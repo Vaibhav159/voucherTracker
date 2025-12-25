@@ -2,10 +2,32 @@ import React, { useEffect, useState, useMemo } from 'react';
 import guidesData from '../data/guides.json';
 
 const GuideModal = ({ guide, onClose }) => {
+
+
+    // Helper to reload reddit widgets
+    const reloadRedditWidgets = () => {
+        const scriptId = 'reddit-wjs';
+        const existingScript = document.getElementById(scriptId);
+        if (existingScript) {
+            existingScript.remove();
+        }
+        const script = document.createElement('script');
+        script.id = scriptId;
+        script.src = "https://embed.reddit.com/widgets.js";
+        script.async = true;
+        script.charset = "UTF-8";
+        document.body.appendChild(script);
+    };
+
     useEffect(() => {
         // Re-scan for widgets when modal opens
         if (window.twttr && window.twttr.widgets) {
             window.twttr.widgets.load();
+        }
+
+        // Reload Reddit widgets for blockquote embeds
+        if (guide.embedHtml && guide.embedHtml.includes('blockquote class="reddit-embed-bq"')) {
+            reloadRedditWidgets();
         }
 
         // Prevent background scrolling
@@ -13,7 +35,7 @@ const GuideModal = ({ guide, onClose }) => {
         return () => {
             document.body.style.overflow = 'unset';
         };
-    }, []);
+    }, [guide]);
 
     // Close on escape key
     useEffect(() => {
@@ -30,6 +52,8 @@ const GuideModal = ({ guide, onClose }) => {
         if (guide.link.includes('twitter.com') || guide.link.includes('x.com')) return 'Open on Twitter';
         return 'Open Link';
     };
+
+
 
     return (
         <div
@@ -81,7 +105,8 @@ const GuideModal = ({ guide, onClose }) => {
                         alignItems: 'center',
                         justifyContent: 'center',
                         fontSize: '1.2rem',
-                        transition: 'background 0.2s'
+                        transition: 'background 0.2s',
+                        zIndex: 10
                     }}
                 >
                     ×
