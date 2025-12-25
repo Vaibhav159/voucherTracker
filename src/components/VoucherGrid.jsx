@@ -126,8 +126,19 @@ const VoucherGrid = ({ vouchers, onVoucherClick }) => {
                         display: 'flex',
                         gap: '1rem',
                         overflowX: 'auto',
-                        paddingBottom: '0.5rem'
-                    }}>
+                        paddingBottom: '0.5rem',
+                        width: '100%',
+                        scrollbarWidth: 'none', // Firefox
+                        msOverflowStyle: 'none', // IE/Edge
+                        WebkitOverflowScrolling: 'touch'
+                    }} className="hide-scrollbar">
+                        <style>
+                            {`
+                                .hide-scrollbar::-webkit-scrollbar {
+                                    display: none;
+                                }
+                            `}
+                        </style>
                         {topDeals.map(voucher => (
                             <div
                                 key={voucher.id}

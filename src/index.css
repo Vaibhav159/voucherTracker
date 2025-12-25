@@ -430,6 +430,11 @@ body::after {
   align-items: start;
 }
 
+/* Fix for grid items not shrinking below content size (causing scroll issues) */
+.home-container>* {
+  min-width: 0;
+}
+
 .sidebar {
   padding: 1.5rem;
   position: sticky;
