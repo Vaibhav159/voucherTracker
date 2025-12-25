@@ -1,16 +1,51 @@
-# React + Vite
+# 🎟️ Voucher Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ > A community-driven platform to track shopping voucher caps, fees, and platforms. 
+ > **[Live Demo](https://vaibhav159.github.io/voucherTracker/)**
 
-Currently, two official plugins are available:
+![Screenshot](https://via.placeholder.com/800x400?text=Voucher+Tracker+UI+Preview)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- **Multi-Platform Comparison**: See caps and fees for Amazon, Flipkart, Uber, etc., across different buying platforms (Gyftr, iShop, etc.).
+- **Smart Search**: Filter instantly by brand or platform (e.g., "Show all Gyftr vouchers").
+- **Deep Space UI**: Modern, glassmorphism-based design with an aurora background.
+- **Community Powered**: Data is stored in a simple JSON-like file, allowing anyone to suggest updates.
 
-## React Compiler
+## 🛠️ Tech Stack
+- **Framework**: React (Vite)
+- **Styling**: Vanilla CSS (Variables, Glassmorphism, Animations)
+- **Routing**: React Router DOM (HashRouter)
+- **Deployment**: GitHub Pages
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🤝 How to Contribute Data
+Found a new voucher cap? Or a fee change?
+1.  Click the **"Suggest Data Change"** button in the app.
+2.  This opens the `src/data/vouchers.js` file on GitHub.
+3.  Click the **Pencil Icon** to edit.
+4.  Add or modify the data:
+    ```js
+    {
+      id: "unique-id",
+      brand: "Brand Name",
+      category: "Category",
+      platforms: [
+        { name: "Platform", cap: "10k/month", fee: "2%", link: "..." }
+      ]
+    }
+    ```
+5.  Scroll down and click **"Propose changes"**.
 
-## Expanding the ESLint configuration
+## 💻 Running Locally
+```bash
+# Clone the repo
+git clone https://github.com/Vaibhav159/voucherTracker.git
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+## 📄 License
+MIT License. Free to use and modify.

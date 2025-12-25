@@ -9,9 +9,9 @@ const Layout = ({ children }) => {
             <h1 className="text-gradient" style={{ margin: 0, fontSize: '2rem' }}>VoucherTracker</h1>
             <p style={{ margin: '5px 0 0', color: 'var(--text-secondary)' }}>Find the best deals & buying caps</p>
           </div>
-          <a 
-            href="https://github.com/vaibhav/voucher-tracker/edit/main/src/data/vouchers.js" 
-            target="_blank" 
+          <a
+            href="https://github.com/Vaibhav159/voucherTracker/edit/main/src/data/vouchers.js"
+            target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"
             style={{ fontSize: '0.9rem' }}
@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
           </a>
         </div>
       </header>
-      
+
       <main className="container" style={{ padding: '2rem 0', minHeight: '80vh' }}>
         {children}
       </main>
