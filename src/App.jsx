@@ -1,5 +1,5 @@
-import { useState, useMemo } from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState, useMemo, useEffect } from 'react';
+import { HashRouter as Router, Routes, Route, useSearchParams } from 'react-router-dom';
 import Layout from './components/Layout';
 import SearchBar from './components/SearchBar';
 import CategoryFilter from './components/CategoryFilter';
@@ -15,9 +15,11 @@ const ALL_PLATFORMS = [...new Set(INITIAL_DATA.flatMap(v => v.platforms.map(p =>
 const ALL_CATEGORIES = [...new Set(INITIAL_DATA.map(v => v.category))].sort();
 
 function Home() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedPlatform, setSelectedPlatform] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const [searchTerm, setSearchTerm] = useState(searchParams.get('search') || '');
+  const [selectedPlatform, setSelectedPlatform] = useState(searchParams.get('platform') || null);
+  const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || null);
   const [selectedVoucher, setSelectedVoucher] = useState(null);
 
   const [sortOption, setSortOption] = useState('Recommended');
@@ -67,7 +69,17 @@ function Home() {
   }, [searchTerm, selectedPlatform, selectedCategory, sortOption]);
 
 
+  // Sync state to URL
+  useEffect(() => {
+    const params = new URLSearchParams();
+    if (searchTerm) params.set('search', searchTerm);
+    if (selectedPlatform) params.set('platform', selectedPlatform);
+    if (selectedCategory) params.set('category', selectedCategory);
 
+    // Use replace for search term changes to not clutter history too much while typing
+    // But for filters, push (default) might be okay. Using replace for cleaner history for now.
+    setSearchParams(params, { replace: true });
+  }, [searchTerm, selectedPlatform, selectedCategory, setSearchParams]);
   return (
     <div style={{ display: 'grid', gridTemplateColumns: 'minmax(250px, 1fr) 3fr', gap: '3rem', alignItems: 'start' }}>
       {/* Sidebar */}
