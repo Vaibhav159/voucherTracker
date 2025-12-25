@@ -1,21 +1,64 @@
-MIT License
+PolyForm Noncommercial License 1.0.0
 
-Copyright (c) 2025 Vaibhav Lodha
+Noncommercial Use
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Users of the software may use the software for any purpose that is not a
+Commercial Use.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+"Commercial Use" means use:
+1.  by a business, similar organization, or individual, that is not an academic
+    institution or a Tax-Exempt Organization; AND
+2.  for a commercial purpose, such as to increase profit or generate revenue.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+"Tax-Exempt Organization" means any entity that has tax-exempt status in the
+jurisdiction where it is organized, such as a section 501(c)(3) organization in
+the United States. 
+
+License Terms
+
+1.  Grant of Rights
+
+    As long as You are making a permitted use as defined in "Noncommercial Use"
+    above, the Licensor which has applied this license to the software grants You
+    a non-exclusive, worldwide, royalty-free, copyright license to use and
+    reproduce the software, and to prepare derivative works, distribute copies,
+    and perform and display publicly the software and derivative works.
+
+    If You are making a permitted use, the Licensor also grants You a
+    non-exclusive, worldwide, royalty-free patent license to make, have made,
+    use, offer to sell, sell, import, and otherwise transfer the software. This
+    patent license covers claims that are practiced by the software as the
+    Licensor distributes it to You.
+
+2.  Conditions
+
+    If You distribute the software, You must include a copy of this license
+    and the following notice with each copy:
+
+    "This software is legally bindingly licensed under the PolyForm
+    Noncommercial License 1.0.0. To view a copy of this license,
+    visit https://polyformproject.org/licenses/noncommercial/1.0.0"
+
+    If You modify the software, You must also include a prominent text file in
+    the software distinguished from this license that states that the software
+    has been modified.
+
+3.  No Other Rights
+
+    This license does not grant You any rights to the Licensor's trademarks or
+    implied licenses.
+
+4.  Disclaimer
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+    IN THE SOFTWARE.
+
+5.  Termination
+
+    If You use the software for a Commercial Use, Your license to use the
+    software terminates automatically.

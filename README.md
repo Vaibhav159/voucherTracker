@@ -48,4 +48,4 @@ npm run dev
 ```
 
 ## 📄 License
-MIT License. Free to use and modify.
+PolyForm Noncommercial License 1.0.0. Free for personal and non-profit use. Business use prohibited.
