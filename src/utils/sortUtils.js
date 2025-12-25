@@ -1,7 +1,7 @@
 export const PLATFORM_PRIORITY = {
     "iShop": 1,
     "Gyftr": 2,
-    "Maximise": 3,
+    "Maximize": 3,
     "MagicPin": 4,
     "Amazon": 5,
     "SaveSage": 6

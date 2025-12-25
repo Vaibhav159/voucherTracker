@@ -30,7 +30,7 @@
                 "color": "#D42426"
             },
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "None",
                 "denominations": [
@@ -79,7 +79,7 @@
                 "color": "#f37e20"
             },
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 4.5%",
                 "denominations": [
@@ -138,7 +138,7 @@
                 "color": "#D42426"
             },
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 3%",
                 "denominations": [
@@ -197,7 +197,7 @@
                 "color": "#ffd700"
             },
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 21%",
                 "denominations": [
@@ -236,7 +236,7 @@
                 "color": "#000000"
             },
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 4%",
                 "denominations": [
@@ -295,7 +295,7 @@
                 "color": "#84c225"
             },
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 3.75%",
                 "denominations": [
@@ -354,7 +354,7 @@
                 "color": "#F8CB46"
             },
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 3.75%",
                 "denominations": [
@@ -413,7 +413,7 @@
                 "color": "#006491"
             },
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 19%",
                 "denominations": [
@@ -452,7 +452,7 @@
                 "color": "#ff3f6c"
             },
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 2%",
                 "denominations": [
@@ -501,7 +501,7 @@
                 "color": "#c41230"
             },
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "None",
                 "denominations": [
@@ -579,7 +579,7 @@
                 "color": "#2c4152"
             },
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 20%",
                 "denominations": [
@@ -696,7 +696,7 @@
                 "color": "#a5a5a5"
             },
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 8.25%",
                 "denominations": [
@@ -745,7 +745,7 @@
                 "color": "#a3080c"
             },
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 6.25%",
                 "denominations": [
@@ -783,7 +783,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 10%",
                 "denominations": [
@@ -821,7 +821,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 8.5%",
                 "denominations": [
@@ -849,7 +849,7 @@
         "category": "Travel & Leisure",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 4.75%",
                 "denominations": [
@@ -887,7 +887,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 3.75%",
                 "denominations": [
@@ -915,7 +915,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 11.75%",
                 "denominations": [
@@ -963,7 +963,7 @@
         "category": "E-commerce & Technology",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 29.75%",
                 "denominations": [
@@ -1001,7 +1001,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 3%",
                 "denominations": [
@@ -1049,7 +1049,7 @@
         "category": "Groceries & Essentials",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "None",
                 "denominations": [
@@ -1087,7 +1087,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 3%",
                 "denominations": [
@@ -1135,7 +1135,7 @@
         "category": "Home & Living",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 6.25%",
                 "denominations": [
@@ -1173,7 +1173,7 @@
         "category": "Health & Wellness",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 10.75%",
                 "denominations": [
@@ -1191,7 +1191,7 @@
         "category": "E-commerce & Technology",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 5.75%",
                 "denominations": [
@@ -1209,7 +1209,7 @@
         "category": "E-commerce & Technology",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 17.5%",
                 "denominations": [
@@ -1227,7 +1227,7 @@
         "category": "Miscellaneous",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 16%",
                 "denominations": [
@@ -1265,7 +1265,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13%",
                 "denominations": [
@@ -1293,7 +1293,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 8.75%",
                 "denominations": [
@@ -1311,7 +1311,7 @@
         "category": "Home & Living",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 15.75%",
                 "denominations": [
@@ -1339,7 +1339,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 11.25%",
                 "denominations": [
@@ -1377,7 +1377,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 36.75%",
                 "denominations": [
@@ -1415,7 +1415,7 @@
         "category": "E-commerce & Technology",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 12.75%",
                 "denominations": [
@@ -1433,7 +1433,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 14.25%",
                 "denominations": [
@@ -1471,7 +1471,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 7%",
                 "denominations": [
@@ -1519,7 +1519,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 12.25%",
                 "denominations": [
@@ -1557,7 +1557,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 11.75%",
                 "denominations": [
@@ -1595,7 +1595,7 @@
         "category": "Health & Wellness",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 11.75%",
                 "denominations": [
@@ -1633,7 +1633,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 10.5%",
                 "denominations": [
@@ -1671,7 +1671,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 11.75%",
                 "denominations": [
@@ -1719,7 +1719,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 0.25%",
                 "denominations": [
@@ -1747,7 +1747,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 2.25%",
                 "denominations": [
@@ -1765,7 +1765,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13%",
                 "denominations": [
@@ -1803,7 +1803,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 10%",
                 "denominations": [
@@ -1841,7 +1841,7 @@
         "category": "E-commerce & Technology",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 18%",
                 "denominations": [
@@ -1869,7 +1869,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 14.25%",
                 "denominations": [
@@ -1917,7 +1917,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13.25%",
                 "denominations": [
@@ -1935,7 +1935,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 6.75%",
                 "denominations": [
@@ -1963,7 +1963,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 1.25%",
                 "denominations": [
@@ -1991,7 +1991,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 2.25%",
                 "denominations": [
@@ -2009,7 +2009,7 @@
         "category": "E-commerce & Technology",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 6.75%",
                 "denominations": [
@@ -2037,7 +2037,7 @@
         "category": "E-commerce & Technology",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 12.75%",
                 "denominations": [
@@ -2055,7 +2055,7 @@
         "category": "Health & Wellness",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 6.75%",
                 "denominations": [
@@ -2093,7 +2093,7 @@
         "category": "Entertainment & OTT",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 3.75%",
                 "denominations": [
@@ -2131,7 +2131,7 @@
         "category": "Miscellaneous",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "None",
                 "denominations": [
@@ -2149,7 +2149,7 @@
         "category": "E-commerce & Technology",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 14%",
                 "denominations": [
@@ -2167,7 +2167,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13%",
                 "denominations": [
@@ -2195,7 +2195,7 @@
         "category": "E-commerce & Technology",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 4%",
                 "denominations": [
@@ -2213,7 +2213,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 11.75%",
                 "denominations": [
@@ -2241,7 +2241,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 10.25%",
                 "denominations": [
@@ -2279,7 +2279,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 11.75%",
                 "denominations": [
@@ -2327,7 +2327,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 12.75%",
                 "denominations": [
@@ -2365,7 +2365,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 7.5%",
                 "denominations": [
@@ -2383,7 +2383,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 1.5%",
                 "denominations": [
@@ -2401,7 +2401,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 3%",
                 "denominations": [
@@ -2429,7 +2429,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 11.75%",
                 "denominations": [
@@ -2447,7 +2447,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 11.75%",
                 "denominations": [
@@ -2485,7 +2485,7 @@
         "category": "Miscellaneous",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13.25%",
                 "denominations": [
@@ -2533,7 +2533,7 @@
         "category": "Entertainment & OTT",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 18%",
                 "denominations": [
@@ -2561,7 +2561,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 14.75%",
                 "denominations": [
@@ -2579,7 +2579,7 @@
         "category": "Miscellaneous",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 50%",
                 "denominations": [
@@ -2597,7 +2597,7 @@
         "category": "Travel & Leisure",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 6.5%",
                 "denominations": [
@@ -2645,7 +2645,7 @@
         "category": "Travel & Leisure",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 17.75%",
                 "denominations": [
@@ -2663,7 +2663,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13.25%",
                 "denominations": [
@@ -2681,7 +2681,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 10.75%",
                 "denominations": [
@@ -2719,7 +2719,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 39.75%",
                 "denominations": [
@@ -2737,7 +2737,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 7.75%",
                 "denominations": [
@@ -2775,7 +2775,7 @@
         "category": "E-commerce & Technology",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 2.75%",
                 "denominations": [
@@ -2823,7 +2823,7 @@
         "category": "Books & Stationery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 7.75%",
                 "denominations": [
@@ -2841,7 +2841,7 @@
         "category": "Miscellaneous",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 1.5%",
                 "denominations": [
@@ -2879,7 +2879,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 18.75%",
                 "denominations": [
@@ -2927,7 +2927,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 4%",
                 "denominations": [
@@ -2975,7 +2975,7 @@
         "category": "Entertainment & OTT",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 38%",
                 "denominations": [
@@ -3003,7 +3003,7 @@
         "category": "Entertainment & OTT",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 4.25%",
                 "denominations": [
@@ -3046,7 +3046,7 @@
         "category": "Travel & Leisure",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 8.25%",
                 "denominations": [
@@ -3084,7 +3084,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13%",
                 "denominations": [
@@ -3102,7 +3102,7 @@
         "category": "New",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 10.25%",
                 "denominations": [
@@ -3130,7 +3130,7 @@
         "category": "Travel & Leisure",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 10%",
                 "denominations": [
@@ -3178,7 +3178,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 8.5%",
                 "denominations": [
@@ -3206,7 +3206,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 11.5%",
                 "denominations": [
@@ -3264,7 +3264,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 11%",
                 "denominations": [
@@ -3282,7 +3282,7 @@
         "category": "E-commerce & Technology",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 28.75%",
                 "denominations": [
@@ -3300,7 +3300,7 @@
         "category": "Entertainment & OTT",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 4.75%",
                 "denominations": [
@@ -3318,7 +3318,7 @@
         "category": "New",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 40%",
                 "denominations": [
@@ -3336,7 +3336,7 @@
         "category": "E-commerce & Technology",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 39.75%",
                 "denominations": [
@@ -3354,7 +3354,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 5.75%",
                 "denominations": [
@@ -3372,7 +3372,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 3.25%",
                 "denominations": [
@@ -3390,7 +3390,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 4.5%",
                 "denominations": [
@@ -3408,7 +3408,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 11.25%",
                 "denominations": [
@@ -3456,7 +3456,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 3.5%",
                 "denominations": [
@@ -3494,7 +3494,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 8.5%",
                 "denominations": [
@@ -3532,7 +3532,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 8.5%",
                 "denominations": [
@@ -3570,7 +3570,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13.75%",
                 "denominations": [
@@ -3598,7 +3598,7 @@
         "category": "E-commerce & Technology",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 14.75%",
                 "denominations": [
@@ -3616,7 +3616,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 6.75%",
                 "denominations": [
@@ -3634,7 +3634,7 @@
         "category": "Travel & Leisure",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 10.75%",
                 "denominations": [
@@ -3662,7 +3662,7 @@
         "category": "Health & Wellness",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 14.25%",
                 "denominations": [
@@ -3690,7 +3690,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 8.75%",
                 "denominations": [
@@ -3728,7 +3728,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 7.75%",
                 "denominations": [
@@ -3746,7 +3746,7 @@
         "category": "Health & Wellness",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 17.75%",
                 "denominations": [
@@ -3794,7 +3794,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 21.25%",
                 "denominations": [
@@ -3822,7 +3822,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 4%",
                 "denominations": [
@@ -3860,7 +3860,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 9.75%",
                 "denominations": [
@@ -3878,7 +3878,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 15.5%",
                 "denominations": [
@@ -3906,7 +3906,7 @@
         "category": "E-commerce & Technology",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 3.5%",
                 "denominations": [
@@ -3934,7 +3934,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13%",
                 "denominations": [
@@ -3952,7 +3952,7 @@
         "category": "Entertainment & OTT",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 17.25%",
                 "denominations": [
@@ -3980,7 +3980,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 12.75%",
                 "denominations": [
@@ -3998,7 +3998,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 6.5%",
                 "denominations": [
@@ -4016,7 +4016,7 @@
         "category": "Beauty & Personal Care",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 3.75%",
                 "denominations": [
@@ -4034,7 +4034,7 @@
         "category": "Travel & Leisure",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13.25%",
                 "denominations": [
@@ -4052,7 +4052,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 9.75%",
                 "denominations": [
@@ -4080,7 +4080,7 @@
         "category": "Entertainment & OTT",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 3.25%",
                 "denominations": [
@@ -4108,7 +4108,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 1.35%",
                 "denominations": [
@@ -4126,7 +4126,7 @@
         "category": "Miscellaneous",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13.75%",
                 "denominations": [
@@ -4154,7 +4154,7 @@
         "category": "Miscellaneous",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 6.75%",
                 "denominations": [
@@ -4172,7 +4172,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 24%",
                 "denominations": [
@@ -4210,7 +4210,7 @@
         "category": "Health & Wellness",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 10.25%",
                 "denominations": [
@@ -4238,7 +4238,7 @@
         "category": "Health & Wellness",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 19.75%",
                 "denominations": [
@@ -4276,7 +4276,7 @@
         "category": "Health & Wellness",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 16.75%",
                 "denominations": [
@@ -4294,7 +4294,7 @@
         "category": "Health & Wellness",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 12.75%",
                 "denominations": [
@@ -4332,7 +4332,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13.5%",
                 "denominations": [
@@ -4380,7 +4380,7 @@
         "category": "Health & Wellness",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 11.25%",
                 "denominations": [
@@ -4408,7 +4408,7 @@
         "category": "Entertainment & OTT",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 17.5%",
                 "denominations": [
@@ -4436,7 +4436,7 @@
         "category": "Travel & Leisure",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 14.25%",
                 "denominations": [
@@ -4454,7 +4454,7 @@
         "category": "Home & Living",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 6.25%",
                 "denominations": [
@@ -4482,7 +4482,7 @@
         "category": "Home & Living",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 14%",
                 "denominations": [
@@ -4500,7 +4500,7 @@
         "category": "Travel & Leisure",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "None",
                 "denominations": [
@@ -4528,7 +4528,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 12.75%",
                 "denominations": [
@@ -4546,7 +4546,7 @@
         "category": "Sports & Fitness",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 11.75%",
                 "denominations": [
@@ -4594,7 +4594,7 @@
         "category": "Home & Living",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 5%",
                 "denominations": [
@@ -4632,7 +4632,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13.25%",
                 "denominations": [
@@ -4670,7 +4670,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 11.75%",
                 "denominations": [
@@ -4708,7 +4708,7 @@
         "category": "Health & Wellness",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 21.75%",
                 "denominations": [
@@ -4726,7 +4726,7 @@
         "category": "Travel & Leisure",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "None",
                 "denominations": [
@@ -4744,7 +4744,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 9.75%",
                 "denominations": [
@@ -4772,7 +4772,7 @@
         "category": "Travel & Leisure",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 8.75%",
                 "denominations": [
@@ -4820,7 +4820,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 8.75%",
                 "denominations": [
@@ -4868,7 +4868,7 @@
         "category": "Entertainment & OTT",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 8.5%",
                 "denominations": [
@@ -4906,7 +4906,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13.25%",
                 "denominations": [
@@ -4944,7 +4944,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 4%",
                 "denominations": [
@@ -4972,7 +4972,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 2.25%",
                 "denominations": [
@@ -5000,7 +5000,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 12.75%",
                 "denominations": [
@@ -5018,7 +5018,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 4%",
                 "denominations": [
@@ -5036,7 +5036,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13.5%",
                 "denominations": [
@@ -5054,7 +5054,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 11%",
                 "denominations": [
@@ -5082,7 +5082,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 2.4%",
                 "denominations": [
@@ -5100,7 +5100,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 4.85%",
                 "denominations": [
@@ -5118,7 +5118,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 4.65%",
                 "denominations": [
@@ -5146,7 +5146,7 @@
         "category": "Beauty & Personal Care",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 14.75%",
                 "denominations": [
@@ -5174,7 +5174,7 @@
         "category": "Travel & Leisure",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 8.5%",
                 "denominations": [
@@ -5202,7 +5202,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 4.75%",
                 "denominations": [
@@ -5230,7 +5230,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 8%",
                 "denominations": [
@@ -5258,7 +5258,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 8.75%",
                 "denominations": [
@@ -5296,7 +5296,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 11.25%",
                 "denominations": [
@@ -5334,7 +5334,7 @@
         "category": "New",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 8.75%",
                 "denominations": [
@@ -5362,7 +5362,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 4.75%",
                 "denominations": [
@@ -5390,7 +5390,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 9.25%",
                 "denominations": [
@@ -5418,7 +5418,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 10.25%",
                 "denominations": [
@@ -5456,7 +5456,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 8.5%",
                 "denominations": [
@@ -5484,7 +5484,7 @@
         "category": "E-commerce & Technology",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 35.75%",
                 "denominations": [
@@ -5512,7 +5512,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 3%",
                 "denominations": [
@@ -5550,7 +5550,7 @@
         "category": "Health & Wellness",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 12.5%",
                 "denominations": [
@@ -5568,7 +5568,7 @@
         "category": "Groceries & Essentials",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 2%",
                 "denominations": [
@@ -5596,7 +5596,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13.25%",
                 "denominations": [
@@ -5634,7 +5634,7 @@
         "category": "Travel & Leisure",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 3%",
                 "denominations": [
@@ -5672,7 +5672,7 @@
         "category": "Travel & Leisure",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 12%",
                 "denominations": [
@@ -5710,7 +5710,7 @@
         "category": "Travel & Leisure",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13%",
                 "denominations": [
@@ -5748,7 +5748,7 @@
         "category": "Travel & Leisure",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 1%",
                 "denominations": [
@@ -5776,7 +5776,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 4.5%",
                 "denominations": [
@@ -5804,7 +5804,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 2.25%",
                 "denominations": [
@@ -5822,7 +5822,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 1.25%",
                 "denominations": [
@@ -5840,7 +5840,7 @@
         "category": "Health & Wellness",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 18.75%",
                 "denominations": [
@@ -5868,7 +5868,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "None",
                 "denominations": [
@@ -5896,7 +5896,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 12%",
                 "denominations": [
@@ -5924,7 +5924,7 @@
         "category": "Travel & Leisure",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 7.75%",
                 "denominations": [
@@ -5952,7 +5952,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 3.5%",
                 "denominations": [
@@ -5980,7 +5980,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 9.75%",
                 "denominations": [
@@ -6008,7 +6008,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 4%",
                 "denominations": [
@@ -6026,7 +6026,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13.5%",
                 "denominations": [
@@ -6054,7 +6054,7 @@
         "category": "Gaming",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 6.75%",
                 "denominations": [
@@ -6072,7 +6072,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13.25%",
                 "denominations": [
@@ -6110,7 +6110,7 @@
         "category": "Home & Living",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 7.75%",
                 "denominations": [
@@ -6128,7 +6128,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13.25%",
                 "denominations": [
@@ -6146,7 +6146,7 @@
         "category": "Miscellaneous",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 7.75%",
                 "denominations": [
@@ -6174,7 +6174,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 3%",
                 "denominations": [
@@ -6192,7 +6192,7 @@
         "category": "Groceries & Essentials",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 1.25%",
                 "denominations": [
@@ -6220,7 +6220,7 @@
         "category": "Shopping",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 10%",
                 "denominations": [
@@ -6248,7 +6248,7 @@
         "category": "Miscellaneous",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 7.5%",
                 "denominations": [
@@ -6266,7 +6266,7 @@
         "category": "Health & Wellness",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 26.75%",
                 "denominations": [
@@ -6284,7 +6284,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 6.75%",
                 "denominations": [
@@ -6332,7 +6332,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 6.5%",
                 "denominations": [
@@ -6370,7 +6370,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 6.5%",
                 "denominations": [
@@ -6388,7 +6388,7 @@
         "category": "Travel & Leisure",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 6.5%",
                 "denominations": [
@@ -6406,7 +6406,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13.75%",
                 "denominations": [
@@ -6444,7 +6444,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 7.25%",
                 "denominations": [
@@ -6482,7 +6482,7 @@
         "category": "Home & Living",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 11%",
                 "denominations": [
@@ -6520,7 +6520,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 9.75%",
                 "denominations": [
@@ -6558,7 +6558,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 8.1%",
                 "denominations": [
@@ -6606,7 +6606,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 10.75%",
                 "denominations": [
@@ -6644,7 +6644,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 10.75%",
                 "denominations": [
@@ -6682,7 +6682,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13%",
                 "denominations": [
@@ -6700,7 +6700,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 3.5%",
                 "denominations": [
@@ -6718,7 +6718,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 0.5%",
                 "denominations": [
@@ -6746,7 +6746,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 1.5%",
                 "denominations": [
@@ -6764,7 +6764,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 4%",
                 "denominations": [
@@ -6782,7 +6782,7 @@
         "category": "Home & Living",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 4%",
                 "denominations": [
@@ -6820,7 +6820,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 3%",
                 "denominations": [
@@ -6868,7 +6868,7 @@
         "category": "E-commerce & Technology",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "None",
                 "denominations": [
@@ -6896,7 +6896,7 @@
         "category": "Home & Living",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 9.75%",
                 "denominations": [
@@ -6924,7 +6924,7 @@
         "category": "Miscellaneous",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 1.2%",
                 "denominations": [
@@ -6942,7 +6942,7 @@
         "category": "E-commerce & Technology",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 14.75%",
                 "denominations": [
@@ -6960,7 +6960,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 9%",
                 "denominations": [
@@ -7008,7 +7008,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 3%",
                 "denominations": [
@@ -7036,7 +7036,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 2%",
                 "denominations": [
@@ -7054,7 +7054,7 @@
         "category": "Home & Living",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "None",
                 "denominations": [
@@ -7092,7 +7092,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 10%",
                 "denominations": [
@@ -7130,7 +7130,7 @@
         "category": "Home & Living",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 15.75%",
                 "denominations": [
@@ -7158,7 +7158,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 11.75%",
                 "denominations": [
@@ -7196,7 +7196,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 7.5%",
                 "denominations": [
@@ -7234,7 +7234,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 8.75%",
                 "denominations": [
@@ -7272,7 +7272,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 10.75%",
                 "denominations": [
@@ -7300,7 +7300,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 11.25%",
                 "denominations": [
@@ -7338,7 +7338,7 @@
         "category": "E-commerce & Technology",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "None",
                 "denominations": [
@@ -7366,7 +7366,7 @@
         "category": "E-commerce & Technology",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 4%",
                 "denominations": [
@@ -7414,7 +7414,7 @@
         "category": "E-commerce & Technology",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 3.5%",
                 "denominations": [
@@ -7452,7 +7452,7 @@
         "category": "Miscellaneous",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 3.5%",
                 "denominations": [
@@ -7490,7 +7490,7 @@
         "category": "E-commerce & Technology",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 2.75%",
                 "denominations": [
@@ -7508,7 +7508,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 5.5%",
                 "denominations": [
@@ -7526,7 +7526,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 5.5%",
                 "denominations": [
@@ -7554,7 +7554,7 @@
         "category": "New",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 12.75%",
                 "denominations": [
@@ -7572,7 +7572,7 @@
         "category": "Gaming",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 6%",
                 "denominations": [
@@ -7590,7 +7590,7 @@
         "category": "Home & Living",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 6.25%",
                 "denominations": [
@@ -7638,7 +7638,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13%",
                 "denominations": [
@@ -7666,7 +7666,7 @@
         "category": "Home & Living",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 11.25%",
                 "denominations": [
@@ -7694,7 +7694,7 @@
         "category": "Sports & Fitness",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 6.75%",
                 "denominations": [
@@ -7712,7 +7712,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 6.25%",
                 "denominations": [
@@ -7740,7 +7740,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13.75%",
                 "denominations": [
@@ -7778,7 +7778,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 3%",
                 "denominations": [
@@ -7826,7 +7826,7 @@
         "category": "Health & Wellness",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13.75%",
                 "denominations": [
@@ -7854,7 +7854,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 10.75%",
                 "denominations": [
@@ -7902,7 +7902,7 @@
         "category": "Health & Wellness",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 8.25%",
                 "denominations": [
@@ -7930,7 +7930,7 @@
         "category": "E-commerce & Technology",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 17.5%",
                 "denominations": [
@@ -7968,7 +7968,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 18.75%",
                 "denominations": [
@@ -7986,7 +7986,7 @@
         "category": "Miscellaneous",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 14.75%",
                 "denominations": [
@@ -8024,7 +8024,7 @@
         "category": "E-commerce & Technology",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 3.25%",
                 "denominations": [
@@ -8042,7 +8042,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 7.75%",
                 "denominations": [
@@ -8070,7 +8070,7 @@
         "category": "Entertainment & OTT",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 34.75%",
                 "denominations": [
@@ -8098,7 +8098,7 @@
         "category": "New",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 5.75%",
                 "denominations": [
@@ -8116,7 +8116,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13.5%",
                 "denominations": [
@@ -8174,7 +8174,7 @@
         "category": "Groceries & Essentials",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 4.5%",
                 "denominations": [
@@ -8202,7 +8202,7 @@
         "category": "Beauty & Personal Care",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 11.75%",
                 "denominations": [
@@ -8230,7 +8230,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 8.75%",
                 "denominations": [
@@ -8278,7 +8278,7 @@
         "category": "Gaming",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 3.75%",
                 "denominations": [
@@ -8306,7 +8306,7 @@
         "category": "Travel & Leisure",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 12.75%",
                 "denominations": [
@@ -8344,7 +8344,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 12.75%",
                 "denominations": [
@@ -8362,7 +8362,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 10.25%",
                 "denominations": [
@@ -8410,7 +8410,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13.25%",
                 "denominations": [
@@ -8428,7 +8428,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 14%",
                 "denominations": [
@@ -8466,7 +8466,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 10.75%",
                 "denominations": [
@@ -8504,7 +8504,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 3.75%",
                 "denominations": [
@@ -8522,7 +8522,7 @@
         "category": "Travel & Leisure",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 10.75%",
                 "denominations": [
@@ -8550,7 +8550,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 8.75%",
                 "denominations": [
@@ -8578,7 +8578,7 @@
         "category": "Jewellery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 2%",
                 "denominations": [
@@ -8596,7 +8596,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 7.75%",
                 "denominations": [
@@ -8644,7 +8644,7 @@
         "category": "Health & Wellness",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 17.75%",
                 "denominations": [
@@ -8672,7 +8672,7 @@
         "category": "Sports & Fitness",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 15.75%",
                 "denominations": [
@@ -8700,7 +8700,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 9.75%",
                 "denominations": [
@@ -8738,7 +8738,7 @@
         "category": "Health & Wellness",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 5%",
                 "denominations": [
@@ -8786,7 +8786,7 @@
         "category": "New",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 2.75%",
                 "denominations": [
@@ -8824,7 +8824,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 9.75%",
                 "denominations": [
@@ -8852,7 +8852,7 @@
         "category": "Books & Stationery",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 7.75%",
                 "denominations": [
@@ -8870,7 +8870,7 @@
         "category": "New",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 6%",
                 "denominations": [
@@ -8898,7 +8898,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 10%",
                 "denominations": [
@@ -8926,7 +8926,7 @@
         "category": "Miscellaneous",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 7.5%",
                 "denominations": [
@@ -8954,7 +8954,7 @@
         "category": "New",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 7.25%",
                 "denominations": [
@@ -8972,7 +8972,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 5.75%",
                 "denominations": [
@@ -8990,7 +8990,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 9%",
                 "denominations": [
@@ -9018,7 +9018,7 @@
         "category": "Travel & Leisure",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 6.5%",
                 "denominations": [
@@ -9036,7 +9036,7 @@
         "category": "Health & Wellness",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 24.75%",
                 "denominations": [
@@ -9074,7 +9074,7 @@
         "category": "New",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 2.5%",
                 "denominations": [
@@ -9092,7 +9092,7 @@
         "category": "Miscellaneous",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 4.25%",
                 "denominations": [
@@ -9130,7 +9130,7 @@
         "category": "New",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 9.75%",
                 "denominations": [
@@ -9158,7 +9158,7 @@
         "category": "New",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 7.75%",
                 "denominations": [
@@ -9186,7 +9186,7 @@
         "category": "Groceries & Essentials",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 9.25%",
                 "denominations": [
@@ -9224,7 +9224,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 8.75%",
                 "denominations": [
@@ -9242,7 +9242,7 @@
         "category": "Gaming",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 5.5%",
                 "denominations": [
@@ -9270,7 +9270,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 3%",
                 "denominations": [
@@ -9318,7 +9318,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 8.75%",
                 "denominations": [
@@ -9366,7 +9366,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 11.75%",
                 "denominations": [
@@ -9404,7 +9404,7 @@
         "category": "Health & Wellness",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 11.75%",
                 "denominations": [
@@ -9432,7 +9432,7 @@
         "category": "E-commerce & Technology",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 2.5%",
                 "denominations": [
@@ -9460,7 +9460,7 @@
         "category": "Entertainment & OTT",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 39.75%",
                 "denominations": [
@@ -9488,7 +9488,7 @@
         "category": "Home & Living",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 4%",
                 "denominations": [
@@ -9526,7 +9526,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 10.25%",
                 "denominations": [
@@ -9564,7 +9564,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "None",
                 "denominations": [
@@ -9602,7 +9602,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 8.5%",
                 "denominations": [
@@ -9650,7 +9650,7 @@
         "category": "Miscellaneous",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 6.75%",
                 "denominations": [
@@ -9678,7 +9678,7 @@
         "category": "Miscellaneous",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 20.75%",
                 "denominations": [
@@ -9726,7 +9726,7 @@
         "category": "Home & Living",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 13.25%",
                 "denominations": [
@@ -9774,7 +9774,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 10.75%",
                 "denominations": [
@@ -9822,7 +9822,7 @@
         "category": "Dining & Food",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 9.75%",
                 "denominations": [
@@ -9860,7 +9860,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 8.75%",
                 "denominations": [
@@ -9898,7 +9898,7 @@
         "category": "Travel & Leisure",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 45%",
                 "denominations": [
@@ -9926,7 +9926,7 @@
         "category": "Travel & Leisure",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 5.25%",
                 "denominations": [
@@ -9944,7 +9944,7 @@
         "category": "Entertainment & OTT",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 22.75%",
                 "denominations": [
@@ -9982,7 +9982,7 @@
         "category": "Fashion & Accessories",
         "platforms": [
             {
-                "name": "Maximise",
+                "name": "Maximize",
                 "cap": "Unlimited",
                 "fee": "Discount 5.75%",
                 "denominations": [

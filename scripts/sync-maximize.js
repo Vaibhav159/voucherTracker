@@ -24,7 +24,7 @@ const HEADERS = {
     'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'
 };
 
-async function syncMaximiseData() {
+async function syncMaximizeData() {
     try {
         console.log(`Fetching data from ${MAXIMISE_API_URL}...`);
         const response = await fetch(MAXIMISE_API_URL, { headers: HEADERS });
@@ -39,7 +39,7 @@ async function syncMaximiseData() {
         }
 
         const maximiseList = json.data.giftCardList;
-        console.log(`Fetched ${maximiseList.length} vouchers from Maximise.`);
+        console.log(`Fetched ${maximiseList.length} vouchers from Maximize.`);
 
         // Load existing vouchers
         let existingVouchers = [];
@@ -87,9 +87,9 @@ async function syncMaximiseData() {
                 newCount++;
             }
 
-            // Update Maximise Platform Entry
+            // Update Maximize Platform Entry
             const maximisePlatform = {
-                name: "Maximise",
+                name: "Maximize",
                 cap: "Unsupported", // API doesn't seem to have cap, using placeholder or "Unlimited" if inferred.
                 // Actually, item.maxCoinsEarn might be related, but let's stick to discount.
                 cap: "Unlimited",
@@ -99,7 +99,7 @@ async function syncMaximiseData() {
                 color: "#1c1c1c"
             };
 
-            // Check if Maximise platform exists
+            // Check if Maximize platform exists
             const platformIndex = voucher.platforms.findIndex(p => p.name.toLowerCase() === 'maximise');
             if (platformIndex >= 0) {
                 // Update existing
@@ -119,7 +119,7 @@ async function syncMaximiseData() {
         console.log(`Sync complete. Updated: ${updatedCount}, New: ${newCount}, Total: ${existingVouchers.length}`);
 
     } catch (error) {
-        console.error("Error syncing Maximise data:", error.message);
+        console.error("Error syncing Maximize data:", error.message);
     }
 }
 
@@ -128,4 +128,4 @@ function normalizeInfo(str) {
     return str.toLowerCase().replace(/[^a-z0-9]/g, '');
 }
 
-syncMaximiseData();
+syncMaximizeData();

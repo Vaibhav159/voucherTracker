@@ -2,7 +2,7 @@ export const PLATFORM_LOGOS = {
     "iShop": "https://ishop.reward360.in/assets/images/logo.svg",
     "Gyftr": "https://www.gyftr.com/instantvouchers/static/images/logo_gv.svg",
     "MagicPin": "https://static.magicpin.com/samara/static/images/logo-v1.svg",
-    "Maximise": "https://savemax.s3.ap-south-1.amazonaws.com/website/maximize_new_logo.png", // Fallback/Guess
+    "Maximize": "https://savemax.s3.ap-south-1.amazonaws.com/website/maximize_new_logo.png", // Fallback/Guess
     "Amazon": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
     "SaveSage": "https://savesage.club/SaveSage-Symbol-on-Light-Background.png",
 };
