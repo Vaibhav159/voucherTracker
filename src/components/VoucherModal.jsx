@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { getPlatformLogo } from '../utils/platformLogos';
+import { getPlatformStyle } from '../utils/platformLogos';
 import { Link } from 'react-router-dom';
 
 const VoucherModal = ({ voucher, onClose }) => {
@@ -125,7 +125,7 @@ const VoucherModal = ({ voucher, onClose }) => {
                     <div style={{ display: 'grid', gap: '1rem' }}>
                         {voucher.platforms.map((platform, idx) => {
                             const { label, value } = getRewardText(platform.fee);
-                            const logo = getPlatformLogo(platform.name);
+                            const style = getPlatformStyle(platform.name);
 
                             return (
                                 <div key={idx} style={{
@@ -142,16 +142,17 @@ const VoucherModal = ({ voucher, onClose }) => {
                                         <div style={{
                                             width: '48px',
                                             height: '48px',
-                                            background: '#fff',
+                                            background: style.bg,
                                             borderRadius: '10px',
                                             display: 'flex',
                                             alignItems: 'center',
                                             justifyContent: 'center',
                                             flexShrink: 0,
-                                            padding: '4px'
+                                            padding: style.padding,
+                                            overflow: 'hidden'
                                         }}>
-                                            {logo ? (
-                                                <img src={logo} alt={platform.name} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
+                                            {style.logo ? (
+                                                <img src={style.logo} alt={platform.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                                             ) : (
                                                 <span style={{ color: '#000', fontWeight: 'bold', fontSize: '1.2rem' }}>{platform.name[0]}</span>
                                             )}
