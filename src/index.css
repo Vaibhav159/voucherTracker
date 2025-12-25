@@ -140,6 +140,7 @@ body::after {
 .text-gradient {
   background: linear-gradient(135deg, #fff 30%, var(--accent-cyan) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
 }
@@ -180,5 +181,212 @@ body::after {
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Navigation Pills */
+.nav-item {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.nav-item.active {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border-color: var(--glass-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Responsiveness & Refactoring */
+
+/* Header & Navigation */
+.app-header {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--glass-border);
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.app-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-container {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Voucher Grid */
+.voucher-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2rem;
+}
+
+/* Voucher Card */
+.voucher-card {
+  padding: 28px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+.voucher-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Main Layout */
+.main-content {
+  padding: 2rem 0;
+  min-height: 80vh;
+}
+
+.home-container {
+  display: grid;
+  grid-template-columns: minmax(250px, 1fr) 3fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.sidebar {
+  padding: 1.5rem;
+  position: sticky;
+  top: 2rem;
+}
+
+/* Default state for toggle button on desktop */
+.mobile-filter-toggle {
+  display: none;
+}
+
+/* Mobile Media Queries */
+@media (max-width: 768px) {
+
+  /* Fix #root padding from App.css */
+  #root {
+    padding: 1rem !important;
+    /* Override App.css */
+  }
+
+  .app-header {
+    padding: 1rem 0;
+  }
+
+  .app-header .container {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .nav-container {
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    gap: 1.5rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .home-container {
+    grid-template-columns: 1fr;
+    /* Stack sidebar and content */
+    gap: 2rem;
+  }
+
+  .sidebar {
+    position: relative;
+    /* Remove sticky on mobile */
+    top: 0;
+    max-height: none;
+    /* Allow full height if needed */
+  }
+
+  .voucher-grid {
+    grid-template-columns: 1fr;
+    /* Stack cards on mobile */
+    gap: 1.5rem;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .main-content {
+    padding: 1rem 0;
+  }
+
+
+
+  /* Make modal full width/better fit on mobile if generic styles needed */
+  /* (Specific modal styles can be added in component css or here) */
+
+  /* Mobile Filter Toggle */
+  .mobile-filter-toggle {
+    display: block;
+  }
+
+  /* Hide sidebar on mobile unless toggled */
+  .sidebar {
+    position: relative;
+    top: 0;
+    max-height: none;
+    display: none;
+    /* Hidden by default on mobile */
+  }
+
+  .sidebar.mobile-visible {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

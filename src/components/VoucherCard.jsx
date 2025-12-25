@@ -7,26 +7,7 @@ const VoucherCard = ({ voucher, onClick }) => {
   return (
     <div
       onClick={() => onClick && onClick(voucher)}
-      className="glass-panel"
-      style={{
-        padding: '28px',
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        background: 'linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%)',
-        transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
-        cursor: 'pointer'
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.transform = 'translateY(-10px) scale(1.02)';
-        e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.5)';
-        e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)';
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.transform = 'translateY(0) scale(1)';
-        e.currentTarget.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.1)';
-        e.currentTarget.style.borderColor = 'var(--glass-border)';
-      }}
+      className="glass-panel voucher-card"
     >
       <div style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '2rem', gap: '18px' }}>
         <div
