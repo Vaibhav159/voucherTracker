@@ -94,6 +94,12 @@ function Home() {
     <div className="home-container">
       {/* Mobile Filter Toggle Removed */}
 
+      {/* Backdrop for mobile filters */}
+      <div
+        className={`mobile-filter-overlay ${activeMobileFilter !== 'none' ? 'active' : ''}`}
+        onClick={() => setActiveMobileFilter('none')}
+      />
+
       {/* Sidebar */}
       <aside className={`glass-panel sidebar 
         ${activeMobileFilter !== 'none' ? 'mobile-visible' : ''} 
@@ -113,7 +119,7 @@ function Home() {
         <div className="sidebar-content-wrapper">
           <div className="platform-section">
             <h3 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--nav-text)' }}>
-              Sort By Platform
+              Filter By Platform
             </h3>
             <PlatformFilter
               selectedPlatform={selectedPlatform}
