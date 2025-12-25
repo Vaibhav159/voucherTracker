@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -9,10 +10,15 @@ const Layout = ({ children }) => {
 
       <header className="app-header">
         <div className="container">
-          <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <img src="./logo.svg" alt="Logo" style={{ height: '32px', width: '32px' }} />
-            <h1 className="text-gradient" style={{ margin: 0, fontSize: '1.8rem' }}>VoucherTracker</h1>
-          </Link>
+          <div className="header-branding">
+            <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <img src="./logo.svg" alt="Logo" style={{ height: '32px', width: '32px' }} />
+              <h1 className="text-gradient" style={{ margin: 0, fontSize: '1.8rem' }}>VoucherTracker</h1>
+            </Link>
+            <div className="mobile-theme-toggle">
+              <ThemeToggle />
+            </div>
+          </div>
 
           <nav className="nav-container">
             <div className="nav-links">
@@ -39,6 +45,9 @@ const Layout = ({ children }) => {
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
               </a>
+              <div className="desktop-theme-toggle">
+                <ThemeToggle />
+              </div>
             </div>
           </nav>
         </div>

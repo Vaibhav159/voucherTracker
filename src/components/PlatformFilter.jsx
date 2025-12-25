@@ -7,8 +7,8 @@ const PlatformFilter = ({ selectedPlatform, onPlatformSelect, platforms }) => {
             <button
                 onClick={() => onPlatformSelect(null)}
                 style={{
-                    background: !selectedPlatform ? 'rgba(255,255,255,0.1)' : 'transparent',
-                    color: !selectedPlatform ? '#fff' : 'var(--text-secondary)',
+                    background: !selectedPlatform ? 'var(--nav-bg-active)' : 'transparent',
+                    color: !selectedPlatform ? 'var(--nav-text-hover)' : 'var(--nav-text)',
                     border: '1px solid transparent',
                     padding: '10px 16px',
                     borderRadius: '8px',
@@ -30,8 +30,8 @@ const PlatformFilter = ({ selectedPlatform, onPlatformSelect, platforms }) => {
                         key={platform}
                         onClick={() => onPlatformSelect(platform)}
                         style={{
-                            background: selectedPlatform === platform ? 'rgba(0, 240, 255, 0.1)' : 'transparent',
-                            color: selectedPlatform === platform ? 'var(--accent-cyan)' : 'var(--text-secondary)',
+                            background: selectedPlatform === platform ? 'var(--nav-bg-active)' : 'transparent',
+                            color: selectedPlatform === platform ? 'var(--accent-cyan)' : 'var(--nav-text)',
                             border: '1px solid transparent',
                             padding: '10px 16px',
                             borderRadius: '8px',
@@ -42,7 +42,8 @@ const PlatformFilter = ({ selectedPlatform, onPlatformSelect, platforms }) => {
                             fontSize: '0.95rem',
                             display: 'flex',
                             alignItems: 'center',
-                            gap: '12px'
+                            gap: '12px',
+                            boxShadow: selectedPlatform === platform ? '0 2px 8px rgba(0,0,0,0.05)' : 'none'
                         }}
                     >
                         {style.logo && (

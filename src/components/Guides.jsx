@@ -51,8 +51,8 @@ const GuideModal = ({ guide, onClose }) => {
         >
             <div
                 style={{
-                    background: 'rgba(23, 23, 23, 0.95)',
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    background: 'var(--modal-bg)',
+                    border: '1px solid var(--modal-border)',
                     borderRadius: '24px',
                     width: '100%',
                     maxWidth: '600px',
@@ -70,9 +70,9 @@ const GuideModal = ({ guide, onClose }) => {
                         position: 'absolute',
                         top: '1.5rem',
                         right: '1.5rem',
-                        background: 'rgba(255,255,255,0.1)',
+                        background: 'var(--btn-secondary-bg)',
                         border: 'none',
-                        color: '#fff',
+                        color: 'var(--text-primary)',
                         width: '32px',
                         height: '32px',
                         borderRadius: '50%',
@@ -160,8 +160,8 @@ const Guides = () => {
                 <button
                     onClick={() => setSelectedTag(null)}
                     style={{
-                        background: !selectedTag ? '#fff' : 'rgba(255,255,255,0.05)',
-                        color: !selectedTag ? '#000' : 'var(--text-secondary)',
+                        background: !selectedTag ? 'var(--nav-bg-active)' : 'var(--tag-bg)',
+                        color: !selectedTag ? 'var(--nav-text-hover)' : 'var(--nav-text)',
                         border: '1px solid var(--glass-border)',
                         padding: '8px 20px',
                         borderRadius: '100px',
@@ -178,8 +178,8 @@ const Guides = () => {
                         key={tag}
                         onClick={() => setSelectedTag(tag === selectedTag ? null : tag)}
                         style={{
-                            background: selectedTag === tag ? 'var(--accent-cyan)' : 'rgba(255,255,255,0.05)',
-                            color: selectedTag === tag ? '#000' : 'var(--text-secondary)',
+                            background: selectedTag === tag ? 'var(--accent-cyan)' : 'var(--tag-bg)',
+                            color: selectedTag === tag ? '#000' : 'var(--nav-text)',
                             border: selectedTag === tag ? '1px solid var(--accent-cyan)' : '1px solid var(--glass-border)',
                             padding: '8px 16px',
                             borderRadius: '100px',
@@ -217,7 +217,8 @@ const Guides = () => {
                             }}
                             style={{
                                 padding: '1.5rem',
-                                border: '1px solid rgba(255,255,255,0.08)',
+                                border: '1px solid var(--item-border)',
+                                background: 'var(--item-bg)',
                                 transition: 'transform 0.2s ease, box-shadow 0.2s ease',
                                 cursor: 'pointer'
                             }}
@@ -235,10 +236,10 @@ const Guides = () => {
                                             fontSize: '0.7rem',
                                             padding: '4px 8px',
                                             borderRadius: '6px',
-                                            background: selectedTag === tag ? 'rgba(0, 240, 255, 0.2)' : 'rgba(255,255,255,0.05)',
-                                            color: selectedTag === tag ? 'var(--accent-cyan)' : 'var(--text-secondary)',
+                                            background: selectedTag === tag ? 'var(--accent-cyan-dim)' : 'var(--tag-bg)',
+                                            color: selectedTag === tag ? 'var(--accent-cyan)' : 'var(--tag-text)',
                                             fontWeight: 500,
-                                            border: selectedTag === tag ? '1px solid var(--accent-cyan)' : '1px solid rgba(255,255,255,0.05)',
+                                            border: selectedTag === tag ? '1px solid var(--accent-cyan)' : '1px solid var(--tag-border)',
                                             cursor: 'pointer'
                                         }}
                                     >
@@ -248,7 +249,7 @@ const Guides = () => {
                             </div>
 
                             {/* Title */}
-                            <h3 style={{ margin: '0 0 0.8rem 0', fontSize: '1.2rem', lineHeight: '1.4', color: '#fff' }}>
+                            <h3 style={{ margin: '0 0 0.8rem 0', fontSize: '1.2rem', lineHeight: '1.4', color: 'var(--card-title)' }}>
                                 <a
                                     href={guide.link}
                                     target="_blank"
@@ -266,7 +267,7 @@ const Guides = () => {
                             </p>
 
                             {/* Footer */}
-                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 'auto', paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 'auto', paddingTop: '1rem', borderTop: '1px solid var(--item-border)' }}>
                                 <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
                                     {guide.author}
                                 </span>

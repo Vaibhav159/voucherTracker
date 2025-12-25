@@ -3,7 +3,7 @@
 :root {
   --font-family: 'Outfit', sans-serif;
 
-  /* Deep Space Theme */
+  /* Deep Space Theme (Default Dark) */
   --bg-color: #030014;
   --text-primary: #ffffff;
   --text-secondary: #94a3b8;
@@ -13,6 +13,7 @@
   --accent-cyan: #00f0ff;
   --accent-pink: #7000ff;
   --accent-violet: #4a00e0;
+  --accent-cyan-dim: rgba(0, 240, 255, 0.1);
 
   /* Glass v2 */
   --glass-bg: rgba(255, 255, 255, 0.03);
@@ -21,6 +22,79 @@
 
   --card-radius: 24px;
   --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* Semantic UI Colors (Default Dark) */
+  --nav-text: var(--text-secondary);
+  --nav-text-hover: #ffffff;
+  --nav-bg: rgba(255, 255, 255, 0.03);
+  --nav-bg-hover: rgba(255, 255, 255, 0.1);
+  --nav-bg-active: rgba(255, 255, 255, 0.15);
+
+  --header-bg: rgba(0, 0, 0, 0.2);
+  --gradient-text-start: #ffffff;
+
+  --spinner-border: rgba(255, 255, 255, 0.1);
+  --card-hover-border: rgba(255, 255, 255, 0.3);
+
+  /* Modal & Item Colors (Default Dark) */
+  --modal-bg: #0a0a0a;
+  --modal-border: rgba(255, 255, 255, 0.1);
+  --item-bg: rgba(255, 255, 255, 0.02);
+  --item-border: rgba(255, 255, 255, 0.08);
+  --tag-bg: rgba(255, 255, 255, 0.1);
+  --tag-text: #ffffff;
+  --tag-border: transparent;
+  --btn-secondary-bg: rgba(255, 255, 255, 0.1);
+  --btn-secondary-text: #ffffff;
+  --btn-secondary-hover-bg: #ffffff;
+  --btn-secondary-hover-text: #000000;
+  --card-title: #ffffff;
+}
+
+[data-theme='light'] {
+  --bg-color: #f1f5f9;
+  /* Darkened slightly from f8fafc for better contrast */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+
+  /* Light Accents - slightly darkened for visibility on light bg */
+  --accent-cyan: #0284c7;
+  /* Darker blue-cyan */
+  --accent-pink: #7209b7;
+  --accent-violet: #4361ee;
+  --accent-cyan-dim: rgba(2, 132, 199, 0.1);
+
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(148, 163, 184, 0.2);
+  /* Slate-400 with opacity */
+  --glass-highlight: rgba(255, 255, 255, 1.0);
+
+  /* Nav overrides */
+  --nav-text: #475569;
+  --nav-text-hover: #0f172a;
+  --nav-bg: rgba(0, 0, 0, 0.05);
+  --nav-bg-hover: rgba(0, 0, 0, 0.1);
+  --nav-bg-active: #ffffff;
+
+  --header-bg: rgba(255, 255, 255, 0.8);
+  --gradient-text-start: #0f172a;
+
+  --spinner-border: rgba(0, 0, 0, 0.1);
+  --card-hover-border: rgba(0, 0, 0, 0.1);
+
+  /* Light Mode Modal Overrides */
+  --modal-bg: #ffffff;
+  --modal-border: rgba(0, 0, 0, 0.1);
+  --item-bg: #ffffff;
+  --item-border: rgba(0, 0, 0, 0.05);
+  --tag-bg: rgba(0, 0, 0, 0.05);
+  --tag-text: #475569;
+  --tag-border: rgba(0, 0, 0, 0.05);
+  --btn-secondary-bg: rgba(0, 0, 0, 0.05);
+  --btn-secondary-text: #0f172a;
+  --btn-secondary-hover-bg: #0f172a;
+  --btn-secondary-hover-text: #ffffff;
+  --card-title: #0f172a;
 }
 
 body {
@@ -138,7 +212,7 @@ body::after {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #fff 30%, var(--accent-cyan) 100%);
+  background: linear-gradient(135deg, var(--gradient-text-start) 30%, var(--accent-cyan) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -172,7 +246,7 @@ body::after {
 .loading-spinner {
   width: 40px;
   height: 40px;
-  border: 3px solid rgba(255, 255, 255, 0.1);
+  border: 3px solid var(--spinner-border);
   border-radius: 50%;
   border-top-color: var(--accent-cyan);
   animation: spin 1s ease-in-out infinite;
@@ -186,12 +260,12 @@ body::after {
 
 /* Navigation Pills */
 .nav-item {
-  color: var(--text-secondary);
+  color: var(--nav-text);
   text-decoration: none;
   font-weight: 500;
   padding: 0.5rem 1rem;
   border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--nav-bg);
   border: 1px solid transparent;
   transition: all 0.2s ease;
   display: flex;
@@ -200,15 +274,15 @@ body::after {
 }
 
 .nav-item:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  background: var(--nav-bg-hover);
+  color: var(--nav-text-hover);
   border-color: rgba(255, 255, 255, 0.1);
   transform: translateY(-1px);
 }
 
 .nav-item.active {
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff;
+  background: var(--nav-bg-active);
+  color: var(--nav-text-hover);
   border-color: var(--glass-border);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -219,12 +293,27 @@ body::after {
 .app-header {
   padding: 1.5rem 0;
   border-bottom: 1px solid var(--glass-border);
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--header-bg);
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
   z-index: 100;
   transition: all 0.3s ease;
+}
+
+.header-branding {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Toggle Visibility Defaults (Desktop) */
+.mobile-theme-toggle {
+  display: none;
+}
+
+.desktop-theme-toggle {
+  display: block;
 }
 
 .app-header .container {
@@ -266,7 +355,7 @@ body::after {
 .voucher-card:hover {
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: var(--card-hover-border);
 }
 
 /* Main Layout */
@@ -310,6 +399,19 @@ body::after {
     flex-direction: column;
     gap: 1rem;
     align-items: stretch;
+  }
+
+  .header-branding {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .mobile-theme-toggle {
+    display: block;
+  }
+
+  .desktop-theme-toggle {
+    display: none;
   }
 
   .nav-container {

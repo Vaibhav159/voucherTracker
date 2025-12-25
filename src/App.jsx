@@ -1,5 +1,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, useSearchParams } from 'react-router-dom';
+import { ThemeProvider } from './context/ThemeContext';
 import Layout from './components/Layout';
 import SearchBar from './components/SearchBar';
 import CategoryFilter from './components/CategoryFilter';
@@ -122,7 +123,7 @@ function Home() {
           overflow: 'hidden' // Contain child scrolls
         }}>
           <div>
-            <h3 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-secondary)' }}>Platforms</h3>
+            <h3 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--nav-text)' }}>Platforms</h3>
             <PlatformFilter
               selectedPlatform={selectedPlatform}
               onPlatformSelect={setSelectedPlatform}
@@ -136,7 +137,7 @@ function Home() {
             minHeight: 0, // Critical for flex scrolling
             flex: 1
           }}>
-            <h3 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-secondary)' }}>Categories</h3>
+            <h3 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--nav-text)' }}>Categories</h3>
             <div style={{
               overflowY: 'auto',
               paddingRight: '5px',
@@ -180,17 +181,20 @@ function Home() {
   );
 }
 
+
 function App() {
   return (
-    <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/guides" element={<Guides />} />
-          <Route path="/voucher/:id" element={<VoucherDetail />} />
-        </Routes>
-      </Layout>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/guides" element={<Guides />} />
+            <Route path="/voucher/:id" element={<VoucherDetail />} />
+          </Routes>
+        </Layout>
+      </Router>
+    </ThemeProvider>
   );
 }
 

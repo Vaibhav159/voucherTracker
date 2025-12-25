@@ -34,7 +34,7 @@ const VoucherCard = ({ voucher, onClick }) => {
           <span style={{
             fontSize: '0.75rem',
             color: 'var(--accent-cyan)',
-            background: 'rgba(0, 240, 255, 0.1)',
+            background: 'var(--accent-cyan-dim)',
             padding: '4px 10px',
             borderRadius: '20px',
             fontWeight: 600,
@@ -60,8 +60,8 @@ const VoucherCard = ({ voucher, onClick }) => {
                     color: 'var(--text-primary)',
                     padding: '4px 10px',
                     borderRadius: '8px',
-                    background: 'rgba(255,255,255,0.05)',
-                    border: '1px solid rgba(255,255,255,0.05)',
+                    background: 'var(--tag-bg)',
+                    border: '1px solid var(--glass-border)',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '6px'
@@ -82,7 +82,7 @@ const VoucherCard = ({ voucher, onClick }) => {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          borderTop: '1px solid rgba(255,255,255,0.1)',
+          borderTop: '1px solid var(--glass-border)',
           paddingTop: '1rem'
         }}>
           <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Check Rates</span>
@@ -95,7 +95,7 @@ const VoucherCard = ({ voucher, onClick }) => {
             alignItems: 'center',
             justifyContent: 'center'
           }}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--bg-color)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
           </div>
         </div>
       </div>

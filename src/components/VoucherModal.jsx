@@ -54,21 +54,21 @@ const VoucherModal = ({ voucher, onClose }) => {
                     maxHeight: '90vh',
                     overflowY: 'auto',
                     position: 'relative',
-                    background: '#0a0a0a',
-                    border: '1px solid rgba(255,255,255,0.1)'
+                    background: 'var(--modal-bg)',
+                    border: '1px solid var(--modal-border)'
                 }}
                 onClick={e => e.stopPropagation()}
             >
                 {/* Header */}
                 <div style={{
                     padding: '1.25rem 1.5rem',
-                    borderBottom: '1px solid rgba(255,255,255,0.1)',
+                    borderBottom: '1px solid var(--modal-border)',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '1rem',
                     position: 'sticky',
                     top: 0,
-                    background: '#0a0a0a',
+                    background: 'var(--modal-bg)',
                     zIndex: 10
                 }}>
                     <div style={{
@@ -98,7 +98,7 @@ const VoucherModal = ({ voucher, onClose }) => {
                             gap: '8px',
                             marginTop: '2px'
                         }}>
-                            <span style={{ background: 'rgba(255,255,255,0.1)', padding: '2px 8px', borderRadius: '4px' }}>{voucher.category}</span>
+                            <span style={{ background: 'var(--tag-bg)', padding: '2px 8px', borderRadius: '4px' }}>{voucher.category}</span>
                         </span>
                     </div>
                     <button
@@ -129,10 +129,10 @@ const VoucherModal = ({ voucher, onClose }) => {
 
                             return (
                                 <div key={idx} style={{
-                                    border: '1px solid rgba(255,255,255,0.08)',
+                                    border: '1px solid var(--item-border)',
                                     borderRadius: '12px',
                                     padding: '1rem',
-                                    background: 'rgba(255,255,255,0.02)',
+                                    background: 'var(--item-bg)',
                                     display: 'flex',
                                     flexDirection: 'column',
                                     gap: '1rem'
@@ -176,8 +176,8 @@ const VoucherModal = ({ voucher, onClose }) => {
                                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
                                             {platform.denominations.slice(0, 4).map(d => (
                                                 <span key={d} style={{
-                                                    background: 'rgba(255,255,255,0.05)',
-                                                    border: '1px solid rgba(255,255,255,0.05)',
+                                                    background: 'var(--tag-bg)',
+                                                    border: '1px solid var(--item-border)',
                                                     padding: '2px 8px',
                                                     borderRadius: '4px',
                                                     fontSize: '0.75rem',
@@ -197,21 +197,24 @@ const VoucherModal = ({ voucher, onClose }) => {
                                             style={{
                                                 padding: '8px 16px',
                                                 fontSize: '0.85rem',
-                                                background: 'rgba(255,255,255,0.1)',
-                                                border: '1px solid rgba(255,255,255,0.1)',
+                                                background: 'var(--btn-secondary-bg)',
+                                                border: '1px solid var(--item-border)',
                                                 boxShadow: 'none',
+                                                color: 'var(--btn-secondary-text)',
                                                 display: 'flex',
                                                 alignItems: 'center',
                                                 gap: '6px',
-                                                marginLeft: 'auto'
+                                                marginLeft: 'auto',
+                                                transition: 'all 0.2s',
+                                                textDecoration: 'none'
                                             }}
                                             onMouseEnter={e => {
-                                                e.currentTarget.style.background = 'var(--text-primary)';
-                                                e.currentTarget.style.color = '#000';
+                                                e.currentTarget.style.background = 'var(--btn-secondary-hover-bg)';
+                                                e.currentTarget.style.color = 'var(--btn-secondary-hover-text)';
                                             }}
                                             onMouseLeave={e => {
-                                                e.currentTarget.style.background = 'rgba(255,255,255,0.1)';
-                                                e.currentTarget.style.color = '#fff';
+                                                e.currentTarget.style.background = 'var(--btn-secondary-bg)';
+                                                e.currentTarget.style.color = 'var(--btn-secondary-text)';
                                             }}
                                         >
                                             Buy on {platform.name} ↗
