@@ -9,6 +9,7 @@ import VoucherModal from './components/VoucherModal';
 import PlatformFilter from './components/PlatformFilter';
 import VoucherDetail from './components/VoucherDetail';
 import Guides from './components/Guides';
+import MobileStickyFilterBar from './components/MobileStickyFilterBar';
 import { vouchers as RAW_DATA } from './data/vouchers';
 import { sortPlatforms } from './utils/sortUtils';
 
@@ -29,7 +30,7 @@ function Home() {
   const [selectedPlatform, setSelectedPlatform] = useState(searchParams.get('platform') || null);
   const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || null);
   const [selectedVoucher, setSelectedVoucher] = useState(null);
-  const [showFilters, setShowFilters] = useState(false); // Mobile filter toggle
+  const [activeMobileFilter, setActiveMobileFilter] = useState('none'); // 'none', 'platform', 'category'
 
   const [sortOption, setSortOption] = useState('Recommended');
 
@@ -91,53 +92,48 @@ function Home() {
   }, [searchTerm, selectedPlatform, selectedCategory, setSearchParams]);
   return (
     <div className="home-container">
-      {/* Mobile Filter Toggle */}
-      <div className="mobile-filter-toggle">
-        <button
-          className="btn-primary"
-          onClick={() => setShowFilters(!showFilters)}
-          style={{ width: '100%', justifyContent: 'center', marginBottom: '1rem' }}
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="4" y1="21" x2="4" y2="14"></line>
-            <line x1="4" y1="10" x2="4" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="12"></line>
-            <line x1="12" y1="8" x2="12" y2="3"></line>
-            <line x1="20" y1="21" x2="20" y2="16"></line>
-            <line x1="20" y1="12" x2="20" y2="3"></line>
-            <line x1="1" y1="14" x2="7" y2="14"></line>
-            <line x1="9" y1="8" x2="15" y2="8"></line>
-            <line x1="17" y1="16" x2="23" y2="16"></line>
-          </svg>
-          {showFilters ? 'Hide Filters' : 'Show Filters'}
-        </button>
-      </div>
+      {/* Mobile Filter Toggle Removed */}
 
       {/* Sidebar */}
-      <aside className={`glass-panel sidebar ${showFilters ? 'mobile-visible' : ''}`}>
+      <aside className={`glass-panel sidebar 
+        ${activeMobileFilter !== 'none' ? 'mobile-visible' : ''} 
+        ${activeMobileFilter === 'platform' ? 'show-platform' : ''} 
+        ${activeMobileFilter === 'category' ? 'show-category' : ''}
+      `}>
+        {/* Close handle/indicator for mobile */}
         <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '2rem',
-          maxHeight: 'calc(100vh - 4rem)', // viewport - sticky top offset
-          overflow: 'hidden' // Contain child scrolls
-        }}>
-          <div>
-            <h3 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--nav-text)' }}>Platforms</h3>
+          width: '40px',
+          height: '4px',
+          background: 'var(--glass-border)',
+          borderRadius: '2px',
+          margin: '8px auto',
+          display: activeMobileFilter !== 'none' ? 'block' : 'none'
+        }} onClick={() => setActiveMobileFilter('none')} />
+
+        <div className="sidebar-content-wrapper">
+          <div className="platform-section">
+            <h3 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--nav-text)' }}>
+              Sort By Platform
+            </h3>
             <PlatformFilter
               selectedPlatform={selectedPlatform}
-              onPlatformSelect={setSelectedPlatform}
+              onPlatformSelect={(p) => {
+                setSelectedPlatform(p);
+                // Optional: Close on select? Maybe not for multi-browse
+              }}
               platforms={ALL_PLATFORMS}
             />
           </div>
 
-          <div style={{
+          <div className="category-section" style={{
             display: 'flex',
             flexDirection: 'column',
             minHeight: 0, // Critical for flex scrolling
             flex: 1
           }}>
-            <h3 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--nav-text)' }}>Categories</h3>
+            <h3 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--nav-text)' }}>
+              Filter By Category
+            </h3>
             <div style={{
               overflowY: 'auto',
               paddingRight: '5px',
@@ -147,13 +143,22 @@ function Home() {
             }}>
               <CategoryFilter
                 selectedCategory={selectedCategory}
-                onCategorySelect={setSelectedCategory}
+                onCategorySelect={(c) => {
+                  setSelectedCategory(c);
+                }}
                 categories={ALL_CATEGORIES}
               />
             </div>
           </div>
         </div>
       </aside>
+
+      {/* Mobile Sticky Bar */}
+      <MobileStickyFilterBar
+        activeFilter={activeMobileFilter}
+        onSortClick={() => setActiveMobileFilter(prev => prev === 'platform' ? 'none' : 'platform')}
+        onFilterClick={() => setActiveMobileFilter(prev => prev === 'category' ? 'none' : 'category')}
+      />
 
 
       {/* Main Content */}

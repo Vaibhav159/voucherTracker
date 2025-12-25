@@ -13,7 +13,8 @@ const CategoryFilter = ({ selectedCategory, onCategorySelect, categories }) => {
                     textAlign: 'left',
                     transition: 'all 0.2s',
                     fontSize: '0.9rem',
-                    fontWeight: !selectedCategory ? 600 : 400
+                    fontWeight: !selectedCategory ? 600 : 400,
+                    width: '100%'
                 }}
             >
                 All Categories
@@ -36,7 +37,11 @@ const CategoryFilter = ({ selectedCategory, onCategorySelect, categories }) => {
                         whiteSpace: 'nowrap',
                         overflow: 'hidden',
                         textOverflow: 'ellipsis',
-                        boxShadow: selectedCategory === category ? '0 2px 8px rgba(0,0,0,0.05)' : 'none'
+                        boxShadow: selectedCategory === category ? '0 2px 8px rgba(0,0,0,0.05)' : 'none',
+                        width: '100%',
+                        textAlign: 'left',
+                        display: 'block' // Ensure text overflow works, block usually better for simple text buttons but let's try strict left
+
                     }}
                     title={category}
                 >

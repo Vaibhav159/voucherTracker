@@ -18,7 +18,9 @@ const PlatformFilter = ({ selectedPlatform, onPlatformSelect, platforms }) => {
                     fontWeight: !selectedPlatform ? 600 : 400,
                     fontSize: '0.95rem',
                     display: 'flex',
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    justifyContent: 'flex-start',
+                    width: '100%'
                 }}
             >
                 All Platforms
@@ -42,8 +44,10 @@ const PlatformFilter = ({ selectedPlatform, onPlatformSelect, platforms }) => {
                             fontSize: '0.95rem',
                             display: 'flex',
                             alignItems: 'center',
+                            justifyContent: 'flex-start', // Ensure left align
                             gap: '12px',
-                            boxShadow: selectedPlatform === platform ? '0 2px 8px rgba(0,0,0,0.05)' : 'none'
+                            boxShadow: selectedPlatform === platform ? '0 2px 8px rgba(0,0,0,0.05)' : 'none',
+                            width: '100%'
                         }}
                     >
                         {style.logo && (
