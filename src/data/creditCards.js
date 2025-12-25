@@ -7,7 +7,7 @@ export const creditCards = [
     fxMarkup: "3.5%",
     category: "Cashback",
     bank: "SBI Card",
-    image: "/assets/cards/sbi-cashback.png",
+    image: "assets/cards/sbi-cashback.png",
     annualFee: "₹999 + taxes",
     rewardRate: "5% Online, 1% Offline",
     features: [
@@ -68,7 +68,7 @@ Excellent for online shopping with 5% unlimited cashback across all merchants. T
     fxMarkup: "2%",
     category: "Premium",
     bank: "ICICI Bank",
-    image: "/assets/cards/icici-emeralde-private-metal.png",
+    image: "assets/cards/icici-emeralde-private-metal.png",
     annualFee: "₹12,499 + taxes",
     rewardRate: "3% Base, Up to 36% Accelerated",
     features: [
@@ -131,7 +131,7 @@ One of India's best super-premium cards with excellent rewards on travel booking
     fxMarkup: "3.5%",
     category: "Cashback",
     bank: "ICICI Bank",
-    image: "/assets/cards/amazon-pay-icici.png",
+    image: "assets/cards/amazon-pay-icici.png",
     annualFee: "Lifetime Free",
     rewardRate: "5% (Prime), 3% (Non-Prime)",
     features: [
@@ -197,7 +197,7 @@ Outstanding lifetime-free card for Amazon ecosystem users. The 5% unlimited cash
     fxMarkup: "2%",
     category: "Premium",
     bank: "HDFC Bank",
-    image: "/assets/cards/hdfc-infinia-metal.png",
+    image: "assets/cards/hdfc-infinia-metal.png",
     annualFee: "₹12,500 + taxes",
     rewardRate: "3.33% Base, Up to 33% SmartBuy",
     features: [
@@ -267,7 +267,7 @@ Benchmark premium card in India offering excellent 3.33% return across all categ
     fxMarkup: "2%",
     category: "Premium",
     bank: "HDFC Bank",
-    image: "/assets/cards/hdfc-diners-black-metal.png",
+    image: "assets/cards/hdfc-diners-black-metal.png",
     annualFee: "₹10,000 + taxes",
     rewardRate: "3.33% Base, Up to 33% SmartBuy",
     features: [
@@ -334,7 +334,7 @@ Excellent alternative to Infinia at 20% lower fee. Nearly identical reward struc
     fxMarkup: "2%",
     category: "Cashback",
     bank: "HDFC Bank",
-    image: "/assets/cards/hdfc-tata-neu-infinity.png",
+    image: "assets/cards/hdfc-tata-neu-infinity.png",
     annualFee: "₹1,499 + taxes",
     rewardRate: "10% on Tata Neu",
     features: [
@@ -407,7 +407,7 @@ Excellent for Tata loyalists with 10% rewards on Tata Neu purchases. The wide ne
     fxMarkup: "3.5%",
     category: "Cashback",
     bank: "HDFC Bank",
-    image: "/assets/cards/hdfc-swiggy.png",
+    image: "assets/cards/hdfc-swiggy.png",
     annualFee: "₹500 + taxes",
     rewardRate: "10% Swiggy, 5% Online",
     features: [
@@ -468,7 +468,7 @@ Outstanding value at ₹500 annual fee with 10% cashback on Swiggy and 5% on div
     fxMarkup: "3.5%",
     category: "Cashback",
     bank: "Axis Bank",
-    image: "/assets/cards/axis-airtel.png",
+    image: "assets/cards/axis-airtel.png",
     annualFee: "₹500 + taxes",
     rewardRate: "25% Airtel, 10% Utilities",
     features: [
@@ -526,7 +526,7 @@ Excellent for Airtel ecosystem users with 25% cashback on Airtel services. The u
     fxMarkup: "2%",
     category: "Travel",
     bank: "Axis Bank",
-    image: "/assets/cards/axis-atlas.png",
+    image: "assets/cards/axis-atlas.png",
     annualFee: "₹5,000 + taxes",
     rewardRate: "2% Base, 5% Travel",
     features: [
@@ -588,7 +588,7 @@ Excellent airline-agnostic travel card with 1:2 redemption ratio across 20+ part
     fxMarkup: "3.5%",
     category: "Cashback",
     bank: "HSBC",
-    image: "/assets/cards/hsbc-live-plus.png",
+    image: "assets/cards/hsbc-live-plus.png",
     annualFee: "₹999 + taxes",
     rewardRate: "10% Dining/Groceries",
     features: [
@@ -653,7 +653,7 @@ Top cashback card for essential categories with 10% on dining/groceries/food del
     fxMarkup: "3.5%",
     category: "Travel",
     bank: "American Express",
-    image: "/assets/cards/amex-platinum-travel.png",
+    image: "assets/cards/amex-platinum-travel.png",
     annualFee: "₹3,500 + taxes",
     rewardRate: "Milestone Based",
     features: [
@@ -719,7 +719,7 @@ Solid milestone-based card with good returns if you spend ₹4 lakh annually. Th
     fxMarkup: "0%",
     category: "Travel",
     bank: "AU Small Finance Bank",
-    image: "/assets/cards/au-ixigo.png",
+    image: "assets/cards/au-ixigo.png",
     annualFee: "₹999 + taxes",
     rewardRate: "10% on Trains",
     features: [
@@ -792,7 +792,7 @@ Best for domestic travel enthusiasts with unique railway lounge access and accel
     fxMarkup: "1.5%",
     category: "Premium",
     bank: "IDFC First Bank",
-    image: "/assets/cards/idfc-first-wealth.png",
+    image: "assets/cards/idfc-first-wealth.png",
     annualFee: "Lifetime Free",
     rewardRate: "10X (>₹20k), 3X (<₹20k)",
     features: [
@@ -845,7 +845,7 @@ One of the best premium lifetime free cards in India. The low forex markup (1.5%
     fxMarkup: "0%",
     category: "Travel",
     bank: "Federal Bank",
-    image: "/assets/cards/scapia.png",
+    image: "assets/cards/scapia.png",
     annualFee: "Lifetime Free",
     rewardRate: "10% - 20% (Coins)",
     features: [
@@ -887,7 +887,7 @@ The best entry-level travel card. Lifetime free + Zero Forex is a killer combina
     fxMarkup: "2%",
     category: "Premium",
     bank: "Bank of Baroda",
-    image: "/assets/cards/bob-eterna.png",
+    image: "assets/cards/bob-eterna.png",
     annualFee: "₹2,499 + taxes",
     rewardRate: "3.75% Travel/Dining",
     features: [
@@ -925,7 +925,7 @@ Excellent for unlimited domestic lounge access and high reward rate on travel/on
     fxMarkup: "3.5%",
     category: "Cashback",
     bank: "Yes Bank / Axis",
-    image: "/assets/cards/kiwi-rupay.png",
+    image: "assets/cards/kiwi-rupay.png",
     annualFee: "Lifetime Free",
     rewardRate: "1% - 5% (Kiwis)",
     features: [
@@ -962,7 +962,7 @@ Great secondary card for making small UPI payments on credit. The base 1% return
     fxMarkup: "3.5%",
     category: "Travel",
     bank: "Axis Bank",
-    image: "/assets/cards/axis-privilege.png",
+    image: "assets/cards/axis-privilege.png",
     annualFee: "₹1,500 + taxes",
     rewardRate: "10 pts/₹200",
     features: [
@@ -998,7 +998,7 @@ A solid "filler" card or entry-level travel card, especially if you get it Lifet
     fxMarkup: "3.5%",
     category: "Shopping",
     bank: "ICICI Bank",
-    image: "/assets/cards/placeholder.png",
+    image: "assets/cards/placeholder.png",
     annualFee: "Lifetime Free",
     rewardRate: "0.5% (Non-Cashback)",
     features: [
@@ -1033,7 +1033,7 @@ Excellent first credit card.While rewards are low, the lifetime free status and 
     fxMarkup: "3.5%",
     category: "Cashback",
     bank: "AU Small Finance Bank",
-    image: "/assets/cards/placeholder.png",
+    image: "assets/cards/placeholder.png",
     annualFee: "Lifetime Free",
     rewardRate: "Up to 3%",
     features: [
@@ -1068,7 +1068,7 @@ One of the best lifetime free cards if you can get it.verified via AU SwipeUp.Th
     fxMarkup: "3.5%",
     category: "Cashback",
     bank: "Axis Bank",
-    image: "/assets/cards/placeholder.png",
+    image: "assets/cards/placeholder.png",
     annualFee: "₹499 + taxes",
     rewardRate: "1.5% Offline, 5% Utilities",
     features: [
@@ -1104,7 +1104,7 @@ Essential for utility bill payments(5 %) and offline retail shopping.The 1.5 % f
     fxMarkup: "3.5%",
     category: "Rewards",
     bank: "American Express",
-    image: "/assets/cards/placeholder.png",
+    image: "assets/cards/placeholder.png",
     annualFee: "₹1,000 + taxes",
     rewardRate: "User-defined (Up to 8%)",
     features: [
@@ -1138,7 +1138,7 @@ A must - have for those who can spend ₹20k a month to maximize the bonus point
     fxMarkup: "2%",
     category: "Travel",
     bank: "HDFC Bank",
-    image: "/assets/cards/placeholder.png",
+    image: "assets/cards/placeholder.png",
     annualFee: "₹2,500 + taxes",
     rewardRate: "1.3% Base, 5X Marks & Spencer",
     features: [
@@ -1174,7 +1174,7 @@ A balanced card.Good for moderate travelers who want international lounge access
     fxMarkup: "1%",
     category: "Premium",
     bank: "Yes Bank",
-    image: "/assets/cards/placeholder.png",
+    image: "assets/cards/placeholder.png",
     annualFee: "₹9,999 + taxes",
     rewardRate: "Up to 4.5%",
     features: [
@@ -1209,7 +1209,7 @@ A fantastic travel card.The 1 % forex fee and unlimited guest lounge access make
     fxMarkup: "3.5%",
     category: "Travel",
     bank: "HDFC Bank",
-    image: "/assets/cards/placeholder.png",
+    image: "assets/cards/placeholder.png",
     annualFee: "₹3,000 + taxes",
     rewardRate: "Bonvoy Points",
     features: [
@@ -1244,7 +1244,7 @@ The Free Night Award alone justifies the fee.If you stay at Marriotts even once 
     fxMarkup: "3.5%",
     category: "Travel",
     bank: "SBI Card",
-    image: "/assets/cards/placeholder.png",
+    image: "assets/cards/placeholder.png",
     annualFee: "₹1,499 + taxes",
     rewardRate: "10% on AC Tickets",
     features: [
@@ -1278,7 +1278,7 @@ Unbeatable for train travel.The 10 % return is substantial for regular AC travel
     fxMarkup: "3.5%",
     category: "Fuel",
     bank: "RBL Bank",
-    image: "/assets/cards/placeholder.png",
+    image: "assets/cards/placeholder.png",
     annualFee: "₹1,500 + taxes",
     rewardRate: "7.5% on Fuel",
     features: [
@@ -1312,7 +1312,7 @@ One of the highest reward rates for fuel(7.5 %) currently available in the marke
     fxMarkup: "3.5%",
     category: "Fuel",
     bank: "SBI Card",
-    image: "/assets/cards/placeholder.png",
+    image: "assets/cards/placeholder.png",
     annualFee: "₹499 + taxes",
     rewardRate: "4.25% on BPCL",
     features: [
@@ -1346,7 +1346,7 @@ A great beginner fuel card.Low fee(waived easily) and decent returns on fuel and
     fxMarkup: "3.5%",
     category: "Fuel",
     bank: "IDFC First Bank",
-    image: "/assets/cards/placeholder.png",
+    image: "assets/cards/placeholder.png",
     annualFee: "₹499 + taxes",
     rewardRate: "4% on HPCL",
     features: [
@@ -1382,7 +1382,7 @@ Versatile card.It covers Fuel, Utilities, and Grocery with good reward rates, al
     fxMarkup: "3.5%",
     category: "Cashback",
     bank: "HDFC Bank",
-    image: "/assets/cards/placeholder.png",
+    image: "assets/cards/placeholder.png",
     annualFee: "₹1,000 + taxes",
     rewardRate: "5% Online, 1% Offline",
     features: [
@@ -1416,7 +1416,7 @@ Great starter card for online shoppers. Easy to get and maintains a decent 5% on
     fxMarkup: "2%",
     category: "Cashback",
     bank: "FPL Technologies",
-    image: "/assets/cards/placeholder.png",
+    image: "https://assets.getonecard.app/assets/legal/CardRotation.mp4",
     annualFee: "Lifetime Free",
     rewardRate: "5X on Top Categories",
     features: [
@@ -1451,7 +1451,7 @@ Stylish lifetime free metal card. The auto-category detection for 5X rewards is 
     fxMarkup: "3.5%",
     category: "Cashback",
     bank: "Axis Bank",
-    image: "/assets/cards/placeholder.png",
+    image: "assets/cards/placeholder.png",
     annualFee: "₹500 + taxes",
     rewardRate: "5% Flipkart, 4% Others",
     features: [
@@ -1485,7 +1485,7 @@ Essential for Flipkart loyalists. The 5% unlimited cashback rivals Amazon Pay IC
     fxMarkup: "3.5%",
     category: "Travel",
     bank: "ICICI Bank",
-    image: "/assets/cards/placeholder.png",
+    image: "assets/cards/placeholder.png",
     annualFee: "₹3,000 + taxes",
     rewardRate: "2 Points/₹100",
     features: [
@@ -1520,7 +1520,7 @@ Solid mid-tier card. Good for those not ready for super-premium but wanting loun
     fxMarkup: "3.5%",
     category: "Cashback",
     bank: "SBI Card",
-    image: "/assets/cards/placeholder.png",
+    image: "assets/cards/placeholder.png",
     annualFee: "₹499 + taxes",
     rewardRate: "10X on Partners",
     features: [
@@ -1555,7 +1555,7 @@ Excellent budget online shopping card. The 10X on partners is outstanding value.
     fxMarkup: "3.5%",
     category: "Cashback",
     bank: "Kotak Mahindra Bank",
-    image: "/assets/cards/placeholder.png",
+    image: "assets/cards/placeholder.png",
     annualFee: "Lifetime Free",
     rewardRate: "1%",
     features: [
