@@ -1,10 +1,11 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { creditCards } from '../data/creditCards';
 
 const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSelection, clearSelection }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [activeFilter, setActiveFilter] = useState('All');
+    const [activeBank, setActiveBank] = useState('All');
     const [modalCard, setModalCard] = useState(null);
     const [sortBy, setSortBy] = useState('recommended');
 
@@ -16,6 +17,38 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
     };
 
     const closeModal = () => setModalCard(null);
+
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        };
+
+        if (modalCard) {
+            window.addEventListener('keydown', handleKeyDown);
+            // Prevent background scrolling when modal is open
+            document.body.style.overflow = 'hidden';
+        }
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+            // Restore scrolling
+            document.body.style.overflow = 'unset';
+        };
+    }, [modalCard]);
+
+    // Handle Escape key to clear selection when not in modal
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape' && !modalCard && selectedCards.length > 0 && clearSelection) {
+                clearSelection();
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [modalCard, selectedCards, clearSelection]);
 
     // Parse fee to number for sorting
     const parseFee = (fee) => {
@@ -38,6 +71,9 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
             card.bank.toLowerCase().includes(searchTerm.toLowerCase());
 
         if (!matchesSearch) return false;
+
+        // Bank Filter
+        if (activeBank !== 'All' && card.bank !== activeBank) return false;
 
         if (activeFilter === 'All') return true;
 
@@ -72,6 +108,9 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
     });
 
     const filters = ['All', 'Cashback', 'Travel', 'Premium', 'Fuel', 'Shopping', 'Low Forex', 'Lifetime Free'];
+
+    // Get unique banks
+    const banks = ['All', ...new Set(creditCards.map(card => card.bank))].sort();
 
     // Sort cards based on selected sort option
     const sortedCards = useMemo(() => {
@@ -544,7 +583,10 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                     bottom: '30px',
                     left: '50%',
                     transform: 'translateX(-50%)',
-                    zIndex: 100
+                    zIndex: 100,
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '10px'
                 }}>
                     <Link
                         to="/compare-cards"
@@ -560,6 +602,30 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                     >
                         Compare {selectedCards.length} Cards →
                     </Link>
+
+                    {/* Clear Selection X Button */}
+                    <button
+                        onClick={clearSelection}
+                        style={{
+                            background: '#ef4444', // Solid Red
+                            border: 'none',
+                            borderRadius: '50%',
+                            width: '36px',
+                            height: '36px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            color: 'white', // White X
+                            cursor: 'pointer',
+                            fontSize: '16px',
+                            fontWeight: 'bold',
+                            boxShadow: '0 4px 12px rgba(239, 68, 68, 0.4)',
+                            transition: 'all 0.2s ease'
+                        }}
+                        aria-label="Clear selection"
+                    >
+                        ✕
+                    </button>
                 </div>
             )}
 
