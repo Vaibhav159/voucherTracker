@@ -91,23 +91,42 @@ function Home() {
     <div style={{ display: 'grid', gridTemplateColumns: 'minmax(250px, 1fr) 3fr', gap: '3rem', alignItems: 'start' }}>
       {/* Sidebar */}
       <aside className="glass-panel" style={{ padding: '1.5rem', position: 'sticky', top: '2rem' }}>
-        <div style={{ marginBottom: '2rem' }}>
-          <h3 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-secondary)' }}>Platforms</h3>
-          <PlatformFilter
-            selectedPlatform={selectedPlatform}
-            onPlatformSelect={setSelectedPlatform}
-            platforms={ALL_PLATFORMS}
-          />
-        </div>
-
-        <div>
-          <h3 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-secondary)' }}>Categories</h3>
-          <div style={{ maxHeight: 'calc(100vh - 400px)', overflowY: 'auto', paddingRight: '5px' }}>
-            <CategoryFilter
-              selectedCategory={selectedCategory}
-              onCategorySelect={setSelectedCategory}
-              categories={ALL_CATEGORIES}
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '2rem',
+          maxHeight: 'calc(100vh - 4rem)', // viewport - sticky top offset
+          overflow: 'hidden' // Contain child scrolls
+        }}>
+          <div>
+            <h3 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-secondary)' }}>Platforms</h3>
+            <PlatformFilter
+              selectedPlatform={selectedPlatform}
+              onPlatformSelect={setSelectedPlatform}
+              platforms={ALL_PLATFORMS}
             />
+          </div>
+
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            minHeight: 0, // Critical for flex scrolling
+            flex: 1
+          }}>
+            <h3 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-secondary)' }}>Categories</h3>
+            <div style={{
+              overflowY: 'auto',
+              paddingRight: '5px',
+              // Custom scrollbar
+              scrollbarWidth: 'thin',
+              scrollbarColor: 'rgba(255,255,255,0.2) transparent'
+            }}>
+              <CategoryFilter
+                selectedCategory={selectedCategory}
+                onCategorySelect={setSelectedCategory}
+                categories={ALL_CATEGORIES}
+              />
+            </div>
           </div>
         </div>
       </aside>
