@@ -1,0 +1,122 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const VoucherCard = ({ voucher }) => {
+  const platformNames = voucher.platforms.map(p => p.name);
+
+  return (
+    <Link
+      to={`/voucher/${voucher.id}`}
+      style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}
+    >
+      <div
+        className="glass-panel"
+        style={{
+          padding: '28px',
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          background: 'linear-gradient(145deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%)',
+          transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = 'translateY(-10px) scale(1.02)';
+          e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.5)';
+          e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = 'translateY(0) scale(1)';
+          e.currentTarget.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.1)';
+          e.currentTarget.style.borderColor = 'var(--glass-border)';
+        }}
+      >
+        <div style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '2rem', gap: '18px' }}>
+          <div
+            style={{
+              width: '64px',
+              height: '64px',
+              borderRadius: '16px',
+              background: '#fff',
+              padding: '8px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              //   boxShadow: '0 0 20px rgba(255,255,255,0.1)'
+            }}
+          >
+            <img
+              src={voucher.logo}
+              alt={voucher.brand}
+              style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+              onError={(e) => { e.target.src = 'https://via.placeholder.com/64?text=' + voucher.brand[0] }}
+            />
+          </div>
+          <div>
+            <h3 style={{ margin: '0 0 6px 0', fontSize: '1.35rem', fontWeight: 600, letterSpacing: '-0.5px' }}>{voucher.brand}</h3>
+            <span style={{
+              fontSize: '0.75rem',
+              color: 'var(--accent-cyan)',
+              background: 'rgba(0, 240, 255, 0.1)',
+              padding: '4px 10px',
+              borderRadius: '20px',
+              fontWeight: 600,
+              textTransform: 'uppercase',
+              letterSpacing: '1px'
+            }}>
+              {voucher.category}
+            </span>
+          </div>
+        </div>
+
+        <div style={{ marginTop: 'auto' }}>
+          <div style={{ marginBottom: '1.2rem' }}>
+            <p style={{ margin: '0 0 8px 0', fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Available on</p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+              {platformNames.slice(0, 3).map(name => (
+                <span
+                  key={name}
+                  style={{
+                    fontSize: '0.8rem',
+                    color: 'var(--text-primary)',
+                    padding: '6px 12px',
+                    borderRadius: '8px',
+                    background: 'rgba(255,255,255,0.05)',
+                    border: '1px solid rgba(255,255,255,0.05)'
+                  }}
+                >
+                  {name}
+                </span>
+              ))}
+              {platformNames.length > 3 && (
+                <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', padding: '6px' }}>+{platformNames.length - 3}</span>
+              )}
+            </div>
+          </div>
+
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            borderTop: '1px solid rgba(255,255,255,0.1)',
+            paddingTop: '1rem'
+          }}>
+            <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Check Rates</span>
+            <div style={{
+              width: '32px',
+              height: '32px',
+              borderRadius: '50%',
+              background: 'var(--text-primary)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Link>
+  );
+};
+
+export default VoucherCard;
