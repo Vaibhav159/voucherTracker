@@ -48,6 +48,16 @@
                 ],
                 "link": "https://magicpin.in/walletRecharge/?merchantId=3402658",
                 "color": "#7000ff"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 1.8%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -87,6 +97,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 1%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -1186,7 +1206,7 @@
     },
     {
         "id": "859",
-        "brand": "Apple",
+        "brand": "Apple Premium Reseller",
         "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Apple+premium+reseller-PNG.png",
         "category": "E-commerce & Technology",
         "platforms": [
@@ -1199,6 +1219,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 3.4%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -5044,6 +5074,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 13.25%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -5291,7 +5331,7 @@
     },
     {
         "id": "66",
-        "brand": "Lenskartcom",
+        "brand": "Lenskart",
         "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Lenskart.png",
         "category": "Fashion & Accessories",
         "platforms": [
@@ -5324,6 +5364,16 @@
                 ],
                 "link": "https://magicpin.in/walletRecharge/?merchantId=43126144",
                 "color": "#7000ff"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 11.75%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -6136,6 +6186,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 13.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -8352,6 +8412,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 13.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -8418,6 +8488,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 13.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -8586,6 +8666,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 2.4%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -12840,6 +12930,16 @@
                 ],
                 "link": "https://magicpin.in/walletRecharge/?merchantId=5302809",
                 "color": "#7000ff"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 8.75%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
