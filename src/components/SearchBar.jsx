@@ -1,7 +1,7 @@
 import React from 'react';
 import { getPlatformLogo } from '../utils/platformLogos';
 
-const SearchBar = ({ value, onChange, selectedPlatform, onPlatformSelect, platforms }) => {
+const SearchBar = ({ value, onChange, selectedPlatform, onPlatformSelect, platforms, sortOption, onSortChange }) => {
     return (
         <div style={{ marginBottom: '4rem', maxWidth: '800px', margin: '0 auto 4rem', position: 'relative', zIndex: 10 }}>
             {/* Search Input */}
@@ -48,6 +48,32 @@ const SearchBar = ({ value, onChange, selectedPlatform, onPlatformSelect, platfo
                         fontWeight: 500
                     }}
                 />
+
+                <div style={{ position: 'relative', marginLeft: '1rem', paddingLeft: '1rem', borderLeft: '1px solid rgba(255,255,255,0.1)' }}>
+                    <select
+                        value={sortOption}
+                        onChange={(e) => onSortChange(e.target.value)}
+                        style={{
+                            background: 'transparent',
+                            color: 'var(--text-secondary)',
+                            border: 'none',
+                            fontSize: '0.9rem',
+                            fontWeight: 600,
+                            cursor: 'pointer',
+                            outline: 'none',
+                            appearance: 'none', // Remove default arrow
+                            paddingRight: '1rem'
+                        }}
+                    >
+                        <option value="Recommended">Recommended</option>
+                        <option value="Alphabetical">A-Z</option>
+                        <option value="Discount">Best Discount</option>
+                    </select>
+                    {/* Custom Arrow */}
+                    <div style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }}>
+                        <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="var(--text-secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 1l4 4 4-4" /></svg>
+                    </div>
+                </div>
             </div>
 
             {/* Modern Filter Pills */}

@@ -18,8 +18,10 @@ function Home() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedVoucher, setSelectedVoucher] = useState(null);
 
+  const [sortOption, setSortOption] = useState('Recommended');
+
   const filteredVouchers = useMemo(() => {
-    let result = INITIAL_DATA;
+    let result = [...INITIAL_DATA];
 
     if (searchTerm) {
       const lowerTerm = searchTerm.toLowerCase();
@@ -39,8 +41,28 @@ function Home() {
       result = result.filter(voucher => voucher.category === selectedCategory);
     }
 
+    // Sorting Logic
+    if (sortOption === 'Alphabetical') {
+      result.sort((a, b) => a.brand.localeCompare(b.brand));
+    } else if (sortOption === 'Discount') {
+      result.sort((a, b) => {
+        const getMaxDiscount = (v) => {
+          return Math.max(...v.platforms.map(p => {
+            const fee = p.fee || '';
+            // Extract number from "2.5% Discount" or "Save 5%"
+            const match = fee.match(/(\d+(\.\d+)?)%/);
+            if (match && (fee.toLowerCase().includes('discount') || fee.toLowerCase().includes('save'))) {
+              return parseFloat(match[1]);
+            }
+            return 0;
+          }));
+        };
+        return getMaxDiscount(b) - getMaxDiscount(a);
+      });
+    }
+
     return result;
-  }, [searchTerm, selectedPlatform, selectedCategory]);
+  }, [searchTerm, selectedPlatform, selectedCategory, sortOption]);
 
   return (
     <>
@@ -51,6 +73,8 @@ function Home() {
           selectedPlatform={selectedPlatform}
           onPlatformSelect={setSelectedPlatform}
           platforms={ALL_PLATFORMS}
+          sortOption={sortOption}
+          onSortChange={setSortOption}
         />
         <CategoryFilter
           selectedCategory={selectedCategory}
