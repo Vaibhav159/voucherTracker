@@ -1,0 +1,5958 @@
+[
+    {
+        "id": "1",
+        "brand": "Amazon Shopping Voucher",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/d/de/Amazon_icon.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "iShop",
+                "cap": "10k/month",
+                "fee": "2.5%",
+                "denominations": [
+                    "500",
+                    "1000",
+                    "2000"
+                ],
+                "link": "https://www.thriwe.com/ishop",
+                "color": "#232F3E"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Promo Code Apply",
+                "denominations": [
+                    "250",
+                    "500",
+                    "1000"
+                ],
+                "link": "https://www.gyftr.com/amazon-shopping-vouchers",
+                "color": "#D42426"
+            },
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "None",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://maximise.web",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "brand": "Flipkart Gift Card",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/f/cd/Flipkart_logo_icon.svg",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "5k/month",
+                "fee": "1%",
+                "denominations": [
+                    "500",
+                    "1000"
+                ],
+                "link": "https://www.gyftr.com/flipkart",
+                "color": "#2874F0"
+            },
+            {
+                "name": "Amazon",
+                "cap": "No Cap",
+                "fee": "None",
+                "denominations": [
+                    "1000"
+                ],
+                "link": "https://amazon.in",
+                "color": "#FF9900"
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "brand": "Swiggy Money",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/1/12/Swiggy_logo.svg",
+        "category": "Food",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "2k/month",
+                "fee": "Discount 5%",
+                "denominations": [
+                    "250",
+                    "500"
+                ],
+                "link": "https://www.gyftr.com/swiggy",
+                "color": "#FC8019"
+            }
+        ]
+    },
+    {
+        "id": "4",
+        "brand": "Zomato",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Zomato_Logo.svg",
+        "category": "Food",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "2k/month",
+                "fee": "Discount 7%",
+                "denominations": [
+                    "250",
+                    "500"
+                ],
+                "link": "https://www.gyftr.com/zomato",
+                "color": "#CB202D"
+            },
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 3%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "5",
+        "brand": "PVR",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/4/48/PVR_Cinemas_logo.svg",
+        "category": "Entertainment",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "12.5k/month",
+                "fee": "Discount 7.5%",
+                "denominations": [
+                    "500",
+                    "1000"
+                ],
+                "link": "https://www.gyftr.com/pvr",
+                "color": "#ffd700"
+            },
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 21%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "6",
+        "brand": "Uber",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png",
+        "category": "Travel",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "250",
+                    "500"
+                ],
+                "link": "https://www.gyftr.com/uber",
+                "color": "#000000"
+            },
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "7",
+        "brand": "BigBasket",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/6/69/BigBasket_Logo.svg",
+        "category": "Grocery",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 5.5%",
+                "denominations": [
+                    "500",
+                    "1000"
+                ],
+                "link": "https://www.gyftr.com/bigbasket",
+                "color": "#84c225"
+            },
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 3.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "8",
+        "brand": "Blinkit",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Blinkit_logo.svg",
+        "category": "Grocery",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "5k/month",
+                "fee": "Discount 5%",
+                "denominations": [
+                    "250",
+                    "500"
+                ],
+                "link": "https://www.gyftr.com/blinkit",
+                "color": "#F8CB46"
+            },
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 3.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "9",
+        "brand": "Dominos",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Domino's_pizza_logo.svg",
+        "category": "Food",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "5k/month",
+                "fee": "Discount 7.5%",
+                "denominations": [
+                    "250",
+                    "500"
+                ],
+                "link": "https://www.gyftr.com/dominos",
+                "color": "#006491"
+            },
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 19%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "brand": "Myntra",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Myntra_logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "15k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "500",
+                    "2000"
+                ],
+                "link": "https://www.gyftr.com/myntra",
+                "color": "#ff3f6c"
+            },
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 2%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "11",
+        "brand": "Levi's",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/8/87/Levis_logo.svg",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "5k/month",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "500",
+                    "2000"
+                ],
+                "link": "https://www.gyftr.com/levis",
+                "color": "#c41230"
+            },
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "None",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "12",
+        "brand": "Trends",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/7/77/Reliance_Trends_logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "5k/month",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "500",
+                    "1000"
+                ],
+                "link": "https://www.gyftr.com/trends",
+                "color": "#178e47"
+            }
+        ]
+    },
+    {
+        "id": "13",
+        "brand": "Ajio",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a8/AJIO_Logo.svg",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 5%",
+                "denominations": [
+                    "500",
+                    "2000"
+                ],
+                "link": "https://www.gyftr.com/ajio",
+                "color": "#2c4152"
+            },
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 20%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "14",
+        "brand": "Reliance Digital",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/2/29/Reliance_Digital_Logo.png",
+        "category": "Electronics",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "25k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "1000",
+                    "5000"
+                ],
+                "link": "https://www.gyftr.com/reliance-digital",
+                "color": "#e31e24"
+            }
+        ]
+    },
+    {
+        "id": "15",
+        "brand": "Smart Bazaar",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Smart_Bazaar_Logo.jpg",
+        "category": "Grocery",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "7.5k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "500",
+                    "2000"
+                ],
+                "link": "https://www.gyftr.com/smart-bazaar",
+                "color": "#00a651"
+            }
+        ]
+    },
+    {
+        "id": "16",
+        "brand": "Titan",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/1/18/Titan_Company_Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 7%",
+                "denominations": [
+                    "1000",
+                    "5000"
+                ],
+                "link": "https://www.gyftr.com/titan",
+                "color": "#a5a5a5"
+            },
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 8.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "17",
+        "brand": "KFC",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/b/bf/KFC_logo.svg",
+        "category": "Food",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "2.5k/month",
+                "fee": "Discount 7.5%",
+                "denominations": [
+                    "250",
+                    "500"
+                ],
+                "link": "https://www.gyftr.com/kfc",
+                "color": "#a3080c"
+            },
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 6.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "791",
+        "brand": "Absolute Barbecues",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Absolute Barbecues E-Gift Card.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "440",
+        "brand": "Aeropostale",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Aeropostale+E-Gift+Card.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 8.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "409",
+        "brand": "Air India",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Air India E-Gift Card.png",
+        "category": "Travel & Leisure",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 4.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "733",
+        "brand": "AJIO Luxe",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Ajio+Luxe.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 3.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "308",
+        "brand": "ALDO",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Aldo.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 11.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "487",
+        "brand": "Aliste",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Aliste.png",
+        "category": "E-commerce & Technology",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 29.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "214",
+        "brand": "Allen Solly",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Allen Solly E-Gift Voucher .png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 3%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "94",
+        "brand": "Amazon",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Amazon Fresh.png",
+        "category": "Groceries & Essentials",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "None",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "490",
+        "brand": "American Eagle",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/American+Eagle+E-Gift+Card+-+PNG.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 3%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "235",
+        "brand": "American Tourister",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/American Tourister.png",
+        "category": "Home & Living",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 6.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "784",
+        "brand": "Apollo",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/apollopharmacy.png",
+        "category": "Health & Wellness",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 10.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "859",
+        "brand": "Apple",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Apple+premium+reseller-PNG.png",
+        "category": "E-commerce & Technology",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 5.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "491",
+        "brand": "AppyHigh Prime",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/AppyHigh+Prime.png",
+        "category": "E-commerce & Technology",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 17.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "236",
+        "brand": "ARCHIES GALLERY",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Archies Gallery.png",
+        "category": "Miscellaneous",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 16%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "451",
+        "brand": "Armani Exchange-Luxe",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Armani+Exchange-Luxe+E-Gift+Card.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "453",
+        "brand": "Asia Seven Express",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Asia+Seven+Express+E-Gift+Card.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 8.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "258",
+        "brand": "Assembly",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Assembly.png",
+        "category": "Home & Living",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 15.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "259",
+        "brand": "Aurelia",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/TCNS Aurelia eGift Cards.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 11.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "492",
+        "brand": "Auric",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Auric.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 36.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "832",
+        "brand": "Avast",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Avast.png",
+        "category": "E-commerce & Technology",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 12.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "493",
+        "brand": "Bakingo",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Bakingo.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 14.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "215",
+        "brand": "Barbeque Nation",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/barbequenation.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 7%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "494",
+        "brand": "Baskin Robbins",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Baskin+Robbins.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 12.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "495",
+        "brand": "Bata",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/bata.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 11.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "309",
+        "brand": "BATH & BODY WORKS",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Bath & Body Works.png",
+        "category": "Health & Wellness",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 11.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "497",
+        "brand": "Behrouz Biryani",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Behrouz+Biryani+E-Gift+Card+-+B2C.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 10.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "311",
+        "brand": "BEVERLY HILLS POLO CLUB",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Beverly Hills Polo Club.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 11.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "608",
+        "brand": "Bhima Jewellers - Coin",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Bhima+Jewellers+-+Coin+E-Gift+Card.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 0.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "607",
+        "brand": "Bhima Jewellers - Jewellery",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Bhima+Jewellers+-+Jewellery+E-Gift+Card.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 2.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "368",
+        "brand": "Bikanervala",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Bikanervala E-Gift Card.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "369",
+        "brand": "Birkenstock",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Birkenstock E-Gift Card.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "500",
+        "brand": "Blaupunkt",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Blaupunkt.png",
+        "category": "E-commerce & Technology",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 18%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "712",
+        "brand": "Bliss Club",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/BlissClub E-Gift Card.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 14.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "71",
+        "brand": "Blue Tokai Coffee",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Blue Tokai E-Gift Card.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "817",
+        "brand": "BlueStone Diamond",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/BlueStone Diamond E-Gift Cards.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 6.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "820",
+        "brand": "BlueStone Gold",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/BlueStone Gold E-Gift Cards.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 1.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "818",
+        "brand": "BlueStone Gold Jewellery",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/BlueStone Gold E-Gift Cards.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 2.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "554",
+        "brand": "Boat",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Boat-PNG.png",
+        "category": "E-commerce & Technology",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 6.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "831",
+        "brand": "Boditive",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Boditive.png",
+        "category": "E-commerce & Technology",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 12.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "374",
+        "brand": "Body Craft",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Body Craft E-Gift Card.png",
+        "category": "Health & Wellness",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 6.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "375",
+        "brand": "BookMyShow",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/BookMyShow Instant Voucher.png",
+        "category": "Entertainment & OTT",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 3.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "631",
+        "brand": "BPCL",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/BPCL-PNG.png",
+        "category": "Miscellaneous",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "None",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "502",
+        "brand": "BrainGymJr",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/BrainGymJr.png",
+        "category": "E-commerce & Technology",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 14%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "376",
+        "brand": "Brooks Brothers-Luxe",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Brooks Brothers-Luxe E-Gift Card.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "830",
+        "brand": "BuyWithEMI",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/BuywithEMI.png",
+        "category": "E-commerce & Technology",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "331",
+        "brand": "Cafe Coffee Day",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Cafe Coffee Day E-Gift Cards.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 11.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "262",
+        "brand": "Cafe Delhi Heights",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Cafe Delhi Heights.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 10.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "310",
+        "brand": "CALL IT SPRING",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Call it Spring.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 11.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "263",
+        "brand": "Campus",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Campus.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 12.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "264",
+        "brand": "Candere Diamond Jewellery",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Candere Diamond Jewellery.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 7.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "265",
+        "brand": "Candere Gold Coin",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Candere Gold Coin.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 1.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "266",
+        "brand": "Candere Gold Jewellery",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Candere Gold Jewellery.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 3%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "834",
+        "brand": "Celio",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Celio.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 11.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "312",
+        "brand": "CHARLES & KEITH",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Charles & Keith.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 11.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "338",
+        "brand": "Chumbak",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Chumbak E-Gift Card.png",
+        "category": "Miscellaneous",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "570",
+        "brand": "Cinepolis",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/Cinepolis.png",
+        "category": "Entertainment & OTT",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 18%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "792",
+        "brand": "Citizen",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Citizen+Watches+-+PNG.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 14.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "302",
+        "brand": "Cleartax",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Cleartax.png",
+        "category": "Miscellaneous",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 50%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "803",
+        "brand": "Cleartrip",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/cleartrip.png",
+        "category": "Travel & Leisure",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "227",
+        "brand": "Cleartrip Hotels",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Cleartrip Hotels E-Gift Card-B2C.png",
+        "category": "Travel & Leisure",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 17.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "557",
+        "brand": "Coach",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Coach+-+PNG.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "325",
+        "brand": "ColorPlus",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/ColorPlus.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 10.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "835",
+        "brand": "Cosmopolitan India",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Cosmopolitan+India.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 39.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "810",
+        "brand": "Costa Coffee",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/costacoffee.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 7.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "149",
+        "brand": "Croma",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Croma.png",
+        "category": "E-commerce & Technology",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 2.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "770",
+        "brand": "Crossword",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Crossword+e-gift+card-PNG.png",
+        "category": "Books & Stationery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 7.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "378",
+        "brand": "Cult",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Cult E-Gift Card.png",
+        "category": "Miscellaneous",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 1.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "816",
+        "brand": "Daily Objects",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Daily Objects.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 18.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "268",
+        "brand": "Decathlon",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Decathlon B2B E-Gift Card.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "509",
+        "brand": "Discovery Plus",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Discovery%2BPNG.png",
+        "category": "Entertainment & OTT",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 38%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "774",
+        "brand": "District",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Zomato+District.png",
+        "category": "Entertainment & OTT",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 4.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "812",
+        "brand": "Dpauls",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Dpauls E-Gift Voucher.png",
+        "category": "Travel & Leisure",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 8.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "383",
+        "brand": "Dune London-Luxe",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Dune London-Luxe E-Gift Card.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "731",
+        "brand": "DUROFLEX",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Duroflex.png",
+        "category": "New",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 10.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "384",
+        "brand": "EaseMyTrip",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/easemytrip.png",
+        "category": "Travel & Leisure",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "558",
+        "brand": "EasyBuy",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/EB+Brand+E-Gift+Card(EasyBuy).png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 8.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "559",
+        "brand": "EatSure",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/EatSure+E-Gift+Card-B2C.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 11.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "512",
+        "brand": "Elleven",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Elleven.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 11%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "513",
+        "brand": "Elver",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Elver-PNG.png",
+        "category": "E-commerce & Technology",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 28.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "389",
+        "brand": "Epic On",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Epic On  E-Gift Cards-1 month subscription-1.png",
+        "category": "Entertainment & OTT",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 4.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "794",
+        "brand": "Estuary World",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Estuary+Water.png",
+        "category": "New",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 40%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "833",
+        "brand": "ET Prime",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/ET+Prime+Subscription.png",
+        "category": "E-commerce & Technology",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 39.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "393",
+        "brand": "Euphoria Jewellery",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Euphoria Jewellery E-Gift Card.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 5.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "515",
+        "brand": "Euphoria Jewellery Gold Coin",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Euphoria+Jewellery+E-Gift+Card.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 3.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "270",
+        "brand": "Euphoria Jewellery Silver Coin",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Euphoria Jewellery E-Gift Card.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 4.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "394",
+        "brand": "Faasos",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Faasos E-Gift Card - B2C.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 11.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "272",
+        "brand": "Fashion Factory",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Fashion Factory.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 3.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "273",
+        "brand": "Fastrack Bags",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Fastrack Bags.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 8.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "396",
+        "brand": "Fastrack",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Fastrack E-Gift Card.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 8.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "718",
+        "brand": "Femmella",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Femmella-PNG.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "839",
+        "brand": "FinuSmart",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/FinuSmart+Easy+Cash-PNG.png",
+        "category": "E-commerce & Technology",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 14.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "350",
+        "brand": "FirstCry",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/FirstCry E-Gift Voucher.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 6.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "203",
+        "brand": "Flipkart",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/flipkart.png",
+        "category": "E-commerce & Technology",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 4.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "805",
+        "brand": "FlixBus",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/FlixBus-PNG.png",
+        "category": "Travel & Leisure",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 10.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "516",
+        "brand": "Flower Aura",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Flower+Aura.png",
+        "category": "Health & Wellness",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 14.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "351",
+        "brand": "Forever New",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Forever New E-Gift Card.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 8.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "304",
+        "brand": "Forever21",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Forever21.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 7.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "255",
+        "brand": "Foxtale",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Foxtale.png",
+        "category": "Health & Wellness",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 17.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "517",
+        "brand": "Freecultr",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Freecultr.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 21.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "398",
+        "brand": "FreshMenu",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/FreshMenu E-Gift Card.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "482",
+        "brand": "Fricken",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Fricken-PNG.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 9.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "518",
+        "brand": "Frido",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Frido-PNG.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 15.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "254",
+        "brand": "FUTURE WORLD - APPLE RESELLER",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Future World.png",
+        "category": "E-commerce & Technology",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 3.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "404",
+        "brand": "G-STAR RAW-Luxe",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/G-STAR RAW-Luxe E-Gift Card.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "538",
+        "brand": "Gaana",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Gaana.png",
+        "category": "Entertainment & OTT",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 17.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "741",
+        "brand": "Giva Jewellery",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Giva Jewellery Gold E-Gift Card.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 12.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "742",
+        "brand": "GIVA Silver Coin",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Giva Jewellery Gold E-Gift Card.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "825",
+        "brand": "Glam Studios",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Glam+Studios+-+PNG.png",
+        "category": "Beauty & Personal Care",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 3.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "479",
+        "brand": "GoIbibo Hotel",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/GoIbibo+Hotels-PNG.png",
+        "category": "Travel & Leisure",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "460",
+        "brand": "The Good Bowls",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/The+Good+Bowl.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 9.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "54",
+        "brand": "Google Play",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/googleplay.png",
+        "category": "Entertainment & OTT",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 3.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "521",
+        "brand": "GRT Jewellers",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/GRT+Jewellers+E-Gift+Card.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 1.35%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "405",
+        "brand": "HAMLEYS - LUXE",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/HAMLEYS - LUXE E-Gift Card.png",
+        "category": "Miscellaneous",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "406",
+        "brand": "HAMLEYS",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Hamleys+E-Gift+Card.png",
+        "category": "Miscellaneous",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 6.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "522",
+        "brand": "Hammer",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Hammer.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 24%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "407",
+        "brand": "Health and Glow",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Health and Glow E-Gift Card.png",
+        "category": "Health & Wellness",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 10.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "813",
+        "brand": "Healthians",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Healthians+E-Gift+Voucher.png",
+        "category": "Health & Wellness",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 19.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "627",
+        "brand": "HealthifyMe Smart Plan",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/HealthifyMe+Smart+Plan+-+PNG.png",
+        "category": "Health & Wellness",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 16.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "524",
+        "brand": "Healthkart",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/HealthKart+PNG.png",
+        "category": "Health & Wellness",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 12.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "462",
+        "brand": "Hidesign",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Hidesign+E-Gift+card.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "759",
+        "brand": "Himalaya",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Himalaya+Wellness-PNG.png",
+        "category": "Health & Wellness",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 11.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "527",
+        "brand": "Hoichoi",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/HoiChoi.png",
+        "category": "Entertainment & OTT",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 17.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "765",
+        "brand": "Holiday Tribe",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/HolidayTribe.png",
+        "category": "Travel & Leisure",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 14.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "53",
+        "brand": "Homecentre",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/homecentre.png",
+        "category": "Home & Living",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 6.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "690",
+        "brand": "House of Vaaree",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Vaaree-PNG.png",
+        "category": "Home & Living",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 14%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "788",
+        "brand": "HP Pay",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/hppay.png",
+        "category": "Travel & Leisure",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "None",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "632",
+        "brand": "Hugo Boss",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Hugo+Boss+Luxe+E-gift+cart+-+PNG.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 12.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "822",
+        "brand": "Hush Puppies",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Hush+Puppies.png",
+        "category": "Sports & Fitness",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 11.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "716",
+        "brand": "IKEA",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/IKEA E-Gift Voucher(b2b).png",
+        "category": "Home & Living",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "787",
+        "brand": "Indian Terrain",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Indian Terrain E-Gift Cards.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "313",
+        "brand": "INGLOT",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Inglot.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 11.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "530",
+        "brand": "Innovist",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Innovist.png",
+        "category": "Health & Wellness",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 21.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "821",
+        "brand": "IRCTC",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/IRCTC-PNG.png",
+        "category": "Travel & Leisure",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "None",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "336",
+        "brand": "ITC",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/itchotels.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 9.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "799",
+        "brand": "Ixigo",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Ixigo.png",
+        "category": "Travel & Leisure",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 8.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "534",
+        "brand": "Jack & Jones",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/JACK+%26+JONES+E-Gift+Card.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 8.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "303",
+        "brand": "JioHotstar",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/JioHotstar.png",
+        "category": "Entertainment & OTT",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 8.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "576",
+        "brand": "Jockey",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/jockey.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "591",
+        "brand": "Jos Alukkas Jewellery",
+        "logo": "",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "464",
+        "brand": "Joyalukkas Diamond",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Joyalukkas+Diamond+E-Gift+Card.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 2.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "593",
+        "brand": "BAGLINE",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Juicy+Couture+Bagline+E-gift+voucher-PNG.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 12.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "226",
+        "brand": "Kalyan",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Kalyan Diamond E-Gift Card.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "560",
+        "brand": "Kate Spade",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/katespade.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "241",
+        "brand": "Ketan Diamonds Diamond Only",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Ketan Diamond Diamond Jewellery.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 11%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "242",
+        "brand": "Ketan Diamonds Gold Coin",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Ketan Diamond Gold Coin.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 2.4%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "243",
+        "brand": "Ketan Diamonds Gold Jewellery",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Ketan Diamond Gold Jewellery.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 4.85%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "465",
+        "brand": "Kiehls",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Kiehls+E-Gift+Card.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 4.65%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "846",
+        "brand": "Kimirica",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Kimirica+-+PNG.png",
+        "category": "Beauty & Personal Care",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 14.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "776",
+        "brand": "Klook",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Klook.png",
+        "category": "Travel & Leisure",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 8.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "466",
+        "brand": "Lakme Salon",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Lakme+Salon+E-Gift+Card.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 4.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "561",
+        "brand": "Lawrence and Mayo",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Lawrence-and-Mayo-PNG.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 8%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "355",
+        "brand": "Lee",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Lee E-Gift Card.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 8.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "66",
+        "brand": "Lenskartcom",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Lenskart.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 11.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "789",
+        "brand": "Liberty",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/giftcard/logo/v3/Liberty.svg",
+        "category": "New",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 8.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "571",
+        "brand": "Lifestyle",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Lifestyle+E-Gift+Card-B2C.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 4.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "572",
+        "brand": "Lifestyle Online",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Lifestyle+E-Gift+Card-B2C.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 9.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "455",
+        "brand": "Linen Club",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Linen+Club+E-Gift+Card.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 10.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "456",
+        "brand": "Lite Bite Food",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Lite+Bite+Food+E-Gift+Card.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 8.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "836",
+        "brand": "Live Mint",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/live+mint.png",
+        "category": "E-commerce & Technology",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 35.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "277",
+        "brand": "Louis Philippe",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Louis Philippe E-Gift Voucher.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 3%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "244",
+        "brand": "Love Beauty & Planet",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Love, Beauty & Planet.png",
+        "category": "Health & Wellness",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 12.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "457",
+        "brand": "Lulu Hypermarket",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Lulu+Hypermarket+E-Gift+Cards.png",
+        "category": "Groceries & Essentials",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 2%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "542",
+        "brand": "Mainland China",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Mainland+China.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "222",
+        "brand": "MakeMyTrip - Bus",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/MMT+Bus.png",
+        "category": "Travel & Leisure",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 3%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "411",
+        "brand": "MakeMyTrip",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/giftcard/logo/v2/MmtWeddingsLogo.png",
+        "category": "Travel & Leisure",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 12%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "225",
+        "brand": "MakeMyTrip - Hotel",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/makemytriphotel.png",
+        "category": "Travel & Leisure",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "223",
+        "brand": "MakeMyTrip - Rail",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/MMT+Rail.png",
+        "category": "Travel & Leisure",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 1%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "307",
+        "brand": "Malabar Diamonds",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/malabargoldanddiamonds.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 4.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "306",
+        "brand": "Malabar Gold Coin",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/malabargoldgc.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 2.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "43",
+        "brand": "Malabar",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/malabar.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 1.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "245",
+        "brand": "Mamaearth",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Mamaearth.png",
+        "category": "Health & Wellness",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 18.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "745",
+        "brand": "Manyavar",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/giftcard/logo/v3/Manyavar.svg",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "None",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "279",
+        "brand": "Marks & Spencer",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Marks & Spencer.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 12%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "551",
+        "brand": "Marriott",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Marriott+Hotels+India+E-Gift+Card+-+B2C.png",
+        "category": "Travel & Leisure",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 7.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "681",
+        "brand": "McDonalds",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/McDonalds E-Gift Card.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 3.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "753",
+        "brand": "Me N Moms",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/giftcard/logo/v3/Me+n+Moms.svg",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 9.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "345",
+        "brand": "Mia",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/mia.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "583",
+        "brand": "Luxe Gift Card",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Michael+Kors+Luxe+E-gift+Card-PNG.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "735",
+        "brand": "Microsoft Xbox",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/microsoft+xbox+game+pass+core.png",
+        "category": "Gaming",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 6.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "729",
+        "brand": "MiniKlub",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/MiniKlub+E-Gift+Card+-+PNG.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "622",
+        "brand": "Mokobara Gift Card",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Mokobara-PNG.png",
+        "category": "Home & Living",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 7.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "655",
+        "brand": "Mothercare",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/MOTHER+CARE-Luxe+E-Gift+Card.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "653",
+        "brand": "Muro QC",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Muro-PNG.png",
+        "category": "Miscellaneous",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 7.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "654",
+        "brand": "Muthoot Gold",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Muthoot+Gold+-PNG.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 3%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "656",
+        "brand": "Nature's Basket",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Nature's+Basket+E-Gift+Card-PNG.png",
+        "category": "Groceries & Essentials",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 1.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "790",
+        "brand": "Neemans",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Neemans-PNG.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "329",
+        "brand": "Nilkamal Homes",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Nilkamal+Homes.png",
+        "category": "Miscellaneous",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 7.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "806",
+        "brand": "Nua Women",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Nua+Woman-PNG.png",
+        "category": "Health & Wellness",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 26.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "234",
+        "brand": "Nykaa",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/nykaa.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 6.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "340",
+        "brand": "Nykaa Fashion",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/nykaafashion.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "341",
+        "brand": "Nykaa Men",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/nykaaman.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "564",
+        "brand": "Oberoi Hotels & Resort",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Oberoi+Hotels+%26+Resort+Gift+Card.png",
+        "category": "Travel & Leisure",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "544",
+        "brand": "Oh! Calcutta",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Oh!+Calcutta.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "86",
+        "brand": "ONLY",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/ONLY E-Gift Card.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 7.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "546",
+        "brand": "Organic India",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Organic+India.png",
+        "category": "Home & Living",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 11%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "441",
+        "brand": "Ovenstory",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Ovenstory+E-Gift+Card+-+B2C-PNG.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 9.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "360",
+        "brand": "Pantaloons",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Pantaloons E-Gift Card-B2C.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 8.1%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "323",
+        "brand": "Park Avenue",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Park Avenue.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 10.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "324",
+        "brand": "Parx",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Parx.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 10.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "35",
+        "brand": "Paul & Shark",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Paul%26Shark-PNG.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "248",
+        "brand": "PC Jeweller Diamond",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/PCJ Diamond Jewellery E-Gift Card.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 3.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "250",
+        "brand": "PC Jeweller Gold Coin",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/PCJ Gold Coin Jewellery E-Gift Card.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 0.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "249",
+        "brand": "PC Jeweller Gold Jewellery",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/PCJ Gold Jewellery E-Gift Card.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 1.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "91",
+        "brand": "PCjeweller",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/PCJ Diamond Jewellery E-Gift Card.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "443",
+        "brand": "Pepperfry",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Pepperfry+E-Gift+Card.png",
+        "category": "Home & Living",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "584",
+        "brand": "Peter England",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/peterengland.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 3%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "219",
+        "brand": "Phone Pe",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/PhonePe+E-Gift+Voucher.png",
+        "category": "E-commerce & Technology",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "None",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "663",
+        "brand": "Pigeon",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Pigeon-PNG.png",
+        "category": "Home & Living",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 9.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "413",
+        "brand": "PinePerks",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/PinePerks.png",
+        "category": "Miscellaneous",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 1.2%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "664",
+        "brand": "Pixel Go",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Pixel+Go-PNG.png",
+        "category": "E-commerce & Technology",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 14.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "665",
+        "brand": "Pizza Hut",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Pizza+Hut+E-Gift+Card.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 9%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "666",
+        "brand": "Planet Fashion",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Planet+Fashion+E-Gift+Card.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 3%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "829",
+        "brand": "PMJ Jewellers",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/PMJ+Jewels.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 2%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "667",
+        "brand": "Prestige",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Prestige+Smart+Kitchen+E-Gift+Card.png",
+        "category": "Home & Living",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "None",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "231",
+        "brand": "Puma",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/puma.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "604",
+        "brand": "Pure Home & Living",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Pure+Home+%2B+Living-PNG.png",
+        "category": "Home & Living",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 15.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "670",
+        "brand": "R&B",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/R%26B.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 11.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "326",
+        "brand": "Rangriti",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Rangriti.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 7.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "361",
+        "brand": "Ray-Ban",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Ray-Ban E-Gift Cards.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 8.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "320",
+        "brand": "Raymond - Ready to Wear",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Raymond - Ready to Wear.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 10.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "281",
+        "brand": "Relaxo",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Relaxo.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 11.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "671",
+        "brand": "Reliance",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Reliance Digital E-Gift Voucher.png",
+        "category": "E-commerce & Technology",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "None",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "212",
+        "brand": "Reliance Jio Mart",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Reliance Jio Mart E-Gift Card .png",
+        "category": "E-commerce & Technology",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "282",
+        "brand": "Reliance My Jio Store",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/My Jio Store E-Gift Voucher.png",
+        "category": "E-commerce & Technology",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 3.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "284",
+        "brand": "Reliance Smart Point",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Reliance+Smart+Point+E-Gift+Card.png",
+        "category": "Miscellaneous",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 3.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "357",
+        "brand": "Reliance Smart Super Store",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Reliance+Smart+Super+Store+E-Gift+Card.png",
+        "category": "E-commerce & Technology",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 2.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "575",
+        "brand": "Reliance Trends",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Reliance Trends E-Gift Voucher.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 5.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "286",
+        "brand": "Reliance Trends Footwear",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Trends Footwear E-Gift Voucher.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 5.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "758",
+        "brand": "Rentomojo",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Rentomojo+e-gift+card-PNG.png",
+        "category": "New",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 12.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "795",
+        "brand": "Roblox",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Roblox-PNG.png",
+        "category": "Gaming",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 6%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "251",
+        "brand": "Samsonite",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Samsonite.png",
+        "category": "Home & Living",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 6.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "476",
+        "brand": "Scotch & Soda-Luxe",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Scotch+%26+Soda-Luxe+E-Gift+Card.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "337",
+        "brand": "Selected Homme",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Selected Homme E-Gift Card.png",
+        "category": "Home & Living",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 11.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "844",
+        "brand": "Shiv Naresh",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Shiv+Naresh+-+PNG.png",
+        "category": "Sports & Fitness",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 6.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "777",
+        "brand": "Shoppers Stop",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Shoppers+Stop.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 6.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "678",
+        "brand": "Sigree",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Sigree.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "556",
+        "brand": "Simon Carter",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Simon+Carter+eGift+cards.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 3%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "682",
+        "brand": "Simple",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Simple.png",
+        "category": "Health & Wellness",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "288",
+        "brand": "Skechers",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Skechers E-Gift Card.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 10.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "683",
+        "brand": "Skinn",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Skinn.png",
+        "category": "Health & Wellness",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 8.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "289",
+        "brand": "Skullcandy",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Skullcandy.png",
+        "category": "E-commerce & Technology",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 17.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "843",
+        "brand": "Sleepwell",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Sleepwell+-+PNG.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 18.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "684",
+        "brand": "Smile Foundation",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Smile+Foundation.png",
+        "category": "Miscellaneous",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 14.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "756",
+        "brand": "Snapdeal",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/giftcard/logo/v3/Snapdeal.svg",
+        "category": "E-commerce & Technology",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 3.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "685",
+        "brand": "Soch",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Soch-PNG.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 7.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "686",
+        "brand": "SonyLIV",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Sony+LIV+premium+Annual+E-Gift+Voucher.png",
+        "category": "Entertainment & OTT",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 34.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "722",
+        "brand": "Spar Hypermarket",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Spar+Hypermarket-PNG.png",
+        "category": "New",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 5.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "603",
+        "brand": "Speedo",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Speedo-PNG.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "569",
+        "brand": "Spencer's Retail",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Spencer's+Retail.png",
+        "category": "Groceries & Essentials",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 4.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "807",
+        "brand": "SSUNSU",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/SSUNSU.png",
+        "category": "Beauty & Personal Care",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 11.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "321",
+        "brand": "Starbucks",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/starbucks.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 8.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "555",
+        "brand": "Steam",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Steam+E-Gift+Voucher.png",
+        "category": "Gaming",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 3.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "687",
+        "brand": "Sterling Holidays",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Sterling+Holidays+E-Gift+Card.png",
+        "category": "Travel & Leisure",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 12.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "688",
+        "brand": "Steve Madden",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Steve+Madden-Luxe+E-Gift+Card.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 12.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "330",
+        "brand": "Subway",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Subway E-Gift Card.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 10.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "50",
+        "brand": "Superdry",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Superdry-Luxe E-Gift Card.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "691",
+        "brand": "Sweet Bengal",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Sweet+Bengal.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 14%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "692",
+        "brand": "Sweet Truth",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Sweet+Truth.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 10.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "37",
+        "brand": "Swiggy",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Swiggy-Updated-PNG.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 3.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "211",
+        "brand": "Taj",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Taj Hotels E-Gift Card.png",
+        "category": "Travel & Leisure",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 10.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "354",
+        "brand": "Taneira",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Taneira E-Gift card.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 8.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "48",
+        "brand": "Tanishq",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Tanishq Studded E-Gift Card.png",
+        "category": "Jewellery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 2%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "430",
+        "brand": "Tata Cliq",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/TATA CLiQ E-Gift Card-B2C.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 7.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "327",
+        "brand": "Tattva Spa",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Tattva+Spa-PNG.png",
+        "category": "Health & Wellness",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 17.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "840",
+        "brand": "TEGO",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/TEGO.png",
+        "category": "Sports & Fitness",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 15.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "841",
+        "brand": "TGIF",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/TGIF-PNG.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 9.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "292",
+        "brand": "The Body Shop",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/The Body Shop E-Gift Cards.png",
+        "category": "Health & Wellness",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "728",
+        "brand": "The Collective",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/The+Collective-PNG.png",
+        "category": "New",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 2.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "697",
+        "brand": "The Good Bowl",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/The+Good+Bowl.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 9.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "845",
+        "brand": "Reading Habit",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/The+Reading+Habit+-+PNG.png",
+        "category": "Books & Stationery",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 7.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "730",
+        "brand": "The Sleep Company",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/The+sleep+company.png",
+        "category": "New",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 6%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "197",
+        "brand": "Third Wave Coffee",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Thirdwavecoffee.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "797",
+        "brand": "Tim Hortons",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Tim+Hortons-PNG.png",
+        "category": "Miscellaneous",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 7.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "732",
+        "brand": "Tinder",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Tinder.png",
+        "category": "New",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 7.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "720",
+        "brand": "Titan Eye+",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Titan+Eye-PNG.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 5.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "294",
+        "brand": "Titan Minimals",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Titan Minimals.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 9%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "828",
+        "brand": "TripXOXO",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/TripXOXO.png",
+        "category": "Travel & Leisure",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "295",
+        "brand": "TRUEFITT & HILL",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/TrueFitt & Hill.png",
+        "category": "Health & Wellness",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 24.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "798",
+        "brand": "Unicorn",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Unicorn-Apple-Reseller-PNG.png",
+        "category": "New",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "796",
+        "brand": "Unipin",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Unipin+E-Gift+Voucher.png",
+        "category": "Miscellaneous",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 4.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "721",
+        "brand": "Urban Ladder",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Urban+Ladder+E-Gift+Card.png",
+        "category": "New",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 9.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "751",
+        "brand": "Urban Space",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/giftcard/logo/v3/Urban+space.svg",
+        "category": "New",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 7.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "296",
+        "brand": "V Mart",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/V Mart.png",
+        "category": "Groceries & Essentials",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 9.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "824",
+        "brand": "Vaango",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Vaango.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 8.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "217",
+        "brand": "Valorant",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Valorant Points E-Gift Voucher.png",
+        "category": "Gaming",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 5.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "586",
+        "brand": "Van Heusen",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Van Heusen E-Gift Voucher.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 3%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "232",
+        "brand": "Vero Moda",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Vero Moda E-Gift Cards.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 8.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "316",
+        "brand": "VICTORIA'S SECRET",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Victoria's Secret.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 11.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "315",
+        "brand": "VICTORIA'S SECRET BEAUTY",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Victoria's Secret Beauty.png",
+        "category": "Health & Wellness",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 11.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "298",
+        "brand": "Vijay Sales",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Vijay Sales E-Gift Card.png",
+        "category": "E-commerce & Technology",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "702",
+        "brand": "Vrott",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/VROTT.png",
+        "category": "Entertainment & OTT",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 39.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "352",
+        "brand": "Wakefit",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Wakefit E-Gift Card.png",
+        "category": "Home & Living",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "704",
+        "brand": "Wendys",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Wendy's.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 10.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "77",
+        "brand": "Westside",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Westside E-Gift Card.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "None",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "449",
+        "brand": "Wildcraft",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/WildGC-PNG.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 8.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "705",
+        "brand": "William Penn",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/William+Penn.png",
+        "category": "Miscellaneous",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 6.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "706",
+        "brand": "Woggles",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Woggles.png",
+        "category": "Miscellaneous",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 20.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "471",
+        "brand": "Wonderchef",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Wonderchef E-Gift Card.png",
+        "category": "Home & Living",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 13.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "301",
+        "brand": "Woodland",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Woodland.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 10.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "319",
+        "brand": "Wow!China",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Wow China.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 9.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "485",
+        "brand": "Wrangler",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Wrangler+E-Gift+Card.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 8.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "582",
+        "brand": "Yatra",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Yatra.png",
+        "category": "Travel & Leisure",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 45%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "472",
+        "brand": "Yatra Hotels & Holidays Voucher",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Yatra+Hotels+%26+Holidays+Voucher.png",
+        "category": "Travel & Leisure",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 5.25%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "709",
+        "brand": "Zee5",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Zee+5.png",
+        "category": "Entertainment & OTT",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 22.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "854",
+        "brand": "SNITCH",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Snitch.png",
+        "category": "Fashion & Accessories",
+        "platforms": [
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 5.75%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ]
+    }
+]
