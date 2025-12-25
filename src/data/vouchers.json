@@ -14,7 +14,7 @@
                     "1000",
                     "2000"
                 ],
-                "link": "https://www.thriwe.com/ishop",
+                "link": "https://ishop.reward360.in/",
                 "color": "#232F3E"
             },
             {
@@ -67,16 +67,6 @@
                 ],
                 "link": "https://www.gyftr.com/instantvouchers/flipkart-gift-vouchers",
                 "color": "#2874F0"
-            },
-            {
-                "name": "Amazon",
-                "cap": "No Cap",
-                "fee": "None",
-                "denominations": [
-                    "1000"
-                ],
-                "link": "https://amazon.in",
-                "color": "#FF9900"
             },
             {
                 "name": "iShop",
@@ -2637,7 +2627,12 @@
                 "cap": "Unlimited",
                 "fee": "Discount 2%",
                 "denominations": [
-                    "500", "1000", "2000", "2500", "5000", "10000"
+                    "500",
+                    "1000",
+                    "2000",
+                    "2500",
+                    "5000",
+                    "10000"
                 ],
                 "link": "https://amzn.to/4ayoXgX",
                 "color": "#FF9900"

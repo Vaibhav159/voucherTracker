@@ -8,7 +8,8 @@ const Layout = ({ children }) => {
     <div className="app-layout">
       <header style={{ padding: '1.5rem 0', borderBottom: '1px solid var(--glass-border)', background: 'rgba(0,0,0,0.2)', backdropFilter: 'blur(10px)', position: 'sticky', top: 0, zIndex: 100 }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Link to="/" style={{ textDecoration: 'none' }}>
+          <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <img src="/logo.svg" alt="Logo" style={{ height: '32px', width: '32px' }} />
             <h1 className="text-gradient" style={{ margin: 0, fontSize: '1.8rem' }}>VoucherTracker</h1>
           </Link>
 
