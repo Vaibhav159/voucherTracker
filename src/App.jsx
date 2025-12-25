@@ -7,6 +7,7 @@ import VoucherGrid from './components/VoucherGrid';
 import VoucherModal from './components/VoucherModal';
 import PlatformFilter from './components/PlatformFilter';
 import VoucherDetail from './components/VoucherDetail';
+import Guides from './components/Guides';
 import { vouchers as INITIAL_DATA } from './data/vouchers';
 
 // Extract unique platforms and categories from data
@@ -123,6 +124,7 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/guides" element={<Guides />} />
           <Route path="/voucher/:id" element={<VoucherDetail />} />
         </Routes>
       </Layout>
