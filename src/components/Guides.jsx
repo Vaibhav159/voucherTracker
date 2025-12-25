@@ -1,7 +1,9 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import guidesData from '../data/guides.json';
+import { useTheme } from '../context/ThemeContext';
 
 const GuideModal = ({ guide, onClose }) => {
+    const { theme } = useTheme();
 
 
     // Helper to reload reddit widgets
@@ -54,6 +56,20 @@ const GuideModal = ({ guide, onClose }) => {
     };
 
 
+
+    // Prepare embed HTML with theme attribute
+    const getAdjustedEmbedHtml = () => {
+        if (guide.embedHtml && guide.embedHtml.includes('blockquote class="reddit-embed-bq"')) {
+            if (theme === 'dark') {
+                // Inject dark theme attribute if not present
+                return guide.embedHtml.replace('blockquote class="reddit-embed-bq"', 'blockquote class="reddit-embed-bq" data-embed-theme="dark"');
+            } else {
+                // Ensure no dark theme attribute (if it was somehow hardcoded, though we rely on dynamic injection)
+                return guide.embedHtml.replace('data-embed-theme="dark"', '');
+            }
+        }
+        return guide.embedHtml;
+    };
 
     return (
         <div
@@ -115,7 +131,7 @@ const GuideModal = ({ guide, onClose }) => {
                 <h3 style={{ margin: '0 0 1.5rem 0', fontSize: '1.5rem', paddingRight: '2rem' }}>{guide.title}</h3>
 
                 {/* Embed Container */}
-                <div dangerouslySetInnerHTML={{ __html: guide.embedHtml }} />
+                <div dangerouslySetInnerHTML={{ __html: getAdjustedEmbedHtml() }} />
 
                 <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center' }}>
                     <a
