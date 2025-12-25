@@ -8,7 +8,14 @@ import VoucherModal from './components/VoucherModal';
 import PlatformFilter from './components/PlatformFilter';
 import VoucherDetail from './components/VoucherDetail';
 import Guides from './components/Guides';
-import { vouchers as INITIAL_DATA } from './data/vouchers';
+import { vouchers as RAW_DATA } from './data/vouchers';
+import { sortPlatforms } from './utils/sortUtils';
+
+// Apply global platform sorting
+const INITIAL_DATA = RAW_DATA.map(voucher => ({
+  ...voucher,
+  platforms: sortPlatforms(voucher.platforms)
+}));
 
 // Extract unique platforms and categories from data
 const ALL_PLATFORMS = [...new Set(INITIAL_DATA.flatMap(v => v.platforms.map(p => p.name)))];

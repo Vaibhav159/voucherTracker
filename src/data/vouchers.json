@@ -54,7 +54,7 @@
     {
         "id": "2",
         "brand": "Flipkart Gift Card",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/f/cd/Flipkart_logo_icon.svg",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/flipkart.png",
         "category": "Shopping",
         "platforms": [
             {
@@ -87,6 +87,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "Maximise",
+                "cap": "Unlimited",
+                "fee": "Discount 4.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
             }
         ]
     },
@@ -171,7 +181,7 @@
     {
         "id": "5",
         "brand": "PVR",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/4/48/PVR_Cinemas_logo.svg",
+        "logo": "https://cdn2.gyftr.com/common/logo/60.png",
         "category": "Entertainment",
         "platforms": [
             {
@@ -259,7 +269,7 @@
     {
         "id": "7",
         "brand": "BigBasket",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/6/69/BigBasket_Logo.svg",
+        "logo": "https://cdn2.gyftr.com/common/logo/44.png",
         "category": "Grocery",
         "platforms": [
             {
@@ -396,7 +406,7 @@
     {
         "id": "10",
         "brand": "Myntra",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Myntra_logo.png",
+        "logo": "https://lh3.googleusercontent.com/e1FojZJYqqvanJ4BXfla7gmWhFy50fJrziavDpdtB5_mm1l8JEWTXvc3Ujfpt9YDJ1wXG-ER761uIWNkrdgHvNkKKcrJgb67JtDh5Vo",
         "category": "Fashion",
         "platforms": [
             {
@@ -2620,6 +2630,16 @@
                 ],
                 "link": "https://magicpin.in/walletRecharge/?merchantId=56919472",
                 "color": "#7000ff"
+            },
+            {
+                "name": "Amazon",
+                "cap": "Unlimited",
+                "fee": "Discount 2%",
+                "denominations": [
+                    "500", "1000", "2000", "2500", "5000", "10000"
+                ],
+                "link": "https://amzn.to/4ayoXgX",
+                "color": "#FF9900"
             }
         ]
     },
@@ -3153,24 +3173,6 @@
                 "name": "Maximise",
                 "cap": "Unlimited",
                 "fee": "Discount 6.75%",
-                "denominations": [
-                    "Any"
-                ],
-                "link": "https://www.maximize.money/",
-                "color": "#1c1c1c"
-            }
-        ]
-    },
-    {
-        "id": "203",
-        "brand": "Flipkart",
-        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/flipkart.png",
-        "category": "E-commerce & Technology",
-        "platforms": [
-            {
-                "name": "Maximise",
-                "cap": "Unlimited",
-                "fee": "Discount 4.5%",
                 "denominations": [
                     "Any"
                 ],
@@ -10538,24 +10540,6 @@
         ]
     },
     {
-        "id": "1454",
-        "brand": "Amazon Fresh",
-        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/74883_Brand-Logo.png",
-        "category": "Shopping",
-        "platforms": [
-            {
-                "name": "Gyftr",
-                "cap": "10k/month",
-                "fee": "None",
-                "denominations": [
-                    "Check Link"
-                ],
-                "link": "https://www.gyftr.com/instantvouchers/amazon-fresh-gift-vouchers",
-                "color": "#D42426"
-            }
-        ]
-    },
-    {
         "id": "1530",
         "brand": "Himalaya Wellness",
         "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/80040_Brand-Logo.png",
@@ -10680,6 +10664,16 @@
                 ],
                 "link": "https://www.gyftr.com/instantvouchers/amazon-prime-membership-gift-vouchers",
                 "color": "#D42426"
+            },
+            {
+                "name": "MagicPin",
+                "cap": "Check App",
+                "fee": "Save 5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://magicpin.in/walletRecharge/?merchantId=5980614",
+                "color": "#7000ff"
             }
         ]
     },
@@ -11598,24 +11592,6 @@
         ]
     },
     {
-        "id": "mp-1197562",
-        "brand": "Amazon Prime",
-        "logo": "https://lh3.googleusercontent.com/2CZXrJWFC9qBPmF4v5o5vwE5C9xPfR3plgcN9INqlFIl6q514CltzPRcvFVS7Hzy9Lg0OgZuRqLmBJp3M0eKSvY5c9Xy27xNLha_a-PF=s750",
-        "category": "Shopping",
-        "platforms": [
-            {
-                "name": "MagicPin",
-                "cap": "Check App",
-                "fee": "Save 5%",
-                "denominations": [
-                    "Check Link"
-                ],
-                "link": "https://magicpin.in/walletRecharge/?merchantId=5980614",
-                "color": "#7000ff"
-            }
-        ]
-    },
-    {
         "id": "mp-1349742",
         "brand": "Jockey India",
         "logo": "http://lh3.googleusercontent.com/3WbUT6axvb-Ee2FJ6S19N8NOtjRsAm3UPH06yzkQtIEMTV4oz_C1k8cuOv15Fm3M-X5BPro56oLndrWUP7MzBF2rAV5X=s750",
@@ -11666,6 +11642,16 @@
                 ],
                 "link": "https://magicpin.in/walletRecharge/?merchantId=47637388",
                 "color": "#7000ff"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/amazon-fresh-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
