@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, selectedCardsCount = 0 }) => {
   const location = useLocation();
   const isActive = (path) => location.pathname === path;
 
@@ -34,6 +34,61 @@ const Layout = ({ children }) => {
               >
                 Guides
               </Link>
+              <Link
+                to="/know-your-cards"
+                className={`nav-item ${isActive('/know-your-cards') ? 'active' : ''}`}
+              >
+                Know Your Cards
+              </Link>
+              <Link
+                to="/compare-cards"
+                className={`nav-item ${isActive('/compare-cards') ? 'active' : ''}`}
+                style={{ position: 'relative' }}
+              >
+                Compare Cards
+                {selectedCardsCount > 0 && (
+                  <span style={{
+                    position: 'absolute',
+                    top: '-5px',
+                    right: '-10px',
+                    background: 'var(--accent-pink)',
+                    color: 'white',
+                    borderRadius: '50%',
+                    width: '18px',
+                    height: '18px',
+                    fontSize: '11px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
+                    {selectedCardsCount}
+                  </span>
+                )}
+              </Link>
+              <span
+                className="nav-item"
+                style={{
+                  color: '#6b7280',
+                  cursor: 'not-allowed',
+                  opacity: 0.6,
+                  position: 'relative'
+                }}
+                title="Coming Soon"
+              >
+                Ask AI 🧞‍♂️
+                <span style={{
+                  position: 'absolute',
+                  top: '-8px',
+                  right: '-35px',
+                  background: 'linear-gradient(135deg, #6b7280, #4b5563)',
+                  color: '#fff',
+                  fontSize: '0.6rem',
+                  padding: '2px 6px',
+                  borderRadius: '4px',
+                  fontWeight: '600',
+                  textTransform: 'uppercase'
+                }}>Soon</span>
+              </span>
               <a
                 href="https://twitter.com/vaibhav_lodha"
                 target="_blank"

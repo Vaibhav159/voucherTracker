@@ -67,22 +67,24 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
             bottom: 0,
             background: 'rgba(0, 0, 0, 0.7)',
             backdropFilter: 'blur(10px)',
-            zIndex: 1000,
+            zIndex: 9999,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: '20px'
+            padding: '20px',
+            overflowY: 'auto'
         }} onClick={onClose}>
             <div
                 className="glass-panel"
                 style={{
                     width: '100%',
                     maxWidth: '600px',
-                    maxHeight: '90vh',
+                    maxHeight: '85vh',
                     overflowY: 'auto',
                     position: 'relative',
                     background: 'var(--modal-bg)',
-                    border: '1px solid var(--modal-border)'
+                    border: '1px solid var(--modal-border)',
+                    margin: 'auto'
                 }}
                 onClick={e => e.stopPropagation()}
             >
