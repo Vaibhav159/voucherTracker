@@ -137,14 +137,15 @@
         "platforms": [
             {
                 "name": "Gyftr",
-                "cap": "2k/month",
-                "fee": "Discount 7%",
+                "cap": "10k/month",
+                "fee": "None",
                 "denominations": [
-                    "250",
-                    "500"
+                    "500",
+                    "1000",
+                    "2000"
                 ],
-                "link": "https://www.gyftr.com/zomato",
-                "color": "#CB202D"
+                "link": "https://www.gyftr.com/instantvouchers/zomato-gift-card-gift-vouchers",
+                "color": "#D42426"
             },
             {
                 "name": "Maximise",
@@ -318,7 +319,7 @@
     {
         "id": "8",
         "brand": "Blinkit",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Blinkit_logo.svg",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Blinkit-yellow-app-icon.svg",
         "category": "Grocery",
         "platforms": [
             {
@@ -455,7 +456,7 @@
     {
         "id": "11",
         "brand": "Levi's",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/8/87/Levis_logo.svg",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/7/75/Levi%27s_logo.svg",
         "category": "Fashion",
         "platforms": [
             {
@@ -493,8 +494,8 @@
     },
     {
         "id": "12",
-        "brand": "Trends",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/7/77/Reliance_Trends_logo.png",
+        "brand": "Reliance Trends",
+        "logo": "https://images.seeklogo.com/logo-png/37/1/reliance-trends-logo-png_seeklogo-373454.png",
         "category": "Fashion",
         "platforms": [
             {
@@ -523,7 +524,7 @@
     {
         "id": "13",
         "brand": "Ajio",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a8/AJIO_Logo.svg",
+        "logo": "https://images.seeklogo.com/logo-png/34/1/ajio-logo-png_seeklogo-348946.png",
         "category": "Fashion",
         "platforms": [
             {
@@ -572,7 +573,7 @@
     {
         "id": "14",
         "brand": "Reliance Digital",
-        "logo": "https://upload.wikimedia.org/wikipedia/en/2/29/Reliance_Digital_Logo.png",
+        "logo": "https://images.seeklogo.com/logo-png/37/1/reliance-digital-logo-png_seeklogo-373459.png",
         "category": "Electronics",
         "platforms": [
             {
@@ -601,7 +602,7 @@
     {
         "id": "15",
         "brand": "Smart Bazaar",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Smart_Bazaar_Logo.jpg",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/e/e6/Smart_Bazaar_logo.png",
         "category": "Grocery",
         "platforms": [
             {
@@ -630,7 +631,7 @@
     {
         "id": "16",
         "brand": "Titan",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/1/18/Titan_Company_Logo.png",
+        "logo": "https://images.seeklogo.com/logo-png/14/1/titan-logo-png_seeklogo-140287.png",
         "category": "Fashion",
         "platforms": [
             {
@@ -669,7 +670,7 @@
     {
         "id": "17",
         "brand": "KFC",
-        "logo": "https://upload.wikimedia.org/wikipedia/en/b/bf/KFC_logo.svg",
+        "logo": "https://images.seeklogo.com/logo-png/17/1/kfc-logo-png_seeklogo-176326.png",
         "category": "Food",
         "platforms": [
             {
@@ -4706,8 +4707,28 @@
                 "denominations": [
                     "Any"
                 ],
-                "link": "https://www.maximize.money/",
+                "link": "https://www.maximize.money/gift-cards/Lenskartcom/66",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/lenskart-gift-vouchers",
+                "color": "#D42426"
+            },
+            {
+                "name": "MagicPin",
+                "cap": "Check App",
+                "fee": "Save 5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://magicpin.in/walletRecharge/?merchantId=43126144",
+                "color": "#7000ff"
             }
         ]
     },
@@ -10014,24 +10035,6 @@
         ]
     },
     {
-        "id": "1435",
-        "brand": "LENSKART",
-        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/55643_Brand-Logo.png",
-        "category": "Fashion",
-        "platforms": [
-            {
-                "name": "Gyftr",
-                "cap": "10k/month",
-                "fee": "Discount 4%",
-                "denominations": [
-                    "Check Link"
-                ],
-                "link": "https://www.gyftr.com/instantvouchers/lenskart-gift-vouchers",
-                "color": "#D42426"
-            }
-        ]
-    },
-    {
         "id": "1438",
         "brand": "Titan Smartwatches",
         "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/61900_Brand-Logo.png",
@@ -11448,24 +11451,6 @@
         ]
     },
     {
-        "id": "721",
-        "brand": "Zomato Gift Card",
-        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/32026_Brand-Logo.png",
-        "category": "Grocery",
-        "platforms": [
-            {
-                "name": "Gyftr",
-                "cap": "10k/month",
-                "fee": "None",
-                "denominations": [
-                    "Check Link"
-                ],
-                "link": "https://www.gyftr.com/instantvouchers/zomato-gift-card-gift-vouchers",
-                "color": "#D42426"
-            }
-        ]
-    },
-    {
         "id": "mp-5162128",
         "brand": "Libas",
         "logo": "https://lh3.googleusercontent.com/kM5sJqqAkjnMy4iH2UUJlr4m6AdhipKRd-OhIQPkZflwlgjoOtqEdERnJmhIhPRFB2AbZbchh2ptgKE5uWy7FN0jWX6vp1jvPrZaqbA=s750",
@@ -11569,24 +11554,6 @@
                     "Check Link"
                 ],
                 "link": "https://magicpin.in/walletRecharge/?merchantId=7541674",
-                "color": "#7000ff"
-            }
-        ]
-    },
-    {
-        "id": "mp-6782999",
-        "brand": "Lenskart Online",
-        "logo": "https://lh3.googleusercontent.com/GNRiTLDMA7ij_a6v7YIOtaEf3akvt3fVsGYUmyZs_ctpn9m5ZFyzgbWgrIJoXHRFxJdR0x3-QV9MxFEZmT11cql-2Yr18gLuZMS3ULhP=s750",
-        "category": "Fashion",
-        "platforms": [
-            {
-                "name": "MagicPin",
-                "cap": "Check App",
-                "fee": "Save 5%",
-                "denominations": [
-                    "Check Link"
-                ],
-                "link": "https://magicpin.in/walletRecharge/?merchantId=43126144",
                 "color": "#7000ff"
             }
         ]

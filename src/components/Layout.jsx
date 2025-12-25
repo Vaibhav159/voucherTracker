@@ -36,6 +36,26 @@ const Layout = ({ children }) => {
               Guides
             </Link>
             <a
+              href="https://twitter.com/vaibhav_lodha"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: 'var(--text-secondary)',
+                textDecoration: 'none',
+                transition: 'color 0.2s',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px'
+              }}
+              onMouseEnter={(e) => e.target.style.color = '#fff'}
+              onMouseLeave={(e) => e.target.style.color = 'var(--text-secondary)'}
+            >
+              <span>Follow</span>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+            <a
               href="https://github.com/Vaibhav159/voucherTracker/edit/main/src/data/guides.json" // Pointed to guides for contribution
               target="_blank"
               rel="noopener noreferrer"
@@ -54,6 +74,9 @@ const Layout = ({ children }) => {
 
       <footer style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-secondary)', borderTop: '1px solid var(--glass-border)' }}>
         <p>© {new Date().getFullYear()} Voucher Tracker. Open Source Community Project.</p>
+        <p style={{ fontSize: '0.9rem', marginTop: '0.5rem' }}>
+          Created by <a href="https://twitter.com/vaibhav_lodha" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-cyan)', textDecoration: 'none' }}>@vaibhav_lodha</a>
+        </p>
       </footer>
     </div>
   );
