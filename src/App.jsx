@@ -62,10 +62,12 @@ function Home() {
         vouchers={filteredVouchers}
         onVoucherClick={setSelectedVoucher}
       />
-      <VoucherModal
-        voucher={selectedVoucher}
-        onClose={() => setSelectedVoucher(null)}
-      />
+      {selectedVoucher && (
+        <VoucherModal
+          voucher={selectedVoucher}
+          onClose={() => setSelectedVoucher(null)}
+        />
+      )}
     </>
   );
 }
