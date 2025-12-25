@@ -1,5 +1,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, useSearchParams } from 'react-router-dom';
+import { ThemeProvider } from './context/ThemeContext';
 import Layout from './components/Layout';
 import SearchBar from './components/SearchBar';
 import CategoryFilter from './components/CategoryFilter';
@@ -11,6 +12,7 @@ import Guides from './components/Guides';
 import CreditCardComparison from './components/CreditCardComparison';
 import CardGuide from './components/CardGuide';
 import ChatBot from './components/ChatBot';
+import MobileStickyFilterBar from './components/MobileStickyFilterBar';
 import { vouchers as RAW_DATA } from './data/vouchers';
 import { sortPlatforms } from './utils/sortUtils';
 
@@ -31,7 +33,7 @@ function Home() {
   const [selectedPlatform, setSelectedPlatform] = useState(searchParams.get('platform') || null);
   const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || null);
   const [selectedVoucher, setSelectedVoucher] = useState(null);
-  const [showFilters, setShowFilters] = useState(false); // Mobile filter toggle
+  const [activeMobileFilter, setActiveMobileFilter] = useState('none'); // 'none', 'platform', 'category'
 
   const [sortOption, setSortOption] = useState('Recommended');
 
@@ -93,53 +95,48 @@ function Home() {
   }, [searchTerm, selectedPlatform, selectedCategory, setSearchParams]);
   return (
     <div className="home-container">
-      {/* Mobile Filter Toggle */}
-      <div className="mobile-filter-toggle">
-        <button
-          className="btn-primary"
-          onClick={() => setShowFilters(!showFilters)}
-          style={{ width: '100%', justifyContent: 'center', marginBottom: '1rem' }}
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="4" y1="21" x2="4" y2="14"></line>
-            <line x1="4" y1="10" x2="4" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="12"></line>
-            <line x1="12" y1="8" x2="12" y2="3"></line>
-            <line x1="20" y1="21" x2="20" y2="16"></line>
-            <line x1="20" y1="12" x2="20" y2="3"></line>
-            <line x1="1" y1="14" x2="7" y2="14"></line>
-            <line x1="9" y1="8" x2="15" y2="8"></line>
-            <line x1="17" y1="16" x2="23" y2="16"></line>
-          </svg>
-          {showFilters ? 'Hide Filters' : 'Show Filters'}
-        </button>
-      </div>
+      {/* Mobile Filter Toggle Removed */}
 
       {/* Sidebar */}
-      <aside className={`glass-panel sidebar ${showFilters ? 'mobile-visible' : ''}`}>
+      <aside className={`glass-panel sidebar 
+        ${activeMobileFilter !== 'none' ? 'mobile-visible' : ''} 
+        ${activeMobileFilter === 'platform' ? 'show-platform' : ''} 
+        ${activeMobileFilter === 'category' ? 'show-category' : ''}
+      `}>
+        {/* Close handle/indicator for mobile */}
         <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '2rem',
-          maxHeight: 'calc(100vh - 4rem)', // viewport - sticky top offset
-          overflow: 'hidden' // Contain child scrolls
-        }}>
-          <div>
-            <h3 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-secondary)' }}>Platforms</h3>
+          width: '40px',
+          height: '4px',
+          background: 'var(--glass-border)',
+          borderRadius: '2px',
+          margin: '8px auto',
+          display: activeMobileFilter !== 'none' ? 'block' : 'none'
+        }} onClick={() => setActiveMobileFilter('none')} />
+
+        <div className="sidebar-content-wrapper">
+          <div className="platform-section">
+            <h3 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--nav-text)' }}>
+              Sort By Platform
+            </h3>
             <PlatformFilter
               selectedPlatform={selectedPlatform}
-              onPlatformSelect={setSelectedPlatform}
+              onPlatformSelect={(p) => {
+                setSelectedPlatform(p);
+                // Optional: Close on select? Maybe not for multi-browse
+              }}
               platforms={ALL_PLATFORMS}
             />
           </div>
 
-          <div style={{
+          <div className="category-section" style={{
             display: 'flex',
             flexDirection: 'column',
             minHeight: 0, // Critical for flex scrolling
             flex: 1
           }}>
-            <h3 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-secondary)' }}>Categories</h3>
+            <h3 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--nav-text)' }}>
+              Filter By Category
+            </h3>
             <div style={{
               overflowY: 'auto',
               paddingRight: '5px',
@@ -149,13 +146,22 @@ function Home() {
             }}>
               <CategoryFilter
                 selectedCategory={selectedCategory}
-                onCategorySelect={setSelectedCategory}
+                onCategorySelect={(c) => {
+                  setSelectedCategory(c);
+                }}
                 categories={ALL_CATEGORIES}
               />
             </div>
           </div>
         </div>
       </aside>
+
+      {/* Mobile Sticky Bar */}
+      <MobileStickyFilterBar
+        activeFilter={activeMobileFilter}
+        onSortClick={() => setActiveMobileFilter(prev => prev === 'platform' ? 'none' : 'platform')}
+        onFilterClick={() => setActiveMobileFilter(prev => prev === 'category' ? 'none' : 'category')}
+      />
 
 
       {/* Main Content */}
@@ -176,12 +182,14 @@ function Home() {
       {selectedVoucher && (
         <VoucherModal
           voucher={selectedVoucher}
+          selectedPlatform={selectedPlatform} // Pass selected platform context
           onClose={() => setSelectedVoucher(null)}
         />
       )}
     </div>
   );
 }
+
 
 function App() {
   const [selectedCards, setSelectedCards] = useState([]);
@@ -200,56 +208,58 @@ function App() {
   };
 
   return (
-    <Router>
-      <Layout selectedCardsCount={selectedCards.length}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/guides" element={<Guides />} />
-          <Route
-            path="/know-your-cards"
-            element={
-              <CreditCardComparison
-                view="grid"
-                selectedCards={selectedCards}
-                toggleCardSelection={toggleCardSelection}
-              />
-            }
-          />
-          <Route
-            path="/compare-cards"
-            element={
-              <CreditCardComparison
-                view="table"
-                selectedCards={selectedCards}
-                toggleCardSelection={toggleCardSelection}
-                clearSelection={() => setSelectedCards([])}
-              />
-            }
-          />
-          <Route path="/card-guide/:id" element={<CardGuide />} />
-          <Route path="/voucher/:id" element={<VoucherDetail />} />
-          <Route path="/ask-ai" element={
-            <div style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              minHeight: '60vh',
-              textAlign: 'center',
-              padding: '2rem'
-            }}>
-              <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🧞‍♂️</div>
-              <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>Ask AI</h2>
-              <p style={{ color: '#6b7280', fontSize: '1.1rem', marginBottom: '2rem' }}>Coming Soon</p>
-              <p style={{ color: 'var(--text-secondary)', maxWidth: '400px', lineHeight: '1.6' }}>
-                Our AI-powered credit card advisor is under development.
-                It will help you find the best card for any spending category.
-              </p>
-            </div>
-          } />
-        </Routes>
-      </Layout>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <Layout selectedCardsCount={selectedCards.length}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/guides" element={<Guides />} />
+            <Route
+              path="/know-your-cards"
+              element={
+                <CreditCardComparison
+                  view="grid"
+                  selectedCards={selectedCards}
+                  toggleCardSelection={toggleCardSelection}
+                />
+              }
+            />
+            <Route
+              path="/compare-cards"
+              element={
+                <CreditCardComparison
+                  view="table"
+                  selectedCards={selectedCards}
+                  toggleCardSelection={toggleCardSelection}
+                  clearSelection={() => setSelectedCards([])}
+                />
+              }
+            />
+            <Route path="/card-guide/:id" element={<CardGuide />} />
+            <Route path="/voucher/:id" element={<VoucherDetail />} />
+            <Route path="/ask-ai" element={
+              <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                minHeight: '60vh',
+                textAlign: 'center',
+                padding: '2rem'
+              }}>
+                <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🧞‍♂️</div>
+                <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>Ask AI</h2>
+                <p style={{ color: '#6b7280', fontSize: '1.1rem', marginBottom: '2rem' }}>Coming Soon</p>
+                <p style={{ color: 'var(--text-secondary)', maxWidth: '400px', lineHeight: '1.6' }}>
+                  Our AI-powered credit card advisor is under development.
+                  It will help you find the best card for any spending category.
+                </p>
+              </div>
+            } />
+          </Routes>
+        </Layout>
+      </Router>
+    </ThemeProvider>
   );
 }
 

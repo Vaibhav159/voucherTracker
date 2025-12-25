@@ -1,11 +1,35 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import guidesData from '../data/guides.json';
+import { useTheme } from '../context/ThemeContext';
 
 const GuideModal = ({ guide, onClose }) => {
+    const { theme } = useTheme();
+
+
+    // Helper to reload reddit widgets
+    const reloadRedditWidgets = () => {
+        const scriptId = 'reddit-wjs';
+        const existingScript = document.getElementById(scriptId);
+        if (existingScript) {
+            existingScript.remove();
+        }
+        const script = document.createElement('script');
+        script.id = scriptId;
+        script.src = "https://embed.reddit.com/widgets.js";
+        script.async = true;
+        script.charset = "UTF-8";
+        document.body.appendChild(script);
+    };
+
     useEffect(() => {
         // Re-scan for widgets when modal opens
         if (window.twttr && window.twttr.widgets) {
             window.twttr.widgets.load();
+        }
+
+        // Reload Reddit widgets for blockquote embeds
+        if (guide.embedHtml && guide.embedHtml.includes('blockquote class="reddit-embed-bq"')) {
+            reloadRedditWidgets();
         }
 
         // Prevent background scrolling
@@ -13,7 +37,7 @@ const GuideModal = ({ guide, onClose }) => {
         return () => {
             document.body.style.overflow = 'unset';
         };
-    }, []);
+    }, [guide]);
 
     // Close on escape key
     useEffect(() => {
@@ -29,6 +53,22 @@ const GuideModal = ({ guide, onClose }) => {
         if (guide.link.includes('reddit.com')) return 'Open on Reddit';
         if (guide.link.includes('twitter.com') || guide.link.includes('x.com')) return 'Open on Twitter';
         return 'Open Link';
+    };
+
+
+
+    // Prepare embed HTML with theme attribute
+    const getAdjustedEmbedHtml = () => {
+        if (guide.embedHtml && guide.embedHtml.includes('blockquote class="reddit-embed-bq"')) {
+            if (theme === 'dark') {
+                // Inject dark theme attribute if not present
+                return guide.embedHtml.replace('blockquote class="reddit-embed-bq"', 'blockquote class="reddit-embed-bq" data-embed-theme="dark"');
+            } else {
+                // Ensure no dark theme attribute (if it was somehow hardcoded, though we rely on dynamic injection)
+                return guide.embedHtml.replace('data-embed-theme="dark"', '');
+            }
+        }
+        return guide.embedHtml;
     };
 
     return (
@@ -52,8 +92,8 @@ const GuideModal = ({ guide, onClose }) => {
         >
             <div
                 style={{
-                    background: 'rgba(23, 23, 23, 0.95)',
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    background: 'var(--modal-bg)',
+                    border: '1px solid var(--modal-border)',
                     borderRadius: '24px',
                     width: '100%',
                     maxWidth: '600px',
@@ -72,9 +112,9 @@ const GuideModal = ({ guide, onClose }) => {
                         position: 'absolute',
                         top: '1.5rem',
                         right: '1.5rem',
-                        background: 'rgba(255,255,255,0.1)',
+                        background: 'var(--btn-secondary-bg)',
                         border: 'none',
-                        color: '#fff',
+                        color: 'var(--text-primary)',
                         width: '32px',
                         height: '32px',
                         borderRadius: '50%',
@@ -83,7 +123,8 @@ const GuideModal = ({ guide, onClose }) => {
                         alignItems: 'center',
                         justifyContent: 'center',
                         fontSize: '1.2rem',
-                        transition: 'background 0.2s'
+                        transition: 'background 0.2s',
+                        zIndex: 10
                     }}
                 >
                     ×
@@ -92,7 +133,7 @@ const GuideModal = ({ guide, onClose }) => {
                 <h3 style={{ margin: '0 0 1.5rem 0', fontSize: '1.5rem', paddingRight: '2rem' }}>{guide.title}</h3>
 
                 {/* Embed Container */}
-                <div dangerouslySetInnerHTML={{ __html: guide.embedHtml }} />
+                <div dangerouslySetInnerHTML={{ __html: getAdjustedEmbedHtml() }} />
 
                 <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center' }}>
                     <a
@@ -162,8 +203,8 @@ const Guides = () => {
                 <button
                     onClick={() => setSelectedTag(null)}
                     style={{
-                        background: !selectedTag ? '#fff' : 'rgba(255,255,255,0.05)',
-                        color: !selectedTag ? '#000' : 'var(--text-secondary)',
+                        background: !selectedTag ? 'var(--nav-bg-active)' : 'var(--tag-bg)',
+                        color: !selectedTag ? 'var(--nav-text-hover)' : 'var(--nav-text)',
                         border: '1px solid var(--glass-border)',
                         padding: '8px 20px',
                         borderRadius: '100px',
@@ -180,8 +221,8 @@ const Guides = () => {
                         key={tag}
                         onClick={() => setSelectedTag(tag === selectedTag ? null : tag)}
                         style={{
-                            background: selectedTag === tag ? 'var(--accent-cyan)' : 'rgba(255,255,255,0.05)',
-                            color: selectedTag === tag ? '#000' : 'var(--text-secondary)',
+                            background: selectedTag === tag ? 'var(--accent-cyan)' : 'var(--tag-bg)',
+                            color: selectedTag === tag ? '#000' : 'var(--nav-text)',
                             border: selectedTag === tag ? '1px solid var(--accent-cyan)' : '1px solid var(--glass-border)',
                             padding: '8px 16px',
                             borderRadius: '100px',
@@ -219,7 +260,8 @@ const Guides = () => {
                             }}
                             style={{
                                 padding: '1.5rem',
-                                border: '1px solid rgba(255,255,255,0.08)',
+                                border: '1px solid var(--item-border)',
+                                background: 'var(--item-bg)',
                                 transition: 'transform 0.2s ease, box-shadow 0.2s ease',
                                 cursor: 'pointer'
                             }}
@@ -237,10 +279,10 @@ const Guides = () => {
                                             fontSize: '0.7rem',
                                             padding: '4px 8px',
                                             borderRadius: '6px',
-                                            background: selectedTag === tag ? 'rgba(0, 240, 255, 0.2)' : 'rgba(255,255,255,0.05)',
-                                            color: selectedTag === tag ? 'var(--accent-cyan)' : 'var(--text-secondary)',
+                                            background: selectedTag === tag ? 'var(--accent-cyan-dim)' : 'var(--tag-bg)',
+                                            color: selectedTag === tag ? 'var(--accent-cyan)' : 'var(--tag-text)',
                                             fontWeight: 500,
-                                            border: selectedTag === tag ? '1px solid var(--accent-cyan)' : '1px solid rgba(255,255,255,0.05)',
+                                            border: selectedTag === tag ? '1px solid var(--accent-cyan)' : '1px solid var(--tag-border)',
                                             cursor: 'pointer'
                                         }}
                                     >
@@ -250,7 +292,7 @@ const Guides = () => {
                             </div>
 
                             {/* Title */}
-                            <h3 style={{ margin: '0 0 0.8rem 0', fontSize: '1.2rem', lineHeight: '1.4', color: '#fff' }}>
+                            <h3 style={{ margin: '0 0 0.8rem 0', fontSize: '1.2rem', lineHeight: '1.4', color: 'var(--card-title)' }}>
                                 <a
                                     href={guide.link}
                                     target="_blank"
@@ -268,7 +310,7 @@ const Guides = () => {
                             </p>
 
                             {/* Footer */}
-                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 'auto', paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 'auto', paddingTop: '1rem', borderTop: '1px solid var(--item-border)' }}>
                                 <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
                                     {guide.author}
                                 </span>

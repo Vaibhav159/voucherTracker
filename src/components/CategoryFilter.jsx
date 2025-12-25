@@ -4,8 +4,8 @@ const CategoryFilter = ({ selectedCategory, onCategorySelect, categories }) => {
             <button
                 onClick={() => onCategorySelect(null)}
                 style={{
-                    background: !selectedCategory ? 'rgba(255,255,255,0.1)' : 'transparent',
-                    color: !selectedCategory ? '#fff' : 'var(--text-secondary)',
+                    background: !selectedCategory ? 'var(--nav-bg-active)' : 'transparent',
+                    color: !selectedCategory ? 'var(--nav-text-hover)' : 'var(--nav-text)',
                     border: '1px solid transparent',
                     padding: '8px 16px',
                     borderRadius: '8px',
@@ -13,7 +13,8 @@ const CategoryFilter = ({ selectedCategory, onCategorySelect, categories }) => {
                     textAlign: 'left',
                     transition: 'all 0.2s',
                     fontSize: '0.9rem',
-                    fontWeight: !selectedCategory ? 600 : 400
+                    fontWeight: !selectedCategory ? 600 : 400,
+                    width: '100%'
                 }}
             >
                 All Categories
@@ -23,8 +24,8 @@ const CategoryFilter = ({ selectedCategory, onCategorySelect, categories }) => {
                     key={category}
                     onClick={() => onCategorySelect(category)}
                     style={{
-                        background: selectedCategory === category ? 'rgba(189, 0, 255, 0.15)' : 'transparent',
-                        color: selectedCategory === category ? 'var(--accent-purple)' : 'var(--text-secondary)',
+                        background: selectedCategory === category ? 'var(--nav-bg-active)' : 'transparent',
+                        color: selectedCategory === category ? 'var(--accent-pink)' : 'var(--nav-text)',
                         border: '1px solid transparent',
                         padding: '8px 16px',
                         borderRadius: '8px',
@@ -35,7 +36,12 @@ const CategoryFilter = ({ selectedCategory, onCategorySelect, categories }) => {
                         fontWeight: selectedCategory === category ? 600 : 400,
                         whiteSpace: 'nowrap',
                         overflow: 'hidden',
-                        textOverflow: 'ellipsis'
+                        textOverflow: 'ellipsis',
+                        boxShadow: selectedCategory === category ? '0 2px 8px rgba(0,0,0,0.05)' : 'none',
+                        width: '100%',
+                        textAlign: 'left',
+                        display: 'block' // Ensure text overflow works, block usually better for simple text buttons but let's try strict left
+
                     }}
                     title={category}
                 >
