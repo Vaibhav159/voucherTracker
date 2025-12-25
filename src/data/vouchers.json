@@ -59,13 +59,15 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.amazon.in"
     },
     {
         "id": "2",
         "brand": "Flipkart Gift Card",
         "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/flipkart.png",
         "category": "Shopping",
+        "site": "https://www.flipkart.com",
         "platforms": [
             {
                 "name": "Gyftr",
@@ -146,7 +148,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.swiggy.com"
     },
     {
         "id": "4",
@@ -206,7 +209,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.zomato.com"
     },
     {
         "id": "5",
@@ -255,7 +259,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.pvrcinemas.com"
     },
     {
         "id": "6",
@@ -314,7 +319,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.uber.com"
     },
     {
         "id": "7",
@@ -373,7 +379,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.bigbasket.com"
     },
     {
         "id": "8",
@@ -432,7 +439,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://blinkit.com"
     },
     {
         "id": "9",
@@ -471,7 +479,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://pizzaonline.dominos.co.in"
     },
     {
         "id": "10",
@@ -520,7 +529,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.myntra.com"
     },
     {
         "id": "11",
@@ -569,7 +579,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.levi.in"
     },
     {
         "id": "12",
@@ -608,7 +619,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://trends.ajio.com"
     },
     {
         "id": "13",
@@ -667,7 +679,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.biba.in"
     },
     {
         "id": "14",
@@ -696,7 +709,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.reliancedigital.in"
     },
     {
         "id": "15",
@@ -725,7 +739,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://reliancesmartbazaar.com/"
     },
     {
         "id": "16",
@@ -774,7 +789,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.titan.co.in"
     },
     {
         "id": "17",
@@ -823,7 +839,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://online.kfc.co.in"
     },
     {
         "id": "791",
@@ -861,7 +878,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.absolutebarbecues.com"
     },
     {
         "id": "440",
@@ -889,7 +907,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.aeropostale.com"
     },
     {
         "id": "409",
@@ -927,7 +946,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.airindia.com"
     },
     {
         "id": "733",
@@ -955,7 +975,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/ajio-luxe-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://luxe.ajio.com"
     },
     {
         "id": "308",
@@ -1003,7 +1024,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.aldoshoes.in"
     },
     {
         "id": "487",
@@ -1041,7 +1063,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.paulsmith.com"
     },
     {
         "id": "214",
@@ -1089,7 +1112,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.armaniexchange.com"
     },
     {
         "id": "94",
@@ -1127,7 +1151,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.amazon.in"
     },
     {
         "id": "490",
@@ -1175,7 +1200,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.aeo.in"
     },
     {
         "id": "235",
@@ -1213,7 +1239,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.americantourister.in"
     },
     {
         "id": "784",
@@ -1231,7 +1258,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.apollopharmacy.in"
     },
     {
         "id": "859",
@@ -1259,7 +1287,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.indiaistore.com"
     },
     {
         "id": "491",
@@ -1277,7 +1306,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://in.appyhigh.com"
     },
     {
         "id": "236",
@@ -1315,7 +1345,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.archiesonline.com"
     },
     {
         "id": "451",
@@ -1343,7 +1374,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.armaniexchange.com"
     },
     {
         "id": "453",
@@ -1361,7 +1393,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.lbf.co.in"
     },
     {
         "id": "258",
@@ -1389,7 +1422,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/assembly-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.assemblytravel.com"
     },
     {
         "id": "259",
@@ -1427,7 +1461,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.shopforaurelia.com"
     },
     {
         "id": "492",
@@ -1465,7 +1500,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.dunelondon.com"
     },
     {
         "id": "832",
@@ -1483,7 +1519,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.avast.com"
     },
     {
         "id": "493",
@@ -1521,7 +1558,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.bakingo.com"
     },
     {
         "id": "215",
@@ -1569,7 +1607,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.barbequenation.com"
     },
     {
         "id": "494",
@@ -1607,7 +1646,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://baskinrobbinsindia.com"
     },
     {
         "id": "495",
@@ -1645,7 +1685,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.bata.in"
     },
     {
         "id": "309",
@@ -1683,7 +1724,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.bathandbodyworks.in"
     },
     {
         "id": "497",
@@ -1721,7 +1763,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.behrouzbiryani.com"
     },
     {
         "id": "311",
@@ -1769,7 +1812,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.bhpc.com"
     },
     {
         "id": "608",
@@ -1797,7 +1841,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.bhimajewellers.com"
     },
     {
         "id": "607",
@@ -1825,7 +1870,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.bhimajewellers.com"
     },
     {
         "id": "368",
@@ -1863,7 +1909,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.bikanervala.com"
     },
     {
         "id": "369",
@@ -1901,7 +1948,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.birkenstock.in"
     },
     {
         "id": "500",
@@ -1929,7 +1977,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://blaupunktaudio.in"
     },
     {
         "id": "712",
@@ -1977,7 +2026,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://blissclub.com"
     },
     {
         "id": "71",
@@ -1995,7 +2045,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://bluetokai.com"
     },
     {
         "id": "817",
@@ -2023,7 +2074,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.bluestone.com"
     },
     {
         "id": "820",
@@ -2051,7 +2103,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.bluestone.com"
     },
     {
         "id": "818",
@@ -2069,7 +2122,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.bluestone.com"
     },
     {
         "id": "554",
@@ -2097,7 +2151,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=6747893",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.boat-lifestyle.com"
     },
     {
         "id": "831",
@@ -2115,7 +2170,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.boditive.com"
     },
     {
         "id": "374",
@@ -2153,7 +2209,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://bodycraft.co.in"
     },
     {
         "id": "375",
@@ -2191,7 +2248,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://in.bookmyshow.com"
     },
     {
         "id": "631",
@@ -2209,7 +2267,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.bharatpetroleum.in"
     },
     {
         "id": "502",
@@ -2227,7 +2286,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.braingymjr.com"
     },
     {
         "id": "376",
@@ -2255,7 +2315,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.brooksbrothers.com"
     },
     {
         "id": "830",
@@ -2273,7 +2334,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.bajajfinserv.in"
     },
     {
         "id": "331",
@@ -2301,7 +2363,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.cafecoffeeday.com"
     },
     {
         "id": "262",
@@ -2339,7 +2402,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://cafedelhiheights.com"
     },
     {
         "id": "310",
@@ -2387,7 +2451,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.callitspring.com"
     },
     {
         "id": "263",
@@ -2425,7 +2490,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.campusshoes.com"
     },
     {
         "id": "264",
@@ -2443,7 +2509,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.candere.com"
     },
     {
         "id": "265",
@@ -2461,7 +2528,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.candere.com"
     },
     {
         "id": "266",
@@ -2489,7 +2557,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.candere.com"
     },
     {
         "id": "834",
@@ -2507,7 +2576,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.celio.in"
     },
     {
         "id": "312",
@@ -2545,7 +2615,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.charleskeith.in"
     },
     {
         "id": "338",
@@ -2593,7 +2664,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.chumbak.com"
     },
     {
         "id": "570",
@@ -2621,7 +2693,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.cinepolisindia.com"
     },
     {
         "id": "792",
@@ -2639,7 +2712,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.citizen.in"
     },
     {
         "id": "302",
@@ -2657,7 +2731,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://cleartax.in"
     },
     {
         "id": "803",
@@ -2705,7 +2780,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.cleartrip.com"
     },
     {
         "id": "227",
@@ -2723,7 +2799,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.cleartrip.com"
     },
     {
         "id": "557",
@@ -2751,7 +2828,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.coach.com"
     },
     {
         "id": "325",
@@ -2789,7 +2867,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.colorplus.co.in"
     },
     {
         "id": "835",
@@ -2807,7 +2886,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.cosmopolitan.in"
     },
     {
         "id": "810",
@@ -2845,7 +2925,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.costacoffee.in"
     },
     {
         "id": "149",
@@ -2893,7 +2974,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.croma.com"
     },
     {
         "id": "770",
@@ -2911,7 +2993,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.crossword.in"
     },
     {
         "id": "378",
@@ -2949,7 +3032,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.cult.fit"
     },
     {
         "id": "816",
@@ -2997,7 +3081,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.dailyobjects.com"
     },
     {
         "id": "268",
@@ -3045,7 +3130,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.decathlon.in"
     },
     {
         "id": "509",
@@ -3073,7 +3159,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/discovery-plus-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.discoveryplus.in"
     },
     {
         "id": "774",
@@ -3116,7 +3203,8 @@
                 "link": "https://amzn.to/4ayoXgX",
                 "color": "#FF9900"
             }
-        ]
+        ],
+        "site": "https://www.zomato.com"
     },
     {
         "id": "812",
@@ -3154,7 +3242,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://dpauls.com"
     },
     {
         "id": "383",
@@ -3182,7 +3271,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.dunelondon.com"
     },
     {
         "id": "731",
@@ -3210,7 +3300,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/duroflex-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.duroflexworld.com"
     },
     {
         "id": "384",
@@ -3258,7 +3349,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.easemytrip.com"
     },
     {
         "id": "558",
@@ -3286,7 +3378,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/easybuy-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.easybuyindia.com"
     },
     {
         "id": "559",
@@ -3344,7 +3437,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.eatsure.com"
     },
     {
         "id": "512",
@@ -3362,7 +3456,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.elleven.in"
     },
     {
         "id": "513",
@@ -3380,7 +3475,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.elver.in"
     },
     {
         "id": "389",
@@ -3408,7 +3504,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.epicon.in"
     },
     {
         "id": "794",
@@ -3426,7 +3523,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://estuaryworld.com"
     },
     {
         "id": "833",
@@ -3444,7 +3542,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://economictimes.indiatimes.com/prime"
     },
     {
         "id": "393",
@@ -3462,7 +3561,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.euphoriajewellery.in"
     },
     {
         "id": "515",
@@ -3480,7 +3580,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.euphoriajewellery.in"
     },
     {
         "id": "270",
@@ -3498,7 +3599,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.euphoriajewellery.in"
     },
     {
         "id": "394",
@@ -3546,7 +3648,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.faasos.com"
     },
     {
         "id": "272",
@@ -3584,7 +3687,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.fashionfactory.in"
     },
     {
         "id": "273",
@@ -3622,7 +3726,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.fastrack.in"
     },
     {
         "id": "396",
@@ -3660,7 +3765,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.fastrack.in"
     },
     {
         "id": "718",
@@ -3688,7 +3794,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/femmella-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.femmella.com"
     },
     {
         "id": "839",
@@ -3706,7 +3813,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://finusmart.com"
     },
     {
         "id": "350",
@@ -3724,7 +3832,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.firstcry.com"
     },
     {
         "id": "805",
@@ -3752,7 +3861,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/flixbus-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.flixbus.in"
     },
     {
         "id": "516",
@@ -3780,7 +3890,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/flower-aura-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.floweraura.com"
     },
     {
         "id": "351",
@@ -3818,7 +3929,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.forevernew.co.in"
     },
     {
         "id": "304",
@@ -3836,7 +3948,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.forever21.in"
     },
     {
         "id": "255",
@@ -3884,7 +3997,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://foxtale.in"
     },
     {
         "id": "517",
@@ -3912,7 +4026,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/freecultr-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.freecultr.com"
     },
     {
         "id": "398",
@@ -3950,7 +4065,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.freshmenu.com"
     },
     {
         "id": "482",
@@ -3968,7 +4084,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://freakins.com"
     },
     {
         "id": "518",
@@ -3996,7 +4113,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/frido-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://myfrido.com"
     },
     {
         "id": "254",
@@ -4024,7 +4142,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/future-world-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.futureworldindia.in"
     },
     {
         "id": "404",
@@ -4042,7 +4161,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.g-star.com"
     },
     {
         "id": "538",
@@ -4070,7 +4190,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/gaana-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://gaana.com"
     },
     {
         "id": "741",
@@ -4088,7 +4209,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.giva.co"
     },
     {
         "id": "742",
@@ -4106,7 +4228,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.giva.co"
     },
     {
         "id": "825",
@@ -4124,7 +4247,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://glamstudios.in"
     },
     {
         "id": "479",
@@ -4142,7 +4266,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.goibibo.com"
     },
     {
         "id": "460",
@@ -4170,7 +4295,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.goodbowls.com"
     },
     {
         "id": "54",
@@ -4198,7 +4324,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.thebeercafe.com"
     },
     {
         "id": "521",
@@ -4216,7 +4343,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.grtjewels.com"
     },
     {
         "id": "405",
@@ -4244,7 +4372,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.hamleys.in"
     },
     {
         "id": "406",
@@ -4262,7 +4391,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.hamleys.in"
     },
     {
         "id": "522",
@@ -4300,7 +4430,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=9032670",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://hammeronline.in"
     },
     {
         "id": "407",
@@ -4328,7 +4459,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://healthandglow.com"
     },
     {
         "id": "813",
@@ -4366,7 +4498,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.healthians.com"
     },
     {
         "id": "627",
@@ -4384,7 +4517,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.healthifyme.com"
     },
     {
         "id": "524",
@@ -4422,7 +4556,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.healthkart.com"
     },
     {
         "id": "462",
@@ -4470,7 +4605,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://hidesign.com"
     },
     {
         "id": "759",
@@ -4498,7 +4634,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://himalayawellness.in"
     },
     {
         "id": "527",
@@ -4526,7 +4663,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/hoichoi-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.hoichoi.tv"
     },
     {
         "id": "765",
@@ -4544,7 +4682,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://holidaytribe.com"
     },
     {
         "id": "53",
@@ -4572,7 +4711,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/home-centre-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.homecentre.in"
     },
     {
         "id": "690",
@@ -4590,7 +4730,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://vaaree.com"
     },
     {
         "id": "788",
@@ -4618,7 +4759,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.hppay.in"
     },
     {
         "id": "632",
@@ -4646,7 +4788,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.hugoboss.com"
     },
     {
         "id": "822",
@@ -4694,7 +4837,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.bata.in/hush-puppies"
     },
     {
         "id": "716",
@@ -4732,7 +4876,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.ikea.com/in/en/"
     },
     {
         "id": "787",
@@ -4770,7 +4915,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.indianterrain.com"
     },
     {
         "id": "313",
@@ -4808,7 +4954,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://inglotcosmetics.in"
     },
     {
         "id": "530",
@@ -4826,7 +4973,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://innovist.com"
     },
     {
         "id": "821",
@@ -4844,7 +4992,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.irctc.co.in"
     },
     {
         "id": "336",
@@ -4872,7 +5021,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.itchotels.com"
     },
     {
         "id": "799",
@@ -4920,7 +5070,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.ixigo.com"
     },
     {
         "id": "534",
@@ -4968,7 +5119,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.jackjones.in"
     },
     {
         "id": "303",
@@ -5006,7 +5158,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=8429994",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.hotstar.com"
     },
     {
         "id": "576",
@@ -5044,7 +5197,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.jockey.in"
     },
     {
         "id": "591",
@@ -5072,7 +5226,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://estele.co"
     },
     {
         "id": "464",
@@ -5100,7 +5255,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.joyalukkas.in"
     },
     {
         "id": "593",
@@ -5118,7 +5274,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://baglineindia.com"
     },
     {
         "id": "226",
@@ -5146,7 +5303,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.kalyanjewellers.net"
     },
     {
         "id": "560",
@@ -5174,7 +5332,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.katespade.com"
     },
     {
         "id": "241",
@@ -5202,7 +5361,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.ketandiamonds.com"
     },
     {
         "id": "242",
@@ -5220,7 +5380,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.ketandiamonds.com"
     },
     {
         "id": "243",
@@ -5238,7 +5399,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.ketandiamonds.com"
     },
     {
         "id": "465",
@@ -5266,7 +5428,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://kiehls.in"
     },
     {
         "id": "846",
@@ -5294,7 +5457,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/kimirica-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://kimirica.shop"
     },
     {
         "id": "776",
@@ -5322,7 +5486,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/klook-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.klook.com"
     },
     {
         "id": "466",
@@ -5350,7 +5515,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.lakmesalon.in"
     },
     {
         "id": "561",
@@ -5378,7 +5544,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://lawrenceandmayo.co.in"
     },
     {
         "id": "355",
@@ -5416,7 +5583,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.lee.in"
     },
     {
         "id": "66",
@@ -5464,7 +5632,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.lenskart.com"
     },
     {
         "id": "789",
@@ -5492,7 +5661,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/liberty-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.libertyshoesonline.com"
     },
     {
         "id": "571",
@@ -5530,7 +5700,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.wowmomo.com"
     },
     {
         "id": "572",
@@ -5558,7 +5729,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/lifestyle-online-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.lifestylestores.com"
     },
     {
         "id": "455",
@@ -5596,7 +5768,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.linenclub.com"
     },
     {
         "id": "456",
@@ -5624,7 +5797,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.lbf.co.in"
     },
     {
         "id": "836",
@@ -5652,7 +5826,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/live-mint-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.livemint.com"
     },
     {
         "id": "277",
@@ -5700,7 +5875,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://louisphilippe.adityabirla.com"
     },
     {
         "id": "244",
@@ -5718,7 +5894,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.lovebeautyandplanet.in"
     },
     {
         "id": "457",
@@ -5746,7 +5923,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.luluhypermarket.in"
     },
     {
         "id": "542",
@@ -5784,7 +5962,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.giva.co"
     },
     {
         "id": "222",
@@ -5822,7 +6001,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.satyapaul.com"
     },
     {
         "id": "411",
@@ -5860,7 +6040,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.makemytrip.com"
     },
     {
         "id": "225",
@@ -5898,7 +6079,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://stevemadden.in"
     },
     {
         "id": "223",
@@ -5926,7 +6108,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.mothercare.in"
     },
     {
         "id": "307",
@@ -5954,7 +6137,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.malabargoldanddiamonds.com"
     },
     {
         "id": "306",
@@ -5972,7 +6156,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.malabargoldanddiamonds.com"
     },
     {
         "id": "43",
@@ -6000,7 +6185,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.malabargoldanddiamonds.com"
     },
     {
         "id": "245",
@@ -6028,7 +6214,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/mamaearth-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://mamaearth.in"
     },
     {
         "id": "745",
@@ -6056,7 +6243,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/manyavar-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.manyavar.com"
     },
     {
         "id": "279",
@@ -6084,7 +6272,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/marks-spencer-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.marksandspencer.in"
     },
     {
         "id": "551",
@@ -6122,7 +6311,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.marriott.com"
     },
     {
         "id": "681",
@@ -6160,7 +6350,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.mcdonaldsindia.com"
     },
     {
         "id": "753",
@@ -6188,7 +6379,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/me-n-moms-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.menmoms.in"
     },
     {
         "id": "345",
@@ -6216,7 +6408,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.miabytanishq.com"
     },
     {
         "id": "583",
@@ -6244,7 +6437,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://luxegiftcard.com"
     },
     {
         "id": "735",
@@ -6262,7 +6456,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.xbox.com"
     },
     {
         "id": "729",
@@ -6300,7 +6495,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://miniklub.in"
     },
     {
         "id": "622",
@@ -6318,7 +6514,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://mokobara.com"
     },
     {
         "id": "655",
@@ -6346,7 +6543,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.mothercare.in"
     },
     {
         "id": "653",
@@ -6374,7 +6572,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://muroshoes.com"
     },
     {
         "id": "654",
@@ -6392,7 +6591,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.muthootfinance.com"
     },
     {
         "id": "656",
@@ -6420,7 +6620,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.naturesbasket.co.in"
     },
     {
         "id": "790",
@@ -6448,7 +6649,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/neemans-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://neemans.com"
     },
     {
         "id": "329",
@@ -6466,7 +6668,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.nilkamalhomes.com"
     },
     {
         "id": "806",
@@ -6484,7 +6687,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.nuawoman.com"
     },
     {
         "id": "234",
@@ -6532,7 +6736,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.nykaa.com"
     },
     {
         "id": "340",
@@ -6570,7 +6775,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=45199613",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.nykaafashion.com"
     },
     {
         "id": "341",
@@ -6588,7 +6794,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.nykaaman.com"
     },
     {
         "id": "564",
@@ -6616,7 +6823,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.oberoihotels.com"
     },
     {
         "id": "544",
@@ -6654,7 +6862,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.speciality.co.in"
     },
     {
         "id": "86",
@@ -6692,7 +6901,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.only.in"
     },
     {
         "id": "546",
@@ -6730,7 +6940,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://organicindia.com"
     },
     {
         "id": "441",
@@ -6768,7 +6979,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.ovenstory.in"
     },
     {
         "id": "360",
@@ -6816,7 +7028,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.pantaloons.com"
     },
     {
         "id": "323",
@@ -6854,7 +7067,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://parkavenue.co.in"
     },
     {
         "id": "324",
@@ -6892,7 +7106,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.raymond.in"
     },
     {
         "id": "35",
@@ -6910,7 +7125,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.paulandshark.com"
     },
     {
         "id": "248",
@@ -6928,7 +7144,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.pcjeweller.com"
     },
     {
         "id": "250",
@@ -6956,7 +7173,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.pcjeweller.com"
     },
     {
         "id": "249",
@@ -6974,7 +7192,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.pcjeweller.com"
     },
     {
         "id": "91",
@@ -6992,7 +7211,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.pcjeweller.com"
     },
     {
         "id": "443",
@@ -7030,7 +7250,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.pepperfry.com"
     },
     {
         "id": "584",
@@ -7078,7 +7299,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://peterengland.adityabirla.com"
     },
     {
         "id": "219",
@@ -7106,7 +7328,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.hugoboss.com"
     },
     {
         "id": "663",
@@ -7134,7 +7357,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/pigeon-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://pigeonappliances.com"
     },
     {
         "id": "413",
@@ -7152,7 +7376,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.pineperks.in"
     },
     {
         "id": "664",
@@ -7170,7 +7395,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.google.com/pixel"
     },
     {
         "id": "665",
@@ -7218,7 +7444,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.pizzahut.co.in"
     },
     {
         "id": "666",
@@ -7246,7 +7473,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://planetfashion.in"
     },
     {
         "id": "829",
@@ -7264,7 +7492,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.pmjjewels.com"
     },
     {
         "id": "667",
@@ -7302,7 +7531,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.prestigexclusive.in"
     },
     {
         "id": "231",
@@ -7340,7 +7570,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://in.puma.com"
     },
     {
         "id": "604",
@@ -7368,7 +7599,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/pure-home-living-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.purehomeandliving.com"
     },
     {
         "id": "670",
@@ -7406,7 +7638,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://randbfashion.com"
     },
     {
         "id": "326",
@@ -7444,7 +7677,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://rangriti.com"
     },
     {
         "id": "361",
@@ -7482,7 +7716,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.ray-ban.com/india"
     },
     {
         "id": "320",
@@ -7510,7 +7745,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/raymond-ready-to-wear-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.raymond.in"
     },
     {
         "id": "281",
@@ -7548,7 +7784,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.relaxofootwear.com"
     },
     {
         "id": "671",
@@ -7586,7 +7823,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://relianceretail.com"
     },
     {
         "id": "212",
@@ -7634,7 +7872,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.jiomart.com"
     },
     {
         "id": "282",
@@ -7682,7 +7921,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.jio.com"
     },
     {
         "id": "284",
@@ -7720,7 +7960,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.jiomart.com"
     },
     {
         "id": "357",
@@ -7738,7 +7979,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.jiomart.com"
     },
     {
         "id": "575",
@@ -7756,7 +7998,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://trends.ajio.com"
     },
     {
         "id": "286",
@@ -7784,7 +8027,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/reliance-trends-footwear-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://trends.ajio.com"
     },
     {
         "id": "758",
@@ -7802,7 +8046,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.rentomojo.com"
     },
     {
         "id": "795",
@@ -7820,7 +8065,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.roblox.com"
     },
     {
         "id": "251",
@@ -7868,7 +8114,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.samsonite.in"
     },
     {
         "id": "476",
@@ -7896,7 +8143,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.scotch-soda.com"
     },
     {
         "id": "337",
@@ -7924,7 +8172,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.selectedhomme.in"
     },
     {
         "id": "844",
@@ -7942,7 +8191,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://shivnaresh.in"
     },
     {
         "id": "777",
@@ -7970,7 +8220,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/shoppers-stop-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.shoppersstop.com"
     },
     {
         "id": "678",
@@ -8008,7 +8259,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.speciality.co.in"
     },
     {
         "id": "556",
@@ -8056,7 +8308,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.simoncarter.in"
     },
     {
         "id": "682",
@@ -8084,7 +8337,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.simpleskincare.in"
     },
     {
         "id": "288",
@@ -8132,7 +8386,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.skechers.in"
     },
     {
         "id": "683",
@@ -8160,7 +8415,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/skinn-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://skinn.in"
     },
     {
         "id": "289",
@@ -8198,7 +8454,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=7697294",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.skullcandy.in"
     },
     {
         "id": "843",
@@ -8216,7 +8473,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.sleepwellproducts.com"
     },
     {
         "id": "684",
@@ -8254,7 +8512,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.smilefoundationindia.org"
     },
     {
         "id": "756",
@@ -8272,7 +8531,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.snapdeal.com"
     },
     {
         "id": "685",
@@ -8300,7 +8560,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/soch-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.soch.com"
     },
     {
         "id": "686",
@@ -8328,7 +8589,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/sonyliv-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.sonyliv.com"
     },
     {
         "id": "722",
@@ -8346,7 +8608,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.sparindia.com"
     },
     {
         "id": "603",
@@ -8404,7 +8667,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.speedo.in"
     },
     {
         "id": "569",
@@ -8442,7 +8706,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.spencers.in"
     },
     {
         "id": "807",
@@ -8470,7 +8735,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/ssunsu-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://ssunsu.in"
     },
     {
         "id": "321",
@@ -8518,7 +8784,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.starbucks.in"
     },
     {
         "id": "555",
@@ -8546,7 +8813,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://store.steampowered.com"
     },
     {
         "id": "687",
@@ -8584,7 +8852,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.sterlingholidays.com"
     },
     {
         "id": "688",
@@ -8612,7 +8881,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://stevemadden.in"
     },
     {
         "id": "330",
@@ -8660,7 +8930,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.subway.com"
     },
     {
         "id": "50",
@@ -8688,7 +8959,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.titaneyeplus.com"
     },
     {
         "id": "691",
@@ -8726,7 +8998,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.speciality.co.in"
     },
     {
         "id": "692",
@@ -8764,7 +9037,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.sweettruth.in"
     },
     {
         "id": "211",
@@ -8802,7 +9076,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.tajhotels.com"
     },
     {
         "id": "354",
@@ -8830,7 +9105,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.taneira.com"
     },
     {
         "id": "48",
@@ -8858,7 +9134,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.tanishq.co.in"
     },
     {
         "id": "430",
@@ -8916,7 +9193,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.tatacliq.com"
     },
     {
         "id": "327",
@@ -8944,7 +9222,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/tattva-spa-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://tattvaspa.com"
     },
     {
         "id": "840",
@@ -8972,7 +9251,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/tego-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://tego.fit"
     },
     {
         "id": "841",
@@ -9010,7 +9290,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.tgifindia.com"
     },
     {
         "id": "292",
@@ -9058,7 +9339,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.thebodyshop.in"
     },
     {
         "id": "728",
@@ -9096,7 +9378,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.thecollective.in"
     },
     {
         "id": "697",
@@ -9124,7 +9407,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/the-good-bowl-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.goodbowls.com"
     },
     {
         "id": "845",
@@ -9142,7 +9426,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://readinghabit.in"
     },
     {
         "id": "730",
@@ -9170,7 +9455,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/the-sleep-company-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://thesleepcompany.in"
     },
     {
         "id": "197",
@@ -9198,7 +9484,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://thirdwavecoffeeroasters.com"
     },
     {
         "id": "797",
@@ -9226,7 +9513,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/tim-hortons-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://timhortonsindia.com"
     },
     {
         "id": "732",
@@ -9244,7 +9532,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://tinder.com"
     },
     {
         "id": "720",
@@ -9262,7 +9551,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.titaneyeplus.com"
     },
     {
         "id": "294",
@@ -9290,7 +9580,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/titan-minimals-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.titan.co.in"
     },
     {
         "id": "828",
@@ -9308,7 +9599,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.tripxoxo.com"
     },
     {
         "id": "295",
@@ -9346,7 +9638,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.truefittandhill.in"
     },
     {
         "id": "798",
@@ -9374,7 +9667,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://shop.unicornstore.in"
     },
     {
         "id": "796",
@@ -9412,7 +9706,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.unipin.com"
     },
     {
         "id": "721",
@@ -9440,7 +9735,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.urbanladder.com"
     },
     {
         "id": "751",
@@ -9468,7 +9764,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/urban-space-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://urbanspace.in"
     },
     {
         "id": "296",
@@ -9506,7 +9803,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.vmart.co.in"
     },
     {
         "id": "824",
@@ -9524,7 +9822,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.vaango.in"
     },
     {
         "id": "217",
@@ -9562,7 +9861,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.gasjeans.com"
     },
     {
         "id": "586",
@@ -9610,7 +9910,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://vanheusenindia.adityabirla.com"
     },
     {
         "id": "232",
@@ -9658,7 +9959,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.veromoda.in"
     },
     {
         "id": "316",
@@ -9696,7 +9998,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.victoriassecret.in"
     },
     {
         "id": "315",
@@ -9724,7 +10027,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/victorias-secret-beauty-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.victoriassecret.in"
     },
     {
         "id": "298",
@@ -9752,7 +10056,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/vijay-sales-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.vijaysales.com"
     },
     {
         "id": "702",
@@ -9780,7 +10085,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/vrott-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://vrott.com"
     },
     {
         "id": "352",
@@ -9818,7 +10124,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.wakefit.co"
     },
     {
         "id": "704",
@@ -9866,7 +10173,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.wendys.com"
     },
     {
         "id": "77",
@@ -9904,7 +10212,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.westside.com"
     },
     {
         "id": "449",
@@ -9952,7 +10261,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.wildcraft.com"
     },
     {
         "id": "705",
@@ -9980,7 +10290,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/william-penn-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.williampenn.net"
     },
     {
         "id": "706",
@@ -10028,7 +10339,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.woggles.in"
     },
     {
         "id": "471",
@@ -10076,7 +10388,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://wonderchef.com"
     },
     {
         "id": "301",
@@ -10124,7 +10437,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.woodlandworldwide.com"
     },
     {
         "id": "319",
@@ -10162,7 +10476,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.wowchina.in"
     },
     {
         "id": "485",
@@ -10200,7 +10515,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.wrangler.in"
     },
     {
         "id": "582",
@@ -10238,7 +10554,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.yatra.com"
     },
     {
         "id": "472",
@@ -10256,7 +10573,8 @@
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             }
-        ]
+        ],
+        "site": "https://www.yatra.com"
     },
     {
         "id": "709",
@@ -10294,7 +10612,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.zee5.com"
     },
     {
         "id": "854",
@@ -10322,7 +10641,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.snitch.co.in"
     },
     {
         "id": "487",
@@ -10340,7 +10660,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-paul-smith-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.paulsmith.com"
     },
     {
         "id": "1544",
@@ -10358,7 +10679,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/abraham-and-thakore-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://abrahamandthakore.com"
     },
     {
         "id": "1540",
@@ -10376,7 +10698,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/adidas-kids-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.adidas.co.in"
     },
     {
         "id": "1545",
@@ -10394,7 +10717,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/bally-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.bally.com"
     },
     {
         "id": "1543",
@@ -10412,7 +10736,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/bottega-veneta-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.bottegaveneta.com"
     },
     {
         "id": "1535",
@@ -10430,7 +10755,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/canali-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.canali.com"
     },
     {
         "id": "1556",
@@ -10448,7 +10774,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/charles-tyrwhitt-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.charlestyrwhitt.com"
     },
     {
         "id": "1557",
@@ -10466,7 +10793,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/ea-7-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.armani.com"
     },
     {
         "id": "1546",
@@ -10484,7 +10812,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/ferragamo-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.ferragamo.com"
     },
     {
         "id": "1536",
@@ -10502,7 +10831,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/giorgio-armani-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.armani.com"
     },
     {
         "id": "1541",
@@ -10520,7 +10850,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/h-by-hamleys-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.hamleys.in"
     },
     {
         "id": "1542",
@@ -10548,7 +10879,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.hunkemoller.in"
     },
     {
         "id": "1518",
@@ -10566,7 +10898,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/instafab-plus-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://instafabplus.com"
     },
     {
         "id": "1532",
@@ -10584,7 +10917,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/jimmy-choo-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.jimmychoo.com"
     },
     {
         "id": "1533",
@@ -10602,7 +10936,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/kate-spade-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.katespade.com"
     },
     {
         "id": "1558",
@@ -10620,7 +10955,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/la-martina-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.lamartina.com"
     },
     {
         "id": "1520",
@@ -10638,7 +10974,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/liberty-online-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.libertyshoesonline.com"
     },
     {
         "id": "1559",
@@ -10656,7 +10993,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/maje-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.maje.com"
     },
     {
         "id": "1560",
@@ -10674,7 +11012,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/paul-shark-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.paulandshark.com"
     },
     {
         "id": "1549",
@@ -10692,7 +11031,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/pottery-barn-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.potterybarn.in"
     },
     {
         "id": "1554",
@@ -10710,7 +11050,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/pret-a-manger-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.pretamanger.in"
     },
     {
         "id": "1531",
@@ -10728,7 +11069,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/ritu-kumar-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.ritukumar.com"
     },
     {
         "id": "1547",
@@ -10746,7 +11088,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/rowan-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://knitrowan.com"
     },
     {
         "id": "1561",
@@ -10764,7 +11107,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/sandro-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.sandro-paris.com"
     },
     {
         "id": "1555",
@@ -10782,7 +11126,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/sunglass-hut-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.sunglasshut.com"
     },
     {
         "id": "1534",
@@ -10800,7 +11145,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/superdry-sport-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.superdry.in"
     },
     {
         "id": "1562",
@@ -10818,7 +11164,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/the-white-crow-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.relianceretail.com"
     },
     {
         "id": "1552",
@@ -10836,7 +11183,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/tods-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.tods.com"
     },
     {
         "id": "1537",
@@ -10854,7 +11202,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/tory-burch-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.toryburch.com"
     },
     {
         "id": "1553",
@@ -10872,7 +11221,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/tumi-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.tumi.in"
     },
     {
         "id": "1538",
@@ -10890,7 +11240,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/valentino-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.valentino.com"
     },
     {
         "id": "1539",
@@ -10908,7 +11259,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/versace-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.versace.com"
     },
     {
         "id": "1550",
@@ -10926,7 +11278,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/villeroy-and-boch-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.villeroy-boch.co.in"
     },
     {
         "id": "1481",
@@ -10944,7 +11297,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/vinci-botanicals-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://vincibotanicals.com"
     },
     {
         "id": "1551",
@@ -10962,7 +11316,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/west-elm-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.westelm.in"
     },
     {
         "id": "1548",
@@ -10980,7 +11335,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/muji-luxe-gift-card-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.muji.com/in"
     },
     {
         "id": "1353",
@@ -11018,7 +11374,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://luxury.tatacliq.com"
     },
     {
         "id": "1568",
@@ -11046,7 +11403,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=48850918",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.citizen.in"
     },
     {
         "id": "50",
@@ -11074,7 +11432,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.titaneyeplus.com"
     },
     {
         "id": "1490",
@@ -11092,7 +11451,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/reliance-smart-bazaar-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.jiomart.com"
     },
     {
         "id": "427",
@@ -11120,7 +11480,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.fabindia.com"
     },
     {
         "id": "218",
@@ -11138,7 +11499,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-hamleys-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.hamleys.in"
     },
     {
         "id": "27",
@@ -11166,7 +11528,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://theraymondshop.com"
     },
     {
         "id": "542",
@@ -11184,7 +11547,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/giva-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.giva.co"
     },
     {
         "id": "1242",
@@ -11212,7 +11576,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=3983890",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.maxfashion.in"
     },
     {
         "id": "30",
@@ -11240,7 +11605,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://wforwoman.com"
     },
     {
         "id": "223",
@@ -11258,7 +11624,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-mothercare-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.mothercare.in"
     },
     {
         "id": "428",
@@ -11276,7 +11643,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/max-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.maxfashion.in"
     },
     {
         "id": "224",
@@ -11294,7 +11662,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-superdry-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.superdry.in"
     },
     {
         "id": "214",
@@ -11312,7 +11681,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-armani-exchange-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.armaniexchange.com"
     },
     {
         "id": "616",
@@ -11350,7 +11720,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.beyoung.in"
     },
     {
         "id": "13",
@@ -11378,7 +11749,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.biba.in"
     },
     {
         "id": "432",
@@ -11396,7 +11768,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-brooks-brothers-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.brooksbrothers.com"
     },
     {
         "id": "492",
@@ -11414,7 +11787,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-dune-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.dunelondon.com"
     },
     {
         "id": "591",
@@ -11432,7 +11806,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/estele-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://estele.co"
     },
     {
         "id": "219",
@@ -11450,7 +11825,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-hugo-boss-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.hugoboss.com"
     },
     {
         "id": "221",
@@ -11478,7 +11854,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.michaelkors.global"
     },
     {
         "id": "1438",
@@ -11496,7 +11873,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/titan-smartwatches-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.titan.co.in"
     },
     {
         "id": "1437",
@@ -11514,7 +11892,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/fastrack-smartwatches-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.fastrack.in"
     },
     {
         "id": "217",
@@ -11542,7 +11921,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.gasjeans.com"
     },
     {
         "id": "433",
@@ -11560,7 +11940,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-g-star-raw-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.g-star.com"
     },
     {
         "id": "488",
@@ -11578,7 +11959,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-replay-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.replayjeans.com"
     },
     {
         "id": "222",
@@ -11606,7 +11988,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.satyapaul.com"
     },
     {
         "id": "435",
@@ -11624,7 +12007,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-scotch-soda-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.scotch-soda.com"
     },
     {
         "id": "225",
@@ -11642,7 +12026,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-steve-madden-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://stevemadden.in"
     },
     {
         "id": "1282",
@@ -11670,7 +12055,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=11940090",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://superbottoms.com"
     },
     {
         "id": "434",
@@ -11688,7 +12074,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-emporio-armani-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.armani.com"
     },
     {
         "id": "1442",
@@ -11716,7 +12103,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://celloworld.com"
     },
     {
         "id": "110",
@@ -11744,7 +12132,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.maccosmetics.in"
     },
     {
         "id": "109",
@@ -11762,7 +12151,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/bobbi-brown-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.bobbibrown.in"
     },
     {
         "id": "511",
@@ -11790,7 +12180,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.tajhotels.com"
     },
     {
         "id": "611",
@@ -11808,7 +12199,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/itc-hotels-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.itchotels.com"
     },
     {
         "id": "1569",
@@ -11826,7 +12218,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/absolute-barbeque-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.absolutebarbecues.com"
     },
     {
         "id": "1482",
@@ -11844,7 +12237,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/adani-meet-and-greet-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.pranaam.adaniairports.com"
     },
     {
         "id": "1576",
@@ -11862,7 +12256,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/clayco-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://clayco.in"
     },
     {
         "id": "1516",
@@ -11880,7 +12275,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/french-accent-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://frenchaccent.in"
     },
     {
         "id": "1517",
@@ -11898,7 +12294,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/haute-sauce-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://hautesauce.in"
     },
     {
         "id": "1525",
@@ -11916,7 +12313,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/hush-puppies-voucher-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.bata.in/hush-puppies"
     },
     {
         "id": "1489",
@@ -11934,7 +12332,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/typsy-beauty-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://typsybeauty.com"
     },
     {
         "id": "1504",
@@ -11952,7 +12351,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/air-india-voucher-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.airindia.com"
     },
     {
         "id": "1577",
@@ -11970,7 +12370,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/grofers-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://blinkit.com"
     },
     {
         "id": "1355",
@@ -12008,7 +12409,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.nykaaman.com"
     },
     {
         "id": "536",
@@ -12036,7 +12438,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.jiomart.com"
     },
     {
         "id": "1530",
@@ -12054,7 +12457,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/himalaya-wellness-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://himalayawellness.in"
     },
     {
         "id": "1420",
@@ -12082,7 +12486,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://shivaorganic.com"
     },
     {
         "id": "107",
@@ -12110,7 +12515,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.kamaayurveda.in"
     },
     {
         "id": "1344",
@@ -12128,7 +12534,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/makemytrip-holiday-e-pay-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.makemytrip.com"
     },
     {
         "id": "400",
@@ -12146,7 +12553,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/the-man-company-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.themancompany.com"
     },
     {
         "id": "1364",
@@ -12184,7 +12592,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.amazon.in/amazonprime"
     },
     {
         "id": "1342",
@@ -12202,7 +12611,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/makemytrip-e-pay-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.makemytrip.com"
     },
     {
         "id": "1343",
@@ -12220,7 +12630,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/makemytrip-hotel-e-pay-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.makemytrip.com"
     },
     {
         "id": "1572",
@@ -12238,7 +12649,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/nua-woman-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.nuawoman.com"
     },
     {
         "id": "1373",
@@ -12266,7 +12678,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://pizzaonline.dominos.co.in"
     },
     {
         "id": "1484",
@@ -12284,7 +12697,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/nat-habit-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://nathabit.in"
     },
     {
         "id": "1500",
@@ -12302,7 +12716,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/shemaroome-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.shemaroome.com"
     },
     {
         "id": "1276",
@@ -12320,7 +12735,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/cleartrip-generic-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.cleartrip.com"
     },
     {
         "id": "1465",
@@ -12338,7 +12754,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/bare-anatomy-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://bareanatomy.in"
     },
     {
         "id": "1467",
@@ -12356,7 +12773,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/sunscoop-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://sunscoop.com"
     },
     {
         "id": "1466",
@@ -12374,7 +12792,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/chemist-at-play-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://chemistatplay.com"
     },
     {
         "id": "1352",
@@ -12392,7 +12811,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/et-prime-subscription-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://economictimes.indiatimes.com/prime"
     },
     {
         "id": "1434",
@@ -12420,7 +12840,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.netmeds.com"
     },
     {
         "id": "1277",
@@ -12438,7 +12859,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/cleartrip-hotel-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.cleartrip.com"
     },
     {
         "id": "1362",
@@ -12456,7 +12878,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/dpauls-travel-tours-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://dpauls.com"
     },
     {
         "id": "112",
@@ -12494,7 +12917,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.fnp.com"
     },
     {
         "id": "1118",
@@ -12522,7 +12946,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://fitpass.co.in"
     },
     {
         "id": "1446",
@@ -12540,7 +12965,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/easemytrip-generic-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.easemytrip.com"
     },
     {
         "id": "1444",
@@ -12558,7 +12984,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/easemytrip-hotels-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.easemytrip.com"
     },
     {
         "id": "1445",
@@ -12576,7 +13003,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/easemytrip-holiday-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.easemytrip.com"
     },
     {
         "id": "483",
@@ -12594,7 +13022,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/apollo-pharmacy-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.apollopharmacy.in"
     },
     {
         "id": "1376",
@@ -12612,7 +13041,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/pharmeasy-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://pharmeasy.in"
     },
     {
         "id": "1441",
@@ -12630,7 +13060,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/mediwheel-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://mediwheel.in"
     },
     {
         "id": "1422",
@@ -12648,7 +13079,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/hindustan-times-premium-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.hindustantimes.com"
     },
     {
         "id": "1399",
@@ -12666,7 +13098,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/home-stop-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.shoppersstop.com/homestop"
     },
     {
         "id": "1510",
@@ -12684,7 +13117,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/j-wellness-circle-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.tajhotels.com"
     },
     {
         "id": "1367",
@@ -12702,7 +13136,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/igp-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.igp.com"
     },
     {
         "id": "1423",
@@ -12720,7 +13155,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/live-hindustan-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.livehindustan.com"
     },
     {
         "id": "1398",
@@ -12738,7 +13174,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/lunch-box-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://thelunchbox.in"
     },
     {
         "id": "65",
@@ -12756,7 +13193,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/machaan-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://machaan.com"
     },
     {
         "id": "1377",
@@ -12774,7 +13212,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/ottplay-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.ottplay.com"
     },
     {
         "id": "138",
@@ -12802,7 +13241,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.pointsforgood.org"
     },
     {
         "id": "1469",
@@ -12830,7 +13270,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=48367497",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://store.steampowered.com"
     },
     {
         "id": "54",
@@ -12858,7 +13299,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.thebeercafe.com"
     },
     {
         "id": "601",
@@ -12886,7 +13328,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.timezonegames.com"
     },
     {
         "id": "1414",
@@ -12904,7 +13347,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/wowchicken-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.wowchicken.in"
     },
     {
         "id": "1455",
@@ -12922,7 +13366,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/matrix-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.matrix.in"
     },
     {
         "id": "571",
@@ -12950,7 +13395,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.wowmomo.com"
     },
     {
         "id": "103",
@@ -12968,7 +13414,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/yatra-com-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.yatra.com"
     },
     {
         "id": "1573",
@@ -12986,7 +13433,8 @@
                 "link": "https://www.gyftr.com/instantvouchers/cultfit-voucher-gift-vouchers",
                 "color": "#D42426"
             }
-        ]
+        ],
+        "site": "https://www.cult.fit"
     },
     {
         "id": "mp-5162128",
@@ -13004,7 +13452,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=38323625",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.libas.in"
     },
     {
         "id": "mp-7418661",
@@ -13022,7 +13471,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=50521397",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.swiggy.com"
     },
     {
         "id": "mp-2082212",
@@ -13040,7 +13490,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=11521331",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.jiomart.com"
     },
     {
         "id": "mp-1197561",
@@ -13068,7 +13519,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.amazon.in"
     },
     {
         "id": "mp-1298438",
@@ -13086,7 +13538,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=7241117",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.nykaa.com"
     },
     {
         "id": "mp-1310775",
@@ -13104,7 +13557,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=7541674",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.firstcry.com"
     },
     {
         "id": "mp-1349742",
@@ -13122,7 +13576,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=8532108",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.jockey.in"
     },
     {
         "id": "mp-2237190",
@@ -13140,7 +13595,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=13363241",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.giva.co"
     },
     {
         "id": "mp-7160069",
@@ -13178,7 +13634,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.amazon.in/fresh"
     },
     {
         "id": "mp-1372141",
@@ -13196,7 +13653,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=8900967",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.croma.com"
     },
     {
         "id": "mp-1163786",
@@ -13224,7 +13682,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://www.makemytrip.com"
     },
     {
         "id": "mp-1168073",
@@ -13242,7 +13701,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=5439551",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://bombayshavingcompany.com"
     },
     {
         "id": "mp-1123552",
@@ -13260,7 +13720,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=4475512",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://mamaearth.in"
     },
     {
         "id": "mp-1340292",
@@ -13288,7 +13749,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.leafstudios.in"
     },
     {
         "id": "mp-7321153",
@@ -13306,7 +13768,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=49253171",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://gullak.money"
     },
     {
         "id": "mp-1379235",
@@ -13324,7 +13787,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=8926458",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.biba.in"
     },
     {
         "id": "mp-1327584",
@@ -13342,7 +13806,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=7936351",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.wakefit.co"
     },
     {
         "id": "mp-1292849",
@@ -13360,7 +13825,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=7146087",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.ixigo.com"
     },
     {
         "id": "mp-1421351",
@@ -13388,7 +13854,8 @@
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
             }
-        ]
+        ],
+        "site": "https://www.fabhotels.com"
     },
     {
         "id": "mp-7415306",
@@ -13406,7 +13873,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=50420917",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.playstation.com"
     },
     {
         "id": "mp-1793954",
@@ -13424,7 +13892,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=9800692",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.durexindia.com"
     },
     {
         "id": "mp-6831266",
@@ -13442,7 +13911,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=45235555",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.lovebeautyandplanet.in"
     },
     {
         "id": "mp-1297316",
@@ -13460,7 +13930,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=7223546",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.lifestylestores.com"
     },
     {
         "id": "mp-7426265",
@@ -13478,7 +13949,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=51027751",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.xbox.com"
     },
     {
         "id": "mp-1845920",
@@ -13496,7 +13968,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=9966867",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.myimaginestore.com"
     },
     {
         "id": "mp-7286769",
@@ -13514,7 +13987,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=48851192",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.maplestore.in"
     },
     {
         "id": "mp-7449982",
@@ -13532,7 +14006,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=51695878",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://campussutra.com"
     },
     {
         "id": "mp-6790092",
@@ -13550,7 +14025,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=44960055",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.zupee.com"
     },
     {
         "id": "mp-7288490",
@@ -13568,7 +14044,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=48886634",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.perfume2order.com"
     },
     {
         "id": "mp-6830770",
@@ -13586,7 +14063,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=45223369",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://swissbeauty.in"
     },
     {
         "id": "mp-1317836",
@@ -13604,7 +14082,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=7697293",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.corseca.in"
     },
     {
         "id": "mp-1340291",
@@ -13622,7 +14101,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=8265939",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.taggdigital.com"
     },
     {
         "id": "mp-1845921",
@@ -13640,7 +14120,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=9966868",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.polaroid.com"
     },
     {
         "id": "mp-1845159",
@@ -13658,7 +14139,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=9950394",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.ketandiamonds.com"
     },
     {
         "id": "mp-1415813",
@@ -13676,7 +14158,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=9008960",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.saregama.com"
     },
     {
         "id": "mp-7288410",
@@ -13694,7 +14177,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=48884149",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://tzaro.in"
     },
     {
         "id": "mp-1298437",
@@ -13712,7 +14196,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=7241116",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://myglamm.com"
     },
     {
         "id": "mp-1419520",
@@ -13730,7 +14215,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=9045653",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.icanstay.com"
     },
     {
         "id": "mp-7605969",
@@ -13748,7 +14234,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=55287618",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://univest.in"
     },
     {
         "id": "mp-7286768",
@@ -13766,7 +14253,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=48851191",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://cosmus.in"
     },
     {
         "id": "mp-6773828",
@@ -13784,7 +14272,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=41720971",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://balenzia.com"
     },
     {
         "id": "mp-2138164",
@@ -13802,7 +14291,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=11847757",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.coloressence.com"
     },
     {
         "id": "mp-4719253",
@@ -13820,7 +14310,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=37287533",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://estele.co"
     },
     {
         "id": "mp-7438383",
@@ -13848,7 +14339,8 @@
                 "link": "https://savesage.club/",
                 "color": "#8B5CF6"
             }
-        ]
+        ],
+        "site": "https://nashermiles.com"
     },
     {
         "id": "mp-6992793",
@@ -13866,7 +14358,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=47147224",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.blackanddecker.in"
     },
     {
         "id": "mp-1450020",
@@ -13884,7 +14377,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=9123795",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.theassembly.in"
     },
     {
         "id": "mp-4057993",
@@ -13902,7 +14396,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=36049543",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://teamonkglobal.com"
     },
     {
         "id": "mp-6994227",
@@ -13920,7 +14415,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=47160359",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://fanaticsports.com"
     },
     {
         "id": "mp-1845917",
@@ -13938,7 +14434,8 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=9966831",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.postcardresorts.com"
     },
     {
         "id": "mp-7637211",
@@ -13956,6 +14453,7 @@
                 "link": "https://magicpin.in/walletRecharge/?merchantId=55608464",
                 "color": "#7000ff"
             }
-        ]
+        ],
+        "site": "https://www.multipl.in"
     }
 ]
