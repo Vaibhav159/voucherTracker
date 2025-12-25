@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import guidesData from '../data/guides.json';
 
 const GuideModal = ({ guide, onClose }) => {
@@ -23,6 +23,13 @@ const GuideModal = ({ guide, onClose }) => {
         window.addEventListener('keydown', handleEsc);
         return () => window.removeEventListener('keydown', handleEsc);
     }, [onClose]);
+
+    // Determine platform label
+    const getPlatformLabel = () => {
+        if (guide.link.includes('reddit.com')) return 'Open on Reddit';
+        if (guide.link.includes('twitter.com') || guide.link.includes('x.com')) return 'Open on Twitter';
+        return 'Open Link';
+    };
 
     return (
         <div
@@ -82,6 +89,7 @@ const GuideModal = ({ guide, onClose }) => {
 
                 <h3 style={{ margin: '0 0 1.5rem 0', fontSize: '1.5rem', paddingRight: '2rem' }}>{guide.title}</h3>
 
+                {/* Embed Container */}
                 <div dangerouslySetInnerHTML={{ __html: guide.embedHtml }} />
 
                 <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center' }}>
@@ -92,7 +100,7 @@ const GuideModal = ({ guide, onClose }) => {
                         className="btn-primary"
                         style={{ fontSize: '0.9rem', textDecoration: 'none' }}
                     >
-                        Open on Twitter ↗
+                        {getPlatformLabel()} ↗
                     </a>
                 </div>
             </div>
@@ -102,6 +110,21 @@ const GuideModal = ({ guide, onClose }) => {
 
 const Guides = () => {
     const [selectedGuide, setSelectedGuide] = useState(null);
+    const [selectedTag, setSelectedTag] = useState(null);
+
+    // Extract unique tags
+    const allTags = useMemo(() => {
+        const tags = new Set();
+        guidesData.forEach(guide => {
+            guide.tags.forEach(tag => tags.add(tag));
+        });
+        return Array.from(tags).sort();
+    }, []);
+
+    const filteredGuides = useMemo(() => {
+        if (!selectedTag) return guidesData;
+        return guidesData.filter(guide => guide.tags.includes(selectedTag));
+    }, [selectedTag]);
 
     useEffect(() => {
         // Load Twitter Widget Script globally
@@ -124,13 +147,61 @@ const Guides = () => {
                 </p>
             </div>
 
+            {/* Tag Filter */}
+            <div style={{
+                display: 'flex',
+                gap: '12px',
+                justifyContent: 'center',
+                flexWrap: 'wrap',
+                marginBottom: '3rem',
+                maxWidth: '900px',
+                margin: '0 auto 3rem'
+            }}>
+                <button
+                    onClick={() => setSelectedTag(null)}
+                    style={{
+                        background: !selectedTag ? '#fff' : 'rgba(255,255,255,0.05)',
+                        color: !selectedTag ? '#000' : 'var(--text-secondary)',
+                        border: '1px solid var(--glass-border)',
+                        padding: '8px 20px',
+                        borderRadius: '100px',
+                        cursor: 'pointer',
+                        fontWeight: 600,
+                        fontSize: '0.9rem',
+                        transition: 'all 0.2s'
+                    }}
+                >
+                    All
+                </button>
+                {allTags.map(tag => (
+                    <button
+                        key={tag}
+                        onClick={() => setSelectedTag(tag === selectedTag ? null : tag)}
+                        style={{
+                            background: selectedTag === tag ? 'var(--accent-cyan)' : 'rgba(255,255,255,0.05)',
+                            color: selectedTag === tag ? '#000' : 'var(--text-secondary)',
+                            border: selectedTag === tag ? '1px solid var(--accent-cyan)' : '1px solid var(--glass-border)',
+                            padding: '8px 16px',
+                            borderRadius: '100px',
+                            cursor: 'pointer',
+                            fontWeight: 500,
+                            fontSize: '0.9rem',
+                            transition: 'all 0.2s',
+                            boxShadow: selectedTag === tag ? '0 0 15px rgba(0, 240, 255, 0.3)' : 'none'
+                        }}
+                    >
+                        {tag}
+                    </button>
+                ))}
+            </div>
+
             <div style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))',
                 gap: '2rem',
                 alignItems: 'start'
             }}>
-                {guidesData.map(guide => {
+                {filteredGuides.map(guide => {
                     const hasEmbed = !!guide.embedHtml;
 
                     return (
@@ -147,17 +218,25 @@ const Guides = () => {
                             {/* Header: Tags */}
                             <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '1rem' }}>
                                 {guide.tags.slice(0, 3).map(tag => (
-                                    <span key={tag} style={{
-                                        fontSize: '0.7rem',
-                                        padding: '4px 8px',
-                                        borderRadius: '6px',
-                                        background: 'rgba(255,255,255,0.05)',
-                                        color: 'var(--text-secondary)',
-                                        fontWeight: 500,
-                                        border: '1px solid rgba(255,255,255,0.05)'
-                                    }}>
+                                    <button
+                                        key={tag}
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            setSelectedTag(tag);
+                                        }}
+                                        style={{
+                                            fontSize: '0.7rem',
+                                            padding: '4px 8px',
+                                            borderRadius: '6px',
+                                            background: selectedTag === tag ? 'rgba(0, 240, 255, 0.2)' : 'rgba(255,255,255,0.05)',
+                                            color: selectedTag === tag ? 'var(--accent-cyan)' : 'var(--text-secondary)',
+                                            fontWeight: 500,
+                                            border: selectedTag === tag ? '1px solid var(--accent-cyan)' : '1px solid rgba(255,255,255,0.05)',
+                                            cursor: 'pointer'
+                                        }}
+                                    >
                                         {tag}
-                                    </span>
+                                    </button>
                                 ))}
                             </div>
 
@@ -213,6 +292,12 @@ const Guides = () => {
                     );
                 })}
             </div>
+
+            {filteredGuides.length === 0 && (
+                <div style={{ textAlign: 'center', padding: '4rem', color: 'var(--text-secondary)' }}>
+                    No guides found for tag "{selectedTag}".
+                </div>
+            )}
 
             {selectedGuide && (
                 <GuideModal
