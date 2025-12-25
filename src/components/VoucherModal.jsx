@@ -133,30 +133,11 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                             href={voucher.site}
                             target="_blank"
                             rel="noopener noreferrer"
-                            style={{
-                                textDecoration: 'none',
-                                color: 'var(--text-secondary)',
-                                fontSize: '0.9rem',
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '4px',
-                                padding: '6px 12px',
-                                borderRadius: '8px',
-                                background: 'var(--tag-bg)',
-                                border: '1px solid var(--item-border)',
-                                marginRight: '8px',
-                                transition: 'all 0.2s'
-                            }}
-                            onMouseEnter={e => {
-                                e.currentTarget.style.background = 'var(--item-border)';
-                                e.currentTarget.style.color = 'var(--text-primary)';
-                            }}
-                            onMouseLeave={e => {
-                                e.currentTarget.style.background = 'var(--tag-bg)';
-                                e.currentTarget.style.color = 'var(--text-secondary)';
-                            }}
+                            className="launch-site-btn"
                         >
-                            Launch Site ↗
+                            <span className="btn-text-desktop">Launch Site</span>
+                            <span className="btn-text-mobile">Site</span>
+                            <span className="btn-icon">↗</span>
                         </a>
                     )}
                     <button
