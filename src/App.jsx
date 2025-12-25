@@ -227,6 +227,7 @@ function App() {
                   view="grid"
                   selectedCards={selectedCards}
                   toggleCardSelection={toggleCardSelection}
+                  clearSelection={() => setSelectedCards([])}
                 />
               }
             />

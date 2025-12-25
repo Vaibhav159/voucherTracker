@@ -20,9 +20,28 @@ const PlatformFilter = ({ selectedPlatform, onPlatformSelect, platforms }) => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'flex-start',
-                    width: '100%'
+                    width: '100%',
+                    gap: '12px'
                 }}
             >
+                <div style={{
+                    background: 'var(--item-bg)',
+                    borderRadius: '8px',
+                    width: '32px',
+                    height: '32px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0,
+                    border: '1px solid var(--item-border)'
+                }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                </div>
                 All Platforms
             </button>
             {platforms.map(platform => {
