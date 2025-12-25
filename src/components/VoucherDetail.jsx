@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { vouchers } from '../data/vouchers';
+import { getPlatformLogo } from '../utils/platformLogos';
 
 const VoucherDetail = () => {
     const { id } = useParams();
@@ -39,14 +40,32 @@ const VoucherDetail = () => {
                 {voucher.platforms.map((platform, idx) => (
                     <div key={idx} className="glass-panel" style={{ padding: '0', overflow: 'hidden', borderTop: `4px solid ${platform.color || '#8b5cf6'}` }}>
                         <div style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.02)' }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-                                <h3 style={{ margin: 0, fontSize: '1.4rem' }}>{platform.name}</h3>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', gap: '1rem' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', minWidth: 0 }}>
+                                    {getPlatformLogo(platform.name) && (
+                                        <div style={{
+                                            background: '#fff',
+                                            borderRadius: '6px',
+                                            padding: '4px',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            height: '36px',
+                                            width: '36px',
+                                            minWidth: '36px',
+                                            flexShrink: 0
+                                        }}>
+                                            <img src={getPlatformLogo(platform.name)} alt="" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
+                                        </div>
+                                    )}
+                                    <h3 style={{ margin: 0, fontSize: '1.2rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{platform.name}</h3>
+                                </div>
                                 <a
                                     href={platform.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="btn-primary"
-                                    style={{ padding: '6px 12px', fontSize: '0.9rem' }}
+                                    style={{ padding: '8px 16px', fontSize: '0.9rem', whiteSpace: 'nowrap', flexShrink: 0 }}
                                 >
                                     Buy Now ↗
                                 </a>

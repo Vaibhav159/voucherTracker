@@ -1,4 +1,5 @@
 import React from 'react';
+import { getPlatformLogo } from '../utils/platformLogos';
 
 const SearchBar = ({ value, onChange, selectedPlatform, onPlatformSelect, platforms }) => {
     return (
@@ -68,26 +69,46 @@ const SearchBar = ({ value, onChange, selectedPlatform, onPlatformSelect, platfo
                 >
                     All
                 </button>
-                {platforms.map(platform => (
-                    <button
-                        key={platform}
-                        onClick={() => onPlatformSelect(platform)}
-                        style={{
-                            background: selectedPlatform === platform ? 'var(--accent-cyan)' : 'rgba(255,255,255,0.03)',
-                            color: selectedPlatform === platform ? '#000' : 'var(--text-secondary)',
-                            border: selectedPlatform === platform ? '1px solid var(--accent-cyan)' : '1px solid var(--glass-border)',
-                            padding: '10px 24px',
-                            borderRadius: '100px',
-                            cursor: 'pointer',
-                            transition: 'all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)',
-                            fontWeight: 600,
-                            fontSize: '0.9rem',
-                            boxShadow: selectedPlatform === platform ? '0 0 20px rgba(0, 240, 255, 0.5)' : 'none'
-                        }}
-                    >
-                        {platform}
-                    </button>
-                ))}
+                {platforms.map(platform => {
+                    const logo = getPlatformLogo(platform);
+                    return (
+                        <button
+                            key={platform}
+                            onClick={() => onPlatformSelect(platform)}
+                            style={{
+                                background: selectedPlatform === platform ? 'var(--accent-cyan)' : 'rgba(255,255,255,0.03)',
+                                color: selectedPlatform === platform ? '#000' : 'var(--text-secondary)',
+                                border: selectedPlatform === platform ? '1px solid var(--accent-cyan)' : '1px solid var(--glass-border)',
+                                padding: '8px 20px',
+                                borderRadius: '100px',
+                                cursor: 'pointer',
+                                transition: 'all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)',
+                                fontWeight: 600,
+                                fontSize: '0.9rem',
+                                boxShadow: selectedPlatform === platform ? '0 0 20px rgba(0, 240, 255, 0.5)' : 'none',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '8px'
+                            }}
+                        >
+                            {logo && (
+                                <div style={{
+                                    background: '#fff',
+                                    borderRadius: '50%',
+                                    width: '20px',
+                                    height: '20px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    padding: '2px'
+                                }}>
+                                    <img src={logo} alt="" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                                </div>
+                            )}
+                            {platform}
+                        </button>
+                    );
+                })}'
             </div>
         </div>
     );

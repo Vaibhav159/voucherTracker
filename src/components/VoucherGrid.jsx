@@ -1,7 +1,7 @@
 import React from 'react';
 import VoucherCard from './VoucherCard';
 
-const VoucherGrid = ({ vouchers }) => {
+const VoucherGrid = ({ vouchers, onVoucherClick }) => {
     const [visibleCount, setVisibleCount] = React.useState(12);
     const observerRef = React.useRef();
 
@@ -52,7 +52,11 @@ const VoucherGrid = ({ vouchers }) => {
                 }}
             >
                 {visibleVouchers.map(voucher => (
-                    <VoucherCard key={voucher.id} voucher={voucher} />
+                    <VoucherCard
+                        key={voucher.id}
+                        voucher={voucher}
+                        onClick={onVoucherClick}
+                    />
                 ))}
             </div>
 

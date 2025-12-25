@@ -4,6 +4,7 @@ import Layout from './components/Layout';
 import SearchBar from './components/SearchBar';
 import CategoryFilter from './components/CategoryFilter';
 import VoucherGrid from './components/VoucherGrid';
+import VoucherModal from './components/VoucherModal';
 import VoucherDetail from './components/VoucherDetail';
 import { vouchers as INITIAL_DATA } from './data/vouchers';
 
@@ -15,11 +16,11 @@ function Home() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedPlatform, setSelectedPlatform] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedVoucher, setSelectedVoucher] = useState(null);
 
   const filteredVouchers = useMemo(() => {
     let result = INITIAL_DATA;
 
-    // Filter by Search
     if (searchTerm) {
       const lowerTerm = searchTerm.toLowerCase();
       result = result.filter(voucher =>
@@ -28,14 +29,12 @@ function Home() {
       );
     }
 
-    // Filter by Platform
     if (selectedPlatform) {
       result = result.filter(voucher =>
         voucher.platforms.some(p => p.name === selectedPlatform)
       );
     }
 
-    // Filter by Category
     if (selectedCategory) {
       result = result.filter(voucher => voucher.category === selectedCategory);
     }
@@ -59,7 +58,14 @@ function Home() {
           categories={ALL_CATEGORIES}
         />
       </div>
-      <VoucherGrid vouchers={filteredVouchers} />
+      <VoucherGrid
+        vouchers={filteredVouchers}
+        onVoucherClick={setSelectedVoucher}
+      />
+      <VoucherModal
+        voucher={selectedVoucher}
+        onClose={() => setSelectedVoucher(null)}
+      />
     </>
   );
 }
