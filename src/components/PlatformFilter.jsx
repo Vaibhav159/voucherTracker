@@ -1,5 +1,5 @@
 import React from 'react';
-import { getPlatformLogo } from '../utils/platformLogos';
+import { getPlatformStyle } from '../utils/platformLogos';
 
 const PlatformFilter = ({ selectedPlatform, onPlatformSelect, platforms }) => {
     return (
@@ -24,7 +24,7 @@ const PlatformFilter = ({ selectedPlatform, onPlatformSelect, platforms }) => {
                 All Platforms
             </button>
             {platforms.map(platform => {
-                const logo = getPlatformLogo(platform);
+                const style = getPlatformStyle(platform);
                 return (
                     <button
                         key={platform}
@@ -45,19 +45,20 @@ const PlatformFilter = ({ selectedPlatform, onPlatformSelect, platforms }) => {
                             gap: '12px'
                         }}
                     >
-                        {logo && (
+                        {style.logo && (
                             <div style={{
-                                background: '#fff',
-                                borderRadius: '6px',
-                                width: '24px',
-                                height: '24px',
+                                background: style.bg,
+                                borderRadius: '8px', // Slightly more rounded
+                                width: '32px',
+                                height: '32px',
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                                padding: '2px',
-                                flexShrink: 0
+                                padding: style.padding,
+                                flexShrink: 0,
+                                overflow: 'hidden' // Ensure content stays inside
                             }}>
-                                <img src={logo} alt="" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                                <img src={style.logo} alt="" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                             </div>
                         )}
                         {platform}

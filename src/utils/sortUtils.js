@@ -1,10 +1,10 @@
 export const PLATFORM_PRIORITY = {
-    "iShop": 1,
-    "Gyftr": 2,
-    "Maximize": 3,
+    "Gyftr": 1,
+    "Maximize": 2,
+    "iShop": 3,
     "MagicPin": 4,
-    "Amazon": 5,
-    "SaveSage": 6
+    "SaveSage": 5,
+    "Amazon": 6,
 };
 
 export const sortPlatforms = (platforms) => {
