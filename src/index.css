@@ -49,6 +49,10 @@
   --btn-secondary-hover-bg: #ffffff;
   --btn-secondary-hover-text: #000000;
   --card-title: #ffffff;
+
+  /* Status Colors (Default Dark) */
+  --color-success: #22c55e;
+  --text-on-success: #000000;
 }
 
 [data-theme='light'] {
@@ -94,7 +98,12 @@
   --btn-secondary-text: #0f172a;
   --btn-secondary-hover-bg: #0f172a;
   --btn-secondary-hover-text: #ffffff;
+  --btn-secondary-hover-text: #ffffff;
   --card-title: #0f172a;
+
+  /* Status Colors (Light) */
+  --color-success: #16a34a;
+  --text-on-success: #ffffff;
 }
 
 body {

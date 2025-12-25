@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { getPlatformStyle } from '../utils/platformLogos';
 import { Link } from 'react-router-dom';
 
-const VoucherModal = ({ voucher, onClose }) => {
+const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
     if (!voucher) return null;
 
     useEffect(() => {
@@ -20,6 +20,33 @@ const VoucherModal = ({ voucher, onClose }) => {
             window.removeEventListener('keydown', handleKeyDown);
         };
     }, [onClose]);
+
+    // Helper to parse discount value
+    const parseDiscount = (fee) => {
+        if (!fee) return 0;
+        const match = fee.match(/(\d+(\.\d+)?)%/);
+        if (match && (fee.toLowerCase().includes('discount') || fee.toLowerCase().includes('save'))) {
+            return parseFloat(match[1]);
+        }
+        return 0;
+    };
+
+    // Calculate best platform ID/Index
+    const bestPlatformIndex = React.useMemo(() => {
+        let maxDiscount = -1;
+        let bestIdx = -1;
+
+        voucher.platforms.forEach((p, idx) => {
+            const discount = parseDiscount(p.fee);
+            if (discount > maxDiscount) {
+                maxDiscount = discount;
+                bestIdx = idx;
+            }
+        });
+
+        // Only highlight if there is actually a discount > 0
+        return maxDiscount > 0 ? bestIdx : -1;
+    }, [voucher]);
 
     const getRewardText = (fee) => {
         if (fee.toLowerCase().includes('discount')) {
@@ -127,16 +154,38 @@ const VoucherModal = ({ voucher, onClose }) => {
                             const { label, value } = getRewardText(platform.fee);
                             const style = getPlatformStyle(platform.name);
 
+                            const isBest = idx === bestPlatformIndex;
+                            const isSelected = selectedPlatform === platform.name;
+
                             return (
                                 <div key={idx} style={{
-                                    border: '1px solid var(--item-border)',
+                                    border: isBest ? '1px solid var(--color-success)' : (isSelected ? '1px solid var(--accent-cyan)' : '1px solid var(--item-border)'),
                                     borderRadius: '12px',
                                     padding: '1rem',
-                                    background: 'var(--item-bg)',
+                                    background: isSelected ? 'var(--accent-cyan-dim)' : 'var(--item-bg)',
                                     display: 'flex',
                                     flexDirection: 'column',
-                                    gap: '1rem'
+                                    gap: '1rem',
+                                    position: 'relative',
+                                    boxShadow: isBest ? '0 0 0 1px var(--color-success)' : 'none'
                                 }}>
+                                    {isBest && (
+                                        <div style={{
+                                            position: 'absolute',
+                                            top: '-10px',
+                                            right: '1rem',
+                                            background: 'var(--color-success)',
+                                            color: 'var(--text-on-success)',
+                                            fontSize: '0.7rem',
+                                            fontWeight: 700,
+                                            padding: '2px 8px',
+                                            borderRadius: '12px',
+                                            boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                                        }}>
+                                            BEST RATE
+                                        </div>
+                                    )}
+
                                     <div style={{ display: 'flex', gap: '1rem' }}>
                                         {/* Platform Logo */}
                                         <div style={{

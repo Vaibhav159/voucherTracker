@@ -174,6 +174,7 @@ function Home() {
       {selectedVoucher && (
         <VoucherModal
           voucher={selectedVoucher}
+          selectedPlatform={selectedPlatform} // Pass selected platform context
           onClose={() => setSelectedVoucher(null)}
         />
       )}
