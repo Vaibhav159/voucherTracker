@@ -5,6 +5,7 @@ import SearchBar from './components/SearchBar';
 import CategoryFilter from './components/CategoryFilter';
 import VoucherGrid from './components/VoucherGrid';
 import VoucherModal from './components/VoucherModal';
+import PlatformFilter from './components/PlatformFilter';
 import VoucherDetail from './components/VoucherDetail';
 import { vouchers as INITIAL_DATA } from './data/vouchers';
 
@@ -64,35 +65,55 @@ function Home() {
     return result;
   }, [searchTerm, selectedPlatform, selectedCategory, sortOption]);
 
+
+
   return (
-    <>
-      <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+    <div style={{ display: 'grid', gridTemplateColumns: 'minmax(250px, 1fr) 3fr', gap: '3rem', alignItems: 'start' }}>
+      {/* Sidebar */}
+      <aside className="glass-panel" style={{ padding: '1.5rem', position: 'sticky', top: '2rem' }}>
+        <div style={{ marginBottom: '2rem' }}>
+          <h3 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-secondary)' }}>Platforms</h3>
+          <PlatformFilter
+            selectedPlatform={selectedPlatform}
+            onPlatformSelect={setSelectedPlatform}
+            platforms={ALL_PLATFORMS}
+          />
+        </div>
+
+        <div>
+          <h3 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-secondary)' }}>Categories</h3>
+          <div style={{ maxHeight: 'calc(100vh - 400px)', overflowY: 'auto', paddingRight: '5px' }}>
+            <CategoryFilter
+              selectedCategory={selectedCategory}
+              onCategorySelect={setSelectedCategory}
+              categories={ALL_CATEGORIES}
+            />
+          </div>
+        </div>
+      </aside>
+
+      {/* Main Content */}
+      <main>
         <SearchBar
           value={searchTerm}
           onChange={setSearchTerm}
-          selectedPlatform={selectedPlatform}
-          onPlatformSelect={setSelectedPlatform}
-          platforms={ALL_PLATFORMS}
           sortOption={sortOption}
           onSortChange={setSortOption}
         />
-        <CategoryFilter
-          selectedCategory={selectedCategory}
-          onCategorySelect={setSelectedCategory}
-          categories={ALL_CATEGORIES}
+
+        <VoucherGrid
+          vouchers={filteredVouchers}
+          onVoucherClick={setSelectedVoucher}
         />
-      </div>
-      <VoucherGrid
-        vouchers={filteredVouchers}
-        onVoucherClick={setSelectedVoucher}
-      />
+      </main>
+
       {selectedVoucher && (
         <VoucherModal
           voucher={selectedVoucher}
           onClose={() => setSelectedVoucher(null)}
         />
       )}
-    </>
+    </div>
   );
 }
 
