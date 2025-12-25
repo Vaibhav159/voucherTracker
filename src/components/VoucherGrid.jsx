@@ -2,7 +2,36 @@ import React from 'react';
 import VoucherCard from './VoucherCard';
 
 const VoucherGrid = ({ vouchers }) => {
-    if (vouchers.length === 0) {
+    const [visibleCount, setVisibleCount] = React.useState(12);
+    const observerRef = React.useRef();
+
+    // Reset visible count when vouchers list changes (e.g. filter)
+    React.useEffect(() => {
+        setVisibleCount(12);
+    }, [vouchers]);
+
+    React.useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries[0].isIntersecting) {
+                    setVisibleCount((prev) => Math.min(prev + 12, vouchers.length));
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        if (observerRef.current) {
+            observer.observe(observerRef.current);
+        }
+
+        return () => {
+            if (observerRef.current) {
+                observer.disconnect();
+            }
+        };
+    }, [vouchers.length]);
+
+    if (!vouchers || vouchers.length === 0) {
         return (
             <div style={{ textAlign: 'center', padding: '4rem', color: 'var(--text-secondary)' }}>
                 <h3>No vouchers found matching your search.</h3>
@@ -11,18 +40,39 @@ const VoucherGrid = ({ vouchers }) => {
         );
     }
 
+    const visibleVouchers = vouchers.slice(0, visibleCount);
+
     return (
-        <div
-            style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
-                gap: '2rem'
-            }}
-        >
-            {vouchers.map(voucher => (
-                <VoucherCard key={voucher.id} voucher={voucher} />
-            ))}
-        </div>
+        <>
+            <div
+                style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
+                    gap: '2rem'
+                }}
+            >
+                {visibleVouchers.map(voucher => (
+                    <VoucherCard key={voucher.id} voucher={voucher} />
+                ))}
+            </div>
+
+            {/* Sentinel element for infinite scroll */}
+            {visibleCount < vouchers.length && (
+                <div
+                    ref={observerRef}
+                    style={{
+                        height: '50px',
+                        margin: '2rem 0',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        color: 'var(--text-secondary)'
+                    }}
+                >
+                    Loading more...
+                </div>
+            )}
+        </>
     );
 };
 

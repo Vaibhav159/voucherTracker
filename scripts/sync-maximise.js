@@ -9,7 +9,7 @@ const MAXIMISE_API_URL = 'https://savemax.maximize.money/api/savemax/giftcard/li
 const HEADERS = {
     'accept': 'application/json, text/plain, */*',
     'accept-language': 'en-IN,en;q=0.6',
-    'authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwNTk0NywiaWF0IjoxNzY2NTc3MDE2LCJleHAiOjE3NjY2NjM0MTZ9.fKMnr8zZYNpRnYjvDXMm75unuRPS6uyBPZOs4wrC918',
+    'authorization': 'Bearer ',
     'cache-control': 'no-cache',
     'origin': 'https://www.maximize.money',
     'priority': 'u=1, i',
