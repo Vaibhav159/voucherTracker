@@ -20,13 +20,13 @@
             {
                 "name": "Gyftr",
                 "cap": "10k/month",
-                "fee": "Promo Code Apply",
+                "fee": "None",
                 "denominations": [
                     "250",
                     "500",
                     "1000"
                 ],
-                "link": "https://www.gyftr.com/amazon-shopping-vouchers",
+                "link": "https://www.gyftr.com/instantvouchers/amazon-shopping-voucher-gift-vouchers",
                 "color": "#D42426"
             },
             {
@@ -50,12 +50,12 @@
             {
                 "name": "Gyftr",
                 "cap": "5k/month",
-                "fee": "1%",
+                "fee": "Discount 1%",
                 "denominations": [
                     "500",
                     "1000"
                 ],
-                "link": "https://www.gyftr.com/flipkart",
+                "link": "https://www.gyftr.com/instantvouchers/flipkart-gift-vouchers",
                 "color": "#2874F0"
             },
             {
@@ -132,7 +132,7 @@
                     "500",
                     "1000"
                 ],
-                "link": "https://www.gyftr.com/pvr",
+                "link": "https://www.gyftr.com/instantvouchers/pvr-gift-vouchers",
                 "color": "#ffd700"
             },
             {
@@ -156,12 +156,12 @@
             {
                 "name": "Gyftr",
                 "cap": "10k/month",
-                "fee": "Discount 4%",
+                "fee": "None",
                 "denominations": [
                     "250",
                     "500"
                 ],
-                "link": "https://www.gyftr.com/uber",
+                "link": "https://www.gyftr.com/instantvouchers/uber-gift-vouchers",
                 "color": "#000000"
             },
             {
@@ -185,12 +185,12 @@
             {
                 "name": "Gyftr",
                 "cap": "10k/month",
-                "fee": "Discount 5.5%",
+                "fee": "None",
                 "denominations": [
                     "500",
                     "1000"
                 ],
-                "link": "https://www.gyftr.com/bigbasket",
+                "link": "https://www.gyftr.com/instantvouchers/bigbasket-gift-vouchers",
                 "color": "#84c225"
             },
             {
@@ -272,12 +272,12 @@
             {
                 "name": "Gyftr",
                 "cap": "15k/month",
-                "fee": "Discount 6.5%",
+                "fee": "Discount 1%",
                 "denominations": [
                     "500",
                     "2000"
                 ],
-                "link": "https://www.gyftr.com/myntra",
+                "link": "https://www.gyftr.com/instantvouchers/myntra-gift-vouchers",
                 "color": "#ff3f6c"
             },
             {
@@ -301,12 +301,12 @@
             {
                 "name": "Gyftr",
                 "cap": "5k/month",
-                "fee": "Discount 10%",
+                "fee": "None",
                 "denominations": [
                     "500",
                     "2000"
                 ],
-                "link": "https://www.gyftr.com/levis",
+                "link": "https://www.gyftr.com/instantvouchers/levis-gift-vouchers",
                 "color": "#c41230"
             },
             {
@@ -349,12 +349,12 @@
             {
                 "name": "Gyftr",
                 "cap": "10k/month",
-                "fee": "Discount 5%",
+                "fee": "None",
                 "denominations": [
                     "500",
                     "2000"
                 ],
-                "link": "https://www.gyftr.com/ajio",
+                "link": "https://www.gyftr.com/instantvouchers/ajio-gift-vouchers",
                 "color": "#2c4152"
             },
             {
@@ -378,12 +378,12 @@
             {
                 "name": "Gyftr",
                 "cap": "25k/month",
-                "fee": "Discount 2.5%",
+                "fee": "None",
                 "denominations": [
                     "1000",
                     "5000"
                 ],
-                "link": "https://www.gyftr.com/reliance-digital",
+                "link": "https://www.gyftr.com/instantvouchers/reliance-digital-gift-vouchers",
                 "color": "#e31e24"
             }
         ]
@@ -416,12 +416,12 @@
             {
                 "name": "Gyftr",
                 "cap": "10k/month",
-                "fee": "Discount 7%",
+                "fee": "None",
                 "denominations": [
                     "1000",
                     "5000"
                 ],
-                "link": "https://www.gyftr.com/titan",
+                "link": "https://www.gyftr.com/instantvouchers/titan-gift-vouchers",
                 "color": "#a5a5a5"
             },
             {
@@ -445,12 +445,12 @@
             {
                 "name": "Gyftr",
                 "cap": "2.5k/month",
-                "fee": "Discount 7.5%",
+                "fee": "None",
                 "denominations": [
                     "250",
                     "500"
                 ],
-                "link": "https://www.gyftr.com/kfc",
+                "link": "https://www.gyftr.com/instantvouchers/kfc-gift-vouchers",
                 "color": "#a3080c"
             },
             {
@@ -534,6 +534,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/ajio-luxe-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -552,6 +562,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 7.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/aldo-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -570,6 +590,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 25%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/aliste-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -588,6 +618,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 1%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/allen-solly-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -606,6 +646,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/amazon-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -624,6 +674,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 1%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/american-eagle-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -642,6 +702,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 1%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/american-tourister-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -714,6 +784,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 9%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/archies-gallery-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -768,6 +848,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 7.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/assembly-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -786,6 +876,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 3.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/aurelia-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -804,6 +904,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 30%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/auric-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -840,6 +950,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 7.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/bakingo-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -858,6 +978,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/barbeque-nation-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -876,6 +1006,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/baskin-robbins-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -894,6 +1034,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/bata-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -912,6 +1062,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 7.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/bath-body-works-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -930,6 +1090,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/behrouz-biryani-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -948,6 +1118,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 7.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/beverly-hills-polo-club-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -1056,6 +1236,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 9%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/blissclub-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -1308,6 +1498,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/café-delhi-heights-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -1326,6 +1526,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 7.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/call-it-spring-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -1344,6 +1554,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/campus-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -1434,6 +1654,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 7.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/charles-keith-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -1452,6 +1682,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/chumbak-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -1578,6 +1818,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 3%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/colorplus-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -1614,6 +1864,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 1.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/costa-coffee-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -1632,6 +1892,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/croma-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -1686,6 +1956,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/daily-objects-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -1704,6 +1984,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 1%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/decathlon-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -1722,6 +2012,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 20%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/discovery-plus-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -1794,6 +2094,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/duroflex-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -1830,6 +2140,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/easybuy-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -1848,6 +2168,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/eatsure-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -2010,6 +2340,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/faasos-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -2028,6 +2368,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/fashion-factory-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -2046,6 +2396,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/fastrack-bags-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -2064,6 +2424,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/fastrack-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -2082,6 +2452,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 7.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/femmella-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -2154,6 +2534,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/flixbus-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -2172,6 +2562,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 7.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/flower-aura-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -2226,6 +2626,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 15%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/foxtale-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -2244,6 +2654,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 15%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/freecultr-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -2298,6 +2718,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/frido-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -2316,6 +2746,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/future-world-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -2352,6 +2792,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 8%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/gaana-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -2532,6 +2982,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 18%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/hammer-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -2568,6 +3028,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/healthians-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -2604,6 +3074,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/healthkart-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -2622,6 +3102,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/hidesign-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -2658,6 +3148,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 15%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/hoichoi-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -2694,6 +3194,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/home-centre-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -2766,6 +3276,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/hush-puppies-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -2784,6 +3304,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/ikea-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -2820,6 +3350,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 7.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/inglot-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -2892,6 +3432,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/ixigo-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -2910,6 +3460,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 1.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/jack-jones-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -2928,6 +3488,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/jio-hotstar-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -2946,6 +3516,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/jockey-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -3126,6 +3706,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/kimirica-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -3144,6 +3734,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 1.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/klook-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -3234,6 +3834,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 3%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/liberty-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -3252,6 +3862,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/lifestyle-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -3270,6 +3890,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/lifestyle-online-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -3324,6 +3954,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 40%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/live-mint-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -3342,6 +3982,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 1%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/louis-philippe-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -3396,6 +4046,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/mainland-china-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -3540,6 +4200,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/mamaearth-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -3558,6 +4228,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/manyavar-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -3576,6 +4256,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 7.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/marks-spencer-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -3630,6 +4320,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/me-n-moms-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -3666,6 +4366,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -3810,6 +4520,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/neemans-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -3864,6 +4584,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/nykaa-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -3882,6 +4612,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/nykaa-fashion-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -3936,6 +4676,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/oh-calcutta-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -3954,6 +4704,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 1.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/only-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -3972,6 +4732,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/organic-india-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -3990,6 +4760,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/oven-story-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4008,6 +4788,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/pantaloons-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4026,6 +4816,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 3%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/park-avenue-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4044,6 +4844,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 3%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/parx-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4170,6 +4980,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 1%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/peter-england-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4206,6 +5026,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/pigeon-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4260,6 +5090,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/pizza-hut-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4314,6 +5154,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/prestige-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4332,6 +5182,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/puma-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4350,6 +5210,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/pure-home-living-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4368,6 +5238,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 7.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/rb-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4386,6 +5266,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/rangriti-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4422,6 +5312,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/raymond-ready-to-wear-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4440,6 +5340,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 3.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/relaxo-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4476,6 +5386,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/reliance-jio-mart-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4494,6 +5414,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/reliance-my-jio-store-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4512,6 +5442,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/reliance-smart-point-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4566,6 +5506,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 1%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/reliance-trends-footwear-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4620,6 +5570,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/samsonite-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4692,6 +5652,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/shoppers-stop-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4710,6 +5680,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/sigree-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4728,6 +5708,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/simon-carter-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4764,6 +5754,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 3.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/skechers-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4782,6 +5782,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 1%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/skinn-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4800,6 +5810,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/skullcandy-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4836,6 +5856,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 8%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/smile-foundation-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4872,6 +5902,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/soch-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4890,6 +5930,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 30%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/sonyliv-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4926,6 +5976,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/speedo-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4944,6 +6004,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/spencers-retail-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4962,6 +6032,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 7%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/ssunsu-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -4980,6 +6060,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/starbucks-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5052,6 +6142,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 3.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/subway-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5088,6 +6188,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/sweet-bengal-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5106,6 +6216,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/sweet-truth-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5196,6 +6316,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 4.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/tata-cliq-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5214,6 +6344,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/tattva-spa-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5232,6 +6372,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/tego-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5250,6 +6400,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/tgif-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5304,6 +6464,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/the-good-bowl-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5340,6 +6510,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/the-sleep-company-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5376,6 +6556,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 1.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/tim-hortons-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5430,6 +6620,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/titan-minimals-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5466,6 +6666,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 17.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/truefitt-hill-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5502,6 +6712,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/unipin-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5538,6 +6758,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/urban-space-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5556,6 +6786,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/v-mart-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5592,6 +6832,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/valorant-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5610,6 +6860,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 1%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/van-heusen-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5628,6 +6888,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 1.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/veromoda-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5646,6 +6916,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 7.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/victorias-secret-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5664,6 +6944,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 7.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/victorias-secret-beauty-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5682,6 +6972,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/vijay-sales-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5700,6 +7000,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 40%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/vrott-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5736,6 +7046,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/wendys-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5754,6 +7074,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/westside-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5772,6 +7102,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/wildcraft-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5790,6 +7130,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/william-penn-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5808,6 +7158,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 15%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/woggles-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5826,6 +7186,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/wonderchef-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5844,6 +7214,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 3%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/woodland-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5862,6 +7242,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/wowchina-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5934,6 +7324,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 20%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/zee5-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     },
@@ -5952,6 +7352,2382 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            }
+        ]
+    },
+    {
+        "id": "487",
+        "brand": " Paul Smith- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/81831_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-paul-smith-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1544",
+        "brand": "Abraham & Thakore- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/65159_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/abraham-and-thakore-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1540",
+        "brand": "Adidas Kids-Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/26259_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/adidas-kids-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1545",
+        "brand": "Bally-Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/43895_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/bally-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1543",
+        "brand": "BOTTEGA VENETA- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/30727_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/bottega-veneta-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1535",
+        "brand": "Canali- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/24043_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/canali-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1556",
+        "brand": "CHARLES TYRWHITT- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/4364_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/charles-tyrwhitt-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1557",
+        "brand": "EA-7- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/32124_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/ea-7-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1546",
+        "brand": "FERRAGAMO- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/74828_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/ferragamo-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1536",
+        "brand": "Giorgio Armani- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/51886_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/giorgio-armani-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1541",
+        "brand": "H BY HAMLEYS- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/4601_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/h-by-hamleys-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1542",
+        "brand": "Hunkemoller- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/63700_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/hunkemoller-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1518",
+        "brand": "Instafab Plus",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/83065_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 8%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/instafab-plus-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1532",
+        "brand": "JIMMY CHOO- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/61912_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/jimmy-choo-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1533",
+        "brand": "Kate Spade- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/28237_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/kate-spade-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1558",
+        "brand": "La Martina- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/47284_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/la-martina-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1520",
+        "brand": "Liberty Online",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/81690_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/liberty-online-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1559",
+        "brand": "MAJE- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/24851_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/maje-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1560",
+        "brand": "PAUL SHARK- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/96156_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/paul-shark-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1549",
+        "brand": "Pottery Barn- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/88072_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/pottery-barn-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1554",
+        "brand": "Pret A Manger-Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/17973_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/pret-a-manger-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1531",
+        "brand": "RITU KUMAR- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/28600_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/ritu-kumar-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1547",
+        "brand": "ROWAN- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/87689_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/rowan-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1561",
+        "brand": "SANDRO",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/66397_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/sandro-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1555",
+        "brand": "Sunglass Hut- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/61495_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/sunglass-hut-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1534",
+        "brand": "SUPERDRY SPORT- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/51859_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/superdry-sport-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1562",
+        "brand": "THE WHITE CROW",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/52649_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/the-white-crow-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1552",
+        "brand": "TODS- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/19665_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/tods-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1537",
+        "brand": "TORY BURCH- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/71807_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/tory-burch-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1553",
+        "brand": "TUMI- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/37395_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/tumi-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1538",
+        "brand": "VALENTINO- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/12587_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/valentino-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1539",
+        "brand": "VERSACE- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/45184_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/versace-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1550",
+        "brand": "VILLEROY AND BOCH- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/55516_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/villeroy-and-boch-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1481",
+        "brand": "Vinci Botanicals",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/91808_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 30%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/vinci-botanicals-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1551",
+        "brand": "WEST ELM- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/93246_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/west-elm-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1548",
+        "brand": "MUJI- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/21466_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/muji-luxe-gift-card-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1353",
+        "brand": "Tata CliQ Luxury",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/92062_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 4.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/tata-cliq-luxury-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1568",
+        "brand": "Citizen Watches",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/71598_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 8%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/citizen-watches-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "50",
+        "brand": "Titan Eye Plus",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/97542_titan-eyeplus.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/titan-eye-plus-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1490",
+        "brand": "Reliance Smart Bazaar",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/14985_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 1%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/reliance-smart-bazaar-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "427",
+        "brand": "Fabindia",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/89448_fabindia.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/fabindia-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "218",
+        "brand": "Hamleys-Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/57869_Hamleys.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-hamleys-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "27",
+        "brand": "The Raymond Shop",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/85141_the-raymond-shop.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/the-raymond-shop-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "542",
+        "brand": "GIVA",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/68037_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/giva-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1242",
+        "brand": "Max Fashion Online",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/14814_Bogo-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/max-fashion-online-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "30",
+        "brand": "W",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/42771_W.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 3.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/w-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "223",
+        "brand": "Mothercare-Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/35596_mothercare.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-mothercare-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "428",
+        "brand": "MAX",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/81378_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/max-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "224",
+        "brand": "Superdry-Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/94761_Superdry.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-superdry-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "214",
+        "brand": "Armani Exchange-Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/25881_AX.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-armani-exchange-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "616",
+        "brand": "Beyoung",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/69650_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 15%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/beyoung-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "13",
+        "brand": "BIBA",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/15774_biba.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 3.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/biba-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "432",
+        "brand": "Brooks Brothers -Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/37237_Brooks-Brother-Block-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-brooks-brothers-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "492",
+        "brand": "Dune-Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/35542_Dune.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-dune-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "591",
+        "brand": "Estele",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/77085_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/estele-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "219",
+        "brand": "Hugo Boss-Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/97467_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-hugo-boss-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "221",
+        "brand": "Michael Kors-Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/81878_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-michael-kors-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1435",
+        "brand": "LENSKART",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/55643_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/lenskart-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1438",
+        "brand": "Titan Smartwatches",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/61900_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/titan-smartwatches-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1437",
+        "brand": "Fastrack Smartwatches",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/26064_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/fastrack-smartwatches-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "217",
+        "brand": "GAS-Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/61289_Gas.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-gas-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "433",
+        "brand": "G-STAR-Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/49393_G-Star-Raw.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-g-star-raw-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "488",
+        "brand": "Replay- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/10388_Replay.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-replay-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "222",
+        "brand": "Satya Paul- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/55556_Satya-Paul.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-satya-paul-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "435",
+        "brand": "Scotch & Soda -Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/6447_Scotch-%26-Soda.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-scotch-soda-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "225",
+        "brand": "Steve Madden-Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/96228_Steve-madden.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-steve-madden-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1282",
+        "brand": "Superbottoms",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/60277_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 8%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/superbottoms-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "434",
+        "brand": "Emporio Armani- Luxe Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/6414_Brand-Logo.png",
+        "category": "Fashion",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/luxe-gift-card-emporio-armani-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1442",
+        "brand": "Cello",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/70706_Brand-Logo.png",
+        "category": "Electronics",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/cello-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "110",
+        "brand": "Mac",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/42341_mac.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/mac-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "109",
+        "brand": "Bobbi Brown",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/40564_bobbi-brown.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/bobbi-brown-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "511",
+        "brand": "Taj Experiences",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/88362_Taj-Experiences-Logo-PNG-%28HR%29.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 3.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/taj-hotels-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "611",
+        "brand": "ITC Hotels",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/40259_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 3.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/itc-hotels-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1569",
+        "brand": "Absolute Barbeque",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/35354_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 3%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/absolute-barbeque-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1482",
+        "brand": "Adani Meet and Greet",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/85304_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/adani-meet-and-greet-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1576",
+        "brand": "CLAYCO",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/28266_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 15%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/clayco-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1516",
+        "brand": "French Accent",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/86630_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 8%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/french-accent-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1517",
+        "brand": "Haute Sauce",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/22138_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 8%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/haute-sauce-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1525",
+        "brand": "Hush Puppies Voucher",
+        "logo": "",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/hush-puppies-voucher-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1489",
+        "brand": "Typsy Beauty",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/24747_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 15%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/typsy-beauty-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1504",
+        "brand": "Air India Voucher",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/64329_18963_Brand-Logo.jpg",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/air-india-voucher-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1577",
+        "brand": "Blinkit Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/85757_Blinkit%20logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/grofers-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1355",
+        "brand": "Nykaa Man",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/68882_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/nykaa-man-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "536",
+        "brand": "Reliance Smart",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/17579_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 1%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/reliance-smart-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1454",
+        "brand": "Amazon Fresh",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/74883_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/amazon-fresh-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1530",
+        "brand": "Himalaya Wellness",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/80040_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/himalaya-wellness-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1420",
+        "brand": "Shiva Organic",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/59774_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/shiva-organic-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "107",
+        "brand": "Kama Ayurveda",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/43679_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/kama-ayurveda-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1344",
+        "brand": "MakeMyTrip Holiday e-Pay",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/48675_Brand%20page%20logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/makemytrip-holiday-e-pay-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "400",
+        "brand": "The Man Company",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/71530_Brand-Page-logo_-283_55.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 8%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/the-man-company-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1364",
+        "brand": "Amazon Prime Membership",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/89038_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 12%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/amazon-prime-membership-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1342",
+        "brand": "MakeMyTrip e-Pay",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/2324_MMT%20LOGO%20SB.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/makemytrip-e-pay-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1343",
+        "brand": "MakeMyTrip Hotel e-Pay",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/58461_brand%20page%20logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/makemytrip-hotel-e-pay-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1572",
+        "brand": "Nua Woman",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/18434_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 20%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/nua-woman-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1373",
+        "brand": "Domino's Pizza",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/76662_Brand%20Page%20Logo%20Dominos.jpg",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 8%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/dominos-pizza-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1484",
+        "brand": "Nat Habit",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/72849_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 20%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/nat-habit-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "514",
+        "brand": "Swiggy Money Voucher",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/55161_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/swiggy-gv-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1500",
+        "brand": "ShemarooMe",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/31703_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 25%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/shemaroome-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1276",
+        "brand": "Cleartrip Generic",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/78770_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/cleartrip-generic-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1465",
+        "brand": "Bare Anatomy",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/63366_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 15%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/bare-anatomy-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1467",
+        "brand": "Sunscoop",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/78650_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 15%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/sunscoop-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1466",
+        "brand": "Chemist At Play",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/18826_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 15%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/chemist-at-play-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1352",
+        "brand": "ET Prime Subscription",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/12705_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 20%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/et-prime-subscription-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1434",
+        "brand": "Netmeds",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/26211_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 7.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/netmeds-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1277",
+        "brand": "Cleartrip Hotel",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/73702_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/cleartrip-hotel-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1362",
+        "brand": "DPauls Travel & Tours",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/85658_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/dpauls-travel-tours-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "112",
+        "brand": "Ferns N Petals",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/67130_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/ferns-n-petals-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1118",
+        "brand": "FITPASS",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/39562_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 15%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/fitpass-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1446",
+        "brand": "EaseMyTrip Generic",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/59288_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/easemytrip-generic-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1444",
+        "brand": "EaseMyTrip Hotels",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/46333_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/easemytrip-hotels-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1445",
+        "brand": "EaseMyTrip Holiday",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/56400_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 8%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/easemytrip-holiday-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "483",
+        "brand": "Apollo Pharmacy",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/57376_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/apollo-pharmacy-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1376",
+        "brand": "Pharmeasy",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/58336_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/pharmeasy-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1441",
+        "brand": "Mediwheel",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/18700_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 15%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/mediwheel-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1422",
+        "brand": "Hindustan Times Premium",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/24073_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 40%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/hindustan-times-premium-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1399",
+        "brand": "Home Stop",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/67002_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/home-stop-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1510",
+        "brand": "Taj Hotels J Wellness Circle",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/9192_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 7.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/j-wellness-circle-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1367",
+        "brand": "IGP",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/57292_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/igp-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1423",
+        "brand": "Live Hindustan",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/43758_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 40%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/live-hindustan-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1398",
+        "brand": "Lunch Box",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/92348_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/lunch-box-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "65",
+        "brand": "Machaan",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/54921_machaan.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/machaan-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1377",
+        "brand": "OTTplay",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/55549_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 30%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/ottplay-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "138",
+        "brand": "Points for Good",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/78831_Brand-Page-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/points-for-people-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1469",
+        "brand": "Steam Wallet",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/20081_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/steam-wallet-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "54",
+        "brand": "Beer Cafe",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/54848_the-beer-cafe.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/beer-cafe-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "601",
+        "brand": "Timezone",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/30328_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/timezone-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1414",
+        "brand": "Wow!Chicken",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/11025_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/wowchicken-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1455",
+        "brand": "Matrix",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/82471_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/matrix-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "571",
+        "brand": "Wow!Momo",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/8557_Brand-Logo.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/wowmomo-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "103",
+        "brand": "Yatra.com",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/29085_yatra.png",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 1.5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/yatra-com-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "1573",
+        "brand": "Cultfit voucher",
+        "logo": "",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/cultfit-voucher-gift-vouchers",
+                "color": "#D42426"
+            }
+        ]
+    },
+    {
+        "id": "721",
+        "brand": "Zomato Gift Card",
+        "logo": "https://cdn.gyftr.com/smartbuy/images/brands/logos/32026_Brand-Logo.png",
+        "category": "Grocery",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/zomato-gift-card-gift-vouchers",
+                "color": "#D42426"
             }
         ]
     }
