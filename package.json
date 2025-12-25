@@ -10,6 +10,7 @@
     "preview": "vite preview",
     "sync-vouchers": "node scripts/sync-gyftr.js",
     "sync-maximise": "node scripts/sync-maximise.js",
+    "sync-magicpin": "node scripts/sync-magicpin.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
