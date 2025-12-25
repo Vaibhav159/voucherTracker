@@ -8,6 +8,9 @@ import VoucherModal from './components/VoucherModal';
 import PlatformFilter from './components/PlatformFilter';
 import VoucherDetail from './components/VoucherDetail';
 import Guides from './components/Guides';
+import CreditCardComparison from './components/CreditCardComparison';
+import CardGuide from './components/CardGuide';
+import ChatBot from './components/ChatBot';
 import { vouchers as RAW_DATA } from './data/vouchers';
 import { sortPlatforms } from './utils/sortUtils';
 
@@ -181,13 +184,69 @@ function Home() {
 }
 
 function App() {
+  const [selectedCards, setSelectedCards] = useState([]);
+
+  // Toggle card selection
+  const toggleCardSelection = (cardId) => {
+    if (selectedCards.includes(cardId)) {
+      setSelectedCards(selectedCards.filter(id => id !== cardId));
+    } else {
+      if (selectedCards.length < 4) {
+        setSelectedCards([...selectedCards, cardId]);
+      } else {
+        alert("You can compare up to 4 cards at a time.");
+      }
+    }
+  };
+
   return (
     <Router>
-      <Layout>
+      <Layout selectedCardsCount={selectedCards.length}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/guides" element={<Guides />} />
+          <Route
+            path="/know-your-cards"
+            element={
+              <CreditCardComparison
+                view="grid"
+                selectedCards={selectedCards}
+                toggleCardSelection={toggleCardSelection}
+              />
+            }
+          />
+          <Route
+            path="/compare-cards"
+            element={
+              <CreditCardComparison
+                view="table"
+                selectedCards={selectedCards}
+                toggleCardSelection={toggleCardSelection}
+                clearSelection={() => setSelectedCards([])}
+              />
+            }
+          />
+          <Route path="/card-guide/:id" element={<CardGuide />} />
           <Route path="/voucher/:id" element={<VoucherDetail />} />
+          <Route path="/ask-ai" element={
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              minHeight: '60vh',
+              textAlign: 'center',
+              padding: '2rem'
+            }}>
+              <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🧞‍♂️</div>
+              <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>Ask AI</h2>
+              <p style={{ color: '#6b7280', fontSize: '1.1rem', marginBottom: '2rem' }}>Coming Soon</p>
+              <p style={{ color: 'var(--text-secondary)', maxWidth: '400px', lineHeight: '1.6' }}>
+                Our AI-powered credit card advisor is under development.
+                It will help you find the best card for any spending category.
+              </p>
+            </div>
+          } />
         </Routes>
       </Layout>
     </Router>

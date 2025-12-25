@@ -33,6 +33,31 @@ body {
   overflow-x: hidden;
 }
 
+/* Performance Optimizations - only for specific elements */
+/* NOTE: translateZ(0) breaks position:fixed on descendant elements */
+
+/* Smooth transitions globally */
+a,
+button,
+input,
+.glass-panel,
+.voucher-card,
+.nav-item {
+  transition: all 0.15s ease-out;
+  will-change: transform, opacity;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* Dynamic Background Orbs */
 body::before {
   content: '';

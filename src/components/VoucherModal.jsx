@@ -40,22 +40,24 @@ const VoucherModal = ({ voucher, onClose }) => {
             bottom: 0,
             background: 'rgba(0, 0, 0, 0.7)',
             backdropFilter: 'blur(10px)',
-            zIndex: 1000,
+            zIndex: 9999,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: '20px'
+            padding: '20px',
+            overflowY: 'auto'
         }} onClick={onClose}>
             <div
                 className="glass-panel"
                 style={{
                     width: '100%',
                     maxWidth: '600px',
-                    maxHeight: '90vh',
+                    maxHeight: '85vh',
                     overflowY: 'auto',
                     position: 'relative',
                     background: '#0a0a0a',
-                    border: '1px solid rgba(255,255,255,0.1)'
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    margin: 'auto'
                 }}
                 onClick={e => e.stopPropagation()}
             >

@@ -41,11 +41,12 @@ const GuideModal = ({ guide, onClose }) => {
                 bottom: 0,
                 background: 'rgba(0, 0, 0, 0.8)',
                 backdropFilter: 'blur(8px)',
-                zIndex: 1000,
+                zIndex: 9999,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                padding: '2rem'
+                padding: '2rem',
+                overflowY: 'auto'
             }}
             onClick={onClose}
         >
@@ -56,11 +57,12 @@ const GuideModal = ({ guide, onClose }) => {
                     borderRadius: '24px',
                     width: '100%',
                     maxWidth: '600px',
-                    maxHeight: '90vh',
+                    maxHeight: '85vh',
                     overflowY: 'auto',
                     position: 'relative',
                     boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
-                    padding: '2rem'
+                    padding: '2rem',
+                    margin: 'auto'
                 }}
                 onClick={e => e.stopPropagation()}
             >
