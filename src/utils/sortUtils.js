@@ -3,7 +3,8 @@ export const PLATFORM_PRIORITY = {
     "Gyftr": 2,
     "Maximise": 3,
     "MagicPin": 4,
-    "Amazon": 5
+    "Amazon": 5,
+    "SaveSage": 6
 };
 
 export const sortPlatforms = (platforms) => {
