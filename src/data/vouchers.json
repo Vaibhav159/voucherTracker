@@ -36,7 +36,7 @@
                 "denominations": [
                     "Any"
                 ],
-                "link": "https://maximise.web",
+                "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
             },
             {
@@ -166,6 +166,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 2.25%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -254,6 +264,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -303,6 +323,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 4.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -352,6 +382,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -479,6 +519,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -557,6 +607,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 7.2%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -654,6 +714,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 7%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -693,6 +763,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 5.75%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -721,6 +801,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 8.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -739,6 +829,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 8.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -767,6 +867,16 @@
                 ],
                 "link": "https://magicpin.in/walletRecharge/?merchantId=6581229",
                 "color": "#7000ff"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 4.6%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -833,6 +943,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 11%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -909,6 +1029,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 7.8%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -985,6 +1115,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 7.2%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -1133,6 +1273,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 13%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -1349,6 +1499,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -1453,6 +1613,16 @@
                 ],
                 "link": "https://www.gyftr.com/instantvouchers/bath-body-works-gift-vouchers",
                 "color": "#D42426"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -1481,6 +1651,16 @@
                 ],
                 "link": "https://www.gyftr.com/instantvouchers/behrouz-biryani-gift-vouchers",
                 "color": "#D42426"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -1519,6 +1699,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 11.75%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -1537,6 +1727,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 1%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -1583,6 +1783,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 13%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -1611,6 +1821,16 @@
                 ],
                 "link": "https://magicpin.in/walletRecharge/?merchantId=45921636",
                 "color": "#7000ff"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 10.25%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -1677,6 +1897,16 @@
                 ],
                 "link": "https://magicpin.in/walletRecharge/?merchantId=45999021",
                 "color": "#7000ff"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 10.25%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -1713,6 +1943,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 2.8%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -1731,6 +1971,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 0.75%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -1823,6 +2073,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -1851,6 +2111,16 @@
                 ],
                 "link": "https://magicpin.in/walletRecharge/?merchantId=1355791",
                 "color": "#7000ff"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -1905,6 +2175,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 12.75%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -1941,6 +2221,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 12%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -1969,6 +2259,16 @@
                 ],
                 "link": "https://www.gyftr.com/instantvouchers/café-delhi-heights-gift-vouchers",
                 "color": "#D42426"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 9%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -2007,6 +2307,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 11.75%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -2099,6 +2409,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 2.1%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -2145,6 +2465,16 @@
                 ],
                 "link": "https://www.gyftr.com/instantvouchers/charles-keith-gift-vouchers",
                 "color": "#D42426"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 11%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -2183,6 +2513,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 13%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -2201,6 +2541,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 12%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -2275,6 +2625,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 6%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -2443,6 +2803,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 3%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -2489,6 +2859,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 8%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -2527,6 +2907,16 @@
                 ],
                 "link": "https://magicpin.in/walletRecharge/?merchantId=41720972",
                 "color": "#7000ff"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 13%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -2565,6 +2955,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 3.8%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -2664,6 +3064,16 @@
                 ],
                 "link": "https://magicpin.in/walletRecharge/?merchantId=45385760",
                 "color": "#7000ff"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 7.75%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -2748,6 +3158,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -2824,6 +3244,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 11%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -3006,6 +3436,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -3110,6 +3550,16 @@
                 ],
                 "link": "https://www.gyftr.com/instantvouchers/fastrack-gift-vouchers",
                 "color": "#D42426"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 8.75%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -3390,6 +3840,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -3628,6 +4088,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 3.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -3664,6 +4134,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -3776,6 +4256,16 @@
                 ],
                 "link": "https://www.gyftr.com/instantvouchers/healthians-gift-vouchers",
                 "color": "#D42426"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 60%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -3822,6 +4312,16 @@
                 ],
                 "link": "https://www.gyftr.com/instantvouchers/healthkart-gift-vouchers",
                 "color": "#D42426"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 11.75%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -3860,6 +4360,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 13.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -3998,6 +4508,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 0%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -4054,6 +4574,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 9%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -4120,6 +4650,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 13.25%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -4260,6 +4800,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 6%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -4298,6 +4848,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 11%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -4392,6 +4952,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 4.3%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -4410,6 +4980,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 4.85%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -4546,6 +5126,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 3.9%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -4686,6 +5276,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 8.75%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -4836,6 +5436,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 10.75%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -4966,6 +5576,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 1.9%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -5032,6 +5652,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 3.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -5060,6 +5690,16 @@
                 ],
                 "link": "https://magicpin.in/walletRecharge/?merchantId=3314200",
                 "color": "#7000ff"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 7.8%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -5088,6 +5728,16 @@
                 ],
                 "link": "https://magicpin.in/walletRecharge/?merchantId=9054037",
                 "color": "#7000ff"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 9%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -5106,6 +5756,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 1.4%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -5124,6 +5784,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 5.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -5420,6 +6090,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 13.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -5474,6 +6154,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 8.75%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -5510,6 +6200,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 2%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -5612,6 +6312,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 6%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -5752,6 +6462,16 @@
                 ],
                 "link": "https://www.gyftr.com/instantvouchers/only-gift-vouchers",
                 "color": "#D42426"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 11%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -5818,6 +6538,16 @@
                 ],
                 "link": "https://www.gyftr.com/instantvouchers/oven-story-gift-vouchers",
                 "color": "#D42426"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 11%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -5856,6 +6586,16 @@
                 ],
                 "link": "https://magicpin.in/walletRecharge/?merchantId=3634401",
                 "color": "#7000ff"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 8%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -5986,6 +6726,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 0.9%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -6050,6 +6800,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -6088,6 +6848,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -6106,6 +6876,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 0.2%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -6208,6 +6988,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 7.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -6320,6 +7110,16 @@
                 ],
                 "link": "https://www.gyftr.com/instantvouchers/puma-gift-vouchers",
                 "color": "#D42426"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -6594,6 +7394,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 3.8%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -6660,6 +7470,16 @@
                 ],
                 "link": "https://www.gyftr.com/instantvouchers/reliance-smart-point-gift-vouchers",
                 "color": "#D42426"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 4.25%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -6798,6 +7618,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 14%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -6816,6 +7646,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 13.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -6966,6 +7806,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -7304,6 +8154,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 13.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -7398,6 +8258,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -7416,6 +8286,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -7444,6 +8324,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 13.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -7500,6 +8390,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -7866,6 +8766,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -7894,6 +8804,16 @@
                 ],
                 "link": "https://magicpin.in/walletRecharge/?merchantId=9700250",
                 "color": "#7000ff"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -7986,6 +8906,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 11.75%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -8180,6 +9110,16 @@
                 ],
                 "link": "https://www.gyftr.com/instantvouchers/unipin-gift-vouchers",
                 "color": "#D42426"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -8198,6 +9138,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 13%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -8254,6 +9204,16 @@
                 ],
                 "link": "https://www.gyftr.com/instantvouchers/v-mart-gift-vouchers",
                 "color": "#D42426"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -8338,6 +9298,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 7.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -8376,6 +9346,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 11.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -8404,6 +9384,16 @@
                 ],
                 "link": "https://www.gyftr.com/instantvouchers/victorias-secret-gift-vouchers",
                 "color": "#D42426"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 12%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -8516,6 +9506,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -8582,6 +9582,16 @@
                 ],
                 "link": "https://www.gyftr.com/instantvouchers/westside-gift-vouchers",
                 "color": "#D42426"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -8620,6 +9630,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 8.75%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -8734,6 +9754,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 14%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -8772,6 +9802,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 10.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -8800,6 +9840,16 @@
                 ],
                 "link": "https://www.gyftr.com/instantvouchers/wowchina-gift-vouchers",
                 "color": "#D42426"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 8.75%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -8828,6 +9878,16 @@
                 ],
                 "link": "https://ishop.reward360.in/",
                 "color": "#f37e20"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 8.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -8902,6 +9962,16 @@
                 ],
                 "link": "https://www.gyftr.com/instantvouchers/zee5-gift-vouchers",
                 "color": "#D42426"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 13.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -8920,6 +9990,16 @@
                 ],
                 "link": "https://www.maximize.money/",
                 "color": "#1c1c1c"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 6%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -9596,6 +10676,16 @@
                 ],
                 "link": "https://magicpin.in/walletRecharge/?merchantId=45349001",
                 "color": "#7000ff"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 9%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -9642,6 +10732,16 @@
                 ],
                 "link": "https://www.gyftr.com/instantvouchers/titan-eye-plus-gift-vouchers",
                 "color": "#D42426"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 6.25%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -9936,6 +11036,16 @@
                 ],
                 "link": "https://www.gyftr.com/instantvouchers/biba-gift-vouchers",
                 "color": "#D42426"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 7%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -10308,6 +11418,16 @@
                 ],
                 "link": "https://www.gyftr.com/instantvouchers/taj-hotels-gift-vouchers",
                 "color": "#D42426"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 6.5%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -10516,6 +11636,16 @@
                 ],
                 "link": "https://magicpin.in/walletRecharge/?merchantId=47324609",
                 "color": "#7000ff"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 5.25%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -10534,6 +11664,16 @@
                 ],
                 "link": "https://www.gyftr.com/instantvouchers/reliance-smart-gift-vouchers",
                 "color": "#D42426"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -10744,6 +11884,16 @@
                 ],
                 "link": "https://www.gyftr.com/instantvouchers/dominos-pizza-gift-vouchers",
                 "color": "#D42426"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 18%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -10980,6 +12130,16 @@
                 ],
                 "link": "https://magicpin.in/walletRecharge/?merchantId=4984103",
                 "color": "#7000ff"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 15%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -11334,6 +12494,16 @@
                 ],
                 "link": "https://www.gyftr.com/instantvouchers/beer-cafe-gift-vouchers",
                 "color": "#D42426"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 7.75%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -11352,6 +12522,16 @@
                 ],
                 "link": "https://www.gyftr.com/instantvouchers/timezone-gift-vouchers",
                 "color": "#D42426"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 9%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -11514,6 +12694,16 @@
                 ],
                 "link": "https://magicpin.in/walletRecharge/?merchantId=5980613",
                 "color": "#7000ff"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 0%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
@@ -12264,6 +13454,16 @@
                 ],
                 "link": "https://magicpin.in/walletRecharge/?merchantId=51553061",
                 "color": "#7000ff"
+            },
+            {
+                "name": "SaveSage",
+                "cap": "Check App",
+                "fee": "Discount 8.75%",
+                "denominations": [
+                    "Check App"
+                ],
+                "link": "https://savesage.club/",
+                "color": "#8B5CF6"
             }
         ]
     },
