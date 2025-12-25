@@ -208,11 +208,18 @@ const Guides = () => {
                         <div
                             key={guide.id}
                             className="glass-panel"
+                            onClick={() => {
+                                if (hasEmbed) {
+                                    setSelectedGuide(guide);
+                                } else {
+                                    window.open(guide.link, '_blank');
+                                }
+                            }}
                             style={{
                                 padding: '1.5rem',
                                 border: '1px solid rgba(255,255,255,0.08)',
                                 transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-                                cursor: 'default'
+                                cursor: 'pointer'
                             }}
                         >
                             {/* Header: Tags */}
@@ -242,7 +249,14 @@ const Guides = () => {
 
                             {/* Title */}
                             <h3 style={{ margin: '0 0 0.8rem 0', fontSize: '1.2rem', lineHeight: '1.4', color: '#fff' }}>
-                                <a href={guide.link} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }} className="hover-underline">
+                                <a
+                                    href={guide.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{ color: 'inherit', textDecoration: 'none' }}
+                                    className="hover-underline"
+                                    onClick={(e) => e.stopPropagation()}
+                                >
                                     {guide.title}
                                 </a>
                             </h3>
@@ -259,7 +273,10 @@ const Guides = () => {
 
                                 {hasEmbed ? (
                                     <button
-                                        onClick={() => setSelectedGuide(guide)}
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            setSelectedGuide(guide);
+                                        }}
                                         style={{
                                             background: 'var(--accent-cyan)',
                                             color: '#000',
@@ -282,6 +299,7 @@ const Guides = () => {
                                         href={guide.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        onClick={(e) => e.stopPropagation()}
                                         style={{ color: 'var(--accent-cyan)', fontSize: '0.85rem', fontWeight: 600, textDecoration: 'none' }}
                                     >
                                         Visit Link ↗
