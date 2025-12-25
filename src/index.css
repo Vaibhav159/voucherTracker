@@ -437,7 +437,8 @@ body::after {
 }
 
 /* Default state for toggle button on desktop */
-.mobile-filter-toggle {
+.mobile-filter-toggle,
+.mobile-filter-overlay {
   display: none;
 }
 
@@ -627,6 +628,26 @@ body::after {
     width: 1px;
     height: 60%;
     background: var(--item-border);
+  }
+
+  .mobile-filter-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    /* Below sidebar (1000) */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    display: block;
+  }
+
+  .mobile-filter-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
   }
 
   /* Sidebar behaviour on mobile when active */
