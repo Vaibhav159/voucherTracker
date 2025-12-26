@@ -451,6 +451,11 @@ body::after {
   display: none;
 }
 
+/* Default state for sticky apply button (hidden on desktop) */
+.sticky-apply-container {
+  display: none;
+}
+
 /* Mobile Media Queries */
 @media (max-width: 768px) {
 
@@ -736,6 +741,33 @@ body::after {
   .sidebar.show-platform .category-section,
   .sidebar.show-category .platform-section {
     display: none !important;
+  }
+
+  /* Sticky Apply Button (Card Detailed Page) */
+  .sticky-apply-container {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem;
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+    background: var(--modal-bg);
+    border-top: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease-out;
+  }
+
+  [data-theme='light'] .sticky-apply-container {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Add padding to page bottom so button doesn't cover content */
+  .card-guide-container {
+    padding-bottom: 80px !important;
   }
 }
 
