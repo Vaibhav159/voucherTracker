@@ -130,8 +130,11 @@ function Home({ onOpenShortcuts }) {
     if (currentCategory !== selectedCategory) {
       setSelectedCategory(currentCategory || null);
     }
-    if (currentSearch !== null && currentSearch !== searchTerm) {
-      setSearchTerm(currentSearch);
+    // Sync from URL to State
+    // We treat null (missing param) as empty string to ensure input clears if param is removed
+    const targetSearch = currentSearch || '';
+    if (targetSearch !== searchTerm) {
+      setSearchTerm(targetSearch);
     }
 
     // Sync Voucher Modal
