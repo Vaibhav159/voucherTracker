@@ -7,6 +7,7 @@ import guidesData from '../data/guides.json';
 const GlobalSearch = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [query, setQuery] = useState('');
+    const [filterType, setFilterType] = useState('all'); // 'all', 'voucher', 'card', 'platform'
     const [selectedIndex, setSelectedIndex] = useState(0);
     const navigate = useNavigate();
     const inputRef = useRef(null);
@@ -43,12 +44,28 @@ const GlobalSearch = () => {
             path: g.link // External link handling might be needed
         }));
 
-        return [...pages, ...voucherItems, ...cardItems, ...guideItems];
+        // Extract unique platforms
+        const uniquePlatforms = [...new Set(vouchers.flatMap(v => v.platforms.map(p => p.name)))];
+        const platformItems = uniquePlatforms.map(p => ({
+            name: p,
+            type: 'platform',
+            path: `/?platform=${encodeURIComponent(p)}`
+        }));
+
+        console.log(platformItems);
+
+        return [...pages, ...voucherItems, ...cardItems, ...guideItems, ...platformItems];
     }, []);
 
     // toggle search logic
-    const toggleSearch = () => {
-        setIsOpen(prev => !prev);
+    const toggleSearch = (initialFilter = 'all') => {
+        setIsOpen(prev => {
+            if (!prev) {
+                setFilterType(initialFilter);
+                return true;
+            }
+            return false;
+        });
         setQuery('');
         setSelectedIndex(0);
     };
@@ -56,10 +73,13 @@ const GlobalSearch = () => {
     // Keyboard Event Listener
     useEffect(() => {
         const handleKeyDown = (e) => {
+            // Check if input is focused
+            const isInputFocused = ['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName);
+
             // CMD+K or CTRL+K
             if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
                 e.preventDefault();
-                toggleSearch();
+                toggleSearch('all');
                 return;
             }
 
@@ -67,9 +87,31 @@ const GlobalSearch = () => {
             if (e.key === 'Shift') {
                 const now = Date.now();
                 if (now - lastShiftKeyTime.current < 500) {
-                    toggleSearch();
+                    toggleSearch('all');
                 }
                 lastShiftKeyTime.current = now;
+            }
+
+            // Shift + V (Vouchers) - Specific shortcut
+            if (e.shiftKey && (e.key === 'V' || e.key === 'v') && !isInputFocused && !e.metaKey && !e.ctrlKey) {
+                // Prevent default only if it's not during typing in our own search, 
+                // but here !isInputFocused handles that.
+                // However, we must be careful not to trigger this if user is just typing Uppercase V in the search box
+                // But !isInputFocused ensures we are not in the search box.
+                e.preventDefault();
+                toggleSearch('voucher');
+            }
+
+            // Shift + C (Cards) - Specific shortcut
+            if (e.shiftKey && (e.key === 'C' || e.key === 'c') && !isInputFocused && !e.metaKey && !e.ctrlKey) {
+                e.preventDefault();
+                toggleSearch('card');
+            }
+
+            // Shift + P (Platforms) - Specific shortcut
+            if (e.shiftKey && (e.key === 'P' || e.key === 'p') && !isInputFocused && !e.metaKey && !e.ctrlKey) {
+                e.preventDefault();
+                toggleSearch('platform');
             }
 
             // Escape to close
@@ -91,16 +133,24 @@ const GlobalSearch = () => {
 
     // Filter results
     const results = useMemo(() => {
-        if (!query) return [];
+        let filtered = allItems;
+
+        // Apply type filter
+        if (filterType !== 'all') {
+            filtered = filtered.filter(item => item.type === filterType);
+        }
+
+        if (!query) return filtered.slice(0, 10); // Show top items if no query
+
         const lowerQuery = query.toLowerCase();
 
-        return allItems.filter(item => {
+        return filtered.filter(item => {
             const nameMatch = item.name.toLowerCase().includes(lowerQuery);
             const tagMatch = item.tags?.some(tag => tag.toLowerCase().includes(lowerQuery));
             const bankMatch = item.bank?.toLowerCase().includes(lowerQuery);
             return nameMatch || tagMatch || bankMatch;
         }).slice(0, 10); // Limit to 10 results
-    }, [query, allItems]);
+    }, [query, allItems, filterType]);
 
     // Navigate selection
     useEffect(() => {
@@ -128,7 +178,11 @@ const GlobalSearch = () => {
     const handleSelect = (item) => {
         if (item.type === 'guide') {
             window.open(item.link, '_blank');
-
+        } else if (item.type === 'platform') {
+            // Force reload if already on home or just navigate
+            // Using navigate with search params
+            navigate(item.path);
+            // Dispatch a custom event or force update if needed, but navigate should work if App.jsx listens to params
         } else {
             navigate(item.path);
         }
@@ -207,6 +261,22 @@ const GlobalSearch = () => {
                             padding: '2px 6px',
                             borderRadius: '4px'
                         }}>ESC</span>
+                        {filterType !== 'all' && (
+                            <span
+                                onClick={() => setFilterType('all')}
+                                style={{
+                                    fontSize: '0.75rem',
+                                    color: 'var(--accent-cyan)',
+                                    background: 'rgba(6, 182, 212, 0.15)',
+                                    padding: '2px 6px',
+                                    borderRadius: '4px',
+                                    cursor: 'pointer',
+                                    border: '1px solid var(--accent-cyan)'
+                                }}
+                            >
+                                {filterType.toUpperCase()} ✕
+                            </span>
+                        )}
                     </div>
                 </div>
 
@@ -246,6 +316,7 @@ const GlobalSearch = () => {
                                     {item.type === 'voucher' && <span>🎟️</span>}
                                     {item.type === 'card' && <span>💳</span>}
                                     {item.type === 'guide' && <span>📚</span>}
+                                    {item.type === 'platform' && <span>🛒</span>}
                                 </div>
 
                                 <div style={{ flex: 1 }}>

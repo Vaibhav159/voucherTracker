@@ -29,13 +29,31 @@ const ALL_CATEGORIES = [...new Set(INITIAL_DATA.map(v => v.category))].sort();
 function Home() {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const [searchTerm, setSearchTerm] = useState(searchParams.get('search') || '');
-  const [selectedPlatform, setSelectedPlatform] = useState(searchParams.get('platform') || null);
-  const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || null);
+  const searchTerm = searchParams.get('search') || '';
+  const selectedPlatform = searchParams.get('platform') || null;
+  const selectedCategory = searchParams.get('category') || null;
   const [selectedVoucher, setSelectedVoucher] = useState(null);
   const [activeMobileFilter, setActiveMobileFilter] = useState('none'); // 'none', 'platform', 'category'
 
   const [sortOption, setSortOption] = useState('Recommended');
+
+  // Helper to update URL params
+  const updateParams = (key, value) => {
+    setSearchParams(prev => {
+      const newParams = new URLSearchParams(prev);
+      if (value) {
+        newParams.set(key, value);
+      } else {
+        newParams.delete(key);
+      }
+      return newParams;
+    }, { replace: true });
+  };
+
+  const handleSearchChange = (val) => updateParams('search', val);
+  const handlePlatformSelect = (p) => updateParams('platform', p);
+  const handleCategorySelect = (c) => updateParams('category', c);
+
 
   const filteredVouchers = useMemo(() => {
     let result = [...INITIAL_DATA];
@@ -82,17 +100,6 @@ function Home() {
   }, [searchTerm, selectedPlatform, selectedCategory, sortOption]);
 
 
-  // Sync state to URL
-  useEffect(() => {
-    const params = new URLSearchParams();
-    if (searchTerm) params.set('search', searchTerm);
-    if (selectedPlatform) params.set('platform', selectedPlatform);
-    if (selectedCategory) params.set('category', selectedCategory);
-
-    // Use replace for search term changes to not clutter history too much while typing
-    // But for filters, push (default) might be okay. Using replace for cleaner history for now.
-    setSearchParams(params, { replace: true });
-  }, [searchTerm, selectedPlatform, selectedCategory, setSearchParams]);
   return (
     <div className="home-container">
       {/* Mobile Filter Toggle Removed */}
@@ -127,8 +134,8 @@ function Home() {
             <PlatformFilter
               selectedPlatform={selectedPlatform}
               onPlatformSelect={(p) => {
-                setSelectedPlatform(p);
-                // Optional: Close on select? Maybe not for multi-browse
+                // Toggle behavior: if clicking selected, unselect it
+                handlePlatformSelect(p === selectedPlatform ? null : p);
               }}
               platforms={ALL_PLATFORMS}
             />
@@ -155,7 +162,8 @@ function Home() {
               <CategoryFilter
                 selectedCategory={selectedCategory}
                 onCategorySelect={(c) => {
-                  setSelectedCategory(c);
+                  // Toggle behavior
+                  handleCategorySelect(c === selectedCategory ? null : c);
                 }}
                 categories={ALL_CATEGORIES}
               />
@@ -176,7 +184,7 @@ function Home() {
       <main>
         <SearchBar
           value={searchTerm}
-          onChange={setSearchTerm}
+          onChange={handleSearchChange}
           sortOption={sortOption}
           onSortChange={setSortOption}
         />
