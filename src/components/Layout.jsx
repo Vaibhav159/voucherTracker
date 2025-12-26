@@ -17,7 +17,7 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
         <div className="container">
           <div className="header-branding">
             <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <img src="./logo.svg" alt="Logo" style={{ height: '32px', width: '32px' }} />
+              <img src="./logo.svg" alt="Voucher Tracker Logo" style={{ height: '32px', width: '32px' }} />
               <h1 className="text-gradient" style={{ margin: 0, fontSize: '1.8rem' }}>VoucherTracker</h1>
             </Link>
             <div className="mobile-theme-toggle">

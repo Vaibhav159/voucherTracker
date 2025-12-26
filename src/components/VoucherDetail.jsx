@@ -55,7 +55,7 @@ const VoucherDetail = () => {
                                             minWidth: '36px',
                                             flexShrink: 0
                                         }}>
-                                            <img src={getPlatformLogo(platform.name)} alt="" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
+                                            <img src={getPlatformLogo(platform.name)} alt={platform.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
                                         </div>
                                     )}
                                     <h3 style={{ margin: 0, fontSize: '1.2rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{platform.name}</h3>

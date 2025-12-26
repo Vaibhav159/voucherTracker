@@ -67,7 +67,7 @@ const VoucherCard = ({ voucher, onClick }) => {
                     gap: '6px'
                   }}
                 >
-                  {logo && <img src={logo} alt="" style={{ height: '12px', width: 'auto', objectFit: 'contain' }} />}
+                  {logo && <img src={logo} alt={name} style={{ height: '12px', width: 'auto', objectFit: 'contain' }} />}
                   {name}
                 </span>
               );
