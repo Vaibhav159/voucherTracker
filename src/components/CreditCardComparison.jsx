@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
+import Fuse from 'fuse.js';
 import { Link } from 'react-router-dom';
 import { creditCards } from '../data/creditCards';
 
@@ -66,46 +67,54 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
         return match ? parseFloat(match[1]) : 0;
     };
 
-    const filteredCards = creditCards.filter(card => {
-        const matchesSearch = card.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            card.bank.toLowerCase().includes(searchTerm.toLowerCase());
+    const filteredCards = useMemo(() => {
+        let cards = creditCards;
 
-        if (!matchesSearch) return false;
-
-        // Bank Filter
-        if (activeBank !== 'All' && card.bank !== activeBank) return false;
-
-        if (activeFilter === 'All') return true;
-
-        // Lifetime Free: Check "Lifetime Free" or "₹0" in fee
-        if (activeFilter === 'Lifetime Free') {
-            const feeLower = card.annualFee?.toLowerCase() || '';
-            return feeLower.includes('lifetime free') || feeLower.includes('₹0') || feeLower === 'free';
+        if (searchTerm) {
+            const fuse = new Fuse(cards, {
+                keys: ['name', 'bank', 'tags'],
+                threshold: 0.3
+            });
+            cards = fuse.search(searchTerm).map(res => res.item);
         }
 
-        // Low Forex: Cards with 0%, 1%, 1.5%, or 2% markup
-        if (activeFilter === 'Low Forex') {
-            const fxNum = parseFloat(card.fxMarkup?.replace('%', '') || '100');
-            return fxNum <= 2;
-        }
+        return cards.filter(card => {
+            // Re-apply other filters on the search results
+            // Bank Filter
+            if (activeBank !== 'All' && card.bank !== activeBank) return false;
 
-        // Fuel: Check category or features
-        if (activeFilter === 'Fuel') {
-            if (card.category === 'Fuel') return true;
-            const lower = (card.name + ' ' + card.features?.join(' ')).toLowerCase();
-            return lower.includes('fuel') || lower.includes('petrol') || lower.includes('bpcl') || lower.includes('hpcl') || lower.includes('iocl');
-        }
+            if (activeFilter === 'All') return true;
 
-        // Shopping: Check category or features
-        if (activeFilter === 'Shopping') {
-            if (card.category === 'Shopping') return true;
-            const lower = (card.name + ' ' + card.bestFor + ' ' + card.features?.join(' ')).toLowerCase();
-            return lower.includes('shopping') || lower.includes('amazon') || lower.includes('flipkart') || lower.includes('online shop');
-        }
+            // Lifetime Free: Check "Lifetime Free" or "₹0" in fee
+            if (activeFilter === 'Lifetime Free') {
+                const feeLower = card.annualFee?.toLowerCase() || '';
+                return feeLower.includes('lifetime free') || feeLower.includes('₹0') || feeLower === 'free';
+            }
 
-        // Default: match by category
-        return card.category === activeFilter;
-    });
+            // Low Forex: Cards with 0%, 1%, 1.5%, or 2% markup
+            if (activeFilter === 'Low Forex') {
+                const fxNum = parseFloat(card.fxMarkup?.replace('%', '') || '100');
+                return fxNum <= 2;
+            }
+
+            // Fuel: Check category or features
+            if (activeFilter === 'Fuel') {
+                if (card.category === 'Fuel') return true;
+                const lower = (card.name + ' ' + card.features?.join(' ')).toLowerCase();
+                return lower.includes('fuel') || lower.includes('petrol') || lower.includes('bpcl') || lower.includes('hpcl') || lower.includes('iocl');
+            }
+
+            // Shopping: Check category or features
+            if (activeFilter === 'Shopping') {
+                if (card.category === 'Shopping') return true;
+                const lower = (card.name + ' ' + card.bestFor + ' ' + card.features?.join(' ')).toLowerCase();
+                return lower.includes('shopping') || lower.includes('amazon') || lower.includes('flipkart') || lower.includes('online shop');
+            }
+
+            // Default: match by category
+            return card.category === activeFilter;
+        });
+    }, [searchTerm, activeBank, activeFilter]);
 
     const filters = ['All', 'Cashback', 'Travel', 'Premium', 'Fuel', 'Shopping', 'Low Forex', 'Lifetime Free'];
 

@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
+import Fuse from 'fuse.js';
 import { HashRouter as Router, Routes, Route, useSearchParams } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import Layout from './components/Layout';
@@ -66,15 +67,20 @@ function Home({ onOpenShortcuts }) {
   };
 
 
+  // Initialize Fuse for searching
+  const fuse = useMemo(() => {
+    return new Fuse(INITIAL_DATA, {
+      keys: ['brand', 'category'],
+      threshold: 0.3
+    });
+  }, []);
+
   const filteredVouchers = useMemo(() => {
     let result = [...INITIAL_DATA];
 
     if (searchTerm) {
-      const lowerTerm = searchTerm.toLowerCase();
-      result = result.filter(voucher =>
-        voucher.brand.toLowerCase().includes(lowerTerm) ||
-        voucher.category.toLowerCase().includes(lowerTerm)
-      );
+      const fuseResults = fuse.search(searchTerm);
+      result = fuseResults.map(res => res.item);
     }
 
     if (selectedPlatform) {
@@ -108,7 +114,7 @@ function Home({ onOpenShortcuts }) {
     }
 
     return result;
-  }, [searchTerm, selectedPlatform, selectedCategory, sortOption]);
+  }, [searchTerm, selectedPlatform, selectedCategory, sortOption, fuse]);
 
 
   // Sync URL to State (Deep linking / External navigation)
