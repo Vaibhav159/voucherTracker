@@ -223,7 +223,8 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
-  padding-bottom: 12px;
+  margin-bottom: 12px;
+  /* Use margin instead of padding for better sizing context */
   background: transparent;
   /* Or match sidebar bg if needed, but transparent works if content scrolls behind/padding logic is right */
   flex-shrink: 0;
@@ -254,8 +255,8 @@ body {
   position: absolute;
   left: 12px;
   top: 50%;
-  transform: translateY(-50%) translateY(-6px);
-  /* Adjust for wrapper padding */
+  transform: translateY(-50%);
+  /* Perfect center */
   color: var(--text-secondary);
   pointer-events: none;
 }
@@ -933,6 +934,9 @@ body::after {
     pointer-events: auto;
   }
 
+
+
+
   /* Sidebar behaviour on mobile when active */
   .sidebar {
     position: fixed !important;
@@ -1021,4 +1025,91 @@ body::after {
   to {
     transform: translateY(0);
   }
+}
+
+/* Stats Bar & Top Deals */
+.stats-bar {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  flex-wrap: wrap;
+}
+
+[data-theme='light'] .stats-bar {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+/* Fix contrast for specific stat values in Light Mode */
+[data-theme='light'] .stats-bar>div:nth-child(1) .stat-value {
+  color: #0891b2 !important;
+  /* Darker Cyan */
+}
+
+[data-theme='light'] .stats-bar>div:nth-child(2) .stat-value {
+  color: #7c3aed !important;
+  /* Darker Purple */
+}
+
+[data-theme='light'] .stats-bar>div:nth-child(3) .stat-value {
+  color: #16a34a !important;
+  /* Darker Green */
+}
+
+.stat-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.top-deals-container {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  width: 100%;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE/Edge */
+}
+
+.top-deals-container::-webkit-scrollbar {
+  display: none;
+}
+
+.top-deal-card {
+  min-width: 200px;
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+[data-theme='light'] .top-deal-card {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.05);
+}
+
+.top-deal-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(251, 191, 36, 0.4);
+}
+
+[data-theme='light'] .top-deal-card:hover {
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.1);
 }
