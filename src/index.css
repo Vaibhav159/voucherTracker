@@ -451,9 +451,30 @@ body::after {
   display: none;
 }
 
-/* Default state for sticky apply button (hidden on desktop) */
+/* Default state for sticky apply button (Desktop: Floating Pill) */
 .sticky-apply-container {
-  display: none;
+  display: flex;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 900;
+  width: auto;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  pointer-events: none;
+  /* Allow clicking through container around button */
+}
+
+.sticky-apply-container .btn-primary {
+  pointer-events: auto;
+  box-shadow: 0 10px 25px rgba(112, 0, 255, 0.4);
+  padding: 1rem 3rem !important;
+  border-radius: 50px !important;
+  font-size: 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Mobile Media Queries */
@@ -743,21 +764,31 @@ body::after {
     display: none !important;
   }
 
-  /* Sticky Apply Button (Card Detailed Page) */
+  /* Sticky Apply Button (Card Detailed Page - Mobile Override) */
   .sticky-apply-container {
-    display: flex;
-    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
+    transform: none;
     z-index: 1000;
-    padding: 1rem;
-    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+    padding: 0.75rem 1rem;
+    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
     background: var(--modal-bg);
     border-top: 1px solid var(--glass-border);
     backdrop-filter: blur(20px);
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
     animation: slideUp 0.3s ease-out;
+    pointer-events: auto;
+    /* Reset pointer events */
+  }
+
+  .sticky-apply-container .btn-primary {
+    width: 100%;
+    padding: 12px !important;
+    border-radius: 12px !important;
+    box-shadow: none;
+    border: none;
+    justify-content: center;
   }
 
   [data-theme='light'] .sticky-apply-container {

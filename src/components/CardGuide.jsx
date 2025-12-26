@@ -57,14 +57,13 @@ const CardGuide = () => {
                 </div>
             </div>
 
-            {/* Sticky Apply Button for Mobile */}
-            <div className="sticky-apply-container"> {/* Visibility handled by CSS */}
+            {/* Sticky Apply Button */}
+            <div className="sticky-apply-container">
                 <a
                     href={card.applyLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary"
-                    style={{ width: '100%', textAlign: 'center', justifyContent: 'center', padding: '1rem' }}
                 >
                     Apply Now
                 </a>
