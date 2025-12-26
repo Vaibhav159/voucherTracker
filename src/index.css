@@ -218,11 +218,62 @@ body {
   object-fit: contain;
 }
 
-/* Category Filter */
+/* Category Search */
+.category-search-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding-bottom: 12px;
+  background: transparent;
+  /* Or match sidebar bg if needed, but transparent works if content scrolls behind/padding logic is right */
+  flex-shrink: 0;
+  /* Prevent shrinking */
+}
+
+.category-search-input {
+  width: 100%;
+  padding: 10px 14px;
+  padding-left: 38px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.category-search-input:focus {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent-pink);
+  box-shadow: 0 0 0 2px rgba(112, 0, 255, 0.1);
+}
+
+.category-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%) translateY(-6px);
+  /* Adjust for wrapper padding */
+  color: var(--text-secondary);
+  pointer-events: none;
+}
+
 .category-list {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  overflow-y: auto;
+  min-height: 0;
+  /* Critical for flex nesting */
+  flex: 1;
+  /* Take remaining space */
+  padding-right: 5px;
+  overscroll-behavior: contain;
+  /* Prevent parent scroll chaining */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
 }
 
 .category-item {
@@ -580,10 +631,25 @@ body::after {
   min-width: 0;
 }
 
+
 .sidebar {
   padding: 1.5rem;
   position: sticky;
   top: 2rem;
+  max-height: calc(100vh - 4rem);
+  /* Constrain height to viewport */
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  /* Critical for nested flex scrolling */
+  overflow: hidden;
+  /* Ensure content stays within borders */
 }
 
 /* Default state for toggle button on desktop */

@@ -7,5 +7,4 @@
 [] Add keyboard shortcuts to platform to open search anything, similar to intellij products
 
 Post POC
-[] Affilate links
-[] Real Time Tracking (High Effort)
+[] Real Time Tracking for Gyftr, Maximize (High Effort)
