@@ -1446,7 +1446,7 @@ Great starter card for online shoppers. Easy to get and maintains a decent 5% on
     fxMarkup: "2%",
     category: "Cashback",
     bank: "FPL Technologies",
-    image: "https:/assets.getonecard.appassets/legal/CardRotation.mp4",
+    image: "assets/cards/placeholder.png",
     annualFee: "Lifetime Free",
     rewardRate: "5X on Top Categories",
     features: [
