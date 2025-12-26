@@ -31,7 +31,7 @@ const PlatformFilter = ({ selectedPlatform, onPlatformSelect, platforms }) => {
                     >
                         {style.logo ? (
                             <div className="icon-container" style={{ background: style.bg, padding: style.padding }}>
-                                <img src={style.logo} alt="" />
+                                <img src={style.logo} alt={`${platform} Logo`} />
                             </div>
                         ) : (
                             <div className="icon-container">

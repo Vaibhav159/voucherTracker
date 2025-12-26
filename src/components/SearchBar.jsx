@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SearchBar = ({ value, onChange, sortOption, onSortChange }) => {
+const SearchBar = ({ value, onChange, sortOption, onSortChange, onOpenShortcuts }) => {
     return (
         <div className="sticky-search-bar" style={{ marginBottom: '2rem', position: 'relative', zIndex: 10 }}>
             {/* Search Input */}
@@ -47,32 +47,71 @@ const SearchBar = ({ value, onChange, sortOption, onSortChange }) => {
                     }}
                 />
 
-                <div style={{ position: 'relative', marginLeft: '1rem', paddingLeft: '1rem', borderLeft: '1px solid rgba(255,255,255,0.1)' }}>
-                    <select
-                        value={sortOption || 'Recommended'}
-                        onChange={(e) => onSortChange(e.target.value)}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                    <button
+                        onClick={onOpenShortcuts}
+                        title="View Keyboard Shortcuts"
                         style={{
-                            background: 'transparent',
-                            color: 'var(--text-secondary)',
+                            background: 'rgba(255,255,255,0.1)',
                             border: 'none',
-                            fontSize: '0.9rem',
-                            fontWeight: 500,
+                            borderRadius: '8px',
+                            padding: '6px 10px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '6px',
                             cursor: 'pointer',
-                            outline: 'none',
-                            appearance: 'none', // Remove default arrow
-                            paddingRight: '1.2rem'
+                            color: 'var(--text-secondary)',
+                            fontSize: '0.85rem',
+                            height: '32px',
+                            transition: 'background 0.2s ease',
+                            whiteSpace: 'nowrap'
                         }}
+                        onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.15)'}
+                        onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
                     >
-                        <option value="Recommended">Recommended</option>
-                        <option value="Alphabetical">A-Z</option>
-                        <option value="Discount">Best Discount</option>
-                    </select>
-                    {/* Custom Arrow */}
-                    <div style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }}>
-                        <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="var(--text-secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 1l4 4 4-4" /></svg>
+                        <span>⌘</span>
+                        <span className="hide-mobile">Shortcuts</span>
+                    </button>
+
+                    <div style={{ position: 'relative', paddingLeft: '1rem', borderLeft: '1px solid rgba(255,255,255,0.1)' }}>
+                        <select
+                            value={sortOption || 'Recommended'}
+                            onChange={(e) => onSortChange(e.target.value)}
+                            style={{
+                                background: 'transparent',
+                                color: 'var(--text-secondary)',
+                                border: 'none',
+                                fontSize: '0.9rem',
+                                fontWeight: 500,
+                                cursor: 'pointer',
+                                outline: 'none',
+                                appearance: 'none', // Remove default arrow
+                                paddingRight: '1.2rem'
+                            }}
+                        >
+                            <option value="Recommended">Recommended</option>
+                            <option value="Alphabetical">A-Z</option>
+                            <option value="Discount">Best Discount</option>
+                        </select>
+                        {/* Custom Arrow */}
+                        <div style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }}>
+                            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="var(--text-secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 1l4 4 4-4" /></svg>
+                        </div>
                     </div>
                 </div>
             </div>
+            <style>{`
+                @media (max-width: 600px) {
+                    .hide-mobile {
+                        display: none;
+                    }
+                    /* Also hide the button itself on mobile if desired, or keep icon only */
+                    /* User request: "we dont have those shortcuts there" -> imply hiding the button */
+                    button[title="View Keyboard Shortcuts"] {
+                        display: none !important;
+                    }
+                }
+            `}</style>
         </div>
     );
 };
