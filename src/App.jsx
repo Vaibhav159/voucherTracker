@@ -39,6 +39,9 @@ function Home({ onOpenShortcuts }) {
 
   const [sortOption, setSortOption] = useState('Recommended');
 
+  // Local state for input value (for debouncing)
+  const [inputValue, setInputValue] = useState(searchTerm);
+
   // Helper to update URL params and local state
   const updateParams = (key, value, setStateFn) => {
     setSearchParams(prev => {
@@ -53,7 +56,19 @@ function Home({ onOpenShortcuts }) {
     if (setStateFn) setStateFn(value);
   };
 
-  const handleSearchChange = (val) => updateParams('search', val, setSearchTerm);
+  // Debounce Search Term Update
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      // Only update if the value is different from what's currently in the URL/committed state
+      if (inputValue !== searchTerm) {
+        updateParams('search', inputValue, setSearchTerm);
+      }
+    }, 200); // 100ms debounce
+
+    return () => clearTimeout(timer);
+  }, [inputValue, searchTerm]); // Dependencies
+
+  const handleSearchChange = (val) => setInputValue(val);
   const handlePlatformSelect = (p) => updateParams('platform', p, setSelectedPlatform);
   const handleCategorySelect = (c) => updateParams('category', c, setSelectedCategory);
 
@@ -135,6 +150,7 @@ function Home({ onOpenShortcuts }) {
     const targetSearch = currentSearch || '';
     if (targetSearch !== searchTerm) {
       setSearchTerm(targetSearch);
+      setInputValue(targetSearch); // Also sync the input value
     }
 
     // Sync Voucher Modal
@@ -233,7 +249,7 @@ function Home({ onOpenShortcuts }) {
       {/* Main Content */}
       <main>
         <SearchBar
-          value={searchTerm}
+          value={inputValue}
           onChange={handleSearchChange}
           sortOption={sortOption}
           onSortChange={setSortOption}
