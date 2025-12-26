@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
+@import "tailwindcss";
+
+
+
 :root {
   --font-family: 'Outfit', sans-serif;
 
@@ -118,105 +122,7 @@ body {
 
 /* Sidebar Filter Styles */
 
-/* Platform Filter */
-.platform-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
 
-/* Make "All Platforms" span full width */
-.platform-grid .platform-card:first-child {
-  grid-column: 1 / -1;
-  flex-direction: row;
-  justify-content: flex-start;
-  text-align: left;
-  gap: 12px;
-  padding: 10px 14px;
-}
-
-.platform-card {
-  display: flex;
-  flex-direction: column;
-  /* Vertical layout for grid items */
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  /* Reduced gap */
-  padding: 12px 6px;
-  /* More vertical padding, less horizontal */
-  background: var(--item-bg);
-  border: 1px solid var(--item-border);
-  border-radius: 12px;
-  color: var(--text-secondary);
-  cursor: pointer;
-  width: 100%;
-  text-align: center;
-  /* Center text */
-  font-family: inherit;
-  font-size: 0.85rem;
-  /* Slightly smaller font */
-  font-weight: 400;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-  min-width: 0;
-}
-
-.platform-card span {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 100%;
-  padding: 0 4px;
-}
-
-.platform-card:hover {
-  background: var(--nav-bg-hover);
-  border-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
-  color: var(--text-primary);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.platform-card.active {
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0.15) 0%, rgba(6, 182, 212, 0.05) 100%);
-  border-color: var(--accent-cyan);
-  color: var(--accent-cyan);
-  font-weight: 600;
-  box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
-}
-
-.platform-card .icon-container {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 4px;
-  transition: all 0.2s;
-}
-
-.platform-card:hover .icon-container {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.platform-card.active .icon-container {
-  border-color: var(--accent-cyan);
-  background: rgba(6, 182, 212, 0.2);
-}
-
-.platform-card img,
-.platform-card svg {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
 
 /* Category Search */
 .category-search-wrapper {
