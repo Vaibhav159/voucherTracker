@@ -152,51 +152,51 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
             {view === 'grid' && (
                 <>
                     {/* Search & Filter Section */}
-                    <div style={{ maxWidth: '800px', margin: '0 auto 3rem auto' }}>
-                        {/* Search Bar */}
-                        <div style={{ position: 'relative', maxWidth: '500px', margin: '0 auto 1.5rem auto' }}>
-                            <input
-                                type="text"
-                                placeholder="Search cards by name or bank..."
-                                value={searchTerm}
-                                onChange={(e) => setSearchTerm(e.target.value)}
-                                style={{
-                                    width: '100%',
-                                    padding: '12px 20px',
-                                    paddingLeft: '45px',
-                                    borderRadius: '50px',
-                                    border: '1px solid var(--glass-border)',
-                                    background: 'rgba(255, 255, 255, 0.05)',
-                                    color: 'var(--text-primary)',
-                                    fontSize: '1rem',
-                                    outline: 'none',
-                                    transition: 'border-color 0.3s'
-                                }}
-                                onFocus={(e) => e.target.style.borderColor = 'var(--accent-cyan)'}
-                                onBlur={(e) => e.target.style.borderColor = 'var(--glass-border)'}
-                            />
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                style={{
-                                    position: 'absolute',
-                                    left: '15px',
-                                    top: '50%',
-                                    transform: 'translateY(-50%)',
-                                    color: 'var(--text-secondary)'
-                                }}
-                            >
-                                <circle cx="11" cy="11" r="8"></circle>
-                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                            </svg>
-                        </div>
+                    {/* Search Bar - Moved out of the wrapper to allow sticky positioning relative to main container */}
+                    <div className="sticky-search-bar pill-search-wrapper" style={{ position: 'relative', maxWidth: '500px', margin: '0 auto 1.5rem auto' }}>
+                        <input
+                            type="text"
+                            placeholder="Search cards by name or bank..."
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                            style={{
+                                width: '100%',
+                                padding: '12px 20px',
+                                paddingLeft: '45px',
+                                borderRadius: '50px',
+                                border: '1px solid var(--glass-border)',
+                                background: 'rgba(255, 255, 255, 0.05)',
+                                color: 'var(--text-primary)',
+                                fontSize: '1rem',
+                                outline: 'none',
+                                transition: 'border-color 0.3s'
+                            }}
+                            onFocus={(e) => e.target.style.borderColor = 'var(--accent-cyan)'}
+                            onBlur={(e) => e.target.style.borderColor = 'var(--glass-border)'}
+                        />
+                        <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            style={{
+                                position: 'absolute',
+                                left: '15px',
+                                top: '50%',
+                                transform: 'translateY(-50%)',
+                                color: 'var(--text-secondary)'
+                            }}
+                        >
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
 
+                    <div style={{ maxWidth: '800px', margin: '0 auto 3rem auto' }}>
                         {/* Filter Buttons */}
                         <div style={{ display: 'flex', justifyContent: 'center', gap: '0.8rem', flexWrap: 'wrap' }}>
                             {filters.map(filter => (

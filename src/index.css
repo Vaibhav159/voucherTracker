@@ -533,6 +533,24 @@ body::after {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
 
+  /* Specific handling for Pill Search Bar (Know Your Cards) */
+  .sticky-search-bar.pill-search-wrapper {
+    margin-bottom: 2rem !important;
+    /* Ensure spacing */
+  }
+
+  .sticky-search-bar.pill-search-wrapper input {
+    background: var(--modal-bg) !important;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-color: var(--glass-border);
+  }
+
+  [data-theme='light'] .sticky-search-bar.pill-search-wrapper input {
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
   .voucher-grid {
     grid-template-columns: 1fr;
     /* Stack cards on mobile */
