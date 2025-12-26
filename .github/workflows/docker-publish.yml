@@ -31,6 +31,7 @@ jobs:
           context: ./backend
           file: ./backend/compose/production/django/Dockerfile
           push: true
+          platforms: linux/amd64,linux/arm64
           tags: ${{ secrets.DOCKER_USERNAME }}/voucher-tracker-backend:latest
           cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/voucher-tracker-backend:buildcache
           cache-to: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/voucher-tracker-backend:buildcache,mode=max
@@ -41,6 +42,7 @@ jobs:
           context: ./backend
           file: ./backend/compose/production/nginx/Dockerfile
           push: true
+          platforms: linux/amd64,linux/arm64
           tags: ${{ secrets.DOCKER_USERNAME }}/voucher-tracker-nginx:latest
           cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/voucher-tracker-nginx:buildcache
           cache-to: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/voucher-tracker-nginx:buildcache,mode=max
