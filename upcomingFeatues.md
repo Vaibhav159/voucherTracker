@@ -4,7 +4,7 @@
 [x] add userback for feedback
 [x] light mode support and toggle
 [x] bug fix: best discounts should be highlighted in detail view for a given voucher & when a platform it should also be highlighted
-[] Add keyboard shortcuts to platform to open search anything, similar to intellij products
+[x] Add keyboard shortcuts to platform to open search anything, similar to intellij products
 
 Post POC
 [] Real Time Tracking for Gyftr, Maximize (High Effort)

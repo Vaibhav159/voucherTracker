@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
+import GlobalSearch from './GlobalSearch';
 
 const Layout = ({ children, selectedCardsCount = 0 }) => {
   const location = useLocation();
@@ -7,6 +8,7 @@ const Layout = ({ children, selectedCardsCount = 0 }) => {
 
   return (
     <div className="app-layout">
+      <GlobalSearch />
 
       <header className="app-header">
         <div className="container">
