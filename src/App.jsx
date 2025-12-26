@@ -134,6 +134,8 @@ function Home() {
             />
           </div>
 
+          <div className="sidebar-divider" /> {/* Added divider */}
+
           <div className="category-section" style={{
             display: 'flex',
             flexDirection: 'column',

@@ -116,29 +116,174 @@ body {
   overflow-x: hidden;
 }
 
-/* Performance Optimizations - only for specific elements */
-/* NOTE: translateZ(0) breaks position:fixed on descendant elements */
+/* Sidebar Filter Styles */
 
-/* Smooth transitions globally */
-a,
-button,
-input,
-.glass-panel,
-.voucher-card,
-.nav-item {
-  transition: all 0.15s ease-out;
-  will-change: transform, opacity;
+/* Platform Filter */
+.platform-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
 }
 
-/* Reduce motion for users who prefer it */
-@media (prefers-reduced-motion: reduce) {
+/* Make "All Platforms" span full width */
+.platform-grid .platform-card:first-child {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-align: left;
+  gap: 12px;
+  padding: 10px 14px;
+}
 
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
+.platform-card {
+  display: flex;
+  flex-direction: column;
+  /* Vertical layout for grid items */
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  /* Reduced gap */
+  padding: 12px 6px;
+  /* More vertical padding, less horizontal */
+  background: var(--item-bg);
+  border: 1px solid var(--item-border);
+  border-radius: 12px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  /* Center text */
+  font-family: inherit;
+  font-size: 0.85rem;
+  /* Slightly smaller font */
+  font-weight: 400;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.platform-card span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  padding: 0 4px;
+}
+
+.platform-card:hover {
+  background: var(--nav-bg-hover);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  color: var(--text-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.platform-card.active {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.15) 0%, rgba(6, 182, 212, 0.05) 100%);
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  font-weight: 600;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
+}
+
+.platform-card .icon-container {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px;
+  transition: all 0.2s;
+}
+
+.platform-card:hover .icon-container {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.platform-card.active .icon-container {
+  border-color: var(--accent-cyan);
+  background: rgba(6, 182, 212, 0.2);
+}
+
+.platform-card img,
+.platform-card svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Category Filter */
+.category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.category-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 16px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 400;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.category-item:hover {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-primary);
+  padding-left: 20px;
+  /* Slight movement for interaction */
+}
+
+.category-item.active {
+  background: linear-gradient(90deg, rgba(112, 0, 255, 0.1) 0%, transparent 100%);
+  border-left: 3px solid var(--accent-pink);
+  color: var(--accent-pink);
+  font-weight: 600;
+  padding-left: 20px;
+  border-radius: 4px 8px 8px 4px;
+  /* Flatter left side */
+}
+
+.category-item-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+/* Sidebar Section Headers */
+.sidebar h3 {
+  font-size: 0.8rem !important;
+  text-transform: uppercase;
+  letter-spacing: 1.5px !important;
+  color: var(--text-secondary) !important;
+  margin-bottom: 1.2rem !important;
+  opacity: 0.7;
+}
+
+/* Section Divider */
+.sidebar-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
+  margin: 1.5rem 0;
+  width: 100%;
 }
 
 /* Dynamic Background Orbs */
