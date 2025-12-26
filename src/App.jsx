@@ -26,19 +26,20 @@ const INITIAL_DATA = RAW_DATA.map(voucher => ({
 const ALL_PLATFORMS = [...new Set(INITIAL_DATA.flatMap(v => v.platforms.map(p => p.name)))];
 const ALL_CATEGORIES = [...new Set(INITIAL_DATA.map(v => v.category))].sort();
 
-function Home() {
+function Home({ onOpenShortcuts }) {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const searchTerm = searchParams.get('search') || '';
-  const selectedPlatform = searchParams.get('platform') || null;
-  const selectedCategory = searchParams.get('category') || null;
+  // State variables for filters, initialized from URL search params
+  const [searchTerm, setSearchTerm] = useState(searchParams.get('search') || '');
+  const [selectedPlatform, setSelectedPlatform] = useState(searchParams.get('platform') || null);
+  const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || null);
   const [selectedVoucher, setSelectedVoucher] = useState(null);
   const [activeMobileFilter, setActiveMobileFilter] = useState('none'); // 'none', 'platform', 'category'
 
   const [sortOption, setSortOption] = useState('Recommended');
 
-  // Helper to update URL params
-  const updateParams = (key, value) => {
+  // Helper to update URL params and local state
+  const updateParams = (key, value, setStateFn) => {
     setSearchParams(prev => {
       const newParams = new URLSearchParams(prev);
       if (value) {
@@ -48,11 +49,12 @@ function Home() {
       }
       return newParams;
     }, { replace: true });
+    setStateFn(value); // Update local state immediately
   };
 
-  const handleSearchChange = (val) => updateParams('search', val);
-  const handlePlatformSelect = (p) => updateParams('platform', p);
-  const handleCategorySelect = (c) => updateParams('category', c);
+  const handleSearchChange = (val) => updateParams('search', val, setSearchTerm);
+  const handlePlatformSelect = (p) => updateParams('platform', p, setSelectedPlatform);
+  const handleCategorySelect = (c) => updateParams('category', c, setSelectedCategory);
 
 
   const filteredVouchers = useMemo(() => {
@@ -100,6 +102,24 @@ function Home() {
   }, [searchTerm, selectedPlatform, selectedCategory, sortOption]);
 
 
+  // Sync URL to State (Deep linking / External navigation)
+  useEffect(() => {
+    const currentPlatform = searchParams.get('platform');
+    const currentCategory = searchParams.get('category');
+    const currentSearch = searchParams.get('search');
+
+    if (currentPlatform !== selectedPlatform) {
+      // Only update if different to avoid potential loops, though React handles same-value setStates optimally
+      setSelectedPlatform(currentPlatform || null);
+    }
+    if (currentCategory !== selectedCategory) {
+      setSelectedCategory(currentCategory || null);
+    }
+    // We optionally sync search too, mostly for initial load, but also for back/forward navigation
+    if (currentSearch !== null && currentSearch !== searchTerm) {
+      setSearchTerm(currentSearch);
+    }
+  }, [searchParams, selectedPlatform, selectedCategory, searchTerm]);
   return (
     <div className="home-container">
       {/* Mobile Filter Toggle Removed */}
@@ -187,6 +207,7 @@ function Home() {
           onChange={handleSearchChange}
           sortOption={sortOption}
           onSortChange={setSortOption}
+          onOpenShortcuts={onOpenShortcuts}
         />
 
         <VoucherGrid
@@ -209,6 +230,7 @@ function Home() {
 
 function App() {
   const [selectedCards, setSelectedCards] = useState([]);
+  const [isShortcutsOpen, setIsShortcutsOpen] = useState(false);
 
   // Toggle card selection
   const toggleCardSelection = (cardId) => {
@@ -223,12 +245,35 @@ function App() {
     }
   };
 
+  // Global listener for Shortcuts Modal (Shift + / which is ?)
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      // Disable on mobile
+      if (window.innerWidth < 768) return;
+
+      const isInputFocused = ['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName);
+      if (isInputFocused) return;
+
+      if (e.key === '?' || (e.shiftKey && e.key === '/')) {
+        e.preventDefault();
+        setIsShortcutsOpen(prev => !prev);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   return (
     <ThemeProvider>
       <Router>
-        <Layout selectedCardsCount={selectedCards.length}>
+        <Layout
+          selectedCardsCount={selectedCards.length}
+          isShortcutsOpen={isShortcutsOpen}
+          setIsShortcutsOpen={setIsShortcutsOpen}
+        >
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home onOpenShortcuts={() => setIsShortcutsOpen(true)} />} />
             <Route path="/guides" element={<Guides />} />
             <Route
               path="/know-your-cards"

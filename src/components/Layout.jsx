@@ -1,14 +1,17 @@
 import { Link, useLocation } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
 import GlobalSearch from './GlobalSearch';
+import ShortcutsModal from './ShortcutsModal';
 
-const Layout = ({ children, selectedCardsCount = 0 }) => {
+const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortcutsOpen }) => {
   const location = useLocation();
   const isActive = (path) => location.pathname === path;
+  // Local state removed, using props from App
 
   return (
     <div className="app-layout">
       <GlobalSearch />
+      <ShortcutsModal isOpen={isShortcutsOpen} onClose={() => setIsShortcutsOpen(false)} />
 
       <header className="app-header">
         <div className="container">

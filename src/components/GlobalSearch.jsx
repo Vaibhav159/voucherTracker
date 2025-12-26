@@ -18,7 +18,6 @@ const GlobalSearch = () => {
         { name: 'Home', type: 'page', path: '/', tags: ['dashboard', 'main'] },
         { name: 'Know Your Cards', type: 'page', path: '/know-your-cards', tags: ['credit', 'cards', 'compare'] },
         { name: 'Guides', type: 'page', path: '/guides', tags: ['tutorials', 'help', 'blog'] },
-        { name: 'Compare Cards', type: 'page', path: '/compare-cards', tags: ['comparison', 'diff'] },
         { name: 'Ask AI', type: 'page', path: '/ask-ai', tags: ['ai', 'chat', 'bot'] }
     ];
 
@@ -73,6 +72,9 @@ const GlobalSearch = () => {
     // Keyboard Event Listener
     useEffect(() => {
         const handleKeyDown = (e) => {
+            // Disable on mobile
+            if (window.innerWidth < 768) return;
+
             // Check if input is focused
             const isInputFocused = ['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName);
 
