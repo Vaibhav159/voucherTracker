@@ -1037,6 +1037,8 @@ body::after {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.06);
   flex-wrap: wrap;
+  width: fit-content;
+  /* Shrink to fit content */
 }
 
 [data-theme='light'] .stats-bar {
