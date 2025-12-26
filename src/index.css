@@ -462,6 +462,8 @@ body::after {
 
   .app-header {
     padding: 1rem 0;
+    position: relative;
+    /* Unstick header on mobile */
   }
 
   .app-header .container {
@@ -508,6 +510,27 @@ body::after {
     top: 0;
     max-height: none;
     /* Allow full height if needed */
+  }
+
+  /* Sticky Search Bar on Mobile */
+  .sticky-search-bar {
+    position: sticky !important;
+    top: 1rem;
+    z-index: 90 !important;
+    margin-bottom: 2rem;
+  }
+
+  .sticky-search-bar .glass-panel {
+    background: var(--modal-bg);
+    /* Solid background to hide scrolling content */
+    backdrop-filter: blur(20px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+  }
+
+  [data-theme='light'] .sticky-search-bar .glass-panel {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
 
   .voucher-grid {
