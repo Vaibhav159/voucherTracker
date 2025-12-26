@@ -2,7 +2,7 @@ import React from 'react';
 
 const SearchBar = ({ value, onChange, sortOption, onSortChange }) => {
     return (
-        <div style={{ marginBottom: '2rem', position: 'relative', zIndex: 10 }}>
+        <div className="sticky-search-bar" style={{ marginBottom: '2rem', position: 'relative', zIndex: 10 }}>
             {/* Search Input */}
             <div
                 className="glass-panel"

@@ -17,7 +17,7 @@ const CardGuide = () => {
     }
 
     return (
-        <div style={{ paddingTop: '2rem', maxWidth: '1000px', margin: '0 auto' }}>
+        <div className="card-guide-container" style={{ paddingTop: '2rem', maxWidth: '1000px', margin: '0 auto' }}>
             <Link to="/compare-cards" style={{ color: 'var(--text-secondary)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '2rem' }}>
                 ← Back to Comparison
             </Link>
@@ -55,6 +55,18 @@ const CardGuide = () => {
                         {card.detailedGuide || "Detailed guide coming soon..."}
                     </ReactMarkdown>
                 </div>
+            </div>
+
+            {/* Sticky Apply Button */}
+            <div className="sticky-apply-container">
+                <a
+                    href={card.applyLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary"
+                >
+                    Apply Now
+                </a>
             </div>
         </div>
     );

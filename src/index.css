@@ -451,6 +451,32 @@ body::after {
   display: none;
 }
 
+/* Default state for sticky apply button (Desktop: Floating Pill) */
+.sticky-apply-container {
+  display: flex;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 900;
+  width: auto;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  pointer-events: none;
+  /* Allow clicking through container around button */
+}
+
+.sticky-apply-container .btn-primary {
+  pointer-events: auto;
+  box-shadow: 0 10px 25px rgba(112, 0, 255, 0.4);
+  padding: 1rem 3rem !important;
+  border-radius: 50px !important;
+  font-size: 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 /* Mobile Media Queries */
 @media (max-width: 768px) {
 
@@ -462,6 +488,8 @@ body::after {
 
   .app-header {
     padding: 1rem 0;
+    position: relative;
+    /* Unstick header on mobile */
   }
 
   .app-header .container {
@@ -508,6 +536,45 @@ body::after {
     top: 0;
     max-height: none;
     /* Allow full height if needed */
+  }
+
+  /* Sticky Search Bar on Mobile */
+  .sticky-search-bar {
+    position: sticky !important;
+    top: 1rem;
+    z-index: 90 !important;
+    margin-bottom: 2rem;
+  }
+
+  .sticky-search-bar .glass-panel {
+    background: var(--modal-bg);
+    /* Solid background to hide scrolling content */
+    backdrop-filter: blur(20px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+  }
+
+  [data-theme='light'] .sticky-search-bar .glass-panel {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Specific handling for Pill Search Bar (Know Your Cards) */
+  .sticky-search-bar.pill-search-wrapper {
+    margin-bottom: 2rem !important;
+    /* Ensure spacing */
+  }
+
+  .sticky-search-bar.pill-search-wrapper input {
+    background: var(--modal-bg) !important;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-color: var(--glass-border);
+  }
+
+  [data-theme='light'] .sticky-search-bar.pill-search-wrapper input {
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
 
   .voucher-grid {
@@ -695,6 +762,43 @@ body::after {
   .sidebar.show-platform .category-section,
   .sidebar.show-category .platform-section {
     display: none !important;
+  }
+
+  /* Sticky Apply Button (Card Detailed Page - Mobile Override) */
+  .sticky-apply-container {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: none;
+    z-index: 1000;
+    padding: 0.75rem 1rem;
+    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
+    background: var(--modal-bg);
+    border-top: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease-out;
+    pointer-events: auto;
+    /* Reset pointer events */
+  }
+
+  .sticky-apply-container .btn-primary {
+    width: 100%;
+    padding: 12px !important;
+    border-radius: 12px !important;
+    box-shadow: none;
+    border: none;
+    justify-content: center;
+  }
+
+  [data-theme='light'] .sticky-apply-container {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Add padding to page bottom so button doesn't cover content */
+  .card-guide-container {
+    padding-bottom: 80px !important;
   }
 }
 
