@@ -33,7 +33,7 @@ function Home({ onOpenShortcuts }) {
   const [searchTerm, setSearchTerm] = useState(searchParams.get('search') || '');
   const [selectedPlatform, setSelectedPlatform] = useState(searchParams.get('platform') || null);
   const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || null);
-  const [selectedVoucher, setSelectedVoucher] = useState(null);
+  const [selectedVoucher, setSelectedVoucher] = useState(null); // Local state fallback, but we primarily use URL now
   const [activeMobileFilter, setActiveMobileFilter] = useState('none'); // 'none', 'platform', 'category'
 
   const [sortOption, setSortOption] = useState('Recommended');
@@ -49,12 +49,21 @@ function Home({ onOpenShortcuts }) {
       }
       return newParams;
     }, { replace: true });
-    setStateFn(value); // Update local state immediately
+    if (setStateFn) setStateFn(value);
   };
 
   const handleSearchChange = (val) => updateParams('search', val, setSearchTerm);
   const handlePlatformSelect = (p) => updateParams('platform', p, setSelectedPlatform);
   const handleCategorySelect = (c) => updateParams('category', c, setSelectedCategory);
+
+  // Handle Voucher selection (updates URL)
+  const handleVoucherSelect = (voucher) => {
+    if (voucher) {
+      updateParams('voucher', voucher.id);
+    } else {
+      updateParams('voucher', null);
+    }
+  };
 
 
   const filteredVouchers = useMemo(() => {
@@ -107,18 +116,30 @@ function Home({ onOpenShortcuts }) {
     const currentPlatform = searchParams.get('platform');
     const currentCategory = searchParams.get('category');
     const currentSearch = searchParams.get('search');
+    const currentVoucherId = searchParams.get('voucher');
 
     if (currentPlatform !== selectedPlatform) {
-      // Only update if different to avoid potential loops, though React handles same-value setStates optimally
       setSelectedPlatform(currentPlatform || null);
     }
     if (currentCategory !== selectedCategory) {
       setSelectedCategory(currentCategory || null);
     }
-    // We optionally sync search too, mostly for initial load, but also for back/forward navigation
     if (currentSearch !== null && currentSearch !== searchTerm) {
       setSearchTerm(currentSearch);
     }
+
+    // Sync Voucher Modal
+    if (currentVoucherId) {
+      const voucher = INITIAL_DATA.find(v => v.id === currentVoucherId);
+      if (voucher) {
+        setSelectedVoucher(voucher);
+      } else {
+        setSelectedVoucher(null);
+      }
+    } else {
+      setSelectedVoucher(null);
+    }
+
   }, [searchParams, selectedPlatform, selectedCategory, searchTerm]);
   return (
     <div className="home-container">
@@ -212,7 +233,7 @@ function Home({ onOpenShortcuts }) {
 
         <VoucherGrid
           vouchers={filteredVouchers}
-          onVoucherClick={setSelectedVoucher}
+          onVoucherClick={handleVoucherSelect}
         />
       </main>
 
@@ -220,7 +241,7 @@ function Home({ onOpenShortcuts }) {
         <VoucherModal
           voucher={selectedVoucher}
           selectedPlatform={selectedPlatform} // Pass selected platform context
-          onClose={() => setSelectedVoucher(null)}
+          onClose={() => handleVoucherSelect(null)}
         />
       )}
     </div>

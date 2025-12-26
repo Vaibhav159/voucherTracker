@@ -49,7 +49,7 @@ const ShortcutsModal = ({ isOpen, onClose }) => {
                     maxWidth: '90%',
                     padding: '2rem',
                     borderRadius: '16px',
-                    background: 'var(--card-bg)',
+                    background: 'var(--modal-bg)',
                     border: '1px solid var(--glass-border)',
                     boxShadow: '0 20px 50px rgba(0,0,0,0.5)',
                     position: 'relative'
@@ -78,15 +78,15 @@ const ShortcutsModal = ({ isOpen, onClose }) => {
 
                 <div style={{ display: 'grid', gap: '1rem' }}>
                     {shortcuts.map((s, i) => (
-                        <div key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '0.8rem', borderBottom: i < shortcuts.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none' }}>
+                        <div key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '0.8rem', borderBottom: i < shortcuts.length - 1 ? '1px solid var(--glass-border)' : 'none' }}>
                             <div style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
                                 {s.desc}
                             </div>
                             <div style={{ display: 'flex', gap: '4px' }}>
                                 {s.keys.map((k, idx) => (
                                     <kbd key={idx} style={{
-                                        background: 'rgba(255,255,255,0.1)',
-                                        border: '1px solid rgba(255,255,255,0.1)',
+                                        background: 'var(--tag-bg)',
+                                        border: '1px solid var(--glass-border)',
                                         borderRadius: '4px',
                                         padding: '2px 6px',
                                         fontSize: '0.8rem',
