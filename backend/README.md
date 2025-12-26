@@ -53,15 +53,32 @@ The following details how to deploy this application.
 
 See detailed [cookiecutter-django Docker documentation](http://cookiecutter-django.readthedocs.io/en/latest/deployment-with-docker.html).
 
+### Cosmos Server Deployment
+
+1.  **Prepare Configuration**:
+    -   Use `docker-compose.cosmos.yml`. This file removes Traefik (since Cosmos handles proxying) and exposes Nginx.
+    -   Ensure `DJANGO_ALLOWED_HOSTS` includes your domain or `*` if relying on Cosmos Gateway for security.
+
+2.  **Deploy in Cosmos**:
+    -   Go to Cosmos Dashboard -> "New Application".
+    -   Select "Docker Compose".
+    -   Copy/Paste the content of `backend/docker-compose.cosmos.yml`.
+    -   **Important**: You may need to adjust the `ports` section if port 80 is occupied, or let Cosmos manage the routing to the container's port 80.
+    -   Add Environment Variables from `.envs/.production/.django` and `.envs/.production/.postgres` into the Cosmos UI if not using the file mount method.
+
 ### Local Development
 
-1.  Build and run using Docker:
+1.  Build and run using Docker (Standard):
     ```bash
     docker-compose -f local.yml up --build
     ```
-    This uses `uv` to install dependencies significantly faster.
+2.  Build and run using Docker (Cosmos Simulation):
+    ```bash
+    docker-compose -f docker-compose.cosmos.yml up --build
+    ```
+    (Access at http://localhost/api/health/)
 
-2.  Access Health Check:
+3.  Access Health Check:
     Visit [http://localhost:8000/api/health/](http://localhost:8000/api/health/)
 
 ### Production Deployment
