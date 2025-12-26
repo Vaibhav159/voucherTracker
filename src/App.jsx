@@ -63,7 +63,7 @@ function Home({ onOpenShortcuts }) {
       if (inputValue !== searchTerm) {
         updateParams('search', inputValue, setSearchTerm);
       }
-    }, 200); // 200ms debounce
+    }, 300); // 300ms debounce
 
     return () => clearTimeout(timer);
   }, [inputValue, searchTerm]); // Dependencies
@@ -298,7 +298,8 @@ function App() {
       if (window.innerWidth < 768) return;
 
       const isInputFocused = ['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName);
-      if (isInputFocused) return;
+      // Allow shortcut if focused element is the global search input
+      if (isInputFocused && document.activeElement?.id !== 'global-search-input') return;
 
       if (e.key === '?' || (e.shiftKey && e.key === '/')) {
         e.preventDefault();

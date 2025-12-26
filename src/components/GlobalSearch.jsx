@@ -59,15 +59,27 @@ const GlobalSearch = () => {
 
     // toggle search logic
     const toggleSearch = (initialFilter = 'all') => {
-        setIsOpen(prev => {
-            if (!prev) {
+        if (isOpen) {
+            // If we are switching to a different specific filter, don't close
+            if (initialFilter !== 'all' && initialFilter !== filterType) {
                 setFilterType(initialFilter);
-                return true;
+                setQuery('');
+                setSelectedIndex(0);
+                // Ensure text input gains focus back if needed
+                if (inputRef.current) inputRef.current.focus();
+                return;
             }
-            return false;
-        });
-        setQuery('');
-        setSelectedIndex(0);
+            // Otherwise close (toggle off)
+            setIsOpen(false);
+            setQuery(''); // Optional: clear query on close
+            setSelectedIndex(0);
+        } else {
+            // Open
+            setIsOpen(prev => true);
+            setFilterType(initialFilter);
+            setQuery('');
+            setSelectedIndex(0);
+        }
     };
 
     // Keyboard Event Listener
@@ -95,24 +107,20 @@ const GlobalSearch = () => {
                 lastShiftKeyTime.current = now;
             }
 
-            // Shift + V (Vouchers) - Specific shortcut
-            if (e.shiftKey && (e.key === 'V' || e.key === 'v') && !isInputFocused && !e.metaKey && !e.ctrlKey) {
-                // Prevent default only if it's not during typing in our own search, 
-                // but here !isInputFocused handles that.
-                // However, we must be careful not to trigger this if user is just typing Uppercase V in the search box
-                // But !isInputFocused ensures we are not in the search box.
+            // Shift + V (Vouchers)
+            if (e.shiftKey && (e.key === 'V' || e.key === 'v') && (!isInputFocused || (document.activeElement?.id === 'global-search-input' && query === '')) && !e.metaKey && !e.ctrlKey) {
                 e.preventDefault();
                 toggleSearch('voucher');
             }
 
-            // Shift + C (Cards) - Specific shortcut
-            if (e.shiftKey && (e.key === 'C' || e.key === 'c') && !isInputFocused && !e.metaKey && !e.ctrlKey) {
+            // Shift + C (Cards)   
+            if (e.shiftKey && (e.key === 'C' || e.key === 'c') && (!isInputFocused || (document.activeElement?.id === 'global-search-input' && query === '')) && !e.metaKey && !e.ctrlKey) {
                 e.preventDefault();
                 toggleSearch('card');
             }
 
-            // Shift + P (Platforms) - Specific shortcut
-            if (e.shiftKey && (e.key === 'P' || e.key === 'p') && !isInputFocused && !e.metaKey && !e.ctrlKey) {
+            // Shift + P (Platforms)
+            if (e.shiftKey && (e.key === 'P' || e.key === 'p') && (!isInputFocused || (document.activeElement?.id === 'global-search-input' && query === '')) && !e.metaKey && !e.ctrlKey) {
                 e.preventDefault();
                 toggleSearch('platform');
             }
@@ -125,7 +133,7 @@ const GlobalSearch = () => {
 
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [isOpen]);
+    }, [isOpen, filterType, query]);
 
     // Focus input when open
     useEffect(() => {
@@ -253,6 +261,7 @@ const GlobalSearch = () => {
                         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                     </svg>
                     <input
+                        id="global-search-input"
                         ref={inputRef}
                         type="text"
                         placeholder="Search anything..."
