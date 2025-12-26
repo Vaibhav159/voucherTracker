@@ -63,7 +63,7 @@ function Home({ onOpenShortcuts }) {
       if (inputValue !== searchTerm) {
         updateParams('search', inputValue, setSearchTerm);
       }
-    }, 200); // 100ms debounce
+    }, 200); // 200ms debounce
 
     return () => clearTimeout(timer);
   }, [inputValue, searchTerm]); // Dependencies
