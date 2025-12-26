@@ -3,8 +3,8 @@
 [x] mobile friendly version
 [x] add userback for feedback
 [x] light mode support and toggle
-[] bug fix: best discounts should be highlighted in detail view for a given voucher & when a platform it should also be highlighted
+[x] bug fix: best discounts should be highlighted in detail view for a given voucher & when a platform it should also be highlighted
+[] Add keyboard shortcuts to platform to open search anything, similar to intellij products
 
 Post POC
-[] Affilate links
-[] Real Time Tracking (High Effort)
+[] Real Time Tracking for Gyftr, Maximize (High Effort)

@@ -3,89 +3,43 @@ import { getPlatformStyle } from '../utils/platformLogos';
 
 const PlatformFilter = ({ selectedPlatform, onPlatformSelect, platforms }) => {
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+        <div className="platform-grid">
+            {/* All Platforms */}
             <button
                 onClick={() => onPlatformSelect(null)}
-                style={{
-                    background: !selectedPlatform ? 'var(--nav-bg-active)' : 'transparent',
-                    color: !selectedPlatform ? 'var(--nav-text-hover)' : 'var(--nav-text)',
-                    border: '1px solid transparent',
-                    padding: '10px 16px',
-                    borderRadius: '8px',
-                    cursor: 'pointer',
-                    textAlign: 'left',
-                    transition: 'all 0.2s',
-                    fontWeight: !selectedPlatform ? 600 : 400,
-                    fontSize: '0.95rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'flex-start',
-                    width: '100%',
-                    gap: '12px'
-                }}
+                className={`platform-card ${!selectedPlatform ? 'active' : ''}`}
             >
-                <div style={{
-                    background: 'var(--item-bg)',
-                    borderRadius: '8px',
-                    width: '32px',
-                    height: '32px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0,
-                    border: '1px solid var(--item-border)'
-                }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <div className="icon-container">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <rect x="3" y="3" width="7" height="7"></rect>
                         <rect x="14" y="3" width="7" height="7"></rect>
                         <rect x="14" y="14" width="7" height="7"></rect>
                         <rect x="3" y="14" width="7" height="7"></rect>
                     </svg>
                 </div>
-                All Platforms
+                <span>All Platforms</span>
             </button>
+
+            {/* Individual Platforms */}
             {platforms.map(platform => {
                 const style = getPlatformStyle(platform);
                 return (
                     <button
                         key={platform}
                         onClick={() => onPlatformSelect(platform)}
-                        style={{
-                            background: selectedPlatform === platform ? 'var(--nav-bg-active)' : 'transparent',
-                            color: selectedPlatform === platform ? 'var(--accent-cyan)' : 'var(--nav-text)',
-                            border: '1px solid transparent',
-                            padding: '10px 16px',
-                            borderRadius: '8px',
-                            cursor: 'pointer',
-                            textAlign: 'left',
-                            transition: 'all 0.2s',
-                            fontWeight: selectedPlatform === platform ? 600 : 400,
-                            fontSize: '0.95rem',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'flex-start', // Ensure left align
-                            gap: '12px',
-                            boxShadow: selectedPlatform === platform ? '0 2px 8px rgba(0,0,0,0.05)' : 'none',
-                            width: '100%'
-                        }}
+                        className={`platform-card ${selectedPlatform === platform ? 'active' : ''}`}
                     >
-                        {style.logo && (
-                            <div style={{
-                                background: style.bg,
-                                borderRadius: '8px', // Slightly more rounded
-                                width: '32px',
-                                height: '32px',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                padding: style.padding,
-                                flexShrink: 0,
-                                overflow: 'hidden' // Ensure content stays inside
-                            }}>
-                                <img src={style.logo} alt="" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                        {style.logo ? (
+                            <div className="icon-container" style={{ background: style.bg, padding: style.padding }}>
+                                <img src={style.logo} alt="" />
+                            </div>
+                        ) : (
+                            <div className="icon-container">
+                                {/* Default fallback icon if no logo */}
+                                <span style={{ fontSize: '10px' }}>{platform.slice(0, 2)}</span>
                             </div>
                         )}
-                        {platform}
+                        <span>{platform}</span>
                     </button>
                 );
             })}

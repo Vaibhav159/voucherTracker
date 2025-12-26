@@ -74,36 +74,27 @@ const VoucherGrid = ({ vouchers, onVoucherClick }) => {
     return (
         <>
             {/* Stats Bar */}
-            <div style={{
-                display: 'flex',
-                gap: '1.5rem',
-                marginBottom: '1.5rem',
-                padding: '1rem 1.5rem',
-                background: 'rgba(255,255,255,0.03)',
-                borderRadius: '12px',
-                border: '1px solid rgba(255,255,255,0.06)',
-                flexWrap: 'wrap'
-            }}>
+            <div className="stats-bar">
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <span style={{ fontSize: '1.5rem' }}>🎫</span>
                     <div>
-                        <div style={{ fontSize: '1.2rem', fontWeight: '700', color: 'var(--accent-cyan)' }}>{stats.total}</div>
-                        <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', textTransform: 'uppercase' }}>Vouchers</div>
+                        <div className="stat-value" style={{ color: 'var(--accent-cyan)' }}>{stats.total}</div>
+                        <div className="stat-label">Vouchers</div>
                     </div>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <span style={{ fontSize: '1.5rem' }}>🏪</span>
                     <div>
-                        <div style={{ fontSize: '1.2rem', fontWeight: '700', color: '#a78bfa' }}>{stats.platforms}</div>
-                        <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', textTransform: 'uppercase' }}>Platforms</div>
+                        <div className="stat-value" style={{ color: '#a78bfa' }}>{stats.platforms}</div>
+                        <div className="stat-label">Platforms</div>
                     </div>
                 </div>
                 {stats.maxDiscount > 0 && (
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                         <span style={{ fontSize: '1.5rem' }}>🔥</span>
                         <div>
-                            <div style={{ fontSize: '1.2rem', fontWeight: '700', color: '#4ade80' }}>{stats.maxDiscount}%</div>
-                            <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', textTransform: 'uppercase' }}>Max Discount</div>
+                            <div className="stat-value" style={{ color: '#4ade80' }}>{stats.maxDiscount}%</div>
+                            <div className="stat-label">Max Discount</div>
                         </div>
                     </div>
                 )}
@@ -122,41 +113,17 @@ const VoucherGrid = ({ vouchers, onVoucherClick }) => {
                     }}>
                         <span style={{ color: '#fbbf24' }}>⚡</span> Top Deals Today
                     </h3>
-                    <div style={{
-                        display: 'flex',
-                        gap: '1rem',
-                        overflowX: 'auto',
-                        paddingBottom: '0.5rem',
-                        width: '100%',
-                        scrollbarWidth: 'none', // Firefox
-                        msOverflowStyle: 'none', // IE/Edge
-                        WebkitOverflowScrolling: 'touch'
-                    }} className="hide-scrollbar">
-                        <style>
-                            {`
-                                .hide-scrollbar::-webkit-scrollbar {
-                                    display: none;
-                                }
-                            `}
-                        </style>
+                    <div className="top-deals-container">
                         {topDeals.map(voucher => (
                             <div
                                 key={voucher.id}
                                 onClick={() => onVoucherClick(voucher)}
-                                style={{
-                                    minWidth: '200px',
-                                    padding: '1rem',
-                                    background: 'linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%)',
-                                    border: '1px solid rgba(251, 191, 36, 0.2)',
-                                    borderRadius: '12px',
-                                    cursor: 'pointer',
-                                    transition: 'all 0.2s'
-                                }}
+                                className="top-deal-card"
                             >
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
                                     <span style={{ fontSize: '1.5rem' }}>{voucher.icon || '🎁'}</span>
                                     <div>
-                                        <div style={{ fontWeight: '600', fontSize: '0.95rem' }}>{voucher.brand}</div>
+                                        <div style={{ fontWeight: '600', fontSize: '0.95rem', color: 'var(--text-primary)' }}>{voucher.brand}</div>
                                         <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>{voucher.category}</div>
                                     </div>
                                 </div>

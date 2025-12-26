@@ -134,6 +134,8 @@ function Home() {
             />
           </div>
 
+          <div className="sidebar-divider" /> {/* Added divider */}
+
           <div className="category-section" style={{
             display: 'flex',
             flexDirection: 'column',
@@ -144,11 +146,11 @@ function Home() {
               Filter By Category
             </h3>
             <div style={{
-              overflowY: 'auto',
-              paddingRight: '5px',
-              // Custom scrollbar
-              scrollbarWidth: 'thin',
-              scrollbarColor: 'rgba(255,255,255,0.2) transparent'
+              display: 'flex',
+              flexDirection: 'column',
+              flex: 1,
+              minHeight: 0,
+              overflow: 'hidden'
             }}>
               <CategoryFilter
                 selectedCategory={selectedCategory}
