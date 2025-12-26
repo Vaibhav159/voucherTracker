@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
+import Fuse from 'fuse.js';
 import { HashRouter as Router, Routes, Route, useSearchParams } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import Layout from './components/Layout';
@@ -38,6 +39,9 @@ function Home({ onOpenShortcuts }) {
 
   const [sortOption, setSortOption] = useState('Recommended');
 
+  // Local state for input value (for debouncing)
+  const [inputValue, setInputValue] = useState(searchTerm);
+
   // Helper to update URL params and local state
   const updateParams = (key, value, setStateFn) => {
     setSearchParams(prev => {
@@ -52,7 +56,19 @@ function Home({ onOpenShortcuts }) {
     if (setStateFn) setStateFn(value);
   };
 
-  const handleSearchChange = (val) => updateParams('search', val, setSearchTerm);
+  // Debounce Search Term Update
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      // Only update if the value is different from what's currently in the URL/committed state
+      if (inputValue !== searchTerm) {
+        updateParams('search', inputValue, setSearchTerm);
+      }
+    }, 200); // 200ms debounce
+
+    return () => clearTimeout(timer);
+  }, [inputValue, searchTerm]); // Dependencies
+
+  const handleSearchChange = (val) => setInputValue(val);
   const handlePlatformSelect = (p) => updateParams('platform', p, setSelectedPlatform);
   const handleCategorySelect = (c) => updateParams('category', c, setSelectedCategory);
 
@@ -66,15 +82,20 @@ function Home({ onOpenShortcuts }) {
   };
 
 
+  // Initialize Fuse for searching
+  const fuse = useMemo(() => {
+    return new Fuse(INITIAL_DATA, {
+      keys: ['brand', 'category'],
+      threshold: 0.3
+    });
+  }, []);
+
   const filteredVouchers = useMemo(() => {
     let result = [...INITIAL_DATA];
 
     if (searchTerm) {
-      const lowerTerm = searchTerm.toLowerCase();
-      result = result.filter(voucher =>
-        voucher.brand.toLowerCase().includes(lowerTerm) ||
-        voucher.category.toLowerCase().includes(lowerTerm)
-      );
+      const fuseResults = fuse.search(searchTerm);
+      result = fuseResults.map(res => res.item);
     }
 
     if (selectedPlatform) {
@@ -108,7 +129,7 @@ function Home({ onOpenShortcuts }) {
     }
 
     return result;
-  }, [searchTerm, selectedPlatform, selectedCategory, sortOption]);
+  }, [searchTerm, selectedPlatform, selectedCategory, sortOption, fuse]);
 
 
   // Sync URL to State (Deep linking / External navigation)
@@ -124,8 +145,12 @@ function Home({ onOpenShortcuts }) {
     if (currentCategory !== selectedCategory) {
       setSelectedCategory(currentCategory || null);
     }
-    if (currentSearch !== null && currentSearch !== searchTerm) {
-      setSearchTerm(currentSearch);
+    // Sync from URL to State
+    // We treat null (missing param) as empty string to ensure input clears if param is removed
+    const targetSearch = currentSearch || '';
+    if (targetSearch !== searchTerm) {
+      setSearchTerm(targetSearch);
+      setInputValue(targetSearch); // Also sync the input value
     }
 
     // Sync Voucher Modal
@@ -224,7 +249,7 @@ function Home({ onOpenShortcuts }) {
       {/* Main Content */}
       <main>
         <SearchBar
-          value={searchTerm}
+          value={inputValue}
           onChange={handleSearchChange}
           sortOption={sortOption}
           onSortChange={setSortOption}

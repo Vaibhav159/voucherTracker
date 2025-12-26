@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
+import Fuse from 'fuse.js';
 import { useNavigate } from 'react-router-dom';
 import vouchers from '../data/vouchers.json';
 import { creditCards } from '../data/creditCards';
@@ -133,6 +134,20 @@ const GlobalSearch = () => {
         }
     }, [isOpen]);
 
+    // Initialize Fuse
+    const fuse = useMemo(() => {
+        const options = {
+            keys: [
+                { name: 'name', weight: 0.4 },
+                { name: 'tags', weight: 0.3 },
+                { name: 'bank', weight: 0.2 },
+                { name: 'type', weight: 0.1 }
+            ],
+            threshold: 0.4
+        };
+        return new Fuse(allItems, options);
+    }, [allItems]);
+
     // Filter results
     const results = useMemo(() => {
         let filtered = allItems;
@@ -144,15 +159,15 @@ const GlobalSearch = () => {
 
         if (!query) return filtered.slice(0, 10); // Show top items if no query
 
-        const lowerQuery = query.toLowerCase();
+        // Use Fuse.js if query exists
+        // Note: Fuse searches entire collection, so we might need to filter by type AFTER search or create separate fuse instances.
+        // For simplicity/performance with small dataset, filtering after search is fine or searching pre-filtered list.
 
-        return filtered.filter(item => {
-            const nameMatch = item.name.toLowerCase().includes(lowerQuery);
-            const tagMatch = item.tags?.some(tag => tag.toLowerCase().includes(lowerQuery));
-            const bankMatch = item.bank?.toLowerCase().includes(lowerQuery);
-            return nameMatch || tagMatch || bankMatch;
-        }).slice(0, 10); // Limit to 10 results
-    }, [query, allItems, filterType]);
+        // Better approach: Create Fuse instance on the filtered list whenever filterType changes
+        const currentFuse = filterType === 'all' ? fuse : new Fuse(filtered, fuse.options);
+
+        return currentFuse.search(query).map(result => result.item).slice(0, 10);
+    }, [query, allItems, filterType, fuse]);
 
     // Navigate selection
     useEffect(() => {
