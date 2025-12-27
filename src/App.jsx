@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, useSearchParams } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
+import { FavoritesProvider } from './context/FavoritesContext';
 import Layout from './components/Layout';
 import SearchBar from './components/SearchBar';
 import CategoryFilter from './components/CategoryFilter';
@@ -11,8 +12,15 @@ import VoucherDetail from './components/VoucherDetail';
 import Guides from './components/Guides';
 import CreditCardComparison from './components/CreditCardComparison';
 import CardGuide from './components/CardGuide';
+import RewardsCalculator from './components/RewardsCalculator';
+import PointsConverter from './components/PointsConverter';
+import BankingGuides from './components/BankingGuides';
+import AskAI from './components/AskAI';
 import ChatBot from './components/ChatBot';
 import MobileStickyFilterBar from './components/MobileStickyFilterBar';
+import TopDeals from './components/TopDeals';
+import StatsBar from './components/StatsBar';
+import { featureFlags } from './config/featureFlags';
 import { vouchers as RAW_DATA } from './data/vouchers';
 import { sortPlatforms } from './utils/sortUtils';
 
@@ -172,6 +180,14 @@ function Home() {
 
       {/* Main Content */}
       <main>
+        {/* Show Top Deals and Stats only when no filters active */}
+        {!searchTerm && !selectedPlatform && !selectedCategory && (
+          <>
+            <StatsBar vouchers={INITIAL_DATA} platforms={ALL_PLATFORMS} />
+            <TopDeals vouchers={INITIAL_DATA} onVoucherClick={setSelectedVoucher} />
+          </>
+        )}
+
         <SearchBar
           value={searchTerm}
           onChange={setSearchTerm}
@@ -215,57 +231,52 @@ function App() {
 
   return (
     <ThemeProvider>
-      <Router>
-        <Layout selectedCardsCount={selectedCards.length}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/guides" element={<Guides />} />
-            <Route
-              path="/know-your-cards"
-              element={
-                <CreditCardComparison
-                  view="grid"
-                  selectedCards={selectedCards}
-                  toggleCardSelection={toggleCardSelection}
-                  clearSelection={() => setSelectedCards([])}
-                />
-              }
-            />
-            <Route
-              path="/compare-cards"
-              element={
-                <CreditCardComparison
-                  view="table"
-                  selectedCards={selectedCards}
-                  toggleCardSelection={toggleCardSelection}
-                  clearSelection={() => setSelectedCards([])}
-                />
-              }
-            />
-            <Route path="/card-guide/:id" element={<CardGuide />} />
-            <Route path="/voucher/:id" element={<VoucherDetail />} />
-            <Route path="/ask-ai" element={
-              <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                minHeight: '60vh',
-                textAlign: 'center',
-                padding: '2rem'
-              }}>
-                <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🧞‍♂️</div>
-                <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>Ask AI</h2>
-                <p style={{ color: '#6b7280', fontSize: '1.1rem', marginBottom: '2rem' }}>Coming Soon</p>
-                <p style={{ color: 'var(--text-secondary)', maxWidth: '400px', lineHeight: '1.6' }}>
-                  Our AI-powered credit card advisor is under development.
-                  It will help you find the best card for any spending category.
-                </p>
-              </div>
-            } />
-          </Routes>
-        </Layout>
-      </Router>
+      <FavoritesProvider>
+        <Router>
+          <Layout selectedCardsCount={selectedCards.length}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/guides" element={<Guides />} />
+              <Route
+                path="/know-your-cards"
+                element={
+                  <CreditCardComparison
+                    view="grid"
+                    selectedCards={selectedCards}
+                    toggleCardSelection={toggleCardSelection}
+                    clearSelection={() => setSelectedCards([])}
+                  />
+                }
+              />
+              <Route
+                path="/compare-cards"
+                element={
+                  <CreditCardComparison
+                    view="table"
+                    selectedCards={selectedCards}
+                    toggleCardSelection={toggleCardSelection}
+                    clearSelection={() => setSelectedCards([])}
+                  />
+                }
+              />
+              <Route path="/card-guide/:id" element={<CardGuide />} />
+              {featureFlags.rewardsCalculator && (
+                <Route path="/rewards-calculator" element={<RewardsCalculator />} />
+              )}
+              {featureFlags.pointsConverter && (
+                <Route path="/points-converter" element={<PointsConverter />} />
+              )}
+              {featureFlags.bankingGuides && (
+                <Route path="/banking-guides" element={<BankingGuides />} />
+              )}
+              <Route path="/voucher/:id" element={<VoucherDetail />} />
+              {featureFlags.askAI && (
+                <Route path="/ask-ai" element={<AskAI />} />
+              )}
+            </Routes>
+          </Layout>
+        </Router>
+      </FavoritesProvider>
     </ThemeProvider>
   );
 }

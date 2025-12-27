@@ -2,6 +2,18 @@ import React, { useEffect, useState, useMemo } from 'react';
 import guidesData from '../data/guides.json';
 import { useTheme } from '../context/ThemeContext';
 
+// Calculate estimated reading time from content
+const getReadingTime = (guide) => {
+    // Estimate based on title + description + embed content
+    const text = [guide.title, guide.description, guide.embedHtml || ''].join(' ');
+    // Strip HTML tags for word count
+    const plainText = text.replace(/<[^>]*>/g, '');
+    const wordCount = plainText.split(/\s+/).filter(Boolean).length;
+    // Average reading speed: 200 words per minute
+    const minutes = Math.ceil(wordCount / 200);
+    return Math.max(1, minutes); // Minimum 1 minute
+};
+
 const GuideModal = ({ guide, onClose }) => {
     const { theme } = useTheme();
 
@@ -154,6 +166,7 @@ const GuideModal = ({ guide, onClose }) => {
 const Guides = () => {
     const [selectedGuide, setSelectedGuide] = useState(null);
     const [selectedTag, setSelectedTag] = useState(null);
+    const [searchTerm, setSearchTerm] = useState('');
 
     // Extract unique tags
     const allTags = useMemo(() => {
@@ -165,9 +178,26 @@ const Guides = () => {
     }, []);
 
     const filteredGuides = useMemo(() => {
-        if (!selectedTag) return guidesData;
-        return guidesData.filter(guide => guide.tags.includes(selectedTag));
-    }, [selectedTag]);
+        let guides = guidesData;
+
+        // Filter by tag
+        if (selectedTag) {
+            guides = guides.filter(guide => guide.tags.includes(selectedTag));
+        }
+
+        // Filter by search term
+        if (searchTerm.trim()) {
+            const lowerSearch = searchTerm.toLowerCase();
+            guides = guides.filter(guide =>
+                guide.title.toLowerCase().includes(lowerSearch) ||
+                guide.description.toLowerCase().includes(lowerSearch) ||
+                guide.tags.some(tag => tag.toLowerCase().includes(lowerSearch)) ||
+                guide.author.toLowerCase().includes(lowerSearch)
+            );
+        }
+
+        return guides;
+    }, [selectedTag, searchTerm]);
 
     useEffect(() => {
         // Load Twitter Widget Script globally
@@ -183,11 +213,58 @@ const Guides = () => {
 
     return (
         <div style={{ maxWidth: '1200px', margin: '0 auto', paddingBottom: '4rem' }}>
-            <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
                 <h2 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Community Guides</h2>
                 <p style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
                     Curated discussions and threads to help you maximize savings.
                 </p>
+            </div>
+
+            {/* Search Bar */}
+            <div style={{ maxWidth: '500px', margin: '0 auto 2rem' }}>
+                <div className="glass-panel" style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    padding: '0.75rem 1rem',
+                    borderRadius: '12px',
+                    background: 'rgba(255,255,255,0.03)'
+                }}>
+                    <span style={{ marginRight: '0.75rem', color: 'var(--text-secondary)' }}>🔍</span>
+                    <input
+                        type="text"
+                        placeholder="Search guides..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        style={{
+                            background: 'transparent',
+                            border: 'none',
+                            color: 'var(--text-primary)',
+                            fontSize: '1rem',
+                            width: '100%',
+                            outline: 'none'
+                        }}
+                    />
+                    {searchTerm && (
+                        <button
+                            onClick={() => setSearchTerm('')}
+                            style={{
+                                background: 'rgba(255,255,255,0.1)',
+                                border: 'none',
+                                color: 'var(--text-secondary)',
+                                borderRadius: '50%',
+                                width: '24px',
+                                height: '24px',
+                                cursor: 'pointer',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                fontSize: '0.8rem'
+                            }}
+                        >
+                            ✕
+                        </button>
+                    )}
+                </div>
             </div>
 
             {/* Tag Filter */}
@@ -311,9 +388,20 @@ const Guides = () => {
 
                             {/* Footer */}
                             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 'auto', paddingTop: '1rem', borderTop: '1px solid var(--item-border)' }}>
-                                <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-                                    {guide.author}
-                                </span>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                                    <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+                                        {guide.author}
+                                    </span>
+                                    <span style={{
+                                        fontSize: '0.75rem',
+                                        color: 'var(--text-secondary)',
+                                        background: 'rgba(255,255,255,0.05)',
+                                        padding: '3px 8px',
+                                        borderRadius: '10px'
+                                    }}>
+                                        ⏱️ {getReadingTime(guide)} min read
+                                    </span>
+                                </div>
 
                                 {hasEmbed ? (
                                     <button

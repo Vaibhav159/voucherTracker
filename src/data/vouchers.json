@@ -20,7 +20,7 @@
             {
                 "name": "Gyftr",
                 "cap": "10k/month",
-                "fee": "Discount ~16.25%",
+                "fee": "Net ~12.4% (Fee 4.13%)",
                 "denominations": [
                     "250",
                     "500",
@@ -72,7 +72,7 @@
             {
                 "name": "Gyftr",
                 "cap": "5k/month",
-                "fee": "Discount 1%",
+                "fee": "Net ~13.5% (Fee 2.95%)",
                 "denominations": [
                     "500",
                     "1000"
