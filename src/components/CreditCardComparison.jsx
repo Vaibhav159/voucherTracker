@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
+import Fuse from 'fuse.js';
 import { Link } from 'react-router-dom';
 import { creditCards } from '../data/creditCards';
 import CardImage from './CardImage';
@@ -69,54 +70,54 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
         return match ? parseFloat(match[1]) : 0;
     };
 
-    const filteredCards = creditCards.filter(card => {
-        // Search by name, bank, features, and bestFor
-        const searchableText = [
-            card.name,
-            card.bank,
-            card.bestFor,
-            card.verdict,
-            ...(card.features || [])
-        ].join(' ').toLowerCase();
+    const filteredCards = useMemo(() => {
+        let cards = creditCards;
 
-        const matchesSearch = searchableText.includes(searchTerm.toLowerCase());
-
-        if (!matchesSearch) return false;
-
-        // Bank Filter
-        if (activeBank !== 'All' && card.bank !== activeBank) return false;
-
-        if (activeFilter === 'All') return true;
-
-        // Lifetime Free: Check "Lifetime Free" or "₹0" in fee
-        if (activeFilter === 'Lifetime Free') {
-            const feeLower = card.annualFee?.toLowerCase() || '';
-            return feeLower.includes('lifetime free') || feeLower.includes('₹0') || feeLower === 'free';
+        if (searchTerm) {
+            const fuse = new Fuse(cards, {
+                keys: ['name', 'bank', 'tags'],
+                threshold: 0.3
+            });
+            cards = fuse.search(searchTerm).map(res => res.item);
         }
 
-        // Low Forex: Cards with 0%, 1%, 1.5%, or 2% markup
-        if (activeFilter === 'Low Forex') {
-            const fxNum = parseFloat(card.fxMarkup?.replace('%', '') || '100');
-            return fxNum <= 2;
-        }
+        return cards.filter(card => {
+            // Re-apply other filters on the search results
+            // Bank Filter
+            if (activeBank !== 'All' && card.bank !== activeBank) return false;
 
-        // Fuel: Check category or features
-        if (activeFilter === 'Fuel') {
-            if (card.category === 'Fuel') return true;
-            const lower = (card.name + ' ' + card.features?.join(' ')).toLowerCase();
-            return lower.includes('fuel') || lower.includes('petrol') || lower.includes('bpcl') || lower.includes('hpcl') || lower.includes('iocl');
-        }
+            if (activeFilter === 'All') return true;
 
-        // Shopping: Check category or features
-        if (activeFilter === 'Shopping') {
-            if (card.category === 'Shopping') return true;
-            const lower = (card.name + ' ' + card.bestFor + ' ' + card.features?.join(' ')).toLowerCase();
-            return lower.includes('shopping') || lower.includes('amazon') || lower.includes('flipkart') || lower.includes('online shop');
-        }
+            // Lifetime Free: Check "Lifetime Free" or "₹0" in fee
+            if (activeFilter === 'Lifetime Free') {
+                const feeLower = card.annualFee?.toLowerCase() || '';
+                return feeLower.includes('lifetime free') || feeLower.includes('₹0') || feeLower === 'free';
+            }
 
-        // Default: match by category
-        return card.category === activeFilter;
-    });
+            // Low Forex: Cards with 0%, 1%, 1.5%, or 2% markup
+            if (activeFilter === 'Low Forex') {
+                const fxNum = parseFloat(card.fxMarkup?.replace('%', '') || '100');
+                return fxNum <= 2;
+            }
+
+            // Fuel: Check category or features
+            if (activeFilter === 'Fuel') {
+                if (card.category === 'Fuel') return true;
+                const lower = (card.name + ' ' + card.features?.join(' ')).toLowerCase();
+                return lower.includes('fuel') || lower.includes('petrol') || lower.includes('bpcl') || lower.includes('hpcl') || lower.includes('iocl');
+            }
+
+            // Shopping: Check category or features
+            if (activeFilter === 'Shopping') {
+                if (card.category === 'Shopping') return true;
+                const lower = (card.name + ' ' + card.bestFor + ' ' + card.features?.join(' ')).toLowerCase();
+                return lower.includes('shopping') || lower.includes('amazon') || lower.includes('flipkart') || lower.includes('online shop');
+            }
+
+            // Default: match by category
+            return card.category === activeFilter;
+        });
+    }, [searchTerm, activeBank, activeFilter]);
 
     const filters = ['All', 'Cashback', 'Travel', 'Premium', 'Fuel', 'Shopping', 'Low Forex', 'Lifetime Free'];
 
@@ -166,75 +167,76 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
             {view === 'grid' && (
                 <>
                     {/* Search & Filter Section */}
-                    <div style={{ maxWidth: '800px', margin: '0 auto 3rem auto' }}>
-                        {/* Search Bar */}
-                        <div style={{ position: 'relative', maxWidth: '500px', margin: '0 auto 1.5rem auto' }}>
-                            <input
-                                type="text"
-                                placeholder="Search cards by name or bank..."
-                                value={searchTerm}
-                                onChange={(e) => setSearchTerm(e.target.value)}
-                                style={{
-                                    width: '100%',
-                                    padding: '12px 20px',
-                                    paddingLeft: '45px',
-                                    borderRadius: '50px',
-                                    border: '1px solid var(--glass-border)',
-                                    background: 'rgba(255, 255, 255, 0.05)',
-                                    color: 'var(--text-primary)',
-                                    fontSize: '1rem',
-                                    outline: 'none',
-                                    transition: 'border-color 0.3s'
-                                }}
-                                onFocus={(e) => e.target.style.borderColor = 'var(--accent-cyan)'}
-                                onBlur={(e) => e.target.style.borderColor = 'var(--glass-border)'}
-                            />
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
+
+                    {/* Search Bar - Moved out of the wrapper to allow sticky positioning relative to main container */}
+                    <div className="sticky-search-bar pill-search-wrapper" style={{ position: 'relative', maxWidth: '500px', margin: '0 auto 1.5rem auto' }}>
+                        <input
+                            type="text"
+                            placeholder="Search cards by name or bank..."
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                            style={{
+                                width: '100%',
+                                padding: '12px 20px',
+                                paddingLeft: '45px',
+                                borderRadius: '50px',
+                                border: '1px solid var(--glass-border)',
+                                background: 'rgba(255, 255, 255, 0.05)',
+                                color: 'var(--text-primary)',
+                                fontSize: '1rem',
+                                outline: 'none',
+                                transition: 'border-color 0.3s'
+                            }}
+                            onFocus={(e) => e.target.style.borderColor = 'var(--accent-cyan)'}
+                            onBlur={(e) => e.target.style.borderColor = 'var(--glass-border)'}
+                        />
+                        <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            style={{
+                                position: 'absolute',
+                                left: '15px',
+                                top: '50%',
+                                transform: 'translateY(-50%)',
+                                color: 'var(--text-secondary)'
+                            }}
+                        >
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        {searchTerm && (
+                            <button
+                                onClick={() => setSearchTerm('')}
                                 style={{
                                     position: 'absolute',
-                                    left: '15px',
+                                    right: '15px',
                                     top: '50%',
                                     transform: 'translateY(-50%)',
-                                    color: 'var(--text-secondary)'
+                                    background: 'rgba(255,255,255,0.1)',
+                                    border: 'none',
+                                    borderRadius: '50%',
+                                    width: '20px',
+                                    height: '20px',
+                                    cursor: 'pointer',
+                                    color: 'var(--text-secondary)',
+                                    fontSize: '12px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center'
                                 }}
                             >
-                                <circle cx="11" cy="11" r="8"></circle>
-                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                            </svg>
-                            {searchTerm && (
-                                <button
-                                    onClick={() => setSearchTerm('')}
-                                    style={{
-                                        position: 'absolute',
-                                        right: '15px',
-                                        top: '50%',
-                                        transform: 'translateY(-50%)',
-                                        background: 'rgba(255,255,255,0.1)',
-                                        border: 'none',
-                                        borderRadius: '50%',
-                                        width: '20px',
-                                        height: '20px',
-                                        cursor: 'pointer',
-                                        color: 'var(--text-secondary)',
-                                        fontSize: '12px',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center'
-                                    }}
-                                >
-                                    ✕
-                                </button>
-                            )}
-                        </div>
+                                ✕
+                            </button>
+                        )}
+                    </div>
 
+                    <div style={{ maxWidth: '800px', margin: '0 auto 3rem auto' }}>
                         {/* Feature/Benefit Quick Search */}
                         {!searchTerm && (
                             <div style={{ marginBottom: '1rem' }}>
@@ -263,7 +265,6 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                                 </div>
                             </div>
                         )}
-
                         {/* Filter Buttons */}
                         <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
                             {filters.map(filter => (

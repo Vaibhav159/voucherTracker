@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
+import Fuse from 'fuse.js';
 import { HashRouter as Router, Routes, Route, useSearchParams } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import { FavoritesProvider } from './context/FavoritesContext';
@@ -34,26 +35,75 @@ const INITIAL_DATA = RAW_DATA.map(voucher => ({
 const ALL_PLATFORMS = [...new Set(INITIAL_DATA.flatMap(v => v.platforms.map(p => p.name)))];
 const ALL_CATEGORIES = [...new Set(INITIAL_DATA.map(v => v.category))].sort();
 
-function Home() {
+function Home({ onOpenShortcuts }) {
   const [searchParams, setSearchParams] = useSearchParams();
 
+  // State variables for filters, initialized from URL search params
   const [searchTerm, setSearchTerm] = useState(searchParams.get('search') || '');
   const [selectedPlatform, setSelectedPlatform] = useState(searchParams.get('platform') || null);
   const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || null);
-  const [selectedVoucher, setSelectedVoucher] = useState(null);
+  const [selectedVoucher, setSelectedVoucher] = useState(null); // Local state fallback, but we primarily use URL now
   const [activeMobileFilter, setActiveMobileFilter] = useState('none'); // 'none', 'platform', 'category'
 
   const [sortOption, setSortOption] = useState('Recommended');
+
+  // Local state for input value (for debouncing)
+  const [inputValue, setInputValue] = useState(searchTerm);
+
+  // Helper to update URL params and local state
+  const updateParams = (key, value, setStateFn) => {
+    setSearchParams(prev => {
+      const newParams = new URLSearchParams(prev);
+      if (value) {
+        newParams.set(key, value);
+      } else {
+        newParams.delete(key);
+      }
+      return newParams;
+    }, { replace: true });
+    if (setStateFn) setStateFn(value);
+  };
+
+  // Debounce Search Term Update
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      // Only update if the value is different from what's currently in the URL/committed state
+      if (inputValue !== searchTerm) {
+        updateParams('search', inputValue, setSearchTerm);
+      }
+    }, 300); // 300ms debounce
+
+    return () => clearTimeout(timer);
+  }, [inputValue, searchTerm]); // Dependencies
+
+  const handleSearchChange = (val) => setInputValue(val);
+  const handlePlatformSelect = (p) => updateParams('platform', p, setSelectedPlatform);
+  const handleCategorySelect = (c) => updateParams('category', c, setSelectedCategory);
+
+  // Handle Voucher selection (updates URL)
+  const handleVoucherSelect = (voucher) => {
+    if (voucher) {
+      updateParams('voucher', voucher.id);
+    } else {
+      updateParams('voucher', null);
+    }
+  };
+
+
+  // Initialize Fuse for searching
+  const fuse = useMemo(() => {
+    return new Fuse(INITIAL_DATA, {
+      keys: ['brand', 'category'],
+      threshold: 0.3
+    });
+  }, []);
 
   const filteredVouchers = useMemo(() => {
     let result = [...INITIAL_DATA];
 
     if (searchTerm) {
-      const lowerTerm = searchTerm.toLowerCase();
-      result = result.filter(voucher =>
-        voucher.brand.toLowerCase().includes(lowerTerm) ||
-        voucher.category.toLowerCase().includes(lowerTerm)
-      );
+      const fuseResults = fuse.search(searchTerm);
+      result = fuseResults.map(res => res.item);
     }
 
     if (selectedPlatform) {
@@ -87,20 +137,43 @@ function Home() {
     }
 
     return result;
-  }, [searchTerm, selectedPlatform, selectedCategory, sortOption]);
+  }, [searchTerm, selectedPlatform, selectedCategory, sortOption, fuse]);
 
 
-  // Sync state to URL
+  // Sync URL to State (Deep linking / External navigation)
   useEffect(() => {
-    const params = new URLSearchParams();
-    if (searchTerm) params.set('search', searchTerm);
-    if (selectedPlatform) params.set('platform', selectedPlatform);
-    if (selectedCategory) params.set('category', selectedCategory);
+    const currentPlatform = searchParams.get('platform');
+    const currentCategory = searchParams.get('category');
+    const currentSearch = searchParams.get('search');
+    const currentVoucherId = searchParams.get('voucher');
 
-    // Use replace for search term changes to not clutter history too much while typing
-    // But for filters, push (default) might be okay. Using replace for cleaner history for now.
-    setSearchParams(params, { replace: true });
-  }, [searchTerm, selectedPlatform, selectedCategory, setSearchParams]);
+    if (currentPlatform !== selectedPlatform) {
+      setSelectedPlatform(currentPlatform || null);
+    }
+    if (currentCategory !== selectedCategory) {
+      setSelectedCategory(currentCategory || null);
+    }
+    // Sync from URL to State
+    // We treat null (missing param) as empty string to ensure input clears if param is removed
+    const targetSearch = currentSearch || '';
+    if (targetSearch !== searchTerm) {
+      setSearchTerm(targetSearch);
+      setInputValue(targetSearch); // Also sync the input value
+    }
+
+    // Sync Voucher Modal
+    if (currentVoucherId) {
+      const voucher = INITIAL_DATA.find(v => v.id === currentVoucherId);
+      if (voucher) {
+        setSelectedVoucher(voucher);
+      } else {
+        setSelectedVoucher(null);
+      }
+    } else {
+      setSelectedVoucher(null);
+    }
+
+  }, [searchParams, selectedPlatform, selectedCategory, searchTerm]);
   return (
     <div className="home-container">
       {/* Mobile Filter Toggle Removed */}
@@ -135,12 +208,14 @@ function Home() {
             <PlatformFilter
               selectedPlatform={selectedPlatform}
               onPlatformSelect={(p) => {
-                setSelectedPlatform(p);
-                // Optional: Close on select? Maybe not for multi-browse
+                // Toggle behavior: if clicking selected, unselect it
+                handlePlatformSelect(p === selectedPlatform ? null : p);
               }}
               platforms={ALL_PLATFORMS}
             />
           </div>
+
+          <div className="sidebar-divider" /> {/* Added divider */}
 
           <div className="category-section" style={{
             display: 'flex',
@@ -152,16 +227,17 @@ function Home() {
               Filter By Category
             </h3>
             <div style={{
-              overflowY: 'auto',
-              paddingRight: '5px',
-              // Custom scrollbar
-              scrollbarWidth: 'thin',
-              scrollbarColor: 'rgba(255,255,255,0.2) transparent'
+              display: 'flex',
+              flexDirection: 'column',
+              flex: 1,
+              minHeight: 0,
+              overflow: 'hidden'
             }}>
               <CategoryFilter
                 selectedCategory={selectedCategory}
                 onCategorySelect={(c) => {
-                  setSelectedCategory(c);
+                  // Toggle behavior
+                  handleCategorySelect(c === selectedCategory ? null : c);
                 }}
                 categories={ALL_CATEGORIES}
               />
@@ -189,15 +265,16 @@ function Home() {
         )}
 
         <SearchBar
-          value={searchTerm}
-          onChange={setSearchTerm}
+          value={inputValue}
+          onChange={handleSearchChange}
           sortOption={sortOption}
           onSortChange={setSortOption}
+          onOpenShortcuts={onOpenShortcuts}
         />
 
         <VoucherGrid
           vouchers={filteredVouchers}
-          onVoucherClick={setSelectedVoucher}
+          onVoucherClick={handleVoucherSelect}
         />
       </main>
 
@@ -205,7 +282,7 @@ function Home() {
         <VoucherModal
           voucher={selectedVoucher}
           selectedPlatform={selectedPlatform} // Pass selected platform context
-          onClose={() => setSelectedVoucher(null)}
+          onClose={() => handleVoucherSelect(null)}
         />
       )}
     </div>
@@ -215,6 +292,7 @@ function Home() {
 
 function App() {
   const [selectedCards, setSelectedCards] = useState([]);
+  const [isShortcutsOpen, setIsShortcutsOpen] = useState(false);
 
   // Toggle card selection
   const toggleCardSelection = (cardId) => {
@@ -229,13 +307,37 @@ function App() {
     }
   };
 
+  // Global listener for Shortcuts Modal (Shift + / which is ?)
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      // Disable on mobile
+      if (window.innerWidth < 768) return;
+
+      const isInputFocused = ['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName);
+      // Allow shortcut if focused element is the global search input
+      if (isInputFocused && document.activeElement?.id !== 'global-search-input') return;
+
+      if (e.key === '?' || (e.shiftKey && e.key === '/')) {
+        e.preventDefault();
+        setIsShortcutsOpen(prev => !prev);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   return (
     <ThemeProvider>
       <FavoritesProvider>
         <Router>
-          <Layout selectedCardsCount={selectedCards.length}>
+          <Layout
+            selectedCardsCount={selectedCards.length}
+            isShortcutsOpen={isShortcutsOpen}
+            setIsShortcutsOpen={setIsShortcutsOpen}
+          >
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Home onOpenShortcuts={() => setIsShortcutsOpen(true)} />} />
               <Route path="/guides" element={<Guides />} />
               <Route
                 path="/know-your-cards"

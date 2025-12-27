@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, useMemo } from 'react';
 import guidesData from '../data/guides.json';
 import { useTheme } from '../context/ThemeContext';
@@ -14,34 +15,101 @@ const getReadingTime = (guide) => {
     return Math.max(1, minutes); // Minimum 1 minute
 };
 
-const GuideModal = ({ guide, onClose }) => {
-    const { theme } = useTheme();
+const RedditEmbed = ({ embedHtml, theme, onLoad }) => {
+    const containerRef = React.useRef(null);
+    const [isLoaded, setIsLoaded] = useState(false);
 
+    useEffect(() => {
+        if (!containerRef.current || !embedHtml) return;
 
-    // Helper to reload reddit widgets
-    const reloadRedditWidgets = () => {
-        const scriptId = 'reddit-wjs';
-        const existingScript = document.getElementById(scriptId);
-        if (existingScript) {
-            existingScript.remove();
+        // Strip existing script tags to prevent conflicts
+        const cleanHtml = embedHtml.replace(/<script\b[^>]*>([\s\S]*?)<\/script>/gim, "");
+
+        // Inject content manually to prevent React reconciliation from undoing the iframe transformation
+        containerRef.current.innerHTML = cleanHtml;
+
+        const blockquote = containerRef.current.querySelector('blockquote');
+        if (blockquote) {
+            if (theme === 'dark') {
+                blockquote.setAttribute('data-embed-theme', 'dark');
+            } else {
+                blockquote.removeAttribute('data-embed-theme');
+            }
         }
-        const script = document.createElement('script');
+
+        // Reload Reddit widgets script
+        const scriptId = 'reddit-wjs';
+        let script = document.getElementById(scriptId);
+        if (script) {
+            script.remove();
+        }
+        script = document.createElement('script');
         script.id = scriptId;
         script.src = "https://embed.reddit.com/widgets.js";
         script.async = true;
         script.charset = "UTF-8";
         document.body.appendChild(script);
-    };
+
+        // Check for iframe creation
+        const checkIframe = setInterval(() => {
+            if (containerRef.current) {
+                const iframe = containerRef.current.querySelector('iframe');
+                if (iframe && iframe.offsetHeight > 0) {
+                    setIsLoaded(true);
+                    onLoad && onLoad();
+                    clearInterval(checkIframe);
+                }
+            }
+        }, 100);
+
+        // Cleanup
+        const timeout = setTimeout(() => {
+            clearInterval(checkIframe);
+            // Fallback: assume loaded if timeout hits to show whatever we have
+            setIsLoaded(true);
+            onLoad && onLoad();
+        }, 8000);
+
+        return () => {
+            clearInterval(checkIframe);
+            clearTimeout(timeout);
+        };
+    }, [embedHtml, theme]);
+
+    return (
+        <div style={{ position: 'relative', minHeight: isLoaded ? '0' : '300px' }}>
+            {!isLoaded && (
+                <div style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    background: 'var(--modal-bg)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '1rem',
+                    zIndex: 10,
+                    borderRadius: '12px'
+                }}>
+                    <div className="loading-spinner"></div>
+                    <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Loading discussion...</span>
+                </div>
+            )}
+            <div ref={containerRef} />
+        </div>
+    );
+};
+
+const GuideModal = ({ guide, onClose }) => {
+    const { theme } = useTheme();
 
     useEffect(() => {
-        // Re-scan for widgets when modal opens
+        // Re-scan for Twitter widgets when modal opens
         if (window.twttr && window.twttr.widgets) {
             window.twttr.widgets.load();
-        }
-
-        // Reload Reddit widgets for blockquote embeds
-        if (guide.embedHtml && guide.embedHtml.includes('blockquote class="reddit-embed-bq"')) {
-            reloadRedditWidgets();
         }
 
         // Prevent background scrolling
@@ -65,22 +133,6 @@ const GuideModal = ({ guide, onClose }) => {
         if (guide.link.includes('reddit.com')) return 'Open on Reddit';
         if (guide.link.includes('twitter.com') || guide.link.includes('x.com')) return 'Open on Twitter';
         return 'Open Link';
-    };
-
-
-
-    // Prepare embed HTML with theme attribute
-    const getAdjustedEmbedHtml = () => {
-        if (guide.embedHtml && guide.embedHtml.includes('blockquote class="reddit-embed-bq"')) {
-            if (theme === 'dark') {
-                // Inject dark theme attribute if not present
-                return guide.embedHtml.replace('blockquote class="reddit-embed-bq"', 'blockquote class="reddit-embed-bq" data-embed-theme="dark"');
-            } else {
-                // Ensure no dark theme attribute (if it was somehow hardcoded, though we rely on dynamic injection)
-                return guide.embedHtml.replace('data-embed-theme="dark"', '');
-            }
-        }
-        return guide.embedHtml;
     };
 
     return (
@@ -145,7 +197,11 @@ const GuideModal = ({ guide, onClose }) => {
                 <h3 style={{ margin: '0 0 1.5rem 0', fontSize: '1.5rem', paddingRight: '2rem' }}>{guide.title}</h3>
 
                 {/* Embed Container */}
-                <div dangerouslySetInnerHTML={{ __html: getAdjustedEmbedHtml() }} />
+                {guide.embedHtml && guide.embedHtml.includes('blockquote class="reddit-embed-bq"') ? (
+                    <RedditEmbed embedHtml={guide.embedHtml} theme={theme} />
+                ) : (
+                    <div dangerouslySetInnerHTML={{ __html: guide.embedHtml }} />
+                )}
 
                 <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center' }}>
                     <a

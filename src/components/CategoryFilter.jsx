@@ -1,53 +1,77 @@
-const CategoryFilter = ({ selectedCategory, onCategorySelect, categories }) => {
-    return (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-            <button
-                onClick={() => onCategorySelect(null)}
-                style={{
-                    background: !selectedCategory ? 'var(--nav-bg-active)' : 'transparent',
-                    color: !selectedCategory ? 'var(--nav-text-hover)' : 'var(--nav-text)',
-                    border: '1px solid transparent',
-                    padding: '8px 16px',
-                    borderRadius: '8px',
-                    cursor: 'pointer',
-                    textAlign: 'left',
-                    transition: 'all 0.2s',
-                    fontSize: '0.9rem',
-                    fontWeight: !selectedCategory ? 600 : 400,
-                    width: '100%'
-                }}
-            >
-                All Categories
-            </button>
-            {categories.map(category => (
-                <button
-                    key={category}
-                    onClick={() => onCategorySelect(category)}
-                    style={{
-                        background: selectedCategory === category ? 'var(--nav-bg-active)' : 'transparent',
-                        color: selectedCategory === category ? 'var(--accent-pink)' : 'var(--nav-text)',
-                        border: '1px solid transparent',
-                        padding: '8px 16px',
-                        borderRadius: '8px',
-                        cursor: 'pointer',
-                        textAlign: 'left',
-                        transition: 'all 0.2s',
-                        fontSize: '0.9rem',
-                        fontWeight: selectedCategory === category ? 600 : 400,
-                        whiteSpace: 'nowrap',
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis',
-                        boxShadow: selectedCategory === category ? '0 2px 8px rgba(0,0,0,0.05)' : 'none',
-                        width: '100%',
-                        textAlign: 'left',
-                        display: 'block' // Ensure text overflow works, block usually better for simple text buttons but let's try strict left
+import React, { useState } from 'react';
 
-                    }}
-                    title={category}
+const CategoryFilter = ({ selectedCategory, onCategorySelect, categories }) => {
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const filteredCategories = categories.filter(category =>
+        category.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    return (
+        <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            height: '100%',
+            minHeight: 0, /* Enable flex shrinking */
+            overflow: 'hidden' /* Contain children */
+        }}>
+            {/* Search Bar */}
+            <div className="category-search-wrapper">
+                <input
+                    type="text"
+                    placeholder="Search categories..."
+                    className="category-search-input"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                />
+                <svg
+                    className="category-search-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                /* Style removed to rely on CSS centering */
                 >
-                    {category}
-                </button>
-            ))}
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </div>
+
+            <div className="category-list">
+                {/* Always show "All Categories" unless searching (optional, let's keep it always visible for easy reset) */}
+                {!searchTerm && (
+                    <button
+                        onClick={() => onCategorySelect(null)}
+                        className={`category-item ${!selectedCategory ? 'active' : ''}`}
+                    >
+                        <span className="category-item-text">All Categories</span>
+                        {!selectedCategory && (
+                            <span style={{ color: 'var(--accent-pink)', fontSize: '1.2rem' }}>•</span>
+                        )}
+                    </button>
+                )}
+
+                {filteredCategories.length > 0 ? (
+                    filteredCategories.map(category => (
+                        <button
+                            key={category}
+                            onClick={() => onCategorySelect(category)}
+                            className={`category-item ${selectedCategory === category ? 'active' : ''}`}
+                            title={category}
+                        >
+                            <span className="category-item-text">{category}</span>
+                        </button>
+                    ))
+                ) : (
+                    <div style={{ padding: '10px', color: 'var(--text-secondary)', fontSize: '0.9rem', textAlign: 'center' }}>
+                        No categories found
+                    </div>
+                )}
+            </div>
         </div>
     );
 };

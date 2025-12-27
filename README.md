@@ -3,7 +3,7 @@
  > A community-driven platform to track shopping voucher caps, fees, and platforms. 
  > **[Live Demo](https://vaibhav159.github.io/voucherTracker/)**
 
-![Screenshot](https://via.placeholder.com/800x400?text=Voucher+Tracker+UI+Preview)
+<video src="https://github.com/user-attachments/assets/dcd76170-5bd3-46d6-92b0-40004845cc14" controls muted autoplay loop style="width: 100%"></video>
 
 ## 🚀 Features
 - **Multi-Platform Comparison**: See caps and fees for Amazon, Flipkart, Uber, etc., across different buying platforms (Gyftr, iShop, etc.).

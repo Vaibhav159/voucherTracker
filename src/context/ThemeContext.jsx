@@ -9,10 +9,6 @@ export const ThemeProvider = ({ children }) => {
         if (savedTheme) {
             return savedTheme;
         }
-        // Check system preference
-        if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-            return 'light';
-        }
         return 'dark'; // Default to dark
     });
 

@@ -1,6 +1,7 @@
 export const creditCards = [
   {
     id: 1,
+    tags: ['Cashback', 'Online Shopping'],
     name: "SBI Cashback Credit Card",
     bestFor: "Online Shoppers",
     verdict: "Best for online shopping with 5% cashback, ₹5000/mo cap.",
@@ -70,6 +71,7 @@ Excellent for online shopping with 5% unlimited cashback across all merchants. T
   },
   {
     id: 2,
+    tags: ['Premium', 'Travel', 'Unlimited Lounge', 'Golf', 'Invite Only', 'Low Forex', 'EPM'],
     name: "ICICI Emeralde Private Metal",
     bestFor: "High Spend + iShop",
     verdict: "Invite-only. 18K RP/mo iShop cap. 36% on hotels, 18% on vouchers.",
@@ -150,6 +152,7 @@ One of India's best super-premium cards with excellent rewards on travel booking
   },
   {
     id: 3,
+    tags: ['Cashback', 'Shopping', 'Amazon', 'Lifetime Free'],
     name: "Amazon Pay ICICI",
     bestFor: "Amazon Prime Members",
     verdict: "Must-have lifetime free card with unlimited Amazon cashback.",
@@ -222,6 +225,7 @@ Outstanding lifetime-free card for Amazon ecosystem users. The 5% unlimited cash
   },
   {
     id: 4,
+    tags: ['Premium', 'Travel', 'Rewards', 'Lounge', 'Golf', 'Invite Only', 'Low Forex'],
     name: "HDFC Infinia Metal",
     bestFor: "SmartBuy Optimization",
     verdict: "15K bonus RP/mo cap. 33% on SmartBuy hotels. India's #1 card.",
@@ -315,6 +319,7 @@ Benchmark premium card in India offering excellent 3.33% return across all categ
   },
   {
     id: 5,
+    tags: ['Premium', 'Travel', 'Rewards', 'Lounge', 'Golf', 'Low Forex'],
     name: "HDFC Diners Club Black Metal",
     bestFor: "SmartBuy + Lifestyle",
     verdict: "10K bonus RP/mo cap (lower than Infinia). Amazon Prime + Swiggy One included.",
@@ -392,6 +397,7 @@ Excellent alternative to Infinia at 20% lower fee. Nearly identical reward struc
   },
   {
     id: 6,
+    tags: ['Cashback', 'Shopping', 'Tata Neu', 'UPI', 'Lounge', 'Low Forex'],
     name: "HDFC Tata Neu Infinity",
     bestFor: "Tata Ecosystem Users",
     verdict: "10% on Tata Neu | 7,000 pts/mo cap.",
@@ -471,6 +477,7 @@ Excellent for Tata loyalists with 10% rewards on Tata Neu purchases. The wide ne
   },
   {
     id: 7,
+    tags: ['Cashback', 'Dining', 'Food Delivery', 'Shopping'],
     name: "HDFC Swiggy Credit Card",
     bestFor: "Foodies & Online Shoppers",
     verdict: "10% Swiggy, 5% online | ₹3,500/mo cap.",
@@ -538,6 +545,7 @@ Outstanding value at ₹500 annual fee with 10% cashback on Swiggy and 5% on div
   },
   {
     id: 8,
+    tags: ['Cashback', 'Utility', 'Telecom'],
     name: "Axis Airtel Credit Card",
     bestFor: "Airtel Users",
     verdict: "25% Airtel, 10% utilities | ₹750/mo cap.",
@@ -602,6 +610,7 @@ Excellent for Airtel ecosystem users with 25% cashback on Airtel services. The u
   },
   {
     id: 9,
+    tags: ['Travel', 'Rewards', 'Lounge', 'Low Forex'],
     name: "Axis Atlas Credit Card",
     bestFor: "Frequent Flyers",
     verdict: "2% base, 5% travel | 2% forex.",
@@ -671,6 +680,7 @@ Excellent airline-agnostic travel card with 1:2 redemption ratio across 20+ part
   },
   {
     id: 10,
+    tags: ['Cashback', 'Dining', 'Grocery', 'Lounge'],
     name: "HSBC Live+ Credit Card",
     bestFor: "Dining & Grocery",
     verdict: "10% cashback on dining and groceries.",
@@ -737,6 +747,7 @@ Top cashback card for essential categories with 10% on dining/groceries/food del
   },
   {
     id: 11,
+    tags: ['Travel', 'Rewards', 'Milestone', 'Lounge'],
     name: "Amex Platinum Travel",
     bestFor: "Milestone Spenders",
     verdict: "Great for reaching 4L milestone via reward multiplier.",
@@ -805,6 +816,7 @@ Solid milestone-based card with good returns if you spend ₹4 lakh annually. Th
   },
   {
     id: 12,
+    tags: ['Travel', 'Train', 'Lounge', 'Zero Forex', 'Lifetime Free'],
     name: "AU Ixigo Credit Card",
     bestFor: "Train Travelers",
     verdict: "Zero forex and railway lounge access.",
@@ -879,6 +891,7 @@ Best for domestic travel enthusiasts with unique railway lounge access and accel
   },
   {
     id: 13,
+    tags: ['Premium', 'Travel', 'Lounge', 'Spa', 'Low Forex', 'Lifetime Free'],
     name: "IDFC First Wealth",
     bestFor: "High Spenders",
     verdict: "LTF premium, 10X on ₹20k+ txns, 1.5% forex.",
@@ -939,6 +952,7 @@ One of the best premium lifetime free cards in India. The low forex markup (1.5%
   },
   {
     id: 14,
+    tags: ['Travel', 'Zero Forex', 'Lounge', 'Lifetime Free'],
     name: "Scapia Federal Credit Card",
     bestFor: "International Travelers",
     verdict: "LTF, 0% forex, 10% coins on all spends.",
@@ -987,6 +1001,7 @@ The best entry-level travel card. Lifetime free + Zero Forex is a killer combina
   },
   {
     id: 15,
+    tags: ['Premium', 'Travel', 'Lounge', 'Low Forex'],
     name: "Bank of Baroda Eterna",
     bestFor: "Frequent Flyers",
     verdict: "Unlimited lounge access & high rewards on travel/online.",
@@ -1026,6 +1041,7 @@ Excellent for unlimited domestic lounge access and high reward rate on travel/on
 
   {
     id: 16,
+    tags: ['Cashback', 'UPI', 'Virtual', 'Lifetime Free'],
     name: "Kiwi RuPay Credit Card",
     bestFor: "UPI Users",
     verdict: "Virtual RuPay card for UPI rewards.",
@@ -1064,6 +1080,7 @@ Great secondary card for making small UPI payments on credit. The base 1% return
   },
   {
     id: 17,
+    tags: ['Travel', 'Lounge', 'Dining'],
     name: "Axis Privilege Credit Card",
     bestFor: "General Travelers",
     verdict: "Good mid-range card with lounge & dining benefits.",
@@ -1101,6 +1118,7 @@ A solid "filler" card or entry-level travel card, especially if you get it Lifet
   },
   {
     id: 18,
+    tags: ['Shopping', 'Lifetime Free'],
     name: "ICICI Bank Platinum Chip",
     bestFor: "First Time Users",
     verdict: "Lifetime free card with great Amazon sales offers.",
@@ -1137,6 +1155,7 @@ Excellent first credit card.While rewards are low, the lifetime free status and 
   },
   {
     id: 19,
+    tags: ['Cashback', 'Lounge', 'Lifetime Free'],
     name: "AU Bank Xcite Ace",
     bestFor: "Cashback & Lounge",
     verdict: "Lifetime free with lounge access (rare combo).",
@@ -1173,6 +1192,7 @@ One of the best lifetime free cards if you can get it.verified via AU SwipeUp.Th
   },
   {
     id: 20,
+    tags: ['Cashback', 'Utility', 'Offline'],
     name: "Axis Bank Ace",
     bestFor: "Offline Cashback",
     verdict: "Best for offline spends and utility bills via GPay.",
@@ -1215,6 +1235,7 @@ Essential for utility bill payments(5 %) and offline retail shopping.The 1.5 % f
   },
   {
     id: 21,
+    tags: ['Rewards', 'Milestone', 'Shopping'],
     name: "Amex Membership Rewards",
     bestFor: "Rewards & Vouchers",
     verdict: "Gold tier collection offers great value.",
@@ -1250,6 +1271,7 @@ A must - have for those who can spend ₹20k a month to maximize the bonus point
   },
   {
     id: 22,
+    tags: ['Travel', 'Lounge', 'Rewards'],
     name: "HDFC Regalia Gold",
     bestFor: "Travel & Lifestyle",
     verdict: "Solid upgrade to the legendary Regalia.",
@@ -1287,6 +1309,7 @@ A balanced card.Good for moderate travelers who want international lounge access
   },
   {
     id: 23,
+    tags: ['Premium', 'Travel', 'Lounge', 'Low Forex', 'BOGO'],
     name: "Yes Bank Marquee",
     bestFor: "Premium Travel",
     verdict: "Unlimited international lounge access & BOGO offers.",
@@ -1324,6 +1347,7 @@ A fantastic travel card.The 1 % forex fee and unlimited guest lounge access make
   },
   {
     id: 24,
+    tags: ['Travel', 'Hotel', 'Lounge'],
     name: "Marriott Bonvoy HDFC",
     bestFor: "Hotel Loyalists",
     verdict: "Free Night Award worth up to 15k points.",
@@ -1360,6 +1384,7 @@ The Free Night Award alone justifies the fee.If you stay at Marriotts even once 
   },
   {
     id: 25,
+    tags: ['Travel', 'Train', 'Lounge'],
     name: "IRCTC SBI Premier",
     bestFor: "Railway Travelers",
     verdict: "10% value back on AC train tickets.",
@@ -1395,6 +1420,7 @@ Unbeatable for train travel.The 10 % return is substantial for regular AC travel
   },
   {
     id: 26,
+    tags: ['Fuel', 'Movies'],
     name: "IndianOil RBL Bank XTRA",
     bestFor: "Fuel Settings",
     verdict: "7.5% value back on IndianOil fuel.",
@@ -1430,6 +1456,7 @@ One of the highest reward rates for fuel(7.5 %) currently available in the marke
   },
   {
     id: 27,
+    tags: ['Fuel', 'Grocery'],
     name: "BPCL SBI Card",
     bestFor: "BPCL Fuel",
     verdict: "4.25% on BPCL | ₹400/mo fuel cap.",
@@ -1470,6 +1497,7 @@ A great beginner fuel card.Low fee(waived easily) and decent returns on fuel and
   },
   {
     id: 28,
+    tags: ['Fuel', 'Grocery', 'Utility', 'Lounge'],
     name: "IDFC First Power+",
     bestFor: "Fuel (HPCL)",
     verdict: "Good rewards on HPCL + Utility bills.",
@@ -1507,6 +1535,7 @@ Versatile card.It covers Fuel, Utilities, and Grocery with good reward rates, al
   },
   {
     id: 29,
+    tags: ['Cashback', 'Online Shopping', 'Lounge'],
     name: "HDFC Millennia Credit Card",
     bestFor: "Online Shoppers",
     verdict: "5% on 10 online brands | ₹2,000/mo cap.",
@@ -1547,6 +1576,7 @@ Great starter card for online shoppers. Easy to get and maintains a decent 5% on
   },
   {
     id: 30,
+    tags: ['Cashback', 'Metal', 'Lifetime Free', 'Low Forex'],
     name: "OneCard Credit Card",
     bestFor: "Metal Card Enthusiasts",
     verdict: "LTF metal card, 5X on top 2 categories, no cap.",
@@ -1588,6 +1618,7 @@ Stylish lifetime free metal card. The auto-category detection for 5X rewards is 
   },
   {
     id: 31,
+    tags: ['Cashback', 'Shopping', 'Flipkart'],
     name: "Flipkart Axis Bank Credit Card",
     bestFor: "Flipkart Shoppers",
     verdict: "5% Flipkart, 7.5% Myntra | ₹4k/quarter cap.",
@@ -1629,6 +1660,7 @@ Essential for Flipkart loyalists. The 5% unlimited cashback rivals Amazon Pay IC
   },
   {
     id: 32,
+    tags: ['Travel', 'Lounge', 'Golf', 'Movies'],
     name: "ICICI Rubyx Credit Card",
     bestFor: "Lifestyle & Travel",
     verdict: "Good mid-tier card with lounge access.",
@@ -1665,6 +1697,7 @@ Solid mid-tier card. Good for those not ready for super-premium but wanting loun
   },
   {
     id: 33,
+    tags: ['Shopping', 'Online Shopping', 'Rewards'],
     name: "SBI SimplyCLICK Credit Card",
     bestFor: "Online Shopping",
     verdict: "10X partners, 5X online | no cap.",
@@ -1706,6 +1739,7 @@ Excellent budget online shopping card. The 10X on partners is outstanding value.
   },
   {
     id: 34,
+    tags: ['Cashback', 'Lifetime Free'],
     name: "Kotak 811 #Dream Different",
     bestFor: "First-Time Users",
     verdict: "Zero-fee card linked to 811 account.",
@@ -1742,6 +1776,7 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
   },
   {
     id: 35,
+    tags: ['Lifestyle', 'Dining', 'Movies', 'Lifetime Free'],
     name: "Axis Neo Credit Card",
     bestFor: "Entry-Level Lifestyle",
     verdict: "Great starter card with Zomato, BookMyShow & shopping offers.",
@@ -1762,6 +1797,7 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
   },
   {
     id: 36,
+    tags: ['Rewards', 'Lounge', 'Dining'],
     name: "Axis Rewards Credit Card",
     bestFor: "Lounge & Swiggy Discounts",
     verdict: "Great value with 2 lounge visits/quarter and dining offers.",
@@ -1782,6 +1818,7 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
   },
   {
     id: 37,
+    tags: ['Lifestyle', 'Movies', 'OTT', 'Dining', 'Lifetime Free'],
     name: "Axis MyZone Credit Card",
     bestFor: "Entertainment & OTT",
     verdict: "Lifetime free with BOGO movies, Swiggy discounts & SonyLiv.",
@@ -1802,6 +1839,7 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
   },
   {
     id: 38,
+    tags: ['Travel', 'Low Forex', 'Lounge', 'Golf'],
     name: "IndusInd Tiger Credit Card",
     bestFor: "Low Forex & Travel",
     verdict: "Excellent 1.5% forex with lounge access and golf benefits.",
@@ -1822,6 +1860,7 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
   },
   {
     id: 39,
+    tags: ['Travel', 'Train', 'Lounge'],
     name: "IRCTC HDFC Bank Credit Card",
     bestFor: "Railway Travelers",
     verdict: "5% rewards on IRCTC with railway lounge access.",
@@ -1842,6 +1881,7 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
   },
   {
     id: 40,
+    tags: ['Cashback', 'Customizable', 'Virtual'],
     name: "HDFC Pixel Play Credit Card",
     bestFor: "Customizable Cashback",
     verdict: "Pick your categories for 5% cashback - truly customizable.",
@@ -1862,6 +1902,7 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
   },
   {
     id: 41,
+    tags: ['Cashback', 'Credit Builder'],
     name: "HDFC Pixel Go Credit Card",
     bestFor: "Credit Builders",
     verdict: "1% unlimited cashback with low fee - ideal for beginners.",
@@ -1882,6 +1923,7 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
   },
   {
     id: 42,
+    tags: ['Shopping', 'Grocery', 'Movies'],
     name: "RBL Shoprite Credit Card",
     bestFor: "Grocery Shopping",
     verdict: "5% rewards on grocery with movie discounts.",
@@ -1902,6 +1944,7 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
   },
   {
     id: 43,
+    tags: ['Travel', 'Lounge', 'Movies', 'Low Forex', 'Lifetime Free'],
     name: "IDFC First Select Credit Card",
     bestFor: "Lounge & Low Forex",
     verdict: "Lifetime free with 1.99% forex and 4 lounge visits/quarter.",
@@ -1922,6 +1965,7 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
   },
   {
     id: 44,
+    tags: ['Travel', 'Zero Forex', 'FD Backed', 'Lifetime Free'],
     name: "IDFC WOW Credit Card",
     bestFor: "Zero Forex Travel",
     verdict: "FD-backed card with 0% forex - perfect for international use.",
@@ -1942,6 +1986,7 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
   },
   {
     id: 45,
+    tags: ['Shopping', 'Rewards'],
     name: "HDFC Shoppers Stop Credit Card",
     bestFor: "Shoppers Stop Loyalists",
     verdict: "3% on private labels with First Citizen membership.",
@@ -1962,6 +2007,7 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
   },
   {
     id: 46,
+    tags: ['Travel', 'Airline', 'Lounge', 'Low Forex'],
     name: "SBI Miles Elite Credit Card",
     bestFor: "Air Travel & Miles",
     verdict: "Premium miles card with 1.99% forex and lounge access.",
@@ -1982,6 +2028,7 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
   },
   {
     id: 47,
+    tags: ['Cashback', 'Grocery', 'Utility', 'Lounge'],
     name: "AU ALTURA Credit Card",
     bestFor: "Grocery & Utility",
     verdict: "Low fee card with 2% on grocery and utility spends.",
@@ -2002,6 +2049,7 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
   },
   {
     id: 48,
+    tags: ['Rewards', 'Online Shopping', 'Lounge'],
     name: "AU ALTURA PLUS Credit Card",
     bestFor: "Online Spends",
     verdict: "2x rewards on online with airport lounge access.",
@@ -2022,6 +2070,7 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
   },
   {
     id: 49,
+    tags: ['Rewards', 'Lounge', 'Insurance', 'Lifetime Free'],
     name: "Axis LIC Signature Credit Card",
     bestFor: "LIC Policyholders",
     verdict: "Lifetime free with 8 lounge visits and LIC rewards.",
@@ -2042,6 +2091,7 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
   },
   {
     id: 50,
+    tags: ['Lifestyle', 'Weekend', 'Lounge', 'Movies', 'Lifetime Free'],
     name: "IndusInd Legend Credit Card",
     bestFor: "Weekend Spenders",
     verdict: "Lifetime free with 2x weekend rewards and BOGO movies.",
@@ -2062,6 +2112,7 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
   },
   {
     id: 51,
+    tags: ['Fuel', 'UPI', 'Movies'],
     name: "Axis Indian Oil RuPay Credit Card",
     bestFor: "Fuel (IndianOil)",
     verdict: "4% value back on IOCL fuel + UPI via RuPay.",
@@ -2082,6 +2133,7 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
   },
   {
     id: 52,
+    tags: ['Premium', 'Travel', 'Lounge', 'Concierge'],
     name: "Axis Magnus Credit Card",
     bestFor: "Travel EDGE + Miles",
     verdict: "5:4 miles ratio (BEST). 12-35 RP/₹200 tiered. 10L RP/yr transfer cap.",
@@ -2113,6 +2165,7 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
   },
   {
     id: 53,
+    tags: ['Lifestyle', 'Customizable', 'Lifetime Free'],
     name: "AU LIT Credit Card",
     bestFor: "DIY Customization",
     verdict: "Build your own card - pay only for features you use.",
@@ -2133,6 +2186,7 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
   },
   {
     id: 54,
+    tags: ['Travel', 'Insurance', 'Vouchers'],
     name: "IndusInd Platinum Aura Credit Card",
     bestFor: "Premium Travel",
     verdict: "Priority Pass with travel insurance and brand vouchers.",
