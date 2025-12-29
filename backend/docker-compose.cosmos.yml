@@ -7,7 +7,8 @@ volumes:
 
 services:
   django:
-    image: ${DOCKER_IMAGE_BACKEND:-${DOCKER_USERNAME}/voucher-tracker-backend:latest}
+    # 1. UPDATED: Hardcoded your image so you don't need extra env vars
+    image: vaibhav198/voucher-tracker-backend:latest
     restart: unless-stopped
     volumes:
       - production_django_media:/app/backend/media
@@ -22,10 +23,8 @@ services:
     command: /start
 
   postgres:
-    build:
-      context: .
-      dockerfile: ./compose/production/postgres/Dockerfile
-    image: backend_production_postgres
+    # 2. UPDATED: Removed 'build'. Used standard image so you don't need source code.
+    image: postgres:15
     restart: unless-stopped
     volumes:
       - production_postgres_data:/var/lib/postgresql/data
@@ -34,19 +33,17 @@ services:
       - ./.envs/.production/.postgres
 
   redis:
-    image: docker.io/redis:6
+    image: redis:6
     restart: unless-stopped
 
   nginx:
-    image: ${DOCKER_IMAGE_NGINX:-${DOCKER_USERNAME}/voucher-tracker-nginx:latest}
+    # 3. UPDATED: Hardcoded image name
+    image: vaibhav198/voucher-tracker-nginx:latest
     restart: unless-stopped
     depends_on:
       - django
     volumes:
       - production_django_media:/usr/share/nginx/media:ro
-    depends_on:
-      - django
-    volumes:
-      - production_django_media:/usr/share/nginx/media:ro
+    # 4. UPDATED: Fixed duplicate keys and Port Conflict
     ports:
-      - "80:80" # Exposed for Cosmos to route to (or map to random host port)
+      - "8050:80"  # Map Host 8050 -> Container 80. Cosmos will talk to 8050.
