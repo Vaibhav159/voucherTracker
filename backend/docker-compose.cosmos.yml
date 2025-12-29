@@ -20,11 +20,12 @@ services:
       - ./.envs/.production/.postgres
     environment:
       - DJANGO_ALLOWED_HOSTS=*
+      - DJANGO_CSRF_TRUSTED_ORIGINS=http://localhost:8050
     command: /start
 
   postgres:
     # 2. UPDATED: Removed 'build'. Used standard image so you don't need source code.
-    image: postgres:15
+    image: postgres:16
     restart: unless-stopped
     volumes:
       - production_postgres_data:/var/lib/postgresql/data

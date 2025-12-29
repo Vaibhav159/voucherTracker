@@ -2,3 +2,4 @@
 # ------------------------------------------------------------------------------
 USE_DOCKER=yes
 IPYTHONDIR=/app/.ipython
+DATABASE_URL=postgres://MAXlUoJJsVQavEmTezgxQMtvUHLLaHrN:wukgdUVXMI1ZiH5Rfa6JVOXBaACpjqIQIdz1WG4GqytVVSwZEjN5vDZW6VKpAuyx@postgres:5432/backend
