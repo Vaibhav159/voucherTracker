@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
+import { useDebounce } from '../hooks/useDebounce';
 
 const CategoryFilter = ({ selectedCategory, onCategorySelect, categories }) => {
     const [searchTerm, setSearchTerm] = useState('');
 
+    // Debounce search term to avoid filtering on every keystroke
+    const debouncedSearchTerm = useDebounce(searchTerm, 200);
+
     const filteredCategories = categories.filter(category =>
-        category.toLowerCase().includes(searchTerm.toLowerCase())
+        category.toLowerCase().includes(debouncedSearchTerm.toLowerCase())
     );
 
     return (

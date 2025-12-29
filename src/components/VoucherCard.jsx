@@ -1,106 +1,93 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { getPlatformLogo } from '../utils/platformLogos';
+import ExpiryBadge from './ExpiryBadge';
+import RatingStars from './RatingStars';
+import { useReviews } from '../hooks/useReviews';
 
 const VoucherCard = ({ voucher, onClick }) => {
   const platformNames = voucher.platforms.map(p => p.name);
+  const { averageRating, reviewCount } = useReviews(voucher.id);
 
   return (
-    <div
+    <button
       onClick={() => onClick && onClick(voucher)}
       className="glass-panel voucher-card"
+      aria-label={`View details for ${voucher.brand} in ${voucher.category} category. Available on ${platformNames.length} platform${platformNames.length > 1 ? 's' : ''}`}
     >
-      <div style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '2rem', gap: '18px' }}>
-        <div
-          style={{
-            width: '64px',
-            height: '64px',
-            borderRadius: '16px',
-            background: '#fff',
-            padding: '8px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
+      <div className="voucher-card__header">
+        <div className="voucher-card__logo">
           <img
             src={voucher.logo}
-            alt={voucher.brand}
-            style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+            alt={`${voucher.brand} logo`}
+            loading="lazy"
             onError={(e) => { e.target.src = `https://ui-avatars.com/api/?name=${voucher.brand}&background=random` }}
           />
         </div>
-        <div>
-          <h3 style={{ margin: '0 0 6px 0', fontSize: '1.35rem', fontWeight: 600, letterSpacing: '-0.5px' }}>{voucher.brand}</h3>
-          <span style={{
-            fontSize: '0.75rem',
-            color: 'var(--accent-cyan)',
-            background: 'var(--accent-cyan-dim)',
-            padding: '4px 10px',
-            borderRadius: '20px',
-            fontWeight: 600,
-            textTransform: 'uppercase',
-            letterSpacing: '1px'
-          }}>
-            {voucher.category}
-          </span>
+        <div className="voucher-card__info">
+          <h3 className="voucher-card__brand">{voucher.brand}</h3>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
+            <span className="voucher-card__category">{voucher.category}</span>
+            {voucher.expiryDays && voucher.lastUpdated && (
+              <ExpiryBadge
+                lastUpdated={voucher.lastUpdated}
+                expiryDays={voucher.expiryDays}
+                size="xs"
+              />
+            )}
+          </div>
+          {averageRating > 0 && (
+            <div style={{ marginTop: '4px' }}>
+              <RatingStars rating={averageRating} size="xs" reviewCount={reviewCount} />
+            </div>
+          )}
         </div>
       </div>
 
-      <div style={{ marginTop: 'auto' }}>
-        <div style={{ marginBottom: '1.2rem' }}>
-          <p style={{ margin: '0 0 8px 0', fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Available on</p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+      <div className="voucher-card__body">
+        <div className="voucher-card__platforms-section">
+          <p className="voucher-card__platforms-label">Available on</p>
+          <div className="voucher-card__platforms-list">
             {platformNames.slice(0, 3).map(name => {
               const logo = getPlatformLogo(name);
               return (
-                <span
-                  key={name}
-                  style={{
-                    fontSize: '0.8rem',
-                    color: 'var(--text-primary)',
-                    padding: '4px 10px',
-                    borderRadius: '8px',
-                    background: 'var(--tag-bg)',
-                    border: '1px solid var(--glass-border)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px'
-                  }}
-                >
-                  {logo && <img src={logo} alt={name} style={{ height: '12px', width: 'auto', objectFit: 'contain' }} />}
+                <span key={name} className="platform-badge">
+                  {logo && <img src={logo} alt={name} loading="lazy" />}
                   {name}
                 </span>
               );
             })}
             {platformNames.length > 3 && (
-              <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', padding: '6px' }}>+{platformNames.length - 3}</span>
+              <span className="platform-badge__count">+{platformNames.length - 3}</span>
             )}
           </div>
         </div>
 
-        <div style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          borderTop: '1px solid var(--glass-border)',
-          paddingTop: '1rem'
-        }}>
-          <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Check Rates</span>
-          <div style={{
-            width: '32px',
-            height: '32px',
-            borderRadius: '50%',
-            background: 'var(--text-primary)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}>
+        <div className="voucher-card__footer">
+          <span className="voucher-card__cta-text">Check Rates</span>
+          <div className="btn-icon">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--bg-color)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
           </div>
         </div>
       </div>
-    </div>
+    </button>
   );
+};
+
+VoucherCard.propTypes = {
+  voucher: PropTypes.shape({
+    id: PropTypes.string,
+    brand: PropTypes.string.isRequired,
+    logo: PropTypes.string,
+    category: PropTypes.string.isRequired,
+    platforms: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      fee: PropTypes.string,
+      cap: PropTypes.string,
+      link: PropTypes.string,
+    })).isRequired,
+  }).isRequired,
+  onClick: PropTypes.func,
 };
 
 export default VoucherCard;

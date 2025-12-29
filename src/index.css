@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
+/* Design System - Modular CSS */
+@import './styles/tokens.css';
+@import './styles/utils.css';
+@import './styles/components/buttons.css';
+@import './styles/components/cards.css';
+@import './styles/components/modals.css';
+@import './styles/components/forms.css';
+@import './styles/components/filters.css';
+
 :root {
   --font-family: 'Outfit', sans-serif;
 
@@ -11,7 +20,7 @@
   /* Neon Accents */
   --primary-glow: conic-gradient(from 180deg at 50% 50%, #16abff33 0deg, #0885ff33 55deg, #54d6ff33 120deg, #0071ff33 160deg, transparent 360deg);
   --accent-cyan: #00f0ff;
-  --accent-pink: #7000ff;
+  --accent-pink: #8B5CF6; /* Changed from #7000ff to #8B5CF6 for WCAG AA compliance (4.5:1 contrast ratio) */
   --accent-violet: #4a00e0;
   --accent-cyan-dim: rgba(0, 240, 255, 0.1);
 
@@ -619,6 +628,15 @@ body::after {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 2rem;
+}
+
+.loading-more {
+  height: 50px;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-secondary);
 }
 
 /* Voucher Card */
@@ -1415,4 +1433,125 @@ body::after {
 [data-theme='light'] .top-deal-card:hover {
   border-color: rgba(245, 158, 11, 0.4);
   box-shadow: 0 4px 12px rgba(245, 158, 11, 0.1);
+}
+
+/* ========================================
+   ACCESSIBILITY IMPROVEMENTS
+   ======================================== */
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus visible states for all interactive elements */
+*:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Specific focus states for buttons */
+button:focus-visible,
+.btn:focus-visible,
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
+}
+
+/* Focus states for cards and interactive elements */
+.voucher-card:focus-visible,
+.platform-card:focus-visible,
+.category-item:focus-visible,
+.top-deal-card:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(0, 240, 255, 0.2);
+}
+
+/* Focus states for inputs */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 1px;
+  border-color: var(--accent-cyan);
+}
+
+/* Focus states for links */
+a:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Remove default focus outline (only when :focus-visible is supported) */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ========================================
+   REDUCED MOTION SUPPORT
+   ======================================== */
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Disable floating background animations */
+  body::before,
+  body::after {
+    animation: none !important;
+  }
+
+  /* Disable hover transforms */
+  .voucher-card:hover,
+  .platform-card:hover,
+  .category-item:hover,
+  .top-deal-card:hover,
+  .btn:hover,
+  .glass-panel:hover {
+    transform: none !important;
+  }
+
+  /* Keep essential transitions but make them instant */
+  .glass-panel::after {
+    transition: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.3);
+  }
+
+  [data-theme='light'] {
+    --glass-bg: rgba(0, 0, 0, 0.05);
+    --glass-border: rgba(0, 0, 0, 0.2);
+  }
+
+  /* Increase border visibility */
+  .glass-panel,
+  .voucher-card,
+  .platform-card {
+    border-width: 2px;
+  }
 }

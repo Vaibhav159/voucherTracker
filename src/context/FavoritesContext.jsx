@@ -1,4 +1,5 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext } from 'react';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
 const FavoritesContext = createContext();
 
@@ -11,24 +12,9 @@ export const useFavorites = () => {
 };
 
 export const FavoritesProvider = ({ children }) => {
-    const [favoriteCards, setFavoriteCards] = useState(() => {
-        const saved = localStorage.getItem('favoriteCards');
-        return saved ? JSON.parse(saved) : [];
-    });
-
-    const [favoriteVouchers, setFavoriteVouchers] = useState(() => {
-        const saved = localStorage.getItem('favoriteVouchers');
-        return saved ? JSON.parse(saved) : [];
-    });
-
-    // Persist to localStorage
-    useEffect(() => {
-        localStorage.setItem('favoriteCards', JSON.stringify(favoriteCards));
-    }, [favoriteCards]);
-
-    useEffect(() => {
-        localStorage.setItem('favoriteVouchers', JSON.stringify(favoriteVouchers));
-    }, [favoriteVouchers]);
+    // Use safe localStorage hook with error handling
+    const [favoriteCards, setFavoriteCards] = useLocalStorage('favoriteCards', []);
+    const [favoriteVouchers, setFavoriteVouchers] = useLocalStorage('favoriteVouchers', []);
 
     const toggleFavoriteCard = (cardId) => {
         setFavoriteCards(prev =>
