@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django import forms
 from django.db import models
+
+from .choices import VoucherMismatchStatus
 from .models import Voucher, VoucherAlias, Platform, VoucherPlatform, VoucherMismatch
 
 
@@ -66,7 +68,7 @@ class VoucherMismatchAdmin(admin.ModelAdmin):
     def create_voucher_from_mismatch(self, request, queryset: list[VoucherMismatch]):
         created_count = 0
         for mismatch in queryset:
-            if mismatch.status == "PROCESSED":
+            if mismatch.status == VoucherMismatchStatus.PROCESSED:
                 continue
 
             # Create Voucher
@@ -81,7 +83,7 @@ class VoucherMismatchAdmin(admin.ModelAdmin):
             if created:
                 created_count += 1
 
-            mismatch.status = "PROCESSED"
+            mismatch.status = VoucherMismatchStatus.PROCESSED
             mismatch.save()
 
         self.message_user(request, f"Created {created_count} new Vouchers.", level="SUCCESS")
@@ -101,7 +103,7 @@ class VoucherMismatchAdmin(admin.ModelAdmin):
             if created:
                 created_count += 1
 
-            mismatch.status = "PROCESSED"
+            mismatch.status = VoucherMismatchStatus.PROCESSED
             mismatch.save()
 
         self.message_user(request, f"Created {created_count} new Aliases.", level="SUCCESS")

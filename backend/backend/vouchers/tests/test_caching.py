@@ -1,6 +1,7 @@
 import pytest
 from django.core.cache import cache
 from backend.vouchers.models import Voucher
+from backend.vouchers.choices import VoucherCategory
 from rest_framework.test import APIClient
 
 @pytest.mark.django_db
@@ -14,7 +15,7 @@ def test_cache_invalidation_on_create(client):
     assert len(response1.data) == 0
 
     # 2. Create Voucher (triggers signal -> cache.clear())
-    Voucher.objects.create(name="New Voucher", category="Shopping")
+    Voucher.objects.create(name="New Voucher", category=VoucherCategory.SHOPPING)
 
     # 3. Second Request - should retrieve new data if cache was cleared
     response2 = client.get("/api/vouchers/")
@@ -25,7 +26,7 @@ def test_cache_invalidation_on_create(client):
 @pytest.mark.django_db
 def test_cache_invalidation_on_update(client):
     cache.clear()
-    voucher = Voucher.objects.create(name="Old Name", category="Shopping")
+    voucher = Voucher.objects.create(name="Old Name", category=VoucherCategory.SHOPPING)
     
     # 1. Populate Cache
     response1 = client.get("/api/vouchers/")
@@ -42,7 +43,7 @@ def test_cache_invalidation_on_update(client):
 @pytest.mark.django_db
 def test_cache_invalidation_on_delete(client):
     cache.clear()
-    voucher = Voucher.objects.create(name="To Delete", category="Shopping")
+    voucher = Voucher.objects.create(name="To Delete", category=VoucherCategory.SHOPPING)
     
     # 1. Populate Cache
     client.get("/api/vouchers/")

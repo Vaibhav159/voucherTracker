@@ -6,6 +6,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets, filters, permissions, decorators, response
 
 from .models import Voucher, VoucherPlatform, VoucherMismatch, Platform
+from .choices import VoucherMismatchStatus, PlatformName
 from .serializers import VoucherSerializer
 
 
@@ -47,7 +48,7 @@ class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
                     "brand_name": brand_name,
                     "gift_card_name": gift_card_name or brand_name,
                     "raw_data": item,
-                    "status": "PENDING"
+                    "status": VoucherMismatchStatus.PENDING
                 }
             )
             return 'mismatch', {
@@ -83,7 +84,7 @@ class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
 
             # Ensure "Maximize" platform exists
             platform, created = Platform.objects.get_or_create(
-                name="Maximize",
+                name=PlatformName.MAXIMIZE,
                 defaults={"icon_url": "https://savemax.maximize.money/favicon.ico"}
             )
 

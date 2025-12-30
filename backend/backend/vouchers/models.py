@@ -3,23 +3,13 @@ import json
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from .choices import VoucherCategory, VoucherMismatchStatus, PlatformName
+
 
 class Voucher(models.Model):
-    CATEGORY_CHOICES = [
-        ("Shopping", "Shopping"),
-        ("Food", "Food"),
-        ("Travel", "Travel"),
-        ("Entertainment", "Entertainment"),
-        ("Grocery", "Grocery"),
-        ("Fashion", "Fashion"),
-        ("Electronics", "Electronics"),
-        ("Health", "Health"),
-        ("Other", "Other"),
-    ]
-
     name = models.CharField(_("Name"), max_length=255, db_index=True)
     logo = models.URLField(_("Logo URL"), blank=True)
-    category = models.CharField(_("Category"), max_length=50, choices=CATEGORY_CHOICES, db_index=True)
+    category = models.CharField(_("Category"), max_length=50, choices=VoucherCategory, db_index=True)
     site_link = models.URLField(_("Site Link"), blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -63,12 +53,6 @@ class VoucherPlatform(models.Model):
 
 
 class VoucherMismatch(models.Model):
-    STATUS_CHOICES = [
-        ("PENDING", "Pending"),
-        ("PROCESSED", "Processed"),
-        ("IGNORED", "Ignored"),
-    ]
-
     platform = models.ForeignKey(Platform, on_delete=models.CASCADE, related_name="mismatches")
     external_id = models.CharField(_("External ID"), max_length=255)
     brand_name = models.CharField(_("Brand Name"), max_length=255)  # Raw brand from source
@@ -76,7 +60,8 @@ class VoucherMismatch(models.Model):
     match_with_voucher = models.ForeignKey(Voucher, on_delete=models.SET_NULL, null=True, blank=True,
                                            related_name="mismatches", verbose_name=_("Map to Voucher"))
     raw_data = models.JSONField(_("Raw Data"), default=dict)
-    status = models.CharField(_("Status"), max_length=20, choices=STATUS_CHOICES, default="PENDING")
+    status = models.CharField(_("Status"), max_length=20, choices=VoucherMismatchStatus,
+                              default=VoucherMismatchStatus.PENDING)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -87,7 +72,7 @@ class VoucherMismatch(models.Model):
         unique_together = ["platform", "external_id"]
 
     def get_category(self):
-        if self.platform.name == "Maximize":
+        if self.platform.name == PlatformName.MAXIMIZE:
             category_str_list = self.raw_data.get("category")
             if isinstance(category_str_list, str):
                 category_list = json.loads(category_str_list)
@@ -95,11 +80,11 @@ class VoucherMismatch(models.Model):
         return self.raw_data
 
     def get_external_id(self):
-        if self.platform.name == "Maximize":
+        if self.platform.name == PlatformName.MAXIMIZE:
             return self.raw_data.get("id")
         return self.raw_data.get("external_id") or self.raw_data.get("id")
 
     def get_logo(self):
-        if self.platform.name == "Maximize":
+        if self.platform.name == PlatformName.MAXIMIZE:
             return self.raw_data.get("giftCardLogo")
         return self.raw_data.get("logo")
