@@ -15,7 +15,10 @@ fido2<2.0.0 # Pin fido2 to avoid breaking changes incompatible with current alla
 django-crispy-forms==2.3  # https://github.com/django-crispy-forms/django-crispy-forms
 crispy-bootstrap5==2024.10  # https://github.com/django-crispy-forms/crispy-bootstrap5
 django-redis==5.4.0  # https://github.com/jazzband/django-redis
+django-ckeditor==6.7.1 # https://github.com/django-ckeditor/django-ckeditor
+
 # Django REST Framework
+# ------------------------------------------------------------------------------
 djangorestframework==3.15.2  # https://github.com/encode/django-rest-framework
 django-cors-headers==4.5.0  # https://github.com/adamchainz/django-cors-headers
 # DRF-spectacular for api documentation

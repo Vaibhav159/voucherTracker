@@ -81,11 +81,14 @@ THIRD_PARTY_APPS = [
     "rest_framework.authtoken",
     "corsheaders",
     "drf_spectacular",
+    "ckeditor",
 ]
 
 LOCAL_APPS = [
     "backend.users",
     "backend.guides",
+    "backend.vouchers",
+    "backend.credit_cards",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
