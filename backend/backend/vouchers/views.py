@@ -1,9 +1,11 @@
+from collections import defaultdict
+
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets, filters, permissions, decorators, response
 
-from .models import Voucher
+from .models import Voucher, VoucherPlatform, VoucherMismatch, Platform
 from .serializers import VoucherSerializer
 
 
@@ -16,10 +18,47 @@ class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
     filterset_fields = ['category']
     search_fields = ['name', 'aliases__name']
 
+    def _handle_voucher_sync(self, voucher: Voucher, platform: Platform, item):
+        external_id = str(item.get("id"))
+        brand_name = item.get("brand")
+        gift_card_name = item.get("giftCardName")
+        discount = item.get("discount")
+
+        if voucher:
+            # Upsert VoucherPlatform
+            vp, vp_created = VoucherPlatform.objects.update_or_create(
+                voucher=voucher,
+                platform=platform,
+                defaults={
+                    "external_id": external_id,
+                    "fee": f"{discount}% OFF" if discount > 0 else "0% OFF",
+                    "cap": "No Cap",
+                    "link": f"https://www.maximize.money/gift-cards/{brand_name}/{external_id}",
+                    "priority": 10
+                }
+            )
+            return 'created' if vp_created else 'updated', None
+        else:
+            # Log mismatch
+            VoucherMismatch.objects.update_or_create(
+                platform=platform,
+                external_id=external_id,
+                defaults={
+                    "brand_name": brand_name,
+                    "gift_card_name": gift_card_name or brand_name,
+                    "raw_data": item,
+                    "status": "PENDING"
+                }
+            )
+            return 'mismatch', {
+                "id": external_id,
+                "brand": brand_name,
+                "name": gift_card_name
+            }
+
     @decorators.action(detail=False, methods=['post'], permission_classes=[permissions.AllowAny])
     def sync_maximize(self, request):
         import requests
-        from .models import Platform, VoucherPlatform, VoucherMismatch
 
         url = 'https://savemax.maximize.money/api/savemax/giftcard/list-all-llm?pageSize=400'
         headers = {
@@ -34,6 +73,14 @@ class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
             data = external_res.json()
             items = data.get("data", {}).get("giftCardList", [])
 
+            brand_to_giftcard_map = defaultdict(list)
+
+            for item in items:
+                brand_to_giftcard_map[item["brand"]].append(item)
+
+            if not brand_to_giftcard_map:
+                return response.Response({"status": "error", "message": "No brands found."}, status=400)
+
             # Ensure "Maximize" platform exists
             platform, created = Platform.objects.get_or_create(
                 name="Maximize",
@@ -44,56 +91,43 @@ class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
             created_count = 0
             skipped_items = []
 
-            for item in items:
-                external_id = str(item.get("id"))
-                brand_name = item.get("brand")
-                gift_card_name = item.get("giftCardName")
-                discount = item.get("discount")
+            for brand_name, brand_items in brand_to_giftcard_map.items():
+                if len(brand_items) == 1:
+                    item = brand_items[0]
+                    if item.get("discount") is None:
+                        continue
 
-                if not brand_name or discount is None:
-                    continue
+                    # Search by brand OR gift card name
+                    voucher = Voucher.objects.filter(name__iexact=brand_name).first()
+                    if not voucher:
+                        voucher = Voucher.objects.filter(aliases__name__iexact=item.get("giftCardName")).first()
 
-                # Find matching Voucher
-                # Try exact name match first, then aliases
-                voucher = Voucher.objects.filter(name__iexact=brand_name).first()
-                if not voucher:
-                    voucher = Voucher.objects.filter(aliases__name__iexact=gift_card_name).first()
+                    status, data = self._handle_voucher_sync(voucher, platform, item)
 
-                if voucher:
-                    # Upsert VoucherPlatform
-                    vp, vp_created = VoucherPlatform.objects.update_or_create(
-                        voucher=voucher,
-                        platform=platform,
-                        defaults={
-                            "external_id": external_id,
-                            "fee": f"{discount}% OFF" if discount > 0 else "0% OFF",
-                            "cap": "No Cap",  # Default assumption based on typical maximize data
-                            "link": f"https://www.maximize.money/gift-cards/{brand_name}/{external_id}",  # Default link
-                            "priority": 10  # Default priority
-                        }
-                    )
-                    if vp_created:
+                    if status == 'created':
                         created_count += 1
-                    else:
+                    elif status == 'updated':
                         updated_count += 1
+                    elif status == 'mismatch':
+                        skipped_items.append(data)
                 else:
-                    # Log mismatch for review
-                    VoucherMismatch.objects.update_or_create(
-                        platform=platform,
-                        external_id=external_id,
-                        defaults={
-                            "brand_name": brand_name,
-                            "gift_card_name": gift_card_name
-                            if gift_card_name else brand_name,
-                            "raw_data": item,
-                            "status": "PENDING"
-                        }
-                    )
-                    skipped_items.append({
-                        "id": external_id,
-                        "brand": brand_name,
-                        "name": gift_card_name
-                    })
+                    for item in brand_items:
+                        if item.get("discount") is None:
+                            continue
+
+                        # Match ONLY via gift_card_name
+                        gift_card_name = item.get("giftCardName")
+                        voucher = Voucher.objects.filter(name__iexact=gift_card_name).first()
+                        if not voucher:
+                            voucher = Voucher.objects.filter(aliases__name__iexact=gift_card_name).first()
+                        status, data = self._handle_voucher_sync(voucher, platform, item)
+
+                        if status == 'created':
+                            created_count += 1
+                        elif status == 'updated':
+                            updated_count += 1
+                        elif status == 'mismatch':
+                            skipped_items.append(data)
 
             from django.core.cache import cache
             cache.clear()  # Invalidate cache after sync

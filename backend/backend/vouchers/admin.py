@@ -57,6 +57,7 @@ class VoucherMismatchAdmin(admin.ModelAdmin):
     list_editable = ["match_with_voucher"]
     autocomplete_fields = ["match_with_voucher"]
     actions = ["create_voucher_from_mismatch", "create_alias_from_mismatch"]
+    ordering = ["match_with_voucher", "created_at"]
 
     def get_queryset(self, request):
         return super().get_queryset(request).exclude(status="PROCESSED")
