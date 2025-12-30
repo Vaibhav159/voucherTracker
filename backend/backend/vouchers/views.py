@@ -1,4 +1,4 @@
-from rest_framework import viewsets, filters, permissions
+from rest_framework import viewsets, filters, permissions, decorators, response
 from django_filters.rest_framework import DjangoFilterBackend
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
@@ -13,3 +13,79 @@ class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
     filterset_fields = ['category']
     search_fields = ['name', 'aliases__name']
+
+    @decorators.action(detail=False, methods=['post'], permission_classes=[permissions.AllowAny])
+    def sync_maximize(self, request):
+        import requests
+        from django.db.models import Q
+        from .models import Platform, VoucherPlatform
+        
+        url = 'https://savemax.maximize.money/api/savemax/giftcard/list-all-llm?pageSize=400'
+        headers = {
+            'accept': 'application/json, text/plain, */*',
+            'accept-language': 'en-IN,en;q=0.6',
+            'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36',
+        }
+        
+        try:
+            external_res = requests.get(url, headers=headers)
+            external_res.raise_for_status()
+            data = external_res.json()
+            items = data.get("data", {}).get("giftCardList", [])
+            
+            # Ensure "Maximize" platform exists
+            platform, created = Platform.objects.get_or_create(
+                name="Maximize", 
+                defaults={"icon_url": "https://savemax.maximize.money/favicon.ico"}
+            )
+            
+            updated_count = 0
+            created_count = 0
+            
+            for item in items:
+                external_id = str(item.get("id"))
+                brand_name = item.get("brand")
+                # gift_card_name = item.get("giftCardName") 
+                discount = item.get("discount")
+                
+                if not brand_name or discount is None:
+                    continue
+                    
+                # Find matching Voucher
+                # Try exact name match first, then aliases
+                voucher = Voucher.objects.filter(name__iexact=brand_name).first()
+                if not voucher:
+                    voucher = Voucher.objects.filter(aliases__name__iexact=brand_name).first()
+                
+                if voucher:
+                    # Upsert VoucherPlatform
+                    print(f"Upserting {brand_name=} {external_id=} {discount=} {voucher=}")
+                    vp, vp_created = VoucherPlatform.objects.update_or_create(
+                        voucher=voucher,
+                        platform=platform,
+                        defaults={
+                            "external_id": external_id,
+                            "fee": f"{discount}% OFF" if discount > 0 else "0% OFF",
+                            "cap": "No Cap", # Default assumption based on typical maximize data
+                            "link": f"https://www.maximize.money/gift-cards/{brand_name}/{external_id}", # Default link
+                            "priority": 10 # Default priority
+                        }
+                    )
+                    print(f"Upserted {brand_name=} {external_id=} {discount=} {voucher=} {vp=}")
+                    if vp_created:
+                        created_count += 1
+                    else:
+                        updated_count += 1
+                        
+            from django.core.cache import cache
+            cache.clear() # Invalidate cache after sync
+            
+            return response.Response({
+                "status": "success", 
+                "message": f"Synced {len(items)} items.",
+                "created": created_count,
+                "updated": updated_count
+            })
+            
+        except Exception as e:
+            return response.Response({"status": "error", "message": str(e)}, status=500)

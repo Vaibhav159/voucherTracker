@@ -47,6 +47,7 @@ class VoucherPlatform(models.Model):
     link = models.URLField(_("Link"), blank=True)
     color = models.CharField(_("Color"), max_length=50, blank=True)
     priority = models.IntegerField(_("Priority"), default=0)
+    external_id = models.CharField(_("External ID"), max_length=255, blank=True, db_index=True)
 
     class Meta:
         ordering = ["priority"]
