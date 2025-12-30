@@ -3,17 +3,6 @@ import React, { useEffect, useState, useMemo } from 'react';
 import guidesData from '../data/guides.json';
 import { useTheme } from '../context/ThemeContext';
 
-// Calculate estimated reading time from content
-const getReadingTime = (guide) => {
-    // Estimate based on title + description + embed content
-    const text = [guide.title, guide.description, guide.embedHtml || ''].join(' ');
-    // Strip HTML tags for word count
-    const plainText = text.replace(/<[^>]*>/g, '');
-    const wordCount = plainText.split(/\s+/).filter(Boolean).length;
-    // Average reading speed: 200 words per minute
-    const minutes = Math.ceil(wordCount / 200);
-    return Math.max(1, minutes); // Minimum 1 minute
-};
 
 const RedditEmbed = ({ embedHtml, theme, onLoad }) => {
     const containerRef = React.useRef(null);
@@ -447,15 +436,6 @@ const Guides = () => {
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                                     <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
                                         {guide.author}
-                                    </span>
-                                    <span style={{
-                                        fontSize: '0.75rem',
-                                        color: 'var(--text-secondary)',
-                                        background: 'rgba(255,255,255,0.05)',
-                                        padding: '3px 8px',
-                                        borderRadius: '10px'
-                                    }}>
-                                        ⏱️ {getReadingTime(guide)} min read
                                     </span>
                                 </div>
 
