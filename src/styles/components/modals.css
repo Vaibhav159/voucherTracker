@@ -22,7 +22,7 @@
   width: 100%;
   max-width: 600px;
   max-height: 85vh;
-  overflow-y: auto;
+  overflow-y: auto !important;
   position: relative;
   background: var(--modal-bg);
   border: 1px solid var(--modal-border);

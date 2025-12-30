@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { calculateDaysRemaining, getExpiryStatus } from '../utils/expiryUtils';
+import { getExpiryStatus } from '../utils/expiryUtils';
 
 const ExpiryBadge = ({ lastUpdated, expiryDays, size = 'sm' }) => {
-  const daysRemaining = calculateDaysRemaining(lastUpdated, expiryDays);
-  const { status, text, color, urgency } = getExpiryStatus(daysRemaining);
+  const { status, text, color, urgency } = getExpiryStatus(expiryDays);
 
   if (status === 'unknown') return null;
 

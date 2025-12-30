@@ -247,7 +247,7 @@ function Home({ onOpenShortcuts }) {
         {!searchTerm && !selectedPlatform && !selectedCategory && (
           <>
             <StatsBar vouchers={INITIAL_DATA} platforms={ALL_PLATFORMS} />
-            <TopDeals vouchers={INITIAL_DATA} onVoucherClick={setSelectedVoucher} />
+            <TopDeals vouchers={INITIAL_DATA} onVoucherClick={handleVoucherSelect} />
           </>
         )}
 
