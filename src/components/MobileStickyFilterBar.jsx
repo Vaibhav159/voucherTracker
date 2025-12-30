@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const MobileStickyFilterBar = ({ onSortClick, onFilterClick, activeFilter }) => {
     return (
@@ -38,6 +39,12 @@ const MobileStickyFilterBar = ({ onSortClick, onFilterClick, activeFilter }) => 
             </button>
         </div>
     );
+};
+
+MobileStickyFilterBar.propTypes = {
+    onSortClick: PropTypes.func.isRequired,
+    onFilterClick: PropTypes.func.isRequired,
+    activeFilter: PropTypes.oneOf(['none', 'platform', 'category']),
 };
 
 export default MobileStickyFilterBar;

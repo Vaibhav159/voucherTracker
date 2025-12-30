@@ -1,21 +1,35 @@
-import { useState, useMemo, useEffect } from 'react';
-import Fuse from 'fuse.js';
+import { useState, useMemo, useEffect, lazy, Suspense } from 'react';
 import { HashRouter as Router, Routes, Route, useSearchParams } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
+import { FavoritesProvider } from './context/FavoritesContext';
+import { useDebounce } from './hooks/useDebounce';
+import { useFuzzySearch } from './hooks/useFuzzySearch';
+import { useDiscountParser } from './hooks/useDiscountParser';
 import Layout from './components/Layout';
 import SearchBar from './components/SearchBar';
 import CategoryFilter from './components/CategoryFilter';
 import VoucherGrid from './components/VoucherGrid';
 import VoucherModal from './components/VoucherModal';
 import PlatformFilter from './components/PlatformFilter';
-import VoucherDetail from './components/VoucherDetail';
-import Guides from './components/Guides';
-import CreditCardComparison from './components/CreditCardComparison';
-import CardGuide from './components/CardGuide';
-import ChatBot from './components/ChatBot';
 import MobileStickyFilterBar from './components/MobileStickyFilterBar';
+import TopDeals from './components/TopDeals';
+import StatsBar from './components/StatsBar';
+import LoadingSpinner from './components/LoadingSpinner';
+import { featureFlags } from './config/featureFlags';
 import { vouchers as RAW_DATA } from './data/vouchers';
 import { sortPlatforms } from './utils/sortUtils';
+import { seedSampleData, hasSampleData } from './utils/seedData';
+
+// Lazy load route components for code splitting
+const VoucherDetail = lazy(() => import('./components/VoucherDetail'));
+const Guides = lazy(() => import('./components/Guides'));
+const CreditCardComparison = lazy(() => import('./components/CreditCardComparison'));
+const CardGuide = lazy(() => import('./components/CardGuide'));
+const RewardsCalculator = lazy(() => import('./components/RewardsCalculator'));
+const PointsConverter = lazy(() => import('./components/PointsConverter'));
+const BankingGuides = lazy(() => import('./components/BankingGuides'));
+const AskAI = lazy(() => import('./components/AskAI'));
+const Favorites = lazy(() => import('./components/Favorites'));
 
 // Apply global platform sorting
 const INITIAL_DATA = RAW_DATA.map(voucher => ({
@@ -39,8 +53,9 @@ function Home({ onOpenShortcuts }) {
 
   const [sortOption, setSortOption] = useState('Recommended');
 
-  // Local state for input value (for debouncing)
+  // Local state for input value with custom debounce hook
   const [inputValue, setInputValue] = useState(searchTerm);
+  const debouncedSearchValue = useDebounce(inputValue, 300);
 
   // Helper to update URL params and local state
   const updateParams = (key, value, setStateFn) => {
@@ -56,17 +71,12 @@ function Home({ onOpenShortcuts }) {
     if (setStateFn) setStateFn(value);
   };
 
-  // Debounce Search Term Update
+  // Update searchTerm when debounced value changes
   useEffect(() => {
-    const timer = setTimeout(() => {
-      // Only update if the value is different from what's currently in the URL/committed state
-      if (inputValue !== searchTerm) {
-        updateParams('search', inputValue, setSearchTerm);
-      }
-    }, 300); // 300ms debounce
-
-    return () => clearTimeout(timer);
-  }, [inputValue, searchTerm]); // Dependencies
+    if (debouncedSearchValue !== searchTerm) {
+      updateParams('search', debouncedSearchValue, setSearchTerm);
+    }
+  }, [debouncedSearchValue]);
 
   const handleSearchChange = (val) => setInputValue(val);
   const handlePlatformSelect = (p) => updateParams('platform', p, setSelectedPlatform);
@@ -82,21 +92,17 @@ function Home({ onOpenShortcuts }) {
   };
 
 
-  // Initialize Fuse for searching
-  const fuse = useMemo(() => {
-    return new Fuse(INITIAL_DATA, {
-      keys: ['brand', 'category'],
-      threshold: 0.3
-    });
-  }, []);
+  // Use custom fuzzy search hook
+  const searchResults = useFuzzySearch(INITIAL_DATA, searchTerm, {
+    keys: ['brand', 'category'],
+    threshold: 0.3
+  });
+
+  // Use discount parser hook for sorting
+  const { getMaxDiscount } = useDiscountParser();
 
   const filteredVouchers = useMemo(() => {
-    let result = [...INITIAL_DATA];
-
-    if (searchTerm) {
-      const fuseResults = fuse.search(searchTerm);
-      result = fuseResults.map(res => res.item);
-    }
+    let result = searchTerm ? searchResults : [...INITIAL_DATA];
 
     if (selectedPlatform) {
       result = result.filter(voucher =>
@@ -113,23 +119,12 @@ function Home({ onOpenShortcuts }) {
       result.sort((a, b) => a.brand.localeCompare(b.brand));
     } else if (sortOption === 'Discount') {
       result.sort((a, b) => {
-        const getMaxDiscount = (v) => {
-          return Math.max(...v.platforms.map(p => {
-            const fee = p.fee || '';
-            // Extract number from "2.5% Discount" or "Save 5%"
-            const match = fee.match(/(\d+(\.\d+)?)%/);
-            if (match && (fee.toLowerCase().includes('discount') || fee.toLowerCase().includes('save'))) {
-              return parseFloat(match[1]);
-            }
-            return 0;
-          }));
-        };
-        return getMaxDiscount(b) - getMaxDiscount(a);
+        return getMaxDiscount(b.platforms) - getMaxDiscount(a.platforms);
       });
     }
 
     return result;
-  }, [searchTerm, selectedPlatform, selectedCategory, sortOption, fuse]);
+  }, [searchResults, selectedPlatform, selectedCategory, sortOption, searchTerm, getMaxDiscount]);
 
 
   // Sync URL to State (Deep linking / External navigation)
@@ -248,6 +243,14 @@ function Home({ onOpenShortcuts }) {
 
       {/* Main Content */}
       <main>
+        {/* Show Top Deals and Stats only when no filters active */}
+        {!searchTerm && !selectedPlatform && !selectedCategory && (
+          <>
+            <StatsBar vouchers={INITIAL_DATA} platforms={ALL_PLATFORMS} />
+            <TopDeals vouchers={INITIAL_DATA} onVoucherClick={setSelectedVoucher} />
+          </>
+        )}
+
         <SearchBar
           value={inputValue}
           onChange={handleSearchChange}
@@ -278,17 +281,27 @@ function App() {
   const [selectedCards, setSelectedCards] = useState([]);
   const [isShortcutsOpen, setIsShortcutsOpen] = useState(false);
 
+  // Seed sample data on first run (for demo purposes)
+  useEffect(() => {
+    if (!hasSampleData()) {
+      seedSampleData();
+    }
+  }, []);
+
   // Toggle card selection
   const toggleCardSelection = (cardId) => {
-    if (selectedCards.includes(cardId)) {
-      setSelectedCards(selectedCards.filter(id => id !== cardId));
-    } else {
-      if (selectedCards.length < 4) {
-        setSelectedCards([...selectedCards, cardId]);
+    setSelectedCards(prevCards => {
+      if (prevCards.includes(cardId)) {
+        return prevCards.filter(id => id !== cardId);
       } else {
-        alert("You can compare up to 4 cards at a time.");
+        if (prevCards.length < 4) {
+          return [...prevCards, cardId];
+        } else {
+          alert("You can compare up to 4 cards at a time.");
+          return prevCards;
+        }
       }
-    }
+    });
   };
 
   // Global listener for Shortcuts Modal (Shift + / which is ?)
@@ -313,61 +326,59 @@ function App() {
 
   return (
     <ThemeProvider>
-      <Router>
-        <Layout
-          selectedCardsCount={selectedCards.length}
-          isShortcutsOpen={isShortcutsOpen}
-          setIsShortcutsOpen={setIsShortcutsOpen}
-        >
-          <Routes>
-            <Route path="/" element={<Home onOpenShortcuts={() => setIsShortcutsOpen(true)} />} />
-            <Route path="/guides" element={<Guides />} />
-            <Route
-              path="/know-your-cards"
-              element={
-                <CreditCardComparison
-                  view="grid"
-                  selectedCards={selectedCards}
-                  toggleCardSelection={toggleCardSelection}
-                  clearSelection={() => setSelectedCards([])}
+      <FavoritesProvider>
+        <Router>
+          <Layout
+            selectedCardsCount={selectedCards.length}
+            isShortcutsOpen={isShortcutsOpen}
+            setIsShortcutsOpen={setIsShortcutsOpen}
+          >
+            <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '400px' }}><LoadingSpinner size="lg" text="Loading..." /></div>}>
+              <Routes>
+                <Route path="/" element={<Home onOpenShortcuts={() => setIsShortcutsOpen(true)} />} />
+                <Route path="/guides" element={<Guides />} />
+                <Route
+                  path="/know-your-cards"
+                  element={
+                    <CreditCardComparison
+                      view="grid"
+                      selectedCards={selectedCards}
+                      toggleCardSelection={toggleCardSelection}
+                      clearSelection={() => setSelectedCards([])}
+                    />
+                  }
                 />
-              }
-            />
-            <Route
-              path="/compare-cards"
-              element={
-                <CreditCardComparison
-                  view="table"
-                  selectedCards={selectedCards}
-                  toggleCardSelection={toggleCardSelection}
-                  clearSelection={() => setSelectedCards([])}
+                <Route
+                  path="/compare-cards"
+                  element={
+                    <CreditCardComparison
+                      view="table"
+                      selectedCards={selectedCards}
+                      toggleCardSelection={toggleCardSelection}
+                      clearSelection={() => setSelectedCards([])}
+                    />
+                  }
                 />
-              }
-            />
-            <Route path="/card-guide/:id" element={<CardGuide />} />
-            <Route path="/voucher/:id" element={<VoucherDetail />} />
-            <Route path="/ask-ai" element={
-              <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                minHeight: '60vh',
-                textAlign: 'center',
-                padding: '2rem'
-              }}>
-                <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🧞‍♂️</div>
-                <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>Ask AI</h2>
-                <p style={{ color: '#6b7280', fontSize: '1.1rem', marginBottom: '2rem' }}>Coming Soon</p>
-                <p style={{ color: 'var(--text-secondary)', maxWidth: '400px', lineHeight: '1.6' }}>
-                  Our AI-powered credit card advisor is under development.
-                  It will help you find the best card for any spending category.
-                </p>
-              </div>
-            } />
-          </Routes>
-        </Layout>
-      </Router>
+                <Route path="/card-guide/:id" element={<CardGuide />} />
+                {featureFlags.rewardsCalculator && (
+                  <Route path="/rewards-calculator" element={<RewardsCalculator />} />
+                )}
+                {featureFlags.pointsConverter && (
+                  <Route path="/points-converter" element={<PointsConverter />} />
+                )}
+                {featureFlags.bankingGuides && (
+                  <Route path="/banking-guides" element={<BankingGuides />} />
+                )}
+                <Route path="/voucher/:id" element={<VoucherDetail />} />
+                {featureFlags.askAI && (
+                  <Route path="/ask-ai" element={<AskAI />} />
+                )}
+                <Route path="/favorites" element={<Favorites />} />
+              </Routes>
+            </Suspense>
+          </Layout>
+        </Router>
+      </FavoritesProvider>
     </ThemeProvider>
   );
 }

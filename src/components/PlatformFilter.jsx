@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { getPlatformStyle } from '../utils/platformLogos';
 
 const PlatformFilter = ({ selectedPlatform, onPlatformSelect, platforms }) => {
@@ -45,6 +46,12 @@ const PlatformFilter = ({ selectedPlatform, onPlatformSelect, platforms }) => {
             })}
         </div>
     );
+};
+
+PlatformFilter.propTypes = {
+    selectedPlatform: PropTypes.string,
+    onPlatformSelect: PropTypes.func.isRequired,
+    platforms: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default PlatformFilter;

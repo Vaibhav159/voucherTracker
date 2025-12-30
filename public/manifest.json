@@ -1,0 +1,21 @@
+{
+  "name": "VoucherTracker - Gift Card Rates Tracker",
+  "short_name": "VoucherTracker",
+  "description": "Track and compare gift voucher rates across multiple platforms in India",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#030014",
+  "theme_color": "#00f0ff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["finance", "shopping", "utilities"],
+  "lang": "en-IN",
+  "dir": "ltr"
+}

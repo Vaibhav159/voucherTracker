@@ -1,12 +1,27 @@
 import { Link, useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 import ThemeToggle from './ThemeToggle';
+import { featureFlags } from '../config/featureFlags';
 import GlobalSearch from './GlobalSearch';
 import ShortcutsModal from './ShortcutsModal';
+import { useFavorites } from '../context/FavoritesContext';
 
 const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortcutsOpen }) => {
   const location = useLocation();
+  const [showOthersMenu, setShowOthersMenu] = useState(false);
+  const { totalFavorites } = useFavorites();
   const isActive = (path) => location.pathname === path;
   // Local state removed, using props from App
+
+  // Only show tools that are enabled
+  const othersLinks = [
+    featureFlags.rewardsCalculator && { path: '/rewards-calculator', label: '🧮 Calculator' },
+    featureFlags.pointsConverter && { path: '/points-converter', label: '💎 Points Value' },
+    featureFlags.bankingGuides && { path: '/banking-guides', label: '🏦 Banking' },
+  ].filter(Boolean);
+
+  const isOthersActive = othersLinks.some(link => location.pathname === link.path);
 
   return (
     <div className="app-layout">
@@ -43,14 +58,14 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
                 to="/know-your-cards"
                 className={`nav-item ${isActive('/know-your-cards') ? 'active' : ''}`}
               >
-                Know Your Cards
+                Cards
               </Link>
               <Link
                 to="/compare-cards"
                 className={`nav-item ${isActive('/compare-cards') ? 'active' : ''}`}
                 style={{ position: 'relative' }}
               >
-                Compare Cards
+                Compare
                 {selectedCardsCount > 0 && (
                   <span style={{
                     position: 'absolute',
@@ -70,30 +85,91 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
                   </span>
                 )}
               </Link>
-              <span
-                className="nav-item"
-                style={{
-                  color: '#6b7280',
-                  cursor: 'not-allowed',
-                  opacity: 0.6,
-                  position: 'relative'
-                }}
-                title="Coming Soon"
+              {featureFlags.askAI && (
+                <Link
+                  to="/ask-ai"
+                  className={`nav-item ${isActive('/ask-ai') ? 'active' : ''}`}
+                >
+                  Ask AI 🧞‍♂️
+                </Link>
+              )}
+              <Link
+                to="/favorites"
+                className={`nav-item ${isActive('/favorites') ? 'active' : ''}`}
+                style={{ position: 'relative' }}
               >
-                Ask AI 🧞‍♂️
-                <span style={{
-                  position: 'absolute',
-                  top: '-8px',
-                  right: '-35px',
-                  background: 'linear-gradient(135deg, #6b7280, #4b5563)',
-                  color: '#fff',
-                  fontSize: '0.6rem',
-                  padding: '2px 6px',
-                  borderRadius: '4px',
-                  fontWeight: '600',
-                  textTransform: 'uppercase'
-                }}>Soon</span>
-              </span>
+                ❤️
+                {totalFavorites > 0 && (
+                  <span style={{
+                    position: 'absolute',
+                    top: '-5px',
+                    right: '-10px',
+                    background: 'var(--accent-pink)',
+                    color: 'white',
+                    borderRadius: '50%',
+                    width: '18px',
+                    height: '18px',
+                    fontSize: '11px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
+                    {totalFavorites}
+                  </span>
+                )}
+              </Link>
+
+              {/* Others Dropdown - only show if at least one tool is enabled */}
+              {othersLinks.length > 0 && (
+                <div
+                  className="nav-dropdown"
+                  onMouseEnter={() => setShowOthersMenu(true)}
+                  onMouseLeave={() => setShowOthersMenu(false)}
+                  style={{ position: 'relative' }}
+                >
+                  <span
+                    className={`nav-item ${isOthersActive ? 'active' : ''}`}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    Tools ▾
+                  </span>
+                  {showOthersMenu && (
+                    <div style={{
+                      position: 'absolute',
+                      top: '100%',
+                      left: '0',
+                      background: 'var(--glass-background)',
+                      backdropFilter: 'blur(20px)',
+                      border: '1px solid var(--glass-border)',
+                      borderRadius: '12px',
+                      padding: '8px 0',
+                      minWidth: '160px',
+                      boxShadow: '0 10px 40px rgba(0, 0, 0, 0.3)',
+                      zIndex: 1000
+                    }}>
+                      {othersLinks.map(link => (
+                        <Link
+                          key={link.path}
+                          to={link.path}
+                          style={{
+                            display: 'block',
+                            padding: '10px 16px',
+                            color: isActive(link.path) ? 'var(--accent-cyan)' : 'var(--text-secondary)',
+                            textDecoration: 'none',
+                            fontSize: '0.9rem',
+                            transition: 'all 0.2s'
+                          }}
+                          onMouseOver={(e) => e.target.style.background = 'rgba(255,255,255,0.05)'}
+                          onMouseOut={(e) => e.target.style.background = 'transparent'}
+                        >
+                          {link.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+
               <a
                 href="https://twitter.com/vaibhav_lodha"
                 target="_blank"
@@ -127,4 +203,12 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
   );
 };
 
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+  selectedCardsCount: PropTypes.number,
+  isShortcutsOpen: PropTypes.bool,
+  setIsShortcutsOpen: PropTypes.func,
+};
+
 export default Layout;
+
