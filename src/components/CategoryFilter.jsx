@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { useDebounce } from '../hooks/useDebounce';
 
 const CategoryFilter = ({ selectedCategory, onCategorySelect, categories }) => {
@@ -78,6 +79,12 @@ const CategoryFilter = ({ selectedCategory, onCategorySelect, categories }) => {
             </div>
         </div>
     );
+};
+
+CategoryFilter.propTypes = {
+    selectedCategory: PropTypes.string,
+    onCategorySelect: PropTypes.func.isRequired,
+    categories: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default CategoryFilter;

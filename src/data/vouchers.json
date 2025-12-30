@@ -15451,5 +15451,725 @@
         "site": "https://www.multipl.in",
         "expiryDays": 270,
         "lastUpdated": "2025-12-01"
+    },
+    {
+        "id": "900",
+        "brand": "Ola",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Ola_Cabs_logo.png",
+        "category": "Travel",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "100",
+                    "250",
+                    "500",
+                    "1000"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/ola-gift-vouchers",
+                "color": "#D42426"
+            },
+            {
+                "name": "Maximize",
+                "cap": "Unlimited",
+                "fee": "Discount 3.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            },
+            {
+                "name": "MagicPin",
+                "cap": "Check App",
+                "fee": "Discount 5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://magicpin.in/",
+                "color": "#7000ff"
+            }
+        ],
+        "site": "https://www.olacabs.com",
+        "expiryDays": 365,
+        "lastUpdated": "2025-12-30"
+    },
+    {
+        "id": "901",
+        "brand": "Zepto",
+        "logo": "https://www.zepto.co.in/favicon.ico",
+        "category": "Grocery",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "250",
+                    "500",
+                    "1000"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/zepto-gift-vouchers",
+                "color": "#D42426"
+            },
+            {
+                "name": "Maximize",
+                "cap": "Unlimited",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ],
+        "site": "https://www.zeptonow.com",
+        "expiryDays": 180,
+        "lastUpdated": "2025-12-30"
+    },
+    {
+        "id": "902",
+        "brand": "Burger King",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/8/85/Burger_King_logo_%281999%29.svg",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "100",
+                    "250",
+                    "500"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/burger-king-gift-vouchers",
+                "color": "#D42426"
+            },
+            {
+                "name": "Maximize",
+                "cap": "Unlimited",
+                "fee": "Discount 8%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            },
+            {
+                "name": "MagicPin",
+                "cap": "Check App",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://magicpin.in/",
+                "color": "#7000ff"
+            }
+        ],
+        "site": "https://www.burgerking.in",
+        "expiryDays": 180,
+        "lastUpdated": "2025-12-30"
+    },
+    {
+        "id": "903",
+        "brand": "Haldiram's",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/3/35/Haldiram%27s_logo.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "Discount 5%",
+                "denominations": [
+                    "250",
+                    "500",
+                    "1000"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/haldirams-gift-vouchers",
+                "color": "#D42426"
+            },
+            {
+                "name": "Maximize",
+                "cap": "Unlimited",
+                "fee": "Discount 7.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ],
+        "site": "https://www.haldirams.com",
+        "expiryDays": 365,
+        "lastUpdated": "2025-12-30"
+    },
+    {
+        "id": "904",
+        "brand": "OYO",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/1/14/OYO_Rooms_%28logo%29.png",
+        "category": "Travel & Leisure",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "500",
+                    "1000",
+                    "2000"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/oyo-gift-vouchers",
+                "color": "#D42426"
+            },
+            {
+                "name": "Maximize",
+                "cap": "Unlimited",
+                "fee": "Discount 5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ],
+        "site": "https://www.oyorooms.com",
+        "expiryDays": 365,
+        "lastUpdated": "2025-12-30"
+    },
+    {
+        "id": "905",
+        "brand": "IndiGo",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/6/69/IndiGo_Airlines_logo.svg",
+        "category": "Travel & Leisure",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "25k/month",
+                "fee": "None",
+                "denominations": [
+                    "1000",
+                    "2000",
+                    "5000"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/indigo-gift-vouchers",
+                "color": "#D42426"
+            },
+            {
+                "name": "Maximize",
+                "cap": "Unlimited",
+                "fee": "Discount 2%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ],
+        "site": "https://www.goindigo.in",
+        "expiryDays": 365,
+        "lastUpdated": "2025-12-30"
+    },
+    {
+        "id": "906",
+        "brand": "Dunkin' Donuts",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/b/b8/Dunkin%27_Donuts_logo.svg",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "100",
+                    "250",
+                    "500"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/dunkin-donuts-gift-vouchers",
+                "color": "#D42426"
+            },
+            {
+                "name": "Maximize",
+                "cap": "Unlimited",
+                "fee": "Discount 8%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ],
+        "site": "https://www.dunkindonuts.co.in",
+        "expiryDays": 180,
+        "lastUpdated": "2025-12-30"
+    },
+    {
+        "id": "907",
+        "brand": "SpiceJet",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e3/SpiceJet_logo.svg",
+        "category": "Travel & Leisure",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "25k/month",
+                "fee": "None",
+                "denominations": [
+                    "1000",
+                    "2000",
+                    "5000"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/spicejet-gift-vouchers",
+                "color": "#D42426"
+            },
+            {
+                "name": "Maximize",
+                "cap": "Unlimited",
+                "fee": "Discount 2.5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ],
+        "site": "https://www.spicejet.com",
+        "expiryDays": 365,
+        "lastUpdated": "2025-12-30"
+    },
+    {
+        "id": "908",
+        "brand": "Taco Bell",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/b/b3/Taco_Bell_2016.svg",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "100",
+                    "250",
+                    "500"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/taco-bell-gift-vouchers",
+                "color": "#D42426"
+            },
+            {
+                "name": "Maximize",
+                "cap": "Unlimited",
+                "fee": "Discount 6%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ],
+        "site": "https://www.tacobell.co.in",
+        "expiryDays": 180,
+        "lastUpdated": "2025-12-30"
+    },
+    {
+        "id": "909",
+        "brand": "Rapido",
+        "logo": "https://play-lh.googleusercontent.com/WO1-qOhVKj9TGCRlA5Y3mQNZJZwDqRYRpNt2EXZs_Wdb-3-9u5Cz2DZV_8g0mWlQYg",
+        "category": "Travel",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "5k/month",
+                "fee": "None",
+                "denominations": [
+                    "100",
+                    "250",
+                    "500"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/rapido-gift-vouchers",
+                "color": "#D42426"
+            },
+            {
+                "name": "Maximize",
+                "cap": "Unlimited",
+                "fee": "Discount 3%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ],
+        "site": "https://www.rapido.bike",
+        "expiryDays": 180,
+        "lastUpdated": "2025-12-30"
+    },
+    {
+        "id": "910",
+        "brand": "Meesho",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/0/07/Meesho_Logo.svg",
+        "category": "Shopping",
+        "platforms": [
+            {
+                "name": "Maximize",
+                "cap": "Unlimited",
+                "fee": "Discount 2%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            },
+            {
+                "name": "MagicPin",
+                "cap": "Check App",
+                "fee": "Discount 5%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://magicpin.in/",
+                "color": "#7000ff"
+            }
+        ],
+        "site": "https://www.meesho.com",
+        "expiryDays": 365,
+        "lastUpdated": "2025-12-30"
+    },
+    {
+        "id": "911",
+        "brand": "Vistara",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/6/62/Vistara_logo_2021.svg",
+        "category": "Travel & Leisure",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "25k/month",
+                "fee": "None",
+                "denominations": [
+                    "1000",
+                    "2000",
+                    "5000"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/vistara-gift-vouchers",
+                "color": "#D42426"
+            },
+            {
+                "name": "Maximize",
+                "cap": "Unlimited",
+                "fee": "Discount 2%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ],
+        "site": "https://www.airvistara.com",
+        "expiryDays": 365,
+        "lastUpdated": "2025-12-30"
+    },
+    {
+        "id": "912",
+        "brand": "INOX",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Inox_logo.svg",
+        "category": "Entertainment & OTT",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "250",
+                    "500",
+                    "1000"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/inox-gift-vouchers",
+                "color": "#D42426"
+            },
+            {
+                "name": "Maximize",
+                "cap": "Unlimited",
+                "fee": "Discount 12%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            },
+            {
+                "name": "MagicPin",
+                "cap": "Check App",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://magicpin.in/",
+                "color": "#7000ff"
+            }
+        ],
+        "site": "https://www.inoxmovies.com",
+        "expiryDays": 365,
+        "lastUpdated": "2025-12-30"
+    },
+    {
+        "id": "913",
+        "brand": "D-Mart",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c7/D-Mart_logo.png",
+        "category": "Grocery",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "500",
+                    "1000",
+                    "2000"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/dmart-gift-vouchers",
+                "color": "#D42426"
+            },
+            {
+                "name": "Maximize",
+                "cap": "Unlimited",
+                "fee": "Discount 3%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ],
+        "site": "https://www.dmart.in",
+        "expiryDays": 365,
+        "lastUpdated": "2025-12-30"
+    },
+    {
+        "id": "914",
+        "brand": "Wow! Momo",
+        "logo": "https://www.wowmomofoods.com/images/logo.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "100",
+                    "250",
+                    "500"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/wow-momo-gift-vouchers",
+                "color": "#D42426"
+            },
+            {
+                "name": "Maximize",
+                "cap": "Unlimited",
+                "fee": "Discount 8%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ],
+        "site": "https://www.wowmomofoods.com",
+        "expiryDays": 180,
+        "lastUpdated": "2025-12-30"
+    },
+    {
+        "id": "915",
+        "brand": "CARS24",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/8/8e/CARS24_Logo.png",
+        "category": "Automotive",
+        "platforms": [
+            {
+                "name": "Maximize",
+                "cap": "Unlimited",
+                "fee": "Discount 2%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ],
+        "site": "https://www.cars24.com",
+        "expiryDays": 365,
+        "lastUpdated": "2025-12-30"
+    },
+    {
+        "id": "916",
+        "brand": "Chai Point",
+        "logo": "https://www.chaipoint.com/images/logo.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "100",
+                    "250",
+                    "500"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/chai-point-gift-vouchers",
+                "color": "#D42426"
+            },
+            {
+                "name": "Maximize",
+                "cap": "Unlimited",
+                "fee": "Discount 9%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ],
+        "site": "https://www.chaipoint.com",
+        "expiryDays": 180,
+        "lastUpdated": "2025-12-30"
+    },
+    {
+        "id": "917",
+        "brand": "Baskin Robbins",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Baskin-Robbins_logo.svg",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "100",
+                    "250",
+                    "500"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/baskin-robbins-gift-vouchers",
+                "color": "#D42426"
+            },
+            {
+                "name": "Maximize",
+                "cap": "Unlimited",
+                "fee": "Discount 7%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            },
+            {
+                "name": "MagicPin",
+                "cap": "Check App",
+                "fee": "Discount 10%",
+                "denominations": [
+                    "Check Link"
+                ],
+                "link": "https://magicpin.in/",
+                "color": "#7000ff"
+            }
+        ],
+        "site": "https://www.baskinrobbinsindia.com",
+        "expiryDays": 365,
+        "lastUpdated": "2025-12-30"
+    },
+    {
+        "id": "918",
+        "brand": "Naturals Ice Cream",
+        "logo": "https://www.naturalsicecream.in/images/logo.png",
+        "category": "Dining & Food",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "100",
+                    "250",
+                    "500"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/naturals-gift-vouchers",
+                "color": "#D42426"
+            },
+            {
+                "name": "Maximize",
+                "cap": "Unlimited",
+                "fee": "Discount 8%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ],
+        "site": "https://www.naturalsicecream.in",
+        "expiryDays": 180,
+        "lastUpdated": "2025-12-30"
+    },
+    {
+        "id": "919",
+        "brand": "CureFit/Cult.fit",
+        "logo": "https://www.cult.fit/static/images/icons/cultsport-logo.svg",
+        "category": "Health & Wellness",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "500",
+                    "1000",
+                    "2000"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/cultfit-gift-vouchers",
+                "color": "#D42426"
+            },
+            {
+                "name": "Maximize",
+                "cap": "Unlimited",
+                "fee": "Discount 5%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ],
+        "site": "https://www.cult.fit",
+        "expiryDays": 365,
+        "lastUpdated": "2025-12-30"
+    },
+    {
+        "id": "920",
+        "brand": "UrbanClap (Urban Company)",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Urban_Company_Logo.svg",
+        "category": "Home & Living",
+        "platforms": [
+            {
+                "name": "Gyftr",
+                "cap": "10k/month",
+                "fee": "None",
+                "denominations": [
+                    "500",
+                    "1000",
+                    "2000"
+                ],
+                "link": "https://www.gyftr.com/instantvouchers/urban-company-gift-vouchers",
+                "color": "#D42426"
+            },
+            {
+                "name": "Maximize",
+                "cap": "Unlimited",
+                "fee": "Discount 4%",
+                "denominations": [
+                    "Any"
+                ],
+                "link": "https://www.maximize.money/",
+                "color": "#1c1c1c"
+            }
+        ],
+        "site": "https://www.urbancompany.com",
+        "expiryDays": 365,
+        "lastUpdated": "2025-12-30"
     }
 ]

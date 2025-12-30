@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Fuse from 'fuse.js';
 import { Link } from 'react-router-dom';
 import { creditCards } from '../data/creditCards';
@@ -12,6 +13,14 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
     const [modalCard, setModalCard] = useState(null);
     const [sortBy, setSortBy] = useState('recommended');
     const { isCardFavorite, toggleFavoriteCard } = useFavorites();
+
+    // New filter states
+    const [showMoreFilters, setShowMoreFilters] = useState(false);
+    const [showAllCategories, setShowAllCategories] = useState(false);
+    const [feeRange, setFeeRange] = useState('all'); // 'all', 'free', 'low', 'mid', 'premium'
+    const [forexFilter, setForexFilter] = useState('all'); // 'all', 'low', 'mid'
+    const [hasLounge, setHasLounge] = useState(false);
+    const [networkFilter, setNetworkFilter] = useState('all'); // 'all', 'visa', 'mastercard', 'rupay', 'amex'
 
     const getCardDetails = (id) => creditCards.find(card => card.id === id);
 
@@ -75,54 +84,90 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
 
         if (searchTerm) {
             const fuse = new Fuse(cards, {
-                keys: ['name', 'bank', 'tags'],
+                keys: ['name', 'bank', 'tags', 'features', 'bestFor'],
                 threshold: 0.3
             });
             cards = fuse.search(searchTerm).map(res => res.item);
         }
 
         return cards.filter(card => {
-            // Re-apply other filters on the search results
             // Bank Filter
             if (activeBank !== 'All' && card.bank !== activeBank) return false;
 
+            // Fee Range Filter
+            if (feeRange !== 'all') {
+                const fee = parseFee(card.annualFee);
+                if (feeRange === 'free' && fee !== 0) return false;
+                if (feeRange === 'low' && (fee === 0 || fee > 500)) return false;
+                if (feeRange === 'mid' && (fee <= 500 || fee > 2000)) return false;
+                if (feeRange === 'premium' && fee <= 2000) return false;
+            }
+
+            // Forex Filter
+            if (forexFilter !== 'all') {
+                const fxNum = parseFloat(card.fxMarkup?.replace('%', '') || '100');
+                if (forexFilter === 'low' && fxNum > 2) return false;
+                if (forexFilter === 'mid' && fxNum > 3) return false;
+            }
+
+            // Lounge Filter
+            if (hasLounge) {
+                const features = card.features?.join(' ').toLowerCase() || '';
+                if (!features.includes('lounge')) return false;
+            }
+
+            // Network Filter
+            if (networkFilter !== 'all') {
+                const cardText = (card.name + ' ' + card.bank + ' ' + card.features?.join(' ')).toLowerCase();
+                if (networkFilter === 'visa' && !cardText.includes('visa')) return false;
+                if (networkFilter === 'mastercard' && !cardText.includes('mastercard')) return false;
+                if (networkFilter === 'rupay' && !cardText.includes('rupay')) return false;
+                if (networkFilter === 'amex' && !cardText.includes('amex') && !card.bank?.toLowerCase().includes('american express')) return false;
+            }
+
+            // Category Filter
             if (activeFilter === 'All') return true;
 
-            // Lifetime Free: Check "Lifetime Free" or "₹0" in fee
             if (activeFilter === 'Lifetime Free') {
                 const feeLower = card.annualFee?.toLowerCase() || '';
                 return feeLower.includes('lifetime free') || feeLower.includes('₹0') || feeLower === 'free';
             }
 
-            // Low Forex: Cards with 0%, 1%, 1.5%, or 2% markup
             if (activeFilter === 'Low Forex') {
                 const fxNum = parseFloat(card.fxMarkup?.replace('%', '') || '100');
                 return fxNum <= 2;
             }
 
-            // Fuel: Check category or features
             if (activeFilter === 'Fuel') {
                 if (card.category === 'Fuel') return true;
                 const lower = (card.name + ' ' + card.features?.join(' ')).toLowerCase();
                 return lower.includes('fuel') || lower.includes('petrol') || lower.includes('bpcl') || lower.includes('hpcl') || lower.includes('iocl');
             }
 
-            // Shopping: Check category or features
             if (activeFilter === 'Shopping') {
                 if (card.category === 'Shopping') return true;
                 const lower = (card.name + ' ' + card.bestFor + ' ' + card.features?.join(' ')).toLowerCase();
                 return lower.includes('shopping') || lower.includes('amazon') || lower.includes('flipkart') || lower.includes('online shop');
             }
 
-            // Default: match by category
+            if (activeFilter === 'Lounge') {
+                const features = card.features?.join(' ').toLowerCase() || '';
+                return features.includes('lounge');
+            }
+
+            if (activeFilter === 'Lifestyle') {
+                return card.category === 'Lifestyle' || card.bestFor?.toLowerCase().includes('lifestyle');
+            }
+
             return card.category === activeFilter;
         });
-    }, [searchTerm, activeBank, activeFilter]);
+    }, [searchTerm, activeBank, activeFilter, feeRange, forexFilter, hasLounge, networkFilter]);
 
-    const filters = ['All', 'Cashback', 'Travel', 'Premium', 'Fuel', 'Shopping', 'Low Forex', 'Lifetime Free'];
-
-    // Feature search suggestions
-    const featureSuggestions = ['lounge access', 'golf', 'fuel surcharge', 'movie', 'milestone', 'airport', 'dining'];
+    // Primary visible categories
+    const primaryFilters = ['All', 'Cashback', 'Travel', 'Premium', 'Fuel', 'Shopping'];
+    // Additional categories shown when expanded
+    const secondaryFilters = ['Low Forex', 'Lifetime Free', 'Lounge', 'Lifestyle'];
+    const allFilters = [...primaryFilters, ...secondaryFilters];
 
     // Get unique banks
     const banks = ['All', ...new Set(creditCards.map(card => card.bank))].sort();
@@ -236,38 +281,255 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                         )}
                     </div>
 
-                    <div style={{ maxWidth: '800px', margin: '0 auto 3rem auto' }}>
-                        {/* Feature/Benefit Quick Search */}
-                        {!searchTerm && (
-                            <div style={{ marginBottom: '1rem' }}>
-                                <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginBottom: '0.5rem', textAlign: 'center' }}>
-                                    🔍 Try searching by benefit:
-                                </p>
-                                <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-                                    {featureSuggestions.map(feature => (
+                    <div style={{ maxWidth: '900px', margin: '0 auto 2rem auto' }}>
+                        {/* Compact Filter Toolbar */}
+                        <div style={{
+                            display: 'flex',
+                            gap: '0.75rem',
+                            alignItems: 'center',
+                            flexWrap: 'wrap',
+                            marginBottom: '1rem'
+                        }}>
+                            {/* Bank Dropdown */}
+                            <select
+                                value={activeBank}
+                                onChange={(e) => setActiveBank(e.target.value)}
+                                style={{
+                                    padding: '8px 12px',
+                                    borderRadius: '8px',
+                                    border: '1px solid var(--glass-border)',
+                                    background: 'rgba(255,255,255,0.05)',
+                                    color: 'var(--text-primary)',
+                                    fontSize: '0.85rem',
+                                    cursor: 'pointer',
+                                    minWidth: '130px'
+                                }}
+                            >
+                                <option value="All">All Banks</option>
+                                {banks.filter(b => b !== 'All').map(bank => (
+                                    <option key={bank} value={bank}>{bank}</option>
+                                ))}
+                            </select>
+
+                            {/* More Filters Button */}
+                            <button
+                                onClick={() => setShowMoreFilters(!showMoreFilters)}
+                                style={{
+                                    padding: '8px 14px',
+                                    borderRadius: '8px',
+                                    border: `1px solid ${showMoreFilters ? 'var(--accent-cyan)' : 'var(--glass-border)'}`,
+                                    background: showMoreFilters ? 'rgba(6, 182, 212, 0.15)' : 'rgba(255,255,255,0.05)',
+                                    color: showMoreFilters ? 'var(--accent-cyan)' : 'var(--text-secondary)',
+                                    cursor: 'pointer',
+                                    fontSize: '0.85rem',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '6px',
+                                    transition: 'all 0.2s'
+                                }}
+                            >
+                                <span>⚙️</span> Filters
+                                {(feeRange !== 'all' || forexFilter !== 'all' || hasLounge || networkFilter !== 'all') && (
+                                    <span style={{
+                                        background: 'var(--accent-cyan)',
+                                        color: '#000',
+                                        borderRadius: '50%',
+                                        width: '18px',
+                                        height: '18px',
+                                        fontSize: '0.7rem',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        fontWeight: 'bold'
+                                    }}>
+                                        {[feeRange !== 'all', forexFilter !== 'all', hasLounge, networkFilter !== 'all'].filter(Boolean).length}
+                                    </span>
+                                )}
+                            </button>
+
+                            {/* Spacer */}
+                            <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
+                                <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+                                    {sortedCards.length} cards
+                                </span>
+                            </div>
+
+                            {/* Sort Dropdown */}
+                            <select
+                                value={sortBy}
+                                onChange={(e) => setSortBy(e.target.value)}
+                                style={{
+                                    padding: '8px 12px',
+                                    borderRadius: '8px',
+                                    border: '1px solid var(--glass-border)',
+                                    background: 'rgba(255,255,255,0.05)',
+                                    color: 'var(--text-primary)',
+                                    fontSize: '0.85rem',
+                                    cursor: 'pointer'
+                                }}
+                            >
+                                <option value="recommended">Recommended</option>
+                                <option value="fee-low">Fee: Low → High</option>
+                                <option value="fee-high">Fee: High → Low</option>
+                                <option value="rewards">Best Rewards</option>
+                                <option value="alphabetical">A-Z</option>
+                            </select>
+                        </div>
+
+                        {/* Collapsible More Filters Panel */}
+                        {showMoreFilters && (
+                            <div
+                                className="expand-panel"
+                                style={{
+                                    background: 'rgba(255,255,255,0.03)',
+                                    border: '1px solid var(--glass-border)',
+                                    borderRadius: '12px',
+                                    padding: '1rem 1.25rem',
+                                    marginBottom: '1rem',
+                                    display: 'grid',
+                                    gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+                                    gap: '1rem'
+                                }}>
+                                {/* Fee Range */}
+                                <div>
+                                    <label style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginBottom: '6px', display: 'block', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                                        Annual Fee
+                                    </label>
+                                    <select
+                                        value={feeRange}
+                                        onChange={(e) => setFeeRange(e.target.value)}
+                                        style={{
+                                            width: '100%',
+                                            padding: '8px 10px',
+                                            borderRadius: '6px',
+                                            border: '1px solid var(--glass-border)',
+                                            background: 'rgba(255,255,255,0.05)',
+                                            color: 'var(--text-primary)',
+                                            fontSize: '0.85rem',
+                                            cursor: 'pointer'
+                                        }}
+                                    >
+                                        <option value="all">Any Fee</option>
+                                        <option value="free">Free (₹0)</option>
+                                        <option value="low">Low (₹1-500)</option>
+                                        <option value="mid">Mid (₹501-2000)</option>
+                                        <option value="premium">Premium (₹2000+)</option>
+                                    </select>
+                                </div>
+
+                                {/* Forex Markup */}
+                                <div>
+                                    <label style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginBottom: '6px', display: 'block', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                                        Forex Markup
+                                    </label>
+                                    <select
+                                        value={forexFilter}
+                                        onChange={(e) => setForexFilter(e.target.value)}
+                                        style={{
+                                            width: '100%',
+                                            padding: '8px 10px',
+                                            borderRadius: '6px',
+                                            border: '1px solid var(--glass-border)',
+                                            background: 'rgba(255,255,255,0.05)',
+                                            color: 'var(--text-primary)',
+                                            fontSize: '0.85rem',
+                                            cursor: 'pointer'
+                                        }}
+                                    >
+                                        <option value="all">Any Markup</option>
+                                        <option value="low">Low (≤2%)</option>
+                                        <option value="mid">Moderate (≤3%)</option>
+                                    </select>
+                                </div>
+
+                                {/* Card Network */}
+                                <div>
+                                    <label style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginBottom: '6px', display: 'block', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                                        Card Network
+                                    </label>
+                                    <select
+                                        value={networkFilter}
+                                        onChange={(e) => setNetworkFilter(e.target.value)}
+                                        style={{
+                                            width: '100%',
+                                            padding: '8px 10px',
+                                            borderRadius: '6px',
+                                            border: '1px solid var(--glass-border)',
+                                            background: 'rgba(255,255,255,0.05)',
+                                            color: 'var(--text-primary)',
+                                            fontSize: '0.85rem',
+                                            cursor: 'pointer'
+                                        }}
+                                    >
+                                        <option value="all">All Networks</option>
+                                        <option value="visa">Visa</option>
+                                        <option value="mastercard">Mastercard</option>
+                                        <option value="rupay">RuPay</option>
+                                        <option value="amex">American Express</option>
+                                    </select>
+                                </div>
+
+                                {/* Lounge Toggle */}
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', paddingTop: '20px' }}>
+                                    <button
+                                        onClick={() => setHasLounge(!hasLounge)}
+                                        style={{
+                                            width: '44px',
+                                            height: '24px',
+                                            borderRadius: '12px',
+                                            border: 'none',
+                                            background: hasLounge ? 'var(--accent-cyan)' : 'rgba(255,255,255,0.15)',
+                                            cursor: 'pointer',
+                                            position: 'relative',
+                                            transition: 'background 0.2s'
+                                        }}
+                                    >
+                                        <span style={{
+                                            position: 'absolute',
+                                            top: '2px',
+                                            left: hasLounge ? '22px' : '2px',
+                                            width: '20px',
+                                            height: '20px',
+                                            borderRadius: '50%',
+                                            background: '#fff',
+                                            transition: 'left 0.2s'
+                                        }} />
+                                    </button>
+                                    <span style={{ fontSize: '0.85rem', color: hasLounge ? 'var(--accent-cyan)' : 'var(--text-secondary)' }}>
+                                        ✈️ Lounge Access Only
+                                    </span>
+                                </div>
+
+                                {/* Clear Filters */}
+                                {(feeRange !== 'all' || forexFilter !== 'all' || hasLounge || networkFilter !== 'all') && (
+                                    <div style={{ display: 'flex', alignItems: 'center', paddingTop: '20px' }}>
                                         <button
-                                            key={feature}
-                                            onClick={() => setSearchTerm(feature)}
+                                            onClick={() => {
+                                                setFeeRange('all');
+                                                setForexFilter('all');
+                                                setHasLounge(false);
+                                                setNetworkFilter('all');
+                                            }}
                                             style={{
-                                                padding: '4px 10px',
-                                                borderRadius: '12px',
-                                                border: '1px solid rgba(139, 92, 246, 0.3)',
-                                                background: 'rgba(139, 92, 246, 0.1)',
-                                                color: 'var(--accent-purple)',
+                                                padding: '6px 12px',
+                                                borderRadius: '6px',
+                                                border: '1px solid #ef4444',
+                                                background: 'transparent',
+                                                color: '#ef4444',
                                                 cursor: 'pointer',
-                                                fontSize: '0.75rem',
-                                                transition: 'all 0.2s'
+                                                fontSize: '0.8rem'
                                             }}
                                         >
-                                            {feature}
+                                            Clear Filters
                                         </button>
-                                    ))}
-                                </div>
+                                    </div>
+                                )}
                             </div>
                         )}
-                        {/* Filter Buttons */}
+
+                        {/* Category Pills */}
                         <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-                            {filters.map(filter => (
+                            {(showAllCategories ? allFilters : primaryFilters).map(filter => (
                                 <button
                                     key={filter}
                                     onClick={() => setActiveFilter(filter)}
@@ -287,59 +549,23 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                                     {filter}
                                 </button>
                             ))}
-                        </div>
 
-                        {/* Bank & Sort */}
-                        <div style={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            alignItems: 'center',
-                            marginTop: '1rem',
-                            flexWrap: 'wrap',
-                            gap: '1rem'
-                        }}>
-                            <select
-                                value={activeBank}
-                                onChange={(e) => setActiveBank(e.target.value)}
+                            {/* Show More/Less Categories */}
+                            <button
+                                onClick={() => setShowAllCategories(!showAllCategories)}
                                 style={{
-                                    padding: '10px 14px',
-                                    borderRadius: '8px',
+                                    padding: '8px 14px',
+                                    borderRadius: '20px',
                                     border: '1px solid var(--glass-border)',
-                                    background: 'rgba(255,255,255,0.05)',
-                                    color: 'var(--text-primary)',
+                                    background: 'rgba(139, 92, 246, 0.1)',
+                                    color: 'var(--accent-purple)',
+                                    cursor: 'pointer',
                                     fontSize: '0.85rem',
-                                    cursor: 'pointer'
+                                    transition: 'all 0.2s ease'
                                 }}
                             >
-                                <option value="All">All Banks</option>
-                                {banks.filter(b => b !== 'All').map(bank => (
-                                    <option key={bank} value={bank}>{bank}</option>
-                                ))}
-                            </select>
-
-                            <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-                                {sortedCards.length} cards
-                            </span>
-
-                            <select
-                                value={sortBy}
-                                onChange={(e) => setSortBy(e.target.value)}
-                                style={{
-                                    padding: '10px 14px',
-                                    borderRadius: '8px',
-                                    border: '1px solid var(--glass-border)',
-                                    background: 'rgba(255,255,255,0.05)',
-                                    color: 'var(--text-primary)',
-                                    fontSize: '0.85rem',
-                                    cursor: 'pointer'
-                                }}
-                            >
-                                <option value="recommended">Recommended</option>
-                                <option value="fee-low">Fee: Low to High</option>
-                                <option value="fee-high">Fee: High to Low</option>
-                                <option value="rewards">Best Rewards</option>
-                                <option value="alphabetical">A-Z</option>
-                            </select>
+                                {showAllCategories ? '− Less' : `+${secondaryFilters.length} more`}
+                            </button>
                         </div>
                     </div>
 
@@ -350,17 +576,21 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                         marginBottom: '3rem'
                     }}>
                         {sortedCards.length > 0 ? (
-                            sortedCards.map(card => {
+                            sortedCards.map((card, index) => {
                                 const isSelected = selectedCards.includes(card.id);
+                                // Calculate stagger delay (cap at 20 cards to avoid too long delays)
+                                const staggerDelay = Math.min(index, 20) * 0.03;
                                 return (
                                     <div
                                         key={card.id}
-                                        className={`glass-panel credit-card-item ${isSelected ? 'selected' : ''}`}
+                                        className={`glass-panel credit-card-item animate-fade-in-up ${isSelected ? 'selected' : ''}`}
                                         style={{
                                             padding: '1.5rem',
                                             cursor: 'pointer',
                                             border: isSelected ? '2px solid var(--accent-cyan)' : '1px solid var(--glass-border)',
-                                            position: 'relative'
+                                            position: 'relative',
+                                            animationDelay: `${staggerDelay}s`,
+                                            opacity: 0
                                         }}
                                         onClick={(e) => openModal(card, e)}
                                     >
@@ -627,6 +857,45 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                                     </button>
                                 </div>
 
+                                {/* Quick Add Card Search */}
+                                {selectedCards.length < 4 && (
+                                    <div style={{ marginBottom: '1.5rem' }}>
+                                        <label style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '0.5rem', display: 'block' }}>
+                                            ➕ Quick add card to comparison:
+                                        </label>
+                                        <select
+                                            onChange={(e) => {
+                                                if (e.target.value) {
+                                                    toggleCardSelection(e.target.value);
+                                                    e.target.value = '';
+                                                }
+                                            }}
+                                            style={{
+                                                width: '100%',
+                                                maxWidth: '400px',
+                                                padding: '10px 12px',
+                                                borderRadius: '8px',
+                                                border: '1px solid var(--glass-border)',
+                                                background: 'rgba(0,0,0,0.3)',
+                                                color: 'var(--text-primary)',
+                                                fontSize: '0.9rem',
+                                                cursor: 'pointer'
+                                            }}
+                                        >
+                                            <option value="">Select a card to add...</option>
+                                            {creditCards
+                                                .filter(card => !selectedCards.includes(card.id))
+                                                .sort((a, b) => a.name.localeCompare(b.name))
+                                                .map(card => (
+                                                    <option key={card.id} value={card.id}>
+                                                        {card.name} ({card.bank})
+                                                    </option>
+                                                ))
+                                            }
+                                        </select>
+                                    </div>
+                                )}
+
                                 <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '800px' }}>
                                     <thead>
                                         <tr>
@@ -715,14 +984,34 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                                             })()}
                                         </tr>
 
-                                        {/* Reward Rate Row */}
+                                        {/* Reward Rate Row - with BEST indicator */}
                                         <tr>
                                             <td style={{ padding: '1rem', borderBottom: '1px solid var(--glass-border)', fontWeight: 'bold', color: 'var(--text-secondary)' }}>Reward Rate</td>
-                                            {selectedCards.map(id => (
-                                                <td key={id} style={{ padding: '1rem', borderBottom: '1px solid var(--glass-border)', fontWeight: '500' }}>
-                                                    {getCardDetails(id).rewardRate}
-                                                </td>
-                                            ))}
+                                            {(() => {
+                                                const rewardData = selectedCards.map(id => {
+                                                    const rate = getCardDetails(id).rewardRate || '0%';
+                                                    // Extract the highest percentage from the rate string
+                                                    const matches = rate.match(/(\d+(?:\.\d+)?)/g);
+                                                    const rateNum = matches ? Math.max(...matches.map(m => parseFloat(m))) : 0;
+                                                    return { id, rate, rateNum };
+                                                });
+                                                const maxRate = Math.max(...rewardData.map(r => r.rateNum));
+
+                                                return rewardData.map(({ id, rate, rateNum }) => (
+                                                    <td key={id} style={{ padding: '1rem', borderBottom: '1px solid var(--glass-border)', fontWeight: '500' }}>
+                                                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                                            <span style={rateNum === maxRate && maxRate > 0 ? { color: '#4ade80', fontWeight: 'bold' } : {}}>
+                                                                {rate}
+                                                            </span>
+                                                            {rateNum === maxRate && maxRate > 0 && (
+                                                                <span style={{ background: '#22c55e', color: '#000', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 'bold' }}>
+                                                                    BEST
+                                                                </span>
+                                                            )}
+                                                        </div>
+                                                    </td>
+                                                ));
+                                            })()}
                                         </tr>
 
                                         {/* Forex Markup Row - with BEST indicator */}
@@ -818,17 +1107,327 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                                 </table>
                             </div>
                         ) : (
-                            <div style={{ textAlign: 'center', padding: '4rem 2rem', color: 'var(--text-secondary)', background: 'rgba(255,255,255,0.03)', borderRadius: '12px' }}>
+                            <div className="popular-comparisons">
                                 <div style={{ fontSize: '3rem', marginBottom: '1rem', opacity: 0.5 }}>🎴</div>
-                                <h3 style={{ marginBottom: '0.5rem' }}>No Cards Selected</h3>
-                                <p style={{ marginBottom: '1.5rem' }}>Go to the Detailed View and select up to 4 cards to compare them side-by-side.</p>
-                                <Link
-                                    to="/know-your-cards"
-                                    className="btn-primary"
-                                    style={{ display: 'inline-block', textDecoration: 'none' }}
-                                >
-                                    Go to Selection
-                                </Link>
+                                <h3>No Cards Selected</h3>
+                                <p>Select from popular comparisons below, or go to Cards to choose your own.</p>
+
+                                {/* Popular Comparison Presets */}
+                                <div className="comparison-presets" style={{ maxHeight: '500px', overflowY: 'auto' }}>
+                                    <div
+                                        className="comparison-preset-card"
+                                        onClick={() => {
+                                            // IndianOil RBL XTRA (26), BPCL SBI (27), IOC Axis (84)
+                                            const presetCards = [26, 27, 84];
+                                            presetCards.forEach(id => {
+                                                if (!selectedCards.includes(id)) toggleCardSelection(id);
+                                            });
+                                        }}
+                                    >
+                                        <h4>⛽ Fuel Savers</h4>
+                                        <p>Maximum savings on fuel purchases and surcharge waiver</p>
+                                        <div className="comparison-preset-cards">
+                                            <span>IndianOil RBL</span>
+                                            <span>BPCL SBI</span>
+                                            <span>IOC Axis</span>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        className="comparison-preset-card"
+                                        onClick={() => {
+                                            // HDFC Swiggy (7), IndusInd EazyDiner (72), HSBC Live+ (10)
+                                            const presetCards = [7, 72, 10];
+                                            presetCards.forEach(id => {
+                                                if (!selectedCards.includes(id)) toggleCardSelection(id);
+                                            });
+                                        }}
+                                    >
+                                        <h4>🍽️ Dining Delights</h4>
+                                        <p>Best rewards on restaurants, food delivery, and dining</p>
+                                        <div className="comparison-preset-cards">
+                                            <span>HDFC Swiggy</span>
+                                            <span>IndusInd EazyDiner</span>
+                                            <span>HSBC Live+</span>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        className="comparison-preset-card"
+                                        onClick={() => {
+                                            // PVR INOX Kotak (71), Axis MyZone (37), IndusInd Legend (50)
+                                            const presetCards = [71, 37, 50];
+                                            presetCards.forEach(id => {
+                                                if (!selectedCards.includes(id)) toggleCardSelection(id);
+                                            });
+                                        }}
+                                    >
+                                        <h4>🎬 Entertainment Buffs</h4>
+                                        <p>Free movie tickets, BOGO offers, and entertainment perks</p>
+                                        <div className="comparison-preset-cards">
+                                            <span>PVR INOX Kotak</span>
+                                            <span>Axis MyZone</span>
+                                            <span>IndusInd Legend</span>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        className="comparison-preset-card"
+                                        onClick={() => {
+                                            // Tata Neu HDFC (6), Kiwi RuPay (16), Jupiter Edge (90)
+                                            const presetCards = [6, 16, 90];
+                                            presetCards.forEach(id => {
+                                                if (!selectedCards.includes(id)) toggleCardSelection(id);
+                                            });
+                                        }}
+                                    >
+                                        <h4>📱 UPI Champions</h4>
+                                        <p>Best rewards on UPI scan & pay transactions</p>
+                                        <div className="comparison-preset-cards">
+                                            <span>Tata Neu HDFC</span>
+                                            <span>Kiwi RuPay</span>
+                                            <span>Jupiter Edge</span>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        className="comparison-preset-card"
+                                        onClick={() => {
+                                            // Airtel Axis (8), Axis Ace (20), PhonePe HDFC Ultimo (66)
+                                            const presetCards = [8, 20, 66];
+                                            presetCards.forEach(id => {
+                                                if (!selectedCards.includes(id)) toggleCardSelection(id);
+                                            });
+                                        }}
+                                    >
+                                        <h4>💡 Utility Warriors</h4>
+                                        <p>Best cashback on electricity, broadband, and bill payments</p>
+                                        <div className="comparison-preset-cards">
+                                            <span>Airtel Axis</span>
+                                            <span>Axis Ace</span>
+                                            <span>PhonePe Ultimo</span>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        className="comparison-preset-card"
+                                        onClick={() => {
+                                            // Amazon Pay ICICI (3), IDFC First Millennia (94), Scapia Federal (14)
+                                            const presetCards = [3, 94, 14];
+                                            presetCards.forEach(id => {
+                                                if (!selectedCards.includes(id)) toggleCardSelection(id);
+                                            });
+                                        }}
+                                    >
+                                        <h4>🆓 Lifetime Free Stars</h4>
+                                        <p>Best value with zero annual fees forever</p>
+                                        <div className="comparison-preset-cards">
+                                            <span>Amazon ICICI</span>
+                                            <span>IDFC Millennia</span>
+                                            <span>Scapia Federal</span>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        className="comparison-preset-card"
+                                        onClick={() => {
+                                            // Axis Neo (35), SBI SimplyCLICK (33), OneCard (30)
+                                            const presetCards = [35, 33, 30];
+                                            presetCards.forEach(id => {
+                                                if (!selectedCards.includes(id)) toggleCardSelection(id);
+                                            });
+                                        }}
+                                    >
+                                        <h4>🌟 Beginners' Best</h4>
+                                        <p>Perfect first credit cards for new users</p>
+                                        <div className="comparison-preset-cards">
+                                            <span>Axis Neo</span>
+                                            <span>SBI SimplyCLICK</span>
+                                            <span>OneCard</span>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        className="comparison-preset-card"
+                                        onClick={() => {
+                                            // Marriott Bonvoy HDFC (24), Axis Reserve (55), HDFC Regalia Gold (22)
+                                            const presetCards = [24, 55, 22];
+                                            presetCards.forEach(id => {
+                                                if (!selectedCards.includes(id)) toggleCardSelection(id);
+                                            });
+                                        }}
+                                    >
+                                        <h4>🏨 Hotel Loyalists</h4>
+                                        <p>Best cards for hotel points, elite status, and stays</p>
+                                        <div className="comparison-preset-cards">
+                                            <span>Marriott HDFC</span>
+                                            <span>Axis Reserve</span>
+                                            <span>Regalia Gold</span>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        className="comparison-preset-card"
+                                        onClick={() => {
+                                            // Axis Atlas (9), Air India SBI Signature (69), Amex Platinum Travel (11)
+                                            const presetCards = [9, 69, 11];
+                                            presetCards.forEach(id => {
+                                                if (!selectedCards.includes(id)) toggleCardSelection(id);
+                                            });
+                                        }}
+                                    >
+                                        <h4>🛫 Airline Miles</h4>
+                                        <p>Best for air miles accumulation and transfers</p>
+                                        <div className="comparison-preset-cards">
+                                            <span>Axis Atlas</span>
+                                            <span>Air India SBI</span>
+                                            <span>Amex Platinum</span>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        className="comparison-preset-card"
+                                        onClick={() => {
+                                            // Scapia Federal (14), IDFC Mayura (56), Niyo Global (89)
+                                            const presetCards = [14, 56, 89];
+                                            presetCards.forEach(id => {
+                                                if (!selectedCards.includes(id)) toggleCardSelection(id);
+                                            });
+                                        }}
+                                    >
+                                        <h4>🌍 Zero Forex</h4>
+                                        <p>No forex markup on international transactions</p>
+                                        <div className="comparison-preset-cards">
+                                            <span>Scapia Federal</span>
+                                            <span>IDFC Mayura</span>
+                                            <span>Niyo Global</span>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        className="comparison-preset-card"
+                                        onClick={() => {
+                                            // ICICI Coral (59), HDFC Millennia (29), IDFC First Power+ (28)
+                                            const presetCards = [59, 29, 28];
+                                            presetCards.forEach(id => {
+                                                if (!selectedCards.includes(id)) toggleCardSelection(id);
+                                            });
+                                        }}
+                                    >
+                                        <h4>🥗 Grocery Gurus</h4>
+                                        <p>Best rewards on supermarkets and grocery shopping</p>
+                                        <div className="comparison-preset-cards">
+                                            <span>ICICI Coral</span>
+                                            <span>HDFC Millennia</span>
+                                            <span>IDFC Power+</span>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        className="comparison-preset-card"
+                                        onClick={() => {
+                                            // HDFC Infinia Metal (4), ICICI Emeralde (2), HDFC Infinia Reserve (98)
+                                            const presetCards = [4, 2, 98];
+                                            presetCards.forEach(id => {
+                                                if (!selectedCards.includes(id)) toggleCardSelection(id);
+                                            });
+                                        }}
+                                    >
+                                        <h4>👑 Super Premium</h4>
+                                        <p>Invite-only cards for high net-worth individuals</p>
+                                        <div className="comparison-preset-cards">
+                                            <span>HDFC Infinia</span>
+                                            <span>ICICI Emeralde</span>
+                                            <span>Infinia Reserve</span>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        className="comparison-preset-card"
+                                        onClick={() => {
+                                            // HDFC BizBlack (57), Amex Gold (76), Amex Platinum (61)
+                                            const presetCards = [57, 76, 61];
+                                            presetCards.forEach(id => {
+                                                if (!selectedCards.includes(id)) toggleCardSelection(id);
+                                            });
+                                        }}
+                                    >
+                                        <h4>🏢 Business Elite</h4>
+                                        <p>Best cards for business expenses and tax payments</p>
+                                        <div className="comparison-preset-cards">
+                                            <span>HDFC BizBlack</span>
+                                            <span>Amex Gold</span>
+                                            <span>Amex Platinum</span>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        className="comparison-preset-card"
+                                        onClick={() => {
+                                            // IDFC First Select (43), AU LIT (53), HDFC Millennia (29)
+                                            const presetCards = [43, 53, 29];
+                                            presetCards.forEach(id => {
+                                                if (!selectedCards.includes(id)) toggleCardSelection(id);
+                                            });
+                                        }}
+                                    >
+                                        <h4>📅 Weekend Warriors</h4>
+                                        <p>Accelerated rewards on weekend spends</p>
+                                        <div className="comparison-preset-cards">
+                                            <span>IDFC Select</span>
+                                            <span>AU LIT</span>
+                                            <span>HDFC Millennia</span>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        className="comparison-preset-card"
+                                        onClick={() => {
+                                            // IDFC WOW (44), Kotak 811 (34), OneCard (30)
+                                            const presetCards = [44, 34, 30];
+                                            presetCards.forEach(id => {
+                                                if (!selectedCards.includes(id)) toggleCardSelection(id);
+                                            });
+                                        }}
+                                    >
+                                        <h4>🔒 Secured Cards</h4>
+                                        <p>Best FD-backed cards for building credit history</p>
+                                        <div className="comparison-preset-cards">
+                                            <span>IDFC WOW</span>
+                                            <span>Kotak 811</span>
+                                            <span>OneCard</span>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        className="comparison-preset-card"
+                                        onClick={() => {
+                                            // HDFC Regalia (60), ICICI Sapphiro (58), Axis Select (63)
+                                            const presetCards = [60, 58, 63];
+                                            presetCards.forEach(id => {
+                                                if (!selectedCards.includes(id)) toggleCardSelection(id);
+                                            });
+                                        }}
+                                    >
+                                        <h4>💳 All-Rounders</h4>
+                                        <p>Best overall value across all spending categories</p>
+                                        <div className="comparison-preset-cards">
+                                            <span>HDFC Regalia</span>
+                                            <span>ICICI Sapphiro</span>
+                                            <span>Axis Select</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div style={{ marginTop: '2rem' }}>
+                                    <Link
+                                        to="/know-your-cards"
+                                        className="btn-primary"
+                                        style={{ display: 'inline-block', textDecoration: 'none' }}
+                                    >
+                                        Browse All Cards →
+                                    </Link>
+                                </div>
                             </div>
                         )}
                     </>
@@ -1074,6 +1673,13 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
             }
         </div >
     );
+};
+
+CreditCardComparison.propTypes = {
+    view: PropTypes.oneOf(['grid', 'table']),
+    selectedCards: PropTypes.arrayOf(PropTypes.string),
+    toggleCardSelection: PropTypes.func,
+    clearSelection: PropTypes.func,
 };
 
 export default CreditCardComparison;

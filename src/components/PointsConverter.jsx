@@ -7,6 +7,25 @@ const POINT_PRESETS = [5000, 10000, 25000, 50000, 100000];
 // Last updated date (you can update this when data changes)
 const LAST_UPDATED = '2025-12-26';
 
+// Partner type icons for visual recognition
+const getPartnerIcon = (optionType) => {
+    const type = optionType.toLowerCase();
+    if (type.includes('singapore air') || type.includes('vistara') || type.includes('etihad')) return '✈️';
+    if (type.includes('air miles') || type.includes('intermiles') || type.includes('miles')) return '🛫';
+    if (type.includes('flight')) return '✈️';
+    if (type.includes('hotel') || type.includes('itc') || type.includes('marriott') || type.includes('accor')) return '🏨';
+    if (type.includes('statement credit') || type.includes('cash')) return '💵';
+    if (type.includes('amazon')) return '🛒';
+    if (type.includes('swiggy')) return '🍔';
+    if (type.includes('tata') || type.includes('neucoins')) return '🛍️';
+    if (type.includes('voucher') || type.includes('gift')) return '🎁';
+    if (type.includes('catalog')) return '📦';
+    if (type.includes('travel') || type.includes('smartbuy') || type.includes('ishop') || type.includes('edge')) return '🌍';
+    if (type.includes('gold') || type.includes('tanishq')) return '💎';
+    if (type.includes('ixigo') || type.includes('scapia')) return '🗺️';
+    return '💳';
+};
+
 const PointsConverter = () => {
     const [selectedCard, setSelectedCard] = useState('');
     const [points, setPoints] = useState(10000);
@@ -360,6 +379,7 @@ const PointsConverter = () => {
                             >
                                 <div>
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                        <span style={{ fontSize: '1.2rem' }}>{getPartnerIcon(option.type)}</span>
                                         <span style={{ fontWeight: '600' }}>{option.type}</span>
                                         {option.recommended && (
                                             <span style={{
@@ -374,7 +394,7 @@ const PointsConverter = () => {
                                         )}
                                     </div>
                                     <p style={{
-                                        margin: '0.25rem 0 0',
+                                        margin: '0.25rem 0 0 2rem',
                                         fontSize: '0.8rem',
                                         color: 'var(--text-secondary)'
                                     }}>

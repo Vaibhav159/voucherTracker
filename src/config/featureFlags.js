@@ -12,10 +12,10 @@ export const featureFlags = {
     cardGuide: true,
 
     // Tools (can be disabled)
-    rewardsCalculator: false,
-    pointsConverter: false,
-    bankingGuides: false,
-    askAI: false,
+    rewardsCalculator: true,
+    pointsConverter: true,
+    bankingGuides: true,
+    askAI: true,
 
     // Homepage enhancements
     topDeals: true,

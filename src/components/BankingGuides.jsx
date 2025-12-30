@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react';
 import { familyBanking, wealthBanking, getBankNames } from '../data/bankingPrograms';
+import { useFavorites } from '../context/FavoritesContext';
 
 // Helper to parse NRV string to number (in lakhs)
 const parseNRV = (nrvStr) => {
@@ -24,6 +25,7 @@ const BankingGuides = () => {
     const [selectedBank, setSelectedBank] = useState('HDFC Bank');
     const [showEligibilityChecker, setShowEligibilityChecker] = useState(false);
     const [userBalance, setUserBalance] = useState('');
+    const [showAllBanks, setShowAllBanks] = useState(false);
 
     const bankNames = getBankNames();
 
@@ -192,7 +194,7 @@ const BankingGuides = () => {
                 maxWidth: '800px',
                 margin: '0 auto 2rem'
             }}>
-                {bankNames.map(bank => (
+                {(showAllBanks ? bankNames : bankNames.slice(0, 5)).map(bank => (
                     <button
                         key={bank}
                         onClick={() => setSelectedBank(bank)}
@@ -216,6 +218,24 @@ const BankingGuides = () => {
                         {bank}
                     </button>
                 ))}
+                {bankNames.length > 5 && (
+                    <button
+                        onClick={() => setShowAllBanks(!showAllBanks)}
+                        style={{
+                            padding: '0.5rem 1rem',
+                            borderRadius: '20px',
+                            border: '1px solid var(--glass-border)',
+                            background: 'rgba(139, 92, 246, 0.1)',
+                            color: 'var(--accent-purple)',
+                            cursor: 'pointer',
+                            fontSize: '0.85rem',
+                            fontWeight: '500',
+                            transition: 'all 0.2s'
+                        }}
+                    >
+                        {showAllBanks ? '− Less' : `+${bankNames.length - 5} more`}
+                    </button>
+                )}
             </div>
 
             {/* Content */}
@@ -230,6 +250,7 @@ const BankingGuides = () => {
 // Wealth Banking Component
 const WealthBankingContent = ({ bank }) => {
     const bankData = wealthBanking[bank];
+    const { isGuideFavorite, toggleFavoriteGuide } = useFavorites();
     if (!bankData) return <div>Bank data not available</div>;
 
     return (
@@ -335,6 +356,25 @@ const WealthBankingContent = ({ bank }) => {
                                 ✓ Dedicated Relationship Manager
                             </div>
                         )}
+
+                        {/* Key Takeaways */}
+                        <div className="key-takeaways-box">
+                            <h5>💡 Key Takeaways</h5>
+                            <ul>
+                                <li>Best card: {tier.eligibleCards[0]}</li>
+                                <li>{tier.benefits[0]}</li>
+                                {tier.rm && <li>Dedicated RM included</li>}
+                            </ul>
+                        </div>
+
+                        {/* Bookmark Button */}
+                        <button
+                            className={`bookmark-btn ${isGuideFavorite(`${bank}::wealth::${tier.name}`) ? 'active' : ''}`}
+                            onClick={() => toggleFavoriteGuide(`${bank}::wealth::${tier.name}`)}
+                            style={{ marginTop: '1rem', width: '100%', justifyContent: 'center' }}
+                        >
+                            {isGuideFavorite(`${bank}::wealth::${tier.name}`) ? '🔖 Bookmarked' : '🔖 Bookmark'}
+                        </button>
                     </div>
                 ))}
             </div>

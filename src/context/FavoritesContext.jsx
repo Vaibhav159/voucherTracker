@@ -15,6 +15,7 @@ export const FavoritesProvider = ({ children }) => {
     // Use safe localStorage hook with error handling
     const [favoriteCards, setFavoriteCards] = useLocalStorage('favoriteCards', []);
     const [favoriteVouchers, setFavoriteVouchers] = useLocalStorage('favoriteVouchers', []);
+    const [favoriteGuides, setFavoriteGuides] = useLocalStorage('favoriteGuides', []);
 
     const toggleFavoriteCard = (cardId) => {
         setFavoriteCards(prev =>
@@ -32,24 +33,37 @@ export const FavoritesProvider = ({ children }) => {
         );
     };
 
+    const toggleFavoriteGuide = (guideId) => {
+        setFavoriteGuides(prev =>
+            prev.includes(guideId)
+                ? prev.filter(id => id !== guideId)
+                : [...prev, guideId]
+        );
+    };
+
     const isCardFavorite = (cardId) => favoriteCards.includes(cardId);
     const isVoucherFavorite = (voucherId) => favoriteVouchers.includes(voucherId);
+    const isGuideFavorite = (guideId) => favoriteGuides.includes(guideId);
 
     const clearAllFavorites = () => {
         setFavoriteCards([]);
         setFavoriteVouchers([]);
+        setFavoriteGuides([]);
     };
 
     return (
         <FavoritesContext.Provider value={{
             favoriteCards,
             favoriteVouchers,
+            favoriteGuides,
             toggleFavoriteCard,
             toggleFavoriteVoucher,
+            toggleFavoriteGuide,
             isCardFavorite,
             isVoucherFavorite,
+            isGuideFavorite,
             clearAllFavorites,
-            totalFavorites: favoriteCards.length + favoriteVouchers.length
+            totalFavorites: favoriteCards.length + favoriteVouchers.length + favoriteGuides.length
         }}>
             {children}
         </FavoritesContext.Provider>

@@ -29,6 +29,7 @@ const RewardsCalculator = lazy(() => import('./components/RewardsCalculator'));
 const PointsConverter = lazy(() => import('./components/PointsConverter'));
 const BankingGuides = lazy(() => import('./components/BankingGuides'));
 const AskAI = lazy(() => import('./components/AskAI'));
+const Favorites = lazy(() => import('./components/Favorites'));
 
 // Apply global platform sorting
 const INITIAL_DATA = RAW_DATA.map(voucher => ({
@@ -289,15 +290,18 @@ function App() {
 
   // Toggle card selection
   const toggleCardSelection = (cardId) => {
-    if (selectedCards.includes(cardId)) {
-      setSelectedCards(selectedCards.filter(id => id !== cardId));
-    } else {
-      if (selectedCards.length < 4) {
-        setSelectedCards([...selectedCards, cardId]);
+    setSelectedCards(prevCards => {
+      if (prevCards.includes(cardId)) {
+        return prevCards.filter(id => id !== cardId);
       } else {
-        alert("You can compare up to 4 cards at a time.");
+        if (prevCards.length < 4) {
+          return [...prevCards, cardId];
+        } else {
+          alert("You can compare up to 4 cards at a time.");
+          return prevCards;
+        }
       }
-    }
+    });
   };
 
   // Global listener for Shortcuts Modal (Shift + / which is ?)
@@ -369,6 +373,7 @@ function App() {
                 {featureFlags.askAI && (
                   <Route path="/ask-ai" element={<AskAI />} />
                 )}
+                <Route path="/favorites" element={<Favorites />} />
               </Routes>
             </Suspense>
           </Layout>

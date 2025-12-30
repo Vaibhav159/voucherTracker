@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import PropTypes from 'prop-types';
 
 // Daily essentials - brands people use regularly (one entry per brand)
 const DAILY_ESSENTIALS = [
@@ -123,6 +124,19 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
             </div>
         </section>
     );
+};
+
+TopDeals.propTypes = {
+    vouchers: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        brand: PropTypes.string.isRequired,
+        logo: PropTypes.string,
+        category: PropTypes.string,
+        platforms: PropTypes.arrayOf(PropTypes.shape({
+            fee: PropTypes.string,
+        })),
+    })).isRequired,
+    onVoucherClick: PropTypes.func.isRequired,
 };
 
 export default TopDeals;

@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
+import PropTypes from 'prop-types';
 
 const StatsBar = ({ vouchers, platforms }) => {
     const [animatedStats, setAnimatedStats] = useState({
@@ -97,6 +98,15 @@ const StatsBar = ({ vouchers, platforms }) => {
             </div>
         </div>
     );
+};
+
+StatsBar.propTypes = {
+    vouchers: PropTypes.arrayOf(PropTypes.shape({
+        platforms: PropTypes.arrayOf(PropTypes.shape({
+            fee: PropTypes.string,
+        })),
+    })).isRequired,
+    platforms: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default StatsBar;

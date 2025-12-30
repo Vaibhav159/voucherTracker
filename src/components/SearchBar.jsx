@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const SearchBar = ({ value, onChange, sortOption, onSortChange, onOpenShortcuts }) => {
     return (
@@ -114,6 +115,14 @@ const SearchBar = ({ value, onChange, sortOption, onSortChange, onOpenShortcuts 
             `}</style>
         </div>
     );
+};
+
+SearchBar.propTypes = {
+    value: PropTypes.string,
+    onChange: PropTypes.func.isRequired,
+    sortOption: PropTypes.string,
+    onSortChange: PropTypes.func.isRequired,
+    onOpenShortcuts: PropTypes.func,
 };
 
 export default SearchBar;

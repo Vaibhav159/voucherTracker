@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { getPlatformStyle } from '../utils/platformLogos';
 import { Link } from 'react-router-dom';
 import { useModalKeyHandler } from '../hooks/useModalKeyHandler';
@@ -16,9 +17,17 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
 
     const [activeTab, setActiveTab] = React.useState('offers'); // 'offers', 'reviews', 'history'
     const [showReviewModal, setShowReviewModal] = React.useState(false);
+    const [copiedLink, setCopiedLink] = React.useState(null);
     const [selectedPlatformForHistory, setSelectedPlatformForHistory] = React.useState(
         voucher.platforms[0]?.name || null
     );
+
+    const copyLink = (link, platformName) => {
+        navigator.clipboard.writeText(link).then(() => {
+            setCopiedLink(platformName);
+            setTimeout(() => setCopiedLink(null), 2000);
+        });
+    };
 
     // Use custom modal keyboard handler hook
     useModalKeyHandler(true, onClose);
@@ -145,81 +154,99 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
 
                             <div className="modal-content">
                                 {voucher.platforms.map((platform, idx) => {
-                            const { label, value } = getRewardText(platform.fee);
-                            const style = getPlatformStyle(platform.name);
+                                    const { label, value } = getRewardText(platform.fee);
+                                    const style = getPlatformStyle(platform.name);
 
-                            const isBest = idx === bestPlatformIndex;
-                            const isSelected = selectedPlatform === platform.name;
+                                    const isBest = idx === bestPlatformIndex;
+                                    const isSelected = selectedPlatform === platform.name;
 
-                            const platformClasses = [
-                                'platform-offer',
-                                isBest && 'best',
-                                isSelected && 'selected'
-                            ].filter(Boolean).join(' ');
+                                    const platformClasses = [
+                                        'platform-offer',
+                                        isBest && 'best',
+                                        isSelected && 'selected'
+                                    ].filter(Boolean).join(' ');
 
-                            return (
-                                <div key={idx} className={platformClasses}>
-                                    {isBest && (
-                                        <div className="platform-offer__badge">
-                                            BEST RATE
-                                        </div>
-                                    )}
-
-                                    <div className="platform-offer__header">
-                                        {/* Platform Logo */}
-                                        <div
-                                            className="platform-offer__logo"
-                                            style={{
-                                                background: style.bg,
-                                                padding: style.padding
-                                            }}
-                                        >
-                                            {style.logo ? (
-                                                <img src={style.logo} alt={platform.name} />
-                                            ) : (
-                                                <span style={{ color: '#000', fontWeight: 'bold', fontSize: '1.2rem' }}>{platform.name[0]}</span>
+                                    return (
+                                        <div key={idx} className={platformClasses}>
+                                            {isBest && (
+                                                <div className="platform-offer__badge">
+                                                    BEST RATE
+                                                </div>
                                             )}
-                                        </div>
 
-                                        {/* Details */}
-                                        <div className="platform-offer__details">
-                                            <div className="platform-offer__metric">
-                                                <div className="platform-offer__metric-label">{label}</div>
-                                                <div className={`platform-offer__metric-value ${label === 'Savings' ? 'savings' : ''}`}>
-                                                    {value}
+                                            <div className="platform-offer__header">
+                                                {/* Platform Logo */}
+                                                <div
+                                                    className="platform-offer__logo"
+                                                    style={{
+                                                        background: style.bg,
+                                                        padding: style.padding
+                                                    }}
+                                                >
+                                                    {style.logo ? (
+                                                        <img src={style.logo} alt={platform.name} />
+                                                    ) : (
+                                                        <span style={{ color: '#000', fontWeight: 'bold', fontSize: '1.2rem' }}>{platform.name[0]}</span>
+                                                    )}
+                                                </div>
+
+                                                {/* Details */}
+                                                <div className="platform-offer__details">
+                                                    <div className="platform-offer__metric">
+                                                        <div className="platform-offer__metric-label">{label}</div>
+                                                        <div className={`platform-offer__metric-value ${label === 'Savings' ? 'savings' : ''}`}>
+                                                            {value}
+                                                        </div>
+                                                    </div>
+                                                    <div className="platform-offer__metric">
+                                                        <div className="platform-offer__metric-label">Monthly Cap</div>
+                                                        <div className="platform-offer__metric-value">{platform.cap}</div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div className="platform-offer__metric">
-                                                <div className="platform-offer__metric-label">Monthly Cap</div>
-                                                <div className="platform-offer__metric-value">{platform.cap}</div>
+
+                                            {/* Denominations & Button */}
+                                            <div className="platform-offer__footer">
+                                                <div className="platform-offer__denominations">
+                                                    {platform.denominations.slice(0, 4).map(d => (
+                                                        <span key={d} className="denomination-badge">
+                                                            ₹{d}
+                                                        </span>
+                                                    ))}
+                                                    {platform.denominations.length > 4 && (
+                                                        <span className="text-secondary text-xs">+more</span>
+                                                    )}
+                                                </div>
+
+                                                <div style={{ display: 'flex', gap: '8px' }}>
+                                                    <button
+                                                        onClick={() => copyLink(platform.link, platform.name)}
+                                                        title="Copy link"
+                                                        style={{
+                                                            padding: '8px 12px',
+                                                            borderRadius: '8px',
+                                                            border: copiedLink === platform.name ? '1px solid #22c55e' : '1px solid var(--glass-border)',
+                                                            background: copiedLink === platform.name ? 'rgba(34, 197, 94, 0.1)' : 'transparent',
+                                                            color: copiedLink === platform.name ? '#22c55e' : 'var(--text-secondary)',
+                                                            cursor: 'pointer',
+                                                            fontSize: '0.8rem',
+                                                            transition: 'all 0.2s'
+                                                        }}
+                                                    >
+                                                        {copiedLink === platform.name ? '✓ Copied!' : '📋 Copy'}
+                                                    </button>
+                                                    <a
+                                                        href={platform.link}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="btn-secondary"
+                                                    >
+                                                        Buy on {platform.name} ↗
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    {/* Denominations & Button */}
-                                    <div className="platform-offer__footer">
-                                        <div className="platform-offer__denominations">
-                                            {platform.denominations.slice(0, 4).map(d => (
-                                                <span key={d} className="denomination-badge">
-                                                    ₹{d}
-                                                </span>
-                                            ))}
-                                            {platform.denominations.length > 4 && (
-                                                <span className="text-secondary text-xs">+more</span>
-                                            )}
-                                        </div>
-
-                                        <a
-                                            href={platform.link}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="btn-secondary"
-                                        >
-                                            Buy on {platform.name} ↗
-                                        </a>
-                                    </div>
-                                </div>
-                            );
+                                    );
                                 })}
                             </div>
 
@@ -323,6 +350,27 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
             )}
         </div>
     );
+};
+
+VoucherModal.propTypes = {
+    voucher: PropTypes.shape({
+        id: PropTypes.string,
+        brand: PropTypes.string.isRequired,
+        logo: PropTypes.string,
+        category: PropTypes.string.isRequired,
+        site: PropTypes.string,
+        expiryDays: PropTypes.number,
+        lastUpdated: PropTypes.string,
+        platforms: PropTypes.arrayOf(PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            fee: PropTypes.string,
+            cap: PropTypes.string,
+            link: PropTypes.string,
+            denominations: PropTypes.arrayOf(PropTypes.string),
+        })).isRequired,
+    }),
+    onClose: PropTypes.func.isRequired,
+    selectedPlatform: PropTypes.string,
 };
 
 export default VoucherModal;

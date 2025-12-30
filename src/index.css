@@ -20,7 +20,8 @@
   /* Neon Accents */
   --primary-glow: conic-gradient(from 180deg at 50% 50%, #16abff33 0deg, #0885ff33 55deg, #54d6ff33 120deg, #0071ff33 160deg, transparent 360deg);
   --accent-cyan: #00f0ff;
-  --accent-pink: #8B5CF6; /* Changed from #7000ff to #8B5CF6 for WCAG AA compliance (4.5:1 contrast ratio) */
+  --accent-pink: #8B5CF6;
+  /* Changed from #7000ff to #8B5CF6 for WCAG AA compliance (4.5:1 contrast ratio) */
   --accent-violet: #4a00e0;
   --accent-cyan-dim: rgba(0, 240, 255, 0.1);
 
@@ -386,6 +387,214 @@ body::after {
   100% {
     transform: translate(30px, 50px);
   }
+}
+
+/* ============================================
+   SMOOTH ANIMATION KEYFRAMES
+   ============================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ============================================
+   ANIMATION UTILITY CLASSES
+   ============================================ */
+
+.animate-fade-in {
+  animation: fadeIn var(--duration-normal) var(--ease-out) forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp var(--duration-slow) var(--ease-out-expo) forwards;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale var(--duration-slow) var(--ease-spring) forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight var(--duration-slow) var(--ease-out-expo) forwards;
+}
+
+.animate-slide-down {
+  animation: slideDown var(--duration-normal) var(--ease-out) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn var(--duration-slow) var(--ease-spring) forwards;
+}
+
+.animate-pulse {
+  animation: pulse 2s var(--ease-in-out) infinite;
+}
+
+/* Staggered animation delays for card grids */
+.stagger-1 {
+  animation-delay: var(--stagger-1);
+  opacity: 0;
+}
+
+.stagger-2 {
+  animation-delay: var(--stagger-2);
+  opacity: 0;
+}
+
+.stagger-3 {
+  animation-delay: var(--stagger-3);
+  opacity: 0;
+}
+
+.stagger-4 {
+  animation-delay: var(--stagger-4);
+  opacity: 0;
+}
+
+.stagger-5 {
+  animation-delay: var(--stagger-5);
+  opacity: 0;
+}
+
+.stagger-6 {
+  animation-delay: 0.12s;
+  opacity: 0;
+}
+
+.stagger-7 {
+  animation-delay: 0.14s;
+  opacity: 0;
+}
+
+.stagger-8 {
+  animation-delay: 0.16s;
+  opacity: 0;
+}
+
+.stagger-9 {
+  animation-delay: 0.18s;
+  opacity: 0;
+}
+
+.stagger-10 {
+  animation-delay: 0.20s;
+  opacity: 0;
+}
+
+/* Page transition wrapper */
+.page-transition {
+  animation: fadeIn var(--duration-slow) var(--ease-out) forwards;
+}
+
+/* Smooth expand/collapse for panels */
+.expand-panel {
+  animation: slideDown var(--duration-normal) var(--ease-out) forwards;
+  transform-origin: top;
+}
+
+/* Enhanced hover transition for all interactive elements */
+button,
+a,
+.clickable,
+[role="button"] {
+  transition: transform var(--duration-fast) var(--ease-out),
+    background var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+/* Subtle press effect for buttons */
+button:active:not(:disabled),
+[role="button"]:active {
+  transform: scale(0.98);
 }
 
 * {
@@ -1505,6 +1714,7 @@ a:focus-visible {
 
 /* Respect user's motion preferences */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -1553,5 +1763,438 @@ a:focus-visible {
   .voucher-card,
   .platform-card {
     border-width: 2px;
+  }
+}
+
+/* ========================================
+   FAVORITES PAGE STYLES
+   ======================================== */
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.favorites-grid-guides {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+/* Favorite Card (Credit Card) */
+.favorite-card {
+  position: relative;
+  padding: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.favorite-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.favorite-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.favorite-card-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.favorite-card-info h4 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.favorite-card-bank {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.favorite-card-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+}
+
+.favorite-card-fee {
+  color: var(--color-success);
+}
+
+.favorite-card-reward {
+  color: var(--accent-cyan);
+}
+
+/* Favorite Voucher */
+.favorite-voucher {
+  position: relative;
+  padding: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.favorite-voucher:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.favorite-voucher-content {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.favorite-voucher-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.favorite-voucher-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.favorite-voucher-logo .brand-letter {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+}
+
+.favorite-voucher-info h4 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.favorite-voucher-category {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.favorite-voucher-platforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.favorite-voucher-platforms .platform-tag {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+}
+
+/* Favorite Guide */
+.favorite-guide {
+  position: relative;
+  padding: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.favorite-guide:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.favorite-guide-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.favorite-guide-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.favorite-guide-type {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(139, 92, 246, 0.2);
+  color: var(--accent-pink);
+}
+
+.favorite-guide-bank {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.favorite-guide h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.favorite-guide-nrv {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  color: var(--accent-cyan);
+}
+
+.favorite-guide-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.favorite-guide-cards .card-tag {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+}
+
+/* Remove Button */
+.favorite-remove-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.2);
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.favorite-card:hover .favorite-remove-btn,
+.favorite-voucher:hover .favorite-remove-btn,
+.favorite-guide:hover .favorite-remove-btn {
+  opacity: 1;
+}
+
+.favorite-remove-btn:hover {
+  background: #ef4444;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Empty State */
+.favorites-empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.favorites-empty-state .empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.favorites-empty-state h3 {
+  margin: 0 0 0.5rem;
+  color: var(--text-primary);
+  font-size: 1.25rem;
+}
+
+.favorites-empty-state p {
+  margin: 0 0 1.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.favorites-empty-state .empty-cta {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(90deg, var(--accent-violet), var(--accent-pink));
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.favorites-empty-state .empty-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+}
+
+/* Key Takeaways Box */
+.key-takeaways-box {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.key-takeaways-box h5 {
+  margin: 0 0 0.75rem;
+  color: var(--accent-cyan);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.key-takeaways-box ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.key-takeaways-box li {
+  margin-bottom: 0.25rem;
+}
+
+/* Bookmark Button */
+.bookmark-btn {
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  padding: 6px 12px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
+.bookmark-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--accent-pink);
+  color: var(--accent-pink);
+}
+
+.bookmark-btn.active {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: var(--accent-pink);
+  color: var(--accent-pink);
+}
+
+/* Popular Comparisons (Empty State) */
+.popular-comparisons {
+  text-align: center;
+  padding: 2rem;
+}
+
+.popular-comparisons h3 {
+  margin: 0 0 0.5rem;
+  color: var(--text-primary);
+}
+
+.popular-comparisons p {
+  margin: 0 0 2rem;
+  color: var(--text-secondary);
+}
+
+.comparison-presets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.comparison-preset-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: left;
+}
+
+.comparison-preset-card:hover {
+  border-color: var(--accent-cyan);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(6, 182, 212, 0.15);
+}
+
+.comparison-preset-card h4 {
+  margin: 0 0 0.5rem;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.comparison-preset-card p {
+  margin: 0 0 0.75rem;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+.comparison-preset-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.comparison-preset-cards span {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(6, 182, 212, 0.15);
+  color: var(--accent-cyan);
+}
+
+/* Copy Strategy Button */
+.copy-strategy-btn {
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid var(--accent-cyan);
+  color: var(--accent-cyan);
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+  margin-top: 0.5rem;
+}
+
+.copy-strategy-btn:hover {
+  background: var(--accent-cyan);
+  color: #000;
+}
+
+.copy-strategy-btn.copied {
+  background: var(--color-success);
+  border-color: var(--color-success);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .favorites-grid {
+    grid-template-columns: 1fr;
+    padding: 0.5rem;
+  }
+
+  .comparison-presets {
+    grid-template-columns: 1fr;
   }
 }

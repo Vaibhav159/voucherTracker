@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import VoucherCard from './VoucherCard';
 import EmptyState from './EmptyState';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
@@ -95,6 +96,18 @@ const VoucherGrid = ({ vouchers, onVoucherClick }) => {
             }
         </>
     );
+};
+
+VoucherGrid.propTypes = {
+    vouchers: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        brand: PropTypes.string.isRequired,
+        logo: PropTypes.string,
+        category: PropTypes.string,
+        discount: PropTypes.number,
+        platforms: PropTypes.array,
+    })),
+    onVoucherClick: PropTypes.func,
 };
 
 export default VoucherGrid;

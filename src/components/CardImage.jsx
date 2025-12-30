@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 // Bank colors for generating styled placeholder cards
 export const bankColors = {
     'HDFC Bank': { primary: '#004c8f', secondary: '#ff6b00', name: 'HDFC' },
@@ -107,6 +109,16 @@ const CardImage = ({ card, style = {}, className = '' }) => {
             }}
         />
     );
+};
+
+CardImage.propTypes = {
+    card: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        bank: PropTypes.string,
+        image: PropTypes.string,
+    }).isRequired,
+    style: PropTypes.object,
+    className: PropTypes.string,
 };
 
 export default CardImage;

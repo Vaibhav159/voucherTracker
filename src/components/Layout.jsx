@@ -1,13 +1,16 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import ThemeToggle from './ThemeToggle';
 import { featureFlags } from '../config/featureFlags';
 import GlobalSearch from './GlobalSearch';
 import ShortcutsModal from './ShortcutsModal';
+import { useFavorites } from '../context/FavoritesContext';
 
 const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortcutsOpen }) => {
   const location = useLocation();
   const [showOthersMenu, setShowOthersMenu] = useState(false);
+  const { totalFavorites } = useFavorites();
   const isActive = (path) => location.pathname === path;
   // Local state removed, using props from App
 
@@ -90,6 +93,31 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
                   Ask AI 🧞‍♂️
                 </Link>
               )}
+              <Link
+                to="/favorites"
+                className={`nav-item ${isActive('/favorites') ? 'active' : ''}`}
+                style={{ position: 'relative' }}
+              >
+                ❤️
+                {totalFavorites > 0 && (
+                  <span style={{
+                    position: 'absolute',
+                    top: '-5px',
+                    right: '-10px',
+                    background: 'var(--accent-pink)',
+                    color: 'white',
+                    borderRadius: '50%',
+                    width: '18px',
+                    height: '18px',
+                    fontSize: '11px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
+                    {totalFavorites}
+                  </span>
+                )}
+              </Link>
 
               {/* Others Dropdown - only show if at least one tool is enabled */}
               {othersLinks.length > 0 && (
@@ -173,6 +201,13 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
       </footer>
     </div >
   );
+};
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+  selectedCardsCount: PropTypes.number,
+  isShortcutsOpen: PropTypes.bool,
+  setIsShortcutsOpen: PropTypes.func,
 };
 
 export default Layout;
