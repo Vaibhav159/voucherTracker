@@ -75,7 +75,7 @@ Excellent for online shopping with 5% unlimited cashback across all merchants. T
     name: "ICICI Emeralde Private Metal",
     bestFor: "High Spend + iShop",
     verdict: "Invite-only. 18K RP/mo iShop cap. 36% on hotels, 18% on vouchers.",
-    fxMarkup: "2%",
+    fxMarkup: "1.99%",
     category: "Premium",
     bank: "ICICI Bank",
     image: "assets/cards/icici-emeralde-private-metal.png",
@@ -156,7 +156,7 @@ One of India's best super-premium cards with excellent rewards on travel booking
     name: "Amazon Pay ICICI",
     bestFor: "Amazon Prime Members",
     verdict: "Must-have lifetime free card with unlimited Amazon cashback.",
-    fxMarkup: "3.5%",
+    fxMarkup: "1.99%",
     category: "Cashback",
     bank: "ICICI Bank",
     image: "assets/cards/amazon-pay-icici.png",
@@ -165,7 +165,7 @@ One of India's best super-premium cards with excellent rewards on travel booking
     rewardType: "cashback",
     rewardCaps: {
       monthly: "No cap - Unlimited",
-      notes: "Excludes fuel, rent, EMI, jewelry. 1.99% forex (Oct 2025)"
+      notes: "Excludes fuel, rent, EMI, jewelry, education, international transactions"
     },
     features: [
       "Unlimited 5% on Amazon (Prime)",
@@ -191,7 +191,7 @@ India's most popular co-branded credit card with over 5 million users, offering 
 ### Benefits
 - **Welcome Benefit:** ₹500 Amazon Prime voucher (if not a Prime member)
 - **Cashback Credit:** Automatically credited as Amazon Pay balance at end of billing cycle
-- **Forex Markup:** 1.99% (from October 2025)
+- **Forex Markup:** 1.99%
 - **Fuel Surcharge Waiver:** 1% across all fuel outlets
 - **No Caps:** Unlimited cashback earning
 - **No Expiry:** Cashback never expires
@@ -202,8 +202,8 @@ No cashback on:
 - Fuel purchases
 - Gold/silver purchases
 - Amazon Business purchases
-- International transactions (from Oct 2025)
-- Education transactions (from Oct 2025)
+- International transactions
+- Education transactions
 
 ### Special Offers
 - Culinary Treats Program: 15% discount at 2,500+ restaurants
@@ -380,7 +380,7 @@ HDFC's premium travel and lifestyle card, competing directly with Infinia at a l
 - Insurance: Max 5,000 points/month
 - Utility/Grocery: Max 2,000 points/month
 - Maximum per statement cycle: 75,000 points
-- SmartBuy: Max 10,000 points/month
+- SmartBuy: Max 7,500 points/month
 
 ### Eligibility
 - Salaried: ₹2.5 lakh/month
@@ -485,7 +485,7 @@ Excellent for Tata loyalists with 10% rewards on Tata Neu purchases. The wide ne
     category: "Cashback",
     bank: "HDFC Bank",
     image: "assets/cards/hdfc-swiggy.png",
-    annualFee: "₹500 (Waived on ₹1L spend)",
+    annualFee: "₹500 (Waived on ₹2L spend)",
     rewardRate: "10% Swiggy, 5% Online, 1% Other",
     rewardType: "cashback",
     rewardCaps: {
@@ -613,12 +613,12 @@ Excellent for Airtel ecosystem users with 25% cashback on Airtel services. The u
     tags: ['Travel', 'Rewards', 'Lounge', 'Low Forex'],
     name: "Axis Atlas Credit Card",
     bestFor: "Frequent Flyers",
-    verdict: "2% base, 5% travel | 2% forex.",
-    fxMarkup: "2%",
+    verdict: "2% base, 5% travel | 3.5% forex.",
+    fxMarkup: "3.5%",
     category: "Travel",
     bank: "Axis Bank",
     image: "assets/cards/axis-atlas.png",
-    annualFee: "₹5,000 (Waived on ₹8L spend)",
+    annualFee: "₹5,000 + GST (No spend-based waiver)",
     rewardRate: "2% Base, 5% on Travel EDGE",
     rewardType: "points",
     rewardCaps: {
@@ -640,9 +640,9 @@ Premium airline-agnostic travel card offering flexible redemption across 20+ tra
 
 ### Key Features
 - **Joining Fee:** ₹5,000 + taxes
-- **Annual Fee:** ₹5,000 + taxes (waived on spending ₹8 lakh annually)
+- **Annual Fee:** ₹5,000 + taxes (No spend-based waiver available)
 - **Reward Rate:** 2 EDGE Miles per ₹100 spent (2% base rate)
-- **Accelerated Rewards:** 2.5X on travel spends via Travel EDGE Portal
+- **Accelerated Rewards:** 5X on travel spends via Travel EDGE Portal (capped at ₹2L/month)
 
 ### Benefits
 - **Welcome Benefit:** 2,500 EDGE Miles (equivalent to 5,000 air miles)
@@ -755,7 +755,7 @@ Top cashback card for essential categories with 10% on dining/groceries/food del
     category: "Travel",
     bank: "American Express",
     image: "assets/cards/amex-platinum-travel.png",
-    annualFee: "₹3,500 + taxes",
+    annualFee: "₹5,000 + taxes",
     rewardRate: "Milestone Based",
     rewardType: "points",
     features: [
@@ -771,8 +771,8 @@ Top cashback card for essential categories with 10% on dining/groceries/food del
 Amex's travel-focused card offering Membership Rewards points with good milestone benefits.
 
 ### Key Features
-- **Joining Fee:** ₹3,500 + taxes
-- **Annual Fee:** ₹3,500 + taxes
+- **Joining Fee:** ₹5,000 + taxes
+- **Annual Fee:** ₹5,000 + taxes
 - **Reward Rate:** 2% (1 point per ₹50 spent)
 
 ### Benefits
@@ -829,7 +829,7 @@ Solid milestone-based card with good returns if you spend ₹4 lakh annually. Th
     rewardType: "cashback",
     features: [
       "Zero Forex Markup",
-      "16 Railway Lounge Visits/Year",
+      "8 Railway + 8 Domestic Airport Lounge Visits/Year",
       "10% Off on Flights/Hotels/Trains via Ixigo"
     ],
     applyLink: "https://www.aubank.in/",
@@ -856,8 +856,8 @@ Travel-focused co-branded card optimized for domestic travelers, especially rail
   - 10% on buses (up to ₹300/month)
   - Payment gateway charges waived on train bookings (twice/month)
 - **Lounge Access (spend ₹20,000/quarter from April 2025):**
-  - 16 domestic airport visits/year
-  - 16 railway lounge visits/year
+  - 8 domestic airport visits/year (max 2/quarter)
+  - 8 railway lounge visits/year
   - 1 international lounge/year (Priority Pass)
 - **Fuel Surcharge Waiver:** 1% on ₹400-₹5,000 (max ₹250/month)
 - **Forex Markup:** 0%
@@ -903,12 +903,12 @@ Best for domestic travel enthusiasts with unique railway lounge access and accel
     rewardRate: "10X (>₹20k txn), 3X (<₹20k)",
     rewardType: "points",
     rewardCaps: {
-      monthly: "25% RP Devaluation (Feb 2025)",
-      lounge: "2 dom + 2 intl/qtr (was 4, requires ₹20k/mo spend)",
-      notes: "10X on spends >₹20k, 3X on <₹20k. Spa discontinued Dec 2025."
+      monthly: "10X on spends >₹20k/month",
+      lounge: "2 dom + 2 intl/qtr (requires ₹20k/mo spend)",
+      notes: "10X on spends >₹20k, 3X on <₹20k. Spa discontinued."
     },
     features: [
-      "Lifetime free (but DEVALUED Feb 2025)",
+      "Lifetime free premium card",
       "10X rewards on >₹20k transactions",
       "Lounge: 2 dom + 2 intl/qtr (needs ₹20K spend)",
       "1.5% forex markup"
@@ -927,11 +927,11 @@ A premium lifetime free card offering excellent wealth management benefits and h
 
 ### Benefits
 - **Welcome Benefit:** ₹500 voucher on spending ₹15,000 in 90 days
-- **Lounge Access:**
-  - Domestic: 4 visits per quarter
-  - International: 4 visits per quarter
-- **Spa Access:** 4 domestic spa visits per quarter
-- **Buy 1 Get 1:** Movies (up to ₹500) and Dining discounts
+- **Lounge Access (requires ₹20,000/month spend):**
+  - Domestic: 2 visits per quarter (8/year)
+  - International: 2 visits per quarter (8/year)
+- **Spa Access:** Discontinued
+- **Buy 1 Get 1:** Movies (up to ₹250) twice/month
 - **Interest Free Cash:** Withdraw cash from ATMs interest-free for 48 days
 - **Forex Markup:** 1.5%
 - **Roadside Assistance:** Complimentary 4 times a year
@@ -988,7 +988,7 @@ A digital-first credit card by Scapia in partnership with Federal Bank, designed
   - 20% (10 Scapia Coins/₹100) on travel bookings via Scapia app
 
 ### Benefits
-- **Lounge Access:** Unlimited domestic lounge access (Condition: Spend ₹5,000 in previous billing cycle)
+- **Lounge Access:** Unlimited domestic lounge access (Condition: Spend ₹10,000 per month for Visa, ₹15,000 for RuPay)
 - **Redemption:** 5 Coins = ₹1 (Effective reward rate: 2% on all spends, 4% on travel)
 - **Instant Digital Issuance:** fast approval and app-based management
 - **No Cost EMI:** 3 months on travel bookings
@@ -1204,8 +1204,8 @@ One of the best lifetime free cards if you can get it.verified via AU SwipeUp.Th
     rewardRate: "5% Bills, 4% Food, 1.5% Other",
     rewardType: "cashback",
     rewardCaps: {
-      monthly: "₹1,000 total cashback",
-      notes: "Hit cap with ₹20K bill payments"
+      monthly: "₹500 cap on 5%+4% categories combined, unlimited on 1.5%",
+      notes: "5%+4% categories have combined ₹500 monthly cap"
     },
     features: [
       "5% on utility bills (GPay/PhonePe)",
@@ -1333,9 +1333,9 @@ A balanced card.Good for moderate travelers who want international lounge access
 Yes Bank's foray into the super-premium segment, aggressively priced with killer features.
 
 ### Key Features
-  - ** Annual Fee:** ₹9, 999 + taxes(30k points welcome benefit covers it)
+  - ** Annual Fee:** ₹9, 999 + GST joining, ₹4,999 renewal (waived on ₹10L spend, 40K points welcome)
     - ** Forex Markup:** 1 % (Lowest in class)
-      - ** Lounge:** Unlimited International for Primary + Guest
+      - ** Lounge:** Unlimited International for Primary + Add-ons, 6 Domestic/qtr (needs ₹1L spend)
 
 ### Benefits
   - ** BMS Offer:** Buy 1 Get 1 up to ₹800 off(3 times / month)
@@ -1554,7 +1554,7 @@ Versatile card.It covers Fuel, Utilities, and Grocery with good reward rates, al
       "5% on Amazon, Flipkart, Swiggy, Zomato, Myntra",
       "5% on BookMyShow, Cult.fit, Sony LIV, Uber, Tata CLiQ",
       "1% on all other spends",
-      "Lounge REMOVED. 1% fees on gaming/wallet/utility >₹50k from Jul 2025"
+      "8 domestic lounge visits/year (max 2/quarter)"
     ],
     applyLink: "https://bitli.in/5lk9ku2",
     detailedGuide: `## 30. HDFC Millennia Credit Card
@@ -1580,7 +1580,7 @@ Great starter card for online shoppers. Easy to get and maintains a decent 5% on
     name: "OneCard Credit Card",
     bestFor: "Metal Card Enthusiasts",
     verdict: "LTF metal card, 5X on top 2 categories, no cap.",
-    fxMarkup: "2%",
+    fxMarkup: "1%",
     category: "Cashback",
     bank: "FPL Technologies",
     image: "assets/cards/onecard.png",
@@ -1595,7 +1595,7 @@ Great starter card for online shoppers. Easy to get and maintains a decent 5% on
       "Lifetime free metal card",
       "5X on top 2 spending categories",
       "25K cap on Edu/Bills/Insurance (Jan 2025)",
-      "2% forex markup"
+      "1% forex markup"
     ],
     applyLink: "https://www.getonecard.app/",
     detailedGuide: `## 31. OneCard Credit Card
@@ -1606,7 +1606,7 @@ India's first mobile-first metal credit card backed by FPL Technologies.
 ### Key Features
 - **Annual Fee:** Lifetime Free
 - **Rewards:** 5X on your top 2 spending categories (auto-detected)
-- **Forex:** 2% markup but 1% cashback (effective 1%)
+- **Forex:** 1% markup (among the lowest for LTF cards)
 
 ### Benefits
 - **Metal Build:** Premium feel
@@ -1626,7 +1626,7 @@ Stylish lifetime free metal card. The auto-category detection for 5X rewards is 
     category: "Cashback",
     bank: "Axis Bank",
     image: "assets/cards/flipkart-axis.png",
-    annualFee: "₹500 (Waived on ₹3L spend)",
+    annualFee: "₹500 (Waived on ₹3.5L spend)",
     rewardRate: "5% Flipkart, 7.5% Myntra",
     rewardType: "cashback",
     rewardCaps: {
@@ -1647,9 +1647,9 @@ Stylish lifetime free metal card. The auto-category detection for 5X rewards is 
 Co-branded card for Flipkart ecosystem users.
 
 ### Key Features
-- **Annual Fee:** ₹500 + taxes (Waived on ₹2 Lakh spend)
-- **Cashback:** 5% on Flipkart, Myntra, 2GUD (Unlimited!)
-- **Partners:** 4% on Swiggy, Uber, PVR, Curefit
+- **Annual Fee:** ₹500 + taxes (Waived on ₹3.5 Lakh spend)
+- **Cashback:** 5% on Flipkart/Cleartrip, 7.5% Myntra (Capped at ₹4,000/quarter each)
+- **Partners:** 4% on Swiggy, Uber, PVR, Curefit (unlimited)
 
 ### Benefits
 - **Welcome:** ₹500 Flipkart voucher
@@ -1709,14 +1709,14 @@ Solid mid-tier card. Good for those not ready for super-premium but wanting loun
     rewardRate: "10X partners, 5X online",
     rewardType: "points",
     rewardCaps: {
-      monthly: "No cap stated",
-      notes: "Amazon, Cleartrip, Lenskart, Netmeds partners"
+      monthly: "5X online capped at 10,000 points/month",
+      notes: "10X partners: Apollo 24x7, BookMyShow, Cleartrip, Dominos, IGP, Myntra, Netmeds, Yatra. Amazon is 5X."
     },
     features: [
-      "10X on Amazon, Cleartrip, etc.",
-      "5X Swiggy (reduced from 10X, Apr 2025)",
+      "10X on BookMyShow, Cleartrip, Myntra, etc.",
+      "5X all online including Amazon (10K pts cap)",
       "₹500 Amazon welcome voucher",
-      "Insurance REMOVED Jul 2025"
+      "₹2K voucher on ₹1L & ₹2L milestones"
     ],
     applyLink: "https://bitli.in/d61oypa",
     detailedGuide: `## 34. SBI SimplyCLICK Credit Card
@@ -1956,7 +1956,7 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
     rewardRate: "0.75% - 2.5% (10x on >₹20k)",
     rewardType: "points",
     features: [
-      "4 Domestic + 4 Railway Lounge visits/quarter",
+      "2 Domestic + 4 Railway Lounge visits/quarter (requires ₹20k/mo spend)",
       "BOGO on Paytm Movies (up to ₹250)",
       "Free Roadside Assistance worth ₹1,399"
     ],
@@ -2104,11 +2104,12 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
     rewardType: "points",
     features: [
       "2x Reward Points on weekend spends",
-      "BOGO on BookMyShow (up to ₹200, 1x/month)",
-      "4,000 Bonus Points on ₹6L yearly spend"
+      "BOGO on BookMyShow (3 free tickets/month)",
+      "4,000 Bonus Points on ₹6L yearly spend",
+      "Lounge access DISCONTINUED (Mar 2025)"
     ],
     applyLink: "https://bitli.in/mtdTIIk",
-    detailedGuide: `## IndusInd Legend Credit Card\n\n### Overview\nLifetime free card with bonus for weekend shoppers.\n\n### Key Benefits\n- **Weekend Boost:** Double reward points on all weekend spends\n- **Lounge:** 1 complimentary domestic lounge visit per quarter\n- **Movies:** Buy 1 Get 1 on BookMyShow (Up to ₹200, once a month)\n- **Bonus:** 4,000 Bonus Points on spending ₹6 Lakhs in a year\n\n### Verdict\nExcellent lifetime free card especially for weekend shoppers.`
+    detailedGuide: `## IndusInd Legend Credit Card\n\n### Overview\nLifetime free card with bonus for weekend shoppers.\n\n### Key Benefits\n- **Weekend Boost:** Double reward points on all weekend spends\n- **Lounge:** DISCONTINUED (effective 7 March 2025)\n- **Movies:** Buy 1 Get 1 on BookMyShow (up to 3 free tickets/month)\n- **Bonus:** 4,000 Bonus Points on spending ₹6 Lakhs in a year\n- **Forex:** 1.8% markup\n\n### Verdict\nExcellent lifetime free card especially for weekend shoppers.`
   },
   {
     id: 51,
@@ -2136,12 +2137,12 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
     tags: ['Premium', 'Travel', 'Lounge', 'Concierge'],
     name: "Axis Magnus Credit Card",
     bestFor: "Travel EDGE + Miles",
-    verdict: "5:4 miles ratio (BEST). 12-35 RP/₹200 tiered. 10L RP/yr transfer cap.",
+    verdict: "5:2 miles ratio. 12-35 RP/₹200 tiered. 5L RP/yr transfer cap.",
     fxMarkup: "2%",
     category: "Premium",
     bank: "Axis Bank",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹30,000 + GST (Burgundy only)",
+    annualFee: "₹12,500 + GST (Waived on ₹25L spend)",
     rewardRate: "12-35 RP/₹200 (up to 24% Travel EDGE)",
     rewardType: "points",
     rewardCaps: {
@@ -2150,15 +2151,15 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
       tier2: "35 RP/₹200 above ₹1.5L/mo",
       travelEdge: "60 RP/₹200 up to ₹2L/mo on Travel EDGE",
       annualTransfer: "5L RP (1L Group A + 4L Group B)",
-      milesRatio: "5:4 conversion (BEST IN INDIA)",
-      optimalSpend: "₹3L/mo for ~10% average return"
+      milesRatio: "5:2 conversion (5:4 for Burgundy)",
+      optimalSpend: "₹3L/mo for best return"
     },
     features: [
-      "5:4 miles ratio (best in India)",
+      "5:2 miles ratio (5:4 for Burgundy)",
       "24% on Travel EDGE hotels",
-      "Unlimited lounge + 4 guest",
+      "Unlimited lounge + 4 guest/year",
       "4 meet & greet/year",
-      "Group A (1L Cap): SIA, Vistara, Air India"
+      "BOGO movies REMOVED Apr 2024"
     ],
     applyLink: "https://bitli.in/F7j6Dpm",
     detailedGuide: `## Axis Magnus Credit Card\n\n### Overview\nBest super-premium travel card in India with 5:4 miles transfer.\n\n### Earning Structure\n- Tier 1: 12 RP/₹200 up to ₹1.5L/mo (4.8%)\n- Tier 2: 35 RP/₹200 above ₹1.5L/mo (14%)\n- Travel EDGE: 60 RP/₹200 up to ₹2L/mo (24%)\n\n### Miles Transfer\n- Burgundy Magnus: 5:4 ratio (BEST)\n- Group A (2L cap): Singapore Air, Vistara, Air India\n- Group B (8L cap): Marriott, Etihad, Qatar\n\n### Exclusions\nNo points on: Utilities, Wallet loads, Rent, Insurance, Fuel, Jewellery\n\n### Verdict\nBest for high spenders targeting airline miles. ₹3L monthly optimal.`
@@ -2378,13 +2379,13 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
     rewardRate: "2 RP/₹100 (up to 10X travel)",
     rewardType: "points",
     features: [
-      "12 lounge visits/year",
-      "₹5K Yatra voucher on ₹5L spend",
-      "1.99% forex markup",
-      "Club Vistara Silver"
+      "8 domestic + 6 intl lounge/year",
+      "5X on dining/grocery/dept stores",
+      "₹5K welcome voucher, ₹6K movies/year",
+      "1.99% forex, Club ITC Silver (new Sep 2025)"
     ],
     applyLink: "https://www.sbicard.com/",
-    detailedGuide: `## SBI Elite\n\n### Overview\nSBI's premium travel card.\n\n### Key Benefits\n- Good lounge access\n- Low forex at 1.99%\n- Milestone vouchers\n\n### Verdict\nSolid premium option from SBI.`
+    detailedGuide: `## SBI Elite\n\n### Overview\nSBI's premium travel card.\n\n### Key Benefits\n- 8 domestic + 6 international lounge visits\n- Low forex at 1.99%\n- 5X rewards on dining, grocery, dept stores\n- 2 free movie tickets/month (₹250 cap each)\n- Air accident insurance REMOVED Jul 2025\n\n### Verdict\nSolid premium option from SBI.`
   },
   {
     id: 63,
@@ -2399,76 +2400,76 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
     rewardRate: "10 pts/₹200",
     rewardType: "points",
     features: [
-      "Unlimited domestic lounge",
-      "4 international lounge/year",
-      "20% dining discount",
-      "Priority customer service"
+      "8 domestic lounge/year (2/qtr, needs ₹50K spend)",
+      "12 international lounge/year (Priority Pass)",
+      "BOGO movies via District (₹250 cap, 2x/mo)",
+      "6 golf rounds + 6 more on ₹3L spend"
     ],
     applyLink: "https://www.axisbank.com/",
-    detailedGuide: `## Axis Select\n\n### Overview\nBest value for unlimited lounge access.\n\n### Key Benefits\n- Unlimited domestic lounge\n- 4 international visits\n\n### Verdict\nPerfect for frequent domestic flyers.`
+    detailedGuide: `## Axis Select\n\n### Overview\nGood value for lounge access at ₹3K fee.\n\n### Key Benefits\n- 12 intl lounge via Priority Pass\n- 8 domestic (2/qtr on ₹50K spend)\n- Annual fee waiver on ₹8L spend\n\n### Verdict\nGood for frequent travelers at mid-tier price.`
   },
   {
     id: 64,
     name: "IDFC Ashva Metal Credit Card",
     bestFor: "Metal Card Design",
     verdict: "Metal card with 12 lounge visits.",
-    fxMarkup: "3.5%",
+    fxMarkup: "1%",
     category: "Premium",
     bank: "IDFC First Bank",
     image: "assets/cards/placeholder.png",
     annualFee: "₹2,999 + GST",
-    rewardRate: "6X on select categories",
+    rewardRate: "10X above ₹20K, 5X below",
     rewardType: "points",
     features: [
-      "Premium metal build",
-      "12 lounge visits/year",
-      "6X on select spends",
-      "Low entry to metal cards"
+      "Premium metal build with 1% forex",
+      "16 domestic + 8 intl lounge (₹20K spend req)",
+      "16 railway lounge visits/year",
+      "Trip cancellation cover ₹25K (2x/year)"
     ],
     applyLink: "https://www.idfcfirstbank.com/",
-    detailedGuide: `## IDFC Ashva Metal\n\n### Overview\nAffordable metal card entry.\n\n### Key Benefits\n- Metal design at ₹3k\n- 12 lounge visits\n\n### Verdict\nGood for metal card lovers on budget.`
+    detailedGuide: `## IDFC Ashva Metal\n\n### Overview\nAffordable metal card with low forex.\n\n### Key Benefits\n- 1% forex markup (lowest in segment)\n- 16 domestic + 8 intl lounge (needs ₹20K/month spend)\n- 10X rewards on spends above ₹20K\n- 1 RP = ₹0.40 for travel, ₹0.25 elsewhere\n\n### Verdict\nBest budget metal card for international travelers.`
   },
   {
     id: 65,
     name: "Axis Olympus Credit Card",
-    bestFor: "Forex Rewards",
-    verdict: "5.87% net on forex spends.",
-    fxMarkup: "3.5%",
-    category: "Travel",
+    bestFor: "Super Premium Travel",
+    verdict: "Best miles transfer ratio (1:4) with unlimited lounge.",
+    fxMarkup: "1.8%",
+    category: "Super Premium",
     bank: "Axis Bank",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹3,000 + GST",
-    rewardRate: "5.87% effective on forex",
-    rewardType: "points",
+    annualFee: "₹20,000 + GST",
+    rewardRate: "1 Mile/₹100 dom, 2 Miles/₹100 intl",
+    rewardType: "miles",
     features: [
-      "High forex rewards",
-      "8 lounge visits/year",
-      "5.87% net (rewards - markup)",
-      "Travel insurance"
+      "Unlimited domestic + intl lounge (Priority Pass)",
+      "1 EDGE Mile = 4 Partner Points (best ratio)",
+      "₹10K Taj/ITC voucher on activation & renewal",
+      "BOGO movies ₹650 cap, 8 golf rounds/year"
     ],
     applyLink: "https://www.axisbank.com/",
-    detailedGuide: `## Axis Olympus\n\n### Overview\nBest for forex reward earning.\n\n### Calculation:\nEDGE RP on forex - 3.5% markup = 5.87% net return\n\n### Verdict\nGreat for international spends if not wanting 0% forex cards.`
+    detailedGuide: `## Axis Olympus\n\n### Overview\nSuper premium card (Citi Prestige successor) with best miles transfer.\n\n### Key Benefits\n- 1 Mile/₹100 domestic, 2 Miles/₹100 international\n- 1 EDGE Mile = 4 Partner Points (best in India)\n- Unlimited domestic & international lounge\n- 10 guest visits/year\n- ₹10K hotel voucher yearly\n\n### Verdict\nBest for frequent international travelers who want miles.`
   },
   {
     id: 66,
     name: "PhonePe HDFC Ultimo Credit Card",
-    bestFor: "UPI Payments",
-    verdict: "10% on PhonePe UPI payments.",
+    bestFor: "UPI & Online Shopping",
+    verdict: "10% on PhonePe, 5% on Amazon/Flipkart/Swiggy.",
     fxMarkup: "3.5%",
     category: "Cashback",
     bank: "HDFC Bank",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹500 + GST",
-    rewardRate: "10% on PhonePe UPI",
+    annualFee: "₹999 + GST (waived on ₹2L)",
+    rewardRate: "10%/5%/1% tiered",
     rewardType: "cashback",
     features: [
-      "10% cashback on PhonePe UPI",
-      "5% on broadband/OTT",
-      "PhonePe ecosystem integration",
-      "UPI credit card"
+      "10% on PhonePe (bills, recharges, travel) - 1K cap",
+      "5% on Amazon/Flipkart/Swiggy/Zomato - 500 cap",
+      "1% on UPI Scan & Pay - 500 cap",
+      "8 domestic lounge/year (2/qtr on ₹75K spend)"
     ],
     applyLink: "https://www.phonepe.com/",
-    detailedGuide: `## PhonePe HDFC Ultimo\n\n### Overview\nBest for PhonePe UPI rewards.\n\n### Key Benefits\n- 10% on PhonePe UPI\n- 5% on digital subscriptions\n\n### Verdict\nMust-have for heavy PhonePe users.`
+    detailedGuide: `## PhonePe HDFC Ultimo\n\n### Overview\nRuPay UPI card for PhonePe ecosystem users.\n\n### Key Benefits\n- 10% on PhonePe spends (capped 1K RP/month)\n- 5% on major online platforms (capped 500 RP/month)\n- 1% on UPI Scan & Pay (capped 500 RP/month)\n- Max ₹2K cashback/month\n- 1 RP = ₹1 cashback\n\n### Verdict\nBest for PhonePe power users and online shoppers.`
   },
   {
     id: 67,
@@ -2494,23 +2495,23 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
   {
     id: 68,
     name: "Club Vistara SBI Credit Card",
-    bestFor: "Vistara Flyers",
-    verdict: "Free Vistara ticket annually + CV points.",
+    bestFor: "DISCONTINUED - Legacy Card",
+    verdict: "No longer accepting new applications. Benefits removed post Air India merger.",
     fxMarkup: "3.5%",
     category: "Travel",
     bank: "SBI Card",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹3,000 + taxes",
-    rewardRate: "CV Points on all spends",
+    annualFee: "₹1,499 (waived but no benefits)",
+    rewardRate: "Maharaja Points till Mar 2026",
     rewardType: "points",
     features: [
-      "Free Vistara economy ticket yearly",
-      "CV Silver membership",
-      "Priority check-in/boarding",
-      "Extra baggage allowance"
+      "⚠️ CARD DISCONTINUED - No new applications",
+      "Ticket vouchers & milestone benefits REMOVED (Apr 2025)",
+      "Club Vistara Silver membership REMOVED",
+      "Can earn Maharaja Points until Mar 2026 only"
     ],
     applyLink: "https://www.sbicard.com/",
-    detailedGuide: `## Club Vistara SBI\n\n### Overview\nFor Vistara frequent flyers.\n\n### Key Benefits\n- Free ticket worth ₹3-5k yearly\n- Silver status benefits\n\n### Verdict\nPays for itself with 1 free ticket.`
+    detailedGuide: `## Club Vistara SBI - DISCONTINUED\n\n### Status\nCard discontinued due to Vistara-Air India merger (Nov 2024).\n\n### What Changed (Apr 2025)\n- No free economy ticket vouchers\n- No milestone benefits\n- No CV Silver membership\n- Annual fee waived but no benefits\n- Card phased out by Mar 2026\n\n### Verdict\nNot recommended. Look at Air India SBI Signature instead.`
   },
   {
     id: 69,
@@ -2536,44 +2537,44 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
   {
     id: 70,
     name: "Federal Celesta Credit Card",
-    bestFor: "Movies & Dining",
-    verdict: "BOGO movies with dining discounts.",
-    fxMarkup: "3.5%",
+    bestFor: "Travel & LTF Card",
+    verdict: "Lifetime free with 3X travel rewards and lounge access.",
+    fxMarkup: "2%",
     category: "Lifestyle",
     bank: "Federal Bank",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹499 + taxes",
-    rewardRate: "1% cashback",
-    rewardType: "cashback",
+    annualFee: "Lifetime Free",
+    rewardRate: "3X travel/2X dining/1X others",
+    rewardType: "points",
     features: [
-      "BOGO on movies",
-      "Up to 15% dining discount",
-      "Low annual fee",
-      "Easy approval"
+      "Lifetime Free - no joining or annual fee",
+      "2 intl lounge/year + 8 domestic (2/qtr on ₹60K)",
+      "3X on travel & intl, 2X dining, 1X others",
+      "BOGO INOX movies (₹100 cap, 1x/mo)"
     ],
     applyLink: "https://www.federalbank.co.in/",
-    detailedGuide: `## Federal Celesta\n\n### Overview\nBudget card with entertainment benefits.\n\n### Key Benefits\n- BOGO movies\n- Dining discounts\n\n### Verdict\nGood entry card for entertainment lovers.`
+    detailedGuide: `## Federal Celesta\n\n### Overview\nLifetime free travel card with lounge access.\n\n### Key Benefits\n- 2% forex (low for LTF card)\n- 2 international lounge/year free\n- 8 domestic lounge/year on spend\n- 1 RP = ₹0.25\n\n### Verdict\nGreat LTF card for travelers on budget.`
   },
   {
     id: 71,
     name: "PVR INOX Kotak Credit Card",
     bestFor: "Movie Buffs",
-    verdict: "Free movie tickets monthly at PVR INOX.",
+    verdict: "Unlimited free tickets on ₹10K milestone spends.",
     fxMarkup: "3.5%",
     category: "Lifestyle",
     bank: "Kotak Mahindra Bank",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹500 + taxes",
-    rewardRate: "Movie-focused rewards",
-    rewardType: "points",
+    annualFee: "₹499 + GST (no joining fee)",
+    rewardRate: "₹300 ticket per ₹10K spend",
+    rewardType: "voucher",
     features: [
-      "Free movie tickets monthly",
-      "Discounts on F&B",
-      "Priority booking",
-      "PVR Privilege points"
+      "1 free movie ticket (₹300) per ₹10K spent/month",
+      "5% off on PVR INOX movie tickets",
+      "20% off on F&B at PVR INOX",
+      "Free access to PVR in-cinema lounges"
     ],
     applyLink: "https://www.kotak.com/",
-    detailedGuide: `## PVR INOX Kotak\n\n### Overview\nFor movie lovers who visit PVR frequently.\n\n### Key Benefits\n- Monthly free tickets pay for card\n- F&B discounts\n\n### Verdict\nMust-have for PVR regulars.`
+    detailedGuide: `## PVR INOX Kotak\n\n### Overview\nUnlimited movie tickets for spend milestones.\n\n### Key Benefits\n- ₹300 movie ticket per ₹10K spent (no cap)\n- 5% off tickets, 20% off F&B\n- Free PVR in-cinema lounge access\n\n### Verdict\nMust-have for frequent PVR moviegoers.`
   },
   {
     id: 72,
@@ -2641,559 +2642,559 @@ Perfect first credit card. Easy to get, lifetime free, and helps build credit sc
   {
     id: 75,
     name: "Amex SmartEarn Credit Card",
-    bestFor: "Partner Rewards",
-    verdict: "5X on select merchants, easy approval.",
+    bestFor: "Online Shopping Rewards",
+    verdict: "10X on Flipkart/Zomato/Uber, 5X on Amazon.",
     fxMarkup: "3.5%",
     category: "Rewards",
     bank: "American Express",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹495 + taxes",
-    rewardRate: "5X on select merchants",
+    annualFee: "₹495 + GST (waived on ₹40K)",
+    rewardRate: "10X/5X on partners, 1X others",
     rewardType: "points",
     features: [
-      "5X on select partners",
-      "10% on dining",
-      "Low entry fee",
-      "Amex network access"
+      "10X on Flipkart, Uber, Zomato, Myntra, etc (500 cap)",
+      "5X on Amazon (250 cap/month)",
+      "₹500 cashback on ₹10K in 90 days",
+      "1 MR = ₹0.25-0.50"
     ],
     applyLink: "https://www.americanexpress.com/in/",
-    detailedGuide: `## Amex SmartEarn\n\n### Overview\nEntry-level Amex with good partner rewards.\n\n### Key Benefits\n- 5X on Flipkart, Amazon, Uber\n- Dining discounts\n\n### Verdict\nGood entry to Amex ecosystem.`
+    detailedGuide: `## Amex SmartEarn\n\n### Overview\nEntry-level Amex for online shoppers.\n\n### Key Benefits\n- 10X on Flipkart, Uber, Zomato, Myntra, BookMyShow\n- 5X on Amazon\n- Fee waiver at ₹40K spend\n- No lounge access\n\n### Verdict\nGood for frequent online shoppers, limited by caps.`
   },
   {
     id: 76,
-    name: "Amex Gold Card",
-    bestFor: "MR Points",
-    verdict: "High MR points earning, ₹4.5k fee.",
+    name: "American Express Gold Charge Card",
+    bestFor: "MR Points Collectors",
+    verdict: "1 MR/₹50 + 1000 bonus monthly. Best for Taj/Marriott transfers.",
     fxMarkup: "3.5%",
     category: "Rewards",
     bank: "American Express",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹4,500 + taxes",
-    rewardRate: "High MR points",
+    annualFee: "₹1,000 Y1, ₹4,500 Y2+ (waived ₹1.5L)",
+    rewardRate: "1 MR/₹50 + 1000 bonus/month",
     rewardType: "points",
     features: [
-      "High MR point earning",
-      "Points never expire",
-      "Transfer to airline partners",
-      "Premium Amex benefits"
+      "CHARGE CARD - no pre-set spending limit",
+      "1000 bonus MR on 6x ₹1K transactions/month",
+      "5X via Reward Multiplier platform",
+      "18K/24K Gold Collection redemption (Taj ₹14K)"
     ],
     applyLink: "https://www.americanexpress.com/in/",
-    detailedGuide: `## Amex Gold\n\n### Overview\nClassic Amex for points collectors.\n\n### Key Benefits\n- High MR earning rate\n- Airline transfers\n\n### Verdict\nFor dedicated Amex points collectors.`
+    detailedGuide: `## Amex Gold Charge Card\n\n### Overview\nClassic Amex charge card for points collectors.\n\n### Key Benefits\n- 1 MR per ₹50 spent\n- 1000 bonus MR on 6x ₹1K/month transactions\n- 5X via Reward Multiplier\n- No pre-set limit (charge card)\n\n### Fee Waiver\n- 50% waiver on ₹90K spend\n- 100% waiver on ₹1.5L spend\n\n### Best Redemptions\n- Taj vouchers (24K = ₹14K)\n- Marriott transfers\n\n### Verdict\nBest for strategic MR point accumulators.`
   },
   {
     id: 77,
     name: "Kotak Royale Signature Credit Card",
-    bestFor: "Lounge Access",
-    verdict: "8 lounge visits for ₹999 fee.",
+    bestFor: "Travel & Dining Rewards",
+    verdict: "4X on travel/dining, 8 lounge/year (₹75K/qtr spend req from Jun'25).",
     fxMarkup: "3.5%",
     category: "Travel",
     bank: "Kotak Mahindra Bank",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹999 + taxes",
-    rewardRate: "~1% value",
+    annualFee: "₹999 (waived on ₹1L)",
+    rewardRate: "4 RP/₹150 travel, 2 RP base (0.66%/0.33%)",
     rewardType: "points",
     features: [
-      "8 lounge visits/year",
-      "Low annual fee",
-      "Dining discounts",
-      "Fuel surcharge waiver"
+      "4 RP/₹150 on hotels/airlines/dining/intl",
+      "2 RP/₹150 on other spends (1 RP = ₹0.20-0.25)",
+      "8 domestic lounge/year (₹75K/qtr spend req)",
+      "Milestone: 30K pts on ₹8L annual spend"
     ],
     applyLink: "https://www.kotak.com/",
-    detailedGuide: `## Kotak Royale Signature\n\n### Overview\nValue lounge card from Kotak.\n\n### Key Benefits\n- 8 lounges for under ₹1k fee\n- Good value proposition\n\n### Verdict\nBest lounge-per-rupee ratio.`
+    detailedGuide: `## Kotak Royale Signature\n\n### Overview\nTravel-focused rewards card with lounge access.\n\n### Key Benefits\n- 4X on hotels, airlines, dining, tour operators, international\n- 2X on other spends\n- 1 RP = ₹0.20-0.25\n- 8 domestic lounge/year (2/quarter)\n- From Jun 2025: ₹75K quarterly spend required for lounge\n\n### Milestone\n- 10K points on ₹4L annual\n- 30K points on ₹8L annual\n\n### Fee\n- ₹999 annual (waived on ₹1L spend)\n- Zero joining fee variant available\n\n### Verdict\nGood for travel spenders who can meet lounge threshold.`
   },
   {
     id: 78,
     name: "SBI SimplySAVE Credit Card",
-    bestFor: "Dining & Movies",
-    verdict: "10X on dining/movies, 5X on others.",
+    bestFor: "Grocery, Dining & Movies",
+    verdict: "10X on dining/movies/grocery/dept stores. Good entry card.",
     fxMarkup: "3.5%",
     category: "Rewards",
     bank: "SBI Card",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹499 + taxes",
-    rewardRate: "10X dining/movies, 5X others",
+    annualFee: "₹499 (waived on ₹1L)",
+    rewardRate: "10X select, 1X others (1.67%/0.17%)",
     rewardType: "points",
     features: [
-      "10X on dining & movies",
-      "5X on departmental stores",
-      "2X on grocery",
-      "Easy approval"
+      "10 RP/₹150 on dining/movies/grocery/dept stores",
+      "1 RP/₹150 on other spends (1 RP = ₹0.25)",
+      "1% fuel surcharge waiver (₹500-₹3K, ₹100 cap)",
+      "2,000 welcome points on ₹2K in 60 days"
     ],
     applyLink: "https://www.sbicard.com/",
-    detailedGuide: `## SBI SimplySAVE\n\n### Overview\nDining and entertainment focused SBI card.\n\n### Key Benefits\n- 10X on dining\n- 10X on movies\n\n### Verdict\nGood for entertainment spenders.`
+    detailedGuide: `## SBI SimplySAVE\n\n### Overview\nEntry-level SBI card for everyday spending.\n\n### Key Benefits\n- 10X on dining, movies, grocery, departmental stores\n- 1X on other spends\n- 1 RP = ₹0.25 (1.67% on 10X categories)\n- RuPay UPI variant available\n- 5000 RP monthly cap on 10X categories\n\n### Verdict\nGood for grocery and dining focused spenders.`
   },
   {
     id: 79,
     name: "HDFC Bharat Cashback Credit Card",
-    bestFor: "Fuel & Telecom",
-    verdict: "LTF with fuel and recharge benefits.",
+    bestFor: "Fuel, Grocery & Bills",
+    verdict: "5% on fuel/grocery/bills (₹150 cap each). Entry-level RuPay card.",
     fxMarkup: "3.5%",
     category: "Cashback",
     bank: "HDFC Bank",
     image: "assets/cards/placeholder.png",
-    annualFee: "Lifetime Free",
-    rewardRate: "5% on select, 1% other",
+    annualFee: "₹500 + GST (waived on ₹20K)",
+    rewardRate: "5% on select (₹300/mo cap total)",
     rewardType: "cashback",
     features: [
-      "5% on fuel surcharge",
-      "5% on mobile recharges",
-      "1% on other spends",
-      "Lifetime free"
+      "5% on fuel/grocery/IRCTC/bills/recharge (₹150 cap)",
+      "5% on PayZapp/SmartBuy/EasyEMI (₹150 cap)",
+      "1% fuel surcharge waiver (₹250/cycle)",
+      "Cashback as points (1 RP = ₹1)"
     ],
     applyLink: "https://www.hdfcbank.com/",
-    detailedGuide: `## HDFC Bharat Cashback\n\n### Overview\nLifetime free card for basic cashback needs.\n\n### Key Benefits\n- 5% on fuel & bills\n- No annual fee ever\n\n### Verdict\nGood backup LTF cashback card.`
+    detailedGuide: `## HDFC Bharat Cashback\n\n### Overview\nEntry-level RuPay cashback card for daily spends.\n\n### Key Benefits\n- 5% cashback on fuel, grocery, IRCTC, bills, recharges\n- 5% on PayZapp/SmartBuy/EasyEMI\n- Each category capped at ₹150/month\n- Max savings ₹300/month = ₹3,600/year\n- 1% fuel surcharge waiver\n\n### Fee\n- ₹500 + GST (waived on ₹20K spend)\n\n### Note\nCashback credited as reward points (1 RP = ₹1)\n\n### Verdict\nGood entry card for fuel and grocery spenders.`
   },
   {
     id: 80,
-    name: "YES Bank PaisaSave Credit Card",
-    bestFor: "Dining & Travel",
-    verdict: "6% dining/travel, 2% groceries.",
+    name: "YES BANK Paisabazaar PaisaSave Credit Card",
+    bestFor: "Dining & Travel Cashback",
+    verdict: "6% dining/travel (₹3K cap), 1% all other. Dec'25 upgrade.",
     fxMarkup: "3.5%",
-    category: "Rewards",
+    category: "Cashback",
     bank: "Yes Bank",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹499 + taxes",
-    rewardRate: "6% Dining/Travel, 2% Grocery",
+    annualFee: "₹0 joining, ₹499 Y2 (waived ₹1.2L)",
+    rewardRate: "6% dining/travel, 1% others",
     rewardType: "cashback",
     features: [
-      "6% on dining and travel",
-      "2% on grocery",
-      "1% on other spends",
-      "Low annual fee"
+      "6% on dining & travel (Zomato/Swiggy/MMT/hotels)",
+      "Unlimited 1% on all other spends",
+      "1.5% on UPI above ₹2K (RuPay variant)",
+      "1% fuel surcharge waiver, ₹3K/mo cap on 6%"
     ],
     applyLink: "https://www.yesbank.in/",
-    detailedGuide: `## YES Bank PaisaSave\n\n### Overview\nValue card for dining and travel rewards.\n\n### Key Benefits\n- 6% on dining & travel\n- 2% on groceries\n\n### Verdict\nGood for lifestyle spenders.`
+    detailedGuide: `## YES BANK Paisabazaar PaisaSave\n\n### Overview\nUpgraded Dec 2025 - best dining/travel cashback in segment.\n\n### Key Benefits\n- 6% cashback on dining & travel (capped ₹3K/month)\n- Beyond cap: 1% continues\n- 1% unlimited on all other spends\n- Free RuPay variant for UPI payments\n- 1.5% on UPI above ₹2K per transaction\n\n### Fee\n- Zero joining fee\n- ₹499 annual (waived on ₹1.2L)\n\n### Verdict\nTop entry-level dining/travel card after Dec 2025 upgrade.`
   },
   {
     id: 81,
-    name: "IndusInd Aura Edge Credit Card",
-    bestFor: "Retail Rewards",
-    verdict: "1% on retail spends with low fee.",
+    name: "IndusInd Platinum Aura Edge Credit Card",
+    bestFor: "Flexible Reward Plans",
+    verdict: "LTF with 4 customizable plans (Shop/Home/Travel/Party).",
     fxMarkup: "3.5%",
     category: "Rewards",
     bank: "IndusInd Bank",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹299 + taxes",
-    rewardRate: "1% on retail",
+    annualFee: "Lifetime Free",
+    rewardRate: "Up to 4 RP/₹100 (1.6% on chosen category)",
     rewardType: "points",
     features: [
-      "1% on all retail spends",
-      "Low annual fee",
-      "Easy approval",
-      "Basic credit building"
+      "Choose 1 of 4 plans: Shop/Home/Travel/Party",
+      "4 RP/₹100 on plan category, 0.5 RP on others",
+      "1% fuel surcharge waiver (₹100/cycle cap)",
+      "Travel insurance: ₹1L baggage, ₹25L air accident"
     ],
     applyLink: "https://www.indusind.com/",
-    detailedGuide: `## IndusInd Aura Edge\n\n### Overview\nEntry-level card for basic rewards.\n\n### Key Benefits\n- Simple 1% return\n- Low fee\n\n### Verdict\nGood starter card.`
+    detailedGuide: `## IndusInd Platinum Aura Edge\n\n### Overview\nLifetime free card with customizable rewards.\n\n### Reward Plans (choose one)\n- Shop: 4 RP/₹100 on dept stores\n- Home: 4 RP/₹100 on groceries\n- Travel: 4 RP/₹100 on hotels\n- Party: 4 RP/₹100 on restaurants\n\n### Redemption\n- 1 RP = ₹0.40 cash, ₹0.50 non-cash\n- Max 2,500 RP/month cash redemption\n- KrisFlyer transfer available\n\n### Verdict\nGood LTF card for focused spenders.`
   },
   {
     id: 82,
-    name: "Kotak Urbane Credit Card",
-    bestFor: "Basic Cashback",
-    verdict: "Entry-level Kotak with basic cashback.",
+    name: "Kotak Urbane Gold Credit Card",
+    bestFor: "Entry-Level Shopping",
+    verdict: "3 RP/₹100, ₹199 fee (waived ₹15K). Good starter card.",
     fxMarkup: "3.5%",
-    category: "Cashback",
+    category: "Rewards",
     bank: "Kotak Mahindra Bank",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹199 + taxes",
-    rewardRate: "~0.5%",
-    rewardType: "cashback",
+    annualFee: "₹199 (waived on ₹15K)",
+    rewardRate: "3 RP/₹100 (~0.75%)",
+    rewardType: "points",
     features: [
-      "Basic cashback on spends",
-      "Very low fee",
-      "Easy approval",
-      "Credit builder"
+      "3 RP/₹100 on all retail spends",
+      "1000 RP = ₹100 (1 RP = ₹0.10)",
+      "Milestone: 10K RP or 4 PVR tickets on ₹1L",
+      "₹50K credit shield on card loss"
     ],
     applyLink: "https://www.kotak.com/",
-    detailedGuide: `## Kotak Urbane\n\n### Overview\nEntry-level Kotak card.\n\n### Key Benefits\n- Rock bottom fee\n- Easy to get\n\n### Verdict\nFirst credit card option.`
+    detailedGuide: `## Kotak Urbane Gold\n\n### Overview\nEntry-level shopping rewards card.\n\n### Key Benefits\n- 3 RP/₹100 on retail\n- 1000 RP = ₹100\n- Points valid 2 years\n\n### Milestone (₹1L annual)\n- 10K bonus RP OR\n- 4 free PVR tickets (₹400 each)\n\n### Fee\n- ₹199 annual (waived on ₹15K)\n- Zero joining\n\n### Note\nKotak not accepting new card applications currently.\n\n### Verdict\nDecent starter card for Kotak customers.`
   },
   {
     id: 83,
     name: "IRCTC RBL Bank Credit Card",
     bestFor: "Railway Travel",
-    verdict: "2.5% on IRCTC + Railway lounge access.",
+    verdict: "2.5% on IRCTC trains + 8 railway lounge visits.",
     fxMarkup: "3.5%",
     category: "Travel",
     bank: "RBL Bank",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹500 + taxes",
-    rewardRate: "2.5% on IRCTC",
+    annualFee: "₹500 + GST",
+    rewardRate: "2.5% on IRCTC trains",
     rewardType: "points",
     features: [
-      "2.5% on IRCTC bookings",
-      "Railway lounge access",
-      "1% on other spends",
-      "1% transaction waiver"
+      "5 RP/₹200 on train tickets (2.5%)",
+      "8 railway lounge/year (2/qtr)",
+      "₹5,000 train cancellation cover",
+      "RuPay with NCMC (metro/bus tap)"
     ],
     applyLink: "https://www.rblbank.com/",
-    detailedGuide: `## IRCTC RBL\n\n### Overview\nRBL's IRCTC co-branded card.\n\n### Key Benefits\n- 2.5% on train bookings\n- Railway lounge access\n\n### Verdict\nGood alternative to IRCTC SBI.`
+    detailedGuide: `## IRCTC RBL\n\n### Overview\nRuPay co-branded railway travel card.\n\n### Key Benefits\n- 2.5% on IRCTC train bookings\n- 1.5% on FASTag recharges\n- 8 railway lounge visits/year\n- Train cancellation cover ₹5K\n- NCMC tap & transit at metro/bus\n\n### Verdict\nBest value IRCTC card with metro integration.`
   },
   {
     id: 84,
-    name: "IOC Axis Credit Card",
-    bestFor: "Indian Oil Fuel",
-    verdict: "4-7% fuel + shopping rewards.",
+    name: "IndianOil Axis Bank Credit Card",
+    bestFor: "IOCL Fuel Spenders",
+    verdict: "4% on IOCL fuel, 1% online. RuPay/UPI enabled.",
     fxMarkup: "3.5%",
     category: "Fuel",
     bank: "Axis Bank",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹500 + taxes",
-    rewardRate: "4-7% on IOCL fuel",
+    annualFee: "₹500 (waived on ₹3.5L)",
+    rewardRate: "4% IOCL, 1% online, 0.2% others",
     rewardType: "points",
     features: [
-      "4-7% on IOCL fuel",
-      "2% on shopping",
-      "RuPay variant available",
-      "Fuel surcharge waiver"
+      "20 RP/₹100 at IOCL (₹5K/mo cap)",
+      "5 RP/₹100 online shopping (₹5K/mo cap)",
+      "1% fuel surcharge waiver (₹50/cycle cap)",
+      "Welcome: 1250 RP on 1st fuel txn"
     ],
     applyLink: "https://www.axisbank.com/",
-    detailedGuide: `## IOC Axis\n\n### Overview\nAxis Bank's Indian Oil co-brand.\n\n### Key Benefits\n- High returns on IOCL fuel\n- Shopping rewards\n\n### Verdict\nGood for IOCL + Axis customers.`
+    detailedGuide: `## IndianOil Axis Bank Credit Card\n\n### Overview\nEntry-level fuel card for IOCL loyalists.\n\n### Key Benefits\n- 4% value back at IOCL outlets (20 RP/₹100)\n- 1% on online shopping (5 RP/₹100)\n- 1 RP/₹100 on other spends\n- 1 RP = ₹0.20\n\n### Caps\n- Fuel: ₹5K/month for 4%\n- Online: ₹5K/month for 1%\n\n### Fee\n- ₹500 annual (waived on ₹3.5L - from Apr 2024)\n\n### Note\nRuPay network - UPI credit card enabled\n\n### Verdict\nGood for moderate IOCL fuel spenders.`
   },
   {
     id: 85,
-    name: "Taj SBI Credit Card",
-    bestFor: "Taj Hotel Stays",
-    verdict: "Taj InnerCircle + hotel credits.",
-    fxMarkup: "3.5%",
-    category: "Travel",
+    name: "SBI Card ELITE",
+    bestFor: "Movies & Dining Rewards",
+    verdict: "5X on grocery/dining/dept stores, 2 free movie tickets/month.",
+    fxMarkup: "1.99%",
+    category: "Premium",
     bank: "SBI Card",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹4,999 + taxes",
-    rewardRate: "Taj Credits + Points",
+    annualFee: "₹4,999 (waived on ₹10L)",
+    rewardRate: "2.5% grocery/dining, 0.5% others",
     rewardType: "points",
     features: [
-      "Taj InnerCircle Gold",
-      "₹5,000 Taj voucher welcome",
-      "Free night on milestones",
-      "Room upgrades"
+      "5X RP on grocery/dining/dept stores (10 RP/₹100)",
+      "2 free movie tickets/month (₹250 each) via BMS",
+      "6 intl lounge + 8 domestic/year",
+      "₹5K welcome voucher, 1.99% forex"
     ],
     applyLink: "https://www.sbicard.com/",
-    detailedGuide: `## Taj SBI\n\n### Overview\nFor Taj Hotel loyalists.\n\n### Key Benefits\n- InnerCircle Gold status\n- Free nights on spending\n\n### Verdict\nMust-have for frequent Taj guests.`
+    detailedGuide: `## SBI Card ELITE\n\n### Overview\nPremium lifestyle card with movie benefits.\n\n### Key Benefits\n- 5X on grocery, dining, dept stores\n- 2 RP/₹100 on others (1 RP = ₹0.25)\n- 2 free BMS tickets/month = ₹6K/year\n- Priority Pass: 6 intl lounge/year\n- 8 domestic lounge/year\n\n### Milestones\n- 10K RP on ₹3-4L annual\n- 15K RP on ₹5-8L annual\n\n### Verdict\nGreat for movie lovers and grocery/dining spenders.`
   },
   {
     id: 86,
-    name: "YES Private Credit Card",
-    bestFor: "Private Banking",
-    verdict: "₹10k fee. Private banking perks.",
-    fxMarkup: "2%",
-    category: "Premium",
+    name: "YES First Exclusive Credit Card",
+    bestFor: "Super Premium Travel Rewards",
+    verdict: "12 RP/₹100 travel, 6 RP others. Top YES card.",
+    fxMarkup: "1.75%",
+    category: "Super Premium",
     bank: "Yes Bank",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹10,000 + GST",
-    rewardRate: "Premium rewards",
+    annualFee: "₹10,000 + GST (waived on ₹20L)",
+    rewardRate: "3% travel, 1.5% others",
     rewardType: "points",
     features: [
-      "Private banking perks",
-      "Unlimited lounge access",
-      "Low forex at 2%",
-      "Concierge services"
+      "12 RP/₹100 travel, 6 RP/₹100 others",
+      "Unlimited domestic + 4 intl lounge/year",
+      "Taj Epicure membership, Golf access",
+      "2X on intl spends, 1.75% forex"
     ],
     applyLink: "https://www.yesbank.in/",
-    detailedGuide: `## YES Private\n\n### Overview\nYES Bank's private banking card.\n\n### Key Benefits\n- Private banking integration\n- Unlimited lounges\n\n### Verdict\nFor YES Bank HNI customers.`
+    detailedGuide: `## YES First Exclusive\n\n### Overview\nYES Bank's super-premium card.\n\n### Key Benefits\n- 12 RP/₹100 on travel\n- 6 RP/₹100 on others\n- 1 RP = ₹0.25\n- Unlimited domestic lounge\n\n### Verdict\nExcellent for high travel spenders.`
   },
   {
     id: 87,
-    name: "IDFC First Private Credit Card",
-    bestFor: "Wealth Management",
-    verdict: "₹10k fee. Wealth portfolio services.",
-    fxMarkup: "1.5%",
-    category: "Premium",
+    name: "IDFC FIRST Private Credit Card",
+    bestFor: "Low Forex + Lounge Access",
+    verdict: "0% forex, unlimited lounge, Taj Epicure Plus.",
+    fxMarkup: "0%",
+    category: "Super Premium",
     bank: "IDFC First Bank",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹10,000 + GST",
-    rewardRate: "Wealth-tier rewards",
+    annualFee: "₹10,000 + GST (waived on ₹8L)",
+    rewardRate: "6 RP/₹100 (1.5%)",
     rewardType: "points",
     features: [
-      "Wealth management perks",
-      "Portfolio services",
-      "Low 1.5% forex",
-      "Unlimited lounge"
+      "6 RP/₹100 all spends (1 RP = ₹0.25)",
+      "ZERO forex markup",
+      "Unlimited domestic + intl lounge",
+      "Taj Epicure Plus membership"
     ],
     applyLink: "https://www.idfcfirstbank.com/",
-    detailedGuide: `## IDFC First Private\n\n### Overview\nIDFC's private banking card.\n\n### Key Benefits\n- Wealth management integration\n- Low forex markup\n\n### Verdict\nFor IDFC HNI clients.`
+    detailedGuide: `## IDFC FIRST Private\n\n### Overview\nIDFC's super-premium card with zero forex.\n\n### Key Benefits\n- 6 RP/₹100 on all spends\n- 0% forex markup (best in class)\n- Unlimited domestic & intl lounge\n- Taj Epicure Plus with free night\n- Golf privileges\n\n### Verdict\nBest for international travelers needing zero forex.`
   },
   {
     id: 88,
-    name: "HSBC Taj Card",
-    bestFor: "Taj Premium",
-    verdict: "₹10k fee. First super-premium Taj co-brand.",
-    fxMarkup: "3.5%",
-    category: "Premium",
+    name: "HSBC Taj Credit Card",
+    bestFor: "Taj Hotel Loyalists",
+    verdict: "₹1.1L fee. India's first luxury hotel co-brand.",
+    fxMarkup: "2%",
+    category: "Ultra Premium",
     bank: "HSBC",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹10,000 + GST",
-    rewardRate: "Taj InnerCircle Gold+",
+    annualFee: "₹1,10,000 + GST",
+    rewardRate: "5 RP/₹100 at Taj, 1 RP others",
     rewardType: "points",
     features: [
-      "InnerCircle Gold membership",
-      "₹10K Taj vouchers welcome",
-      "2 free nights annually",
-      "Suite upgrades"
+      "Taj InnerCircle Platinum (NeuPass)",
+      "1 free night at Taj Palace + 2 nights IHCL",
+      "Unlimited lounge, 4 Blacklane airport rides",
+      "21 Taj Club/Chambers access, spa credits"
     ],
     applyLink: "https://www.hsbc.co.in/",
-    detailedGuide: `## HSBC Taj\n\n### Overview\nFirst super-premium Taj co-brand.\n\n### Key Benefits\n- InnerCircle Gold\n- 2 free nights worth ₹20k+\n\n### Verdict\nBest for Taj loyalists with high spends.`
+    detailedGuide: `## HSBC Taj Credit Card\n\n### Overview\nIndia's most expensive hotel co-brand (₹1.1L).\n\n### Key Benefits\n- Instant Taj InnerCircle Platinum\n- 1 night Taj Palace + 2 nights IHCL welcome\n- 5 RP/₹100 at Taj properties\n- Unlimited domestic/intl lounge\n- 4 Blacklane airport transfers\n- 21 Taj Club Lounge visits\n\n### Verdict\nOnly for serious Taj loyalists with high hotel spend.`
   },
   {
     id: 89,
     tags: ['Neo Bank', 'Zero Forex', 'Travel'],
-    name: "Niyo Global Credit Card",
+    name: "Niyo SBM Credit Card",
     bestFor: "International Travel",
-    verdict: "Zero forex markup. Great for frequent international travelers.",
-    fxMarkup: "0%",
+    verdict: "Zero forex markup on VISA rates. Note: Famous Niyo Global is a debit card.",
+    fxMarkup: "0% (VISA rates apply)",
     category: "Travel",
-    bank: "Niyo",
+    bank: "SBM Bank via Niyo",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹499 (Often waived)",
-    rewardRate: "1% Cashback",
-    rewardType: "cashback",
+    annualFee: "₹0 (No annual fee)",
+    rewardRate: "Niyo Coins rewards",
+    rewardType: "points",
     features: [
-      "Zero forex markup",
-      "Live exchange rates",
-      "Free international ATM withdrawals",
-      "1% cashback on all spends"
+      "Zero forex markup (VISA exchange rates)",
+      "Lounge access on ₹50K quarterly spend",
+      "Niyo Coins on domestic CC transactions",
+      "⚠️ Note: Niyo Global (debit) is more popular"
     ],
     applyLink: "https://www.goniyo.com/",
-    detailedGuide: `## Niyo Global\n\n### Overview\nNeo-bank card focused on international travel.\n\n### Key Benefits\n- Zero forex markup\n- Live inter-bank rates\n- Free ATM abroad\n\n### Verdict\nBest for frequent international travelers on a budget.`
+    detailedGuide: `## Niyo SBM Credit Card\n\n### Overview\nNeo-bank credit card with zero forex markup.\n\n### Key Benefits\n- Zero forex markup (uses VISA rates)\n- No annual fee\n- Niyo Coins rewards\n\n### Important Note\nThe famous "Niyo Global Card" is actually a DEBIT card linked to savings account. This credit card variant offers similar zero forex benefits.\n\n### Verdict\nGood for international travel, but the debit card is more popular.`
   },
   {
     id: 90,
     tags: ['Neo Bank', 'UPI', 'Rewards'],
-    name: "Jupiter Edge Credit Card",
-    bestFor: "UPI Rewards",
-    verdict: "1% UPI rewards. Great for daily UPI users.",
+    name: "Jupiter Edge CSB RuPay Credit Card",
+    bestFor: "UPI Credit Card Rewards",
+    verdict: "LTF with 2% on chosen category (shop/travel/dine), UPI enabled.",
     fxMarkup: "3.5%",
-    category: "Rewards",
-    bank: "Jupiter (Federal Bank)",
+    category: "Cashback",
+    bank: "CSB Bank via Jupiter",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹499 (Waived on ₹1L spend)",
-    rewardRate: "1% on UPI, 5X on partners",
-    rewardType: "points",
+    annualFee: "Lifetime Free (Edge+ ₹499 one-time)",
+    rewardRate: "2% selected, 0.4% others (Jewels)",
+    rewardType: "cashback",
     features: [
-      "1% reward on UPI payments",
-      "5X on partner merchants",
-      "No hidden charges",
-      "Instant issuance"
+      "2% on chosen category (shop/travel/dining)",
+      "0.4% on all other UPI & card spends",
+      "₹250 welcome voucher on ₹2K UPI spend",
+      "Change category every 3 billing cycles"
     ],
     applyLink: "https://jupiter.money/",
-    detailedGuide: `## Jupiter Edge\n\n### Overview\nNeo-bank credit card with UPI rewards.\n\n### Key Benefits\n- UPI rewards (rare feature)\n- Partner accelerators\n\n### Verdict\nGreat for UPI-heavy users.`
+    detailedGuide: `## Jupiter Edge CSB RuPay\n\n### Overview\nNeo-bank UPI-enabled credit card.\n\n### Key Benefits\n- Choose 1 category: Shop/Travel/Dining\n- 2% cashback on chosen category\n- 0.4% on all other spends\n- UPI payments via Jupiter app\n- Jewels: 5 = ₹1\n\n### Edge+ Variant (₹499 one-time)\n- 10% on shopping (wishlist brands)\n- 5% on travel\n- 1% on others\n- ₹3K/month cap total\n\n### Verdict\nBest LTF UPI credit card for digital natives.`
   },
   {
     id: 91,
     tags: ['Neo Bank', 'Travel', 'Lifestyle'],
-    name: "Fi Federal Credit Card",
-    bestFor: "Digital Natives",
-    verdict: "Lifestyle rewards. Good for young professionals.",
-    fxMarkup: "2.5%",
+    name: "AmpliFi Fi-Federal Credit Card",
+    bestFor: "Multi-Brand Lifestyle Rewards",
+    verdict: "3% on 20+ brands, 0% forex. Great app experience.",
+    fxMarkup: "0%",
     category: "Lifestyle",
-    bank: "Federal Bank",
+    bank: "Federal Bank via Fi",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹499 (Often waived)",
-    rewardRate: "2-5% Fi-Coins",
+    annualFee: "₹2,000 (waived on ₹2.5L)",
+    rewardRate: "3% on brands, 0.6% base",
     rewardType: "points",
     features: [
-      "2-5% Fi-Coins on spends",
-      "Fi-Coins = real money",
-      "Smart spend tracking",
-      "Lounge access (2/quarter)"
+      "3% on 20+ brands (Amazon/Flipkart/Swiggy/Uber)",
+      "5X on top 3 monthly brands",
+      "0% forex markup, 2 lounge/qtr on ₹50K",
+      "₹4,250+ welcome vouchers on ₹2K fee"
     ],
     applyLink: "https://fi.money/",
-    detailedGuide: `## Fi Federal\n\n### Overview\nNeo-bank lifestyle card.\n\n### Key Benefits\n- Good reward rates\n- Excellent app experience\n\n### Verdict\nBest for digital-first users.`
+    detailedGuide: `## AmpliFi Fi-Federal\n\n### Overview\nFi Money's premium lifestyle card.\n\n### Key Benefits\n- 3% on 20+ lifestyle brands\n- 5X on top 3 brands (if ₹15K+ monthly)\n- 1X (0.6%) on everything else\n- ZERO forex markup\n- Fi-Coins: 100 = ₹3 (airline miles)\n\n### Welcome (₹2K fee)\n- Zomato ₹1K, Uber ₹500, Myntra ₹1K\n- SonyLiv 1yr, Croma ₹750\n\n### Verdict\nBest mid-range neo-bank card for lifestyle spenders.`
   },
   {
     id: 92,
     tags: ['Premium', 'Travel', 'Rewards'],
     name: "AU Vetta Credit Card",
-    bestFor: "Premium Rewards",
-    verdict: "3.5% base rewards. Premium AU offering.",
-    fxMarkup: "2%",
-    category: "Premium",
+    bestFor: "Grocery & Utility Spenders",
+    verdict: "4 RP/₹100 grocery, 10 RP/₹100 utility. Lounge access included.",
+    fxMarkup: "2.99%",
+    category: "Lifestyle",
     bank: "AU Small Finance Bank",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹3,999 + GST",
-    rewardRate: "3.5% base, 7X accelerated",
+    annualFee: "₹2,999 + GST (waived on ₹1.5L)",
+    rewardRate: "1-2.5% (1 RP = ₹0.20-0.25)",
     rewardType: "points",
     features: [
-      "3.5% base reward rate",
-      "7X on partner brands",
-      "8 lounge visits/year",
-      "Golf benefits"
+      "4 RP/₹100 grocery/dept stores, 2 RP/₹100 others",
+      "10 RP/₹100 on utility bills (100 RP cap/txn)",
+      "4 domestic + 4 intl lounge/year (₹20K/qtr for domestic)",
+      "8 railway lounge/year, 1000 birthday bonus"
     ],
     applyLink: "https://www.aubank.in/",
-    detailedGuide: `## AU Vetta\n\n### Overview\nAU Bank's premium offering.\n\n### Key Benefits\n- High base reward rate\n- Premium lifestyle benefits\n\n### Verdict\nCompetes with major bank premium cards.`
+    detailedGuide: `## AU Vetta\n\n### Overview\nMid-level lifestyle card from AU Bank.\n\n### Key Benefits\n- 4 RP/₹100 on grocery & departmental stores\n- 2 RP/₹100 on other retail\n- 10 RP/₹100 on utility (capped 100 RP/txn)\n- 1 RP = ₹0.20-0.25\n\n### Lounge\n- 4 domestic/year (₹20K/qtr spend required)\n- 4 international/year via Priority Pass\n- 8 railway lounge/year\n\n### Milestone\n- 500 pts on ₹50K/quarter\n- 1500 pts on ₹1L/quarter\n- ₹1K voucher on ₹2.5L annual\n\n### Verdict\nGood for utility bill payers and grocery shoppers.`
   },
   {
     id: 93,
-    tags: ['Entry Level', 'Fuel', 'Rewards'],
+    tags: ['Entry Level', 'Rewards'],
     name: "HDFC Freedom Credit Card",
-    bestFor: "Entry Level Spenders",
-    verdict: "Good entry card. 1.5% fuel surcharge waiver.",
+    bestFor: "Entry-Level Everyday Spends",
+    verdict: "10X on BigBasket/Swiggy/Uber, 1 CP/₹150 base. Starter card.",
     fxMarkup: "3.5%",
     category: "Rewards",
     bank: "HDFC Bank",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹500 (Waived on ₹50K spend)",
-    rewardRate: "2 RP per ₹150",
+    annualFee: "₹500 (waived on ₹50K)",
+    rewardRate: "10X select, 1 CP/₹150 base (0.1%)",
     rewardType: "points",
     features: [
-      "2 reward points per ₹150",
-      "1.5% fuel surcharge waiver",
-      "Low entry requirements",
-      "Easy approval"
+      "10X CashPoints on BigBasket/Swiggy/Uber/OYO/BMS",
+      "1 CP/₹150 on other spends (1 CP = ₹0.15)",
+      "1% fuel surcharge waiver (₹250/cycle cap)",
+      "500 welcome CP, 0.99% intro rate 90 days"
     ],
     applyLink: "https://www.hdfcbank.com/",
-    detailedGuide: `## HDFC Freedom\n\n### Overview\nHDFC's entry-level credit card.\n\n### Key Benefits\n- Low annual fee\n- Easy eligibility\n\n### Verdict\nGood first credit card for building credit history.`
+    detailedGuide: `## HDFC Freedom\n\n### Overview\nEntry-level HDFC card for first-time users.\n\n### Key Benefits\n- 10X on BigBasket, Swiggy, Uber, OYO, BookMyShow\n- 2,500 CP/month cap on 10X\n- 5X on EMI at merchants\n- 1 CP/₹150 on other spends\n- 1 CP = ₹0.15\n\n### Exclusions\nNo rewards on fuel, wallet loads, rent, govt\n\n### Fee\n- ₹500 (waived on ₹50K annual)\n- 500 CP welcome & renewal bonus\n\n### Verdict\nGood starter card with popular merchant accelerators.`
   },
   {
     id: 94,
     tags: ['Lifestyle', 'Shopping', 'Millennials'],
     name: "IDFC First Millennia Credit Card",
-    bestFor: "Young Professionals",
-    verdict: "Lifestyle focused. 6X on dining & movies.",
+    bestFor: "Lifetime Free Entry Card",
+    verdict: "LTF with 10X rewards above ₹20K spend + railway lounge.",
     fxMarkup: "3.5%",
     category: "Lifestyle",
     bank: "IDFC First Bank",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹500 (Waived on ₹50K spend)",
-    rewardRate: "6X on dining/movies, 1X base",
+    annualFee: "Lifetime Free",
+    rewardRate: "3X up to ₹20K, 10X above",
     rewardType: "points",
     features: [
-      "6X on dining & movies",
-      "1% cashback on others",
-      "Low forex 3.5%",
-      "2 lounge visits/year"
+      "Lifetime Free - zero annual fee",
+      "16 railway lounge/year (4/qtr, ₹20K spend req)",
+      "3X RP up to ₹20K/mo, 10X above ₹20K",
+      "No airport lounge access"
     ],
     applyLink: "https://www.idfcfirstbank.com/",
-    detailedGuide: `## IDFC First Millennia\n\n### Overview\nTargeted at young professionals.\n\n### Key Benefits\n- High rewards on lifestyle\n- Low annual fee\n\n### Verdict\nGreat for dining and entertainment lovers.`
+    detailedGuide: `## IDFC First Millennia\n\n### Overview\nLifetime free entry-level card.\n\n### Key Benefits\n- Zero annual fee forever\n- 3X rewards up to ₹20K/month\n- 10X on spends above ₹20K\n- 16 railway lounge visits/year\n- 1 RP = ₹0.25\n\n### Limitations\n- No airport lounge access\n- ₹99 redemption fee\n\n### Verdict\nBest entry-level LTF card for train travelers.`
   },
   {
     id: 95,
-    tags: ['Premium', 'Rewards', 'Low Fee'],
+    tags: ['Premium', 'Rewards', 'Movies'],
     name: "RBL Platinum Maxima Credit Card",
-    bestFor: "Premium at Low Fee",
-    verdict: "Premium perks at ₹1499. Good value proposition.",
+    bestFor: "Movie Buffs & Dining",
+    verdict: "10X on dining/entertainment + BOGO movies. Good entry premium.",
     fxMarkup: "3.5%",
     category: "Premium",
     bank: "RBL Bank",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹1,499 + GST",
-    rewardRate: "2X on weekends, 1X base",
+    annualFee: "₹2,000 + GST",
+    rewardRate: "10 RP/₹100 on dining/entertainment, 2 RP base",
     rewardType: "points",
     features: [
-      "2X rewards on weekends",
-      "Complimentary lounge access",
-      "Fuel surcharge waiver",
-      "Buy 1 Get 1 movies"
+      "10X on dining/grocery/entertainment (1K RP cap/mo)",
+      "1 domestic lounge/qtr (₹35K spend req from Jul'25)",
+      "BOGO BookMyShow (₹200 cap, 1x/month)",
+      "Milestone: 20K bonus on ₹4L annual spend"
     ],
     applyLink: "https://www.rblbank.com/",
-    detailedGuide: `## RBL Platinum Maxima\n\n### Overview\nValue-focused premium card.\n\n### Key Benefits\n- Weekend accelerators\n- Good lounge access\n\n### Verdict\nBest for budget-conscious premium seekers.`
+    detailedGuide: `## RBL Platinum Maxima\n\n### Overview\nEntry premium card for lifestyle spenders.\n\n### Key Benefits\n- 10 RP/₹100 on dining, grocery, entertainment, international\n- 2 RP/₹100 on other spends\n- 1 RP = ₹0.25\n- 8,000 welcome points\n- BOGO movies (15x/year)\n- 1 domestic lounge/quarter\n\n### Milestone\n- 10K points on ₹2L spend\n- Additional 10K on ₹4L spend\n\n### Verdict\nGood for dining/movie enthusiasts on budget.`
   },
   {
     id: 96,
-    tags: ['Premium', 'Lifestyle', 'Wellness'],
-    name: "Kotak Zen Credit Card",
-    bestFor: "Wellness Lifestyle",
-    verdict: "Health & wellness focused. Unique positioning.",
+    tags: ['Premium', 'Shopping', 'Rewards'],
+    name: "Kotak Zen Signature Credit Card",
+    bestFor: "Shopping & Lifestyle Spenders",
+    verdict: "10X on shopping categories + lounge access. Good for fashion/lifestyle.",
     fxMarkup: "3.5%",
-    category: "Lifestyle",
+    category: "Rewards",
     bank: "Kotak Mahindra Bank",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹1,499 + GST",
-    rewardRate: "5X on wellness, 1X base",
+    annualFee: "₹1,500 (waived on ₹1.5L)",
+    rewardRate: "10 pts/₹150 shopping, 5 pts/₹150 base",
     rewardType: "points",
     features: [
-      "5X on fitness/wellness",
-      "Cult.fit benefits",
-      "Health insurance discounts",
-      "Spa & salon offers"
+      "10 Zen pts/₹150 on shopping (apparel/jewellery/lifestyle)",
+      "8 domestic + 3 international lounge/year",
+      "Milestone: 15K pts on ₹6L annual spend",
+      "1 Zen pt = ₹0.20 (1.33% on shopping)"
     ],
     applyLink: "https://www.kotak.com/",
-    detailedGuide: `## Kotak Zen\n\n### Overview\nWellness-focused lifestyle card.\n\n### Key Benefits\n- Fitness rewards\n- Health partner benefits\n\n### Verdict\nUnique for health-conscious users.`
+    detailedGuide: `## Kotak Zen Signature\n\n### Overview\nShopping-focused rewards card with travel perks.\n\n### Key Benefits\n- 10 Zen pts/₹150 on shopping categories\n- 5 Zen pts/₹150 on other spends\n- 1 Zen pt = ₹0.20 value\n- 8 domestic + 3 international lounge visits\n- 1,500 welcome points\n- 1% fuel surcharge waiver\n\n### Milestone\n- 7,500 pts on ₹3L spend\n- 15,000 pts on ₹6L spend\n\n### Verdict\nGood for fashion and lifestyle shoppers.`
   },
   {
     id: 97,
     tags: ['Premium', 'Travel', 'BOB'],
     name: "BOB Premier Credit Card",
-    bestFor: "BOB Premium",
-    verdict: "Bank of Baroda's premium offering. Good travel perks.",
-    fxMarkup: "3%",
-    category: "Premium",
+    bestFor: "Travel & Dining (BOB Customers)",
+    verdict: "2.5% on travel/dining + domestic lounge. Currently LTF offer.",
+    fxMarkup: "3.5%",
+    category: "Travel",
     bank: "Bank of Baroda",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹2,499 + GST",
-    rewardRate: "4X on travel, 1X base",
+    annualFee: "₹1,000 (LTF offer till Dec'25)",
+    rewardRate: "5X travel/dining (2.5%), 2 RP/₹100 base",
     rewardType: "points",
     features: [
-      "4X on travel bookings",
-      "Airport lounge access",
-      "Golf privileges",
-      "Travel insurance"
+      "5X (10 RP/₹100) on travel/dining/intl (2K cap/mo)",
+      "1 domestic lounge/qtr (₹20K spend req)",
+      "LTF on ₹1.2L annual or ₹10K in 60 days",
+      "1 RP = ₹0.25 (2.5% on travel/dining)"
     ],
-    applyLink: "https://www.bankofbaroda.in/",
-    detailedGuide: `## BOB Premier\n\n### Overview\nBOB's premium travel card.\n\n### Key Benefits\n- Travel rewards\n- Comprehensive insurance\n\n### Verdict\nGood for BOB customers seeking travel perks.`
+    applyLink: "https://www.bobcard.co.in/",
+    detailedGuide: `## BOB Premier\n\n### Overview\nBOB's travel-focused mid-range card.\n\n### Key Benefits\n- 10 RP/₹100 on travel, dining, international (5X)\n- 2 RP/₹100 on other spends\n- 1 RP = ₹0.25 cashback\n- 1 domestic lounge/quarter\n- 500 welcome points\n- 1% fuel surcharge waiver\n\n### Fee Waiver\n- ₹10K in first 60 days = joining fee waived\n- ₹1.2L annual = renewal waived\n- LTF offer till Dec 2025\n\n### Verdict\nGood travel card for BOB customers.`
   },
   {
     id: 98,
     tags: ['Super Premium', 'HNI', 'Invite Only'],
-    name: "HDFC Infinia Reserve",
-    bestFor: "Ultra HNI",
-    verdict: "Invite-only ultra-premium. Most exclusive HDFC card.",
-    fxMarkup: "1.5%",
+    name: "HDFC Infinia Metal Edition Credit Card",
+    bestFor: "Ultra HNI / Frequent Travelers",
+    verdict: "India's benchmark super-premium. 3.33% via SmartBuy, unlimited lounge.",
+    fxMarkup: "2%",
     category: "Super Premium",
     bank: "HDFC Bank",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹1,00,000 + GST",
-    rewardRate: "5 RP per ₹100 (5%)",
+    annualFee: "₹12,500 + GST (waived on ₹10L)",
+    rewardRate: "5 RP/₹150 (3.33% via SmartBuy)",
     rewardType: "points",
     features: [
-      "5% base reward rate",
-      "Unlimited lounge + guest",
-      "Personal concierge 24/7",
-      "Luxury hotel benefits"
+      "Invite-only super premium card",
+      "Unlimited domestic + international lounge",
+      "1:1 redemption on flights/hotels via SmartBuy",
+      "Club Marriott + ITC 3N pay 2N"
     ],
     applyLink: "https://www.hdfcbank.com/",
-    detailedGuide: `## HDFC Infinia Reserve\n\n### Overview\nHDFC's most exclusive card for ultra-HNIs.\n\n### Key Benefits\n- Highest reward rate\n- White-glove service\n\n### Verdict\nThe pinnacle of Indian credit cards.`
+    detailedGuide: `## HDFC Infinia Metal Edition\n\n### Overview\nIndia's most aspirational credit card. Invite-only.\n\n### Key Benefits\n- 5 RP per ₹150 spent (3.33% value)\n- 10X on SmartBuy (up to 33% back)\n- 1:1 redemption for flights/hotels\n- Unlimited Priority Pass worldwide\n- Club Marriott membership\n- ITC 3N pay for 2N\n- Unlimited golf\n- 2% forex markup\n\n### Fee Structure\n- ₹12,500 + GST joining/renewal\n- Waived on ₹10L annual spend\n- 12,500 welcome points\n\n### Verdict\nThe gold standard of Indian credit cards.`
   },
   {
     id: 99,
     tags: ['Entertainment', 'OTT', 'Lifestyle'],
-    name: "ICICI Amazon Prime Credit Card",
-    bestFor: "Amazon Prime Users",
-    verdict: "5% on Amazon with Prime. Great for Amazon shoppers.",
-    fxMarkup: "3.5%",
+    name: "Amazon Pay ICICI Credit Card",
+    bestFor: "Amazon Shoppers",
+    verdict: "LTF with 5% Amazon (Prime) or 3% (non-Prime). Best for Amazon loyalists.",
+    fxMarkup: "1.99%",
     category: "Shopping",
     bank: "ICICI Bank",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹500 (Waived with Prime)",
-    rewardRate: "5% Amazon, 2% bill pay, 1% others",
+    annualFee: "Lifetime Free",
+    rewardRate: "5% Amazon (Prime), 3% (non-Prime), 1% others",
     rewardType: "cashback",
     features: [
-      "5% back on Amazon",
-      "2% on bill payments",
-      "1% on other spends",
-      "Prime membership benefits"
+      "Lifetime Free - zero joining/annual fee",
+      "5% Amazon cashback (Prime) / 3% (non-Prime)",
+      "2% on Amazon Pay partners, 1% others",
+      "1.99% forex (reduced Oct 2025)"
     ],
     applyLink: "https://www.amazon.in/amazonpay/icici",
-    detailedGuide: `## ICICI Amazon Prime\n\n### Overview\nCo-branded card for Prime members.\n\n### Key Benefits\n- Best Amazon rewards\n- Includes Prime membership\n\n### Verdict\nMust-have for frequent Amazon shoppers.`
+    detailedGuide: `## Amazon Pay ICICI\n\n### Overview\nIndia's most popular co-branded card (5M+ users).\n\n### Key Benefits\n- 5% unlimited Amazon cashback (Prime members)\n- 3% Amazon cashback (non-Prime)\n- 2% on 100+ Amazon Pay partners\n- 1% on all other spends\n- Rewards never expire\n- 1.99% forex (low for LTF card)\n\n### Limitations\n- No lounge access\n- No rewards on EMI, fuel, gold\n- Amazon-centric benefits\n\n### Verdict\nMust-have for Amazon Prime members.`
   },
   {
     id: 100,
-    tags: ['Travel', 'Hotels', 'Rewards'],
-    name: "Axis ITC Hotels Credit Card",
-    bestFor: "ITC Hotels Loyalists",
-    verdict: "10X on ITC Hotels. Best for ITC frequent guests.",
-    fxMarkup: "3.5%",
+    tags: ['Travel', 'Miles', 'Rewards'],
+    name: "Axis Bank Atlas Credit Card",
+    bestFor: "Miles Enthusiasts & Frequent Travelers",
+    verdict: "Best miles card at ₹5K. 1:2 transfer to ITC/airlines. Tiered lounge.",
+    fxMarkup: "2%",
     category: "Travel",
     bank: "Axis Bank",
     image: "assets/cards/placeholder.png",
-    annualFee: "₹2,000 + GST",
-    rewardRate: "10X ITC, 2X dining, 1X base",
-    rewardType: "points",
+    annualFee: "₹5,000 + GST",
+    rewardRate: "5 EDGE Miles/₹100 travel, 2 Miles base",
+    rewardType: "miles",
     features: [
-      "10X on ITC Hotels",
-      "WelcomHeritage benefits",
-      "Dining privileges",
-      "Room upgrades"
+      "5 EDGE Miles/₹100 on travel (2X on intl)",
+      "1:2 transfer to airlines/hotels (ITC, Singapore, etc.)",
+      "Tiered lounge: 8-12 domestic + 4-8 intl/year",
+      "2,500 welcome + renewal miles on tier"
     ],
     applyLink: "https://www.axisbank.com/",
-    detailedGuide: `## Axis ITC Hotels\n\n### Overview\nCo-brand for ITC hotel chain.\n\n### Key Benefits\n- Massive ITC rewards\n- Hotel benefits\n\n### Verdict\nPerfect for ITC loyalists.`
+    detailedGuide: `## Axis Atlas\n\n### Overview\nBest entry miles card for travel enthusiasts.\n\n### Key Benefits\n- 5 EDGE Miles/₹100 on airlines & hotels\n- 2 EDGE Miles/₹100 on other spends\n- 1 EDGE Mile = 2 Partner Points (ITC, Singapore Airlines, etc.)\n- Tiered membership: Silver/Gold/Platinum\n- 2% forex markup\n\n### Lounge Access (by tier)\n- Silver: 8 domestic + 4 international\n- Gold: 10 domestic + 6 international\n- Platinum: 12 domestic + 8 international\n\n### Transfer Partners\n- Group A: Singapore, Etihad, Qatar, Marriott\n- Group B: Air India, ITC, SpiceJet\n\n### Verdict\nBest miles card under ₹10K annual fee.`
   }
 ];
