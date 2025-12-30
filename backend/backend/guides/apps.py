@@ -7,4 +7,7 @@ class GuidesConfig(AppConfig):
     verbose_name = _("Guides")
 
     def ready(self):
-        pass
+        try:
+            import backend.guides.signals  # noqa: F401
+        except ImportError:
+            pass
