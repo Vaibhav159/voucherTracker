@@ -203,6 +203,7 @@ class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
 
                     for item in brands:
                         brand_name = item.get('name')
+                        item["category"] = cat["name"]
                         # Normalize brand name for matching same as JS script: toLowerCase and remove non-alphanumeric
                         # However, DB search is usually case-insensitive. We will use standard logic.
 
@@ -242,7 +243,7 @@ class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
                                 defaults={
                                     "external_id": external_id,
                                     "fee": discount_text,
-                                    "cap": "10k/month", # Default as per JS script
+                                    # "cap": "10k/month", # Default as per JS script
                                     "link": link,
                                     # "priority": 5 # Let's not set priority hardcoded for now or maybe lower than Maximize?
                                 }

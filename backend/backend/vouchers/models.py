@@ -77,7 +77,7 @@ class VoucherMismatch(models.Model):
             if isinstance(category_str_list, str):
                 category_list = json.loads(category_str_list)
                 return category_list[0]
-        return self.raw_data
+        return self.raw_data.get("category")
 
     def get_external_id(self):
         if self.platform.name == PlatformName.MAXIMIZE:
@@ -87,4 +87,6 @@ class VoucherMismatch(models.Model):
     def get_logo(self):
         if self.platform.name == PlatformName.MAXIMIZE:
             return self.raw_data.get("giftCardLogo")
+        if self.platform.name == PlatformName.GYFTR:
+            return self.raw_data.get("brand_icon_url")
         return self.raw_data.get("logo")
