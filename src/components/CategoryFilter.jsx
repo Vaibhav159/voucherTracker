@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { useDebounce } from '../hooks/useDebounce';
 
 const CategoryFilter = ({ selectedCategory, onCategorySelect, categories }) => {
     const [searchTerm, setSearchTerm] = useState('');
 
+    // Debounce search term to avoid filtering on every keystroke
+    const debouncedSearchTerm = useDebounce(searchTerm, 200);
+
     const filteredCategories = categories.filter(category =>
-        category.toLowerCase().includes(searchTerm.toLowerCase())
+        category.toLowerCase().includes(debouncedSearchTerm.toLowerCase())
     );
 
     return (
@@ -74,6 +79,12 @@ const CategoryFilter = ({ selectedCategory, onCategorySelect, categories }) => {
             </div>
         </div>
     );
+};
+
+CategoryFilter.propTypes = {
+    selectedCategory: PropTypes.string,
+    onCategorySelect: PropTypes.func.isRequired,
+    categories: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default CategoryFilter;

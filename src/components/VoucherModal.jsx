@@ -1,52 +1,52 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { getPlatformStyle } from '../utils/platformLogos';
 import { Link } from 'react-router-dom';
+import { useModalKeyHandler } from '../hooks/useModalKeyHandler';
+import { useDiscountParser } from '../hooks/useDiscountParser';
+import { useReviews } from '../hooks/useReviews';
+import { usePriceHistory } from '../hooks/usePriceHistory';
+import RatingStars from './RatingStars';
+import ReviewModal from './ReviewModal';
+import ReviewsList from './ReviewsList';
+import PriceHistoryChart from './PriceHistoryChart';
+import ExpiryBadge from './ExpiryBadge';
 
 const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
     if (!voucher) return null;
 
-    useEffect(() => {
-        document.body.style.overflow = 'hidden';
+    const [activeTab, setActiveTab] = React.useState('offers'); // 'offers', 'reviews', 'history'
+    const [showReviewModal, setShowReviewModal] = React.useState(false);
+    const [copiedLink, setCopiedLink] = React.useState(null);
+    const [selectedPlatformForHistory, setSelectedPlatformForHistory] = React.useState(
+        voucher.platforms[0]?.name || null
+    );
 
-        const handleKeyDown = (e) => {
-            if (e.key === 'Escape') {
-                onClose();
-            }
-        };
-        window.addEventListener('keydown', handleKeyDown);
-
-        return () => {
-            document.body.style.overflow = 'unset';
-            window.removeEventListener('keydown', handleKeyDown);
-        };
-    }, [onClose]);
-
-    // Helper to parse discount value
-    const parseDiscount = (fee) => {
-        if (!fee) return 0;
-        const match = fee.match(/(\d+(\.\d+)?)%/);
-        if (match && (fee.toLowerCase().includes('discount') || fee.toLowerCase().includes('save'))) {
-            return parseFloat(match[1]);
-        }
-        return 0;
+    const copyLink = (link, platformName) => {
+        navigator.clipboard.writeText(link).then(() => {
+            setCopiedLink(platformName);
+            setTimeout(() => setCopiedLink(null), 2000);
+        });
     };
+
+    // Use custom modal keyboard handler hook
+    useModalKeyHandler(true, onClose);
+
+    // Use discount parser hook
+    const { getBestPlatform } = useDiscountParser();
+
+    // Use reviews hook
+    const { reviews, averageRating, reviewCount, addReview, markHelpful } = useReviews(voucher.id);
+
+    // Use price history hook
+    const { priceHistory } = usePriceHistory(voucher.id);
 
     // Calculate best platform ID/Index
     const bestPlatformIndex = React.useMemo(() => {
-        let maxDiscount = -1;
-        let bestIdx = -1;
-
-        voucher.platforms.forEach((p, idx) => {
-            const discount = parseDiscount(p.fee);
-            if (discount > maxDiscount) {
-                maxDiscount = discount;
-                bestIdx = idx;
-            }
-        });
-
+        const { idx, discount } = getBestPlatform(voucher.platforms);
         // Only highlight if there is actually a discount > 0
-        return maxDiscount > 0 ? bestIdx : -1;
-    }, [voucher]);
+        return discount > 0 ? idx : -1;
+    }, [voucher, getBestPlatform]);
 
     const getRewardText = (fee) => {
         if (fee.toLowerCase().includes('discount')) {
@@ -59,76 +59,36 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
     };
 
     return (
-        <div style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: 'rgba(0, 0, 0, 0.7)',
-            backdropFilter: 'blur(10px)',
-            zIndex: 9999,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '20px',
-            overflowY: 'auto'
-        }} onClick={onClose}>
+        <div className="modal-overlay" onClick={onClose}>
             <div
-                className="glass-panel"
-                style={{
-                    width: '100%',
-                    maxWidth: '600px',
-                    maxHeight: '85vh',
-                    overflowY: 'auto',
-                    position: 'relative',
-                    background: 'var(--modal-bg)',
-                    border: '1px solid var(--modal-border)',
-                    margin: 'auto'
-                }}
+                className="modal-container glass-panel"
                 onClick={e => e.stopPropagation()}
             >
                 {/* Header */}
-                <div style={{
-                    padding: '1.25rem 1.5rem',
-                    borderBottom: '1px solid var(--modal-border)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '1rem',
-                    position: 'sticky',
-                    top: 0,
-                    background: 'var(--modal-bg)',
-                    zIndex: 10
-                }}>
-                    <div style={{
-                        width: '56px',
-                        height: '56px',
-                        background: '#fff',
-                        borderRadius: '12px',
-                        padding: '6px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        flexShrink: 0
-                    }}>
+                <div className="modal-header">
+                    <div className="modal-header__logo">
                         <img
                             src={voucher.logo}
                             alt={voucher.brand}
-                            style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                         />
                     </div>
-                    <div style={{ flex: 1 }}>
-                        <h2 style={{ margin: 0, fontSize: '1.5rem' }}>{voucher.brand}</h2>
-                        <span style={{
-                            fontSize: '0.8rem',
-                            color: 'var(--text-secondary)',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '8px',
-                            marginTop: '2px'
-                        }}>
-                            <span style={{ background: 'var(--tag-bg)', padding: '2px 8px', borderRadius: '4px' }}>{voucher.category}</span>
-                        </span>
+                    <div className="modal-header__info" style={{ flex: 1 }}>
+                        <h2 className="modal-header__title">{voucher.brand}</h2>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '4px', flexWrap: 'wrap' }}>
+                            <span className="modal-header__tag">{voucher.category}</span>
+                            {voucher.expiryDays && voucher.lastUpdated && (
+                                <ExpiryBadge
+                                    lastUpdated={voucher.lastUpdated}
+                                    expiryDays={voucher.expiryDays}
+                                    size="xs"
+                                />
+                            )}
+                            {averageRating > 0 && (
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                                    <RatingStars rating={averageRating} size="xs" reviewCount={reviewCount} />
+                                </div>
+                            )}
+                        </div>
                     </div>
                     {voucher.site && (
                         <a
@@ -144,166 +104,273 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                     )}
                     <button
                         onClick={onClose}
-                        style={{
-                            background: 'transparent',
-                            border: 'none',
-                            color: 'var(--text-secondary)',
-                            fontSize: '1.5rem',
-                            cursor: 'pointer',
-                            padding: '4px'
-                        }}
+                        className="btn-close"
                     >
                         ×
                     </button>
                 </div>
 
+                {/* Tabs */}
+                <div style={{
+                    display: 'flex',
+                    borderBottom: '1px solid var(--modal-border)',
+                    padding: '0 var(--space-lg)',
+                    gap: '4px'
+                }}>
+                    {[
+                        { id: 'offers', label: 'Offers', icon: '💰' },
+                        { id: 'reviews', label: `Reviews${reviewCount > 0 ? ` (${reviewCount})` : ''}`, icon: '⭐' },
+                        { id: 'history', label: 'Price History', icon: '📈' }
+                    ].map(tab => (
+                        <button
+                            key={tab.id}
+                            onClick={() => setActiveTab(tab.id)}
+                            style={{
+                                padding: '12px 16px',
+                                background: 'transparent',
+                                border: 'none',
+                                borderBottom: activeTab === tab.id ? '2px solid var(--accent-cyan)' : '2px solid transparent',
+                                color: activeTab === tab.id ? 'var(--accent-cyan)' : 'var(--text-secondary)',
+                                fontWeight: activeTab === tab.id ? 600 : 400,
+                                fontSize: '0.85rem',
+                                cursor: 'pointer',
+                                transition: 'all var(--duration-normal)',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '6px'
+                            }}
+                        >
+                            <span>{tab.icon}</span>
+                            <span>{tab.label}</span>
+                        </button>
+                    ))}
+                </div>
+
                 {/* Body */}
-                <div style={{ padding: '1.5rem' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-                        <span style={{ color: 'var(--text-secondary)', fontSize: '0.75rem', letterSpacing: '1px', fontWeight: 600 }}>AVAILABLE OFFERS</span>
-                    </div>
+                <div className="modal-body">
+                    {activeTab === 'offers' && (
+                        <>
+                            <div className="modal-section-header">AVAILABLE OFFERS</div>
 
-                    <div style={{ display: 'grid', gap: '1rem' }}>
-                        {voucher.platforms.map((platform, idx) => {
-                            const { label, value } = getRewardText(platform.fee);
-                            const style = getPlatformStyle(platform.name);
+                            <div className="modal-content">
+                                {voucher.platforms.map((platform, idx) => {
+                                    const { label, value } = getRewardText(platform.fee);
+                                    const style = getPlatformStyle(platform.name);
 
-                            const isBest = idx === bestPlatformIndex;
-                            const isSelected = selectedPlatform === platform.name;
+                                    const isBest = idx === bestPlatformIndex;
+                                    const isSelected = selectedPlatform === platform.name;
 
-                            return (
-                                <div key={idx} style={{
-                                    border: isBest ? '1px solid var(--color-success)' : (isSelected ? '1px solid var(--accent-cyan)' : '1px solid var(--item-border)'),
-                                    borderRadius: '12px',
-                                    padding: '1rem',
-                                    background: isSelected ? 'var(--accent-cyan-dim)' : 'var(--item-bg)',
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    gap: '1rem',
-                                    position: 'relative',
-                                    boxShadow: isBest ? '0 0 0 1px var(--color-success)' : 'none'
-                                }}>
-                                    {isBest && (
-                                        <div style={{
-                                            position: 'absolute',
-                                            top: '-10px',
-                                            right: '1rem',
-                                            background: 'var(--color-success)',
-                                            color: 'var(--text-on-success)',
-                                            fontSize: '0.7rem',
-                                            fontWeight: 700,
-                                            padding: '2px 8px',
-                                            borderRadius: '12px',
-                                            boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
-                                        }}>
-                                            BEST RATE
-                                        </div>
-                                    )}
+                                    const platformClasses = [
+                                        'platform-offer',
+                                        isBest && 'best',
+                                        isSelected && 'selected'
+                                    ].filter(Boolean).join(' ');
 
-                                    <div style={{ display: 'flex', gap: '1rem' }}>
-                                        {/* Platform Logo */}
-                                        <div style={{
-                                            width: '48px',
-                                            height: '48px',
-                                            background: style.bg,
-                                            borderRadius: '10px',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            flexShrink: 0,
-                                            padding: style.padding,
-                                            overflow: 'hidden'
-                                        }}>
-                                            {style.logo ? (
-                                                <img src={style.logo} alt={platform.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                                            ) : (
-                                                <span style={{ color: '#000', fontWeight: 'bold', fontSize: '1.2rem' }}>{platform.name[0]}</span>
+                                    return (
+                                        <div key={idx} className={platformClasses}>
+                                            {isBest && (
+                                                <div className="platform-offer__badge">
+                                                    BEST RATE
+                                                </div>
                                             )}
-                                        </div>
 
-                                        {/* Details */}
-                                        <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                                            <div>
-                                                <div style={{ color: 'var(--text-secondary)', fontSize: '0.75rem', marginBottom: '2px' }}>{label}</div>
-                                                <div style={{ fontSize: '1.2rem', fontWeight: 700, color: label === 'Savings' ? '#4ade80' : 'inherit' }}>{value}</div>
+                                            <div className="platform-offer__header">
+                                                {/* Platform Logo */}
+                                                <div
+                                                    className="platform-offer__logo"
+                                                    style={{
+                                                        background: style.bg,
+                                                        padding: style.padding
+                                                    }}
+                                                >
+                                                    {style.logo ? (
+                                                        <img src={style.logo} alt={platform.name} />
+                                                    ) : (
+                                                        <span style={{ color: '#000', fontWeight: 'bold', fontSize: '1.2rem' }}>{platform.name[0]}</span>
+                                                    )}
+                                                </div>
+
+                                                {/* Details */}
+                                                <div className="platform-offer__details">
+                                                    <div className="platform-offer__metric">
+                                                        <div className="platform-offer__metric-label">{label}</div>
+                                                        <div className={`platform-offer__metric-value ${label === 'Savings' ? 'savings' : ''}`}>
+                                                            {value}
+                                                        </div>
+                                                    </div>
+                                                    <div className="platform-offer__metric">
+                                                        <div className="platform-offer__metric-label">Monthly Cap</div>
+                                                        <div className="platform-offer__metric-value">{platform.cap}</div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div>
-                                                <div style={{ color: 'var(--text-secondary)', fontSize: '0.75rem', marginBottom: '2px' }}>Monthly Cap</div>
-                                                <div style={{ fontSize: '1rem', fontWeight: 500 }}>{platform.cap}</div>
+
+                                            {/* Denominations & Button */}
+                                            <div className="platform-offer__footer">
+                                                <div className="platform-offer__denominations">
+                                                    {platform.denominations.slice(0, 4).map(d => (
+                                                        <span key={d} className="denomination-badge">
+                                                            ₹{d}
+                                                        </span>
+                                                    ))}
+                                                    {platform.denominations.length > 4 && (
+                                                        <span className="text-secondary text-xs">+more</span>
+                                                    )}
+                                                </div>
+
+                                                <div style={{ display: 'flex', gap: '8px' }}>
+                                                    <button
+                                                        onClick={() => copyLink(platform.link, platform.name)}
+                                                        title="Copy link"
+                                                        style={{
+                                                            padding: '8px 12px',
+                                                            borderRadius: '8px',
+                                                            border: copiedLink === platform.name ? '1px solid #22c55e' : '1px solid var(--glass-border)',
+                                                            background: copiedLink === platform.name ? 'rgba(34, 197, 94, 0.1)' : 'transparent',
+                                                            color: copiedLink === platform.name ? '#22c55e' : 'var(--text-secondary)',
+                                                            cursor: 'pointer',
+                                                            fontSize: '0.8rem',
+                                                            transition: 'all 0.2s'
+                                                        }}
+                                                    >
+                                                        {copiedLink === platform.name ? '✓ Copied!' : '📋 Copy'}
+                                                    </button>
+                                                    <a
+                                                        href={platform.link}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="btn-secondary"
+                                                    >
+                                                        Buy on {platform.name} ↗
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    );
+                                })}
+                            </div>
 
-                                    {/* Denominations & Button */}
-                                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap' }}>
-                                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
-                                            {platform.denominations.slice(0, 4).map(d => (
-                                                <span key={d} style={{
-                                                    background: 'var(--tag-bg)',
-                                                    border: '1px solid var(--item-border)',
-                                                    padding: '2px 8px',
-                                                    borderRadius: '4px',
-                                                    fontSize: '0.75rem',
-                                                    color: 'var(--text-secondary)'
-                                                }}>
-                                                    ₹{d}
-                                                </span>
-                                            ))}
-                                            {platform.denominations.length > 4 && <span style={{ color: 'var(--text-secondary)', fontSize: '0.75rem', alignSelf: 'center' }}>+more</span>}
+                            {/* Did you know section */}
+                            <div className="info-card">
+                                <span className="info-card__icon">💡</span>
+                                <div>
+                                    <h4 className="info-card__title">Did you know?</h4>
+                                    <p className="info-card__description">
+                                        Buying vouchers often stacks with credit card rewards. Check your card's specific multiplier for 'Gift Card' purchases before buying.
+                                    </p>
+                                </div>
+                            </div>
+                        </>
+                    )}
+
+                    {activeTab === 'reviews' && (
+                        <>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                                <div className="modal-section-header">
+                                    USER REVIEWS {reviewCount > 0 && `(${reviewCount})`}
+                                </div>
+                                <button
+                                    onClick={() => setShowReviewModal(true)}
+                                    className="btn-primary"
+                                    style={{ padding: '8px 16px', fontSize: '0.85rem' }}
+                                >
+                                    Write Review
+                                </button>
+                            </div>
+
+                            {averageRating > 0 && (
+                                <div style={{
+                                    background: 'var(--glass-bg)',
+                                    border: '1px solid var(--glass-border)',
+                                    borderRadius: 'var(--radius-md)',
+                                    padding: 'var(--space-md)',
+                                    marginBottom: 'var(--space-lg)',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: 'var(--space-lg)'
+                                }}>
+                                    <div style={{ textAlign: 'center' }}>
+                                        <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--accent-cyan)' }}>
+                                            {averageRating.toFixed(1)}
                                         </div>
-
-                                        <a
-                                            href={platform.link}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="btn-primary"
-                                            style={{
-                                                padding: '8px 16px',
-                                                fontSize: '0.85rem',
-                                                background: 'var(--btn-secondary-bg)',
-                                                border: '1px solid var(--item-border)',
-                                                boxShadow: 'none',
-                                                color: 'var(--btn-secondary-text)',
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                gap: '6px',
-                                                marginLeft: 'auto',
-                                                transition: 'all 0.2s',
-                                                textDecoration: 'none'
-                                            }}
-                                            onMouseEnter={e => {
-                                                e.currentTarget.style.background = 'var(--btn-secondary-hover-bg)';
-                                                e.currentTarget.style.color = 'var(--btn-secondary-hover-text)';
-                                            }}
-                                            onMouseLeave={e => {
-                                                e.currentTarget.style.background = 'var(--btn-secondary-bg)';
-                                                e.currentTarget.style.color = 'var(--btn-secondary-text)';
-                                            }}
-                                        >
-                                            Buy on {platform.name} ↗
-                                        </a>
+                                        <RatingStars rating={averageRating} size="md" />
+                                        <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '4px' }}>
+                                            Based on {reviewCount} review{reviewCount !== 1 ? 's' : ''}
+                                        </div>
                                     </div>
                                 </div>
-                            );
-                        })}
-                    </div>
+                            )}
 
-                    {/* Did you know section */}
-                    <div style={{ marginTop: '1.5rem', padding: '1rem', background: '#F0F9FF', borderRadius: '12px', color: '#0C4A6E' }}>
-                        <div style={{ display: 'flex', gap: '8px' }}>
-                            <span style={{ fontSize: '1rem' }}>💡</span>
-                            <div>
-                                <h4 style={{ margin: '0 0 2px 0', fontSize: '0.9rem' }}>Did you know?</h4>
-                                <p style={{ margin: 0, fontSize: '0.8rem', opacity: 0.9, lineHeight: '1.4' }}>
-                                    Buying vouchers often stacks with credit card rewards. Check your card's specific multiplier for 'Gift Card' purchases before buying.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                            <ReviewsList reviews={reviews} onMarkHelpful={markHelpful} />
+                        </>
+                    )}
+
+                    {activeTab === 'history' && (
+                        <>
+                            <div className="modal-section-header">PRICE HISTORY</div>
+
+                            {voucher.platforms.length > 1 && (
+                                <div style={{ marginBottom: '1rem' }}>
+                                    <label style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '8px', display: 'block' }}>
+                                        Select Platform:
+                                    </label>
+                                    <select
+                                        value={selectedPlatformForHistory}
+                                        onChange={(e) => setSelectedPlatformForHistory(e.target.value)}
+                                        className="sort-dropdown"
+                                        style={{ width: '100%', maxWidth: '300px' }}
+                                    >
+                                        {voucher.platforms.map((platform, idx) => (
+                                            <option key={idx} value={platform.name}>
+                                                {platform.name}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+                            )}
+
+                            {selectedPlatformForHistory && (
+                                <PriceHistoryChart
+                                    priceHistory={priceHistory}
+                                    platformName={selectedPlatformForHistory}
+                                />
+                            )}
+                        </>
+                    )}
                 </div>
             </div>
+
+            {/* Review Modal */}
+            {showReviewModal && (
+                <ReviewModal
+                    voucher={voucher}
+                    onClose={() => setShowReviewModal(false)}
+                    onSubmit={addReview}
+                />
+            )}
         </div>
     );
+};
+
+VoucherModal.propTypes = {
+    voucher: PropTypes.shape({
+        id: PropTypes.string,
+        brand: PropTypes.string.isRequired,
+        logo: PropTypes.string,
+        category: PropTypes.string.isRequired,
+        site: PropTypes.string,
+        expiryDays: PropTypes.number,
+        lastUpdated: PropTypes.string,
+        platforms: PropTypes.arrayOf(PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            fee: PropTypes.string,
+            cap: PropTypes.string,
+            link: PropTypes.string,
+            denominations: PropTypes.arrayOf(PropTypes.string),
+        })).isRequired,
+    }),
+    onClose: PropTypes.func.isRequired,
+    selectedPlatform: PropTypes.string,
 };
 
 export default VoucherModal;

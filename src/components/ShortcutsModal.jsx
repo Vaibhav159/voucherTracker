@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 const ShortcutsModal = ({ isOpen, onClose }) => {
     // Close on Escape
@@ -105,6 +106,11 @@ const ShortcutsModal = ({ isOpen, onClose }) => {
             </div>
         </div>
     );
+};
+
+ShortcutsModal.propTypes = {
+    isOpen: PropTypes.bool.isRequired,
+    onClose: PropTypes.func.isRequired,
 };
 
 export default ShortcutsModal;

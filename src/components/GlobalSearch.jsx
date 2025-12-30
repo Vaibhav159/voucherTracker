@@ -1,9 +1,10 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
-import Fuse from 'fuse.js';
 import { useNavigate } from 'react-router-dom';
 import vouchers from '../data/vouchers.json';
 import { creditCards } from '../data/creditCards';
 import guidesData from '../data/guides.json';
+import { useModalKeyHandler } from '../hooks/useModalKeyHandler';
+import { useFuzzySearch } from '../hooks/useFuzzySearch';
 
 const GlobalSearch = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -51,8 +52,6 @@ const GlobalSearch = () => {
             type: 'platform',
             path: `/?platform=${encodeURIComponent(p)}`
         }));
-
-        console.log(platformItems);
 
         return [...pages, ...voucherItems, ...cardItems, ...guideItems, ...platformItems];
     }, []);
@@ -113,7 +112,7 @@ const GlobalSearch = () => {
                 toggleSearch('voucher');
             }
 
-            // Shift + C (Cards)   
+            // Shift + C (Cards)
             if (e.shiftKey && (e.key === 'C' || e.key === 'c') && (!isInputFocused || (document.activeElement?.id === 'global-search-input' && query === '')) && !e.metaKey && !e.ctrlKey) {
                 e.preventDefault();
                 toggleSearch('card');
@@ -127,7 +126,10 @@ const GlobalSearch = () => {
 
             // Escape to close
             if (isOpen && e.key === 'Escape') {
+                e.preventDefault();
                 setIsOpen(false);
+                setQuery('');
+                setSelectedIndex(0);
             }
         };
 
@@ -142,40 +144,28 @@ const GlobalSearch = () => {
         }
     }, [isOpen]);
 
-    // Initialize Fuse
-    const fuse = useMemo(() => {
-        const options = {
-            keys: [
-                { name: 'name', weight: 0.4 },
-                { name: 'tags', weight: 0.3 },
-                { name: 'bank', weight: 0.2 },
-                { name: 'type', weight: 0.1 }
-            ],
-            threshold: 0.4
-        };
-        return new Fuse(allItems, options);
-    }, [allItems]);
+    // Filter items by type first
+    const filteredItems = useMemo(() => {
+        return filterType === 'all'
+            ? allItems
+            : allItems.filter(item => item.type === filterType);
+    }, [allItems, filterType]);
 
-    // Filter results
+    // Use custom fuzzy search hook
+    const searchResults = useFuzzySearch(filteredItems, query, {
+        keys: [
+            { name: 'name', weight: 0.4 },
+            { name: 'tags', weight: 0.3 },
+            { name: 'bank', weight: 0.2 },
+            { name: 'type', weight: 0.1 }
+        ],
+        threshold: 0.4
+    });
+
+    // Limit results to top 10
     const results = useMemo(() => {
-        let filtered = allItems;
-
-        // Apply type filter
-        if (filterType !== 'all') {
-            filtered = filtered.filter(item => item.type === filterType);
-        }
-
-        if (!query) return filtered.slice(0, 10); // Show top items if no query
-
-        // Use Fuse.js if query exists
-        // Note: Fuse searches entire collection, so we might need to filter by type AFTER search or create separate fuse instances.
-        // For simplicity/performance with small dataset, filtering after search is fine or searching pre-filtered list.
-
-        // Better approach: Create Fuse instance on the filtered list whenever filterType changes
-        const currentFuse = filterType === 'all' ? fuse : new Fuse(filtered, fuse.options);
-
-        return currentFuse.search(query).map(result => result.item).slice(0, 10);
-    }, [query, allItems, filterType, fuse]);
+        return searchResults.slice(0, 10);
+    }, [searchResults]);
 
     // Navigate selection
     useEffect(() => {
@@ -219,44 +209,14 @@ const GlobalSearch = () => {
     return (
         <div
             className="global-search-overlay"
-            style={{
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                background: 'rgba(0,0,0,0.6)',
-                backdropFilter: 'blur(4px)',
-                zIndex: 10000, // Very high z-index
-                display: 'flex',
-                alignItems: 'flex-start',
-                justifyContent: 'center',
-                paddingTop: '15vh'
-            }}
             onClick={() => setIsOpen(false)}
         >
             <div
                 className="global-search-container glass-panel"
-                style={{
-                    width: '600px',
-                    maxWidth: '90%',
-                    background: 'var(--card-bg)', // improved generic theme
-                    border: '1px solid var(--glass-border)',
-                    borderRadius: '12px',
-                    boxShadow: '0 20px 50px rgba(0,0,0,0.5)',
-                    overflow: 'hidden',
-                    display: 'flex',
-                    flexDirection: 'column'
-                }}
                 onClick={(e) => e.stopPropagation()}
             >
-                <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    padding: '16px',
-                    borderBottom: '1px solid var(--glass-border)'
-                }}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '12px' }}>
+                <div className="search-input-container">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <circle cx="11" cy="11" r="8"></circle>
                         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                     </svg>
@@ -267,38 +227,14 @@ const GlobalSearch = () => {
                         placeholder="Search anything..."
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
-                        style={{
-                            flex: 1,
-                            background: 'transparent',
-                            border: 'none',
-                            color: 'var(--text-primary)',
-                            fontSize: '1.2rem',
-                            outline: 'none'
-                        }}
+                        className="search-input"
                     />
-                    <div style={{
-                        display: 'flex',
-                        gap: '8px'
-                    }}>
-                        <span style={{
-                            fontSize: '0.75rem',
-                            color: 'var(--text-secondary)',
-                            background: 'rgba(255,255,255,0.1)',
-                            padding: '2px 6px',
-                            borderRadius: '4px'
-                        }}>ESC</span>
+                    <div className="search-shortcuts">
+                        <span className="search-shortcut">ESC</span>
                         {filterType !== 'all' && (
                             <span
                                 onClick={() => setFilterType('all')}
-                                style={{
-                                    fontSize: '0.75rem',
-                                    color: 'var(--accent-cyan)',
-                                    background: 'rgba(6, 182, 212, 0.15)',
-                                    padding: '2px 6px',
-                                    borderRadius: '4px',
-                                    cursor: 'pointer',
-                                    border: '1px solid var(--accent-cyan)'
-                                }}
+                                className="search-filter-badge"
                             >
                                 {filterType.toUpperCase()} ✕
                             </span>
@@ -307,37 +243,16 @@ const GlobalSearch = () => {
                 </div>
 
                 {results.length > 0 ? (
-                    <ul style={{
-                        listStyle: 'none',
-                        margin: 0,
-                        padding: '8px 0',
-                        maxHeight: '400px',
-                        overflowY: 'auto'
-                    }}>
+                    <ul className="search-results">
                         {results.map((item, index) => (
                             <li
                                 key={index}
                                 onMouseEnter={() => setSelectedIndex(index)}
                                 onClick={() => handleSelect(item)}
-                                style={{
-                                    padding: '12px 20px',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '12px',
-                                    cursor: 'pointer',
-                                    background: index === selectedIndex ? 'rgba(6, 182, 212, 0.15)' : 'transparent',
-                                    borderLeft: index === selectedIndex ? '3px solid var(--accent-cyan)' : '3px solid transparent'
-                                }}
+                                className={`search-result-item ${index === selectedIndex ? 'selected' : ''}`}
                             >
                                 {/* Icons based on type */}
-                                <div style={{
-                                    width: '24px',
-                                    height: '24px',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    color: 'var(--text-secondary)'
-                                }}>
+                                <div className="search-result-icon">
                                     {item.type === 'page' && <span>📄</span>}
                                     {item.type === 'voucher' && <span>🎟️</span>}
                                     {item.type === 'card' && <span>💳</span>}
@@ -345,27 +260,27 @@ const GlobalSearch = () => {
                                     {item.type === 'platform' && <span>🛒</span>}
                                 </div>
 
-                                <div style={{ flex: 1 }}>
-                                    <div style={{ color: 'var(--text-primary)', fontWeight: '500' }}>{item.name}</div>
-                                    <div style={{ color: 'var(--text-secondary)', fontSize: '0.8rem' }}>
+                                <div className="search-result-content">
+                                    <div className="search-result-title">{item.name}</div>
+                                    <div className="search-result-meta">
                                         {item.type.toUpperCase()} • {item.description || item.bank || item.category || 'Page'}
                                     </div>
                                 </div>
 
                                 {index === selectedIndex && (
-                                    <span style={{ color: 'var(--text-secondary)', fontSize: '0.8rem' }}>↵</span>
+                                    <span className="search-result-indicator">↵</span>
                                 )}
                             </li>
                         ))}
                     </ul>
                 ) : query && (
-                    <div style={{ padding: '30px', textAlign: 'center', color: 'var(--text-secondary)' }}>
+                    <div className="search-empty">
                         No results found for "{query}"
                     </div>
                 )}
 
                 {!query && (
-                    <div style={{ padding: '16px', background: 'rgba(255,255,255,0.02)', color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
+                    <div className="search-helper">
                         Type to search for Vouchers, Credit Cards, Guides, and Pages...
                     </div>
                 )}

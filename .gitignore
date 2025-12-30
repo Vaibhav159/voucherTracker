@@ -28,3 +28,4 @@ gyftr_*.json
 magicpin_response.json
 save*.json
 venv
+.claude/

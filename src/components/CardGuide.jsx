@@ -1,11 +1,51 @@
-import React from 'react';
+import { useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import { creditCards } from '../data/creditCards';
+import CardImage from './CardImage';
 
 const CardGuide = () => {
     const { id } = useParams();
     const card = creditCards.find(c => c.id === parseInt(id));
+
+    // Find similar cards based on: same bank, same category, or similar fee tier
+    const similarCards = useMemo(() => {
+        if (!card) return [];
+
+        const parseFee = (fee) => {
+            if (!fee) return 9999;
+            const lower = fee.toLowerCase();
+            if (lower.includes('lifetime free') || lower.includes('₹0') || lower === 'free') return 0;
+            const match = fee.match(/₹?([\d,]+)/);
+            return match ? parseInt(match[1].replace(/,/g, '')) : 9999;
+        };
+
+        const currentFee = parseFee(card.annualFee);
+
+        // Score cards based on similarity
+        const scored = creditCards
+            .filter(c => c.id !== card.id)
+            .map(c => {
+                let score = 0;
+                // Same bank = high score
+                if (c.bank === card.bank) score += 3;
+                // Same category = high score
+                if (c.category === card.category) score += 3;
+                // Similar fee tier (within 20% or both free)
+                const otherFee = parseFee(c.annualFee);
+                if (currentFee === 0 && otherFee === 0) score += 2;
+                else if (Math.abs(currentFee - otherFee) < currentFee * 0.3) score += 2;
+                // Similar best use
+                if (c.bestFor === card.bestFor) score += 1;
+
+                return { ...c, score };
+            })
+            .filter(c => c.score > 0)
+            .sort((a, b) => b.score - a.score)
+            .slice(0, 4);
+
+        return scored;
+    }, [card]);
 
     if (!card) {
         return (
@@ -57,6 +97,85 @@ const CardGuide = () => {
                 </div>
             </div>
 
+            {/* Similar Cards Section */}
+            {similarCards.length > 0 && (
+                <div style={{ marginTop: '2rem' }}>
+                    <h2 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: 'var(--text-primary)' }}>
+                        🔄 Similar Cards You Might Like
+                    </h2>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '1rem' }}>
+                        {similarCards.map(similarCard => (
+                            <Link
+                                key={similarCard.id}
+                                to={`/card-guide/${similarCard.id}`}
+                                style={{ textDecoration: 'none' }}
+                            >
+                                <div
+                                    className="glass-panel"
+                                    style={{
+                                        padding: '1rem',
+                                        transition: 'all 0.3s ease',
+                                        cursor: 'pointer',
+                                        height: '100%'
+                                    }}
+                                >
+                                    <div style={{
+                                        height: '100px',
+                                        background: 'rgba(255,255,255,0.03)',
+                                        borderRadius: '8px',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        marginBottom: '0.75rem',
+                                        overflow: 'hidden'
+                                    }}>
+                                        <CardImage card={similarCard} style={{ maxWidth: '90%', maxHeight: '80px' }} />
+                                    </div>
+                                    <h4 style={{
+                                        margin: '0 0 0.25rem 0',
+                                        fontSize: '0.9rem',
+                                        fontWeight: '600',
+                                        color: 'var(--card-title)',
+                                        whiteSpace: 'nowrap',
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis'
+                                    }}>
+                                        {similarCard.name}
+                                    </h4>
+                                    <p style={{
+                                        margin: '0 0 0.5rem 0',
+                                        fontSize: '0.75rem',
+                                        color: 'var(--text-secondary)'
+                                    }}>
+                                        {similarCard.bank}
+                                    </p>
+                                    <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                                        {similarCard.bank === card.bank && (
+                                            <span style={{
+                                                fontSize: '0.65rem',
+                                                padding: '2px 6px',
+                                                background: 'rgba(99, 102, 241, 0.2)',
+                                                color: '#a5b4fc',
+                                                borderRadius: '4px'
+                                            }}>Same Bank</span>
+                                        )}
+                                        {similarCard.category === card.category && (
+                                            <span style={{
+                                                fontSize: '0.65rem',
+                                                padding: '2px 6px',
+                                                background: 'rgba(34, 197, 94, 0.2)',
+                                                color: '#86efac',
+                                                borderRadius: '4px'
+                                            }}>{card.category}</span>
+                                        )}
+                                    </div>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            )}
+
             {/* Sticky Apply Button */}
             <div className="sticky-apply-container">
                 <a
@@ -73,3 +192,4 @@ const CardGuide = () => {
 };
 
 export default CardGuide;
+

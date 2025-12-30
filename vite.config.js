@@ -5,4 +5,52 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: './', // Important for GitHub Pages with HashRouter
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Vendor chunks for better caching
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          'vendor-fuse': ['fuse.js'],
+          'vendor-markdown': ['react-markdown'],
+
+          // Data chunks
+          'data-vouchers': ['./src/data/vouchers.json'],
+          'data-cards': ['./src/data/creditCards.js'],
+          'data-guides': ['./src/data/guides.json'],
+
+          // Route chunks (lazy loaded components)
+          'route-guides': ['./src/components/Guides.jsx'],
+          'route-cards': [
+            './src/components/CreditCardComparison.jsx',
+            './src/components/CardGuide.jsx'
+          ],
+          'route-calculators': [
+            './src/components/RewardsCalculator.jsx',
+            './src/components/PointsConverter.jsx'
+          ],
+          'route-ai': ['./src/components/AskAI.jsx'],
+        }
+      }
+    },
+    // Set chunk size warning limit
+    chunkSizeWarningLimit: 500,
+
+    // Minify for production
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true, // Remove console.logs in production
+        drop_debugger: true
+      }
+    },
+
+    // Source maps for debugging
+    sourcemap: false, // Disable for smaller bundle
+  },
+
+  // Optimize dependencies
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom', 'fuse.js']
+  }
 })
