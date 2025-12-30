@@ -21,8 +21,8 @@ class CreditCard(models.Model):
     ]
 
     name = models.CharField(_("Name"), max_length=255)
-    bank = models.CharField(_("Bank"), max_length=255, choices=BANK_CHOICES)
-    category = models.CharField(_("Category"), max_length=255, blank=True)
+    bank = models.CharField(_("Bank"), max_length=255, choices=BANK_CHOICES, db_index=True)
+    category = models.CharField(_("Category"), max_length=255, blank=True, db_index=True)
     image = models.URLField(_("Image URL"), blank=True)
     annual_fee = models.CharField(_("Annual Fee"), max_length=255, blank=True)
     reward_rate = models.CharField(_("Reward Rate"), max_length=255, blank=True)

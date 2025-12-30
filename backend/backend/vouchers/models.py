@@ -16,7 +16,7 @@ class Voucher(models.Model):
 
     name = models.CharField(_("Name"), max_length=255, db_index=True)
     logo = models.URLField(_("Logo URL"), blank=True)
-    category = models.CharField(_("Category"), max_length=50, choices=CATEGORY_CHOICES)
+    category = models.CharField(_("Category"), max_length=50, choices=CATEGORY_CHOICES, db_index=True)
     site_link = models.URLField(_("Site Link"), blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
