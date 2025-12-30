@@ -1,3 +1,5 @@
+import json
+
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -54,3 +56,45 @@ class VoucherPlatform(models.Model):
 
     def __str__(self):
         return f"{self.voucher.name} on {self.platform.name}"
+
+class VoucherMismatch(models.Model):
+    STATUS_CHOICES = [
+        ("PENDING", "Pending"),
+        ("PROCESSED", "Processed"),
+        ("IGNORED", "Ignored"),
+    ]
+
+    platform = models.ForeignKey(Platform, on_delete=models.CASCADE, related_name="mismatches")
+    external_id = models.CharField(_("External ID"), max_length=255)
+    brand_name = models.CharField(_("Brand Name"), max_length=255) # Raw brand from source
+    gift_card_name = models.CharField(_("Gift Card Name"), max_length=255)
+    match_with_voucher = models.ForeignKey(Voucher, on_delete=models.SET_NULL, null=True, blank=True, related_name="mismatches", verbose_name=_("Map to Voucher"))
+    raw_data = models.JSONField(_("Raw Data"), default=dict)
+    status = models.CharField(_("Status"), max_length=20, choices=STATUS_CHOICES, default="PENDING")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.brand_name} ({self.platform.name})"
+
+    class Meta:
+        unique_together = ["platform", "external_id"]
+
+
+    def get_category(self):
+        if self.platform.name == "Maximize":
+            category_str_list = self.raw_data.get("category")
+            if isinstance(category_str_list, str):
+                category_list =  json.loads(category_str_list)
+                return category_list[0]
+        return self.raw_data
+
+    def get_external_id(self):
+        if self.platform.name == "Maximize":
+            return self.raw_data.get("id")
+        return self.raw_data.get("external_id") or self.raw_data.get("id")
+
+    def get_logo(self):
+        if self.platform.name == "Maximize":
+            return self.raw_data.get("giftCardLogo")
+        return self.raw_data.get("logo")

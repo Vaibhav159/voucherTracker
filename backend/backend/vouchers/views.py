@@ -18,7 +18,7 @@ class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
     def sync_maximize(self, request):
         import requests
         from django.db.models import Q
-        from .models import Platform, VoucherPlatform
+        from .models import Platform, VoucherPlatform, VoucherMismatch
         
         url = 'https://savemax.maximize.money/api/savemax/giftcard/list-all-llm?pageSize=400'
         headers = {
@@ -41,6 +41,7 @@ class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
             
             updated_count = 0
             created_count = 0
+            skipped_items = []
             
             for item in items:
                 external_id = str(item.get("id"))
@@ -76,7 +77,25 @@ class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
                         created_count += 1
                     else:
                         updated_count += 1
-                        
+                else:
+                    # Log mismatch for review
+                    VoucherMismatch.objects.update_or_create(
+                        platform=platform,
+                        external_id=external_id,
+                        defaults={
+                            "brand_name": brand_name,
+                            "gift_card_name": gift_card_name 
+                            if gift_card_name else brand_name,
+                            "raw_data": item,
+                            "status": "PENDING"
+                        }
+                    )
+                    skipped_items.append({
+                        "id": external_id,
+                        "brand": brand_name,
+                        "name": gift_card_name
+                    })
+
             from django.core.cache import cache
             cache.clear() # Invalidate cache after sync
             
@@ -84,7 +103,9 @@ class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
                 "status": "success", 
                 "message": f"Synced {len(items)} items.",
                 "created": created_count,
-                "updated": updated_count
+                "updated": updated_count,
+                "skipped_count": len(skipped_items),
+                "skipped_items": skipped_items
             })
             
         except Exception as e:
