@@ -45,7 +45,7 @@ class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
             for item in items:
                 external_id = str(item.get("id"))
                 brand_name = item.get("brand")
-                # gift_card_name = item.get("giftCardName") 
+                gift_card_name = item.get("giftCardName") 
                 discount = item.get("discount")
                 
                 if not brand_name or discount is None:
@@ -53,13 +53,14 @@ class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
                     
                 # Find matching Voucher
                 # Try exact name match first, then aliases
-                voucher = Voucher.objects.filter(name__iexact=brand_name).first()
+                voucher = Voucher.objects.filter(name__iexact=gift_card_name).first()
                 if not voucher:
-                    voucher = Voucher.objects.filter(aliases__name__iexact=brand_name).first()
+                    voucher = Voucher.objects.filter(aliases__name__iexact=gift_card_name).first()
                 
                 if voucher:
                     # Upsert VoucherPlatform
-                    print(f"Upserting {brand_name=} {external_id=} {discount=} {voucher=}")
+                    if "amazon" in brand_name.lower(): 
+                        print(f"Upserting {brand_name=} {external_id=} {discount=} {voucher=}")
                     vp, vp_created = VoucherPlatform.objects.update_or_create(
                         voucher=voucher,
                         platform=platform,
@@ -71,7 +72,6 @@ class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
                             "priority": 10 # Default priority
                         }
                     )
-                    print(f"Upserted {brand_name=} {external_id=} {discount=} {voucher=} {vp=}")
                     if vp_created:
                         created_count += 1
                     else:
