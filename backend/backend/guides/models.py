@@ -1,9 +1,10 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from django_prose_editor.fields import ProseEditorField
 
 class Guide(models.Model):
     title = models.CharField(_("Title"), max_length=255)
-    description = models.TextField(_("Description"), blank=True)
+    description = ProseEditorField(_("Description"), blank=True)
     link = models.URLField(_("Link"), max_length=500, blank=True)
     tags = models.JSONField(_("Tags"), default=list)
     author = models.CharField(_("Author"), max_length=255, blank=True)

@@ -1,10 +1,8 @@
 from django.contrib import admin
 from django import forms
-from ckeditor.widgets import CKEditorWidget
 from .models import Guide
 
 class GuideAdminForm(forms.ModelForm):
-    description = forms.CharField(widget=CKEditorWidget())
     class Meta:
         model = Guide
         fields = "__all__"

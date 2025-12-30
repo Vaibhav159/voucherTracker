@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from django_prose_editor.fields import ProseEditorField
 
 class CreditCard(models.Model):
     BANK_CHOICES = [
@@ -28,8 +29,8 @@ class CreditCard(models.Model):
     reward_rate = models.CharField(_("Reward Rate"), max_length=255, blank=True)
     fx_markup = models.CharField(_("Forex Markup"), max_length=255, blank=True)
     best_for = models.CharField(_("Best For"), max_length=255, blank=True)
-    verdict = models.TextField(_("Verdict"), blank=True)
-    detailed_guide = models.TextField(_("Detailed Guide"), blank=True)
+    verdict = ProseEditorField(_("Verdict"), blank=True)
+    detailed_guide = ProseEditorField(_("Detailed Guide"), blank=True)
     apply_link = models.URLField(_("Apply Link"), blank=True)
     features = models.JSONField(_("Features"), default=list)
     tags = models.JSONField(_("Tags"), default=list)

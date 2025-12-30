@@ -81,7 +81,7 @@ THIRD_PARTY_APPS = [
     "rest_framework.authtoken",
     "corsheaders",
     "drf_spectacular",
-    "ckeditor",
+    "django_prose_editor",
 ]
 
 LOCAL_APPS = [

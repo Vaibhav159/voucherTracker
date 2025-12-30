@@ -1,11 +1,8 @@
 from django.contrib import admin
 from django import forms
-from ckeditor.widgets import CKEditorWidget
 from .models import CreditCard
 
 class CreditCardAdminForm(forms.ModelForm):
-    detailed_guide = forms.CharField(widget=CKEditorWidget())
-    verdict = forms.CharField(widget=CKEditorWidget())
     class Meta:
         model = CreditCard
         fields = "__all__"
