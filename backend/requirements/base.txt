@@ -16,6 +16,7 @@ django-crispy-forms==2.3  # https://github.com/django-crispy-forms/django-crispy
 crispy-bootstrap5==2024.10  # https://github.com/django-crispy-forms/crispy-bootstrap5
 django-redis==5.4.0  # https://github.com/jazzband/django-redis
 django-ckeditor==6.7.1 # https://github.com/django-ckeditor/django-ckeditor
+django-filter==24.3 # https://github.com/carltongibson/django-filter
 
 # Django REST Framework
 # ------------------------------------------------------------------------------
