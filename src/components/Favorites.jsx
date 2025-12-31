@@ -26,16 +26,7 @@ const Favorites = () => {
         return creditCards.filter(c => isCardFavorite(c.id));
     }, [creditCards, favoriteCards, isCardFavorite]);
 
-    const loading = vouchersLoading || cardsLoading;
-
-    if (loading) {
-        return (
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '50vh', flexDirection: 'column', gap: '1rem' }}>
-                <div className="loading-spinner"></div>
-                <span style={{ color: 'var(--text-secondary)' }}>Loading your favorites...</span>
-            </div>
-        );
-    } // Parse guide IDs to get guide info (format: "bank-type-tier")
+    // Parse guide IDs to get guide info (format: "bank-type-tier")
     const favoritedGuideObjects = useMemo(() => {
         return favoriteGuides.map(guideId => {
             const [bank, type, tierName] = guideId.split('::');
@@ -50,6 +41,17 @@ const Favorites = () => {
             }
         }).filter(Boolean);
     }, [favoriteGuides]);
+
+    const loading = vouchersLoading || cardsLoading;
+
+    if (loading) {
+        return (
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '50vh', flexDirection: 'column', gap: '1rem' }}>
+                <div className="loading-spinner"></div>
+                <span style={{ color: 'var(--text-secondary)' }}>Loading your favorites...</span>
+            </div>
+        );
+    }
 
     // ...
 
