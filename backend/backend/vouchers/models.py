@@ -3,7 +3,7 @@ import json
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from .choices import VoucherCategory, VoucherMismatchStatus, PlatformName
+from backend.vouchers.choices import VoucherCategory, VoucherMismatchStatus, PlatformName
 
 
 class Voucher(models.Model):

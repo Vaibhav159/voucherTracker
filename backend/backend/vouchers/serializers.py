@@ -1,17 +1,20 @@
 from rest_framework import serializers
 from .models import Voucher, VoucherAlias, Platform, VoucherPlatform
 
+
 class PlatformSerializer(serializers.ModelSerializer):
     class Meta:
         model = Platform
         fields = ["id", "name", "icon_url"]
 
+
 class VoucherPlatformSerializer(serializers.ModelSerializer):
     name = serializers.CharField(source='platform.name', read_only=True)
-    
+
     class Meta:
         model = VoucherPlatform
         fields = ["name", "cap", "fee", "denominations", "link", "color"]
+
 
 class VoucherSerializer(serializers.ModelSerializer):
     brand = serializers.CharField(source='name')

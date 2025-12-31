@@ -6,11 +6,9 @@ from django.views.decorators.cache import cache_page
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets, filters, permissions, decorators, response
 
-from .models import Voucher, VoucherPlatform, VoucherMismatch, Platform
-from .choices import VoucherMismatchStatus, PlatformName
-from .models import Voucher, VoucherPlatform, VoucherMismatch, Platform
-from .choices import VoucherMismatchStatus, PlatformName
-from .serializers import VoucherSerializer, PlatformSerializer
+from backend.vouchers.models import Voucher, VoucherPlatform, VoucherMismatch, Platform
+from backend.vouchers.choices import VoucherMismatchStatus, PlatformName
+from backend.vouchers.serializers import VoucherSerializer, PlatformSerializer
 
 
 class PlatformViewSet(viewsets.ReadOnlyModelViewSet):
@@ -178,7 +176,7 @@ class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
             # Ensure "Gyftr" platform exists
             platform, _ = Platform.objects.get_or_create(
                 name=PlatformName.GYFTR,
-                defaults={"icon_url": "https://www.gyftr.com/public/images/gyftr_logo.png"} # Default logo if needed
+                defaults={"icon_url": "https://www.gyftr.com/public/images/gyftr_logo.png"}  # Default logo if needed
             )
 
             created_count = 0
@@ -218,7 +216,7 @@ class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
                         # Search by brand exact match (iexact)
                         voucher = Voucher.objects.filter(name__iexact=brand_name).first()
                         if not voucher:
-                             # Check aliases
+                            # Check aliases
                             voucher = Voucher.objects.filter(aliases__name__iexact=brand_name).first()
 
                         # Prepare mapping item
@@ -261,13 +259,13 @@ class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
                             else:
                                 updated_count += 1
                         else:
-                             # Log mismatch
+                            # Log mismatch
                             VoucherMismatch.objects.update_or_create(
                                 platform=platform,
                                 external_id=external_id,
                                 defaults={
                                     "brand_name": brand_name,
-                                    "gift_card_name": brand_name, # Gyftr usually implies brand = gift card
+                                    "gift_card_name": brand_name,  # Gyftr usually implies brand = gift card
                                     "raw_data": item,
                                     "status": VoucherMismatchStatus.PENDING
                                 }
@@ -279,8 +277,8 @@ class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
                             })
 
                 except Exception as brand_err:
-                     print(f"Error fetching brands for {cat_slug}: {brand_err}")
-                     continue
+                    print(f"Error fetching brands for {cat_slug}: {brand_err}")
+                    continue
 
             from django.core.cache import cache
             cache.clear()
