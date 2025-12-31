@@ -5,6 +5,8 @@ import { useCreditCards } from '../hooks/useCreditCards';
 import { useGuides } from '../hooks/useGuides';
 import { useModalKeyHandler } from '../hooks/useModalKeyHandler';
 import { useFuzzySearch } from '../hooks/useFuzzySearch';
+import { familyBanking, wealthBanking } from '../data/bankingPrograms';
+import { featureFlags } from '../config/featureFlags';
 
 const GlobalSearch = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -19,12 +21,30 @@ const GlobalSearch = () => {
     const { guides: guidesData } = useGuides();
 
     // Hardcoded Pages
-    const pages = [
-        { name: 'Home', type: 'page', path: '/', tags: ['dashboard', 'main'] },
-        { name: 'Know Your Cards', type: 'page', path: '/know-your-cards', tags: ['credit', 'cards', 'compare'] },
-        { name: 'Guides', type: 'page', path: '/guides', tags: ['tutorials', 'help', 'blog'] },
-        { name: 'Ask AI', type: 'page', path: '/ask-ai', tags: ['ai', 'chat', 'bot'] }
-    ];
+    // Dynamic Pages based on feature flags
+    const pages = useMemo(() => {
+        const basePages = [
+            { name: 'Home', type: 'page', path: '/', tags: ['dashboard', 'main'] },
+            { name: 'Know Your Cards', type: 'page', path: '/know-your-cards', tags: ['credit', 'cards', 'compare'] },
+            { name: 'Guides', type: 'page', path: '/guides', tags: ['tutorials', 'help', 'blog'] },
+            { name: 'Favorites', type: 'page', path: '/favorites', tags: ['saved', 'bookmarked', 'shortlist'] }
+        ];
+
+        if (featureFlags.askAI) {
+            basePages.push({ name: 'Ask AI', type: 'page', path: '/ask-ai', tags: ['ai', 'chat', 'bot', 'assistant'] });
+        }
+        if (featureFlags.rewardsCalculator) {
+            basePages.push({ name: 'Rewards Calculator', type: 'page', path: '/rewards-calculator', tags: ['calculate', 'points', 'value'] });
+        }
+        if (featureFlags.pointsConverter) {
+            basePages.push({ name: 'Points Converter', type: 'page', path: '/points-converter', tags: ['transfer', 'ratio', 'miles'] });
+        }
+        if (featureFlags.bankingGuides) {
+            basePages.push({ name: 'Banking Comparison', type: 'page', path: '/banking-guides', tags: ['tiers', 'wealth', 'family', 'limits'] });
+        }
+
+        return basePages;
+    }, []);
 
     // Combine all searchable items
     const allItems = useMemo(() => {
@@ -61,8 +81,51 @@ const GlobalSearch = () => {
             path: `/?platform=${encodeURIComponent(p)}`
         }));
 
-        return [...pages, ...voucherItems, ...cardItems, ...guideItems, ...platformItems];
-    }, [vouchers, creditCards, guidesData]);
+        // Extract unique categories
+        const uniqueCategories = [...new Set(safeVouchers.map(v => v.category).filter(Boolean))];
+        const categoryItems = uniqueCategories.map(cat => ({
+            name: cat,
+            type: 'category',
+            path: `/?category=${encodeURIComponent(cat)}`,
+            tags: ['voucher', 'shopping', 'brand']
+        }));
+
+        // Extract Banking Tiers
+        const bankingTierItems = [];
+        Object.entries(wealthBanking).forEach(([bank, data]) => {
+            data.tiers.forEach(tier => {
+                bankingTierItems.push({
+                    name: `${bank} ${tier.name}`,
+                    bank: bank,
+                    type: 'banking',
+                    path: `/banking-guides`, // Link to the comparison page
+                    description: `Min: ${tier.minNRV}`,
+                    tags: ['tier', 'wealth', bank, ...tier.benefits]
+                });
+            });
+        });
+
+        // Extract Family Banking
+        const familyBankingItems = Object.entries(familyBanking).map(([bank, data]) => ({
+            name: data.name,
+            bank: bank,
+            type: 'banking',
+            path: `/banking-guides`,
+            description: `Family Program • Min: ${data.minNRV}`,
+            tags: ['family', 'members', bank, ...data.benefits]
+        }));
+
+        return [
+            ...pages,
+            ...voucherItems,
+            ...cardItems,
+            ...guideItems,
+            ...platformItems,
+            ...categoryItems,
+            ...bankingTierItems,
+            ...familyBankingItems
+        ];
+    }, [vouchers, creditCards, guidesData, pages]);
 
     // toggle search logic
     const toggleSearch = (initialFilter = 'all') => {
@@ -163,8 +226,9 @@ const GlobalSearch = () => {
     const searchResults = useFuzzySearch(filteredItems, query, {
         keys: [
             { name: 'name', weight: 0.4 },
-            { name: 'tags', weight: 0.3 },
-            { name: 'bank', weight: 0.2 },
+            { name: 'tags', weight: 0.25 },
+            { name: 'bank', weight: 0.15 },
+            { name: 'description', weight: 0.1 },
             { name: 'type', weight: 0.1 }
         ],
         threshold: 0.4
@@ -266,6 +330,8 @@ const GlobalSearch = () => {
                                     {item.type === 'card' && <span>💳</span>}
                                     {item.type === 'guide' && <span>📚</span>}
                                     {item.type === 'platform' && <span>🛒</span>}
+                                    {item.type === 'category' && <span>🏷️</span>}
+                                    {item.type === 'banking' && <span>🏦</span>}
                                 </div>
 
                                 <div className="search-result-content">
