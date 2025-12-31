@@ -1,8 +1,8 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useVouchers } from '../hooks/useVouchers';
-import { creditCards } from '../data/creditCards';
-import guidesData from '../data/guides.json';
+import { useCreditCards } from '../hooks/useCreditCards';
+import { useGuides } from '../hooks/useGuides';
 import { useModalKeyHandler } from '../hooks/useModalKeyHandler';
 import { useFuzzySearch } from '../hooks/useFuzzySearch';
 
@@ -15,6 +15,8 @@ const GlobalSearch = () => {
     const inputRef = useRef(null);
     const lastShiftKeyTime = useRef(0);
     const { vouchers } = useVouchers();
+    const { creditCards } = useCreditCards();
+    const { guides: guidesData } = useGuides();
 
     // Hardcoded Pages
     const pages = [
@@ -26,20 +28,25 @@ const GlobalSearch = () => {
 
     // Combine all searchable items
     const allItems = useMemo(() => {
-        const voucherItems = vouchers.map(v => ({
+        // Fallback to empty arrays if data is loading/null
+        const safeVouchers = vouchers || [];
+        const safeCreditCards = creditCards || [];
+        const safeGuides = guidesData || [];
+
+        const voucherItems = safeVouchers.map(v => ({
             ...v,
             name: v.brand,
             type: 'voucher',
             path: `/?voucher=${v.id}`
         }));
 
-        const cardItems = creditCards.map(c => ({
+        const cardItems = safeCreditCards.map(c => ({
             ...c,
             type: 'card',
             path: `/card-guide/${c.id}`
         }));
 
-        const guideItems = guidesData.map(g => ({
+        const guideItems = safeGuides.map(g => ({
             ...g,
             name: g.title,
             type: 'guide',
@@ -47,7 +54,7 @@ const GlobalSearch = () => {
         }));
 
         // Extract unique platforms
-        const uniquePlatforms = [...new Set(vouchers.flatMap(v => v.platforms.map(p => p.name)))];
+        const uniquePlatforms = [...new Set(safeVouchers.flatMap(v => v.platforms ? v.platforms.map(p => p.name) : []))];
         const platformItems = uniquePlatforms.map(p => ({
             name: p,
             type: 'platform',
@@ -55,7 +62,7 @@ const GlobalSearch = () => {
         }));
 
         return [...pages, ...voucherItems, ...cardItems, ...guideItems, ...platformItems];
-    }, [vouchers]);
+    }, [vouchers, creditCards, guidesData]);
 
     // toggle search logic
     const toggleSearch = (initialFilter = 'all') => {

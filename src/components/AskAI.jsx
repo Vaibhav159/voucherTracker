@@ -1,8 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { creditCards } from '../data/creditCards';
-import { vouchers } from '../data/vouchers';
+import { useTheme } from '../context/ThemeContext';
+import { useVouchers } from '../hooks/useVouchers';
+import { useCreditCards } from '../hooks/useCreditCards';
+import { useGuides } from '../hooks/useGuides';
 import { wealthBanking, familyBanking, getBankNames } from '../data/bankingPrograms';
+
+const GOOGLE_API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
 
 // Copy to clipboard helper
 const copyToClipboard = async (text) => {
@@ -123,7 +127,7 @@ const getFollowUpSuggestions = (query, response) => {
 };
 
 // Smart card matching engine
-const findBestCards = (query) => {
+const findBestCards = (query, creditCards) => {
     const lowerQuery = query.toLowerCase();
     let results = [];
     let explanation = '';
@@ -191,7 +195,7 @@ const findBestCards = (query) => {
 };
 
 // Find vouchers for a brand
-const findVouchers = (query) => {
+const findVouchers = (query, vouchers) => {
     const lowerQuery = query.toLowerCase();
     return vouchers.filter(v =>
         v.brand?.toLowerCase().includes(lowerQuery) ||
@@ -218,7 +222,7 @@ const getBestPlatform = (voucher) => {
 };
 
 // Card + Voucher combo recommendations
-const getComboRecommendation = (brand) => {
+const getComboRecommendation = (brand, vouchers, creditCards) => {
     const lowerBrand = brand.toLowerCase();
     const matchingVoucher = vouchers.find(v => v.brand?.toLowerCase().includes(lowerBrand));
     if (!matchingVoucher) return null;
@@ -257,7 +261,7 @@ const getComboRecommendation = (brand) => {
 };
 
 // Get spending recommendation
-const getSpendingAdvice = (query) => {
+const getSpendingAdvice = (query, creditCards) => {
     const lowerQuery = query.toLowerCase();
     if (lowerQuery.includes('₹') || lowerQuery.includes('spend') || lowerQuery.includes('monthly')) {
         const amountMatch = query.match(/₹?\s?(\d+(?:,\d+)*)/i);
@@ -315,14 +319,18 @@ const bankingActions = [
 
 const AskAI = () => {
     const bankNames = getBankNames();
+    const { vouchers } = useVouchers();
+    const { creditCards } = useCreditCards();
+    const { guides } = useGuides();
+
     const [messages, setMessages] = useState([
         {
             role: 'assistant',
             content: `👋 Hi! I'm your **Credit Card + Banking + Voucher AI Advisor**
 
 **Powered by:**
-• **${creditCards.length} Credit Cards** with detailed caps & strategies
-• **${vouchers.length}+ Brand Vouchers** with best discounts
+• **Scanning...** Credit Cards with detailed caps & strategies
+• **Scanning...** Brand Vouchers with best discounts
 • **14 Banks** with wealth tiers & family programs
 
 🏦 **NEW: Banking Intelligence!**
@@ -344,6 +352,18 @@ const AskAI = () => {
     const [copiedIndex, setCopiedIndex] = useState(null);
     const [showBankFilter, setShowBankFilter] = useState(false);
     const messagesEndRef = useRef(null);
+
+    // Update stats once loaded
+    useEffect(() => {
+        if (messages.length === 1 && messages[0].role === 'assistant' && (creditCards.length > 0 || vouchers.length > 0)) {
+            setMessages(prev => {
+                const newContent = prev[0].content
+                    .replace('**Scanning...** Credit Cards', `**${creditCards.length} Credit Cards**`)
+                    .replace('**Scanning...** Brand Vouchers', `**${vouchers.length}+ Brand Vouchers**`);
+                return [{ ...prev[0], content: newContent }];
+            });
+        }
+    }, [creditCards.length, vouchers.length]);
 
     const handleCopy = async (text, index) => {
         const success = await copyToClipboard(text);
@@ -519,7 +539,7 @@ const AskAI = () => {
         const isComboQuery = ['combo', 'voucher', 'maximize', 'savings', 'best for'].some(k => lowerQuery.includes(k));
 
         if (isComboQuery && detectedBrand) {
-            const combo = getComboRecommendation(detectedBrand);
+            const combo = getComboRecommendation(detectedBrand, vouchers || [], creditCards || []);
             if (combo) {
                 response.content = `## 🎯 ${combo.voucher.brand} - Ultimate Savings Combo\n\n`;
                 response.content += `### 🎫 Best Voucher Deal\n`;
@@ -566,17 +586,17 @@ const AskAI = () => {
         }
 
         // Spending advice
-        const spendingAdvice = getSpendingAdvice(query);
+        const spendingAdvice = getSpendingAdvice(query, creditCards || []);
         if (spendingAdvice) {
             response.content = `## 💡 Spending Strategy\n\n${spendingAdvice.advice}`;
-            response.cards = creditCards.filter(c =>
+            response.cards = (creditCards || []).filter(c =>
                 spendingAdvice.recommended.some(name => c.name?.includes(name))
             ).slice(0, 3);
             return response;
         }
 
         // General card search
-        const searchResult = findBestCards(query);
+        const searchResult = findBestCards(query, creditCards || []);
         if (searchResult.cards.length > 0) {
             response.content = `## ${searchResult.explanation}\n\nFound **${searchResult.totalFound} cards**:\n\n`;
             searchResult.cards.forEach((card, i) => {

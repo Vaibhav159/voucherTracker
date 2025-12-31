@@ -2,11 +2,14 @@ import { useState, useMemo, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Fuse from 'fuse.js';
 import { Link } from 'react-router-dom';
-import { creditCards } from '../data/creditCards';
+import { useCreditCards } from '../hooks/useCreditCards';
 import CardImage from './CardImage';
 import { useFavorites } from '../context/FavoritesContext';
+import LoadingSpinner from './LoadingSpinner';
 
 const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSelection, clearSelection }) => {
+    const { creditCards, loading, error } = useCreditCards();
+
     const [searchTerm, setSearchTerm] = useState('');
     const [activeFilter, setActiveFilter] = useState('All');
     const [activeBank, setActiveBank] = useState('All');
@@ -161,7 +164,9 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
 
             return card.category === activeFilter;
         });
-    }, [searchTerm, activeBank, activeFilter, feeRange, forexFilter, hasLounge, networkFilter]);
+
+        return cards;
+    }, [searchTerm, activeBank, activeFilter, feeRange, forexFilter, hasLounge, networkFilter, creditCards]);
 
     // Primary visible categories
     const primaryFilters = ['All', 'Cashback', 'Travel', 'Premium', 'Fuel', 'Shopping'];
@@ -194,6 +199,25 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
         }
         return cards;
     }, [filteredCards, sortBy]);
+
+    // ... (logic)
+
+    if (loading) {
+        return (
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '50vh' }}>
+                <LoadingSpinner size="lg" />
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div style={{ textAlign: 'center', padding: '4rem', color: 'var(--text-danger)' }}>
+                <h3>Error loading credit cards</h3>
+                <p>Please try again later.</p>
+            </div>
+        );
+    }
 
     return (
         <div style={{ paddingTop: '1rem', paddingBottom: '4rem' }}>

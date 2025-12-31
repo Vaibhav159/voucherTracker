@@ -29,6 +29,8 @@ class CreditCard(models.Model):
     reward_rate = models.CharField(_("Reward Rate"), max_length=255, blank=True)
     fx_markup = models.CharField(_("Forex Markup"), max_length=255, blank=True)
     best_for = models.CharField(_("Best For"), max_length=255, blank=True)
+    reward_type = models.CharField(_("Reward Type"), max_length=50, blank=True)
+    reward_caps = models.JSONField(_("Reward Caps"), default=dict, blank=True)
     verdict = ProseEditorField(_("Verdict"), blank=True)
     detailed_guide = ProseEditorField(_("Detailed Guide"), blank=True)
     apply_link = models.URLField(_("Apply Link"), blank=True)
