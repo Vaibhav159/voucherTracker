@@ -6,8 +6,8 @@ export const featureFlags = {
     home: true,
     voucherTracker: true,
     useBackendApi: false, // Master switch for backend API
-    useGuidesApi: true,
-    useCreditCardsApi: true, // for vouchers
+    useGuidesApi: false,
+    useCreditCardsApi: false, // for vouchers
 
     // Credit card features
     knowYourCards: true,
