@@ -10,11 +10,12 @@ import { useState, useMemo, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import Fuse from 'fuse.js';
 import { Link } from 'react-router-dom';
-import { creditCards } from '../data/creditCards';
+import { useCreditCards } from '../hooks/useCreditCards';
 import CardImage from './CardImage';
 import { useFavorites } from '../context/FavoritesContext';
 import { useToast } from './UXPolish';
 import { CreditCardGridSkeleton } from './Skeleton';
+import LoadingSpinner from './LoadingSpinner';
 
 // Comparison rows configuration
 const COMPARISON_ROWS = [
@@ -30,6 +31,7 @@ const COMPARISON_ROWS = [
 ];
 
 const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSelection, clearSelection }) => {
+    const { creditCards, loading, error } = useCreditCards();
     const toast = useToast();
     const [searchTerm, setSearchTerm] = useState('');
     const [activeFilter, setActiveFilter] = useState('All');
@@ -152,7 +154,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
     const banks = useMemo(() => {
         const bankSet = new Set(creditCards.map(c => c.bank));
         return ['All', ...Array.from(bankSet).sort()];
-    }, []);
+    }, [creditCards]);
 
     // Filter cards
     const filteredCards = useMemo(() => {
@@ -222,7 +224,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
             }
             return card.category === activeFilter;
         });
-    }, [searchTerm, activeFilter, activeBank, feeRange, forexFilter, hasLounge, networkFilter]);
+    }, [searchTerm, activeBank, activeFilter, feeRange, forexFilter, hasLounge, networkFilter, creditCards]);
 
     // Sort cards
     const sortedCards = useMemo(() => {
@@ -314,7 +316,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
         } else {
             toast.warning('Could not find matching cards');
         }
-    }, [clearSelection, toggleCardSelection, toast]);
+    }, [clearSelection, toggleCardSelection, toast, creditCards]);
 
     // Popular comparisons for empty state
     const popularComparisons = [
@@ -522,7 +524,26 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
         );
     };
 
-    // Show skeleton during loading
+    // Show loading state from hook
+    if (loading) {
+        return (
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '50vh' }}>
+                <LoadingSpinner size="lg" />
+            </div>
+        );
+    }
+
+    // Show error state
+    if (error) {
+        return (
+            <div style={{ textAlign: 'center', padding: '4rem', color: 'var(--text-danger)' }}>
+                <h3>Error loading credit cards</h3>
+                <p>Please try again later.</p>
+            </div>
+        );
+    }
+
+    // Show skeleton during initial load for grid view
     if (isLoading && view === 'grid') {
         return (
             <div style={{ paddingTop: '1rem', paddingBottom: '4rem' }}>

@@ -13,9 +13,9 @@
 
 import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import vouchers from '../data/vouchers.json';
-import { creditCards } from '../data/creditCards';
-import guidesData from '../data/guides.json';
+import { useVouchers } from '../hooks/useVouchers';
+import { useCreditCards } from '../hooks/useCreditCards';
+import { useGuides } from '../hooks/useGuides';
 import { useModalKeyHandler } from '../hooks/useModalKeyHandler';
 import { useFuzzySearch } from '../hooks/useFuzzySearch';
 import { useLocalStorage } from '../hooks/useLocalStorage';
@@ -34,6 +34,9 @@ const GlobalSearch = () => {
     const inputRef = useRef(null);
     const resultsRef = useRef(null);
     const lastShiftKeyTime = useRef(0);
+    const { vouchers } = useVouchers();
+    const { creditCards } = useCreditCards();
+    const { guides: guidesData } = useGuides();
 
     // Pages
     const pages = [
@@ -48,7 +51,12 @@ const GlobalSearch = () => {
 
     // Combine all searchable items
     const allItems = useMemo(() => {
-        const voucherItems = vouchers.map(v => ({
+        // Fallback to empty arrays if data is loading/null
+        const safeVouchers = vouchers || [];
+        const safeCreditCards = creditCards || [];
+        const safeGuides = guidesData || [];
+
+        const voucherItems = safeVouchers.map(v => ({
             ...v,
             name: v.brand,
             type: 'voucher',
@@ -56,14 +64,14 @@ const GlobalSearch = () => {
             icon: '🎟️'
         }));
 
-        const cardItems = creditCards.map(c => ({
+        const cardItems = safeCreditCards.map(c => ({
             ...c,
             type: 'card',
             path: `/card-guide/${c.id}`,
             icon: '💳'
         }));
 
-        const guideItems = guidesData.map(g => ({
+        const guideItems = safeGuides.map(g => ({
             ...g,
             name: g.title,
             type: 'guide',
@@ -71,7 +79,8 @@ const GlobalSearch = () => {
             icon: '📖'
         }));
 
-        const uniquePlatforms = [...new Set(vouchers.flatMap(v => v.platforms.map(p => p.name)))];
+        // Extract unique platforms safely
+        const uniquePlatforms = [...new Set(safeVouchers.flatMap(v => v.platforms ? v.platforms.map(p => p.name) : []))];
         const platformItems = uniquePlatforms.map(p => ({
             name: p,
             type: 'platform',
@@ -80,7 +89,7 @@ const GlobalSearch = () => {
         }));
 
         return [...pages, ...voucherItems, ...cardItems, ...guideItems, ...platformItems];
-    }, []);
+    }, [vouchers, creditCards, guidesData]);
 
     // Toggle search
     const toggleSearch = useCallback((initialFilter = 'all') => {
@@ -107,11 +116,11 @@ const GlobalSearch = () => {
     const addToRecentSearches = useCallback((item) => {
         setRecentSearches(prev => {
             const filtered = prev.filter(s => s.path !== item.path);
-            return [{ 
-                name: item.name, 
-                type: item.type, 
+            return [{
+                name: item.name,
+                type: item.type,
                 path: item.path,
-                icon: item.icon 
+                icon: item.icon
             }, ...filtered].slice(0, MAX_RECENT_SEARCHES);
         });
     }, [setRecentSearches]);
@@ -257,13 +266,13 @@ const GlobalSearch = () => {
     // Handle selection
     const handleSelect = useCallback((item) => {
         addToRecentSearches(item);
-        
+
         if (item.type === 'guide') {
             window.open(item.link || item.path, '_blank');
         } else {
             navigate(item.path);
         }
-        
+
         setIsOpen(false);
         setQuery('');
     }, [navigate, addToRecentSearches]);
@@ -281,14 +290,14 @@ const GlobalSearch = () => {
     // Highlight matching text
     const highlightMatch = useCallback((text, searchQuery) => {
         if (!searchQuery || !text) return text;
-        
+
         const regex = new RegExp(`(${searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
         const parts = text.split(regex);
-        
-        return parts.map((part, i) => 
+
+        return parts.map((part, i) =>
             regex.test(part) ? (
-                <mark key={i} style={{ 
-                    background: 'rgba(6, 182, 212, 0.3)', 
+                <mark key={i} style={{
+                    background: 'rgba(6, 182, 212, 0.3)',
                     color: 'var(--accent-cyan)',
                     borderRadius: '2px',
                     padding: '0 2px',
@@ -430,14 +439,14 @@ const GlobalSearch = () => {
                             style={{
                                 padding: '6px 12px',
                                 borderRadius: '20px',
-                                border: filterType === filter.id 
-                                    ? '1px solid var(--accent-cyan)' 
+                                border: filterType === filter.id
+                                    ? '1px solid var(--accent-cyan)'
                                     : '1px solid var(--glass-border)',
-                                background: filterType === filter.id 
-                                    ? 'rgba(6, 182, 212, 0.15)' 
+                                background: filterType === filter.id
+                                    ? 'rgba(6, 182, 212, 0.15)'
                                     : 'transparent',
-                                color: filterType === filter.id 
-                                    ? 'var(--accent-cyan)' 
+                                color: filterType === filter.id
+                                    ? 'var(--accent-cyan)'
                                     : 'var(--text-secondary)',
                                 fontSize: '0.8rem',
                                 cursor: 'pointer',
@@ -448,8 +457,8 @@ const GlobalSearch = () => {
                             }}
                         >
                             {filter.label}
-                            <span style={{ 
-                                fontSize: '0.65rem', 
+                            <span style={{
+                                fontSize: '0.65rem',
                                 opacity: 0.6,
                                 fontFamily: 'monospace',
                             }}>
@@ -460,12 +469,12 @@ const GlobalSearch = () => {
                 </div>
 
                 {/* Results */}
-                <div 
+                <div
                     ref={resultsRef}
                     id="search-results"
                     role="listbox"
-                    style={{ 
-                        maxHeight: '400px', 
+                    style={{
+                        maxHeight: '400px',
                         overflowY: 'auto',
                     }}
                 >
@@ -489,8 +498,8 @@ const GlobalSearch = () => {
                                             padding: '12px 16px',
                                             borderRadius: '10px',
                                             cursor: 'pointer',
-                                            background: index === selectedIndex 
-                                                ? 'rgba(255, 255, 255, 0.08)' 
+                                            background: index === selectedIndex
+                                                ? 'rgba(255, 255, 255, 0.08)'
                                                 : 'transparent',
                                             transition: 'background 0.15s',
                                         }}
@@ -499,8 +508,8 @@ const GlobalSearch = () => {
                                             {item.icon || '📄'}
                                         </span>
                                         <div style={{ flex: 1, minWidth: 0 }}>
-                                            <div style={{ 
-                                                fontWeight: 500, 
+                                            <div style={{
+                                                fontWeight: 500,
                                                 color: 'var(--text-primary)',
                                                 whiteSpace: 'nowrap',
                                                 overflow: 'hidden',
@@ -508,8 +517,8 @@ const GlobalSearch = () => {
                                             }}>
                                                 {highlightMatch(item.name, query)}
                                             </div>
-                                            <div style={{ 
-                                                fontSize: '0.8rem', 
+                                            <div style={{
+                                                fontSize: '0.8rem',
                                                 color: 'var(--text-secondary)',
                                                 display: 'flex',
                                                 alignItems: 'center',
@@ -550,8 +559,8 @@ const GlobalSearch = () => {
 
                     {/* No Results */}
                     {query && results.length === 0 && (
-                        <div style={{ 
-                            padding: '3rem 2rem', 
+                        <div style={{
+                            padding: '3rem 2rem',
                             textAlign: 'center',
                             color: 'var(--text-secondary)',
                         }}>
@@ -572,8 +581,8 @@ const GlobalSearch = () => {
                                 alignItems: 'center',
                                 padding: '8px 16px',
                             }}>
-                                <span style={{ 
-                                    fontSize: '0.75rem', 
+                                <span style={{
+                                    fontSize: '0.75rem',
                                     color: 'var(--text-secondary)',
                                     fontWeight: 600,
                                     textTransform: 'uppercase',
@@ -614,8 +623,8 @@ const GlobalSearch = () => {
                                             padding: '10px 16px',
                                             borderRadius: '10px',
                                             cursor: 'pointer',
-                                            background: index === selectedIndex 
-                                                ? 'rgba(255, 255, 255, 0.08)' 
+                                            background: index === selectedIndex
+                                                ? 'rgba(255, 255, 255, 0.08)'
                                                 : 'transparent',
                                         }}
                                     >
@@ -660,8 +669,8 @@ const GlobalSearch = () => {
 
                     {/* Empty State - No Query, No Recent */}
                     {!query && recentSearches.length === 0 && (
-                        <div style={{ 
-                            padding: '3rem 2rem', 
+                        <div style={{
+                            padding: '3rem 2rem',
                             textAlign: 'center',
                             color: 'var(--text-secondary)',
                         }}>
@@ -669,7 +678,7 @@ const GlobalSearch = () => {
                             <p style={{ margin: 0 }}>
                                 Search for vouchers, cards, guides, and more...
                             </p>
-                            <div style={{ 
+                            <div style={{
                                 marginTop: '1.5rem',
                                 display: 'flex',
                                 justifyContent: 'center',

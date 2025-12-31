@@ -7,6 +7,7 @@ import { ToastProvider } from './components/UXPolish';
 import { useDebounce } from './hooks/useDebounce';
 import { useFuzzySearch } from './hooks/useFuzzySearch';
 import { useDiscountParser } from './hooks/useDiscountParser';
+import { useVouchers } from './hooks/useVouchers';
 import Layout from './components/Layout';
 import SearchBar from './components/SearchBar';
 import CategoryFilter from './components/CategoryFilter';
@@ -18,9 +19,6 @@ import TopDeals from './components/TopDeals';
 import StatsBar from './components/StatsBar';
 import LoadingSpinner from './components/LoadingSpinner';
 import { featureFlags } from './config/featureFlags';
-import { vouchers as RAW_DATA } from './data/vouchers';
-import { sortPlatforms } from './utils/sortUtils';
-import { seedSampleData, hasSampleData } from './utils/seedData';
 
 // Lazy load route components for code splitting
 const VoucherDetail = lazy(() => import('./components/VoucherDetail'));
@@ -43,18 +41,19 @@ const MyCards = lazy(() => import('./components/MyCards'));
 import QuickCardPicker from './components/QuickCardPicker';
 import OnboardingTour from './components/OnboardingTour';
 
-// Apply global platform sorting
-const INITIAL_DATA = RAW_DATA.map(voucher => ({
-  ...voucher,
-  platforms: sortPlatforms(voucher.platforms)
-}));
+const LoadingScreen = () => (
+  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', flexDirection: 'column', gap: '1rem' }}>
+    <LoadingSpinner size="lg" />
+    <span style={{ color: 'var(--text-secondary)' }}>Loading Vouchers...</span>
+  </div>
+);
 
-// Extract unique platforms and categories from data
-const ALL_PLATFORMS = [...new Set(INITIAL_DATA.flatMap(v => v.platforms.map(p => p.name)))];
-const ALL_CATEGORIES = [...new Set(INITIAL_DATA.map(v => v.category))].sort();
-
-function Home({ onOpenShortcuts }) {
+function Home({ data, onOpenShortcuts }) {
   const [searchParams, setSearchParams] = useSearchParams();
+
+  // Use data from props instead of static RAW_DATA or INITIAL_DATA
+  const ALL_PLATFORMS = useMemo(() => [...new Set(data.flatMap(v => v.platforms.map(p => p.name)))], [data]);
+  const ALL_CATEGORIES = useMemo(() => [...new Set(data.map(v => v.category))].sort(), [data]);
 
   // State variables for filters, initialized from URL search params
   const [searchTerm, setSearchTerm] = useState(searchParams.get('search') || '');
@@ -105,7 +104,8 @@ function Home({ onOpenShortcuts }) {
 
 
   // Use custom fuzzy search hook
-  const searchResults = useFuzzySearch(INITIAL_DATA, searchTerm, {
+  // Use custom fuzzy search hook
+  const searchResults = useFuzzySearch(data, searchTerm, {
     keys: ['brand', 'category'],
     threshold: 0.3
   });
@@ -114,7 +114,7 @@ function Home({ onOpenShortcuts }) {
   const { getMaxDiscount } = useDiscountParser();
 
   const filteredVouchers = useMemo(() => {
-    let result = searchTerm ? searchResults : [...INITIAL_DATA];
+    let result = searchTerm ? searchResults : [...data];
 
     if (selectedPlatform) {
       result = result.filter(voucher =>
@@ -162,7 +162,7 @@ function Home({ onOpenShortcuts }) {
 
     // Sync Voucher Modal
     if (currentVoucherId) {
-      const voucher = INITIAL_DATA.find(v => v.id === currentVoucherId);
+      const voucher = data.find(v => v.id === currentVoucherId);
       if (voucher) {
         setSelectedVoucher(voucher);
       } else {
@@ -258,8 +258,13 @@ function Home({ onOpenShortcuts }) {
         {/* Show Top Deals and Stats only when no filters active */}
         {!searchTerm && !selectedPlatform && !selectedCategory && (
           <>
-            <StatsBar vouchers={INITIAL_DATA} platforms={ALL_PLATFORMS} />
-            <TopDeals vouchers={INITIAL_DATA} onVoucherClick={handleVoucherSelect} />
+            {/* Show Top Deals and Stats only when no filters active */}
+            {!searchTerm && !selectedPlatform && !selectedCategory && (
+              <>
+                <StatsBar vouchers={data} platforms={ALL_PLATFORMS} />
+                <TopDeals vouchers={data} onVoucherClick={handleVoucherSelect} />
+              </>
+            )}
           </>
         )}
 
@@ -293,12 +298,8 @@ function App() {
   const [selectedCards, setSelectedCards] = useState([]);
   const [isShortcutsOpen, setIsShortcutsOpen] = useState(false);
 
-  // Seed sample data on first run (for demo purposes)
-  useEffect(() => {
-    if (!hasSampleData()) {
-      seedSampleData();
-    }
-  }, []);
+  // Use custom hook to fetch data
+  const { vouchers, loading, error } = useVouchers();
 
   // Toggle card selection
   const toggleCardSelection = (cardId) => {
@@ -339,6 +340,9 @@ function App() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
+  if (loading) return <LoadingScreen />;
+  if (error) return <div className="error-screen">Error: {error.message}. Is Backend running?</div>;
+
   return (
     <ThemeProvider>
       <ToastProvider position="bottom-right" maxToasts={5}>
@@ -352,7 +356,7 @@ function App() {
               >
                 <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '400px' }}><LoadingSpinner size="lg" text="Loading..." /></div>}>
                   <Routes>
-                    <Route path="/" element={<Home onOpenShortcuts={() => setIsShortcutsOpen(true)} />} />
+                    <Route path="/" element={<Home data={vouchers} onOpenShortcuts={() => setIsShortcutsOpen(true)} />} />
                     <Route path="/guides" element={<Guides />} />
                     <Route
                       path="/know-your-cards"
@@ -386,7 +390,7 @@ function App() {
                     {featureFlags.bankingGuides && (
                       <Route path="/banking-guides" element={<BankingGuides />} />
                     )}
-                    <Route path="/voucher/:id" element={<VoucherDetail />} />
+                    <Route path="/voucher/:id" element={<VoucherDetail vouchers={vouchers} />} />
                     {featureFlags.askAI && (
                       <Route path="/ask-ai" element={<AskAI />} />
                     )}

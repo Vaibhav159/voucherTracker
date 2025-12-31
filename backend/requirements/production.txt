@@ -1,0 +1,11 @@
+# PRECAUTION: avoid production dependencies that aren't in development
+
+-r base.txt
+
+gunicorn==23.0.0  # https://github.com/benoitc/gunicorn
+psycopg[binary]==3.2.3 ; sys_platform == 'darwin'
+psycopg[c]==3.2.3      ; sys_platform == 'linux'
+
+# Django
+# ------------------------------------------------------------------------------
+django-anymail==12.0  # https://github.com/anymail/django-anymail

@@ -1,33 +1,32 @@
 import { useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
 import { useFavorites } from '../context/FavoritesContext';
-import { creditCards } from '../data/creditCards';
-import { vouchers } from '../data/vouchers';
+import { useVouchers } from '../hooks/useVouchers';
+import { useCreditCards } from '../hooks/useCreditCards';
+import VoucherCard from './VoucherCard';
+import { Link } from 'react-router-dom';
 import { wealthBanking, familyBanking } from '../data/bankingPrograms';
 import guidesData from '../data/guides.json';
 import CardImage from './CardImage';
+import LoadingSpinner from './LoadingSpinner';
 
 const Favorites = () => {
+    const { favoriteVouchers, favoriteCards, favoriteGuides, isVoucherFavorite, isCardFavorite, toggleFavoriteVoucher, toggleFavoriteCard, toggleFavoriteGuide, totalFavorites } = useFavorites();
+    const { vouchers, loading: vouchersLoading } = useVouchers();
+    const { creditCards, loading: cardsLoading } = useCreditCards();
+
     const [activeTab, setActiveTab] = useState('cards');
-    const {
-        favoriteCards,
-        favoriteVouchers,
-        favoriteGuides,
-        toggleFavoriteCard,
-        toggleFavoriteVoucher,
-        toggleFavoriteGuide,
-        totalFavorites
-    } = useFavorites();
 
-    // Get full card objects for favorited cards
-    const favoritedCardObjects = useMemo(() => {
-        return creditCards.filter(card => favoriteCards.includes(card.id));
-    }, [favoriteCards]);
-
-    // Get full voucher objects for favorited vouchers
+    // Get Voucher Objects
     const favoritedVoucherObjects = useMemo(() => {
-        return vouchers.filter(voucher => favoriteVouchers.includes(voucher.id));
-    }, [favoriteVouchers]);
+        if (!vouchers) return [];
+        return vouchers.filter(v => isVoucherFavorite(v.id));
+    }, [vouchers, favoriteVouchers, isVoucherFavorite]);
+
+    // Get Card Objects
+    const favoritedCardObjects = useMemo(() => {
+        if (!creditCards) return [];
+        return creditCards.filter(c => isCardFavorite(c.id));
+    }, [creditCards, favoriteCards, isCardFavorite]);
 
     // Parse guide IDs to get guide info
     // Handles both community guides (simple IDs like "1", "2") and banking guides (format: "bank::type::tier")
@@ -69,6 +68,17 @@ const Favorites = () => {
     // Separate community guides from banking guides for counts
     const communityGuideCount = favoritedGuideObjects.filter(g => g.type === 'community').length;
     const bankingGuideCount = favoritedGuideObjects.filter(g => g.type !== 'community').length;
+
+    const loading = vouchersLoading || cardsLoading;
+
+    if (loading) {
+        return (
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '50vh', flexDirection: 'column', gap: '1rem' }}>
+                <LoadingSpinner size="lg" />
+                <span style={{ color: 'var(--text-secondary)' }}>Loading your favorites...</span>
+            </div>
+        );
+    }
 
     const tabs = [
         { id: 'cards', label: '💳 Cards', count: favoriteCards.length },

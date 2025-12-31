@@ -14,15 +14,18 @@ export const useLocalStorage = (key, initialValue) => {
       return initialValue;
     }
 
-    try {
-      // Get from local storage by key
-      const item = window.localStorage.getItem(key);
-      // Parse stored json or if none return initialValue
-      return item ? JSON.parse(item) : initialValue;
-    } catch (error) {
-      // If error (parsing error, quota exceeded, etc.), return initial value
-      console.error(`Error reading localStorage key "${key}":`, error);
+    const item = window.localStorage.getItem(key);
+
+    if (!item) {
       return initialValue;
+    }
+
+    try {
+      // Try to parse as JSON
+      return JSON.parse(item);
+    } catch (error) {
+      // Fallback: if not valid JSON, return as-is (handles legacy raw strings)
+      return item;
     }
   });
 
@@ -38,13 +41,13 @@ export const useLocalStorage = (key, initialValue) => {
 
       // Save to local storage
       if (typeof window !== 'undefined') {
+        // If value is a string, we still JSON.stringify it to keep it consistent
+        // But if we want to support raw strings from other sources, we just have to be careful
         window.localStorage.setItem(key, JSON.stringify(valueToStore));
       }
     } catch (error) {
-      // Handle quota exceeded error
       if (error.name === 'QuotaExceededError') {
         console.error(`localStorage quota exceeded for key "${key}"`);
-        // Optionally: Could trigger a cleanup function or notify user
       } else {
         console.error(`Error writing localStorage key "${key}":`, error);
       }
@@ -58,7 +61,8 @@ export const useLocalStorage = (key, initialValue) => {
         try {
           setStoredValue(JSON.parse(e.newValue));
         } catch (error) {
-          console.error(`Error parsing storage event for key "${key}":`, error);
+          // Fallback for non-JSON strings
+          setStoredValue(e.newValue);
         }
       }
     };
