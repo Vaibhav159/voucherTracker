@@ -8,7 +8,15 @@ from rest_framework import viewsets, filters, permissions, decorators, response
 
 from .models import Voucher, VoucherPlatform, VoucherMismatch, Platform
 from .choices import VoucherMismatchStatus, PlatformName
-from .serializers import VoucherSerializer
+from .models import Voucher, VoucherPlatform, VoucherMismatch, Platform
+from .choices import VoucherMismatchStatus, PlatformName
+from .serializers import VoucherSerializer, PlatformSerializer
+
+
+class PlatformViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Platform.objects.all()
+    serializer_class = PlatformSerializer
+    permission_classes = [permissions.AllowAny]
 
 
 @method_decorator(cache_page(60 * 15), name='dispatch')

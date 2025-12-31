@@ -7,21 +7,18 @@ class PlatformSerializer(serializers.ModelSerializer):
         fields = ["id", "name", "icon_url"]
 
 class VoucherPlatformSerializer(serializers.ModelSerializer):
-    platform = PlatformSerializer(read_only=True)
+    name = serializers.CharField(source='platform.name', read_only=True)
     
     class Meta:
         model = VoucherPlatform
-        fields = ["platform", "cap", "fee", "denominations", "link", "color", "priority"]
-
-class VoucherAliasSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = VoucherAlias
-        fields = ["name"]
+        fields = ["name", "cap", "fee", "denominations", "link", "color"]
 
 class VoucherSerializer(serializers.ModelSerializer):
+    brand = serializers.CharField(source='name')
+    site = serializers.CharField(source='site_link')
     platforms = VoucherPlatformSerializer(many=True, read_only=True)
-    aliases = VoucherAliasSerializer(many=True, read_only=True)
+    lastUpdated = serializers.DateTimeField(source='updated_at', format="%Y-%m-%d", read_only=True)
 
     class Meta:
         model = Voucher
-        fields = ["id", "name", "logo", "category", "site_link", "created_at", "updated_at", "platforms", "aliases"]
+        fields = ["id", "brand", "logo", "category", "site", "platforms", "lastUpdated"]

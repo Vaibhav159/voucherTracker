@@ -9,7 +9,7 @@ def test_voucher_list(client):
     response = client.get("/api/vouchers/")
     assert response.status_code == 200
     assert len(response.data) >= 1
-    assert response.data[0]["name"] == "Amazon"
+    assert response.data[0]["brand"] == "Amazon"
 
 @pytest.mark.django_db
 def test_voucher_filter(client):
@@ -22,4 +22,4 @@ def test_voucher_filter(client):
     # If paginated, data is in 'results'
     data = response.data['results'] if 'results' in response.data else response.data
     assert len(data) == 1
-    assert data[0]["name"] == "Dominos"
+    assert data[0]["brand"] == "Dominos"
