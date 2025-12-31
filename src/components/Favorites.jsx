@@ -4,6 +4,7 @@ import { useFavorites } from '../context/FavoritesContext';
 import { creditCards } from '../data/creditCards';
 import { vouchers } from '../data/vouchers';
 import { wealthBanking, familyBanking } from '../data/bankingPrograms';
+import guidesData from '../data/guides.json';
 import CardImage from './CardImage';
 
 const Favorites = () => {
@@ -28,26 +29,52 @@ const Favorites = () => {
         return vouchers.filter(voucher => favoriteVouchers.includes(voucher.id));
     }, [favoriteVouchers]);
 
-    // Parse guide IDs to get guide info (format: "bank-type-tier")
+    // Parse guide IDs to get guide info
+    // Handles both community guides (simple IDs like "1", "2") and banking guides (format: "bank::type::tier")
     const favoritedGuideObjects = useMemo(() => {
         return favoriteGuides.map(guideId => {
-            const [bank, type, tierName] = guideId.split('::');
-            const data = type === 'wealth' ? wealthBanking[bank] : familyBanking[bank];
-            if (!data) return null;
-
-            if (type === 'wealth') {
-                const tier = data.tiers?.find(t => t.name === tierName);
-                return tier ? { id: guideId, bank, type, ...tier } : null;
-            } else {
-                return { id: guideId, bank, type, ...data };
+            // First, check if it's a community guide (simple ID)
+            const communityGuide = guidesData.find(g => g.id === guideId);
+            if (communityGuide) {
+                return {
+                    id: guideId,
+                    type: 'community',
+                    title: communityGuide.title,
+                    description: communityGuide.description,
+                    author: communityGuide.author,
+                    link: communityGuide.link,
+                    tags: communityGuide.tags
+                };
             }
+
+            // Otherwise, try parsing as banking guide (format: "bank::type::tierName")
+            const parts = guideId.split('::');
+            if (parts.length >= 2) {
+                const [bank, type, tierName] = parts;
+                const data = type === 'wealth' ? wealthBanking[bank] : familyBanking[bank];
+                if (!data) return null;
+
+                if (type === 'wealth') {
+                    const tier = data.tiers?.find(t => t.name === tierName);
+                    return tier ? { id: guideId, bank, type, ...tier } : null;
+                } else {
+                    return { id: guideId, bank, type, ...data };
+                }
+            }
+
+            return null;
         }).filter(Boolean);
     }, [favoriteGuides]);
+
+    // Separate community guides from banking guides for counts
+    const communityGuideCount = favoritedGuideObjects.filter(g => g.type === 'community').length;
+    const bankingGuideCount = favoritedGuideObjects.filter(g => g.type !== 'community').length;
 
     const tabs = [
         { id: 'cards', label: '💳 Cards', count: favoriteCards.length },
         { id: 'vouchers', label: '🎟️ Vouchers', count: favoriteVouchers.length },
-        { id: 'guides', label: '📚 Guides', count: favoriteGuides.length },
+        { id: 'guides', label: '📚 Guides', count: communityGuideCount },
+        { id: 'banking', label: '🏦 Banking', count: bankingGuideCount },
     ];
 
     return (
@@ -215,49 +242,102 @@ const Favorites = () => {
                     </div>
                 )}
 
-                {/* Guides Tab */}
+                {/* Guides Tab - Community Guides only */}
                 {activeTab === 'guides' && (
                     <div>
-                        {favoritedGuideObjects.length === 0 ? (
+                        {communityGuideCount === 0 ? (
                             <EmptyState
                                 icon="📚"
-                                title="No bookmarked guides yet"
-                                description="Browse banking guides and click the bookmark icon to save them."
-                                link="/banking-guides"
+                                title="No saved community guides"
+                                description="Browse guides and click the heart icon to save them."
+                                link="/guides"
                                 linkText="Browse Guides"
                             />
                         ) : (
                             <div className="favorites-grid favorites-grid-guides">
-                                {favoritedGuideObjects.map(guide => (
-                                    <div key={guide.id} className="favorite-guide glass-panel">
-                                        <button
-                                            className="favorite-remove-btn"
-                                            onClick={() => toggleFavoriteGuide(guide.id)}
-                                            title="Remove from favorites"
-                                        >
-                                            ✕
-                                        </button>
-                                        <Link to="/banking-guides" className="favorite-guide-link">
-                                            <div className="favorite-guide-header">
-                                                <span className="favorite-guide-type">
-                                                    {guide.type === 'wealth' ? '💎 Wealth' : '👨‍👩‍👧‍👦 Family'}
-                                                </span>
-                                                <span className="favorite-guide-bank">{guide.bank}</span>
-                                            </div>
-                                            <h4>{guide.name}</h4>
-                                            {guide.minNRV && (
-                                                <p className="favorite-guide-nrv">Min NRV: {guide.minNRV}</p>
-                                            )}
-                                            {guide.eligibleCards && (
-                                                <div className="favorite-guide-cards">
-                                                    {guide.eligibleCards.slice(0, 2).map((card, i) => (
-                                                        <span key={i} className="card-tag">{card}</span>
-                                                    ))}
+                                {favoritedGuideObjects
+                                    .filter(guide => guide.type === 'community')
+                                    .map(guide => (
+                                        <div key={guide.id} className="favorite-guide glass-panel">
+                                            <button
+                                                className="favorite-remove-btn"
+                                                onClick={() => toggleFavoriteGuide(guide.id)}
+                                                title="Remove from favorites"
+                                            >
+                                                ✕
+                                            </button>
+                                            <a
+                                                href={guide.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="favorite-guide-link"
+                                                style={{ textDecoration: 'none' }}
+                                            >
+                                                <div className="favorite-guide-header">
+                                                    <span className="favorite-guide-type">📝 Community</span>
+                                                    <span className="favorite-guide-bank">{guide.author}</span>
                                                 </div>
-                                            )}
-                                        </Link>
-                                    </div>
-                                ))}
+                                                <h4>{guide.title}</h4>
+                                                {guide.tags && (
+                                                    <div className="favorite-guide-cards" style={{ marginTop: '0.5rem' }}>
+                                                        {guide.tags.slice(0, 2).map((tag, i) => (
+                                                            <span key={i} className="card-tag">{tag}</span>
+                                                        ))}
+                                                    </div>
+                                                )}
+                                            </a>
+                                        </div>
+                                    ))}
+                            </div>
+                        )}
+                    </div>
+                )}
+
+                {/* Banking Tab - Wealth/Family Banking Guides */}
+                {activeTab === 'banking' && (
+                    <div>
+                        {bankingGuideCount === 0 ? (
+                            <EmptyState
+                                icon="🏦"
+                                title="No saved banking guides"
+                                description="Browse banking guides and click the bookmark icon to save them."
+                                link="/banking-guides"
+                                linkText="Browse Banking Guides"
+                            />
+                        ) : (
+                            <div className="favorites-grid favorites-grid-guides">
+                                {favoritedGuideObjects
+                                    .filter(guide => guide.type !== 'community')
+                                    .map(guide => (
+                                        <div key={guide.id} className="favorite-guide glass-panel">
+                                            <button
+                                                className="favorite-remove-btn"
+                                                onClick={() => toggleFavoriteGuide(guide.id)}
+                                                title="Remove from favorites"
+                                            >
+                                                ✕
+                                            </button>
+                                            <Link to="/banking-guides" className="favorite-guide-link">
+                                                <div className="favorite-guide-header">
+                                                    <span className="favorite-guide-type">
+                                                        {guide.type === 'wealth' ? '💎 Wealth' : '👨‍👩‍👧‍👦 Family'}
+                                                    </span>
+                                                    <span className="favorite-guide-bank">{guide.bank}</span>
+                                                </div>
+                                                <h4>{guide.name}</h4>
+                                                {guide.minNRV && (
+                                                    <p className="favorite-guide-nrv">Min NRV: {guide.minNRV}</p>
+                                                )}
+                                                {guide.eligibleCards && (
+                                                    <div className="favorite-guide-cards">
+                                                        {guide.eligibleCards.slice(0, 2).map((card, i) => (
+                                                            <span key={i} className="card-tag">{card}</span>
+                                                        ))}
+                                                    </div>
+                                                )}
+                                            </Link>
+                                        </div>
+                                    ))}
                             </div>
                         )}
                     </div>

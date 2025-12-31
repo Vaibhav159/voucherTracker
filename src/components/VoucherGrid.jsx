@@ -1,25 +1,133 @@
-import React from 'react';
+/**
+ * VoucherGrid - FIXED VERSION
+ * 
+ * Fixes:
+ * - Proper width calculation to prevent horizontal overflow
+ * - Cards no longer cut off on the right
+ * - Better responsive column calculation
+ */
+
+import React, { useRef, useMemo, useCallback, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import VoucherCard from './VoucherCard';
+import { useVirtualizer } from '@tanstack/react-virtual';
+import VoucherCard from './VoucherCardPolished';
 import EmptyState from './EmptyState';
-import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { VoucherGridSkeleton } from './Skeleton';
 
-const VoucherGrid = ({ vouchers, onVoucherClick }) => {
-    const [visibleCount, setVisibleCount] = React.useState(12);
+const CARD_MIN_WIDTH = 280;
+const CARD_GAP = 24;
+const CARD_HEIGHT = 280;
+const OVERSCAN = 5;
 
-    // Reset visible count when vouchers list changes (e.g. filter)
-    React.useEffect(() => {
-        setVisibleCount(12);
+const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
+    const parentRef = useRef(null);
+    const [columns, setColumns] = useState(3);
+    const [containerWidth, setContainerWidth] = useState(0);
+    const [isInitialLoad, setIsInitialLoad] = useState(true);
+
+    // Simulate initial load delay for skeleton demo
+    useEffect(() => {
+        if (vouchers && vouchers.length > 0) {
+            const timer = setTimeout(() => setIsInitialLoad(false), 300);
+            return () => clearTimeout(timer);
+        }
     }, [vouchers]);
 
-    // Use custom intersection observer hook for infinite scroll
-    const observerRef = useIntersectionObserver(
-        React.useCallback(() => {
-            setVisibleCount((prev) => Math.min(prev + 12, vouchers.length));
-        }, [vouchers.length]),
-        { threshold: 0.1 }
-    );
+    // Calculate columns based on container width - FIXED VERSION
+    useEffect(() => {
+        const calculateColumns = () => {
+            if (!parentRef.current) return;
+            
+            // Get actual available width (accounting for padding/scrollbar)
+            const containerRect = parentRef.current.getBoundingClientRect();
+            const width = containerRect.width - 16; // Account for padding
+            
+            setContainerWidth(width);
+            
+            // Calculate how many cards can fit
+            // Formula: (width + gap) / (cardWidth + gap) = number of cards
+            const possibleCols = Math.floor((width + CARD_GAP) / (CARD_MIN_WIDTH + CARD_GAP));
+            const cols = Math.max(1, Math.min(possibleCols, 4)); // Max 4 columns
+            
+            setColumns(cols);
+        };
 
+        calculateColumns();
+        
+        // Use ResizeObserver for responsive updates
+        const resizeObserver = new ResizeObserver(() => {
+            requestAnimationFrame(calculateColumns);
+        });
+        
+        if (parentRef.current) {
+            resizeObserver.observe(parentRef.current);
+        }
+
+        // Also listen to window resize as backup
+        window.addEventListener('resize', calculateColumns);
+
+        return () => {
+            resizeObserver.disconnect();
+            window.removeEventListener('resize', calculateColumns);
+        };
+    }, []);
+
+    // Group vouchers into rows
+    const rows = useMemo(() => {
+        if (!vouchers || vouchers.length === 0) return [];
+        const result = [];
+        for (let i = 0; i < vouchers.length; i += columns) {
+            result.push(vouchers.slice(i, i + columns));
+        }
+        return result;
+    }, [vouchers, columns]);
+
+    const getRowHeight = useCallback(() => CARD_HEIGHT + CARD_GAP, []);
+
+    const virtualizer = useVirtualizer({
+        count: rows.length,
+        getScrollElement: () => parentRef.current,
+        estimateSize: getRowHeight,
+        overscan: OVERSCAN,
+    });
+
+    // Calculate stats
+    const stats = useMemo(() => {
+        if (!vouchers || vouchers.length === 0) {
+            return { total: 0, brands: 0, platforms: 0, maxDiscount: 0 };
+        }
+
+        const uniqueBrands = new Set(vouchers.map(v => v.brand)).size;
+        const uniquePlatforms = new Set(
+            vouchers.flatMap(v => v.platforms.map(p => p.name))
+        ).size;
+
+        let maxDisc = 0;
+        vouchers.forEach(v => {
+            v.platforms.forEach(p => {
+                const fee = p.fee || '';
+                const match = fee.match(/(\d+(?:\.\d+)?)\s*%/);
+                if (match) {
+                    const discount = parseFloat(match[1]);
+                    if (discount > maxDisc) maxDisc = discount;
+                }
+            });
+        });
+
+        return {
+            total: vouchers.length,
+            brands: uniqueBrands,
+            platforms: uniquePlatforms,
+            maxDiscount: Math.round(maxDisc)
+        };
+    }, [vouchers]);
+
+    // Show skeleton during loading
+    if (isLoading || isInitialLoad) {
+        return <VoucherGridSkeleton count={9} />;
+    }
+
+    // Empty state
     if (!vouchers || vouchers.length === 0) {
         return (
             <EmptyState
@@ -30,70 +138,90 @@ const VoucherGrid = ({ vouchers, onVoucherClick }) => {
         );
     }
 
-    const stats = React.useMemo(() => {
-        if (!vouchers) return { total: 0, platforms: 0, maxDiscount: 0 };
-        const uniqueBrands = new Set(vouchers.map(v => v.brand)).size;
-        const maxDisc = Math.max(...vouchers.map(v => v.discount || 0), 0);
-        return {
-            total: vouchers.length,
-            platforms: uniqueBrands,
-            maxDiscount: maxDisc
-        };
-    }, [vouchers]);
+    const virtualRows = virtualizer.getVirtualItems();
 
-    const visibleVouchers = vouchers.slice(0, visibleCount);
+    // Calculate actual card width based on container and columns
+    const cardWidth = containerWidth > 0 
+        ? Math.floor((containerWidth - (CARD_GAP * (columns - 1))) / columns)
+        : CARD_MIN_WIDTH;
 
     return (
         <>
-            {/* Stats Bar */}
-            <div className="stats-bar">
-                <div className="stat-item">
-                    <span className="stat-icon">🎫</span>
-                    <div>
-                        <div className="stat-value text-cyan">{stats.total}</div>
-                        <div className="stat-label">Vouchers</div>
-                    </div>
+            {/* Virtualized Grid Container */}
+            <div
+                ref={parentRef}
+                className="voucher-grid-virtual-container"
+                role="feed"
+                aria-busy={isLoading}
+                aria-label={`${stats.total} vouchers available`}
+                style={{
+                    height: 'calc(100vh - 350px)',
+                    minHeight: '500px',
+                    overflow: 'auto',
+                    overflowX: 'hidden', // PREVENT HORIZONTAL SCROLL
+                    contain: 'strict',
+                    padding: '0 8px',
+                    boxSizing: 'border-box',
+                }}
+            >
+                <div
+                    style={{
+                        height: `${virtualizer.getTotalSize()}px`,
+                        width: '100%',
+                        position: 'relative',
+                    }}
+                >
+                    {virtualRows.map((virtualRow) => {
+                        const rowVouchers = rows[virtualRow.index];
+                        
+                        return (
+                            <div
+                                key={virtualRow.key}
+                                data-index={virtualRow.index}
+                                ref={virtualizer.measureElement}
+                                role="group"
+                                aria-label={`Voucher row ${virtualRow.index + 1}`}
+                                style={{
+                                    position: 'absolute',
+                                    top: 0,
+                                    left: 0,
+                                    width: '100%',
+                                    transform: `translateY(${virtualRow.start}px)`,
+                                    display: 'grid',
+                                    // USE fr UNITS INSTEAD OF minmax TO PREVENT OVERFLOW
+                                    gridTemplateColumns: `repeat(${columns}, 1fr)`,
+                                    gap: `${CARD_GAP}px`,
+                                    boxSizing: 'border-box',
+                                }}
+                            >
+                                {rowVouchers.map((voucher, colIndex) => (
+                                    <VoucherCard
+                                        key={voucher.id}
+                                        voucher={voucher}
+                                        onClick={onVoucherClick}
+                                        index={virtualRow.index * columns + colIndex}
+                                    />
+                                ))}
+                            </div>
+                        );
+                    })}
                 </div>
-                <div className="stat-item">
-                    <span className="stat-icon">🏪</span>
-                    <div>
-                        <div className="stat-value text-pink">{stats.platforms}</div>
-                        <div className="stat-label">Platforms</div>
-                    </div>
-                </div>
-                {stats.maxDiscount > 0 && (
-                    <div className="stat-item">
-                        <span className="stat-icon">🔥</span>
-                        <div>
-                            <div className="stat-value text-success">{stats.maxDiscount}%</div>
-                            <div className="stat-label">Max Discount</div>
-                        </div>
-                    </div>
-                )}
             </div>
 
-            {/* Main Grid */}
-            <div className="voucher-grid">
-                {visibleVouchers.map(voucher => (
-                    <VoucherCard
-                        key={voucher.id}
-                        voucher={voucher}
-                        onClick={onVoucherClick}
-                    />
-                ))}
-            </div>
-
-            {/* Sentinel element for infinite scroll */}
-            {
-                visibleCount < vouchers.length && (
-                    <div
-                        ref={observerRef}
-                        className="loading-more"
-                    >
-                        Loading more...
-                    </div>
-                )
-            }
+            {/* Scroll indicator */}
+            {vouchers.length > 20 && (
+                <div 
+                    style={{
+                        textAlign: 'center',
+                        padding: '1rem',
+                        color: 'var(--text-secondary)',
+                        fontSize: '0.85rem',
+                    }}
+                    aria-live="polite"
+                >
+                    Showing {Math.min(virtualRows.length * columns, vouchers.length)} of {vouchers.length} vouchers
+                </div>
+            )}
         </>
     );
 };
@@ -108,6 +236,7 @@ VoucherGrid.propTypes = {
         platforms: PropTypes.array,
     })),
     onVoucherClick: PropTypes.func,
+    isLoading: PropTypes.bool,
 };
 
 export default VoucherGrid;

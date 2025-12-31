@@ -6,18 +6,39 @@ import RatingStars from './RatingStars';
 import { useReviews } from '../hooks/useReviews';
 import { useFavorites } from '../context/FavoritesContext';
 
-const VoucherCard = ({ voucher, onClick }) => {
+const VoucherCard = ({ voucher, onClick, index = 0 }) => {
   const platformNames = voucher.platforms.map(p => p.name);
   const { averageRating, reviewCount } = useReviews(voucher.id);
   const { toggleFavoriteVoucher, isVoucherFavorite } = useFavorites();
   const isFavorite = isVoucherFavorite(voucher.id);
+
+  // Calculate max discount from platform fees
+  const maxDiscount = React.useMemo(() => {
+    let max = 0;
+    voucher.platforms.forEach(p => {
+      const fee = p.fee || '';
+      const match = fee.match(/(\d+(?:\.\d+)?)\s*%/);
+      if (match) {
+        const discount = parseFloat(match[1]);
+        if (discount > max) max = discount;
+      }
+    });
+    return Math.round(max);
+  }, [voucher.platforms]);
+
+  // Staggered animation delay (max 0.5s)
+  const animationDelay = Math.min(index * 0.03, 0.5);
 
   return (
     <button
       onClick={() => onClick && onClick(voucher)}
       className="glass-panel voucher-card"
       aria-label={`View details for ${voucher.brand} in ${voucher.category} category. Available on ${platformNames.length} platform${platformNames.length > 1 ? 's' : ''}`}
-      style={{ position: 'relative' }}
+      data-tour={index === 0 ? "voucher-card" : undefined}
+      style={{
+        position: 'relative',
+        animationDelay: `${animationDelay}s`
+      }}
     >
       {/* Favorite Toggle Button */}
       <span
@@ -54,6 +75,29 @@ const VoucherCard = ({ voucher, onClick }) => {
       >
         {isFavorite ? '❤️' : '🤍'}
       </span>
+
+      {/* Discount Badge */}
+      {maxDiscount > 0 && (
+        <span
+          className="voucher-discount-badge"
+          style={{
+            position: 'absolute',
+            top: '0.75rem',
+            left: '0.75rem',
+            background: 'linear-gradient(135deg, #22c55e, #16a34a)',
+            color: '#fff',
+            fontSize: '0.7rem',
+            fontWeight: 700,
+            padding: '4px 8px',
+            borderRadius: '6px',
+            boxShadow: '0 2px 8px rgba(34, 197, 94, 0.3)',
+            zIndex: 5
+          }}
+        >
+          {maxDiscount}% OFF
+        </span>
+      )}
+
       <div className="voucher-card__header">
         <div className="voucher-card__logo">
           <img
@@ -127,6 +171,7 @@ VoucherCard.propTypes = {
     })).isRequired,
   }).isRequired,
   onClick: PropTypes.func,
+  index: PropTypes.number,
 };
 
 export default VoucherCard;

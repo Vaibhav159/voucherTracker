@@ -1,0 +1,321 @@
+/**
+ * Mobile UX Polish
+ * 
+ * Improvements for mobile experience:
+ * - Larger touch targets (48px minimum)
+ * - Better tap feedback
+ * - Swipe-friendly spacing
+ * - Bottom navigation safe area
+ * - Reduced motion support
+ */
+
+/* ============================================
+   TOUCH TARGETS
+   ============================================ */
+
+/* Ensure minimum 48px touch targets on mobile */
+@media (max-width: 768px) {
+    /* All interactive elements */
+    button,
+    a,
+    [role="button"],
+    input[type="checkbox"],
+    input[type="radio"],
+    .clickable {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Favorite buttons need larger targets */
+    .voucher-card [role="button"],
+    .favorite-btn {
+        min-width: 48px;
+        min-height: 48px;
+    }
+
+    /* Filter buttons */
+    .platform-card,
+    .category-item {
+        min-height: 48px;
+        padding: 12px 16px;
+    }
+
+    /* Form inputs */
+    input,
+    select,
+    textarea {
+        min-height: 48px;
+        font-size: 16px; /* Prevents iOS zoom */
+    }
+
+    /* Navigation items */
+    .nav-item {
+        min-height: 44px;
+        padding: 12px 16px;
+    }
+}
+
+/* ============================================
+   TAP FEEDBACK
+   ============================================ */
+
+/* Disable default highlight */
+button,
+a,
+[role="button"] {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Custom tap feedback */
+@media (hover: none) and (pointer: coarse) {
+    button:active,
+    a:active,
+    [role="button"]:active,
+    .voucher-card:active {
+        transform: scale(0.98);
+        opacity: 0.9;
+    }
+
+    .glass-panel:active {
+        transform: scale(0.995);
+    }
+}
+
+/* ============================================
+   SAFE AREAS
+   ============================================ */
+
+/* Bottom navigation safe area */
+.mobile-sticky-bar {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Header safe area */
+header {
+    padding-top: env(safe-area-inset-top, 0px);
+}
+
+/* Modal safe areas */
+.modal-overlay {
+    padding: env(safe-area-inset-top, 20px) 
+             env(safe-area-inset-right, 20px) 
+             env(safe-area-inset-bottom, 20px) 
+             env(safe-area-inset-left, 20px);
+}
+
+/* ============================================
+   SWIPE-FRIENDLY SPACING
+   ============================================ */
+
+@media (max-width: 768px) {
+    /* Add padding for swipe gestures */
+    .voucher-grid-virtual-container {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    /* Cards should have breathing room */
+    .voucher-card {
+        margin: 4px;
+    }
+
+    /* Horizontal scroll containers */
+    .horizontal-scroll {
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .horizontal-scroll::-webkit-scrollbar {
+        display: none;
+    }
+
+    .horizontal-scroll > * {
+        scroll-snap-align: start;
+    }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .voucher-card,
+    .glass-panel {
+        transform: none !important;
+    }
+
+    /* Keep essential feedback */
+    button:active {
+        opacity: 0.8;
+    }
+}
+
+/* ============================================
+   IMPROVED SCROLLING
+   ============================================ */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Prevent overscroll on body */
+body {
+    overscroll-behavior-y: contain;
+}
+
+/* Momentum scrolling on iOS */
+.scroll-container {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+}
+
+/* ============================================
+   MOBILE MODAL IMPROVEMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+    /* Full-width modals on mobile */
+    .modal-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        max-height: 90vh;
+        border-radius: 20px 20px 0 0;
+        margin: auto 0 0 0;
+    }
+
+    /* Bottom sheet style */
+    .modal-overlay {
+        align-items: flex-end;
+    }
+
+    /* Drag handle for modals */
+    .modal-content::before {
+        content: '';
+        display: block;
+        width: 40px;
+        height: 4px;
+        background: var(--glass-border);
+        border-radius: 2px;
+        margin: 12px auto;
+    }
+}
+
+/* ============================================
+   TOAST POSITIONING
+   ============================================ */
+
+@media (max-width: 768px) {
+    /* Move toasts above mobile nav */
+    .toast-container {
+        bottom: 80px !important;
+        left: 12px !important;
+        right: 12px !important;
+    }
+
+    .toast-container > div {
+        max-width: 100% !important;
+    }
+}
+
+/* ============================================
+   KEYBOARD VISIBILITY
+   ============================================ */
+
+/* When keyboard is visible, adjust layout */
+@media (max-height: 500px) and (max-width: 768px) {
+    .mobile-sticky-bar {
+        display: none;
+    }
+
+    .modal-content {
+        max-height: 100vh;
+    }
+}
+
+/* ============================================
+   PULL TO REFRESH INDICATOR
+   ============================================ */
+
+.pull-indicator {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%);
+    padding: 8px 16px;
+    background: var(--glass-bg);
+    border-radius: 0 0 12px 12px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    transition: transform 0.2s ease;
+    z-index: 100;
+}
+
+.pull-indicator.visible {
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ============================================
+   LOADING STATES
+   ============================================ */
+
+/* Skeleton shimmer that works on mobile */
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        var(--skeleton-base, rgba(255, 255, 255, 0.05)) 0%,
+        var(--skeleton-highlight, rgba(255, 255, 255, 0.1)) 50%,
+        var(--skeleton-base, rgba(255, 255, 255, 0.05)) 100%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* ============================================
+   FOCUS VISIBLE (Keyboard Navigation)
+   ============================================ */
+
+/* Only show focus ring for keyboard users */
+*:focus {
+    outline: none;
+}
+
+*:focus-visible {
+    outline: 2px solid var(--accent-cyan);
+    outline-offset: 2px;
+}
+
+/* ============================================
+   HAPTIC FEEDBACK HINTS
+   ============================================ */
+
+/* Visual hint that element has haptic feedback */
+@media (hover: none) and (pointer: coarse) {
+    .has-haptic::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: transparent;
+        pointer-events: none;
+        transition: background 0.1s;
+    }
+
+    .has-haptic:active::after {
+        background: rgba(255, 255, 255, 0.1);
+    }
+}
