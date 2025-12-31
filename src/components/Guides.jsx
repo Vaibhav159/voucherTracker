@@ -1,10 +1,11 @@
 
 import React, { useEffect, useState, useMemo } from 'react';
-import guidesData from '../data/guides.json';
+import { useGuides } from '../hooks/useGuides';
 import { useTheme } from '../context/ThemeContext';
-
+import LoadingSpinner from './LoadingSpinner';
 
 const RedditEmbed = ({ embedHtml, theme, onLoad }) => {
+    // ... (unchanged)
     const containerRef = React.useRef(null);
     const [isLoaded, setIsLoaded] = useState(false);
 
@@ -209,25 +210,31 @@ const GuideModal = ({ guide, onClose }) => {
 };
 
 const Guides = () => {
+    const { guides: guidesData, loading, error } = useGuides();
     const [selectedGuide, setSelectedGuide] = useState(null);
     const [selectedTag, setSelectedTag] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
 
     // Extract unique tags
     const allTags = useMemo(() => {
+        if (!guidesData) return [];
         const tags = new Set();
         guidesData.forEach(guide => {
-            guide.tags.forEach(tag => tags.add(tag));
+            if (guide.tags) {
+                guide.tags.forEach(tag => tags.add(tag));
+            }
         });
         return Array.from(tags).sort();
-    }, []);
+    }, [guidesData]);
 
+    // ... (rest of filtering logic)
     const filteredGuides = useMemo(() => {
-        let guides = guidesData;
+        if (!guidesData) return [];
+        let guides = [...guidesData]; // Copy to avoid mutation
 
         // Filter by tag
         if (selectedTag) {
-            guides = guides.filter(guide => guide.tags.includes(selectedTag));
+            guides = guides.filter(guide => guide.tags && guide.tags.includes(selectedTag));
         }
 
         // Filter by search term
@@ -235,14 +242,14 @@ const Guides = () => {
             const lowerSearch = searchTerm.toLowerCase();
             guides = guides.filter(guide =>
                 guide.title.toLowerCase().includes(lowerSearch) ||
-                guide.description.toLowerCase().includes(lowerSearch) ||
-                guide.tags.some(tag => tag.toLowerCase().includes(lowerSearch)) ||
-                guide.author.toLowerCase().includes(lowerSearch)
+                (guide.description && guide.description.toLowerCase().includes(lowerSearch)) ||
+                (guide.tags && guide.tags.some(tag => tag.toLowerCase().includes(lowerSearch))) ||
+                (guide.author && guide.author.toLowerCase().includes(lowerSearch))
             );
         }
 
         return guides;
-    }, [selectedTag, searchTerm]);
+    }, [guidesData, selectedTag, searchTerm]);
 
     useEffect(() => {
         // Load Twitter Widget Script globally
@@ -255,6 +262,23 @@ const Guides = () => {
             document.body.appendChild(script);
         }
     }, []);
+
+    if (loading) {
+        return (
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '50vh' }}>
+                <LoadingSpinner size="lg" />
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div style={{ textAlign: 'center', padding: '4rem', color: 'var(--text-danger)' }}>
+                <h3>Error loading guides</h3>
+                <p>Please try again later.</p>
+            </div>
+        );
+    }
 
     return (
         <div style={{ maxWidth: '1200px', margin: '0 auto', paddingBottom: '4rem' }}>

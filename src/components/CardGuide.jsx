@@ -1,12 +1,20 @@
-import { useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
-import { creditCards } from '../data/creditCards';
+import { useCreditCards } from '../hooks/useCreditCards';
+import { useTheme } from '../context/ThemeContext';
 import CardImage from './CardImage';
+import LoadingSpinner from './LoadingSpinner';
 
 const CardGuide = () => {
     const { id } = useParams();
-    const card = creditCards.find(c => c.id === parseInt(id));
+    const { creditCards, loading, error } = useCreditCards();
+    const { theme } = useTheme();
+
+    const card = useMemo(() => {
+        if (!creditCards) return null;
+        return creditCards.find(c => c.id === parseInt(id));
+    }, [creditCards, id]);
 
     // Find similar cards based on: same bank, same category, or similar fee tier
     const similarCards = useMemo(() => {
