@@ -76,3 +76,5 @@ npm run dev
 
 ## 📄 License
 PolyForm Noncommercial License 1.0.0. Free for personal and non-profit use. Business use prohibited.
+
+https://tracker.cheq.dpdns.org/api/docs/#/credit-cards/credit_cards_list

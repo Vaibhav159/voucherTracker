@@ -6,6 +6,7 @@ import guidesData from '../data/guides.json';
 const cache = {
     data: null,
     timestamp: 0,
+    fetchPromise: null, // To deduplicate simultaneous requests
 };
 
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
@@ -34,37 +35,51 @@ export const useGuides = () => {
                 return;
             }
 
-            try {
-                const response = await fetch('/api/guides/');
-                if (!response.ok) {
-                    throw new Error('Failed to fetch guides');
-                }
-                const data = await response.json();
-
-                // Backend returns paginated response or list? 
-                // ViewSet defaults to pagination usually unless configured otherwise.
-                // If StandardResultsSetPagination is global default, it returns { count, next, previous, results: [] }
-                // Let's assume pagination is active as per Vouchers.
-                // We should handle both cases or verify backend response structure.
-                // VoucherViewSet uses StandardResultsSetPagination. 
-                // GuideViewSet code: class GuideViewSet(viewsets.ReadOnlyModelViewSet) ...
-                // If settings.REST_FRAMEWORK.DEFAULT_PAGINATION_CLASS is set, it will be paginated.
-                // Let's assume it is and check for 'results' property.
-
-                let processedData = data;
-                if (data.results && Array.isArray(data.results)) {
-                    processedData = data.results;
-                }
-
-                if (!processedData || processedData.length === 0) {
-                    console.warn('API returned empty guides list, using fallback');
+            // If a fetch is already in progress, wait for it
+            if (cache.fetchPromise) {
+                try {
+                    const data = await cache.fetchPromise;
+                    setGuides(data);
+                    setLoading(false);
+                } catch (err) {
                     setGuides(guidesData);
-                } else {
-                    setGuides(processedData);
-                    // Update cache
-                    cache.data = processedData;
-                    cache.timestamp = now;
+                    setLoading(false);
                 }
+                return;
+            }
+
+            // Start a new fetch and store the promise
+            cache.fetchPromise = (async () => {
+                try {
+                    const response = await fetch('/api/guides/');
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch guides');
+                    }
+                    const data = await response.json();
+
+                    let processedData = data;
+                    if (data.results && Array.isArray(data.results)) {
+                        processedData = data.results;
+                    }
+
+                    if (!processedData || processedData.length === 0) {
+                        console.warn('API returned empty guides list, using fallback');
+                        return guidesData;
+                    } else {
+                        cache.data = processedData;
+                        cache.timestamp = Date.now();
+                        return processedData;
+                    }
+                } catch (err) {
+                    throw err;
+                } finally {
+                    cache.fetchPromise = null;
+                }
+            })();
+
+            try {
+                const data = await cache.fetchPromise;
+                setGuides(data);
             } catch (err) {
                 console.error('Error fetching guides:', err);
                 // Fallback to local data on error

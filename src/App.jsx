@@ -1,6 +1,5 @@
 import { useState, useMemo, useEffect, lazy, Suspense } from 'react';
 import { HashRouter as Router, Routes, Route, useSearchParams } from 'react-router-dom';
-import { ThemeProvider } from './context/ThemeContext';
 import { FavoritesProvider } from './context/FavoritesContext';
 import { useDebounce } from './hooks/useDebounce';
 import { useFuzzySearch } from './hooks/useFuzzySearch';
@@ -337,61 +336,59 @@ function App() {
   if (error) return <div className="error-screen">Error: {error.message}. Is Backend running?</div>;
 
   return (
-    <ThemeProvider>
-      <FavoritesProvider>
-        <Router>
-          <Layout
-            selectedCardsCount={selectedCards.length}
-            isShortcutsOpen={isShortcutsOpen}
-            setIsShortcutsOpen={setIsShortcutsOpen}
-          >
-            <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '400px' }}><LoadingSpinner size="lg" text="Loading..." /></div>}>
-              <Routes>
-                <Route path="/" element={<Home data={vouchers} onOpenShortcuts={() => setIsShortcutsOpen(true)} />} />
-                <Route path="/guides" element={<Guides />} />
-                <Route
-                  path="/know-your-cards"
-                  element={
-                    <CreditCardComparison
-                      view="grid"
-                      selectedCards={selectedCards}
-                      toggleCardSelection={toggleCardSelection}
-                      clearSelection={() => setSelectedCards([])}
-                    />
-                  }
-                />
-                <Route
-                  path="/compare-cards"
-                  element={
-                    <CreditCardComparison
-                      view="table"
-                      selectedCards={selectedCards}
-                      toggleCardSelection={toggleCardSelection}
-                      clearSelection={() => setSelectedCards([])}
-                    />
-                  }
-                />
-                <Route path="/card-guide/:id" element={<CardGuide />} />
-                {featureFlags.rewardsCalculator && (
-                  <Route path="/rewards-calculator" element={<RewardsCalculator />} />
-                )}
-                {featureFlags.pointsConverter && (
-                  <Route path="/points-converter" element={<PointsConverter />} />
-                )}
-                {featureFlags.bankingGuides && (
-                  <Route path="/banking-guides" element={<BankingGuides />} />
-                )}
-                <Route path="/voucher/:id" element={<VoucherDetail vouchers={vouchers} />} />
-                {featureFlags.askAI && (
-                  <Route path="/ask-ai" element={<AskAI />} />
-                )}
-                <Route path="/favorites" element={<Favorites />} />
-              </Routes>
-            </Suspense>
-          </Layout>
-        </Router>
-      </FavoritesProvider>
-    </ThemeProvider>
+    <FavoritesProvider>
+      <Router>
+        <Layout
+          selectedCardsCount={selectedCards.length}
+          isShortcutsOpen={isShortcutsOpen}
+          setIsShortcutsOpen={setIsShortcutsOpen}
+        >
+          <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '400px' }}><LoadingSpinner size="lg" text="Loading..." /></div>}>
+            <Routes>
+              <Route path="/" element={<Home data={vouchers} onOpenShortcuts={() => setIsShortcutsOpen(true)} />} />
+              <Route path="/guides" element={<Guides />} />
+              <Route
+                path="/know-your-cards"
+                element={
+                  <CreditCardComparison
+                    view="grid"
+                    selectedCards={selectedCards}
+                    toggleCardSelection={toggleCardSelection}
+                    clearSelection={() => setSelectedCards([])}
+                  />
+                }
+              />
+              <Route
+                path="/compare-cards"
+                element={
+                  <CreditCardComparison
+                    view="table"
+                    selectedCards={selectedCards}
+                    toggleCardSelection={toggleCardSelection}
+                    clearSelection={() => setSelectedCards([])}
+                  />
+                }
+              />
+              <Route path="/card-guide/:id" element={<CardGuide />} />
+              {featureFlags.rewardsCalculator && (
+                <Route path="/rewards-calculator" element={<RewardsCalculator />} />
+              )}
+              {featureFlags.pointsConverter && (
+                <Route path="/points-converter" element={<PointsConverter />} />
+              )}
+              {featureFlags.bankingGuides && (
+                <Route path="/banking-guides" element={<BankingGuides />} />
+              )}
+              <Route path="/voucher/:id" element={<VoucherDetail vouchers={vouchers} />} />
+              {featureFlags.askAI && (
+                <Route path="/ask-ai" element={<AskAI />} />
+              )}
+              <Route path="/favorites" element={<Favorites />} />
+            </Routes>
+          </Suspense>
+        </Layout>
+      </Router>
+    </FavoritesProvider>
   );
 }
 
