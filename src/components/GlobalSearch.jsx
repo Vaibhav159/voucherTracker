@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import vouchers from '../data/vouchers.json';
+import { useVouchers } from '../hooks/useVouchers';
 import { creditCards } from '../data/creditCards';
 import guidesData from '../data/guides.json';
 import { useModalKeyHandler } from '../hooks/useModalKeyHandler';
@@ -14,6 +14,7 @@ const GlobalSearch = () => {
     const navigate = useNavigate();
     const inputRef = useRef(null);
     const lastShiftKeyTime = useRef(0);
+    const { vouchers } = useVouchers();
 
     // Hardcoded Pages
     const pages = [
@@ -54,7 +55,7 @@ const GlobalSearch = () => {
         }));
 
         return [...pages, ...voucherItems, ...cardItems, ...guideItems, ...platformItems];
-    }, []);
+    }, [vouchers]);
 
     // toggle search logic
     const toggleSearch = (initialFilter = 'all') => {

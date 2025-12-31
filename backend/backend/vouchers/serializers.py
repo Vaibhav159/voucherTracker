@@ -17,11 +17,16 @@ class VoucherPlatformSerializer(serializers.ModelSerializer):
 
 
 class VoucherSerializer(serializers.ModelSerializer):
+    id = serializers.CharField(read_only=True)
     brand = serializers.CharField(source='name')
     site = serializers.CharField(source='site_link')
     platforms = VoucherPlatformSerializer(many=True, read_only=True)
     lastUpdated = serializers.DateTimeField(source='updated_at', format="%Y-%m-%d", read_only=True)
+    expiry_date = serializers.SerializerMethodField()
 
     class Meta:
         model = Voucher
-        fields = ["id", "brand", "logo", "category", "site", "platforms", "lastUpdated"]
+        fields = ["id", "brand", "logo", "category", "site", "platforms", "lastUpdated", "expiry_date"]
+
+    def get_expiry_date(self, obj):
+        return "365"

@@ -5,6 +5,7 @@ export const featureFlags = {
     // Core features (always enabled)
     home: true,
     voucherTracker: true,
+    useBackendApi: false, // Use Backend API for vouchers
 
     // Credit card features
     knowYourCards: true,
