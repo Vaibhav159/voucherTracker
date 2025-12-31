@@ -2,7 +2,6 @@ from rest_framework import serializers
 from .models import CreditCard
 
 class CreditCardSerializer(serializers.ModelSerializer):
-    id = serializers.CharField(read_only=True)
     annualFee = serializers.CharField(source='annual_fee')
     rewardRate = serializers.CharField(source='reward_rate')
     fxMarkup = serializers.CharField(source='fx_markup')
