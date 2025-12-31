@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect, useCallback } from 'react';
 import { featureFlags } from '../config/featureFlags';
+import { API_ENDPOINTS } from '../config/apiConfig';
 import vouchersData from '../data/vouchers.json';
 import { sortPlatforms } from '../utils/sortUtils';
 
@@ -33,7 +34,7 @@ export const VouchersProvider = ({ children }) => {
         }
 
         try {
-            const response = await fetch('/api/vouchers/');
+            const response = await fetch(API_ENDPOINTS.VOUCHERS);
             if (!response.ok) {
                 throw new Error(`API Error: ${response.status} ${response.statusText}`);
             }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { featureFlags } from '../config/featureFlags';
+import { API_ENDPOINTS } from '../config/apiConfig';
 import guidesData from '../data/guides.json';
 
 // Simple in-memory cache
@@ -51,7 +52,7 @@ export const useGuides = () => {
             // Start a new fetch and store the promise
             cache.fetchPromise = (async () => {
                 try {
-                    const response = await fetch('/api/guides/');
+                    const response = await fetch(API_ENDPOINTS.GUIDES);
                     if (!response.ok) {
                         throw new Error('Failed to fetch guides');
                     }

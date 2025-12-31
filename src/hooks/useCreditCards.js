@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { featureFlags } from '../config/featureFlags';
+import { API_ENDPOINTS } from '../config/apiConfig';
 // We need to import creditCards from creditCards.js
 // Note: creditCards.js has named export 'creditCards'
 import { creditCards as localCreditCards } from '../data/creditCards';
@@ -52,7 +53,7 @@ export const useCreditCards = () => {
             // Start a new fetch and store the promise
             cache.fetchPromise = (async () => {
                 try {
-                    const response = await fetch('/api/credit-cards/');
+                    const response = await fetch(API_ENDPOINTS.CREDIT_CARDS);
                     if (!response.ok) {
                         throw new Error('Failed to fetch credit cards');
                     }
