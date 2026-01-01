@@ -4,49 +4,6 @@ import os
 from django.conf import settings
 from django.db import migrations
 
-def load_credit_cards(apps, schema_editor):
-    CreditCard = apps.get_model('credit_cards', 'CreditCard')
-    
-    paths_to_try = [
-        os.path.join(settings.BASE_DIR, 'creditCards.json'),
-        '/app/creditCards.json',
-        'creditCards.json',
-    ]
-    json_file_path = None
-    for p in paths_to_try:
-        if os.path.exists(p):
-            json_file_path = p
-            break
-            
-    if not json_file_path:
-        print("Warning: creditCards.json not found, skipping credit card population.")
-        return
-
-    with open(json_file_path, "r") as f:
-        cards_data = json.load(f)
-
-    for item in cards_data:
-        CreditCard.objects.update_or_create(
-            id=item.get("id"),
-            defaults={
-                "name": item.get("name"),
-                "bank": item.get("bank"),
-                "category": item.get("category"),
-                "image": item.get("image"),
-                "annual_fee": item.get("annualFee"),
-                "reward_rate": item.get("rewardRate"),
-                "fx_markup": item.get("fxMarkup", ""),
-                "best_for": item.get("bestFor", ""),
-                "verdict": item.get("verdict", ""),
-                "detailed_guide": item.get("detailedGuide", ""),
-                "apply_link": item.get("applyLink", ""),
-                "features": item.get("features", []),
-                "tags": item.get("tags", []),
-                "reward_type": item.get("rewardType", ""),
-                "reward_caps": item.get("rewardCaps", {}),
-            }
-        )
-
 class Migration(migrations.Migration):
 
     dependencies = [
@@ -54,5 +11,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunPython(load_credit_cards, migrations.RunPython.noop),
+        migrations.RunPython(migrations.RunPython.noop, migrations.RunPython.noop),
     ]

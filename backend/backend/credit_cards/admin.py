@@ -14,17 +14,17 @@ class CreditCardAdminForm(forms.ModelForm):
 @admin.register(CreditCard)
 class CreditCardAdmin(admin.ModelAdmin):
     form = CreditCardAdminForm
-    list_display = ["name", "bank", "category", "reward_rate", "annual_fee"]
+    list_display = ["name", "bank", "category"]
     list_filter = ["bank", "category", "created_at"]
     search_fields = ["name", "bank"]
     fieldsets = (
         (None, {
-            "fields": ("name", "bank", "category", "image")
+            "fields": ("name", "bank", "category", "image", "slug")
         }),
-        ("Details", {
-            "fields": ("annual_fee", "reward_rate", "fx_markup", "best_for", "verdict")
+        ("Structured Data", {
+            "fields": ("fees", "eligibility", "rewards", "features", "metadata", "tags")
         }),
         ("Content", {
-            "fields": ("detailed_guide", "features", "tags", "apply_link")
+            "fields": ("verdict", "detailed_guide", "apply_link")
         }),
     )
