@@ -33,3 +33,25 @@ def test_credit_card_search(client):
     data = response.data['results'] if 'results' in response.data else response.data
     assert len(data) >= 1
     assert any(c["name"] == "UniqueCard Search" for c in data)
+@pytest.mark.django_db
+def test_credit_card_related_guides(client):
+    from backend.guides.models import Guide
+    
+    # Create a guide with specific tag
+    Guide.objects.create(
+        title="DCB Metal Guide",
+        tags=["DCB", "Guide", "HDFC"]
+    )
+    
+    # Create a card that should match
+    card = CreditCard.objects.create(
+        name="Diners Club Black Metal",
+        slug="hdfc-diners-black-metal",
+        bank="HDFC Bank"
+    )
+    
+    response = client.get(f"/api/credit-cards/{card.id}/")
+    assert response.status_code == 200
+    assert "related_guides" in response.data
+    assert len(response.data["related_guides"]) >= 1
+    assert response.data["related_guides"][0]["title"] == "DCB Metal Guide"
