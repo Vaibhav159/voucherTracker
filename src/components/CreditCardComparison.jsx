@@ -599,11 +599,12 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
     }
 
     // Show error state
-    if (error) {
+    // Only show blocking error if we have no credit cards AND a backend error
+    if (error && sortedCards.length === 0) {
         return (
             <div style={{ textAlign: 'center', padding: '4rem', color: 'var(--text-danger)' }}>
                 <h3>Error loading credit cards</h3>
-                <p>Please try again later.</p>
+                <p>Please try again later or check your connection.</p>
             </div>
         );
     }

@@ -342,7 +342,12 @@ function App() {
   }, []);
 
   if (loading) return <LoadingScreen />;
-  if (error) return <div className="error-screen">Error: {error.message}. Is Backend running?</div>;
+
+  // Only show blocking error if we have no vouchers AND a backend error
+  // If we have vouchers (from fallback), the app will function even with an error
+  if (error && vouchers.length === 0) {
+    return <div className="error-screen">Error: {error}. Is Backend running?</div>;
+  }
 
   return (
     <ThemeProvider>

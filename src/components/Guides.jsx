@@ -274,11 +274,12 @@ const Guides = () => {
         );
     }
 
-    if (error) {
+    // Only show blocking error if we have no guides AND a backend error
+    if (error && filteredGuides.length === 0) {
         return (
             <div style={{ textAlign: 'center', padding: '4rem', color: 'var(--text-danger)' }}>
                 <h3>Error loading guides</h3>
-                <p>Please try again later.</p>
+                <p>Please try again later or check your connection.</p>
             </div>
         );
     }
