@@ -352,18 +352,31 @@ const AskAI = () => {
     const [copiedIndex, setCopiedIndex] = useState(null);
     const [showBankFilter, setShowBankFilter] = useState(false);
     const messagesEndRef = useRef(null);
+    const chatContainerRef = useRef(null);
 
-    // Update stats once loaded
+    // Update stats once loaded - runs whenever creditCards or vouchers change
     useEffect(() => {
-        if (messages.length === 1 && messages[0].role === 'assistant' && (creditCards.length > 0 || vouchers.length > 0)) {
-            setMessages(prev => {
-                const newContent = prev[0].content
-                    .replace('**Scanning...** Credit Cards', `**${creditCards.length} Credit Cards**`)
-                    .replace('**Scanning...** Brand Vouchers', `**${vouchers.length}+ Brand Vouchers**`);
-                return [{ ...prev[0], content: newContent }];
-            });
+        if (messages.length === 1 && messages[0].role === 'assistant') {
+            const currentContent = messages[0].content;
+            // Check if we still have scanning placeholders
+            const needsCardUpdate = currentContent.includes('**Scanning...** Credit Cards') && creditCards.length > 0;
+            const needsVoucherUpdate = currentContent.includes('**Scanning...** Brand Vouchers') && vouchers.length > 0;
+
+            if (needsCardUpdate || needsVoucherUpdate) {
+                setMessages(prev => {
+                    let newContent = prev[0].content;
+                    if (needsCardUpdate) {
+                        newContent = newContent.replace('**Scanning...** Credit Cards', `**${creditCards.length} Credit Cards**`);
+                    }
+                    if (needsVoucherUpdate) {
+                        newContent = newContent.replace('**Scanning...** Brand Vouchers', `**${vouchers.length}+ Brand Vouchers**`);
+                    }
+                    return [{ ...prev[0], content: newContent }];
+                });
+            }
         }
-    }, [creditCards.length, vouchers.length]);
+    }, [creditCards.length, vouchers.length, messages]);
+
 
     const handleCopy = async (text, index) => {
         const success = await copyToClipboard(text);
@@ -373,8 +386,16 @@ const AskAI = () => {
         }
     };
 
+    // Scroll handling - intelligent scrolling
     useEffect(() => {
-        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+        const lastMsg = messages[messages.length - 1];
+        if (lastMsg?.role === 'user') {
+            // If user just sent a message, scroll to bottom to see it
+            messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+        } else if (lastMsg?.role === 'assistant' && chatContainerRef.current) {
+            // If assistant responded, since we show single Q&A, scroll to TOP to read answer
+            chatContainerRef.current.scrollTop = 0;
+        }
     }, [messages]);
 
     const processQuery = (query) => {
@@ -652,216 +673,459 @@ const AskAI = () => {
         }, 500);
     };
 
+    // Clear chat handler
+    const handleClearChat = () => {
+        setMessages([{
+            role: 'assistant',
+            content: `👋 Hi! I'm your **Credit Card + Banking + Voucher AI Advisor**
+
+**Powered by:**
+• **${creditCards.length} Credit Cards** with detailed caps & strategies
+• **${vouchers.length}+ Brand Vouchers** with best discounts
+• **14 Banks** with wealth tiers & family programs
+
+🏦 **Banking Intelligence!**
+- "HDFC wealth tiers" → See all tier requirements
+- "What tier for 25L NRV?" → Find your eligibility across banks
+- "Family banking at Axis" → Family program details
+
+**Also try:**
+- "Best combo for Amazon" → Card + voucher savings
+- "Compare Infinia vs Magnus"`,
+            cards: [],
+            vouchers: [],
+            bankingData: null,
+            followUps: ['HDFC wealth tiers', 'Best premium card', 'Best combo for Amazon']
+        }]);
+    };
+
+    // State for mobile sidebar toggle
+    const [showSidebar, setShowSidebar] = useState(false);
+
     return (
-        <div style={{ maxWidth: '900px', margin: '0 auto', padding: '1rem' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '1rem' }}>
+            {/* Header */}
             <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-                <h1 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>
+                <h1 className="text-gradient" style={{ fontSize: '2rem', marginBottom: '0.25rem' }}>
                     Ask AI 🧞‍♂️
                 </h1>
-                <p style={{ color: 'var(--text-secondary)' }}>
-                    {creditCards.length} Cards • {vouchers.length}+ Vouchers • 14 Banks • Smart Combos
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
+                    {creditCards.length} Cards • {vouchers.length}+ Vouchers • 14 Banks
                 </p>
             </div>
 
-            {/* Card Quick Actions */}
-            <div style={{ marginBottom: '0.5rem' }}>
-                <p style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', marginBottom: '0.3rem', textAlign: 'center' }}>💳 Cards</p>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', justifyContent: 'center' }}>
-                    {quickActions.map((action, i) => (
-                        <button key={i} onClick={() => handleQuickAction(action.query)} style={{
-                            padding: '5px 10px', borderRadius: '16px', border: '1px solid var(--glass-border)',
-                            background: 'var(--glass-background)', color: 'var(--text-secondary)',
-                            cursor: 'pointer', fontSize: '0.75rem'
-                        }}>{action.label}</button>
-                    ))}
-                </div>
-            </div>
+            {/* Mobile Toggle Button */}
+            <button
+                onClick={() => setShowSidebar(!showSidebar)}
+                className="mobile-sidebar-toggle"
+                style={{
+                    display: 'none',
+                    width: '100%',
+                    padding: '12px',
+                    marginBottom: '1rem',
+                    borderRadius: '12px',
+                    border: '1px solid var(--glass-border)',
+                    background: 'var(--glass-background)',
+                    color: 'var(--text-primary)',
+                    cursor: 'pointer',
+                    fontSize: '0.9rem',
+                    fontWeight: '500'
+                }}
+            >
+                {showSidebar ? '✕ Hide Presets' : '📋 Show Quick Presets'}
+            </button>
 
-            {/* Combo Quick Actions */}
-            <div style={{ marginBottom: '0.5rem' }}>
-                <p style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', marginBottom: '0.3rem', textAlign: 'center' }}>🎯 Card + Voucher Combos</p>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', justifyContent: 'center' }}>
-                    {comboActions.map((action, i) => (
-                        <button key={i} onClick={() => handleQuickAction(action.query)} style={{
-                            padding: '5px 10px', borderRadius: '16px', border: '1px solid rgba(236, 72, 153, 0.3)',
-                            background: 'rgba(236, 72, 153, 0.1)', color: '#f472b6',
-                            cursor: 'pointer', fontSize: '0.75rem'
-                        }}>{action.label}</button>
-                    ))}
-                </div>
-            </div>
+            {/* Split Panel Layout */}
+            <div style={{ display: 'flex', gap: '1.5rem', height: 'calc(100vh - 200px)', minHeight: '600px' }}>
 
-            {/* Banking Quick Actions - NEW */}
-            <div style={{ marginBottom: '0.5rem' }}>
-                <p style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', marginBottom: '0.3rem', textAlign: 'center' }}>🏦 Banking Tiers & Eligibility</p>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', justifyContent: 'center' }}>
-                    {bankingActions.map((action, i) => (
-                        <button key={i} onClick={() => handleQuickAction(action.query)} style={{
-                            padding: '5px 10px', borderRadius: '16px', border: '1px solid rgba(34, 197, 94, 0.3)',
-                            background: 'rgba(34, 197, 94, 0.1)', color: '#22c55e',
-                            cursor: 'pointer', fontSize: '0.75rem'
-                        }}>{action.label}</button>
-                    ))}
-                </div>
-            </div>
-
-            {/* Bank Filter Toggle */}
-            <div style={{ marginBottom: '1rem' }}>
-                <button onClick={() => setShowBankFilter(!showBankFilter)} style={{
-                    display: 'flex', alignItems: 'center', gap: '0.3rem', margin: '0 auto',
-                    padding: '4px 12px', borderRadius: '12px', border: '1px solid rgba(139, 92, 246, 0.3)',
-                    background: 'rgba(139, 92, 246, 0.1)', color: 'var(--accent-purple)',
-                    cursor: 'pointer', fontSize: '0.7rem'
-                }}>
-                    🏦 Browse All 14 Banks {showBankFilter ? '▲' : '▼'}
-                </button>
-                {showBankFilter && (
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', justifyContent: 'center', marginTop: '0.5rem', padding: '0.5rem', background: 'rgba(139, 92, 246, 0.05)', borderRadius: '12px' }}>
-                        {bankNames.map((bank, i) => (
-                            <button key={i} onClick={() => handleQuickAction(`${bank} wealth tiers`)} style={{
-                                padding: '4px 8px', borderRadius: '12px', border: '1px solid rgba(139, 92, 246, 0.3)',
-                                background: 'rgba(139, 92, 246, 0.1)', color: 'var(--accent-purple)',
-                                cursor: 'pointer', fontSize: '0.7rem'
-                            }}>{bank.split(' ')[0]}</button>
-                        ))}
-                    </div>
-                )}
-            </div>
-
-            {/* Chat Container */}
-            <div className="glass-panel" style={{ height: '420px', overflowY: 'auto', padding: '1rem', marginBottom: '1rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                {messages.map((msg, i) => (
-                    <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: msg.role === 'user' ? 'flex-end' : 'flex-start', maxWidth: '85%', alignSelf: msg.role === 'user' ? 'flex-end' : 'flex-start' }}>
-                        <div style={{ position: 'relative' }}>
-                            <div style={{
-                                padding: '12px 16px', borderRadius: msg.role === 'user' ? '18px 18px 4px 18px' : '18px 18px 18px 4px',
-                                background: msg.role === 'user' ? 'linear-gradient(135deg, var(--accent-cyan), var(--accent-blue))' : 'rgba(255,255,255,0.05)',
-                                color: msg.role === 'user' ? '#000' : 'var(--text-primary)', fontSize: '0.9rem', lineHeight: '1.5', whiteSpace: 'pre-wrap'
-                            }} dangerouslySetInnerHTML={{
-                                __html: msg.content
-                                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                                    .replace(/## (.*?)(?:\n|$)/g, '<h3 style="margin: 0.5rem 0; font-size: 1.05rem;">$1</h3>')
-                                    .replace(/### (.*?)(?:\n|$)/g, '<h4 style="margin: 0.3rem 0; font-size: 0.95rem; color: var(--accent-cyan);">$1</h4>')
-                                    .replace(/- (.*?)(?:\n|$)/g, '<div style="margin-left: 0.8rem;">• $1</div>')
-                                    .replace(/\n/g, '<br/>')
-                            }} />
-
-                            {msg.role === 'assistant' && i > 0 && (
+                {/* Left Sidebar - Presets */}
+                <aside
+                    className={`ask-ai-sidebar ${showSidebar ? 'mobile-visible' : ''}`}
+                    style={{
+                        width: '220px',
+                        flexShrink: 0,
+                        padding: '0.5rem 0',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '0.5rem',
+                        overflowY: 'auto',
+                        maxHeight: '550px'
+                    }}
+                >
+                    {/* Cards Section */}
+                    <div>
+                        <h3 style={{ fontSize: '0.65rem', color: '#06b6d4', textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '0.5rem', paddingLeft: '12px', opacity: 0.8 }}>
+                            Cards
+                        </h3>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                            {quickActions.map((action, i) => (
                                 <button
-                                    onClick={() => handleCopy(msg.content, i)}
+                                    key={i}
+                                    onClick={() => { handleQuickAction(action.query); setShowSidebar(false); }}
                                     style={{
-                                        position: 'absolute', top: '8px', right: '8px', padding: '4px 8px',
-                                        background: copiedIndex === i ? 'rgba(34, 197, 94, 0.2)' : 'rgba(255,255,255,0.1)',
-                                        border: 'none', borderRadius: '6px', cursor: 'pointer', fontSize: '0.7rem',
-                                        color: copiedIndex === i ? '#22c55e' : 'var(--text-secondary)'
+                                        padding: '8px 12px',
+                                        borderRadius: '8px',
+                                        border: 'none',
+                                        background: 'transparent',
+                                        color: 'var(--text-secondary)',
+                                        cursor: 'pointer',
+                                        fontSize: '0.85rem',
+                                        textAlign: 'left',
+                                        transition: 'all 0.15s ease'
                                     }}
-                                    title="Copy response"
+                                    onMouseEnter={(e) => { e.target.style.background = 'rgba(6, 182, 212, 0.1)'; e.target.style.color = '#06b6d4'; e.target.style.paddingLeft = '16px'; }}
+                                    onMouseLeave={(e) => { e.target.style.background = 'transparent'; e.target.style.color = 'var(--text-secondary)'; e.target.style.paddingLeft = '12px'; }}
                                 >
-                                    {copiedIndex === i ? '✓ Copied' : '📋 Copy'}
+                                    {action.label}
                                 </button>
-                            )}
+                            ))}
                         </div>
+                    </div>
 
-                        {msg.cards?.length > 0 && (
-                            <div style={{ display: 'flex', gap: '0.4rem', marginTop: '0.5rem', flexWrap: 'wrap' }}>
-                                {msg.cards.map(card => (
-                                    <Link key={card.id} to={`/card-guide/${card.id}`} style={{
-                                        display: 'flex', alignItems: 'center', gap: '4px', padding: '5px 8px',
-                                        background: 'rgba(0, 212, 255, 0.1)', borderRadius: '6px',
-                                        border: '1px solid rgba(0, 212, 255, 0.3)', textDecoration: 'none',
-                                        color: 'var(--accent-cyan)', fontSize: '0.7rem'
-                                    }}>💳 {card.name?.split(' ').slice(0, 2).join(' ')} →</Link>
+                    {/* Combos Section */}
+                    <div>
+                        <h3 style={{ fontSize: '0.65rem', color: '#ec4899', textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '0.5rem', paddingLeft: '12px', opacity: 0.8 }}>
+                            Combos
+                        </h3>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                            {comboActions.map((action, i) => (
+                                <button
+                                    key={i}
+                                    onClick={() => { handleQuickAction(action.query); setShowSidebar(false); }}
+                                    style={{
+                                        padding: '8px 12px',
+                                        borderRadius: '8px',
+                                        border: 'none',
+                                        background: 'transparent',
+                                        color: 'var(--text-secondary)',
+                                        cursor: 'pointer',
+                                        fontSize: '0.85rem',
+                                        textAlign: 'left',
+                                        transition: 'all 0.15s ease'
+                                    }}
+                                    onMouseEnter={(e) => { e.target.style.background = 'rgba(236, 72, 153, 0.1)'; e.target.style.color = '#ec4899'; e.target.style.paddingLeft = '16px'; }}
+                                    onMouseLeave={(e) => { e.target.style.background = 'transparent'; e.target.style.color = 'var(--text-secondary)'; e.target.style.paddingLeft = '12px'; }}
+                                >
+                                    {action.label}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Banking Section */}
+                    <div>
+                        <h3 style={{ fontSize: '0.65rem', color: '#22c55e', textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '0.5rem', paddingLeft: '12px', opacity: 0.8 }}>
+                            Banking
+                        </h3>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                            {bankingActions.map((action, i) => (
+                                <button
+                                    key={i}
+                                    onClick={() => { handleQuickAction(action.query); setShowSidebar(false); }}
+                                    style={{
+                                        padding: '8px 12px',
+                                        borderRadius: '8px',
+                                        border: 'none',
+                                        background: 'transparent',
+                                        color: 'var(--text-secondary)',
+                                        cursor: 'pointer',
+                                        fontSize: '0.85rem',
+                                        textAlign: 'left',
+                                        transition: 'all 0.15s ease'
+                                    }}
+                                    onMouseEnter={(e) => { e.target.style.background = 'rgba(34, 197, 94, 0.1)'; e.target.style.color = '#22c55e'; e.target.style.paddingLeft = '16px'; }}
+                                    onMouseLeave={(e) => { e.target.style.background = 'transparent'; e.target.style.color = 'var(--text-secondary)'; e.target.style.paddingLeft = '12px'; }}
+                                >
+                                    {action.label}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* All Banks Expandable */}
+                    <div style={{ marginTop: 'auto' }}>
+                        <button
+                            onClick={() => setShowBankFilter(!showBankFilter)}
+                            style={{
+                                width: '100%',
+                                padding: '8px 12px',
+                                borderRadius: '8px',
+                                border: 'none',
+                                background: showBankFilter ? 'rgba(139, 92, 246, 0.1)' : 'transparent',
+                                color: 'var(--text-secondary)',
+                                cursor: 'pointer',
+                                fontSize: '0.8rem',
+                                display: 'flex',
+                                justifyContent: 'space-between',
+                                alignItems: 'center',
+                                transition: 'all 0.15s ease'
+                            }}
+                        >
+                            <span>🏦 All 14 Banks</span>
+                            <span>{showBankFilter ? '▲' : '▼'}</span>
+                        </button>
+                        {showBankFilter && (
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '4px', marginTop: '8px' }}>
+                                {bankNames.map((bank, i) => (
+                                    <button
+                                        key={i}
+                                        onClick={() => { handleQuickAction(`${bank} wealth tiers`); setShowSidebar(false); }}
+                                        style={{
+                                            padding: '6px 8px',
+                                            borderRadius: '6px',
+                                            border: '1px solid rgba(139, 92, 246, 0.2)',
+                                            background: 'transparent',
+                                            color: 'var(--accent-purple)',
+                                            cursor: 'pointer',
+                                            fontSize: '0.7rem',
+                                            textAlign: 'center'
+                                        }}
+                                    >
+                                        {bank.split(' ')[0]}
+                                    </button>
                                 ))}
                             </div>
                         )}
-
-                        {msg.vouchers?.length > 0 && (
-                            <div style={{ display: 'flex', gap: '0.4rem', marginTop: '0.4rem', flexWrap: 'wrap' }}>
-                                {msg.vouchers.map(voucher => (
-                                    <Link key={voucher.id} to={`/voucher/${voucher.id}`} style={{
-                                        display: 'flex', alignItems: 'center', gap: '4px', padding: '5px 8px',
-                                        background: 'rgba(236, 72, 153, 0.1)', borderRadius: '6px',
-                                        border: '1px solid rgba(236, 72, 153, 0.3)', textDecoration: 'none',
-                                        color: '#f472b6', fontSize: '0.7rem'
-                                    }}>🎫 {voucher.brand} →</Link>
-                                ))}
-                            </div>
-                        )}
-
-                        {/* Banking data link */}
-                        {msg.bankingData?.type === 'wealth' && (
-                            <div style={{ marginTop: '0.4rem' }}>
-                                <Link to="/banking-guides" style={{
-                                    display: 'inline-flex', alignItems: 'center', gap: '4px', padding: '5px 8px',
-                                    background: 'rgba(34, 197, 94, 0.1)', borderRadius: '6px',
-                                    border: '1px solid rgba(34, 197, 94, 0.3)', textDecoration: 'none',
-                                    color: '#22c55e', fontSize: '0.7rem'
-                                }}>🏦 View Full Banking Guide →</Link>
-                            </div>
-                        )}
-
-                        {/* Follow-up suggestions */}
-                        {msg.role === 'assistant' && msg.followUps?.length > 0 && i === messages.length - 1 && (
-                            <div style={{ marginTop: '0.75rem' }}>
-                                <p style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', marginBottom: '0.4rem' }}>💡 Follow-up questions:</p>
-                                <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
-                                    {msg.followUps.map((suggestion, idx) => (
-                                        <button
-                                            key={idx}
-                                            onClick={() => handleQuickAction(suggestion)}
-                                            style={{
-                                                padding: '5px 10px', borderRadius: '12px',
-                                                border: '1px solid rgba(139, 92, 246, 0.3)',
-                                                background: 'rgba(139, 92, 246, 0.1)',
-                                                color: 'var(--accent-purple)', cursor: 'pointer', fontSize: '0.75rem'
-                                            }}
-                                        >
-                                            {suggestion}
-                                        </button>
-                                    ))}
-                                </div>
-                            </div>
-                        )}
                     </div>
-                ))}
+                </aside>
 
-                {isTyping && (
-                    <div style={{ display: 'flex', gap: '4px', padding: '12px 16px', background: 'rgba(255,255,255,0.05)', borderRadius: '18px', width: 'fit-content' }}>
-                        <span style={{ animation: 'pulse 1s infinite' }}>●</span>
-                        <span style={{ animation: 'pulse 1s infinite', animationDelay: '0.2s' }}>●</span>
-                        <span style={{ animation: 'pulse 1s infinite', animationDelay: '0.4s' }}>●</span>
-                    </div>
-                )}
-                <div ref={messagesEndRef} />
-            </div>
-
-            <form onSubmit={handleSubmit} style={{ display: 'flex', gap: '0.5rem' }}>
-                <input type="text" value={input} onChange={(e) => setInput(e.target.value)}
-                    placeholder="Ask about cards, banking tiers, vouchers, or combos..."
-                    style={{ flex: 1, padding: '12px 16px', borderRadius: '12px', border: '1px solid var(--glass-border)', background: 'var(--glass-background)', color: 'var(--text-primary)', fontSize: '1rem', outline: 'none' }}
-                />
-                <button type="submit" style={{
-                    padding: '12px 20px', borderRadius: '12px', border: 'none',
-                    background: 'linear-gradient(135deg, var(--accent-cyan), var(--accent-blue))',
-                    color: '#000', fontWeight: '600', cursor: 'pointer'
-                }}>Ask</button>
-                {messages.length > 1 && (
-                    <button
-                        type="button"
-                        onClick={() => setMessages([messages[0]])}
-                        title="Clear chat history"
+                {/* Right Panel - Chat */}
+                <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minWidth: 0 }}>
+                    {/* Chat Container - Flexible Height */}
+                    <div
+                        ref={chatContainerRef}
+                        className="glass-panel"
                         style={{
-                            padding: '12px 14px', borderRadius: '12px',
-                            border: '1px solid rgba(239, 68, 68, 0.3)',
-                            background: 'rgba(239, 68, 68, 0.1)', color: '#ef4444', cursor: 'pointer'
+                            flex: 1,
+                            overflowY: 'auto',
+                            padding: '1rem',
+                            marginBottom: '1rem',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '1rem'
                         }}
                     >
-                        🗑️
-                    </button>
-                )}
-            </form>
+                        {/* Show only the last user message and last assistant message (or just the initial welcome message) */
+                            (messages.length > 1 ? messages.slice(-2) : messages).map((msg, i) => (
+                                <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: msg.role === 'user' ? 'flex-end' : 'flex-start', maxWidth: '95%', alignSelf: msg.role === 'user' ? 'flex-end' : 'flex-start' }}>
+                                    <div style={{ position: 'relative', width: msg.role === 'user' ? 'auto' : '100%' }}>
+                                        {msg.role === 'user' ? (
+                                            /* User message - simple text */
+                                            <div style={{
+                                                padding: '12px 18px',
+                                                borderRadius: '16px 16px 4px 16px',
+                                                background: 'linear-gradient(135deg, #06b6d4, #8b5cf6)',
+                                                color: '#ffffff',
+                                                fontSize: '0.9rem',
+                                                lineHeight: '1.5',
+                                                fontWeight: '500'
+                                            }}>
+                                                {msg.content}
+                                            </div>
+                                        ) : (
+                                            /* Assistant message - with markdown */
+                                            <div style={{
+                                                padding: '14px 18px',
+                                                borderRadius: '16px 16px 16px 4px',
+                                                background: 'rgba(255,255,255,0.03)',
+                                                color: 'var(--text-primary)',
+                                                fontSize: '0.88rem',
+                                                lineHeight: '1.65'
+                                            }} dangerouslySetInnerHTML={{
+                                                __html: msg.content
+                                                    // Remove standalone # symbols
+                                                    .replace(/^#\s*$/gm, '')
+                                                    // Headers
+                                                    .replace(/^### (.+)$/gm, '<div style="font-size: 0.9rem; font-weight: 600; color: #22c55e; margin: 0.75rem 0 0.25rem; padding-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.05);">$1</div>')
+                                                    .replace(/^## (.+)$/gm, '<div style="font-size: 0.95rem; font-weight: 600; color: #06b6d4; margin: 0.75rem 0 0.25rem;">$1</div>')
+                                                    .replace(/^# (.+)$/gm, '<div style="font-size: 1rem; font-weight: 700; margin: 0.5rem 0;">$1</div>')
+                                                    // Bold
+                                                    .replace(/\*\*(.+?)\*\*/g, '<strong style="color: #06b6d4;">$1</strong>')
+                                                    // Lists
+                                                    .replace(/^[•\-] (.+)$/gm, '<div style="padding-left: 1rem; margin: 2px 0;">• $1</div>')
+                                                    // Arrows
+                                                    .replace(/→/g, '<span style="color: #8b5cf6;">→</span>')
+                                                    // Line breaks
+                                                    .replace(/\n\n/g, '<div style="height: 0.5rem;"></div>')
+                                                    .replace(/\n/g, '<br/>')
+                                            }} />
+                                        )}
 
-            <style>{`@keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }`}</style>
+                                        {msg.role === 'assistant' && (
+                                            <button
+                                                onClick={() => handleCopy(msg.content, i)}
+                                                style={{
+                                                    position: 'absolute', top: '8px', right: '8px', padding: '4px 8px',
+                                                    background: copiedIndex === i ? 'rgba(34, 197, 94, 0.2)' : 'rgba(255,255,255,0.1)',
+                                                    border: 'none', borderRadius: '6px', cursor: 'pointer', fontSize: '0.7rem',
+                                                    color: copiedIndex === i ? '#22c55e' : 'var(--text-secondary)'
+                                                }}
+                                                title="Copy response"
+                                            >
+                                                {copiedIndex === i ? '✓' : '📋'}
+                                            </button>
+                                        )}
+                                    </div>
+
+                                    {/* Card links */}
+                                    {msg.cards?.length > 0 && (
+                                        <div style={{ display: 'flex', gap: '6px', marginTop: '0.5rem', flexWrap: 'wrap' }}>
+                                            {msg.cards.map(card => (
+                                                <Link key={card.id} to={`/card-guide/${card.id}`} style={{
+                                                    display: 'flex', alignItems: 'center', gap: '4px', padding: '6px 10px',
+                                                    background: 'rgba(6, 182, 212, 0.1)', borderRadius: '8px',
+                                                    border: '1px solid rgba(6, 182, 212, 0.2)', textDecoration: 'none',
+                                                    color: '#06b6d4', fontSize: '0.75rem'
+                                                }}>💳 {card.name?.split(' ').slice(0, 2).join(' ')} →</Link>
+                                            ))}
+                                        </div>
+                                    )}
+
+                                    {/* Voucher links */}
+                                    {msg.vouchers?.length > 0 && (
+                                        <div style={{ display: 'flex', gap: '6px', marginTop: '0.5rem', flexWrap: 'wrap' }}>
+                                            {msg.vouchers.map(voucher => (
+                                                <Link key={voucher.id} to={`/voucher/${voucher.id}`} style={{
+                                                    display: 'flex', alignItems: 'center', gap: '4px', padding: '6px 10px',
+                                                    background: 'rgba(236, 72, 153, 0.1)', borderRadius: '8px',
+                                                    border: '1px solid rgba(236, 72, 153, 0.2)', textDecoration: 'none',
+                                                    color: '#f472b6', fontSize: '0.75rem'
+                                                }}>🎫 {voucher.brand} →</Link>
+                                            ))}
+                                        </div>
+                                    )}
+
+                                    {/* Banking link */}
+                                    {msg.bankingData?.type === 'wealth' && (
+                                        <div style={{ marginTop: '0.5rem' }}>
+                                            <Link to="/banking-guides" style={{
+                                                display: 'inline-flex', alignItems: 'center', gap: '4px', padding: '6px 10px',
+                                                background: 'rgba(34, 197, 94, 0.1)', borderRadius: '8px',
+                                                border: '1px solid rgba(34, 197, 94, 0.2)', textDecoration: 'none',
+                                                color: '#22c55e', fontSize: '0.75rem'
+                                            }}>🏦 View Full Banking Guide →</Link>
+                                        </div>
+                                    )}
+
+                                    {/* Follow-up suggestions - Only show for the very last message */}
+                                    {msg.role === 'assistant' && msg.followUps?.length > 0 && (
+                                        <div style={{ marginTop: '1rem', width: '100%', paddingTop: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+                                            <p style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', marginBottom: '0.5rem', paddingLeft: '4px' }}>💡 Follow up:</p>
+                                            <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                                                {msg.followUps.map((suggestion, idx) => (
+                                                    <button
+                                                        key={idx}
+                                                        onClick={() => handleQuickAction(suggestion)}
+                                                        style={{
+                                                            padding: '6px 12px', borderRadius: '20px',
+                                                            border: '1px solid rgba(139, 92, 246, 0.3)',
+                                                            background: 'transparent',
+                                                            color: 'var(--accent-purple)', cursor: 'pointer', fontSize: '0.75rem',
+                                                            transition: 'all 0.2s ease'
+                                                        }}
+                                                        onMouseEnter={(e) => { e.target.style.background = 'rgba(139, 92, 246, 0.1)'; }}
+                                                        onMouseLeave={(e) => { e.target.style.background = 'transparent'; }}
+                                                    >
+                                                        {suggestion}
+                                                    </button>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
+
+                        {isTyping && (
+                            <div style={{ display: 'flex', gap: '4px', padding: '12px 16px', background: 'rgba(255,255,255,0.05)', borderRadius: '18px', width: 'fit-content' }}>
+                                <span style={{ animation: 'pulse 1s infinite' }}>●</span>
+                                <span style={{ animation: 'pulse 1s infinite', animationDelay: '0.2s' }}>●</span>
+                                <span style={{ animation: 'pulse 1s infinite', animationDelay: '0.4s' }}>●</span>
+                            </div>
+                        )}
+                        <div ref={messagesEndRef} />
+                    </div>
+
+                    {/* Input Form */}
+                    <form onSubmit={handleSubmit} style={{ display: 'flex', gap: '0.5rem' }}>
+                        <input
+                            type="text"
+                            value={input}
+                            onChange={(e) => setInput(e.target.value)}
+                            placeholder="Ask about cards, banking, vouchers..."
+                            style={{
+                                flex: 1,
+                                padding: '14px 18px',
+                                borderRadius: '12px',
+                                border: '1px solid var(--glass-border)',
+                                background: 'var(--glass-background)',
+                                color: 'var(--text-primary)',
+                                fontSize: '1rem',
+                                outline: 'none'
+                            }}
+                        />
+                        <button type="submit" style={{
+                            padding: '14px 24px',
+                            borderRadius: '12px',
+                            border: 'none',
+                            background: 'linear-gradient(135deg, #06b6d4, #8b5cf6)',
+                            color: '#fff',
+                            fontWeight: '600',
+                            cursor: 'pointer',
+                            fontSize: '1rem',
+                            boxShadow: '0 4px 15px rgba(6, 182, 212, 0.3)'
+                        }}>Ask</button>
+                        {messages.length > 1 && (
+                            <button
+                                type="button"
+                                onClick={handleClearChat}
+                                title="Clear chat"
+                                style={{
+                                    padding: '14px 16px',
+                                    borderRadius: '12px',
+                                    border: '1px solid rgba(239, 68, 68, 0.3)',
+                                    background: 'rgba(239, 68, 68, 0.1)',
+                                    color: '#ef4444',
+                                    cursor: 'pointer',
+                                    fontSize: '1rem'
+                                }}
+                            >
+                                🗑️
+                            </button>
+                        )}
+                    </form>
+                </div>
+            </div>
+
+            {/* Styles for layout */}
+            <style>{`
+                @keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+                
+                /* Mobile responsive */
+                @media (max-width: 768px) {
+                    .ask-ai-sidebar {
+                        display: none !important;
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        width: 100% !important;
+                        max-height: 100vh !important;
+                        z-index: 1000;
+                        border-radius: 0 !important;
+                    }
+                    
+                    .ask-ai-sidebar.mobile-visible {
+                        display: flex !important;
+                    }
+                    
+                    .mobile-sidebar-toggle {
+                        display: flex !important;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+            `}</style>
         </div>
     );
 };

@@ -1,0 +1,556 @@
+/**
+ * CSS Polish Additions
+ * 
+ * Add these styles to your index.css or create a new polish.css file
+ * and import it after your main styles.
+ */
+
+/* ============================================
+   1. IMPROVED FOCUS STATES (Accessibility)
+   ============================================ */
+
+/* Visible focus ring for keyboard navigation */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+    outline: 2px solid var(--accent-cyan);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* Remove outline for mouse users */
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible) {
+    outline: none;
+}
+
+
+/* ============================================
+   2. SMOOTHER ANIMATIONS
+   ============================================ */
+
+/* Voucher Card Hover - More polish */
+.voucher-card {
+    transition: 
+        transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 0.3s ease,
+        border-color 0.2s ease;
+}
+
+.voucher-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 60px rgba(6, 182, 212, 0.1);
+    border-color: rgba(6, 182, 212, 0.3);
+}
+
+.voucher-card:active {
+    transform: translateY(-6px) scale(1.01);
+    transition-duration: 0.1s;
+}
+
+/* Glass Panel Hover */
+.glass-panel {
+    transition: 
+        transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.25s ease,
+        border-color 0.2s ease;
+}
+
+/* Platform Badge Hover */
+.platform-badge {
+    transition: all 0.2s ease;
+}
+
+.platform-badge:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+
+/* ============================================
+   3. BUTTON IMPROVEMENTS
+   ============================================ */
+
+/* Primary Button */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+    transition: 
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+    filter: brightness(1.1);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    transition-duration: 0.1s;
+}
+
+/* Button Ripple Effect */
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+}
+
+.btn-primary:active::after {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+}
+
+/* Secondary Button */
+.btn-secondary {
+    transition: 
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-1px);
+}
+
+
+/* ============================================
+   4. MODAL IMPROVEMENTS
+   ============================================ */
+
+/* Modal Overlay - Smoother backdrop */
+.modal-overlay {
+    animation: fadeIn 0.25s ease-out;
+}
+
+/* Modal Container - Better entrance */
+.modal-container {
+    animation: modalSlideIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Close button hover */
+.btn-close {
+    transition: 
+        background 0.2s ease,
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+.btn-close:hover {
+    background: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+    transform: rotate(90deg);
+}
+
+
+/* ============================================
+   5. LOADING STATES
+   ============================================ */
+
+/* Shimmer Effect */
+.skeleton-shimmer {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.03) 0%,
+        rgba(255, 255, 255, 0.08) 50%,
+        rgba(255, 255, 255, 0.03) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.7; }
+}
+
+/* Spinner */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid var(--glass-border);
+    border-top-color: var(--accent-cyan);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+
+/* ============================================
+   6. SCROLL & SELECTION
+   ============================================ */
+
+/* Better Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+/* Firefox scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
+}
+
+/* Selection Color */
+::selection {
+    background: rgba(6, 182, 212, 0.35);
+    color: inherit;
+}
+
+::-moz-selection {
+    background: rgba(6, 182, 212, 0.35);
+    color: inherit;
+}
+
+
+/* ============================================
+   7. TOUCH & MOBILE IMPROVEMENTS
+   ============================================ */
+
+/* Better touch targets */
+@media (pointer: coarse) {
+    button,
+    a,
+    [role="button"],
+    .nav-item,
+    .platform-card,
+    .category-item {
+        min-height: 44px;
+    }
+    
+    /* Larger close buttons on mobile */
+    .btn-close {
+        width: 44px;
+        height: 44px;
+        font-size: 1.5rem;
+    }
+}
+
+/* Disable hover effects on touch devices */
+@media (hover: none) {
+    .voucher-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    .btn-primary:hover {
+        transform: none;
+        filter: none;
+    }
+}
+
+/* Active states for touch */
+@media (hover: none) {
+    .voucher-card:active {
+        transform: scale(0.98);
+        transition-duration: 0.1s;
+    }
+    
+    .btn-primary:active {
+        filter: brightness(0.9);
+    }
+}
+
+
+/* ============================================
+   8. REDUCED MOTION (Accessibility)
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .voucher-card:hover {
+        transform: none;
+    }
+}
+
+
+/* ============================================
+   9. EMPTY STATE STYLING
+   ============================================ */
+
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.empty-state__icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.empty-state__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.empty-state__description {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 400px;
+    margin: 0 auto 1.5rem;
+}
+
+
+/* ============================================
+   10. TOAST NOTIFICATION STYLING
+   ============================================ */
+
+@keyframes toastSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes toastSlideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100%) scale(0.8);
+    }
+}
+
+
+/* ============================================
+   11. FAVORITE BUTTON ANIMATION
+   ============================================ */
+
+@keyframes heartBeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.3); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+@keyframes ripple {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+.favorite-btn.animating {
+    animation: heartBeat 0.4s ease-in-out;
+}
+
+
+/* ============================================
+   12. GRADIENT TEXT ENHANCEMENT
+   ============================================ */
+
+.text-gradient {
+    background: linear-gradient(
+        135deg,
+        var(--gradient-text-start) 0%,
+        var(--accent-cyan) 50%,
+        var(--accent-pink) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% center; }
+    50% { background-position: 100% center; }
+}
+
+
+/* ============================================
+   13. CARD GRID IMPROVEMENTS
+   ============================================ */
+
+.voucher-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.75rem;
+}
+
+@media (max-width: 768px) {
+    .voucher-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+}
+
+
+/* ============================================
+   14. PLATFORM OFFER CARD (Modal)
+   ============================================ */
+
+.platform-offer {
+    transition: 
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.platform-offer:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.platform-offer.best {
+    border-color: var(--color-success);
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.15);
+}
+
+.platform-offer.best:hover {
+    box-shadow: 0 8px 30px rgba(34, 197, 94, 0.25);
+}
+
+
+/* ============================================
+   15. STATS BAR ANIMATION
+   ============================================ */
+
+.stats-bar {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-item {
+    transition: transform 0.2s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-3px);
+}
+
+.stat-value {
+    transition: color 0.2s ease;
+}
+
+
+/* ============================================
+   LIGHT MODE ADJUSTMENTS
+   ============================================ */
+
+[data-theme='light'] {
+    /* Scrollbar for light mode */
+    ::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.15);
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 0, 0, 0.25);
+    }
+    
+    /* Selection for light mode */
+    ::selection {
+        background: rgba(2, 132, 199, 0.25);
+    }
+    
+    /* Card shadows for light mode */
+    .voucher-card:hover {
+        box-shadow: 
+            0 20px 40px rgba(0, 0, 0, 0.15),
+            0 0 40px rgba(2, 132, 199, 0.08);
+    }
+    
+    .glass-panel {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+}

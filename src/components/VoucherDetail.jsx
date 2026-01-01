@@ -1,14 +1,40 @@
 import React, { useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { vouchers } from '../data/vouchers';
+import { useVouchers } from '../hooks/useVouchers';
 import { getPlatformLogo } from '../utils/platformLogos';
+import LoadingSpinner from './LoadingSpinner';
 
 const VoucherDetail = () => {
     const { id } = useParams();
+    const { vouchers, loading, error } = useVouchers();
 
     const voucher = useMemo(() => {
         return vouchers.find(v => v.id === id);
-    }, [id]);
+    }, [id, vouchers]);
+
+    // Share to X function
+    const shareToX = () => {
+        const url = `${window.location.origin}${window.location.pathname}#/voucher/${id}`;
+        const text = `Check out ${voucher?.brand} voucher deals on Voucher Tracker! 🎫💰`;
+        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+    };
+
+    if (loading) {
+        return (
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '50vh' }}>
+                <LoadingSpinner size="lg" />
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div style={{ padding: '4rem', textAlign: 'center' }}>
+                <h2>Error loading voucher</h2>
+                <Link to="/" className="btn-primary" style={{ marginTop: '1rem' }}>Back to Home</Link>
+            </div>
+        );
+    }
 
     if (!voucher) {
         return (
@@ -19,21 +45,42 @@ const VoucherDetail = () => {
         );
     }
 
+
     return (
         <div className="container" style={{ maxWidth: '1000px' }}>
             <Link to="/" style={{ color: 'var(--text-secondary)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', marginBottom: '2rem' }}>
                 ← Back to Vouchers
             </Link>
 
-            <div className="glass-panel" style={{ padding: '2rem', marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '2rem' }}>
+            <div className="glass-panel" style={{ padding: '2rem', marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '2rem', flexWrap: 'wrap' }}>
                 <div style={{ width: '100px', height: '100px', background: '#fff', borderRadius: '20px', padding: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <img src={voucher.logo} alt={voucher.brand} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                 </div>
-                <div>
+                <div style={{ flex: 1 }}>
                     <h1 style={{ margin: '0 0 10px 0', fontSize: '2.5rem' }}>{voucher.brand}</h1>
                     <span style={{ background: 'rgba(255,255,255,0.1)', padding: '4px 12px', borderRadius: '20px' }}>{voucher.category}</span>
                 </div>
+                <button
+                    onClick={shareToX}
+                    style={{
+                        padding: '10px 16px',
+                        borderRadius: '10px',
+                        border: '1px solid rgba(29, 161, 242, 0.4)',
+                        background: 'rgba(29, 161, 242, 0.1)',
+                        color: '#1DA1F2',
+                        cursor: 'pointer',
+                        fontSize: '0.9rem',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        fontWeight: 500,
+                    }}
+                    title="Share to X (Twitter)"
+                >
+                    𝕏 Share
+                </button>
             </div>
+
 
             <h2 style={{ marginBottom: '1.5rem' }}>Available Platforms</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>

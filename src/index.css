@@ -3,11 +3,18 @@
 /* Design System - Modular CSS */
 @import './styles/tokens.css';
 @import './styles/utils.css';
+@import './styles/tokens-enhanced.css';
+@import './styles/utils-enhanced.css';
 @import './styles/components/buttons.css';
 @import './styles/components/cards.css';
 @import './styles/components/modals.css';
 @import './styles/components/forms.css';
 @import './styles/components/filters.css';
+@import './styles/polish.css';
+@import './styles/mobile-ux.css';
+@import './styles/navigation-styles.css';
+@import './styles/global-redesign.css';
+@import './styles/ui-fixes.css';
 
 :root {
   --font-family: 'Outfit', sans-serif;
@@ -662,27 +669,40 @@ button:active:not(:disabled),
 
 /* Credit Card Grid Item Enhancements */
 .credit-card-item {
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 20px !important;
+  overflow: hidden;
+  background: rgba(15, 15, 25, 0.6) !important;
+  backdrop-filter: blur(10px);
 }
 
 .credit-card-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(6, 182, 212, 0.15);
+  transform: translateY(-8px);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15) !important;
 }
 
 .credit-card-item.selected {
   border: 2px solid var(--accent-cyan) !important;
-  box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+  box-shadow:
+    0 0 30px rgba(6, 182, 212, 0.25),
+    0 10px 40px rgba(0, 0, 0, 0.3),
+    inset 0 0 60px rgba(6, 182, 212, 0.05);
 }
 
 .credit-card-item .card-image-container {
-  background: linear-gradient(145deg, #1a1a2e, #252545);
+  background: linear-gradient(145deg, #1a1a30, #252545);
+  border-radius: 16px;
   transition: transform 0.3s ease;
+  overflow: hidden;
 }
 
 .credit-card-item:hover .card-image-container {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
+
 
 .text-gradient {
   background: linear-gradient(135deg, var(--gradient-text-start) 30%, var(--accent-cyan) 100%);
@@ -811,6 +831,19 @@ button:active:not(:disabled),
 
 .desktop-theme-toggle {
   display: block;
+}
+
+/* Hide mobile elements on desktop */
+.hamburger-btn {
+  display: none;
+}
+
+.header-right-mobile {
+  display: none;
+}
+
+.mobile-menu-overlay {
+  display: none;
 }
 
 .app-header .container {
@@ -951,22 +984,147 @@ button:active:not(:disabled),
 
   .app-header {
     padding: 1rem 0;
-    position: relative;
-    /* Unstick header on mobile */
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
 
   .app-header .container {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: stretch;
-  }
-
-  .header-branding {
-    width: 100%;
+    flex-direction: row;
+    gap: 0;
+    align-items: center;
     justify-content: space-between;
   }
 
+  .header-branding {
+    width: auto;
+    justify-content: flex-start;
+  }
+
+  .header-branding h1 {
+    font-size: 1.4rem !important;
+  }
+
+  .header-right-mobile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
   .mobile-theme-toggle {
+    display: block;
+  }
+
+  /* Hamburger Button */
+  .hamburger-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1002;
+  }
+
+  .hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    position: relative;
+  }
+
+  .hamburger-icon span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+
+  .hamburger-icon.open span:first-child {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger-icon.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  .hamburger-icon.open span:last-child {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Mobile Menu Overlay */
+  .mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Nav Container Mobile Slide-in Menu */
+  .nav-container {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--modal-bg);
+    border-left: 1px solid var(--glass-border);
+    z-index: 1001;
+    padding: 80px 24px 24px;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+  }
+
+  .nav-container.mobile-open {
+    right: 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .nav-item {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 14px 16px;
+    font-size: 1rem;
+    border-radius: 12px;
+  }
+
+  .nav-item.active {
+    background: var(--nav-bg-active);
+  }
+
+  .nav-dropdown {
+    width: 100%;
+  }
+
+  .nav-dropdown>span {
+    width: 100%;
     display: block;
   }
 
@@ -974,39 +1132,85 @@ button:active:not(:disabled),
     display: none;
   }
 
-  .nav-container {
-    justify-content: space-between;
-    width: 100%;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .nav-links {
-    gap: 1.5rem;
-    width: 100%;
-    justify-content: center;
-  }
-
+  /* Layout Stacking */
   .home-container {
     grid-template-columns: 1fr;
-    /* Stack sidebar and content */
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .sidebar {
     position: relative;
-    /* Remove sticky on mobile */
     top: 0;
     max-height: none;
-    /* Allow full height if needed */
+  }
+
+  /* Daily Essentials - Better mobile grid */
+  .daily-essentials-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+
+  .essential-card {
+    padding: 0.875rem 0.5rem;
+    min-height: 0;
+  }
+
+  .essential-logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+  }
+
+  .essential-name {
+    font-size: 0.75rem;
+    line-height: 1.2;
+  }
+
+  /* Stats bar - 2x2 grid for readability */
+  .stats-bar {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    padding: 0.875rem;
+    width: 100%;
+  }
+
+  .stat-item {
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  .stat-icon {
+    font-size: 1.25rem;
+  }
+
+  .stat-value {
+    font-size: 1rem;
+  }
+
+  .stat-label {
+    font-size: 0.65rem;
+  }
+
+  /* Touch targets - minimum 44px */
+  .nav-item,
+  .platform-card,
+  .category-item,
+  .bank-chip,
+  button:not(.hamburger-btn) {
+    min-height: 44px;
   }
 
   /* Sticky Search Bar on Mobile */
   .sticky-search-bar {
     position: sticky !important;
-    top: 1rem;
+    top: 70px;
     z-index: 90 !important;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .sticky-search-bar .glass-panel {
@@ -1324,19 +1528,73 @@ button:active:not(:disabled),
   border: 1px solid var(--glass-border);
   border-radius: 16px;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.3s var(--ease-out);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 0.5rem;
+  opacity: 0;
+  animation: essentialCardEntrance 0.5s var(--ease-out-expo) forwards;
+}
+
+/* Staggered entrance delays */
+.essential-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.essential-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.essential-card:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.essential-card:nth-child(4) {
+  animation-delay: 0.2s;
+}
+
+.essential-card:nth-child(5) {
+  animation-delay: 0.25s;
+}
+
+.essential-card:nth-child(6) {
+  animation-delay: 0.3s;
+}
+
+.essential-card:nth-child(7) {
+  animation-delay: 0.35s;
+}
+
+.essential-card:nth-child(8) {
+  animation-delay: 0.4s;
+}
+
+@keyframes essentialCardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .essential-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px) scale(1.02);
   border-color: var(--accent-cyan);
-  background: rgba(6, 182, 212, 0.08);
-  box-shadow: 0 8px 24px rgba(6, 182, 212, 0.15);
+  background: rgba(6, 182, 212, 0.1);
+  box-shadow:
+    0 12px 32px rgba(6, 182, 212, 0.2),
+    0 0 16px rgba(6, 182, 212, 0.1);
+}
+
+.essential-card:hover .essential-logo {
+  transform: scale(1.08);
+  border-color: var(--accent-cyan);
 }
 
 .essential-badge {
@@ -1350,6 +1608,23 @@ button:active:not(:disabled),
   padding: 3px 6px;
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3);
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+
+  0%,
+  100% {
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 2px 16px rgba(34, 197, 94, 0.5);
+  }
+}
+
+.essential-logo {
+  transition: transform 0.3s var(--ease-out), border-color 0.3s ease;
 }
 
 .essential-logo {
@@ -2195,6 +2470,757 @@ a:focus-visible {
   }
 
   .comparison-presets {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   BANKING GUIDES - UI POLISH & COMPARE
+   ============================================ */
+
+/* Tab Switching Animation */
+.banking-tab-content {
+  animation: fadeInUp 0.4s ease-out forwards;
+}
+
+.banking-tab-content.switching {
+  animation: fadeOut 0.2s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* Bank Chip Enhanced Styles */
+.bank-chip {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.bank-chip::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: 0.5s;
+}
+
+.bank-chip:hover::before {
+  left: 100%;
+}
+
+.bank-chip:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.bank-chip.active {
+  border-color: var(--accent-cyan);
+  background: rgba(6, 182, 212, 0.2);
+  color: var(--accent-cyan);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
+}
+
+/* Tier Card Styles */
+.tier-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.tier-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+  transform: skewX(-25deg);
+  transition: 0.6s;
+  pointer-events: none;
+}
+
+.tier-card:hover::before {
+  left: 150%;
+}
+
+.tier-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Compare Checkbox on Tier Card */
+.tier-compare-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 8px;
+  color: var(--accent-purple);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  width: 100%;
+  justify-content: center;
+}
+
+.tier-compare-checkbox:hover {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: var(--accent-purple);
+}
+
+.tier-compare-checkbox.selected {
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
+  color: white;
+}
+
+.tier-compare-checkbox input {
+  display: none;
+}
+
+/* Floating Compare Bar */
+.banking-compare-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10, 10, 20, 0.95);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid var(--accent-purple);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  animation: slideUp 0.3s ease-out forwards;
+  box-shadow: 0 -4px 30px rgba(139, 92, 246, 0.2);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.banking-compare-bar .compare-items {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.banking-compare-bar .compare-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 20px;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+}
+
+.banking-compare-bar .compare-chip .bank-name {
+  color: var(--accent-cyan);
+  font-weight: 600;
+}
+
+.banking-compare-bar .compare-chip .remove-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.banking-compare-bar .compare-chip .remove-btn:hover {
+  color: #ef4444;
+}
+
+.banking-compare-bar .compare-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.banking-compare-bar .compare-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.banking-compare-bar .compare-btn.primary {
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
+  border: none;
+  color: white;
+}
+
+.banking-compare-bar .compare-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+}
+
+.banking-compare-bar .compare-btn.secondary {
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+}
+
+.banking-compare-bar .compare-btn.secondary:hover {
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+/* Compare Modal */
+.banking-compare-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease-out;
+  padding: 2rem;
+}
+
+.banking-compare-modal {
+  background: var(--modal-bg);
+  border: 1px solid var(--modal-border);
+  border-radius: 20px;
+  max-width: 1200px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: scaleIn 0.3s ease-out;
+}
+
+.banking-compare-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--glass-border);
+  position: sticky;
+  top: 0;
+  background: var(--modal-bg);
+  z-index: 10;
+}
+
+.banking-compare-modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, var(--text-primary), var(--accent-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.banking-compare-modal-header .close-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: var(--text-secondary);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.banking-compare-modal-header .close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--text-primary);
+}
+
+.banking-compare-modal-content {
+  padding: 2rem;
+}
+
+.banking-compare-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.banking-compare-column {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.banking-compare-column-header {
+  padding: 1.25rem;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.1));
+  border-bottom: 1px solid var(--glass-border);
+  text-align: center;
+}
+
+.banking-compare-column-header .bank-name {
+  font-size: 0.85rem;
+  color: var(--accent-cyan);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.banking-compare-column-header .tier-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.banking-compare-section {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.banking-compare-section:last-child {
+  border-bottom: none;
+}
+
+.banking-compare-section h4 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  margin: 0 0 0.75rem;
+}
+
+.banking-compare-section .nrv-value {
+  font-size: 0.9rem;
+  color: var(--accent-cyan);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.banking-compare-section .cards-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.banking-compare-section .card-tag {
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+}
+
+.banking-compare-section .benefits-list {
+  margin: 0;
+  padding-left: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.banking-compare-section .benefits-list li {
+  margin-bottom: 4px;
+}
+
+.banking-compare-section .rm-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.banking-compare-section .rm-badge.has-rm {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+}
+
+.banking-compare-section .rm-badge.no-rm {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+}
+
+/* Key Takeaways Box Enhanced */
+.key-takeaways-box {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.08), rgba(251, 191, 36, 0.02));
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.key-takeaways-box:hover {
+  border-color: rgba(251, 191, 36, 0.4);
+  box-shadow: 0 4px 20px rgba(251, 191, 36, 0.1);
+}
+
+.key-takeaways-box h5 {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  color: #fbbf24;
+}
+
+.key-takeaways-box ul {
+  margin: 0;
+  padding-left: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.key-takeaways-box li {
+  margin-bottom: 4px;
+}
+
+/* Bookmark Button Enhanced */
+.bookmark-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.bookmark-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--text-primary);
+}
+
+.bookmark-btn.active {
+  background: rgba(251, 191, 36, 0.15);
+  border-color: #fbbf24;
+  color: #fbbf24;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .banking-compare-bar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .banking-compare-bar .compare-items {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .banking-compare-modal {
+    margin: 1rem;
+    max-height: calc(100vh - 2rem);
+  }
+
+  .banking-compare-modal-header {
+    padding: 1rem;
+  }
+
+  .banking-compare-modal-content {
+    padding: 1rem;
+  }
+
+  .banking-compare-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   ENHANCED MOBILE RESPONSIVE - SMALL SCREENS
+   ============================================ */
+
+/* Small phones (414px and below) */
+@media (max-width: 414px) {
+
+  /* Header adjustments */
+  .header-logo .logo-text {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 0.5rem;
+  }
+
+  .action-btn {
+    padding: 8px;
+  }
+
+  /* Navigation dropdowns */
+  .nav-dropdown-menu {
+    min-width: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Card grids - single column */
+  .credit-card-item {
+    padding: 1rem;
+  }
+
+  .credit-card-item h3 {
+    font-size: 0.95rem;
+  }
+
+  /* Voucher grid */
+  .voucher-card {
+    padding: 1rem;
+  }
+
+  /* Stats bar */
+  .stats-bar {
+    padding: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .stat-item {
+    padding: 0.5rem;
+  }
+
+  /* Favorites page */
+  .favorites-grid {
+    gap: 0.75rem;
+  }
+
+  .favorite-card,
+  .favorite-voucher {
+    padding: 1rem;
+  }
+
+  /* Tab buttons */
+  .favorites-tabs button,
+  .banking-tabs button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  /* Compare floating bar */
+  .floating-compare-bar {
+    padding: 0.75rem;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .floating-compare-bar .selected-cards {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Search bar */
+  .search-container input {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+
+  /* Filter pills */
+  .filter-pills button {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+
+  /* Modal adjustments */
+  .modal-content {
+    margin: 0.5rem;
+    max-height: calc(100vh - 1rem);
+    border-radius: 16px;
+  }
+
+  .modal-header {
+    padding: 1rem;
+  }
+
+  .modal-body {
+    padding: 1rem;
+  }
+}
+
+/* Extra small phones (375px and below) */
+@media (max-width: 375px) {
+
+  /* Page headers */
+  h2.text-gradient {
+    font-size: 1.75rem;
+  }
+
+  /* Card selection checkbox */
+  .credit-card-item .selection-checkbox {
+    width: 28px;
+    height: 28px;
+    top: 8px;
+    right: 8px;
+  }
+
+  /* Favorite button */
+  .credit-card-item .favorite-btn {
+    width: 28px;
+    height: 28px;
+    top: 8px;
+    left: 8px;
+  }
+
+  /* Card image container */
+  .credit-card-item .card-image-container {
+    height: 100px;
+  }
+
+  /* Stats summary */
+  .stats-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Banking compare bar */
+  .banking-compare-bar {
+    padding: 0.75rem;
+  }
+
+  .banking-compare-bar .compare-chip {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+
+  /* Tier cards */
+  .tier-card {
+    padding: 1rem;
+  }
+
+  .tier-card h3 {
+    font-size: 1rem;
+  }
+}
+
+/* ============================================
+   ONBOARDING TOUR - MOBILE RESPONSIVE
+   ============================================ */
+
+/* Ensure tour works well on mobile */
+@media (max-width: 768px) {
+  .onboarding-overlay .onboarding-tooltip {
+    width: calc(100vw - 32px);
+    max-width: 320px;
+    left: 16px !important;
+    right: 16px;
+  }
+
+  .onboarding-tooltip .onboarding-title {
+    font-size: 1.1rem;
+  }
+
+  .onboarding-tooltip .onboarding-content {
+    font-size: 0.9rem;
+  }
+
+  .onboarding-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .onboarding-actions button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================
+   TOUCH-FRIENDLY IMPROVEMENTS
+   ============================================ */
+
+@media (hover: none) and (pointer: coarse) {
+
+  /* Larger touch targets on mobile */
+  .nav-link,
+  .action-btn,
+  .mobile-nav-link {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Show remove buttons always on touch devices */
+  .favorite-remove-btn,
+  .credit-card-item .favorite-btn,
+  .credit-card-item .selection-checkbox {
+    opacity: 1;
+  }
+
+  /* Disable hover effects that cause issues on touch */
+  .credit-card-item:hover,
+  .voucher-card:hover,
+  .tier-card:hover {
+    transform: none;
+  }
+
+  /* Add active state instead */
+  .credit-card-item:active,
+  .voucher-card:active,
+  .tier-card:active {
+    transform: scale(0.98);
+  }
+}
+
+/* ============================================
+   SKELETON LOADER RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+
+  .skeleton-grid-cards,
+  .skeleton-grid-vouchers {
+    grid-template-columns: 1fr;
+  }
+
+  .skeleton-grid-tiers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 414px) {
+  .skeleton-grid-tiers {
     grid-template-columns: 1fr;
   }
 }

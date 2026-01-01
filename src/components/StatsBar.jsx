@@ -1,112 +1,326 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 import PropTypes from 'prop-types';
 
-const StatsBar = ({ vouchers, platforms }) => {
-    const [animatedStats, setAnimatedStats] = useState({
-        vouchers: 0,
-        platforms: 0,
-        savings: 0
+/**
+ * StatsBar - Redesigned
+ * 
+ * Cleaner stats display for the home page
+ */
+
+const StatsBar = ({ vouchers = [], platforms = [] }) => {
+  const stats = useMemo(() => {
+    // Count vouchers
+    const voucherCount = vouchers.length;
+
+    // Count unique platforms
+    const platformCount = platforms.length || 6;
+
+    // Find max discount
+    let maxDiscount = 0;
+    vouchers.forEach(v => {
+      v.platforms?.forEach(p => {
+        const fee = p.fee || '';
+        const match = fee.match(/(\d+(\.\d+)?)%/);
+        if (match && (fee.toLowerCase().includes('discount') || fee.toLowerCase().includes('save') || fee.toLowerCase().includes('off'))) {
+          const discount = parseFloat(match[1]);
+          if (discount > maxDiscount) maxDiscount = discount;
+        }
+      });
     });
 
-    const stats = useMemo(() => {
-        // Calculate estimated monthly savings (average discount * assumed spend)
-        const avgDiscount = vouchers.reduce((sum, v) => {
-            const maxD = Math.max(...v.platforms.map(p => {
-                const fee = p.fee || '';
-                const match = fee.match(/(\d+(\.\d+)?)%/);
-                if (match && (fee.toLowerCase().includes('discount') || fee.toLowerCase().includes('save'))) {
-                    return parseFloat(match[1]);
-                }
-                return 0;
-            }));
-            return sum + maxD;
-        }, 0) / vouchers.length || 0;
+    return {
+      vouchers: voucherCount,
+      platforms: platformCount,
+      maxDiscount: Math.round(maxDiscount),
+      avgSavings: '₹1,139', // Placeholder - calculate from actual data if available
+    };
+  }, [vouchers, platforms]);
 
-        // Assuming ₹10,000 average monthly spend on voucher-eligible purchases
-        const estimatedSavings = Math.round((avgDiscount / 100) * 10000);
-
-        return {
-            vouchers: vouchers.length,
-            platforms: platforms.length,
-            savings: estimatedSavings
-        };
-    }, [vouchers, platforms]);
-
-    // Animate counters on mount
-    useEffect(() => {
-        const duration = 1500;
-        const steps = 60;
-        const interval = duration / steps;
-
-        let step = 0;
-        const timer = setInterval(() => {
-            step++;
-            const progress = step / steps;
-            // Ease out quad
-            const eased = 1 - (1 - progress) * (1 - progress);
-
-            setAnimatedStats({
-                vouchers: Math.round(stats.vouchers * eased),
-                platforms: Math.round(stats.platforms * eased),
-                savings: Math.round(stats.savings * eased)
-            });
-
-            if (step >= steps) clearInterval(timer);
-        }, interval);
-
-        return () => clearInterval(timer);
-    }, [stats]);
-
-    return (
-        <div className="stats-bar">
-            <div className="stat-item">
-                <div className="stat-icon">🎟️</div>
-                <div className="stat-content">
-                    <span className="stat-value">{animatedStats.vouchers}+</span>
-                    <span className="stat-label">Vouchers</span>
-                </div>
-            </div>
-
-            <div className="stat-divider"></div>
-
-            <div className="stat-item">
-                <div className="stat-icon">🏪</div>
-                <div className="stat-content">
-                    <span className="stat-value">{animatedStats.platforms}</span>
-                    <span className="stat-label">Platforms</span>
-                </div>
-            </div>
-
-            <div className="stat-divider"></div>
-
-            <div className="stat-item">
-                <div className="stat-icon">💰</div>
-                <div className="stat-content">
-                    <span className="stat-value">₹{animatedStats.savings.toLocaleString()}</span>
-                    <span className="stat-label">Avg. Monthly Savings</span>
-                </div>
-            </div>
-
-            <div className="stat-divider"></div>
-
-            <div className="stat-item">
-                <div className="stat-icon">⭐</div>
-                <div className="stat-content">
-                    <span className="stat-value">100%</span>
-                    <span className="stat-label">Free to Use</span>
-                </div>
-            </div>
+  return (
+    <div className="stats-bar-premium">
+      <div className="stats-bar-glow"></div>
+      <div className="stats-bar-content">
+        <div className="stat-item-premium">
+          <div className="stat-icon-wrapper voucher-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
+              <path d="M13 5v2" />
+              <path d="M13 17v2" />
+              <path d="M13 11v2" />
+            </svg>
+          </div>
+          <div className="stat-content-premium">
+            <span className="stat-value-premium">
+              {stats.vouchers}<span className="stat-plus">+</span>
+            </span>
+            <span className="stat-label-premium">Vouchers</span>
+          </div>
         </div>
-    );
+
+        <div className="stat-divider-premium">
+          <div className="divider-line"></div>
+          <div className="divider-dot"></div>
+          <div className="divider-line"></div>
+        </div>
+
+        <div className="stat-item-premium">
+          <div className="stat-icon-wrapper platform-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="3" y="3" width="7" height="7" rx="1" />
+              <rect x="14" y="3" width="7" height="7" rx="1" />
+              <rect x="14" y="14" width="7" height="7" rx="1" />
+              <rect x="3" y="14" width="7" height="7" rx="1" />
+            </svg>
+          </div>
+          <div className="stat-content-premium">
+            <span className="stat-value-premium">{stats.platforms}</span>
+            <span className="stat-label-premium">Platforms</span>
+          </div>
+        </div>
+
+      </div>
+
+      <style>{`
+        .stats-bar-premium {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1.5rem 2.5rem;
+          background: linear-gradient(135deg, 
+            rgba(255, 255, 255, 0.03) 0%, 
+            rgba(255, 255, 255, 0.06) 50%,
+            rgba(255, 255, 255, 0.03) 100%
+          );
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 20px;
+          margin-bottom: 2rem;
+          overflow: hidden;
+          box-shadow: 
+            0 4px 24px rgba(0, 0, 0, 0.15),
+            inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .stats-bar-glow {
+          position: absolute;
+          top: -50%;
+          left: -50%;
+          width: 200%;
+          height: 200%;
+          background: radial-gradient(
+            ellipse at center,
+            rgba(139, 92, 246, 0.08) 0%,
+            rgba(59, 130, 246, 0.05) 30%,
+            transparent 70%
+          );
+          animation: pulseGlow 8s ease-in-out infinite;
+          pointer-events: none;
+        }
+
+        @keyframes pulseGlow {
+          0%, 100% { opacity: 0.5; transform: scale(1); }
+          50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        .stats-bar-content {
+          position: relative;
+          z-index: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 2.5rem;
+          flex-wrap: wrap;
+        }
+
+        .stat-item-premium {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          padding: 0.5rem;
+          transition: transform 0.3s ease;
+        }
+
+        .stat-item-premium:hover {
+          transform: translateY(-2px);
+        }
+
+        .stat-icon-wrapper {
+          width: 48px;
+          height: 48px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 14px;
+          color: white;
+          position: relative;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-item-premium:hover .stat-icon-wrapper {
+          transform: scale(1.05);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .voucher-icon {
+          background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+          box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+
+        .platform-icon {
+          background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+          box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        }
+
+        .savings-icon {
+          background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+          box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .stat-content-premium {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+        }
+
+        .stat-value-premium {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: var(--text-primary);
+          line-height: 1.2;
+          letter-spacing: -0.02em;
+          display: flex;
+          align-items: baseline;
+        }
+
+        .stat-plus {
+          font-size: 1rem;
+          font-weight: 600;
+          color: rgba(255, 255, 255, 0.6);
+          margin-left: 1px;
+        }
+
+        .stat-label-premium {
+          font-size: 0.75rem;
+          color: var(--text-secondary);
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          font-weight: 500;
+        }
+
+        .stat-divider-premium {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 4px;
+          height: 50px;
+        }
+
+        .divider-line {
+          width: 1px;
+          flex: 1;
+          background: linear-gradient(to bottom, 
+            transparent 0%, 
+            rgba(255, 255, 255, 0.15) 50%,
+            transparent 100%
+          );
+        }
+
+        .divider-dot {
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+          .stats-bar-premium {
+            padding: 1.25rem 1.5rem;
+            border-radius: 16px;
+          }
+
+          .stats-bar-content {
+            gap: 1.5rem;
+          }
+
+          .stat-divider-premium {
+            display: none;
+          }
+
+          .stat-item-premium {
+            flex: 0 0 auto;
+          }
+
+          .stat-icon-wrapper {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+          }
+
+          .stat-icon-wrapper svg {
+            width: 20px;
+            height: 20px;
+          }
+
+          .stat-value-premium {
+            font-size: 1.25rem;
+          }
+
+          .stat-label-premium {
+            font-size: 0.7rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .stats-bar-premium {
+            padding: 1rem;
+          }
+
+          .stats-bar-content {
+            gap: 1rem;
+            justify-content: space-around;
+            width: 100%;
+          }
+
+          .stat-item-premium {
+            flex-direction: column;
+            text-align: center;
+            gap: 8px;
+          }
+
+          .stat-content-premium {
+            align-items: center;
+          }
+
+          .stat-icon-wrapper {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+          }
+
+          .stat-icon-wrapper svg {
+            width: 18px;
+            height: 18px;
+          }
+
+          .stat-value-premium {
+            font-size: 1.1rem;
+          }
+
+          .stat-label-premium {
+            font-size: 0.65rem;
+          }
+        }
+      `}</style>
+    </div>
+  );
 };
 
 StatsBar.propTypes = {
-    vouchers: PropTypes.arrayOf(PropTypes.shape({
-        platforms: PropTypes.arrayOf(PropTypes.shape({
-            fee: PropTypes.string,
-        })),
-    })).isRequired,
-    platforms: PropTypes.arrayOf(PropTypes.string).isRequired,
+  vouchers: PropTypes.array,
+  platforms: PropTypes.array,
 };
 
 export default StatsBar;

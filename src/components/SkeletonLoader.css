@@ -1,0 +1,117 @@
+/* Skeleton Loader Styles */
+
+/* Base skeleton with shimmer animation */
+.skeleton {
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.05) 25%,
+            rgba(255, 255, 255, 0.1) 50%,
+            rgba(255, 255, 255, 0.05) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Card Skeleton */
+.skeleton-card {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.skeleton-card-image {
+    margin-bottom: 0.5rem;
+}
+
+.skeleton-title {
+    margin-top: 0.5rem;
+}
+
+.skeleton-subtitle {
+    margin-top: 0.25rem;
+}
+
+.skeleton-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.skeleton-stats {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+/* Voucher Skeleton */
+.skeleton-voucher {
+    padding: 1rem;
+}
+
+.skeleton-voucher-header {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.skeleton-voucher-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.skeleton-voucher-platforms {
+    margin-top: 0.5rem;
+}
+
+/* Tier Skeleton */
+.skeleton-tier {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.skeleton-benefits {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+/* Grid layouts */
+.skeleton-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.skeleton-grid-cards {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.skeleton-grid-vouchers {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.skeleton-grid-tiers {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+/* Dark mode enhancement */
+[data-theme="light"] .skeleton {
+    background: linear-gradient(90deg,
+            rgba(0, 0, 0, 0.06) 25%,
+            rgba(0, 0, 0, 0.12) 50%,
+            rgba(0, 0, 0, 0.06) 75%);
+    background-size: 200% 100%;
+}

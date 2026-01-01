@@ -2,7 +2,9 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { useGuides } from '../hooks/useGuides';
 import { useTheme } from '../context/ThemeContext';
+import { useFavorites } from '../context/FavoritesContext';
 import LoadingSpinner from './LoadingSpinner';
+
 
 const RedditEmbed = ({ embedHtml, theme, onLoad }) => {
     // ... (unchanged)
@@ -214,6 +216,7 @@ const Guides = () => {
     const [selectedGuide, setSelectedGuide] = useState(null);
     const [selectedTag, setSelectedTag] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
+    const { toggleFavoriteGuide, isGuideFavorite } = useFavorites();
 
     // Extract unique tags
     const allTags = useMemo(() => {
@@ -409,9 +412,37 @@ const Guides = () => {
                                 border: '1px solid var(--item-border)',
                                 background: 'var(--item-bg)',
                                 transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-                                cursor: 'pointer'
+                                cursor: 'pointer',
+                                position: 'relative'
                             }}
                         >
+                            {/* Favorite Toggle Button */}
+                            <button
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    toggleFavoriteGuide(guide.id);
+                                }}
+                                title={isGuideFavorite(guide.id) ? 'Remove from favorites' : 'Add to favorites'}
+                                style={{
+                                    position: 'absolute',
+                                    top: '1rem',
+                                    right: '1rem',
+                                    background: isGuideFavorite(guide.id) ? 'rgba(239, 68, 68, 0.15)' : 'rgba(255, 255, 255, 0.05)',
+                                    border: isGuideFavorite(guide.id) ? '1px solid rgba(239, 68, 68, 0.3)' : '1px solid var(--glass-border)',
+                                    borderRadius: '50%',
+                                    width: '36px',
+                                    height: '36px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    cursor: 'pointer',
+                                    transition: 'all 0.2s ease',
+                                    fontSize: '1rem',
+                                    zIndex: 5
+                                }}
+                            >
+                                {isGuideFavorite(guide.id) ? '❤️' : '🤍'}
+                            </button>
                             {/* Header: Tags */}
                             <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '1rem' }}>
                                 {guide.tags.slice(0, 3).map(tag => (
