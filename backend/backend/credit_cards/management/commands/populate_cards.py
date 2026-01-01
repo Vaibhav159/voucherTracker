@@ -27,6 +27,8 @@ class Command(BaseCommand):
                 'reward_rate': item.get('rewardRate', ''),
                 'fx_markup': item.get('fxMarkup', ''),
                 'best_for': item.get('bestFor', ''),
+                'reward_type': item.get('rewardType', ''),
+                'reward_caps': item.get('rewardCaps', {}),
                 'verdict': item.get('verdict', ''),
                 'detailed_guide': item.get('detailedGuide', ''),
                 'apply_link': item.get('applyLink', ''),

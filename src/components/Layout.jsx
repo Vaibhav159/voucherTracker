@@ -1,205 +1,352 @@
+import React, { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
 import PropTypes from 'prop-types';
 import ThemeToggle from './ThemeToggle';
 import { featureFlags } from '../config/featureFlags';
 import GlobalSearch from './GlobalSearch';
 import ShortcutsModal from './ShortcutsModal';
 import { useFavorites } from '../context/FavoritesContext';
+import OnboardingTour, { useShouldShowTour } from './OnboardingTour';
 
 const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortcutsOpen }) => {
   const location = useLocation();
-  const [showOthersMenu, setShowOthersMenu] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
+  const dropdownRef = useRef(null);
   const { totalFavorites } = useFavorites();
-  const isActive = (path) => location.pathname === path;
-  // Local state removed, using props from App
+  const [showTour, setShowTourComplete] = useShouldShowTour();
 
-  // Only show tools that are enabled
-  const othersLinks = [
-    featureFlags.rewardsCalculator && { path: '/rewards-calculator', label: '🧮 Calculator' },
-    featureFlags.pointsConverter && { path: '/points-converter', label: '💎 Points Value' },
-    featureFlags.bankingGuides && { path: '/banking-guides', label: '🏦 Banking' },
+  const isActive = (path) => location.pathname === path;
+  const isActiveGroup = (paths) => paths.some(p => location.pathname === p);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileMenuOpen(false);
+    setActiveDropdown(null);
+  }, [location.pathname]);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setActiveDropdown(null);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  // Navigation structure - cleaner groupings
+  const cardsLinks = [
+    { path: '/know-your-cards', label: 'Browse Cards', icon: '🎴' },
+    { path: '/compare-cards', label: 'Compare Cards', icon: '⚖️', badge: selectedCardsCount },
+    { path: '/my-cards', label: 'My Wallet', icon: '👛' },
+  ];
+
+  const bankingLinks = [
+    { path: '/browse-banking', label: 'Browse Banking', icon: '🏦' },
+    { path: '/compare-banking', label: 'Compare Banking', icon: '⚖️' },
+  ];
+
+  const toolsLinks = [
+    featureFlags.rewardsCalculator && { path: '/rewards-calculator', label: 'Rewards Calculator', icon: '🧮' },
+    featureFlags.pointsConverter && { path: '/points-converter', label: 'Points Value', icon: '💎' },
+    // Hidden for now - will implement later:
+    // { path: '/spend-optimizer', label: 'Spend Optimizer', icon: '📊' },
+    // { path: '/milestones', label: 'Milestones', icon: '🎯' },
+    // { path: '/savings', label: 'Savings Dashboard', icon: '💰' },
   ].filter(Boolean);
 
-  const isOthersActive = othersLinks.some(link => location.pathname === link.path);
+  const toggleDropdown = (name) => {
+    setActiveDropdown(activeDropdown === name ? null : name);
+  };
+
+
+  // Dropdown Component
+  const NavDropdown = ({ name, label, icon, links, isActiveCheck }) => {
+    const isOpen = activeDropdown === name;
+    const hasActivePath = isActiveCheck ? isActiveCheck() : links.some(l => isActive(l.path));
+
+    return (
+      <div className="nav-dropdown-wrapper" ref={name === activeDropdown ? dropdownRef : null}>
+        <button
+          className={`nav-link nav-dropdown-trigger ${hasActivePath ? 'active' : ''}`}
+          onClick={() => toggleDropdown(name)}
+          aria-expanded={isOpen}
+          aria-haspopup="true"
+        >
+          {icon && <span className="nav-icon">{icon}</span>}
+          <span>{label}</span>
+          <svg
+            className={`dropdown-chevron ${isOpen ? 'open' : ''}`}
+            width="12"
+            height="12"
+            viewBox="0 0 12 12"
+            fill="none"
+          >
+            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+
+        {isOpen && (
+          <div className="nav-dropdown-menu">
+            {links.map(link => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`dropdown-item ${isActive(link.path) ? 'active' : ''}`}
+                onClick={() => setActiveDropdown(null)}
+              >
+                <span className="dropdown-item-icon">{link.icon}</span>
+                <span className="dropdown-item-label">{link.label}</span>
+                {link.badge > 0 && (
+                  <span className="dropdown-item-badge">{link.badge}</span>
+                )}
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  };
 
   return (
     <div className="app-layout">
       <GlobalSearch />
       <ShortcutsModal isOpen={isShortcutsOpen} onClose={() => setIsShortcutsOpen(false)} />
+      {showTour && <OnboardingTour onComplete={setShowTourComplete} />}
 
       <header className="app-header">
-        <div className="container">
-          <div className="header-branding">
-            <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <img src="./logo.svg" alt="Voucher Tracker Logo" style={{ height: '32px', width: '32px' }} />
-              <h1 className="text-gradient" style={{ margin: 0, fontSize: '1.8rem' }}>VoucherTracker</h1>
+        <div className="header-container">
+          {/* Logo */}
+          <Link to="/" className="header-logo">
+            <img src="./logo.svg" alt="" className="logo-icon" />
+            <span className="logo-text">
+              <span className="logo-primary">Voucher</span>
+              <span className="logo-secondary">Tracker</span>
+            </span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="nav-desktop" data-tour="navigation">
+            <Link
+              to="/"
+              className={`nav-link ${isActive('/') ? 'active' : ''}`}
+            >
+              <span className="nav-icon">🏷️</span>
+              <span>Vouchers</span>
             </Link>
-            <div className="mobile-theme-toggle">
+
+            <Link
+              to="/guides"
+              className={`nav-link ${isActive('/guides') ? 'active' : ''}`}
+            >
+              <span className="nav-icon">📚</span>
+              <span>Guides</span>
+            </Link>
+
+            <NavDropdown
+              name="cards"
+              label="Cards"
+              icon="💳"
+              links={cardsLinks}
+              isActiveCheck={() => isActiveGroup(['/know-your-cards', '/compare-cards', '/my-cards'])}
+            />
+
+            <NavDropdown
+              name="banking"
+              label="Banking"
+              icon="🏦"
+              links={bankingLinks}
+              isActiveCheck={() => isActiveGroup(['/browse-banking', '/compare-banking'])}
+            />
+
+            {featureFlags.askAI && (
+              <Link
+                to="/ask-ai"
+                className={`nav-link nav-link-highlight ${isActive('/ask-ai') ? 'active' : ''}`}
+              >
+                <span className="nav-icon">✨</span>
+                <span>Ask AI</span>
+              </Link>
+            )}
+
+
+            <NavDropdown
+              name="tools"
+              label="Tools"
+              icon="🛠️"
+              links={toolsLinks}
+            />
+          </nav>
+
+          {/* Right Side Actions */}
+          <div className="header-actions">
+            <Link
+              to="/favorites"
+              className={`action-btn favorites-btn ${isActive('/favorites') ? 'active' : ''}`}
+              aria-label={`Favorites${totalFavorites > 0 ? ` (${totalFavorites})` : ''}`}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill={totalFavorites > 0 ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+              {totalFavorites > 0 && (
+                <span className="action-badge">{totalFavorites}</span>
+              )}
+            </Link>
+
+            <a
+              href="https://twitter.com/vaibhav_lodha"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="action-btn twitter-btn"
+              aria-label="Follow on X"
+            >
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+
+            <div className="theme-toggle-wrapper">
               <ThemeToggle />
             </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="mobile-menu-btn"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+              aria-expanded={mobileMenuOpen}
+            >
+              <span className={`menu-icon ${mobileMenuOpen ? 'open' : ''}`}>
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`mobile-overlay ${mobileMenuOpen ? 'active' : ''}`}
+        onClick={() => setMobileMenuOpen(false)}
+      />
+
+      {/* Mobile Navigation Drawer */}
+      <nav className={`nav-mobile ${mobileMenuOpen ? 'open' : ''}`}>
+        <div className="mobile-nav-header">
+          <span className="mobile-nav-title">Menu</span>
+          <button
+            className="mobile-close-btn"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <div className="mobile-nav-content">
+          <div className="mobile-nav-section">
+            <span className="mobile-section-label">Main</span>
+            <Link to="/" className={`mobile-nav-link ${isActive('/') ? 'active' : ''}`}>
+              <span className="mobile-nav-icon">🏷️</span>
+              <span>Vouchers</span>
+            </Link>
+            <Link to="/guides" className={`mobile-nav-link ${isActive('/guides') ? 'active' : ''}`}>
+              <span className="mobile-nav-icon">📚</span>
+              <span>Guides</span>
+            </Link>
+            {featureFlags.askAI && (
+              <Link to="/ask-ai" className={`mobile-nav-link highlight ${isActive('/ask-ai') ? 'active' : ''}`}>
+                <span className="mobile-nav-icon">✨</span>
+                <span>Ask AI</span>
+              </Link>
+            )}
           </div>
 
-          <nav className="nav-container">
-            <div className="nav-links">
+          <div className="mobile-nav-section">
+            <span className="mobile-section-label">Cards</span>
+            {cardsLinks.map(link => (
               <Link
-                to="/"
-                className={`nav-item ${isActive('/') ? 'active' : ''}`}
+                key={link.path}
+                to={link.path}
+                className={`mobile-nav-link ${isActive(link.path) ? 'active' : ''}`}
               >
-                Vouchers
+                <span className="mobile-nav-icon">{link.icon}</span>
+                <span>{link.label}</span>
+                {link.badge > 0 && <span className="mobile-badge">{link.badge}</span>}
               </Link>
-              <Link
-                to="/guides"
-                className={`nav-item ${isActive('/guides') ? 'active' : ''}`}
-              >
-                Guides
-              </Link>
-              <Link
-                to="/know-your-cards"
-                className={`nav-item ${isActive('/know-your-cards') ? 'active' : ''}`}
-              >
-                Cards
-              </Link>
-              <Link
-                to="/compare-cards"
-                className={`nav-item ${isActive('/compare-cards') ? 'active' : ''}`}
-                style={{ position: 'relative' }}
-              >
-                Compare
-                {selectedCardsCount > 0 && (
-                  <span style={{
-                    position: 'absolute',
-                    top: '-5px',
-                    right: '-10px',
-                    background: 'var(--accent-pink)',
-                    color: 'white',
-                    borderRadius: '50%',
-                    width: '18px',
-                    height: '18px',
-                    fontSize: '11px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                  }}>
-                    {selectedCardsCount}
-                  </span>
-                )}
-              </Link>
-              {featureFlags.askAI && (
-                <Link
-                  to="/ask-ai"
-                  className={`nav-item ${isActive('/ask-ai') ? 'active' : ''}`}
-                >
-                  Ask AI 🧞‍♂️
-                </Link>
-              )}
-              <Link
-                to="/favorites"
-                className={`nav-item ${isActive('/favorites') ? 'active' : ''}`}
-                style={{ position: 'relative' }}
-              >
-                ❤️
-                {totalFavorites > 0 && (
-                  <span style={{
-                    position: 'absolute',
-                    top: '-5px',
-                    right: '-10px',
-                    background: 'var(--accent-pink)',
-                    color: 'white',
-                    borderRadius: '50%',
-                    width: '18px',
-                    height: '18px',
-                    fontSize: '11px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                  }}>
-                    {totalFavorites}
-                  </span>
-                )}
-              </Link>
+            ))}
+          </div>
 
-              {/* Others Dropdown - only show if at least one tool is enabled */}
-              {othersLinks.length > 0 && (
-                <div
-                  className="nav-dropdown"
-                  onMouseEnter={() => setShowOthersMenu(true)}
-                  onMouseLeave={() => setShowOthersMenu(false)}
-                  style={{ position: 'relative' }}
-                >
-                  <span
-                    className={`nav-item ${isOthersActive ? 'active' : ''}`}
-                    style={{ cursor: 'pointer' }}
-                  >
-                    Tools ▾
-                  </span>
-                  {showOthersMenu && (
-                    <div style={{
-                      position: 'absolute',
-                      top: '100%',
-                      left: '0',
-                      background: 'var(--glass-background)',
-                      backdropFilter: 'blur(20px)',
-                      border: '1px solid var(--glass-border)',
-                      borderRadius: '12px',
-                      padding: '8px 0',
-                      minWidth: '160px',
-                      boxShadow: '0 10px 40px rgba(0, 0, 0, 0.3)',
-                      zIndex: 1000
-                    }}>
-                      {othersLinks.map(link => (
-                        <Link
-                          key={link.path}
-                          to={link.path}
-                          style={{
-                            display: 'block',
-                            padding: '10px 16px',
-                            color: isActive(link.path) ? 'var(--accent-cyan)' : 'var(--text-secondary)',
-                            textDecoration: 'none',
-                            fontSize: '0.9rem',
-                            transition: 'all 0.2s'
-                          }}
-                          onMouseOver={(e) => e.target.style.background = 'rgba(255,255,255,0.05)'}
-                          onMouseOut={(e) => e.target.style.background = 'transparent'}
-                        >
-                          {link.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              )}
-
-              <a
-                href="https://twitter.com/vaibhav_lodha"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="nav-item"
+          <div className="mobile-nav-section">
+            <span className="mobile-section-label">Banking</span>
+            {bankingLinks.map(link => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`mobile-nav-link ${isActive(link.path) ? 'active' : ''}`}
               >
-                <span>Follow</span>
-                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <span className="mobile-nav-icon">{link.icon}</span>
+                <span>{link.label}</span>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mobile-nav-section">
+            <span className="mobile-section-label">Tools</span>
+            {toolsLinks.map(link => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`mobile-nav-link ${isActive(link.path) ? 'active' : ''}`}
+              >
+                <span className="mobile-nav-icon">{link.icon}</span>
+                <span>{link.label}</span>
+              </Link>
+            ))}
+          </div>
+
+
+          <div className="mobile-nav-section">
+            <span className="mobile-section-label">More</span>
+            <Link to="/favorites" className={`mobile-nav-link ${isActive('/favorites') ? 'active' : ''}`}>
+              <span className="mobile-nav-icon">❤️</span>
+              <span>Favorites</span>
+              {totalFavorites > 0 && <span className="mobile-badge">{totalFavorites}</span>}
+            </Link>
+            <a
+              href="https://twitter.com/vaibhav_lodha"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mobile-nav-link"
+            >
+              <span className="mobile-nav-icon">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
-              </a>
-              <div className="desktop-theme-toggle">
-                <ThemeToggle />
-              </div>
-            </div>
-          </nav>
+              </span>
+              <span>Follow on X</span>
+            </a>
+          </div>
         </div>
-      </header >
+      </nav>
 
       <main className="container main-content">
         {children}
       </main>
 
-      <footer style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-secondary)', borderTop: '1px solid var(--glass-border)' }}>
+      <footer className="app-footer">
         <p>© {new Date().getFullYear()} Voucher Tracker. Open Source Community Project.</p>
-        <p style={{ fontSize: '0.9rem', marginTop: '0.5rem' }}>
-          Created by <a href="https://twitter.com/vaibhav_lodha" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-cyan)', textDecoration: 'none' }}>@vaibhav_lodha</a>
+        <p className="footer-credit">
+          Created by <a href="https://twitter.com/vaibhav_lodha" target="_blank" rel="noopener noreferrer">@vaibhav_lodha</a>
         </p>
       </footer>
-    </div >
+    </div>
   );
 };
 
@@ -211,4 +358,3 @@ Layout.propTypes = {
 };
 
 export default Layout;
-

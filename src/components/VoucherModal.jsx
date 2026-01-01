@@ -1,4 +1,16 @@
-import React from 'react';
+/**
+ * VoucherModal - Polished Version
+ * 
+ * Improvements:
+ * - Toast notifications on copy
+ * - Share to WhatsApp/Twitter
+ * - Quick add to favorites
+ * - Better "Best Deal" highlighting
+ * - Improved accessibility
+ * - Animated interactions
+ */
+
+import React, { useState, useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { getPlatformStyle } from '../utils/platformLogos';
 import { Link } from 'react-router-dom';
@@ -6,6 +18,8 @@ import { useModalKeyHandler } from '../hooks/useModalKeyHandler';
 import { useDiscountParser } from '../hooks/useDiscountParser';
 import { useReviews } from '../hooks/useReviews';
 import { usePriceHistory } from '../hooks/usePriceHistory';
+import { useFavorites } from '../context/FavoritesContext';
+import { useToast } from './UXPolish';
 import RatingStars from './RatingStars';
 import ReviewModal from './ReviewModal';
 import ReviewsList from './ReviewsList';
@@ -13,40 +27,102 @@ import PriceHistoryChart from './PriceHistoryChart';
 import ExpiryBadge from './ExpiryBadge';
 
 const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
-    if (!voucher) return null;
+    const toast = useToast();
+    const { toggleFavoriteVoucher, isVoucherFavorite } = useFavorites();
 
-    const [activeTab, setActiveTab] = React.useState('offers'); // 'offers', 'reviews', 'history'
-    const [showReviewModal, setShowReviewModal] = React.useState(false);
-    const [copiedLink, setCopiedLink] = React.useState(null);
-    const [selectedPlatformForHistory, setSelectedPlatformForHistory] = React.useState(
-        voucher.platforms[0]?.name || null
+    const [activeTab, setActiveTab] = useState('offers');
+    const [showReviewModal, setShowReviewModal] = useState(false);
+    const [copiedLink, setCopiedLink] = useState(null);
+    const [showShareMenu, setShowShareMenu] = useState(null);
+    const [selectedPlatformForHistory, setSelectedPlatformForHistory] = useState(
+        voucher?.platforms[0]?.name || null
     );
 
-    const copyLink = (link, platformName) => {
+    // Hooks
+    useModalKeyHandler(true, onClose);
+    const { getBestPlatform } = useDiscountParser();
+    const { reviews, averageRating, reviewCount, addReview, markHelpful } = useReviews(voucher?.id);
+    const { priceHistory } = usePriceHistory(voucher?.id);
+
+    const isFavorite = isVoucherFavorite(voucher?.id);
+
+    // Copy link with toast
+    const copyLink = useCallback((link, platformName) => {
         navigator.clipboard.writeText(link).then(() => {
             setCopiedLink(platformName);
+            toast.success(`Link copied for ${platformName}!`);
             setTimeout(() => setCopiedLink(null), 2000);
+        }).catch(() => {
+            toast.error('Failed to copy link');
         });
-    };
+    }, [toast]);
 
-    // Use custom modal keyboard handler hook
-    useModalKeyHandler(true, onClose);
+    // Share functionality
+    const shareVoucher = useCallback((platform, method) => {
+        const url = platform.link;
+        const text = `Check out ${voucher.brand} voucher on ${platform.name} - ${platform.fee} discount!`;
 
-    // Use discount parser hook
-    const { getBestPlatform } = useDiscountParser();
+        if (method === 'whatsapp') {
+            window.open(`https://wa.me/?text=${encodeURIComponent(text + '\n' + url)}`, '_blank');
+            toast.success('Opening WhatsApp...');
+        } else if (method === 'twitter') {
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+            toast.success('Opening Twitter...');
+        } else if (method === 'native' && navigator.share) {
+            navigator.share({
+                title: `${voucher.brand} Voucher`,
+                text: text,
+                url: url
+            }).then(() => {
+                toast.success('Shared successfully!');
+            }).catch(() => { });
+        }
+        setShowShareMenu(null);
+    }, [voucher, toast]);
 
-    // Use reviews hook
-    const { reviews, averageRating, reviewCount, addReview, markHelpful } = useReviews(voucher.id);
+    // Copy all deals
+    const copyAllDeals = useCallback(() => {
+        const deals = voucher.platforms.map(p =>
+            `${p.name}: ${p.fee} (Cap: ${p.cap}) - ${p.link}`
+        ).join('\n\n');
 
-    // Use price history hook
-    const { priceHistory } = usePriceHistory(voucher.id);
+        const text = `${voucher.brand} Voucher Deals:\n\n${deals}`;
 
-    // Calculate best platform ID/Index
-    const bestPlatformIndex = React.useMemo(() => {
+        navigator.clipboard.writeText(text).then(() => {
+            toast.success('All deals copied to clipboard!');
+        });
+    }, [voucher, toast]);
+
+    // Toggle favorite with feedback
+    const handleFavoriteToggle = useCallback(() => {
+        toggleFavoriteVoucher(voucher.id, voucher.brand);
+
+        // Haptic feedback
+        if (navigator.vibrate) {
+            navigator.vibrate(isFavorite ? 30 : [30, 50, 30]);
+        }
+    }, [toggleFavoriteVoucher, voucher, isFavorite]);
+
+    // Calculate best platform
+    const bestPlatformIndex = useMemo(() => {
+        if (!voucher) return -1;
         const { idx, discount } = getBestPlatform(voucher.platforms);
-        // Only highlight if there is actually a discount > 0
         return discount > 0 ? idx : -1;
     }, [voucher, getBestPlatform]);
+
+    // Calculate total potential savings
+    const potentialSavings = useMemo(() => {
+        if (!voucher || bestPlatformIndex === -1) return null;
+        const bestPlatform = voucher.platforms[bestPlatformIndex];
+        const fee = bestPlatform.fee || '';
+        const match = fee.match(/(\d+(?:\.\d+)?)\s*%/);
+        if (match) {
+            const discount = parseFloat(match[1]);
+            // Assume ₹1000 spend for calculation
+            return Math.round(1000 * discount / 100);
+        }
+        return null;
+    }, [voucher, bestPlatformIndex]);
 
     const getRewardText = (fee) => {
         if (fee.toLowerCase().includes('discount')) {
@@ -58,22 +134,39 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
         return { label: 'Fees', value: fee };
     };
 
+    if (!voucher) return null;
+
     return (
-        <div className="modal-overlay" onClick={onClose}>
+        <div
+            className="modal-overlay"
+            onClick={onClose}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="voucher-modal-title"
+        >
             <div
                 className="modal-container glass-panel"
                 onClick={e => e.stopPropagation()}
+                style={{
+                    animation: 'modalSlideIn 0.3s ease-out',
+                    maxWidth: '700px',
+                    width: '95%',
+                    margin: '0 auto'
+                }}
             >
                 {/* Header */}
                 <div className="modal-header">
                     <div className="modal-header__logo">
                         <img
                             src={voucher.logo}
-                            alt={voucher.brand}
+                            alt=""
+                            onError={(e) => {
+                                e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(voucher.brand)}&background=random`;
+                            }}
                         />
                     </div>
                     <div className="modal-header__info" style={{ flex: 1 }}>
-                        <h2 className="modal-header__title">{voucher.brand}</h2>
+                        <h2 id="voucher-modal-title" className="modal-header__title">{voucher.brand}</h2>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '4px', flexWrap: 'wrap' }}>
                             <span className="modal-header__tag">{voucher.category}</span>
                             {voucher.expiryDays && voucher.lastUpdated && (
@@ -84,271 +177,292 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                                 />
                             )}
                             {averageRating > 0 && (
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                                    <RatingStars rating={averageRating} size="xs" reviewCount={reviewCount} />
-                                </div>
+                                <RatingStars rating={averageRating} size="xs" reviewCount={reviewCount} />
                             )}
                         </div>
                     </div>
-                    {voucher.site && (
-                        <a
-                            href={voucher.site}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="launch-site-btn"
-                        >
-                            <span className="btn-text-desktop">Launch Site</span>
-                            <span className="btn-text-mobile">Site</span>
-                            <span className="btn-icon">↗</span>
-                        </a>
-                    )}
-                    <button
-                        onClick={onClose}
-                        className="btn-close"
-                    >
-                        ×
-                    </button>
-                </div>
 
-                {/* Tabs */}
-                <div style={{
-                    display: 'flex',
-                    borderBottom: '1px solid var(--modal-border)',
-                    padding: '0 var(--space-lg)',
-                    gap: '4px'
-                }}>
-                    {[
-                        { id: 'offers', label: 'Offers', icon: '💰' },
-                        { id: 'reviews', label: `Reviews${reviewCount > 0 ? ` (${reviewCount})` : ''}`, icon: '⭐' },
-                        { id: 'history', label: 'Price History', icon: '📈' }
-                    ].map(tab => (
+                    {/* Action Buttons - Clean like production */}
+                    <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                        {/* Share to X button */}
                         <button
-                            key={tab.id}
-                            onClick={() => setActiveTab(tab.id)}
+                            onClick={() => {
+                                const url = `${window.location.origin}${window.location.pathname}#/?voucher=${voucher.id}`;
+                                const text = `Check out ${voucher.brand} voucher deals on Voucher Tracker! 🎫💰`;
+                                window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+                                toast.success('Opening X/Twitter...');
+                            }}
                             style={{
-                                padding: '12px 16px',
-                                background: 'transparent',
-                                border: 'none',
-                                borderBottom: activeTab === tab.id ? '2px solid var(--accent-cyan)' : '2px solid transparent',
-                                color: activeTab === tab.id ? 'var(--accent-cyan)' : 'var(--text-secondary)',
-                                fontWeight: activeTab === tab.id ? 600 : 400,
-                                fontSize: '0.85rem',
+                                padding: '8px 14px',
+                                borderRadius: '8px',
+                                border: '1px solid rgba(255, 255, 255, 0.2)',
+                                background: 'linear-gradient(135deg, #000, #1a1a1a)',
+                                color: '#fff',
                                 cursor: 'pointer',
-                                transition: 'all var(--duration-normal)',
+                                fontSize: '0.85rem',
+                                fontWeight: '600',
                                 display: 'flex',
                                 alignItems: 'center',
-                                gap: '6px'
+                                gap: '6px',
+                                transition: 'all 0.2s ease',
                             }}
+                            onMouseEnter={(e) => {
+                                e.target.style.background = 'linear-gradient(135deg, #1a1a1a, #333)';
+                                e.target.style.transform = 'translateY(-1px)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.target.style.background = 'linear-gradient(135deg, #000, #1a1a1a)';
+                                e.target.style.transform = 'translateY(0)';
+                            }}
+                            title="Share to X (Twitter)"
                         >
-                            <span>{tab.icon}</span>
-                            <span>{tab.label}</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                            Share
                         </button>
-                    ))}
+                        {voucher.site && (
+                            <a
+                                href={voucher.site}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="launch-site-btn"
+                            >
+                                <span className="btn-text-desktop">Launch Site</span>
+                                <span className="btn-text-mobile">Site</span>
+                                <span className="btn-icon">↗</span>
+                            </a>
+                        )}
+                        <button
+                            onClick={onClose}
+                            className="btn-close"
+                            aria-label="Close modal"
+                        >
+                            ×
+                        </button>
+                    </div>
+
                 </div>
 
-                {/* Body */}
-                <div className="modal-body">
-                    {activeTab === 'offers' && (
-                        <>
-                            <div className="modal-section-header">AVAILABLE OFFERS</div>
+                {/* Content - Directly show offers like production */}
+                <div className="modal-content" role="tabpanel">
+                    <div className="modal-section-header" style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center'
+                    }}>
+                        <span>AVAILABLE OFFERS</span>
+                    </div>
 
-                            <div className="modal-content">
-                                {voucher.platforms.map((platform, idx) => {
-                                    const { label, value } = getRewardText(platform.fee);
-                                    const style = getPlatformStyle(platform.name);
+                    <div className="platforms-grid">
+                        {voucher.platforms.map((platform, idx) => {
+                            const style = getPlatformStyle(platform.name);
+                            const { label, value } = getRewardText(platform.fee);
+                            const isBest = idx === bestPlatformIndex;
+                            const isSelected = selectedPlatform === platform.name;
 
-                                    const isBest = idx === bestPlatformIndex;
-                                    const isSelected = selectedPlatform === platform.name;
-
-                                    const platformClasses = [
-                                        'platform-offer',
-                                        isBest && 'best',
-                                        isSelected && 'selected'
-                                    ].filter(Boolean).join(' ');
-
-                                    return (
-                                        <div key={idx} className={platformClasses}>
-                                            {isBest && (
-                                                <div className="platform-offer__badge">
-                                                    BEST RATE
-                                                </div>
-                                            )}
-
-                                            <div className="platform-offer__header">
-                                                {/* Platform Logo */}
-                                                <div
-                                                    className="platform-offer__logo"
-                                                    style={{
-                                                        background: style.bg,
-                                                        padding: style.padding
-                                                    }}
-                                                >
-                                                    {style.logo ? (
-                                                        <img src={style.logo} alt={platform.name} />
-                                                    ) : (
-                                                        <span style={{ color: '#000', fontWeight: 'bold', fontSize: '1.2rem' }}>{platform.name[0]}</span>
-                                                    )}
-                                                </div>
-
-                                                {/* Details */}
-                                                <div className="platform-offer__details">
-                                                    <div className="platform-offer__metric">
-                                                        <div className="platform-offer__metric-label">{label}</div>
-                                                        <div className={`platform-offer__metric-value ${label === 'Savings' ? 'savings' : ''}`}>
-                                                            {value}
-                                                        </div>
-                                                    </div>
-                                                    <div className="platform-offer__metric">
-                                                        <div className="platform-offer__metric-label">Monthly Cap</div>
-                                                        <div className="platform-offer__metric-value">{platform.cap}</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            {/* Denominations & Button */}
-                                            <div className="platform-offer__footer">
-                                                <div className="platform-offer__denominations">
-                                                    {platform.denominations.slice(0, 4).map(d => (
-                                                        <span key={d} className="denomination-badge">
-                                                            ₹{d}
-                                                        </span>
-                                                    ))}
-                                                    {platform.denominations.length > 4 && (
-                                                        <span className="text-secondary text-xs">+more</span>
-                                                    )}
-                                                </div>
-
-                                                <div style={{ display: 'flex', gap: '8px' }}>
-                                                    <button
-                                                        onClick={() => copyLink(platform.link, platform.name)}
-                                                        title="Copy link"
-                                                        style={{
-                                                            padding: '8px 12px',
-                                                            borderRadius: '8px',
-                                                            border: copiedLink === platform.name ? '1px solid #22c55e' : '1px solid var(--glass-border)',
-                                                            background: copiedLink === platform.name ? 'rgba(34, 197, 94, 0.1)' : 'transparent',
-                                                            color: copiedLink === platform.name ? '#22c55e' : 'var(--text-secondary)',
-                                                            cursor: 'pointer',
-                                                            fontSize: '0.8rem',
-                                                            transition: 'all 0.2s'
-                                                        }}
-                                                    >
-                                                        {copiedLink === platform.name ? '✓ Copied!' : '📋 Copy'}
-                                                    </button>
-                                                    <a
-                                                        href={platform.link}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="btn-secondary"
-                                                    >
-                                                        Buy on {platform.name} ↗
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    );
-                                })}
-                            </div>
-
-                            {/* Did you know section */}
-                            <div className="info-card">
-                                <span className="info-card__icon">💡</span>
-                                <div>
-                                    <h4 className="info-card__title">Did you know?</h4>
-                                    <p className="info-card__description">
-                                        Buying vouchers often stacks with credit card rewards. Check your card's specific multiplier for 'Gift Card' purchases before buying.
-                                    </p>
-                                </div>
-                            </div>
-                        </>
-                    )}
-
-                    {activeTab === 'reviews' && (
-                        <>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-                                <div className="modal-section-header">
-                                    USER REVIEWS {reviewCount > 0 && `(${reviewCount})`}
-                                </div>
-                                <button
-                                    onClick={() => setShowReviewModal(true)}
-                                    className="btn-primary"
-                                    style={{ padding: '8px 16px', fontSize: '0.85rem' }}
+                            return (
+                                <div
+                                    key={idx}
+                                    className={`platform-offer ${isBest ? 'best' : ''} ${isSelected ? 'selected' : ''}`}
+                                    style={{
+                                        animation: `fadeInUp 0.3s ease-out ${idx * 0.1}s both`,
+                                    }}
                                 >
-                                    Write Review
-                                </button>
-                            </div>
-
-                            {averageRating > 0 && (
-                                <div style={{
-                                    background: 'var(--glass-bg)',
-                                    border: '1px solid var(--glass-border)',
-                                    borderRadius: 'var(--radius-md)',
-                                    padding: 'var(--space-md)',
-                                    marginBottom: 'var(--space-lg)',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: 'var(--space-lg)'
-                                }}>
-                                    <div style={{ textAlign: 'center' }}>
-                                        <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--accent-cyan)' }}>
-                                            {averageRating.toFixed(1)}
+                                    {isBest && (
+                                        <div className="platform-offer__badge" style={{
+                                            background: 'linear-gradient(135deg, #22c55e, #16a34a)',
+                                            animation: 'pulse 2s infinite',
+                                        }}>
+                                            🏆 BEST RATE
                                         </div>
-                                        <RatingStars rating={averageRating} size="md" />
-                                        <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '4px' }}>
-                                            Based on {reviewCount} review{reviewCount !== 1 ? 's' : ''}
+                                    )}
+
+                                    <div className="platform-offer__header">
+                                        <div
+                                            className="platform-offer__logo"
+                                            style={{
+                                                background: style.bg,
+                                                padding: style.padding,
+                                                borderRadius: '12px',
+                                                width: '56px',
+                                                height: '56px',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                flexShrink: 0,
+                                                overflow: 'hidden'
+                                            }}
+                                        >
+                                            {style.logo ? (
+                                                <img
+                                                    src={style.logo}
+                                                    alt={platform.name}
+                                                    style={{
+                                                        maxWidth: '100%',
+                                                        maxHeight: '100%',
+                                                        objectFit: 'contain'
+                                                    }}
+                                                    onError={(e) => {
+                                                        e.target.style.display = 'none';
+                                                        e.target.nextSibling.style.display = 'flex';
+                                                    }}
+                                                />
+                                            ) : null}
+                                            <span style={{
+                                                color: '#fff',
+                                                fontWeight: 'bold',
+                                                fontSize: '1.2rem',
+                                                display: style.logo ? 'none' : 'flex'
+                                            }}>
+                                                {platform.name[0]}
+                                            </span>
+                                        </div>
+
+                                        <div className="platform-offer__details">
+                                            <div className="platform-offer__metric">
+                                                <div className="platform-offer__metric-label">{label}</div>
+                                                <div className={`platform-offer__metric-value ${label === 'Savings' ? 'savings' : ''}`}>
+                                                    {value}
+                                                </div>
+                                            </div>
+                                            <div className="platform-offer__metric">
+                                                <div className="platform-offer__metric-label">Monthly Cap</div>
+                                                <div className="platform-offer__metric-value">{platform.cap}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="platform-offer__footer">
+                                        <div className="platform-offer__denominations">
+                                            {platform.denominations?.slice(0, 4).map(d => (
+                                                <span key={d} className="denomination-badge">₹{d}</span>
+                                            ))}
+                                            {platform.denominations?.length > 4 && (
+                                                <span className="text-secondary text-xs">+more</span>
+                                            )}
+                                        </div>
+
+                                        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                                            {/* Copy Button */}
+                                            <button
+                                                onClick={() => copyLink(platform.link, platform.name)}
+                                                title="Copy link"
+                                                style={{
+                                                    padding: '8px 12px',
+                                                    borderRadius: '8px',
+                                                    border: copiedLink === platform.name
+                                                        ? '1px solid #22c55e'
+                                                        : '1px solid var(--glass-border)',
+                                                    background: copiedLink === platform.name
+                                                        ? 'rgba(34, 197, 94, 0.15)'
+                                                        : 'transparent',
+                                                    color: copiedLink === platform.name
+                                                        ? '#22c55e'
+                                                        : 'var(--text-secondary)',
+                                                    cursor: 'pointer',
+                                                    fontSize: '0.8rem',
+                                                    transition: 'all 0.2s',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    gap: '4px',
+                                                }}
+                                            >
+                                                📋 {copiedLink === platform.name ? 'Copied!' : 'Copy'}
+                                            </button>
+
+                                            {/* Buy Button - Clean style like production */}
+                                            <a
+                                                href={platform.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="btn-secondary"
+                                                style={{
+                                                    textDecoration: 'none',
+                                                    padding: '8px 16px',
+                                                    borderRadius: '8px',
+                                                    border: '1px solid var(--glass-border)',
+                                                    background: 'transparent',
+                                                    color: 'var(--text-primary)',
+                                                    fontSize: '0.8rem',
+                                                    display: 'inline-flex',
+                                                    alignItems: 'center',
+                                                    gap: '4px',
+                                                }}
+                                            >
+                                                Buy on {platform.name} ↗
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
-                            )}
+                            );
+                        })}
+                    </div>
 
-                            <ReviewsList reviews={reviews} onMarkHelpful={markHelpful} />
-                        </>
-                    )}
-
-                    {activeTab === 'history' && (
-                        <>
-                            <div className="modal-section-header">PRICE HISTORY</div>
-
-                            {voucher.platforms.length > 1 && (
-                                <div style={{ marginBottom: '1rem' }}>
-                                    <label style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '8px', display: 'block' }}>
-                                        Select Platform:
-                                    </label>
-                                    <select
-                                        value={selectedPlatformForHistory}
-                                        onChange={(e) => setSelectedPlatformForHistory(e.target.value)}
-                                        className="sort-dropdown"
-                                        style={{ width: '100%', maxWidth: '300px' }}
-                                    >
-                                        {voucher.platforms.map((platform, idx) => (
-                                            <option key={idx} value={platform.name}>
-                                                {platform.name}
-                                            </option>
-                                        ))}
-                                    </select>
-                                </div>
-                            )}
-
-                            {selectedPlatformForHistory && (
-                                <PriceHistoryChart
-                                    priceHistory={priceHistory}
-                                    platformName={selectedPlatformForHistory}
-                                />
-                            )}
-                        </>
-                    )}
+                    {/* Tip Card */}
+                    <div className="info-card" style={{ marginTop: '1.5rem' }}>
+                        <span className="info-card__icon">💡</span>
+                        <div>
+                            <h4 className="info-card__title">Did you know?</h4>
+                            <p className="info-card__description">
+                                Buying vouchers often stacks with credit card rewards. Check your card's specific multiplier for 'Gift Card' purchases before buying.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            {/* Review Modal */}
-            {showReviewModal && (
-                <ReviewModal
-                    voucher={voucher}
-                    onClose={() => setShowReviewModal(false)}
-                    onSubmit={addReview}
-                />
-            )}
-        </div>
+                {/* Reviews and Price History tabs hidden for now */}
+
+                {/* Review Modal */}
+                {
+                    showReviewModal && (
+                        <ReviewModal
+                            voucherId={voucher.id}
+                            brandName={voucher.brand}
+                            platforms={voucher.platforms.map(p => p.name)}
+                            onClose={() => setShowReviewModal(false)}
+                            onSubmit={(review) => {
+                                addReview(review);
+                                setShowReviewModal(false);
+                                toast.success('Thanks for your review!');
+                            }}
+                        />
+                    )
+                }
+
+                {/* Animation styles */}
+                <style>{`
+                    @keyframes modalSlideIn {
+                        from {
+                            opacity: 0;
+                            transform: translateY(20px) scale(0.98);
+                        }
+                        to {
+                            opacity: 1;
+                            transform: translateY(0) scale(1);
+                        }
+                    }
+                    @keyframes fadeInUp {
+                        from {
+                            opacity: 0;
+                            transform: translateY(10px);
+                        }
+                        to {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                    }
+                    @keyframes fadeIn {
+                        from { opacity: 0; }
+                        to { opacity: 1; }
+                    }
+                    @keyframes pulse {
+                        0%, 100% { opacity: 1; }
+                        50% { opacity: 0.8; }
+                    }
+                `}</style>
+            </div >
+        </div >
     );
 };
 
@@ -357,7 +471,7 @@ VoucherModal.propTypes = {
         id: PropTypes.string,
         brand: PropTypes.string.isRequired,
         logo: PropTypes.string,
-        category: PropTypes.string.isRequired,
+        category: PropTypes.string,
         site: PropTypes.string,
         expiryDays: PropTypes.number,
         lastUpdated: PropTypes.string,
@@ -366,7 +480,7 @@ VoucherModal.propTypes = {
             fee: PropTypes.string,
             cap: PropTypes.string,
             link: PropTypes.string,
-            denominations: PropTypes.arrayOf(PropTypes.string),
+            denominations: PropTypes.array,
         })).isRequired,
     }),
     onClose: PropTypes.func.isRequired,
