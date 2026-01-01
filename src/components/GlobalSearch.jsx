@@ -67,7 +67,7 @@ const GlobalSearch = () => {
         const cardItems = safeCreditCards.map(c => ({
             ...c,
             type: 'card',
-            path: `/card-guide/${c.id}`,
+            path: `/card-guide/${c.slug || c.id}`,
             icon: '💳'
         }));
 

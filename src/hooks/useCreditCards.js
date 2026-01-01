@@ -130,6 +130,8 @@ const transformCreditCard = (card) => {
     return {
         ...card,
         multiplierBadge,
+        // Ensure slug exists (fall back to id if missing from source)
+        slug: card.slug || card.id,
         // Flatten commonly accessed fields for backward compatibility
         annualFee,
         joiningFee,

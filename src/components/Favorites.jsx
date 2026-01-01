@@ -270,7 +270,7 @@ const Favorites = () => {
                         {favoritedCardObjects.slice(-3).reverse().map(card => (
                             <Link
                                 key={`recent-card-${card.id}`}
-                                to={`/card-guide/${card.id}`}
+                                to={`/card-guide/${card.slug || card.id}`}
                                 className="glass-panel"
                                 style={{
                                     minWidth: '200px',
@@ -410,7 +410,7 @@ const Favorites = () => {
                                         >
                                             ✕
                                         </button>
-                                        <Link to={`/card-guide/${card.id}`} className="favorite-card-link">
+                                        <Link to={`/card-guide/${card.slug || card.id}`} className="favorite-card-link">
                                             <div className="favorite-card-image">
                                                 <CardImage card={card} style={{ maxWidth: '140px', maxHeight: '90px' }} />
                                             </div>

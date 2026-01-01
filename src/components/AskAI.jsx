@@ -971,7 +971,7 @@ const AskAI = () => {
                                     {msg.cards?.length > 0 && (
                                         <div style={{ display: 'flex', gap: '6px', marginTop: '0.5rem', flexWrap: 'wrap' }}>
                                             {msg.cards.map(card => (
-                                                <Link key={card.id} to={`/card-guide/${card.id}`} style={{
+                                                <Link key={card.id} to={`/card-guide/${card.slug || card.id}`} style={{
                                                     display: 'flex', alignItems: 'center', gap: '4px', padding: '6px 10px',
                                                     background: 'rgba(6, 182, 212, 0.1)', borderRadius: '8px',
                                                     border: '1px solid rgba(6, 182, 212, 0.2)', textDecoration: 'none',

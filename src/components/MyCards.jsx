@@ -85,7 +85,7 @@ const MyCards = () => {
         <div className="mycards-icon">💳</div>
         <h1>My Cards</h1>
         <p>Your personal credit card collection</p>
-        
+
         {/* Stats */}
         <div className="mycards-stats">
           <div className="stat">
@@ -132,7 +132,7 @@ const MyCards = () => {
 
       {/* Tab Content */}
       <div className="mycards-content">
-        
+
         {/* Collection Tab */}
         {activeTab === 'collection' && (
           <>
@@ -145,7 +145,7 @@ const MyCards = () => {
                 </div>
                 <h2>No cards yet</h2>
                 <p>Add your credit cards to get personalized recommendations and track your rewards</p>
-                <button 
+                <button
                   className="btn-primary"
                   onClick={() => setActiveTab('add')}
                 >
@@ -164,13 +164,13 @@ const MyCards = () => {
                       {cards.map(card => {
                         const note = getCardNote(card.id);
                         const tierInfo = TIER_CONFIG[card.tier] || TIER_CONFIG.entry;
-                        
+
                         return (
                           <div key={card.id} className="card-item glass-panel">
                             {/* Tier Badge */}
-                            <div 
+                            <div
                               className="tier-badge"
-                              style={{ 
+                              style={{
                                 background: `${tierInfo.color}20`,
                                 borderColor: `${tierInfo.color}40`,
                                 color: tierInfo.color,
@@ -178,12 +178,12 @@ const MyCards = () => {
                             >
                               {tierInfo.icon} {tierInfo.label}
                             </div>
-                            
+
                             {/* Card Visual */}
                             <div className="card-visual">
                               <CardImage card={card} />
                             </div>
-                            
+
                             {/* Card Info */}
                             <div className="card-info">
                               <h4>{card.name}</h4>
@@ -191,7 +191,7 @@ const MyCards = () => {
                                 {card.annualFee} • {card.rewardRate || 'Rewards vary'}
                               </p>
                             </div>
-                            
+
                             {/* Note */}
                             {editingNote === card.id ? (
                               <div className="note-editor">
@@ -207,14 +207,14 @@ const MyCards = () => {
                                 </div>
                               </div>
                             ) : note ? (
-                              <div 
+                              <div
                                 className="card-note"
                                 onClick={() => { setEditingNote(card.id); setNoteText(note); }}
                               >
                                 📝 {note}
                               </div>
                             ) : null}
-                            
+
                             {/* Actions */}
                             <div className="card-actions">
                               <button
@@ -224,7 +224,7 @@ const MyCards = () => {
                               >
                                 📝
                               </button>
-                              <Link to={`/card-guide/${card.id}`} className="btn-icon" title="View guide">
+                              <Link to={`/card-guide/${card.slug || card.id}`} className="btn-icon" title="View guide">
                                 📖
                               </Link>
                               <button
@@ -335,7 +335,7 @@ const MyCards = () => {
                       >
                         + Add to Collection
                       </button>
-                      <Link to={`/card-guide/${rec.id}`} className="btn-secondary">
+                      <Link to={`/card-guide/${rec.slug || rec.id}`} className="btn-secondary">
                         View Details
                       </Link>
                     </div>

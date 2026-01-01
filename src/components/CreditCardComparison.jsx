@@ -325,7 +325,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
 
         cardIds.forEach(id => {
             // Direct ID match
-            const found = creditCards.find(card => card.id === id);
+            const found = creditCards.find(card => card.id === id || card.slug === id || card.id === parseInt(id));
 
             if (found && !matchedIds.includes(found.id)) {
                 matchedIds.push(found.id);
@@ -598,7 +598,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                                 {cards.map(card => (
                                     <td key={card.id} style={{ padding: '1rem', textAlign: 'center' }}>
                                         <Link
-                                            to={`/card-guide/${card.id}`}
+                                            to={`/card-guide/${card.slug || card.id}`}
                                             style={{
                                                 display: 'inline-block',
                                                 padding: '8px 16px',
@@ -1422,7 +1422,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                                 {selectedCards.includes(modalCard.id) ? 'Remove from Compare' : 'Add to Compare'}
                             </button>
                             <Link
-                                to={`/card-guide/${modalCard.id}`}
+                                to={`/card-guide/${modalCard.slug || modalCard.id}`}
                                 style={{
                                     flex: 1,
                                     padding: '12px',

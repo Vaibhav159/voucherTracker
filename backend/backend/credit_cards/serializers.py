@@ -14,7 +14,7 @@ class CreditCardSerializer(serializers.ModelSerializer):
     class Meta:
         model = CreditCard
         fields = [
-            "id", "name", "bank", "category", "image", "annualFee",
+            "id", "slug", "name", "bank", "category", "image", "annualFee",
             "rewardRate", "fxMarkup", "bestFor", "verdict", "detailedGuide",
             "applyLink", "features", "tags", "rewardType", "rewardCaps"
         ]

@@ -10,7 +10,7 @@ export const creditCards = [
       "annual": 999,
       "currency": "INR",
       "waivedOn": 200000,
-      "waiverText": "Waived on ₹2 Lakh spend in a calendar year"
+      "waiverText": "Waived on \u20b92 Lakh spend in a calendar year"
     },
     "eligibility": {
       "income": 300000,
@@ -119,8 +119,8 @@ export const creditCards = [
       "pros": [
         "5% cashback on ALL online spends (no merchant restrictions)",
         "Simple auto-credit redemption (no points to track)",
-        "₹5,000 monthly cap is generous for most users",
-        "Easy annual fee waiver at ₹2 Lakh spend",
+        "\u20b95,000 monthly cap is generous for most users",
+        "Easy annual fee waiver at \u20b92 Lakh spend",
         "1% cashback on offline spends"
       ],
       "cons": [
@@ -130,7 +130,8 @@ export const creditCards = [
         "High forex markup at 3.5%",
         "Limited additional benefits"
       ]
-    }
+    },
+    "slug": "sbi-cashback"
   },
   {
     "id": "icici-emeralde-private-metal",
@@ -143,7 +144,7 @@ export const creditCards = [
       "annual": 12499,
       "currency": "INR",
       "waivedOn": 1000000,
-      "waiverText": "Annual fee waived on spending ₹10 lakhs in a card anniversary year"
+      "waiverText": "Annual fee waived on spending \u20b910 lakhs in a card anniversary year"
     },
     "eligibility": {
       "income": 2400000,
@@ -158,7 +159,7 @@ export const creditCards = [
       "type": "points",
       "name": "ICICI Reward Points",
       "baseRate": 0.03,
-      "earningText": "6 Reward Points per ₹200 spent (3% value back at 1:1 redemption for travel/vouchers)",
+      "earningText": "6 Reward Points per \u20b9200 spent (3% value back at 1:1 redemption for travel/vouchers)",
       "expiry": "3 years from date of earning",
       "joiningBonus": "12,500 Reward Points + Taj Epicure Preferred Membership (1 year) + EazyDiner Prime Membership (renewed annually)",
       "exclusions": "Fuel, Rent, Tax, Government Services, E-Wallet Loads",
@@ -166,13 +167,16 @@ export const creditCards = [
         "tier": "super-premium",
         "monthlyCap": null,
         "capResetPeriod": "calendar",
-        "specialLogic": "6X rewards on flights/vouchers (18% value) and 12X rewards on hotel bookings (36% value) via iShop. Category caps: Grocery ₹40,000/month, Utilities ₹80,000/month, Insurance ₹80,000/month, Education ₹80,000/month",
+        "specialLogic": "6X rewards on flights/vouchers (18% value) and 12X rewards on hotel bookings (36% value) via iShop. Category caps: Grocery \u20b940,000/month, Utilities \u20b980,000/month, Insurance \u20b980,000/month, Education \u20b980,000/month",
         "portals": [
           {
             "name": "iShop",
             "rate": 0.36,
             "label": "12X (36% Value) on Hotels via iShop",
-            "categories": ["hotels", "travel"]
+            "categories": [
+              "hotels",
+              "travel"
+            ]
           }
         ],
         "categories": {
@@ -210,30 +214,30 @@ export const creditCards = [
       },
       "redemption": {
         "baseValue": 1,
-        "bestOption": "Redeem for flights, hotels via iShop or select brand vouchers (Apple, Tanishq, Tumi, Coach) for 1 RP = ₹1",
+        "bestOption": "Redeem for flights, hotels via iShop or select brand vouchers (Apple, Tanishq, Tumi, Coach) for 1 RP = \u20b91",
         "options": [
           {
             "type": "iShop Travel/Vouchers",
             "value": 1,
-            "desc": "1 RP = ₹1",
+            "desc": "1 RP = \u20b91",
             "recommended": true
           },
           {
             "type": "Select Brand Vouchers",
             "value": 1,
-            "desc": "1 RP = ₹1 (Apple, Tanishq, Tumi, Coach, etc.)",
+            "desc": "1 RP = \u20b91 (Apple, Tanishq, Tumi, Coach, etc.)",
             "recommended": true
           },
           {
             "type": "Rewards Catalogue",
             "value": 0.6,
-            "desc": "1 RP = ₹0.60",
+            "desc": "1 RP = \u20b90.60",
             "recommended": false
           },
           {
             "type": "Statement Credit",
             "value": 0.4,
-            "desc": "1 RP = ₹0.40",
+            "desc": "1 RP = \u20b90.40",
             "recommended": false
           }
         ]
@@ -248,7 +252,7 @@ export const creditCards = [
       "milestones": [
         {
           "spend": 800000,
-          "benefit": "₹6,000 EaseMyTrip Air Travel Vouchers (2 x ₹3,000)"
+          "benefit": "\u20b96,000 EaseMyTrip Air Travel Vouchers (2 x \u20b93,000)"
         }
       ],
       "golf": {
@@ -257,7 +261,7 @@ export const creditCards = [
       },
       "movies": {
         "included": true,
-        "text": "BOGO on BookMyShow up to ₹750 off on second ticket, 2 times per month"
+        "text": "BOGO on BookMyShow up to \u20b9750 off on second ticket, 2 times per month"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -293,7 +297,8 @@ export const creditCards = [
         "No direct airline mile transfer partners",
         "Statement credit redemption at poor 0.40 value"
       ]
-    }
+    },
+    "slug": "icici-emeralde-private-metal"
   },
   {
     "id": "amazon-pay-icici",
@@ -323,7 +328,7 @@ export const creditCards = [
       "baseRate": 0.05,
       "earningText": "5% on Amazon (Prime), 3% (Non-Prime), 2% on Amazon Pay partners, 1% elsewhere",
       "expiry": "Never (Amazon Pay balance)",
-      "joiningBonus": "₹500 Amazon Prime Voucher + ₹2,000 cashback coupons (Prime) / ₹1,500 coupons (Non-Prime)",
+      "joiningBonus": "\u20b9500 Amazon Prime Voucher + \u20b92,000 cashback coupons (Prime) / \u20b91,500 coupons (Non-Prime)",
       "exclusions": "Fuel, Rent, Tax, Education, Utilities, International spends (no cashback), EMI, Gold/Silver",
       "calculator": {
         "tier": "co-branded",
@@ -335,7 +340,9 @@ export const creditCards = [
             "name": "Amazon",
             "rate": 0.05,
             "label": "5% (Prime) on Amazon",
-            "categories": ["shopping"]
+            "categories": [
+              "shopping"
+            ]
           }
         ],
         "categories": {
@@ -452,7 +459,8 @@ export const creditCards = [
         "No international spend cashback",
         "Requires Prime membership for best rewards"
       ]
-    }
+    },
+    "slug": "amazon-pay-icici"
   },
   {
     "id": "hdfc-infinia-metal",
@@ -465,7 +473,7 @@ export const creditCards = [
       "annual": 12500,
       "currency": "INR",
       "waivedOn": 1000000,
-      "waiverText": "Waived on ₹10 Lakh spend in preceding 12 months"
+      "waiverText": "Waived on \u20b910 Lakh spend in preceding 12 months"
     },
     "eligibility": {
       "income": 2400000,
@@ -480,7 +488,7 @@ export const creditCards = [
       "type": "points",
       "name": "Reward Points",
       "baseRate": 0.033,
-      "earningText": "5 Reward Points per ₹150 spent (3.33% when redeemed at 1:1)",
+      "earningText": "5 Reward Points per \u20b9150 spent (3.33% when redeemed at 1:1)",
       "expiry": "3 years",
       "joiningBonus": "12,500 Reward Points + Club Marriott Membership on fee payment",
       "exclusions": "Fuel, Rent (via third-party apps), Government payments, Wallet loads",
@@ -494,35 +502,44 @@ export const creditCards = [
             "name": "SmartBuy Flights/Hotels",
             "rate": 0.333,
             "label": "33.3% (10X Rewards - Flights/Hotels)",
-            "categories": ["travel", "hotels"]
+            "categories": [
+              "travel",
+              "hotels"
+            ]
           },
           {
             "name": "SmartBuy Vouchers (Gyftr)",
             "rate": 0.165,
             "label": "16.5% (5X Rewards - Amazon/Flipkart)",
-            "categories": ["online", "shopping"]
+            "categories": [
+              "online",
+              "shopping"
+            ]
           },
           {
             "name": "SmartBuy Apple/Tanishq",
             "rate": 0.165,
             "label": "16.5% (5X Rewards)",
-            "categories": ["online", "shopping"]
+            "categories": [
+              "online",
+              "shopping"
+            ]
           }
         ],
         "categories": {
           "travel": {
             "rate": 0.033,
-            "label": "3.33% (5 RP/₹150)",
+            "label": "3.33% (5 RP/\u20b9150)",
             "cap": null
           },
           "dining": {
             "rate": 0.033,
-            "label": "3.33% (5 RP/₹150)",
+            "label": "3.33% (5 RP/\u20b9150)",
             "cap": null
           },
           "online": {
             "rate": 0.033,
-            "label": "3.33% (5 RP/₹150)",
+            "label": "3.33% (5 RP/\u20b9150)",
             "cap": null
           },
           "fuel": {
@@ -549,7 +566,7 @@ export const creditCards = [
           {
             "type": "SmartBuy Flights/Hotels",
             "value": 1,
-            "desc": "1 RP = ₹1 (up to 70% of booking, max 1.5L RP/month)",
+            "desc": "1 RP = \u20b91 (up to 70% of booking, max 1.5L RP/month)",
             "recommended": true
           },
           {
@@ -561,25 +578,25 @@ export const creditCards = [
           {
             "type": "Apple Products",
             "value": 1,
-            "desc": "1 RP = ₹1 via SmartBuy",
+            "desc": "1 RP = \u20b91 via SmartBuy",
             "recommended": true
           },
           {
             "type": "Tanishq Vouchers",
             "value": 1,
-            "desc": "1 RP = ₹1 via SmartBuy",
+            "desc": "1 RP = \u20b91 via SmartBuy",
             "recommended": true
           },
           {
             "type": "Product Catalogue",
             "value": 0.5,
-            "desc": "1 RP = ₹0.50",
+            "desc": "1 RP = \u20b90.50",
             "recommended": false
           },
           {
             "type": "Statement Credit",
             "value": 0.3,
-            "desc": "1 RP = ₹0.30 (max 50K RP/month)",
+            "desc": "1 RP = \u20b90.30 (max 50K RP/month)",
             "recommended": false
           }
         ]
@@ -640,12 +657,13 @@ export const creditCards = [
       ],
       "cons": [
         "Invite only - extremely difficult to obtain",
-        "High annual fee ₹12,500 + GST",
-        "₹10L spend required for fee waiver",
+        "High annual fee \u20b912,500 + GST",
+        "\u20b910L spend required for fee waiver",
         "SmartBuy rewards capped at 15,000 RP/month",
         "No rewards on fuel"
       ]
-    }
+    },
+    "slug": "hdfc-infinia-metal"
   },
   {
     "id": "hdfc-diners-club-black-metal",
@@ -658,7 +676,7 @@ export const creditCards = [
       "annual": 10000,
       "currency": "INR",
       "waivedOn": 800000,
-      "waiverText": "Waived on ₹8 Lakh spend in card anniversary year"
+      "waiverText": "Waived on \u20b98 Lakh spend in card anniversary year"
     },
     "eligibility": {
       "income": 1800000,
@@ -673,9 +691,9 @@ export const creditCards = [
       "type": "points",
       "name": "Reward Points",
       "baseRate": 0.033,
-      "earningText": "5 Reward Points per ₹150 spent (3.33% value back at 1:1 redemption)",
+      "earningText": "5 Reward Points per \u20b9150 spent (3.33% value back at 1:1 redemption)",
       "expiry": "3 years",
-      "joiningBonus": "Club Marriott + Amazon Prime + Swiggy One on ₹1.5L spend in 90 days",
+      "joiningBonus": "Club Marriott + Amazon Prime + Swiggy One on \u20b91.5L spend in 90 days",
       "exclusions": "Fuel, Rent, Government payments, Wallet loads",
       "calculator": {
         "tier": "super-premium",
@@ -687,29 +705,35 @@ export const creditCards = [
             "name": "SmartBuy Flights/Hotels",
             "rate": 0.333,
             "label": "33.3% (10X Rewards - Flights/Hotels)",
-            "categories": ["travel", "hotels"]
+            "categories": [
+              "travel",
+              "hotels"
+            ]
           },
           {
             "name": "SmartBuy Vouchers (Gyftr)",
             "rate": 0.099,
             "label": "10% (3X Rewards - Amazon/Flipkart)",
-            "categories": ["online", "shopping"]
+            "categories": [
+              "online",
+              "shopping"
+            ]
           }
         ],
         "categories": {
           "travel": {
             "rate": 0.033,
-            "label": "3.33% (5 RP/₹150)",
+            "label": "3.33% (5 RP/\u20b9150)",
             "cap": null
           },
           "dining": {
             "rate": 0.066,
-            "label": "6.67% (10 RP/₹150 on weekends)",
+            "label": "6.67% (10 RP/\u20b9150 on weekends)",
             "cap": null
           },
           "online": {
             "rate": 0.033,
-            "label": "3.33% (5 RP/₹150)",
+            "label": "3.33% (5 RP/\u20b9150)",
             "cap": null
           },
           "fuel": {
@@ -736,7 +760,7 @@ export const creditCards = [
           {
             "type": "SmartBuy Flights/Hotels",
             "value": 1,
-            "desc": "1 RP = ₹1 (max 75K RP/month)",
+            "desc": "1 RP = \u20b91 (max 75K RP/month)",
             "recommended": true
           },
           {
@@ -748,19 +772,19 @@ export const creditCards = [
           {
             "type": "Product Catalogue",
             "value": 1,
-            "desc": "1 RP = ₹1 for select items",
+            "desc": "1 RP = \u20b91 for select items",
             "recommended": false
           },
           {
             "type": "Vouchers",
             "value": 1,
-            "desc": "1 RP = ₹1 for select vouchers",
+            "desc": "1 RP = \u20b91 for select vouchers",
             "recommended": false
           },
           {
             "type": "Statement Credit",
             "value": 0.3,
-            "desc": "1 RP = ₹0.30",
+            "desc": "1 RP = \u20b90.30",
             "recommended": false
           }
         ]
@@ -779,7 +803,7 @@ export const creditCards = [
         },
         {
           "spend": 400000,
-          "benefit": "10,000 Bonus RP per quarter (₹4L spend)"
+          "benefit": "10,000 Bonus RP per quarter (\u20b94L spend)"
         }
       ],
       "golf": {
@@ -819,13 +843,14 @@ export const creditCards = [
         "Quarterly milestone bonus of 10K RP"
       ],
       "cons": [
-        "₹10,000 + GST annual fee",
+        "\u20b910,000 + GST annual fee",
         "Diners Club acceptance limited at some merchants",
         "Airmile conversion devalued (2:1 ratio)",
         "Max 75,000 RP earning per statement cycle",
         "Insurance rewards capped at 5,000 RP/month"
       ]
-    }
+    },
+    "slug": "hdfc-diners-club-black-metal"
   },
   {
     "id": "hdfc-tata-neu-infinity",
@@ -838,7 +863,7 @@ export const creditCards = [
       "annual": 1499,
       "currency": "INR",
       "waivedOn": 300000,
-      "waiverText": "Waived on ₹3 Lakh spend in a year"
+      "waiverText": "Waived on \u20b93 Lakh spend in a year"
     },
     "eligibility": {
       "income": 1200000,
@@ -902,19 +927,19 @@ export const creditCards = [
           {
             "type": "Tata Neu/Partners",
             "value": 1,
-            "desc": "1 NeuCoin = ₹1 at BigBasket, Croma, Westside, Taj, etc.",
+            "desc": "1 NeuCoin = \u20b91 at BigBasket, Croma, Westside, Taj, etc.",
             "recommended": true
           },
           {
             "type": "Tanishq",
             "value": 1,
-            "desc": "1 NeuCoin = ₹1 for gold/jewellery",
+            "desc": "1 NeuCoin = \u20b91 for gold/jewellery",
             "recommended": true
           },
           {
             "type": "Air India",
             "value": 1,
-            "desc": "1 NeuCoin = ₹1 for flights",
+            "desc": "1 NeuCoin = \u20b91 for flights",
             "recommended": true
           }
         ]
@@ -922,7 +947,7 @@ export const creditCards = [
     },
     "features": {
       "lounge": {
-        "domestic": "8 per year (2/quarter on ₹50K spend) - milestone based from June 2025",
+        "domestic": "8 per year (2/quarter on \u20b950K spend) - milestone based from June 2025",
         "international": "4 per year (1/quarter) via Priority Pass",
         "accessType": "Priority Pass (Visa) / Voucher (RuPay)"
       },
@@ -974,7 +999,8 @@ export const creditCards = [
         "Multiple category caps (2,000/month each)",
         "No rewards on rent, fuel, gaming"
       ]
-    }
+    },
+    "slug": "hdfc-tata-neu-infinity"
   },
   {
     "id": "amex-platinum-travel",
@@ -1002,9 +1028,9 @@ export const creditCards = [
       "type": "points",
       "name": "Membership Rewards Points",
       "baseRate": 0.02,
-      "earningText": "1 MR Point per ₹50 spent (2% base rate)",
+      "earningText": "1 MR Point per \u20b950 spent (2% base rate)",
       "expiry": "Never (while card is active)",
-      "joiningBonus": "10,000 MR Points on ₹15,000 spend within 90 days (worth ₹3,000)",
+      "joiningBonus": "10,000 MR Points on \u20b915,000 spend within 90 days (worth \u20b93,000)",
       "exclusions": "Fuel, Insurance, Utilities, Cash transactions, EMI at POS",
       "calculator": {
         "tier": "premium",
@@ -1016,23 +1042,26 @@ export const creditCards = [
             "name": "Reward Multiplier",
             "rate": 0.06,
             "label": "3X via Reward Multiplier (Amazon/Flipkart)",
-            "categories": ["shopping", "travel"]
+            "categories": [
+              "shopping",
+              "travel"
+            ]
           }
         ],
         "categories": {
           "travel": {
             "rate": 0.02,
-            "label": "1 MR per ₹50",
+            "label": "1 MR per \u20b950",
             "cap": null
           },
           "dining": {
             "rate": 0.02,
-            "label": "1 MR per ₹50",
+            "label": "1 MR per \u20b950",
             "cap": null
           },
           "online": {
             "rate": 0.02,
-            "label": "1 MR per ₹50 (3X with Reward Multiplier)",
+            "label": "1 MR per \u20b950 (3X with Reward Multiplier)",
             "cap": null
           },
           "fuel": {
@@ -1042,7 +1071,7 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.02,
-            "label": "1 MR per ₹50",
+            "label": "1 MR per \u20b950",
             "cap": null
           },
           "utilities": {
@@ -1059,7 +1088,7 @@ export const creditCards = [
           {
             "type": "Amex Travel Online (Pay with Points)",
             "value": 0.3,
-            "desc": "1 MR = ₹0.30 for flights/hotels",
+            "desc": "1 MR = \u20b90.30 for flights/hotels",
             "recommended": true
           },
           {
@@ -1083,19 +1112,19 @@ export const creditCards = [
           {
             "type": "Taj Vouchers",
             "value": 0.4,
-            "desc": "25,000 MR = ₹10,000 voucher",
+            "desc": "25,000 MR = \u20b910,000 voucher",
             "recommended": false
           },
           {
             "type": "Amazon/Flipkart Vouchers",
             "value": 0.25,
-            "desc": "22,000 MR = ₹5,000 voucher",
+            "desc": "22,000 MR = \u20b95,000 voucher",
             "recommended": false
           },
           {
             "type": "Statement Credit",
             "value": 0.25,
-            "desc": "1 MR = ₹0.25",
+            "desc": "1 MR = \u20b90.25",
             "recommended": false
           }
         ]
@@ -1118,7 +1147,7 @@ export const creditCards = [
         },
         {
           "spend": 400000,
-          "benefit": "25,000 Bonus MR Points + ₹10,000 Taj Stay Voucher (annual)"
+          "benefit": "25,000 Bonus MR Points + \u20b910,000 Taj Stay Voucher (annual)"
         }
       ],
       "golf": {
@@ -1132,7 +1161,7 @@ export const creditCards = [
       "fuel": {
         "surchargeWaiver": "0-1%",
         "cap": null,
-        "text": "0% fee at HPCL below ₹5,000, 1% above ₹5,000"
+        "text": "0% fee at HPCL below \u20b95,000, 1% above \u20b95,000"
       },
       "forex": {
         "markup": 0.035,
@@ -1154,11 +1183,11 @@ export const creditCards = [
         "Amex",
         "Hotel Benefits"
       ],
-      "bestFor": "Frequent travelers who can hit ₹4 Lakh annual spend to maximize milestone rewards and Taj/Marriott benefits",
+      "bestFor": "Frequent travelers who can hit \u20b94 Lakh annual spend to maximize milestone rewards and Taj/Marriott benefits",
       "rating": 4.3,
-      "verdict": "India's best milestone-based travel card with up to ₹24,000 annual value for those who can hit spend targets",
+      "verdict": "India's best milestone-based travel card with up to \u20b924,000 annual value for those who can hit spend targets",
       "pros": [
-        "Excellent milestone rewards (40,000 points + ₹10K Taj voucher on ₹4L spend)",
+        "Excellent milestone rewards (40,000 points + \u20b910K Taj voucher on \u20b94L spend)",
         "Points never expire",
         "1:1 Marriott Bonvoy transfer",
         "8 complimentary domestic lounge visits",
@@ -1169,11 +1198,12 @@ export const creditCards = [
         "No annual fee waiver option",
         "High forex markup at 3.5%",
         "International lounge access costs $35/visit",
-        "Low base redemption value (₹0.25-0.30)",
+        "Low base redemption value (\u20b90.25-0.30)",
         "Limited acceptance compared to Visa/Mastercard",
         "Amex temporarily paused new applications (as of 2025)"
       ]
-    }
+    },
+    "slug": "amex-platinum-travel"
   },
   {
     "id": 14,
@@ -1205,7 +1235,7 @@ export const creditCards = [
     "bank": "Federal Bank",
     "image": "assets/cards/scapia.png",
     "annualFee": "Lifetime Free",
-    "rewardRate": "2% flat (5 Coins/₹100)",
+    "rewardRate": "2% flat (5 Coins/\u20b9100)",
     "rewardType": "cashback",
     "rewardCaps": {
       "monthly": "No cap - Unlimited",
@@ -1218,7 +1248,8 @@ export const creditCards = [
       "Only LTF card with both benefits"
     ],
     "applyLink": "https://apply.scapia.cards/landing_page?referral_code=qsrcko",
-    "detailedGuide": "## 14. Scapia Federal Credit Card\n\n### Overview\nA digital-first credit card by Scapia in partnership with Federal Bank, designed specifically for travelers.\n\n### Key Features\n- **Joining Fee:** Lifetime Free\n- **Annual Fee:** Lifetime Free\n- **Forex Markup:** 0% (Zero)\n- **Reward Rate:**\n  - 10% (5 Scapia Coins/₹100) on all online/offline spends\n  - 20% (10 Scapia Coins/₹100) on travel bookings via Scapia app\n\n### Benefits\n- **Lounge Access:** Unlimited domestic lounge access (Condition: Spend ₹10,000 per month for Visa, ₹15,000 for RuPay)\n- **Redemption:** 5 Coins = ₹1 (Effective reward rate: 2% on all spends, 4% on travel)\n- **Instant Digital Issuance:** fast approval and app-based management\n- **No Cost EMI:** 3 months on travel bookings\n\n### Exclusions\n- Rent, education, cash, forex, etc. do not earn coins.\n\n### Verdict\nThe best entry-level travel card. Lifetime free + Zero Forex is a killer combination. The lounge access condition is very easy to meet."
+    "detailedGuide": "## 14. Scapia Federal Credit Card\n\n### Overview\nA digital-first credit card by Scapia in partnership with Federal Bank, designed specifically for travelers.\n\n### Key Features\n- **Joining Fee:** Lifetime Free\n- **Annual Fee:** Lifetime Free\n- **Forex Markup:** 0% (Zero)\n- **Reward Rate:**\n  - 10% (5 Scapia Coins/\u20b9100) on all online/offline spends\n  - 20% (10 Scapia Coins/\u20b9100) on travel bookings via Scapia app\n\n### Benefits\n- **Lounge Access:** Unlimited domestic lounge access (Condition: Spend \u20b910,000 per month for Visa, \u20b915,000 for RuPay)\n- **Redemption:** 5 Coins = \u20b91 (Effective reward rate: 2% on all spends, 4% on travel)\n- **Instant Digital Issuance:** fast approval and app-based management\n- **No Cost EMI:** 3 months on travel bookings\n\n### Exclusions\n- Rent, education, cash, forex, etc. do not earn coins.\n\n### Verdict\nThe best entry-level travel card. Lifetime free + Zero Forex is a killer combination. The lounge access condition is very easy to meet.",
+    "slug": "scapia-federal-credit-card"
   },
   {
     "id": 16,
@@ -1244,7 +1275,8 @@ export const creditCards = [
       "Virtual Instant Issuance"
     ],
     "applyLink": "https://gokiwi.in/",
-    "detailedGuide": "## 17. Kiwi RuPay Credit Card\n\n### Overview\nA unique fintech-led credit card designed exclusively for UPI payments, currently issued by Yes Bank or Axis Bank.\n\n### Key Features\n- **Annual Fee:** Lifetime Free\n- **Reward Rate:**\n  - 2 Kiwis per ₹50 spent (1%) on Scan & Pay\n  - 1 Kiwi = ₹0.25 (Effective 1% return)\n  - Boosted rewards (up to 5%) with \"Kiwi Neon\" subscription (₹999/year)\n\n### Benefits\n- **UPI Integration:** Seamless scan and pay via Kiwi app\n- **Virtual First:** No physical card required (optional)\n- **Accessibility:** Quick approval process\n\n### Verdict\nGreat secondary card for making small UPI payments on credit. The base 1% return on UPI is decent for a lifetime free product."
+    "detailedGuide": "## 17. Kiwi RuPay Credit Card\n\n### Overview\nA unique fintech-led credit card designed exclusively for UPI payments, currently issued by Yes Bank or Axis Bank.\n\n### Key Features\n- **Annual Fee:** Lifetime Free\n- **Reward Rate:**\n  - 2 Kiwis per \u20b950 spent (1%) on Scan & Pay\n  - 1 Kiwi = \u20b90.25 (Effective 1% return)\n  - Boosted rewards (up to 5%) with \"Kiwi Neon\" subscription (\u20b9999/year)\n\n### Benefits\n- **UPI Integration:** Seamless scan and pay via Kiwi app\n- **Virtual First:** No physical card required (optional)\n- **Accessibility:** Quick approval process\n\n### Verdict\nGreat secondary card for making small UPI payments on credit. The base 1% return on UPI is decent for a lifetime free product.",
+    "slug": "kiwi-rupay-credit-card"
   },
   {
     "id": "hdfc-regalia-gold",
@@ -1257,7 +1289,7 @@ export const creditCards = [
       "annual": 2500,
       "currency": "INR",
       "waivedOn": 400000,
-      "waiverText": "Waived on ₹4 Lakh spend in card anniversary year"
+      "waiverText": "Waived on \u20b94 Lakh spend in card anniversary year"
     },
     "eligibility": {
       "income": 1800000,
@@ -1272,9 +1304,9 @@ export const creditCards = [
       "type": "points",
       "name": "Reward Points",
       "baseRate": 0.0267,
-      "earningText": "4 Reward Points per ₹150 spent (2.67% at 1:1, up to 13% on partners)",
+      "earningText": "4 Reward Points per \u20b9150 spent (2.67% at 1:1, up to 13% on partners)",
       "expiry": "2 years",
-      "joiningBonus": "₹2,500 gift voucher + Club Vistara Silver + MMT Black Elite (on ₹1L spend in 90 days)",
+      "joiningBonus": "\u20b92,500 gift voucher + Club Vistara Silver + MMT Black Elite (on \u20b91L spend in 90 days)",
       "exclusions": "Rent, Government payments (rewards available on fuel, utilities, insurance)",
       "calculator": {
         "tier": "premium",
@@ -1286,24 +1318,30 @@ export const creditCards = [
             "name": "SmartBuy Flights/Hotels",
             "rate": 0.133,
             "label": "13.3% (5X Rewards - Flights/Hotels)",
-            "categories": ["travel", "hotels"]
+            "categories": [
+              "travel",
+              "hotels"
+            ]
           },
           {
             "name": "SmartBuy Vouchers",
             "rate": 0.133,
             "label": "13.3% (5X Rewards - Amazon/Flipkart)",
-            "categories": ["online", "shopping"]
+            "categories": [
+              "online",
+              "shopping"
+            ]
           }
         ],
         "categories": {
           "travel": {
             "rate": 0.0267,
-            "label": "2.67% (4 RP/₹150)",
+            "label": "2.67% (4 RP/\u20b9150)",
             "cap": null
           },
           "dining": {
             "rate": 0.0267,
-            "label": "2.67% (4 RP/₹150)",
+            "label": "2.67% (4 RP/\u20b9150)",
             "cap": null
           },
           "online": {
@@ -1313,17 +1351,17 @@ export const creditCards = [
           },
           "fuel": {
             "rate": 0.0267,
-            "label": "2.67% (4 RP/₹150) + 1% surcharge waiver",
+            "label": "2.67% (4 RP/\u20b9150) + 1% surcharge waiver",
             "cap": null
           },
           "groceries": {
             "rate": 0.0267,
-            "label": "2.67% (4 RP/₹150)",
+            "label": "2.67% (4 RP/\u20b9150)",
             "cap": null
           },
           "utilities": {
             "rate": 0.0267,
-            "label": "2.67% (4 RP/₹150)",
+            "label": "2.67% (4 RP/\u20b9150)",
             "cap": null
           }
         }
@@ -1335,13 +1373,13 @@ export const creditCards = [
           {
             "type": "SmartBuy Flights/Hotels",
             "value": 0.5,
-            "desc": "1 RP = ₹0.50 (up to 70% of booking, max 50K RP/month)",
+            "desc": "1 RP = \u20b90.50 (up to 70% of booking, max 50K RP/month)",
             "recommended": true
           },
           {
             "type": "Gold Catalogue",
             "value": 0.65,
-            "desc": "1 RP = ₹0.65 (Apple, Bose, Fitbit)",
+            "desc": "1 RP = \u20b90.65 (Apple, Bose, Fitbit)",
             "recommended": true
           },
           {
@@ -1353,13 +1391,13 @@ export const creditCards = [
           {
             "type": "Vouchers",
             "value": 0.35,
-            "desc": "1 RP = ₹0.35",
+            "desc": "1 RP = \u20b90.35",
             "recommended": false
           },
           {
             "type": "Statement Credit",
             "value": 0.2,
-            "desc": "1 RP = ₹0.20 (max 50K RP/month)",
+            "desc": "1 RP = \u20b90.20 (max 50K RP/month)",
             "recommended": false
           }
         ]
@@ -1374,15 +1412,15 @@ export const creditCards = [
       "milestones": [
         {
           "spend": 150000,
-          "benefit": "₹1,500 voucher (Marriott/Myntra/M&S/Reliance Digital) per quarter"
+          "benefit": "\u20b91,500 voucher (Marriott/Myntra/M&S/Reliance Digital) per quarter"
         },
         {
           "spend": 500000,
-          "benefit": "₹5,000 SmartBuy flight voucher annually"
+          "benefit": "\u20b95,000 SmartBuy flight voucher annually"
         },
         {
           "spend": 750000,
-          "benefit": "Additional ₹5,000 SmartBuy flight voucher annually"
+          "benefit": "Additional \u20b95,000 SmartBuy flight voucher annually"
         }
       ],
       "golf": {
@@ -1422,12 +1460,13 @@ export const creditCards = [
         "Low forex markup at 2%"
       ],
       "cons": [
-        "₹2,500 + GST fee with ₹4L waiver threshold",
-        "Base redemption value (₹0.50) lower than Infinia",
+        "\u20b92,500 + GST fee with \u20b94L waiver threshold",
+        "Base redemption value (\u20b90.50) lower than Infinia",
         "SmartBuy bonus capped at 5,000 RP/month",
-        "₹99 redemption fee applies"
+        "\u20b999 redemption fee applies"
       ]
-    }
+    },
+    "slug": "hdfc-regalia-gold"
   },
   {
     "id": "yes-bank-marquee",
@@ -1440,7 +1479,7 @@ export const creditCards = [
       "annual": 4999,
       "currency": "INR",
       "waivedOn": 1000000,
-      "waiverText": "Annual fee waived on ₹10 Lakh annual spend"
+      "waiverText": "Annual fee waived on \u20b910 Lakh annual spend"
     },
     "eligibility": {
       "income": 3600000,
@@ -1455,15 +1494,15 @@ export const creditCards = [
       "type": "points",
       "name": "YES Rewardz Points",
       "baseRate": 0.0225,
-      "earningText": "18 RP per ₹200 offline (2.25%); 36 RP per ₹200 online (4.5%)",
+      "earningText": "18 RP per \u20b9200 offline (2.25%); 36 RP per \u20b9200 online (4.5%)",
       "expiry": "36 months from date of earning",
-      "joiningBonus": "40,000 YES Rewardz Points (worth ₹10,000) on paying joining fee + ETPrime subscription worth ₹3,199",
+      "joiningBonus": "40,000 YES Rewardz Points (worth \u20b910,000) on paying joining fee + ETPrime subscription worth \u20b93,199",
       "exclusions": "Rental, Wallet, Fuel, Government, Marketing/Advertising, Post-purchase EMI, Instant EMI",
       "calculator": {
         "tier": "super-premium",
         "monthlyCap": 100000,
         "capResetPeriod": "statement",
-        "specialLogic": "Online spends capped at 100,000 RP/statement (~₹5.5L spend). 10 RP/₹200 on select categories (utilities, insurance, recharge). Redemption capped at 70% of cart value for flights/hotels.",
+        "specialLogic": "Online spends capped at 100,000 RP/statement (~\u20b95.5L spend). 10 RP/\u20b9200 on select categories (utilities, insurance, recharge). Redemption capped at 70% of cart value for flights/hotels.",
         "categories": {
           "travel": {
             "rate": 0.045,
@@ -1477,7 +1516,7 @@ export const creditCards = [
           },
           "online": {
             "rate": 0.045,
-            "label": "36 RP/₹200 online shopping",
+            "label": "36 RP/\u20b9200 online shopping",
             "cap": 25000
           },
           "fuel": {
@@ -1492,19 +1531,19 @@ export const creditCards = [
           },
           "utilities": {
             "rate": 0.0125,
-            "label": "10 RP/₹200 on select categories",
+            "label": "10 RP/\u20b9200 on select categories",
             "cap": null
           }
         }
       },
       "redemption": {
         "baseValue": 0.25,
-        "bestOption": "Flight/Hotel bookings via YES Rewardz portal at ₹0.25/point",
+        "bestOption": "Flight/Hotel bookings via YES Rewardz portal at \u20b90.25/point",
         "options": [
           {
             "type": "Flight/Hotel Booking",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25 (Max 3L points/month, 70% redemption limit)",
+            "desc": "1 RP = \u20b90.25 (Max 3L points/month, 70% redemption limit)",
             "recommended": true
           },
           {
@@ -1522,13 +1561,13 @@ export const creditCards = [
           {
             "type": "Gift Vouchers (Swiggy)",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": true
           },
           {
             "type": "Gift Vouchers (Amazon/Flipkart)",
             "value": 0.1,
-            "desc": "1 RP = ₹0.10 (devalued)",
+            "desc": "1 RP = \u20b90.10 (devalued)",
             "recommended": false
           }
         ]
@@ -1536,7 +1575,7 @@ export const creditCards = [
     },
     "features": {
       "lounge": {
-        "domestic": "6 per quarter (Primary + Add-on). Requires ₹1 Lakh quarterly spend from April 2025",
+        "domestic": "6 per quarter (Primary + Add-on). Requires \u20b91 Lakh quarterly spend from April 2025",
         "international": "Unlimited for Primary + Add-on. 4 guest visits/year",
         "accessType": "Direct card swipe (no Priority Pass needed)"
       },
@@ -1560,7 +1599,7 @@ export const creditCards = [
       },
       "movies": {
         "included": true,
-        "text": "BOGO on BookMyShow, max ₹800/ticket, 3 free tickets/month"
+        "text": "BOGO on BookMyShow, max \u20b9800/ticket, 3 free tickets/month"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -1588,15 +1627,16 @@ export const creditCards = [
         "Lowest forex markup at 1%",
         "Unlimited international lounge access for primary + add-on",
         "40,000 RP welcome bonus covers joining fee",
-        "BOGO movie tickets up to ₹800/ticket"
+        "BOGO movie tickets up to \u20b9800/ticket"
       ],
       "cons": [
-        "₹1 Lakh quarterly spend required for domestic lounge access from April 2025",
+        "\u20b91 Lakh quarterly spend required for domestic lounge access from April 2025",
         "Limited miles transfer partners (only Club Vistara & InterMiles)",
         "70% redemption cap on flight/hotel bookings",
-        "Gift voucher redemption value devalued to ₹0.10-0.15/point"
+        "Gift voucher redemption value devalued to \u20b90.10-0.15/point"
       ]
-    }
+    },
+    "slug": "yes-bank-marquee"
   },
   {
     "id": "marriott-bonvoy-hdfc",
@@ -1624,7 +1664,7 @@ export const creditCards = [
       "type": "points",
       "name": "Marriott Bonvoy Points",
       "baseRate": 0.0133,
-      "earningText": "8 points/₹150 at Marriott Hotels, 4 points/₹150 on Travel/Dining, 2 points/₹150 on others",
+      "earningText": "8 points/\u20b9150 at Marriott Hotels, 4 points/\u20b9150 on Travel/Dining, 2 points/\u20b9150 on others",
       "expiry": "Never (with activity every 24 months)",
       "joiningBonus": "1 Free Night Award (up to 15,000 points) on first transaction or fee levy",
       "exclusions": "Fuel, Wallet loads, Gift cards, Vouchers, Cash advances, EMI",
@@ -1636,17 +1676,17 @@ export const creditCards = [
         "categories": {
           "travel": {
             "rate": 0.0267,
-            "label": "2.67% (4 points/₹150)",
+            "label": "2.67% (4 points/\u20b9150)",
             "cap": null
           },
           "dining": {
             "rate": 0.0267,
-            "label": "2.67% (4 points/₹150)",
+            "label": "2.67% (4 points/\u20b9150)",
             "cap": null
           },
           "online": {
             "rate": 0.0133,
-            "label": "1.33% (2 points/₹150)",
+            "label": "1.33% (2 points/\u20b9150)",
             "cap": null
           },
           "fuel": {
@@ -1656,12 +1696,12 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.0133,
-            "label": "1.33% (2 points/₹150)",
+            "label": "1.33% (2 points/\u20b9150)",
             "cap": null
           },
           "utilities": {
             "rate": 0.0133,
-            "label": "1.33% (2 points/₹150)",
+            "label": "1.33% (2 points/\u20b9150)",
             "cap": null
           }
         }
@@ -1757,7 +1797,8 @@ export const creditCards = [
         "Diners Club network has limited acceptance",
         "No fuel surcharge waiver"
       ]
-    }
+    },
+    "slug": "marriott-bonvoy-hdfc"
   },
   {
     "id": "irctc-sbi-premier",
@@ -1904,7 +1945,8 @@ export const creditCards = [
         "No airport lounge access",
         "Rail accident insurance discontinued July 2025"
       ]
-    }
+    },
+    "slug": "irctc-sbi-premier"
   },
   {
     "id": "hdfc-millennia",
@@ -1917,7 +1959,7 @@ export const creditCards = [
       "annual": 1000,
       "currency": "INR",
       "waivedOn": 100000,
-      "waiverText": "Waived on ₹1 Lakh spend in 12 months"
+      "waiverText": "Waived on \u20b91 Lakh spend in 12 months"
     },
     "eligibility": {
       "income": 420000,
@@ -1981,19 +2023,19 @@ export const creditCards = [
           {
             "type": "Statement Credit",
             "value": 1,
-            "desc": "1 CashPoint = ₹1 (min 500 points, max 3K/month, ₹50 fee)",
+            "desc": "1 CashPoint = \u20b91 (min 500 points, max 3K/month, \u20b950 fee)",
             "recommended": true
           },
           {
             "type": "SmartBuy Flights/Hotels",
             "value": 1,
-            "desc": "1 CashPoint = ₹1 (up to 50% of booking, max 50K/month)",
+            "desc": "1 CashPoint = \u20b91 (up to 50% of booking, max 50K/month)",
             "recommended": true
           },
           {
             "type": "Products/Vouchers",
             "value": 0.3,
-            "desc": "1 CashPoint = ₹0.30",
+            "desc": "1 CashPoint = \u20b90.30",
             "recommended": false
           }
         ]
@@ -2008,7 +2050,7 @@ export const creditCards = [
       "milestones": [
         {
           "spend": 100000,
-          "benefit": "₹1,000 gift voucher (BigBasket/BookMyShow/PVR/Pizza Hut) per quarter"
+          "benefit": "\u20b91,000 gift voucher (BigBasket/BookMyShow/PVR/Pizza Hut) per quarter"
         }
       ],
       "golf": {
@@ -2042,19 +2084,20 @@ export const creditCards = [
       "verdict": "Best entry-level card for millennials with 5% on top 10 online brands",
       "pros": [
         "5% on Amazon, Flipkart, Myntra, Swiggy, Zomato, Uber, etc.",
-        "1 CashPoint = ₹1 redemption (1:1 ratio)",
-        "Low ₹1 Lakh waiver threshold",
+        "1 CashPoint = \u20b91 redemption (1:1 ratio)",
+        "Low \u20b91 Lakh waiver threshold",
         "Quarterly milestone vouchers",
         "Good beginner card for credit building"
       ],
       "cons": [
         "Separate 1,000 point caps on 5% and 1% categories",
-        "₹50 redemption fee from Aug 2024",
+        "\u20b950 redemption fee from Aug 2024",
         "Lounge access tied to milestone benefit",
         "No international lounge access",
         "3.5% forex markup"
       ]
-    }
+    },
+    "slug": "hdfc-millennia"
   },
   {
     "id": 30,
@@ -2095,7 +2138,8 @@ export const creditCards = [
       "1% forex markup"
     ],
     "applyLink": "https://www.getonecard.app/",
-    "detailedGuide": "## 31. OneCard Credit Card\n\n### Overview\nIndia's first mobile-first metal credit card backed by FPL Technologies.\n\n### Key Features\n- **Annual Fee:** Lifetime Free\n- **Rewards:** 5X on your top 2 spending categories (auto-detected)\n- **Forex:** 1% markup (among the lowest for LTF cards)\n\n### Benefits\n- **Metal Build:** Premium feel\n- **App Control:** Full card control via app\n- **Dynamic Rewards:** AI picks your best categories\n\n### Verdict\nStylish lifetime free metal card. The auto-category detection for 5X rewards is unique and useful."
+    "detailedGuide": "## 31. OneCard Credit Card\n\n### Overview\nIndia's first mobile-first metal credit card backed by FPL Technologies.\n\n### Key Features\n- **Annual Fee:** Lifetime Free\n- **Rewards:** 5X on your top 2 spending categories (auto-detected)\n- **Forex:** 1% markup (among the lowest for LTF cards)\n\n### Benefits\n- **Metal Build:** Premium feel\n- **App Control:** Full card control via app\n- **Dynamic Rewards:** AI picks your best categories\n\n### Verdict\nStylish lifetime free metal card. The auto-category detection for 5X rewards is unique and useful.",
+    "slug": "onecard-credit-card"
   },
   {
     "id": "irctc-hdfc",
@@ -2108,7 +2152,7 @@ export const creditCards = [
       "annual": 500,
       "currency": "INR",
       "waivedOn": 150000,
-      "waiverText": "Waived on ₹1.5 Lakh spend in anniversary year"
+      "waiverText": "Waived on \u20b91.5 Lakh spend in anniversary year"
     },
     "eligibility": {
       "income": 180000,
@@ -2123,9 +2167,9 @@ export const creditCards = [
       "type": "points",
       "name": "Reward Points",
       "baseRate": 0.01,
-      "earningText": "5 RP per ₹100 on IRCTC (5%), 1 RP per ₹100 on others (1%)",
+      "earningText": "5 RP per \u20b9100 on IRCTC (5%), 1 RP per \u20b9100 on others (1%)",
       "expiry": "2 years",
-      "joiningBonus": "₹500 gift voucher on first transaction within 37 days",
+      "joiningBonus": "\u20b9500 gift voucher on first transaction within 37 days",
       "exclusions": "Fuel, Wallet loads, Gift cards, Vouchers, EMI, Government, Education, Rent",
       "calculator": {
         "tier": "co-branded",
@@ -2135,17 +2179,17 @@ export const creditCards = [
         "categories": {
           "travel": {
             "rate": 0.05,
-            "label": "5% on IRCTC bookings (5 RP/₹100)",
+            "label": "5% on IRCTC bookings (5 RP/\u20b9100)",
             "cap": 1000
           },
           "dining": {
             "rate": 0.01,
-            "label": "1% (1 RP/₹100)",
+            "label": "1% (1 RP/\u20b9100)",
             "cap": null
           },
           "online": {
             "rate": 0.01,
-            "label": "1% (1 RP/₹100)",
+            "label": "1% (1 RP/\u20b9100)",
             "cap": null
           },
           "fuel": {
@@ -2160,7 +2204,7 @@ export const creditCards = [
           },
           "utilities": {
             "rate": 0.01,
-            "label": "1% (1 RP/₹100)",
+            "label": "1% (1 RP/\u20b9100)",
             "cap": null
           }
         }
@@ -2172,13 +2216,13 @@ export const creditCards = [
           {
             "type": "IRCTC Train Booking (SmartBuy)",
             "value": 1,
-            "desc": "1 RP = ₹1 (up to 70% of fare, min 100 RP)",
+            "desc": "1 RP = \u20b91 (up to 70% of fare, min 100 RP)",
             "recommended": true
           },
           {
             "type": "IRCTC Vouchers",
             "value": 1,
-            "desc": "1 RP = ₹1 via SmartBuy/NetBanking",
+            "desc": "1 RP = \u20b91 via SmartBuy/NetBanking",
             "recommended": true
           }
         ]
@@ -2193,7 +2237,7 @@ export const creditCards = [
       "milestones": [
         {
           "spend": 30000,
-          "benefit": "₹500 gift voucher per quarter"
+          "benefit": "\u20b9500 gift voucher per quarter"
         }
       ],
       "golf": {
@@ -2238,9 +2282,10 @@ export const creditCards = [
         "Monthly cap of 1,000 RP on accelerated rewards",
         "No airport lounge access",
         "Limited to train travel benefits",
-        "₹99 redemption fee"
+        "\u20b999 redemption fee"
       ]
-    }
+    },
+    "slug": "irctc-hdfc"
   },
   {
     "id": "hdfc-pixel-play",
@@ -2253,7 +2298,7 @@ export const creditCards = [
       "annual": 500,
       "currency": "INR",
       "waivedOn": 100000,
-      "waiverText": "Joining fee waived on ₹20K in 90 days; Annual fee waived on ₹1L/year"
+      "waiverText": "Joining fee waived on \u20b920K in 90 days; Annual fee waived on \u20b91L/year"
     },
     "eligibility": {
       "income": 300000,
@@ -2270,7 +2315,7 @@ export const creditCards = [
       "baseRate": 0.01,
       "earningText": "5% on 2 chosen categories, 3% on 1 e-commerce merchant, 1% on others",
       "expiry": "2 years",
-      "joiningBonus": "Joining fee waiver on ₹20,000 spend in 90 days",
+      "joiningBonus": "Joining fee waiver on \u20b920,000 spend in 90 days",
       "exclusions": "Fuel, Rent, EMI, Wallet loads, Government",
       "calculator": {
         "tier": "entry",
@@ -2364,7 +2409,7 @@ export const creditCards = [
         "Choose 2 categories for 5% + 1 e-commerce for 3%",
         "Customizable card design and billing cycle",
         "Fully digital management via PayZapp",
-        "Low ₹500 annual fee with easy waiver",
+        "Low \u20b9500 annual fee with easy waiver",
         "1% UPI cashback on RuPay variant"
       ],
       "cons": [
@@ -2374,7 +2419,8 @@ export const creditCards = [
         "Categories changeable only every 3 months",
         "Shared limit if existing HDFC card holder"
       ]
-    }
+    },
+    "slug": "hdfc-pixel-play"
   },
   {
     "id": "hdfc-pixel-go",
@@ -2387,7 +2433,7 @@ export const creditCards = [
       "annual": 250,
       "currency": "INR",
       "waivedOn": 50000,
-      "waiverText": "Joining fee waived on ₹10K in 90 days; Annual fee waived on ₹50K/year"
+      "waiverText": "Joining fee waived on \u20b910K in 90 days; Annual fee waived on \u20b950K/year"
     },
     "eligibility": {
       "income": 240000,
@@ -2404,7 +2450,7 @@ export const creditCards = [
       "baseRate": 0.01,
       "earningText": "5% on SmartBuy, 1% on all other eligible spends",
       "expiry": "2 years",
-      "joiningBonus": "Joining fee waiver on ₹10,000 spend in 90 days",
+      "joiningBonus": "Joining fee waiver on \u20b910,000 spend in 90 days",
       "exclusions": "Fuel, Rent, EMI, Wallet loads, Government",
       "calculator": {
         "tier": "entry",
@@ -2416,7 +2462,10 @@ export const creditCards = [
             "name": "SmartBuy",
             "rate": 0.05,
             "label": "5% CashPoints via SmartBuy (Amazon/Travel)",
-            "categories": ["shopping", "travel"]
+            "categories": [
+              "shopping",
+              "travel"
+            ]
           }
         ],
         "categories": {
@@ -2503,8 +2552,8 @@ export const creditCards = [
       "rating": 3.6,
       "verdict": "Best beginner card with simple 1% cashback and easy fee waiver",
       "pros": [
-        "Lowest fee at ₹250 + GST",
-        "Easy ₹50K waiver threshold",
+        "Lowest fee at \u20b9250 + GST",
+        "Easy \u20b950K waiver threshold",
         "1% unlimited cashback on most spends",
         "5% on SmartBuy purchases",
         "Fully digital via PayZapp"
@@ -2516,7 +2565,8 @@ export const creditCards = [
         "Limited to PayZapp redemption",
         "No customization like Pixel Play"
       ]
-    }
+    },
+    "slug": "hdfc-pixel-go"
   },
   {
     "id": "axis-magnus",
@@ -2529,7 +2579,7 @@ export const creditCards = [
       "annual": 12500,
       "currency": "INR",
       "waivedOn": 2500000,
-      "waiverText": "Waived on ₹25 Lakh spend in preceding anniversary year (excludes insurance, gold, fuel)"
+      "waiverText": "Waived on \u20b925 Lakh spend in preceding anniversary year (excludes insurance, gold, fuel)"
     },
     "eligibility": {
       "income": 2400000,
@@ -2544,10 +2594,10 @@ export const creditCards = [
       "type": "points",
       "name": "EDGE Reward Points",
       "baseRate": 0.06,
-      "earningText": "12 EDGE Points per ₹200 up to ₹1.5L/month, 35 EDGE Points per ₹200 above ₹1.5L",
+      "earningText": "12 EDGE Points per \u20b9200 up to \u20b91.5L/month, 35 EDGE Points per \u20b9200 above \u20b91.5L",
       "expiry": "3 years from credit (points forfeited 30 days after card closure)",
-      "joiningBonus": "Choice of ₹12,500 voucher (Luxe/Postcard Hotels/Yatra)",
-      "exclusions": "Fuel, Insurance, Gold/Jewellery, Utilities, Govt spends, Wallet recharge, Rent (capped at ₹50K/month with 1% fee), EMI",
+      "joiningBonus": "Choice of \u20b912,500 voucher (Luxe/Postcard Hotels/Yatra)",
+      "exclusions": "Fuel, Insurance, Gold/Jewellery, Utilities, Govt spends, Wallet recharge, Rent (capped at \u20b950K/month with 1% fee), EMI",
       "calculator": {
         "tier": "super-premium",
         "monthlyCap": null,
@@ -2558,23 +2608,26 @@ export const creditCards = [
             "name": "Travel Edge",
             "rate": 0.15,
             "label": "5X via Travel Edge (Travel/Hotels)",
-            "categories": ["travel", "hotels"]
+            "categories": [
+              "travel",
+              "hotels"
+            ]
           }
         ],
         "categories": {
           "travel": {
             "rate": 0.15,
-            "label": "60 EDGE pts/₹200 on Travel EDGE (up to ₹2L/month)",
+            "label": "60 EDGE pts/\u20b9200 on Travel EDGE (up to \u20b92L/month)",
             "cap": 600000
           },
           "dining": {
             "rate": 0.06,
-            "label": "12-35 EDGE pts/₹200 based on monthly spend tier",
+            "label": "12-35 EDGE pts/\u20b9200 based on monthly spend tier",
             "cap": null
           },
           "online": {
             "rate": 0.06,
-            "label": "12-35 EDGE pts/₹200 based on monthly spend tier",
+            "label": "12-35 EDGE pts/\u20b9200 based on monthly spend tier",
             "cap": null
           },
           "fuel": {
@@ -2584,7 +2637,7 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.06,
-            "label": "12-35 EDGE pts/₹200 based on monthly spend tier",
+            "label": "12-35 EDGE pts/\u20b9200 based on monthly spend tier",
             "cap": null
           },
           "utilities": {
@@ -2619,13 +2672,13 @@ export const creditCards = [
           {
             "type": "Travel EDGE Portal",
             "value": 0.2,
-            "desc": "1 EDGE = ₹0.20 for flights/hotels",
+            "desc": "1 EDGE = \u20b90.20 for flights/hotels",
             "recommended": false
           },
           {
             "type": "Product Catalogue",
             "value": 0.2,
-            "desc": "1 EDGE = ₹0.20",
+            "desc": "1 EDGE = \u20b90.20",
             "recommended": false
           }
         ]
@@ -2633,7 +2686,7 @@ export const creditCards = [
     },
     "features": {
       "lounge": {
-        "domestic": "Unlimited (requires ₹50K spend in previous 3 months, waived for new cards)",
+        "domestic": "Unlimited (requires \u20b950K spend in previous 3 months, waived for new cards)",
         "international": "Unlimited (Priority Pass) + 4 guest visits per year",
         "accessType": "Priority Pass"
       },
@@ -2671,25 +2724,26 @@ export const creditCards = [
         "Priority Pass",
         "High Spender"
       ],
-      "bestFor": "High spenders (₹1.5L+/month) seeking accelerated rewards and airmile transfers for premium travel",
+      "bestFor": "High spenders (\u20b91.5L+/month) seeking accelerated rewards and airmile transfers for premium travel",
       "rating": 4,
       "verdict": "Once India's best travel card, now best suited for heavy spenders who can maximize tiered rewards and airmile transfers",
       "pros": [
-        "Up to 17.5% reward rate on spends above ₹1.5L/month",
+        "Up to 17.5% reward rate on spends above \u20b91.5L/month",
         "Up to 30% on Travel EDGE portal",
         "Unlimited lounge access (domestic + international)",
         "20+ airline and hotel transfer partners",
-        "Welcome voucher worth ₹12,500"
+        "Welcome voucher worth \u20b912,500"
       ],
       "cons": [
         "Devalued 5:2 airmile conversion (was 5:4)",
-        "High ₹25 Lakh spend required for fee waiver",
+        "High \u20b925 Lakh spend required for fee waiver",
         "Domestic lounge access now spend-based",
         "Only 4 guest visits (reduced from 8)",
         "No rewards on fuel, insurance, utilities, gold",
         "500K annual cap on miles transfer (100K Group A, 400K Group B)"
       ]
-    }
+    },
+    "slug": "axis-magnus"
   },
   {
     "id": 70,
@@ -2704,7 +2758,7 @@ export const creditCards = [
         }
       },
       "monthlyCap": null,
-      "feeWaiver": "₹2L spend",
+      "feeWaiver": "\u20b92L spend",
       "highlight": "Premium lifestyle",
       "tier": "premium"
     },
@@ -2719,12 +2773,13 @@ export const creditCards = [
     "rewardType": "points",
     "features": [
       "Lifetime Free - no joining or annual fee",
-      "2 intl lounge/year + 8 domestic (2/qtr on ₹60K)",
+      "2 intl lounge/year + 8 domestic (2/qtr on \u20b960K)",
       "3X on travel & intl, 2X dining, 1X others",
-      "BOGO INOX movies (₹100 cap, 1x/mo)"
+      "BOGO INOX movies (\u20b9100 cap, 1x/mo)"
     ],
     "applyLink": "https://www.federalbank.co.in/",
-    "detailedGuide": "## Federal Celesta\n\n### Overview\nLifetime free travel card with lounge access.\n\n### Key Benefits\n- 2% forex (low for LTF card)\n- 2 international lounge/year free\n- 8 domestic lounge/year on spend\n- 1 RP = ₹0.25\n\n### Verdict\nGreat LTF card for travelers on budget."
+    "detailedGuide": "## Federal Celesta\n\n### Overview\nLifetime free travel card with lounge access.\n\n### Key Benefits\n- 2% forex (low for LTF card)\n- 2 international lounge/year free\n- 8 domestic lounge/year on spend\n- 1 RP = \u20b90.25\n\n### Verdict\nGreat LTF card for travelers on budget.",
+    "slug": "federal-celesta-credit-card"
   },
   {
     "id": 89,
@@ -2740,17 +2795,18 @@ export const creditCards = [
     "category": "Travel",
     "bank": "SBM Bank via Niyo",
     "image": "assets/cards/placeholder.png",
-    "annualFee": "₹0 (No annual fee)",
+    "annualFee": "\u20b90 (No annual fee)",
     "rewardRate": "Niyo Coins rewards",
     "rewardType": "points",
     "features": [
       "Zero forex markup (VISA exchange rates)",
-      "Lounge access on ₹50K quarterly spend",
+      "Lounge access on \u20b950K quarterly spend",
       "Niyo Coins on domestic CC transactions",
-      "⚠️ Note: Niyo Global (debit) is more popular"
+      "\u26a0\ufe0f Note: Niyo Global (debit) is more popular"
     ],
     "applyLink": "https://www.goniyo.com/",
-    "detailedGuide": "## Niyo SBM Credit Card\n\n### Overview\nNeo-bank credit card with zero forex markup.\n\n### Key Benefits\n- Zero forex markup (uses VISA rates)\n- No annual fee\n- Niyo Coins rewards\n\n### Important Note\nThe famous \"Niyo Global Card\" is actually a DEBIT card linked to savings account. This credit card variant offers similar zero forex benefits.\n\n### Verdict\nGood for international travel, but the debit card is more popular."
+    "detailedGuide": "## Niyo SBM Credit Card\n\n### Overview\nNeo-bank credit card with zero forex markup.\n\n### Key Benefits\n- Zero forex markup (uses VISA rates)\n- No annual fee\n- Niyo Coins rewards\n\n### Important Note\nThe famous \"Niyo Global Card\" is actually a DEBIT card linked to savings account. This credit card variant offers similar zero forex benefits.\n\n### Verdict\nGood for international travel, but the debit card is more popular.",
+    "slug": "niyo-sbm-credit-card"
   },
   {
     "id": 90,
@@ -2766,17 +2822,18 @@ export const creditCards = [
     "category": "Cashback",
     "bank": "CSB Bank via Jupiter",
     "image": "assets/cards/placeholder.png",
-    "annualFee": "Lifetime Free (Edge+ ₹499 one-time)",
+    "annualFee": "Lifetime Free (Edge+ \u20b9499 one-time)",
     "rewardRate": "2% selected, 0.4% others (Jewels)",
     "rewardType": "cashback",
     "features": [
       "2% on chosen category (shop/travel/dining)",
       "0.4% on all other UPI & card spends",
-      "₹250 welcome voucher on ₹2K UPI spend",
+      "\u20b9250 welcome voucher on \u20b92K UPI spend",
       "Change category every 3 billing cycles"
     ],
     "applyLink": "https://jupiter.money/",
-    "detailedGuide": "## Jupiter Edge CSB RuPay\n\n### Overview\nNeo-bank UPI-enabled credit card.\n\n### Key Benefits\n- Choose 1 category: Shop/Travel/Dining\n- 2% cashback on chosen category\n- 0.4% on all other spends\n- UPI payments via Jupiter app\n- Jewels: 5 = ₹1\n\n### Edge+ Variant (₹499 one-time)\n- 10% on shopping (wishlist brands)\n- 5% on travel\n- 1% on others\n- ₹3K/month cap total\n\n### Verdict\nBest LTF UPI credit card for digital natives."
+    "detailedGuide": "## Jupiter Edge CSB RuPay\n\n### Overview\nNeo-bank UPI-enabled credit card.\n\n### Key Benefits\n- Choose 1 category: Shop/Travel/Dining\n- 2% cashback on chosen category\n- 0.4% on all other spends\n- UPI payments via Jupiter app\n- Jewels: 5 = \u20b91\n\n### Edge+ Variant (\u20b9499 one-time)\n- 10% on shopping (wishlist brands)\n- 5% on travel\n- 1% on others\n- \u20b93K/month cap total\n\n### Verdict\nBest LTF UPI credit card for digital natives.",
+    "slug": "jupiter-edge-csb-rupay-credit-card"
   },
   {
     "id": 91,
@@ -2792,17 +2849,18 @@ export const creditCards = [
     "category": "Lifestyle",
     "bank": "Federal Bank via Fi",
     "image": "assets/cards/placeholder.png",
-    "annualFee": "₹2,000 (waived on ₹2.5L)",
+    "annualFee": "\u20b92,000 (waived on \u20b92.5L)",
     "rewardRate": "3% on brands, 0.6% base",
     "rewardType": "points",
     "features": [
       "3% on 20+ brands (Amazon/Flipkart/Swiggy/Uber)",
       "5X on top 3 monthly brands",
-      "0% forex markup, 2 lounge/qtr on ₹50K",
-      "₹4,250+ welcome vouchers on ₹2K fee"
+      "0% forex markup, 2 lounge/qtr on \u20b950K",
+      "\u20b94,250+ welcome vouchers on \u20b92K fee"
     ],
     "applyLink": "https://fi.money/",
-    "detailedGuide": "## AmpliFi Fi-Federal\n\n### Overview\nFi Money's premium lifestyle card.\n\n### Key Benefits\n- 3% on 20+ lifestyle brands\n- 5X on top 3 brands (if ₹15K+ monthly)\n- 1X (0.6%) on everything else\n- ZERO forex markup\n- Fi-Coins: 100 = ₹3 (airline miles)\n\n### Welcome (₹2K fee)\n- Zomato ₹1K, Uber ₹500, Myntra ₹1K\n- SonyLiv 1yr, Croma ₹750\n\n### Verdict\nBest mid-range neo-bank card for lifestyle spenders."
+    "detailedGuide": "## AmpliFi Fi-Federal\n\n### Overview\nFi Money's premium lifestyle card.\n\n### Key Benefits\n- 3% on 20+ lifestyle brands\n- 5X on top 3 brands (if \u20b915K+ monthly)\n- 1X (0.6%) on everything else\n- ZERO forex markup\n- Fi-Coins: 100 = \u20b93 (airline miles)\n\n### Welcome (\u20b92K fee)\n- Zomato \u20b91K, Uber \u20b9500, Myntra \u20b91K\n- SonyLiv 1yr, Croma \u20b9750\n\n### Verdict\nBest mid-range neo-bank card for lifestyle spenders.",
+    "slug": "amplifi-fi-federal-credit-card"
   },
   {
     "id": "hdfc-swiggy",
@@ -2815,7 +2873,7 @@ export const creditCards = [
       "annual": 500,
       "currency": "INR",
       "waivedOn": 200000,
-      "waiverText": "Waived on ₹2 Lakh spend in a year"
+      "waiverText": "Waived on \u20b92 Lakh spend in a year"
     },
     "eligibility": {
       "income": 180000,
@@ -2923,17 +2981,18 @@ export const creditCards = [
         "10% cashback on Swiggy (Food, Instamart, Dineout, Genie)",
         "5% on major online shopping platforms",
         "Cashback now credited directly to statement",
-        "Low annual fee of ₹500",
+        "Low annual fee of \u20b9500",
         "Free 3-month Swiggy One membership"
       ],
       "cons": [
         "No airport lounge access",
-        "Monthly caps: ₹1,500 each for Swiggy and online",
+        "Monthly caps: \u20b91,500 each for Swiggy and online",
         "5% online cashback MCC-based, can be inconsistent",
         "No fuel surcharge waiver",
         "Short Swiggy One membership (3 months only)"
       ]
-    }
+    },
+    "slug": "hdfc-swiggy"
   },
   {
     "id": "hdfc-shoppers-stop",
@@ -2963,7 +3022,7 @@ export const creditCards = [
       "baseRate": 0.01,
       "earningText": "3% on Shoppers Stop, 1% on other spends (as HDFC Reward Points from Mar 2024)",
       "expiry": "2 years",
-      "joiningBonus": "Shoppers Stop voucher worth ₹500 + Silver Edge Membership",
+      "joiningBonus": "Shoppers Stop voucher worth \u20b9500 + Silver Edge Membership",
       "exclusions": "Rent, Government payments (Grocery capped at 1,000 RP/month)",
       "calculator": {
         "tier": "co-branded",
@@ -3010,19 +3069,19 @@ export const creditCards = [
           {
             "type": "Shoppers Stop Vouchers",
             "value": 1,
-            "desc": "1 RP = ₹1 at Shoppers Stop",
+            "desc": "1 RP = \u20b91 at Shoppers Stop",
             "recommended": true
           },
           {
             "type": "SmartBuy Travel",
             "value": 0.2,
-            "desc": "1 RP = ₹0.20",
+            "desc": "1 RP = \u20b90.20",
             "recommended": false
           },
           {
             "type": "Statement Credit",
             "value": 0.2,
-            "desc": "1 RP = ₹0.20",
+            "desc": "1 RP = \u20b90.20",
             "recommended": false
           }
         ]
@@ -3037,7 +3096,7 @@ export const creditCards = [
       "milestones": [
         {
           "spend": 15000,
-          "benefit": "₹500 Shoppers Stop voucher on weekend purchase (max 5/year)"
+          "benefit": "\u20b9500 Shoppers Stop voucher on weekend purchase (max 5/year)"
         }
       ],
       "golf": {
@@ -3071,10 +3130,10 @@ export const creditCards = [
       "verdict": "Decent for Shoppers Stop customers with 3% rewards on store purchases",
       "pros": [
         "3% value back on Shoppers Stop spends",
-        "Free Silver Edge membership worth ₹350",
-        "₹500 welcome voucher",
+        "Free Silver Edge membership worth \u20b9350",
+        "\u20b9500 welcome voucher",
         "Weekend milestone vouchers",
-        "Low annual fee of ₹299"
+        "Low annual fee of \u20b9299"
       ],
       "cons": [
         "No longer lifetime free (from Mar 2024)",
@@ -3083,7 +3142,8 @@ export const creditCards = [
         "Limited redemption value outside Shoppers Stop",
         "Monthly caps on rewards"
       ]
-    }
+    },
+    "slug": "hdfc-shoppers-stop"
   },
   {
     "id": "hdfc-bizblack-metal",
@@ -3096,7 +3156,7 @@ export const creditCards = [
       "annual": 10000,
       "currency": "INR",
       "waivedOn": 750000,
-      "waiverText": "Joining waived on ₹1.5L in 90 days; Annual waived on ₹7.5L/year"
+      "waiverText": "Joining waived on \u20b91.5L in 90 days; Annual waived on \u20b97.5L/year"
     },
     "eligibility": {
       "income": 3000000,
@@ -3111,9 +3171,9 @@ export const creditCards = [
       "type": "points",
       "name": "Reward Points",
       "baseRate": 0.033,
-      "earningText": "5 RP/₹150 on all spends, 5X on business spends (₹50K+ threshold)",
+      "earningText": "5 RP/\u20b9150 on all spends, 5X on business spends (\u20b950K+ threshold)",
       "expiry": "3 years",
-      "joiningBonus": "Club Marriott + Taj voucher ₹5,000 on ₹1.5L spend in 90 days",
+      "joiningBonus": "Club Marriott + Taj voucher \u20b95,000 on \u20b91.5L spend in 90 days",
       "exclusions": "Fuel, Rent (beyond thresholds), Education (via third-party), Online gaming",
       "calculator": {
         "tier": "super-premium",
@@ -3125,7 +3185,10 @@ export const creditCards = [
             "name": "Income Tax & GST",
             "rate": 0.166,
             "label": "16.6% (5X Rewards)",
-            "categories": ["business", "tax"]
+            "categories": [
+              "business",
+              "tax"
+            ]
           }
         ],
         "categories": {
@@ -3136,7 +3199,7 @@ export const creditCards = [
           },
           "dining": {
             "rate": 0.033,
-            "label": "3.33% (5 RP/₹150)",
+            "label": "3.33% (5 RP/\u20b9150)",
             "cap": null
           },
           "online": {
@@ -3168,7 +3231,7 @@ export const creditCards = [
           {
             "type": "SmartBuy Flights/Hotels",
             "value": 1,
-            "desc": "1 RP = ₹1 (up to 70% of booking, max 75K RP/month)",
+            "desc": "1 RP = \u20b91 (up to 70% of booking, max 75K RP/month)",
             "recommended": true
           },
           {
@@ -3180,13 +3243,13 @@ export const creditCards = [
           {
             "type": "Amazon Vouchers",
             "value": 0.7,
-            "desc": "1 RP = ₹0.70",
+            "desc": "1 RP = \u20b90.70",
             "recommended": true
           },
           {
             "type": "Statement Credit",
             "value": 0.3,
-            "desc": "1 RP = ₹0.30",
+            "desc": "1 RP = \u20b90.30",
             "recommended": false
           }
         ]
@@ -3201,11 +3264,11 @@ export const creditCards = [
       "milestones": [
         {
           "spend": 150000,
-          "benefit": "Club Marriott + Taj ₹5K voucher (in 90 days)"
+          "benefit": "Club Marriott + Taj \u20b95K voucher (in 90 days)"
         },
         {
           "spend": 500000,
-          "benefit": "SmartBuy Flight/Taj voucher ₹5,000"
+          "benefit": "SmartBuy Flight/Taj voucher \u20b95,000"
         }
       ],
       "golf": {
@@ -3244,13 +3307,14 @@ export const creditCards = [
         "55 days interest-free credit period"
       ],
       "cons": [
-        "High ₹10,000 + GST annual fee",
-        "Requires ₹50K minimum spend for 5X activation",
-        "ITR requirement of ₹21-30 Lakh+",
+        "High \u20b910,000 + GST annual fee",
+        "Requires \u20b950K minimum spend for 5X activation",
+        "ITR requirement of \u20b921-30 Lakh+",
         "Diners Club limited acceptance",
         "No fuel surcharge waiver"
       ]
-    }
+    },
+    "slug": "hdfc-bizblack-metal"
   },
   {
     "id": "axis-atlas",
@@ -3278,7 +3342,7 @@ export const creditCards = [
       "type": "miles",
       "name": "EDGE Miles",
       "baseRate": 0.02,
-      "earningText": "2 EDGE Miles per ₹100 on all eligible spends; 5 EDGE Miles per ₹100 on travel (airlines, hotels, Travel Edge)",
+      "earningText": "2 EDGE Miles per \u20b9100 on all eligible spends; 5 EDGE Miles per \u20b9100 on travel (airlines, hotels, Travel Edge)",
       "expiry": "3 years from earning date",
       "joiningBonus": "2,500 EDGE Miles on first transaction within 37 days of card issuance",
       "exclusions": "Gold/Jewellery, Rent, Wallet, Government Institutions, Insurance, Fuel, Utilities, Telecom",
@@ -3286,21 +3350,21 @@ export const creditCards = [
         "tier": "premium",
         "monthlyCap": 10000,
         "capResetPeriod": "calendar",
-        "specialLogic": "5X miles on travel capped at ₹2L/month spend; Tier system (Silver/Gold/Platinum) with milestone benefits",
+        "specialLogic": "5X miles on travel capped at \u20b92L/month spend; Tier system (Silver/Gold/Platinum) with milestone benefits",
         "categories": {
           "travel": {
             "rate": 0.05,
-            "label": "5 EDGE Miles/₹100 on Travel Edge, Airlines, Hotels",
+            "label": "5 EDGE Miles/\u20b9100 on Travel Edge, Airlines, Hotels",
             "cap": 10000
           },
           "dining": {
             "rate": 0.02,
-            "label": "2 EDGE Miles/₹100",
+            "label": "2 EDGE Miles/\u20b9100",
             "cap": null
           },
           "online": {
             "rate": 0.02,
-            "label": "2 EDGE Miles/₹100",
+            "label": "2 EDGE Miles/\u20b9100",
             "cap": null
           },
           "fuel": {
@@ -3310,7 +3374,7 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.02,
-            "label": "2 EDGE Miles/₹100",
+            "label": "2 EDGE Miles/\u20b9100",
             "cap": null
           },
           "utilities": {
@@ -3327,7 +3391,7 @@ export const creditCards = [
           {
             "type": "Travel Edge Portal",
             "value": 1,
-            "desc": "1 EDGE Mile = ₹1 on flights/hotels",
+            "desc": "1 EDGE Mile = \u20b91 on flights/hotels",
             "recommended": false
           },
           {
@@ -3339,7 +3403,7 @@ export const creditCards = [
           {
             "type": "Product Catalogue",
             "value": 1,
-            "desc": "1 EDGE Mile = ₹1",
+            "desc": "1 EDGE Mile = \u20b91",
             "recommended": false
           }
         ]
@@ -3393,17 +3457,18 @@ export const creditCards = [
       "rating": 4.5,
       "verdict": "Best mid-premium travel card with excellent 1:2 partner transfer ratio",
       "pros": [
-        "5X miles on travel up to ₹2L/month",
+        "5X miles on travel up to \u20b92L/month",
         "1:2 partner transfer ratio",
         "Tier-based milestone benefits",
         "Flexible redemption across 20+ partners"
       ],
       "cons": [
         "No fee waiver option",
-        "Accelerated miles capped at ₹2L/month",
+        "Accelerated miles capped at \u20b92L/month",
         "Group A partners capped at 30K miles/year"
       ]
-    }
+    },
+    "slug": "axis-atlas"
   },
   {
     "id": "axis-reserve",
@@ -3416,7 +3481,7 @@ export const creditCards = [
       "annual": 50000,
       "currency": "INR",
       "waivedOn": 3500000,
-      "waiverText": "Annual fee waived on spending ₹35 Lakh in preceding anniversary year"
+      "waiverText": "Annual fee waived on spending \u20b935 Lakh in preceding anniversary year"
     },
     "eligibility": {
       "income": 3000000,
@@ -3431,29 +3496,29 @@ export const creditCards = [
       "type": "points",
       "name": "EDGE Reward Points",
       "baseRate": 0.015,
-      "earningText": "15 EDGE Reward Points per ₹200 spent (1.5% value-back); 2X on international spends",
+      "earningText": "15 EDGE Reward Points per \u20b9200 spent (1.5% value-back); 2X on international spends",
       "expiry": "3 years from earning date",
       "joiningBonus": "15,000 EDGE Reward Points on first transaction within 30 days",
-      "exclusions": "Fuel, Wallet, Utilities, Government Institutions, Insurance, Gold, Rent (capped at ₹1L/month)",
+      "exclusions": "Fuel, Wallet, Utilities, Government Institutions, Insurance, Gold, Rent (capped at \u20b91L/month)",
       "calculator": {
         "tier": "super-premium",
         "monthlyCap": null,
         "capResetPeriod": "calendar",
-        "specialLogic": "2X points (3% value-back) on international spends up to credit limit; Rental transactions capped at ₹1L/month",
+        "specialLogic": "2X points (3% value-back) on international spends up to credit limit; Rental transactions capped at \u20b91L/month",
         "categories": {
           "travel": {
             "rate": 0.03,
-            "label": "2X (30 points/₹200 = 3% value-back) on international spends",
+            "label": "2X (30 points/\u20b9200 = 3% value-back) on international spends",
             "cap": null
           },
           "dining": {
             "rate": 0.015,
-            "label": "15 EDGE Points/₹200 (1.5%)",
+            "label": "15 EDGE Points/\u20b9200 (1.5%)",
             "cap": null
           },
           "online": {
             "rate": 0.015,
-            "label": "15 EDGE Points/₹200 (1.5%)",
+            "label": "15 EDGE Points/\u20b9200 (1.5%)",
             "cap": null
           },
           "fuel": {
@@ -3463,7 +3528,7 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.015,
-            "label": "15 EDGE Points/₹200 (1.5%)",
+            "label": "15 EDGE Points/\u20b9200 (1.5%)",
             "cap": null
           },
           "utilities": {
@@ -3486,13 +3551,13 @@ export const creditCards = [
           {
             "type": "Product Catalogue",
             "value": 0.2,
-            "desc": "1 RP = ₹0.20",
+            "desc": "1 RP = \u20b90.20",
             "recommended": false
           },
           {
             "type": "Cashback",
             "value": 0.2,
-            "desc": "1 RP = ₹0.20 statement credit",
+            "desc": "1 RP = \u20b90.20 statement credit",
             "recommended": false
           }
         ]
@@ -3511,7 +3576,7 @@ export const creditCards = [
       },
       "movies": {
         "included": true,
-        "text": "BOGO on BookMyShow (up to ₹500 off 2nd ticket, 5x/month)"
+        "text": "BOGO on BookMyShow (up to \u20b9500 off 2nd ticket, 5x/month)"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -3536,14 +3601,15 @@ export const creditCards = [
         "Unlimited lounge access",
         "50 golf rounds/year",
         "Club ITC, Accor Plus, Marriott memberships",
-        "1.5% value-back (7.5 RP/₹100)"
+        "1.5% value-back (7.5 RP/\u20b9100)"
       ],
       "cons": [
-        "₹50K annual fee",
+        "\u20b950K annual fee",
         "5:2 transfer ratio (lower than before)",
         "Annual transfer cap of 5L points"
       ]
-    }
+    },
+    "slug": "axis-reserve"
   },
   {
     "id": "axis-olympus",
@@ -3556,7 +3622,7 @@ export const creditCards = [
       "annual": 20000,
       "currency": "INR",
       "waivedOn": null,
-      "waiverText": "No fee waiver. Compensated with ₹10K Taj/ITC vouchers + 2,500 EDGE Miles as welcome/renewal benefit"
+      "waiverText": "No fee waiver. Compensated with \u20b910K Taj/ITC vouchers + 2,500 EDGE Miles as welcome/renewal benefit"
     },
     "eligibility": {
       "income": 1800000,
@@ -3571,9 +3637,9 @@ export const creditCards = [
       "type": "miles",
       "name": "EDGE Miles",
       "baseRate": 0.01,
-      "earningText": "1 EDGE Mile per ₹100 on domestic spends; 2 EDGE Miles per ₹100 on international spends",
+      "earningText": "1 EDGE Mile per \u20b9100 on domestic spends; 2 EDGE Miles per \u20b9100 on international spends",
       "expiry": "3 years from earning date",
-      "joiningBonus": "₹10,000 Taj/ITC Hotel voucher + 2,500 EDGE Miles on first transaction within 30 days",
+      "joiningBonus": "\u20b910,000 Taj/ITC Hotel voucher + 2,500 EDGE Miles on first transaction within 30 days",
       "exclusions": "Fuel, Wallet, Utilities, Government Institutions, Insurance, Gold, Rent",
       "calculator": {
         "tier": "super-premium",
@@ -3583,17 +3649,17 @@ export const creditCards = [
         "categories": {
           "travel": {
             "rate": 0.02,
-            "label": "2 EDGE Miles/₹100 on international",
+            "label": "2 EDGE Miles/\u20b9100 on international",
             "cap": null
           },
           "dining": {
             "rate": 0.01,
-            "label": "1 EDGE Mile/₹100",
+            "label": "1 EDGE Mile/\u20b9100",
             "cap": null
           },
           "online": {
             "rate": 0.01,
-            "label": "1 EDGE Mile/₹100",
+            "label": "1 EDGE Mile/\u20b9100",
             "cap": null
           },
           "fuel": {
@@ -3603,7 +3669,7 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.01,
-            "label": "1 EDGE Mile/₹100",
+            "label": "1 EDGE Mile/\u20b9100",
             "cap": null
           },
           "utilities": {
@@ -3626,13 +3692,13 @@ export const creditCards = [
           {
             "type": "Travel Edge Portal",
             "value": 1,
-            "desc": "1 EDGE Mile = ₹1",
+            "desc": "1 EDGE Mile = \u20b91",
             "recommended": false
           },
           {
             "type": "Product Catalogue",
             "value": 1,
-            "desc": "1 EDGE Mile = ₹1",
+            "desc": "1 EDGE Mile = \u20b91",
             "recommended": false
           }
         ]
@@ -3652,7 +3718,7 @@ export const creditCards = [
       ],
       "golf": {
         "included": true,
-        "text": "8 complimentary golf rounds/year; additional rounds on ₹50K+ monthly spend"
+        "text": "8 complimentary golf rounds/year; additional rounds on \u20b950K+ monthly spend"
       },
       "movies": {
         "included": true,
@@ -3681,14 +3747,15 @@ export const creditCards = [
         "Best-in-market 1:4 partner transfer",
         "Taj Epicure membership",
         "Unlimited lounge access",
-        "₹10K hotel vouchers on joining/renewal"
+        "\u20b910K hotel vouchers on joining/renewal"
       ],
       "cons": [
         "Low 1% earn rate on domestic spends",
-        "₹20K annual fee with no waiver",
+        "\u20b920K annual fee with no waiver",
         "No milestone spend benefits"
       ]
-    }
+    },
+    "slug": "axis-olympus"
   },
   {
     "id": "axis-horizon",
@@ -3716,9 +3783,9 @@ export const creditCards = [
       "type": "miles",
       "name": "EDGE Miles",
       "baseRate": 0.02,
-      "earningText": "2 EDGE Miles per ₹100 on all eligible spends; 5 EDGE Miles per ₹100 on Travel Edge and direct airline spends",
+      "earningText": "2 EDGE Miles per \u20b9100 on all eligible spends; 5 EDGE Miles per \u20b9100 on Travel Edge and direct airline spends",
       "expiry": "3 years from earning date",
-      "joiningBonus": "5,000 EDGE Miles on first transaction of ₹1,000+ within 30 days",
+      "joiningBonus": "5,000 EDGE Miles on first transaction of \u20b91,000+ within 30 days",
       "exclusions": "Fuel, Utilities, Rent, Insurance, Transportation/Tolls, Educational Institutions, Government Institutions, Wallet",
       "calculator": {
         "tier": "premium",
@@ -3728,17 +3795,17 @@ export const creditCards = [
         "categories": {
           "travel": {
             "rate": 0.05,
-            "label": "5 EDGE Miles/₹100 on Travel Edge & Airlines",
+            "label": "5 EDGE Miles/\u20b9100 on Travel Edge & Airlines",
             "cap": null
           },
           "dining": {
             "rate": 0.02,
-            "label": "2 EDGE Miles/₹100",
+            "label": "2 EDGE Miles/\u20b9100",
             "cap": null
           },
           "online": {
             "rate": 0.02,
-            "label": "2 EDGE Miles/₹100",
+            "label": "2 EDGE Miles/\u20b9100",
             "cap": null
           },
           "fuel": {
@@ -3748,7 +3815,7 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.02,
-            "label": "2 EDGE Miles/₹100",
+            "label": "2 EDGE Miles/\u20b9100",
             "cap": null
           },
           "utilities": {
@@ -3771,13 +3838,13 @@ export const creditCards = [
           {
             "type": "Travel Edge Portal",
             "value": 1,
-            "desc": "1 EDGE Mile = ₹1",
+            "desc": "1 EDGE Mile = \u20b91",
             "recommended": false
           },
           {
             "type": "Product Catalogue",
             "value": 1,
-            "desc": "1 EDGE Mile = ₹1",
+            "desc": "1 EDGE Mile = \u20b91",
             "recommended": false
           }
         ]
@@ -3828,7 +3895,8 @@ export const creditCards = [
         "No fee waiver",
         "3.5% forex markup"
       ]
-    }
+    },
+    "slug": "axis-horizon"
   },
   {
     "id": "axis-select",
@@ -3841,7 +3909,7 @@ export const creditCards = [
       "annual": 3000,
       "currency": "INR",
       "waivedOn": 800000,
-      "waiverText": "Annual fee waived on spending ₹8 Lakh in card anniversary year"
+      "waiverText": "Annual fee waived on spending \u20b98 Lakh in card anniversary year"
     },
     "eligibility": {
       "income": 600000,
@@ -3856,29 +3924,29 @@ export const creditCards = [
       "type": "points",
       "name": "EDGE Reward Points",
       "baseRate": 0.01,
-      "earningText": "10 EDGE Reward Points per ₹200 spent; 2X (20 points) on retail shopping up to ₹20K/month",
+      "earningText": "10 EDGE Reward Points per \u20b9200 spent; 2X (20 points) on retail shopping up to \u20b920K/month",
       "expiry": "3 years from earning date",
-      "joiningBonus": "10,000 EDGE Reward Points (₹2,000 value) on first transaction within 30 days",
+      "joiningBonus": "10,000 EDGE Reward Points (\u20b92,000 value) on first transaction within 30 days",
       "exclusions": "Insurance, Rent, Fuel, Educational Services, Utilities & Telecom, Wallet, Gold/Jewellery, Government Services",
       "calculator": {
         "tier": "premium",
         "monthlyCap": 4000,
         "capResetPeriod": "calendar",
-        "specialLogic": "2X rewards on retail shopping capped at ₹20K/month; 5,000 bonus points on ₹3L annual spend",
+        "specialLogic": "2X rewards on retail shopping capped at \u20b920K/month; 5,000 bonus points on \u20b93L annual spend",
         "categories": {
           "travel": {
             "rate": 0.01,
-            "label": "10 EDGE Points/₹200",
+            "label": "10 EDGE Points/\u20b9200",
             "cap": null
           },
           "dining": {
             "rate": 0.01,
-            "label": "10 EDGE Points/₹200",
+            "label": "10 EDGE Points/\u20b9200",
             "cap": null
           },
           "online": {
             "rate": 0.01,
-            "label": "10 EDGE Points/₹200",
+            "label": "10 EDGE Points/\u20b9200",
             "cap": null
           },
           "fuel": {
@@ -3888,7 +3956,7 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.02,
-            "label": "2X (20 Points/₹200) on retail stores",
+            "label": "2X (20 Points/\u20b9200) on retail stores",
             "cap": 4000
           },
           "utilities": {
@@ -3911,13 +3979,13 @@ export const creditCards = [
           {
             "type": "Product Catalogue",
             "value": 0.2,
-            "desc": "1 RP = ₹0.20",
+            "desc": "1 RP = \u20b90.20",
             "recommended": false
           },
           {
             "type": "Cashback",
             "value": 0.2,
-            "desc": "1 RP = ₹0.20 statement credit",
+            "desc": "1 RP = \u20b90.20 statement credit",
             "recommended": false
           }
         ]
@@ -3925,8 +3993,8 @@ export const creditCards = [
     },
     "features": {
       "lounge": {
-        "domestic": "2/quarter on ₹50K spend in previous quarter",
-        "international": "6/year via Priority Pass (additional 6 on ₹3L spend)",
+        "domestic": "2/quarter on \u20b950K spend in previous quarter",
+        "international": "6/year via Priority Pass (additional 6 on \u20b93L spend)",
         "accessType": "Priority Pass"
       },
       "milestones": [
@@ -3937,11 +4005,11 @@ export const creditCards = [
       ],
       "golf": {
         "included": true,
-        "text": "6 complimentary rounds; 6 more on ₹3L annual spend (12 total)"
+        "text": "6 complimentary rounds; 6 more on \u20b93L annual spend (12 total)"
       },
       "movies": {
         "included": true,
-        "text": "BOGO via District app, twice/month (up to ₹250 off)"
+        "text": "BOGO via District app, twice/month (up to \u20b9250 off)"
       },
       "fuel": {
         "surchargeWaiver": "0%",
@@ -3971,9 +4039,10 @@ export const creditCards = [
       "cons": [
         "Low 10:1 redemption ratio",
         "No fuel rewards",
-        "Retail 2X capped at ₹20K/month"
+        "Retail 2X capped at \u20b920K/month"
       ]
-    }
+    },
+    "slug": "axis-select"
   },
   {
     "id": "axis-privilege",
@@ -3986,7 +4055,7 @@ export const creditCards = [
       "annual": 1500,
       "currency": "INR",
       "waivedOn": 500000,
-      "waiverText": "Annual fee waived on spending ₹5 Lakh in card anniversary year"
+      "waiverText": "Annual fee waived on spending \u20b95 Lakh in card anniversary year"
     },
     "eligibility": {
       "income": 600000,
@@ -4001,29 +4070,29 @@ export const creditCards = [
       "type": "points",
       "name": "EDGE Reward Points",
       "baseRate": 0.01,
-      "earningText": "10 EDGE Reward Points per ₹200 spent on all eligible domestic and international transactions",
+      "earningText": "10 EDGE Reward Points per \u20b9200 spent on all eligible domestic and international transactions",
       "expiry": "3 years from earning date",
-      "joiningBonus": "12,500 EDGE Reward Points (₹2,500 value) on joining fee payment + first transaction within 30 days",
+      "joiningBonus": "12,500 EDGE Reward Points (\u20b92,500 value) on joining fee payment + first transaction within 30 days",
       "exclusions": "Fuel, Rent, Utilities, Insurance, Gold, Government Services, Educational Services, Wallet",
       "calculator": {
         "tier": "entry",
         "monthlyCap": null,
         "capResetPeriod": "calendar",
-        "specialLogic": "Uncapped rewards on all eligible spends; 10,000 bonus points on ₹2.5L annual spend",
+        "specialLogic": "Uncapped rewards on all eligible spends; 10,000 bonus points on \u20b92.5L annual spend",
         "categories": {
           "travel": {
             "rate": 0.01,
-            "label": "10 EDGE Points/₹200",
+            "label": "10 EDGE Points/\u20b9200",
             "cap": null
           },
           "dining": {
             "rate": 0.01,
-            "label": "10 EDGE Points/₹200",
+            "label": "10 EDGE Points/\u20b9200",
             "cap": null
           },
           "online": {
             "rate": 0.01,
-            "label": "10 EDGE Points/₹200",
+            "label": "10 EDGE Points/\u20b9200",
             "cap": null
           },
           "fuel": {
@@ -4033,7 +4102,7 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.01,
-            "label": "10 EDGE Points/₹200",
+            "label": "10 EDGE Points/\u20b9200",
             "cap": null
           },
           "utilities": {
@@ -4056,13 +4125,13 @@ export const creditCards = [
           {
             "type": "Product Catalogue",
             "value": 0.2,
-            "desc": "1 RP = ₹0.20",
+            "desc": "1 RP = \u20b90.20",
             "recommended": false
           },
           {
             "type": "Cashback",
             "value": 0.2,
-            "desc": "1 RP = ₹0.20 statement credit",
+            "desc": "1 RP = \u20b90.20 statement credit",
             "recommended": false
           }
         ]
@@ -4070,14 +4139,14 @@ export const creditCards = [
     },
     "features": {
       "lounge": {
-        "domestic": "2/quarter on ₹50K spend in previous quarter (max 8/year)",
+        "domestic": "2/quarter on \u20b950K spend in previous quarter (max 8/year)",
         "international": "None",
         "accessType": "Spend-based"
       },
       "milestones": [
         {
           "spend": 250000,
-          "benefit": "10,000 bonus EDGE Reward Points (₹2,000 value)"
+          "benefit": "10,000 bonus EDGE Reward Points (\u20b92,000 value)"
         }
       ],
       "golf": {
@@ -4109,7 +4178,7 @@ export const creditCards = [
       "verdict": "Decent entry-level rewards card with uncapped earning but low redemption value",
       "pros": [
         "Uncapped reward points",
-        "Low annual fee ₹1,500",
+        "Low annual fee \u20b91,500",
         "12,500 welcome points",
         "Dining discounts via EazyDiner"
       ],
@@ -4118,7 +4187,8 @@ export const creditCards = [
         "Domestic lounges only (spend-based)",
         "No international lounge access"
       ]
-    }
+    },
+    "slug": "axis-privilege"
   },
   {
     "id": "axis-myzone",
@@ -4131,7 +4201,7 @@ export const creditCards = [
       "annual": 500,
       "currency": "INR",
       "waivedOn": null,
-      "waiverText": "SonyLIV Premium renewal on spending ₹1.5L in anniversary year"
+      "waiverText": "SonyLIV Premium renewal on spending \u20b91.5L in anniversary year"
     },
     "eligibility": {
       "income": 300000,
@@ -4146,9 +4216,9 @@ export const creditCards = [
       "type": "points",
       "name": "EDGE Reward Points",
       "baseRate": 0.004,
-      "earningText": "4 EDGE Reward Points per ₹200 spent",
+      "earningText": "4 EDGE Reward Points per \u20b9200 spent",
       "expiry": "3 years from earning date",
-      "joiningBonus": "Complimentary SonyLIV Premium membership (₹999 value) on first spend within 30 days",
+      "joiningBonus": "Complimentary SonyLIV Premium membership (\u20b9999 value) on first spend within 30 days",
       "exclusions": "Movies, Fuel, Rent, Insurance, Utilities, Jewellery, Education, Government Institutions, Wallet, EMI",
       "calculator": {
         "tier": "entry",
@@ -4158,17 +4228,17 @@ export const creditCards = [
         "categories": {
           "travel": {
             "rate": 0.004,
-            "label": "4 EDGE Points/₹200",
+            "label": "4 EDGE Points/\u20b9200",
             "cap": null
           },
           "dining": {
             "rate": 0.004,
-            "label": "4 EDGE Points/₹200",
+            "label": "4 EDGE Points/\u20b9200",
             "cap": null
           },
           "online": {
             "rate": 0.004,
-            "label": "4 EDGE Points/₹200",
+            "label": "4 EDGE Points/\u20b9200",
             "cap": null
           },
           "fuel": {
@@ -4178,7 +4248,7 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.004,
-            "label": "4 EDGE Points/₹200",
+            "label": "4 EDGE Points/\u20b9200",
             "cap": null
           },
           "utilities": {
@@ -4195,13 +4265,13 @@ export const creditCards = [
           {
             "type": "Product Catalogue",
             "value": 0.2,
-            "desc": "1 RP = ₹0.20",
+            "desc": "1 RP = \u20b90.20",
             "recommended": true
           },
           {
             "type": "Cashback",
             "value": 0.2,
-            "desc": "1 RP = ₹0.20 statement credit",
+            "desc": "1 RP = \u20b90.20 statement credit",
             "recommended": false
           }
         ]
@@ -4209,14 +4279,14 @@ export const creditCards = [
     },
     "features": {
       "lounge": {
-        "domestic": "1/quarter on ₹50K spend in previous 3 months",
+        "domestic": "1/quarter on \u20b950K spend in previous 3 months",
         "international": "None",
         "accessType": "Spend-based"
       },
       "milestones": [
         {
           "spend": 150000,
-          "benefit": "1,000 EDGE Reward Points + SonyLIV renewal (₹1.5L in anniversary year)"
+          "benefit": "1,000 EDGE Reward Points + SonyLIV renewal (\u20b91.5L in anniversary year)"
         }
       ],
       "golf": {
@@ -4247,17 +4317,18 @@ export const creditCards = [
       "rating": 3.5,
       "verdict": "Best for SonyLIV subscribers and Swiggy/movie enthusiasts on a budget",
       "pros": [
-        "Free SonyLIV Premium (₹999 value)",
+        "Free SonyLIV Premium (\u20b9999 value)",
         "BOGO movie tickets",
-        "Swiggy ₹120 off (2x/month)",
-        "Low ₹500 annual fee"
+        "Swiggy \u20b9120 off (2x/month)",
+        "Low \u20b9500 annual fee"
       ],
       "cons": [
         "Very low 0.4% reward rate",
         "Movie spends excluded from rewards",
         "Limited lounge access"
       ]
-    }
+    },
+    "slug": "axis-myzone"
   },
   {
     "id": "axis-neo",
@@ -4285,9 +4356,9 @@ export const creditCards = [
       "type": "points",
       "name": "EDGE Reward Points",
       "baseRate": 0.001,
-      "earningText": "1 EDGE Reward Point per ₹200 spent",
+      "earningText": "1 EDGE Reward Point per \u20b9200 spent",
       "expiry": "3 years from earning date",
-      "joiningBonus": "100% cashback up to ₹300 on first utility bill payment within 30 days",
+      "joiningBonus": "100% cashback up to \u20b9300 on first utility bill payment within 30 days",
       "exclusions": "Fuel, Utilities, Insurance, EMI, Wallet, Rent, Government, Education",
       "calculator": {
         "tier": "entry",
@@ -4297,17 +4368,17 @@ export const creditCards = [
         "categories": {
           "travel": {
             "rate": 0.001,
-            "label": "1 EDGE Point/₹200",
+            "label": "1 EDGE Point/\u20b9200",
             "cap": null
           },
           "dining": {
             "rate": 0.001,
-            "label": "1 EDGE Point/₹200",
+            "label": "1 EDGE Point/\u20b9200",
             "cap": null
           },
           "online": {
             "rate": 0.001,
-            "label": "1 EDGE Point/₹200",
+            "label": "1 EDGE Point/\u20b9200",
             "cap": null
           },
           "fuel": {
@@ -4317,7 +4388,7 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.001,
-            "label": "1 EDGE Point/₹200",
+            "label": "1 EDGE Point/\u20b9200",
             "cap": null
           },
           "utilities": {
@@ -4334,7 +4405,7 @@ export const creditCards = [
           {
             "type": "Product Catalogue",
             "value": 0.2,
-            "desc": "1 RP = ₹0.20",
+            "desc": "1 RP = \u20b90.20",
             "recommended": true
           }
         ]
@@ -4375,9 +4446,9 @@ export const creditCards = [
       "rating": 3.2,
       "verdict": "Ultra-basic card best for Zomato 40% off and brand discounts; poor reward rate",
       "pros": [
-        "₹250 annual fee (often LTF)",
-        "40% off on Zomato (₹120 max, 2x/month)",
-        "Myntra ₹150 off",
+        "\u20b9250 annual fee (often LTF)",
+        "40% off on Zomato (\u20b9120 max, 2x/month)",
+        "Myntra \u20b9150 off",
         "Blinkit discounts"
       ],
       "cons": [
@@ -4385,7 +4456,8 @@ export const creditCards = [
         "No lounge access",
         "Very limited benefits"
       ]
-    }
+    },
+    "slug": "axis-neo"
   },
   {
     "id": "flipkart-axis",
@@ -4398,7 +4470,7 @@ export const creditCards = [
       "annual": 500,
       "currency": "INR",
       "waivedOn": 350000,
-      "waiverText": "Annual fee waived on spending ₹3.5 Lakh in preceding year"
+      "waiverText": "Annual fee waived on spending \u20b93.5 Lakh in preceding year"
     },
     "eligibility": {
       "income": 300000,
@@ -4415,13 +4487,13 @@ export const creditCards = [
       "baseRate": 0.01,
       "earningText": "5% on Flipkart & Cleartrip; 7.5% on Myntra; 4% on Swiggy, Uber, PVR, cult.fit; 1% on others",
       "expiry": "N/A - Direct statement credit",
-      "joiningBonus": "Flipkart voucher worth ₹250 + Swiggy 50% off (up to ₹100) for new users",
+      "joiningBonus": "Flipkart voucher worth \u20b9250 + Swiggy 50% off (up to \u20b9100) for new users",
       "exclusions": "Fuel, Rent, Insurance, Utilities, Education, Gift Cards, Gold, Wallet, EMI conversions",
       "calculator": {
         "tier": "co-branded",
         "monthlyCap": 4000,
         "capResetPeriod": "statement-quarter",
-        "specialLogic": "₹4,000 cashback cap per quarter each for Flipkart, Cleartrip, Myntra",
+        "specialLogic": "\u20b94,000 cashback cap per quarter each for Flipkart, Cleartrip, Myntra",
         "categories": {
           "travel": {
             "rate": 0.05,
@@ -4481,7 +4553,7 @@ export const creditCards = [
       },
       "movies": {
         "included": true,
-        "text": "100% off on 2nd movie ticket via District app (₹250 max, 1x/month)"
+        "text": "100% off on 2nd movie ticket via District app (\u20b9250 max, 1x/month)"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -4509,11 +4581,12 @@ export const creditCards = [
         "Direct statement cashback"
       ],
       "cons": [
-        "₹4K/quarter cap on each merchant",
+        "\u20b94K/quarter cap on each merchant",
         "Lounge access discontinued",
         "Many exclusions"
       ]
-    }
+    },
+    "slug": "flipkart-axis"
   },
   {
     "id": "axis-airtel",
@@ -4526,7 +4599,7 @@ export const creditCards = [
       "annual": 500,
       "currency": "INR",
       "waivedOn": 200000,
-      "waiverText": "Annual fee waived on spending ₹2 Lakh in preceding year"
+      "waiverText": "Annual fee waived on spending \u20b92 Lakh in preceding year"
     },
     "eligibility": {
       "income": 300000,
@@ -4543,7 +4616,7 @@ export const creditCards = [
       "baseRate": 0.01,
       "earningText": "25% on Airtel bills (via Thanks app); 10% on utilities & food delivery; 1% on others",
       "expiry": "N/A - Direct statement credit",
-      "joiningBonus": "Amazon e-voucher worth ₹500 on first transaction within 30 days",
+      "joiningBonus": "Amazon e-voucher worth \u20b9500 on first transaction within 30 days",
       "exclusions": "Fuel, Rent, Insurance, Education, Gold, Wallet, EMI, Government",
       "calculator": {
         "tier": "co-branded",
@@ -4558,7 +4631,7 @@ export const creditCards = [
           },
           "dining": {
             "rate": 0.1,
-            "label": "10% on Swiggy/Zomato/BigBasket (₹500/month cap)",
+            "label": "10% on Swiggy/Zomato/BigBasket (\u20b9500/month cap)",
             "cap": 500
           },
           "online": {
@@ -4578,7 +4651,7 @@ export const creditCards = [
           },
           "utilities": {
             "rate": 0.1,
-            "label": "10% via Airtel Thanks (₹250/month cap)",
+            "label": "10% via Airtel Thanks (\u20b9250/month cap)",
             "cap": 250
           }
         }
@@ -4598,7 +4671,7 @@ export const creditCards = [
     },
     "features": {
       "lounge": {
-        "domestic": "4/year on ₹50K spend in previous 3 months",
+        "domestic": "4/year on \u20b950K spend in previous 3 months",
         "international": "None",
         "accessType": "Spend-based"
       },
@@ -4634,14 +4707,15 @@ export const creditCards = [
         "25% on Airtel bills",
         "10% on utilities via Thanks app",
         "10% on Swiggy/Zomato/BigBasket",
-        "Low ₹500 fee"
+        "Low \u20b9500 fee"
       ],
       "cons": [
         "Must use Airtel Thanks app",
-        "Low monthly caps (₹250-500)",
+        "Low monthly caps (\u20b9250-500)",
         "Only domestic lounges"
       ]
-    }
+    },
+    "slug": "axis-airtel"
   },
   {
     "id": "axis-ace",
@@ -4654,7 +4728,7 @@ export const creditCards = [
       "annual": 499,
       "currency": "INR",
       "waivedOn": 200000,
-      "waiverText": "Joining fee reversed on ₹10K spend in first 45 days; Annual fee waived on ₹2L spend"
+      "waiverText": "Joining fee reversed on \u20b910K spend in first 45 days; Annual fee waived on \u20b92L spend"
     },
     "eligibility": {
       "income": 300000,
@@ -4671,13 +4745,13 @@ export const creditCards = [
       "baseRate": 0.015,
       "earningText": "5% on Google Pay bill payments; 4% on Swiggy/Zomato/Ola; 1.5% on others",
       "expiry": "N/A - Direct statement credit",
-      "joiningBonus": "Joining fee reversed on spending ₹10,000 within 45 days",
+      "joiningBonus": "Joining fee reversed on spending \u20b910,000 within 45 days",
       "exclusions": "Fuel, Rent, Insurance, Utilities (non-GPay), Education, Gold, Wallet, EMI, Government",
       "calculator": {
         "tier": "co-branded",
         "monthlyCap": 500,
         "capResetPeriod": "statement",
-        "specialLogic": "5% on bills only via Google Pay; Combined cap of ₹500/month on 5% + 4% categories",
+        "specialLogic": "5% on bills only via Google Pay; Combined cap of \u20b9500/month on 5% + 4% categories",
         "categories": {
           "travel": {
             "rate": 0.015,
@@ -4726,7 +4800,7 @@ export const creditCards = [
     },
     "features": {
       "lounge": {
-        "domestic": "4/year on ₹50K spend in previous 3 months",
+        "domestic": "4/year on \u20b950K spend in previous 3 months",
         "international": "None",
         "accessType": "Spend-based"
       },
@@ -4762,14 +4836,15 @@ export const creditCards = [
         "5% on utility bills via GPay",
         "4% on Swiggy/Zomato/Ola",
         "1.5% base rate (unlimited)",
-        "Low ₹499 fee"
+        "Low \u20b9499 fee"
       ],
       "cons": [
         "Must use Google Pay for 5% utility cashback",
-        "₹500/month combined cap on 5%+4%",
+        "\u20b9500/month combined cap on 5%+4%",
         "iOS users can't use GPay pay feature"
       ]
-    }
+    },
+    "slug": "axis-ace"
   },
   {
     "id": "axis-indianoil",
@@ -4782,7 +4857,7 @@ export const creditCards = [
       "annual": 500,
       "currency": "INR",
       "waivedOn": 350000,
-      "waiverText": "Annual fee waived on spending ₹3.5 Lakh in card anniversary year"
+      "waiverText": "Annual fee waived on spending \u20b93.5 Lakh in card anniversary year"
     },
     "eligibility": {
       "income": 240000,
@@ -4797,39 +4872,39 @@ export const creditCards = [
       "type": "points",
       "name": "EDGE Reward Points",
       "baseRate": 0.02,
-      "earningText": "4% value-back (20 RP per ₹100) on IOCL fuel; 1% (5 RP per ₹100) on online shopping",
+      "earningText": "4% value-back (20 RP per \u20b9100) on IOCL fuel; 1% (5 RP per \u20b9100) on online shopping",
       "expiry": "3 years from earning date",
-      "joiningBonus": "Up to 1,250 EDGE Reward Points (₹250 value) on first fuel transaction within 30 days",
+      "joiningBonus": "Up to 1,250 EDGE Reward Points (\u20b9250 value) on first fuel transaction within 30 days",
       "exclusions": "Education, Government, Utilities, Rent, Wallet, Jewellery/Gold, Insurance",
       "calculator": {
         "tier": "co-branded",
         "monthlyCap": null,
         "capResetPeriod": "calendar",
-        "specialLogic": "4% on fuel only at IOCL outlets; fuel transactions ₹400-₹4,000 only",
+        "specialLogic": "4% on fuel only at IOCL outlets; fuel transactions \u20b9400-\u20b94,000 only",
         "categories": {
           "travel": {
             "rate": 0.01,
-            "label": "1 EDGE Point/₹200",
+            "label": "1 EDGE Point/\u20b9200",
             "cap": null
           },
           "dining": {
             "rate": 0.01,
-            "label": "1 EDGE Point/₹200",
+            "label": "1 EDGE Point/\u20b9200",
             "cap": null
           },
           "online": {
             "rate": 0.01,
-            "label": "5 EDGE Points/₹100 (1%)",
+            "label": "5 EDGE Points/\u20b9100 (1%)",
             "cap": null
           },
           "fuel": {
             "rate": 0.04,
-            "label": "20 EDGE Points/₹100 at IOCL (4%)",
+            "label": "20 EDGE Points/\u20b9100 at IOCL (4%)",
             "cap": null
           },
           "groceries": {
             "rate": 0.01,
-            "label": "1 EDGE Point/₹200",
+            "label": "1 EDGE Point/\u20b9200",
             "cap": null
           },
           "utilities": {
@@ -4852,7 +4927,7 @@ export const creditCards = [
           {
             "type": "Product Catalogue",
             "value": 0.2,
-            "desc": "1 RP = ₹0.20",
+            "desc": "1 RP = \u20b90.20",
             "recommended": false
           }
         ]
@@ -4894,17 +4969,18 @@ export const creditCards = [
       "verdict": "Best budget fuel card for IOCL customers with 4% value-back on fuel",
       "pros": [
         "4% value-back on IOCL fuel",
-        "Low ₹500 annual fee",
+        "Low \u20b9500 annual fee",
         "1% on online shopping",
         "Fuel surcharge waiver"
       ],
       "cons": [
         "Only works at IOCL outlets",
         "No lounge access",
-        "₹50 fuel surcharge waiver cap",
-        "Fuel txn must be ₹400-₹4,000"
+        "\u20b950 fuel surcharge waiver cap",
+        "Fuel txn must be \u20b9400-\u20b94,000"
       ]
-    }
+    },
+    "slug": "axis-indianoil"
   },
   {
     "id": "axis-lic-signature",
@@ -4932,7 +5008,7 @@ export const creditCards = [
       "type": "points",
       "name": "Reward Points",
       "baseRate": 0.002,
-      "earningText": "2 Reward Points per ₹100 on LIC premium & international spends; 1 RP per ₹100 on others",
+      "earningText": "2 Reward Points per \u20b9100 on LIC premium & international spends; 1 RP per \u20b9100 on others",
       "expiry": "12 months from earning date",
       "joiningBonus": "None",
       "exclusions": "Fuel, Wallet, EMI, Utilities & Telecom, Education, Rent, Government, Gold/Jewellery",
@@ -4944,17 +5020,17 @@ export const creditCards = [
         "categories": {
           "travel": {
             "rate": 0.002,
-            "label": "2 RP/₹100 on international",
+            "label": "2 RP/\u20b9100 on international",
             "cap": null
           },
           "dining": {
             "rate": 0.001,
-            "label": "1 RP/₹100",
+            "label": "1 RP/\u20b9100",
             "cap": null
           },
           "online": {
             "rate": 0.001,
-            "label": "1 RP/₹100",
+            "label": "1 RP/\u20b9100",
             "cap": null
           },
           "fuel": {
@@ -4964,7 +5040,7 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.001,
-            "label": "1 RP/₹100",
+            "label": "1 RP/\u20b9100",
             "cap": null
           },
           "utilities": {
@@ -5039,7 +5115,8 @@ export const creditCards = [
         "No international lounge",
         "Basic benefits"
       ]
-    }
+    },
+    "slug": "axis-lic-signature"
   },
   {
     "id": "axis-rewards",
@@ -5052,7 +5129,7 @@ export const creditCards = [
       "annual": 1000,
       "currency": "INR",
       "waivedOn": 200000,
-      "waiverText": "Annual fee waived on spending ₹2 Lakh in card anniversary year"
+      "waiverText": "Annual fee waived on spending \u20b92 Lakh in card anniversary year"
     },
     "eligibility": {
       "income": 500000,
@@ -5067,29 +5144,29 @@ export const creditCards = [
       "type": "points",
       "name": "EDGE Reward Points",
       "baseRate": 0.0032,
-      "earningText": "2 EDGE Reward Points per ₹125 spent; 10X (20 RP) on apparel & departmental stores",
+      "earningText": "2 EDGE Reward Points per \u20b9125 spent; 10X (20 RP) on apparel & departmental stores",
       "expiry": "3 years from earning date",
-      "joiningBonus": "5,000 EDGE Reward Points (₹1,000 value) on ₹1,000 spend within 30 days",
+      "joiningBonus": "5,000 EDGE Reward Points (\u20b91,000 value) on \u20b91,000 spend within 30 days",
       "exclusions": "Fuel, Wallet, Rent, Insurance, Utilities, Education, Government, EMI, Cash Advances",
       "calculator": {
         "tier": "entry",
         "monthlyCap": null,
         "capResetPeriod": "calendar",
-        "specialLogic": "10X rewards on apparel & departmental stores (up to ₹7K/month); 1,500 bonus RP on ₹30K monthly spend",
+        "specialLogic": "10X rewards on apparel & departmental stores (up to \u20b97K/month); 1,500 bonus RP on \u20b930K monthly spend",
         "categories": {
           "travel": {
             "rate": 0.0032,
-            "label": "2 EDGE Points/₹125",
+            "label": "2 EDGE Points/\u20b9125",
             "cap": null
           },
           "dining": {
             "rate": 0.0032,
-            "label": "2 EDGE Points/₹125",
+            "label": "2 EDGE Points/\u20b9125",
             "cap": null
           },
           "online": {
             "rate": 0.0032,
-            "label": "2 EDGE Points/₹125",
+            "label": "2 EDGE Points/\u20b9125",
             "cap": null
           },
           "fuel": {
@@ -5099,7 +5176,7 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.032,
-            "label": "10X (20 RP/₹125) on apparel/dept stores",
+            "label": "10X (20 RP/\u20b9125) on apparel/dept stores",
             "cap": null
           },
           "utilities": {
@@ -5122,13 +5199,13 @@ export const creditCards = [
           {
             "type": "Product Catalogue",
             "value": 0.2,
-            "desc": "1 RP = ₹0.20",
+            "desc": "1 RP = \u20b90.20",
             "recommended": false
           },
           {
             "type": "Cashback",
             "value": 0.2,
-            "desc": "1 RP = ₹0.20 statement credit",
+            "desc": "1 RP = \u20b90.20 statement credit",
             "recommended": false
           }
         ]
@@ -5136,14 +5213,14 @@ export const creditCards = [
     },
     "features": {
       "lounge": {
-        "domestic": "2/quarter on ₹50K spend in previous quarter",
+        "domestic": "2/quarter on \u20b950K spend in previous quarter",
         "international": "None",
         "accessType": "Spend-based"
       },
       "milestones": [
         {
           "spend": 30000,
-          "benefit": "1,500 EDGE Reward Points per month (on ₹30K+ monthly spend)"
+          "benefit": "1,500 EDGE Reward Points per month (on \u20b930K+ monthly spend)"
         }
       ],
       "golf": {
@@ -5177,14 +5254,15 @@ export const creditCards = [
         "10X rewards on apparel/dept stores",
         "1,500 monthly milestone bonus",
         "Swiggy 30% off",
-        "Membership bouquet ₹1,000/year"
+        "Membership bouquet \u20b91,000/year"
       ],
       "cons": [
         "Low base reward rate (0.3%)",
-        "10X accelerated capped at ₹7K",
+        "10X accelerated capped at \u20b97K",
         "Only domestic lounges (spend-based)"
       ]
-    }
+    },
+    "slug": "axis-rewards"
   },
   {
     "id": "sbi-aurum",
@@ -5344,7 +5422,8 @@ export const creditCards = [
         "Base reward rate of only 1%",
         "Rs. 12 Lakh spend required for fee waiver"
       ]
-    }
+    },
+    "slug": "sbi-aurum"
   },
   {
     "id": "sbi-elite",
@@ -5504,7 +5583,8 @@ export const creditCards = [
         "Rs. 10 Lakh spend required for fee waiver",
         "Club Vistara membership discontinued"
       ]
-    }
+    },
+    "slug": "sbi-elite"
   },
   {
     "id": "sbi-prime",
@@ -5656,7 +5736,8 @@ export const creditCards = [
         "Higher forex markup of 3.5%",
         "No renewal benefits"
       ]
-    }
+    },
+    "slug": "sbi-prime"
   },
   {
     "id": "sbi-simplyclick",
@@ -5807,7 +5888,8 @@ export const creditCards = [
         "Low base rate of 0.25% offline",
         "No travel or dining perks"
       ]
-    }
+    },
+    "slug": "sbi-simplyclick"
   },
   {
     "id": "sbi-simplysave",
@@ -5950,7 +6032,8 @@ export const creditCards = [
         "Lower base rate than SimplyCLICK (0.17% vs 0.25%)",
         "No milestone benefits"
       ]
-    }
+    },
+    "slug": "sbi-simplysave"
   },
   {
     "id": "sbi-pulse",
@@ -6098,7 +6181,8 @@ export const creditCards = [
         "Low base reward rate of 0.5%",
         "Priority Pass visits are chargeable"
       ]
-    }
+    },
+    "slug": "sbi-pulse"
   },
   {
     "id": "club-vistara-sbi-prime",
@@ -6258,7 +6342,8 @@ export const creditCards = [
         "Rent payments excluded from rewards",
         "Limited to Vistara ecosystem"
       ]
-    }
+    },
+    "slug": "club-vistara-sbi-prime"
   },
   {
     "id": "club-vistara-sbi",
@@ -6411,7 +6496,8 @@ export const creditCards = [
         "Lower CV Point earn rate than PRIME",
         "Economy tickets less valuable than Premium Economy"
       ]
-    }
+    },
+    "slug": "club-vistara-sbi"
   },
   {
     "id": "bpcl-sbi-octane",
@@ -6559,7 +6645,8 @@ export const creditCards = [
         "Low base rate of 0.25% on other spends",
         "No international lounge access"
       ]
-    }
+    },
+    "slug": "bpcl-sbi-octane"
   },
   {
     "id": "bpcl-sbi",
@@ -6701,7 +6788,8 @@ export const creditCards = [
         "Lower monthly fuel cap of 1,300 RPs",
         "No milestone benefits"
       ]
-    }
+    },
+    "slug": "bpcl-sbi"
   },
   {
     "id": "yatra-sbi",
@@ -6844,7 +6932,8 @@ export const creditCards = [
         "No international lounge access",
         "No rewards on fuel"
       ]
-    }
+    },
+    "slug": "yatra-sbi"
   },
   {
     "id": "sbi-simplysave-upi-rupay",
@@ -6988,7 +7077,8 @@ export const creditCards = [
         "Low base rate of 0.17%",
         "Limited international acceptance"
       ]
-    }
+    },
+    "slug": "sbi-simplysave-upi-rupay"
   },
   {
     "id": "icici-emeralde",
@@ -7001,7 +7091,7 @@ export const creditCards = [
       "annual": 12000,
       "currency": "INR",
       "waivedOn": 1000000,
-      "waiverText": "Annual fee waived on spending ₹10 lakhs in a year"
+      "waiverText": "Annual fee waived on spending \u20b910 lakhs in a year"
     },
     "eligibility": {
       "income": 1800000,
@@ -7016,15 +7106,15 @@ export const creditCards = [
       "type": "points",
       "name": "ICICI Reward Points",
       "baseRate": 0.01,
-      "earningText": "4 RP per ₹100 on retail, 1 RP per ₹100 on utilities/insurance (1% value back at 0.25 redemption)",
+      "earningText": "4 RP per \u20b9100 on retail, 1 RP per \u20b9100 on utilities/insurance (1% value back at 0.25 redemption)",
       "expiry": "3 years from date of earning",
-      "joiningBonus": "₹5,000 Tata CLiQ voucher (American Express variant only, as birthday benefit)",
+      "joiningBonus": "\u20b95,000 Tata CLiQ voucher (American Express variant only, as birthday benefit)",
       "exclusions": "Fuel, Rent, Tax, Government Services, E-Wallet Loads",
       "calculator": {
         "tier": "super-premium",
         "monthlyCap": null,
         "capResetPeriod": "calendar",
-        "specialLogic": "4 RP per ₹100 on retail, 1 RP per ₹100 on utilities/insurance. Accelerated rewards via iShop. Category caps: Utilities ₹80,000/month, Insurance ₹80,000/month, Grocery ₹40,000/month",
+        "specialLogic": "4 RP per \u20b9100 on retail, 1 RP per \u20b9100 on utilities/insurance. Accelerated rewards via iShop. Category caps: Utilities \u20b980,000/month, Insurance \u20b980,000/month, Grocery \u20b940,000/month",
         "categories": {
           "travel": {
             "rate": 0.01,
@@ -7053,31 +7143,31 @@ export const creditCards = [
           },
           "utilities": {
             "rate": 0.0025,
-            "label": "0.25% value back (1 RP per ₹100)",
+            "label": "0.25% value back (1 RP per \u20b9100)",
             "cap": 200
           }
         }
       },
       "redemption": {
         "baseValue": 0.25,
-        "bestOption": "Redeem for e-vouchers (Tanishq, Marriott, Croma, Amazon) at 1 RP = ₹0.25",
+        "bestOption": "Redeem for e-vouchers (Tanishq, Marriott, Croma, Amazon) at 1 RP = \u20b90.25",
         "options": [
           {
             "type": "E-Vouchers",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": true
           },
           {
             "type": "Product Catalogue",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": false
           },
           {
             "type": "Statement Credit",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": false
           }
         ]
@@ -7092,11 +7182,11 @@ export const creditCards = [
       "milestones": [],
       "golf": {
         "included": true,
-        "text": "1 complimentary golf round/lesson per ₹50,000 spent in previous month (max 4 per month)"
+        "text": "1 complimentary golf round/lesson per \u20b950,000 spent in previous month (max 4 per month)"
       },
       "movies": {
         "included": true,
-        "text": "BOGO on BookMyShow up to ₹750 off on second ticket, 4 times per month"
+        "text": "BOGO on BookMyShow up to \u20b9750 off on second ticket, 4 times per month"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -7121,17 +7211,18 @@ export const creditCards = [
         "Unlimited domestic and international lounge access",
         "4 BookMyShow BOGO offers per month (best among ICICI cards)",
         "Spend-based golf benefits (up to 4 rounds/month)",
-        "Travel cancellation cover up to ₹12,000",
+        "Travel cancellation cover up to \u20b912,000",
         "Low forex markup of 2%"
       ],
       "cons": [
         "Low reward rate of just 1% value back",
         "No milestone benefits",
         "Add-on cards don't get lounge access",
-        "High annual fee of ₹12,000 for the rewards offered",
-        "Redemption value stuck at ₹0.25 per point"
+        "High annual fee of \u20b912,000 for the rewards offered",
+        "Redemption value stuck at \u20b90.25 per point"
       ]
-    }
+    },
+    "slug": "icici-emeralde"
   },
   {
     "id": "icici-sapphiro",
@@ -7144,7 +7235,7 @@ export const creditCards = [
       "annual": 3500,
       "currency": "INR",
       "waivedOn": 600000,
-      "waiverText": "Annual fee waived on spending ₹6 lakhs in a year"
+      "waiverText": "Annual fee waived on spending \u20b96 lakhs in a year"
     },
     "eligibility": {
       "income": 900000,
@@ -7159,15 +7250,15 @@ export const creditCards = [
       "type": "points",
       "name": "ICICI Reward Points",
       "baseRate": 0.005,
-      "earningText": "2 RP per ₹100 domestic, 4 RP per ₹100 international, 1 RP per ₹100 utilities/insurance",
+      "earningText": "2 RP per \u20b9100 domestic, 4 RP per \u20b9100 international, 1 RP per \u20b9100 utilities/insurance",
       "expiry": "3 years from date of earning",
-      "joiningBonus": "Welcome vouchers worth ₹13,000+ (Tata CLiQ ₹3,000, EaseMyTrip ₹4,000, EazyDiner Prime ₹1,095, Da Milano ₹5,000, Croma ₹1,500)",
+      "joiningBonus": "Welcome vouchers worth \u20b913,000+ (Tata CLiQ \u20b93,000, EaseMyTrip \u20b94,000, EazyDiner Prime \u20b91,095, Da Milano \u20b95,000, Croma \u20b91,500)",
       "exclusions": "Fuel, Rent, Tax, Government Services, E-Wallet Loads",
       "calculator": {
         "tier": "premium",
         "monthlyCap": null,
         "capResetPeriod": "calendar",
-        "specialLogic": "Milestone bonus: 4,000 RP at ₹4L spend + 2,000 RP per additional ₹1L (max 20,000 RP/year). Category caps: Utilities/Insurance ₹80,000/month, Grocery ₹40,000/month",
+        "specialLogic": "Milestone bonus: 4,000 RP at \u20b94L spend + 2,000 RP per additional \u20b91L (max 20,000 RP/year). Category caps: Utilities/Insurance \u20b980,000/month, Grocery \u20b940,000/month",
         "categories": {
           "travel": {
             "rate": 0.01,
@@ -7196,7 +7287,7 @@ export const creditCards = [
           },
           "utilities": {
             "rate": 0.0025,
-            "label": "0.25% value back (1 RP per ₹100)",
+            "label": "0.25% value back (1 RP per \u20b9100)",
             "cap": 200
           }
         }
@@ -7208,19 +7299,19 @@ export const creditCards = [
           {
             "type": "E-Vouchers",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": true
           },
           {
             "type": "Product Catalogue",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": false
           },
           {
             "type": "Cashback",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": false
           }
         ]
@@ -7228,7 +7319,7 @@ export const creditCards = [
     },
     "features": {
       "lounge": {
-        "domestic": "4 per quarter (requires ₹75,000 quarterly spend)",
+        "domestic": "4 per quarter (requires \u20b975,000 quarterly spend)",
         "international": "2 per year via Priority Pass/DreamFolks",
         "accessType": "Priority Pass / DreamFolks"
       },
@@ -7248,11 +7339,11 @@ export const creditCards = [
       ],
       "golf": {
         "included": true,
-        "text": "1 complimentary golf round/lesson per ₹50,000 spent in previous month (max 4 per month)"
+        "text": "1 complimentary golf round/lesson per \u20b950,000 spent in previous month (max 4 per month)"
       },
       "movies": {
         "included": true,
-        "text": "BOGO on BookMyShow up to ₹500 off on second ticket, 2 times per month"
+        "text": "BOGO on BookMyShow up to \u20b9500 off on second ticket, 2 times per month"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -7272,22 +7363,23 @@ export const creditCards = [
       ],
       "bestFor": "Frequent travelers and lifestyle spenders who can maximize the welcome vouchers and milestone benefits",
       "rating": 4.2,
-      "verdict": "A well-rounded premium card with excellent welcome benefits worth double the joining fee, ideal for those who can meet the ₹6L spend threshold for fee waiver.",
+      "verdict": "A well-rounded premium card with excellent welcome benefits worth double the joining fee, ideal for those who can meet the \u20b96L spend threshold for fee waiver.",
       "pros": [
-        "Welcome vouchers worth ₹13,000+ exceed joining fee of ₹6,500",
+        "Welcome vouchers worth \u20b913,000+ exceed joining fee of \u20b96,500",
         "Up to 20,000 milestone reward points annually",
         "International and domestic lounge access",
         "24/7 concierge services",
-        "₹3 crore air accident insurance",
+        "\u20b93 crore air accident insurance",
         "Good international spend rewards (1%)"
       ],
       "cons": [
         "Low base domestic reward rate (0.5%)",
-        "Domestic lounge requires ₹75,000 quarterly spend",
-        "High joining fee of ₹6,500",
+        "Domestic lounge requires \u20b975,000 quarterly spend",
+        "High joining fee of \u20b96,500",
         "Forex markup of 3.5% is high"
       ]
-    }
+    },
+    "slug": "icici-sapphiro"
   },
   {
     "id": "icici-rubyx",
@@ -7300,7 +7392,7 @@ export const creditCards = [
       "annual": 2000,
       "currency": "INR",
       "waivedOn": 300000,
-      "waiverText": "Annual fee waived on spending ₹3 lakhs in an anniversary year"
+      "waiverText": "Annual fee waived on spending \u20b93 lakhs in an anniversary year"
     },
     "eligibility": {
       "income": 600000,
@@ -7315,15 +7407,15 @@ export const creditCards = [
       "type": "points",
       "name": "ICICI Reward Points",
       "baseRate": 0.005,
-      "earningText": "2 RP per ₹100 domestic, 4 RP per ₹100 international, 1 RP per ₹100 utilities/insurance",
+      "earningText": "2 RP per \u20b9100 domestic, 4 RP per \u20b9100 international, 1 RP per \u20b9100 utilities/insurance",
       "expiry": "3 years from date of earning",
-      "joiningBonus": "Welcome vouchers worth ₹5,250+ (Tata CLiQ ₹2,000, EaseMyTrip ₹2,000, Croma ₹1,000, EazyDiner Prime 3-month membership ₹1,095)",
+      "joiningBonus": "Welcome vouchers worth \u20b95,250+ (Tata CLiQ \u20b92,000, EaseMyTrip \u20b92,000, Croma \u20b91,000, EazyDiner Prime 3-month membership \u20b91,095)",
       "exclusions": "Fuel, Rent, Tax, Government Services, E-Wallet Loads",
       "calculator": {
         "tier": "premium",
         "monthlyCap": null,
         "capResetPeriod": "calendar",
-        "specialLogic": "Milestone: 3,000 RP at ₹3L spend + 1,500 RP per additional ₹1L (max 15,000 RP/year). Category caps: Utilities/Insurance ₹40,000/month, Grocery ₹40,000/month",
+        "specialLogic": "Milestone: 3,000 RP at \u20b93L spend + 1,500 RP per additional \u20b91L (max 15,000 RP/year). Category caps: Utilities/Insurance \u20b940,000/month, Grocery \u20b940,000/month",
         "categories": {
           "travel": {
             "rate": 0.01,
@@ -7352,7 +7444,7 @@ export const creditCards = [
           },
           "utilities": {
             "rate": 0.0025,
-            "label": "0.25% value back (1 RP per ₹100)",
+            "label": "0.25% value back (1 RP per \u20b9100)",
             "cap": 100
           }
         }
@@ -7364,19 +7456,19 @@ export const creditCards = [
           {
             "type": "E-Vouchers",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": true
           },
           {
             "type": "Product Catalogue",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": false
           },
           {
             "type": "Cashback",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": false
           }
         ]
@@ -7384,7 +7476,7 @@ export const creditCards = [
     },
     "features": {
       "lounge": {
-        "domestic": "2 per quarter (requires ₹75,000 quarterly spend)",
+        "domestic": "2 per quarter (requires \u20b975,000 quarterly spend)",
         "international": "None",
         "accessType": "Visa/Mastercard"
       },
@@ -7404,11 +7496,11 @@ export const creditCards = [
       ],
       "golf": {
         "included": true,
-        "text": "1 complimentary golf round/lesson per ₹50,000 spent in previous month (max 2 per month)"
+        "text": "1 complimentary golf round/lesson per \u20b950,000 spent in previous month (max 2 per month)"
       },
       "movies": {
         "included": true,
-        "text": "25% off (max ₹150) on min 2 tickets on BookMyShow & INOX, 2 times per month each"
+        "text": "25% off (max \u20b9150) on min 2 tickets on BookMyShow & INOX, 2 times per month each"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -7430,20 +7522,21 @@ export const creditCards = [
       "rating": 3.9,
       "verdict": "A solid mid-tier card with welcome vouchers exceeding the joining fee, ideal for those who can't meet the higher Sapphiro spend thresholds.",
       "pros": [
-        "Welcome vouchers worth ₹5,250+ exceed joining fee",
+        "Welcome vouchers worth \u20b95,250+ exceed joining fee",
         "Up to 15,000 milestone reward points annually",
         "Airport + Railway lounge access (8 railway visits/year)",
         "Golf benefits included",
         "24/7 concierge services",
-        "₹1 crore air accident insurance"
+        "\u20b91 crore air accident insurance"
       ],
       "cons": [
         "Low reward rate (0.5% domestic)",
         "No international lounge access",
-        "Airport lounge requires ₹75,000 quarterly spend",
+        "Airport lounge requires \u20b975,000 quarterly spend",
         "Forex markup of 3.5% is high"
       ]
-    }
+    },
+    "slug": "icici-rubyx"
   },
   {
     "id": "icici-coral",
@@ -7456,7 +7549,7 @@ export const creditCards = [
       "annual": 500,
       "currency": "INR",
       "waivedOn": 150000,
-      "waiverText": "Annual fee waived on spending ₹1.5 lakhs in a year"
+      "waiverText": "Annual fee waived on spending \u20b91.5 lakhs in a year"
     },
     "eligibility": {
       "income": 300000,
@@ -7471,7 +7564,7 @@ export const creditCards = [
       "type": "points",
       "name": "ICICI Reward Points",
       "baseRate": 0.005,
-      "earningText": "2 RP per ₹100 on retail, 1 RP per ₹100 on utilities/insurance",
+      "earningText": "2 RP per \u20b9100 on retail, 1 RP per \u20b9100 on utilities/insurance",
       "expiry": "3 years from date of earning",
       "joiningBonus": "None",
       "exclusions": "Fuel, Rent, Tax, Government Services, E-Wallet Loads",
@@ -7479,7 +7572,7 @@ export const creditCards = [
         "tier": "entry",
         "monthlyCap": null,
         "capResetPeriod": "calendar",
-        "specialLogic": "Milestone: 2,000 RP at ₹2L spend + 1,000 RP per additional ₹1L (max 10,000 RP/year). Category caps: Utilities/Insurance ₹40,000/month, Grocery ₹20,000/month",
+        "specialLogic": "Milestone: 2,000 RP at \u20b92L spend + 1,000 RP per additional \u20b91L (max 10,000 RP/year). Category caps: Utilities/Insurance \u20b940,000/month, Grocery \u20b920,000/month",
         "categories": {
           "travel": {
             "rate": 0.005,
@@ -7508,7 +7601,7 @@ export const creditCards = [
           },
           "utilities": {
             "rate": 0.0025,
-            "label": "0.25% value back (1 RP per ₹100)",
+            "label": "0.25% value back (1 RP per \u20b9100)",
             "cap": 100
           }
         }
@@ -7520,19 +7613,19 @@ export const creditCards = [
           {
             "type": "E-Vouchers",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": true
           },
           {
             "type": "Product Catalogue",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": false
           },
           {
             "type": "Cashback",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": false
           }
         ]
@@ -7540,7 +7633,7 @@ export const creditCards = [
     },
     "features": {
       "lounge": {
-        "domestic": "1 per quarter (requires ₹75,000 quarterly spend)",
+        "domestic": "1 per quarter (requires \u20b975,000 quarterly spend)",
         "international": "None",
         "accessType": "Visa/Mastercard"
       },
@@ -7564,7 +7657,7 @@ export const creditCards = [
       },
       "movies": {
         "included": true,
-        "text": "25% off (max ₹100) on min 2 tickets on BookMyShow & INOX, 2 times per month"
+        "text": "25% off (max \u20b9100) on min 2 tickets on BookMyShow & INOX, 2 times per month"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -7584,10 +7677,10 @@ export const creditCards = [
       ],
       "bestFor": "Credit card beginners and low-to-moderate spenders who want basic benefits at a low annual fee",
       "rating": 3.5,
-      "verdict": "A good entry-level card for building credit history with essential benefits like movie discounts and lounge access at an affordable ₹500 annual fee.",
+      "verdict": "A good entry-level card for building credit history with essential benefits like movie discounts and lounge access at an affordable \u20b9500 annual fee.",
       "pros": [
-        "Low annual fee of just ₹500",
-        "Easy fee waiver threshold (₹1.5L)",
+        "Low annual fee of just \u20b9500",
+        "Easy fee waiver threshold (\u20b91.5L)",
         "Up to 10,000 milestone reward points annually",
         "Movie discounts on BookMyShow & INOX",
         "Railway lounge access (4 per year)",
@@ -7596,12 +7689,13 @@ export const creditCards = [
       "cons": [
         "Low reward rate (0.5%)",
         "No international lounge access",
-        "Airport lounge requires ₹75,000 quarterly spend",
+        "Airport lounge requires \u20b975,000 quarterly spend",
         "No welcome bonus",
         "No golf benefits",
         "Only 1 airport lounge per quarter"
       ]
-    }
+    },
+    "slug": "icici-coral"
   },
   {
     "id": "icici-manchester-united-signature",
@@ -7614,7 +7708,7 @@ export const creditCards = [
       "annual": 2499,
       "currency": "INR",
       "waivedOn": 250000,
-      "waiverText": "Annual fee waived on spending ₹2.5 lakhs in a year"
+      "waiverText": "Annual fee waived on spending \u20b92.5 lakhs in a year"
     },
     "eligibility": {
       "income": 600000,
@@ -7629,7 +7723,7 @@ export const creditCards = [
       "type": "points",
       "name": "ICICI Reward Points",
       "baseRate": 0.0075,
-      "earningText": "3 RP per ₹100 domestic, 4 RP per ₹100 international, 5 RP per ₹100 on Man Utd match days",
+      "earningText": "3 RP per \u20b9100 domestic, 4 RP per \u20b9100 international, 5 RP per \u20b9100 on Man Utd match days",
       "expiry": "3 years from date of earning",
       "joiningBonus": "Manchester United branded holdall (duffel bag) and football",
       "exclusions": "Fuel, Rent, Tax, Government Services, E-Wallet Loads",
@@ -7637,7 +7731,7 @@ export const creditCards = [
         "tier": "co-branded",
         "monthlyCap": null,
         "capResetPeriod": "calendar",
-        "specialLogic": "5 RP per ₹100 on Manchester United match days (1.25% value), 4 RP per ₹100 international (1%), 3 RP per ₹100 domestic (0.75%)",
+        "specialLogic": "5 RP per \u20b9100 on Manchester United match days (1.25% value), 4 RP per \u20b9100 international (1%), 3 RP per \u20b9100 domestic (0.75%)",
         "categories": {
           "travel": {
             "rate": 0.01,
@@ -7678,19 +7772,19 @@ export const creditCards = [
           {
             "type": "E-Vouchers",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": true
           },
           {
             "type": "Product Catalogue",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": false
           },
           {
             "type": "Cashback",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": false
           }
         ]
@@ -7698,7 +7792,7 @@ export const creditCards = [
     },
     "features": {
       "lounge": {
-        "domestic": "2 per quarter (requires ₹75,000 quarterly spend)",
+        "domestic": "2 per quarter (requires \u20b975,000 quarterly spend)",
         "international": "None",
         "accessType": "Visa"
       },
@@ -7722,7 +7816,7 @@ export const creditCards = [
       },
       "movies": {
         "included": true,
-        "text": "25% off (max ₹150) on min 2 tickets on BookMyShow & INOX, 2 times per month"
+        "text": "25% off (max \u20b9150) on min 2 tickets on BookMyShow & INOX, 2 times per month"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -7758,7 +7852,8 @@ export const creditCards = [
         "No golf benefits",
         "Competition-based rewards favor only top spenders nationwide"
       ]
-    }
+    },
+    "slug": "icici-manchester-united-signature"
   },
   {
     "id": "icici-platinum-chip",
@@ -7786,7 +7881,7 @@ export const creditCards = [
       "type": "points",
       "name": "ICICI Reward Points",
       "baseRate": 0.005,
-      "earningText": "2 RP per ₹100 on retail, 1 RP per ₹100 on utilities/insurance",
+      "earningText": "2 RP per \u20b9100 on retail, 1 RP per \u20b9100 on utilities/insurance",
       "expiry": "3 years from date of earning",
       "joiningBonus": "None",
       "exclusions": "Fuel, Rent, Tax, Government Services, E-Wallet Loads",
@@ -7794,7 +7889,7 @@ export const creditCards = [
         "tier": "entry",
         "monthlyCap": null,
         "capResetPeriod": "calendar",
-        "specialLogic": "Category caps: Utilities ₹40,000/month, Insurance ₹40,000/month, Grocery ₹20,000/month. No milestone benefits",
+        "specialLogic": "Category caps: Utilities \u20b940,000/month, Insurance \u20b940,000/month, Grocery \u20b920,000/month. No milestone benefits",
         "categories": {
           "travel": {
             "rate": 0.005,
@@ -7823,7 +7918,7 @@ export const creditCards = [
           },
           "utilities": {
             "rate": 0.0025,
-            "label": "0.25% value back (1 RP per ₹100)",
+            "label": "0.25% value back (1 RP per \u20b9100)",
             "cap": 100
           }
         }
@@ -7835,19 +7930,19 @@ export const creditCards = [
           {
             "type": "E-Vouchers",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": true
           },
           {
             "type": "Product Catalogue",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": false
           },
           {
             "type": "Cashback",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": false
           }
         ]
@@ -7905,7 +8000,8 @@ export const creditCards = [
         "No welcome bonus",
         "Minimal lifestyle benefits"
       ]
-    }
+    },
+    "slug": "icici-platinum-chip"
   },
   {
     "id": "amex-platinum-charge",
@@ -7918,7 +8014,7 @@ export const creditCards = [
       "annual": 66000,
       "currency": "INR",
       "waivedOn": null,
-      "waiverText": "No fee waiver available. Renewal benefit of ₹35,000 voucher on spending ₹20 Lakhs in membership year."
+      "waiverText": "No fee waiver available. Renewal benefit of \u20b935,000 voucher on spending \u20b920 Lakhs in membership year."
     },
     "eligibility": {
       "income": 2500000,
@@ -7928,15 +8024,15 @@ export const creditCards = [
       },
       "type": "Salaried/Self-Employed",
       "creditScore": 750,
-      "notes": "₹15 LPA for Self-Employed. Must have good credit history with no defaults."
+      "notes": "\u20b915 LPA for Self-Employed. Must have good credit history with no defaults."
     },
     "rewards": {
       "type": "points",
       "name": "Membership Rewards Points",
       "baseRate": 0.00625,
-      "earningText": "1 MR point per ₹40 spent. At base redemption (₹0.25/point), this equals 0.625% return.",
+      "earningText": "1 MR point per \u20b940 spent. At base redemption (\u20b90.25/point), this equals 0.625% return.",
       "expiry": "No Expiry (while card is active)",
-      "joiningBonus": "Taj vouchers worth ₹45,000 on spending ₹50,000 within first 2 months of card membership and payment of annual fee",
+      "joiningBonus": "Taj vouchers worth \u20b945,000 on spending \u20b950,000 within first 2 months of card membership and payment of annual fee",
       "exclusions": "Fuel, Insurance, Utilities, Cash Transactions",
       "calculator": {
         "tier": "super-premium",
@@ -7948,7 +8044,10 @@ export const creditCards = [
             "name": "Reward Multiplier",
             "rate": 0.03125,
             "label": "5X via Reward Multiplier",
-            "categories": ["shopping", "travel"]
+            "categories": [
+              "shopping",
+              "travel"
+            ]
           }
         ],
         "categories": {
@@ -7959,7 +8058,7 @@ export const creditCards = [
           },
           "dining": {
             "rate": 0.00625,
-            "label": "1 MR/₹40",
+            "label": "1 MR/\u20b940",
             "cap": null
           },
           "online": {
@@ -7974,7 +8073,7 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.00625,
-            "label": "1 MR/₹40",
+            "label": "1 MR/\u20b940",
             "cap": null
           },
           "utilities": {
@@ -7986,24 +8085,24 @@ export const creditCards = [
       },
       "redemption": {
         "baseValue": 0.25,
-        "bestOption": "Transfer to Marriott Bonvoy (1:1) for hotel redemptions. Value can reach ₹0.75-1.0 per point with good hotel redemptions.",
+        "bestOption": "Transfer to Marriott Bonvoy (1:1) for hotel redemptions. Value can reach \u20b90.75-1.0 per point with good hotel redemptions.",
         "options": [
           {
             "type": "Statement Credit",
             "value": 0.25,
-            "desc": "1 MR = ₹0.25 via Pay with Points",
+            "desc": "1 MR = \u20b90.25 via Pay with Points",
             "recommended": false
           },
           {
             "type": "Marriott Bonvoy",
             "value": 1,
-            "desc": "1 MR = 1 Marriott Bonvoy point (value ₹0.75-1.0)",
+            "desc": "1 MR = 1 Marriott Bonvoy point (value \u20b90.75-1.0)",
             "recommended": true
           },
           {
             "type": "Taj Vouchers",
             "value": 0.5,
-            "desc": "24K MR = ₹12,000 Taj voucher",
+            "desc": "24K MR = \u20b912,000 Taj voucher",
             "recommended": true
           },
           {
@@ -8024,7 +8123,7 @@ export const creditCards = [
       "milestones": [
         {
           "spend": 5000000,
-          "benefit": "₹35,000 voucher (Taj/Luxe/Postcard) on ₹20L spend + renewal fee payment"
+          "benefit": "\u20b935,000 voucher (Taj/Luxe/Postcard) on \u20b920L spend + renewal fee payment"
         }
       ],
       "golf": {
@@ -8072,7 +8171,7 @@ export const creditCards = [
       ],
       "bestFor": "High-net-worth individuals seeking premium lifestyle benefits, hotel elite status, and unlimited lounge access",
       "rating": 4.5,
-      "verdict": "India's most prestigious card with unmatched hotel memberships and lifestyle benefits. The ₹77,880 (incl. GST) annual fee is justified if you use the hotel status and lounge access extensively.",
+      "verdict": "India's most prestigious card with unmatched hotel memberships and lifestyle benefits. The \u20b977,880 (incl. GST) annual fee is justified if you use the hotel status and lounge access extensively.",
       "pros": [
         "Unlimited global lounge access including Centurion Lounges",
         "7 complimentary hotel elite tier memberships",
@@ -8082,13 +8181,14 @@ export const creditCards = [
         "Points never expire"
       ],
       "cons": [
-        "Very high annual fee (₹66,000 + GST)",
-        "Low base reward rate (1 point per ₹40)",
+        "Very high annual fee (\u20b966,000 + GST)",
+        "Low base reward rate (1 point per \u20b940)",
         "No fee waiver option",
         "No rewards on fuel, utilities, insurance",
         "Limited acceptance compared to Visa/MC"
       ]
-    }
+    },
+    "slug": "amex-platinum-charge"
   },
   {
     "id": "amex-gold-charge",
@@ -8101,7 +8201,7 @@ export const creditCards = [
       "annual": 4500,
       "currency": "INR",
       "waivedOn": null,
-      "waiverText": "Renewal fee may be waived 50-100% on request based on annual spending (typically ₹2L+ spend). First year fee ₹1,000, second year onwards ₹4,500."
+      "waiverText": "Renewal fee may be waived 50-100% on request based on annual spending (typically \u20b92L+ spend). First year fee \u20b91,000, second year onwards \u20b94,500."
     },
     "eligibility": {
       "income": 600000,
@@ -8117,32 +8217,35 @@ export const creditCards = [
       "type": "points",
       "name": "Membership Rewards Points",
       "baseRate": 0.005,
-      "earningText": "1 MR point per ₹50 spent including utilities (capped at 10,000 points/month on utilities). Base value at ₹0.25/point = 0.5% return.",
+      "earningText": "1 MR point per \u20b950 spent including utilities (capped at 10,000 points/month on utilities). Base value at \u20b90.25/point = 0.5% return.",
       "expiry": "No Expiry (while card is active)",
-      "joiningBonus": "4,000 MR points on spending ₹10,000 within 90 days of card membership + annual fee payment",
+      "joiningBonus": "4,000 MR points on spending \u20b910,000 within 90 days of card membership + annual fee payment",
       "exclusions": "Insurance, Cash Transactions. Fuel excluded from June 12, 2025.",
       "calculator": {
         "tier": "premium",
         "monthlyCap": 10000,
         "capResetPeriod": "calendar",
-        "specialLogic": "1,000 bonus MR points on completing 6 transactions of ₹1,000+ each in a calendar month. 5X MR points via Reward Multiplier.",
+        "specialLogic": "1,000 bonus MR points on completing 6 transactions of \u20b91,000+ each in a calendar month. 5X MR points via Reward Multiplier.",
         "portals": [
           {
             "name": "Reward Multiplier",
             "rate": 0.025,
             "label": "5X via Reward Multiplier",
-            "categories": ["shopping", "travel"]
+            "categories": [
+              "shopping",
+              "travel"
+            ]
           }
         ],
         "categories": {
           "travel": {
             "rate": 0.005,
-            "label": "1 MR/₹50",
+            "label": "1 MR/\u20b950",
             "cap": null
           },
           "dining": {
             "rate": 0.005,
-            "label": "1 MR/₹50 + 20% off at partner restaurants",
+            "label": "1 MR/\u20b950 + 20% off at partner restaurants",
             "cap": null
           },
           "online": {
@@ -8152,47 +8255,47 @@ export const creditCards = [
           },
           "fuel": {
             "rate": 0.005,
-            "label": "1 MR/₹50 (till June 2025, capped at 5,000 pts/month)",
+            "label": "1 MR/\u20b950 (till June 2025, capped at 5,000 pts/month)",
             "cap": 5000
           },
           "groceries": {
             "rate": 0.005,
-            "label": "1 MR/₹50",
+            "label": "1 MR/\u20b950",
             "cap": null
           },
           "utilities": {
             "rate": 0.005,
-            "label": "1 MR/₹50 (capped at 10,000 pts/month)",
+            "label": "1 MR/\u20b950 (capped at 10,000 pts/month)",
             "cap": 10000
           }
         }
       },
       "redemption": {
         "baseValue": 0.25,
-        "bestOption": "Redeem for 18K/24K Gold Collection vouchers. Taj voucher at 24K gives ₹0.58/point value.",
+        "bestOption": "Redeem for 18K/24K Gold Collection vouchers. Taj voucher at 24K gives \u20b90.58/point value.",
         "options": [
           {
             "type": "Statement Credit",
             "value": 0.25,
-            "desc": "1 MR = ₹0.25",
+            "desc": "1 MR = \u20b90.25",
             "recommended": false
           },
           {
             "type": "24K Gold Collection - Taj",
             "value": 0.58,
-            "desc": "24,000 MR = ₹14,000 Taj voucher",
+            "desc": "24,000 MR = \u20b914,000 Taj voucher",
             "recommended": true
           },
           {
             "type": "24K Gold Collection - Amazon",
             "value": 0.33,
-            "desc": "24,000 MR = ₹8,000 Amazon voucher",
+            "desc": "24,000 MR = \u20b98,000 Amazon voucher",
             "recommended": false
           },
           {
             "type": "18K Gold Collection - Taj",
             "value": 0.5,
-            "desc": "18,000 MR = ₹9,000 Taj voucher",
+            "desc": "18,000 MR = \u20b99,000 Taj voucher",
             "recommended": true
           },
           {
@@ -8213,7 +8316,7 @@ export const creditCards = [
       "milestones": [
         {
           "spend": 6000,
-          "benefit": "1,000 bonus MR points on 6 transactions of ₹1,000+ each month"
+          "benefit": "1,000 bonus MR points on 6 transactions of \u20b91,000+ each month"
         },
         {
           "spend": 0,
@@ -8254,19 +8357,20 @@ export const creditCards = [
         "Earns MR points on utility bills (capped)",
         "Earns MR points on fuel (till June 2025)",
         "No preset spending limit",
-        "Monthly bonus of 1,000 MR on 6x ₹1,000 transactions",
+        "Monthly bonus of 1,000 MR on 6x \u20b91,000 transactions",
         "Iconic gold card design",
         "18K/24K Gold Collection redemptions",
-        "Low first year fee (₹1,000)"
+        "Low first year fee (\u20b91,000)"
       ],
       "cons": [
         "No airport lounge access",
-        "Renewal fee of ₹4,500 (waiver needs negotiation)",
+        "Renewal fee of \u20b94,500 (waiver needs negotiation)",
         "Caps on utility and fuel rewards",
         "Limited acceptance compared to Visa/MC",
         "No travel benefits"
       ]
-    }
+    },
+    "slug": "amex-gold-charge"
   },
   {
     "id": "amex-mrcc",
@@ -8279,7 +8383,7 @@ export const creditCards = [
       "annual": 4500,
       "currency": "INR",
       "waivedOn": 150000,
-      "waiverText": "100% annual fee waiver on ₹1.5L spend. 50% waiver on ₹90K-₹1.5L spend. First year fee ₹1,000 (free on referral)."
+      "waiverText": "100% annual fee waiver on \u20b91.5L spend. 50% waiver on \u20b990K-\u20b91.5L spend. First year fee \u20b91,000 (free on referral)."
     },
     "eligibility": {
       "income": 450000,
@@ -8289,38 +8393,41 @@ export const creditCards = [
       },
       "type": "Salaried/Self-Employed",
       "creditScore": 700,
-      "notes": "Monthly income of ₹35,000+ for salaried. Self-employed need ITR of ₹4.5L+."
+      "notes": "Monthly income of \u20b935,000+ for salaried. Self-employed need ITR of \u20b94.5L+."
     },
     "rewards": {
       "type": "points",
       "name": "Membership Rewards Points",
       "baseRate": 0.005,
-      "earningText": "1 MR point per ₹50 spent. Base value at ₹0.25/point = 0.5% return. Can reach 5-7% with milestones.",
+      "earningText": "1 MR point per \u20b950 spent. Base value at \u20b90.25/point = 0.5% return. Can reach 5-7% with milestones.",
       "expiry": "No Expiry (while card is active)",
-      "joiningBonus": "4,000 MR points on spending ₹15,000 within 90 days + annual fee payment",
+      "joiningBonus": "4,000 MR points on spending \u20b915,000 within 90 days + annual fee payment",
       "exclusions": "Fuel, Utilities, Insurance, Cash Transactions, EMI at POS",
       "calculator": {
         "tier": "entry",
         "monthlyCap": null,
         "capResetPeriod": "calendar",
-        "specialLogic": "1,000 bonus MR on 4 transactions of ₹1,500+ each month. Additional 1,000 bonus MR on spending ₹20,000+ in a month. 5X via Reward Multiplier.",
+        "specialLogic": "1,000 bonus MR on 4 transactions of \u20b91,500+ each month. Additional 1,000 bonus MR on spending \u20b920,000+ in a month. 5X via Reward Multiplier.",
         "portals": [
           {
             "name": "Reward Multiplier",
             "rate": 0.025,
             "label": "5X via Reward Multiplier",
-            "categories": ["shopping", "travel"]
+            "categories": [
+              "shopping",
+              "travel"
+            ]
           }
         ],
         "categories": {
           "travel": {
             "rate": 0.005,
-            "label": "1 MR/₹50",
+            "label": "1 MR/\u20b950",
             "cap": null
           },
           "dining": {
             "rate": 0.005,
-            "label": "1 MR/₹50",
+            "label": "1 MR/\u20b950",
             "cap": null
           },
           "online": {
@@ -8335,7 +8442,7 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.005,
-            "label": "1 MR/₹50",
+            "label": "1 MR/\u20b950",
             "cap": null
           },
           "utilities": {
@@ -8352,25 +8459,25 @@ export const creditCards = [
           {
             "type": "Statement Credit",
             "value": 0.25,
-            "desc": "1 MR = ₹0.25",
+            "desc": "1 MR = \u20b90.25",
             "recommended": false
           },
           {
             "type": "24K Gold Collection - Taj",
             "value": 0.58,
-            "desc": "24,000 MR = ₹14,000 Taj voucher",
+            "desc": "24,000 MR = \u20b914,000 Taj voucher",
             "recommended": true
           },
           {
             "type": "24K Gold Collection - Tanishq",
             "value": 0.42,
-            "desc": "24,000 MR = ₹10,000 Tanishq voucher",
+            "desc": "24,000 MR = \u20b910,000 Tanishq voucher",
             "recommended": false
           },
           {
             "type": "18K Gold Collection - Amazon",
             "value": 0.33,
-            "desc": "18,000 MR = ₹6,000 Amazon voucher",
+            "desc": "18,000 MR = \u20b96,000 Amazon voucher",
             "recommended": false
           },
           {
@@ -8391,11 +8498,11 @@ export const creditCards = [
       "milestones": [
         {
           "spend": 6000,
-          "benefit": "1,000 bonus MR points on 4 transactions of ₹1,500+ each month"
+          "benefit": "1,000 bonus MR points on 4 transactions of \u20b91,500+ each month"
         },
         {
           "spend": 20000,
-          "benefit": "Additional 1,000 bonus MR points on spending ₹20,000+ in a calendar month"
+          "benefit": "Additional 1,000 bonus MR points on spending \u20b920,000+ in a calendar month"
         },
         {
           "spend": 0,
@@ -8413,7 +8520,7 @@ export const creditCards = [
       "fuel": {
         "surchargeWaiver": "0%",
         "cap": 0,
-        "text": "0% convenience fee at HPCL for transactions under ₹5,000"
+        "text": "0% convenience fee at HPCL for transactions under \u20b95,000"
       },
       "forex": {
         "markup": 0.035,
@@ -8430,11 +8537,11 @@ export const creditCards = [
       ],
       "bestFor": "First-time Amex users who can hit monthly milestones for high effective reward rate. Part of popular Amex Trifecta strategy.",
       "rating": 4.2,
-      "verdict": "Best entry-level Amex card with easy milestone bonuses. Spending ₹20K/month with 4x ₹1,500 transactions yields 2,400 bonus MR points - excellent for its fee bracket.",
+      "verdict": "Best entry-level Amex card with easy milestone bonuses. Spending \u20b920K/month with 4x \u20b91,500 transactions yields 2,400 bonus MR points - excellent for its fee bracket.",
       "pros": [
-        "Easy monthly milestones (4x ₹1,500 = 1,000 MR)",
-        "Additional 1,000 MR on ₹20K monthly spend",
-        "100% fee waiver on ₹1.5L annual spend",
+        "Easy monthly milestones (4x \u20b91,500 = 1,000 MR)",
+        "Additional 1,000 MR on \u20b920K monthly spend",
+        "100% fee waiver on \u20b91.5L annual spend",
         "18K/24K Gold Collection access",
         "Points never expire",
         "5,000 MR on first renewal",
@@ -8443,11 +8550,12 @@ export const creditCards = [
       "cons": [
         "No rewards on fuel, utilities, insurance",
         "No airport lounge access",
-        "High renewal fee (₹4,500) if waiver not earned",
+        "High renewal fee (\u20b94,500) if waiver not earned",
         "Limited acceptance compared to Visa/MC",
         "Base reward rate only 0.5%"
       ]
-    }
+    },
+    "slug": "amex-mrcc"
   },
   {
     "id": "amex-smartearn",
@@ -8460,7 +8568,7 @@ export const creditCards = [
       "annual": 495,
       "currency": "INR",
       "waivedOn": 40000,
-      "waiverText": "Annual fee waived on spending ₹40,000+ in the previous card membership year."
+      "waiverText": "Annual fee waived on spending \u20b940,000+ in the previous card membership year."
     },
     "eligibility": {
       "income": 450000,
@@ -8476,9 +8584,9 @@ export const creditCards = [
       "type": "points",
       "name": "Membership Rewards Points",
       "baseRate": 0.005,
-      "earningText": "1 MR point per ₹50 spent. 10X on select partners (capped). 5X on Amazon (capped).",
+      "earningText": "1 MR point per \u20b950 spent. 10X on select partners (capped). 5X on Amazon (capped).",
       "expiry": "No Expiry (while card is active)",
-      "joiningBonus": "₹500 cashback on spending ₹10,000 within first 90 days",
+      "joiningBonus": "\u20b9500 cashback on spending \u20b910,000 within first 90 days",
       "exclusions": "Fuel, Utilities, Insurance, Cash Transactions, EMI at POS",
       "calculator": {
         "tier": "entry",
@@ -8490,7 +8598,11 @@ export const creditCards = [
             "name": "Partner Multipliers",
             "rate": 0.05,
             "label": "10X on Zomato/Uber/Flipkart",
-            "categories": ["shopping", "travel", "dining"]
+            "categories": [
+              "shopping",
+              "travel",
+              "dining"
+            ]
           }
         ],
         "categories": {
@@ -8538,19 +8650,19 @@ export const creditCards = [
           {
             "type": "Statement Credit",
             "value": 0.25,
-            "desc": "1 MR = ₹0.25",
+            "desc": "1 MR = \u20b90.25",
             "recommended": true
           },
           {
             "type": "E-Vouchers",
             "value": 0.25,
-            "desc": "Various brand vouchers at ₹0.25/point",
+            "desc": "Various brand vouchers at \u20b90.25/point",
             "recommended": false
           },
           {
             "type": "With Gold Collection (pooled)",
             "value": 0.5,
-            "desc": "Pool with MRCC for Taj at ₹0.50/point",
+            "desc": "Pool with MRCC for Taj at \u20b90.50/point",
             "recommended": true
           }
         ]
@@ -8565,15 +8677,15 @@ export const creditCards = [
       "milestones": [
         {
           "spend": 120000,
-          "benefit": "₹500 voucher on spending ₹1.2 Lakhs in card membership year"
+          "benefit": "\u20b9500 voucher on spending \u20b91.2 Lakhs in card membership year"
         },
         {
           "spend": 180000,
-          "benefit": "Additional ₹500 voucher on spending ₹1.8 Lakhs"
+          "benefit": "Additional \u20b9500 voucher on spending \u20b91.8 Lakhs"
         },
         {
           "spend": 240000,
-          "benefit": "Additional ₹500 voucher on spending ₹2.4 Lakhs"
+          "benefit": "Additional \u20b9500 voucher on spending \u20b92.4 Lakhs"
         }
       ],
       "golf": {
@@ -8587,7 +8699,7 @@ export const creditCards = [
       "fuel": {
         "surchargeWaiver": "1%",
         "cap": 5000,
-        "text": "0% convenience fee at HPCL under ₹5,000. 1% above ₹5,000."
+        "text": "0% convenience fee at HPCL under \u20b95,000. 1% above \u20b95,000."
       },
       "forex": {
         "markup": 0.035,
@@ -8606,11 +8718,11 @@ export const creditCards = [
       "rating": 3.5,
       "verdict": "Decent entry-level card for online shopping with 10X/5X accelerated rewards, but monthly caps are very low. Best as gateway to Amex ecosystem.",
       "pros": [
-        "Lowest Amex annual fee (₹495)",
-        "Easy fee waiver (₹40K spend)",
+        "Lowest Amex annual fee (\u20b9495)",
+        "Easy fee waiver (\u20b940K spend)",
         "10X on Flipkart, Zomato, Myntra, Uber",
         "5X on Amazon",
-        "Welcome cashback of ₹500",
+        "Welcome cashback of \u20b9500",
         "HPCL fuel convenience waiver"
       ],
       "cons": [
@@ -8621,7 +8733,8 @@ export const creditCards = [
         "Limited acceptance compared to Visa/MC",
         "Low milestone voucher values"
       ]
-    }
+    },
+    "slug": "amex-smartearn"
   },
   {
     "id": "amex-platinum-reserve",
@@ -8634,7 +8747,7 @@ export const creditCards = [
       "annual": 10000,
       "currency": "INR",
       "waivedOn": 1000000,
-      "waiverText": "100% annual fee waiver on spending ₹10 Lakhs in the preceding membership year."
+      "waiverText": "100% annual fee waiver on spending \u20b910 Lakhs in the preceding membership year."
     },
     "eligibility": {
       "income": 600000,
@@ -8650,32 +8763,35 @@ export const creditCards = [
       "type": "points",
       "name": "Membership Rewards Points",
       "baseRate": 0.005,
-      "earningText": "1 MR point per ₹50 spent. Base value at ₹0.25/point = 0.5% return. Monthly vouchers add significant value.",
+      "earningText": "1 MR point per \u20b950 spent. Base value at \u20b90.25/point = 0.5% return. Monthly vouchers add significant value.",
       "expiry": "No Expiry (while card is active)",
-      "joiningBonus": "11,000 MR points on spending ₹30,000 within 90 days + joining fee payment",
+      "joiningBonus": "11,000 MR points on spending \u20b930,000 within 90 days + joining fee payment",
       "exclusions": "Fuel, Utilities, Insurance, Cash Transactions, EMI at POS",
       "calculator": {
         "tier": "premium",
         "monthlyCap": null,
         "capResetPeriod": "calendar",
-        "specialLogic": "₹1,000 monthly voucher on spending ₹50,000/month (enrollment required). 5X MR points via Reward Multiplier. Golf access on ₹50K monthly spend.",
+        "specialLogic": "\u20b91,000 monthly voucher on spending \u20b950,000/month (enrollment required). 5X MR points via Reward Multiplier. Golf access on \u20b950K monthly spend.",
         "portals": [
           {
             "name": "Reward Multiplier",
             "rate": 0.025,
             "label": "5X via Reward Multiplier",
-            "categories": ["shopping", "travel"]
+            "categories": [
+              "shopping",
+              "travel"
+            ]
           }
         ],
         "categories": {
           "travel": {
             "rate": 0.005,
-            "label": "1 MR/₹50",
+            "label": "1 MR/\u20b950",
             "cap": null
           },
           "dining": {
             "rate": 0.005,
-            "label": "1 MR/₹50",
+            "label": "1 MR/\u20b950",
             "cap": null
           },
           "online": {
@@ -8690,7 +8806,7 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.005,
-            "label": "1 MR/₹50",
+            "label": "1 MR/\u20b950",
             "cap": null
           },
           "utilities": {
@@ -8707,7 +8823,7 @@ export const creditCards = [
           {
             "type": "Statement Credit",
             "value": 0.25,
-            "desc": "1 MR = ₹0.25",
+            "desc": "1 MR = \u20b90.25",
             "recommended": false
           },
           {
@@ -8740,16 +8856,16 @@ export const creditCards = [
       "milestones": [
         {
           "spend": 50000,
-          "benefit": "₹1,000 voucher on spending ₹50,000 in a calendar month (up to ₹12,000/year)"
+          "benefit": "\u20b91,000 voucher on spending \u20b950,000 in a calendar month (up to \u20b912,000/year)"
         },
         {
           "spend": 500000,
-          "benefit": "Taj Stay voucher worth ₹10,000 on ₹5L spend + annual fee payment"
+          "benefit": "Taj Stay voucher worth \u20b910,000 on \u20b95L spend + annual fee payment"
         }
       ],
       "golf": {
         "included": true,
-        "text": "2 complimentary rounds/month at 32+ golf courses on ₹50,000 monthly spend"
+        "text": "2 complimentary rounds/month at 32+ golf courses on \u20b950,000 monthly spend"
       },
       "movies": {
         "included": false,
@@ -8758,7 +8874,7 @@ export const creditCards = [
       "fuel": {
         "surchargeWaiver": "1%",
         "cap": 5000,
-        "text": "0% convenience fee at HPCL under ₹5,000. 1% above ₹5,000."
+        "text": "0% convenience fee at HPCL under \u20b95,000. 1% above \u20b95,000."
       },
       "forex": {
         "markup": 0.035,
@@ -8785,26 +8901,27 @@ export const creditCards = [
         "Lounge Access",
         "Monthly Vouchers"
       ],
-      "bestFor": "High spenders (₹50K+/month) who can maximize monthly vouchers, golf benefits, and hotel memberships",
+      "bestFor": "High spenders (\u20b950K+/month) who can maximize monthly vouchers, golf benefits, and hotel memberships",
       "rating": 3.8,
-      "verdict": "Good for those spending ₹50K+/month to earn ₹12K in annual vouchers. The ₹10L spend requirement for fee waiver is steep. Accor Plus and dining memberships add value.",
+      "verdict": "Good for those spending \u20b950K+/month to earn \u20b912K in annual vouchers. The \u20b910L spend requirement for fee waiver is steep. Accor Plus and dining memberships add value.",
       "pros": [
-        "₹12,000/year in vouchers on ₹50K monthly spend",
+        "\u20b912,000/year in vouchers on \u20b950K monthly spend",
         "Complimentary Taj Epicure, EazyDiner Prime, Accor Plus",
         "Golf access at 32+ courses",
         "Domestic + limited international lounge access",
         "Priority Pass membership included",
-        "₹10K Taj voucher on ₹5L spend"
+        "\u20b910K Taj voucher on \u20b95L spend"
       ],
       "cons": [
-        "High annual fee (₹10,000 + GST)",
-        "₹10L spend needed for fee waiver (unrealistic for most)",
+        "High annual fee (\u20b910,000 + GST)",
+        "\u20b910L spend needed for fee waiver (unrealistic for most)",
         "Only 2 international lounge visits/year",
-        "Golf/voucher benefits require ₹50K monthly spend",
+        "Golf/voucher benefits require \u20b950K monthly spend",
         "Low base reward rate (0.5%)",
         "No Centurion Lounge access (discontinued Sep 2023)"
       ]
-    }
+    },
+    "slug": "amex-platinum-reserve"
   },
   {
     "id": "idfc-first-private",
@@ -8817,7 +8934,7 @@ export const creditCards = [
       "annual": 50000,
       "currency": "INR",
       "waivedOn": null,
-      "waiverText": "Invite-only. ₹50,000 + GST joining/annual fee. 50,000 welcome RPs + Club ITC Culinaire on joining. 25,000 RPs on renewal."
+      "waiverText": "Invite-only. \u20b950,000 + GST joining/annual fee. 50,000 welcome RPs + Club ITC Culinaire on joining. 25,000 RPs on renewal."
     },
     "eligibility": {
       "income": 3600000,
@@ -8834,7 +8951,7 @@ export const creditCards = [
       "baseRate": 0.00167,
       "earningText": "10X on spends above threshold & birthday (1.67%); 6X on Travel & Shop app bookings; 3X on rent/edu/govt (0.5%); 1X on utilities/insurance (0.17%)",
       "expiry": "Never Expires",
-      "joiningBonus": "50,000 Reward Points (₹12,500 value) + Club ITC Culinaire Hotel Membership",
+      "joiningBonus": "50,000 Reward Points (\u20b912,500 value) + Club ITC Culinaire Hotel Membership",
       "exclusions": "Fuel, EMI, Cash Withdrawals, Fees & Charges",
       "calculator": {
         "tier": "super-premium",
@@ -8843,10 +8960,12 @@ export const creditCards = [
         "specialLogic": "10X on eligible spends; 50X bonus on hotels, 20X bonus on flights via app. Monthly bonus cap 25,000 RPs. Annual redemption cap 3,00,000 RPs. Karma Points donated to charity on high spends.",
         "portals": [
           {
-            "name": "Threshold > ₹20k",
+            "name": "Threshold > \u20b920k",
             "rate": 0.0167,
-            "label": "10X Rewards (> ₹20k spend)",
-            "categories": ["all"]
+            "label": "10X Rewards (> \u20b920k spend)",
+            "categories": [
+              "all"
+            ]
           }
         ],
         "categories": {
@@ -8884,24 +9003,24 @@ export const creditCards = [
       },
       "redemption": {
         "baseValue": 0.25,
-        "bestOption": "Travel bookings via IDFC App or Statement Credit at ₹0.25 per point",
+        "bestOption": "Travel bookings via IDFC App or Statement Credit at \u20b90.25 per point",
         "options": [
           {
             "type": "Statement Credit",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": true
           },
           {
             "type": "Travel Bookings (App)",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25 (up to 70% of booking)",
+            "desc": "1 RP = \u20b90.25 (up to 70% of booking)",
             "recommended": true
           },
           {
             "type": "Product Catalogue",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": false
           }
         ]
@@ -8929,7 +9048,7 @@ export const creditCards = [
       },
       "movies": {
         "included": true,
-        "text": "Up to ₹750 discount on BookMyShow twice per month"
+        "text": "Up to \u20b9750 discount on BookMyShow twice per month"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -8959,13 +9078,14 @@ export const creditCards = [
         "No late payment or over-limit charges"
       ],
       "cons": [
-        "Very high ₹50,000 annual fee + GST",
+        "Very high \u20b950,000 annual fee + GST",
         "Invite-only, not available for direct application",
-        "Low redemption value at ₹0.25 per point",
+        "Low redemption value at \u20b90.25 per point",
         "No airmiles transfer partners",
         "Annual redemption cap of 3 lakh points"
       ]
-    }
+    },
+    "slug": "idfc-first-private"
   },
   {
     "id": "idfc-first-wealth",
@@ -8993,21 +9113,23 @@ export const creditCards = [
       "type": "points",
       "name": "Reward Points",
       "baseRate": 0.00375,
-      "earningText": "10X on spends above ₹20k/month & birthday (1.25%); 3X up to ₹20k (0.375%); 3X on rent/edu/govt; 1X on utilities/insurance. Effective Jan 18, 2026: Base changed from ₹150 to ₹200 per RP.",
+      "earningText": "10X on spends above \u20b920k/month & birthday (1.25%); 3X up to \u20b920k (0.375%); 3X on rent/edu/govt; 1X on utilities/insurance. Effective Jan 18, 2026: Base changed from \u20b9150 to \u20b9200 per RP.",
       "expiry": "Never Expires",
-      "joiningBonus": "₹500 gift voucher on spending ₹5,000 within 30 days + 5% cashback up to ₹1,000 on first EMI",
+      "joiningBonus": "\u20b9500 gift voucher on spending \u20b95,000 within 30 days + 5% cashback up to \u20b91,000 on first EMI",
       "exclusions": "Fuel, EMI, Cash Withdrawals. Rent/Edu/Govt/Wallet not counted for 10X threshold.",
       "calculator": {
         "tier": "premium",
         "monthlyCap": null,
         "capResetPeriod": "statement",
-        "specialLogic": "10X rewards on incremental spends above ₹20,000/month. 3X on base spends. 33% bonus RPs on hotel, 20% bonus on flights via app. New ₹200 base from Jan 18, 2026.",
+        "specialLogic": "10X rewards on incremental spends above \u20b920,000/month. 3X on base spends. 33% bonus RPs on hotel, 20% bonus on flights via app. New \u20b9200 base from Jan 18, 2026.",
         "portals": [
           {
-            "name": "Threshold > ₹20k",
+            "name": "Threshold > \u20b920k",
             "rate": 0.0125,
-            "label": "10X Rewards (> ₹20k spend)",
-            "categories": ["all"]
+            "label": "10X Rewards (> \u20b920k spend)",
+            "categories": [
+              "all"
+            ]
           }
         ],
         "categories": {
@@ -9018,12 +9140,12 @@ export const creditCards = [
           },
           "dining": {
             "rate": 0.0125,
-            "label": "10X on spends above ₹20k threshold",
+            "label": "10X on spends above \u20b920k threshold",
             "cap": null
           },
           "online": {
             "rate": 0.0125,
-            "label": "10X on spends above ₹20k threshold",
+            "label": "10X on spends above \u20b920k threshold",
             "cap": null
           },
           "fuel": {
@@ -9033,7 +9155,7 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.0125,
-            "label": "10X on spends above ₹20k threshold",
+            "label": "10X on spends above \u20b920k threshold",
             "cap": null
           },
           "utilities": {
@@ -9050,19 +9172,19 @@ export const creditCards = [
           {
             "type": "Pay with Points",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25 at online/in-store checkout",
+            "desc": "1 RP = \u20b90.25 at online/in-store checkout",
             "recommended": true
           },
           {
             "type": "Gift Vouchers (Amazon/Flipkart)",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": true
           },
           {
             "type": "Travel Bookings (App)",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": false
           }
         ]
@@ -9070,8 +9192,8 @@ export const creditCards = [
     },
     "features": {
       "lounge": {
-        "domestic": "1 per quarter (effective Apr 2026; requires ₹20k spend in previous month)",
-        "international": "1 per quarter (effective Apr 2026; requires ₹20k spend in previous month)",
+        "domestic": "1 per quarter (effective Apr 2026; requires \u20b920k spend in previous month)",
+        "international": "1 per quarter (effective Apr 2026; requires \u20b920k spend in previous month)",
         "accessType": "DreamFolks"
       },
       "milestones": [
@@ -9086,11 +9208,11 @@ export const creditCards = [
       ],
       "golf": {
         "included": true,
-        "text": "1 complimentary round per quarter on ₹20k spend/month (effective Apr 2026)"
+        "text": "1 complimentary round per quarter on \u20b920k spend/month (effective Apr 2026)"
       },
       "movies": {
         "included": true,
-        "text": "BOGO up to ₹250 on District app, twice per month"
+        "text": "BOGO up to \u20b9250 on District app, twice per month"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -9120,13 +9242,14 @@ export const creditCards = [
         "Golf privileges included"
       ],
       "cons": [
-        "High income eligibility (₹36 lakh p.a.)",
-        "10X rewards only above ₹20k/month threshold",
-        "Low redemption value at ₹0.25 per point",
+        "High income eligibility (\u20b936 lakh p.a.)",
+        "10X rewards only above \u20b920k/month threshold",
+        "Low redemption value at \u20b90.25 per point",
         "Lounge access reduced from Apr 2026",
         "No airmiles transfer partners"
       ]
-    }
+    },
+    "slug": "idfc-first-wealth"
   },
   {
     "id": "idfc-first-select",
@@ -9154,21 +9277,23 @@ export const creditCards = [
       "type": "points",
       "name": "Reward Points",
       "baseRate": 0.00375,
-      "earningText": "10X on spends above ₹20k/month & birthday (1.25%); 3X up to ₹20k (0.375%); 3X on rent/edu/govt; 1X on utilities/insurance. Effective Jan 18, 2026: Base changed from ₹150 to ₹200 per RP.",
+      "earningText": "10X on spends above \u20b920k/month & birthday (1.25%); 3X up to \u20b920k (0.375%); 3X on rent/edu/govt; 1X on utilities/insurance. Effective Jan 18, 2026: Base changed from \u20b9150 to \u20b9200 per RP.",
       "expiry": "Never Expires",
-      "joiningBonus": "₹500 gift voucher on spending ₹5,000 within 30 days + 5% cashback up to ₹1,000 on first EMI",
+      "joiningBonus": "\u20b9500 gift voucher on spending \u20b95,000 within 30 days + 5% cashback up to \u20b91,000 on first EMI",
       "exclusions": "Fuel, EMI, Cash Withdrawals. Rent/Edu/Govt/Wallet not counted for 10X threshold.",
       "calculator": {
         "tier": "premium",
         "monthlyCap": null,
         "capResetPeriod": "statement",
-        "specialLogic": "10X rewards on incremental spends above ₹20,000/month. 3X on base spends. 50X bonus on hotels, 20X bonus on flights via app. New ₹200 base from Jan 18, 2026.",
+        "specialLogic": "10X rewards on incremental spends above \u20b920,000/month. 3X on base spends. 50X bonus on hotels, 20X bonus on flights via app. New \u20b9200 base from Jan 18, 2026.",
         "portals": [
           {
-            "name": "Threshold > ₹20k",
+            "name": "Threshold > \u20b920k",
             "rate": 0.0125,
-            "label": "10X Rewards (> ₹20k spend)",
-            "categories": ["all"]
+            "label": "10X Rewards (> \u20b920k spend)",
+            "categories": [
+              "all"
+            ]
           }
         ],
         "categories": {
@@ -9179,12 +9304,12 @@ export const creditCards = [
           },
           "dining": {
             "rate": 0.0125,
-            "label": "10X on spends above ₹20k threshold",
+            "label": "10X on spends above \u20b920k threshold",
             "cap": null
           },
           "online": {
             "rate": 0.0125,
-            "label": "10X on spends above ₹20k threshold",
+            "label": "10X on spends above \u20b920k threshold",
             "cap": null
           },
           "fuel": {
@@ -9194,7 +9319,7 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.0125,
-            "label": "10X on spends above ₹20k threshold",
+            "label": "10X on spends above \u20b920k threshold",
             "cap": null
           },
           "utilities": {
@@ -9211,19 +9336,19 @@ export const creditCards = [
           {
             "type": "Pay with Points",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25 at online/in-store checkout",
+            "desc": "1 RP = \u20b90.25 at online/in-store checkout",
             "recommended": true
           },
           {
             "type": "Gift Vouchers (Amazon/Flipkart)",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": true
           },
           {
             "type": "Travel Bookings (App)",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": false
           }
         ]
@@ -9231,7 +9356,7 @@ export const creditCards = [
     },
     "features": {
       "lounge": {
-        "domestic": "1 per quarter (effective Apr 2026; requires ₹20k spend in previous month)",
+        "domestic": "1 per quarter (effective Apr 2026; requires \u20b920k spend in previous month)",
         "international": "None",
         "accessType": "DreamFolks"
       },
@@ -9242,7 +9367,7 @@ export const creditCards = [
       },
       "movies": {
         "included": true,
-        "text": "BOGO up to ₹125 on District app, twice per month"
+        "text": "BOGO up to \u20b9125 on District app, twice per month"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -9271,13 +9396,14 @@ export const creditCards = [
         "Rewards on rent & education payments"
       ],
       "cons": [
-        "10X rewards only above ₹20k/month threshold",
+        "10X rewards only above \u20b920k/month threshold",
         "No international lounge access",
-        "Low redemption value at ₹0.25 per point",
+        "Low redemption value at \u20b90.25 per point",
         "Airport lounge reduced to 1/quarter from Apr 2026",
         "No golf or premium lifestyle benefits"
       ]
-    }
+    },
+    "slug": "idfc-first-select"
   },
   {
     "id": "idfc-first-classic",
@@ -9305,37 +9431,39 @@ export const creditCards = [
       "type": "points",
       "name": "Reward Points",
       "baseRate": 0.00375,
-      "earningText": "10X on spends above ₹20k/month & birthday (1.25%); 3X up to ₹20k (0.375%); 3X on rent/edu/govt; 1X on utilities/insurance. Effective Jan 18, 2026: Base changed from ₹150 to ₹200 per RP.",
+      "earningText": "10X on spends above \u20b920k/month & birthday (1.25%); 3X up to \u20b920k (0.375%); 3X on rent/edu/govt; 1X on utilities/insurance. Effective Jan 18, 2026: Base changed from \u20b9150 to \u20b9200 per RP.",
       "expiry": "Never Expires",
-      "joiningBonus": "₹500 gift voucher on spending ₹5,000 within 30 days + 5% cashback up to ₹1,000 on first EMI",
+      "joiningBonus": "\u20b9500 gift voucher on spending \u20b95,000 within 30 days + 5% cashback up to \u20b91,000 on first EMI",
       "exclusions": "Fuel, EMI, Cash Withdrawals. Rent/Edu/Govt/Wallet not counted for 10X threshold.",
       "calculator": {
         "tier": "entry",
         "monthlyCap": null,
         "capResetPeriod": "statement",
-        "specialLogic": "10X rewards on incremental spends above ₹20,000/month. 3X on all spends up to ₹20k. New ₹200 base from Jan 18, 2026.",
+        "specialLogic": "10X rewards on incremental spends above \u20b920,000/month. 3X on all spends up to \u20b920k. New \u20b9200 base from Jan 18, 2026.",
         "portals": [
           {
-            "name": "Threshold > ₹20k",
+            "name": "Threshold > \u20b920k",
             "rate": 0.0125,
-            "label": "10X Rewards (> ₹20k spend)",
-            "categories": ["all"]
+            "label": "10X Rewards (> \u20b920k spend)",
+            "categories": [
+              "all"
+            ]
           }
         ],
         "categories": {
           "travel": {
             "rate": 0.0125,
-            "label": "10X on spends above ₹20k threshold",
+            "label": "10X on spends above \u20b920k threshold",
             "cap": null
           },
           "dining": {
             "rate": 0.0125,
-            "label": "10X on spends above ₹20k threshold",
+            "label": "10X on spends above \u20b920k threshold",
             "cap": null
           },
           "online": {
             "rate": 0.0125,
-            "label": "10X on spends above ₹20k threshold",
+            "label": "10X on spends above \u20b920k threshold",
             "cap": null
           },
           "fuel": {
@@ -9345,7 +9473,7 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.0125,
-            "label": "10X on spends above ₹20k threshold",
+            "label": "10X on spends above \u20b920k threshold",
             "cap": null
           },
           "utilities": {
@@ -9362,19 +9490,19 @@ export const creditCards = [
           {
             "type": "Pay with Points",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25 at online/in-store checkout",
+            "desc": "1 RP = \u20b90.25 at online/in-store checkout",
             "recommended": true
           },
           {
             "type": "Gift Vouchers (Amazon/Flipkart)",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": true
           },
           {
             "type": "Product Catalogue",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": false
           }
         ]
@@ -9393,7 +9521,7 @@ export const creditCards = [
       },
       "movies": {
         "included": true,
-        "text": "25% off up to ₹100 on District app, once per month"
+        "text": "25% off up to \u20b9100 on District app, once per month"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -9416,7 +9544,7 @@ export const creditCards = [
       "verdict": "Best entry-level lifetime-free card with railway lounge access and unlimited rewards",
       "pros": [
         "Lifetime free with zero conditions",
-        "Low income eligibility (₹25k/month)",
+        "Low income eligibility (\u20b925k/month)",
         "Railway lounge access (4 per quarter)",
         "Rewards never expire",
         "Roadside assistance included"
@@ -9424,11 +9552,12 @@ export const creditCards = [
       "cons": [
         "No airport lounge access",
         "High 3.5% forex markup",
-        "10X rewards only above ₹20k/month",
-        "Low redemption value at ₹0.25 per point",
+        "10X rewards only above \u20b920k/month",
+        "Low redemption value at \u20b90.25 per point",
         "Limited lifestyle benefits"
       ]
-    }
+    },
+    "slug": "idfc-first-classic"
   },
   {
     "id": "idfc-first-millennia",
@@ -9456,37 +9585,39 @@ export const creditCards = [
       "type": "points",
       "name": "Reward Points",
       "baseRate": 0.005,
-      "earningText": "10X on spends above ₹20k/month & birthday (1.67%); 3X up to ₹20k online & offline (0.5%); 3X on edu/wallet/govt; 1X on utilities/insurance",
+      "earningText": "10X on spends above \u20b920k/month & birthday (1.67%); 3X up to \u20b920k online & offline (0.5%); 3X on edu/wallet/govt; 1X on utilities/insurance",
       "expiry": "Never Expires",
-      "joiningBonus": "₹500 gift voucher on spending ₹5,000 within 30 days + 5% cashback up to ₹1,000 on first EMI",
+      "joiningBonus": "\u20b9500 gift voucher on spending \u20b95,000 within 30 days + 5% cashback up to \u20b91,000 on first EMI",
       "exclusions": "Fuel, EMI, Cash Withdrawals, Insurance. Edu/Wallet/Govt not counted for 10X threshold.",
       "calculator": {
         "tier": "entry",
         "monthlyCap": null,
         "capResetPeriod": "statement",
-        "specialLogic": "10X rewards on incremental spends above ₹20,000/month. 3X on all online & offline spends up to ₹20k. Base 1 RP per ₹150.",
+        "specialLogic": "10X rewards on incremental spends above \u20b920,000/month. 3X on all online & offline spends up to \u20b920k. Base 1 RP per \u20b9150.",
         "portals": [
           {
-            "name": "Threshold > ₹20k",
+            "name": "Threshold > \u20b920k",
             "rate": 0.0167,
-            "label": "10X Rewards (> ₹20k spend)",
-            "categories": ["all"]
+            "label": "10X Rewards (> \u20b920k spend)",
+            "categories": [
+              "all"
+            ]
           }
         ],
         "categories": {
           "travel": {
             "rate": 0.0167,
-            "label": "10X on spends above ₹20k threshold",
+            "label": "10X on spends above \u20b920k threshold",
             "cap": null
           },
           "dining": {
             "rate": 0.0167,
-            "label": "10X on spends above ₹20k threshold",
+            "label": "10X on spends above \u20b920k threshold",
             "cap": null
           },
           "online": {
             "rate": 0.0167,
-            "label": "10X on spends above ₹20k threshold",
+            "label": "10X on spends above \u20b920k threshold",
             "cap": null
           },
           "fuel": {
@@ -9496,7 +9627,7 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.0167,
-            "label": "10X on spends above ₹20k threshold",
+            "label": "10X on spends above \u20b920k threshold",
             "cap": null
           },
           "utilities": {
@@ -9513,19 +9644,19 @@ export const creditCards = [
           {
             "type": "Pay with Points",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25 at online/in-store checkout",
+            "desc": "1 RP = \u20b90.25 at online/in-store checkout",
             "recommended": true
           },
           {
             "type": "Gift Vouchers (Amazon/Flipkart)",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": true
           },
           {
             "type": "Product Catalogue",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": false
           }
         ]
@@ -9544,7 +9675,7 @@ export const creditCards = [
       },
       "movies": {
         "included": true,
-        "text": "25% off up to ₹100 on District/Paytm app, once per month"
+        "text": "25% off up to \u20b9100 on District/Paytm app, once per month"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -9568,7 +9699,7 @@ export const creditCards = [
       "verdict": "Ideal starter card for millennials with never-expiring rewards and railway lounge access",
       "pros": [
         "Lifetime free with zero conditions",
-        "Low income eligibility (₹25k/month)",
+        "Low income eligibility (\u20b925k/month)",
         "Railway lounge access (4 per quarter)",
         "Rewards never expire",
         "Low interest rate option (0.75% p.m.)"
@@ -9576,11 +9707,12 @@ export const creditCards = [
       "cons": [
         "No airport lounge access",
         "High 3.5% forex markup",
-        "10X rewards only above ₹20k/month",
-        "Low redemption value at ₹0.25 per point",
+        "10X rewards only above \u20b920k/month",
+        "Low redemption value at \u20b90.25 per point",
         "Very similar to Classic card"
       ]
-    }
+    },
+    "slug": "idfc-first-millennia"
   },
   {
     "id": "idfc-first-wow",
@@ -9593,7 +9725,7 @@ export const creditCards = [
       "annual": 0,
       "currency": "INR",
       "waivedOn": 0,
-      "waiverText": "Lifetime Free - Secured card against FD (minimum ₹20,000 or ₹25,000 FD required)"
+      "waiverText": "Lifetime Free - Secured card against FD (minimum \u20b920,000 or \u20b925,000 FD required)"
     },
     "eligibility": {
       "income": 0,
@@ -9610,7 +9742,7 @@ export const creditCards = [
       "baseRate": 0.0067,
       "earningText": "4X on all eligible spends (0.67%); 1X on utilities/insurance (0.17%); Credit limit = 100% of FD value",
       "expiry": "Never Expires",
-      "joiningBonus": "5% cashback up to ₹1,000 on first EMI transaction within 90 days",
+      "joiningBonus": "5% cashback up to \u20b91,000 on first EMI transaction within 90 days",
       "exclusions": "Fuel, EMI, Cash Withdrawals",
       "calculator": {
         "tier": "entry",
@@ -9657,19 +9789,19 @@ export const creditCards = [
           {
             "type": "Pay with Points",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25 at online/in-store checkout",
+            "desc": "1 RP = \u20b90.25 at online/in-store checkout",
             "recommended": true
           },
           {
             "type": "Gift Vouchers (Amazon/Flipkart)",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": true
           },
           {
             "type": "Product Catalogue",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": false
           }
         ]
@@ -9688,7 +9820,7 @@ export const creditCards = [
       },
       "movies": {
         "included": true,
-        "text": "50% off up to ₹300 on BookMyShow (Visa benefit)"
+        "text": "50% off up to \u20b9300 on BookMyShow (Visa benefit)"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -9719,12 +9851,13 @@ export const creditCards = [
       ],
       "cons": [
         "No lounge access",
-        "Requires FD of minimum ₹20,000",
-        "Low redemption value at ₹0.25 per point",
+        "Requires FD of minimum \u20b920,000",
+        "Low redemption value at \u20b90.25 per point",
         "No 10X accelerated rewards",
         "Limited lifestyle benefits"
       ]
-    }
+    },
+    "slug": "idfc-first-wow"
   },
   {
     "id": "kotak-white-reserve",
@@ -9737,7 +9870,7 @@ export const creditCards = [
       "annual": 12500,
       "currency": "INR",
       "waivedOn": 1000000,
-      "waiverText": "Waived on ₹10 lakh annual spend"
+      "waiverText": "Waived on \u20b910 lakh annual spend"
     },
     "eligibility": {
       "income": 2500000,
@@ -9752,29 +9885,29 @@ export const creditCards = [
       "type": "points",
       "name": "White Pass Value",
       "baseRate": 0,
-      "earningText": "Milestone-based White Pass rewards. No rewards below ₹3 lakh annual spend. Earn up to ₹2.5 lakh White Pass on ₹1 crore spend.",
+      "earningText": "Milestone-based White Pass rewards. No rewards below \u20b93 lakh annual spend. Earn up to \u20b92.5 lakh White Pass on \u20b91 crore spend.",
       "expiry": "Valid until 90 days after anniversary cycle",
       "joiningBonus": "Club Marriott Membership with 3 Celebration Certificates",
-      "exclusions": "Fuel, Wallet, Rent, Govt, Insurance, Utilities, Education excluded from milestone calculation. W.e.f June 2025: 1% fee on Wallet/Gaming above ₹10K/month, Utilities above ₹75K/month, Fuel above ₹50K/month",
+      "exclusions": "Fuel, Wallet, Rent, Govt, Insurance, Utilities, Education excluded from milestone calculation. W.e.f June 2025: 1% fee on Wallet/Gaming above \u20b910K/month, Utilities above \u20b975K/month, Fuel above \u20b950K/month",
       "calculator": {
         "tier": "super-premium",
         "monthlyCap": null,
         "capResetPeriod": "anniversary",
-        "specialLogic": "White Pass is earned via ANNUAL SPEND MILESTONES (not per-transaction). Milestones: ₹3L→₹5K, ₹10L→+₹15K (total ₹20K), ₹20L→+₹22K (₹42K), ₹30L→+₹24K (₹66K), ₹40L→+₹26K (₹92K), ₹50L→+₹28K (₹1.2L), ₹75L→+₹63K (₹1.83L), ₹1Cr→+₹67K (₹2.5L). No rewards if spend <₹3L. Redemption: 1 White Pass = ₹1 on catalog, ₹0.70 for cashback.",
+        "specialLogic": "White Pass is earned via ANNUAL SPEND MILESTONES (not per-transaction). Milestones: \u20b93L\u2192\u20b95K, \u20b910L\u2192+\u20b915K (total \u20b920K), \u20b920L\u2192+\u20b922K (\u20b942K), \u20b930L\u2192+\u20b924K (\u20b966K), \u20b940L\u2192+\u20b926K (\u20b992K), \u20b950L\u2192+\u20b928K (\u20b91.2L), \u20b975L\u2192+\u20b963K (\u20b91.83L), \u20b91Cr\u2192+\u20b967K (\u20b92.5L). No rewards if spend <\u20b93L. Redemption: 1 White Pass = \u20b91 on catalog, \u20b90.70 for cashback.",
         "categories": {
           "travel": {
             "rate": 0.025,
-            "label": "Up to 2.5% on ₹1Cr milestone",
+            "label": "Up to 2.5% on \u20b91Cr milestone",
             "cap": 250000
           },
           "dining": {
             "rate": 0.025,
-            "label": "Up to 2.5% on ₹1Cr milestone",
+            "label": "Up to 2.5% on \u20b91Cr milestone",
             "cap": 250000
           },
           "online": {
             "rate": 0.025,
-            "label": "Up to 2.5% on ₹1Cr milestone",
+            "label": "Up to 2.5% on \u20b91Cr milestone",
             "cap": 250000
           },
           "fuel": {
@@ -9784,7 +9917,7 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.025,
-            "label": "Up to 2.5% on ₹1Cr milestone",
+            "label": "Up to 2.5% on \u20b91Cr milestone",
             "cap": 250000
           },
           "utilities": {
@@ -9801,13 +9934,13 @@ export const creditCards = [
           {
             "type": "White Pass Catalog",
             "value": 1,
-            "desc": "1 White Pass = ₹1 on vouchers, flights, hotels, experiences",
+            "desc": "1 White Pass = \u20b91 on vouchers, flights, hotels, experiences",
             "recommended": true
           },
           {
             "type": "Cashback",
             "value": 0.7,
-            "desc": "1 White Pass = ₹0.70 as cashback",
+            "desc": "1 White Pass = \u20b90.70 as cashback",
             "recommended": false
           }
         ]
@@ -9822,35 +9955,35 @@ export const creditCards = [
       "milestones": [
         {
           "spend": 300000,
-          "benefit": "₹5,000 White Pass Value"
+          "benefit": "\u20b95,000 White Pass Value"
         },
         {
           "spend": 1000000,
-          "benefit": "Additional ₹15,000 White Pass (Total ₹20,000)"
+          "benefit": "Additional \u20b915,000 White Pass (Total \u20b920,000)"
         },
         {
           "spend": 2000000,
-          "benefit": "Additional ₹22,000 White Pass (Total ₹42,000)"
+          "benefit": "Additional \u20b922,000 White Pass (Total \u20b942,000)"
         },
         {
           "spend": 3000000,
-          "benefit": "Additional ₹24,000 White Pass (Total ₹66,000)"
+          "benefit": "Additional \u20b924,000 White Pass (Total \u20b966,000)"
         },
         {
           "spend": 4000000,
-          "benefit": "Additional ₹26,000 White Pass (Total ₹92,000)"
+          "benefit": "Additional \u20b926,000 White Pass (Total \u20b992,000)"
         },
         {
           "spend": 5000000,
-          "benefit": "Additional ₹28,000 White Pass (Total ₹1,20,000)"
+          "benefit": "Additional \u20b928,000 White Pass (Total \u20b91,20,000)"
         },
         {
           "spend": 7500000,
-          "benefit": "Additional ₹63,000 White Pass (Total ₹1,83,000)"
+          "benefit": "Additional \u20b963,000 White Pass (Total \u20b91,83,000)"
         },
         {
           "spend": 10000000,
-          "benefit": "Additional ₹67,000 White Pass (Total ₹2,50,000)"
+          "benefit": "Additional \u20b967,000 White Pass (Total \u20b92,50,000)"
         }
       ],
       "golf": {
@@ -9880,24 +10013,25 @@ export const creditCards = [
         "Club Marriott",
         "Milestone Rewards"
       ],
-      "bestFor": "Ultra HNIs with ₹10L+ annual spends seeking luxury travel, lounge, and lifestyle benefits",
+      "bestFor": "Ultra HNIs with \u20b910L+ annual spends seeking luxury travel, lounge, and lifestyle benefits",
       "rating": 4.3,
-      "verdict": "India's top milestone-based super-premium card with unmatched lounge access and Club Marriott perks, but requires ₹3L minimum spend to unlock any rewards.",
+      "verdict": "India's top milestone-based super-premium card with unmatched lounge access and Club Marriott perks, but requires \u20b93L minimum spend to unlock any rewards.",
       "pros": [
         "Unlimited domestic and international lounge access for primary and add-on",
-        "Up to 2.5% value back on ₹1 crore spend",
+        "Up to 2.5% value back on \u20b91 crore spend",
         "Club Marriott membership with dining and stay discounts",
         "Low 2% forex markup",
         "2 complimentary golf rounds per month worldwide",
         "Luxury concierge services"
       ],
       "cons": [
-        "No rewards below ₹3 lakh annual spend",
-        "Very high ₹12,500 annual fee requires ₹10L spend for waiver",
+        "No rewards below \u20b93 lakh annual spend",
+        "Very high \u20b912,500 annual fee requires \u20b910L spend for waiver",
         "Cashback redemption at reduced 0.70 rate",
-        "Requires ₹25L+ income eligibility"
+        "Requires \u20b925L+ income eligibility"
       ]
-    }
+    },
+    "slug": "kotak-white-reserve"
   },
   {
     "id": "kotak-white",
@@ -9910,7 +10044,7 @@ export const creditCards = [
       "annual": 3000,
       "currency": "INR",
       "waivedOn": 500000,
-      "waiverText": "Waived on ₹5 lakh annual spend"
+      "waiverText": "Waived on \u20b95 lakh annual spend"
     },
     "eligibility": {
       "income": 600000,
@@ -9925,29 +10059,29 @@ export const creditCards = [
       "type": "points",
       "name": "White Pass Value",
       "baseRate": 0,
-      "earningText": "Milestone-based White Pass rewards. Earn up to ₹27,000 White Pass annually on ₹12 lakh spend. Minimum ₹2 lakh spend required to unlock rewards.",
+      "earningText": "Milestone-based White Pass rewards. Earn up to \u20b927,000 White Pass annually on \u20b912 lakh spend. Minimum \u20b92 lakh spend required to unlock rewards.",
       "expiry": "Expires on card anniversary date + 90 days claim period",
-      "joiningBonus": "₹1,500 White Pass on spending ₹30,000 within 60 days of card setup",
-      "exclusions": "Fuel, Wallet, Rent, Govt, Insurance, Utilities, EMI transactions. W.e.f June 2025: 1% fee on Wallet/Gaming above ₹10K/month, Utilities above ₹75K/month, Fuel above ₹50K/month",
+      "joiningBonus": "\u20b91,500 White Pass on spending \u20b930,000 within 60 days of card setup",
+      "exclusions": "Fuel, Wallet, Rent, Govt, Insurance, Utilities, EMI transactions. W.e.f June 2025: 1% fee on Wallet/Gaming above \u20b910K/month, Utilities above \u20b975K/month, Fuel above \u20b950K/month",
       "calculator": {
         "tier": "premium",
         "monthlyCap": null,
         "capResetPeriod": "anniversary",
-        "specialLogic": "White Pass is earned via ANNUAL SPEND MILESTONES. Maximum ₹27,000 White Pass annually on ₹12 lakh spend (~2.25% value back). Minimum ₹2 lakh spend required to start earning. Redemption: 1 White Pass = ₹1 on catalog.",
+        "specialLogic": "White Pass is earned via ANNUAL SPEND MILESTONES. Maximum \u20b927,000 White Pass annually on \u20b912 lakh spend (~2.25% value back). Minimum \u20b92 lakh spend required to start earning. Redemption: 1 White Pass = \u20b91 on catalog.",
         "categories": {
           "travel": {
             "rate": 0.0225,
-            "label": "Up to 2.25% on ₹12L spend",
+            "label": "Up to 2.25% on \u20b912L spend",
             "cap": 27000
           },
           "dining": {
             "rate": 0.0225,
-            "label": "Up to 2.25% on ₹12L spend",
+            "label": "Up to 2.25% on \u20b912L spend",
             "cap": 27000
           },
           "online": {
             "rate": 0.0225,
-            "label": "Up to 2.25% on ₹12L spend",
+            "label": "Up to 2.25% on \u20b912L spend",
             "cap": 27000
           },
           "fuel": {
@@ -9957,7 +10091,7 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.0225,
-            "label": "Up to 2.25% on ₹12L spend",
+            "label": "Up to 2.25% on \u20b912L spend",
             "cap": 27000
           },
           "utilities": {
@@ -9974,7 +10108,7 @@ export const creditCards = [
           {
             "type": "White Pass Catalog",
             "value": 1,
-            "desc": "1 White Pass = ₹1 on vouchers, flights, hotels, National Geographic experiences",
+            "desc": "1 White Pass = \u20b91 on vouchers, flights, hotels, National Geographic experiences",
             "recommended": true
           }
         ]
@@ -9993,7 +10127,7 @@ export const creditCards = [
         },
         {
           "spend": 1200000,
-          "benefit": "Maximum ₹27,000 White Pass Value annually"
+          "benefit": "Maximum \u20b927,000 White Pass Value annually"
         }
       ],
       "golf": {
@@ -10023,22 +10157,23 @@ export const creditCards = [
       ],
       "bestFor": "High spenders seeking milestone-based White Pass rewards with domestic and international lounge access",
       "rating": 3.8,
-      "verdict": "A solid premium card for high spenders but complex milestone structure and ₹2L minimum spend requirement limit its appeal compared to simpler reward cards.",
+      "verdict": "A solid premium card for high spenders but complex milestone structure and \u20b92L minimum spend requirement limit its appeal compared to simpler reward cards.",
       "pros": [
-        "Up to 2.25% value back on ₹12L annual spend",
+        "Up to 2.25% value back on \u20b912L annual spend",
         "Domestic and international lounge access",
         "Premium brand voucher redemptions",
         "Railway surcharge waiver up to 2.5%",
-        "Fee waiver achievable at ₹5L spend"
+        "Fee waiver achievable at \u20b95L spend"
       ],
       "cons": [
-        "Minimum ₹2L spend required to unlock any rewards",
+        "Minimum \u20b92L spend required to unlock any rewards",
         "Complex milestone-based structure",
         "White Pass expires on anniversary date",
         "No category-specific accelerated rewards",
         "3.5% forex markup is on higher side"
       ]
-    }
+    },
+    "slug": "kotak-white"
   },
   {
     "id": "kotak-mojo-platinum",
@@ -10051,7 +10186,7 @@ export const creditCards = [
       "annual": 1000,
       "currency": "INR",
       "waivedOn": 100000,
-      "waiverText": "Joining fee waived on ₹30K spend in 90 days. Annual fee waived on ₹1 lakh spend"
+      "waiverText": "Joining fee waived on \u20b930K spend in 90 days. Annual fee waived on \u20b91 lakh spend"
     },
     "eligibility": {
       "income": 400000,
@@ -10066,29 +10201,29 @@ export const creditCards = [
       "type": "points",
       "name": "Mojo Points",
       "baseRate": 0.0025,
-      "earningText": "2.5 Mojo Points per ₹100 on online spends (1% value). 1 Mojo Point per ₹100 on other spends (0.4% value). No rewards on fuel or cash withdrawal.",
+      "earningText": "2.5 Mojo Points per \u20b9100 on online spends (1% value). 1 Mojo Point per \u20b9100 on other spends (0.4% value). No rewards on fuel or cash withdrawal.",
       "expiry": "12 months from date earned",
-      "joiningBonus": "2,500 Mojo Points quarterly on ₹75,000 spend (1st year only)",
-      "exclusions": "Fuel, Cash Withdrawal. W.e.f June 2025: Education & Insurance earn only up to ₹70K/statement cycle. Wallet/Gaming, Utility, Fuel excluded from milestone calculation.",
+      "joiningBonus": "2,500 Mojo Points quarterly on \u20b975,000 spend (1st year only)",
+      "exclusions": "Fuel, Cash Withdrawal. W.e.f June 2025: Education & Insurance earn only up to \u20b970K/statement cycle. Wallet/Gaming, Utility, Fuel excluded from milestone calculation.",
       "calculator": {
         "tier": "entry",
         "monthlyCap": null,
         "capResetPeriod": "statement",
-        "specialLogic": "2.5x Mojo Points on all online spends. 1x on offline spends excluding fuel. 1 Mojo Point = ₹0.25 on catalog, ₹0.20 for cashback. Minimum 2,500 points for redemption.",
+        "specialLogic": "2.5x Mojo Points on all online spends. 1x on offline spends excluding fuel. 1 Mojo Point = \u20b90.25 on catalog, \u20b90.20 for cashback. Minimum 2,500 points for redemption.",
         "categories": {
           "travel": {
             "rate": 0.01,
-            "label": "1% (2.5 Mojo/₹100 online)",
+            "label": "1% (2.5 Mojo/\u20b9100 online)",
             "cap": null
           },
           "dining": {
             "rate": 0.01,
-            "label": "1% (2.5 Mojo/₹100 online)",
+            "label": "1% (2.5 Mojo/\u20b9100 online)",
             "cap": null
           },
           "online": {
             "rate": 0.01,
-            "label": "1% (2.5 Mojo/₹100)",
+            "label": "1% (2.5 Mojo/\u20b9100)",
             "cap": null
           },
           "fuel": {
@@ -10098,12 +10233,12 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.004,
-            "label": "0.4% (1 Mojo/₹100 offline)",
+            "label": "0.4% (1 Mojo/\u20b9100 offline)",
             "cap": null
           },
           "utilities": {
             "rate": 0.004,
-            "label": "0.4% (1 Mojo/₹100 offline)",
+            "label": "0.4% (1 Mojo/\u20b9100 offline)",
             "cap": null
           }
         }
@@ -10115,13 +10250,13 @@ export const creditCards = [
           {
             "type": "Catalog Redemption",
             "value": 0.25,
-            "desc": "1 Mojo Point = ₹0.25 on shopping, travel, vouchers",
+            "desc": "1 Mojo Point = \u20b90.25 on shopping, travel, vouchers",
             "recommended": true
           },
           {
             "type": "Statement Credit",
             "value": 0.2,
-            "desc": "1 Mojo Point = ₹0.20 as cashback (min 2,500 points)",
+            "desc": "1 Mojo Point = \u20b90.20 as cashback (min 2,500 points)",
             "recommended": false
           }
         ]
@@ -10129,7 +10264,7 @@ export const creditCards = [
     },
     "features": {
       "lounge": {
-        "domestic": "8 per year (2 per quarter, requires ₹75K quarterly spend from June 2025)",
+        "domestic": "8 per year (2 per quarter, requires \u20b975K quarterly spend from June 2025)",
         "international": "None",
         "accessType": "DreamFolks"
       },
@@ -10172,8 +10307,8 @@ export const creditCards = [
         "Uncapped reward earning",
         "8 domestic lounge visits annually",
         "Railway surcharge waiver up to 2.5%",
-        "Low ₹1L spend for fee waiver",
-        "₹1.25L insurance on lost card"
+        "Low \u20b91L spend for fee waiver",
+        "\u20b91.25L insurance on lost card"
       ],
       "cons": [
         "Low 0.4% reward rate on offline spends",
@@ -10182,7 +10317,8 @@ export const creditCards = [
         "12-month points expiry",
         "3.5% forex markup"
       ]
-    }
+    },
+    "slug": "kotak-mojo-platinum"
   },
   {
     "id": "kotak-zen-signature",
@@ -10195,7 +10331,7 @@ export const creditCards = [
       "annual": 1500,
       "currency": "INR",
       "waivedOn": 150000,
-      "waiverText": "Waived on ₹1.5 lakh annual spend"
+      "waiverText": "Waived on \u20b91.5 lakh annual spend"
     },
     "eligibility": {
       "income": 480000,
@@ -10210,29 +10346,29 @@ export const creditCards = [
       "type": "points",
       "name": "Zen Points",
       "baseRate": 0.0083,
-      "earningText": "10 Zen Points per ₹150 on shopping (apparel, jewellery, lifestyle, departmental stores) = 1.67%. 5 Zen Points per ₹150 on other spends = 0.83%. Capped at 6,500 points per billing cycle.",
+      "earningText": "10 Zen Points per \u20b9150 on shopping (apparel, jewellery, lifestyle, departmental stores) = 1.67%. 5 Zen Points per \u20b9150 on other spends = 0.83%. Capped at 6,500 points per billing cycle.",
       "expiry": "2 years from date earned",
-      "joiningBonus": "1,500 Zen Points on payment of joining fee (worth ₹375)",
+      "joiningBonus": "1,500 Zen Points on payment of joining fee (worth \u20b9375)",
       "exclusions": "Fuel, Cash, EMI transactions. W.e.f June 2025: Wallet/Gaming, Utility, Fuel, Insurance, Govt, Rent, Education excluded from milestone calculation.",
       "calculator": {
         "tier": "premium",
         "monthlyCap": 6500,
         "capResetPeriod": "statement",
-        "specialLogic": "10 Zen Points/₹150 on SHOPPING CATEGORIES (Apparel, Lifestyle, Jewellery, Departmental Stores). 5 Zen Points/₹150 on other spends. Monthly cap of 6,500 Zen Points (~₹1,625 value). Redemption: 1 Zen Point = ₹0.25 catalog, ₹0.20 cashback.",
+        "specialLogic": "10 Zen Points/\u20b9150 on SHOPPING CATEGORIES (Apparel, Lifestyle, Jewellery, Departmental Stores). 5 Zen Points/\u20b9150 on other spends. Monthly cap of 6,500 Zen Points (~\u20b91,625 value). Redemption: 1 Zen Point = \u20b90.25 catalog, \u20b90.20 cashback.",
         "categories": {
           "travel": {
             "rate": 0.0083,
-            "label": "0.83% (5 Zen/₹150)",
+            "label": "0.83% (5 Zen/\u20b9150)",
             "cap": 1625
           },
           "dining": {
             "rate": 0.0083,
-            "label": "0.83% (5 Zen/₹150)",
+            "label": "0.83% (5 Zen/\u20b9150)",
             "cap": 1625
           },
           "online": {
             "rate": 0.0167,
-            "label": "1.67% on shopping sites (10 Zen/₹150)",
+            "label": "1.67% on shopping sites (10 Zen/\u20b9150)",
             "cap": 1625
           },
           "fuel": {
@@ -10242,12 +10378,12 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.0167,
-            "label": "1.67% at departmental stores (10 Zen/₹150)",
+            "label": "1.67% at departmental stores (10 Zen/\u20b9150)",
             "cap": 1625
           },
           "utilities": {
             "rate": 0.0083,
-            "label": "0.83% (5 Zen/₹150)",
+            "label": "0.83% (5 Zen/\u20b9150)",
             "cap": 1625
           }
         }
@@ -10259,19 +10395,19 @@ export const creditCards = [
           {
             "type": "Catalog Redemption",
             "value": 0.25,
-            "desc": "1 Zen Point = ₹0.25 on shopping, travel, mobile recharge",
+            "desc": "1 Zen Point = \u20b90.25 on shopping, travel, mobile recharge",
             "recommended": true
           },
           {
             "type": "PaybyPoints at POS",
             "value": 0.2,
-            "desc": "1 Zen Point = ₹0.20 at partner merchants",
+            "desc": "1 Zen Point = \u20b90.20 at partner merchants",
             "recommended": false
           },
           {
             "type": "Statement Credit",
             "value": 0.2,
-            "desc": "1 Zen Point = ₹0.20 (min 2,000 points)",
+            "desc": "1 Zen Point = \u20b90.20 (min 2,000 points)",
             "recommended": false
           }
         ]
@@ -10279,18 +10415,18 @@ export const creditCards = [
     },
     "features": {
       "lounge": {
-        "domestic": "8 per year (2 per quarter, requires ₹75K quarterly spend from June 2025)",
+        "domestic": "8 per year (2 per quarter, requires \u20b975K quarterly spend from June 2025)",
         "international": "3 per year (Priority Pass)",
         "accessType": "DreamFolks + Priority Pass"
       },
       "milestones": [
         {
           "spend": 300000,
-          "benefit": "7,500 bonus Zen Points (₹1,875 value)"
+          "benefit": "7,500 bonus Zen Points (\u20b91,875 value)"
         },
         {
           "spend": 600000,
-          "benefit": "15,000 bonus Zen Points (₹3,750 value) - replaces ₹3L milestone"
+          "benefit": "15,000 bonus Zen Points (\u20b93,750 value) - replaces \u20b93L milestone"
         }
       ],
       "golf": {
@@ -10325,8 +10461,8 @@ export const creditCards = [
       "pros": [
         "1.67% value on shopping categories (apparel, lifestyle, jewellery)",
         "Domestic and international lounge access",
-        "Milestone bonuses up to 15,000 points on ₹6L spend",
-        "Low ₹1.5L spend for fee waiver",
+        "Milestone bonuses up to 15,000 points on \u20b96L spend",
+        "Low \u20b91.5L spend for fee waiver",
         "Railway surcharge waiver"
       ],
       "cons": [
@@ -10336,7 +10472,8 @@ export const creditCards = [
         "3.5% forex markup",
         "Quarterly spend required for lounge access from June 2025"
       ]
-    }
+    },
+    "slug": "kotak-zen-signature"
   },
   {
     "id": "kotak-pvr-inox",
@@ -10364,44 +10501,44 @@ export const creditCards = [
       "type": "points",
       "name": "Movie Tickets (M-Coupons)",
       "baseRate": 0.03,
-      "earningText": "1 free PVR INOX movie ticket (₹300 value) for every ₹10,000 spent per month. Unlimited tickets possible. 5% instant discount on PVR tickets. 20% off on F&B at PVR.",
+      "earningText": "1 free PVR INOX movie ticket (\u20b9300 value) for every \u20b910,000 spent per month. Unlimited tickets possible. 5% instant discount on PVR tickets. 20% off on F&B at PVR.",
       "expiry": "M-Coupons valid for 60 days from claim date. Must claim within 2 billing cycles.",
       "joiningBonus": "None",
-      "exclusions": "Rent Payments, Wallet Funding, Online Skill-Based Gaming excluded from milestone calculation. 1% fee on Rent, Education, and on Wallet/Gaming above ₹10K, Utility above ₹50K, Fuel above ₹35K monthly.",
+      "exclusions": "Rent Payments, Wallet Funding, Online Skill-Based Gaming excluded from milestone calculation. 1% fee on Rent, Education, and on Wallet/Gaming above \u20b910K, Utility above \u20b950K, Fuel above \u20b935K monthly.",
       "calculator": {
         "tier": "co-branded",
         "monthlyCap": null,
         "capResetPeriod": "calendar",
-        "specialLogic": "MOVIE TICKET MILESTONE: Earn 1 M-Coupon (worth ₹300) for every ₹10,000 spent in a monthly billing cycle. No limit on tickets. E.g., ₹75,000 spend = 7 tickets (₹2,100 value = 2.8%). Additional 5% off on PVR tickets and 20% off on F&B at PVR cinemas. Access to PVR INOX In-Cinema Lounges.",
+        "specialLogic": "MOVIE TICKET MILESTONE: Earn 1 M-Coupon (worth \u20b9300) for every \u20b910,000 spent in a monthly billing cycle. No limit on tickets. E.g., \u20b975,000 spend = 7 tickets (\u20b92,100 value = 2.8%). Additional 5% off on PVR tickets and 20% off on F&B at PVR cinemas. Access to PVR INOX In-Cinema Lounges.",
         "categories": {
           "travel": {
             "rate": 0.03,
-            "label": "₹300 ticket per ₹10K spend (3%)",
+            "label": "\u20b9300 ticket per \u20b910K spend (3%)",
             "cap": null
           },
           "dining": {
             "rate": 0.03,
-            "label": "₹300 ticket per ₹10K spend (3%)",
+            "label": "\u20b9300 ticket per \u20b910K spend (3%)",
             "cap": null
           },
           "online": {
             "rate": 0.03,
-            "label": "₹300 ticket per ₹10K spend (3%)",
+            "label": "\u20b9300 ticket per \u20b910K spend (3%)",
             "cap": null
           },
           "fuel": {
             "rate": 0.03,
-            "label": "₹300 ticket per ₹10K spend (3%)",
+            "label": "\u20b9300 ticket per \u20b910K spend (3%)",
             "cap": null
           },
           "groceries": {
             "rate": 0.03,
-            "label": "₹300 ticket per ₹10K spend (3%)",
+            "label": "\u20b9300 ticket per \u20b910K spend (3%)",
             "cap": null
           },
           "utilities": {
             "rate": 0.03,
-            "label": "₹300 ticket per ₹10K spend (3%)",
+            "label": "\u20b9300 ticket per \u20b910K spend (3%)",
             "cap": null
           }
         }
@@ -10413,7 +10550,7 @@ export const creditCards = [
           {
             "type": "PVR Movie Ticket",
             "value": 300,
-            "desc": "1 M-Coupon = ₹300 towards any PVR INOX movie ticket",
+            "desc": "1 M-Coupon = \u20b9300 towards any PVR INOX movie ticket",
             "recommended": true
           }
         ]
@@ -10428,7 +10565,7 @@ export const creditCards = [
       "milestones": [
         {
           "spend": 10000,
-          "benefit": "1 free PVR INOX ticket (₹300 value) per month"
+          "benefit": "1 free PVR INOX ticket (\u20b9300 value) per month"
         },
         {
           "spend": 20000,
@@ -10469,12 +10606,12 @@ export const creditCards = [
       "rating": 4,
       "verdict": "The ultimate card for PVR regulars with unlimited free tickets, instant discounts, and F&B savings. Great value if you love movies, but limited use outside entertainment.",
       "pros": [
-        "Unlimited free movie tickets (₹300 each per ₹10K spend)",
+        "Unlimited free movie tickets (\u20b9300 each per \u20b910K spend)",
         "5% instant discount on PVR tickets",
         "20% off on food and beverages at PVR",
         "Free access to PVR INOX In-Cinema Lounges",
         "No joining fee (first year)",
-        "Low ₹499 annual fee"
+        "Low \u20b9499 annual fee"
       ],
       "cons": [
         "No rewards outside PVR ecosystem",
@@ -10484,7 +10621,8 @@ export const creditCards = [
         "Rent, wallet, gaming excluded from milestone",
         "Annual fee cannot be waived"
       ]
-    }
+    },
+    "slug": "kotak-pvr-inox"
   },
   {
     "id": "kotak-myntra",
@@ -10497,7 +10635,7 @@ export const creditCards = [
       "annual": 500,
       "currency": "INR",
       "waivedOn": 200000,
-      "waiverText": "Waived on ₹2 lakh annual spend"
+      "waiverText": "Waived on \u20b92 lakh annual spend"
     },
     "eligibility": {
       "income": 300000,
@@ -10512,15 +10650,15 @@ export const creditCards = [
       "type": "cashback",
       "name": "Cashback",
       "baseRate": 0.0125,
-      "earningText": "7.5% instant discount on Myntra (capped ₹750/txn). 5% cashback on Swiggy, Cleartrip, PVR, Urban Company (capped ₹1,000/month). 1.25% cashback on all other online/offline/UPI spends.",
+      "earningText": "7.5% instant discount on Myntra (capped \u20b9750/txn). 5% cashback on Swiggy, Cleartrip, PVR, Urban Company (capped \u20b91,000/month). 1.25% cashback on all other online/offline/UPI spends.",
       "expiry": "Cashback credited within 30 days. Never expires once credited.",
-      "joiningBonus": "₹500 Myntra voucher on first ₹500+ transaction within 30 days. Complimentary Myntra Insider Select membership.",
-      "exclusions": "Rent, Wallet, Fuel, Insurance, Utility, Govt, Education above ₹70K, Online Gaming excluded from cashback. UPI cashback only on transactions ≥₹2,000.",
+      "joiningBonus": "\u20b9500 Myntra voucher on first \u20b9500+ transaction within 30 days. Complimentary Myntra Insider Select membership.",
+      "exclusions": "Rent, Wallet, Fuel, Insurance, Utility, Govt, Education above \u20b970K, Online Gaming excluded from cashback. UPI cashback only on transactions \u2265\u20b92,000.",
       "calculator": {
         "tier": "co-branded",
         "monthlyCap": 1000,
         "capResetPeriod": "statement",
-        "specialLogic": "DISCONTINUED as of July 10, 2025. Existing cardholders migrated to Kotak League Platinum or Zen Signature. Card features: 7.5% INSTANT DISCOUNT at Myntra checkout (max ₹750/transaction, unlimited transactions). 5% cashback on partner brands (Swiggy, Cleartrip, PVR, Urban Company) capped at ₹1,000/month. 1.25% unlimited cashback on all other spends including UPI (min ₹2,000/txn for UPI).",
+        "specialLogic": "DISCONTINUED as of July 10, 2025. Existing cardholders migrated to Kotak League Platinum or Zen Signature. Card features: 7.5% INSTANT DISCOUNT at Myntra checkout (max \u20b9750/transaction, unlimited transactions). 5% cashback on partner brands (Swiggy, Cleartrip, PVR, Urban Company) capped at \u20b91,000/month. 1.25% unlimited cashback on all other spends including UPI (min \u20b92,000/txn for UPI).",
         "categories": {
           "travel": {
             "rate": 0.05,
@@ -10534,7 +10672,7 @@ export const creditCards = [
           },
           "online": {
             "rate": 0.075,
-            "label": "7.5% on Myntra (max ₹750/txn)",
+            "label": "7.5% on Myntra (max \u20b9750/txn)",
             "cap": 750
           },
           "fuel": {
@@ -10576,7 +10714,7 @@ export const creditCards = [
       "milestones": [
         {
           "spend": 50000,
-          "benefit": "2 complimentary PVR tickets (₹250 each) quarterly"
+          "benefit": "2 complimentary PVR tickets (\u20b9250 each) quarterly"
         }
       ],
       "golf": {
@@ -10585,7 +10723,7 @@ export const creditCards = [
       },
       "movies": {
         "included": true,
-        "text": "5% cashback at PVR. 2 free PVR tickets on ₹50K quarterly spend."
+        "text": "5% cashback at PVR. 2 free PVR tickets on \u20b950K quarterly spend."
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -10614,18 +10752,19 @@ export const creditCards = [
         "5% cashback on Swiggy, Cleartrip, PVR, Urban Company",
         "1.25% unlimited base cashback including UPI",
         "Complimentary Myntra Insider membership",
-        "Low ₹500 annual fee with ₹2L waiver option",
+        "Low \u20b9500 annual fee with \u20b92L waiver option",
         "Quarterly PVR tickets on milestone"
       ],
       "cons": [
         "CARD DISCONTINUED from July 10, 2025",
-        "Partner cashback capped at ₹1,000/month",
-        "Myntra discount capped at ₹750/transaction",
-        "UPI cashback only on ₹2,000+ transactions",
+        "Partner cashback capped at \u20b91,000/month",
+        "Myntra discount capped at \u20b9750/transaction",
+        "UPI cashback only on \u20b92,000+ transactions",
         "Limited to 4 domestic lounge visits",
         "No international lounge access"
       ]
-    }
+    },
+    "slug": "kotak-myntra"
   },
   {
     "id": "indusind-indulge",
@@ -10638,7 +10777,7 @@ export const creditCards = [
       "annual": 10000,
       "currency": "INR",
       "waivedOn": 1000000,
-      "waiverText": "Annual fee waived on ₹10 Lakh annual spend. Multiple joining fee options available (₹75K with vouchers, ₹15K without, or LTF for select customers)"
+      "waiverText": "Annual fee waived on \u20b910 Lakh annual spend. Multiple joining fee options available (\u20b975K with vouchers, \u20b915K without, or LTF for select customers)"
     },
     "eligibility": {
       "income": 3600000,
@@ -10653,7 +10792,7 @@ export const creditCards = [
       "type": "points",
       "name": "Reward Points",
       "baseRate": 0.015,
-      "earningText": "1.5 RP per ₹100 spent on all categories. 0.7 RP per ₹100 on utilities, insurance, govt, education",
+      "earningText": "1.5 RP per \u20b9100 spent on all categories. 0.7 RP per \u20b9100 on utilities, insurance, govt, education",
       "expiry": "Never Expires (while card active)",
       "joiningBonus": "Welcome vouchers from Oberoi Hotels, Postcard Hotel, Vouchagram, or Luxe Gift Card worth joining fee value",
       "exclusions": "Fuel (no RP), Rent capped at 500 RP/cycle, Reduced rate on Utility, Insurance, Govt, Education",
@@ -10665,17 +10804,17 @@ export const creditCards = [
         "categories": {
           "travel": {
             "rate": 0.015,
-            "label": "1.5% (1.5 RP/₹100)",
+            "label": "1.5% (1.5 RP/\u20b9100)",
             "cap": null
           },
           "dining": {
             "rate": 0.015,
-            "label": "1.5% (1.5 RP/₹100)",
+            "label": "1.5% (1.5 RP/\u20b9100)",
             "cap": null
           },
           "online": {
             "rate": 0.015,
-            "label": "1.5% (1.5 RP/₹100)",
+            "label": "1.5% (1.5 RP/\u20b9100)",
             "cap": null
           },
           "fuel": {
@@ -10685,24 +10824,24 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.015,
-            "label": "1.5% (1.5 RP/₹100)",
+            "label": "1.5% (1.5 RP/\u20b9100)",
             "cap": null
           },
           "utilities": {
             "rate": 0.007,
-            "label": "0.7% (0.7 RP/₹100)",
+            "label": "0.7% (0.7 RP/\u20b9100)",
             "cap": null
           }
         }
       },
       "redemption": {
         "baseValue": 1,
-        "bestOption": "Redeem against cash credit at 1 RP = ₹1",
+        "bestOption": "Redeem against cash credit at 1 RP = \u20b91",
         "options": [
           {
             "type": "Cash Credit",
             "value": 1,
-            "desc": "1 RP = ₹1",
+            "desc": "1 RP = \u20b91",
             "recommended": true
           },
           {
@@ -10714,7 +10853,7 @@ export const creditCards = [
           {
             "type": "IndusMoments Catalogue",
             "value": 1,
-            "desc": "Products & vouchers at 1 RP = ₹1",
+            "desc": "Products & vouchers at 1 RP = \u20b91",
             "recommended": true
           }
         ]
@@ -10733,7 +10872,7 @@ export const creditCards = [
       },
       "movies": {
         "included": true,
-        "text": "BOGO on BookMyShow (3x/month, max ₹700 per free ticket + ₹50 off F&B)"
+        "text": "BOGO on BookMyShow (3x/month, max \u20b9700 per free ticket + \u20b950 off F&B)"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -10745,7 +10884,7 @@ export const creditCards = [
       },
       "dining": {
         "included": true,
-        "text": "₹3,000 off on dining at 100+ restaurants via EazyDiner, twice a year"
+        "text": "\u20b93,000 off on dining at 100+ restaurants via EazyDiner, twice a year"
       },
       "concierge": {
         "included": true,
@@ -10753,7 +10892,7 @@ export const creditCards = [
       },
       "insurance": {
         "included": true,
-        "text": "Air Accident Cover up to ₹2.5 Crore, Total Protect for fraud protection"
+        "text": "Air Accident Cover up to \u20b92.5 Crore, Total Protect for fraud protection"
       }
     },
     "metadata": {
@@ -10770,20 +10909,21 @@ export const creditCards = [
       "verdict": "Premium lifestyle card with iconic design and strong lounge benefits, but reward rate is low for the segment",
       "pros": [
         "22K gold inlay - unique design statement",
-        "1 RP = ₹1 cash redemption value",
+        "1 RP = \u20b91 cash redemption value",
         "Unlimited international lounge access outside India",
         "No pre-set spending limit (NPSL)",
         "Low forex markup of 1.8%",
         "Unlimited golf access"
       ],
       "cons": [
-        "Very high joining fee (₹75,000 standard)",
+        "Very high joining fee (\u20b975,000 standard)",
         "Low reward rate of 1.5% vs competitors at 3-5%",
         "No milestone benefits for high spenders",
         "Domestic lounge visits with Priority Pass charged ($27)",
-        "Income eligibility of ₹36L+ is restrictive"
+        "Income eligibility of \u20b936L+ is restrictive"
       ]
-    }
+    },
+    "slug": "indusind-indulge"
   },
   {
     "id": "indusind-pinnacle",
@@ -10796,7 +10936,7 @@ export const creditCards = [
       "annual": 0,
       "currency": "INR",
       "waivedOn": null,
-      "waiverText": "Lifetime free from 2nd year. Joining fee offset by welcome vouchers worth ₹15,000"
+      "waiverText": "Lifetime free from 2nd year. Joining fee offset by welcome vouchers worth \u20b915,000"
     },
     "eligibility": {
       "income": 1000000,
@@ -10811,29 +10951,29 @@ export const creditCards = [
       "type": "points",
       "name": "Reward Points",
       "baseRate": 0.01,
-      "earningText": "2.5 RP per ₹100 on online spends, 1.5 RP on travel/airlines, 1 RP on offline, 0.7 RP on utilities",
+      "earningText": "2.5 RP per \u20b9100 on online spends, 1.5 RP on travel/airlines, 1 RP on offline, 0.7 RP on utilities",
       "expiry": "Never Expires",
-      "joiningBonus": "Choice of: Oberoi Hotel stay voucher, Postcard Hotel voucher, Montblanc voucher, Luxe Gift Card ₹5,000, or brand vouchers (Bata, Pantaloons, etc.)",
+      "joiningBonus": "Choice of: Oberoi Hotel stay voucher, Postcard Hotel voucher, Montblanc voucher, Luxe Gift Card \u20b95,000, or brand vouchers (Bata, Pantaloons, etc.)",
       "exclusions": "Fuel (no RP), Rent capped at 500 RP/cycle, Reduced rate on Utility, Insurance, Govt, Education",
       "calculator": {
         "tier": "premium",
         "monthlyCap": 7500,
         "capResetPeriod": "calendar",
-        "specialLogic": "Max 7,500 RP cash redemption per month. Golf requires ₹25,000 spend in previous month",
+        "specialLogic": "Max 7,500 RP cash redemption per month. Golf requires \u20b925,000 spend in previous month",
         "categories": {
           "travel": {
             "rate": 0.015,
-            "label": "1.5% (1.5 RP/₹100 on online travel)",
+            "label": "1.5% (1.5 RP/\u20b9100 on online travel)",
             "cap": null
           },
           "dining": {
             "rate": 0.01,
-            "label": "1% (1 RP/₹100)",
+            "label": "1% (1 RP/\u20b9100)",
             "cap": null
           },
           "online": {
             "rate": 0.025,
-            "label": "2.5% (2.5 RP/₹100 on e-commerce)",
+            "label": "2.5% (2.5 RP/\u20b9100 on e-commerce)",
             "cap": null
           },
           "fuel": {
@@ -10843,24 +10983,24 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.01,
-            "label": "1% (1 RP/₹100)",
+            "label": "1% (1 RP/\u20b9100)",
             "cap": null
           },
           "utilities": {
             "rate": 0.007,
-            "label": "0.7% (0.7 RP/₹100)",
+            "label": "0.7% (0.7 RP/\u20b9100)",
             "cap": null
           }
         }
       },
       "redemption": {
         "baseValue": 0.75,
-        "bestOption": "Cash credit at 1 RP = ₹0.75, making effective value-back ~1.87% on online spends",
+        "bestOption": "Cash credit at 1 RP = \u20b90.75, making effective value-back ~1.87% on online spends",
         "options": [
           {
             "type": "Cash Credit",
             "value": 0.75,
-            "desc": "1 RP = ₹0.75",
+            "desc": "1 RP = \u20b90.75",
             "recommended": true
           },
           {
@@ -10887,11 +11027,11 @@ export const creditCards = [
       "milestones": [],
       "golf": {
         "included": true,
-        "text": "1 complimentary golf game + 1 lesson per month (requires ₹25,000 spend in previous month)"
+        "text": "1 complimentary golf game + 1 lesson per month (requires \u20b925,000 spend in previous month)"
       },
       "movies": {
         "included": true,
-        "text": "BOGO on BookMyShow (3x/month, max ₹200 per free ticket)"
+        "text": "BOGO on BookMyShow (3x/month, max \u20b9200 per free ticket)"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -10907,7 +11047,7 @@ export const creditCards = [
       },
       "insurance": {
         "included": true,
-        "text": "Air Accident Cover ₹25 Lakh, Total Protect, Auto Assist, Travel Insurance"
+        "text": "Air Accident Cover \u20b925 Lakh, Total Protect, Auto Assist, Travel Insurance"
       },
       "exclusiveAccount": {
         "included": true,
@@ -10937,10 +11077,11 @@ export const creditCards = [
         "High forex markup of 3.5%",
         "Only 1 lounge visit per quarter (domestic & international each)",
         "7,500 RP monthly cap on cash redemption",
-        "Golf benefit requires ₹25K spend in previous month",
+        "Golf benefit requires \u20b925K spend in previous month",
         "Low 0.7% on utilities reduces overall value"
       ]
-    }
+    },
+    "slug": "indusind-pinnacle"
   },
   {
     "id": "indusind-legend",
@@ -10953,7 +11094,7 @@ export const creditCards = [
       "annual": 0,
       "currency": "INR",
       "waivedOn": null,
-      "waiverText": "Lifetime Free (LTF). Paid variants available at ₹5,000-₹9,999 with welcome vouchers"
+      "waiverText": "Lifetime Free (LTF). Paid variants available at \u20b95,000-\u20b99,999 with welcome vouchers"
     },
     "eligibility": {
       "income": 600000,
@@ -10968,15 +11109,15 @@ export const creditCards = [
       "type": "points",
       "name": "Reward Points",
       "baseRate": 0.01,
-      "earningText": "1 RP per ₹100 on weekdays, 2 RP per ₹100 on weekends. 0.7 RP on utilities, medical, auto, telecom",
+      "earningText": "1 RP per \u20b9100 on weekdays, 2 RP per \u20b9100 on weekends. 0.7 RP on utilities, medical, auto, telecom",
       "expiry": "Never Expires (while card active)",
-      "joiningBonus": "Welcome vouchers from top brands (only on paid variants). 3,000 bonus RP on ₹5 Lakh annual spend milestone",
+      "joiningBonus": "Welcome vouchers from top brands (only on paid variants). 3,000 bonus RP on \u20b95 Lakh annual spend milestone",
       "exclusions": "Fuel (no RP), Rent/Wallet/Utility/Insurance not counted for milestone",
       "calculator": {
         "tier": "entry",
         "monthlyCap": 5000,
         "capResetPeriod": "calendar",
-        "specialLogic": "Weekend vs weekday earning structure. Max 5,000 RP cash redemption per month. Milestone: 3,000 bonus RP on ₹5L annual spend",
+        "specialLogic": "Weekend vs weekday earning structure. Max 5,000 RP cash redemption per month. Milestone: 3,000 bonus RP on \u20b95L annual spend",
         "categories": {
           "travel": {
             "rate": 0.01,
@@ -11012,18 +11153,18 @@ export const creditCards = [
       },
       "redemption": {
         "baseValue": 0.5,
-        "bestOption": "Cash credit at 1 RP = ₹0.50 (effective ~0.5-1% value-back)",
+        "bestOption": "Cash credit at 1 RP = \u20b90.50 (effective ~0.5-1% value-back)",
         "options": [
           {
             "type": "Cash Credit",
             "value": 0.5,
-            "desc": "1 RP = ₹0.50 (devalued from Mar 2024)",
+            "desc": "1 RP = \u20b90.50 (devalued from Mar 2024)",
             "recommended": true
           },
           {
             "type": "Non-Cash Redemption",
             "value": 0.75,
-            "desc": "1 RP = ₹0.75 for vouchers/products",
+            "desc": "1 RP = \u20b90.75 for vouchers/products",
             "recommended": false
           },
           {
@@ -11044,7 +11185,7 @@ export const creditCards = [
       "milestones": [
         {
           "spend": 500000,
-          "benefit": "3,000 bonus Reward Points on ₹5 Lakh annual spend"
+          "benefit": "3,000 bonus Reward Points on \u20b95 Lakh annual spend"
         }
       ],
       "golf": {
@@ -11053,7 +11194,7 @@ export const creditCards = [
       },
       "movies": {
         "included": true,
-        "text": "BOGO on BookMyShow (1x/month, max ₹200 per free ticket + ₹50 off F&B)"
+        "text": "BOGO on BookMyShow (1x/month, max \u20b9200 per free ticket + \u20b950 off F&B)"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -11069,7 +11210,7 @@ export const creditCards = [
       },
       "insurance": {
         "included": true,
-        "text": "Air Accident Cover ₹25 Lakh, Total Protect, Auto Assist, Lost Baggage ₹1L, Lost Ticket ₹25K"
+        "text": "Air Accident Cover \u20b925 Lakh, Total Protect, Auto Assist, Lost Baggage \u20b91L, Lost Ticket \u20b925K"
       }
     },
     "metadata": {
@@ -11089,17 +11230,18 @@ export const creditCards = [
         "Comprehensive travel insurance coverage",
         "2x rewards on weekends incentivizes planned spending",
         "No cash advance fee (rare benefit)",
-        "Milestone bonus of 3,000 RP on ₹5L spend"
+        "Milestone bonus of 3,000 RP on \u20b95L spend"
       ],
       "cons": [
         "Lounge access DISCONTINUED from March 2025",
         "Low reward rate (0.5-1% effective value)",
-        "Cash redemption devalued to 1 RP = ₹0.50",
+        "Cash redemption devalued to 1 RP = \u20b90.50",
         "Only 1 BOGO movie per month",
         "No dining or golf benefits",
         "5,000 RP monthly cap on cash redemption"
       ]
-    }
+    },
+    "slug": "indusind-legend"
   },
   {
     "id": "indusind-club-vistara-explorer",
@@ -11127,51 +11269,51 @@ export const creditCards = [
       "type": "points",
       "name": "Club Vistara Points",
       "baseRate": 0.01,
-      "earningText": "8 CV Points per ₹200 on Vistara website, 6 CV on travel/airlines/hotels, 2 CV elsewhere, 1 CV on utilities/fuel/insurance",
+      "earningText": "8 CV Points per \u20b9200 on Vistara website, 6 CV on travel/airlines/hotels, 2 CV elsewhere, 1 CV on utilities/fuel/insurance",
       "expiry": "As per Club Vistara program rules",
-      "joiningBonus": "Complimentary CV Gold membership (1st year), Business Class ticket voucher (base fare waiver), Gift vouchers worth ₹25,000 (Luxe/Oberoi/Postcard)",
+      "joiningBonus": "Complimentary CV Gold membership (1st year), Business Class ticket voucher (base fare waiver), Gift vouchers worth \u20b925,000 (Luxe/Oberoi/Postcard)",
       "exclusions": "Reduced CV Points on utilities, fuel, insurance categories",
       "calculator": {
         "tier": "co-branded",
         "monthlyCap": null,
         "capResetPeriod": "statement",
-        "specialLogic": "CV Points earned only up to assigned credit limit per cycle. Business class voucher on ₹3L spend milestone (max 5 per year)",
+        "specialLogic": "CV Points earned only up to assigned credit limit per cycle. Business class voucher on \u20b93L spend milestone (max 5 per year)",
         "categories": {
           "travel": {
             "rate": 0.03,
-            "label": "3% (6 CV/₹200 = ~₹3/₹100)",
+            "label": "3% (6 CV/\u20b9200 = ~\u20b93/\u20b9100)",
             "cap": null
           },
           "dining": {
             "rate": 0.01,
-            "label": "1% (2 CV/₹200)",
+            "label": "1% (2 CV/\u20b9200)",
             "cap": null
           },
           "online": {
             "rate": 0.01,
-            "label": "1% (2 CV/₹200)",
+            "label": "1% (2 CV/\u20b9200)",
             "cap": null
           },
           "fuel": {
             "rate": 0.005,
-            "label": "0.5% (1 CV/₹200)",
+            "label": "0.5% (1 CV/\u20b9200)",
             "cap": null
           },
           "groceries": {
             "rate": 0.01,
-            "label": "1% (2 CV/₹200)",
+            "label": "1% (2 CV/\u20b9200)",
             "cap": null
           },
           "utilities": {
             "rate": 0.005,
-            "label": "0.5% (1 CV/₹200)",
+            "label": "0.5% (1 CV/\u20b9200)",
             "cap": null
           }
         }
       },
       "redemption": {
         "baseValue": 1,
-        "bestOption": "Redeem CV Points for Vistara/Air India flights. Business class voucher on ₹3L spend",
+        "bestOption": "Redeem CV Points for Vistara/Air India flights. Business class voucher on \u20b93L spend",
         "options": [
           {
             "type": "Vistara Flights",
@@ -11182,7 +11324,7 @@ export const creditCards = [
           {
             "type": "Business Class Voucher",
             "value": 21500,
-            "desc": "₹3L spend = 1 Business Class voucher (~₹21,500 value)",
+            "desc": "\u20b93L spend = 1 Business Class voucher (~\u20b921,500 value)",
             "recommended": true
           }
         ]
@@ -11222,7 +11364,7 @@ export const creditCards = [
       },
       "movies": {
         "included": true,
-        "text": "BOGO on BookMyShow (2x/month, max ₹700 per free ticket)"
+        "text": "BOGO on BookMyShow (2x/month, max \u20b9700 per free ticket)"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -11234,7 +11376,7 @@ export const creditCards = [
       },
       "dining": {
         "included": true,
-        "text": "₹3,000 off dining at EazyDiner partner restaurants twice a year"
+        "text": "\u20b93,000 off dining at EazyDiner partner restaurants twice a year"
       },
       "concierge": {
         "included": true,
@@ -11242,7 +11384,7 @@ export const creditCards = [
       },
       "insurance": {
         "included": true,
-        "text": "Air Accident Cover ₹2.5 Crore, Total Protect, Travel Insurance"
+        "text": "Air Accident Cover \u20b92.5 Crore, Total Protect, Travel Insurance"
       },
       "specialFeatures": {
         "noLateFee": true,
@@ -11269,17 +11411,18 @@ export const creditCards = [
         "8 CV Points on Vistara bookings (4% effective)",
         "No late payment, over-limit, or cash advance fees",
         "Good international lounge access (4/quarter)",
-        "Welcome vouchers worth ₹25,000"
+        "Welcome vouchers worth \u20b925,000"
       ],
       "cons": [
-        "Very high joining fee of ₹40,000 + GST",
-        "Annual fee of ₹10,000 with no waiver",
+        "Very high joining fee of \u20b940,000 + GST",
+        "Annual fee of \u20b910,000 with no waiver",
         "Program being revised due to Vistara-Air India merger",
         "Low CV Points on non-travel categories",
         "Only 1 domestic lounge visit per quarter",
         "CV Gold membership only for 1st year"
       ]
-    }
+    },
+    "slug": "indusind-club-vistara-explorer"
   },
   {
     "id": "indusind-eazydiner-platinum",
@@ -11307,19 +11450,19 @@ export const creditCards = [
       "type": "points",
       "name": "Reward Points + EazyPoints",
       "baseRate": 0.02,
-      "earningText": "2 RP per ₹100 spent (except fuel, insurance, rent, utility, govt). 0.7 RP on excluded categories. 2X EazyPoints on EazyDiner transactions",
+      "earningText": "2 RP per \u20b9100 spent (except fuel, insurance, rent, utility, govt). 0.7 RP on excluded categories. 2X EazyPoints on EazyDiner transactions",
       "expiry": "1 year for EazyPoints, RP never expire",
-      "joiningBonus": "3-month EazyDiner Prime membership worth ₹1,095, 500 bonus EazyPoints",
-      "exclusions": "Fuel, Insurance, Rent, Utility, Government - earn only 0.7 RP/₹100",
+      "joiningBonus": "3-month EazyDiner Prime membership worth \u20b91,095, 500 bonus EazyPoints",
+      "exclusions": "Fuel, Insurance, Rent, Utility, Government - earn only 0.7 RP/\u20b9100",
       "calculator": {
         "tier": "entry",
         "monthlyCap": null,
         "capResetPeriod": "calendar",
-        "specialLogic": "Prime membership renewed for 3 months on ₹30,000 quarterly spend. 2,000 bonus RP on ₹30K spend every 90 days",
+        "specialLogic": "Prime membership renewed for 3 months on \u20b930,000 quarterly spend. 2,000 bonus RP on \u20b930K spend every 90 days",
         "categories": {
           "travel": {
             "rate": 0.02,
-            "label": "2% (2 RP/₹100)",
+            "label": "2% (2 RP/\u20b9100)",
             "cap": null
           },
           "dining": {
@@ -11329,7 +11472,7 @@ export const creditCards = [
           },
           "online": {
             "rate": 0.02,
-            "label": "2% (2 RP/₹100)",
+            "label": "2% (2 RP/\u20b9100)",
             "cap": null
           },
           "fuel": {
@@ -11339,12 +11482,12 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.02,
-            "label": "2% (2 RP/₹100)",
+            "label": "2% (2 RP/\u20b9100)",
             "cap": null
           },
           "utilities": {
             "rate": 0.007,
-            "label": "0.7% (0.7 RP/₹100)",
+            "label": "0.7% (0.7 RP/\u20b9100)",
             "cap": null
           }
         }
@@ -11398,8 +11541,8 @@ export const creditCards = [
       },
       "dining": {
         "included": true,
-        "text": "25% off on dining via EazyDiner Prime at 2,000+ restaurants. Additional 20% off (up to ₹500) when paying via PayEazy on EazyDiner app",
-        "prime": "3-month EazyDiner Prime membership included (renewed on ₹30K quarterly spend)",
+        "text": "25% off on dining via EazyDiner Prime at 2,000+ restaurants. Additional 20% off (up to \u20b9500) when paying via PayEazy on EazyDiner app",
+        "prime": "3-month EazyDiner Prime membership included (renewed on \u20b930K quarterly spend)",
         "discount": "Up to 45% total discount on dining"
       },
       "insurance": {
@@ -11423,18 +11566,19 @@ export const creditCards = [
         "25% base + 20% extra = up to 45% off on dining via PayEazy",
         "Complimentary EazyDiner Prime membership",
         "2X EazyPoints on all EazyDiner transactions",
-        "Milestone benefits with 2,000 bonus RP on ₹30K spend",
+        "Milestone benefits with 2,000 bonus RP on \u20b930K spend",
         "Prime membership auto-renews on maintaining spend"
       ],
       "cons": [
         "No lounge access",
         "No movie benefits",
-        "Low redemption value of RP (₹0.10 per point)",
+        "Low redemption value of RP (\u20b90.10 per point)",
         "High forex markup of 3.5%",
         "Dining discount only via EazyDiner app PayEazy",
         "Not useful for non-diners"
       ]
-    }
+    },
+    "slug": "indusind-eazydiner-platinum"
   },
   {
     "id": "indusind-platinum-aura-edge",
@@ -11447,7 +11591,7 @@ export const creditCards = [
       "annual": 0,
       "currency": "INR",
       "waivedOn": null,
-      "waiverText": "Lifetime Free. Some variants have ₹500 joining fee"
+      "waiverText": "Lifetime Free. Some variants have \u20b9500 joining fee"
     },
     "eligibility": {
       "income": 300000,
@@ -11462,7 +11606,7 @@ export const creditCards = [
       "type": "points",
       "name": "Savings Points (Reward Points)",
       "baseRate": 0.005,
-      "earningText": "Choose from 4 reward plans (Shop/Home/Travel/Party). Up to 4 SP per ₹100 on select categories, 0.5 SP on others",
+      "earningText": "Choose from 4 reward plans (Shop/Home/Travel/Party). Up to 4 SP per \u20b9100 on select categories, 0.5 SP on others",
       "expiry": "Never Expires",
       "joiningBonus": "Welcome discount vouchers from Amazon, Flipkart, Big Bazaar, Zee5, Apollo Pharmacy, Bata, Vero Moda, etc.",
       "exclusions": "Fuel (no RP). Plan categories outside chosen plan earn base 0.5 SP rate",
@@ -11474,17 +11618,17 @@ export const creditCards = [
         "categories": {
           "travel": {
             "rate": 0.02,
-            "label": "Up to 4 SP/₹100 (Travel Plan)",
+            "label": "Up to 4 SP/\u20b9100 (Travel Plan)",
             "cap": null
           },
           "dining": {
             "rate": 0.02,
-            "label": "Up to 4 SP/₹100 (Party Plan)",
+            "label": "Up to 4 SP/\u20b9100 (Party Plan)",
             "cap": null
           },
           "online": {
             "rate": 0.02,
-            "label": "Up to 4 SP/₹100 (Shop Plan)",
+            "label": "Up to 4 SP/\u20b9100 (Shop Plan)",
             "cap": null
           },
           "fuel": {
@@ -11494,30 +11638,30 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.02,
-            "label": "Up to 4 SP/₹100 (Home/Shop Plan)",
+            "label": "Up to 4 SP/\u20b9100 (Home/Shop Plan)",
             "cap": null
           },
           "utilities": {
             "rate": 0.005,
-            "label": "0.5 SP/₹100",
+            "label": "0.5 SP/\u20b9100",
             "cap": null
           }
         }
       },
       "redemption": {
         "baseValue": 0.4,
-        "bestOption": "Cash credit at 1 SP = ₹0.40 or non-cash at 1 SP = ₹0.50",
+        "bestOption": "Cash credit at 1 SP = \u20b90.40 or non-cash at 1 SP = \u20b90.50",
         "options": [
           {
             "type": "Cash Credit",
             "value": 0.4,
-            "desc": "1 SP = ₹0.40",
+            "desc": "1 SP = \u20b90.40",
             "recommended": true
           },
           {
             "type": "Non-Cash Redemption",
             "value": 0.5,
-            "desc": "1 SP = ₹0.50 for vouchers/products",
+            "desc": "1 SP = \u20b90.50 for vouchers/products",
             "recommended": false
           },
           {
@@ -11554,11 +11698,11 @@ export const creditCards = [
       },
       "insurance": {
         "included": true,
-        "text": "Air Accident Cover ₹25 Lakh, Total Protect, Travel Insurance (delayed/lost baggage, passport, ticket)"
+        "text": "Air Accident Cover \u20b925 Lakh, Total Protect, Travel Insurance (delayed/lost baggage, passport, ticket)"
       },
       "contactless": {
         "included": true,
-        "text": "Tap and pay for transactions up to ₹5,000"
+        "text": "Tap and pay for transactions up to \u20b95,000"
       }
     },
     "metadata": {
@@ -11575,7 +11719,7 @@ export const creditCards = [
       "pros": [
         "Lifetime free - no joining or annual fee",
         "Unique 4-plan reward structure for customization",
-        "Up to 4 SP/₹100 on chosen plan categories (~1.6% value)",
+        "Up to 4 SP/\u20b9100 on chosen plan categories (~1.6% value)",
         "Welcome vouchers from popular brands",
         "Travel insurance included",
         "Contactless payments supported"
@@ -11584,12 +11728,13 @@ export const creditCards = [
         "No lounge access",
         "No movie or golf benefits",
         "Low base rate of 0.5 SP on non-plan categories",
-        "Cash redemption value only ₹0.40 per point",
+        "Cash redemption value only \u20b90.40 per point",
         "High forex markup of 3.5%",
         "2,500 SP monthly cap on cash redemption",
         "Can only change reward plan after 6 months"
       ]
-    }
+    },
+    "slug": "indusind-platinum-aura-edge"
   },
   {
     "id": "rbl-world-safari",
@@ -11617,29 +11762,29 @@ export const creditCards = [
       "type": "points",
       "name": "Travel Points",
       "baseRate": 0.005,
-      "earningText": "2 Travel Points per ₹100 on domestic spends (0.5% value back)",
+      "earningText": "2 Travel Points per \u20b9100 on domestic spends (0.5% value back)",
       "expiry": "2 Years",
-      "joiningBonus": "MakeMyTrip voucher worth ₹3,000 on first transaction within 30 days",
+      "joiningBonus": "MakeMyTrip voucher worth \u20b93,000 on first transaction within 30 days",
       "exclusions": "International transactions, Fuel, Utilities, Insurance, Quasi-Cash, Railways, Real Estate, Education, Wallet loads, Govt Services, EMI conversions",
       "calculator": {
         "tier": "premium",
         "monthlyCap": null,
         "capResetPeriod": "calendar",
-        "specialLogic": "NO reward points on international transactions despite 0% forex. 2.5X (5 RP/₹100) on travel spends only.",
+        "specialLogic": "NO reward points on international transactions despite 0% forex. 2.5X (5 RP/\u20b9100) on travel spends only.",
         "categories": {
           "travel": {
             "rate": 0.0125,
-            "label": "5 TP/₹100 (2.5X) on travel",
+            "label": "5 TP/\u20b9100 (2.5X) on travel",
             "cap": null
           },
           "dining": {
             "rate": 0.005,
-            "label": "2 TP/₹100 base rate",
+            "label": "2 TP/\u20b9100 base rate",
             "cap": null
           },
           "online": {
             "rate": 0.005,
-            "label": "2 TP/₹100 base rate",
+            "label": "2 TP/\u20b9100 base rate",
             "cap": null
           },
           "fuel": {
@@ -11649,7 +11794,7 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.005,
-            "label": "2 TP/₹100 base rate",
+            "label": "2 TP/\u20b9100 base rate",
             "cap": null
           },
           "utilities": {
@@ -11666,19 +11811,19 @@ export const creditCards = [
           {
             "type": "Air Travel",
             "value": 0.25,
-            "desc": "1 TP = ₹0.25",
+            "desc": "1 TP = \u20b90.25",
             "recommended": true
           },
           {
             "type": "Hotel Stays",
             "value": 0.25,
-            "desc": "1 TP = ₹0.25",
+            "desc": "1 TP = \u20b90.25",
             "recommended": true
           },
           {
             "type": "Shopping Vouchers",
             "value": 0.25,
-            "desc": "1 TP = ₹0.25",
+            "desc": "1 TP = \u20b90.25",
             "recommended": false
           }
         ]
@@ -11686,8 +11831,8 @@ export const creditCards = [
     },
     "features": {
       "lounge": {
-        "domestic": "2 per quarter (spend ₹35,000 in previous quarter from July 2025)",
-        "international": "2 per year (Priority Pass) + 1 extra on ₹50K quarterly spend",
+        "domestic": "2 per quarter (spend \u20b935,000 in previous quarter from July 2025)",
+        "international": "2 per year (Priority Pass) + 1 extra on \u20b950K quarterly spend",
         "accessType": "MasterCard/Visa India Lounge + Priority Pass"
       },
       "milestones": [
@@ -11701,7 +11846,7 @@ export const creditCards = [
         },
         {
           "spend": 750000,
-          "benefit": "₹10,000 voucher (Taj/Amazon/Croma/Myntra/MMT)"
+          "benefit": "\u20b910,000 voucher (Taj/Amazon/Croma/Myntra/MMT)"
         }
       ],
       "golf": {
@@ -11745,15 +11890,16 @@ export const creditCards = [
         "Complimentary international travel insurance",
         "Priority Pass membership with 2 free international lounge visits",
         "2.5X rewards on travel spends",
-        "MMT voucher worth ₹3,000 as welcome benefit"
+        "MMT voucher worth \u20b93,000 as welcome benefit"
       ],
       "cons": [
         "NO reward points earned on international transactions",
-        "Annual fee of ₹3,000 with no waiver option",
-        "Lounge access now requires ₹35K quarterly spend",
+        "Annual fee of \u20b93,000 with no waiver option",
+        "Lounge access now requires \u20b935K quarterly spend",
         "Low base reward rate of 0.5%"
       ]
-    }
+    },
+    "slug": "rbl-world-safari"
   },
   {
     "id": "rbl-insignia-preferred-banking",
@@ -11766,7 +11912,7 @@ export const creditCards = [
       "annual": 7000,
       "currency": "INR",
       "waivedOn": 1000000,
-      "waiverText": "Waived on ₹10L annual spend; FREE for Insignia Preferred Banking customers"
+      "waiverText": "Waived on \u20b910L annual spend; FREE for Insignia Preferred Banking customers"
     },
     "eligibility": {
       "income": 3000000,
@@ -11776,13 +11922,13 @@ export const creditCards = [
       },
       "type": "Insignia Preferred Banking Customers / HNIs",
       "creditScore": 750,
-      "specialCriteria": "Insignia Banking: ₹30L TRV or ₹10L AMB in Current Account"
+      "specialCriteria": "Insignia Banking: \u20b930L TRV or \u20b910L AMB in Current Account"
     },
     "rewards": {
       "type": "points",
       "name": "Reward Points",
       "baseRate": 0.0125,
-      "earningText": "5 RP per ₹100 on domestic (1.25%), 10 RP per ₹100 on international (2.5%)",
+      "earningText": "5 RP per \u20b9100 on domestic (1.25%), 10 RP per \u20b9100 on international (2.5%)",
       "expiry": "2 Years",
       "joiningBonus": "28,000 Reward Points on first transaction within 30 days (Not applicable for Insignia Banking customers)",
       "exclusions": "Fuel, Utilities, Insurance, Quasi-Cash, Railways, Real Estate, Education, Wallet loads, Govt Services, EMI conversions",
@@ -11790,21 +11936,21 @@ export const creditCards = [
         "tier": "super-premium",
         "monthlyCap": null,
         "capResetPeriod": "calendar",
-        "specialLogic": "2X rewards on international transactions. Invite-only for Insignia Preferred Banking members or ₹7K fee for others.",
+        "specialLogic": "2X rewards on international transactions. Invite-only for Insignia Preferred Banking members or \u20b97K fee for others.",
         "categories": {
           "travel": {
             "rate": 0.0125,
-            "label": "5 RP/₹100 domestic",
+            "label": "5 RP/\u20b9100 domestic",
             "cap": null
           },
           "dining": {
             "rate": 0.0125,
-            "label": "5 RP/₹100 domestic",
+            "label": "5 RP/\u20b9100 domestic",
             "cap": null
           },
           "online": {
             "rate": 0.0125,
-            "label": "5 RP/₹100 domestic",
+            "label": "5 RP/\u20b9100 domestic",
             "cap": null
           },
           "fuel": {
@@ -11814,7 +11960,7 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.0125,
-            "label": "5 RP/₹100 domestic",
+            "label": "5 RP/\u20b9100 domestic",
             "cap": null
           },
           "utilities": {
@@ -11831,13 +11977,13 @@ export const creditCards = [
           {
             "type": "Air Travel",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": true
           },
           {
             "type": "Hotel Stays",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": true
           },
           {
@@ -11858,7 +12004,7 @@ export const creditCards = [
       "milestones": [
         {
           "spend": 800000,
-          "benefit": "₹8,000 vouchers from Taj/Amazon/Croma/Myntra/MakeMyTrip"
+          "benefit": "\u20b98,000 vouchers from Taj/Amazon/Croma/Myntra/MakeMyTrip"
         }
       ],
       "golf": {
@@ -11867,7 +12013,7 @@ export const creditCards = [
       },
       "movies": {
         "included": true,
-        "text": "Flat ₹500 off on BookMyShow twice per month"
+        "text": "Flat \u20b9500 off on BookMyShow twice per month"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -11907,16 +12053,17 @@ export const creditCards = [
         "High reward rate: 2.5% on international spends",
         "6 international lounge visits via Priority Pass",
         "Lower forex markup at 1.5%",
-        "₹500 off on movies twice monthly",
+        "\u20b9500 off on movies twice monthly",
         "Premium hotel benefits across major chains"
       ],
       "cons": [
-        "₹7,000 annual fee for non-Insignia customers",
-        "High eligibility threshold (₹30L TRV)",
+        "\u20b97,000 annual fee for non-Insignia customers",
+        "High eligibility threshold (\u20b930L TRV)",
         "Domestic reward rate of 1.25% is below super-premium standards",
         "Limited milestone benefits"
       ]
-    }
+    },
+    "slug": "rbl-insignia-preferred-banking"
   },
   {
     "id": "rbl-icon",
@@ -11929,7 +12076,7 @@ export const creditCards = [
       "annual": 5000,
       "currency": "INR",
       "waivedOn": null,
-      "waiverText": "No standard waiver; welcome bonus of 20,000 RP (₹5,000 value) offsets joining fee"
+      "waiverText": "No standard waiver; welcome bonus of 20,000 RP (\u20b95,000 value) offsets joining fee"
     },
     "eligibility": {
       "income": 600000,
@@ -11944,29 +12091,29 @@ export const creditCards = [
       "type": "points",
       "name": "Reward Points",
       "baseRate": 0.005,
-      "earningText": "2 RP per ₹100 base (0.5%); 20 RP per ₹100 (5%) on international & weekend dining",
+      "earningText": "2 RP per \u20b9100 base (0.5%); 20 RP per \u20b9100 (5%) on international & weekend dining",
       "expiry": "2 Years",
-      "joiningBonus": "20,000 Reward Points (₹5,000 value) on first transaction within 30 days",
+      "joiningBonus": "20,000 Reward Points (\u20b95,000 value) on first transaction within 30 days",
       "exclusions": "Fuel, Utilities, Insurance, Quasi-Cash, Railways, Real Estate, Education, Wallet loads, Govt Services, EMI conversions",
       "calculator": {
         "tier": "premium",
         "monthlyCap": 4000,
         "capResetPeriod": "calendar",
-        "specialLogic": "10X rewards (20 RP/₹100) on international purchases and weekend dining; capped at 2,000 RP/month each category",
+        "specialLogic": "10X rewards (20 RP/\u20b9100) on international purchases and weekend dining; capped at 2,000 RP/month each category",
         "categories": {
           "travel": {
             "rate": 0.005,
-            "label": "2 RP/₹100 base rate",
+            "label": "2 RP/\u20b9100 base rate",
             "cap": null
           },
           "dining": {
             "rate": 0.05,
-            "label": "20 RP/₹100 on weekends (10X)",
+            "label": "20 RP/\u20b9100 on weekends (10X)",
             "cap": 500
           },
           "online": {
             "rate": 0.005,
-            "label": "2 RP/₹100 base rate",
+            "label": "2 RP/\u20b9100 base rate",
             "cap": null
           },
           "fuel": {
@@ -11976,7 +12123,7 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.005,
-            "label": "2 RP/₹100 base rate",
+            "label": "2 RP/\u20b9100 base rate",
             "cap": null
           },
           "utilities": {
@@ -11993,13 +12140,13 @@ export const creditCards = [
           {
             "type": "Air Travel",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": true
           },
           {
             "type": "Hotel Stays",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": true
           },
           {
@@ -12013,7 +12160,7 @@ export const creditCards = [
     },
     "features": {
       "lounge": {
-        "domestic": "2 per quarter (spend ₹35,000 in previous quarter from July 2025)",
+        "domestic": "2 per quarter (spend \u20b935,000 in previous quarter from July 2025)",
         "international": "Priority Pass membership (paid access at $35/visit)",
         "accessType": "MasterCard/Visa India Lounge + Priority Pass (paid)"
       },
@@ -12037,7 +12184,7 @@ export const creditCards = [
       },
       "movies": {
         "included": true,
-        "text": "Buy 1 Get 1 Free on BookMyShow (up to ₹200), twice per month"
+        "text": "Buy 1 Get 1 Free on BookMyShow (up to \u20b9200), twice per month"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -12076,13 +12223,14 @@ export const creditCards = [
         "Comprehensive golf benefits"
       ],
       "cons": [
-        "₹5,000 annual fee with no waiver",
+        "\u20b95,000 annual fee with no waiver",
         "10X rewards capped at 2,000 RP/month per category",
         "No free international lounge access",
         "Standard 3.5% forex markup",
         "Lounge access now requires quarterly spend threshold"
       ]
-    }
+    },
+    "slug": "rbl-icon"
   },
   {
     "id": "rbl-platinum-maxima",
@@ -12110,29 +12258,29 @@ export const creditCards = [
       "type": "points",
       "name": "Reward Points",
       "baseRate": 0.005,
-      "earningText": "2 RP per ₹100 base (0.5%); 10 RP per ₹100 (2.5%) on dining, grocery, entertainment, international",
+      "earningText": "2 RP per \u20b9100 base (0.5%); 10 RP per \u20b9100 (2.5%) on dining, grocery, entertainment, international",
       "expiry": "2 Years",
-      "joiningBonus": "8,000 Reward Points (₹2,000 value) on first transaction within 30 days",
+      "joiningBonus": "8,000 Reward Points (\u20b92,000 value) on first transaction within 30 days",
       "exclusions": "Fuel, Utilities, Insurance, Quasi-Cash, Railways, Real Estate, Education, Wallet loads, Govt Services, EMI conversions, Bills2Pay",
       "calculator": {
         "tier": "entry",
         "monthlyCap": 1000,
         "capResetPeriod": "calendar",
-        "specialLogic": "5X rewards (10 RP/₹100) on dining, grocery, entertainment and international purchases capped at 1,000 RP/month total. From Oct 15 2024, expanded exclusions apply.",
+        "specialLogic": "5X rewards (10 RP/\u20b9100) on dining, grocery, entertainment and international purchases capped at 1,000 RP/month total. From Oct 15 2024, expanded exclusions apply.",
         "categories": {
           "travel": {
             "rate": 0.005,
-            "label": "2 RP/₹100 base rate",
+            "label": "2 RP/\u20b9100 base rate",
             "cap": null
           },
           "dining": {
             "rate": 0.025,
-            "label": "10 RP/₹100 (5X)",
+            "label": "10 RP/\u20b9100 (5X)",
             "cap": 250
           },
           "online": {
             "rate": 0.005,
-            "label": "2 RP/₹100 base rate",
+            "label": "2 RP/\u20b9100 base rate",
             "cap": null
           },
           "fuel": {
@@ -12142,7 +12290,7 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.025,
-            "label": "10 RP/₹100 (5X)",
+            "label": "10 RP/\u20b9100 (5X)",
             "cap": 250
           },
           "utilities": {
@@ -12159,13 +12307,13 @@ export const creditCards = [
           {
             "type": "Air Travel",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": true
           },
           {
             "type": "Hotel Stays",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": true
           },
           {
@@ -12179,7 +12327,7 @@ export const creditCards = [
     },
     "features": {
       "lounge": {
-        "domestic": "1 per quarter (spend ₹35,000 in previous quarter from July 2025)",
+        "domestic": "1 per quarter (spend \u20b935,000 in previous quarter from July 2025)",
         "international": "None",
         "accessType": "MasterCard/Visa India Lounge Program"
       },
@@ -12199,7 +12347,7 @@ export const creditCards = [
       },
       "movies": {
         "included": true,
-        "text": "Buy 1 Get 1 Free on BookMyShow (up to ₹100), once per month"
+        "text": "Buy 1 Get 1 Free on BookMyShow (up to \u20b9100), once per month"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -12222,10 +12370,10 @@ export const creditCards = [
       "rating": 3.5,
       "verdict": "Decent mid-range card with 5X rewards on dining/entertainment and movie benefits",
       "pros": [
-        "Affordable ₹2,000 annual fee",
+        "Affordable \u20b92,000 annual fee",
         "5X rewards (2.5%) on dining, grocery, entertainment, international",
         "Welcome bonus nearly offsets first year fee",
-        "BOGO movie ticket monthly (up to ₹100)",
+        "BOGO movie ticket monthly (up to \u20b9100)",
         "Up to 20,000 milestone points annually"
       ],
       "cons": [
@@ -12236,7 +12384,8 @@ export const creditCards = [
         "Standard 3.5% forex markup",
         "Extensive reward exclusions from Oct 2024"
       ]
-    }
+    },
+    "slug": "rbl-platinum-maxima"
   },
   {
     "id": "rbl-shoprite",
@@ -12249,7 +12398,7 @@ export const creditCards = [
       "annual": 500,
       "currency": "INR",
       "waivedOn": 150000,
-      "waiverText": "Waived on ₹1.5L annual spend"
+      "waiverText": "Waived on \u20b91.5L annual spend"
     },
     "eligibility": {
       "income": 180000,
@@ -12264,29 +12413,29 @@ export const creditCards = [
       "type": "points",
       "name": "Reward Points",
       "baseRate": 0.0025,
-      "earningText": "1 RP per ₹100 base (0.25%); 20 RP per ₹100 (5%) on grocery shopping",
+      "earningText": "1 RP per \u20b9100 base (0.25%); 20 RP per \u20b9100 (5%) on grocery shopping",
       "expiry": "2 Years",
-      "joiningBonus": "2,000 Reward Points (₹500 value) on first transaction within 30 days + RBL MyCard app download",
+      "joiningBonus": "2,000 Reward Points (\u20b9500 value) on first transaction within 30 days + RBL MyCard app download",
       "exclusions": "Fuel, Utilities, Insurance, Quasi-Cash, Railways, Real Estate, Education, Wallet loads, Govt Services, EMI conversions",
       "calculator": {
         "tier": "entry",
         "monthlyCap": 1000,
         "capResetPeriod": "calendar",
-        "specialLogic": "20X rewards on grocery shopping capped at 1,000 RP/month (₹250 value). Excellent for monthly grocery spends up to ₹5,000.",
+        "specialLogic": "20X rewards on grocery shopping capped at 1,000 RP/month (\u20b9250 value). Excellent for monthly grocery spends up to \u20b95,000.",
         "categories": {
           "travel": {
             "rate": 0.0025,
-            "label": "1 RP/₹100 base rate",
+            "label": "1 RP/\u20b9100 base rate",
             "cap": null
           },
           "dining": {
             "rate": 0.0025,
-            "label": "1 RP/₹100 base rate",
+            "label": "1 RP/\u20b9100 base rate",
             "cap": null
           },
           "online": {
             "rate": 0.0025,
-            "label": "1 RP/₹100 base rate",
+            "label": "1 RP/\u20b9100 base rate",
             "cap": null
           },
           "fuel": {
@@ -12296,7 +12445,7 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.05,
-            "label": "20 RP/₹100 (5% value back)",
+            "label": "20 RP/\u20b9100 (5% value back)",
             "cap": 250
           },
           "utilities": {
@@ -12313,13 +12462,13 @@ export const creditCards = [
           {
             "type": "Air Travel",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": true
           },
           {
             "type": "Hotel Stays",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": false
           },
           {
@@ -12344,7 +12493,7 @@ export const creditCards = [
       },
       "movies": {
         "included": true,
-        "text": "10% off (up to ₹100) on BookMyShow, 15 times per year"
+        "text": "10% off (up to \u20b9100) on BookMyShow, 15 times per year"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -12367,8 +12516,8 @@ export const creditCards = [
       "rating": 3.5,
       "verdict": "Excellent entry-level card for grocery shoppers with 5% value back and minimal annual fee",
       "pros": [
-        "Very low annual fee of ₹500",
-        "Fee waived on ₹1.5L annual spend",
+        "Very low annual fee of \u20b9500",
+        "Fee waived on \u20b91.5L annual spend",
         "5% value back on grocery shopping",
         "Welcome bonus covers first year fee",
         "10% off on BookMyShow 15 times/year",
@@ -12380,9 +12529,10 @@ export const creditCards = [
         "No lounge access",
         "No milestone benefits",
         "Standard 3.5% forex markup",
-        "₹99 + GST redemption fee"
+        "\u20b999 + GST redemption fee"
       ]
-    }
+    },
+    "slug": "rbl-shoprite"
   },
   {
     "id": "yes-bank-reserv",
@@ -12395,7 +12545,7 @@ export const creditCards = [
       "annual": 2499,
       "currency": "INR",
       "waivedOn": 300000,
-      "waiverText": "Joining fee waived on ₹40,000 spend in 30 days. Annual fee waived on ₹3 Lakh annual spend"
+      "waiverText": "Joining fee waived on \u20b940,000 spend in 30 days. Annual fee waived on \u20b93 Lakh annual spend"
     },
     "eligibility": {
       "income": 2400000,
@@ -12410,7 +12560,7 @@ export const creditCards = [
       "type": "points",
       "name": "YES Rewardz Points",
       "baseRate": 0.015,
-      "earningText": "24 RP per ₹200 online (3%); 12 RP per ₹200 offline (1.5%); 6 RP per ₹200 select categories",
+      "earningText": "24 RP per \u20b9200 online (3%); 12 RP per \u20b9200 offline (1.5%); 6 RP per \u20b9200 select categories",
       "expiry": "36 months from date of earning",
       "joiningBonus": "None",
       "exclusions": "Rental, Wallet, Fuel, Government, Marketing/Advertising, Cash withdrawals, Post-purchase EMI",
@@ -12418,7 +12568,7 @@ export const creditCards = [
         "tier": "premium",
         "monthlyCap": 36000,
         "capResetPeriod": "statement",
-        "specialLogic": "36,000 RP cap per statement. Paid subscription plans available: 2X Plan (₹3,500/yr) or 3X Plan (₹5,000/yr) for accelerated rewards up to 6% on online. Redemption capped at 70% of cart value.",
+        "specialLogic": "36,000 RP cap per statement. Paid subscription plans available: 2X Plan (\u20b93,500/yr) or 3X Plan (\u20b95,000/yr) for accelerated rewards up to 6% on online. Redemption capped at 70% of cart value.",
         "categories": {
           "travel": {
             "rate": 0.03,
@@ -12432,7 +12582,7 @@ export const creditCards = [
           },
           "online": {
             "rate": 0.03,
-            "label": "24 RP/₹200 online shopping",
+            "label": "24 RP/\u20b9200 online shopping",
             "cap": 9000
           },
           "fuel": {
@@ -12447,19 +12597,19 @@ export const creditCards = [
           },
           "utilities": {
             "rate": 0.0075,
-            "label": "6 RP/₹200 on select categories",
+            "label": "6 RP/\u20b9200 on select categories",
             "cap": null
           }
         }
       },
       "redemption": {
         "baseValue": 0.25,
-        "bestOption": "Flight/Hotel bookings via YES Rewardz portal at ₹0.25/point",
+        "bestOption": "Flight/Hotel bookings via YES Rewardz portal at \u20b90.25/point",
         "options": [
           {
             "type": "Flight/Hotel Booking",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25 (70% redemption limit)",
+            "desc": "1 RP = \u20b90.25 (70% redemption limit)",
             "recommended": true
           },
           {
@@ -12477,7 +12627,7 @@ export const creditCards = [
           {
             "type": "Gift Vouchers",
             "value": 0.15,
-            "desc": "1 RP = ₹0.15 (devalued)",
+            "desc": "1 RP = \u20b90.15 (devalued)",
             "recommended": false
           }
         ]
@@ -12485,7 +12635,7 @@ export const creditCards = [
     },
     "features": {
       "lounge": {
-        "domestic": "3 per quarter. Requires ₹1 Lakh quarterly spend from April 2025",
+        "domestic": "3 per quarter. Requires \u20b91 Lakh quarterly spend from April 2025",
         "international": "6 per year via Priority Pass",
         "accessType": "Priority Pass for international"
       },
@@ -12509,7 +12659,7 @@ export const creditCards = [
       },
       "movies": {
         "included": true,
-        "text": "25% off up to ₹250/month on BookMyShow"
+        "text": "25% off up to \u20b9250/month on BookMyShow"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -12530,22 +12680,23 @@ export const creditCards = [
       ],
       "bestFor": "Online shoppers seeking 3% returns with achievable fee waiver and low forex markup",
       "rating": 4,
-      "verdict": "Solid mid-premium card with 3% online rewards, achievable ₹3L fee waiver, and decent travel benefits. Subscription plans can boost rewards up to 6%.",
+      "verdict": "Solid mid-premium card with 3% online rewards, achievable \u20b93L fee waiver, and decent travel benefits. Subscription plans can boost rewards up to 6%.",
       "pros": [
         "3% reward rate on online spends (up to 6% with subscription)",
         "Low forex markup at 1.75%",
-        "Achievable ₹3 Lakh fee waiver threshold",
+        "Achievable \u20b93 Lakh fee waiver threshold",
         "Rewards on utilities, insurance, education (usually excluded)",
         "Purchase protection for online electronics"
       ],
       "cons": [
         "Poor redemption ratio (4:1) reduces effective value",
-        "₹1 Lakh quarterly spend required for lounge access from April 2025",
+        "\u20b91 Lakh quarterly spend required for lounge access from April 2025",
         "No welcome bonus on joining",
         "Limited international lounge access (6/year only)",
         "Subscription plans add extra cost for best rewards"
       ]
-    }
+    },
+    "slug": "yes-bank-reserv"
   },
   {
     "id": "yes-bank-byoc",
@@ -12558,7 +12709,7 @@ export const creditCards = [
       "annual": 588,
       "currency": "INR",
       "waivedOn": null,
-      "waiverText": "Card fee: ₹249 Eco-friendly / ₹3,499 Metal (one-time). Monthly fee: ₹49+GST (Rewards) or ₹99+GST (Cashback). Optional subscription: Silver ₹99, Gold ₹149, Platinum ₹249/month for 10% merchant cashback"
+      "waiverText": "Card fee: \u20b9249 Eco-friendly / \u20b93,499 Metal (one-time). Monthly fee: \u20b949+GST (Rewards) or \u20b999+GST (Cashback). Optional subscription: Silver \u20b999, Gold \u20b9149, Platinum \u20b9249/month for 10% merchant cashback"
     },
     "eligibility": {
       "income": 300000,
@@ -12573,19 +12724,19 @@ export const creditCards = [
       "type": "cashback",
       "name": "Cashback or YES Rewardz Points",
       "baseRate": 0.01,
-      "earningText": "Choose: 1% unlimited cashback OR 8 RP/₹200 (1%). Plus 10% cashback on selected merchants with subscription plans.",
+      "earningText": "Choose: 1% unlimited cashback OR 8 RP/\u20b9200 (1%). Plus 10% cashback on selected merchants with subscription plans.",
       "expiry": "Never expires (Reward Points: 36 months)",
-      "joiningBonus": "₹500 Amazon voucher on spending ₹1,000 within first 30 days",
+      "joiningBonus": "\u20b9500 Amazon voucher on spending \u20b91,000 within first 30 days",
       "exclusions": "Rental, Wallet, Utility, Fuel, Cash withdrawals, Post-purchase EMI, Instant EMI",
       "calculator": {
         "tier": "entry",
         "monthlyCap": 1000,
         "capResetPeriod": "statement",
-        "specialLogic": "Customizable card - choose Cashback or Rewards variant. Subscription plans (Silver/Gold/Platinum) offer 10% cashback on selected merchants (Swiggy, BookMyShow, PharmEasy, Uber, BigBasket) capped at ₹100/merchant/month. Utility rewards capped at 600 RP/statement.",
+        "specialLogic": "Customizable card - choose Cashback or Rewards variant. Subscription plans (Silver/Gold/Platinum) offer 10% cashback on selected merchants (Swiggy, BookMyShow, PharmEasy, Uber, BigBasket) capped at \u20b9100/merchant/month. Utility rewards capped at 600 RP/statement.",
         "categories": {
           "travel": {
             "rate": 0.01,
-            "label": "1% cashback / 8 RP per ₹200",
+            "label": "1% cashback / 8 RP per \u20b9200",
             "cap": null
           },
           "dining": {
@@ -12628,13 +12779,13 @@ export const creditCards = [
           {
             "type": "Flight/Hotel Booking",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25 (Rewards variant)",
+            "desc": "1 RP = \u20b90.25 (Rewards variant)",
             "recommended": true
           },
           {
             "type": "Gift Vouchers",
             "value": 0.15,
-            "desc": "1 RP = ₹0.15",
+            "desc": "1 RP = \u20b90.15",
             "recommended": false
           }
         ]
@@ -12642,14 +12793,14 @@ export const creditCards = [
     },
     "features": {
       "lounge": {
-        "domestic": "1 per quarter. Requires ₹50,000 quarterly spend from April 2025",
+        "domestic": "1 per quarter. Requires \u20b950,000 quarterly spend from April 2025",
         "international": "None",
         "accessType": "Mastercard Domestic Lounge program"
       },
       "milestones": [
         {
           "spend": 1000,
-          "benefit": "₹500 Amazon voucher (within 30 days of activation)"
+          "benefit": "\u20b9500 Amazon voucher (within 30 days of activation)"
         }
       ],
       "golf": {
@@ -12658,7 +12809,7 @@ export const creditCards = [
       },
       "movies": {
         "included": true,
-        "text": "10% cashback on BookMyShow via subscription plan (max ₹100/month)"
+        "text": "10% cashback on BookMyShow via subscription plan (max \u20b9100/month)"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -12684,20 +12835,21 @@ export const creditCards = [
       "pros": [
         "Fully customizable - choose rewards or cashback",
         "10% cashback on popular merchants (Swiggy, BookMyShow, etc.)",
-        "Choose card material (Eco-friendly ₹249 or Metal ₹3,499)",
+        "Choose card material (Eco-friendly \u20b9249 or Metal \u20b93,499)",
         "1% unlimited cashback option",
         "Never-expiring reward points",
         "Low entry barrier"
       ],
       "cons": [
-        "Monthly subscription fees add up (₹49-249/month)",
-        "Cashback on merchants capped at ₹100/merchant/month",
+        "Monthly subscription fees add up (\u20b949-249/month)",
+        "Cashback on merchants capped at \u20b9100/merchant/month",
         "Only 1 domestic lounge visit per quarter",
         "No international lounge access",
         "High forex markup at 3.5%",
         "Cannot change core benefit (cashback/rewards) after issuance"
       ]
-    }
+    },
+    "slug": "yes-bank-byoc"
   },
   {
     "id": "yes-bank-elite-plus",
@@ -12710,7 +12862,7 @@ export const creditCards = [
       "annual": 999,
       "currency": "INR",
       "waivedOn": 200000,
-      "waiverText": "Joining fee waived on ₹20,000 spend in 30 days. Annual fee waived on ₹2 Lakh annual spend"
+      "waiverText": "Joining fee waived on \u20b920,000 spend in 30 days. Annual fee waived on \u20b92 Lakh annual spend"
     },
     "eligibility": {
       "income": 1200000,
@@ -12725,15 +12877,15 @@ export const creditCards = [
       "type": "points",
       "name": "YES Rewardz Points",
       "baseRate": 0.0075,
-      "earningText": "12 RP per ₹200 online (1.5%); 6 RP per ₹200 offline (0.75%); 4 RP per ₹200 select categories",
+      "earningText": "12 RP per \u20b9200 online (1.5%); 6 RP per \u20b9200 offline (0.75%); 4 RP per \u20b9200 select categories",
       "expiry": "36 months from date of earning",
-      "joiningBonus": "None (but fee waiver available on ₹20K spend)",
+      "joiningBonus": "None (but fee waiver available on \u20b920K spend)",
       "exclusions": "Fuel, Cash withdrawals, Government, Marketing/Advertising, Post-purchase EMI, Instant EMI",
       "calculator": {
         "tier": "premium",
         "monthlyCap": 12000,
         "capResetPeriod": "statement",
-        "specialLogic": "12,000 RP cap per statement cycle. Paid subscription plan (₹2,500/yr) boosts rewards to 5X on dining, travel, fashion, healthcare categories. Previously known as YES Premia.",
+        "specialLogic": "12,000 RP cap per statement cycle. Paid subscription plan (\u20b92,500/yr) boosts rewards to 5X on dining, travel, fashion, healthcare categories. Previously known as YES Premia.",
         "categories": {
           "travel": {
             "rate": 0.015,
@@ -12747,7 +12899,7 @@ export const creditCards = [
           },
           "online": {
             "rate": 0.015,
-            "label": "12 RP/₹200 online shopping",
+            "label": "12 RP/\u20b9200 online shopping",
             "cap": 3000
           },
           "fuel": {
@@ -12762,7 +12914,7 @@ export const creditCards = [
           },
           "utilities": {
             "rate": 0.005,
-            "label": "4 RP/₹200 on select categories",
+            "label": "4 RP/\u20b9200 on select categories",
             "cap": null
           }
         }
@@ -12774,7 +12926,7 @@ export const creditCards = [
           {
             "type": "Flight/Hotel Booking",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": true
           },
           {
@@ -12792,7 +12944,7 @@ export const creditCards = [
           {
             "type": "Gift Vouchers",
             "value": 0.15,
-            "desc": "1 RP = ₹0.15",
+            "desc": "1 RP = \u20b90.15",
             "recommended": false
           }
         ]
@@ -12800,7 +12952,7 @@ export const creditCards = [
     },
     "features": {
       "lounge": {
-        "domestic": "2 per quarter (Primary only). Requires ₹50,000 quarterly spend from April 2025",
+        "domestic": "2 per quarter (Primary only). Requires \u20b950,000 quarterly spend from April 2025",
         "international": "3 per year via Priority Pass (Primary only)",
         "accessType": "Priority Pass for international"
       },
@@ -12820,7 +12972,7 @@ export const creditCards = [
       },
       "movies": {
         "included": true,
-        "text": "25% off up to ₹250/month on BookMyShow"
+        "text": "25% off up to \u20b9250/month on BookMyShow"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -12842,9 +12994,9 @@ export const creditCards = [
       ],
       "bestFor": "Mid-tier users seeking balanced rewards, lounge access, and lifestyle benefits at affordable annual fee",
       "rating": 3.8,
-      "verdict": "Solid all-rounder card formerly known as YES Premia. Good for users seeking domestic + international lounge access, golf benefits, and movie discounts at just ₹999/year.",
+      "verdict": "Solid all-rounder card formerly known as YES Premia. Good for users seeking domestic + international lounge access, golf benefits, and movie discounts at just \u20b9999/year.",
       "pros": [
-        "Low annual fee of ₹999 with achievable waiver",
+        "Low annual fee of \u20b9999 with achievable waiver",
         "Both domestic and international lounge access",
         "Golf benefits included",
         "25% movie discount on BookMyShow",
@@ -12854,11 +13006,12 @@ export const creditCards = [
       "cons": [
         "Modest 1.5% reward rate on online spends",
         "12,000 RP cap per statement limits earning potential",
-        "₹50K quarterly spend required for domestic lounge from April 2025",
+        "\u20b950K quarterly spend required for domestic lounge from April 2025",
         "International lounge limited to 3/year",
-        "₹100 redemption fee per request"
+        "\u20b9100 redemption fee per request"
       ]
-    }
+    },
+    "slug": "yes-bank-elite-plus"
   },
   {
     "id": "yes-bank-ace",
@@ -12871,7 +13024,7 @@ export const creditCards = [
       "annual": 499,
       "currency": "INR",
       "waivedOn": 50000,
-      "waiverText": "Joining fee waived on ₹5,000 spend in 30 days. Annual fee waived on ₹50,000 annual spend"
+      "waiverText": "Joining fee waived on \u20b95,000 spend in 30 days. Annual fee waived on \u20b950,000 annual spend"
     },
     "eligibility": {
       "income": 300000,
@@ -12886,15 +13039,15 @@ export const creditCards = [
       "type": "points",
       "name": "YES Rewardz Points",
       "baseRate": 0.005,
-      "earningText": "8 RP per ₹200 online (1%); 4 RP per ₹200 offline (0.5%); 2 RP per ₹200 select categories",
+      "earningText": "8 RP per \u20b9200 online (1%); 4 RP per \u20b9200 offline (0.5%); 2 RP per \u20b9200 select categories",
       "expiry": "36 months from date of earning",
-      "joiningBonus": "None (but easy joining fee waiver on ₹5K spend)",
+      "joiningBonus": "None (but easy joining fee waiver on \u20b95K spend)",
       "exclusions": "UPI (RuPay), Fuel, Rent, Cash withdrawals, Wallet, Government, Marketing/Advertising, Post-purchase EMI",
       "calculator": {
         "tier": "entry",
         "monthlyCap": 5000,
         "capResetPeriod": "statement",
-        "specialLogic": "5,000 RP cap per statement cycle. Entry-level card previously known as YES Prosperity Rewards Plus. Subscription plans (₹1,000-2,000/yr) boost rewards to 3X-5X on dining, travel, fashion, healthcare. Available in RuPay and Visa variants.",
+        "specialLogic": "5,000 RP cap per statement cycle. Entry-level card previously known as YES Prosperity Rewards Plus. Subscription plans (\u20b91,000-2,000/yr) boost rewards to 3X-5X on dining, travel, fashion, healthcare. Available in RuPay and Visa variants.",
         "categories": {
           "travel": {
             "rate": 0.01,
@@ -12908,7 +13061,7 @@ export const creditCards = [
           },
           "online": {
             "rate": 0.01,
-            "label": "8 RP/₹200 online shopping",
+            "label": "8 RP/\u20b9200 online shopping",
             "cap": 1250
           },
           "fuel": {
@@ -12923,7 +13076,7 @@ export const creditCards = [
           },
           "utilities": {
             "rate": 0.0025,
-            "label": "2 RP/₹200 on select categories (150 RP cap/cycle)",
+            "label": "2 RP/\u20b9200 on select categories (150 RP cap/cycle)",
             "cap": 38
           }
         }
@@ -12935,7 +13088,7 @@ export const creditCards = [
           {
             "type": "Flight/Hotel Booking",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": true
           },
           {
@@ -12953,13 +13106,13 @@ export const creditCards = [
           {
             "type": "Gift Vouchers",
             "value": 0.1,
-            "desc": "1 RP = ₹0.10",
+            "desc": "1 RP = \u20b90.10",
             "recommended": false
           },
           {
             "type": "Statement Credit",
             "value": 0.1,
-            "desc": "1 RP = ₹0.10",
+            "desc": "1 RP = \u20b90.10",
             "recommended": false
           }
         ]
@@ -13010,11 +13163,11 @@ export const creditCards = [
       "rating": 3.2,
       "verdict": "Basic entry-level card ideal for beginners. Easy fee waiver thresholds, decent 1% online rewards, and purchase protection. No lounge access or premium perks.",
       "pros": [
-        "Very low ₹499 annual fee with easy ₹50K waiver",
-        "Low income requirement (₹25K/month)",
-        "Purchase protection up to ₹50,000",
-        "Credit Shield cover of ₹1 Lakh",
-        "Available against Fixed Deposit (₹30K+)",
+        "Very low \u20b9499 annual fee with easy \u20b950K waiver",
+        "Low income requirement (\u20b925K/month)",
+        "Purchase protection up to \u20b950,000",
+        "Credit Shield cover of \u20b91 Lakh",
+        "Available against Fixed Deposit (\u20b930K+)",
         "Subscription plans available for higher rewards",
         "Available in RuPay variant"
       ],
@@ -13023,10 +13176,11 @@ export const creditCards = [
         "5,000 RP cap per statement severely limits earnings",
         "No lounge access",
         "No movie or golf benefits",
-        "₹100 redemption fee per request",
+        "\u20b9100 redemption fee per request",
         "No UPI rewards on RuPay variant"
       ]
-    }
+    },
+    "slug": "yes-bank-ace"
   },
   {
     "id": "bob-eterna",
@@ -13039,7 +13193,7 @@ export const creditCards = [
       "annual": 2499,
       "currency": "INR",
       "waivedOn": 250000,
-      "waiverText": "Annual fee waived on ₹2.5L annual spend. Joining fee waived on ₹25,000 spend within 60 days. LTF offer available till 31st Dec 2025."
+      "waiverText": "Annual fee waived on \u20b92.5L annual spend. Joining fee waived on \u20b925,000 spend within 60 days. LTF offer available till 31st Dec 2025."
     },
     "eligibility": {
       "income": 1200000,
@@ -13054,29 +13208,29 @@ export const creditCards = [
       "type": "points",
       "name": "Reward Points",
       "baseRate": 0.0075,
-      "earningText": "3 RP per ₹100 on regular spends (0.75%). 15 RP per ₹100 on online, travel, dining, international spends (3.75%). 5X bonus capped at 5,000 RP per statement cycle.",
+      "earningText": "3 RP per \u20b9100 on regular spends (0.75%). 15 RP per \u20b9100 on online, travel, dining, international spends (3.75%). 5X bonus capped at 5,000 RP per statement cycle.",
       "expiry": "Lifelong validity",
-      "joiningBonus": "10,000 Bonus RP on ₹50,000 spend in first 60 days + 6-month FITPASS Pro membership worth ₹15,000",
+      "joiningBonus": "10,000 Bonus RP on \u20b950,000 spend in first 60 days + 6-month FITPASS Pro membership worth \u20b915,000",
       "exclusions": "Fuel, Rent, Utilities, Insurance, Govt, Education, Hospital, Wallet, Charity, Supermarket, Convenience Store, Fast Food, Telecom, Transportation, Laundry, Cleaning, Agriculture, Contractor",
       "calculator": {
         "tier": "premium",
         "monthlyCap": 5000,
         "capResetPeriod": "statement",
-        "specialLogic": "5X bonus (12 extra RP) is capped at 5,000 RP per statement cycle on accelerated categories. After cap, base rate of 3 RP/₹100 applies. Extra 12 RP on flights and 30 RP on hotels via BOBCARD SmartDeal.",
+        "specialLogic": "5X bonus (12 extra RP) is capped at 5,000 RP per statement cycle on accelerated categories. After cap, base rate of 3 RP/\u20b9100 applies. Extra 12 RP on flights and 30 RP on hotels via BOBCARD SmartDeal.",
         "categories": {
           "travel": {
             "rate": 0.0375,
-            "label": "15 RP/₹100 (3.75%) via BOBCARD SmartDeal",
+            "label": "15 RP/\u20b9100 (3.75%) via BOBCARD SmartDeal",
             "cap": 1250
           },
           "dining": {
             "rate": 0.0375,
-            "label": "15 RP/₹100 (3.75%)",
+            "label": "15 RP/\u20b9100 (3.75%)",
             "cap": 1250
           },
           "online": {
             "rate": 0.0375,
-            "label": "15 RP/₹100 (3.75%)",
+            "label": "15 RP/\u20b9100 (3.75%)",
             "cap": 1250
           },
           "fuel": {
@@ -13098,12 +13252,12 @@ export const creditCards = [
       },
       "redemption": {
         "baseValue": 0.25,
-        "bestOption": "Statement credit at 1 RP = ₹0.25 (no redemption fee)",
+        "bestOption": "Statement credit at 1 RP = \u20b90.25 (no redemption fee)",
         "options": [
           {
             "type": "Statement Credit",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": true
           },
           {
@@ -13123,7 +13277,7 @@ export const creditCards = [
     },
     "features": {
       "lounge": {
-        "domestic": "Unlimited per quarter (on ₹40,000 spend in previous quarter)",
+        "domestic": "Unlimited per quarter (on \u20b940,000 spend in previous quarter)",
         "international": "None",
         "accessType": "RuPay/Visa Infinite - DreamFolks/Visa"
       },
@@ -13143,7 +13297,7 @@ export const creditCards = [
       },
       "movies": {
         "included": true,
-        "text": "BOGO on District/Paytm Movies, max ₹250 off per month"
+        "text": "BOGO on District/Paytm Movies, max \u20b9250 off per month"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -13171,7 +13325,7 @@ export const creditCards = [
         "3.75% reward rate on online, travel, dining, international spends",
         "Unlimited domestic lounge access for primary and add-on cards",
         "Low 2% forex markup",
-        "Easy annual fee waiver at ₹2.5L spend",
+        "Easy annual fee waiver at \u20b92.5L spend",
         "LTF offer currently available",
         "No redemption fee for statement credit"
       ],
@@ -13182,7 +13336,8 @@ export const creditCards = [
         "BOB customer support is inconsistent",
         "No miles transfer partners"
       ]
-    }
+    },
+    "slug": "bob-eterna"
   },
   {
     "id": "bob-premier",
@@ -13195,7 +13350,7 @@ export const creditCards = [
       "annual": 1000,
       "currency": "INR",
       "waivedOn": 120000,
-      "waiverText": "Annual fee waived on ₹1.2L annual spend. Joining fee waived on ₹10,000 spend within 60 days. LTF offer available till 31st Dec 2025."
+      "waiverText": "Annual fee waived on \u20b91.2L annual spend. Joining fee waived on \u20b910,000 spend within 60 days. LTF offer available till 31st Dec 2025."
     },
     "eligibility": {
       "income": 300000,
@@ -13210,29 +13365,29 @@ export const creditCards = [
       "type": "points",
       "name": "Reward Points",
       "baseRate": 0.005,
-      "earningText": "2 RP per ₹100 on regular spends (0.5%). 10 RP per ₹100 on travel, dining, international spends (2.5%). 5X bonus capped at 2,000 RP per statement cycle.",
+      "earningText": "2 RP per \u20b9100 on regular spends (0.5%). 10 RP per \u20b9100 on travel, dining, international spends (2.5%). 5X bonus capped at 2,000 RP per statement cycle.",
       "expiry": "Lifelong validity",
-      "joiningBonus": "500 Bonus RP on ₹5,000 spend in first 60 days",
+      "joiningBonus": "500 Bonus RP on \u20b95,000 spend in first 60 days",
       "exclusions": "Fuel, Utilities, Telecom, Rent, Insurance, Govt, Education, Supermarket (same as Eterna)",
       "calculator": {
         "tier": "entry",
         "monthlyCap": 2000,
         "capResetPeriod": "statement",
-        "specialLogic": "5X bonus (8 extra RP) is capped at 2,000 RP per statement cycle. After cap, base rate of 2 RP/₹100 applies.",
+        "specialLogic": "5X bonus (8 extra RP) is capped at 2,000 RP per statement cycle. After cap, base rate of 2 RP/\u20b9100 applies.",
         "categories": {
           "travel": {
             "rate": 0.025,
-            "label": "10 RP/₹100 (2.5%)",
+            "label": "10 RP/\u20b9100 (2.5%)",
             "cap": 500
           },
           "dining": {
             "rate": 0.025,
-            "label": "10 RP/₹100 (2.5%)",
+            "label": "10 RP/\u20b9100 (2.5%)",
             "cap": 500
           },
           "online": {
             "rate": 0.005,
-            "label": "2 RP/₹100 (0.5%) - Base rate",
+            "label": "2 RP/\u20b9100 (0.5%) - Base rate",
             "cap": null
           },
           "fuel": {
@@ -13254,12 +13409,12 @@ export const creditCards = [
       },
       "redemption": {
         "baseValue": 0.25,
-        "bestOption": "Statement credit at 1 RP = ₹0.25",
+        "bestOption": "Statement credit at 1 RP = \u20b90.25",
         "options": [
           {
             "type": "Statement Credit",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": true
           },
           {
@@ -13273,7 +13428,7 @@ export const creditCards = [
     },
     "features": {
       "lounge": {
-        "domestic": "1 per quarter (on ₹20,000 spend in previous quarter)",
+        "domestic": "1 per quarter (on \u20b920,000 spend in previous quarter)",
         "international": "None",
         "accessType": "RuPay/Visa - DreamFolks/Visa"
       },
@@ -13308,12 +13463,12 @@ export const creditCards = [
         "RuPay",
         "Visa"
       ],
-      "bestFor": "Budget-conscious travelers who spend ₹20K-₹1.5L annually on dining and travel",
+      "bestFor": "Budget-conscious travelers who spend \u20b920K-\u20b91.5L annually on dining and travel",
       "rating": 3.5,
       "verdict": "Solid mid-range card with 2.5% on travel/dining, but low monthly cap and high forex markup limit value. Good as LTF.",
       "pros": [
         "2.5% reward rate on travel, dining, international",
-        "Low annual fee with easy waiver at ₹1.2L",
+        "Low annual fee with easy waiver at \u20b91.2L",
         "Quarterly domestic lounge access",
         "LTF offer currently available",
         "Up to 3 free add-on cards"
@@ -13325,7 +13480,8 @@ export const creditCards = [
         "No international lounge access",
         "Same MCC exclusions as Eterna"
       ]
-    }
+    },
+    "slug": "bob-premier"
   },
   {
     "id": "sc-ultimate",
@@ -13338,7 +13494,7 @@ export const creditCards = [
       "annual": 5000,
       "currency": "INR",
       "waivedOn": null,
-      "waiverText": "No fee waiver available. Welcome bonus of 6,000 RP (₹6,000) on joining. Renewal bonus of 5,000 RP (₹5,000)."
+      "waiverText": "No fee waiver available. Welcome bonus of 6,000 RP (\u20b96,000) on joining. Renewal bonus of 5,000 RP (\u20b95,000)."
     },
     "eligibility": {
       "income": 2400000,
@@ -13353,9 +13509,9 @@ export const creditCards = [
       "type": "points",
       "name": "Reward Points",
       "baseRate": 0.0333,
-      "earningText": "5 RP per ₹150 on most spends (3.33%, 1 RP = ₹1). 3 RP per ₹150 (2%) on utilities, supermarkets, insurance, property management, schools, govt payments. No rewards on fuel.",
+      "earningText": "5 RP per \u20b9150 on most spends (3.33%, 1 RP = \u20b91). 3 RP per \u20b9150 (2%) on utilities, supermarkets, insurance, property management, schools, govt payments. No rewards on fuel.",
       "expiry": "3 years from accumulation date",
-      "joiningBonus": "6,000 RP worth ₹6,000 on paying joining fee",
+      "joiningBonus": "6,000 RP worth \u20b96,000 on paying joining fee",
       "exclusions": "Fuel (no rewards). Lower rate on Utilities, Supermarkets, Insurance, Property Management, Schools, Government payments.",
       "calculator": {
         "tier": "super-premium",
@@ -13365,17 +13521,17 @@ export const creditCards = [
         "categories": {
           "travel": {
             "rate": 0.0333,
-            "label": "5 RP/₹150 (3.33%)",
+            "label": "5 RP/\u20b9150 (3.33%)",
             "cap": null
           },
           "dining": {
             "rate": 0.0333,
-            "label": "5 RP/₹150 (3.33%)",
+            "label": "5 RP/\u20b9150 (3.33%)",
             "cap": null
           },
           "online": {
             "rate": 0.0333,
-            "label": "5 RP/₹150 (3.33%)",
+            "label": "5 RP/\u20b9150 (3.33%)",
             "cap": null
           },
           "fuel": {
@@ -13385,31 +13541,31 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.02,
-            "label": "3 RP/₹150 (2%) - Supermarkets",
+            "label": "3 RP/\u20b9150 (2%) - Supermarkets",
             "cap": null
           },
           "utilities": {
             "rate": 0.02,
-            "label": "3 RP/₹150 (2%) - Utilities/Insurance/Govt",
+            "label": "3 RP/\u20b9150 (2%) - Utilities/Insurance/Govt",
             "cap": null
           }
         }
       },
       "redemption": {
         "baseValue": 1,
-        "bestOption": "Shopping vouchers via 360° Rewards portal at 1 RP = ₹1",
+        "bestOption": "Shopping vouchers via 360\u00b0 Rewards portal at 1 RP = \u20b91",
         "redemptionFee": 99,
         "options": [
           {
             "type": "Shopping Vouchers",
             "value": 1,
-            "desc": "1 RP = ₹1 (Titan, FabIndia, Croma, Shoppers Stop, etc.) - ₹99 redemption fee",
+            "desc": "1 RP = \u20b91 (Titan, FabIndia, Croma, Shoppers Stop, etc.) - \u20b999 redemption fee",
             "recommended": true
           },
           {
             "type": "Luxury Vouchers",
             "value": 1,
-            "desc": "Ray Ban, Coach, Tumi, Hugo Boss - ₹99 redemption fee",
+            "desc": "Ray Ban, Coach, Tumi, Hugo Boss - \u20b999 redemption fee",
             "recommended": false
           }
         ]
@@ -13418,7 +13574,7 @@ export const creditCards = [
     "features": {
       "lounge": {
         "domestic": "4 per quarter (16 per year) via Visa/Mastercard",
-        "international": "1 per month via Priority Pass (on ₹20,000 spend in previous month)",
+        "international": "1 per month via Priority Pass (on \u20b920,000 spend in previous month)",
         "accessType": "Priority Pass + Visa/Mastercard domestic"
       },
       "milestones": [
@@ -13469,14 +13625,15 @@ export const creditCards = [
         "Priority Pass with international lounge access"
       ],
       "cons": [
-        "Non-waivable ₹5,000 annual fee",
+        "Non-waivable \u20b95,000 annual fee",
         "No statement credit option - only voucher redemption",
         "Limited voucher brand selection (no Amazon/Flipkart)",
-        "₹99 redemption fee per transaction",
-        "International lounge requires ₹20K monthly spend",
+        "\u20b999 redemption fee per transaction",
+        "International lounge requires \u20b920K monthly spend",
         "3-year point expiry"
       ]
-    }
+    },
+    "slug": "sc-ultimate"
   },
   {
     "id": "sc-smart",
@@ -13489,7 +13646,7 @@ export const creditCards = [
       "annual": 499,
       "currency": "INR",
       "waivedOn": 120000,
-      "waiverText": "Annual fee waived on ₹1.2L annual spend. Joining fee waived for new-to-bank customers."
+      "waiverText": "Annual fee waived on \u20b91.2L annual spend. Joining fee waived for new-to-bank customers."
     },
     "eligibility": {
       "income": 300000,
@@ -13504,15 +13661,15 @@ export const creditCards = [
       "type": "cashback",
       "name": "Cashback",
       "baseRate": 0.01,
-      "earningText": "2% cashback on online spends (max ₹1,000/month). 1% cashback on offline spends (max ₹500/month). Total max ₹1,500/month or ₹18,000/year.",
+      "earningText": "2% cashback on online spends (max \u20b91,000/month). 1% cashback on offline spends (max \u20b9500/month). Total max \u20b91,500/month or \u20b918,000/year.",
       "expiry": "Never expires",
-      "joiningBonus": "₹500 Amazon Pay voucher on card activation",
+      "joiningBonus": "\u20b9500 Amazon Pay voucher on card activation",
       "exclusions": "Fuel, Cash Withdrawals",
       "calculator": {
         "tier": "entry",
         "monthlyCap": 1500,
         "capResetPeriod": "calendar",
-        "specialLogic": "Separate caps for online (₹1,000) and offline (₹500). No minimum transaction value. Cashback on govt payments, utilities, insurance, wallet loads included.",
+        "specialLogic": "Separate caps for online (\u20b91,000) and offline (\u20b9500). No minimum transaction value. Cashback on govt payments, utilities, insurance, wallet loads included.",
         "categories": {
           "travel": {
             "rate": 0.02,
@@ -13548,12 +13705,12 @@ export const creditCards = [
       },
       "redemption": {
         "baseValue": 1,
-        "bestOption": "Statement credit via 360° Rewards portal",
+        "bestOption": "Statement credit via 360\u00b0 Rewards portal",
         "options": [
           {
             "type": "Statement Credit",
             "value": 1,
-            "desc": "₹1 = ₹1, min ₹2,500 for first redemption, then ₹1,000 multiples",
+            "desc": "\u20b91 = \u20b91, min \u20b92,500 for first redemption, then \u20b91,000 multiples",
             "recommended": true
           }
         ]
@@ -13599,18 +13756,19 @@ export const creditCards = [
         "Cashback on govt payments, insurance, wallet loads",
         "Extended 90-day interest-free period for new cards",
         "No redemption fee",
-        "Easy annual fee waiver at ₹1.2L",
+        "Easy annual fee waiver at \u20b91.2L",
         "Low 0.99% EMI conversion rate"
       ],
       "cons": [
         "No cashback on fuel",
-        "Monthly cap of ₹1,500 (₹1,000 online + ₹500 offline)",
+        "Monthly cap of \u20b91,500 (\u20b91,000 online + \u20b9500 offline)",
         "No lounge access",
         "No fuel surcharge waiver",
-        "High ₹2,500 minimum for first redemption",
+        "High \u20b92,500 minimum for first redemption",
         "High 3.5% forex markup"
       ]
-    }
+    },
+    "slug": "sc-smart"
   },
   {
     "id": "hsbc-live-plus",
@@ -13623,7 +13781,7 @@ export const creditCards = [
       "annual": 999,
       "currency": "INR",
       "waivedOn": 200000,
-      "waiverText": "Waived on ₹2,00,000 annual spend"
+      "waiverText": "Waived on \u20b92,00,000 annual spend"
     },
     "eligibility": {
       "income": 600000,
@@ -13640,13 +13798,13 @@ export const creditCards = [
       "baseRate": 0.015,
       "earningText": "1.5% unlimited cashback on all eligible retail spends",
       "expiry": "Credited within 45 days of statement",
-      "joiningBonus": "₹1,000 cashback on ₹20,000 spend within 30 days + ₹250 Amazon voucher on video KYC",
+      "joiningBonus": "\u20b91,000 cashback on \u20b920,000 spend within 30 days + \u20b9250 Amazon voucher on video KYC",
       "exclusions": "Utilities, Fuel, Wallet loads, Rent, Education, Government, Insurance, Jewellery, EMI, Tolls, Financial Institutions, Money Transfers",
       "calculator": {
         "tier": "entry",
         "monthlyCap": 1000,
         "capResetPeriod": "statement",
-        "specialLogic": "10% cashback on dining, grocery, and food delivery combined capped at ₹1,000/month. 1.5% unlimited on other retail spends. Cashback auto-credited to statement.",
+        "specialLogic": "10% cashback on dining, grocery, and food delivery combined capped at \u20b91,000/month. 1.5% unlimited on other retail spends. Cashback auto-credited to statement.",
         "categories": {
           "travel": {
             "rate": 0.015,
@@ -13731,18 +13889,19 @@ export const creditCards = [
       "pros": [
         "10% cashback on dining, grocery, and food delivery",
         "1.5% unlimited cashback on other retail spends",
-        "Low annual fee of ₹999 with easy waiver",
+        "Low annual fee of \u20b9999 with easy waiver",
         "Auto-credited cashback - no redemption hassle",
         "Live+ Dining Program with additional discounts"
       ],
       "cons": [
-        "₹1,000 monthly cap on 10% categories",
+        "\u20b91,000 monthly cap on 10% categories",
         "Long exclusion list including utilities and insurance",
         "No international lounge access",
         "Only available in select cities",
         "Not available to self-employed individuals"
       ]
-    }
+    },
+    "slug": "hsbc-live-plus"
   },
   {
     "id": "hsbc-premier",
@@ -13770,29 +13929,29 @@ export const creditCards = [
       "type": "points",
       "name": "HSBC Reward Points",
       "baseRate": 0.03,
-      "earningText": "3 Reward Points per ₹100 spent (3% return at 1:1 redemption)",
+      "earningText": "3 Reward Points per \u20b9100 spent (3% return at 1:1 redemption)",
       "expiry": "Never Expires",
-      "joiningBonus": "20,000 Reward Points on card activation + Taj Epicure Membership + Taj Gift Card worth ₹12,000 + EazyDiner Prime Membership",
-      "exclusions": "Fuel (from Apr 2025), Education, E-wallets, Jewellery, Bail & Bond payments. Utilities/Insurance capped at ₹1L/month combined for select MCCs",
+      "joiningBonus": "20,000 Reward Points on card activation + Taj Epicure Membership + Taj Gift Card worth \u20b912,000 + EazyDiner Prime Membership",
+      "exclusions": "Fuel (from Apr 2025), Education, E-wallets, Jewellery, Bail & Bond payments. Utilities/Insurance capped at \u20b91L/month combined for select MCCs",
       "calculator": {
         "tier": "super-premium",
         "monthlyCap": 100000,
         "capResetPeriod": "calendar",
-        "specialLogic": "3 RP per ₹100 on all spends. From Apr 2025, select categories (utilities, insurance, education, govt, jewellery) capped at ₹1L monthly spend combined. Fuel completely excluded. 1:1 transfer to 20+ airline/hotel partners.",
+        "specialLogic": "3 RP per \u20b9100 on all spends. From Apr 2025, select categories (utilities, insurance, education, govt, jewellery) capped at \u20b91L monthly spend combined. Fuel completely excluded. 1:1 transfer to 20+ airline/hotel partners.",
         "categories": {
           "travel": {
             "rate": 0.03,
-            "label": "3% (3 RP/₹100)",
+            "label": "3% (3 RP/\u20b9100)",
             "cap": null
           },
           "dining": {
             "rate": 0.03,
-            "label": "3% (3 RP/₹100)",
+            "label": "3% (3 RP/\u20b9100)",
             "cap": null
           },
           "online": {
             "rate": 0.03,
-            "label": "3% (3 RP/₹100)",
+            "label": "3% (3 RP/\u20b9100)",
             "cap": null
           },
           "fuel": {
@@ -13802,12 +13961,12 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.03,
-            "label": "3% (3 RP/₹100)",
+            "label": "3% (3 RP/\u20b9100)",
             "cap": null
           },
           "utilities": {
             "rate": 0.03,
-            "label": "3% (capped at ₹1L/month)",
+            "label": "3% (capped at \u20b91L/month)",
             "cap": 3000
           }
         }
@@ -13825,7 +13984,7 @@ export const creditCards = [
           {
             "type": "Apple Products",
             "value": 1,
-            "desc": "1 RP = ₹1 via Imagine vouchers",
+            "desc": "1 RP = \u20b91 via Imagine vouchers",
             "recommended": true
           },
           {
@@ -13837,7 +13996,7 @@ export const creditCards = [
           {
             "type": "Gift Cards",
             "value": 0.25,
-            "desc": "1 RP = ₹0.25",
+            "desc": "1 RP = \u20b90.25",
             "recommended": false
           }
         ]
@@ -13888,13 +14047,14 @@ export const creditCards = [
         "Metal card with premium feel"
       ],
       "cons": [
-        "Requires HSBC Premier relationship (₹40L TRB or ₹3L salary)",
-        "₹20,000 annual fee if Premier criteria not met",
-        "High ₹12,000 joining fee",
+        "Requires HSBC Premier relationship (\u20b940L TRB or \u20b93L salary)",
+        "\u20b920,000 annual fee if Premier criteria not met",
+        "High \u20b912,000 joining fee",
         "From Apr 2025: fuel excluded, caps on utilities/insurance",
         "Limited to select cities"
       ]
-    }
+    },
+    "slug": "hsbc-premier"
   },
   {
     "id": "au-zenith-plus",
@@ -13907,7 +14067,7 @@ export const creditCards = [
       "annual": 4999,
       "currency": "INR",
       "waivedOn": 800000,
-      "waiverText": "Waived on ₹8,00,000 net retail spend in previous anniversary year"
+      "waiverText": "Waived on \u20b98,00,000 net retail spend in previous anniversary year"
     },
     "eligibility": {
       "income": 2500000,
@@ -13922,29 +14082,29 @@ export const creditCards = [
       "type": "points",
       "name": "AU Reward Points",
       "baseRate": 0.01,
-      "earningText": "1 RP per ₹100 on retail spends (1 RP = ₹1)",
+      "earningText": "1 RP per \u20b9100 on retail spends (1 RP = \u20b91)",
       "expiry": "2 Years",
-      "joiningBonus": "Choice of luxury brand vouchers or Reward Points worth ₹5,000 on card activation",
+      "joiningBonus": "Choice of luxury brand vouchers or Reward Points worth \u20b95,000 on card activation",
       "exclusions": "Fuel, EMI, Cash transactions. Special categories (Utility, Insurance, Rent, Education, Govt) excluded from milestone calculation",
       "calculator": {
         "tier": "super-premium",
         "monthlyCap": null,
         "capResetPeriod": "statement",
-        "specialLogic": "2 RP/₹100 on travel, dining, and international spends (2% value). 1 RP/₹100 on other retail (1% value). 1 RP = ₹1 redemption. Monthly milestone: 1,000 RP on ₹75,000 spend. Taj Epicure on ₹12L annual spend.",
+        "specialLogic": "2 RP/\u20b9100 on travel, dining, and international spends (2% value). 1 RP/\u20b9100 on other retail (1% value). 1 RP = \u20b91 redemption. Monthly milestone: 1,000 RP on \u20b975,000 spend. Taj Epicure on \u20b912L annual spend.",
         "categories": {
           "travel": {
             "rate": 0.02,
-            "label": "2% (2 RP/₹100)",
+            "label": "2% (2 RP/\u20b9100)",
             "cap": null
           },
           "dining": {
             "rate": 0.02,
-            "label": "2% (2 RP/₹100)",
+            "label": "2% (2 RP/\u20b9100)",
             "cap": null
           },
           "online": {
             "rate": 0.01,
-            "label": "1% (1 RP/₹100)",
+            "label": "1% (1 RP/\u20b9100)",
             "cap": null
           },
           "fuel": {
@@ -13954,7 +14114,7 @@ export const creditCards = [
           },
           "groceries": {
             "rate": 0.01,
-            "label": "1% (1 RP/₹100)",
+            "label": "1% (1 RP/\u20b9100)",
             "cap": null
           },
           "utilities": {
@@ -13971,19 +14131,19 @@ export const creditCards = [
           {
             "type": "Vouchers",
             "value": 1,
-            "desc": "1 RP = ₹1",
+            "desc": "1 RP = \u20b91",
             "recommended": true
           },
           {
             "type": "Flight/Hotel",
             "value": 1,
-            "desc": "1 RP = ₹1",
+            "desc": "1 RP = \u20b91",
             "recommended": true
           },
           {
             "type": "Merchandise",
             "value": 1,
-            "desc": "1 RP = ₹1",
+            "desc": "1 RP = \u20b91",
             "recommended": false
           }
         ]
@@ -14011,7 +14171,7 @@ export const creditCards = [
       },
       "movies": {
         "included": true,
-        "text": "16 BOGO tickets/year via BookMyShow (4 per quarter, up to ₹500/ticket)"
+        "text": "16 BOGO tickets/year via BookMyShow (4 per quarter, up to \u20b9500/ticket)"
       },
       "fuel": {
         "surchargeWaiver": "1%",
@@ -14040,17 +14200,18 @@ export const creditCards = [
         "1:1 reward redemption value",
         "16 domestic + 8 international lounge visits",
         "16 BOGO movie tickets + 8 golf rounds annually",
-        "Taj Epicure membership on ₹12L spend",
+        "Taj Epicure membership on \u20b912L spend",
         "Metal card with premium feel"
       ],
       "cons": [
         "Lower reward rate (1-2%) compared to some competitors",
-        "High income requirement (₹2.5L/month)",
-        "₹8L spend required for fee waiver",
+        "High income requirement (\u20b92.5L/month)",
+        "\u20b98L spend required for fee waiver",
         "Fuel transactions don't earn rewards",
-        "₹99 redemption fee applies"
+        "\u20b999 redemption fee applies"
       ]
-    }
+    },
+    "slug": "au-zenith-plus"
   },
   {
     "id": "ixigo-au",
@@ -14063,7 +14224,7 @@ export const creditCards = [
       "annual": 999,
       "currency": "INR",
       "waivedOn": 100000,
-      "waiverText": "Currently Lifetime Free. Otherwise waived on ₹1,00,000 annual spend"
+      "waiverText": "Currently Lifetime Free. Otherwise waived on \u20b91,00,000 annual spend"
     },
     "eligibility": {
       "income": 300000,
@@ -14078,19 +14239,19 @@ export const creditCards = [
       "type": "points",
       "name": "ixigo Reward Points",
       "baseRate": 0.025,
-      "earningText": "10 RP per ₹200 online (2.5%), 5 RP per ₹200 offline (1.25%)",
+      "earningText": "10 RP per \u20b9200 online (2.5%), 5 RP per \u20b9200 offline (1.25%)",
       "expiry": "2 Years",
-      "joiningBonus": "1,000 Reward Points + ₹1,000 ixigo money voucher on first transaction within 30 days",
+      "joiningBonus": "1,000 Reward Points + \u20b91,000 ixigo money voucher on first transaction within 30 days",
       "exclusions": "Fuel, Rent, Insurance, Jewellery, Wallets, Education, Government, BBPS, International transactions (from Dec 2024)",
       "calculator": {
         "tier": "co-branded",
         "monthlyCap": 10000,
         "capResetPeriod": "statement",
-        "specialLogic": "ZERO FOREX MARKUP - Key USP. 10 RP/₹200 online (2.5%), 5 RP/₹200 offline (1.25%), 20 RP/₹200 on train bookings via ixigo (5%). 1 RP = ₹0.50 as ixigo money, ₹0.20 for AU vouchers. 10% discount on flights/hotels/buses via ixigo.",
+        "specialLogic": "ZERO FOREX MARKUP - Key USP. 10 RP/\u20b9200 online (2.5%), 5 RP/\u20b9200 offline (1.25%), 20 RP/\u20b9200 on train bookings via ixigo (5%). 1 RP = \u20b90.50 as ixigo money, \u20b90.20 for AU vouchers. 10% discount on flights/hotels/buses via ixigo.",
         "categories": {
           "travel": {
             "rate": 0.05,
-            "label": "5% on ixigo train bookings (20 RP/₹200)",
+            "label": "5% on ixigo train bookings (20 RP/\u20b9200)",
             "cap": null
           },
           "dining": {
@@ -14100,7 +14261,7 @@ export const creditCards = [
           },
           "online": {
             "rate": 0.025,
-            "label": "2.5% (10 RP/₹200)",
+            "label": "2.5% (10 RP/\u20b9200)",
             "cap": null
           },
           "fuel": {
@@ -14127,13 +14288,13 @@ export const creditCards = [
           {
             "type": "ixigo Money",
             "value": 0.5,
-            "desc": "1 RP = ₹0.50 (best value)",
+            "desc": "1 RP = \u20b90.50 (best value)",
             "recommended": true
           },
           {
             "type": "AU Rewardz Vouchers",
             "value": 0.2,
-            "desc": "1 RP = ₹0.20",
+            "desc": "1 RP = \u20b90.20",
             "recommended": false
           }
         ]
@@ -14141,7 +14302,7 @@ export const creditCards = [
     },
     "features": {
       "lounge": {
-        "domestic": "8 airport + 8 railway per year (2 each per quarter on ₹20K spend)",
+        "domestic": "8 airport + 8 railway per year (2 each per quarter on \u20b920K spend)",
         "international": "1 per year via Priority Pass",
         "accessType": "Priority Pass + AU Card"
       },
@@ -14187,11 +14348,12 @@ export const creditCards = [
         "10,000 RP cap per statement cycle",
         "Long exclusion list including international from Dec 2024",
         "Only 1 international lounge visit",
-        "Low redemption value (₹0.20-₹0.50 per RP)",
+        "Low redemption value (\u20b90.20-\u20b90.50 per RP)",
         "Benefits maximized only on ixigo platform",
-        "₹99 redemption fee"
+        "\u20b999 redemption fee"
       ]
-    }
+    },
+    "slug": "ixigo-au"
   },
   {
     "id": "onecard-metal",
@@ -14219,7 +14381,7 @@ export const creditCards = [
       "type": "points",
       "name": "OneCard Reward Points",
       "baseRate": 0.002,
-      "earningText": "1 RP per ₹50 spent (base 0.2%), 5X on top 2 categories (1%)",
+      "earningText": "1 RP per \u20b950 spent (base 0.2%), 5X on top 2 categories (1%)",
       "expiry": "Never Expires",
       "joiningBonus": "Instant virtual card activation + Regular merchant offers in app",
       "exclusions": "Transfers, Wallet loads, Cash withdrawals, Rent payments",
@@ -14227,13 +14389,15 @@ export const creditCards = [
         "tier": "entry",
         "monthlyCap": null,
         "capResetPeriod": "calendar",
-        "specialLogic": "Unique 5X rewards on top 2 spend categories automatically selected each month. Must spend in at least 3 categories to qualify for 5X. Fractional points earned. 1 RP = ₹0.10 for cashback.",
+        "specialLogic": "Unique 5X rewards on top 2 spend categories automatically selected each month. Must spend in at least 3 categories to qualify for 5X. Fractional points earned. 1 RP = \u20b90.10 for cashback.",
         "portals": [
           {
             "name": "Top 2 Categories",
             "rate": 0.01,
             "label": "5X on Top 2 Categories",
-            "categories": ["all"]
+            "categories": [
+              "all"
+            ]
           }
         ],
         "categories": {
@@ -14276,13 +14440,13 @@ export const creditCards = [
           {
             "type": "Statement Credit",
             "value": 0.1,
-            "desc": "1 RP = ₹0.10 cashback",
+            "desc": "1 RP = \u20b90.10 cashback",
             "recommended": true
           },
           {
             "type": "Vouchers",
             "value": 0.15,
-            "desc": "1 RP = ₹0.15 (select brands)",
+            "desc": "1 RP = \u20b90.15 (select brands)",
             "recommended": false
           }
         ]
@@ -14338,11 +14502,12 @@ export const creditCards = [
         "No lounge access",
         "No fuel surcharge waiver",
         "Must spend in 3+ categories for 5X rewards",
-        "Low redemption value (₹0.10 per RP)",
+        "Low redemption value (\u20b90.10 per RP)",
         "Available as secured card for low credit scores",
         "RBI restrictions on some partner banks"
       ]
-    }
+    },
+    "slug": "onecard-metal"
   },
   {
     "id": "tata-neu-infinity-hdfc",
@@ -14355,7 +14520,7 @@ export const creditCards = [
       "annual": 1499,
       "currency": "INR",
       "waivedOn": 300000,
-      "waiverText": "Waived on ₹3,00,000 annual spend. LTF offer available till Dec 2024"
+      "waiverText": "Waived on \u20b93,00,000 annual spend. LTF offer available till Dec 2024"
     },
     "eligibility": {
       "income": 1200000,
@@ -14378,7 +14543,7 @@ export const creditCards = [
         "tier": "premium",
         "monthlyCap": 2000,
         "capResetPeriod": "calendar",
-        "specialLogic": "Up to 10% on Tata Neu (5% base + 5% NeuPass). 1.5% on non-Tata. 1.5% on UPI via Tata Neu UPI ID (0.5% + 1% additional). 1 NeuCoin = ₹1. Multiple category caps apply.",
+        "specialLogic": "Up to 10% on Tata Neu (5% base + 5% NeuPass). 1.5% on non-Tata. 1.5% on UPI via Tata Neu UPI ID (0.5% + 1% additional). 1 NeuCoin = \u20b91. Multiple category caps apply.",
         "categories": {
           "travel": {
             "rate": 0.015,
@@ -14419,13 +14584,13 @@ export const creditCards = [
           {
             "type": "Tata Neu Partners",
             "value": 1,
-            "desc": "1 NeuCoin = ₹1 at BigBasket, Croma, Westside, etc.",
+            "desc": "1 NeuCoin = \u20b91 at BigBasket, Croma, Westside, etc.",
             "recommended": true
           },
           {
             "type": "Flight Booking",
             "value": 1,
-            "desc": "1 NeuCoin = ₹1 on Air India (redemption varies)",
+            "desc": "1 NeuCoin = \u20b91 on Air India (redemption varies)",
             "recommended": false
           }
         ]
@@ -14483,6 +14648,7 @@ export const creditCards = [
         "Third-party app payments attract 1% fee",
         "Not ideal for non-Tata brand shopping"
       ]
-    }
+    },
+    "slug": "tata-neu-infinity-hdfc"
   }
 ];

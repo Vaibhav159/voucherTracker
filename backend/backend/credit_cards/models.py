@@ -22,6 +22,7 @@ class CreditCard(models.Model):
     ]
 
     name = models.CharField(_("Name"), max_length=255)
+    slug = models.SlugField(_("Slug"), max_length=255, unique=True, blank=True, null=True)
     bank = models.CharField(_("Bank"), max_length=255, choices=BANK_CHOICES, db_index=True)
     category = models.CharField(_("Category"), max_length=255, blank=True, db_index=True)
     image = models.URLField(_("Image URL"), blank=True)

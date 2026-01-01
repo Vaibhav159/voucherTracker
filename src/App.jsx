@@ -381,7 +381,7 @@ function App() {
                           />
                         }
                       />
-                      <Route path="/card-guide/:id" element={<CardGuide />} />
+                      <Route path="/card-guide/:slug" element={<CardGuide />} />
                       {featureFlags.rewardsCalculator && (
                         <Route path="/rewards-calculator" element={<RewardsCalculator />} />
                       )}

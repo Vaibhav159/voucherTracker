@@ -212,7 +212,7 @@ const ChatMessage = memo(({
           {message.cards.map((card) => (
             <Link
               key={card.id}
-              to={`/card-guide/${card.id}`}
+              to={`/card-guide/${card.slug || card.id}`}
               className={styles.cardLink}
             >
               💳 {card.name?.split(' ').slice(0, 2).join(' ')} →
