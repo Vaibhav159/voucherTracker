@@ -206,6 +206,93 @@ const CardGuide = () => {
                                 </section>
                             )}
 
+                            {/* SmartBuy / Accelerated Rewards Section */}
+                            {(card.rewards?.calculator?.smartBuy?.merchants || card.rewards?.calculator?.acceleratedRewards?.merchants) && (() => {
+                                const rewardData = card.rewards.calculator.smartBuy || card.rewards.calculator.acceleratedRewards;
+                                const isHDFC = card.bank === 'HDFC Bank';
+                                const sectionTitle = isHDFC ? '🛒 SmartBuy Portal Rewards' : '🚀 Accelerated Rewards';
+                                const titleColor = isHDFC ? 'var(--accent-purple)' : 'var(--accent-cyan)';
+
+                                return (
+                                    <section>
+                                        <h2 style={{ color: titleColor, fontSize: '1.5rem', marginBottom: '1.2rem', borderBottom: '1px solid var(--glass-border)', paddingBottom: '0.5rem' }}>
+                                            {sectionTitle}
+                                        </h2>
+                                        <div style={{ background: 'linear-gradient(135deg, rgba(168, 85, 247, 0.08), rgba(99, 102, 241, 0.08))', padding: '1.5rem', borderRadius: '12px', border: '1px solid rgba(168, 85, 247, 0.2)' }}>
+                                            {/* SmartBuy Summary */}
+                                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.5rem' }}>
+                                                {rewardData.baseRewardRate && (
+                                                    <div style={{ padding: '0.75rem 1rem', background: 'rgba(168, 85, 247, 0.15)', borderRadius: '8px' }}>
+                                                        <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>Base Rate</div>
+                                                        <div style={{ fontWeight: '600', color: '#c084fc' }}>{rewardData.baseRewardRate}</div>
+                                                    </div>
+                                                )}
+                                                {rewardData.monthlyCap && (
+                                                    <div style={{ padding: '0.75rem 1rem', background: 'rgba(34, 197, 94, 0.15)', borderRadius: '8px' }}>
+                                                        <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>Monthly Cap</div>
+                                                        <div style={{ fontWeight: '600', color: '#4ade80' }}>
+                                                            {rewardData.monthlyCap.toLocaleString()} {rewardData.type === 'cashback' ? '' : 'RP'}
+                                                        </div>
+                                                    </div>
+                                                )}
+                                                {rewardData.pointValueTravel && (
+                                                    <div style={{ padding: '0.75rem 1rem', background: 'rgba(99, 102, 241, 0.15)', borderRadius: '8px' }}>
+                                                        <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>Point Value (Travel)</div>
+                                                        <div style={{ fontWeight: '600', color: '#a5b4fc' }}>₹{rewardData.pointValueTravel}/point</div>
+                                                    </div>
+                                                )}
+                                            </div>
+
+                                            {/* Merchants Grid */}
+                                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '0.75rem' }}>
+                                                {Object.entries(rewardData.merchants).map(([key, merchant]) => (
+                                                    <div key={key} style={{
+                                                        padding: '0.75rem 1rem',
+                                                        background: 'rgba(0,0,0,0.3)',
+                                                        borderRadius: '8px',
+                                                        border: '1px solid rgba(255,255,255,0.06)',
+                                                        display: 'flex',
+                                                        justifyContent: 'space-between',
+                                                        alignItems: 'center'
+                                                    }}>
+                                                        <span style={{
+                                                            textTransform: 'capitalize',
+                                                            fontSize: '0.85rem',
+                                                            color: 'var(--text-primary)'
+                                                        }}>
+                                                            {key === 'igp' ? 'IGP.com' :
+                                                                key === 'mmtHoliday' ? 'MMT Holiday' :
+                                                                    key === 'instantVouchers' ? 'Gyftr' :
+                                                                        key === 'redbus' ? 'RedBus' :
+                                                                            key === 'pharmeasy' ? 'PharmEasy' :
+                                                                                key === 'amazonPrime' ? 'Amazon (Prime)' :
+                                                                                    key === 'amazonNonPrime' ? 'Amazon (Non-Prime)' :
+                                                                                        key === 'amazonPayPartners' ? 'Amazon Pay Partners' :
+                                                                                            key}
+                                                        </span>
+                                                        <span style={{
+                                                            fontWeight: '700',
+                                                            color: merchant.effectiveRate?.includes('33') || merchant.rate?.includes('10') ? '#22c55e' :
+                                                                merchant.effectiveRate?.includes('16') || merchant.rate?.includes('5') || merchant.rate?.includes('6') ? '#4ade80' :
+                                                                    '#94a3b8',
+                                                            fontSize: '0.9rem'
+                                                        }}>
+                                                            {merchant.multiplier || merchant.rate}
+                                                        </span>
+                                                    </div>
+                                                ))}
+                                            </div>
+
+                                            {rewardData.note && (
+                                                <p style={{ marginTop: '1rem', fontSize: '0.8rem', color: 'var(--text-secondary)', fontStyle: 'italic' }}>
+                                                    ℹ️ {rewardData.note}
+                                                </p>
+                                            )}
+                                        </div>
+                                    </section>
+                                );
+                            })()}
+
                             {/* Fees & Eligibility */}
                             {(card.fees || card.eligibility) && (
                                 <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
@@ -284,86 +371,88 @@ const CardGuide = () => {
                         </>
                     )}
                 </div>
-            </div>
+            </div >
 
             {/* Similar Cards Section */}
-            {similarCards.length > 0 && (
-                <div style={{ marginTop: '2rem' }}>
-                    <h2 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: 'var(--text-primary)' }}>
-                        🔄 Similar Cards You Might Like
-                    </h2>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '1rem' }}>
-                        {similarCards.map(similarCard => (
-                            <Link
-                                key={similarCard.id}
-                                to={`/card-guide/${similarCard.slug || similarCard.id}`}
-                                style={{ textDecoration: 'none' }}
-                            >
-                                <div
-                                    className="glass-panel"
-                                    style={{
-                                        padding: '1rem',
-                                        transition: 'all 0.3s ease',
-                                        cursor: 'pointer',
-                                        height: '100%'
-                                    }}
+            {
+                similarCards.length > 0 && (
+                    <div style={{ marginTop: '2rem' }}>
+                        <h2 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: 'var(--text-primary)' }}>
+                            🔄 Similar Cards You Might Like
+                        </h2>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '1rem' }}>
+                            {similarCards.map(similarCard => (
+                                <Link
+                                    key={similarCard.id}
+                                    to={`/card-guide/${similarCard.slug || similarCard.id}`}
+                                    style={{ textDecoration: 'none' }}
                                 >
-                                    <div style={{
-                                        height: '100px',
-                                        background: 'rgba(255,255,255,0.03)',
-                                        borderRadius: '8px',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        marginBottom: '0.75rem',
-                                        overflow: 'hidden'
-                                    }}>
-                                        <CardImage card={similarCard} style={{ maxWidth: '90%', maxHeight: '80px' }} />
+                                    <div
+                                        className="glass-panel"
+                                        style={{
+                                            padding: '1rem',
+                                            transition: 'all 0.3s ease',
+                                            cursor: 'pointer',
+                                            height: '100%'
+                                        }}
+                                    >
+                                        <div style={{
+                                            height: '100px',
+                                            background: 'rgba(255,255,255,0.03)',
+                                            borderRadius: '8px',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            marginBottom: '0.75rem',
+                                            overflow: 'hidden'
+                                        }}>
+                                            <CardImage card={similarCard} style={{ maxWidth: '90%', maxHeight: '80px' }} />
+                                        </div>
+                                        <h4 style={{
+                                            margin: '0 0 0.25rem 0',
+                                            fontSize: '0.9rem',
+                                            fontWeight: '600',
+                                            color: 'var(--card-title)',
+                                            whiteSpace: 'nowrap',
+                                            overflow: 'hidden',
+                                            textOverflow: 'ellipsis'
+                                        }}>
+                                            {similarCard.name}
+                                        </h4>
+                                        <p style={{
+                                            margin: '0 0 0.5rem 0',
+                                            fontSize: '0.75rem',
+                                            color: 'var(--text-secondary)'
+                                        }}>
+                                            {similarCard.bank}
+                                        </p>
+                                        <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                                            {similarCard.bank === card.bank && (
+                                                <span style={{
+                                                    fontSize: '0.65rem',
+                                                    padding: '2px 6px',
+                                                    background: 'rgba(99, 102, 241, 0.2)',
+                                                    color: '#a5b4fc',
+                                                    borderRadius: '4px'
+                                                }}>Same Bank</span>
+                                            )}
+                                            {similarCard.category === card.category && (
+                                                <span style={{
+                                                    fontSize: '0.65rem',
+                                                    padding: '2px 6px',
+                                                    background: 'rgba(34, 197, 94, 0.2)',
+                                                    color: '#86efac',
+                                                    borderRadius: '4px'
+                                                }}>{card.category}</span>
+                                            )}
+                                        </div>
                                     </div>
-                                    <h4 style={{
-                                        margin: '0 0 0.25rem 0',
-                                        fontSize: '0.9rem',
-                                        fontWeight: '600',
-                                        color: 'var(--card-title)',
-                                        whiteSpace: 'nowrap',
-                                        overflow: 'hidden',
-                                        textOverflow: 'ellipsis'
-                                    }}>
-                                        {similarCard.name}
-                                    </h4>
-                                    <p style={{
-                                        margin: '0 0 0.5rem 0',
-                                        fontSize: '0.75rem',
-                                        color: 'var(--text-secondary)'
-                                    }}>
-                                        {similarCard.bank}
-                                    </p>
-                                    <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                                        {similarCard.bank === card.bank && (
-                                            <span style={{
-                                                fontSize: '0.65rem',
-                                                padding: '2px 6px',
-                                                background: 'rgba(99, 102, 241, 0.2)',
-                                                color: '#a5b4fc',
-                                                borderRadius: '4px'
-                                            }}>Same Bank</span>
-                                        )}
-                                        {similarCard.category === card.category && (
-                                            <span style={{
-                                                fontSize: '0.65rem',
-                                                padding: '2px 6px',
-                                                background: 'rgba(34, 197, 94, 0.2)',
-                                                color: '#86efac',
-                                                borderRadius: '4px'
-                                            }}>{card.category}</span>
-                                        )}
-                                    </div>
-                                </div>
-                            </Link>
-                        ))}
+                                </Link>
+                            ))}
+                        </div>
                     </div>
-                </div>
-            )}
+                )
+            }
 
             {/* Sticky Apply Button */}
             <div className="sticky-apply-container">
@@ -376,7 +465,7 @@ const CardGuide = () => {
                     Apply Now
                 </a>
             </div>
-        </div>
+        </div >
     );
 };
 

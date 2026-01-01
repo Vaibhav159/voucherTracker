@@ -168,17 +168,20 @@ export const creditCards = [
         "monthlyCap": null,
         "capResetPeriod": "calendar",
         "specialLogic": "6X rewards on flights/vouchers (18% value) and 12X rewards on hotel bookings (36% value) via iShop. Category caps: Grocery \u20b940,000/month, Utilities \u20b980,000/month, Insurance \u20b980,000/month, Education \u20b980,000/month",
-        "portals": [
-          {
-            "name": "iShop",
-            "rate": 0.36,
-            "label": "12X (36% Value) on Hotels via iShop",
-            "categories": [
-              "hotels",
-              "travel"
-            ]
-          }
-        ],
+        "smartBuy": {
+          "baseRewardRate": "3% (6 RP/₹200)",
+          "pointValueTravel": 1,
+          "pointValueVouchers": 1,
+          "monthlyCap": 18000,
+          "dailyCap": 10000,
+          "merchants": {
+            "hotels": { "multiplier": "12X", "effectiveRate": "36%", "label": "Hotels via iShop - 12X" },
+            "flights": { "multiplier": "6X", "effectiveRate": "18%", "label": "Flights via iShop - 6X" },
+            "vouchers": { "multiplier": "6X", "effectiveRate": "18%", "label": "Shopping Vouchers - 6X" },
+            "bus": { "multiplier": "6X", "effectiveRate": "18%", "label": "Bus Bookings - 6X" }
+          },
+          "note": "Total cap: 18,000 RP/month. Daily cap: 10,000 RP."
+        },
         "categories": {
           "travel": {
             "rate": 0.03,
@@ -335,16 +338,20 @@ export const creditCards = [
         "monthlyCap": null,
         "capResetPeriod": "calendar",
         "specialLogic": null,
-        "portals": [
-          {
-            "name": "Amazon",
-            "rate": 0.05,
-            "label": "5% (Prime) on Amazon",
-            "categories": [
-              "shopping"
-            ]
-          }
-        ],
+        "smartBuy": {
+          "type": "cashback",
+          "baseRewardRate": "1%-5% Cashback",
+          "monthlyCap": 1100,
+          "dailyCap": null,
+          "merchants": {
+            "amazonPrime": { "multiplier": "5%", "effectiveRate": "5%", "label": "Amazon (Prime Members)" },
+            "amazonNonPrime": { "multiplier": "3%", "effectiveRate": "3%", "label": "Amazon (Non-Prime)" },
+            "amazonPayPartners": { "multiplier": "2%", "effectiveRate": "2%", "label": "Amazon Pay Partners" },
+            "fuel": { "multiplier": "5%", "effectiveRate": "5%", "label": "Fuel (1st Txn/Month)" },
+            "ishop": { "multiplier": "4%", "effectiveRate": "4%", "label": "iShop Portal (4%)" }
+          },
+          "note": "iShop cashback capped at ₹1,100/month. Fuel cashback max ₹150/month."
+        },
         "categories": {
           "travel": {
             "rate": 0.05,
@@ -526,6 +533,26 @@ export const creditCards = [
             ]
           }
         ],
+        "smartBuy": {
+          "baseRewardRate": "5 RP/₹150 (3.33%)",
+          "pointValueTravel": 1.0,
+          "pointValueVouchers": 1.0,
+          "monthlyCap": 15000,
+          "dailyCap": 15000,
+          "merchants": {
+            "igp": { "multiplier": "10X", "effectiveRate": "33%", "label": "IGP.com - 10X (33%)" },
+            "flights": { "multiplier": "5X", "effectiveRate": "16.5%", "label": "Flights - 5X (16.5%)" },
+            "hotels": { "multiplier": "10X", "effectiveRate": "33%", "label": "Hotels - 10X (33%)" },
+            "trains": { "multiplier": "3X", "effectiveRate": "10%", "label": "Confirmtkt Trains - 3X (10%)" },
+            "redbus": { "multiplier": "5X", "effectiveRate": "16.5%", "label": "RedBus - 5X (16.5%)" },
+            "instantVouchers": { "multiplier": "5X", "effectiveRate": "16.5%", "label": "Instant Vouchers (Gyftr) - 5X (16.5%)" },
+            "myntra": { "multiplier": "5X", "effectiveRate": "16.5%", "label": "Myntra - 5X (16.5%)" },
+            "nykaa": { "multiplier": "5X", "effectiveRate": "16.5%", "label": "Nykaa - 5X (16.5%)" },
+            "jockey": { "multiplier": "10X", "effectiveRate": "33%", "label": "Jockey - 10X (33%)" },
+            "pharmeasy": { "multiplier": "10X", "effectiveRate": "33%", "label": "Pharmeasy - 10X (33%)" },
+            "mmtHoliday": { "multiplier": "5X", "effectiveRate": "16.5%", "label": "MMT Holiday - 5X (16.5%)" }
+          }
+        },
         "categories": {
           "travel": {
             "rate": 0.033,
@@ -720,6 +747,26 @@ export const creditCards = [
             ]
           }
         ],
+        "smartBuy": {
+          "baseRewardRate": "5 RP/₹150 (3.33%)",
+          "pointValueTravel": 1.0,
+          "pointValueVouchers": 0.50,
+          "monthlyCap": 10000,
+          "dailyCap": 10000,
+          "merchants": {
+            "igp": { "multiplier": "10X", "effectiveRate": "33%", "label": "IGP.com - 10X (33%)" },
+            "flights": { "multiplier": "5X", "effectiveRate": "16.5%", "label": "Flights - 5X (16.5%)" },
+            "hotels": { "multiplier": "10X", "effectiveRate": "33%", "label": "Hotels - 10X (33%)" },
+            "trains": { "multiplier": "3X", "effectiveRate": "10%", "label": "Confirmtkt Trains - 3X (10%)" },
+            "redbus": { "multiplier": "5X", "effectiveRate": "16.5%", "label": "RedBus - 5X (16.5%)" },
+            "instantVouchers": { "multiplier": "3X", "effectiveRate": "10%", "label": "Instant Vouchers (Gyftr) - 3X (10%)" },
+            "myntra": { "multiplier": "5X", "effectiveRate": "16.5%", "label": "Myntra - 5X (16.5%)" },
+            "nykaa": { "multiplier": "5X", "effectiveRate": "16.5%", "label": "Nykaa - 5X (16.5%)" },
+            "jockey": { "multiplier": "10X", "effectiveRate": "33%", "label": "Jockey - 10X (33%)" },
+            "pharmeasy": { "multiplier": "10X", "effectiveRate": "33%", "label": "Pharmeasy - 10X (33%)" },
+            "mmtHoliday": { "multiplier": "5X", "effectiveRate": "16.5%", "label": "MMT Holiday - 5X (16.5%)" }
+          }
+        },
         "categories": {
           "travel": {
             "rate": 0.033,
@@ -853,6 +900,408 @@ export const creditCards = [
     "slug": "hdfc-diners-club-black-metal"
   },
   {
+    "id": "hdfc-diners-club-black",
+    "name": "HDFC Diners Club Black Credit Card",
+    "bank": "HDFC Bank",
+    "image": "/assets/cards/hdfc-diners-black.png",
+    "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/diners-club-black-credit-card",
+    "fees": {
+      "joining": 10000,
+      "annual": 10000,
+      "currency": "INR",
+      "waivedOn": 500000,
+      "waiverText": "Waived on ₹5 Lakh spend in previous year"
+    },
+    "eligibility": {
+      "income": 175000,
+      "age": { "min": 21, "max": 60 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Reward Points",
+      "baseRate": 0.033,
+      "earningText": "5 RP per ₹150 (3.33% rate)",
+      "expiry": "3 years",
+      "calculator": {
+        "tier": "super-premium",
+        "monthlyCap": 7500,
+        "capResetPeriod": "statement",
+        "smartBuy": {
+          "baseRewardRate": "5 RP/₹150 (3.33%)",
+          "pointValueTravel": 1.0,
+          "pointValueVouchers": 0.50,
+          "monthlyCap": 7500,
+          "dailyCap": 2500,
+          "merchants": {
+            "igp": { "multiplier": "10X", "effectiveRate": "33%", "label": "IGP.com - 10X (33%)" },
+            "flights": { "multiplier": "5X", "effectiveRate": "16.5%", "label": "Flights - 5X (16.5%)" },
+            "hotels": { "multiplier": "10X", "effectiveRate": "33%", "label": "Hotels - 10X (33%)" },
+            "trains": { "multiplier": "3X", "effectiveRate": "10%", "label": "Confirmtkt - 3X (10%)" },
+            "redbus": { "multiplier": "5X", "effectiveRate": "16.5%", "label": "RedBus - 5X (16.5%)" },
+            "instantVouchers": { "multiplier": "3X", "effectiveRate": "10%", "label": "Gyftr Vouchers - 3X (10%)" },
+            "myntra": { "multiplier": "5X", "effectiveRate": "16.5%", "label": "Myntra - 5X (16.5%)" },
+            "nykaa": { "multiplier": "5X", "effectiveRate": "16.5%", "label": "Nykaa - 5X (16.5%)" },
+            "jockey": { "multiplier": "10X", "effectiveRate": "33%", "label": "Jockey - 10X (33%)" },
+            "pharmeasy": { "multiplier": "10X", "effectiveRate": "33%", "label": "Pharmeasy - 10X (33%)" },
+            "mmtHoliday": { "multiplier": "5X", "effectiveRate": "16.5%", "label": "MMT Holiday - 5X (16.5%)" }
+          }
+        },
+        "categories": {
+          "travel": { "rate": 0.033, "label": "3.33% (5 RP/₹150)" },
+          "dining": { "rate": 0.066, "label": "2X on Weekend Dining" },
+          "online": { "rate": 0.033, "label": "3.33% (5 RP/₹150)" }
+        }
+      },
+      "redemption": {
+        "baseValue": 1,
+        "bestOption": "Flights/Hotels (1 RP = ₹1)",
+        "options": [
+          { "type": "Travel", "value": 1, "desc": "Flights/Hotels via SmartBuy (70% points + 30% cash)" },
+          { "type": "Airmiles", "value": 1, "desc": "1 RP = 1 Mile (InterMiles/KrisFlyer)" }
+        ]
+      }
+    },
+    "features": [
+      "Unlimited Airport Lounge Access (Worldwide)",
+      "Club Marriott Membership on joining",
+      "6 Complimentary Golf games per quarter",
+      "Air Accident Cover of ₹2 Crore"
+    ],
+    "slug": "hdfc-diners-club-black"
+  },
+  {
+    "id": "hdfc-diners-club-privilege",
+    "name": "HDFC Diners Club Privilege Credit Card",
+    "bank": "HDFC Bank",
+    "image": "/assets/cards/hdfc-diners-privilege.png",
+    "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/diners-club-privilege-credit-card",
+    "fees": {
+      "joining": 1000,
+      "annual": 1000,
+      "currency": "INR",
+      "waivedOn": 300000,
+      "waiverText": "Waived on ₹3 Lakh spend"
+    },
+    "eligibility": {
+      "income": 70000,
+      "age": { "min": 21, "max": 60 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 730
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Reward Points",
+      "baseRate": 0.0133,
+      "earningText": "4 RP per ₹150 (1.33% rate)",
+      "expiry": "2 years",
+      "joiningBonus": "Swiggy One & Amazon Prime membership (spend based)",
+      "exclusions": "Fuel, Wallet Loads, Rent, EMI, Govt Transactions",
+      "calculator": {
+        "tier": "mid-range",
+        "monthlyCap": 4000,
+        "capResetPeriod": "statement",
+        "smartBuy": {
+          "baseRewardRate": "4 RP/₹150 (1.33%)",
+          "pointValueTravel": 0.50,
+          "pointValueVouchers": 0.50,
+          "monthlyCap": 4000,
+          "dailyCap": 2000,
+          "merchants": {
+            "igp": { "multiplier": "10X", "effectiveRate": "13.3%", "label": "IGP.com - 10X (13.3%)" },
+            "flights": { "multiplier": "5X", "effectiveRate": "6.6%", "label": "Flights - 5X (6.6%)" },
+            "hotels": { "multiplier": "10X", "effectiveRate": "13.3%", "label": "Hotels - 10X (13.3%)" },
+            "trains": { "multiplier": "3X", "effectiveRate": "4%", "label": "Confirmtkt - 3X (4%)" },
+            "redbus": { "multiplier": "5X", "effectiveRate": "6.6%", "label": "RedBus - 5X (6.6%)" },
+            "instantVouchers": { "multiplier": "5X", "effectiveRate": "6.6%", "label": "Gyftr Vouchers - 5X (6.6%)" },
+            "myntra": { "multiplier": "5X", "effectiveRate": "6.6%", "label": "Myntra - 5X (6.6%)" },
+            "nykaa": { "multiplier": "5X", "effectiveRate": "6.6%", "label": "Nykaa - 5X (6.6%)" },
+            "jockey": { "multiplier": "10X", "effectiveRate": "13.3%", "label": "Jockey - 10X (13.3%)" },
+            "pharmeasy": { "multiplier": "10X", "effectiveRate": "13.3%", "label": "Pharmeasy - 10X (13.3%)" },
+            "mmtHoliday": { "multiplier": "5X", "effectiveRate": "6.6%", "label": "MMT Holiday - 5X (6.6%)" }
+          }
+        },
+        "categories": {
+          "travel": { "rate": 0.0133, "label": "1.33% (4 RP/₹150)" },
+          "dining": { "rate": 0.066, "label": "5X on Swiggy/Zomato (6.67%)", "cap": 2500 }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.5,
+        "bestOption": "Flights/Hotels (1 RP = ₹0.50)",
+        "options": [
+          { "type": "Travel", "value": 0.5, "desc": "Flights/Hotels via SmartBuy" },
+          { "type": "Cashback", "value": 0.20, "desc": "Statement Credit" }
+        ]
+      }
+    },
+    "features": [
+      "12 Airport Lounge Access per year (Domestic/International)",
+      "Buy 1 Get 1 on BookMyShow (Weekend)",
+      "Complimentary Swiggy One & Times Prime"
+    ],
+    "slug": "hdfc-diners-club-privilege"
+  },
+  {
+    "id": "hdfc-moneyback-plus",
+    "name": "HDFC Bank MoneyBack+ Credit Card",
+    "bank": "HDFC Bank",
+    "image": "/assets/cards/hdfc-moneyback-plus.png",
+    "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/moneyback-plus-credit-card",
+    "fees": {
+      "joining": 500,
+      "annual": 500,
+      "currency": "INR",
+      "waivedOn": 50000,
+      "waiverText": "Waived on ₹50,000 annual spend"
+    },
+    "eligibility": {
+      "income": 20000,
+      "age": { "min": 21, "max": 60 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "cashback",
+      "name": "CashPoints",
+      "baseRate": 0.0033,
+      "earningText": "2 CashPoints per ₹150 (0.33%)",
+      "expiry": "2 years",
+      "joiningBonus": "500 CashPoints on payment of joining fee",
+      "exclusions": "Fuel, Wallet Loads, Rent, Govt Transactions",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": 15000,
+        "capResetPeriod": "statement",
+        "smartBuy": {
+          "type": "cashback",
+          "baseRewardRate": "Cashback Card",
+          "monthlyCap": 1000,
+          "dailyCap": null,
+          "merchants": {
+            "igp": { "rate": "10%", "label": "IGP.com - 10% Cashback" },
+            "flights": { "rate": "5%", "label": "Flights - 5% Cashback" },
+            "hotels": { "rate": "5%", "label": "Hotels - 5% Cashback" },
+            "trains": { "rate": "1%", "label": "Confirmtkt - 1% Cashback" },
+            "redbus": { "rate": "5%", "label": "RedBus - 5% Cashback" },
+            "instantVouchers": { "rate": "5%", "label": "Gyftr Vouchers - 5% Cashback" },
+            "myntra": { "rate": "5%", "label": "Myntra - 5% Cashback" },
+            "nykaa": { "rate": "5%", "label": "Nykaa - 5% Cashback" },
+            "jockey": { "rate": "10%", "label": "Jockey - 10% Cashback" },
+            "pharmeasy": { "rate": "10%", "label": "Pharmeasy - 10% Cashback" },
+            "mmtHoliday": { "rate": "5%", "label": "MMT Holiday - 5% Cashback" }
+          }
+        },
+        "categories": {
+          "online": { "rate": 0.033, "label": "10X on Amazon, Flipkart, Swiggy (3.3%)", "cap": 2500 },
+          "retail": { "rate": 0.0033, "label": "0.33% Base Rate" }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Statement Credit (1 CP = ₹0.25)",
+        "options": [{ "type": "Statement Credit", "value": 0.25, "desc": "Min 2500 points for redemption" }]
+      }
+    },
+    "features": [
+      "10X CashPoints on Amazon, Flipkart, Swiggy, BigBasket",
+      "Gift Voucher worth ₹500 on spending ₹50,000/quarter",
+      "1% Fuel Surcharge Waiver"
+    ],
+    "slug": "hdfc-moneyback-plus"
+  },
+  {
+    "id": "hdfc-freedom",
+    "name": "HDFC Bank Freedom Credit Card",
+    "bank": "HDFC Bank",
+    "image": "/assets/cards/hdfc-freedom.png",
+    "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/freedom-credit-card",
+    "fees": {
+      "joining": 500,
+      "annual": 500,
+      "currency": "INR",
+      "waivedOn": 50000,
+      "waiverText": "Waived on ₹50,000 annual spend"
+    },
+    "eligibility": {
+      "income": 12000,
+      "age": { "min": 21, "max": 60 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 650
+    },
+    "rewards": {
+      "type": "cashback",
+      "name": "CashPoints",
+      "baseRate": 0.001,
+      "earningText": "1 CashPoint per ₹150 (0.1%)",
+      "expiry": "2 years",
+      "exclusions": "Fuel, Wallet Loads, Rent, Govt Transactions",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": 2500,
+        "capResetPeriod": "statement",
+        "smartBuy": {
+          "type": "cashback",
+          "baseRewardRate": "Cashback Card",
+          "monthlyCap": 1000,
+          "dailyCap": null,
+          "merchants": {
+            "igp": { "rate": "10%", "label": "IGP.com - 10% Cashback" },
+            "flights": { "rate": "5%", "label": "Flights - 5% Cashback" },
+            "hotels": { "rate": "5%", "label": "Hotels - 5% Cashback" },
+            "trains": { "rate": "1%", "label": "Confirmtkt - 1% Cashback" },
+            "redbus": { "rate": "5%", "label": "RedBus - 5% Cashback" },
+            "instantVouchers": { "rate": "5%", "label": "Gyftr Vouchers - 5% Cashback" },
+            "myntra": { "rate": "5%", "label": "Myntra - 5% Cashback" },
+            "nykaa": { "rate": "5%", "label": "Nykaa - 5% Cashback" },
+            "jockey": { "rate": "10%", "label": "Jockey - 10% Cashback" },
+            "pharmeasy": { "rate": "10%", "label": "Pharmeasy - 10% Cashback" },
+            "mmtHoliday": { "rate": "5%", "label": "MMT Holiday - 5% Cashback" }
+          }
+        },
+        "categories": {
+          "online": { "rate": 0.01, "label": "10X on Swiggy, BookMyShow, BigBasket (1%)" },
+          "retail": { "rate": 0.001, "label": "0.1% Base Rate" }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.15,
+        "bestOption": "Statement Credit (1 CP = ₹0.15)",
+        "options": [{ "type": "Statement Credit", "value": 0.15, "desc": "Statement credit redemption" }]
+      }
+    },
+    "features": [
+      "10X CashPoints on BigBasket, Swiggy, BookMyShow, OYO, Uber",
+      "Low interest rate (0.99% for first 90 days)",
+      "Zero lost card liability"
+    ],
+    "slug": "hdfc-freedom"
+  },
+  {
+    "id": "hdfc-bizpower",
+    "name": "HDFC Bank BizPower Credit Card",
+    "bank": "HDFC Bank",
+    "image": "/assets/cards/hdfc-bizpower.png",
+    "link": "https://www.hdfcbank.com/personal/pay/cards/business-credit-cards/biz-power/biz-power-credit-card",
+    "fees": {
+      "joining": 2500,
+      "annual": 2500,
+      "currency": "INR",
+      "waivedOn": 400000,
+      "waiverText": "Waived on ₹4 Lakh spend"
+    },
+    "eligibility": {
+      "income": 100000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Reward Points",
+      "baseRate": 0.0173,
+      "earningText": "4 RP per ₹150 (1.73%)",
+      "expiry": "2 years",
+      "calculator": {
+        "tier": "mid-range",
+        "monthlyCap": 60000,
+        "capResetPeriod": "statement",
+        "smartBuy": {
+          "baseRewardRate": "4 RP/₹150 (1.73%)",
+          "pointValueTravel": 0.50,
+          "pointValueVouchers": 0.50,
+          "monthlyCap": 4000,
+          "dailyCap": 2000,
+          "merchants": {
+            "igp": { "multiplier": "10X", "effectiveRate": "13.3%", "label": "IGP.com - 10X (13.3%)" },
+            "flights": { "multiplier": "5X", "effectiveRate": "6.6%", "label": "Flights - 5X (6.6%)" },
+            "hotels": { "multiplier": "10X", "effectiveRate": "13.3%", "label": "Hotels - 10X (13.3%)" },
+            "trains": { "multiplier": "3X", "effectiveRate": "4%", "label": "Confirmtkt - 3X (4%)" },
+            "redbus": { "multiplier": "5X", "effectiveRate": "6.6%", "label": "RedBus - 5X (6.6%)" },
+            "instantVouchers": { "multiplier": "5X", "effectiveRate": "6.6%", "label": "Gyftr Vouchers - 5X (6.6%)" },
+            "myntra": { "multiplier": "5X", "effectiveRate": "6.6%", "label": "Myntra - 5X (6.6%)" },
+            "nykaa": { "multiplier": "5X", "effectiveRate": "6.6%", "label": "Nykaa - 5X (6.6%)" },
+            "jockey": { "multiplier": "10X", "effectiveRate": "13.3%", "label": "Jockey - 10X (13.3%)" },
+            "pharmeasy": { "multiplier": "10X", "effectiveRate": "13.3%", "label": "Pharmeasy - 10X (13.3%)" },
+            "mmtHoliday": { "multiplier": "5X", "effectiveRate": "6.6%", "label": "MMT Holiday - 5X (6.6%)" }
+          }
+        },
+        "categories": {
+          "utilities": { "rate": 0.0866, "label": "5X on Tax, GST, Vendor Payments (via SmartPay)" },
+          "online": { "rate": 0.0866, "label": "5X on Ads (Google/FB) & Software" }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.5,
+        "bestOption": "Flights/Hotels (1 RP = ₹0.50)",
+        "options": [{ "type": "Travel", "value": 0.5, "desc": "Flights/Hotels via SmartBuy" }]
+      }
+    },
+    "features": [
+      "16 Airport Lounges/year (4/qtr domestic + 6/year international)",
+      "5X Rewards on GST, Vendor Pay, Google Ads",
+      "55 Days Interest Free Credit"
+    ],
+    "slug": "hdfc-bizpower"
+  },
+
+  {
+    "id": "hdfc-regalia",
+    "name": "HDFC Regalia Credit Card",
+    "bank": "HDFC Bank",
+    "image": "/assets/cards/hdfc-regalia.png",
+    "fees": {
+      "joining": 2500,
+      "annual": 2500,
+      "waivedOn": 300000,
+      "waiverText": "Waived on ₹3 Lakh spend"
+    },
+    "rewards": {
+      "type": "points",
+      "baseRate": 0.026,
+      "earningText": "4 RP per ₹150 (2.67% rate)",
+      "calculator": {
+        "tier": "premium",
+        "monthlyCap": 4000,
+        "smartBuy": {
+          "baseRewardRate": "4 RP/₹150 (2.67%)",
+          "pointValueTravel": 0.50,
+          "pointValueVouchers": 0.50,
+          "monthlyCap": 4000,
+          "dailyCap": 2000,
+          "merchants": {
+            "igp": { "multiplier": "10X", "effectiveRate": "13.3%", "label": "IGP.com - 10X (13.3%)" },
+            "flights": { "multiplier": "5X", "effectiveRate": "6.6%", "label": "Flights - 5X (6.6%)" },
+            "hotels": { "multiplier": "10X", "effectiveRate": "13.3%", "label": "Hotels - 10X (13.3%)" },
+            "trains": { "multiplier": "3X", "effectiveRate": "4%", "label": "Confirmtkt - 3X (4%)" },
+            "redbus": { "multiplier": "5X", "effectiveRate": "6.6%", "label": "RedBus - 5X (6.6%)" },
+            "instantVouchers": { "multiplier": "5X", "effectiveRate": "6.6%", "label": "Gyftr Vouchers - 5X (6.6%)" },
+            "myntra": { "multiplier": "5X", "effectiveRate": "6.6%", "label": "Myntra - 5X (6.6%)" },
+            "nykaa": { "multiplier": "5X", "effectiveRate": "6.6%", "label": "Nykaa - 5X (6.6%)" },
+            "jockey": { "multiplier": "10X", "effectiveRate": "13.3%", "label": "Jockey - 10X (13.3%)" },
+            "pharmeasy": { "multiplier": "10X", "effectiveRate": "13.3%", "label": "Pharmeasy - 10X (13.3%)" },
+            "mmtHoliday": { "multiplier": "5X", "effectiveRate": "6.6%", "label": "MMT Holiday - 5X (6.6%)" }
+          }
+        },
+        "categories": {
+          "travel": { "rate": 0.026, "label": "2.67% (4 RP/₹150)" }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.5,
+        "bestOption": "Flights/Hotels (1 RP = ₹0.50)",
+        "options": [{ "type": "Travel", "value": 0.5, "desc": "Flights/Hotels via SmartBuy" }]
+      }
+    },
+    "features": [
+      "12 Airport Lounge Access in India/International",
+      "Bonus 10,000 RP on ₹5 Lakh spend",
+      "Foreign Currency Markup: 2%"
+    ],
+    "slug": "hdfc-regalia"
+  },
+  {
     "id": "hdfc-tata-neu-infinity",
     "name": "Tata Neu Infinity HDFC Bank Credit Card",
     "bank": "HDFC Bank",
@@ -917,6 +1366,26 @@ export const creditCards = [
             "rate": 0.015,
             "label": "1.5% (capped at 2,000/month)",
             "cap": 2000
+          }
+        },
+        "smartBuy": {
+          "type": "neucoins",
+          "baseRewardRate": "NeuCoins",
+          "monthlyCap": null,
+          "dailyCap": null,
+          "note": "NeuCoins vary by merchant",
+          "merchants": {
+            "igp": { "rate": "6% NC", "label": "IGP.com - 6% NeuCoins" },
+            "flights": { "rate": "1.5% NC", "label": "Flights - 1.5% NeuCoins" },
+            "hotels": { "rate": "6% NC", "label": "Hotels - 6% NeuCoins" },
+            "trains": { "rate": "1.5% NC", "label": "Confirmtkt Trains - 1.5% NeuCoins" },
+            "redbus": { "rate": "1.5% NC", "label": "RedBus - 1.5% NeuCoins" },
+            "instantVouchers": { "rate": "1.5% NC", "label": "Instant Vouchers (Gyftr) - 1.5% NeuCoins" },
+            "myntra": { "rate": "1.5% NC", "label": "Myntra - 1.5% NeuCoins" },
+            "nykaa": { "rate": "1.5% NC", "label": "Nykaa - 1.5% NeuCoins" },
+            "jockey": { "rate": "6% NC", "label": "Jockey - 6% NeuCoins" },
+            "pharmeasy": { "rate": "6% NC", "label": "Pharmeasy - 6% NeuCoins" },
+            "mmtHoliday": { "rate": "1.5% NC", "label": "MMT Holiday - 1.5% NeuCoins" }
           }
         }
       },
@@ -1001,6 +1470,73 @@ export const creditCards = [
       ]
     },
     "slug": "hdfc-tata-neu-infinity"
+  },
+  {
+    "id": "hdfc-tata-neu-plus",
+    "name": "Tata Neu Plus HDFC Bank Credit Card",
+    "bank": "HDFC Bank",
+    "image": "/assets/cards/hdfc-tata-neu-plus.png",
+    "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/tata-neu-plus-hdfc-bank-credit-card",
+    "fees": {
+      "joining": 499,
+      "annual": 499,
+      "currency": "INR",
+      "waivedOn": 100000,
+      "waiverText": "Waived on ₹1 Lakh spend in a year"
+    },
+    "eligibility": {
+      "income": 25000,
+      "age": { "min": 21, "max": 60 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "points",
+      "name": "NeuCoins",
+      "baseRate": 0.01,
+      "earningText": "1% NeuCoins on all spends, up to 7% on Tata Neu app",
+      "expiry": "12 months",
+      "joiningBonus": "499 NeuCoins on first transaction",
+      "exclusions": "Fuel, Rent, Government, Wallet loads",
+      "calculator": {
+        "tier": "co-branded",
+        "monthlyCap": null,
+        "smartBuy": {
+          "type": "neucoins",
+          "baseRewardRate": "NeuCoins",
+          "merchants": {
+            "igp": { "rate": "4%", "label": "IGP.com - 4% NeuCoins" },
+            "flights": { "rate": "1%", "label": "Flights - 1% NeuCoins" },
+            "hotels": { "rate": "4%", "label": "Hotels - 4% NeuCoins" },
+            "trains": { "rate": "1%", "label": "Confirmtkt - 1% NeuCoins" },
+            "redbus": { "rate": "1%", "label": "RedBus - 1% NeuCoins" },
+            "instantVouchers": { "rate": "1%", "label": "Gyftr Vouchers - 1% NeuCoins" },
+            "myntra": { "rate": "4%", "label": "Myntra - 4% NeuCoins" },
+            "nykaa": { "rate": "4%", "label": "Nykaa - 4% NeuCoins" },
+            "jockey": { "rate": "4%", "label": "Jockey - 4% NeuCoins" },
+            "pharmeasy": { "rate": "4%", "label": "Pharmeasy - 4% NeuCoins" },
+            "mmtHoliday": { "rate": "1%", "label": "MMT Holiday - 1% NeuCoins" }
+          }
+        },
+        "categories": {
+          "travel": { "rate": 0.01, "label": "1% NeuCoins" },
+          "dining": { "rate": 0.01, "label": "1% NeuCoins" },
+          "online": { "rate": 0.01, "label": "1% NeuCoins" },
+          "tataneu": { "rate": 0.02, "label": "2% on Tata Neu App" }
+        }
+      },
+      "redemption": {
+        "baseValue": 1,
+        "bestOption": "Tata Neu App (1 NeuCoin = ₹1)",
+        "options": [{ "type": "Cashback", "value": 1, "desc": "Redeem on Tata Neu App" }]
+      }
+    },
+    "features": [
+      "4 Domestic Airport Lounge Access per year (1 per quarter)",
+      "2% NeuCoins on Tata Neu App, 1% on other spends",
+      "Zero lost card liability"
+    ],
+    "slug": "hdfc-tata-neu-plus"
   },
   {
     "id": "amex-platinum-travel",
@@ -1333,6 +1869,26 @@ export const creditCards = [
             ]
           }
         ],
+        "smartBuy": {
+          "baseRewardRate": "4 RP/₹150 (2.67%)",
+          "pointValueTravel": 0.50,
+          "pointValueVouchers": 0.50,
+          "monthlyCap": 4000,
+          "dailyCap": 2000,
+          "merchants": {
+            "igp": { "multiplier": "10X", "effectiveRate": "13.3%", "label": "IGP.com - 10X (13.3%)" },
+            "flights": { "multiplier": "5X", "effectiveRate": "6.6%", "label": "Flights - 5X (6.6%)" },
+            "hotels": { "multiplier": "10X", "effectiveRate": "13.3%", "label": "Hotels - 10X (13.3%)" },
+            "trains": { "multiplier": "3X", "effectiveRate": "4%", "label": "Confirmtkt Trains - 3X (4%)" },
+            "redbus": { "multiplier": "5X", "effectiveRate": "6.6%", "label": "RedBus - 5X (6.6%)" },
+            "instantVouchers": { "multiplier": "5X", "effectiveRate": "6.6%", "label": "Instant Vouchers (Gyftr) - 5X (6.6%)" },
+            "myntra": { "multiplier": "5X", "effectiveRate": "6.6%", "label": "Myntra - 5X (6.6%)" },
+            "nykaa": { "multiplier": "5X", "effectiveRate": "6.6%", "label": "Nykaa - 5X (6.6%)" },
+            "jockey": { "multiplier": "10X", "effectiveRate": "13.3%", "label": "Jockey - 10X (13.3%)" },
+            "pharmeasy": { "multiplier": "10X", "effectiveRate": "13.3%", "label": "Pharmeasy - 10X (13.3%)" },
+            "mmtHoliday": { "multiplier": "5X", "effectiveRate": "6.6%", "label": "MMT Holiday - 5X (6.6%)" }
+          }
+        },
         "categories": {
           "travel": {
             "rate": 0.0267,
@@ -2014,6 +2570,25 @@ export const creditCards = [
             "label": "1% CashPoints",
             "cap": 1000
           }
+        },
+        "smartBuy": {
+          "type": "cashback",
+          "baseRewardRate": "Cashback Card",
+          "monthlyCap": 1000,
+          "dailyCap": null,
+          "merchants": {
+            "igp": { "rate": "10%", "label": "IGP.com - 10% Cashback" },
+            "flights": { "rate": "5%", "label": "Flights - 5% Cashback" },
+            "hotels": { "rate": "5%", "label": "Hotels - 5% Cashback" },
+            "trains": { "rate": "1%", "label": "Confirmtkt Trains - 1% Cashback" },
+            "redbus": { "rate": "5%", "label": "RedBus - 5% Cashback" },
+            "instantVouchers": { "rate": "5%", "label": "Instant Vouchers (Gyftr) - 5% Cashback" },
+            "myntra": { "rate": "5%", "label": "Myntra - 5% Cashback" },
+            "nykaa": { "rate": "5%", "label": "Nykaa - 5% Cashback" },
+            "jockey": { "rate": "10%", "label": "Jockey - 10% Cashback" },
+            "pharmeasy": { "rate": "10%", "label": "Pharmeasy - 10% Cashback" },
+            "mmtHoliday": { "rate": "5%", "label": "MMT Holiday - 5% Cashback" }
+          }
         }
       },
       "redemption": {
@@ -2119,7 +2694,7 @@ export const creditCards = [
       "tier": "entry"
     },
     "bestFor": "Metal Card Enthusiasts",
-    "verdict": "LTF metal card, 5X on top 2 categories, no cap.",
+    "verdict": "LTF, 5X on top 2 categories, no cap.",
     "fxMarkup": "1%",
     "category": "Cashback",
     "bank": "FPL Technologies",
@@ -2457,17 +3032,19 @@ export const creditCards = [
         "monthlyCap": null,
         "capResetPeriod": "calendar",
         "specialLogic": null,
-        "portals": [
-          {
-            "name": "SmartBuy",
-            "rate": 0.05,
-            "label": "5% CashPoints via SmartBuy (Amazon/Travel)",
-            "categories": [
-              "shopping",
-              "travel"
-            ]
+        "smartBuy": {
+          "type": "cashback",
+          "baseRewardRate": "1% Cashback",
+          "monthlyCap": null,
+          "dailyCap": null,
+          "merchants": {
+            "amazonPrime": { "rate": "5%", "label": "Amazon (Prime Members) - 5% Cashback" },
+            "amazonNonPrime": { "rate": "3%", "label": "Amazon (Non-Prime) - 3% Cashback" },
+            "amazonPayPartners": { "rate": "2%", "label": "Amazon Pay Partners (Swiggy, Uber, etc.) - 2%" },
+            "flights": { "rate": "5%", "label": "Flights via Amazon Pay (Prime) - 5%" },
+            "hotels": { "rate": "5%", "label": "Hotels via Amazon Pay (Prime) - 5%" }
           }
-        ],
+        },
         "categories": {
           "travel": {
             "rate": 0.05,
@@ -2927,6 +3504,25 @@ export const creditCards = [
             "rate": 0,
             "label": "No cashback on utilities",
             "cap": null
+          }
+        },
+        "smartBuy": {
+          "type": "cashback",
+          "baseRewardRate": "Cashback Card",
+          "monthlyCap": 1000,
+          "dailyCap": null,
+          "merchants": {
+            "igp": { "rate": "10%", "label": "IGP.com - 10% Cashback" },
+            "flights": { "rate": "5%", "label": "Flights - 5% Cashback" },
+            "hotels": { "rate": "5%", "label": "Hotels - 5% Cashback" },
+            "trains": { "rate": "1%", "label": "Confirmtkt Trains - 1% Cashback" },
+            "redbus": { "rate": "5%", "label": "RedBus - 5% Cashback" },
+            "instantVouchers": { "rate": "5%", "label": "Instant Vouchers (Gyftr) - 5% Cashback" },
+            "myntra": { "rate": "5%", "label": "Myntra - 5% Cashback" },
+            "nykaa": { "rate": "5%", "label": "Nykaa - 5% Cashback" },
+            "jockey": { "rate": "10%", "label": "Jockey - 10% Cashback" },
+            "pharmeasy": { "rate": "10%", "label": "Pharmeasy - 10% Cashback" },
+            "mmtHoliday": { "rate": "5%", "label": "MMT Holiday - 5% Cashback" }
           }
         }
       },
@@ -7115,6 +7711,20 @@ export const creditCards = [
         "monthlyCap": null,
         "capResetPeriod": "calendar",
         "specialLogic": "4 RP per \u20b9100 on retail, 1 RP per \u20b9100 on utilities/insurance. Accelerated rewards via iShop. Category caps: Utilities \u20b980,000/month, Insurance \u20b980,000/month, Grocery \u20b940,000/month",
+        "smartBuy": {
+          "baseRewardRate": "1% (4 RP/₹100)",
+          "pointValueTravel": 0.25,
+          "pointValueVouchers": 0.25,
+          "monthlyCap": 12000,
+          "dailyCap": null,
+          "merchants": {
+            "hotels": { "multiplier": "12X", "effectiveRate": "12%", "label": "Hotels via iShop - 12X" },
+            "flights": { "multiplier": "6X", "effectiveRate": "6%", "label": "Flights via iShop - 6X" },
+            "vouchers": { "multiplier": "6X", "effectiveRate": "6%", "label": "Shopping Vouchers - 6X" },
+            "bus": { "multiplier": "6X", "effectiveRate": "6%", "label": "Bus Bookings - 6X" }
+          },
+          "note": "Monthly cap: 12,000 RP (Bonus Points)"
+        },
         "categories": {
           "travel": {
             "rate": 0.01,
@@ -7259,6 +7869,19 @@ export const creditCards = [
         "monthlyCap": null,
         "capResetPeriod": "calendar",
         "specialLogic": "Milestone bonus: 4,000 RP at \u20b94L spend + 2,000 RP per additional \u20b91L (max 20,000 RP/year). Category caps: Utilities/Insurance \u20b980,000/month, Grocery \u20b940,000/month",
+        "smartBuy": {
+          "baseRewardRate": "0.5% (2 RP/₹100)",
+          "pointValueTravel": 0.25,
+          "pointValueVouchers": 0.25,
+          "monthlyCap": 9000,
+          "dailyCap": null,
+          "merchants": {
+            "hotels": { "multiplier": "12X", "effectiveRate": "6%", "label": "Hotels via iShop - 12X" },
+            "flights": { "multiplier": "6X", "effectiveRate": "3%", "label": "Flights via iShop - 6X" },
+            "vouchers": { "multiplier": "6X", "effectiveRate": "3%", "label": "Shopping Vouchers - 6X" }
+          },
+          "note": "Monthly cap: 9,000 Bonus Points."
+        },
         "categories": {
           "travel": {
             "rate": 0.01,
@@ -7416,6 +8039,17 @@ export const creditCards = [
         "monthlyCap": null,
         "capResetPeriod": "calendar",
         "specialLogic": "Milestone: 3,000 RP at \u20b93L spend + 1,500 RP per additional \u20b91L (max 15,000 RP/year). Category caps: Utilities/Insurance \u20b940,000/month, Grocery \u20b940,000/month",
+        "smartBuy": {
+          "baseRewardRate": "0.5% (2 RP/₹100)",
+          "pointValueTravel": 0.25,
+          "pointValueVouchers": 0.25,
+          "monthlyCap": null,
+          "dailyCap": null,
+          "merchants": {
+            "hotels": { "multiplier": "12X", "effectiveRate": "6%", "label": "Hotels via iShop - 12X" },
+            "flights": { "multiplier": "6X", "effectiveRate": "3%", "label": "Flights via iShop - 6X" }
+          }
+        },
         "categories": {
           "travel": {
             "rate": 0.01,
@@ -7573,6 +8207,19 @@ export const creditCards = [
         "monthlyCap": null,
         "capResetPeriod": "calendar",
         "specialLogic": "Milestone: 2,000 RP at \u20b92L spend + 1,000 RP per additional \u20b91L (max 10,000 RP/year). Category caps: Utilities/Insurance \u20b940,000/month, Grocery \u20b920,000/month",
+        "smartBuy": {
+          "baseRewardRate": "0.5% (2 RP/₹100)",
+          "pointValueTravel": 0.25,
+          "pointValueVouchers": 0.25,
+          "monthlyCap": 9000,
+          "dailyCap": null,
+          "merchants": {
+            "hotels": { "multiplier": "12X", "effectiveRate": "6%", "label": "Hotels via iShop - 12X" },
+            "flights": { "multiplier": "6X", "effectiveRate": "3%", "label": "Flights via iShop - 6X" },
+            "vouchers": { "multiplier": "6X", "effectiveRate": "3%", "label": "Shopping Vouchers - 6X" }
+          },
+          "note": "Monthly cap: 9,000 Bonus Points."
+        },
         "categories": {
           "travel": {
             "rate": 0.005,
@@ -7732,6 +8379,19 @@ export const creditCards = [
         "monthlyCap": null,
         "capResetPeriod": "calendar",
         "specialLogic": "5 RP per \u20b9100 on Manchester United match days (1.25% value), 4 RP per \u20b9100 international (1%), 3 RP per \u20b9100 domestic (0.75%)",
+        "smartBuy": {
+          "baseRewardRate": "0.75% (3 RP/₹100)",
+          "pointValueTravel": 0.25,
+          "pointValueVouchers": 0.25,
+          "monthlyCap": 9000,
+          "dailyCap": null,
+          "merchants": {
+            "hotels": { "multiplier": "12X", "effectiveRate": "9%", "label": "Hotels via iShop - 12X" },
+            "flights": { "multiplier": "6X", "effectiveRate": "4.5%", "label": "Flights via iShop - 6X" },
+            "vouchers": { "multiplier": "6X", "effectiveRate": "4.5%", "label": "Shopping Vouchers - 6X" }
+          },
+          "note": "Monthly cap: 9,000 Bonus Points. Match days earn 5RP/100."
+        },
         "categories": {
           "travel": {
             "rate": 0.01,
@@ -8002,6 +8662,335 @@ export const creditCards = [
       ]
     },
     "slug": "icici-platinum-chip"
+  },
+  {
+    "id": "icici-makemytrip-signature",
+    "name": "MakeMyTrip ICICI Bank Signature Credit Card",
+    "bank": "ICICI Bank",
+    "image": "/assets/cards/icici-mmt-signature.png",
+    "link": "https://www.icicibank.com/personal-banking/cards/credit-card/makemytrip-signature-credit-card",
+    "fees": {
+      "joining": 999,
+      "annual": 999,
+      "currency": "INR",
+      "waivedOn": 300000,
+      "waiverText": "Waived on ₹3 Lakh spend"
+    },
+    "eligibility": {
+      "income": 20000, // Salaried monthly
+      "age": { "min": 21, "max": 60 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "points",
+      "name": "My Cash",
+      "baseRate": 0.01, // 1%
+      "earningText": "1.25% - 6% My Cash (1 My Cash = ₹1)",
+      "expiry": "Never Expires",
+      "joiningBonus": "₹1,500 MMT Voucher + MMTBLACK Gold Membership",
+      "exclusions": "Fuel, Rent, EMI, Cash Withdrawals",
+      "calculator": {
+        "tier": "mid-range",
+        "monthlyCap": null,
+        "monthlyCap": null,
+        "smartBuy": {
+          "baseRewardRate": "Platform Spends",
+          "monthlyCap": 1100,
+          "merchants": {
+            "hotels": { "multiplier": "6%", "effectiveRate": "6%", "label": "Hotels on MMT (6%)" },
+            "flights": { "multiplier": "3%", "effectiveRate": "3%", "label": "Flights on MMT (3%)" },
+            "holiday": { "multiplier": "3%", "effectiveRate": "3%", "label": "Holiday Packages (3%)" },
+            "ishop": { "multiplier": "4%", "effectiveRate": "4%", "label": "iShop Portal (4%)" }
+          }
+        },
+        "categories": {
+          "travel": { "rate": 0.0125, "label": "1.25% on other travel" },
+          "dining": { "rate": 0.0125, "label": "1.25% (2 My Cash/₹200)" },
+          "international": { "rate": 0.015, "label": "1.5% on International" }
+        }
+      },
+      "redemption": {
+        "baseValue": 1,
+        "bestOption": "MMT Bookings (1:1)",
+        "options": [
+          { "type": "Travel", "value": 1, "desc": "100% redemption on MakeMyTrip" }
+        ]
+      }
+    },
+    "features": [
+      "8 Domestic Lounge Access per year (2 per quarter)",
+      "1 International Lounge Access per year (Priority Pass)",
+      "Buy 1 Get 1 on BookMyShow (up to ₹150 discount)",
+      "Lowest Forex Markup: 0.99%"
+    ],
+    "metadata": {
+      "tags": ["Travel", "Hotels", "Co-branded", "Low Forex"],
+      "verdict": "A must-have for frequent MakeMyTrip users, especially for hotel bookings (6% return). The 0.99% forex markup is a standout feature for international travelers.",
+      "pros": ["6% Reward Rate on Hotels", "Unique 0.99% Forex Markup", "Lifetime Validity of Points", "Complimentary MMTBLACK Membership"],
+      "cons": ["Rewards usable only on MMT", "Fee waiver threshold is high (₹3L)"]
+    },
+    "slug": "icici-makemytrip-signature"
+  },
+  {
+    "id": "icici-hpcl-super-saver",
+    "name": "ICICI Bank HPCL Super Saver Credit Card",
+    "bank": "ICICI Bank",
+    "image": "/assets/cards/icici-hpcl-super-saver.png",
+    "link": "https://www.icicibank.com/personal-banking/cards/credit-card/hpcl-super-saver-credit-card",
+    "fees": {
+      "joining": 500,
+      "annual": 500,
+      "currency": "INR",
+      "waivedOn": 150000,
+      "waiverText": "Waived on ₹1.5 Lakh spend"
+    },
+    "eligibility": {
+      "income": 15000,
+      "age": { "min": 21, "max": 60 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Reward Points",
+      "baseRate": 0.005,
+      "earningText": "2 RP per ₹100 (0.5%)",
+      "expiry": "2 years",
+      "joiningBonus": "2000 Bonus RP + ₹100 Cashback on HP Pay",
+      "exclusions": "Rent, EMI, Fuel (earns cashback instead)",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": null,
+        "smartBuy": {
+          "baseRewardRate": "HP Pay App",
+          "monthlyCap": 300,
+          "merchants": {
+            "fuel": { "multiplier": "5%", "effectiveRate": "5%", "label": "HPCL Pumps (4% Cashback + 1% Surcharge)" },
+            "hppay": { "multiplier": "1.5%", "effectiveRate": "1.5%", "label": "HP Pay App Extra (1.5%)" }
+          }
+        },
+        "categories": {
+          "utilities": { "rate": 0.05, "label": "5% (20 RP/₹100) on Utilities/Departmental", "cap": 100 },
+          "fuel": { "rate": 0.04, "label": "4% Cashback at HPCL" }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Fuel/Cashback (1 RP = ₹0.25)",
+        "options": [
+          { "type": "Cashback", "value": 0.25, "desc": "Statement Credit" }
+        ]
+      }
+    },
+    "features": [
+      "5% Savings on Fuel at HPCL",
+      "24x7 Roadside Assistance included",
+      "4 Domestic Lounge Access per year (min spend ₹5000 prev quarter)",
+      "25% discount on BookMyShow/Inox (up to ₹100)"
+    ],
+    "metadata": {
+      "tags": ["Fuel", "Cashback", "Roadside Assistance"],
+      "verdict": "Great entry-level card for HPCL fuel users with the rare benefit of including 24x7 Roadside Assistance.",
+      "pros": ["5% Return on Fuel", "Rewards on Utilities & Groceries", "Roadside Assistance Included", "Low Annual Fee"],
+      "cons": ["Strict caps on reward earning", "Lounge access spend-linked"]
+    },
+    "slug": "icici-hpcl-super-saver"
+  },
+  {
+    "id": "adani-one-icici-signature",
+    "name": "Adani One ICICI Bank Signature Credit Card",
+    "bank": "ICICI Bank",
+    "image": "/assets/cards/adani-one-icici-signature.png",
+    "link": "https://www.icicibank.com/personal-banking/cards/credit-card/adani-one-icici-bank-signature-credit-card",
+    "fees": {
+      "joining": 5000,
+      "annual": 5000,
+      "currency": "INR",
+      "waivedOn": 600000,
+      "waiverText": "Waived on ₹6 Lakh spend"
+    },
+    "eligibility": {
+      "income": 50000, // Est based on premium tier
+      "age": { "min": 21, "max": 60 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Adani Reward Points",
+      "baseRate": 0.015,
+      "earningText": "1.5% - 7% Adani Points",
+      "expiry": "Statement Cycle",
+      "joiningBonus": "₹9,000 worth of Benefits (Flights/Hotel Vouchers)",
+      "exclusions": "Fuel, Rent, EMI",
+      "calculator": {
+        "tier": "premium",
+        "monthlyCap": null,
+        "smartBuy": {
+          "baseRewardRate": "Adani Ecosystem",
+          "monthlyCap": null,
+          "merchants": {
+            "flight": { "multiplier": "7%", "effectiveRate": "7%", "label": "Adani One Ecosystem (7%)" },
+            "international": { "multiplier": "2%", "effectiveRate": "2%", "label": "International Spends (2%)" }
+          }
+        },
+        "categories": {
+          "travel": { "rate": 0.07, "label": "7% on Adani One (Flights/Traiman)" },
+          "utilities": { "rate": 0.005, "label": "0.5% on Utilities" }
+        }
+      },
+      "redemption": {
+        "baseValue": 1,
+        "bestOption": "Adani One Booking (1 RP = ₹1)",
+        "options": [
+          { "type": "Travel", "value": 1, "desc": "100% redemption on Adani One" }
+        ]
+      }
+    },
+    "features": [
+      "Pranaam Meet & Greet Service (2 per year) - Unique Benefit",
+      "16 Domestic Lounge Access (4 per quarter)",
+      "2 International Lounge Access per year",
+      "Buy 1 Get 1 on Movies (up to ₹500/month)"
+    ],
+    "metadata": {
+      "tags": ["Travel", "Airport Services", "Co-branded", "Premium"],
+      "verdict": "A niche but powerful card for frequent flyers using Adani airports (Mumbai, Ahmedabad, etc.). The Pranaam Meet & Greet benefit alone can justify the fee for luxury travelers.",
+      "pros": ["7% Rewards on Adani Ecosystem", "Pranaam Meet & Greet Service", "16 Lounge Visits", "Valet Parking & Porter Service"],
+      "cons": ["High Annual Fee ₹5000", "Rewards locked to Adani ecosystem"]
+    },
+    "slug": "adani-one-icici-signature"
+  },
+  {
+    "id": "adani-one-icici-platinum",
+    "name": "Adani One ICICI Bank Platinum Credit Card",
+    "bank": "ICICI Bank",
+    "image": "/assets/cards/adani-one-icici-platinum.png",
+    "link": "https://www.icicibank.com/personal-banking/cards/credit-card/adani-one-icici-bank-platinum-credit-card",
+    "fees": {
+      "joining": 750,
+      "annual": 750,
+      "currency": "INR",
+      "waivedOn": 300000,
+      "waiverText": "Waived on ₹3 Lakh spend"
+    },
+    "eligibility": {
+      "income": 25000,
+      "age": { "min": 21, "max": 60 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Adani Reward Points",
+      "baseRate": 0.01,
+      "earningText": "1% - 3% Adani Points",
+      "expiry": "Statement Cycle",
+      "joiningBonus": "₹5,000 worth of Vouchers",
+      "exclusions": "Fuel, Rent, EMI",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": null,
+        "smartBuy": {
+          "baseRewardRate": "Adani Ecosystem",
+          "monthlyCap": null,
+          "merchants": {
+            "flight": { "multiplier": "3%", "effectiveRate": "3%", "label": "Adani One Ecosystem (3%)" },
+            "international": { "multiplier": "1.5%", "effectiveRate": "1.5%", "label": "International Spends (1.5%)" }
+          }
+        },
+        "categories": {
+          "travel": { "rate": 0.03, "label": "3% on Adani One" }
+        }
+      },
+      "redemption": {
+        "baseValue": 1,
+        "bestOption": "Adani One Booking (1:1)",
+        "options": [
+          { "type": "Travel", "value": 1, "desc": "Redeem on Adani One" }
+        ]
+      }
+    },
+    "features": [
+      "8 Domestic Lounge Access per year (No spend condition)",
+      "Benefits worth ₹5000 on joining",
+      "1% Fuel Surcharge Waiver"
+    ],
+    "metadata": {
+      "tags": ["Travel", "Entry Level", "Co-branded"],
+      "verdict": "A solid entry-level travel card. Using the welcome vouchers makes it effectively free for the first few years.",
+      "pros": ["Welcome Benefits > Fee", "3% Return on Adani One", "Lounge Access without spend criteria"],
+      "cons": ["No International Lounge", "Forex Markup 3.5%"]
+    },
+    "slug": "adani-one-icici-platinum"
+  },
+  {
+    "id": "icici-times-black",
+    "name": "Times Black ICICI Bank Credit Card",
+    "bank": "ICICI Bank",
+    "image": "/assets/cards/icici-times-black.png",
+    "link": "https://www.icicibank.com/personal-banking/cards/credit-card/times-black-credit-card",
+    "fees": {
+      "joining": 20000,
+      "annual": 20000,
+      "currency": "INR",
+      "waivedOn": 2500000,
+      "waiverText": "Waived on ₹25 Lakh spend"
+    },
+    "eligibility": {
+      "income": 200000,
+      "age": { "min": 21, "max": 60 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Times Points",
+      "baseRate": 0.02, // 2%
+      "earningText": "2% Base - up to 24% on iShop",
+      "expiry": "2 Years",
+      "joiningBonus": "₹25,000+ Benefits (Luxe Stays, Visa Services)",
+      "exclusions": "Fuel, Rent, EMI",
+      "calculator": {
+        "tier": "super-premium",
+        "monthlyCap": null,
+        "smartBuy": {
+          "baseRewardRate": "iShop Portal",
+          "monthlyCap": 15000,
+          "merchants": {
+            "hotels": { "multiplier": "24%", "effectiveRate": "24%", "label": "iShop Hotels (24%)" },
+            "flights": { "multiplier": "12%", "effectiveRate": "12%", "label": "iShop Flights (12%)" },
+            "vouchers": { "multiplier": "12%", "effectiveRate": "12%", "label": "iShop Vouchers (12%)" }
+          }
+        },
+        "categories": {
+          "dining": { "rate": 0.03, "label": "Discounts at Premium Restaurants (The Quorum)" },
+          "utilities": { "rate": 0.02, "label": "2% on Utilities/Govt (Unique)" }
+        }
+      },
+      "redemption": {
+        "baseValue": 1,
+        "bestOption": "iShop Travel/Vouchers (1:1)",
+        "options": [
+          { "type": "Travel", "value": 1, "desc": "100% redemption on iShop" },
+          { "type": "Cashback", "value": 0.40, "desc": "Statement Credit" }
+        ]
+      }
+    },
+    "features": [
+      "Unlimited Domestic & International Lounge Access",
+      "Metal Card crafted from Times printing plates",
+      "Complimentary The Quorum Club Access",
+      "Helicopter Transfer (Bangalore) on milestones"
+    ],
+    "metadata": {
+      "tags": ["Super Premium", "Metal", "Lifestyle", "Unlimited Lounge"],
+      "verdict": "A lifestyle powerhouse for those who value experiences (Quorum Club, Events) over pure ROI. The 24% return on hotels via iShop is industry-leading.",
+      "pros": ["24% Rewards on Hotels", "Unlimited Lounges", "Unique Lifestyle Benefits (Quorum, Visa Services)", "Rewards on Utilities"],
+      "cons": ["High Fee ₹20,000", "Base rate (2%) lower than Infinia (3.3%)"]
+    },
+    "slug": "icici-times-black"
   },
   {
     "id": "amex-platinum-charge",

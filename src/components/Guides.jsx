@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState, useMemo } from 'react';
 import { useGuides } from '../hooks/useGuides';
+import Markdown from 'react-markdown';
 import { useTheme } from '../context/ThemeContext';
 import { useFavorites } from '../context/FavoritesContext';
 import LoadingSpinner from './LoadingSpinner';
@@ -189,23 +190,48 @@ const GuideModal = ({ guide, onClose }) => {
                 <h3 style={{ margin: '0 0 1.5rem 0', fontSize: '1.5rem', paddingRight: '2rem' }}>{guide.title}</h3>
 
                 {/* Embed Container */}
-                {guide.embedHtml && guide.embedHtml.includes('blockquote class="reddit-embed-bq"') ? (
+                {guide.content ? (
+                    <div style={{ color: 'var(--text-primary)', lineHeight: '1.6' }}>
+                        <Markdown components={{
+                            h1: ({ node, ...props }) => <h1 style={{ fontSize: '1.8rem', margin: '1.5rem 0 1rem' }} {...props} />,
+                            h2: ({ node, ...props }) => <h2 style={{ fontSize: '1.5rem', margin: '1.5rem 0 1rem', color: 'var(--accent-cyan)' }} {...props} />,
+                            h3: ({ node, ...props }) => <h3 style={{ fontSize: '1.2rem', margin: '1.2rem 0 0.8rem' }} {...props} />,
+                            p: ({ node, ...props }) => <p style={{ marginBottom: '1rem' }} {...props} />,
+                            ul: ({ node, ...props }) => <ul style={{ marginBottom: '1rem', paddingLeft: '1.5rem' }} {...props} />,
+                            li: ({ node, ...props }) => <li style={{ marginBottom: '0.5rem' }} {...props} />,
+                            blockquote: ({ node, ...props }) => (
+                                <blockquote style={{
+                                    borderLeft: '4px solid var(--accent-cyan)',
+                                    margin: '1rem 0',
+                                    paddingLeft: '1rem',
+                                    color: 'var(--text-secondary)',
+                                    fontStyle: 'italic'
+                                }} {...props} />
+                            ),
+                            a: ({ node, ...props }) => <a style={{ color: 'var(--accent-cyan)' }} {...props} />
+                        }}>
+                            {guide.content}
+                        </Markdown>
+                    </div>
+                ) : guide.embedHtml && guide.embedHtml.includes('blockquote class="reddit-embed-bq"') ? (
                     <RedditEmbed embedHtml={guide.embedHtml} theme={theme} />
                 ) : (
                     <div dangerouslySetInnerHTML={{ __html: guide.embedHtml }} />
                 )}
 
-                <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center' }}>
-                    <a
-                        href={guide.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn-primary"
-                        style={{ fontSize: '0.9rem', textDecoration: 'none' }}
-                    >
-                        {getPlatformLabel()} ↗
-                    </a>
-                </div>
+                {guide.link && guide.link !== '#' && (
+                    <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center' }}>
+                        <a
+                            href={guide.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-primary"
+                            style={{ fontSize: '0.9rem', textDecoration: 'none' }}
+                        >
+                            {getPlatformLabel()} ↗
+                        </a>
+                    </div>
+                )}
             </div>
         </div>
     );
@@ -395,13 +421,15 @@ const Guides = () => {
             }}>
                 {filteredGuides.map(guide => {
                     const hasEmbed = !!guide.embedHtml;
+                    const hasContent = !!guide.content;
+                    const isInternal = hasEmbed || hasContent;
 
                     return (
                         <div
                             key={guide.id}
                             className="glass-panel"
                             onClick={() => {
-                                if (hasEmbed) {
+                                if (isInternal) {
                                     setSelectedGuide(guide);
                                 } else {
                                     window.open(guide.link, '_blank');
@@ -494,7 +522,7 @@ const Guides = () => {
                                     </span>
                                 </div>
 
-                                {hasEmbed ? (
+                                {isInternal ? (
                                     <button
                                         onClick={(e) => {
                                             e.stopPropagation();
@@ -515,7 +543,7 @@ const Guides = () => {
                                         onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'}
                                         onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
                                     >
-                                        Read Thread
+                                        {hasContent ? 'Read Guide' : 'Read Thread'}
                                     </button>
                                 ) : (
                                     <a
