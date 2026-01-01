@@ -19,6 +19,7 @@ import TopDeals from './components/TopDeals';
 import StatsBar from './components/StatsBar';
 import LoadingSpinner from './components/LoadingSpinner';
 import { featureFlags } from './config/featureFlags';
+import ErrorBoundary from './components/ErrorBoundary';
 
 // Lazy load route components for code splitting
 const VoucherDetail = lazy(() => import('./components/VoucherDetail'));
@@ -28,6 +29,8 @@ const CardGuide = lazy(() => import('./components/CardGuide'));
 const RewardsCalculator = lazy(() => import('./components/RewardsCalculator'));
 const PointsConverter = lazy(() => import('./components/PointsConverter'));
 const BankingGuides = lazy(() => import('./components/BankingGuides'));
+const BrowseBanking = lazy(() => import('./components/BrowseBanking'));
+const CompareBanking = lazy(() => import('./components/CompareBanking'));
 const AskAI = lazy(() => import('./components/AskAI'));
 const Favorites = lazy(() => import('./components/Favorites'));
 
@@ -39,7 +42,6 @@ const MyCards = lazy(() => import('./components/MyCards'));
 
 // Global floating components (non-lazy for immediate availability)
 import QuickCardPicker from './components/QuickCardPicker';
-import OnboardingTour from './components/OnboardingTour';
 
 const LoadingScreen = () => (
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', flexDirection: 'column', gap: '1rem' }}>
@@ -219,8 +221,9 @@ function Home({ data, onOpenShortcuts }) {
           <div className="category-section" style={{
             display: 'flex',
             flexDirection: 'column',
-            minHeight: 0, // Critical for flex scrolling
-            flex: 1
+            minHeight: '200px', // Ensure minimum visible height for categories
+            flex: 1,
+            overflow: 'visible'
           }}>
             <h3 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--nav-text)' }}>
               Filter By Category
@@ -229,8 +232,8 @@ function Home({ data, onOpenShortcuts }) {
               display: 'flex',
               flexDirection: 'column',
               flex: 1,
-              minHeight: 0,
-              overflow: 'hidden'
+              minHeight: '150px',
+              overflow: 'auto'
             }}>
               <CategoryFilter
                 selectedCategory={selectedCategory}
@@ -242,6 +245,7 @@ function Home({ data, onOpenShortcuts }) {
               />
             </div>
           </div>
+
         </div>
       </aside>
 
@@ -255,19 +259,7 @@ function Home({ data, onOpenShortcuts }) {
 
       {/* Main Content */}
       <main>
-        {/* Show Top Deals and Stats only when no filters active */}
-        {!searchTerm && !selectedPlatform && !selectedCategory && (
-          <>
-            {/* Show Top Deals and Stats only when no filters active */}
-            {!searchTerm && !selectedPlatform && !selectedCategory && (
-              <>
-                <StatsBar vouchers={data} platforms={ALL_PLATFORMS} />
-                <TopDeals vouchers={data} onVoucherClick={handleVoucherSelect} />
-              </>
-            )}
-          </>
-        )}
-
+        {/* Search Bar - Always visible at top */}
         <SearchBar
           value={inputValue}
           onChange={handleSearchChange}
@@ -276,11 +268,20 @@ function Home({ data, onOpenShortcuts }) {
           onOpenShortcuts={onOpenShortcuts}
         />
 
+        {/* Show Stats and Top Deals only when no filters active */}
+        {!searchTerm && !selectedPlatform && !selectedCategory && (
+          <>
+            <StatsBar vouchers={data} platforms={ALL_PLATFORMS} />
+            <TopDeals vouchers={data} onVoucherClick={handleVoucherSelect} />
+          </>
+        )}
+
         <VoucherGrid
           vouchers={filteredVouchers}
           onVoucherClick={handleVoucherSelect}
         />
       </main>
+
 
       {selectedVoucher && (
         <VoucherModal
@@ -354,57 +355,60 @@ function App() {
                 isShortcutsOpen={isShortcutsOpen}
                 setIsShortcutsOpen={setIsShortcutsOpen}
               >
-                <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '400px' }}><LoadingSpinner size="lg" text="Loading..." /></div>}>
-                  <Routes>
-                    <Route path="/" element={<Home data={vouchers} onOpenShortcuts={() => setIsShortcutsOpen(true)} />} />
-                    <Route path="/guides" element={<Guides />} />
-                    <Route
-                      path="/know-your-cards"
-                      element={
-                        <CreditCardComparison
-                          view="grid"
-                          selectedCards={selectedCards}
-                          toggleCardSelection={toggleCardSelection}
-                          clearSelection={() => setSelectedCards([])}
-                        />
-                      }
-                    />
-                    <Route
-                      path="/compare-cards"
-                      element={
-                        <CreditCardComparison
-                          view="table"
-                          selectedCards={selectedCards}
-                          toggleCardSelection={toggleCardSelection}
-                          clearSelection={() => setSelectedCards([])}
-                        />
-                      }
-                    />
-                    <Route path="/card-guide/:id" element={<CardGuide />} />
-                    {featureFlags.rewardsCalculator && (
-                      <Route path="/rewards-calculator" element={<RewardsCalculator />} />
-                    )}
-                    {featureFlags.pointsConverter && (
-                      <Route path="/points-converter" element={<PointsConverter />} />
-                    )}
-                    {featureFlags.bankingGuides && (
-                      <Route path="/banking-guides" element={<BankingGuides />} />
-                    )}
-                    <Route path="/voucher/:id" element={<VoucherDetail vouchers={vouchers} />} />
-                    {featureFlags.askAI && (
-                      <Route path="/ask-ai" element={<AskAI />} />
-                    )}
-                    <Route path="/favorites" element={<Favorites />} />
-                    {/* New UX Feature Routes */}
-                    <Route path="/spend-optimizer" element={<SpendOptimizer />} />
-                    <Route path="/milestones" element={<MilestoneTracker />} />
-                    <Route path="/savings" element={<SavingsDashboard />} />
-                    <Route path="/my-cards" element={<MyCards />} />
-                  </Routes>
-                </Suspense>
-                {/* Global floating components */}
-                <QuickCardPicker />
-                <OnboardingTour />
+                <ErrorBoundary>
+                  <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '400px' }}><LoadingSpinner size="lg" text="Loading..." /></div>}>
+                    <Routes>
+                      <Route path="/" element={<Home data={vouchers} onOpenShortcuts={() => setIsShortcutsOpen(true)} />} />
+                      <Route path="/guides" element={<Guides />} />
+                      <Route
+                        path="/know-your-cards"
+                        element={
+                          <CreditCardComparison
+                            view="grid"
+                            selectedCards={selectedCards}
+                            toggleCardSelection={toggleCardSelection}
+                            clearSelection={() => setSelectedCards([])}
+                          />
+                        }
+                      />
+                      <Route
+                        path="/compare-cards"
+                        element={
+                          <CreditCardComparison
+                            view="table"
+                            selectedCards={selectedCards}
+                            toggleCardSelection={toggleCardSelection}
+                            clearSelection={() => setSelectedCards([])}
+                          />
+                        }
+                      />
+                      <Route path="/card-guide/:id" element={<CardGuide />} />
+                      {featureFlags.rewardsCalculator && (
+                        <Route path="/rewards-calculator" element={<RewardsCalculator />} />
+                      )}
+                      {featureFlags.pointsConverter && (
+                        <Route path="/points-converter" element={<PointsConverter />} />
+                      )}
+                      {featureFlags.bankingGuides && (
+                        <Route path="/banking-guides" element={<BankingGuides />} />
+                      )}
+                      <Route path="/browse-banking" element={<BankingGuides />} />
+                      <Route path="/compare-banking" element={<CompareBanking />} />
+                      <Route path="/voucher/:id" element={<VoucherDetail vouchers={vouchers} />} />
+                      {featureFlags.askAI && (
+                        <Route path="/ask-ai" element={<AskAI />} />
+                      )}
+                      <Route path="/favorites" element={<Favorites />} />
+                      {/* New UX Feature Routes */}
+                      <Route path="/spend-optimizer" element={<SpendOptimizer />} />
+                      <Route path="/milestones" element={<MilestoneTracker />} />
+                      <Route path="/savings" element={<SavingsDashboard />} />
+                      <Route path="/my-cards" element={<MyCards />} />
+                    </Routes>
+                  </Suspense>
+                  {/* Global floating components */}
+                  <QuickCardPicker />
+                </ErrorBoundary>
               </Layout>
             </Router>
           </MyCardsProvider>

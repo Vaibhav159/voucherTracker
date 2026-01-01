@@ -48,6 +48,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
     const [forexFilter, setForexFilter] = useState('all');
     const [hasLounge, setHasLounge] = useState(false);
     const [networkFilter, setNetworkFilter] = useState('all');
+    const [selectedPreset, setSelectedPreset] = useState(null);
 
     // Simulate initial load for skeleton
     useEffect(() => {
@@ -75,6 +76,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
         }
 
         toggleCardSelection(cardId);
+        setSelectedPreset(null); // Clear preset when manually changing selection
 
         if (navigator.vibrate) {
             navigator.vibrate(isSelected ? 30 : [30, 50, 30]);
@@ -90,6 +92,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
         if (selectedCards.length === 0) return;
         const count = selectedCards.length;
         clearSelection();
+        setSelectedPreset(null);
         toast.info(`Cleared ${count} card${count !== 1 ? 's' : ''} from comparison`);
     }, [selectedCards, clearSelection, toast]);
 
@@ -222,6 +225,26 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                 const features = card.features?.join(' ').toLowerCase() || '';
                 return features.includes('lounge');
             }
+            if (activeFilter === 'Cashback') {
+                return card.rewardType === 'cashback' || card.category === 'Cashback';
+            }
+            if (activeFilter === 'Travel') {
+                if (card.category === 'Travel') return true;
+                const tags = card.tags?.map(t => t.toLowerCase()) || [];
+                return tags.includes('travel');
+            }
+            if (activeFilter === 'Premium') {
+                if (card.category === 'Premium') return true;
+                const tags = card.tags?.map(t => t.toLowerCase()) || [];
+                return tags.includes('premium') || tags.includes('super-premium') || tags.includes('invite only');
+            }
+            if (activeFilter === 'Dining') {
+                const tags = card.tags?.map(t => t.toLowerCase()) || [];
+                const features = card.features?.join(' ').toLowerCase() || '';
+                const bestFor = card.bestFor?.toLowerCase() || '';
+                return tags.includes('dining') || tags.includes('food delivery') ||
+                    features.includes('dining') || bestFor.includes('food') || bestFor.includes('dining');
+            }
             return card.category === activeFilter;
         });
     }, [searchTerm, activeBank, activeFilter, feeRange, forexFilter, hasLounge, networkFilter, creditCards]);
@@ -239,13 +262,20 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
             case 'name':
                 return cards.sort((a, b) => a.name.localeCompare(b.name));
             default:
+                // For "recommended" with an active category filter, prioritize exact category matches
+                if (activeFilter && activeFilter !== 'All' && activeFilter !== 'Lifetime Free' && activeFilter !== 'Low Forex' && activeFilter !== 'Lounge') {
+                    return cards.sort((a, b) => {
+                        const aExact = a.category === activeFilter ? 0 : 1;
+                        const bExact = b.category === activeFilter ? 0 : 1;
+                        return aExact - bExact;
+                    });
+                }
                 return cards;
         }
-    }, [filteredCards, sortBy]);
+    }, [filteredCards, sortBy, activeFilter]);
 
-    // Categories
-    const primaryFilters = ['All', 'Lifetime Free', 'Low Forex', 'Shopping', 'Travel', 'Fuel', 'Lounge'];
-    const secondaryFilters = ['Lifestyle', 'Dining', 'Premium', 'Business', 'Student'];
+    // Categories - only filters with actual implementation
+    const cardFilters = ['All', 'Lifetime Free', 'Low Forex', 'Cashback', 'Travel', 'Premium', 'Shopping', 'Dining', 'Fuel', 'Lounge'];
 
     const getTierColor = (tier) => {
         const colors = {
@@ -290,19 +320,51 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
     };
 
     // Handle preset comparison selection - find cards by name and select them
-    const handlePresetSelection = useCallback((cardNames) => {
-        // Find card IDs that match the card names (fuzzy match on name)
+    const handlePresetSelection = useCallback((cardNames, presetName) => {
+        // Find card IDs that match the card names with improved matching
         const matchedIds = [];
-        cardNames.forEach(name => {
-            const found = creditCards.find(card => {
-                const cardNameLower = card.name.toLowerCase();
-                const searchLower = name.toLowerCase();
-                // Match if the card name contains the search term or vice versa
-                return cardNameLower.includes(searchLower) || searchLower.includes(cardNameLower) ||
-                    // Also match partial words
-                    cardNameLower.split(' ').some(word => searchLower.includes(word) && word.length > 2) ||
-                    searchLower.split(' ').some(word => cardNameLower.includes(word) && word.length > 2);
-            });
+
+        cardNames.forEach(searchName => {
+            const searchLower = searchName.toLowerCase().trim();
+            const searchWords = searchLower.split(/\s+/).filter(word => word.length > 2);
+
+            // Try to find the best match using different strategies
+            let found = null;
+
+            // Strategy 1: Exact match
+            found = creditCards.find(card => card.name.toLowerCase() === searchLower);
+
+            // Strategy 2: Card name starts with search term
+            if (!found) {
+                found = creditCards.find(card => card.name.toLowerCase().startsWith(searchLower));
+            }
+
+            // Strategy 3: Card name contains the full search term
+            if (!found) {
+                found = creditCards.find(card => card.name.toLowerCase().includes(searchLower));
+            }
+
+            // Strategy 4: All significant search words appear in card name (in order)
+            if (!found && searchWords.length > 0) {
+                found = creditCards.find(card => {
+                    const cardNameLower = card.name.toLowerCase();
+                    // All words from searchName must be in the card name
+                    return searchWords.every(word => cardNameLower.includes(word));
+                });
+            }
+
+            // Strategy 5: Match by key identifying words (bank + card type)
+            if (!found && searchWords.length >= 2) {
+                found = creditCards.find(card => {
+                    const cardNameLower = card.name.toLowerCase();
+                    const cardWords = cardNameLower.split(/\s+/);
+                    // Check if at least 2 key words match and the first word matches
+                    const firstWordMatch = cardWords[0].includes(searchWords[0]) || searchWords[0].includes(cardWords[0]);
+                    const secondWordMatch = searchWords.length > 1 && cardWords.some(w => w.includes(searchWords[1]) || searchWords[1].includes(w));
+                    return firstWordMatch && secondWordMatch;
+                });
+            }
+
             if (found && !matchedIds.includes(found.id)) {
                 matchedIds.push(found.id);
             }
@@ -312,23 +374,26 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
             // Clear existing and select new ones
             clearSelection();
             matchedIds.forEach(id => toggleCardSelection(id));
+            setSelectedPreset(presetName || null);
             toast.success(`Selected ${matchedIds.length} cards for comparison`);
+            // Scroll to top to show comparison table
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
             toast.warning('Could not find matching cards');
         }
-    }, [clearSelection, toggleCardSelection, toast, creditCards]);
+    }, [clearSelection, toggleCardSelection, toast, creditCards, setSelectedPreset]);
 
     // Popular comparisons for empty state
     const popularComparisons = [
-        { name: '⛽ Fuel Savers', desc: 'Maximum savings on fuel purchases and surcharge waiver', cards: ['IndianOil RBL', 'BPCL SBI', 'IOC Axis'] },
-        { name: '🍽️ Dining Delights', desc: 'Best rewards on restaurants, food delivery, and dining', cards: ['HDFC Swiggy', 'IndusInd EazyDiner', 'HSBC Live+'] },
-        { name: '🎬 Entertainment Buffs', desc: 'Free movie tickets, BOGO offers, and entertainment perks', cards: ['PVR INOX Kotak', 'Axis MyZone', 'IndusInd Legend'] },
-        { name: '📱 UPI Champions', desc: 'Best rewards on UPI scan & pay transactions', cards: ['Tata Neu HDFC', 'Kiwi RuPay', 'Jupiter Edge'] },
-        { name: '💡 Utility Warriors', desc: 'Best cashback on electricity, broadband, and bill payments', cards: ['Airtel Axis', 'Axis Ace', 'PhonePe Ultimo'] },
-        { name: '🆓 Lifetime Free Stars', desc: 'Best value with zero annual fees forever', cards: ['Amazon ICICI', 'IDFC Millennia', 'Scapia Federal'] },
-        { name: '🌟 Beginners\' Best', desc: 'Perfect first credit cards for new users', cards: ['Axis Neo', 'SBI SimplyCLICK', 'OneCard'] },
-        { name: '🏨 Hotel Loyalists', desc: 'Best cards for hotel points, elite status, and stays', cards: ['Marriott HDFC', 'Axis Reserve', 'Regalia Gold'] },
-        { name: '✈️ Airline Miles', desc: 'Best for air miles accumulation and transfers', cards: ['Axis Atlas', 'Air India SBI', 'Amex Platinum'] },
+        { name: '⛽ Fuel Savers', desc: 'Maximum savings on fuel purchases and surcharge waiver', cards: ['IndianOil RBL Bank XTRA', 'BPCL SBI Card', 'IndianOil Axis Bank'] },
+        { name: '🍽️ Dining Delights', desc: 'Best rewards on restaurants, food delivery, and dining', cards: ['HDFC Swiggy Credit Card', 'IndusInd EazyDiner Credit Card', 'HSBC Live+ Credit Card'] },
+        { name: '🎬 Entertainment Buffs', desc: 'Free movie tickets, BOGO offers, and entertainment perks', cards: ['PVR INOX Kotak Credit Card', 'Axis MyZone Credit Card', 'IndusInd Legend Credit Card'] },
+        { name: '📱 UPI Champions', desc: 'Best rewards on UPI scan & pay transactions', cards: ['HDFC Tata Neu Infinity', 'Kiwi RuPay Credit Card', 'Jupiter Edge CSB'] },
+        { name: '💡 Utility Warriors', desc: 'Best cashback on electricity, broadband, and bill payments', cards: ['Axis Airtel Credit Card', 'Axis Bank Ace', 'PhonePe HDFC Ultimo'] },
+        { name: '🆓 Lifetime Free Stars', desc: 'Best value with zero annual fees forever', cards: ['Amazon Pay ICICI', 'IDFC First Select', 'Scapia Federal Credit Card'] },
+        { name: '🌟 Beginners\' Best', desc: 'Perfect first credit cards for new users', cards: ['Axis Neo Credit Card', 'SBI SimplyCLICK Credit Card', 'OneCard Credit Card'] },
+        { name: '🏨 Hotel Loyalists', desc: 'Best cards for hotel points, elite status, and stays', cards: ['Marriott Bonvoy HDFC', 'Axis Reserve', 'HDFC Regalia Gold'] },
+        { name: '✈️ Airline Miles', desc: 'Best for air miles accumulation and transfers', cards: ['Axis Atlas Credit Card', 'Air India SBI', 'Amex Platinum Travel'] },
     ];
 
     // Render Comparison Table
@@ -549,7 +614,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
             <div style={{ paddingTop: '1rem', paddingBottom: '4rem' }}>
                 <header style={{ marginBottom: '2.5rem', textAlign: 'center' }}>
                     <h2 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>
-                        Compare Credit Cards
+                        Browse Credit Cards
                     </h2>
                     <p style={{ color: 'var(--text-secondary)' }}>Loading cards...</p>
                 </header>
@@ -560,53 +625,145 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
 
     return (
         <div style={{ paddingTop: '1rem', paddingBottom: '4rem' }}>
-            {/* Header */}
+            {/* Header - Dynamic based on view */}
             <header style={{ marginBottom: '2.5rem', textAlign: 'center' }}>
                 <h2 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '0.5rem', fontStyle: 'italic' }}>
-                    Compare Credit Cards
+                    {view === 'grid' ? 'Browse Credit Cards' : 'Compare Credit Cards'}
                 </h2>
                 <p style={{ color: 'var(--text-secondary)' }}>
-                    Compare the features and benefits of your selected cards.
+                    {view === 'grid'
+                        ? `${creditCards.length} cards available • Click to compare`
+                        : `Comparing ${selectedCards.length} cards • Features and benefits`
+                    }
                 </p>
             </header>
+
 
             {/* Grid View */}
             {view === 'grid' && (
                 <>
-                    {/* Search and Filters */}
-                    <div className="glass-panel" style={{ padding: '1.5rem', marginBottom: '1.5rem' }}>
-                        {/* Search */}
-                        <div style={{ marginBottom: '1rem' }}>
-                            <input
-                                type="text"
-                                placeholder="Search cards by name, bank, or features..."
-                                value={searchTerm}
-                                onChange={(e) => setSearchTerm(e.target.value)}
-                                style={{
-                                    width: '100%',
-                                    padding: '12px 16px',
-                                    borderRadius: '12px',
-                                    border: '1px solid var(--glass-border)',
-                                    background: 'rgba(0,0,0,0.3)',
-                                    color: 'var(--text-primary)',
-                                    fontSize: '0.95rem',
-                                }}
-                            />
-                        </div>
+                    {/* Premium Filter Section - Liquid Glass */}
+                    <div style={{
+                        background: 'linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))',
+                        backdropFilter: 'blur(20px)',
+                        WebkitBackdropFilter: 'blur(20px)',
+                        borderRadius: '24px',
+                        padding: '28px 32px',
+                        marginBottom: '2.5rem',
+                        border: '1px solid rgba(255,255,255,0.18)',
+                        boxShadow: `
+                            0 8px 32px rgba(0,0,0,0.3),
+                            inset 0 1px 1px rgba(255,255,255,0.1),
+                            inset 0 -1px 1px rgba(0,0,0,0.1)
+                        `,
+                        position: 'relative',
+                        overflow: 'hidden',
+                    }}>
+                        {/* Glass Shine Effect */}
+                        <div style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            right: 0,
+                            height: '50%',
+                            background: 'linear-gradient(180deg, rgba(255,255,255,0.08) 0%, transparent 100%)',
+                            borderRadius: '24px 24px 0 0',
+                            pointerEvents: 'none',
+                        }} />
+                        {/* Accent Glow */}
+                        <div style={{
+                            position: 'absolute',
+                            top: '-50%',
+                            left: '-20%',
+                            width: '60%',
+                            height: '100%',
+                            background: 'radial-gradient(ellipse, rgba(6, 182, 212, 0.15) 0%, transparent 70%)',
+                            pointerEvents: 'none',
+                        }} />
+                        <div style={{
+                            position: 'absolute',
+                            bottom: '-50%',
+                            right: '-20%',
+                            width: '60%',
+                            height: '100%',
+                            background: 'radial-gradient(ellipse, rgba(139, 92, 246, 0.12) 0%, transparent 70%)',
+                            pointerEvents: 'none',
+                        }} />
+                        {/* Top Row - Search & Controls */}
+                        <div style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '16px',
+                            marginBottom: '24px',
+                            position: 'relative',
+                            zIndex: 1,
+                        }}>
+                            {/* Search Input - Glass Style */}
+                            <div style={{ flex: '1 1 300px', position: 'relative', minWidth: '200px' }}>
+                                <input
+                                    type="text"
+                                    placeholder="Search credit cards..."
+                                    value={searchTerm}
+                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                    style={{
+                                        width: '100%',
+                                        minWidth: '200px',
+                                        padding: '16px 20px',
+                                        paddingLeft: '52px',
+                                        borderRadius: '16px',
+                                        border: '1px solid rgba(255,255,255,0.15)',
+                                        background: 'rgba(255,255,255,0.05)',
+                                        backdropFilter: 'blur(10px)',
+                                        color: 'var(--text-primary)',
+                                        fontSize: '0.95rem',
+                                        outline: 'none',
+                                        transition: 'all 0.3s ease',
+                                        boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.1)',
+                                    }}
+                                    onFocus={(e) => {
+                                        e.target.style.borderColor = 'rgba(6, 182, 212, 0.6)';
+                                        e.target.style.boxShadow = '0 0 20px rgba(6, 182, 212, 0.2), inset 0 1px 2px rgba(0,0,0,0.1)';
+                                    }}
+                                    onBlur={(e) => {
+                                        e.target.style.borderColor = 'rgba(255,255,255,0.15)';
+                                        e.target.style.boxShadow = 'inset 0 1px 2px rgba(0,0,0,0.1)';
+                                    }}
+                                />
+                                <svg
+                                    style={{
+                                        position: 'absolute',
+                                        left: '18px',
+                                        top: '50%',
+                                        transform: 'translateY(-50%)',
+                                        width: '20px',
+                                        height: '20px',
+                                        opacity: 0.5,
+                                    }}
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                </svg>
+                            </div>
 
-                        {/* Bank + Sort Row */}
-                        <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
+                            {/* Bank Filter - Glass Style */}
                             <select
                                 value={activeBank}
                                 onChange={(e) => setActiveBank(e.target.value)}
                                 style={{
-                                    padding: '10px 14px',
-                                    borderRadius: '10px',
-                                    border: '1px solid var(--glass-border)',
-                                    background: 'rgba(0,0,0,0.3)',
+                                    padding: '16px 20px',
+                                    borderRadius: '16px',
+                                    border: '1px solid rgba(255,255,255,0.15)',
+                                    background: 'rgba(255,255,255,0.05)',
+                                    backdropFilter: 'blur(10px)',
                                     color: 'var(--text-primary)',
-                                    fontSize: '0.85rem',
+                                    fontSize: '0.9rem',
+                                    cursor: 'pointer',
+                                    outline: 'none',
                                     minWidth: '160px',
+                                    boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.1)',
+                                    transition: 'all 0.3s ease',
                                 }}
                             >
                                 {banks.map(bank => (
@@ -614,16 +771,23 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                                 ))}
                             </select>
 
+                            {/* Sort - Glass Style */}
                             <select
                                 value={sortBy}
                                 onChange={(e) => setSortBy(e.target.value)}
                                 style={{
-                                    padding: '10px 14px',
-                                    borderRadius: '10px',
-                                    border: '1px solid var(--glass-border)',
-                                    background: 'rgba(0,0,0,0.3)',
+                                    padding: '16px 20px',
+                                    borderRadius: '16px',
+                                    border: '1px solid rgba(255,255,255,0.15)',
+                                    background: 'rgba(255,255,255,0.05)',
+                                    backdropFilter: 'blur(10px)',
                                     color: 'var(--text-primary)',
-                                    fontSize: '0.85rem',
+                                    fontSize: '0.9rem',
+                                    cursor: 'pointer',
+                                    outline: 'none',
+                                    minWidth: '150px',
+                                    boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.1)',
+                                    transition: 'all 0.3s ease',
                                 }}
                             >
                                 <option value="recommended">Recommended</option>
@@ -634,65 +798,73 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                             </select>
                         </div>
 
-                        {/* Category Filters */}
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                            {primaryFilters.map(filter => (
-                                <button
-                                    key={filter}
-                                    onClick={() => setActiveFilter(filter)}
-                                    style={{
-                                        padding: '8px 14px',
-                                        borderRadius: '20px',
-                                        border: activeFilter === filter ? '1px solid var(--accent-purple)' : '1px solid var(--glass-border)',
-                                        background: activeFilter === filter ? 'rgba(139, 92, 246, 0.15)' : 'rgba(255,255,255,0.03)',
-                                        color: activeFilter === filter ? 'var(--accent-purple)' : 'var(--text-secondary)',
-                                        cursor: 'pointer',
-                                        fontSize: '0.85rem',
-                                        transition: 'all 0.2s ease',
-                                    }}
-                                >
-                                    {filter}
-                                </button>
-                            ))}
-
-                            {showAllCategories && secondaryFilters.map(filter => (
-                                <button
-                                    key={filter}
-                                    onClick={() => setActiveFilter(filter)}
-                                    style={{
-                                        padding: '8px 14px',
-                                        borderRadius: '20px',
-                                        border: activeFilter === filter ? '1px solid var(--accent-purple)' : '1px solid var(--glass-border)',
-                                        background: activeFilter === filter ? 'rgba(139, 92, 246, 0.15)' : 'rgba(255,255,255,0.03)',
-                                        color: activeFilter === filter ? 'var(--accent-purple)' : 'var(--text-secondary)',
-                                        cursor: 'pointer',
-                                        fontSize: '0.85rem',
-                                    }}
-                                >
-                                    {filter}
-                                </button>
-                            ))}
-
-                            <button
-                                onClick={() => setShowAllCategories(!showAllCategories)}
-                                style={{
-                                    padding: '8px 12px',
-                                    background: 'transparent',
-                                    border: 'none',
-                                    color: 'var(--accent-purple)',
-                                    cursor: 'pointer',
-                                    fontSize: '0.85rem',
-                                }}
-                            >
-                                {showAllCategories ? '− Less' : `+${secondaryFilters.length} more`}
-                            </button>
+                        {/* Category Filters - Glass Pills */}
+                        <div style={{
+                            display: 'flex',
+                            flexWrap: 'wrap',
+                            gap: '12px',
+                            position: 'relative',
+                            zIndex: 1,
+                        }}>
+                            {cardFilters.map(filter => {
+                                const isActive = activeFilter === filter;
+                                return (
+                                    <button
+                                        key={filter}
+                                        onClick={() => setActiveFilter(filter)}
+                                        style={{
+                                            padding: '12px 24px',
+                                            borderRadius: '50px',
+                                            border: isActive
+                                                ? '1px solid rgba(6, 182, 212, 0.5)'
+                                                : '1px solid rgba(255,255,255,0.12)',
+                                            background: isActive
+                                                ? 'linear-gradient(135deg, rgba(6, 182, 212, 0.3), rgba(139, 92, 246, 0.3))'
+                                                : 'rgba(255,255,255,0.04)',
+                                            backdropFilter: 'blur(8px)',
+                                            color: isActive ? '#fff' : 'rgba(255,255,255,0.6)',
+                                            cursor: 'pointer',
+                                            fontSize: '0.9rem',
+                                            fontWeight: isActive ? '600' : '500',
+                                            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                                            boxShadow: isActive
+                                                ? '0 4px 20px rgba(6, 182, 212, 0.25), inset 0 1px 1px rgba(255,255,255,0.1)'
+                                                : 'inset 0 1px 1px rgba(255,255,255,0.05)',
+                                            position: 'relative',
+                                            overflow: 'hidden',
+                                        }}
+                                        onMouseEnter={(e) => {
+                                            if (!isActive) {
+                                                e.target.style.background = 'rgba(255,255,255,0.08)';
+                                                e.target.style.borderColor = 'rgba(255,255,255,0.2)';
+                                                e.target.style.color = 'rgba(255,255,255,0.9)';
+                                                e.target.style.transform = 'translateY(-2px)';
+                                                e.target.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2), inset 0 1px 1px rgba(255,255,255,0.1)';
+                                            }
+                                        }}
+                                        onMouseLeave={(e) => {
+                                            if (!isActive) {
+                                                e.target.style.background = 'rgba(255,255,255,0.04)';
+                                                e.target.style.borderColor = 'rgba(255,255,255,0.12)';
+                                                e.target.style.color = 'rgba(255,255,255,0.6)';
+                                                e.target.style.transform = 'translateY(0)';
+                                                e.target.style.boxShadow = 'inset 0 1px 1px rgba(255,255,255,0.05)';
+                                            }
+                                        }}
+                                    >
+                                        {filter}
+                                    </button>
+                                );
+                            })}
                         </div>
                     </div>
+
 
                     {/* Cards Grid */}
                     <div style={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+                        gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 320px))',
+                        justifyContent: 'center',
                         gap: '1.5rem',
                         marginBottom: '3rem'
                     }}>
@@ -915,8 +1087,12 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                                 flexWrap: 'wrap',
                                 gap: '1rem'
                             }}>
-                                <h3 style={{ margin: 0, display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                    Comparison
+                                <h3 style={{ margin: 0, display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
+                                    {selectedPreset ? (
+                                        <span style={{ color: 'var(--accent-cyan)' }}>{selectedPreset}</span>
+                                    ) : (
+                                        'Comparison'
+                                    )}
                                     <span style={{
                                         background: 'linear-gradient(135deg, var(--accent-cyan), var(--accent-pink))',
                                         color: '#000',
@@ -964,6 +1140,34 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                                             📤 Share
                                         </button>
                                     )}
+
+                                    {/* Share to X (Twitter) */}
+                                    <button
+                                        onClick={() => {
+                                            const cardNames = selectedCards.map(id => getCardDetails(id)?.name).filter(Boolean).join(' vs ');
+                                            const cardIds = selectedCards.join(',');
+                                            const url = `${window.location.origin}${window.location.pathname}#/compare-cards?cards=${cardIds}`;
+                                            const text = `Check out my credit card comparison: ${cardNames} on Voucher Tracker! 💳`;
+                                            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+                                            toast.success('Opening X/Twitter...');
+                                        }}
+                                        style={{
+                                            padding: '8px 16px',
+                                            borderRadius: '10px',
+                                            border: '1px solid rgba(29, 161, 242, 0.4)',
+                                            background: 'rgba(29, 161, 242, 0.1)',
+                                            color: '#1DA1F2',
+                                            cursor: 'pointer',
+                                            fontSize: '0.85rem',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            gap: '6px',
+                                        }}
+                                        title="Share to X (Twitter)"
+                                    >
+                                        𝕏 Share
+                                    </button>
+
 
                                     <button
                                         onClick={handleClearSelection}
@@ -1014,7 +1218,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                                             borderRadius: '12px',
                                             transition: 'all 0.2s ease',
                                         }}
-                                        onClick={() => handlePresetSelection(comparison.cards)}
+                                        onClick={() => handlePresetSelection(comparison.cards, comparison.name)}
                                         onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
                                         onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
                                     >

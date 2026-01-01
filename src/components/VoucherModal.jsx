@@ -184,6 +184,43 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
 
                     {/* Action Buttons - Clean like production */}
                     <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                        {/* Share to X button */}
+                        <button
+                            onClick={() => {
+                                const url = `${window.location.origin}${window.location.pathname}#/?voucher=${voucher.id}`;
+                                const text = `Check out ${voucher.brand} voucher deals on Voucher Tracker! 🎫💰`;
+                                window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+                                toast.success('Opening X/Twitter...');
+                            }}
+                            style={{
+                                padding: '8px 14px',
+                                borderRadius: '8px',
+                                border: '1px solid rgba(255, 255, 255, 0.2)',
+                                background: 'linear-gradient(135deg, #000, #1a1a1a)',
+                                color: '#fff',
+                                cursor: 'pointer',
+                                fontSize: '0.85rem',
+                                fontWeight: '600',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '6px',
+                                transition: 'all 0.2s ease',
+                            }}
+                            onMouseEnter={(e) => {
+                                e.target.style.background = 'linear-gradient(135deg, #1a1a1a, #333)';
+                                e.target.style.transform = 'translateY(-1px)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.target.style.background = 'linear-gradient(135deg, #000, #1a1a1a)';
+                                e.target.style.transform = 'translateY(0)';
+                            }}
+                            title="Share to X (Twitter)"
+                        >
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                            Share
+                        </button>
                         {voucher.site && (
                             <a
                                 href={voucher.site}
@@ -204,6 +241,7 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                             ×
                         </button>
                     </div>
+
                 </div>
 
                 {/* Content - Directly show offers like production */}

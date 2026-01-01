@@ -21,7 +21,7 @@ const OVERSCAN = 5;
 
 const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
     const parentRef = useRef(null);
-    const [columns, setColumns] = useState(3);
+    const [columns, setColumns] = useState(2);
     const [containerWidth, setContainerWidth] = useState(0);
     const [isInitialLoad, setIsInitialLoad] = useState(true);
 
@@ -47,7 +47,7 @@ const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
             // Calculate how many cards can fit
             // Formula: (width + gap) / (cardWidth + gap) = number of cards
             const possibleCols = Math.floor((width + CARD_GAP) / (CARD_MIN_WIDTH + CARD_GAP));
-            const cols = Math.max(1, Math.min(possibleCols, 4)); // Max 4 columns
+            const cols = Math.max(1, Math.min(possibleCols, 2)); // Max 2 columns
             
             setColumns(cols);
         };
@@ -188,7 +188,6 @@ const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
                                     width: '100%',
                                     transform: `translateY(${virtualRow.start}px)`,
                                     display: 'grid',
-                                    // USE fr UNITS INSTEAD OF minmax TO PREVENT OVERFLOW
                                     gridTemplateColumns: `repeat(${columns}, 1fr)`,
                                     gap: `${CARD_GAP}px`,
                                     boxSizing: 'border-box',

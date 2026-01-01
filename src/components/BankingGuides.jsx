@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { familyBanking, wealthBanking, getBankNames } from '../data/bankingPrograms';
 import { useFavorites } from '../context/FavoritesContext';
 
@@ -123,6 +124,7 @@ const BankingCompareBar = ({ selectedTiers, onRemoveTier, onClearAll, onCompare 
 };
 
 const BankingGuides = () => {
+    const navigate = useNavigate();
     const [activeTab, setActiveTab] = useState('wealth');
     const [selectedBank, setSelectedBank] = useState('HDFC Bank');
     const [showEligibilityChecker, setShowEligibilityChecker] = useState(false);
@@ -133,7 +135,6 @@ const BankingGuides = () => {
 
     // Compare feature state
     const [selectedTiersForCompare, setSelectedTiersForCompare] = useState([]);
-    const [showCompareModal, setShowCompareModal] = useState(false);
 
     const bankNames = getBankNames();
 
@@ -408,17 +409,14 @@ const BankingGuides = () => {
                 selectedTiers={selectedTiersForCompare}
                 onRemoveTier={removeTierFromCompare}
                 onClearAll={clearAllCompare}
-                onCompare={() => setShowCompareModal(true)}
+                onCompare={() => {
+                    // Navigate to compare page with selected tier IDs
+                    const tierIds = selectedTiersForCompare
+                        .map(item => `${item.bank}-${item.tier.name}`)
+                        .join(',');
+                    navigate(`/compare-banking?tiers=${tierIds}`);
+                }}
             />
-
-            {/* Compare Modal */}
-            {showCompareModal && (
-                <BankingCompareModal
-                    selectedTiers={selectedTiersForCompare}
-                    onClose={() => setShowCompareModal(false)}
-                    onRemoveTier={removeTierFromCompare}
-                />
-            )}
         </div>
     );
 };
@@ -450,9 +448,37 @@ const WealthBankingContent = ({ bank, onToggleCompare, isTierSelected }) => {
                         className={`glass-panel tier-card animate-fade-in-up stagger-${Math.min(idx + 1, 5)}`}
                         style={{
                             padding: '1.5rem',
-                            borderTop: `3px solid ${getTierColor(idx, bankData.tiers.length)}`
+                            borderTop: `3px solid ${getTierColor(idx, bankData.tiers.length)}`,
+                            position: 'relative'
                         }}
                     >
+                        {/* Favorite Button - Top Right */}
+                        <button
+                            onClick={() => toggleFavoriteGuide(`${bank}::wealth::${tier.name}`)}
+                            style={{
+                                position: 'absolute',
+                                top: '12px',
+                                right: '12px',
+                                height: '32px',
+                                width: '32px',
+                                borderRadius: '50%',
+                                backgroundColor: isGuideFavorite(`${bank}::wealth::${tier.name}`)
+                                    ? 'rgba(236, 72, 153, 0.2)'
+                                    : 'rgba(0,0,0,0.4)',
+                                border: isGuideFavorite(`${bank}::wealth::${tier.name}`)
+                                    ? '1px solid rgba(236, 72, 153, 0.5)'
+                                    : 'none',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                cursor: 'pointer',
+                                fontSize: '14px',
+                                transition: 'all 0.2s ease'
+                            }}
+                            title={isGuideFavorite(`${bank}::wealth::${tier.name}`) ? 'Remove from favorites' : 'Add to favorites'}
+                        >
+                            {isGuideFavorite(`${bank}::wealth::${tier.name}`) ? '❤️' : '🤍'}
+                        </button>
                         {/* Tier Header */}
                         <div style={{ marginBottom: '1rem' }}>
                             <h4 style={{
@@ -554,15 +580,6 @@ const WealthBankingContent = ({ bank, onToggleCompare, isTierSelected }) => {
                                 {isTierSelected(bank, tier.name) ? '✓ Added to Compare' : '⚖️ Compare'}
                             </button>
                         </div>
-
-                        {/* Bookmark Button */}
-                        <button
-                            className={`bookmark-btn ${isGuideFavorite(`${bank}::wealth::${tier.name}`) ? 'active' : ''}`}
-                            onClick={() => toggleFavoriteGuide(`${bank}::wealth::${tier.name}`)}
-                            style={{ marginTop: '0.5rem', width: '100%', justifyContent: 'center' }}
-                        >
-                            {isGuideFavorite(`${bank}::wealth::${tier.name}`) ? '🔖 Bookmarked' : '🔖 Bookmark'}
-                        </button>
                     </div>
                 ))}
             </div>

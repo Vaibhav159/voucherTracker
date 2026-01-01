@@ -16,15 +16,14 @@ import ExpiryBadge from './ExpiryBadge';
 import RatingStars from './RatingStars';
 import { useReviews } from '../hooks/useReviews';
 import { useFavorites } from '../context/FavoritesContext';
-import { useToast } from './UXPolish'; // Import toast
 
 const VoucherCard = memo(({ voucher, onClick, index = 0 }) => {
     const platformNames = voucher.platforms.map(p => p.name);
     const { averageRating, reviewCount } = useReviews(voucher.id);
     const { toggleFavoriteVoucher, isVoucherFavorite } = useFavorites();
     const isFavorite = isVoucherFavorite(voucher.id);
-    const toast = useToast();
-    
+
+
     const [isHovered, setIsHovered] = useState(false);
     const [favoriteAnimating, setFavoriteAnimating] = useState(false);
 
@@ -46,21 +45,16 @@ const VoucherCard = memo(({ voucher, onClick, index = 0 }) => {
     const handleFavoriteClick = useCallback((e) => {
         e.stopPropagation();
         setFavoriteAnimating(true);
-        
+
         // Haptic feedback
         if (navigator.vibrate) {
             navigator.vibrate(isFavorite ? 30 : [30, 50, 30]);
         }
-        
-        toggleFavoriteVoucher(voucher.id);
-        
-        // Show toast
-        if (!isFavorite) {
-            toast.success(`${voucher.brand} added to favorites!`);
-        }
-        
+
+        toggleFavoriteVoucher(voucher.id, voucher.brand);
+
         setTimeout(() => setFavoriteAnimating(false), 400);
-    }, [isFavorite, toggleFavoriteVoucher, voucher.id, voucher.brand, toast]);
+    }, [isFavorite, toggleFavoriteVoucher, voucher.id, voucher.brand]);
 
     // Staggered animation delay (max 0.5s)
     const animationDelay = Math.min(index * 0.03, 0.5);
@@ -118,7 +112,7 @@ const VoucherCard = memo(({ voucher, onClick, index = 0 }) => {
                 }}>
                     {isFavorite ? '❤️' : '🤍'}
                 </span>
-                
+
                 {/* Burst effect */}
                 {favoriteAnimating && !isFavorite && (
                     <span style={{
@@ -163,8 +157,8 @@ const VoucherCard = memo(({ voucher, onClick, index = 0 }) => {
                         src={voucher.logo}
                         alt="" // Decorative, brand name is in text
                         loading="lazy"
-                        onError={(e) => { 
-                            e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(voucher.brand)}&background=random&color=fff&bold=true`; 
+                        onError={(e) => {
+                            e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(voucher.brand)}&background=random&color=fff&bold=true`;
                         }}
                     />
                 </div>

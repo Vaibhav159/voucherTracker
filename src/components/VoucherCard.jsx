@@ -44,14 +44,14 @@ const VoucherCard = ({ voucher, onClick, index = 0 }) => {
       <span
         onClick={(e) => {
           e.stopPropagation();
-          toggleFavoriteVoucher(voucher.id);
+          toggleFavoriteVoucher(voucher.id, voucher.brand);
         }}
         role="button"
         tabIndex={0}
         onKeyDown={(e) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.stopPropagation();
-            toggleFavoriteVoucher(voucher.id);
+            toggleFavoriteVoucher(voucher.id, voucher.brand);
           }
         }}
         title={isFavorite ? 'Remove from favorites' : 'Add to favorites'}

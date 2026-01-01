@@ -11,10 +11,10 @@ const StatsBar = ({ vouchers = [], platforms = [] }) => {
   const stats = useMemo(() => {
     // Count vouchers
     const voucherCount = vouchers.length;
-    
+
     // Count unique platforms
     const platformCount = platforms.length || 6;
-    
+
     // Find max discount
     let maxDiscount = 0;
     vouchers.forEach(v => {
@@ -37,118 +37,280 @@ const StatsBar = ({ vouchers = [], platforms = [] }) => {
   }, [vouchers, platforms]);
 
   return (
-    <div className="stats-bar-v2">
-      <div className="stat-item">
-        <span className="stat-icon">🎫</span>
-        <div className="stat-content">
-          <span className="stat-value">{stats.vouchers}+</span>
-          <span className="stat-label">VOUCHERS</span>
+    <div className="stats-bar-premium">
+      <div className="stats-bar-glow"></div>
+      <div className="stats-bar-content">
+        <div className="stat-item-premium">
+          <div className="stat-icon-wrapper voucher-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
+              <path d="M13 5v2" />
+              <path d="M13 17v2" />
+              <path d="M13 11v2" />
+            </svg>
+          </div>
+          <div className="stat-content-premium">
+            <span className="stat-value-premium">
+              {stats.vouchers}<span className="stat-plus">+</span>
+            </span>
+            <span className="stat-label-premium">Vouchers</span>
+          </div>
         </div>
-      </div>
 
-      <div className="stat-divider" />
-
-      <div className="stat-item">
-        <span className="stat-icon">📅</span>
-        <div className="stat-content">
-          <span className="stat-value">{stats.platforms}</span>
-          <span className="stat-label">PLATFORMS</span>
+        <div className="stat-divider-premium">
+          <div className="divider-line"></div>
+          <div className="divider-dot"></div>
+          <div className="divider-line"></div>
         </div>
-      </div>
 
-      <div className="stat-divider" />
-
-      <div className="stat-item">
-        <span className="stat-icon">💰</span>
-        <div className="stat-content">
-          <span className="stat-value">{stats.avgSavings}</span>
-          <span className="stat-label">AVG. MONTHLY SAVINGS</span>
+        <div className="stat-item-premium">
+          <div className="stat-icon-wrapper platform-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="3" y="3" width="7" height="7" rx="1" />
+              <rect x="14" y="3" width="7" height="7" rx="1" />
+              <rect x="14" y="14" width="7" height="7" rx="1" />
+              <rect x="3" y="14" width="7" height="7" rx="1" />
+            </svg>
+          </div>
+          <div className="stat-content-premium">
+            <span className="stat-value-premium">{stats.platforms}</span>
+            <span className="stat-label-premium">Platforms</span>
+          </div>
         </div>
-      </div>
 
-      <div className="stat-divider" />
-
-      <div className="stat-item">
-        <span className="stat-icon">⭐</span>
-        <div className="stat-content">
-          <span className="stat-value">100%</span>
-          <span className="stat-label">FREE TO USE</span>
-        </div>
       </div>
 
       <style>{`
-        .stats-bar-v2 {
+        .stats-bar-premium {
+          position: relative;
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 1.5rem;
-          padding: 1.25rem 2rem;
-          background: rgba(255, 255, 255, 0.03);
-          border: 1px solid var(--glass-border);
-          border-radius: 16px;
+          padding: 1.5rem 2.5rem;
+          background: linear-gradient(135deg, 
+            rgba(255, 255, 255, 0.03) 0%, 
+            rgba(255, 255, 255, 0.06) 50%,
+            rgba(255, 255, 255, 0.03) 100%
+          );
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 20px;
           margin-bottom: 2rem;
+          overflow: hidden;
+          box-shadow: 
+            0 4px 24px rgba(0, 0, 0, 0.15),
+            inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .stats-bar-glow {
+          position: absolute;
+          top: -50%;
+          left: -50%;
+          width: 200%;
+          height: 200%;
+          background: radial-gradient(
+            ellipse at center,
+            rgba(139, 92, 246, 0.08) 0%,
+            rgba(59, 130, 246, 0.05) 30%,
+            transparent 70%
+          );
+          animation: pulseGlow 8s ease-in-out infinite;
+          pointer-events: none;
+        }
+
+        @keyframes pulseGlow {
+          0%, 100% { opacity: 0.5; transform: scale(1); }
+          50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        .stats-bar-content {
+          position: relative;
+          z-index: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 2.5rem;
           flex-wrap: wrap;
         }
 
-        .stat-item {
+        .stat-item-premium {
           display: flex;
           align-items: center;
-          gap: 12px;
+          gap: 14px;
+          padding: 0.5rem;
+          transition: transform 0.3s ease;
         }
 
-        .stat-icon {
-          font-size: 1.5rem;
+        .stat-item-premium:hover {
+          transform: translateY(-2px);
         }
 
-        .stat-content {
+        .stat-icon-wrapper {
+          width: 48px;
+          height: 48px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 14px;
+          color: white;
+          position: relative;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-item-premium:hover .stat-icon-wrapper {
+          transform: scale(1.05);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .voucher-icon {
+          background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+          box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+
+        .platform-icon {
+          background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+          box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        }
+
+        .savings-icon {
+          background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+          box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .stat-content-premium {
           display: flex;
           flex-direction: column;
+          gap: 2px;
         }
 
-        .stat-value {
-          font-size: 1.25rem;
+        .stat-value-premium {
+          font-size: 1.5rem;
           font-weight: 700;
           color: var(--text-primary);
           line-height: 1.2;
+          letter-spacing: -0.02em;
+          display: flex;
+          align-items: baseline;
         }
 
-        .stat-label {
-          font-size: 0.65rem;
+        .stat-plus {
+          font-size: 1rem;
+          font-weight: 600;
+          color: rgba(255, 255, 255, 0.6);
+          margin-left: 1px;
+        }
+
+        .stat-label-premium {
+          font-size: 0.75rem;
           color: var(--text-secondary);
           text-transform: uppercase;
-          letter-spacing: 0.05em;
+          letter-spacing: 0.08em;
+          font-weight: 500;
         }
 
-        .stat-divider {
+        .stat-divider-premium {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 4px;
+          height: 50px;
+        }
+
+        .divider-line {
           width: 1px;
-          height: 40px;
-          background: var(--glass-border);
+          flex: 1;
+          background: linear-gradient(to bottom, 
+            transparent 0%, 
+            rgba(255, 255, 255, 0.15) 50%,
+            transparent 100%
+          );
+        }
+
+        .divider-dot {
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.2);
         }
 
         @media (max-width: 768px) {
-          .stats-bar-v2 {
-            padding: 1rem;
-            gap: 1rem;
+          .stats-bar-premium {
+            padding: 1.25rem 1.5rem;
+            border-radius: 16px;
           }
 
-          .stat-divider {
+          .stats-bar-content {
+            gap: 1.5rem;
+          }
+
+          .stat-divider-premium {
             display: none;
           }
 
-          .stat-item {
-            flex: 1 1 45%;
-            min-width: 130px;
+          .stat-item-premium {
+            flex: 0 0 auto;
           }
 
-          .stat-value {
-            font-size: 1.1rem;
+          .stat-icon-wrapper {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+          }
+
+          .stat-icon-wrapper svg {
+            width: 20px;
+            height: 20px;
+          }
+
+          .stat-value-premium {
+            font-size: 1.25rem;
+          }
+
+          .stat-label-premium {
+            font-size: 0.7rem;
           }
         }
 
         @media (max-width: 480px) {
-          .stat-item {
-            flex: 1 1 100%;
-            justify-content: center;
+          .stats-bar-premium {
+            padding: 1rem;
+          }
+
+          .stats-bar-content {
+            gap: 1rem;
+            justify-content: space-around;
+            width: 100%;
+          }
+
+          .stat-item-premium {
+            flex-direction: column;
+            text-align: center;
+            gap: 8px;
+          }
+
+          .stat-content-premium {
+            align-items: center;
+          }
+
+          .stat-icon-wrapper {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+          }
+
+          .stat-icon-wrapper svg {
+            width: 18px;
+            height: 18px;
+          }
+
+          .stat-value-premium {
+            font-size: 1.1rem;
+          }
+
+          .stat-label-premium {
+            font-size: 0.65rem;
           }
         }
       `}</style>

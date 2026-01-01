@@ -1,6 +1,6 @@
 export const PLATFORM_STYLES = {
     "iShop": {
-        logo: "https://www.icicibank.com/managed-assets/images/offer-zone/ishop-offers/iShop-Logo.png",
+        logo: "https://d35fe9hjas7aql.cloudfront.net/ishop1.0/prod/shared-ui/v1/assets/images/icons/logo.svg",
         bg: "transparent",
         padding: "0px"
     },
@@ -15,12 +15,12 @@ export const PLATFORM_STYLES = {
         padding: "0px"
     },
     "Maximize": {
-        logo: "https://www.maximize.money/assets/images/logo.png",
+        logo: "/maximize-logo.jpg",
         bg: "#22c55e",
         padding: "10px"
     },
     "Amazon": {
-        logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+        logo: "https://1000logos.net/wp-content/uploads/2016/10/Amazon-Logo.png",
         bg: "#232F3E",
         padding: "10px"
     },

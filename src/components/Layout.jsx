@@ -6,6 +6,7 @@ import { featureFlags } from '../config/featureFlags';
 import GlobalSearch from './GlobalSearch';
 import ShortcutsModal from './ShortcutsModal';
 import { useFavorites } from '../context/FavoritesContext';
+import OnboardingTour, { useShouldShowTour } from './OnboardingTour';
 
 const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortcutsOpen }) => {
   const location = useLocation();
@@ -13,6 +14,7 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
   const [activeDropdown, setActiveDropdown] = useState(null);
   const dropdownRef = useRef(null);
   const { totalFavorites } = useFavorites();
+  const [showTour, setShowTourComplete] = useShouldShowTour();
 
   const isActive = (path) => location.pathname === path;
   const isActiveGroup = (paths) => paths.some(p => location.pathname === p);
@@ -41,10 +43,14 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
     { path: '/my-cards', label: 'My Wallet', icon: '👛' },
   ];
 
+  const bankingLinks = [
+    { path: '/browse-banking', label: 'Browse Banking', icon: '🏦' },
+    { path: '/compare-banking', label: 'Compare Banking', icon: '⚖️' },
+  ];
+
   const toolsLinks = [
     featureFlags.rewardsCalculator && { path: '/rewards-calculator', label: 'Rewards Calculator', icon: '🧮' },
     featureFlags.pointsConverter && { path: '/points-converter', label: 'Points Value', icon: '💎' },
-    featureFlags.bankingGuides && { path: '/banking-guides', label: 'Banking Guides', icon: '🏦' },
     // Hidden for now - will implement later:
     // { path: '/spend-optimizer', label: 'Spend Optimizer', icon: '📊' },
     // { path: '/milestones', label: 'Milestones', icon: '🎯' },
@@ -54,6 +60,7 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
   const toggleDropdown = (name) => {
     setActiveDropdown(activeDropdown === name ? null : name);
   };
+
 
   // Dropdown Component
   const NavDropdown = ({ name, label, icon, links, isActiveCheck }) => {
@@ -107,6 +114,7 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
     <div className="app-layout">
       <GlobalSearch />
       <ShortcutsModal isOpen={isShortcutsOpen} onClose={() => setIsShortcutsOpen(false)} />
+      {showTour && <OnboardingTour onComplete={setShowTourComplete} />}
 
       <header className="app-header">
         <div className="header-container">
@@ -145,6 +153,14 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
               isActiveCheck={() => isActiveGroup(['/know-your-cards', '/compare-cards', '/my-cards'])}
             />
 
+            <NavDropdown
+              name="banking"
+              label="Banking"
+              icon="🏦"
+              links={bankingLinks}
+              isActiveCheck={() => isActiveGroup(['/browse-banking', '/compare-banking'])}
+            />
+
             {featureFlags.askAI && (
               <Link
                 to="/ask-ai"
@@ -154,6 +170,7 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
                 <span>Ask AI</span>
               </Link>
             )}
+
 
             <NavDropdown
               name="tools"
@@ -267,6 +284,20 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
           </div>
 
           <div className="mobile-nav-section">
+            <span className="mobile-section-label">Banking</span>
+            {bankingLinks.map(link => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`mobile-nav-link ${isActive(link.path) ? 'active' : ''}`}
+              >
+                <span className="mobile-nav-icon">{link.icon}</span>
+                <span>{link.label}</span>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mobile-nav-section">
             <span className="mobile-section-label">Tools</span>
             {toolsLinks.map(link => (
               <Link
@@ -279,6 +310,7 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
               </Link>
             ))}
           </div>
+
 
           <div className="mobile-nav-section">
             <span className="mobile-section-label">More</span>
