@@ -1,5 +1,6 @@
 import { useState, useMemo, useCallback } from 'react';
-import { CALCULATOR_CARDS, SPENDING_PRESETS, SPENDING_CATEGORIES, BANKS } from '../data/calculatorCards';
+import { creditCards } from '../data/creditCards';
+import { SPENDING_PRESETS, SPENDING_CATEGORIES, BANKS } from '../data/calculatorConfig';
 
 const parseAnnualFee = (feeString) => {
     if (!feeString || feeString.toLowerCase().includes('free')) return 0;
@@ -41,63 +42,84 @@ const RewardsCalculator = () => {
     const totalMonthlySpend = useMemo(() => Object.values(spending).reduce((a, b) => a + b, 0), [spending]);
 
     const cardRewards = useMemo(() => {
-        return CALCULATOR_CARDS.map(card => {
+        // Filter only cards that have calculator data (nested in rewards.calculator)
+        const activeCards = creditCards.filter(c => c.rewards?.calculator);
+
+        return activeCards.map(card => {
+            const calc = card.rewards.calculator;
+            const rewardType = card.rewards?.type || 'points';
+            const annualFee = card.fees?.annual || 0;
+            const annualFeeStr = annualFee === 0 ? 'Lifetime Free' : `₹${annualFee.toLocaleString('en-IN')}`;
+
             let monthlyRewards = 0;
             let rewardBreakdown = [];
             let cappedAmount = null;
 
-            if (card.specialLogic === 'onecard') {
+            if (calc.specialLogic === 'onecard') {
                 const sorted = [spending.online, spending.dining, spending.fuel, spending.groceries, spending.travel, spending.utilities].sort((a, b) => b - a);
                 const topTwoTotal = sorted[0] + sorted[1];
                 monthlyRewards = (topTwoTotal * 0.01) + ((totalMonthlySpend - topTwoTotal) * 0.002);
                 rewardBreakdown.push('1% top 2 cats', '0.2% rest');
-            } else if (card.id === 'amazon-pay-icici') {
-                monthlyRewards = (spending.online * 0.05) + ((totalMonthlySpend - spending.online) * 0.01);
-                rewardBreakdown.push('5% Amazon Prime', '1% all else');
-            } else if (card.id === 'hdfc-swiggy') {
-                monthlyRewards = Math.min(spending.dining * 0.10, 1500) + Math.min(spending.online * 0.05, 1500) + Math.min((totalMonthlySpend - spending.dining - spending.online) * 0.01, 500);
-                rewardBreakdown.push('10% Swiggy', '5% online');
-                cappedAmount = 3500;
-            } else if (card.id === 'axis-ace') {
-                const utilReward = Math.min(spending.utilities * 0.05, 500);
-                const dineReward = Math.min(spending.dining * 0.04, 500 - utilReward);
-                monthlyRewards = utilReward + dineReward + ((totalMonthlySpend - spending.utilities - spending.dining) * 0.015);
-                rewardBreakdown.push('5% GPay bills', '4% food apps', '1.5% rest');
-            } else if (card.id === 'axis-airtel') {
-                monthlyRewards = Math.min(spending.utilities * 0.25, 500) + ((totalMonthlySpend - spending.utilities) * 0.01);
-                rewardBreakdown.push('25% Airtel');
-            } else if (card.id === 'scapia-federal') {
-                monthlyRewards = (spending.travel * 0.04) + ((totalMonthlySpend - spending.travel) * 0.02);
-                rewardBreakdown.push('4% Scapia travel', '2% rest');
             } else {
-                let catRewards = 0, catSpend = 0;
-                Object.entries(card.categories).forEach(([cat, det]) => {
-                    const sp = spending[cat] || 0;
-                    if (sp > 0) {
-                        let rw = sp * det.rate;
-                        if (det.cap) rw = Math.min(rw, det.cap);
-                        catRewards += rw;
-                        catSpend += sp;
-                        rewardBreakdown.push(det.label);
-                    }
-                });
-                monthlyRewards = catRewards + ((totalMonthlySpend - catSpend) * card.baseRate);
-                if (Object.keys(card.categories).length === 0) rewardBreakdown.push(`${(card.baseRate * 100).toFixed(1)}% base`);
+                let catRewards = 0;
+                let catSpend = 0;
+
+                // Calculate category-specific rewards
+                if (calc.categories) {
+                    Object.entries(calc.categories).forEach(([catKey, det]) => {
+                        const sp = spending[catKey] || 0;
+                        if (sp > 0) {
+                            let rw = sp * det.rate;
+                            if (det.cap) {
+                                rw = Math.min(rw, det.cap);
+                            }
+                            catRewards += rw;
+                            catSpend += sp;
+                            // Only add to breakdown if significant
+                            if (rw > 0) rewardBreakdown.push(det.label || `${det.rate * 100}% ${catKey}`);
+                        }
+                    });
+                }
+
+                // Base rewards on remaining spend (use card's baseRate or calc's baseRate)
+                const baseRate = calc.baseRate || card.rewards?.baseRate || 0;
+                const remainingSpend = Math.max(0, totalMonthlySpend - catSpend);
+                const baseReward = remainingSpend * baseRate;
+
+                monthlyRewards = catRewards + baseReward;
+
+                if (Object.keys(calc.categories || {}).length === 0 && baseRate) {
+                    rewardBreakdown.push(`${(baseRate * 100).toFixed(1)}% base`);
+                }
             }
 
-            if (card.monthlyCap && monthlyRewards > card.monthlyCap) {
-                monthlyRewards = card.monthlyCap;
-                cappedAmount = card.monthlyCap;
+            // Apply overall monthly cap if exists
+            if (calc.monthlyCap && monthlyRewards > calc.monthlyCap) {
+                monthlyRewards = calc.monthlyCap;
+                cappedAmount = calc.monthlyCap;
             }
 
             const annualRewards = monthlyRewards * 12;
-            const annualFeeAmount = parseAnnualFee(card.annualFee);
-            const netAnnualValue = annualRewards - annualFeeAmount;
+            const netAnnualValue = annualRewards - annualFee;
             const effectiveRate = totalMonthlySpend > 0 ? ((monthlyRewards / totalMonthlySpend) * 100).toFixed(2) : '0.00';
 
-            return { ...card, monthlyRewards: Math.round(monthlyRewards), annualRewards: Math.round(annualRewards), annualFeeAmount, netAnnualValue: Math.round(netAnnualValue), effectiveRate, rewardBreakdown, cappedAmount, isCapped: cappedAmount !== null };
+            return {
+                ...card,
+                ...calc, // Spread calculator props like feeWaiver, highlight, tier
+                rewardType,
+                annualFee: annualFeeStr,
+                annualFeeAmount: annualFee,
+                monthlyRewards: Math.round(monthlyRewards),
+                annualRewards: Math.round(annualRewards),
+                netAnnualValue: Math.round(netAnnualValue),
+                effectiveRate,
+                rewardBreakdown,
+                cappedAmount,
+                isCapped: cappedAmount !== null
+            };
         }).sort((a, b) => b.netAnnualValue - a.netAnnualValue);
     }, [spending, totalMonthlySpend]);
+
 
     const filteredCards = useMemo(() => {
         return cardRewards.filter(card => {
@@ -115,7 +137,7 @@ const RewardsCalculator = () => {
         <div style={{ minHeight: '100vh', padding: '2rem 1rem 4rem' }}>
             <header style={{ textAlign: 'center', marginBottom: '2rem', maxWidth: '700px', margin: '0 auto 2rem' }}>
                 <h1 className="text-gradient" style={{ fontSize: 'clamp(1.8rem, 5vw, 2.5rem)', fontWeight: '800', marginBottom: '0.5rem' }}>Credit Card Rewards Calculator</h1>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>Compare <strong style={{ color: '#22c55e' }}>{CALCULATOR_CARDS.length} cards</strong> across <strong style={{ color: '#06b6d4' }}>{BANKS.length - 1} banks</strong></p>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>Compare <strong style={{ color: '#22c55e' }}>{cardRewards.length} cards</strong> across <strong style={{ color: '#06b6d4' }}>{BANKS.length - 1} banks</strong></p>
             </header>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'minmax(280px, 380px) 1fr', gap: '2rem', maxWidth: '1400px', margin: '0 auto' }} className="calc-grid">
@@ -203,9 +225,23 @@ const RewardsCalculator = () => {
                                         <div><div style={{ fontSize: '0.65rem', color: 'var(--text-secondary)' }}>Monthly</div><div style={{ fontSize: '0.9rem', fontWeight: '600', color: '#06b6d4' }}>₹{card.monthlyRewards.toLocaleString('en-IN')}</div></div>
                                         <div><div style={{ fontSize: '0.65rem', color: 'var(--text-secondary)' }}>Annual</div><div style={{ fontSize: '0.9rem', fontWeight: '600', color: '#22c55e' }}>₹{card.annualRewards.toLocaleString('en-IN')}</div></div>
                                         <div><div style={{ fontSize: '0.65rem', color: 'var(--text-secondary)' }}>Fee</div><div style={{ fontSize: '0.9rem', fontWeight: '600', color: card.annualFeeAmount > 0 ? '#f87171' : '#22c55e' }}>{card.annualFeeAmount > 0 ? `−₹${card.annualFeeAmount.toLocaleString('en-IN')}` : 'Free'}</div></div>
-                                        <div><div style={{ fontSize: '0.65rem', color: 'var(--text-secondary)' }}>Tier</div><div style={{ fontSize: '0.8rem', fontWeight: '500', color: card.tier === 'super-premium' ? '#fbbf24' : card.tier === 'premium' ? '#8b5cf6' : card.tier === 'co-branded' ? '#06b6d4' : 'var(--text-secondary)', textTransform: 'capitalize' }}>{card.tier.replace('-', ' ')}</div></div>
+                                        <div><div style={{ fontSize: '0.65rem', color: 'var(--text-secondary)' }}>Tier</div><div style={{ fontSize: '0.8rem', fontWeight: '500', color: card.tier === 'super-premium' ? '#fbbf24' : card.tier === 'premium' ? '#8b5cf6' : card.tier === 'co-branded' ? '#06b6d4' : 'var(--text-secondary)', textTransform: 'capitalize' }}>{(card.tier || 'Standard').replace('-', ' ')}</div></div>
                                         {card.feeWaiver && <div style={{ gridColumn: '1/-1' }}><div style={{ fontSize: '0.65rem', color: 'var(--text-secondary)' }}>Fee Waiver</div><div style={{ fontSize: '0.8rem', color: '#22c55e' }}>{card.feeWaiver}</div></div>}
                                         <div style={{ gridColumn: '1/-1' }}><div style={{ fontSize: '0.65rem', color: 'var(--text-secondary)' }}>Highlights</div><div style={{ fontSize: '0.8rem', color: 'var(--text-primary)' }}>{card.highlight}</div></div>
+
+                                        {card.portals && (
+                                            <div style={{ gridColumn: '1/-1', marginTop: '0.5rem', background: 'rgba(139, 92, 246, 0.1)', padding: '0.75rem', borderRadius: '8px', border: '1px dashed rgba(139, 92, 246, 0.4)' }}>
+                                                <div style={{ fontSize: '0.7rem', color: '#a78bfa', fontWeight: 'bold', marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.5px' }}>🚀 Portal Multipliers</div>
+                                                <div style={{ display: 'grid', gap: '0.4rem' }}>
+                                                    {card.portals.map((p, pIdx) => (
+                                                        <div key={pIdx} style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem' }}>
+                                                            <span style={{ color: 'var(--text-primary)' }}>{p.name}</span>
+                                                            <span style={{ fontWeight: '600', color: '#22c55e' }}>{p.label}</span>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        )}
                                     </div>
                                 )}
                             </div>

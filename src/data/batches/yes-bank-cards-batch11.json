@@ -1,0 +1,449 @@
+[
+  {
+    "id": "yes-bank-marquee",
+    "name": "Yes Bank Marquee Credit Card",
+    "bank": "Yes Bank",
+    "image": "/assets/cards/yes-bank-marquee.png",
+    "link": "https://www.yesbank.in/personal-banking/yes-individual/cards/credit-cards/marquee-credit-card",
+    "fees": {
+      "joining": 9999,
+      "annual": 4999,
+      "currency": "INR",
+      "waivedOn": 1000000,
+      "waiverText": "Annual fee waived on ₹10 Lakh annual spend"
+    },
+    "eligibility": {
+      "income": 3600000,
+      "age": { "min": 21, "max": 60 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "YES Rewardz Points",
+      "baseRate": 0.0225,
+      "earningText": "18 RP per ₹200 offline (2.25%); 36 RP per ₹200 online (4.5%)",
+      "expiry": "36 months from date of earning",
+      "joiningBonus": "40,000 YES Rewardz Points (worth ₹10,000) on paying joining fee + ETPrime subscription worth ₹3,199",
+      "exclusions": "Rental, Wallet, Fuel, Government, Marketing/Advertising, Post-purchase EMI, Instant EMI",
+      "calculator": {
+        "tier": "super-premium",
+        "monthlyCap": 100000,
+        "capResetPeriod": "statement",
+        "specialLogic": "Online spends capped at 100,000 RP/statement (~₹5.5L spend). 10 RP/₹200 on select categories (utilities, insurance, recharge). Redemption capped at 70% of cart value for flights/hotels.",
+        "categories": {
+          "travel": { "rate": 0.045, "label": "4.5% online / 2.25% offline", "cap": null },
+          "dining": { "rate": 0.045, "label": "4.5% online / 2.25% offline", "cap": null },
+          "online": { "rate": 0.045, "label": "36 RP/₹200 online shopping", "cap": 25000 },
+          "fuel": { "rate": 0, "label": "No rewards on fuel", "cap": 0 },
+          "groceries": { "rate": 0.045, "label": "4.5% online / 2.25% offline", "cap": null },
+          "utilities": { "rate": 0.0125, "label": "10 RP/₹200 on select categories", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Flight/Hotel bookings via YES Rewardz portal at ₹0.25/point",
+        "options": [
+          { "type": "Flight/Hotel Booking", "value": 0.25, "desc": "1 RP = ₹0.25 (Max 3L points/month, 70% redemption limit)", "recommended": true },
+          { "type": "Club Vistara Points", "value": 0.25, "desc": "10 RP = 1 CV Point", "recommended": true },
+          { "type": "InterMiles", "value": 0.25, "desc": "10 RP = 1 InterMile", "recommended": false },
+          { "type": "Gift Vouchers (Swiggy)", "value": 0.25, "desc": "1 RP = ₹0.25", "recommended": true },
+          { "type": "Gift Vouchers (Amazon/Flipkart)", "value": 0.10, "desc": "1 RP = ₹0.10 (devalued)", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "6 per quarter (Primary + Add-on). Requires ₹1 Lakh quarterly spend from April 2025",
+        "international": "Unlimited for Primary + Add-on. 4 guest visits/year",
+        "accessType": "Direct card swipe (no Priority Pass needed)"
+      },
+      "milestones": [
+        { "spend": 0, "benefit": "40,000 RP + ETPrime subscription on joining fee payment" },
+        { "spend": 1000000, "benefit": "Annual fee waiver" },
+        { "spend": 0, "benefit": "20,000 RP on renewal fee payment" }
+      ],
+      "golf": { "included": true, "text": "4 green fee waivers + 12 complimentary lessons (1/month) at select courses" },
+      "movies": { "included": true, "text": "BOGO on BookMyShow, max ₹800/ticket, 3 free tickets/month" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 1000 },
+      "forex": { "markup": 0.01, "text": "1% markup - One of the lowest in India" }
+    },
+    "metadata": {
+      "tags": ["Super Premium", "Low Forex", "Unlimited Lounge", "High Rewards", "Travel", "Online Shopping"],
+      "bestFor": "High spenders seeking premium travel benefits with 4.5% returns on online spends and lowest forex markup",
+      "rating": 4.5,
+      "verdict": "Best-in-class for online shopping rewards with 4.5% return, unlimited international lounge access, and 1% forex markup. Ideal for international travelers and heavy online spenders.",
+      "pros": [
+        "Industry-leading 4.5% reward rate on online spends",
+        "Lowest forex markup at 1%",
+        "Unlimited international lounge access for primary + add-on",
+        "40,000 RP welcome bonus covers joining fee",
+        "BOGO movie tickets up to ₹800/ticket"
+      ],
+      "cons": [
+        "₹1 Lakh quarterly spend required for domestic lounge access from April 2025",
+        "Limited miles transfer partners (only Club Vistara & InterMiles)",
+        "70% redemption cap on flight/hotel bookings",
+        "Gift voucher redemption value devalued to ₹0.10-0.15/point"
+      ]
+    }
+  },
+  {
+    "id": "yes-bank-reserv",
+    "name": "Yes Bank RESERV Credit Card",
+    "bank": "Yes Bank",
+    "image": "/assets/cards/yes-bank-reserv.png",
+    "link": "https://www.yesbank.in/personal-banking/yes-individual/cards/credit-cards/reserv-credit-card",
+    "fees": {
+      "joining": 2499,
+      "annual": 2499,
+      "currency": "INR",
+      "waivedOn": 300000,
+      "waiverText": "Joining fee waived on ₹40,000 spend in 30 days. Annual fee waived on ₹3 Lakh annual spend"
+    },
+    "eligibility": {
+      "income": 2400000,
+      "age": { "min": 21, "max": 60 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "YES Rewardz Points",
+      "baseRate": 0.015,
+      "earningText": "24 RP per ₹200 online (3%); 12 RP per ₹200 offline (1.5%); 6 RP per ₹200 select categories",
+      "expiry": "36 months from date of earning",
+      "joiningBonus": "None",
+      "exclusions": "Rental, Wallet, Fuel, Government, Marketing/Advertising, Cash withdrawals, Post-purchase EMI",
+      "calculator": {
+        "tier": "premium",
+        "monthlyCap": 36000,
+        "capResetPeriod": "statement",
+        "specialLogic": "36,000 RP cap per statement. Paid subscription plans available: 2X Plan (₹3,500/yr) or 3X Plan (₹5,000/yr) for accelerated rewards up to 6% on online. Redemption capped at 70% of cart value.",
+        "categories": {
+          "travel": { "rate": 0.03, "label": "3% online / 1.5% offline", "cap": null },
+          "dining": { "rate": 0.03, "label": "3% online / 1.5% offline", "cap": null },
+          "online": { "rate": 0.03, "label": "24 RP/₹200 online shopping", "cap": 9000 },
+          "fuel": { "rate": 0, "label": "No rewards on fuel", "cap": 0 },
+          "groceries": { "rate": 0.03, "label": "3% online / 1.5% offline", "cap": null },
+          "utilities": { "rate": 0.0075, "label": "6 RP/₹200 on select categories", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Flight/Hotel bookings via YES Rewardz portal at ₹0.25/point",
+        "options": [
+          { "type": "Flight/Hotel Booking", "value": 0.25, "desc": "1 RP = ₹0.25 (70% redemption limit)", "recommended": true },
+          { "type": "Club Vistara Points", "value": 0.25, "desc": "10 RP = 1 CV Point", "recommended": true },
+          { "type": "InterMiles", "value": 0.25, "desc": "10 RP = 1 InterMile", "recommended": false },
+          { "type": "Gift Vouchers", "value": 0.15, "desc": "1 RP = ₹0.15 (devalued)", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "3 per quarter. Requires ₹1 Lakh quarterly spend from April 2025",
+        "international": "6 per year via Priority Pass",
+        "accessType": "Priority Pass for international"
+      },
+      "milestones": [
+        { "spend": 40000, "benefit": "Joining fee waiver (within 30 days)" },
+        { "spend": 300000, "benefit": "Annual fee waiver" },
+        { "spend": 0, "benefit": "8,000 RP on renewal fee payment" }
+      ],
+      "golf": { "included": true, "text": "4 green fee waivers + 1 complimentary lesson per year" },
+      "movies": { "included": true, "text": "25% off up to ₹250/month on BookMyShow" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 1000 },
+      "forex": { "markup": 0.0175, "text": "1.75% markup - Lower than industry average" }
+    },
+    "metadata": {
+      "tags": ["Premium", "Online Shopping", "Low Forex", "Travel", "Subscription Plans"],
+      "bestFor": "Online shoppers seeking 3% returns with achievable fee waiver and low forex markup",
+      "rating": 4.0,
+      "verdict": "Solid mid-premium card with 3% online rewards, achievable ₹3L fee waiver, and decent travel benefits. Subscription plans can boost rewards up to 6%.",
+      "pros": [
+        "3% reward rate on online spends (up to 6% with subscription)",
+        "Low forex markup at 1.75%",
+        "Achievable ₹3 Lakh fee waiver threshold",
+        "Rewards on utilities, insurance, education (usually excluded)",
+        "Purchase protection for online electronics"
+      ],
+      "cons": [
+        "Poor redemption ratio (4:1) reduces effective value",
+        "₹1 Lakh quarterly spend required for lounge access from April 2025",
+        "No welcome bonus on joining",
+        "Limited international lounge access (6/year only)",
+        "Subscription plans add extra cost for best rewards"
+      ]
+    }
+  },
+  {
+    "id": "yes-bank-byoc",
+    "name": "Yes Bank BYOC (Build Your Own Card)",
+    "bank": "Yes Bank",
+    "image": "/assets/cards/yes-bank-byoc.png",
+    "link": "https://www.yesbank.in/personal-banking/yes-individual/cards/credit-cards/byoc-credit-card",
+    "fees": {
+      "joining": 249,
+      "annual": 588,
+      "currency": "INR",
+      "waivedOn": null,
+      "waiverText": "Card fee: ₹249 Eco-friendly / ₹3,499 Metal (one-time). Monthly fee: ₹49+GST (Rewards) or ₹99+GST (Cashback). Optional subscription: Silver ₹99, Gold ₹149, Platinum ₹249/month for 10% merchant cashback"
+    },
+    "eligibility": {
+      "income": 300000,
+      "age": { "min": 21, "max": 60 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "cashback",
+      "name": "Cashback or YES Rewardz Points",
+      "baseRate": 0.01,
+      "earningText": "Choose: 1% unlimited cashback OR 8 RP/₹200 (1%). Plus 10% cashback on selected merchants with subscription plans.",
+      "expiry": "Never expires (Reward Points: 36 months)",
+      "joiningBonus": "₹500 Amazon voucher on spending ₹1,000 within first 30 days",
+      "exclusions": "Rental, Wallet, Utility, Fuel, Cash withdrawals, Post-purchase EMI, Instant EMI",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": 1000,
+        "capResetPeriod": "statement",
+        "specialLogic": "Customizable card - choose Cashback or Rewards variant. Subscription plans (Silver/Gold/Platinum) offer 10% cashback on selected merchants (Swiggy, BookMyShow, PharmEasy, Uber, BigBasket) capped at ₹100/merchant/month. Utility rewards capped at 600 RP/statement.",
+        "categories": {
+          "travel": { "rate": 0.01, "label": "1% cashback / 8 RP per ₹200", "cap": null },
+          "dining": { "rate": 0.10, "label": "10% on Swiggy with subscription", "cap": 100 },
+          "online": { "rate": 0.10, "label": "10% on BigBasket, BookMyShow with subscription", "cap": 100 },
+          "fuel": { "rate": 0, "label": "No rewards on fuel", "cap": 0 },
+          "groceries": { "rate": 0.10, "label": "10% on BigBasket with subscription", "cap": 100 },
+          "utilities": { "rate": 0.01, "label": "1% / 600 RP cap per statement", "cap": 150 }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Cashback variant gives direct 1% cashback. Rewards variant: redeem for flights/vouchers",
+        "options": [
+          { "type": "Direct Cashback", "value": 1.00, "desc": "1% cashback (Cashback variant)", "recommended": true },
+          { "type": "Flight/Hotel Booking", "value": 0.25, "desc": "1 RP = ₹0.25 (Rewards variant)", "recommended": true },
+          { "type": "Gift Vouchers", "value": 0.15, "desc": "1 RP = ₹0.15", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "1 per quarter. Requires ₹50,000 quarterly spend from April 2025",
+        "international": "None",
+        "accessType": "Mastercard Domestic Lounge program"
+      },
+      "milestones": [
+        { "spend": 1000, "benefit": "₹500 Amazon voucher (within 30 days of activation)" }
+      ],
+      "golf": { "included": true, "text": "4 complimentary rounds/year + 1 lesson/month at select courses" },
+      "movies": { "included": true, "text": "10% cashback on BookMyShow via subscription plan (max ₹100/month)" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 100 },
+      "forex": { "markup": 0.035, "text": "3.5% markup" }
+    },
+    "metadata": {
+      "tags": ["Customizable", "Cashback", "Entry Level", "Subscription Model", "Eco-Friendly", "Metal Card"],
+      "bestFor": "Users who want customizable benefits and targeted cashback on specific merchants like Swiggy, BookMyShow, BigBasket",
+      "rating": 3.5,
+      "verdict": "Unique customizable card ideal for those who want to tailor benefits. Best for heavy users of Swiggy, BookMyShow, BigBasket, Uber, and PharmEasy who can maximize 10% merchant cashback.",
+      "pros": [
+        "Fully customizable - choose rewards or cashback",
+        "10% cashback on popular merchants (Swiggy, BookMyShow, etc.)",
+        "Choose card material (Eco-friendly ₹249 or Metal ₹3,499)",
+        "1% unlimited cashback option",
+        "Never-expiring reward points",
+        "Low entry barrier"
+      ],
+      "cons": [
+        "Monthly subscription fees add up (₹49-249/month)",
+        "Cashback on merchants capped at ₹100/merchant/month",
+        "Only 1 domestic lounge visit per quarter",
+        "No international lounge access",
+        "High forex markup at 3.5%",
+        "Cannot change core benefit (cashback/rewards) after issuance"
+      ]
+    }
+  },
+  {
+    "id": "yes-bank-elite-plus",
+    "name": "Yes Bank ELITE+ Credit Card",
+    "bank": "Yes Bank",
+    "image": "/assets/cards/yes-bank-elite-plus.png",
+    "link": "https://www.yesbank.in/personal-banking/yes-individual/cards/credit-cards/elite-plus-credit-card",
+    "fees": {
+      "joining": 999,
+      "annual": 999,
+      "currency": "INR",
+      "waivedOn": 200000,
+      "waiverText": "Joining fee waived on ₹20,000 spend in 30 days. Annual fee waived on ₹2 Lakh annual spend"
+    },
+    "eligibility": {
+      "income": 1200000,
+      "age": { "min": 21, "max": 60 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "YES Rewardz Points",
+      "baseRate": 0.0075,
+      "earningText": "12 RP per ₹200 online (1.5%); 6 RP per ₹200 offline (0.75%); 4 RP per ₹200 select categories",
+      "expiry": "36 months from date of earning",
+      "joiningBonus": "None (but fee waiver available on ₹20K spend)",
+      "exclusions": "Fuel, Cash withdrawals, Government, Marketing/Advertising, Post-purchase EMI, Instant EMI",
+      "calculator": {
+        "tier": "premium",
+        "monthlyCap": 12000,
+        "capResetPeriod": "statement",
+        "specialLogic": "12,000 RP cap per statement cycle. Paid subscription plan (₹2,500/yr) boosts rewards to 5X on dining, travel, fashion, healthcare categories. Previously known as YES Premia.",
+        "categories": {
+          "travel": { "rate": 0.015, "label": "1.5% online / 0.75% offline", "cap": null },
+          "dining": { "rate": 0.015, "label": "1.5% online / 0.75% offline", "cap": null },
+          "online": { "rate": 0.015, "label": "12 RP/₹200 online shopping", "cap": 3000 },
+          "fuel": { "rate": 0, "label": "No rewards on fuel", "cap": 0 },
+          "groceries": { "rate": 0.015, "label": "1.5% online / 0.75% offline", "cap": null },
+          "utilities": { "rate": 0.005, "label": "4 RP/₹200 on select categories", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Flight/Hotel bookings via YES Rewardz portal",
+        "options": [
+          { "type": "Flight/Hotel Booking", "value": 0.25, "desc": "1 RP = ₹0.25", "recommended": true },
+          { "type": "Club Vistara Points", "value": 0.25, "desc": "10 RP = 1 CV Point", "recommended": true },
+          { "type": "InterMiles", "value": 0.25, "desc": "10 RP = 1 InterMile", "recommended": false },
+          { "type": "Gift Vouchers", "value": 0.15, "desc": "1 RP = ₹0.15", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "2 per quarter (Primary only). Requires ₹50,000 quarterly spend from April 2025",
+        "international": "3 per year via Priority Pass (Primary only)",
+        "accessType": "Priority Pass for international"
+      },
+      "milestones": [
+        { "spend": 20000, "benefit": "Joining fee waiver (within 30 days)" },
+        { "spend": 200000, "benefit": "Annual fee waiver" }
+      ],
+      "golf": { "included": true, "text": "4 green fee waivers + 1 complimentary lesson/month at select courses" },
+      "movies": { "included": true, "text": "25% off up to ₹250/month on BookMyShow" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 500 },
+      "forex": { "markup": 0.0275, "text": "2.75% markup" }
+    },
+    "metadata": {
+      "tags": ["Premium", "All-Rounder", "Travel", "Golf", "Movies", "Lifestyle"],
+      "bestFor": "Mid-tier users seeking balanced rewards, lounge access, and lifestyle benefits at affordable annual fee",
+      "rating": 3.8,
+      "verdict": "Solid all-rounder card formerly known as YES Premia. Good for users seeking domestic + international lounge access, golf benefits, and movie discounts at just ₹999/year.",
+      "pros": [
+        "Low annual fee of ₹999 with achievable waiver",
+        "Both domestic and international lounge access",
+        "Golf benefits included",
+        "25% movie discount on BookMyShow",
+        "Low 2.75% forex markup for its segment",
+        "Subscription plan available for higher rewards"
+      ],
+      "cons": [
+        "Modest 1.5% reward rate on online spends",
+        "12,000 RP cap per statement limits earning potential",
+        "₹50K quarterly spend required for domestic lounge from April 2025",
+        "International lounge limited to 3/year",
+        "₹100 redemption fee per request"
+      ]
+    }
+  },
+  {
+    "id": "yes-bank-ace",
+    "name": "Yes Bank ACE Credit Card",
+    "bank": "Yes Bank",
+    "image": "/assets/cards/yes-bank-ace.png",
+    "link": "https://www.yesbank.in/personal-banking/yes-individual/cards/credit-cards/ace-credit-card",
+    "fees": {
+      "joining": 499,
+      "annual": 499,
+      "currency": "INR",
+      "waivedOn": 50000,
+      "waiverText": "Joining fee waived on ₹5,000 spend in 30 days. Annual fee waived on ₹50,000 annual spend"
+    },
+    "eligibility": {
+      "income": 300000,
+      "age": { "min": 21, "max": 60 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "points",
+      "name": "YES Rewardz Points",
+      "baseRate": 0.005,
+      "earningText": "8 RP per ₹200 online (1%); 4 RP per ₹200 offline (0.5%); 2 RP per ₹200 select categories",
+      "expiry": "36 months from date of earning",
+      "joiningBonus": "None (but easy joining fee waiver on ₹5K spend)",
+      "exclusions": "UPI (RuPay), Fuel, Rent, Cash withdrawals, Wallet, Government, Marketing/Advertising, Post-purchase EMI",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": 5000,
+        "capResetPeriod": "statement",
+        "specialLogic": "5,000 RP cap per statement cycle. Entry-level card previously known as YES Prosperity Rewards Plus. Subscription plans (₹1,000-2,000/yr) boost rewards to 3X-5X on dining, travel, fashion, healthcare. Available in RuPay and Visa variants.",
+        "categories": {
+          "travel": { "rate": 0.01, "label": "1% online / 0.5% offline", "cap": null },
+          "dining": { "rate": 0.01, "label": "1% online / 0.5% offline", "cap": null },
+          "online": { "rate": 0.01, "label": "8 RP/₹200 online shopping", "cap": 1250 },
+          "fuel": { "rate": 0, "label": "No rewards on fuel", "cap": 0 },
+          "groceries": { "rate": 0.01, "label": "1% online / 0.5% offline", "cap": null },
+          "utilities": { "rate": 0.0025, "label": "2 RP/₹200 on select categories (150 RP cap/cycle)", "cap": 38 }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Flight/Hotel bookings via YES Rewardz portal",
+        "options": [
+          { "type": "Flight/Hotel Booking", "value": 0.25, "desc": "1 RP = ₹0.25", "recommended": true },
+          { "type": "Club Vistara Points", "value": 0.25, "desc": "10 RP = 1 CV Point", "recommended": true },
+          { "type": "InterMiles", "value": 0.25, "desc": "10 RP = 1 InterMile", "recommended": false },
+          { "type": "Gift Vouchers", "value": 0.10, "desc": "1 RP = ₹0.10", "recommended": false },
+          { "type": "Statement Credit", "value": 0.10, "desc": "1 RP = ₹0.10", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "None",
+        "international": "None",
+        "accessType": "Not available"
+      },
+      "milestones": [
+        { "spend": 5000, "benefit": "Joining fee waiver (within 30 days)" },
+        { "spend": 50000, "benefit": "Annual fee waiver" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 100 },
+      "forex": { "markup": 0.0275, "text": "2.75% markup" }
+    },
+    "metadata": {
+      "tags": ["Entry Level", "First Card", "New to Credit", "Basic Rewards", "Low Fee"],
+      "bestFor": "First-time credit card users or those building credit history with low income requirements",
+      "rating": 3.2,
+      "verdict": "Basic entry-level card ideal for beginners. Easy fee waiver thresholds, decent 1% online rewards, and purchase protection. No lounge access or premium perks.",
+      "pros": [
+        "Very low ₹499 annual fee with easy ₹50K waiver",
+        "Low income requirement (₹25K/month)",
+        "Purchase protection up to ₹50,000",
+        "Credit Shield cover of ₹1 Lakh",
+        "Available against Fixed Deposit (₹30K+)",
+        "Subscription plans available for higher rewards",
+        "Available in RuPay variant"
+      ],
+      "cons": [
+        "Low 1% reward rate on online spends",
+        "5,000 RP cap per statement severely limits earnings",
+        "No lounge access",
+        "No movie or golf benefits",
+        "₹100 redemption fee per request",
+        "No UPI rewards on RuPay variant"
+      ]
+    }
+  }
+]

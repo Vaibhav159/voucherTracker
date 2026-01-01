@@ -304,16 +304,15 @@ function App() {
 
   // Toggle card selection
   const toggleCardSelection = (cardId) => {
-    // Convert to number for consistent comparison (card.id in data is a number)
-    const numericId = typeof cardId === 'string' ? parseInt(cardId, 10) : cardId;
-
     setSelectedCards(prevCards => {
-      if (prevCards.includes(numericId)) {
-        return prevCards.filter(id => id !== numericId);
+      if (prevCards.includes(cardId)) {
+        return prevCards.filter(id => id !== cardId);
       } else {
         if (prevCards.length < 4) {
-          return [...prevCards, numericId];
+          return [...prevCards, cardId];
         } else {
+          // Use toast if available, otherwise alert
+          // checks if window.toast is available (unlikely in React) or just simple alert
           alert("You can compare up to 4 cards at a time.");
           return prevCards;
         }

@@ -1,0 +1,487 @@
+[
+  {
+    "id": "amex-platinum-charge",
+    "name": "American Express Platinum Charge Card",
+    "bank": "American Express",
+    "image": "/assets/cards/amex-platinum-charge.png",
+    "link": "https://www.americanexpress.com/in/charge-cards/platinum-card/",
+    "fees": {
+      "joining": 66000,
+      "annual": 66000,
+      "currency": "INR",
+      "waivedOn": null,
+      "waiverText": "No fee waiver available. Renewal benefit of ₹35,000 voucher on spending ₹20 Lakhs in membership year."
+    },
+    "eligibility": {
+      "income": 2500000,
+      "age": { "min": 18, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750,
+      "notes": "₹15 LPA for Self-Employed. Must have good credit history with no defaults."
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Membership Rewards Points",
+      "baseRate": 0.00625,
+      "earningText": "1 MR point per ₹40 spent. At base redemption (₹0.25/point), this equals 0.625% return.",
+      "expiry": "No Expiry (while card is active)",
+      "joiningBonus": "Taj vouchers worth ₹45,000 on spending ₹50,000 within first 2 months of card membership and payment of annual fee",
+      "exclusions": "Fuel, Insurance, Utilities, Cash Transactions",
+      "calculator": {
+        "tier": "super-premium",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "3X MR points on international spends. 5X MR points via Reward Multiplier on 50+ brands. Up to 20X via Rewards Xcelerator on luxury brands.",
+        "categories": {
+          "travel": { "rate": 0.01875, "label": "3X on International", "cap": null },
+          "dining": { "rate": 0.00625, "label": "1 MR/₹40", "cap": null },
+          "online": { "rate": 0.03125, "label": "5X via Reward Multiplier", "cap": null },
+          "fuel": { "rate": 0, "label": "No rewards", "cap": null },
+          "groceries": { "rate": 0.00625, "label": "1 MR/₹40", "cap": null },
+          "utilities": { "rate": 0, "label": "No rewards", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Transfer to Marriott Bonvoy (1:1) for hotel redemptions. Value can reach ₹0.75-1.0 per point with good hotel redemptions.",
+        "options": [
+          { "type": "Statement Credit", "value": 0.25, "desc": "1 MR = ₹0.25 via Pay with Points", "recommended": false },
+          { "type": "Marriott Bonvoy", "value": 1.0, "desc": "1 MR = 1 Marriott Bonvoy point (value ₹0.75-1.0)", "recommended": true },
+          { "type": "Taj Vouchers", "value": 0.50, "desc": "24K MR = ₹12,000 Taj voucher", "recommended": true },
+          { "type": "Airline Partners", "value": 0.50, "desc": "Transfer to Emirates, Singapore, BA, etc.", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "Unlimited (affiliated lounges)",
+        "international": "Unlimited (Amex Global Lounge Collection including Centurion, Priority Pass, Plaza Premium, etc.)",
+        "accessType": "Amex Centurion Lounges + Priority Pass + Plaza Premium + Delta + Escape"
+      },
+      "milestones": [
+        { "spend": 5000000, "benefit": "₹35,000 voucher (Taj/Luxe/Postcard) on ₹20L spend + renewal fee payment" }
+      ],
+      "golf": { "included": true, "text": "Unlimited complimentary rounds at premium golf courses in India and select international courses" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "0%", "cap": 0, "text": "No fuel benefits - fuel excluded from rewards" },
+      "forex": { "markup": 0.035, "text": "3.5% + GST" },
+      "hotelStatus": [
+        "Marriott Bonvoy Gold Elite",
+        "Hilton Honors Gold",
+        "Radisson Rewards Premium",
+        "Taj Epicure Plus",
+        "Accor Plus Traveller",
+        "The Postcard Sunshine Club Platinum",
+        "I Prefer Titanium"
+      ],
+      "concierge": "24x7 Platinum Concierge for travel, dining, lifestyle assistance",
+      "insurance": {
+        "airAccident": 50000000,
+        "overseasMedical": 4200000,
+        "purchaseProtection": true
+      },
+      "digitalSubscriptions": "Ace by Times Prime (WSJ+Mint, Vogue, Conde Nast Traveler, SonyLiv Premium, Disney+ Hotstar)"
+    },
+    "metadata": {
+      "tags": ["Super Premium", "Metal Card", "Charge Card", "Lifestyle", "Travel", "Luxury"],
+      "bestFor": "High-net-worth individuals seeking premium lifestyle benefits, hotel elite status, and unlimited lounge access",
+      "rating": 4.5,
+      "verdict": "India's most prestigious card with unmatched hotel memberships and lifestyle benefits. The ₹77,880 (incl. GST) annual fee is justified if you use the hotel status and lounge access extensively.",
+      "pros": [
+        "Unlimited global lounge access including Centurion Lounges",
+        "7 complimentary hotel elite tier memberships",
+        "Metal card with premium design",
+        "3X rewards on international spends",
+        "Excellent concierge service",
+        "Points never expire"
+      ],
+      "cons": [
+        "Very high annual fee (₹66,000 + GST)",
+        "Low base reward rate (1 point per ₹40)",
+        "No fee waiver option",
+        "No rewards on fuel, utilities, insurance",
+        "Limited acceptance compared to Visa/MC"
+      ]
+    }
+  },
+  {
+    "id": "amex-gold-charge",
+    "name": "American Express Gold Charge Card",
+    "bank": "American Express",
+    "image": "/assets/cards/amex-gold-charge.png",
+    "link": "https://www.americanexpress.com/in/charge-cards/gold-card/",
+    "fees": {
+      "joining": 1000,
+      "annual": 4500,
+      "currency": "INR",
+      "waivedOn": null,
+      "waiverText": "Renewal fee may be waived 50-100% on request based on annual spending (typically ₹2L+ spend). First year fee ₹1,000, second year onwards ₹4,500."
+    },
+    "eligibility": {
+      "income": 600000,
+      "age": { "min": 18, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750,
+      "notes": "Self-employed must have 12+ months trading history. Savings/current account required with Indian/multinational bank."
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Membership Rewards Points",
+      "baseRate": 0.005,
+      "earningText": "1 MR point per ₹50 spent including utilities (capped at 10,000 points/month on utilities). Base value at ₹0.25/point = 0.5% return.",
+      "expiry": "No Expiry (while card is active)",
+      "joiningBonus": "4,000 MR points on spending ₹10,000 within 90 days of card membership + annual fee payment",
+      "exclusions": "Insurance, Cash Transactions. Fuel excluded from June 12, 2025.",
+      "calculator": {
+        "tier": "premium",
+        "monthlyCap": 10000,
+        "capResetPeriod": "calendar",
+        "specialLogic": "1,000 bonus MR points on completing 6 transactions of ₹1,000+ each in a calendar month. 5X MR points via Reward Multiplier.",
+        "categories": {
+          "travel": { "rate": 0.005, "label": "1 MR/₹50", "cap": null },
+          "dining": { "rate": 0.005, "label": "1 MR/₹50 + 20% off at partner restaurants", "cap": null },
+          "online": { "rate": 0.025, "label": "5X via Reward Multiplier", "cap": null },
+          "fuel": { "rate": 0.005, "label": "1 MR/₹50 (till June 2025, capped at 5,000 pts/month)", "cap": 5000 },
+          "groceries": { "rate": 0.005, "label": "1 MR/₹50", "cap": null },
+          "utilities": { "rate": 0.005, "label": "1 MR/₹50 (capped at 10,000 pts/month)", "cap": 10000 }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Redeem for 18K/24K Gold Collection vouchers. Taj voucher at 24K gives ₹0.58/point value.",
+        "options": [
+          { "type": "Statement Credit", "value": 0.25, "desc": "1 MR = ₹0.25", "recommended": false },
+          { "type": "24K Gold Collection - Taj", "value": 0.58, "desc": "24,000 MR = ₹14,000 Taj voucher", "recommended": true },
+          { "type": "24K Gold Collection - Amazon", "value": 0.33, "desc": "24,000 MR = ₹8,000 Amazon voucher", "recommended": false },
+          { "type": "18K Gold Collection - Taj", "value": 0.50, "desc": "18,000 MR = ₹9,000 Taj voucher", "recommended": true },
+          { "type": "Marriott Bonvoy", "value": 0.75, "desc": "1 MR = 1 Marriott point", "recommended": true }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "Not included",
+        "international": "Not included",
+        "accessType": "None"
+      },
+      "milestones": [
+        { "spend": 6000, "benefit": "1,000 bonus MR points on 6 transactions of ₹1,000+ each month" },
+        { "spend": 0, "benefit": "5,000 MR points on first renewal with annual fee payment" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "0%", "cap": 0, "text": "No fuel surcharge waiver" },
+      "forex": { "markup": 0.035, "text": "3.5% + GST" },
+      "hotelBenefits": "The Hotel Collection: $100 hotel credit + room upgrade on 2+ night stays at 400+ hotels worldwide (Hilton, Hyatt, IHG)"
+    },
+    "metadata": {
+      "tags": ["Charge Card", "Rewards", "Utilities", "Gold Collection", "No Preset Limit"],
+      "bestFor": "Those who want MR points on utility bills and fuel, with iconic gold card design and no preset spending limit",
+      "rating": 4.0,
+      "verdict": "One of the few cards in India that rewards utility and fuel spends. The iconic gold design and 18K/24K Gold Collection make it attractive for Amex enthusiasts.",
+      "pros": [
+        "Earns MR points on utility bills (capped)",
+        "Earns MR points on fuel (till June 2025)",
+        "No preset spending limit",
+        "Monthly bonus of 1,000 MR on 6x ₹1,000 transactions",
+        "Iconic gold card design",
+        "18K/24K Gold Collection redemptions",
+        "Low first year fee (₹1,000)"
+      ],
+      "cons": [
+        "No airport lounge access",
+        "Renewal fee of ₹4,500 (waiver needs negotiation)",
+        "Caps on utility and fuel rewards",
+        "Limited acceptance compared to Visa/MC",
+        "No travel benefits"
+      ]
+    }
+  },
+  {
+    "id": "amex-mrcc",
+    "name": "American Express Membership Rewards Credit Card",
+    "bank": "American Express",
+    "image": "/assets/cards/amex-mrcc.png",
+    "link": "https://www.americanexpress.com/in/credit-cards/membership-rewards-card/",
+    "fees": {
+      "joining": 1000,
+      "annual": 4500,
+      "currency": "INR",
+      "waivedOn": 150000,
+      "waiverText": "100% annual fee waiver on ₹1.5L spend. 50% waiver on ₹90K-₹1.5L spend. First year fee ₹1,000 (free on referral)."
+    },
+    "eligibility": {
+      "income": 450000,
+      "age": { "min": 18, "max": 70 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700,
+      "notes": "Monthly income of ₹35,000+ for salaried. Self-employed need ITR of ₹4.5L+."
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Membership Rewards Points",
+      "baseRate": 0.005,
+      "earningText": "1 MR point per ₹50 spent. Base value at ₹0.25/point = 0.5% return. Can reach 5-7% with milestones.",
+      "expiry": "No Expiry (while card is active)",
+      "joiningBonus": "4,000 MR points on spending ₹15,000 within 90 days + annual fee payment",
+      "exclusions": "Fuel, Utilities, Insurance, Cash Transactions, EMI at POS",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "1,000 bonus MR on 4 transactions of ₹1,500+ each month. Additional 1,000 bonus MR on spending ₹20,000+ in a month. 5X via Reward Multiplier.",
+        "categories": {
+          "travel": { "rate": 0.005, "label": "1 MR/₹50", "cap": null },
+          "dining": { "rate": 0.005, "label": "1 MR/₹50", "cap": null },
+          "online": { "rate": 0.025, "label": "5X via Reward Multiplier", "cap": null },
+          "fuel": { "rate": 0, "label": "No rewards (counts for milestones)", "cap": null },
+          "groceries": { "rate": 0.005, "label": "1 MR/₹50", "cap": null },
+          "utilities": { "rate": 0, "label": "No rewards (counts for milestones)", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "18K/24K Gold Collection vouchers or Marriott Bonvoy transfer for best value.",
+        "options": [
+          { "type": "Statement Credit", "value": 0.25, "desc": "1 MR = ₹0.25", "recommended": false },
+          { "type": "24K Gold Collection - Taj", "value": 0.58, "desc": "24,000 MR = ₹14,000 Taj voucher", "recommended": true },
+          { "type": "24K Gold Collection - Tanishq", "value": 0.42, "desc": "24,000 MR = ₹10,000 Tanishq voucher", "recommended": false },
+          { "type": "18K Gold Collection - Amazon", "value": 0.33, "desc": "18,000 MR = ₹6,000 Amazon voucher", "recommended": false },
+          { "type": "Marriott Bonvoy", "value": 0.75, "desc": "1 MR = 1 Marriott point", "recommended": true }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "Not included",
+        "international": "Not included",
+        "accessType": "None"
+      },
+      "milestones": [
+        { "spend": 6000, "benefit": "1,000 bonus MR points on 4 transactions of ₹1,500+ each month" },
+        { "spend": 20000, "benefit": "Additional 1,000 bonus MR points on spending ₹20,000+ in a calendar month" },
+        { "spend": 0, "benefit": "5,000 MR points on first renewal with annual fee payment" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "0%", "cap": 0, "text": "0% convenience fee at HPCL for transactions under ₹5,000" },
+      "forex": { "markup": 0.035, "text": "3.5% + GST" }
+    },
+    "metadata": {
+      "tags": ["Entry Level", "Rewards", "Milestones", "Gold Collection", "Fee Waiver"],
+      "bestFor": "First-time Amex users who can hit monthly milestones for high effective reward rate. Part of popular Amex Trifecta strategy.",
+      "rating": 4.2,
+      "verdict": "Best entry-level Amex card with easy milestone bonuses. Spending ₹20K/month with 4x ₹1,500 transactions yields 2,400 bonus MR points - excellent for its fee bracket.",
+      "pros": [
+        "Easy monthly milestones (4x ₹1,500 = 1,000 MR)",
+        "Additional 1,000 MR on ₹20K monthly spend",
+        "100% fee waiver on ₹1.5L annual spend",
+        "18K/24K Gold Collection access",
+        "Points never expire",
+        "5,000 MR on first renewal",
+        "Free first year on referral"
+      ],
+      "cons": [
+        "No rewards on fuel, utilities, insurance",
+        "No airport lounge access",
+        "High renewal fee (₹4,500) if waiver not earned",
+        "Limited acceptance compared to Visa/MC",
+        "Base reward rate only 0.5%"
+      ]
+    }
+  },
+  {
+    "id": "amex-smartearn",
+    "name": "American Express SmartEarn Credit Card",
+    "bank": "American Express",
+    "image": "/assets/cards/amex-smartearn.png",
+    "link": "https://www.americanexpress.com/in/credit-cards/smartearn-credit-card/",
+    "fees": {
+      "joining": 495,
+      "annual": 495,
+      "currency": "INR",
+      "waivedOn": 40000,
+      "waiverText": "Annual fee waived on spending ₹40,000+ in the previous card membership year."
+    },
+    "eligibility": {
+      "income": 450000,
+      "age": { "min": 18, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700,
+      "notes": "Entry-level Amex card. Self-employed need ITR. Available in select cities only."
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Membership Rewards Points",
+      "baseRate": 0.005,
+      "earningText": "1 MR point per ₹50 spent. 10X on select partners (capped). 5X on Amazon (capped).",
+      "expiry": "No Expiry (while card is active)",
+      "joiningBonus": "₹500 cashback on spending ₹10,000 within first 90 days",
+      "exclusions": "Fuel, Utilities, Insurance, Cash Transactions, EMI at POS",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": 1250,
+        "capResetPeriod": "calendar",
+        "specialLogic": "10X on Zomato+EaseMyTrip (500 pts/month combined). 10X on Flipkart, Myntra, Uber, Ajio, Nykaa, PVR, BookMyShow, BlinkIt (500 pts/month combined). 5X on Amazon (250 pts/month). Total accelerated cap: 1,250 pts/month.",
+        "categories": {
+          "travel": { "rate": 0.05, "label": "10X on EaseMyTrip (capped 500/month with Zomato)", "cap": 125 },
+          "dining": { "rate": 0.05, "label": "10X on Zomato (capped 500/month with EaseMyTrip)", "cap": 125 },
+          "online": { "rate": 0.05, "label": "10X on Flipkart, Myntra, Ajio, Nykaa (capped 500/month combined)", "cap": 125 },
+          "fuel": { "rate": 0, "label": "No rewards", "cap": null },
+          "groceries": { "rate": 0.05, "label": "10X on BlinkIt (part of 500 pts cap)", "cap": 125 },
+          "utilities": { "rate": 0, "label": "No rewards", "cap": null },
+          "amazon": { "rate": 0.025, "label": "5X on Amazon (capped 250 pts/month)", "cap": 63 }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Pool with MRCC/Gold Charge for 18K/24K Gold Collection. Otherwise, redeem for statement credit or basic vouchers.",
+        "options": [
+          { "type": "Statement Credit", "value": 0.25, "desc": "1 MR = ₹0.25", "recommended": true },
+          { "type": "E-Vouchers", "value": 0.25, "desc": "Various brand vouchers at ₹0.25/point", "recommended": false },
+          { "type": "With Gold Collection (pooled)", "value": 0.50, "desc": "Pool with MRCC for Taj at ₹0.50/point", "recommended": true }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "Not included",
+        "international": "Not included",
+        "accessType": "None"
+      },
+      "milestones": [
+        { "spend": 120000, "benefit": "₹500 voucher on spending ₹1.2 Lakhs in card membership year" },
+        { "spend": 180000, "benefit": "Additional ₹500 voucher on spending ₹1.8 Lakhs" },
+        { "spend": 240000, "benefit": "Additional ₹500 voucher on spending ₹2.4 Lakhs" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 5000, "text": "0% convenience fee at HPCL under ₹5,000. 1% above ₹5,000." },
+      "forex": { "markup": 0.035, "text": "3.5% + GST" }
+    },
+    "metadata": {
+      "tags": ["Entry Level", "Online Shopping", "Low Fee", "Accelerated Rewards", "Fee Waiver"],
+      "bestFor": "Online shoppers using Flipkart, Amazon, Zomato, Uber with low monthly spends. Entry point to Amex ecosystem.",
+      "rating": 3.5,
+      "verdict": "Decent entry-level card for online shopping with 10X/5X accelerated rewards, but monthly caps are very low. Best as gateway to Amex ecosystem.",
+      "pros": [
+        "Lowest Amex annual fee (₹495)",
+        "Easy fee waiver (₹40K spend)",
+        "10X on Flipkart, Zomato, Myntra, Uber",
+        "5X on Amazon",
+        "Welcome cashback of ₹500",
+        "HPCL fuel convenience waiver"
+      ],
+      "cons": [
+        "Very low monthly caps (500+500+250 = 1,250 pts max)",
+        "No lounge access",
+        "No rewards on fuel, utilities",
+        "Limited redemption options standalone",
+        "Limited acceptance compared to Visa/MC",
+        "Low milestone voucher values"
+      ]
+    }
+  },
+  {
+    "id": "amex-platinum-reserve",
+    "name": "American Express Platinum Reserve Credit Card",
+    "bank": "American Express",
+    "image": "/assets/cards/amex-platinum-reserve.png",
+    "link": "https://www.americanexpress.com/in/credit-cards/platinum-reserve-credit-card/",
+    "fees": {
+      "joining": 5000,
+      "annual": 10000,
+      "currency": "INR",
+      "waivedOn": 1000000,
+      "waiverText": "100% annual fee waiver on spending ₹10 Lakhs in the preceding membership year."
+    },
+    "eligibility": {
+      "income": 600000,
+      "age": { "min": 18, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750,
+      "notes": "Self-employed need 12+ months trading history. Premium card targeting frequent travelers and high spenders."
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Membership Rewards Points",
+      "baseRate": 0.005,
+      "earningText": "1 MR point per ₹50 spent. Base value at ₹0.25/point = 0.5% return. Monthly vouchers add significant value.",
+      "expiry": "No Expiry (while card is active)",
+      "joiningBonus": "11,000 MR points on spending ₹30,000 within 90 days + joining fee payment",
+      "exclusions": "Fuel, Utilities, Insurance, Cash Transactions, EMI at POS",
+      "calculator": {
+        "tier": "premium",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "₹1,000 monthly voucher on spending ₹50,000/month (enrollment required). 5X MR points via Reward Multiplier. Golf access on ₹50K monthly spend.",
+        "categories": {
+          "travel": { "rate": 0.005, "label": "1 MR/₹50", "cap": null },
+          "dining": { "rate": 0.005, "label": "1 MR/₹50", "cap": null },
+          "online": { "rate": 0.025, "label": "5X via Reward Multiplier", "cap": null },
+          "fuel": { "rate": 0, "label": "No rewards", "cap": null },
+          "groceries": { "rate": 0.005, "label": "1 MR/₹50", "cap": null },
+          "utilities": { "rate": 0, "label": "No rewards", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Transfer to Marriott Bonvoy or airline partners. Monthly vouchers provide best recurring value.",
+        "options": [
+          { "type": "Statement Credit", "value": 0.25, "desc": "1 MR = ₹0.25", "recommended": false },
+          { "type": "Marriott Bonvoy", "value": 0.75, "desc": "1 MR = 1 Marriott Bonvoy point", "recommended": true },
+          { "type": "Airline Partners", "value": 0.50, "desc": "Transfer to Emirates, BA, Singapore, etc.", "recommended": false },
+          { "type": "E-Vouchers", "value": 0.25, "desc": "Various brand vouchers", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "12 visits/year (max 3 per quarter) at partner lounges",
+        "international": "2 visits/year via Priority Pass (US$35 per additional visit)",
+        "accessType": "Partner Lounges + Priority Pass (complimentary membership, $99 fee waived)"
+      },
+      "milestones": [
+        { "spend": 50000, "benefit": "₹1,000 voucher on spending ₹50,000 in a calendar month (up to ₹12,000/year)" },
+        { "spend": 500000, "benefit": "Taj Stay voucher worth ₹10,000 on ₹5L spend + annual fee payment" }
+      ],
+      "golf": { "included": true, "text": "2 complimentary rounds/month at 32+ golf courses on ₹50,000 monthly spend" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 5000, "text": "0% convenience fee at HPCL under ₹5,000. 1% above ₹5,000." },
+      "forex": { "markup": 0.035, "text": "3.5% + GST" },
+      "hotelMemberships": [
+        "Taj Epicure (10% off stays, late checkout, dining discounts)",
+        "EazyDiner Prime (up to 50% off at 1800+ restaurants)",
+        "Accor Plus Explorer (30% off dining, member rates)",
+        "The Hotel Collection ($100 credit + upgrade on 2+ night stays)"
+      ],
+      "insurance": {
+        "airAccident": 10000000,
+        "purchaseProtection": true
+      },
+      "concierge": "24x7 Platinum Concierge for dining reservations, travel, lifestyle assistance"
+    },
+    "metadata": {
+      "tags": ["Premium", "Travel", "Dining", "Golf", "Lounge Access", "Monthly Vouchers"],
+      "bestFor": "High spenders (₹50K+/month) who can maximize monthly vouchers, golf benefits, and hotel memberships",
+      "rating": 3.8,
+      "verdict": "Good for those spending ₹50K+/month to earn ₹12K in annual vouchers. The ₹10L spend requirement for fee waiver is steep. Accor Plus and dining memberships add value.",
+      "pros": [
+        "₹12,000/year in vouchers on ₹50K monthly spend",
+        "Complimentary Taj Epicure, EazyDiner Prime, Accor Plus",
+        "Golf access at 32+ courses",
+        "Domestic + limited international lounge access",
+        "Priority Pass membership included",
+        "₹10K Taj voucher on ₹5L spend"
+      ],
+      "cons": [
+        "High annual fee (₹10,000 + GST)",
+        "₹10L spend needed for fee waiver (unrealistic for most)",
+        "Only 2 international lounge visits/year",
+        "Golf/voucher benefits require ₹50K monthly spend",
+        "Low base reward rate (0.5%)",
+        "No Centurion Lounge access (discontinued Sep 2023)"
+      ]
+    }
+  }
+]

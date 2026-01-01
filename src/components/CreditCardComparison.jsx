@@ -319,54 +319,27 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
         return lower.includes('free') || lower.includes('₹0');
     };
 
-    // Handle preset comparison selection - find cards by name and select them
-    const handlePresetSelection = useCallback((cardNames, presetName) => {
-        // Find card IDs that match the card names with improved matching
+    // Handle preset comparison selection - find cards by ID and select them
+    const handlePresetSelection = useCallback((cardIds, presetName) => {
         const matchedIds = [];
 
-        cardNames.forEach(searchName => {
-            const searchLower = searchName.toLowerCase().trim();
-            const searchWords = searchLower.split(/\s+/).filter(word => word.length > 2);
-
-            // Try to find the best match using different strategies
-            let found = null;
-
-            // Strategy 1: Exact match
-            found = creditCards.find(card => card.name.toLowerCase() === searchLower);
-
-            // Strategy 2: Card name starts with search term
-            if (!found) {
-                found = creditCards.find(card => card.name.toLowerCase().startsWith(searchLower));
-            }
-
-            // Strategy 3: Card name contains the full search term
-            if (!found) {
-                found = creditCards.find(card => card.name.toLowerCase().includes(searchLower));
-            }
-
-            // Strategy 4: All significant search words appear in card name (in order)
-            if (!found && searchWords.length > 0) {
-                found = creditCards.find(card => {
-                    const cardNameLower = card.name.toLowerCase();
-                    // All words from searchName must be in the card name
-                    return searchWords.every(word => cardNameLower.includes(word));
-                });
-            }
-
-            // Strategy 5: Match by key identifying words (bank + card type)
-            if (!found && searchWords.length >= 2) {
-                found = creditCards.find(card => {
-                    const cardNameLower = card.name.toLowerCase();
-                    const cardWords = cardNameLower.split(/\s+/);
-                    // Check if at least 2 key words match and the first word matches
-                    const firstWordMatch = cardWords[0].includes(searchWords[0]) || searchWords[0].includes(cardWords[0]);
-                    const secondWordMatch = searchWords.length > 1 && cardWords.some(w => w.includes(searchWords[1]) || searchWords[1].includes(w));
-                    return firstWordMatch && secondWordMatch;
-                });
-            }
+        cardIds.forEach(id => {
+            // Direct ID match
+            const found = creditCards.find(card => card.id === id);
 
             if (found && !matchedIds.includes(found.id)) {
                 matchedIds.push(found.id);
+            } else {
+                // Legacy fallback: Try fuzzy name match if ID fails (e.g. for user custom presets if any)
+                // This keeps backward compatibility just in case
+                const searchLower = id.toLowerCase();
+                const foundByName = creditCards.find(card =>
+                    card.name.toLowerCase() === searchLower ||
+                    card.name.toLowerCase().includes(searchLower)
+                );
+                if (foundByName && !matchedIds.includes(foundByName.id)) {
+                    matchedIds.push(foundByName.id);
+                }
             }
         });
 
@@ -379,21 +352,21 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
             // Scroll to top to show comparison table
             window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
-            toast.warning('Could not find matching cards');
+            toast.warning('Could not find matching cards for this preset');
         }
     }, [clearSelection, toggleCardSelection, toast, creditCards, setSelectedPreset]);
 
     // Popular comparisons for empty state
     const popularComparisons = [
-        { name: '⛽ Fuel Savers', desc: 'Maximum savings on fuel purchases and surcharge waiver', cards: ['IndianOil RBL Bank XTRA', 'BPCL SBI Card', 'IndianOil Axis Bank'] },
-        { name: '🍽️ Dining Delights', desc: 'Best rewards on restaurants, food delivery, and dining', cards: ['HDFC Swiggy Credit Card', 'IndusInd EazyDiner Credit Card', 'HSBC Live+ Credit Card'] },
-        { name: '🎬 Entertainment Buffs', desc: 'Free movie tickets, BOGO offers, and entertainment perks', cards: ['PVR INOX Kotak Credit Card', 'Axis MyZone Credit Card', 'IndusInd Legend Credit Card'] },
-        { name: '📱 UPI Champions', desc: 'Best rewards on UPI scan & pay transactions', cards: ['HDFC Tata Neu Infinity', 'Kiwi RuPay Credit Card', 'Jupiter Edge CSB'] },
-        { name: '💡 Utility Warriors', desc: 'Best cashback on electricity, broadband, and bill payments', cards: ['Axis Airtel Credit Card', 'Axis Bank Ace', 'PhonePe HDFC Ultimo'] },
-        { name: '🆓 Lifetime Free Stars', desc: 'Best value with zero annual fees forever', cards: ['Amazon Pay ICICI', 'IDFC First Select', 'Scapia Federal Credit Card'] },
-        { name: '🌟 Beginners\' Best', desc: 'Perfect first credit cards for new users', cards: ['Axis Neo Credit Card', 'SBI SimplyCLICK Credit Card', 'OneCard Credit Card'] },
-        { name: '🏨 Hotel Loyalists', desc: 'Best cards for hotel points, elite status, and stays', cards: ['Marriott Bonvoy HDFC', 'Axis Reserve', 'HDFC Regalia Gold'] },
-        { name: '✈️ Airline Miles', desc: 'Best for air miles accumulation and transfers', cards: ['Axis Atlas Credit Card', 'Air India SBI', 'Amex Platinum Travel'] },
+        { name: '⛽ Fuel Savers', desc: 'Maximum savings on fuel purchases and surcharge waiver', cards: ['IndianOil RBL Bank XTRA Credit Card', 'BPCL SBI Card OCTANE', 'IndianOil Axis Bank Credit Card'] },
+        { name: '🍽️ Dining Delights', desc: 'Best rewards on restaurants, food delivery, and dining', cards: ['Swiggy HDFC Bank Credit Card', 'IndusInd EazyDiner Credit Card', 'HSBC Live+ Credit Card'] },
+        { name: '🎬 Entertainment Buffs', desc: 'Free movie tickets, BOGO offers, and entertainment perks', cards: ['PVR INOX Kotak Credit Card', 'Axis Bank My Zone Credit Card', 'IndusInd Bank Legend Credit Card'] },
+        { name: '📱 UPI Champions', desc: 'Best rewards on UPI scan & pay transactions', cards: ['Tata Neu Infinity HDFC Bank Credit Card', 'Kiwi RuPay Credit Card', 'Jupiter CSB Bank Edge RuPay Credit Card'] },
+        { name: '💡 Utility Warriors', desc: 'Best cashback on electricity, broadband, and bill payments', cards: ['Airtel Axis Bank Credit Card', 'Axis Bank Ace Credit Card', 'SBI Cashback Credit Card'] },
+        { name: '🆓 Lifetime Free Stars', desc: 'Best value with zero annual fees forever', cards: ['amazon-pay-icici', 'idfc-first-select', 'federal-scapia'] }, // Keeping known IDs for these
+        { name: '🌟 Beginners\' Best', desc: 'Perfect first credit cards for new users', cards: ['Axis Bank Neo Credit Card', 'SBI SimplyCLICK Credit Card', 'onecard'] },
+        { name: '🏨 Hotel Loyalists', desc: 'Best cards for hotel points, elite status, and stays', cards: ['Marriott Bonvoy HDFC Bank Credit Card', 'Axis Bank Reserve Credit Card', 'HDFC Bank Regalia Gold Credit Card'] },
+        { name: '✈️ Airline Miles', desc: 'Best for air miles accumulation and transfers', cards: ['Axis Bank Atlas Credit Card', 'Air India SBI Signature Credit Card', 'American Express Platinum Travel Credit Card'] },
     ];
 
     // Render Comparison Table
@@ -403,188 +376,248 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
         if (cards.length === 0) return null;
 
         return (
-            <div className="comparison-table-wrapper" style={{ overflowX: 'auto', marginTop: '1.5rem' }}>
-                <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '600px' }}>
-                    {/* Header - Card Images */}
-                    <thead>
-                        <tr>
-                            <th style={{
-                                padding: '1rem',
-                                textAlign: 'left',
-                                borderBottom: '2px solid var(--glass-border)',
-                                background: 'rgba(139, 92, 246, 0.05)',
-                                width: '160px',
-                            }}>
-                                <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                    💳 Card
-                                </span>
-                            </th>
-                            {cards.map(card => (
-                                <th key={card.id} style={{
-                                    padding: '1.5rem 1rem',
-                                    textAlign: 'center',
-                                    borderBottom: '2px solid var(--glass-border)',
-                                    background: 'rgba(139, 92, 246, 0.05)',
-                                    position: 'relative',
-                                    minWidth: '180px',
+            <div className="liquid-glass" style={{ marginTop: '1.5rem', position: 'relative' }}>
+                <div className="comparison-table-wrapper" style={{ overflowX: 'auto', maxHeight: '80vh', borderRadius: 'inherit' }}>
+                    <style>
+                        {`
+                    .comparison-row:hover {
+                        background: rgba(255, 255, 255, 0.03) !important;
+                    }
+                    .comparison-row:hover td {
+                         color: var(--text-primary) !important;
+                    }
+                    `}
+                    </style>
+                    <table style={{ minWidth: '100%', width: 'max-content', borderCollapse: 'separate', borderSpacing: 0 }}>
+                        {/* Header - Card Images */}
+                        <thead>
+                            <tr>
+                                <th className="glass-sticky-header" style={{
+                                    padding: '1rem',
+                                    textAlign: 'left',
+                                    position: 'sticky',
+                                    top: 0,
+                                    left: 0,
+                                    zIndex: 30,
+                                    width: '160px'
                                 }}>
-                                    {/* Remove button */}
-                                    <button
-                                        onClick={() => toggleCardSelection(card.id)}
-                                        style={{
-                                            position: 'absolute',
-                                            top: '8px',
-                                            right: '8px',
-                                            width: '24px',
-                                            height: '24px',
-                                            borderRadius: '50%',
-                                            background: 'rgba(239, 68, 68, 0.1)',
-                                            border: '1px solid rgba(239, 68, 68, 0.3)',
-                                            color: '#ef4444',
-                                            cursor: 'pointer',
-                                            fontSize: '12px',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                        }}
-                                        title="Remove from comparison"
-                                    >
-                                        ✕
-                                    </button>
-
-                                    {/* Card Image */}
-                                    <div style={{ height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.75rem' }}>
-                                        <CardImage card={card} style={{ maxWidth: '120px', maxHeight: '75px' }} />
-                                    </div>
-
-                                    {/* Card Name */}
-                                    <div style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
-                                        {card.name}
-                                    </div>
-
-                                    {/* Tier Badge */}
-                                    {card.tier && (
-                                        <span style={{
-                                            display: 'inline-block',
-                                            padding: '2px 8px',
-                                            borderRadius: '10px',
-                                            fontSize: '0.65rem',
-                                            fontWeight: 600,
-                                            textTransform: 'uppercase',
-                                            background: `${getTierColor(card.tier)}20`,
-                                            color: getTierColor(card.tier),
-                                        }}>
-                                            {card.tier?.replace('-', ' ')}
-                                        </span>
-                                    )}
+                                    <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                        💳 Card
+                                    </span>
                                 </th>
-                            ))}
-                        </tr>
-                    </thead>
+                                {cards.map(card => (
+                                    <th key={card.id} className="glass-sticky-header" style={{
+                                        padding: '1.5rem 1rem',
+                                        textAlign: 'center',
+                                        position: 'sticky',
+                                        top: 0,
+                                        zIndex: 20,
+                                        width: '240px',
+                                        minWidth: '240px',
+                                        maxWidth: '240px'
+                                    }}>
+                                        {/* Remove button */}
+                                        <button
+                                            onClick={() => toggleCardSelection(card.id)}
+                                            style={{
+                                                position: 'absolute',
+                                                top: '8px',
+                                                right: '8px',
+                                                width: '24px',
+                                                height: '24px',
+                                                borderRadius: '50%',
+                                                background: 'rgba(239, 68, 68, 0.1)',
+                                                border: '1px solid rgba(239, 68, 68, 0.3)',
+                                                color: '#ef4444',
+                                                cursor: 'pointer',
+                                                fontSize: '12px',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                            }}
+                                            title="Remove from comparison"
+                                        >
+                                            ✕
+                                        </button>
 
-                    {/* Body - Comparison Rows */}
-                    <tbody>
-                        {COMPARISON_ROWS.map((row, idx) => (
-                            <tr key={row.key} style={{ background: idx % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.01)' }}>
-                                <td style={{
+                                        {/* Card Image */}
+                                        <div style={{ height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.75rem' }}>
+                                            <CardImage card={card} style={{ maxWidth: '120px', maxHeight: '75px' }} />
+                                        </div>
+
+                                        {/* Card Name */}
+                                        <div style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
+                                            {card.name}
+                                        </div>
+
+                                        {/* Tier Badge */}
+                                        {card.tier && (
+                                            <span style={{
+                                                display: 'inline-block',
+                                                padding: '2px 8px',
+                                                borderRadius: '10px',
+                                                fontSize: '0.65rem',
+                                                fontWeight: 600,
+                                                textTransform: 'uppercase',
+                                                background: `${getTierColor(card.tier)}20`,
+                                                color: getTierColor(card.tier),
+                                            }}>
+                                                {card.tier?.replace('-', ' ')}
+                                            </span>
+                                        )}
+                                    </th>
+                                ))}
+                            </tr>
+                        </thead>
+
+                        {/* Body - Comparison Rows */}
+                        <tbody>
+                            {COMPARISON_ROWS.map((row, idx) => (
+                                <tr key={row.key} className="comparison-row" style={{
+                                    background: idx % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.01)',
+                                    transition: 'background 0.2s ease'
+                                }}>
+                                    <td className="glass-sticky-col" style={{
+                                        padding: '1rem',
+                                        borderBottom: '1px solid var(--glass-border)',
+                                        color: 'var(--text-secondary)',
+                                        fontWeight: 500,
+                                        fontSize: '0.85rem',
+                                        position: 'sticky',
+                                        left: 0,
+                                        zIndex: 10
+                                    }}>
+                                        <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                            <span>{row.icon}</span>
+                                            <span>{row.label}</span>
+                                        </span>
+                                    </td>
+                                    {cards.map(card => {
+                                        const value = getComparisonValue(card, row.key);
+
+                                        // Special rendering for Reward Rate to show Multiplier Badge
+                                        if (row.key === 'rewardRate' && card.multiplierBadge) {
+                                            return (
+                                                <td key={card.id} style={{
+                                                    padding: '1rem',
+                                                    textAlign: 'center',
+                                                    borderBottom: '1px solid var(--glass-border)',
+                                                    color: 'var(--text-primary)',
+                                                    background: 'rgba(34, 197, 94, 0.03)', // Subtle Green Highlight
+                                                    borderLeft: '1px dashed rgba(34, 197, 94, 0.2)',
+                                                    borderRight: '1px dashed rgba(34, 197, 94, 0.2)',
+                                                    width: '240px',
+                                                    minWidth: '240px',
+                                                    maxWidth: '240px',
+                                                    whiteSpace: 'normal'
+                                                }}>
+                                                    <div style={{ fontWeight: 500 }}>{value}</div>
+                                                    <div style={{ marginTop: '6px', fontSize: '0.7rem', color: '#22c55e', fontWeight: 600, background: 'rgba(34,197,94,0.1)', padding: '2px 6px', borderRadius: '4px', display: 'inline-block' }}>
+                                                        {card.multiplierBadge}
+                                                    </div>
+                                                </td>
+                                            );
+                                        }
+                                        const isHighlight = (row.key === 'annualFee' && isFreeCard(value));
+
+                                        return (
+                                            <td key={card.id} style={{
+                                                padding: '1rem',
+                                                textAlign: 'center',
+                                                borderBottom: '1px solid var(--glass-border)',
+                                                color: isHighlight ? '#22c55e' : 'var(--text-primary)',
+                                                fontWeight: isHighlight ? 600 : 400,
+                                                fontSize: '0.85rem',
+                                                width: '240px',
+                                                minWidth: '240px',
+                                                maxWidth: '240px',
+                                                whiteSpace: 'normal',
+                                                lineHeight: '1.5'
+                                            }}>
+                                                {value}
+                                            </td>
+                                        );
+                                    })}
+                                </tr>
+                            ))}
+
+                            {/* Features Row */}
+                            <tr>
+                                <td className="glass-sticky-col" style={{
                                     padding: '1rem',
                                     borderBottom: '1px solid var(--glass-border)',
                                     color: 'var(--text-secondary)',
                                     fontWeight: 500,
                                     fontSize: '0.85rem',
+                                    verticalAlign: 'top',
+                                    position: 'sticky',
+                                    left: 0,
+                                    zIndex: 10
                                 }}>
                                     <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        <span>{row.icon}</span>
-                                        <span>{row.label}</span>
+                                        <span>✨</span>
+                                        <span>Key Features</span>
                                     </span>
                                 </td>
-                                {cards.map(card => {
-                                    const value = getComparisonValue(card, row.key);
-                                    const isHighlight = (row.key === 'annualFee' && isFreeCard(value));
-
-                                    return (
-                                        <td key={card.id} style={{
-                                            padding: '1rem',
-                                            textAlign: 'center',
-                                            borderBottom: '1px solid var(--glass-border)',
-                                            color: isHighlight ? '#22c55e' : 'var(--text-primary)',
-                                            fontWeight: isHighlight ? 600 : 400,
-                                            fontSize: '0.85rem',
-                                        }}>
-                                            {value}
-                                        </td>
-                                    );
-                                })}
+                                {cards.map(card => (
+                                    <td key={card.id} style={{
+                                        padding: '1rem',
+                                        borderBottom: '1px solid var(--glass-border)',
+                                        textAlign: 'left',
+                                        fontSize: '0.8rem',
+                                        verticalAlign: 'top',
+                                        lineHeight: '1.6',
+                                        width: '240px',
+                                        minWidth: '240px',
+                                        maxWidth: '240px',
+                                        whiteSpace: 'normal'
+                                    }}>
+                                        {card.features && card.features.length > 0 ? (
+                                            <ul style={{ margin: 0, paddingLeft: '1.25rem', color: 'var(--text-secondary)' }}>
+                                                {card.features.slice(0, 4).map((f, i) => (
+                                                    <li key={i} style={{ marginBottom: '4px' }}>{f}</li>
+                                                ))}
+                                                {card.features.length > 4 && (
+                                                    <li style={{ color: 'var(--accent-violet)', fontStyle: 'italic' }}>
+                                                        +{card.features.length - 4} more
+                                                    </li>
+                                                )}
+                                            </ul>
+                                        ) : (
+                                            <span style={{ color: 'var(--text-secondary)', opacity: 0.5 }}>-</span>
+                                        )}
+                                    </td>
+                                ))}
                             </tr>
-                        ))}
+                        </tbody>
 
-                        {/* Features Row */}
-                        <tr>
-                            <td style={{
-                                padding: '1rem',
-                                borderBottom: '1px solid var(--glass-border)',
-                                color: 'var(--text-secondary)',
-                                fontWeight: 500,
-                                fontSize: '0.85rem',
-                                verticalAlign: 'top',
-                            }}>
-                                <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                    <span>✨</span>
-                                    <span>Key Features</span>
-                                </span>
-                            </td>
-                            {cards.map(card => (
-                                <td key={card.id} style={{
-                                    padding: '1rem',
-                                    borderBottom: '1px solid var(--glass-border)',
-                                    textAlign: 'left',
-                                    fontSize: '0.8rem',
-                                }}>
-                                    {card.features && card.features.length > 0 ? (
-                                        <ul style={{ margin: 0, paddingLeft: '1.25rem', color: 'var(--text-secondary)' }}>
-                                            {card.features.slice(0, 4).map((f, i) => (
-                                                <li key={i} style={{ marginBottom: '4px' }}>{f}</li>
-                                            ))}
-                                            {card.features.length > 4 && (
-                                                <li style={{ color: 'var(--accent-violet)', fontStyle: 'italic' }}>
-                                                    +{card.features.length - 4} more
-                                                </li>
-                                            )}
-                                        </ul>
-                                    ) : (
-                                        <span style={{ color: 'var(--text-secondary)', opacity: 0.5 }}>-</span>
-                                    )}
-                                </td>
-                            ))}
-                        </tr>
-                    </tbody>
-
-                    {/* Footer - Action Buttons */}
-                    <tfoot>
-                        <tr>
-                            <td style={{ padding: '1rem' }}></td>
-                            {cards.map(card => (
-                                <td key={card.id} style={{ padding: '1rem', textAlign: 'center' }}>
-                                    <Link
-                                        to={`/card-guide/${card.id}`}
-                                        style={{
-                                            display: 'inline-block',
-                                            padding: '8px 16px',
-                                            background: 'linear-gradient(135deg, var(--accent-cyan), var(--accent-pink))',
-                                            color: '#000',
-                                            textDecoration: 'none',
-                                            borderRadius: '8px',
-                                            fontSize: '0.8rem',
-                                            fontWeight: 600,
-                                        }}
-                                    >
-                                        View Details →
-                                    </Link>
-                                </td>
-                            ))}
-                        </tr>
-                    </tfoot>
-                </table>
+                        {/* Footer - Action Buttons */}
+                        <tfoot>
+                            <tr>
+                                <td style={{ padding: '1rem' }}></td>
+                                {cards.map(card => (
+                                    <td key={card.id} style={{ padding: '1rem', textAlign: 'center' }}>
+                                        <Link
+                                            to={`/card-guide/${card.id}`}
+                                            style={{
+                                                display: 'inline-block',
+                                                padding: '8px 16px',
+                                                background: 'linear-gradient(135deg, var(--accent-cyan), var(--accent-pink))',
+                                                color: '#000',
+                                                textDecoration: 'none',
+                                                borderRadius: '8px',
+                                                fontSize: '0.8rem',
+                                                fontWeight: 600,
+                                            }}
+                                        >
+                                            View Details →
+                                        </Link>
+                                    </td>
+                                ))}
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
             </div>
         );
     };
@@ -982,6 +1015,25 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                                                 </span>
                                             )}
                                         </div>
+
+                                        {/* Multiplier Badge */}
+                                        {card.multiplierBadge && (
+                                            <div style={{
+                                                marginBottom: '10px',
+                                                background: 'linear-gradient(90deg, rgba(34, 197, 94, 0.15), rgba(6, 182, 212, 0.15))',
+                                                border: '1px dashed rgba(34, 197, 94, 0.4)',
+                                                borderRadius: '8px',
+                                                padding: '6px 10px',
+                                                fontSize: '0.75rem',
+                                                fontWeight: '600',
+                                                color: '#22c55e',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                gap: '6px'
+                                            }}>
+                                                {card.multiplierBadge}
+                                            </div>
+                                        )}
 
                                         {/* Quick Stats */}
                                         <div style={{

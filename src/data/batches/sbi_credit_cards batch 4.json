@@ -1,0 +1,1113 @@
+[
+  {
+    "id": "sbi-aurum",
+    "name": "SBI Aurum Credit Card",
+    "bank": "SBI Card",
+    "image": "/assets/cards/sbi-aurum.png",
+    "link": "https://www.aurumcreditcard.com/",
+    "fees": {
+      "joining": 9999,
+      "annual": 9999,
+      "currency": "INR",
+      "waivedOn": 1200000,
+      "waiverText": "Annual fee waived on spends of Rs. 12 Lakh in a year"
+    },
+    "eligibility": {
+      "income": 4000000,
+      "age": { "min": 21, "max": 60 },
+      "type": "Invite-only (HNI)",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "AURUM Reward Points",
+      "baseRate": 0.01,
+      "earningText": "Earn 4 Reward Points per Rs. 100 spent (1% value back)",
+      "expiry": "Never expires",
+      "joiningBonus": "40,000 AURUM Reward Points worth Rs. 10,000 on payment of joining fee",
+      "exclusions": "Fuel, Wallet loads, Rent, Government, Insurance, Education, Utilities",
+      "calculator": {
+        "tier": "super-premium",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "Monthly milestone: Rs. 1,500 TataCliq Luxury voucher on Rs. 1 Lakh monthly spend",
+        "categories": {
+          "travel": { "rate": 0.01, "label": "4 RP/Rs. 100", "cap": null },
+          "dining": { "rate": 0.01, "label": "4 RP/Rs. 100", "cap": null },
+          "online": { "rate": 0.01, "label": "4 RP/Rs. 100", "cap": null },
+          "fuel": { "rate": 0, "label": "No rewards on fuel", "cap": null },
+          "groceries": { "rate": 0.01, "label": "4 RP/Rs. 100", "cap": null },
+          "utilities": { "rate": 0, "label": "No rewards on utilities", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Redeem at AURUM Rewards Portal for flights, hotels, gift vouchers",
+        "options": [
+          { "type": "AURUM Rewards Portal", "value": 0.25, "desc": "1 RP = Rs. 0.25 for flights, hotels, experiences", "recommended": true },
+          { "type": "Statement Credit", "value": 0.25, "desc": "1 RP = Rs. 0.25", "recommended": false },
+          { "type": "Product Catalogue", "value": 0.25, "desc": "1 RP = Rs. 0.25", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "4 per quarter (16 per year) via Visa/MasterCard",
+        "international": "Unlimited via DreamFolks/Priority Pass",
+        "accessType": "DreamFolks / Priority Pass"
+      },
+      "milestones": [
+        { "spend": 100000, "benefit": "Rs. 1,500 TataCliq Luxury voucher (monthly)" },
+        { "spend": 500000, "benefit": "Rs. 5,000 TataCliq Luxury voucher (annual)" },
+        { "spend": 1000000, "benefit": "Rs. 10,000 Taj voucher (annual)" },
+        { "spend": 2000000, "benefit": "Rs. 20,000 Apple voucher (annual)" }
+      ],
+      "golf": { "included": true, "text": "16 complimentary rounds per year (4/quarter) + 12 lessons per year" },
+      "movies": { "included": true, "text": "4 movie tickets worth Rs. 250 each per month via BookMyShow (Rs. 12,000/year)" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 250 },
+      "forex": { "markup": 0.0199, "text": "1.99%" }
+    },
+    "metadata": {
+      "tags": ["Super-Premium", "Metal Card", "Invite-Only", "Luxury", "Travel"],
+      "bestFor": "High-net-worth individuals seeking luxury lifestyle benefits and premium travel perks",
+      "rating": 4.2,
+      "verdict": "Top-tier card with excellent milestone benefits but invite-only access limits availability",
+      "pros": [
+        "Unlimited international lounge access",
+        "Strong milestone benefits up to 3.7% return",
+        "Premium memberships (Club Marriott, WSJ, Mint)",
+        "Complimentary spa access at airports",
+        "Low forex markup of 1.99%"
+      ],
+      "cons": [
+        "Invite-only - not directly accessible",
+        "High annual fee of Rs. 9,999",
+        "Base reward rate of only 1%",
+        "Rs. 12 Lakh spend required for fee waiver"
+      ]
+    }
+  },
+  {
+    "id": "sbi-elite",
+    "name": "SBI Elite Credit Card",
+    "bank": "SBI Card",
+    "image": "/assets/cards/sbi-elite.png",
+    "link": "https://www.sbicard.com/en/personal/credit-cards/lifestyle/sbi-card-elite.page",
+    "fees": {
+      "joining": 4999,
+      "annual": 4999,
+      "currency": "INR",
+      "waivedOn": 1000000,
+      "waiverText": "Annual fee waived on spends of Rs. 10 Lakh in a year"
+    },
+    "eligibility": {
+      "income": 1200000,
+      "age": { "min": 21, "max": 70 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Elite Reward Points",
+      "baseRate": 0.005,
+      "earningText": "Earn 2 Reward Points per Rs. 100 spent (0.5% base), 5X on select categories",
+      "expiry": "2 years from accrual",
+      "joiningBonus": "E-Gift vouchers worth Rs. 5,000 from Yatra/Bata/Aditya Birla Fashion/Pantaloons/Shoppers Stop",
+      "exclusions": "Fuel, Wallet loads, Rent, Government payments",
+      "calculator": {
+        "tier": "premium",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "5X rewards on Dining, Groceries, Departmental Stores",
+        "categories": {
+          "travel": { "rate": 0.005, "label": "2 RP/Rs. 100 (0.5%)", "cap": null },
+          "dining": { "rate": 0.025, "label": "10 RP/Rs. 100 (2.5%)", "cap": null },
+          "online": { "rate": 0.005, "label": "2 RP/Rs. 100 (0.5%)", "cap": null },
+          "fuel": { "rate": 0, "label": "No rewards on fuel", "cap": null },
+          "groceries": { "rate": 0.025, "label": "10 RP/Rs. 100 (2.5%)", "cap": null },
+          "utilities": { "rate": 0.005, "label": "2 RP/Rs. 100 (0.5%)", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Redeem for gift vouchers or statement credit",
+        "options": [
+          { "type": "Statement Credit", "value": 0.25, "desc": "4 RP = Rs. 1", "recommended": true },
+          { "type": "Gift Vouchers", "value": 0.25, "desc": "4 RP = Rs. 1", "recommended": true },
+          { "type": "Product Catalogue", "value": 0.25, "desc": "4 RP = Rs. 1", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "2 per quarter (8 per year) via Visa/MasterCard/RuPay",
+        "international": "6 per year (max 2 per quarter) via Priority Pass",
+        "accessType": "Priority Pass / Visa / MasterCard"
+      },
+      "milestones": [
+        { "spend": 300000, "benefit": "10,000 Bonus Reward Points" },
+        { "spend": 400000, "benefit": "10,000 Bonus Reward Points" },
+        { "spend": 500000, "benefit": "15,000 Bonus Reward Points" },
+        { "spend": 800000, "benefit": "15,000 Bonus Reward Points" }
+      ],
+      "golf": { "included": true, "text": "4 complimentary green fees access + up to 50% off on golf games + 1 lesson/month" },
+      "movies": { "included": true, "text": "2 complimentary movie tickets per month (Rs. 250 each) via BookMyShow - Rs. 6,000/year" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 250 },
+      "forex": { "markup": 0.0199, "text": "1.99%" }
+    },
+    "metadata": {
+      "tags": ["Premium", "Lifestyle", "Travel", "Movies", "Dining"],
+      "bestFor": "Frequent diners and grocery shoppers seeking premium travel and movie benefits",
+      "rating": 4.0,
+      "verdict": "Solid premium card with good accelerated rewards but high fee relative to benefits",
+      "pros": [
+        "5X rewards on dining, groceries, departmental stores",
+        "Free movie tickets worth Rs. 6,000/year",
+        "Low forex markup of 1.99%",
+        "Priority Pass with 6 international visits",
+        "Available in Visa/MasterCard/Amex/RuPay variants"
+      ],
+      "cons": [
+        "High annual fee of Rs. 4,999",
+        "Base reward rate of only 0.5%",
+        "Rs. 10 Lakh spend required for fee waiver",
+        "Club Vistara membership discontinued"
+      ]
+    }
+  },
+  {
+    "id": "sbi-prime",
+    "name": "SBI Prime Credit Card",
+    "bank": "SBI Card",
+    "image": "/assets/cards/sbi-prime.png",
+    "link": "https://www.sbicard.com/en/personal/credit-cards/rewards/sbi-card-prime.page",
+    "fees": {
+      "joining": 2999,
+      "annual": 2999,
+      "currency": "INR",
+      "waivedOn": 300000,
+      "waiverText": "Annual fee waived on spends of Rs. 3 Lakh in a year"
+    },
+    "eligibility": {
+      "income": 600000,
+      "age": { "min": 21, "max": 70 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Prime Reward Points",
+      "baseRate": 0.005,
+      "earningText": "Earn 2 Reward Points per Rs. 100 spent (0.5% base), 5X on select categories",
+      "expiry": "2 years from accrual",
+      "joiningBonus": "E-Gift voucher worth Rs. 3,000 from Yatra/Bata/Aditya Birla Fashion/Pantaloons/Shoppers Stop",
+      "exclusions": "Fuel, Wallet loads, Rent, Government payments",
+      "calculator": {
+        "tier": "premium",
+        "monthlyCap": 7500,
+        "capResetPeriod": "calendar",
+        "specialLogic": "5X rewards on Dining, Groceries, Movies, Departmental Stores; capped at 7,500 RP/month",
+        "categories": {
+          "travel": { "rate": 0.005, "label": "2 RP/Rs. 100 (0.5%)", "cap": null },
+          "dining": { "rate": 0.025, "label": "10 RP/Rs. 100 (2.5%)", "cap": 1875 },
+          "online": { "rate": 0.005, "label": "2 RP/Rs. 100 (0.5%)", "cap": null },
+          "fuel": { "rate": 0, "label": "No rewards on fuel", "cap": null },
+          "groceries": { "rate": 0.025, "label": "10 RP/Rs. 100 (2.5%)", "cap": 1875 },
+          "utilities": { "rate": 0.005, "label": "2 RP/Rs. 100 (0.5%)", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Redeem for gift vouchers or statement credit",
+        "options": [
+          { "type": "Statement Credit", "value": 0.25, "desc": "4 RP = Rs. 1", "recommended": true },
+          { "type": "Gift Vouchers", "value": 0.25, "desc": "4 RP = Rs. 1", "recommended": true },
+          { "type": "Product Catalogue", "value": 0.25, "desc": "4 RP = Rs. 1", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "8 per year (max 2 per quarter) via Visa/MasterCard/RuPay",
+        "international": "4 per year (max 2 per quarter) via Priority Pass",
+        "accessType": "Priority Pass / Visa / MasterCard"
+      },
+      "milestones": [
+        { "spend": 50000, "benefit": "Rs. 1,000 Pizza Hut e-voucher (quarterly)" },
+        { "spend": 500000, "benefit": "Rs. 7,000 e-voucher from Yatra/Pantaloons (annual)" }
+      ],
+      "golf": { "included": true, "text": "4 complimentary green fees access + up to 50% off on golf + 1 lesson/month" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 250 },
+      "forex": { "markup": 0.035, "text": "3.5%" }
+    },
+    "metadata": {
+      "tags": ["Mid-Premium", "Rewards", "Dining", "Groceries", "Travel"],
+      "bestFor": "Mid-tier spenders seeking rewards on dining, groceries, and movies with travel perks",
+      "rating": 3.8,
+      "verdict": "Good value for mid-range spenders but monthly cap limits high spenders",
+      "pros": [
+        "5X rewards on dining, groceries, movies, departmental stores",
+        "Lower fee waiver threshold of Rs. 3 Lakh",
+        "20X birthday bonus rewards",
+        "Good lounge access (8 domestic + 4 international)",
+        "ITC Silver membership for new cards"
+      ],
+      "cons": [
+        "Monthly cap of 7,500 RPs on accelerated rewards",
+        "No free movie tickets unlike Elite",
+        "Higher forex markup of 3.5%",
+        "No renewal benefits"
+      ]
+    }
+  },
+  {
+    "id": "sbi-simplyclick",
+    "name": "SBI SimplyCLICK Credit Card",
+    "bank": "SBI Card",
+    "image": "/assets/cards/sbi-simplyclick.png",
+    "link": "https://www.sbicard.com/en/personal/credit-cards/shopping/simplyclick-sbi-card.page",
+    "fees": {
+      "joining": 499,
+      "annual": 499,
+      "currency": "INR",
+      "waivedOn": 100000,
+      "waiverText": "Annual fee reversed on spends of Rs. 1 Lakh in a year"
+    },
+    "eligibility": {
+      "income": 300000,
+      "age": { "min": 21, "max": 70 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "points",
+      "name": "SimplyCLICK Reward Points",
+      "baseRate": 0.0025,
+      "earningText": "1 RP per Rs. 100 (0.25% base), 10X on partners, 5X on other online",
+      "expiry": "2 years from accrual",
+      "joiningBonus": "Amazon.in gift card worth Rs. 500 on payment of joining fee",
+      "exclusions": "Fuel (offline), Wallet loads, Rent, Government payments",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": 10000,
+        "capResetPeriod": "calendar",
+        "specialLogic": "10X on partners (Apollo, BookMyShow, Cleartrip, Dominos, IGP, Myntra, Netmeds, Yatra), 5X on other online; each capped at 10,000 RP/month",
+        "categories": {
+          "travel": { "rate": 0.0125, "label": "5X online (1.25%)", "cap": 2500 },
+          "dining": { "rate": 0.025, "label": "10X partners (2.5%)", "cap": 2500 },
+          "online": { "rate": 0.025, "label": "10X partners / 5X others", "cap": 2500 },
+          "fuel": { "rate": 0, "label": "No rewards on fuel", "cap": null },
+          "groceries": { "rate": 0.0125, "label": "5X online (1.25%)", "cap": 2500 },
+          "utilities": { "rate": 0.0025, "label": "1 RP/Rs. 100 (0.25%)", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Redeem for e-vouchers from partner brands",
+        "options": [
+          { "type": "Cleartrip/Yatra Vouchers", "value": 0.25, "desc": "4 RP = Rs. 1", "recommended": true },
+          { "type": "Statement Credit", "value": 0.25, "desc": "4 RP = Rs. 1", "recommended": false },
+          { "type": "Gift Vouchers", "value": 0.25, "desc": "4 RP = Rs. 1", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "None",
+        "international": "None",
+        "accessType": "N/A"
+      },
+      "milestones": [
+        { "spend": 100000, "benefit": "Rs. 2,000 Cleartrip/Yatra e-voucher (annual online spends)" },
+        { "spend": 200000, "benefit": "Rs. 2,000 Cleartrip/Yatra e-voucher (annual online spends)" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 100 },
+      "forex": { "markup": 0.035, "text": "3.5%" }
+    },
+    "metadata": {
+      "tags": ["Entry-Level", "Online Shopping", "E-Commerce", "Budget"],
+      "bestFor": "Online shoppers who frequently use partner platforms like Myntra, BookMyShow, Cleartrip",
+      "rating": 4.0,
+      "verdict": "Excellent entry-level card for online shopping enthusiasts with strong partner rewards",
+      "pros": [
+        "10X rewards on 8 popular online partners",
+        "5X rewards on all other online spends",
+        "Low annual fee of Rs. 499",
+        "Easy fee waiver at Rs. 1 Lakh",
+        "Good milestone vouchers"
+      ],
+      "cons": [
+        "No airport lounge access",
+        "Monthly cap of 10,000 RPs per category",
+        "Low base rate of 0.25% offline",
+        "No travel or dining perks"
+      ]
+    }
+  },
+  {
+    "id": "sbi-simplysave",
+    "name": "SBI SimplySAVE Credit Card",
+    "bank": "SBI Card",
+    "image": "/assets/cards/sbi-simplysave.png",
+    "link": "https://www.sbicard.com/en/personal/credit-cards/shopping/simplysave-sbi-card.page",
+    "fees": {
+      "joining": 499,
+      "annual": 499,
+      "currency": "INR",
+      "waivedOn": 100000,
+      "waiverText": "Annual fee reversed on spends of Rs. 1 Lakh in a year"
+    },
+    "eligibility": {
+      "income": 300000,
+      "age": { "min": 21, "max": 70 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "points",
+      "name": "SimplySAVE Reward Points",
+      "baseRate": 0.00167,
+      "earningText": "1 RP per Rs. 150 (0.17% base), 10X on Dining/Movies/Groceries/Departmental",
+      "expiry": "2 years from accrual",
+      "joiningBonus": "2,000 Bonus Reward Points on spending Rs. 2,000 within 60 days",
+      "exclusions": "Fuel, Wallet loads, Rent, Government payments",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": 5000,
+        "capResetPeriod": "calendar",
+        "specialLogic": "10X (10 RP per Rs. 150) on Dining, Movies, Groceries, Departmental Stores; capped at 5,000 RP/month",
+        "categories": {
+          "travel": { "rate": 0.00167, "label": "1 RP/Rs. 150 (0.17%)", "cap": null },
+          "dining": { "rate": 0.0167, "label": "10 RP/Rs. 150 (1.67%)", "cap": 1250 },
+          "online": { "rate": 0.00167, "label": "1 RP/Rs. 150 (0.17%)", "cap": null },
+          "fuel": { "rate": 0, "label": "No rewards on fuel", "cap": null },
+          "groceries": { "rate": 0.0167, "label": "10 RP/Rs. 150 (1.67%)", "cap": 1250 },
+          "utilities": { "rate": 0.00167, "label": "1 RP/Rs. 150 (0.17%)", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Redeem for gift vouchers or statement credit",
+        "options": [
+          { "type": "Statement Credit", "value": 0.25, "desc": "4 RP = Rs. 1", "recommended": true },
+          { "type": "Gift Vouchers", "value": 0.25, "desc": "4 RP = Rs. 1", "recommended": true },
+          { "type": "Product Catalogue", "value": 0.25, "desc": "4 RP = Rs. 1", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "None",
+        "international": "None",
+        "accessType": "N/A"
+      },
+      "milestones": [],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 100 },
+      "forex": { "markup": 0.035, "text": "3.5%" }
+    },
+    "metadata": {
+      "tags": ["Entry-Level", "Offline Shopping", "Dining", "Groceries", "Budget"],
+      "bestFor": "Everyday spenders who shop at physical stores, dine out, and buy groceries",
+      "rating": 3.7,
+      "verdict": "Solid entry-level card for offline spenders but lower reward rate than SimplyCLICK",
+      "pros": [
+        "10X rewards on dining, movies, groceries, departmental stores",
+        "Low annual fee of Rs. 499",
+        "Easy fee waiver at Rs. 1 Lakh",
+        "Welcome bonus of 2,000 RPs",
+        "Available in RuPay UPI variant"
+      ],
+      "cons": [
+        "No airport lounge access",
+        "Monthly cap of 5,000 RPs on accelerated categories",
+        "Lower base rate than SimplyCLICK (0.17% vs 0.25%)",
+        "No milestone benefits"
+      ]
+    }
+  },
+  {
+    "id": "sbi-pulse",
+    "name": "SBI Pulse Credit Card",
+    "bank": "SBI Card",
+    "image": "/assets/cards/sbi-pulse.png",
+    "link": "https://www.sbicard.com/en/personal/credit-cards/lifestyle/sbi-card-pulse.page",
+    "fees": {
+      "joining": 1499,
+      "annual": 1499,
+      "currency": "INR",
+      "waivedOn": 200000,
+      "waiverText": "Annual fee waived on spends of Rs. 2 Lakh in a year"
+    },
+    "eligibility": {
+      "income": 200000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Pulse Reward Points",
+      "baseRate": 0.005,
+      "earningText": "2 RP per Rs. 100 (0.5% base), 5X on health categories",
+      "expiry": "2 years from accrual",
+      "joiningBonus": "Noise ColorFit Pulse 4 Pro Smartwatch worth Rs. 7,999 + 1-year FITPASS PRO + 1-year Netmeds First membership",
+      "exclusions": "Fuel, Wallet loads, Rent, Government payments, EMI transactions",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "5X (10 RP per Rs. 100) on Pharmacy, Chemist, Dining, Movies, Sports",
+        "categories": {
+          "travel": { "rate": 0.005, "label": "2 RP/Rs. 100 (0.5%)", "cap": null },
+          "dining": { "rate": 0.025, "label": "10 RP/Rs. 100 (2.5%)", "cap": null },
+          "online": { "rate": 0.005, "label": "2 RP/Rs. 100 (0.5%)", "cap": null },
+          "fuel": { "rate": 0, "label": "No rewards on fuel", "cap": null },
+          "groceries": { "rate": 0.005, "label": "2 RP/Rs. 100 (0.5%)", "cap": null },
+          "utilities": { "rate": 0.005, "label": "2 RP/Rs. 100 (0.5%)", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Redeem for Netmeds vouchers or statement credit",
+        "options": [
+          { "type": "Statement Credit", "value": 0.25, "desc": "4 RP = Rs. 1", "recommended": true },
+          { "type": "Netmeds Vouchers", "value": 0.25, "desc": "4 RP = Rs. 1", "recommended": true },
+          { "type": "Product Catalogue", "value": 0.25, "desc": "4 RP = Rs. 1", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "8 per year (max 2 per quarter) via Visa/MasterCard",
+        "international": "Priority Pass membership (lounge visits chargeable)",
+        "accessType": "Visa / MasterCard / Priority Pass"
+      },
+      "milestones": [
+        { "spend": 400000, "benefit": "Rs. 1,500 Netmeds e-voucher (annual)" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 250 },
+      "forex": { "markup": 0.035, "text": "3.5%" }
+    },
+    "metadata": {
+      "tags": ["Health", "Fitness", "Wellness", "Pharmacy", "Lifestyle"],
+      "bestFor": "Health-conscious individuals who spend on pharmacy, fitness, and wellness",
+      "rating": 3.6,
+      "verdict": "Unique health-focused card with great welcome benefits but niche appeal",
+      "pros": [
+        "Smartwatch worth Rs. 7,999 as welcome gift",
+        "Free FITPASS PRO + Netmeds First membership yearly",
+        "5X rewards on pharmacy and health spends",
+        "8 complimentary domestic lounge visits",
+        "Good insurance coverage"
+      ],
+      "cons": [
+        "Niche category focus limits universal appeal",
+        "High milestone threshold of Rs. 4 Lakh",
+        "Low base reward rate of 0.5%",
+        "Priority Pass visits are chargeable"
+      ]
+    }
+  },
+  {
+    "id": "club-vistara-sbi-prime",
+    "name": "Club Vistara SBI Card PRIME",
+    "bank": "SBI Card",
+    "image": "/assets/cards/club-vistara-sbi-prime.png",
+    "link": "https://www.sbicard.com/en/personal/credit-cards/travel/club-vistara-sbi-card-prime.page",
+    "fees": {
+      "joining": 2999,
+      "annual": 2999,
+      "currency": "INR",
+      "waivedOn": null,
+      "waiverText": "No fee waiver available"
+    },
+    "eligibility": {
+      "income": 600000,
+      "age": { "min": 18, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "miles",
+      "name": "Club Vistara Points",
+      "baseRate": 0.02,
+      "earningText": "4 CV Points per Rs. 200 spent on all categories including fuel",
+      "expiry": "36 months from date of flight",
+      "joiningBonus": "1 complimentary Premium Economy ticket e-voucher + 3,000 bonus CV Points on Rs. 75,000 spend in 90 days",
+      "exclusions": "Rent payments (w.e.f. April 2024)",
+      "calculator": {
+        "tier": "co-branded",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "CV Points redeemable on Vistara flights; CV Silver status included",
+        "categories": {
+          "travel": { "rate": 0.02, "label": "4 CV/Rs. 200", "cap": null },
+          "dining": { "rate": 0.02, "label": "4 CV/Rs. 200", "cap": null },
+          "online": { "rate": 0.02, "label": "4 CV/Rs. 200", "cap": null },
+          "fuel": { "rate": 0.02, "label": "4 CV/Rs. 200", "cap": null },
+          "groceries": { "rate": 0.02, "label": "4 CV/Rs. 200", "cap": null },
+          "utilities": { "rate": 0.02, "label": "4 CV/Rs. 200", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.80,
+        "bestOption": "Redeem for Vistara flights or partner airlines",
+        "options": [
+          { "type": "Vistara Award Flights", "value": 0.80, "desc": "1 CV = Rs. 0.80 approx", "recommended": true },
+          { "type": "Partner Airlines (Singapore Airlines)", "value": 0.80, "desc": "Transfer to partner programs", "recommended": false },
+          { "type": "Upgrade Vouchers", "value": 0.80, "desc": "Use for cabin upgrades", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "8 per year (max 2 per quarter) via Visa/MasterCard",
+        "international": "4 per year (max 2 per quarter) via Priority Pass",
+        "accessType": "Priority Pass / Visa / MasterCard"
+      },
+      "milestones": [
+        { "spend": 150000, "benefit": "1 Premium Economy ticket (being discontinued post April 2025)" },
+        { "spend": 300000, "benefit": "1 Premium Economy ticket (being discontinued post April 2025)" },
+        { "spend": 450000, "benefit": "1 Premium Economy ticket (being discontinued post April 2025)" },
+        { "spend": 800000, "benefit": "1 Premium Economy ticket + Rs. 10,000 Yatra hotel voucher" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "0%", "cap": 0 },
+      "forex": { "markup": 0.035, "text": "3.5%" }
+    },
+    "metadata": {
+      "tags": ["Travel", "Airlines", "Vistara", "Co-branded", "Frequent Flyer"],
+      "bestFor": "Vistara frequent flyers who want to earn free tickets through everyday spending",
+      "rating": 4.3,
+      "verdict": "Excellent value for Vistara loyalists with milestone tickets worth more than fees",
+      "pros": [
+        "Premium Economy ticket worth more than joining fee",
+        "Up to 4 free Premium Economy tickets annually",
+        "CV Points earn on all spends including fuel",
+        "CV Silver status with lounge access",
+        "Flight cancellation insurance up to Rs. 3,500"
+      ],
+      "cons": [
+        "No fee waiver option",
+        "Milestone benefits being discontinued April 2025",
+        "Rent payments excluded from rewards",
+        "Limited to Vistara ecosystem"
+      ]
+    }
+  },
+  {
+    "id": "club-vistara-sbi",
+    "name": "Club Vistara SBI Card",
+    "bank": "SBI Card",
+    "image": "/assets/cards/club-vistara-sbi.png",
+    "link": "https://www.sbicard.com/en/personal/credit-cards/travel/club-vistara-sbi-card.page",
+    "fees": {
+      "joining": 1499,
+      "annual": 1499,
+      "currency": "INR",
+      "waivedOn": null,
+      "waiverText": "No fee waiver available"
+    },
+    "eligibility": {
+      "income": 400000,
+      "age": { "min": 18, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "miles",
+      "name": "Club Vistara Points",
+      "baseRate": 0.015,
+      "earningText": "3 CV Points per Rs. 200 spent on all categories including fuel",
+      "expiry": "36 months from date of flight",
+      "joiningBonus": "1 complimentary Economy ticket e-voucher",
+      "exclusions": "Rent payments (w.e.f. April 2024)",
+      "calculator": {
+        "tier": "co-branded",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "CV Points redeemable on Vistara flights; discontinued for new issuance Sept 2024",
+        "categories": {
+          "travel": { "rate": 0.015, "label": "3 CV/Rs. 200", "cap": null },
+          "dining": { "rate": 0.015, "label": "3 CV/Rs. 200", "cap": null },
+          "online": { "rate": 0.015, "label": "3 CV/Rs. 200", "cap": null },
+          "fuel": { "rate": 0.015, "label": "3 CV/Rs. 200", "cap": null },
+          "groceries": { "rate": 0.015, "label": "3 CV/Rs. 200", "cap": null },
+          "utilities": { "rate": 0.015, "label": "3 CV/Rs. 200", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.80,
+        "bestOption": "Redeem for Vistara flights",
+        "options": [
+          { "type": "Vistara Award Flights", "value": 0.80, "desc": "1 CV = Rs. 0.80 approx", "recommended": true },
+          { "type": "Partner Airlines", "value": 0.80, "desc": "Transfer to partner programs", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "4 per year (1 per quarter) via MasterCard",
+        "international": "4 per year (max 2 per quarter) via Priority Pass",
+        "accessType": "Priority Pass / MasterCard"
+      },
+      "milestones": [
+        { "spend": 150000, "benefit": "1 Economy ticket" },
+        { "spend": 300000, "benefit": "1 Economy ticket" },
+        { "spend": 450000, "benefit": "1 Economy ticket" },
+        { "spend": 800000, "benefit": "1 Economy ticket + Rs. 5,000 Yatra hotel voucher" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "0%", "cap": 0 },
+      "forex": { "markup": 0.035, "text": "3.5%" }
+    },
+    "metadata": {
+      "tags": ["Travel", "Airlines", "Vistara", "Co-branded", "Frequent Flyer"],
+      "bestFor": "Budget Vistara flyers who want free Economy tickets through card spending",
+      "rating": 3.8,
+      "verdict": "Good entry-point for Vistara loyalty but discontinued for new applications",
+      "pros": [
+        "Economy ticket worth more than joining fee",
+        "CV Points earn on all spends including fuel",
+        "Lower fee than PRIME variant",
+        "Priority Pass membership included"
+      ],
+      "cons": [
+        "Discontinued for new issuance (Sept 2024)",
+        "No fee waiver option",
+        "Lower CV Point earn rate than PRIME",
+        "Economy tickets less valuable than Premium Economy"
+      ]
+    }
+  },
+  {
+    "id": "bpcl-sbi-octane",
+    "name": "BPCL SBI Card OCTANE",
+    "bank": "SBI Card",
+    "image": "/assets/cards/bpcl-sbi-octane.png",
+    "link": "https://www.sbicard.com/en/personal/credit-cards/travel/bpcl-sbi-card-octane.page",
+    "fees": {
+      "joining": 1499,
+      "annual": 1499,
+      "currency": "INR",
+      "waivedOn": 200000,
+      "waiverText": "Annual fee reversed on spends of Rs. 2 Lakh in a year"
+    },
+    "eligibility": {
+      "income": 300000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "BPCL Octane Reward Points",
+      "baseRate": 0.0025,
+      "earningText": "1 RP per Rs. 100 (0.25% base), 25X at BPCL, 10X on select categories",
+      "expiry": "2 years from accrual",
+      "joiningBonus": "6,000 Bonus Reward Points worth Rs. 1,500 on payment of joining fee",
+      "exclusions": "Wallet loads, Non-BPCL fuel, Rent, Government payments",
+      "calculator": {
+        "tier": "co-branded",
+        "monthlyCap": 2500,
+        "capResetPeriod": "statement",
+        "specialLogic": "25X (25 RP per Rs. 100) at BPCL capped at 2,500 RP/month; 10X on Dining, Groceries, Movies, Departmental capped at 7,500 RP/month",
+        "categories": {
+          "travel": { "rate": 0.0025, "label": "1 RP/Rs. 100 (0.25%)", "cap": null },
+          "dining": { "rate": 0.025, "label": "10 RP/Rs. 100 (2.5%)", "cap": 1875 },
+          "online": { "rate": 0.0025, "label": "1 RP/Rs. 100 (0.25%)", "cap": null },
+          "fuel": { "rate": 0.0725, "label": "25 RP/Rs. 100 at BPCL (6.25%) + 1% waiver", "cap": 625 },
+          "groceries": { "rate": 0.025, "label": "10 RP/Rs. 100 (2.5%)", "cap": 1875 },
+          "utilities": { "rate": 0.0025, "label": "1 RP/Rs. 100 (0.25%)", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Instant redemption at BPCL outlets for fuel",
+        "options": [
+          { "type": "BPCL Fuel Redemption", "value": 0.25, "desc": "4 RP = Rs. 1 at BPCL outlets", "recommended": true },
+          { "type": "Statement Credit", "value": 0.25, "desc": "4 RP = Rs. 1", "recommended": false },
+          { "type": "Gift Vouchers", "value": 0.25, "desc": "4 RP = Rs. 1", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "4 per year (max 1 per quarter) via Visa",
+        "international": "None",
+        "accessType": "Visa"
+      },
+      "milestones": [
+        { "spend": 300000, "benefit": "Rs. 2,000 e-voucher from Aditya Birla Fashion/Yatra/Bata/Hush Puppies (annual)" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 100 },
+      "forex": { "markup": 0.035, "text": "3.5%" }
+    },
+    "metadata": {
+      "tags": ["Fuel", "BPCL", "Co-branded", "Petrol", "Travel"],
+      "bestFor": "Regular BPCL fuel users seeking maximum value back on fuel spends",
+      "rating": 4.2,
+      "verdict": "Best fuel card for BPCL loyalists with 7.25% value back on fuel",
+      "pros": [
+        "7.25% total value back on BPCL fuel (6.25% rewards + 1% surcharge waiver)",
+        "10X rewards on dining, groceries, movies",
+        "Instant redemption at BPCL outlets",
+        "Good welcome bonus of Rs. 1,500",
+        "4 domestic lounge visits"
+      ],
+      "cons": [
+        "Fuel benefits only at BPCL outlets",
+        "Monthly fuel cap of 2,500 RPs",
+        "Low base rate of 0.25% on other spends",
+        "No international lounge access"
+      ]
+    }
+  },
+  {
+    "id": "bpcl-sbi",
+    "name": "BPCL SBI Credit Card",
+    "bank": "SBI Card",
+    "image": "/assets/cards/bpcl-sbi.png",
+    "link": "https://www.sbicard.com/en/personal/credit-cards/travel/bpcl-sbi-card.page",
+    "fees": {
+      "joining": 499,
+      "annual": 499,
+      "currency": "INR",
+      "waivedOn": 50000,
+      "waiverText": "Annual fee reversed on spends of Rs. 50,000 in a year"
+    },
+    "eligibility": {
+      "income": 200000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "points",
+      "name": "BPCL Reward Points",
+      "baseRate": 0.0025,
+      "earningText": "1 RP per Rs. 100 (0.25% base), 13X at BPCL, 5X on select categories",
+      "expiry": "2 years from accrual",
+      "joiningBonus": "1,300 Bonus Reward Points on payment of joining fee",
+      "exclusions": "Wallet loads, Non-BPCL fuel, Rent, Government payments",
+      "calculator": {
+        "tier": "co-branded",
+        "monthlyCap": 1300,
+        "capResetPeriod": "statement",
+        "specialLogic": "13X (13 RP per Rs. 100) at BPCL capped at 1,300 RP/month; 5X on Dining, Groceries, Movies, Departmental capped at 5,000 RP/month",
+        "categories": {
+          "travel": { "rate": 0.0025, "label": "1 RP/Rs. 100 (0.25%)", "cap": null },
+          "dining": { "rate": 0.0125, "label": "5 RP/Rs. 100 (1.25%)", "cap": 1250 },
+          "online": { "rate": 0.0025, "label": "1 RP/Rs. 100 (0.25%)", "cap": null },
+          "fuel": { "rate": 0.0425, "label": "13 RP/Rs. 100 at BPCL (3.25%) + 1% waiver", "cap": 325 },
+          "groceries": { "rate": 0.0125, "label": "5 RP/Rs. 100 (1.25%)", "cap": 1250 },
+          "utilities": { "rate": 0.0025, "label": "1 RP/Rs. 100 (0.25%)", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Instant redemption at BPCL outlets for fuel",
+        "options": [
+          { "type": "BPCL Fuel Redemption", "value": 0.25, "desc": "4 RP = Rs. 1 at BPCL outlets", "recommended": true },
+          { "type": "Statement Credit", "value": 0.25, "desc": "4 RP = Rs. 1", "recommended": false },
+          { "type": "Gift Vouchers", "value": 0.25, "desc": "4 RP = Rs. 1", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "None",
+        "international": "None",
+        "accessType": "N/A"
+      },
+      "milestones": [],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 100 },
+      "forex": { "markup": 0.035, "text": "3.5%" }
+    },
+    "metadata": {
+      "tags": ["Fuel", "BPCL", "Co-branded", "Budget", "Entry-Level"],
+      "bestFor": "Budget-conscious BPCL users seeking fuel rewards at minimal fees",
+      "rating": 3.5,
+      "verdict": "Good entry-level fuel card but Octane offers significantly better value",
+      "pros": [
+        "4.25% total value back on BPCL fuel",
+        "Low annual fee of Rs. 499",
+        "Very easy fee waiver at Rs. 50,000",
+        "5X rewards on dining and groceries"
+      ],
+      "cons": [
+        "Lower fuel rewards than Octane",
+        "No airport lounge access",
+        "Lower monthly fuel cap of 1,300 RPs",
+        "No milestone benefits"
+      ]
+    }
+  },
+  {
+    "id": "yatra-sbi",
+    "name": "Yatra SBI Credit Card",
+    "bank": "SBI Card",
+    "image": "/assets/cards/yatra-sbi.png",
+    "link": "https://www.sbicard.com/en/personal/credit-cards/travel/yatra-sbi-card.page",
+    "fees": {
+      "joining": 499,
+      "annual": 499,
+      "currency": "INR",
+      "waivedOn": 100000,
+      "waiverText": "Annual fee reversed on spends of Rs. 1 Lakh in a year"
+    },
+    "eligibility": {
+      "income": 300000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Yatra Reward Points",
+      "baseRate": 0.0025,
+      "earningText": "1 RP per Rs. 100 (0.25% base), 6X on dining, groceries, entertainment, international",
+      "expiry": "2 years from accrual",
+      "joiningBonus": "Yatra.com vouchers worth Rs. 8,250 on payment of joining fee",
+      "exclusions": "Fuel, Wallet loads, Rent, Government payments",
+      "calculator": {
+        "tier": "co-branded",
+        "monthlyCap": 5000,
+        "capResetPeriod": "calendar",
+        "specialLogic": "6X on Dining, Groceries, Departmental, Movies, Entertainment, International; each capped at 5,000 RP/month. Card discontinued March 2025.",
+        "categories": {
+          "travel": { "rate": 0.0025, "label": "1 RP/Rs. 100 (0.25%)", "cap": null },
+          "dining": { "rate": 0.015, "label": "6 RP/Rs. 100 (1.5%)", "cap": 1250 },
+          "online": { "rate": 0.0025, "label": "1 RP/Rs. 100 (0.25%)", "cap": null },
+          "fuel": { "rate": 0, "label": "No rewards on fuel", "cap": null },
+          "groceries": { "rate": 0.015, "label": "6 RP/Rs. 100 (1.5%)", "cap": 1250 },
+          "utilities": { "rate": 0.0025, "label": "1 RP/Rs. 100 (0.25%)", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Redeem for Yatra.com vouchers",
+        "options": [
+          { "type": "Yatra Vouchers", "value": 0.25, "desc": "4 RP = Rs. 1 for Yatra bookings", "recommended": true },
+          { "type": "Statement Credit", "value": 0.25, "desc": "4 RP = Rs. 1", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "8 per year (max 2 per quarter) via MasterCard",
+        "international": "None",
+        "accessType": "MasterCard"
+      },
+      "milestones": [
+        { "spend": 100000, "benefit": "Bonus Reward Points (annual)" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 100 },
+      "forex": { "markup": 0.035, "text": "3.5%" }
+    },
+    "metadata": {
+      "tags": ["Travel", "Yatra", "Co-branded", "Budget", "Flights", "Hotels"],
+      "bestFor": "Budget travelers who book frequently on Yatra.com",
+      "rating": 3.9,
+      "verdict": "Great value for Yatra users with welcome vouchers exceeding annual fee, but card discontinued",
+      "pros": [
+        "Welcome vouchers worth Rs. 8,250 (16x the fee)",
+        "Rs. 1,000 off domestic flights, Rs. 4,000 off international",
+        "20% off domestic hotels",
+        "8 domestic lounge visits",
+        "Rs. 50 Lakh air accident cover"
+      ],
+      "cons": [
+        "Card discontinued for new applications (March 2025)",
+        "Travel benefits discontinued May 2025",
+        "No international lounge access",
+        "No rewards on fuel"
+      ]
+    }
+  },
+  {
+    "id": "irctc-sbi-premier",
+    "name": "IRCTC SBI Card Premier",
+    "bank": "SBI Card",
+    "image": "/assets/cards/irctc-sbi-premier.png",
+    "link": "https://www.sbicard.com/en/personal/credit-cards/travel/irctc-premier-card.page",
+    "fees": {
+      "joining": 1499,
+      "annual": 1499,
+      "currency": "INR",
+      "waivedOn": 200000,
+      "waiverText": "Annual fee reversed on spends of Rs. 2 Lakh in a year"
+    },
+    "eligibility": {
+      "income": 300000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "IRCTC Reward Points",
+      "baseRate": 0.008,
+      "earningText": "1 RP per Rs. 125 (0.8% base), 3 RP on dining/utility, 10% on AC tickets",
+      "expiry": "2 years from accrual",
+      "joiningBonus": "1,500 Reward Points equivalent to Rs. 1,500 on payment of joining fee",
+      "exclusions": "Fuel, Wallet loads, Rent, Government payments",
+      "calculator": {
+        "tier": "co-branded",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "10% value back on AC1, AC2, AC3, Executive Chair, Chair Car via IRCTC (1 RP = Rs. 1 for IRCTC)",
+        "categories": {
+          "travel": { "rate": 0.10, "label": "10% on AC tickets via IRCTC", "cap": null },
+          "dining": { "rate": 0.024, "label": "3 RP/Rs. 125 (2.4%)", "cap": null },
+          "online": { "rate": 0.008, "label": "1 RP/Rs. 125 (0.8%)", "cap": null },
+          "fuel": { "rate": 0, "label": "No rewards on fuel", "cap": null },
+          "groceries": { "rate": 0.008, "label": "1 RP/Rs. 125 (0.8%)", "cap": null },
+          "utilities": { "rate": 0.024, "label": "3 RP/Rs. 125 on standing instructions (2.4%)", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.00,
+        "bestOption": "Redeem on IRCTC website/app for train tickets",
+        "options": [
+          { "type": "IRCTC Ticket Booking", "value": 1.00, "desc": "1 RP = Rs. 1 on IRCTC", "recommended": true },
+          { "type": "Statement Credit", "value": 0.25, "desc": "4 RP = Rs. 1 (lower value)", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "8 Railway Lounge visits per year (max 2 per quarter)",
+        "international": "None",
+        "accessType": "IRCTC Railway Lounges"
+      },
+      "milestones": [
+        { "spend": 50000, "benefit": "2,500 Bonus Reward Points (annual travel spends)" },
+        { "spend": 100000, "benefit": "5,000 Bonus Reward Points (annual travel spends)" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 100 },
+      "forex": { "markup": 0.035, "text": "3.5%" }
+    },
+    "metadata": {
+      "tags": ["Travel", "Railways", "IRCTC", "Co-branded", "Trains"],
+      "bestFor": "Frequent train travelers booking AC class tickets through IRCTC",
+      "rating": 4.1,
+      "verdict": "Excellent for train travelers with 10% back on AC tickets and Rs. 1 RP value",
+      "pros": [
+        "10% value back on AC train tickets",
+        "1 RP = Rs. 1 redemption on IRCTC (4x standard value)",
+        "Welcome bonus equals joining fee",
+        "Up to 17.5% return with milestone rewards",
+        "8 complimentary railway lounge visits",
+        "1% transaction fee savings on IRCTC"
+      ],
+      "cons": [
+        "Benefits limited to train travel",
+        "Low base rate of 0.8% on other spends",
+        "No airport lounge access",
+        "Rail accident insurance discontinued July 2025"
+      ]
+    }
+  },
+  {
+    "id": "sbi-simplysave-upi-rupay",
+    "name": "SimplySAVE UPI SBI Card (RuPay)",
+    "bank": "SBI Card",
+    "image": "/assets/cards/sbi-simplysave-upi-rupay.png",
+    "link": "https://www.sbicard.com/en/personal/credit-cards/shopping/simplysave-upi-rupay-card.page",
+    "fees": {
+      "joining": 499,
+      "annual": 499,
+      "currency": "INR",
+      "waivedOn": 100000,
+      "waiverText": "Annual fee reversed on spends of Rs. 1 Lakh in a year"
+    },
+    "eligibility": {
+      "income": 300000,
+      "age": { "min": 21, "max": 70 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "points",
+      "name": "SimplySAVE Reward Points",
+      "baseRate": 0.00167,
+      "earningText": "1 RP per Rs. 150 (0.17% base), 10X on Dining/Movies/Groceries/Departmental",
+      "expiry": "2 years from accrual",
+      "joiningBonus": "2,000 Bonus Reward Points on spending Rs. 2,000 within 60 days",
+      "exclusions": "Fuel, Wallet loads, Rent, Government payments",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": 5000,
+        "capResetPeriod": "calendar",
+        "specialLogic": "UPI-enabled RuPay card; 10X on Dining, Movies, Groceries, Departmental; capped at 5,000 RP/month",
+        "categories": {
+          "travel": { "rate": 0.00167, "label": "1 RP/Rs. 150 (0.17%)", "cap": null },
+          "dining": { "rate": 0.0167, "label": "10 RP/Rs. 150 (1.67%)", "cap": 1250 },
+          "online": { "rate": 0.00167, "label": "1 RP/Rs. 150 (0.17%)", "cap": null },
+          "fuel": { "rate": 0, "label": "No rewards on fuel", "cap": null },
+          "groceries": { "rate": 0.0167, "label": "10 RP/Rs. 150 (1.67%)", "cap": 1250 },
+          "utilities": { "rate": 0.00167, "label": "1 RP/Rs. 150 (0.17%)", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Redeem for gift vouchers or statement credit",
+        "options": [
+          { "type": "Statement Credit", "value": 0.25, "desc": "4 RP = Rs. 1", "recommended": true },
+          { "type": "Gift Vouchers", "value": 0.25, "desc": "4 RP = Rs. 1", "recommended": true },
+          { "type": "Product Catalogue", "value": 0.25, "desc": "4 RP = Rs. 1", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "RuPay Select benefits may include lounge access",
+        "international": "None",
+        "accessType": "RuPay"
+      },
+      "milestones": [],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 100 },
+      "forex": { "markup": 0.035, "text": "3.5%" }
+    },
+    "metadata": {
+      "tags": ["Entry-Level", "UPI", "RuPay", "Digital Payments", "Budget"],
+      "bestFor": "Users who want UPI credit line for everyday payments with rewards on dining and groceries",
+      "rating": 3.8,
+      "verdict": "Best entry-level RuPay card with UPI integration for seamless digital payments",
+      "pros": [
+        "UPI-enabled for QR code payments",
+        "Rewards on UPI transactions",
+        "10X on dining, movies, groceries, departmental",
+        "Low annual fee of Rs. 499",
+        "Easy fee waiver at Rs. 1 Lakh",
+        "RuPay benefits and security"
+      ],
+      "cons": [
+        "No airport lounge access",
+        "Monthly cap of 5,000 RPs",
+        "Low base rate of 0.17%",
+        "Limited international acceptance"
+      ]
+    }
+  }
+]

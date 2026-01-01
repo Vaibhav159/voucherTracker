@@ -1,0 +1,526 @@
+[
+  {
+    "id": "kotak-white-reserve",
+    "name": "Kotak White Reserve Credit Card",
+    "bank": "Kotak Mahindra Bank",
+    "image": "/assets/cards/kotak-white-reserve.png",
+    "link": "https://www.kotak.com/en/personal-banking/cards/credit-cards/white-reserve-credit-card.html",
+    "fees": {
+      "joining": 12500,
+      "annual": 12500,
+      "currency": "INR",
+      "waivedOn": 1000000,
+      "waiverText": "Waived on ₹10 lakh annual spend"
+    },
+    "eligibility": {
+      "income": 2500000,
+      "age": { "min": 28, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "White Pass Value",
+      "baseRate": 0,
+      "earningText": "Milestone-based White Pass rewards. No rewards below ₹3 lakh annual spend. Earn up to ₹2.5 lakh White Pass on ₹1 crore spend.",
+      "expiry": "Valid until 90 days after anniversary cycle",
+      "joiningBonus": "Club Marriott Membership with 3 Celebration Certificates",
+      "exclusions": "Fuel, Wallet, Rent, Govt, Insurance, Utilities, Education excluded from milestone calculation. W.e.f June 2025: 1% fee on Wallet/Gaming above ₹10K/month, Utilities above ₹75K/month, Fuel above ₹50K/month",
+      "calculator": {
+        "tier": "super-premium",
+        "monthlyCap": null,
+        "capResetPeriod": "anniversary",
+        "specialLogic": "White Pass is earned via ANNUAL SPEND MILESTONES (not per-transaction). Milestones: ₹3L→₹5K, ₹10L→+₹15K (total ₹20K), ₹20L→+₹22K (₹42K), ₹30L→+₹24K (₹66K), ₹40L→+₹26K (₹92K), ₹50L→+₹28K (₹1.2L), ₹75L→+₹63K (₹1.83L), ₹1Cr→+₹67K (₹2.5L). No rewards if spend <₹3L. Redemption: 1 White Pass = ₹1 on catalog, ₹0.70 for cashback.",
+        "categories": {
+          "travel": { "rate": 0.025, "label": "Up to 2.5% on ₹1Cr milestone", "cap": 250000 },
+          "dining": { "rate": 0.025, "label": "Up to 2.5% on ₹1Cr milestone", "cap": 250000 },
+          "online": { "rate": 0.025, "label": "Up to 2.5% on ₹1Cr milestone", "cap": 250000 },
+          "fuel": { "rate": 0, "label": "No rewards on fuel", "cap": null },
+          "groceries": { "rate": 0.025, "label": "Up to 2.5% on ₹1Cr milestone", "cap": 250000 },
+          "utilities": { "rate": 0, "label": "No rewards on utilities", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.0,
+        "bestOption": "White Pass Catalog (1:1 redemption for vouchers, flights, hotels, experiences)",
+        "options": [
+          { "type": "White Pass Catalog", "value": 1.0, "desc": "1 White Pass = ₹1 on vouchers, flights, hotels, experiences", "recommended": true },
+          { "type": "Cashback", "value": 0.70, "desc": "1 White Pass = ₹0.70 as cashback", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "Unlimited (Primary & Add-on)",
+        "international": "Unlimited (Priority Pass)",
+        "accessType": "DreamFolks + Priority Pass"
+      },
+      "milestones": [
+        { "spend": 300000, "benefit": "₹5,000 White Pass Value" },
+        { "spend": 1000000, "benefit": "Additional ₹15,000 White Pass (Total ₹20,000)" },
+        { "spend": 2000000, "benefit": "Additional ₹22,000 White Pass (Total ₹42,000)" },
+        { "spend": 3000000, "benefit": "Additional ₹24,000 White Pass (Total ₹66,000)" },
+        { "spend": 4000000, "benefit": "Additional ₹26,000 White Pass (Total ₹92,000)" },
+        { "spend": 5000000, "benefit": "Additional ₹28,000 White Pass (Total ₹1,20,000)" },
+        { "spend": 7500000, "benefit": "Additional ₹63,000 White Pass (Total ₹1,83,000)" },
+        { "spend": 10000000, "benefit": "Additional ₹67,000 White Pass (Total ₹2,50,000)" }
+      ],
+      "golf": { "included": true, "text": "2 complimentary rounds per month worldwide" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 4500 },
+      "forex": { "markup": 0.02, "text": "2%" }
+    },
+    "metadata": {
+      "tags": ["Super-Premium", "Metal Card", "Travel", "Golf", "Unlimited Lounge", "Club Marriott", "Milestone Rewards"],
+      "bestFor": "Ultra HNIs with ₹10L+ annual spends seeking luxury travel, lounge, and lifestyle benefits",
+      "rating": 4.3,
+      "verdict": "India's top milestone-based super-premium card with unmatched lounge access and Club Marriott perks, but requires ₹3L minimum spend to unlock any rewards.",
+      "pros": [
+        "Unlimited domestic and international lounge access for primary and add-on",
+        "Up to 2.5% value back on ₹1 crore spend",
+        "Club Marriott membership with dining and stay discounts",
+        "Low 2% forex markup",
+        "2 complimentary golf rounds per month worldwide",
+        "Luxury concierge services"
+      ],
+      "cons": [
+        "No rewards below ₹3 lakh annual spend",
+        "Very high ₹12,500 annual fee requires ₹10L spend for waiver",
+        "Cashback redemption at reduced 0.70 rate",
+        "Requires ₹25L+ income eligibility"
+      ]
+    }
+  },
+  {
+    "id": "kotak-white",
+    "name": "Kotak White Credit Card",
+    "bank": "Kotak Mahindra Bank",
+    "image": "/assets/cards/kotak-white.png",
+    "link": "https://www.kotak.com/en/personal-banking/cards/credit-cards/white-credit-card.html",
+    "fees": {
+      "joining": 3000,
+      "annual": 3000,
+      "currency": "INR",
+      "waivedOn": 500000,
+      "waiverText": "Waived on ₹5 lakh annual spend"
+    },
+    "eligibility": {
+      "income": 600000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "White Pass Value",
+      "baseRate": 0,
+      "earningText": "Milestone-based White Pass rewards. Earn up to ₹27,000 White Pass annually on ₹12 lakh spend. Minimum ₹2 lakh spend required to unlock rewards.",
+      "expiry": "Expires on card anniversary date + 90 days claim period",
+      "joiningBonus": "₹1,500 White Pass on spending ₹30,000 within 60 days of card setup",
+      "exclusions": "Fuel, Wallet, Rent, Govt, Insurance, Utilities, EMI transactions. W.e.f June 2025: 1% fee on Wallet/Gaming above ₹10K/month, Utilities above ₹75K/month, Fuel above ₹50K/month",
+      "calculator": {
+        "tier": "premium",
+        "monthlyCap": null,
+        "capResetPeriod": "anniversary",
+        "specialLogic": "White Pass is earned via ANNUAL SPEND MILESTONES. Maximum ₹27,000 White Pass annually on ₹12 lakh spend (~2.25% value back). Minimum ₹2 lakh spend required to start earning. Redemption: 1 White Pass = ₹1 on catalog.",
+        "categories": {
+          "travel": { "rate": 0.0225, "label": "Up to 2.25% on ₹12L spend", "cap": 27000 },
+          "dining": { "rate": 0.0225, "label": "Up to 2.25% on ₹12L spend", "cap": 27000 },
+          "online": { "rate": 0.0225, "label": "Up to 2.25% on ₹12L spend", "cap": 27000 },
+          "fuel": { "rate": 0, "label": "No rewards on fuel", "cap": null },
+          "groceries": { "rate": 0.0225, "label": "Up to 2.25% on ₹12L spend", "cap": 27000 },
+          "utilities": { "rate": 0, "label": "No rewards on utilities", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.0,
+        "bestOption": "White Pass Catalog (1:1 redemption for vouchers, flights, hotels)",
+        "options": [
+          { "type": "White Pass Catalog", "value": 1.0, "desc": "1 White Pass = ₹1 on vouchers, flights, hotels, National Geographic experiences", "recommended": true }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "8 per year (2 per quarter)",
+        "international": "4 per year (Priority Pass)",
+        "accessType": "DreamFolks + Priority Pass"
+      },
+      "milestones": [
+        { "spend": 200000, "benefit": "White Pass rewards unlocked" },
+        { "spend": 1200000, "benefit": "Maximum ₹27,000 White Pass Value annually" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 3500 },
+      "forex": { "markup": 0.035, "text": "3.5%" }
+    },
+    "metadata": {
+      "tags": ["Premium", "Travel", "Milestone Rewards", "Lounge Access", "Lifestyle"],
+      "bestFor": "High spenders seeking milestone-based White Pass rewards with domestic and international lounge access",
+      "rating": 3.8,
+      "verdict": "A solid premium card for high spenders but complex milestone structure and ₹2L minimum spend requirement limit its appeal compared to simpler reward cards.",
+      "pros": [
+        "Up to 2.25% value back on ₹12L annual spend",
+        "Domestic and international lounge access",
+        "Premium brand voucher redemptions",
+        "Railway surcharge waiver up to 2.5%",
+        "Fee waiver achievable at ₹5L spend"
+      ],
+      "cons": [
+        "Minimum ₹2L spend required to unlock any rewards",
+        "Complex milestone-based structure",
+        "White Pass expires on anniversary date",
+        "No category-specific accelerated rewards",
+        "3.5% forex markup is on higher side"
+      ]
+    }
+  },
+  {
+    "id": "kotak-mojo-platinum",
+    "name": "Kotak Mojo Platinum Credit Card",
+    "bank": "Kotak Mahindra Bank",
+    "image": "/assets/cards/kotak-mojo-platinum.png",
+    "link": "https://www.kotak.com/en/personal-banking/cards/credit-cards/mojo-platinum-credit-card.html",
+    "fees": {
+      "joining": 1000,
+      "annual": 1000,
+      "currency": "INR",
+      "waivedOn": 100000,
+      "waiverText": "Joining fee waived on ₹30K spend in 90 days. Annual fee waived on ₹1 lakh spend"
+    },
+    "eligibility": {
+      "income": 400000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Mojo Points",
+      "baseRate": 0.0025,
+      "earningText": "2.5 Mojo Points per ₹100 on online spends (1% value). 1 Mojo Point per ₹100 on other spends (0.4% value). No rewards on fuel or cash withdrawal.",
+      "expiry": "12 months from date earned",
+      "joiningBonus": "2,500 Mojo Points quarterly on ₹75,000 spend (1st year only)",
+      "exclusions": "Fuel, Cash Withdrawal. W.e.f June 2025: Education & Insurance earn only up to ₹70K/statement cycle. Wallet/Gaming, Utility, Fuel excluded from milestone calculation.",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": null,
+        "capResetPeriod": "statement",
+        "specialLogic": "2.5x Mojo Points on all online spends. 1x on offline spends excluding fuel. 1 Mojo Point = ₹0.25 on catalog, ₹0.20 for cashback. Minimum 2,500 points for redemption.",
+        "categories": {
+          "travel": { "rate": 0.01, "label": "1% (2.5 Mojo/₹100 online)", "cap": null },
+          "dining": { "rate": 0.01, "label": "1% (2.5 Mojo/₹100 online)", "cap": null },
+          "online": { "rate": 0.01, "label": "1% (2.5 Mojo/₹100)", "cap": null },
+          "fuel": { "rate": 0, "label": "No rewards on fuel", "cap": null },
+          "groceries": { "rate": 0.004, "label": "0.4% (1 Mojo/₹100 offline)", "cap": null },
+          "utilities": { "rate": 0.004, "label": "0.4% (1 Mojo/₹100 offline)", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Kotak Rewards Catalog for shopping, travel, vouchers",
+        "options": [
+          { "type": "Catalog Redemption", "value": 0.25, "desc": "1 Mojo Point = ₹0.25 on shopping, travel, vouchers", "recommended": true },
+          { "type": "Statement Credit", "value": 0.20, "desc": "1 Mojo Point = ₹0.20 as cashback (min 2,500 points)", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "8 per year (2 per quarter, requires ₹75K quarterly spend from June 2025)",
+        "international": "None",
+        "accessType": "DreamFolks"
+      },
+      "milestones": [
+        { "spend": 75000, "benefit": "2,500 bonus Mojo Points (quarterly, 1st year only)" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 3500 },
+      "forex": { "markup": 0.035, "text": "3.5%" }
+    },
+    "metadata": {
+      "tags": ["Entry-Level", "Online Shopping", "Lounge Access", "Points", "Rewards"],
+      "bestFor": "Frequent online shoppers seeking basic rewards with domestic lounge access",
+      "rating": 3.5,
+      "verdict": "A decent entry-level rewards card with accelerated online earnings, but the 0.4% offline reward rate is underwhelming compared to competitors.",
+      "pros": [
+        "2.5x rewards on all online spends",
+        "Uncapped reward earning",
+        "8 domestic lounge visits annually",
+        "Railway surcharge waiver up to 2.5%",
+        "Low ₹1L spend for fee waiver",
+        "₹1.25L insurance on lost card"
+      ],
+      "cons": [
+        "Low 0.4% reward rate on offline spends",
+        "Quarterly milestone bonus only for 1st year",
+        "No international lounge access",
+        "12-month points expiry",
+        "3.5% forex markup"
+      ]
+    }
+  },
+  {
+    "id": "kotak-zen-signature",
+    "name": "Kotak Zen Signature Credit Card",
+    "bank": "Kotak Mahindra Bank",
+    "image": "/assets/cards/kotak-zen-signature.png",
+    "link": "https://www.kotak.com/en/personal-banking/cards/credit-cards/zen-signature-credit-card.html",
+    "fees": {
+      "joining": 1500,
+      "annual": 1500,
+      "currency": "INR",
+      "waivedOn": 150000,
+      "waiverText": "Waived on ₹1.5 lakh annual spend"
+    },
+    "eligibility": {
+      "income": 480000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 720
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Zen Points",
+      "baseRate": 0.0083,
+      "earningText": "10 Zen Points per ₹150 on shopping (apparel, jewellery, lifestyle, departmental stores) = 1.67%. 5 Zen Points per ₹150 on other spends = 0.83%. Capped at 6,500 points per billing cycle.",
+      "expiry": "2 years from date earned",
+      "joiningBonus": "1,500 Zen Points on payment of joining fee (worth ₹375)",
+      "exclusions": "Fuel, Cash, EMI transactions. W.e.f June 2025: Wallet/Gaming, Utility, Fuel, Insurance, Govt, Rent, Education excluded from milestone calculation.",
+      "calculator": {
+        "tier": "premium",
+        "monthlyCap": 6500,
+        "capResetPeriod": "statement",
+        "specialLogic": "10 Zen Points/₹150 on SHOPPING CATEGORIES (Apparel, Lifestyle, Jewellery, Departmental Stores). 5 Zen Points/₹150 on other spends. Monthly cap of 6,500 Zen Points (~₹1,625 value). Redemption: 1 Zen Point = ₹0.25 catalog, ₹0.20 cashback.",
+        "categories": {
+          "travel": { "rate": 0.0083, "label": "0.83% (5 Zen/₹150)", "cap": 1625 },
+          "dining": { "rate": 0.0083, "label": "0.83% (5 Zen/₹150)", "cap": 1625 },
+          "online": { "rate": 0.0167, "label": "1.67% on shopping sites (10 Zen/₹150)", "cap": 1625 },
+          "fuel": { "rate": 0, "label": "No rewards on fuel", "cap": null },
+          "groceries": { "rate": 0.0167, "label": "1.67% at departmental stores (10 Zen/₹150)", "cap": 1625 },
+          "utilities": { "rate": 0.0083, "label": "0.83% (5 Zen/₹150)", "cap": 1625 }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Kotak Rewards Catalog for shopping, travel, vouchers",
+        "options": [
+          { "type": "Catalog Redemption", "value": 0.25, "desc": "1 Zen Point = ₹0.25 on shopping, travel, mobile recharge", "recommended": true },
+          { "type": "PaybyPoints at POS", "value": 0.20, "desc": "1 Zen Point = ₹0.20 at partner merchants", "recommended": false },
+          { "type": "Statement Credit", "value": 0.20, "desc": "1 Zen Point = ₹0.20 (min 2,000 points)", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "8 per year (2 per quarter, requires ₹75K quarterly spend from June 2025)",
+        "international": "3 per year (Priority Pass)",
+        "accessType": "DreamFolks + Priority Pass"
+      },
+      "milestones": [
+        { "spend": 300000, "benefit": "7,500 bonus Zen Points (₹1,875 value)" },
+        { "spend": 600000, "benefit": "15,000 bonus Zen Points (₹3,750 value) - replaces ₹3L milestone" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 3500 },
+      "forex": { "markup": 0.035, "text": "3.5%" }
+    },
+    "metadata": {
+      "tags": ["Premium", "Shopping", "Lifestyle", "Apparel", "Lounge Access", "Milestone Rewards"],
+      "bestFor": "Frequent shoppers at apparel, lifestyle, and departmental stores seeking accelerated rewards",
+      "rating": 3.9,
+      "verdict": "An excellent shopping-focused card with 1.67% value on lifestyle purchases and solid lounge access, but the monthly cap limits high spenders.",
+      "pros": [
+        "1.67% value on shopping categories (apparel, lifestyle, jewellery)",
+        "Domestic and international lounge access",
+        "Milestone bonuses up to 15,000 points on ₹6L spend",
+        "Low ₹1.5L spend for fee waiver",
+        "Railway surcharge waiver"
+      ],
+      "cons": [
+        "6,500 points monthly cap limits earning potential",
+        "Only 0.83% on non-shopping categories",
+        "International lounge limited to 3 visits",
+        "3.5% forex markup",
+        "Quarterly spend required for lounge access from June 2025"
+      ]
+    }
+  },
+  {
+    "id": "kotak-pvr-inox",
+    "name": "Kotak PVR INOX Credit Card",
+    "bank": "Kotak Mahindra Bank",
+    "image": "/assets/cards/kotak-pvr-inox.png",
+    "link": "https://www.kotak.com/en/personal-banking/cards/credit-cards/pvr-inox-kotak-credit-card.html",
+    "fees": {
+      "joining": 0,
+      "annual": 499,
+      "currency": "INR",
+      "waivedOn": null,
+      "waiverText": "No waiver available. First year joining fee free."
+    },
+    "eligibility": {
+      "income": 300000,
+      "age": { "min": 18, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Movie Tickets (M-Coupons)",
+      "baseRate": 0.03,
+      "earningText": "1 free PVR INOX movie ticket (₹300 value) for every ₹10,000 spent per month. Unlimited tickets possible. 5% instant discount on PVR tickets. 20% off on F&B at PVR.",
+      "expiry": "M-Coupons valid for 60 days from claim date. Must claim within 2 billing cycles.",
+      "joiningBonus": "None",
+      "exclusions": "Rent Payments, Wallet Funding, Online Skill-Based Gaming excluded from milestone calculation. 1% fee on Rent, Education, and on Wallet/Gaming above ₹10K, Utility above ₹50K, Fuel above ₹35K monthly.",
+      "calculator": {
+        "tier": "co-branded",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "MOVIE TICKET MILESTONE: Earn 1 M-Coupon (worth ₹300) for every ₹10,000 spent in a monthly billing cycle. No limit on tickets. E.g., ₹75,000 spend = 7 tickets (₹2,100 value = 2.8%). Additional 5% off on PVR tickets and 20% off on F&B at PVR cinemas. Access to PVR INOX In-Cinema Lounges.",
+        "categories": {
+          "travel": { "rate": 0.03, "label": "₹300 ticket per ₹10K spend (3%)", "cap": null },
+          "dining": { "rate": 0.03, "label": "₹300 ticket per ₹10K spend (3%)", "cap": null },
+          "online": { "rate": 0.03, "label": "₹300 ticket per ₹10K spend (3%)", "cap": null },
+          "fuel": { "rate": 0.03, "label": "₹300 ticket per ₹10K spend (3%)", "cap": null },
+          "groceries": { "rate": 0.03, "label": "₹300 ticket per ₹10K spend (3%)", "cap": null },
+          "utilities": { "rate": 0.03, "label": "₹300 ticket per ₹10K spend (3%)", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 300,
+        "bestOption": "PVR INOX movie tickets via M-Coupons",
+        "options": [
+          { "type": "PVR Movie Ticket", "value": 300, "desc": "1 M-Coupon = ₹300 towards any PVR INOX movie ticket", "recommended": true }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "None",
+        "international": "None",
+        "accessType": "N/A"
+      },
+      "milestones": [
+        { "spend": 10000, "benefit": "1 free PVR INOX ticket (₹300 value) per month" },
+        { "spend": 20000, "benefit": "2 free PVR INOX tickets per month" },
+        { "spend": 100000, "benefit": "10 free PVR INOX tickets per month" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": true, "text": "5% instant discount on PVR INOX tickets. 20% off on F&B. Free In-Cinema Lounge access." },
+      "fuel": { "surchargeWaiver": "0%", "cap": 0 },
+      "forex": { "markup": 0.035, "text": "3.5%" }
+    },
+    "metadata": {
+      "tags": ["Co-Branded", "Movies", "Entertainment", "PVR INOX", "Low Fee", "Lifestyle"],
+      "bestFor": "Movie enthusiasts who frequently watch films at PVR INOX cinemas",
+      "rating": 4.0,
+      "verdict": "The ultimate card for PVR regulars with unlimited free tickets, instant discounts, and F&B savings. Great value if you love movies, but limited use outside entertainment.",
+      "pros": [
+        "Unlimited free movie tickets (₹300 each per ₹10K spend)",
+        "5% instant discount on PVR tickets",
+        "20% off on food and beverages at PVR",
+        "Free access to PVR INOX In-Cinema Lounges",
+        "No joining fee (first year)",
+        "Low ₹499 annual fee"
+      ],
+      "cons": [
+        "No rewards outside PVR ecosystem",
+        "No airport lounge access",
+        "No fuel surcharge waiver",
+        "M-Coupons expire in 60 days",
+        "Rent, wallet, gaming excluded from milestone",
+        "Annual fee cannot be waived"
+      ]
+    }
+  },
+  {
+    "id": "kotak-myntra",
+    "name": "Kotak Myntra Credit Card",
+    "bank": "Kotak Mahindra Bank",
+    "image": "/assets/cards/kotak-myntra.png",
+    "link": "https://www.kotak.com/en/personal-banking/cards/credit-cards/myntra-kotak-credit-card.html",
+    "fees": {
+      "joining": 500,
+      "annual": 500,
+      "currency": "INR",
+      "waivedOn": 200000,
+      "waiverText": "Waived on ₹2 lakh annual spend"
+    },
+    "eligibility": {
+      "income": 300000,
+      "age": { "min": 18, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "cashback",
+      "name": "Cashback",
+      "baseRate": 0.0125,
+      "earningText": "7.5% instant discount on Myntra (capped ₹750/txn). 5% cashback on Swiggy, Cleartrip, PVR, Urban Company (capped ₹1,000/month). 1.25% cashback on all other online/offline/UPI spends.",
+      "expiry": "Cashback credited within 30 days. Never expires once credited.",
+      "joiningBonus": "₹500 Myntra voucher on first ₹500+ transaction within 30 days. Complimentary Myntra Insider Select membership.",
+      "exclusions": "Rent, Wallet, Fuel, Insurance, Utility, Govt, Education above ₹70K, Online Gaming excluded from cashback. UPI cashback only on transactions ≥₹2,000.",
+      "calculator": {
+        "tier": "co-branded",
+        "monthlyCap": 1000,
+        "capResetPeriod": "statement",
+        "specialLogic": "DISCONTINUED as of July 10, 2025. Existing cardholders migrated to Kotak League Platinum or Zen Signature. Card features: 7.5% INSTANT DISCOUNT at Myntra checkout (max ₹750/transaction, unlimited transactions). 5% cashback on partner brands (Swiggy, Cleartrip, PVR, Urban Company) capped at ₹1,000/month. 1.25% unlimited cashback on all other spends including UPI (min ₹2,000/txn for UPI).",
+        "categories": {
+          "travel": { "rate": 0.05, "label": "5% on Cleartrip", "cap": 1000 },
+          "dining": { "rate": 0.05, "label": "5% on Swiggy/Swiggy Instamart", "cap": 1000 },
+          "online": { "rate": 0.075, "label": "7.5% on Myntra (max ₹750/txn)", "cap": 750 },
+          "fuel": { "rate": 0, "label": "No cashback on fuel", "cap": null },
+          "groceries": { "rate": 0.05, "label": "5% on Swiggy Instamart", "cap": 1000 },
+          "utilities": { "rate": 0.0125, "label": "1.25% base cashback", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.0,
+        "bestOption": "Auto-credited cashback to statement",
+        "options": [
+          { "type": "Statement Cashback", "value": 1.0, "desc": "Cashback auto-credited within 30 days", "recommended": true }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "4 per year (1 per quarter)",
+        "international": "None",
+        "accessType": "DreamFolks"
+      },
+      "milestones": [
+        { "spend": 50000, "benefit": "2 complimentary PVR tickets (₹250 each) quarterly" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": true, "text": "5% cashback at PVR. 2 free PVR tickets on ₹50K quarterly spend." },
+      "fuel": { "surchargeWaiver": "1%", "cap": 3500 },
+      "forex": { "markup": 0.035, "text": "3.5%" }
+    },
+    "metadata": {
+      "tags": ["Co-Branded", "Shopping", "Myntra", "Cashback", "Fashion", "Lifestyle", "DISCONTINUED"],
+      "bestFor": "Frequent Myntra shoppers seeking instant checkout discounts (CARD DISCONTINUED)",
+      "rating": 4.1,
+      "verdict": "DISCONTINUED (July 2025). Was an excellent co-branded card with highest 7.5% Myntra discount and strong partner cashback. Existing cardholders migrated to League Platinum or Zen Signature.",
+      "pros": [
+        "7.5% instant discount on Myntra (highest among fashion cards)",
+        "5% cashback on Swiggy, Cleartrip, PVR, Urban Company",
+        "1.25% unlimited base cashback including UPI",
+        "Complimentary Myntra Insider membership",
+        "Low ₹500 annual fee with ₹2L waiver option",
+        "Quarterly PVR tickets on milestone"
+      ],
+      "cons": [
+        "CARD DISCONTINUED from July 10, 2025",
+        "Partner cashback capped at ₹1,000/month",
+        "Myntra discount capped at ₹750/transaction",
+        "UPI cashback only on ₹2,000+ transactions",
+        "Limited to 4 domestic lounge visits",
+        "No international lounge access"
+      ]
+    }
+  }
+]

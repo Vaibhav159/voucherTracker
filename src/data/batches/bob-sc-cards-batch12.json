@@ -1,0 +1,348 @@
+[
+  {
+    "id": "bob-eterna",
+    "name": "BOB Eterna Credit Card",
+    "bank": "Bank of Baroda",
+    "image": "/assets/cards/bob-eterna.png",
+    "link": "https://www.bobcard.co.in/credit-card-types/eterna",
+    "fees": {
+      "joining": 2499,
+      "annual": 2499,
+      "currency": "INR",
+      "waivedOn": 250000,
+      "waiverText": "Annual fee waived on ₹2.5L annual spend. Joining fee waived on ₹25,000 spend within 60 days. LTF offer available till 31st Dec 2025."
+    },
+    "eligibility": {
+      "income": 1200000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Reward Points",
+      "baseRate": 0.0075,
+      "earningText": "3 RP per ₹100 on regular spends (0.75%). 15 RP per ₹100 on online, travel, dining, international spends (3.75%). 5X bonus capped at 5,000 RP per statement cycle.",
+      "expiry": "Lifelong validity",
+      "joiningBonus": "10,000 Bonus RP on ₹50,000 spend in first 60 days + 6-month FITPASS Pro membership worth ₹15,000",
+      "exclusions": "Fuel, Rent, Utilities, Insurance, Govt, Education, Hospital, Wallet, Charity, Supermarket, Convenience Store, Fast Food, Telecom, Transportation, Laundry, Cleaning, Agriculture, Contractor",
+      "calculator": {
+        "tier": "premium",
+        "monthlyCap": 5000,
+        "capResetPeriod": "statement",
+        "specialLogic": "5X bonus (12 extra RP) is capped at 5,000 RP per statement cycle on accelerated categories. After cap, base rate of 3 RP/₹100 applies. Extra 12 RP on flights and 30 RP on hotels via BOBCARD SmartDeal.",
+        "categories": {
+          "travel": { "rate": 0.0375, "label": "15 RP/₹100 (3.75%) via BOBCARD SmartDeal", "cap": 1250 },
+          "dining": { "rate": 0.0375, "label": "15 RP/₹100 (3.75%)", "cap": 1250 },
+          "online": { "rate": 0.0375, "label": "15 RP/₹100 (3.75%)", "cap": 1250 },
+          "fuel": { "rate": 0, "label": "No rewards on fuel", "cap": null },
+          "groceries": { "rate": 0, "label": "Excluded - Supermarkets/Convenience Stores", "cap": null },
+          "utilities": { "rate": 0, "label": "Excluded - Special MCC", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Statement credit at 1 RP = ₹0.25 (no redemption fee)",
+        "options": [
+          { "type": "Statement Credit", "value": 0.25, "desc": "1 RP = ₹0.25", "recommended": true },
+          { "type": "Products/Vouchers", "value": 0.25, "desc": "Via BOBCARD rewards portal", "recommended": false },
+          { "type": "Travel Bookings", "value": 0.25, "desc": "Via BOBCARD rewards portal", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "Unlimited per quarter (on ₹40,000 spend in previous quarter)",
+        "international": "None",
+        "accessType": "RuPay/Visa Infinite - DreamFolks/Visa"
+      },
+      "milestones": [
+        { "spend": 50000, "benefit": "10,000 Bonus RP + FITPASS Pro 6 months (within 60 days)" },
+        { "spend": 500000, "benefit": "20,000 Bonus RP (annual milestone)" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": true, "text": "BOGO on District/Paytm Movies, max ₹250 off per month" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 250 },
+      "forex": { "markup": 0.02, "text": "2% forex markup (lower than industry standard)" }
+    },
+    "metadata": {
+      "tags": ["Premium", "Travel", "Lifestyle", "Lounge Access", "Low Forex", "RuPay", "Visa Infinite"],
+      "bestFor": "Frequent domestic travelers and online spenders who can avoid excluded MCCs",
+      "rating": 4.0,
+      "verdict": "Strong 3.75% reward rate on select categories with unlimited domestic lounge access, but extensive MCC exclusions limit its appeal. Currently available LTF till Dec 2025.",
+      "pros": [
+        "3.75% reward rate on online, travel, dining, international spends",
+        "Unlimited domestic lounge access for primary and add-on cards",
+        "Low 2% forex markup",
+        "Easy annual fee waiver at ₹2.5L spend",
+        "LTF offer currently available",
+        "No redemption fee for statement credit"
+      ],
+      "cons": [
+        "Extensive MCC exclusions (utilities, insurance, rent, govt, supermarkets)",
+        "5,000 RP monthly cap on accelerated rewards",
+        "No international lounge access",
+        "BOB customer support is inconsistent",
+        "No miles transfer partners"
+      ]
+    }
+  },
+  {
+    "id": "bob-premier",
+    "name": "BOB Premier Credit Card",
+    "bank": "Bank of Baroda",
+    "image": "/assets/cards/bob-premier.png",
+    "link": "https://www.bobcard.co.in/credit-card-types/premier",
+    "fees": {
+      "joining": 1000,
+      "annual": 1000,
+      "currency": "INR",
+      "waivedOn": 120000,
+      "waiverText": "Annual fee waived on ₹1.2L annual spend. Joining fee waived on ₹10,000 spend within 60 days. LTF offer available till 31st Dec 2025."
+    },
+    "eligibility": {
+      "income": 300000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Reward Points",
+      "baseRate": 0.005,
+      "earningText": "2 RP per ₹100 on regular spends (0.5%). 10 RP per ₹100 on travel, dining, international spends (2.5%). 5X bonus capped at 2,000 RP per statement cycle.",
+      "expiry": "Lifelong validity",
+      "joiningBonus": "500 Bonus RP on ₹5,000 spend in first 60 days",
+      "exclusions": "Fuel, Utilities, Telecom, Rent, Insurance, Govt, Education, Supermarket (same as Eterna)",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": 2000,
+        "capResetPeriod": "statement",
+        "specialLogic": "5X bonus (8 extra RP) is capped at 2,000 RP per statement cycle. After cap, base rate of 2 RP/₹100 applies.",
+        "categories": {
+          "travel": { "rate": 0.025, "label": "10 RP/₹100 (2.5%)", "cap": 500 },
+          "dining": { "rate": 0.025, "label": "10 RP/₹100 (2.5%)", "cap": 500 },
+          "online": { "rate": 0.005, "label": "2 RP/₹100 (0.5%) - Base rate", "cap": null },
+          "fuel": { "rate": 0, "label": "No rewards on fuel", "cap": null },
+          "groceries": { "rate": 0, "label": "Excluded - Special MCC", "cap": null },
+          "utilities": { "rate": 0, "label": "Excluded - Special MCC", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Statement credit at 1 RP = ₹0.25",
+        "options": [
+          { "type": "Statement Credit", "value": 0.25, "desc": "1 RP = ₹0.25", "recommended": true },
+          { "type": "Products/Vouchers", "value": 0.25, "desc": "Via BOBCARD rewards portal", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "1 per quarter (on ₹20,000 spend in previous quarter)",
+        "international": "None",
+        "accessType": "RuPay/Visa - DreamFolks/Visa"
+      },
+      "milestones": [
+        { "spend": 5000, "benefit": "500 Bonus RP (within 60 days)" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 250 },
+      "forex": { "markup": 0.035, "text": "3.5% forex markup" }
+    },
+    "metadata": {
+      "tags": ["Entry-Level", "Travel", "Dining", "RuPay", "Visa"],
+      "bestFor": "Budget-conscious travelers who spend ₹20K-₹1.5L annually on dining and travel",
+      "rating": 3.5,
+      "verdict": "Solid mid-range card with 2.5% on travel/dining, but low monthly cap and high forex markup limit value. Good as LTF.",
+      "pros": [
+        "2.5% reward rate on travel, dining, international",
+        "Low annual fee with easy waiver at ₹1.2L",
+        "Quarterly domestic lounge access",
+        "LTF offer currently available",
+        "Up to 3 free add-on cards"
+      ],
+      "cons": [
+        "Only 2,000 RP monthly cap on accelerated rewards",
+        "High 3.5% forex markup",
+        "Only 1 lounge visit per quarter",
+        "No international lounge access",
+        "Same MCC exclusions as Eterna"
+      ]
+    }
+  },
+  {
+    "id": "sc-ultimate",
+    "name": "Standard Chartered Ultimate Credit Card",
+    "bank": "Standard Chartered",
+    "image": "/assets/cards/sc-ultimate.png",
+    "link": "https://www.sc.com/in/credit-cards/ultimate-card/",
+    "fees": {
+      "joining": 5000,
+      "annual": 5000,
+      "currency": "INR",
+      "waivedOn": null,
+      "waiverText": "No fee waiver available. Welcome bonus of 6,000 RP (₹6,000) on joining. Renewal bonus of 5,000 RP (₹5,000)."
+    },
+    "eligibility": {
+      "income": 2400000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Reward Points",
+      "baseRate": 0.0333,
+      "earningText": "5 RP per ₹150 on most spends (3.33%, 1 RP = ₹1). 3 RP per ₹150 (2%) on utilities, supermarkets, insurance, property management, schools, govt payments. No rewards on fuel.",
+      "expiry": "3 years from accumulation date",
+      "joiningBonus": "6,000 RP worth ₹6,000 on paying joining fee",
+      "exclusions": "Fuel (no rewards). Lower rate on Utilities, Supermarkets, Insurance, Property Management, Schools, Government payments.",
+      "calculator": {
+        "tier": "super-premium",
+        "monthlyCap": null,
+        "capResetPeriod": null,
+        "specialLogic": "No cap on reward points. Flat 3.33% on most categories, reduced 2% on utilities/insurance/govt/supermarkets/schools. Rent payments attract 1% processing fee.",
+        "categories": {
+          "travel": { "rate": 0.0333, "label": "5 RP/₹150 (3.33%)", "cap": null },
+          "dining": { "rate": 0.0333, "label": "5 RP/₹150 (3.33%)", "cap": null },
+          "online": { "rate": 0.0333, "label": "5 RP/₹150 (3.33%)", "cap": null },
+          "fuel": { "rate": 0, "label": "No rewards on fuel", "cap": null },
+          "groceries": { "rate": 0.02, "label": "3 RP/₹150 (2%) - Supermarkets", "cap": null },
+          "utilities": { "rate": 0.02, "label": "3 RP/₹150 (2%) - Utilities/Insurance/Govt", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.0,
+        "bestOption": "Shopping vouchers via 360° Rewards portal at 1 RP = ₹1",
+        "redemptionFee": 99,
+        "options": [
+          { "type": "Shopping Vouchers", "value": 1.0, "desc": "1 RP = ₹1 (Titan, FabIndia, Croma, Shoppers Stop, etc.) - ₹99 redemption fee", "recommended": true },
+          { "type": "Luxury Vouchers", "value": 1.0, "desc": "Ray Ban, Coach, Tumi, Hugo Boss - ₹99 redemption fee", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "4 per quarter (16 per year) via Visa/Mastercard",
+        "international": "1 per month via Priority Pass (on ₹20,000 spend in previous month)",
+        "accessType": "Priority Pass + Visa/Mastercard domestic"
+      },
+      "milestones": [
+        { "spend": 0, "benefit": "6,000 RP welcome bonus on joining fee payment" },
+        { "spend": 0, "benefit": "5,000 RP renewal bonus on annual fee payment" }
+      ],
+      "golf": { "included": true, "text": "1 complimentary golf game + 1 golf lesson per month at premier domestic courses" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 1000 },
+      "forex": { "markup": 0.02, "text": "2% forex markup (net 0.67% gain with 3.33% rewards)" }
+    },
+    "metadata": {
+      "tags": ["Super-Premium", "High Rewards", "Golf", "Lounge Access", "Low Forex", "Mastercard World"],
+      "bestFor": "High spenders who want consistent 3.33% rewards without category restrictions or caps",
+      "rating": 4.2,
+      "verdict": "Excellent 3.33% uncapped rewards on most spends, comparable to HDFC Infinia/Diners Black. Limited voucher redemption options is the main drawback.",
+      "pros": [
+        "Industry-leading 3.33% reward rate on most spends",
+        "No cap on reward points",
+        "Low 2% forex markup",
+        "Rewards on utilities, insurance, govt payments (at 2%)",
+        "Complimentary golf benefits",
+        "Priority Pass with international lounge access"
+      ],
+      "cons": [
+        "Non-waivable ₹5,000 annual fee",
+        "No statement credit option - only voucher redemption",
+        "Limited voucher brand selection (no Amazon/Flipkart)",
+        "₹99 redemption fee per transaction",
+        "International lounge requires ₹20K monthly spend",
+        "3-year point expiry"
+      ]
+    }
+  },
+  {
+    "id": "sc-smart",
+    "name": "Standard Chartered Smart Credit Card",
+    "bank": "Standard Chartered",
+    "image": "/assets/cards/sc-smart.png",
+    "link": "https://www.sc.com/in/credit-cards/smart-credit-card/",
+    "fees": {
+      "joining": 499,
+      "annual": 499,
+      "currency": "INR",
+      "waivedOn": 120000,
+      "waiverText": "Annual fee waived on ₹1.2L annual spend. Joining fee waived for new-to-bank customers."
+    },
+    "eligibility": {
+      "income": 300000,
+      "age": { "min": 18, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "cashback",
+      "name": "Cashback",
+      "baseRate": 0.01,
+      "earningText": "2% cashback on online spends (max ₹1,000/month). 1% cashback on offline spends (max ₹500/month). Total max ₹1,500/month or ₹18,000/year.",
+      "expiry": "Never expires",
+      "joiningBonus": "₹500 Amazon Pay voucher on card activation",
+      "exclusions": "Fuel, Cash Withdrawals",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": 1500,
+        "capResetPeriod": "calendar",
+        "specialLogic": "Separate caps for online (₹1,000) and offline (₹500). No minimum transaction value. Cashback on govt payments, utilities, insurance, wallet loads included.",
+        "categories": {
+          "travel": { "rate": 0.02, "label": "2% (Online)", "cap": 1000 },
+          "dining": { "rate": 0.01, "label": "1% (Offline) or 2% (Online)", "cap": 500 },
+          "online": { "rate": 0.02, "label": "2% cashback", "cap": 1000 },
+          "fuel": { "rate": 0, "label": "No cashback on fuel", "cap": null },
+          "groceries": { "rate": 0.01, "label": "1% (Offline) or 2% (Online)", "cap": 500 },
+          "utilities": { "rate": 0.02, "label": "2% (Online bill payments)", "cap": 1000 }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.0,
+        "bestOption": "Statement credit via 360° Rewards portal",
+        "options": [
+          { "type": "Statement Credit", "value": 1.0, "desc": "₹1 = ₹1, min ₹2,500 for first redemption, then ₹1,000 multiples", "recommended": true }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "None",
+        "international": "None",
+        "accessType": "Not available"
+      },
+      "milestones": [],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "None", "cap": 0 },
+      "forex": { "markup": 0.035, "text": "3.5% forex markup" }
+    },
+    "metadata": {
+      "tags": ["Entry-Level", "Cashback", "Online Shopping", "Utilities", "Beginners"],
+      "bestFor": "Online shoppers and those who want cashback on utilities, insurance, and govt payments without exclusions",
+      "rating": 3.8,
+      "verdict": "Best entry-level cashback card for online spends with minimal exclusions. Covers utilities, insurance, govt payments that other cards exclude.",
+      "pros": [
+        "2% cashback on all online spends including utilities",
+        "Cashback on govt payments, insurance, wallet loads",
+        "Extended 90-day interest-free period for new cards",
+        "No redemption fee",
+        "Easy annual fee waiver at ₹1.2L",
+        "Low 0.99% EMI conversion rate"
+      ],
+      "cons": [
+        "No cashback on fuel",
+        "Monthly cap of ₹1,500 (₹1,000 online + ₹500 offline)",
+        "No lounge access",
+        "No fuel surcharge waiver",
+        "High ₹2,500 minimum for first redemption",
+        "High 3.5% forex markup"
+      ]
+    }
+  }
+]

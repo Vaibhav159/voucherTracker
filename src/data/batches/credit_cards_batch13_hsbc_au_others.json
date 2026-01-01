@@ -1,0 +1,515 @@
+[
+  {
+    "id": "hsbc-live-plus",
+    "name": "HSBC Live+ Credit Card",
+    "bank": "HSBC",
+    "image": "/assets/cards/hsbc-live-plus.png",
+    "link": "https://www.hsbc.co.in/credit-cards/products/live-plus/",
+    "fees": {
+      "joining": 999,
+      "annual": 999,
+      "currency": "INR",
+      "waivedOn": 200000,
+      "waiverText": "Waived on ₹2,00,000 annual spend"
+    },
+    "eligibility": {
+      "income": 600000,
+      "age": { "min": 18, "max": 65 },
+      "type": "Salaried",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "cashback",
+      "name": "Cashback",
+      "baseRate": 0.015,
+      "earningText": "1.5% unlimited cashback on all eligible retail spends",
+      "expiry": "Credited within 45 days of statement",
+      "joiningBonus": "₹1,000 cashback on ₹20,000 spend within 30 days + ₹250 Amazon voucher on video KYC",
+      "exclusions": "Utilities, Fuel, Wallet loads, Rent, Education, Government, Insurance, Jewellery, EMI, Tolls, Financial Institutions, Money Transfers",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": 1000,
+        "capResetPeriod": "statement",
+        "specialLogic": "10% cashback on dining, grocery, and food delivery combined capped at ₹1,000/month. 1.5% unlimited on other retail spends. Cashback auto-credited to statement.",
+        "categories": {
+          "travel": { "rate": 0.015, "label": "1.5% cashback", "cap": null },
+          "dining": { "rate": 0.10, "label": "10% cashback (combined cap)", "cap": 1000 },
+          "online": { "rate": 0.015, "label": "1.5% cashback", "cap": null },
+          "fuel": { "rate": 0.0, "label": "Excluded", "cap": null },
+          "groceries": { "rate": 0.10, "label": "10% cashback (combined cap)", "cap": 1000 },
+          "utilities": { "rate": 0.0, "label": "Excluded", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.0,
+        "bestOption": "Automatic statement credit",
+        "options": [
+          { "type": "Statement Credit", "value": 1.0, "desc": "Auto-credited to account", "recommended": true }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "4 per year (1 per quarter)",
+        "international": "None",
+        "accessType": "DreamFolks"
+      },
+      "milestones": [],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 250 },
+      "forex": { "markup": 0.035, "text": "3.5% + GST" }
+    },
+    "metadata": {
+      "tags": ["Cashback", "Dining", "Grocery", "Food Delivery", "Everyday Spends"],
+      "bestFor": "10% cashback on dining, grocery, and food delivery spends",
+      "rating": 4.0,
+      "verdict": "Best-in-class cashback card for dining & grocery spenders with a low annual fee and strong 10% return on everyday essentials.",
+      "pros": [
+        "10% cashback on dining, grocery, and food delivery",
+        "1.5% unlimited cashback on other retail spends",
+        "Low annual fee of ₹999 with easy waiver",
+        "Auto-credited cashback - no redemption hassle",
+        "Live+ Dining Program with additional discounts"
+      ],
+      "cons": [
+        "₹1,000 monthly cap on 10% categories",
+        "Long exclusion list including utilities and insurance",
+        "No international lounge access",
+        "Only available in select cities",
+        "Not available to self-employed individuals"
+      ]
+    }
+  },
+  {
+    "id": "hsbc-premier",
+    "name": "HSBC Premier Credit Card",
+    "bank": "HSBC",
+    "image": "/assets/cards/hsbc-premier.png",
+    "link": "https://www.hsbc.co.in/credit-cards/products/premier/",
+    "fees": {
+      "joining": 12000,
+      "annual": 20000,
+      "currency": "INR",
+      "waivedOn": null,
+      "waiverText": "Annual fee waived for HSBC Premier relationship holders"
+    },
+    "eligibility": {
+      "income": 3600000,
+      "age": { "min": 21, "max": 65 },
+      "type": "HSBC Premier Customer",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "HSBC Reward Points",
+      "baseRate": 0.03,
+      "earningText": "3 Reward Points per ₹100 spent (3% return at 1:1 redemption)",
+      "expiry": "Never Expires",
+      "joiningBonus": "20,000 Reward Points on card activation + Taj Epicure Membership + Taj Gift Card worth ₹12,000 + EazyDiner Prime Membership",
+      "exclusions": "Fuel (from Apr 2025), Education, E-wallets, Jewellery, Bail & Bond payments. Utilities/Insurance capped at ₹1L/month combined for select MCCs",
+      "calculator": {
+        "tier": "super-premium",
+        "monthlyCap": 100000,
+        "capResetPeriod": "calendar",
+        "specialLogic": "3 RP per ₹100 on all spends. From Apr 2025, select categories (utilities, insurance, education, govt, jewellery) capped at ₹1L monthly spend combined. Fuel completely excluded. 1:1 transfer to 20+ airline/hotel partners.",
+        "categories": {
+          "travel": { "rate": 0.03, "label": "3% (3 RP/₹100)", "cap": null },
+          "dining": { "rate": 0.03, "label": "3% (3 RP/₹100)", "cap": null },
+          "online": { "rate": 0.03, "label": "3% (3 RP/₹100)", "cap": null },
+          "fuel": { "rate": 0.0, "label": "Excluded (from Apr 2025)", "cap": null },
+          "groceries": { "rate": 0.03, "label": "3% (3 RP/₹100)", "cap": null },
+          "utilities": { "rate": 0.03, "label": "3% (capped at ₹1L/month)", "cap": 3000 }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.0,
+        "bestOption": "1:1 transfer to airline miles or Apple products",
+        "options": [
+          { "type": "Airline Miles", "value": 1.0, "desc": "1 RP = 1 Mile (20+ partners)", "recommended": true },
+          { "type": "Apple Products", "value": 1.0, "desc": "1 RP = ₹1 via Imagine vouchers", "recommended": true },
+          { "type": "Hotel Points", "value": 1.0, "desc": "1 RP = 1 Hotel Point (select partners)", "recommended": false },
+          { "type": "Gift Cards", "value": 0.25, "desc": "1 RP = ₹0.25", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "Unlimited",
+        "international": "Unlimited + 8 guest visits/year",
+        "accessType": "Priority Pass"
+      },
+      "milestones": [],
+      "golf": { "included": true, "text": "Complimentary golf sessions via Premier benefits" },
+      "movies": { "included": true, "text": "BOGO on BookMyShow (any day)" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 3000 },
+      "forex": { "markup": 0.0099, "text": "0.99% - One of the lowest in India" }
+    },
+    "metadata": {
+      "tags": ["Super Premium", "Travel", "Airline Miles", "Lounge Access", "Metal Card", "Low Forex"],
+      "bestFor": "HSBC Premier customers seeking unlimited lounge access and 1:1 airline mile transfers",
+      "rating": 4.3,
+      "verdict": "Exceptional travel card for HSBC Premier customers with 0.99% forex, unlimited lounges, and flexible 1:1 mile transfers to 20+ partners.",
+      "pros": [
+        "0.99% forex markup - among the lowest in India",
+        "Unlimited domestic & international lounge access",
+        "3% reward rate with 1:1 airline/Apple redemption",
+        "Reward points never expire",
+        "Complimentary Taj Epicure + EazyDiner membership",
+        "Metal card with premium feel"
+      ],
+      "cons": [
+        "Requires HSBC Premier relationship (₹40L TRB or ₹3L salary)",
+        "₹20,000 annual fee if Premier criteria not met",
+        "High ₹12,000 joining fee",
+        "From Apr 2025: fuel excluded, caps on utilities/insurance",
+        "Limited to select cities"
+      ]
+    }
+  },
+  {
+    "id": "au-zenith-plus",
+    "name": "AU Zenith+ Credit Card",
+    "bank": "AU Small Finance Bank",
+    "image": "/assets/cards/au-zenith-plus.png",
+    "link": "https://www.au.bank.in/premium-banking/credit-cards/zenith-plus-credit-card",
+    "fees": {
+      "joining": 4999,
+      "annual": 4999,
+      "currency": "INR",
+      "waivedOn": 800000,
+      "waiverText": "Waived on ₹8,00,000 net retail spend in previous anniversary year"
+    },
+    "eligibility": {
+      "income": 2500000,
+      "age": { "min": 21, "max": 60 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "AU Reward Points",
+      "baseRate": 0.01,
+      "earningText": "1 RP per ₹100 on retail spends (1 RP = ₹1)",
+      "expiry": "2 Years",
+      "joiningBonus": "Choice of luxury brand vouchers or Reward Points worth ₹5,000 on card activation",
+      "exclusions": "Fuel, EMI, Cash transactions. Special categories (Utility, Insurance, Rent, Education, Govt) excluded from milestone calculation",
+      "calculator": {
+        "tier": "super-premium",
+        "monthlyCap": null,
+        "capResetPeriod": "statement",
+        "specialLogic": "2 RP/₹100 on travel, dining, and international spends (2% value). 1 RP/₹100 on other retail (1% value). 1 RP = ₹1 redemption. Monthly milestone: 1,000 RP on ₹75,000 spend. Taj Epicure on ₹12L annual spend.",
+        "categories": {
+          "travel": { "rate": 0.02, "label": "2% (2 RP/₹100)", "cap": null },
+          "dining": { "rate": 0.02, "label": "2% (2 RP/₹100)", "cap": null },
+          "online": { "rate": 0.01, "label": "1% (1 RP/₹100)", "cap": null },
+          "fuel": { "rate": 0.0, "label": "Excluded", "cap": null },
+          "groceries": { "rate": 0.01, "label": "1% (1 RP/₹100)", "cap": null },
+          "utilities": { "rate": 0.0, "label": "Excluded from milestones", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.0,
+        "bestOption": "Gift vouchers or AU Rewardz redemption",
+        "options": [
+          { "type": "Vouchers", "value": 1.0, "desc": "1 RP = ₹1", "recommended": true },
+          { "type": "Flight/Hotel", "value": 1.0, "desc": "1 RP = ₹1", "recommended": true },
+          { "type": "Merchandise", "value": 1.0, "desc": "1 RP = ₹1", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "16 per year (via AU Card)",
+        "international": "8 per year (2 per quarter via Priority Pass)",
+        "accessType": "Priority Pass + AU Card"
+      },
+      "milestones": [
+        { "spend": 75000, "benefit": "1,000 Reward Points per statement cycle" },
+        { "spend": 1200000, "benefit": "Complimentary Taj Epicure Membership" }
+      ],
+      "golf": { "included": true, "text": "8 complimentary golf games/lessons per year (2 per quarter)" },
+      "movies": { "included": true, "text": "16 BOGO tickets/year via BookMyShow (4 per quarter, up to ₹500/ticket)" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 1000 },
+      "forex": { "markup": 0.0099, "text": "0.99% - Premium low forex markup" }
+    },
+    "metadata": {
+      "tags": ["Super Premium", "Metal Card", "Low Forex", "Travel", "Dining", "Golf", "Movies"],
+      "bestFor": "Travelers and high spenders seeking 0.99% forex, comprehensive lounge access, and lifestyle benefits",
+      "rating": 4.2,
+      "verdict": "Well-rounded super-premium metal card with 0.99% forex, extensive lounge access, and strong lifestyle benefits including golf and movies.",
+      "pros": [
+        "0.99% forex markup - excellent for international spends",
+        "1:1 reward redemption value",
+        "16 domestic + 8 international lounge visits",
+        "16 BOGO movie tickets + 8 golf rounds annually",
+        "Taj Epicure membership on ₹12L spend",
+        "Metal card with premium feel"
+      ],
+      "cons": [
+        "Lower reward rate (1-2%) compared to some competitors",
+        "High income requirement (₹2.5L/month)",
+        "₹8L spend required for fee waiver",
+        "Fuel transactions don't earn rewards",
+        "₹99 redemption fee applies"
+      ]
+    }
+  },
+  {
+    "id": "ixigo-au",
+    "name": "ixigo AU Credit Card",
+    "bank": "AU Small Finance Bank",
+    "image": "/assets/cards/ixigo-au.png",
+    "link": "https://www.aubank.in/personal-banking/credit-cards/ixigo-au-travel-credit-card",
+    "fees": {
+      "joining": 0,
+      "annual": 999,
+      "currency": "INR",
+      "waivedOn": 100000,
+      "waiverText": "Currently Lifetime Free. Otherwise waived on ₹1,00,000 annual spend"
+    },
+    "eligibility": {
+      "income": 300000,
+      "age": { "min": 21, "max": 60 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "points",
+      "name": "ixigo Reward Points",
+      "baseRate": 0.025,
+      "earningText": "10 RP per ₹200 online (2.5%), 5 RP per ₹200 offline (1.25%)",
+      "expiry": "2 Years",
+      "joiningBonus": "1,000 Reward Points + ₹1,000 ixigo money voucher on first transaction within 30 days",
+      "exclusions": "Fuel, Rent, Insurance, Jewellery, Wallets, Education, Government, BBPS, International transactions (from Dec 2024)",
+      "calculator": {
+        "tier": "co-branded",
+        "monthlyCap": 10000,
+        "capResetPeriod": "statement",
+        "specialLogic": "ZERO FOREX MARKUP - Key USP. 10 RP/₹200 online (2.5%), 5 RP/₹200 offline (1.25%), 20 RP/₹200 on train bookings via ixigo (5%). 1 RP = ₹0.50 as ixigo money, ₹0.20 for AU vouchers. 10% discount on flights/hotels/buses via ixigo.",
+        "categories": {
+          "travel": { "rate": 0.05, "label": "5% on ixigo train bookings (20 RP/₹200)", "cap": null },
+          "dining": { "rate": 0.025, "label": "2.5% online", "cap": null },
+          "online": { "rate": 0.025, "label": "2.5% (10 RP/₹200)", "cap": null },
+          "fuel": { "rate": 0.0, "label": "Excluded", "cap": null },
+          "groceries": { "rate": 0.0125, "label": "1.25% offline", "cap": null },
+          "utilities": { "rate": 0.0, "label": "Excluded", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.50,
+        "bestOption": "Convert to ixigo money for travel bookings",
+        "options": [
+          { "type": "ixigo Money", "value": 0.50, "desc": "1 RP = ₹0.50 (best value)", "recommended": true },
+          { "type": "AU Rewardz Vouchers", "value": 0.20, "desc": "1 RP = ₹0.20", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "8 airport + 8 railway per year (2 each per quarter on ₹20K spend)",
+        "international": "1 per year via Priority Pass",
+        "accessType": "Priority Pass + AU Card"
+      },
+      "milestones": [],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 250 },
+      "forex": { "markup": 0.0, "text": "ZERO FOREX MARKUP - Major USP" }
+    },
+    "metadata": {
+      "tags": ["Zero Forex", "Travel", "Co-branded", "Lifetime Free", "Railway", "Budget Travel"],
+      "bestFor": "Budget-conscious travelers seeking zero forex markup and ixigo platform discounts",
+      "rating": 4.1,
+      "verdict": "India's best zero forex card for budget travelers with ixigo discounts, railway lounge access, and lifetime free status.",
+      "pros": [
+        "ZERO forex markup - saves 3.5%+ on international spends",
+        "Currently Lifetime Free (LTF)",
+        "10% discount on ixigo flights, hotels, buses",
+        "8 railway + 8 airport lounge visits",
+        "Earns rewards on forex spends (unlike most zero forex cards)",
+        "Available in RuPay variant for UPI"
+      ],
+      "cons": [
+        "10,000 RP cap per statement cycle",
+        "Long exclusion list including international from Dec 2024",
+        "Only 1 international lounge visit",
+        "Low redemption value (₹0.20-₹0.50 per RP)",
+        "Benefits maximized only on ixigo platform",
+        "₹99 redemption fee"
+      ]
+    }
+  },
+  {
+    "id": "onecard-metal",
+    "name": "OneCard Metal Credit Card",
+    "bank": "Federal Bank / BOB / SBM / Indian Bank / CSB / South Indian Bank",
+    "image": "/assets/cards/onecard-metal.png",
+    "link": "https://www.getonecard.app/",
+    "fees": {
+      "joining": 0,
+      "annual": 0,
+      "currency": "INR",
+      "waivedOn": null,
+      "waiverText": "Lifetime Free - No joining or annual fee"
+    },
+    "eligibility": {
+      "income": 240000,
+      "age": { "min": 18, "max": 60 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 650
+    },
+    "rewards": {
+      "type": "points",
+      "name": "OneCard Reward Points",
+      "baseRate": 0.002,
+      "earningText": "1 RP per ₹50 spent (base 0.2%), 5X on top 2 categories (1%)",
+      "expiry": "Never Expires",
+      "joiningBonus": "Instant virtual card activation + Regular merchant offers in app",
+      "exclusions": "Transfers, Wallet loads, Cash withdrawals, Rent payments",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "Unique 5X rewards on top 2 spend categories automatically selected each month. Must spend in at least 3 categories to qualify for 5X. Fractional points earned. 1 RP = ₹0.10 for cashback.",
+        "categories": {
+          "travel": { "rate": 0.01, "label": "1% (if in top 2 categories)", "cap": null },
+          "dining": { "rate": 0.01, "label": "1% (if in top 2 categories)", "cap": null },
+          "online": { "rate": 0.01, "label": "1% (if in top 2 categories)", "cap": null },
+          "fuel": { "rate": 0.01, "label": "1% (if in top 2 categories)", "cap": null },
+          "groceries": { "rate": 0.01, "label": "1% (if in top 2 categories)", "cap": null },
+          "utilities": { "rate": 0.002, "label": "0.2% base rate", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.10,
+        "bestOption": "Statement credit/cashback via app",
+        "options": [
+          { "type": "Statement Credit", "value": 0.10, "desc": "1 RP = ₹0.10 cashback", "recommended": true },
+          { "type": "Vouchers", "value": 0.15, "desc": "1 RP = ₹0.15 (select brands)", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "None",
+        "international": "None",
+        "accessType": "Not Available"
+      },
+      "milestones": [],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "0%", "cap": 0 },
+      "forex": { "markup": 0.01, "text": "1% - Low for an entry-level card" }
+    },
+    "metadata": {
+      "tags": ["Lifetime Free", "Metal Card", "Entry Level", "Fintech", "Low Forex", "Beginners"],
+      "bestFor": "First-time credit card users wanting a free metal card with low forex markup",
+      "rating": 3.8,
+      "verdict": "India's only lifetime free metal card - perfect for beginners with low forex needs, but limited rewards and no lounge access.",
+      "pros": [
+        "Lifetime Free - no fees ever",
+        "Metal card form factor - unique at this price",
+        "1% forex markup - excellent for entry-level",
+        "5X rewards on top 2 categories",
+        "Fractional reward points earned",
+        "Excellent app with instant controls",
+        "No redemption fees, points never expire"
+      ],
+      "cons": [
+        "Very low base reward rate (0.2%)",
+        "No lounge access",
+        "No fuel surcharge waiver",
+        "Must spend in 3+ categories for 5X rewards",
+        "Low redemption value (₹0.10 per RP)",
+        "Available as secured card for low credit scores",
+        "RBI restrictions on some partner banks"
+      ]
+    }
+  },
+  {
+    "id": "tata-neu-infinity-hdfc",
+    "name": "Tata Neu Infinity HDFC Bank Credit Card",
+    "bank": "HDFC Bank",
+    "image": "/assets/cards/tata-neu-infinity-hdfc.png",
+    "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/tata-neu-infinity-hdfc-bank-credit-card",
+    "fees": {
+      "joining": 1499,
+      "annual": 1499,
+      "currency": "INR",
+      "waivedOn": 300000,
+      "waiverText": "Waived on ₹3,00,000 annual spend. LTF offer available till Dec 2024"
+    },
+    "eligibility": {
+      "income": 1200000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 720
+    },
+    "rewards": {
+      "type": "points",
+      "name": "NeuCoins",
+      "baseRate": 0.015,
+      "earningText": "1.5% NeuCoins on non-Tata spends, 5% on Tata Neu + extra 5% with NeuPass",
+      "expiry": "12 months from credit (from Aug 2025)",
+      "joiningBonus": "1,499 NeuCoins on first transaction within 30 days (covers joining fee)",
+      "exclusions": "Fuel, Wallet loads, Rent, Government, EMI, Cash advances. Grocery capped at 2,000/month. Utility/Telecom capped at 2,000/month each. UPI capped at 500/month.",
+      "calculator": {
+        "tier": "premium",
+        "monthlyCap": 2000,
+        "capResetPeriod": "calendar",
+        "specialLogic": "Up to 10% on Tata Neu (5% base + 5% NeuPass). 1.5% on non-Tata. 1.5% on UPI via Tata Neu UPI ID (0.5% + 1% additional). 1 NeuCoin = ₹1. Multiple category caps apply.",
+        "categories": {
+          "travel": { "rate": 0.015, "label": "1.5% NeuCoins (up to 10% on Air India via Tata Neu)", "cap": null },
+          "dining": { "rate": 0.015, "label": "1.5% NeuCoins", "cap": null },
+          "online": { "rate": 0.10, "label": "Up to 10% on Tata Neu brands", "cap": null },
+          "fuel": { "rate": 0.0, "label": "Excluded", "cap": null },
+          "groceries": { "rate": 0.10, "label": "Up to 10% on BigBasket (cap 2,000/month)", "cap": 2000 },
+          "utilities": { "rate": 0.015, "label": "1.5% (capped 2,000/month)", "cap": 2000 }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.0,
+        "bestOption": "Redeem on Tata Neu app across partner brands",
+        "options": [
+          { "type": "Tata Neu Partners", "value": 1.0, "desc": "1 NeuCoin = ₹1 at BigBasket, Croma, Westside, etc.", "recommended": true },
+          { "type": "Flight Booking", "value": 1.0, "desc": "1 NeuCoin = ₹1 on Air India (redemption varies)", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "8 per year (2 per quarter)",
+        "international": "4 per year (1 per quarter)",
+        "accessType": "Priority Pass / RuPay International"
+      },
+      "milestones": [],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 500 },
+      "forex": { "markup": 0.035, "text": "3.5% (2% for premium variant on some transactions)" }
+    },
+    "metadata": {
+      "tags": ["Tata Ecosystem", "Co-branded", "UPI Rewards", "RuPay", "Grocery", "E-commerce"],
+      "bestFor": "Tata ecosystem loyalists shopping on BigBasket, Croma, Air India, and Tata Neu brands",
+      "rating": 4.0,
+      "verdict": "Best-in-class for Tata ecosystem users with up to 10% returns on Tata brands, UPI rewards on RuPay variant, and solid lounge access.",
+      "pros": [
+        "Up to 10% back on Tata Neu purchases",
+        "1:1 NeuCoin redemption value",
+        "1.5% on UPI via RuPay variant",
+        "8 domestic + 4 international lounge visits",
+        "LTF offer available (limited period)",
+        "Welcome bonus covers joining fee"
+      ],
+      "cons": [
+        "Multiple monthly caps (grocery, utility, UPI)",
+        "3.5% forex markup",
+        "12-month NeuCoin expiry from Aug 2025",
+        "Benefits concentrated in Tata ecosystem",
+        "Third-party app payments attract 1% fee",
+        "Not ideal for non-Tata brand shopping"
+      ]
+    }
+  }
+]
