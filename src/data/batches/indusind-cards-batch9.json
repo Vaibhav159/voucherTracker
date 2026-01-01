@@ -1,0 +1,551 @@
+[
+  {
+    "id": "indusind-indulge",
+    "name": "IndusInd Indulge Credit Card",
+    "bank": "IndusInd Bank",
+    "image": "/assets/cards/indusind-indulge.png",
+    "link": "https://www.indusind.com/in/en/personal/cards/credit-card/indulge-credit-card.html",
+    "fees": {
+      "joining": 75000,
+      "annual": 10000,
+      "currency": "INR",
+      "waivedOn": 1000000,
+      "waiverText": "Annual fee waived on ₹10 Lakh annual spend. Multiple joining fee options available (₹75K with vouchers, ₹15K without, or LTF for select customers)"
+    },
+    "eligibility": {
+      "income": 3600000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Reward Points",
+      "baseRate": 0.015,
+      "earningText": "1.5 RP per ₹100 spent on all categories. 0.7 RP per ₹100 on utilities, insurance, govt, education",
+      "expiry": "Never Expires (while card active)",
+      "joiningBonus": "Welcome vouchers from Oberoi Hotels, Postcard Hotel, Vouchagram, or Luxe Gift Card worth joining fee value",
+      "exclusions": "Fuel (no RP), Rent capped at 500 RP/cycle, Reduced rate on Utility, Insurance, Govt, Education",
+      "calculator": {
+        "tier": "super-premium",
+        "monthlyCap": 10000,
+        "capResetPeriod": "calendar",
+        "specialLogic": "No pre-set spending limit (NPSL). Max 10,000 RP cash redemption per month",
+        "categories": {
+          "travel": { "rate": 0.015, "label": "1.5% (1.5 RP/₹100)", "cap": null },
+          "dining": { "rate": 0.015, "label": "1.5% (1.5 RP/₹100)", "cap": null },
+          "online": { "rate": 0.015, "label": "1.5% (1.5 RP/₹100)", "cap": null },
+          "fuel": { "rate": 0, "label": "No RP (Surcharge waiver only)", "cap": null },
+          "groceries": { "rate": 0.015, "label": "1.5% (1.5 RP/₹100)", "cap": null },
+          "utilities": { "rate": 0.007, "label": "0.7% (0.7 RP/₹100)", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.0,
+        "bestOption": "Redeem against cash credit at 1 RP = ₹1",
+        "options": [
+          { "type": "Cash Credit", "value": 1.0, "desc": "1 RP = ₹1", "recommended": true },
+          { "type": "KrisFlyer Miles", "value": 0.5, "desc": "200 RP = 100 KrisFlyer Miles", "recommended": false },
+          { "type": "IndusMoments Catalogue", "value": 1.0, "desc": "Products & vouchers at 1 RP = ₹1", "recommended": true }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "6 per quarter (via Visa)",
+        "international": "4 per quarter (Priority Pass). Unlimited outside India",
+        "accessType": "Priority Pass + Visa"
+      },
+      "milestones": [],
+      "golf": { "included": true, "text": "Unlimited complimentary golf games and lessons at select premium clubs across India" },
+      "movies": { "included": true, "text": "BOGO on BookMyShow (3x/month, max ₹700 per free ticket + ₹50 off F&B)" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 400 },
+      "forex": { "markup": 0.018, "text": "1.8% + GST" },
+      "dining": { "included": true, "text": "₹3,000 off on dining at 100+ restaurants via EazyDiner, twice a year" },
+      "concierge": { "included": true, "text": "24x7 concierge services for travel, dining, entertainment bookings" },
+      "insurance": { "included": true, "text": "Air Accident Cover up to ₹2.5 Crore, Total Protect for fraud protection" }
+    },
+    "metadata": {
+      "tags": ["Super-Premium", "Invite-Only", "22K Gold Inlay", "Unlimited Lounge", "NPSL", "Luxury"],
+      "bestFor": "HNIs seeking luxury lifestyle benefits with 22K gold inlay card and unlimited international lounge access",
+      "rating": 3.8,
+      "verdict": "Premium lifestyle card with iconic design and strong lounge benefits, but reward rate is low for the segment",
+      "pros": [
+        "22K gold inlay - unique design statement",
+        "1 RP = ₹1 cash redemption value",
+        "Unlimited international lounge access outside India",
+        "No pre-set spending limit (NPSL)",
+        "Low forex markup of 1.8%",
+        "Unlimited golf access"
+      ],
+      "cons": [
+        "Very high joining fee (₹75,000 standard)",
+        "Low reward rate of 1.5% vs competitors at 3-5%",
+        "No milestone benefits for high spenders",
+        "Domestic lounge visits with Priority Pass charged ($27)",
+        "Income eligibility of ₹36L+ is restrictive"
+      ]
+    }
+  },
+  {
+    "id": "indusind-pinnacle",
+    "name": "IndusInd Pinnacle World Credit Card",
+    "bank": "IndusInd Bank",
+    "image": "/assets/cards/indusind-pinnacle.png",
+    "link": "https://www.indusind.com/in/en/personal/cards/credit-card/pinnacle-world-credit-card.html",
+    "fees": {
+      "joining": 15000,
+      "annual": 0,
+      "currency": "INR",
+      "waivedOn": null,
+      "waiverText": "Lifetime free from 2nd year. Joining fee offset by welcome vouchers worth ₹15,000"
+    },
+    "eligibility": {
+      "income": 1000000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Reward Points",
+      "baseRate": 0.01,
+      "earningText": "2.5 RP per ₹100 on online spends, 1.5 RP on travel/airlines, 1 RP on offline, 0.7 RP on utilities",
+      "expiry": "Never Expires",
+      "joiningBonus": "Choice of: Oberoi Hotel stay voucher, Postcard Hotel voucher, Montblanc voucher, Luxe Gift Card ₹5,000, or brand vouchers (Bata, Pantaloons, etc.)",
+      "exclusions": "Fuel (no RP), Rent capped at 500 RP/cycle, Reduced rate on Utility, Insurance, Govt, Education",
+      "calculator": {
+        "tier": "premium",
+        "monthlyCap": 7500,
+        "capResetPeriod": "calendar",
+        "specialLogic": "Max 7,500 RP cash redemption per month. Golf requires ₹25,000 spend in previous month",
+        "categories": {
+          "travel": { "rate": 0.015, "label": "1.5% (1.5 RP/₹100 on online travel)", "cap": null },
+          "dining": { "rate": 0.01, "label": "1% (1 RP/₹100)", "cap": null },
+          "online": { "rate": 0.025, "label": "2.5% (2.5 RP/₹100 on e-commerce)", "cap": null },
+          "fuel": { "rate": 0, "label": "No RP (Surcharge waiver only)", "cap": null },
+          "groceries": { "rate": 0.01, "label": "1% (1 RP/₹100)", "cap": null },
+          "utilities": { "rate": 0.007, "label": "0.7% (0.7 RP/₹100)", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.75,
+        "bestOption": "Cash credit at 1 RP = ₹0.75, making effective value-back ~1.87% on online spends",
+        "options": [
+          { "type": "Cash Credit", "value": 0.75, "desc": "1 RP = ₹0.75", "recommended": true },
+          { "type": "KrisFlyer Miles", "value": 0.5, "desc": "200 RP = 100 KrisFlyer Miles", "recommended": false },
+          { "type": "IndusMoments Catalogue", "value": 0.75, "desc": "Products & vouchers", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "1 per quarter (Mastercard)",
+        "international": "1 per quarter (Priority Pass)",
+        "accessType": "Priority Pass + Mastercard"
+      },
+      "milestones": [],
+      "golf": { "included": true, "text": "1 complimentary golf game + 1 lesson per month (requires ₹25,000 spend in previous month)" },
+      "movies": { "included": true, "text": "BOGO on BookMyShow (3x/month, max ₹200 per free ticket)" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 200 },
+      "forex": { "markup": 0.035, "text": "3.5% + GST" },
+      "concierge": { "included": true, "text": "24x7 Legend Concierge Services" },
+      "insurance": { "included": true, "text": "Air Accident Cover ₹25 Lakh, Total Protect, Auto Assist, Travel Insurance" },
+      "exclusiveAccount": { "included": true, "text": "Complimentary IndusInd Exclusive Savings Account with zero AMB" }
+    },
+    "metadata": {
+      "tags": ["Premium", "Online Shopping", "Lifetime Free", "Golf", "Good Cashback"],
+      "bestFor": "Online shoppers seeking 2.5% value-back on e-commerce with no annual fee and premium lifestyle benefits",
+      "rating": 4.0,
+      "verdict": "Solid premium card for online shoppers with good cashback redemption and lifetime free structure",
+      "pros": [
+        "Lifetime free from 2nd year (no annual fee)",
+        "2.5 RP on online spends = ~1.87% effective cashback",
+        "Welcome vouchers worth the joining fee",
+        "Complimentary zero-AMB IndusInd Exclusive Account",
+        "Golf benefits included",
+        "Good lounge access for both domestic and international"
+      ],
+      "cons": [
+        "High forex markup of 3.5%",
+        "Only 1 lounge visit per quarter (domestic & international each)",
+        "7,500 RP monthly cap on cash redemption",
+        "Golf benefit requires ₹25K spend in previous month",
+        "Low 0.7% on utilities reduces overall value"
+      ]
+    }
+  },
+  {
+    "id": "indusind-legend",
+    "name": "IndusInd Legend Credit Card",
+    "bank": "IndusInd Bank",
+    "image": "/assets/cards/indusind-legend.png",
+    "link": "https://www.indusind.com/in/en/personal/cards/credit-card/legend-credit-card.html",
+    "fees": {
+      "joining": 0,
+      "annual": 0,
+      "currency": "INR",
+      "waivedOn": null,
+      "waiverText": "Lifetime Free (LTF). Paid variants available at ₹5,000-₹9,999 with welcome vouchers"
+    },
+    "eligibility": {
+      "income": 600000,
+      "age": { "min": 18, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Reward Points",
+      "baseRate": 0.01,
+      "earningText": "1 RP per ₹100 on weekdays, 2 RP per ₹100 on weekends. 0.7 RP on utilities, medical, auto, telecom",
+      "expiry": "Never Expires (while card active)",
+      "joiningBonus": "Welcome vouchers from top brands (only on paid variants). 3,000 bonus RP on ₹5 Lakh annual spend milestone",
+      "exclusions": "Fuel (no RP), Rent/Wallet/Utility/Insurance not counted for milestone",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": 5000,
+        "capResetPeriod": "calendar",
+        "specialLogic": "Weekend vs weekday earning structure. Max 5,000 RP cash redemption per month. Milestone: 3,000 bonus RP on ₹5L annual spend",
+        "categories": {
+          "travel": { "rate": 0.01, "label": "1% weekdays / 2% weekends", "cap": null },
+          "dining": { "rate": 0.01, "label": "1% weekdays / 2% weekends", "cap": null },
+          "online": { "rate": 0.01, "label": "1% weekdays / 2% weekends", "cap": null },
+          "fuel": { "rate": 0, "label": "No RP (Surcharge waiver only)", "cap": null },
+          "groceries": { "rate": 0.01, "label": "1% weekdays / 2% weekends", "cap": null },
+          "utilities": { "rate": 0.007, "label": "0.7% (reduced rate)", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.50,
+        "bestOption": "Cash credit at 1 RP = ₹0.50 (effective ~0.5-1% value-back)",
+        "options": [
+          { "type": "Cash Credit", "value": 0.50, "desc": "1 RP = ₹0.50 (devalued from Mar 2024)", "recommended": true },
+          { "type": "Non-Cash Redemption", "value": 0.75, "desc": "1 RP = ₹0.75 for vouchers/products", "recommended": false },
+          { "type": "KrisFlyer Miles", "value": 0.5, "desc": "200 RP = 100 KrisFlyer Miles", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "DISCONTINUED (eff. 7 March 2025)",
+        "international": "DISCONTINUED (eff. 7 March 2025)",
+        "accessType": "None - Previously Priority Pass"
+      },
+      "milestones": [
+        { "spend": 500000, "benefit": "3,000 bonus Reward Points on ₹5 Lakh annual spend" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": true, "text": "BOGO on BookMyShow (1x/month, max ₹200 per free ticket + ₹50 off F&B)" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 100 },
+      "forex": { "markup": 0.018, "text": "1.8% + GST (one of the lowest in market)" },
+      "concierge": { "included": true, "text": "24x7 Legend Concierge Services" },
+      "insurance": { "included": true, "text": "Air Accident Cover ₹25 Lakh, Total Protect, Auto Assist, Lost Baggage ₹1L, Lost Ticket ₹25K" }
+    },
+    "metadata": {
+      "tags": ["Lifetime Free", "Entry-Level", "Low Forex", "Weekend Rewards", "Insurance"],
+      "bestFor": "First-time credit card users seeking LTF card with low forex markup and basic travel insurance benefits",
+      "rating": 3.2,
+      "verdict": "Decent LTF option with low forex and insurance, but devalued rewards and removed lounge access hurt its appeal",
+      "pros": [
+        "Lifetime free - no joining or annual fee",
+        "Low forex markup of 1.8% (excellent for international use)",
+        "Comprehensive travel insurance coverage",
+        "2x rewards on weekends incentivizes planned spending",
+        "No cash advance fee (rare benefit)",
+        "Milestone bonus of 3,000 RP on ₹5L spend"
+      ],
+      "cons": [
+        "Lounge access DISCONTINUED from March 2025",
+        "Low reward rate (0.5-1% effective value)",
+        "Cash redemption devalued to 1 RP = ₹0.50",
+        "Only 1 BOGO movie per month",
+        "No dining or golf benefits",
+        "5,000 RP monthly cap on cash redemption"
+      ]
+    }
+  },
+  {
+    "id": "indusind-club-vistara-explorer",
+    "name": "Club Vistara IndusInd Bank Explorer Credit Card",
+    "bank": "IndusInd Bank",
+    "image": "/assets/cards/indusind-club-vistara-explorer.png",
+    "link": "https://www.indusind.com/in/en/personal/cards/credit-card/club-vistara-indusInd-bank-explorer-credit-card.html",
+    "fees": {
+      "joining": 40000,
+      "annual": 10000,
+      "currency": "INR",
+      "waivedOn": null,
+      "waiverText": "No waiver. Note: Program being revised due to Vistara-Air India merger (eff. Nov 2024)"
+    },
+    "eligibility": {
+      "income": 1500000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Club Vistara Points",
+      "baseRate": 0.01,
+      "earningText": "8 CV Points per ₹200 on Vistara website, 6 CV on travel/airlines/hotels, 2 CV elsewhere, 1 CV on utilities/fuel/insurance",
+      "expiry": "As per Club Vistara program rules",
+      "joiningBonus": "Complimentary CV Gold membership (1st year), Business Class ticket voucher (base fare waiver), Gift vouchers worth ₹25,000 (Luxe/Oberoi/Postcard)",
+      "exclusions": "Reduced CV Points on utilities, fuel, insurance categories",
+      "calculator": {
+        "tier": "co-branded",
+        "monthlyCap": null,
+        "capResetPeriod": "statement",
+        "specialLogic": "CV Points earned only up to assigned credit limit per cycle. Business class voucher on ₹3L spend milestone (max 5 per year)",
+        "categories": {
+          "travel": { "rate": 0.03, "label": "3% (6 CV/₹200 = ~₹3/₹100)", "cap": null },
+          "dining": { "rate": 0.01, "label": "1% (2 CV/₹200)", "cap": null },
+          "online": { "rate": 0.01, "label": "1% (2 CV/₹200)", "cap": null },
+          "fuel": { "rate": 0.005, "label": "0.5% (1 CV/₹200)", "cap": null },
+          "groceries": { "rate": 0.01, "label": "1% (2 CV/₹200)", "cap": null },
+          "utilities": { "rate": 0.005, "label": "0.5% (1 CV/₹200)", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.0,
+        "bestOption": "Redeem CV Points for Vistara/Air India flights. Business class voucher on ₹3L spend",
+        "options": [
+          { "type": "Vistara Flights", "value": 1.0, "desc": "CV Points for award flights on Vistara network", "recommended": true },
+          { "type": "Business Class Voucher", "value": 21500, "desc": "₹3L spend = 1 Business Class voucher (~₹21,500 value)", "recommended": true }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "1 per quarter",
+        "international": "4 per quarter (Priority Pass)",
+        "accessType": "Priority Pass"
+      },
+      "milestones": [
+        { "spend": 300000, "benefit": "1 Complimentary Business Class ticket voucher" },
+        { "spend": 600000, "benefit": "2 Business Class vouchers (cumulative)" },
+        { "spend": 900000, "benefit": "3 Business Class vouchers (cumulative)" },
+        { "spend": 1200000, "benefit": "4 Business Class vouchers (cumulative)" },
+        { "spend": 1500000, "benefit": "5 Business Class vouchers (max per year)" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": true, "text": "BOGO on BookMyShow (2x/month, max ₹700 per free ticket)" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 200 },
+      "forex": { "markup": 0.018, "text": "1.8% + GST (revised from 0% eff. Nov 2024)" },
+      "dining": { "included": true, "text": "₹3,000 off dining at EazyDiner partner restaurants twice a year" },
+      "concierge": { "included": true, "text": "24x7 concierge services for travel assistance" },
+      "insurance": { "included": true, "text": "Air Accident Cover ₹2.5 Crore, Total Protect, Travel Insurance" },
+      "specialFeatures": {
+        "noLateFee": true,
+        "noOverLimitFee": true,
+        "noCashAdvanceFee": true,
+        "vistaraGold": "Complimentary CV Gold membership (1st year): Priority check-in, boarding, baggage"
+      }
+    },
+    "metadata": {
+      "tags": ["Co-branded", "Travel", "Vistara", "Business Class", "Premium", "Being Revised"],
+      "bestFor": "Frequent Vistara flyers seeking premium travel benefits and business class vouchers through milestone spends",
+      "rating": 3.5,
+      "verdict": "Strong for Vistara loyalists with excellent milestone benefits, but high fees and program uncertainty due to merger",
+      "pros": [
+        "Business Class vouchers on milestone spends (up to 5/year)",
+        "Complimentary CV Gold membership benefits",
+        "8 CV Points on Vistara bookings (4% effective)",
+        "No late payment, over-limit, or cash advance fees",
+        "Good international lounge access (4/quarter)",
+        "Welcome vouchers worth ₹25,000"
+      ],
+      "cons": [
+        "Very high joining fee of ₹40,000 + GST",
+        "Annual fee of ₹10,000 with no waiver",
+        "Program being revised due to Vistara-Air India merger",
+        "Low CV Points on non-travel categories",
+        "Only 1 domestic lounge visit per quarter",
+        "CV Gold membership only for 1st year"
+      ]
+    }
+  },
+  {
+    "id": "indusind-eazydiner-platinum",
+    "name": "EazyDiner IndusInd Bank Platinum Credit Card",
+    "bank": "IndusInd Bank",
+    "image": "/assets/cards/indusind-eazydiner-platinum.png",
+    "link": "https://www.indusind.com/in/en/personal/cards/credit-card/eazydiner-platinum-credit-card.html",
+    "fees": {
+      "joining": 0,
+      "annual": 0,
+      "currency": "INR",
+      "waivedOn": null,
+      "waiverText": "Lifetime Free credit card"
+    },
+    "eligibility": {
+      "income": 300000,
+      "age": { "min": 21, "max": 60 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Reward Points + EazyPoints",
+      "baseRate": 0.02,
+      "earningText": "2 RP per ₹100 spent (except fuel, insurance, rent, utility, govt). 0.7 RP on excluded categories. 2X EazyPoints on EazyDiner transactions",
+      "expiry": "1 year for EazyPoints, RP never expire",
+      "joiningBonus": "3-month EazyDiner Prime membership worth ₹1,095, 500 bonus EazyPoints",
+      "exclusions": "Fuel, Insurance, Rent, Utility, Government - earn only 0.7 RP/₹100",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "Prime membership renewed for 3 months on ₹30,000 quarterly spend. 2,000 bonus RP on ₹30K spend every 90 days",
+        "categories": {
+          "travel": { "rate": 0.02, "label": "2% (2 RP/₹100)", "cap": null },
+          "dining": { "rate": 0.02, "label": "2% + 25% off via PayEazy + additional 20%", "cap": null },
+          "online": { "rate": 0.02, "label": "2% (2 RP/₹100)", "cap": null },
+          "fuel": { "rate": 0, "label": "No RP (Surcharge waiver only)", "cap": null },
+          "groceries": { "rate": 0.02, "label": "2% (2 RP/₹100)", "cap": null },
+          "utilities": { "rate": 0.007, "label": "0.7% (0.7 RP/₹100)", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.10,
+        "bestOption": "Redeem RP instantly against restaurant bills via PayEazy on EazyDiner app",
+        "options": [
+          { "type": "Restaurant Bills", "value": 0.10, "desc": "Instant redemption via PayEazy", "recommended": true },
+          { "type": "EazyPoints Redemption", "value": 1.0, "desc": "Free hotel stays, meals, exclusive events", "recommended": true }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "None",
+        "international": "None",
+        "accessType": "Not available"
+      },
+      "milestones": [
+        { "spend": 30000, "benefit": "3-month EazyDiner Prime renewal + 2,000 Bonus RP (every 90 days)" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 100 },
+      "forex": { "markup": 0.035, "text": "3.5% + GST" },
+      "dining": {
+        "included": true,
+        "text": "25% off on dining via EazyDiner Prime at 2,000+ restaurants. Additional 20% off (up to ₹500) when paying via PayEazy on EazyDiner app",
+        "prime": "3-month EazyDiner Prime membership included (renewed on ₹30K quarterly spend)",
+        "discount": "Up to 45% total discount on dining"
+      },
+      "insurance": { "included": true, "text": "Total Protect fraud coverage" }
+    },
+    "metadata": {
+      "tags": ["Lifetime Free", "Dining", "Co-branded", "EazyDiner", "Entry-Level"],
+      "bestFor": "Foodies who frequently dine out and want lifetime free card with guaranteed 25-45% dining discounts",
+      "rating": 3.8,
+      "verdict": "Excellent lifetime free dining card with substantial restaurant discounts via EazyDiner ecosystem",
+      "pros": [
+        "Lifetime free - no joining or annual fee",
+        "25% base + 20% extra = up to 45% off on dining via PayEazy",
+        "Complimentary EazyDiner Prime membership",
+        "2X EazyPoints on all EazyDiner transactions",
+        "Milestone benefits with 2,000 bonus RP on ₹30K spend",
+        "Prime membership auto-renews on maintaining spend"
+      ],
+      "cons": [
+        "No lounge access",
+        "No movie benefits",
+        "Low redemption value of RP (₹0.10 per point)",
+        "High forex markup of 3.5%",
+        "Dining discount only via EazyDiner app PayEazy",
+        "Not useful for non-diners"
+      ]
+    }
+  },
+  {
+    "id": "indusind-platinum-aura-edge",
+    "name": "IndusInd Platinum Aura Edge Credit Card",
+    "bank": "IndusInd Bank",
+    "image": "/assets/cards/indusind-platinum-aura-edge.png",
+    "link": "https://www.indusind.com/in/en/personal/cards/credit-card/platinum-aura-edge-visa-and-mastercard-credit-card-easy-credit.html",
+    "fees": {
+      "joining": 0,
+      "annual": 0,
+      "currency": "INR",
+      "waivedOn": null,
+      "waiverText": "Lifetime Free. Some variants have ₹500 joining fee"
+    },
+    "eligibility": {
+      "income": 300000,
+      "age": { "min": 18, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Savings Points (Reward Points)",
+      "baseRate": 0.005,
+      "earningText": "Choose from 4 reward plans (Shop/Home/Travel/Party). Up to 4 SP per ₹100 on select categories, 0.5 SP on others",
+      "expiry": "Never Expires",
+      "joiningBonus": "Welcome discount vouchers from Amazon, Flipkart, Big Bazaar, Zee5, Apollo Pharmacy, Bata, Vero Moda, etc.",
+      "exclusions": "Fuel (no RP). Plan categories outside chosen plan earn base 0.5 SP rate",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": 2500,
+        "capResetPeriod": "calendar",
+        "specialLogic": "Choose 1 of 4 plans (Shop/Home/Travel/Party). Can change plan after 6 months. Max 2,500 SP cash redemption per month",
+        "categories": {
+          "travel": { "rate": 0.02, "label": "Up to 4 SP/₹100 (Travel Plan)", "cap": null },
+          "dining": { "rate": 0.02, "label": "Up to 4 SP/₹100 (Party Plan)", "cap": null },
+          "online": { "rate": 0.02, "label": "Up to 4 SP/₹100 (Shop Plan)", "cap": null },
+          "fuel": { "rate": 0, "label": "No RP (Surcharge waiver only)", "cap": null },
+          "groceries": { "rate": 0.02, "label": "Up to 4 SP/₹100 (Home/Shop Plan)", "cap": null },
+          "utilities": { "rate": 0.005, "label": "0.5 SP/₹100", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.40,
+        "bestOption": "Cash credit at 1 SP = ₹0.40 or non-cash at 1 SP = ₹0.50",
+        "options": [
+          { "type": "Cash Credit", "value": 0.40, "desc": "1 SP = ₹0.40", "recommended": true },
+          { "type": "Non-Cash Redemption", "value": 0.50, "desc": "1 SP = ₹0.50 for vouchers/products", "recommended": false },
+          { "type": "KrisFlyer Miles", "value": 0.50, "desc": "100 SP = 100 KrisFlyer Miles (max 10,000/month)", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "None",
+        "international": "None",
+        "accessType": "Not available"
+      },
+      "milestones": [],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 100 },
+      "forex": { "markup": 0.035, "text": "3.5% + GST" },
+      "insurance": { "included": true, "text": "Air Accident Cover ₹25 Lakh, Total Protect, Travel Insurance (delayed/lost baggage, passport, ticket)" },
+      "contactless": { "included": true, "text": "Tap and pay for transactions up to ₹5,000" }
+    },
+    "metadata": {
+      "tags": ["Lifetime Free", "Entry-Level", "Customizable Rewards", "Contactless", "Beginner"],
+      "bestFor": "First-time credit card users seeking LTF card with customizable reward plans based on spending habits",
+      "rating": 3.0,
+      "verdict": "Basic entry-level LTF card with unique customizable reward plans but limited travel/lifestyle benefits",
+      "pros": [
+        "Lifetime free - no joining or annual fee",
+        "Unique 4-plan reward structure for customization",
+        "Up to 4 SP/₹100 on chosen plan categories (~1.6% value)",
+        "Welcome vouchers from popular brands",
+        "Travel insurance included",
+        "Contactless payments supported"
+      ],
+      "cons": [
+        "No lounge access",
+        "No movie or golf benefits",
+        "Low base rate of 0.5 SP on non-plan categories",
+        "Cash redemption value only ₹0.40 per point",
+        "High forex markup of 3.5%",
+        "2,500 SP monthly cap on cash redemption",
+        "Can only change reward plan after 6 months"
+      ]
+    }
+  }
+]

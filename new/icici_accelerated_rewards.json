@@ -1,0 +1,1190 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-01",
+    "source": "ICICI Bank Official, TechnoFino, CardInsider, PaisaBazaar",
+    "notes": "iShop portal in Beta - rules/caps subject to change"
+  },
+  "accelerated_rewards_portal": {
+    "program_name": "iShop by ICICI Bank",
+    "launch_date": "February 2024",
+    "status": "Beta",
+    "access_methods": ["ICICI Net Banking", "iMobile App", "icicibank.com/ishoplogin"],
+    "cap_reset": "Calendar Month",
+    "redemption_fee": {
+      "standard": "₹99 + GST per transaction",
+      "waived_for": ["Emeralde Private Metal", "Times Black"]
+    },
+    "redemption_limits": {
+      "flights": "Up to 100% payment via points (95% for some cards)",
+      "hotels": "Up to 90% payment via points",
+      "vouchers": "Up to 50% payment via points",
+      "net_banking": "80% of order value"
+    },
+    "voucher_caps": {
+      "amazon_pay": "₹12,000 per month purchase limit",
+      "flipkart": "Capped (varies)",
+      "processing_fee": "2.5% on select brands (Swiggy, Amazon, Flipkart) when paying by card; waived for net banking"
+    },
+    "reward_credit_timeline": "45-90 days post-transaction (or 45 days after flight/hotel completion)",
+    "key_limitation": "No air miles transfer partners"
+  },
+  "cards": [
+    {
+      "card_id": 1,
+      "card_name": "ICICI Emeralde Private Metal Credit Card",
+      "card_tier": "Super Premium",
+      "program_identity": {
+        "program_name": "ICICI Reward Points + iShop Accelerated",
+        "reward_unit": "ICICI Reward Points (RP)",
+        "base_rate_label": "6 RP per ₹200 (3% return)",
+        "point_value": {
+          "flights_hotels_vouchers": "1 RP = ₹1",
+          "catalog_redemption": "1 RP = ₹0.60",
+          "statement_credit": "1 RP = ₹0.40",
+          "air_india_transfer": "1 RP = 1 Air India Mile"
+        }
+      },
+      "limits_and_caps": {
+        "ishop_monthly_cap": "18,000 Bonus Points (excludes base 1X)",
+        "ishop_daily_cap": "10,000 Accelerated Points",
+        "effective_monthly_cap_value": "₹21,600 (at 1 RP = ₹1)",
+        "cap_reset": "Calendar Month",
+        "base_reward_exclusions": ["Tax payments", "Rent", "Fuel", "E-wallet loading", "EMI conversions"],
+        "category_caps": {
+          "grocery": "Capped (generous threshold)",
+          "education": "Capped (generous threshold)",
+          "utilities": "Capped (generous threshold)",
+          "insurance": "Capped (generous threshold)"
+        }
+      },
+      "ishop_multiplier_table": [
+        {
+          "category": "Hotel Bookings",
+          "multiplier": "12X",
+          "earning_rate": "36 RP per ₹100",
+          "effective_return_percent": 36.0,
+          "specific_cap": "Part of 18,000 monthly cap"
+        },
+        {
+          "category": "Flight Bookings",
+          "multiplier": "6X",
+          "earning_rate": "18 RP per ₹100",
+          "effective_return_percent": 18.0,
+          "specific_cap": "Part of 18,000 monthly cap"
+        },
+        {
+          "category": "Shopping Vouchers",
+          "multiplier": "6X",
+          "earning_rate": "18 RP per ₹100",
+          "effective_return_percent": 18.0,
+          "specific_cap": "Amazon Pay: ₹12,000/month; Part of 18,000 monthly cap"
+        },
+        {
+          "category": "Bus Bookings",
+          "multiplier": "6X",
+          "earning_rate": "18 RP per ₹100",
+          "effective_return_percent": 18.0,
+          "specific_cap": "Part of 18,000 monthly cap"
+        }
+      ],
+      "direct_category_boosts": [
+        {
+          "category": "All Domestic Retail",
+          "boost": "6 RP per ₹200",
+          "effective_return_percent": 3.0,
+          "cap": "No specific cap",
+          "condition": "Excludes fuel, rent, tax, EMI, e-wallet"
+        },
+        {
+          "category": "Fuel",
+          "boost": "1% Surcharge Waiver",
+          "effective_return_percent": 1.0,
+          "cap": "₹4,000 transaction limit, max ₹1,000 savings/month",
+          "condition": "Min ₹400 transaction"
+        }
+      ],
+      "fees": {
+        "joining_fee": "₹12,499 + GST",
+        "annual_fee": "₹12,499 + GST",
+        "fee_waiver_condition": "₹10L annual spend",
+        "forex_markup": "2% + GST"
+      },
+      "additional_benefits": {
+        "welcome_benefits": ["Taj Epicure membership (1 year)", "EazyDiner Prime", "12,500 RP"],
+        "milestone_benefits": "₹6,000 EaseMyTrip vouchers on ₹8L spend",
+        "lounge_access": {
+          "domestic": "Unlimited (Primary + Add-on)",
+          "international": "Unlimited Priority Pass (Primary + Add-on)"
+        },
+        "golf": "Unlimited rounds/lessons monthly",
+        "bookmyshow": "BOGO up to ₹750, 2x/month",
+        "ishop_redemption_fee": "Waived"
+      }
+    },
+    {
+      "card_id": 2,
+      "card_name": "Amazon Pay ICICI Bank Credit Card",
+      "card_tier": "Co-Branded (Lifetime Free)",
+      "program_identity": {
+        "program_name": "Amazon Pay myCash + iShop Cashback",
+        "reward_unit": "Amazon Pay Balance (myCash)",
+        "base_rate_label": "1-5% Cashback (varies by category)",
+        "point_value": {
+          "amazon_balance": "1 myCash = ₹1 (direct credit to Amazon Pay)"
+        }
+      },
+      "limits_and_caps": {
+        "ishop_monthly_cap": "₹1,100 Cashback",
+        "ishop_daily_cap": "Not specified",
+        "cap_reset": "Calendar Month",
+        "base_reward_exclusions": ["EMI purchases", "Amazon Business", "Digital Gold", "Fuel", "Rent", "Tax", "Education"],
+        "category_caps": {
+          "amazon_prime_shopping": "Unlimited 5%",
+          "non_prime_amazon": "Unlimited 3%",
+          "amazon_pay_partners": "Unlimited 2%",
+          "other_spends": "Unlimited 1%"
+        }
+      },
+      "ishop_multiplier_table": [
+        {
+          "category": "All iShop Categories",
+          "multiplier": "Up to 4%",
+          "earning_rate": "4% Cashback",
+          "effective_return_percent": 4.0,
+          "specific_cap": "₹1,100/month total"
+        }
+      ],
+      "direct_category_boosts": [
+        {
+          "category": "Amazon.in (Prime Members)",
+          "boost": "5% Unlimited Cashback",
+          "effective_return_percent": 5.0,
+          "cap": "Unlimited",
+          "condition": "Must have active Prime membership"
+        },
+        {
+          "category": "Amazon.in (Non-Prime)",
+          "boost": "3% Unlimited Cashback",
+          "effective_return_percent": 3.0,
+          "cap": "Unlimited",
+          "condition": "Non-Prime users"
+        },
+        {
+          "category": "Amazon Pay Partners",
+          "boost": "2% Unlimited Cashback",
+          "effective_return_percent": 2.0,
+          "cap": "Unlimited",
+          "condition": "Login & Pay with Amazon, digitally fulfilled categories, physical gift cards"
+        },
+        {
+          "category": "All Other Domestic Spends",
+          "boost": "1% Unlimited Cashback",
+          "effective_return_percent": 1.0,
+          "cap": "Unlimited",
+          "condition": "Excludes fuel, rent, tax, education, utilities, international"
+        },
+        {
+          "category": "Fuel (First purchase/month)",
+          "boost": "5% Cashback",
+          "effective_return_percent": 5.0,
+          "cap": "Max ₹150 cashback",
+          "condition": "Min ₹2,000 transaction, first fuel purchase of month"
+        }
+      ],
+      "fees": {
+        "joining_fee": "₹0 (Lifetime Free)",
+        "annual_fee": "₹0 (Lifetime Free)",
+        "fee_waiver_condition": "N/A",
+        "forex_markup": "1.99% (reduced from 3.5% effective Oct 2025)"
+      },
+      "additional_benefits": {
+        "welcome_benefits": ["₹200 Cashback (offer-based)"],
+        "milestone_benefits": "None",
+        "lounge_access": {
+          "domestic": "Conditional - 1 access/quarter on ₹75,000 spend (Prime members only)",
+          "international": "None"
+        },
+        "ishop_redemption_fee": "N/A (Cashback direct to Amazon Pay)"
+      }
+    },
+    {
+      "card_id": 3,
+      "card_name": "ICICI Emeralde Credit Card (Standard/PVC)",
+      "card_tier": "Premium",
+      "program_identity": {
+        "program_name": "ICICI Reward Points + iShop Accelerated",
+        "reward_unit": "ICICI Reward Points (RP)",
+        "base_rate_label": "4 RP per ₹100 domestic, 1 RP per ₹100 utilities/insurance",
+        "point_value": {
+          "flights_hotels_vouchers": "1 RP = ₹0.25",
+          "statement_credit": "1 RP = ₹0.25"
+        }
+      },
+      "limits_and_caps": {
+        "ishop_monthly_cap": "12,000 Bonus Points",
+        "ishop_daily_cap": "Not specified",
+        "cap_reset": "Calendar Month",
+        "base_reward_exclusions": ["Fuel", "Rent", "Tax", "EMI conversions"]
+      },
+      "ishop_multiplier_table": [
+        {
+          "category": "Hotel Bookings",
+          "multiplier": "12X",
+          "earning_rate": "12X base rate",
+          "effective_return_percent": 12.0,
+          "specific_cap": "Part of 12,000 monthly cap"
+        },
+        {
+          "category": "Flight Bookings",
+          "multiplier": "6X",
+          "earning_rate": "6X base rate",
+          "effective_return_percent": 6.0,
+          "specific_cap": "Part of 12,000 monthly cap"
+        },
+        {
+          "category": "Shopping Vouchers",
+          "multiplier": "6X",
+          "earning_rate": "6X base rate",
+          "effective_return_percent": 6.0,
+          "specific_cap": "Part of 12,000 monthly cap"
+        }
+      ],
+      "direct_category_boosts": [
+        {
+          "category": "Domestic Retail",
+          "boost": "4 RP per ₹100",
+          "effective_return_percent": 1.0,
+          "cap": "No specific cap",
+          "condition": "At 1 RP = ₹0.25 redemption"
+        },
+        {
+          "category": "International Spends",
+          "boost": "4 RP per ₹100",
+          "effective_return_percent": 1.0,
+          "cap": "No specific cap",
+          "condition": "At 1 RP = ₹0.25 redemption"
+        },
+        {
+          "category": "Utilities/Insurance",
+          "boost": "1 RP per ₹100",
+          "effective_return_percent": 0.25,
+          "cap": "No specific cap",
+          "condition": "Lower earning rate"
+        }
+      ],
+      "fees": {
+        "joining_fee": "₹12,000 + GST",
+        "annual_fee": "₹12,000 + GST",
+        "fee_waiver_condition": "₹10L annual spend",
+        "forex_markup": "3.5% + GST"
+      },
+      "additional_benefits": {
+        "welcome_benefits": ["₹5,000 Tata CLiQ voucher (AmEx variant)"],
+        "milestone_benefits": "Not specified",
+        "lounge_access": {
+          "domestic": "Unlimited (Primary only)",
+          "international": "Unlimited Priority Pass (Primary only)"
+        },
+        "golf": "4 rounds/month (1 per ₹50,000 spend)",
+        "bookmyshow": "BOGO up to ₹750, 4x/month",
+        "ishop_redemption_fee": "₹99 + GST"
+      }
+    },
+    {
+      "card_id": 4,
+      "card_name": "ICICI Sapphiro Credit Card",
+      "card_tier": "Premium",
+      "program_identity": {
+        "program_name": "ICICI Reward Points + iShop Accelerated",
+        "reward_unit": "ICICI Reward Points (RP)",
+        "base_rate_label": "2 RP per ₹100 domestic, 4 RP per ₹100 international",
+        "point_value": {
+          "catalog_redemption": "1 RP = ₹0.25-₹0.50 (varies)",
+          "statement_credit": "1 RP = ₹0.25"
+        }
+      },
+      "limits_and_caps": {
+        "ishop_monthly_cap": "9,000 Bonus Points",
+        "ishop_daily_cap": "Not specified",
+        "cap_reset": "Calendar Month",
+        "base_reward_exclusions": ["Fuel", "Rent", "Tax", "EMI conversions"]
+      },
+      "ishop_multiplier_table": [
+        {
+          "category": "Hotel Bookings",
+          "multiplier": "12X",
+          "earning_rate": "12X base rate",
+          "effective_return_percent": 12.0,
+          "specific_cap": "Part of 9,000 monthly cap"
+        },
+        {
+          "category": "Flight Bookings",
+          "multiplier": "6X",
+          "earning_rate": "6X base rate",
+          "effective_return_percent": 6.0,
+          "specific_cap": "Part of 9,000 monthly cap"
+        },
+        {
+          "category": "Shopping Vouchers",
+          "multiplier": "6X",
+          "earning_rate": "6X base rate",
+          "effective_return_percent": 6.0,
+          "specific_cap": "Part of 9,000 monthly cap"
+        }
+      ],
+      "direct_category_boosts": [
+        {
+          "category": "Domestic Retail",
+          "boost": "2 RP per ₹100",
+          "effective_return_percent": 0.5,
+          "cap": "No specific cap",
+          "condition": "At standard redemption"
+        },
+        {
+          "category": "International Spends",
+          "boost": "4 RP per ₹100",
+          "effective_return_percent": 1.0,
+          "cap": "No specific cap",
+          "condition": "At standard redemption"
+        },
+        {
+          "category": "Utilities/Insurance",
+          "boost": "1 RP per ₹100",
+          "effective_return_percent": 0.25,
+          "cap": "No specific cap",
+          "condition": "Lower earning rate"
+        }
+      ],
+      "fees": {
+        "joining_fee": "₹3,500 + GST",
+        "annual_fee": "₹3,500 + GST",
+        "fee_waiver_condition": "₹6L annual spend",
+        "forex_markup": "3.5% + GST"
+      },
+      "additional_benefits": {
+        "welcome_benefits": ["₹9,500 vouchers (Tata CLiQ, EazyDiner, Da Milano, EaseMyTrip, Croma)"],
+        "milestone_benefits": "48 golf rounds on ₹6L spend",
+        "lounge_access": {
+          "domestic": "4/quarter (on ₹75,000 spend/quarter)",
+          "international": "2/year"
+        },
+        "golf": "4 rounds/month (1 per ₹50,000 spend)",
+        "bookmyshow": "BOGO up to ₹750, 2x/month",
+        "ishop_redemption_fee": "₹99 + GST"
+      }
+    },
+    {
+      "card_id": 5,
+      "card_name": "ICICI Rubyx Credit Card",
+      "card_tier": "Mid-Premium",
+      "program_identity": {
+        "program_name": "ICICI Reward Points + iShop Accelerated",
+        "reward_unit": "ICICI Reward Points (RP)",
+        "base_rate_label": "2 RP per ₹100 domestic, 4 RP per ₹100 international",
+        "point_value": {
+          "catalog_redemption": "1 RP = ₹0.25",
+          "statement_credit": "1 RP = ₹0.25"
+        }
+      },
+      "limits_and_caps": {
+        "ishop_monthly_cap": "9,000 Bonus Points",
+        "ishop_daily_cap": "Not specified",
+        "cap_reset": "Calendar Month",
+        "base_reward_exclusions": ["Fuel", "Rent", "Tax", "EMI conversions"]
+      },
+      "ishop_multiplier_table": [
+        {
+          "category": "Hotel Bookings",
+          "multiplier": "12X",
+          "earning_rate": "12X base rate",
+          "effective_return_percent": 12.0,
+          "specific_cap": "Part of 9,000 monthly cap"
+        },
+        {
+          "category": "Flight Bookings",
+          "multiplier": "6X",
+          "earning_rate": "6X base rate",
+          "effective_return_percent": 6.0,
+          "specific_cap": "Part of 9,000 monthly cap"
+        },
+        {
+          "category": "Shopping Vouchers",
+          "multiplier": "6X",
+          "earning_rate": "6X base rate",
+          "effective_return_percent": 6.0,
+          "specific_cap": "Part of 9,000 monthly cap"
+        }
+      ],
+      "direct_category_boosts": [
+        {
+          "category": "Domestic Retail",
+          "boost": "2 RP per ₹100",
+          "effective_return_percent": 0.5,
+          "cap": "No specific cap",
+          "condition": "At standard redemption"
+        },
+        {
+          "category": "International Spends",
+          "boost": "4 RP per ₹100",
+          "effective_return_percent": 1.0,
+          "cap": "No specific cap",
+          "condition": "At standard redemption"
+        },
+        {
+          "category": "Utilities/Insurance",
+          "boost": "1 RP per ₹100",
+          "effective_return_percent": 0.25,
+          "cap": "No specific cap",
+          "condition": "Lower earning rate"
+        }
+      ],
+      "fees": {
+        "joining_fee": "₹3,000 + GST",
+        "annual_fee": "₹2,000 + GST",
+        "fee_waiver_condition": "₹3L annual spend",
+        "forex_markup": "3.5% + GST"
+      },
+      "additional_benefits": {
+        "welcome_benefits": ["₹5,000+ vouchers"],
+        "milestone_benefits": "3,000 RP on ₹3L, 1,500 RP per additional ₹1L (max 15,000 RP/year)",
+        "lounge_access": {
+          "domestic": "8/year",
+          "railway": "8/year"
+        },
+        "golf": "2 rounds/month (1 per ₹50,000 spend)",
+        "bookmyshow": "25% off up to ₹150, 2x/month",
+        "ishop_redemption_fee": "₹99 + GST"
+      }
+    },
+    {
+      "card_id": 6,
+      "card_name": "ICICI Coral Credit Card",
+      "card_tier": "Entry-Level",
+      "program_identity": {
+        "program_name": "ICICI Reward Points + iShop Accelerated",
+        "reward_unit": "ICICI Reward Points (RP)",
+        "base_rate_label": "2 RP per ₹100 retail, 1 RP per ₹100 utilities/insurance",
+        "point_value": {
+          "catalog_redemption": "1 RP = ₹0.25",
+          "statement_credit": "1 RP = ₹0.25"
+        }
+      },
+      "limits_and_caps": {
+        "ishop_monthly_cap": "9,000 Bonus Points",
+        "ishop_daily_cap": "Not specified",
+        "cap_reset": "Calendar Month",
+        "base_reward_exclusions": ["Fuel", "Rent", "Tax", "EMI conversions"]
+      },
+      "ishop_multiplier_table": [
+        {
+          "category": "Hotel Bookings",
+          "multiplier": "12X",
+          "earning_rate": "12X base rate",
+          "effective_return_percent": 12.0,
+          "specific_cap": "Part of 9,000 monthly cap"
+        },
+        {
+          "category": "Flight Bookings",
+          "multiplier": "6X",
+          "earning_rate": "6X base rate",
+          "effective_return_percent": 6.0,
+          "specific_cap": "Part of 9,000 monthly cap"
+        },
+        {
+          "category": "Shopping Vouchers",
+          "multiplier": "6X",
+          "earning_rate": "6X base rate",
+          "effective_return_percent": 6.0,
+          "specific_cap": "Part of 9,000 monthly cap"
+        }
+      ],
+      "direct_category_boosts": [
+        {
+          "category": "Retail Spends",
+          "boost": "2 RP per ₹100",
+          "effective_return_percent": 0.5,
+          "cap": "No specific cap",
+          "condition": "Excludes fuel"
+        },
+        {
+          "category": "Utilities/Insurance",
+          "boost": "1 RP per ₹100",
+          "effective_return_percent": 0.25,
+          "cap": "No specific cap",
+          "condition": "Lower earning rate"
+        },
+        {
+          "category": "Fuel at HPCL",
+          "boost": "1% Surcharge Waiver",
+          "effective_return_percent": 1.0,
+          "cap": "₹400-₹4,000 transaction range",
+          "condition": "Only at HPCL outlets"
+        },
+        {
+          "category": "Dining",
+          "boost": "15% off",
+          "effective_return_percent": 15.0,
+          "cap": "Varies by restaurant",
+          "condition": "Via Culinary Treats Programme"
+        }
+      ],
+      "fees": {
+        "joining_fee": "₹500 + GST",
+        "annual_fee": "₹500 + GST",
+        "fee_waiver_condition": "₹1.5L annual spend",
+        "forex_markup": "3.5% + GST"
+      },
+      "additional_benefits": {
+        "welcome_benefits": ["None on paid variant"],
+        "milestone_benefits": "2,000 RP on ₹2L, 1,000 RP per additional ₹1L (max 10,000 RP/year)",
+        "lounge_access": {
+          "domestic": "1/quarter (on ₹75,000 spend/quarter)",
+          "railway": "4/year (no spend condition)"
+        },
+        "bookmyshow": "25% off up to ₹100, 2x/month",
+        "ishop_redemption_fee": "₹99 + GST"
+      }
+    },
+    {
+      "card_id": 7,
+      "card_name": "ICICI Manchester United Signature Credit Card",
+      "card_tier": "Co-Branded (Signature)",
+      "program_identity": {
+        "program_name": "ICICI Reward Points + iShop Accelerated",
+        "reward_unit": "ICICI Reward Points (RP)",
+        "base_rate_label": "3 RP per ₹100 domestic, 4 RP per ₹100 international, 5 RP on match days",
+        "point_value": {
+          "catalog_redemption": "1 RP = ₹0.25",
+          "statement_credit": "1 RP = ₹0.25"
+        }
+      },
+      "limits_and_caps": {
+        "ishop_monthly_cap": "9,000 Bonus Points",
+        "ishop_daily_cap": "Not specified",
+        "cap_reset": "Calendar Month",
+        "base_reward_exclusions": ["Fuel", "Rent", "Tax", "EMI conversions"]
+      },
+      "ishop_multiplier_table": [
+        {
+          "category": "Hotel Bookings",
+          "multiplier": "12X",
+          "earning_rate": "12X base rate",
+          "effective_return_percent": 12.0,
+          "specific_cap": "Part of 9,000 monthly cap"
+        },
+        {
+          "category": "Flight Bookings",
+          "multiplier": "6X",
+          "earning_rate": "6X base rate",
+          "effective_return_percent": 6.0,
+          "specific_cap": "Part of 9,000 monthly cap"
+        },
+        {
+          "category": "Shopping Vouchers",
+          "multiplier": "6X",
+          "earning_rate": "6X base rate",
+          "effective_return_percent": 6.0,
+          "specific_cap": "Part of 9,000 monthly cap"
+        }
+      ],
+      "direct_category_boosts": [
+        {
+          "category": "Domestic Retail",
+          "boost": "3 RP per ₹100",
+          "effective_return_percent": 0.75,
+          "cap": "No specific cap",
+          "condition": "Standard spends"
+        },
+        {
+          "category": "International Spends",
+          "boost": "4 RP per ₹100",
+          "effective_return_percent": 1.0,
+          "cap": "No specific cap",
+          "condition": "Standard spends"
+        },
+        {
+          "category": "Match Day Spends",
+          "boost": "5 RP per ₹100",
+          "effective_return_percent": 1.25,
+          "cap": "No specific cap",
+          "condition": "On Manchester United match days"
+        },
+        {
+          "category": "Fuel at HPCL",
+          "boost": "1% Surcharge Waiver",
+          "effective_return_percent": 1.0,
+          "cap": "Up to ₹4,000",
+          "condition": "Only at HPCL outlets"
+        }
+      ],
+      "fees": {
+        "joining_fee": "₹2,499 + GST",
+        "annual_fee": "₹2,499 + GST",
+        "fee_waiver_condition": "₹2.5L annual spend",
+        "forex_markup": "3.5% + GST"
+      },
+      "additional_benefits": {
+        "welcome_benefits": ["ManU branded holdall", "ManU football"],
+        "milestone_benefits": "Top spender: Signed jersey + match ticket (monthly); Top 18: Full Manchester United Experience",
+        "lounge_access": {
+          "domestic": "2/quarter (on ₹75,000 spend/quarter)"
+        },
+        "bookmyshow": "25% off up to ₹750, 2x/month",
+        "manu_benefits": {
+          "museum_tour": "20% off",
+          "red_cafe": "10% off",
+          "megastore": "10% off"
+        },
+        "ishop_redemption_fee": "₹99 + GST"
+      }
+    },
+    {
+      "card_id": 8,
+      "card_name": "ICICI Platinum Chip Credit Card",
+      "card_tier": "Entry-Level (Lifetime Free)",
+      "program_identity": {
+        "program_name": "ICICI Reward Points + iShop Accelerated",
+        "reward_unit": "ICICI Reward Points (RP)",
+        "base_rate_label": "2 RP per ₹100 retail, 1 RP per ₹100 utilities/insurance",
+        "point_value": {
+          "catalog_redemption": "1 RP = ₹0.25",
+          "statement_credit": "1 RP = ₹0.25"
+        }
+      },
+      "limits_and_caps": {
+        "ishop_monthly_cap": "Part of 9,000 category (standard cards)",
+        "ishop_daily_cap": "Not specified",
+        "cap_reset": "Calendar Month",
+        "base_reward_exclusions": ["Fuel", "Rent", "Tax", "EMI conversions"],
+        "category_caps": {
+          "utilities": "₹40,000/month",
+          "insurance": "₹40,000/month",
+          "grocery_departmental": "₹20,000/month"
+        }
+      },
+      "ishop_multiplier_table": [
+        {
+          "category": "Hotel Bookings",
+          "multiplier": "12X",
+          "earning_rate": "12X base rate",
+          "effective_return_percent": 12.0,
+          "specific_cap": "Based on card tier cap"
+        },
+        {
+          "category": "Flight Bookings",
+          "multiplier": "6X",
+          "earning_rate": "6X base rate",
+          "effective_return_percent": 6.0,
+          "specific_cap": "Based on card tier cap"
+        },
+        {
+          "category": "Shopping Vouchers",
+          "multiplier": "6X",
+          "earning_rate": "6X base rate",
+          "effective_return_percent": 6.0,
+          "specific_cap": "Based on card tier cap"
+        }
+      ],
+      "direct_category_boosts": [
+        {
+          "category": "Retail Spends",
+          "boost": "2 RP per ₹100",
+          "effective_return_percent": 0.5,
+          "cap": "Capped by category limits",
+          "condition": "Excludes fuel"
+        },
+        {
+          "category": "Utilities/Insurance",
+          "boost": "1 RP per ₹100",
+          "effective_return_percent": 0.25,
+          "cap": "₹40,000/month each",
+          "condition": "Lower earning rate"
+        },
+        {
+          "category": "Fuel at HPCL",
+          "boost": "1% Surcharge Waiver",
+          "effective_return_percent": 1.0,
+          "cap": "₹400-₹4,000 transaction range",
+          "condition": "Only at HPCL outlets"
+        },
+        {
+          "category": "Dining",
+          "boost": "15% off",
+          "effective_return_percent": 15.0,
+          "cap": "Varies by restaurant",
+          "condition": "Via Culinary Treats Programme"
+        }
+      ],
+      "fees": {
+        "joining_fee": "₹0 (Lifetime Free)",
+        "annual_fee": "₹0 (Lifetime Free)",
+        "fee_waiver_condition": "N/A",
+        "forex_markup": "3.5% + GST"
+      },
+      "additional_benefits": {
+        "welcome_benefits": ["None"],
+        "milestone_benefits": "None",
+        "lounge_access": {
+          "domestic": "None",
+          "international": "None"
+        },
+        "ishop_redemption_fee": "₹99 + GST"
+      }
+    },
+    {
+      "card_id": 9,
+      "card_name": "MakeMyTrip ICICI Bank Signature Credit Card",
+      "card_tier": "Co-Branded (Travel)",
+      "program_identity": {
+        "program_name": "myCash (MMT Wallet) + iShop Cashback",
+        "reward_unit": "myCash",
+        "base_rate_label": "1-6% myCash (varies by category)",
+        "point_value": {
+          "mmt_redemption": "1 myCash = ₹1 on MakeMyTrip bookings"
+        }
+      },
+      "limits_and_caps": {
+        "ishop_monthly_cap": "₹1,100 Cashback (co-branded tier)",
+        "ishop_daily_cap": "Not specified",
+        "cap_reset": "Calendar Month",
+        "base_reward_exclusions": ["Fuel", "Rent", "Tax", "EMI conversions"],
+        "mycash_expiry": "No expiry on myCash"
+      },
+      "ishop_multiplier_table": [
+        {
+          "category": "All iShop Categories",
+          "multiplier": "Up to 4%",
+          "earning_rate": "4% Cashback",
+          "effective_return_percent": 4.0,
+          "specific_cap": "₹1,100/month total"
+        }
+      ],
+      "direct_category_boosts": [
+        {
+          "category": "Hotels on MakeMyTrip",
+          "boost": "6% myCash (12 myCash per ₹200)",
+          "effective_return_percent": 6.0,
+          "cap": "Unlimited",
+          "condition": "Bookings via MMT platform"
+        },
+        {
+          "category": "Flights/Packages/Cabs/Bus on MMT",
+          "boost": "3% myCash (6 myCash per ₹200)",
+          "effective_return_percent": 3.0,
+          "cap": "Unlimited",
+          "condition": "Bookings via MMT platform"
+        },
+        {
+          "category": "All Other Spends",
+          "boost": "1% myCash (2 myCash per ₹200)",
+          "effective_return_percent": 1.0,
+          "cap": "Unlimited",
+          "condition": "All other categories"
+        },
+        {
+          "category": "Train Bookings",
+          "boost": "25 myCash per booking",
+          "effective_return_percent": "Varies",
+          "cap": "Per booking flat",
+          "condition": "Via MMT platform"
+        }
+      ],
+      "fees": {
+        "joining_fee": "₹999 + GST",
+        "annual_fee": "₹999 + GST",
+        "fee_waiver_condition": "₹3L annual spend",
+        "forex_markup": "0.99%"
+      },
+      "additional_benefits": {
+        "welcome_benefits": ["₹1,000 MMT voucher (1 year validity)", "MMTBLACK Gold membership"],
+        "renewal_benefits": "₹1,000 hotel voucher (3 months validity)",
+        "milestone_benefits": "None specified",
+        "lounge_access": {
+          "domestic": "2/quarter (on ₹75,000 spend/quarter)",
+          "international": "1/quarter"
+        },
+        "bookmyshow": "25% off up to ₹150, 2x/month",
+        "ishop_redemption_fee": "N/A (Cashback to MMT wallet)"
+      }
+    },
+    {
+      "card_id": 10,
+      "card_name": "ICICI Bank HPCL Super Saver Credit Card",
+      "card_tier": "Co-Branded (Fuel)",
+      "program_identity": {
+        "program_name": "PAYBACK Points + ICICI RP + iShop Accelerated",
+        "reward_unit": "PAYBACK Points / ICICI Reward Points",
+        "base_rate_label": "2 RP per ₹100 retail, 5% on fuel/grocery/utilities",
+        "point_value": {
+          "payback_redemption": "Can be redeemed at PAYBACK partners, HP Pay app, HPCL outlets",
+          "catalog_redemption": "1 RP = ₹0.25"
+        }
+      },
+      "limits_and_caps": {
+        "ishop_monthly_cap": "9,000 Bonus Points",
+        "ishop_daily_cap": "Not specified",
+        "cap_reset": "Calendar Month",
+        "total_monthly_cashback_cap": "₹300 across all categories",
+        "base_reward_exclusions": ["Rent", "Tax", "EMI conversions"]
+      },
+      "ishop_multiplier_table": [
+        {
+          "category": "Hotel Bookings",
+          "multiplier": "12X",
+          "earning_rate": "12X base rate",
+          "effective_return_percent": 12.0,
+          "specific_cap": "Part of 9,000 monthly cap"
+        },
+        {
+          "category": "Flight Bookings",
+          "multiplier": "6X",
+          "earning_rate": "6X base rate",
+          "effective_return_percent": 6.0,
+          "specific_cap": "Part of 9,000 monthly cap"
+        },
+        {
+          "category": "Shopping Vouchers",
+          "multiplier": "6X",
+          "earning_rate": "6X base rate",
+          "effective_return_percent": 6.0,
+          "specific_cap": "Part of 9,000 monthly cap"
+        }
+      ],
+      "direct_category_boosts": [
+        {
+          "category": "Fuel at HPCL",
+          "boost": "5% Total (4% Cashback + 1% Surcharge Waiver)",
+          "effective_return_percent": 5.0,
+          "cap": "₹200/month (4% cashback cap)",
+          "condition": "At HPCL outlets only"
+        },
+        {
+          "category": "Fuel via HP Pay App",
+          "boost": "Additional 1.5% PAYBACK Points",
+          "effective_return_percent": 6.5,
+          "cap": "Combined with fuel cap",
+          "condition": "Payments via HP Pay app at HPCL outlets"
+        },
+        {
+          "category": "Utilities/Grocery/Departmental",
+          "boost": "5% (20 RP per ₹100)",
+          "effective_return_percent": 5.0,
+          "cap": "₹100/month (400 RP)",
+          "condition": "All utility and grocery merchants"
+        },
+        {
+          "category": "Other Retail",
+          "boost": "2 RP per ₹100",
+          "effective_return_percent": 0.5,
+          "cap": "No specific cap",
+          "condition": "All non-fuel, non-utility categories"
+        }
+      ],
+      "fees": {
+        "joining_fee": "₹500 + GST",
+        "annual_fee": "₹500 + GST",
+        "fee_waiver_condition": "₹1.5L annual spend",
+        "forex_markup": "3.5% + GST"
+      },
+      "additional_benefits": {
+        "welcome_benefits": ["2,000 RP (on fee payment + ₹5,000 spend in 45 days)", "₹100 HP Pay cashback"],
+        "milestone_benefits": "None specified",
+        "lounge_access": {
+          "domestic": "1/quarter (on ₹75,000 spend/quarter)"
+        },
+        "bookmyshow": "25% off up to ₹100, 2x/month",
+        "roadside_assistance": "24x7 complimentary",
+        "ishop_redemption_fee": "₹99 + GST"
+      }
+    },
+    {
+      "card_id": 11,
+      "card_name": "Adani One ICICI Bank Signature Credit Card",
+      "card_tier": "Co-Branded (Premium Travel)",
+      "program_identity": {
+        "program_name": "Adani Reward Points + iShop Cashback",
+        "reward_unit": "Adani Reward Points (Adani Alpha)",
+        "base_rate_label": "1.5-7% Adani RP (varies by category)",
+        "point_value": {
+          "adani_one_redemption": "1 Adani RP = ₹1 within Adani ecosystem",
+          "effective_domestic_rate": "1.5% = 0.75% real return",
+          "effective_international_rate": "2% = 1% real return",
+          "effective_adani_rate": "7% = 3.5% real return"
+        }
+      },
+      "limits_and_caps": {
+        "ishop_monthly_cap": "₹1,100 Cashback (co-branded tier)",
+        "ishop_daily_cap": "Not specified",
+        "cap_reset": "Calendar Month",
+        "adani_rewards_cap": "Uncapped within Adani ecosystem",
+        "base_reward_exclusions": ["EMI conversions"]
+      },
+      "ishop_multiplier_table": [
+        {
+          "category": "All iShop Categories",
+          "multiplier": "Up to 4%",
+          "earning_rate": "4% Cashback",
+          "effective_return_percent": 4.0,
+          "specific_cap": "₹1,100/month total"
+        }
+      ],
+      "direct_category_boosts": [
+        {
+          "category": "Adani Ecosystem (Airports, Trainman, Gas, Electricity)",
+          "boost": "7% Adani RP per ₹100",
+          "effective_return_percent": 7.0,
+          "cap": "Uncapped",
+          "condition": "Adani One app, Adani-managed airports, Adani CNG, Adani Electricity"
+        },
+        {
+          "category": "International Spends",
+          "boost": "2% Adani RP per ₹100",
+          "effective_return_percent": 2.0,
+          "cap": "No specific cap",
+          "condition": "All international transactions"
+        },
+        {
+          "category": "Domestic Spends",
+          "boost": "1.5% Adani RP per ₹100",
+          "effective_return_percent": 1.5,
+          "cap": "No specific cap",
+          "condition": "All domestic transactions"
+        },
+        {
+          "category": "Utilities/Insurance",
+          "boost": "0.5% Adani RP per ₹100",
+          "effective_return_percent": 0.5,
+          "cap": "No specific cap",
+          "condition": "Lower earning rate"
+        }
+      ],
+      "fees": {
+        "joining_fee": "₹5,000 + GST",
+        "annual_fee": "₹5,000 + GST",
+        "fee_waiver_condition": "₹6L annual spend",
+        "forex_markup": "3.5% + GST"
+      },
+      "additional_benefits": {
+        "welcome_benefits": ["₹5,000 flight voucher (on ₹25,000 spend in 60 days)", "₹2,000 hotel voucher", "₹2,000 holiday voucher"],
+        "milestone_benefits": "None specified",
+        "lounge_access": {
+          "domestic": "4/quarter",
+          "international": "2/year (Priority Pass)"
+        },
+        "pranaam_service": "2x/year (1 on activation, 1 on ₹3L spend)",
+        "bookmyshow": "BOGO up to ₹1,000/month (50% off up to ₹500)",
+        "airport_benefits": ["Premium parking", "Valet", "Porter (8/year)", "Lounge upgrades"],
+        "yes_bank_transfer": "400 YES Bank RP = 100 Adani RP",
+        "ishop_redemption_fee": "N/A (Cashback)"
+      }
+    },
+    {
+      "card_id": 12,
+      "card_name": "Adani One ICICI Bank Platinum Credit Card",
+      "card_tier": "Co-Branded (Entry-Level Travel)",
+      "program_identity": {
+        "program_name": "Adani Reward Points + iShop Cashback",
+        "reward_unit": "Adani Reward Points",
+        "base_rate_label": "1-3% Adani RP (varies by category)",
+        "point_value": {
+          "adani_one_redemption": "1 Adani RP = ₹1 within Adani ecosystem"
+        }
+      },
+      "limits_and_caps": {
+        "ishop_monthly_cap": "₹1,100 Cashback (co-branded tier)",
+        "ishop_daily_cap": "Not specified",
+        "cap_reset": "Calendar Month",
+        "base_reward_exclusions": ["EMI conversions"]
+      },
+      "ishop_multiplier_table": [
+        {
+          "category": "All iShop Categories",
+          "multiplier": "Up to 4%",
+          "earning_rate": "4% Cashback",
+          "effective_return_percent": 4.0,
+          "specific_cap": "₹1,100/month total"
+        }
+      ],
+      "direct_category_boosts": [
+        {
+          "category": "Adani Ecosystem (Airports, Trainman, Gas, Electricity)",
+          "boost": "3% Adani RP per ₹100",
+          "effective_return_percent": 3.0,
+          "cap": "No specific cap",
+          "condition": "Adani One app, Adani-managed airports, Adani CNG, Adani Electricity"
+        },
+        {
+          "category": "International Spends",
+          "boost": "1.5% Adani RP per ₹100",
+          "effective_return_percent": 1.5,
+          "cap": "No specific cap",
+          "condition": "All international transactions"
+        },
+        {
+          "category": "Domestic Spends",
+          "boost": "1% Adani RP per ₹100",
+          "effective_return_percent": 1.0,
+          "cap": "No specific cap",
+          "condition": "All domestic transactions"
+        },
+        {
+          "category": "Utilities/Insurance",
+          "boost": "0.5% Adani RP per ₹100",
+          "effective_return_percent": 0.5,
+          "cap": "No specific cap",
+          "condition": "Lower earning rate"
+        }
+      ],
+      "fees": {
+        "joining_fee": "₹750 + GST",
+        "annual_fee": "₹750 + GST",
+        "fee_waiver_condition": "₹3L annual spend",
+        "forex_markup": "3.5% + GST"
+      },
+      "additional_benefits": {
+        "welcome_benefits": ["₹3,000 flight voucher (on ₹10,000 spend in 60 days)"],
+        "milestone_benefits": "None specified",
+        "lounge_access": {
+          "domestic": "2/quarter (no spend condition)"
+        },
+        "airport_benefits": ["2 lounge upgrades/quarter", "2 valet/year", "2 premium parking/year", "4 porter/year"],
+        "bookmyshow": "25% off up to ₹100",
+        "ishop_redemption_fee": "N/A (Cashback)"
+      }
+    },
+    {
+      "card_id": 13,
+      "card_name": "Times Black ICICI Bank Credit Card",
+      "card_tier": "Super Premium (Lifestyle)",
+      "program_identity": {
+        "program_name": "ICICI Reward Points + iShop Accelerated",
+        "reward_unit": "ICICI Reward Points (RP)",
+        "base_rate_label": "4 RP per ₹200 (2% return)",
+        "point_value": {
+          "flights_hotels_vouchers": "1 RP = ₹1",
+          "statement_credit": "1 RP = ₹0.40"
+        }
+      },
+      "limits_and_caps": {
+        "ishop_monthly_cap": "15,000 Bonus Points",
+        "ishop_daily_cap": "Not specified",
+        "cap_reset": "Calendar Month",
+        "base_reward_exclusions": ["Fuel", "Rent", "EMI conversions"],
+        "category_caps": {
+          "utilities_insurance_education_government": "5,000 RP per statement cycle"
+        }
+      },
+      "ishop_multiplier_table": [
+        {
+          "category": "Hotel Bookings",
+          "multiplier": "12X",
+          "earning_rate": "24 RP per ₹100",
+          "effective_return_percent": 24.0,
+          "specific_cap": "Part of 15,000 monthly cap"
+        },
+        {
+          "category": "Flight Bookings",
+          "multiplier": "6X",
+          "earning_rate": "12 RP per ₹100",
+          "effective_return_percent": 12.0,
+          "specific_cap": "Part of 15,000 monthly cap"
+        },
+        {
+          "category": "Shopping Vouchers",
+          "multiplier": "6X",
+          "earning_rate": "12 RP per ₹100",
+          "effective_return_percent": 12.0,
+          "specific_cap": "Part of 15,000 monthly cap"
+        }
+      ],
+      "direct_category_boosts": [
+        {
+          "category": "All Domestic Retail",
+          "boost": "4 RP per ₹200",
+          "effective_return_percent": 2.0,
+          "cap": "Uncapped for general retail",
+          "condition": "Excludes fuel, rent, EMI"
+        },
+        {
+          "category": "Utilities/Insurance/Education/Government",
+          "boost": "4 RP per ₹200",
+          "effective_return_percent": 2.0,
+          "cap": "5,000 RP per statement cycle",
+          "condition": "Capped categories"
+        }
+      ],
+      "fees": {
+        "joining_fee": "₹20,000 + GST",
+        "annual_fee": "₹20,000 + GST",
+        "fee_waiver_condition": "None (mandatory annual fee)",
+        "forex_markup": "2% + GST"
+      },
+      "additional_benefits": {
+        "welcome_benefits": [
+          "₹10,000 Tata CLiQ Luxury",
+          "₹10,000 Klook",
+          "₹10,000 EaseMyTrip",
+          "₹10,000 Travel Visa assistance",
+          "₹10,000 Lifestyle (Toni&Guy, Interflora)"
+        ],
+        "milestone_benefits": "Up to ₹70,000 benefits on ₹25L spend",
+        "lounge_access": {
+          "domestic": "Unlimited (Primary + Add-on)",
+          "international": "Unlimited Priority Pass (Primary + Add-on)"
+        },
+        "criblife": "6 personalized requests/year",
+        "encalm_prive": "Business class lounge access (Delhi)",
+        "bookmyshow": "BOGO up to ₹750, 2x/month",
+        "ishop_redemption_fee": "Waived"
+      }
+    }
+  ],
+  "comparison_summary": {
+    "best_ishop_returns": {
+      "hotels": {
+        "card": "Emeralde Private Metal",
+        "effective_return": "36%",
+        "monthly_cap": "18,000 bonus points"
+      },
+      "flights": {
+        "card": "Emeralde Private Metal",
+        "effective_return": "18%",
+        "monthly_cap": "18,000 bonus points"
+      },
+      "vouchers": {
+        "card": "Emeralde Private Metal",
+        "effective_return": "18%",
+        "monthly_cap": "18,000 bonus points"
+      }
+    },
+    "best_direct_category_returns": {
+      "amazon_shopping": {
+        "card": "Amazon Pay ICICI (Prime)",
+        "effective_return": "5% unlimited"
+      },
+      "fuel": {
+        "card": "HPCL Super Saver",
+        "effective_return": "5-6.5%",
+        "cap": "₹200/month + HP Pay bonus"
+      },
+      "adani_ecosystem": {
+        "card": "Adani One Signature",
+        "effective_return": "7% uncapped"
+      },
+      "travel_mmt": {
+        "card": "MakeMyTrip ICICI",
+        "effective_return": "6% on hotels, 3% on flights"
+      }
+    },
+    "ishop_monthly_caps_hierarchy": [
+      {"card": "Emeralde Private Metal", "cap": "18,000 bonus points"},
+      {"card": "Times Black", "cap": "15,000 bonus points"},
+      {"card": "Emeralde PVC", "cap": "12,000 bonus points"},
+      {"card": "Sapphiro/Rubyx/Coral/HPCL/ManU", "cap": "9,000 bonus points"},
+      {"card": "Co-Branded (Amazon/Adani/MMT)", "cap": "₹1,100 cashback"}
+    ],
+    "cards_with_waived_redemption_fee": ["Emeralde Private Metal", "Times Black"],
+    "lifetime_free_cards": ["Amazon Pay ICICI", "ICICI Platinum Chip"]
+  }
+}

@@ -9,6 +9,7 @@ from .serializers import CreditCardSerializer
 class CreditCardViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = CreditCard.objects.all()
     serializer_class = CreditCardSerializer
+    lookup_field = 'slug'
     permission_classes = [permissions.AllowAny]
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
     filterset_fields = ['bank', 'category']

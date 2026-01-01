@@ -71,12 +71,15 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
             key={voucher.id}
             className="essential-card-v2"
             onClick={() => onVoucherClick(voucher)}
+            title={voucher.brand}
+            data-brand={voucher.brand.toLowerCase()}
           >
             {voucher.maxDiscount > 0 && (
               <span className="discount-badge">
                 {voucher.maxDiscount}% OFF
               </span>
             )}
+            {/* ... rest of the card content ... */}
 
             <div className="card-logo">
               {voucher.logo ? (
@@ -96,12 +99,6 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
                 {voucher.brand.charAt(0).toUpperCase()}
               </span>
             </div>
-
-            <span className="brand-name">
-              {voucher.essentialBrand.charAt(0).toUpperCase() + voucher.essentialBrand.slice(1)}
-            </span>
-
-            <span className="category-tag">{voucher.category}</span>
           </button>
         ))}
       </div>
@@ -112,7 +109,7 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
         }
 
         .section-header {
-          margin-bottom: 1.25rem;
+          margin-bottom: 1rem;
         }
 
         .header-content {
@@ -139,9 +136,21 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
         }
 
         .essentials-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-          gap: 1rem;
+          display: flex;
+          overflow-x: auto;
+          gap: 0.75rem;
+          padding-bottom: 0.5rem;
+          scrollbar-width: thin;
+          -webkit-overflow-scrolling: touch;
+        }
+        
+        .essentials-grid::-webkit-scrollbar {
+          height: 4px;
+        }
+        
+        .essentials-grid::-webkit-scrollbar-thumb {
+          background-color: rgba(255, 255, 255, 0.1);
+          border-radius: 4px;
         }
 
         .essential-card-v2 {
@@ -149,95 +158,93 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
           display: flex;
           flex-direction: column;
           align-items: center;
-          padding: 1.25rem 1rem;
-          background: rgba(255, 255, 255, 0.03);
-          border: 1px solid var(--glass-border);
-          border-radius: 16px;
+          justify-content: center;
+          padding: 0;
+          background: #1c1c1e; /* iOS Dark Mode Grey */
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 22px; /* iOS Squircle approximation */
           cursor: pointer;
-          transition: all 0.25s ease;
-          text-align: center;
+          transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); /* Bouncy press */
+          min-width: 84px;
+          width: 84px;
+          height: 84px;
+          flex-shrink: 0;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
         .essential-card-v2:hover {
-          background: rgba(255, 255, 255, 0.06);
-          border-color: rgba(139, 92, 246, 0.3);
-          transform: translateY(-4px);
-          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+          transform: scale(1.05); /* App icon hover effect */
+          border-color: rgba(255, 255, 255, 0.3);
+          z-index: 10;
+        }
+
+        .essential-card-v2:active {
+           transform: scale(0.95);
         }
 
         .discount-badge {
           position: absolute;
-          top: -8px;
-          right: -8px;
-          padding: 4px 8px;
-          background: linear-gradient(135deg, #22c55e, #16a34a);
-          border-radius: 8px;
-          font-size: 0.65rem;
-          font-weight: 700;
-          color: white;
-          white-space: nowrap;
-        }
-
-        .card-logo {
-          width: 56px;
-          height: 56px;
-          background: rgba(255, 255, 255, 0.05);
-          border-radius: 12px;
+          top: -6px;
+          right: -6px;
+          height: 22px;
+          min-width: 22px;
+          padding: 0 6px;
           display: flex;
           align-items: center;
           justify-content: center;
-          margin-bottom: 0.75rem;
+          background: #ff3b30; /* iOS Red */
+          border: 2px solid var(--bg-color); /* Cutout effect */
+          border-radius: 11px;
+          font-size: 0.7rem;
+          font-weight: 700;
+          color: white;
+          white-space: nowrap;
+          z-index: 2;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .card-logo {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           overflow: hidden;
+          margin-bottom: 0;
         }
 
         .card-logo img {
-          width: 40px;
-          height: 40px;
-          object-fit: contain;
+          width: 100%;
+          height: 100%;
+          object-fit: contain !important;
+          border-radius: 0;
+          padding: 8px;
         }
 
+        /* Removed specific logo scalings as full bleed cover handles it better */
+
         .brand-fallback {
-          font-size: 1.25rem;
+          font-size: 1.75rem;
           font-weight: 700;
           color: var(--accent-violet);
         }
 
-        .brand-name {
-          font-size: 0.9rem;
-          font-weight: 600;
-          color: var(--text-primary);
-          margin-bottom: 0.25rem;
-        }
-
-        .category-tag {
-          font-size: 0.7rem;
-          color: var(--text-secondary);
-          text-transform: uppercase;
-          letter-spacing: 0.03em;
-        }
-
         @media (max-width: 640px) {
           .essentials-grid {
-            grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-            gap: 0.75rem;
+             gap: 0.6rem;
           }
-
           .essential-card-v2 {
-            padding: 1rem 0.75rem;
+             min-width: 70px;
+             width: 70px;
+             height: 70px;
           }
-
-          .card-logo {
+          .card-logo img {
             width: 48px;
             height: 48px;
           }
-
-          .brand-name {
-            font-size: 0.8rem;
-          }
         }
       `}</style>
-    </section>
-  );
+    </section>);
 };
 
 TopDeals.propTypes = {

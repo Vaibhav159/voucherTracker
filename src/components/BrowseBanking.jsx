@@ -1,5 +1,5 @@
-import { useState, useMemo } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useState, useMemo, useEffect, useCallback } from 'react';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { wealthBanking, getBankNames } from '../data/bankingPrograms';
 import { useFavorites } from '../context/FavoritesContext';
 
@@ -24,10 +24,26 @@ const getTierColor = (tierName) => {
 
 const BrowseBanking = () => {
     const navigate = useNavigate();
-    const [selectedTiers, setSelectedTiers] = useState([]);
-    const [searchTerm, setSearchTerm] = useState('');
-    const [sortBy, setSortBy] = useState('bank'); // bank, nrv-low, nrv-high
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    // Initialize state from URL params
+    const [selectedTiers, setSelectedTiers] = useState(() => {
+        const tiersParam = searchParams.get('tiers');
+        return tiersParam ? tiersParam.split(',').filter(Boolean) : [];
+    });
+    const [searchTerm, setSearchTerm] = useState(() => searchParams.get('q') || '');
+    const [sortBy, setSortBy] = useState(() => searchParams.get('sort') || 'bank');
     const { isGuideFavorite, toggleFavoriteGuide } = useFavorites();
+
+    // Sync state changes to URL
+    useEffect(() => {
+        const params = new URLSearchParams();
+        if (searchTerm) params.set('q', searchTerm);
+        if (sortBy && sortBy !== 'bank') params.set('sort', sortBy);
+        if (selectedTiers.length > 0) params.set('tiers', selectedTiers.join(','));
+
+        setSearchParams(params, { replace: true });
+    }, [searchTerm, sortBy, selectedTiers, setSearchParams]);
 
     const banks = getBankNames();
 

@@ -1,0 +1,615 @@
+[
+  {
+    "id": "icici-emeralde-private-metal",
+    "name": "ICICI Emeralde Private Metal",
+    "bank": "ICICI Bank",
+    "image": "/assets/cards/icici-emeralde-private-metal.png",
+    "link": "https://www.icicibank.com/personal-banking/cards/credit-card/emeralde-private-metal-credit-card",
+    "fees": {
+      "joining": 12499,
+      "annual": 12499,
+      "currency": "INR",
+      "waivedOn": 1000000,
+      "waiverText": "Annual fee waived on spending ₹10 lakhs in a card anniversary year"
+    },
+    "eligibility": {
+      "income": 2400000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Invite Only",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "ICICI Reward Points",
+      "baseRate": 0.03,
+      "earningText": "6 Reward Points per ₹200 spent (3% value back at 1:1 redemption for travel/vouchers)",
+      "expiry": "3 years from date of earning",
+      "joiningBonus": "12,500 Reward Points + Taj Epicure Preferred Membership (1 year) + EazyDiner Prime Membership (renewed annually)",
+      "exclusions": "Fuel, Rent, Tax, Government Services, E-Wallet Loads",
+      "calculator": {
+        "tier": "super-premium",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "6X rewards on flights/vouchers (18% value) and 12X rewards on hotel bookings (36% value) via iShop. Category caps: Grocery ₹40,000/month, Utilities ₹80,000/month, Insurance ₹80,000/month, Education ₹80,000/month",
+        "categories": {
+          "travel": { "rate": 0.03, "label": "3% base; up to 36% via iShop hotels", "cap": null },
+          "dining": { "rate": 0.03, "label": "3% value back", "cap": null },
+          "online": { "rate": 0.03, "label": "3% value back", "cap": null },
+          "fuel": { "rate": 0.0, "label": "Excluded from rewards", "cap": null },
+          "groceries": { "rate": 0.03, "label": "3% value back", "cap": 1200 },
+          "utilities": { "rate": 0.03, "label": "3% value back", "cap": 2400 }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.0,
+        "bestOption": "Redeem for flights, hotels via iShop or select brand vouchers (Apple, Tanishq, Tumi, Coach) for 1 RP = ₹1",
+        "options": [
+          { "type": "iShop Travel/Vouchers", "value": 1.0, "desc": "1 RP = ₹1", "recommended": true },
+          { "type": "Select Brand Vouchers", "value": 1.0, "desc": "1 RP = ₹1 (Apple, Tanishq, Tumi, Coach, etc.)", "recommended": true },
+          { "type": "Rewards Catalogue", "value": 0.6, "desc": "1 RP = ₹0.60", "recommended": false },
+          { "type": "Statement Credit", "value": 0.4, "desc": "1 RP = ₹0.40", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "Unlimited (Primary + Add-on)",
+        "international": "Unlimited via Priority Pass (Primary + Add-on)",
+        "accessType": "Priority Pass"
+      },
+      "milestones": [
+        { "spend": 800000, "benefit": "₹6,000 EaseMyTrip Air Travel Vouchers (2 x ₹3,000)" }
+      ],
+      "golf": { "included": true, "text": "Unlimited complimentary golf rounds/lessons via Golftripz" },
+      "movies": { "included": true, "text": "BOGO on BookMyShow up to ₹750 off on second ticket, 2 times per month" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 100000 },
+      "forex": { "markup": 0.02, "text": "2% + GST (~2.36%)" }
+    },
+    "metadata": {
+      "tags": ["Super Premium", "Metal Card", "Invite Only", "Travel", "Unlimited Lounge"],
+      "bestFor": "High spenders seeking premium travel benefits, unlimited lounge access for entire family, and excellent 3% reward rates",
+      "rating": 4.7,
+      "verdict": "ICICI's flagship super-premium card competing with HDFC Infinia, offering exceptional 3% rewards with 1:1 redemption and unlimited lounge access for both primary and add-on cardholders.",
+      "pros": [
+        "Excellent 3% reward rate with 1:1 redemption for travel/vouchers",
+        "Unlimited domestic + international lounge for primary and add-on",
+        "Up to 36% value back on hotel bookings via iShop",
+        "Unlimited golf benefits",
+        "Includes utilities, insurance, education in rewards program",
+        "Taj Epicure + EazyDiner Prime memberships"
+      ],
+      "cons": [
+        "Invite-only card, not easily accessible",
+        "Best redemption (1:1) limited to travel and select vouchers",
+        "No direct airline mile transfer partners",
+        "Statement credit redemption at poor 0.40 value"
+      ]
+    }
+  },
+  {
+    "id": "icici-emeralde",
+    "name": "ICICI Emeralde Credit Card",
+    "bank": "ICICI Bank",
+    "image": "/assets/cards/icici-emeralde.png",
+    "link": "https://www.icicibank.com/personal-banking/cards/credit-card/emeralde-credit-card",
+    "fees": {
+      "joining": 12000,
+      "annual": 12000,
+      "currency": "INR",
+      "waivedOn": 1000000,
+      "waiverText": "Annual fee waived on spending ₹10 lakhs in a year"
+    },
+    "eligibility": {
+      "income": 1800000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "ICICI Reward Points",
+      "baseRate": 0.01,
+      "earningText": "4 RP per ₹100 on retail, 1 RP per ₹100 on utilities/insurance (1% value back at 0.25 redemption)",
+      "expiry": "3 years from date of earning",
+      "joiningBonus": "₹5,000 Tata CLiQ voucher (American Express variant only, as birthday benefit)",
+      "exclusions": "Fuel, Rent, Tax, Government Services, E-Wallet Loads",
+      "calculator": {
+        "tier": "super-premium",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "4 RP per ₹100 on retail, 1 RP per ₹100 on utilities/insurance. Accelerated rewards via iShop. Category caps: Utilities ₹80,000/month, Insurance ₹80,000/month, Grocery ₹40,000/month",
+        "categories": {
+          "travel": { "rate": 0.01, "label": "1% base; higher via iShop", "cap": null },
+          "dining": { "rate": 0.01, "label": "1% value back", "cap": null },
+          "online": { "rate": 0.01, "label": "1% value back", "cap": null },
+          "fuel": { "rate": 0.0, "label": "Excluded from rewards", "cap": null },
+          "groceries": { "rate": 0.01, "label": "1% value back", "cap": 400 },
+          "utilities": { "rate": 0.0025, "label": "0.25% value back (1 RP per ₹100)", "cap": 200 }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Redeem for e-vouchers (Tanishq, Marriott, Croma, Amazon) at 1 RP = ₹0.25",
+        "options": [
+          { "type": "E-Vouchers", "value": 0.25, "desc": "1 RP = ₹0.25", "recommended": true },
+          { "type": "Product Catalogue", "value": 0.25, "desc": "1 RP = ₹0.25", "recommended": false },
+          { "type": "Statement Credit", "value": 0.25, "desc": "1 RP = ₹0.25", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "Unlimited (Primary only)",
+        "international": "Unlimited via Priority Pass/DreamFolks (Primary only)",
+        "accessType": "Priority Pass / DreamFolks"
+      },
+      "milestones": [],
+      "golf": { "included": true, "text": "1 complimentary golf round/lesson per ₹50,000 spent in previous month (max 4 per month)" },
+      "movies": { "included": true, "text": "BOGO on BookMyShow up to ₹750 off on second ticket, 4 times per month" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 50000 },
+      "forex": { "markup": 0.02, "text": "2% + GST (~2.36%)" }
+    },
+    "metadata": {
+      "tags": ["Super Premium", "Lifestyle", "Travel", "Unlimited Lounge"],
+      "bestFor": "High spenders who want unlimited lounge access and lifestyle benefits without the Metal card's invite-only restriction",
+      "rating": 3.8,
+      "verdict": "A solid super-premium card with excellent lounge benefits and 4 BookMyShow offers monthly, but underwhelming 1% reward rate compared to the Private Metal variant.",
+      "pros": [
+        "Unlimited domestic and international lounge access",
+        "4 BookMyShow BOGO offers per month (best among ICICI cards)",
+        "Spend-based golf benefits (up to 4 rounds/month)",
+        "Travel cancellation cover up to ₹12,000",
+        "Low forex markup of 2%"
+      ],
+      "cons": [
+        "Low reward rate of just 1% value back",
+        "No milestone benefits",
+        "Add-on cards don't get lounge access",
+        "High annual fee of ₹12,000 for the rewards offered",
+        "Redemption value stuck at ₹0.25 per point"
+      ]
+    }
+  },
+  {
+    "id": "icici-sapphiro",
+    "name": "ICICI Sapphiro Credit Card",
+    "bank": "ICICI Bank",
+    "image": "/assets/cards/icici-sapphiro.png",
+    "link": "https://www.icicibank.com/personal-banking/cards/credit-card/sapphiro-card",
+    "fees": {
+      "joining": 6500,
+      "annual": 3500,
+      "currency": "INR",
+      "waivedOn": 600000,
+      "waiverText": "Annual fee waived on spending ₹6 lakhs in a year"
+    },
+    "eligibility": {
+      "income": 900000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "ICICI Reward Points",
+      "baseRate": 0.005,
+      "earningText": "2 RP per ₹100 domestic, 4 RP per ₹100 international, 1 RP per ₹100 utilities/insurance",
+      "expiry": "3 years from date of earning",
+      "joiningBonus": "Welcome vouchers worth ₹13,000+ (Tata CLiQ ₹3,000, EaseMyTrip ₹4,000, EazyDiner Prime ₹1,095, Da Milano ₹5,000, Croma ₹1,500)",
+      "exclusions": "Fuel, Rent, Tax, Government Services, E-Wallet Loads",
+      "calculator": {
+        "tier": "premium",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "Milestone bonus: 4,000 RP at ₹4L spend + 2,000 RP per additional ₹1L (max 20,000 RP/year). Category caps: Utilities/Insurance ₹80,000/month, Grocery ₹40,000/month",
+        "categories": {
+          "travel": { "rate": 0.01, "label": "1% international, 0.5% domestic", "cap": null },
+          "dining": { "rate": 0.005, "label": "0.5% domestic", "cap": null },
+          "online": { "rate": 0.005, "label": "0.5% domestic", "cap": null },
+          "fuel": { "rate": 0.0, "label": "Excluded from rewards", "cap": null },
+          "groceries": { "rate": 0.005, "label": "0.5% value back", "cap": 200 },
+          "utilities": { "rate": 0.0025, "label": "0.25% value back (1 RP per ₹100)", "cap": 200 }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Redeem for travel vouchers or shopping e-vouchers",
+        "options": [
+          { "type": "E-Vouchers", "value": 0.25, "desc": "1 RP = ₹0.25", "recommended": true },
+          { "type": "Product Catalogue", "value": 0.25, "desc": "1 RP = ₹0.25", "recommended": false },
+          { "type": "Cashback", "value": 0.25, "desc": "1 RP = ₹0.25", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "4 per quarter (requires ₹75,000 quarterly spend)",
+        "international": "2 per year via Priority Pass/DreamFolks",
+        "accessType": "Priority Pass / DreamFolks"
+      },
+      "milestones": [
+        { "spend": 400000, "benefit": "4,000 Reward Points" },
+        { "spend": 500000, "benefit": "6,000 Reward Points (cumulative)" },
+        { "spend": 600000, "benefit": "8,000 Reward Points (cumulative) + Annual fee waiver" }
+      ],
+      "golf": { "included": true, "text": "1 complimentary golf round/lesson per ₹50,000 spent in previous month (max 4 per month)" },
+      "movies": { "included": true, "text": "BOGO on BookMyShow up to ₹500 off on second ticket, 2 times per month" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 4000 },
+      "forex": { "markup": 0.035, "text": "3.5% + GST" }
+    },
+    "metadata": {
+      "tags": ["Premium", "Travel", "Lifestyle", "Welcome Bonus"],
+      "bestFor": "Frequent travelers and lifestyle spenders who can maximize the welcome vouchers and milestone benefits",
+      "rating": 4.2,
+      "verdict": "A well-rounded premium card with excellent welcome benefits worth double the joining fee, ideal for those who can meet the ₹6L spend threshold for fee waiver.",
+      "pros": [
+        "Welcome vouchers worth ₹13,000+ exceed joining fee of ₹6,500",
+        "Up to 20,000 milestone reward points annually",
+        "International and domestic lounge access",
+        "24/7 concierge services",
+        "₹3 crore air accident insurance",
+        "Good international spend rewards (1%)"
+      ],
+      "cons": [
+        "Low base domestic reward rate (0.5%)",
+        "Domestic lounge requires ₹75,000 quarterly spend",
+        "High joining fee of ₹6,500",
+        "Forex markup of 3.5% is high"
+      ]
+    }
+  },
+  {
+    "id": "icici-rubyx",
+    "name": "ICICI Rubyx Credit Card",
+    "bank": "ICICI Bank",
+    "image": "/assets/cards/icici-rubyx.png",
+    "link": "https://www.icicibank.com/personal-banking/cards/credit-card/rubyx-credit-card",
+    "fees": {
+      "joining": 3000,
+      "annual": 2000,
+      "currency": "INR",
+      "waivedOn": 300000,
+      "waiverText": "Annual fee waived on spending ₹3 lakhs in an anniversary year"
+    },
+    "eligibility": {
+      "income": 600000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 720
+    },
+    "rewards": {
+      "type": "points",
+      "name": "ICICI Reward Points",
+      "baseRate": 0.005,
+      "earningText": "2 RP per ₹100 domestic, 4 RP per ₹100 international, 1 RP per ₹100 utilities/insurance",
+      "expiry": "3 years from date of earning",
+      "joiningBonus": "Welcome vouchers worth ₹5,250+ (Tata CLiQ ₹2,000, EaseMyTrip ₹2,000, Croma ₹1,000, EazyDiner Prime 3-month membership ₹1,095)",
+      "exclusions": "Fuel, Rent, Tax, Government Services, E-Wallet Loads",
+      "calculator": {
+        "tier": "premium",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "Milestone: 3,000 RP at ₹3L spend + 1,500 RP per additional ₹1L (max 15,000 RP/year). Category caps: Utilities/Insurance ₹40,000/month, Grocery ₹40,000/month",
+        "categories": {
+          "travel": { "rate": 0.01, "label": "1% international, 0.5% domestic", "cap": null },
+          "dining": { "rate": 0.005, "label": "0.5% domestic", "cap": null },
+          "online": { "rate": 0.005, "label": "0.5% domestic", "cap": null },
+          "fuel": { "rate": 0.0, "label": "Excluded from rewards", "cap": null },
+          "groceries": { "rate": 0.005, "label": "0.5% value back", "cap": 200 },
+          "utilities": { "rate": 0.0025, "label": "0.25% value back (1 RP per ₹100)", "cap": 100 }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Redeem for e-vouchers or product catalogue",
+        "options": [
+          { "type": "E-Vouchers", "value": 0.25, "desc": "1 RP = ₹0.25", "recommended": true },
+          { "type": "Product Catalogue", "value": 0.25, "desc": "1 RP = ₹0.25", "recommended": false },
+          { "type": "Cashback", "value": 0.25, "desc": "1 RP = ₹0.25", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "2 per quarter (requires ₹75,000 quarterly spend)",
+        "international": "None",
+        "accessType": "Visa/Mastercard"
+      },
+      "milestones": [
+        { "spend": 300000, "benefit": "3,000 Reward Points" },
+        { "spend": 400000, "benefit": "4,500 Reward Points (cumulative)" },
+        { "spend": 500000, "benefit": "6,000 Reward Points (cumulative)" }
+      ],
+      "golf": { "included": true, "text": "1 complimentary golf round/lesson per ₹50,000 spent in previous month (max 2 per month)" },
+      "movies": { "included": true, "text": "25% off (max ₹150) on min 2 tickets on BookMyShow & INOX, 2 times per month each" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 4000 },
+      "forex": { "markup": 0.035, "text": "3.5% + GST" }
+    },
+    "metadata": {
+      "tags": ["Mid-Premium", "All-Rounder", "Movies", "Travel"],
+      "bestFor": "Mid-range spenders looking for a balance of lifestyle benefits, movie discounts, and domestic travel perks",
+      "rating": 3.9,
+      "verdict": "A solid mid-tier card with welcome vouchers exceeding the joining fee, ideal for those who can't meet the higher Sapphiro spend thresholds.",
+      "pros": [
+        "Welcome vouchers worth ₹5,250+ exceed joining fee",
+        "Up to 15,000 milestone reward points annually",
+        "Airport + Railway lounge access (8 railway visits/year)",
+        "Golf benefits included",
+        "24/7 concierge services",
+        "₹1 crore air accident insurance"
+      ],
+      "cons": [
+        "Low reward rate (0.5% domestic)",
+        "No international lounge access",
+        "Airport lounge requires ₹75,000 quarterly spend",
+        "Forex markup of 3.5% is high"
+      ]
+    }
+  },
+  {
+    "id": "icici-coral",
+    "name": "ICICI Coral Credit Card",
+    "bank": "ICICI Bank",
+    "image": "/assets/cards/icici-coral.png",
+    "link": "https://www.icicibank.com/personal-banking/cards/credit-card/coral-credit-card",
+    "fees": {
+      "joining": 500,
+      "annual": 500,
+      "currency": "INR",
+      "waivedOn": 150000,
+      "waiverText": "Annual fee waived on spending ₹1.5 lakhs in a year"
+    },
+    "eligibility": {
+      "income": 300000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "points",
+      "name": "ICICI Reward Points",
+      "baseRate": 0.005,
+      "earningText": "2 RP per ₹100 on retail, 1 RP per ₹100 on utilities/insurance",
+      "expiry": "3 years from date of earning",
+      "joiningBonus": "None",
+      "exclusions": "Fuel, Rent, Tax, Government Services, E-Wallet Loads",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "Milestone: 2,000 RP at ₹2L spend + 1,000 RP per additional ₹1L (max 10,000 RP/year). Category caps: Utilities/Insurance ₹40,000/month, Grocery ₹20,000/month",
+        "categories": {
+          "travel": { "rate": 0.005, "label": "0.5% value back", "cap": null },
+          "dining": { "rate": 0.005, "label": "0.5% value back", "cap": null },
+          "online": { "rate": 0.005, "label": "0.5% value back", "cap": null },
+          "fuel": { "rate": 0.0, "label": "Excluded from rewards", "cap": null },
+          "groceries": { "rate": 0.005, "label": "0.5% value back", "cap": 100 },
+          "utilities": { "rate": 0.0025, "label": "0.25% value back (1 RP per ₹100)", "cap": 100 }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Redeem for e-vouchers or cashback",
+        "options": [
+          { "type": "E-Vouchers", "value": 0.25, "desc": "1 RP = ₹0.25", "recommended": true },
+          { "type": "Product Catalogue", "value": 0.25, "desc": "1 RP = ₹0.25", "recommended": false },
+          { "type": "Cashback", "value": 0.25, "desc": "1 RP = ₹0.25", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "1 per quarter (requires ₹75,000 quarterly spend)",
+        "international": "None",
+        "accessType": "Visa/Mastercard"
+      },
+      "milestones": [
+        { "spend": 200000, "benefit": "2,000 Reward Points" },
+        { "spend": 300000, "benefit": "3,000 Reward Points (cumulative)" },
+        { "spend": 400000, "benefit": "4,000 Reward Points (cumulative)" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": true, "text": "25% off (max ₹100) on min 2 tickets on BookMyShow & INOX, 2 times per month" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 4000 },
+      "forex": { "markup": 0.035, "text": "3.5% + GST" }
+    },
+    "metadata": {
+      "tags": ["Entry Level", "Low Fee", "Movies", "Beginner"],
+      "bestFor": "Credit card beginners and low-to-moderate spenders who want basic benefits at a low annual fee",
+      "rating": 3.5,
+      "verdict": "A good entry-level card for building credit history with essential benefits like movie discounts and lounge access at an affordable ₹500 annual fee.",
+      "pros": [
+        "Low annual fee of just ₹500",
+        "Easy fee waiver threshold (₹1.5L)",
+        "Up to 10,000 milestone reward points annually",
+        "Movie discounts on BookMyShow & INOX",
+        "Railway lounge access (4 per year)",
+        "iShop accelerated rewards available"
+      ],
+      "cons": [
+        "Low reward rate (0.5%)",
+        "No international lounge access",
+        "Airport lounge requires ₹75,000 quarterly spend",
+        "No welcome bonus",
+        "No golf benefits",
+        "Only 1 airport lounge per quarter"
+      ]
+    }
+  },
+  {
+    "id": "icici-manchester-united-signature",
+    "name": "ICICI Manchester United Signature Credit Card",
+    "bank": "ICICI Bank",
+    "image": "/assets/cards/icici-manchester-united-signature.png",
+    "link": "https://www.icicibank.com/personal-banking/cards/credit-card/manchester-credit-card/signature-card",
+    "fees": {
+      "joining": 2499,
+      "annual": 2499,
+      "currency": "INR",
+      "waivedOn": 250000,
+      "waiverText": "Annual fee waived on spending ₹2.5 lakhs in a year"
+    },
+    "eligibility": {
+      "income": 600000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 720
+    },
+    "rewards": {
+      "type": "points",
+      "name": "ICICI Reward Points",
+      "baseRate": 0.0075,
+      "earningText": "3 RP per ₹100 domestic, 4 RP per ₹100 international, 5 RP per ₹100 on Man Utd match days",
+      "expiry": "3 years from date of earning",
+      "joiningBonus": "Manchester United branded holdall (duffel bag) and football",
+      "exclusions": "Fuel, Rent, Tax, Government Services, E-Wallet Loads",
+      "calculator": {
+        "tier": "co-branded",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "5 RP per ₹100 on Manchester United match days (1.25% value), 4 RP per ₹100 international (1%), 3 RP per ₹100 domestic (0.75%)",
+        "categories": {
+          "travel": { "rate": 0.01, "label": "1% international", "cap": null },
+          "dining": { "rate": 0.0075, "label": "0.75% domestic", "cap": null },
+          "online": { "rate": 0.0075, "label": "0.75% domestic", "cap": null },
+          "fuel": { "rate": 0.0, "label": "Excluded from rewards", "cap": null },
+          "groceries": { "rate": 0.0075, "label": "0.75% value back", "cap": null },
+          "utilities": { "rate": 0.0025, "label": "0.25% value back", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Redeem for e-vouchers or Manchester United merchandise",
+        "options": [
+          { "type": "E-Vouchers", "value": 0.25, "desc": "1 RP = ₹0.25", "recommended": true },
+          { "type": "Product Catalogue", "value": 0.25, "desc": "1 RP = ₹0.25", "recommended": false },
+          { "type": "Cashback", "value": 0.25, "desc": "1 RP = ₹0.25", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "2 per quarter (requires ₹75,000 quarterly spend)",
+        "international": "None",
+        "accessType": "Visa"
+      },
+      "milestones": [
+        { "spend": 0, "benefit": "Top monthly spender: Signed Man Utd jersey + match ticket" },
+        { "spend": 0, "benefit": "Top 70 spenders: Man Utd branded shirt monthly" },
+        { "spend": 0, "benefit": "Top 18 spenders: Fully paid Manchester United Experience (stadium tour, training session, megastore visit)" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": true, "text": "25% off (max ₹150) on min 2 tickets on BookMyShow & INOX, 2 times per month" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 4000 },
+      "forex": { "markup": 0.035, "text": "3.5% + GST" }
+    },
+    "metadata": {
+      "tags": ["Co-branded", "Sports", "Manchester United", "Football"],
+      "bestFor": "Die-hard Manchester United fans who want exclusive club merchandise and once-in-a-lifetime experiences",
+      "rating": 3.7,
+      "verdict": "A must-have for Manchester United fans with unique club experiences and merchandise, but average for non-fans due to modest reward rates.",
+      "pros": [
+        "Exclusive Man Utd merchandise as welcome gift",
+        "Chance to win fully-paid Manchester United Experience",
+        "Higher rewards on match days (1.25%)",
+        "10-20% discounts at Old Trafford and Man Utd megastore",
+        "Top spenders get signed jerseys and match tickets",
+        "Better base reward rate (0.75%) than Coral"
+      ],
+      "cons": [
+        "Benefits primarily appeal to Man Utd fans only",
+        "Low base reward rate for non-fans",
+        "No international lounge access",
+        "No golf benefits",
+        "Competition-based rewards favor only top spenders nationwide"
+      ]
+    }
+  },
+  {
+    "id": "icici-platinum-chip",
+    "name": "ICICI Platinum Chip Credit Card",
+    "bank": "ICICI Bank",
+    "image": "/assets/cards/icici-platinum-chip.png",
+    "link": "https://www.icicibank.com/personal-banking/cards/credit-card/platinum-chip-credit-card",
+    "fees": {
+      "joining": 0,
+      "annual": 0,
+      "currency": "INR",
+      "waivedOn": null,
+      "waiverText": "Lifetime free - no joining or annual fee"
+    },
+    "eligibility": {
+      "income": 240000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 650
+    },
+    "rewards": {
+      "type": "points",
+      "name": "ICICI Reward Points",
+      "baseRate": 0.005,
+      "earningText": "2 RP per ₹100 on retail, 1 RP per ₹100 on utilities/insurance",
+      "expiry": "3 years from date of earning",
+      "joiningBonus": "None",
+      "exclusions": "Fuel, Rent, Tax, Government Services, E-Wallet Loads",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "Category caps: Utilities ₹40,000/month, Insurance ₹40,000/month, Grocery ₹20,000/month. No milestone benefits",
+        "categories": {
+          "travel": { "rate": 0.005, "label": "0.5% value back", "cap": null },
+          "dining": { "rate": 0.005, "label": "0.5% value back", "cap": null },
+          "online": { "rate": 0.005, "label": "0.5% value back", "cap": null },
+          "fuel": { "rate": 0.0, "label": "Excluded from rewards", "cap": null },
+          "groceries": { "rate": 0.005, "label": "0.5% value back", "cap": 100 },
+          "utilities": { "rate": 0.0025, "label": "0.25% value back (1 RP per ₹100)", "cap": 100 }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Redeem for e-vouchers or cashback",
+        "options": [
+          { "type": "E-Vouchers", "value": 0.25, "desc": "1 RP = ₹0.25", "recommended": true },
+          { "type": "Product Catalogue", "value": 0.25, "desc": "1 RP = ₹0.25", "recommended": false },
+          { "type": "Cashback", "value": 0.25, "desc": "1 RP = ₹0.25", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "None",
+        "international": "None",
+        "accessType": "None"
+      },
+      "milestones": [],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 4000 },
+      "forex": { "markup": 0.035, "text": "3.5% + GST" }
+    },
+    "metadata": {
+      "tags": ["Entry Level", "Lifetime Free", "Beginner", "Credit Building", "Zero Fee"],
+      "bestFor": "First-time credit card users looking to build credit history with absolutely zero annual fee",
+      "rating": 3.2,
+      "verdict": "The best option for credit beginners - a truly lifetime free card with basic rewards, EMV chip security, and dining discounts, though lacking premium benefits.",
+      "pros": [
+        "Lifetime free - zero joining and annual fee forever",
+        "Easiest eligibility criteria among ICICI cards",
+        "Good for building credit history",
+        "EMV chip security + PIN protection",
+        "Fuel surcharge waiver at HPCL",
+        "Up to 15% dining discounts via Culinary Treats",
+        "iShop accelerated rewards available"
+      ],
+      "cons": [
+        "No lounge access",
+        "No movie benefits",
+        "No milestone bonuses",
+        "Low reward rate (0.5%)",
+        "No welcome bonus",
+        "Minimal lifestyle benefits"
+      ]
+    }
+  }
+]

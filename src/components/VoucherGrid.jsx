@@ -37,28 +37,28 @@ const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
     useEffect(() => {
         const calculateColumns = () => {
             if (!parentRef.current) return;
-            
+
             // Get actual available width (accounting for padding/scrollbar)
             const containerRect = parentRef.current.getBoundingClientRect();
             const width = containerRect.width - 16; // Account for padding
-            
+
             setContainerWidth(width);
-            
+
             // Calculate how many cards can fit
             // Formula: (width + gap) / (cardWidth + gap) = number of cards
             const possibleCols = Math.floor((width + CARD_GAP) / (CARD_MIN_WIDTH + CARD_GAP));
             const cols = Math.max(1, Math.min(possibleCols, 2)); // Max 2 columns
-            
+
             setColumns(cols);
         };
 
         calculateColumns();
-        
+
         // Use ResizeObserver for responsive updates
         const resizeObserver = new ResizeObserver(() => {
             requestAnimationFrame(calculateColumns);
         });
-        
+
         if (parentRef.current) {
             resizeObserver.observe(parentRef.current);
         }
@@ -141,7 +141,7 @@ const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
     const virtualRows = virtualizer.getVirtualItems();
 
     // Calculate actual card width based on container and columns
-    const cardWidth = containerWidth > 0 
+    const cardWidth = containerWidth > 0
         ? Math.floor((containerWidth - (CARD_GAP * (columns - 1))) / columns)
         : CARD_MIN_WIDTH;
 
@@ -173,7 +173,7 @@ const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
                 >
                     {virtualRows.map((virtualRow) => {
                         const rowVouchers = rows[virtualRow.index];
-                        
+
                         return (
                             <div
                                 key={virtualRow.key}
@@ -207,20 +207,7 @@ const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
                 </div>
             </div>
 
-            {/* Scroll indicator */}
-            {vouchers.length > 20 && (
-                <div 
-                    style={{
-                        textAlign: 'center',
-                        padding: '1rem',
-                        color: 'var(--text-secondary)',
-                        fontSize: '0.85rem',
-                    }}
-                    aria-live="polite"
-                >
-                    Showing {Math.min(virtualRows.length * columns, vouchers.length)} of {vouchers.length} vouchers
-                </div>
-            )}
+
         </>
     );
 };

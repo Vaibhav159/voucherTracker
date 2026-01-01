@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { familyBanking, wealthBanking, getBankNames } from '../data/bankingPrograms';
 import { useFavorites } from '../context/FavoritesContext';
 
@@ -125,8 +125,18 @@ const BankingCompareBar = ({ selectedTiers, onRemoveTier, onClearAll, onCompare 
 
 const BankingGuides = () => {
     const navigate = useNavigate();
-    const [activeTab, setActiveTab] = useState('wealth');
-    const [selectedBank, setSelectedBank] = useState('HDFC Bank');
+    const [searchParams, setSearchParams] = useSearchParams();
+    const bankNames = getBankNames();
+
+    // Initialize state from URL params
+    const [activeTab, setActiveTab] = useState(() => {
+        const tab = searchParams.get('tab');
+        return (tab === 'wealth' || tab === 'family') ? tab : 'wealth';
+    });
+    const [selectedBank, setSelectedBank] = useState(() => {
+        const bank = searchParams.get('bank');
+        return bank && bankNames.includes(bank) ? bank : 'HDFC Bank';
+    });
     const [showEligibilityChecker, setShowEligibilityChecker] = useState(false);
     const [userBalance, setUserBalance] = useState('');
     const [showAllBanks, setShowAllBanks] = useState(false);
@@ -136,7 +146,14 @@ const BankingGuides = () => {
     // Compare feature state
     const [selectedTiersForCompare, setSelectedTiersForCompare] = useState([]);
 
-    const bankNames = getBankNames();
+    // Sync state changes to URL
+    useEffect(() => {
+        const params = new URLSearchParams();
+        params.set('tab', activeTab);
+        params.set('bank', selectedBank);
+
+        setSearchParams(params, { replace: true });
+    }, [activeTab, selectedBank, setSearchParams]);
 
     // Handle tab switching with animation
     const handleTabSwitch = (tabId) => {

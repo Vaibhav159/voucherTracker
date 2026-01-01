@@ -1,0 +1,1309 @@
+{
+  "cards": [
+    {
+      "id": "makemytrip-icici-credit-card",
+      "name": "MakeMyTrip ICICI Bank Credit Card",
+      "bank": "ICICI Bank",
+      "network": ["Mastercard", "RuPay"],
+      "tier": "Mid-range",
+      "category": "Travel Co-brand",
+      "tags": ["Travel", "Co-branded", "Hotels", "Flights", "MMT Ecosystem", "Low Forex"],
+      "launchDate": "October 2024",
+      "cardMaterial": "Plastic",
+      
+      "fees": {
+        "joining": 999,
+        "joiningGST": true,
+        "annual": 999,
+        "annualGST": true,
+        "addonCard": 0,
+        "waiverCondition": "₹3L spend in anniversary year",
+        "waiverSpendThreshold": 300000
+      },
+      
+      "eligibility": {
+        "minAgeSalaried": 21,
+        "maxAgeSalaried": 65,
+        "minAgeSelfEmployed": 21,
+        "maxAgeSelfEmployed": 65,
+        "minIncomeSalariedMonthly": 20000,
+        "minIncomeSelfEmployedAnnual": 300000,
+        "minCreditScore": 700
+      },
+      
+      "welcomeBenefits": {
+        "total": "~₹8,000+",
+        "details": [
+          {
+            "benefit": "MMT Voucher",
+            "value": 1000,
+            "validity": "1 year",
+            "usableOn": "Flights, Hotels, Holiday Packages, Bus, Cab"
+          },
+          {
+            "benefit": "MMTBLACK Gold Membership",
+            "value": 7000,
+            "validity": "1 year",
+            "details": "10% hotel upgrades, 20% F&B discounts, 25% flight add-on discounts, Zero cancellation fees, Priority support"
+          }
+        ]
+      },
+      
+      "renewalBenefits": {
+        "details": [
+          {
+            "benefit": "MMT Hotel Voucher",
+            "value": 1000,
+            "validity": "3 months"
+          }
+        ]
+      },
+      
+      "rewardStructure": {
+        "rewardType": "myCash",
+        "rewardCurrency": "myCash",
+        "pointValue": 1,
+        "pointValueUnit": "₹",
+        "pointExpiry": "Never expires",
+        "earningRates": [
+          {
+            "category": "Hotel Bookings on MMT",
+            "rate": "12 myCash per ₹200",
+            "percentage": 6,
+            "cap": "Unlimited"
+          },
+          {
+            "category": "Flights/Holiday Packages/Cabs/Bus on MMT",
+            "rate": "6 myCash per ₹200",
+            "percentage": 3,
+            "cap": "Unlimited"
+          },
+          {
+            "category": "Train Bookings on MMT",
+            "rate": "25 myCash flat per booking",
+            "percentage": null,
+            "cap": "Unlimited"
+          },
+          {
+            "category": "All Other Spends (Domestic & International)",
+            "rate": "2 myCash per ₹200",
+            "percentage": 1,
+            "cap": "Unlimited"
+          },
+          {
+            "category": "Insurance Payments",
+            "rate": "1%",
+            "percentage": 1,
+            "cap": "1,000 myCash per year"
+          }
+        ],
+        "exclusions": ["Fuel", "Rent", "EMI", "Cash Advances", "Joining/Annual Fee", "Balance Transfers"],
+        "notes": "Rewards are over and above MMT platform discounts. UPI transactions via RuPay card earn 1% myCash."
+      },
+      
+      "redemption": {
+        "bestOption": "Travel bookings on MakeMyTrip",
+        "options": [
+          {
+            "method": "Flights on MMT",
+            "value": "1 myCash = ₹1",
+            "ratio": "1:1"
+          },
+          {
+            "method": "Hotels on MMT",
+            "value": "1 myCash = ₹1",
+            "ratio": "1:1"
+          },
+          {
+            "method": "Holiday Packages on MMT",
+            "value": "1 myCash = ₹1",
+            "ratio": "1:1"
+          },
+          {
+            "method": "Trains/Bus/Cabs on MMT",
+            "value": "1 myCash = ₹1",
+            "ratio": "1:1"
+          },
+          {
+            "method": "Visa Services on MMT",
+            "value": "1 myCash = ₹1",
+            "ratio": "1:1"
+          }
+        ],
+        "restrictions": "Cannot redeem for cash/statement credit. myCash usable only on MakeMyTrip platform."
+      },
+      
+      "loungeAccess": {
+        "domestic": {
+          "count": 8,
+          "period": "year",
+          "maxPerQuarter": 2,
+          "spendRequirement": null,
+          "network": "Mastercard/RuPay Domestic Lounge Program"
+        },
+        "international": {
+          "count": 1,
+          "period": "year",
+          "membership": "Priority Pass",
+          "spendRequirement": null
+        },
+        "railway": null,
+        "applicableTo": "Primary cardholder only"
+      },
+      
+      "travelBenefits": {
+        "forexMarkup": 0.99,
+        "forexNote": "Effectively zero - earns 1% myCash on international spends",
+        "fuelSurchargeWaiver": {
+          "percentage": 1,
+          "maxTransaction": 4000,
+          "monthlyCapSavings": null
+        },
+        "insurance": null,
+        "concierge": null,
+        "noCoastEMI": "Available on MMT travel bookings (3-month tenure)"
+      },
+      
+      "lifestyleBenefits": {
+        "movies": {
+          "platform": ["BookMyShow", "INOX"],
+          "offer": "Buy 1 Get 25% off (up to ₹150) on 2nd ticket",
+          "frequency": "Twice per month per platform",
+          "maxSavings": "₹600/month"
+        },
+        "dining": {
+          "program": "ICICI Bank Culinary Treats Programme",
+          "details": "Discounts at partner restaurants"
+        },
+        "memberships": [
+          {
+            "name": "MMTBLACK Gold",
+            "value": 7000,
+            "included": true
+          }
+        ]
+      },
+      
+      "milestones": null,
+      
+      "charges": {
+        "interestRate": {
+          "monthly": 3.49,
+          "annual": 41.88
+        },
+        "cashAdvanceFee": {
+          "percentage": 2.5,
+          "minimum": 500
+        },
+        "latePaymentFee": {
+          "upTo500": 0,
+          "501to5000": 500,
+          "5001to10000": 750,
+          "above10000": 950
+        },
+        "overlimitFee": {
+          "percentage": 2.5,
+          "minimum": 550
+        },
+        "chequeReturnFee": 500
+      },
+      
+      "analysis": {
+        "bestFor": [
+          "Frequent MakeMyTrip users",
+          "Hotel bookers (6% return)",
+          "International travelers (0.99% forex)",
+          "Those who prefer platform loyalty over flexibility"
+        ],
+        "pros": [
+          "Industry-best 6% return on hotel bookings",
+          "Lowest forex markup (0.99%) in mid-tier segment",
+          "myCash never expires",
+          "No spend requirement for lounge access",
+          "Dual network (Mastercard + RuPay for UPI)",
+          "Rewards on top of MMT platform discounts"
+        ],
+        "cons": [
+          "Rewards locked to MMT ecosystem only",
+          "1% return on non-MMT spends is mediocre",
+          "₹3L spend needed for fee waiver is high",
+          "No international lounge beyond 1/year",
+          "Cannot convert myCash to cash/miles"
+        ],
+        "verdict": "Excellent for loyal MakeMyTrip users who book 2-3+ trips/year. The 6% hotel return and 0.99% forex make it one of the best travel co-brand cards in India. Skip if you prefer platform flexibility or need better general spending returns.",
+        "rating": 4.2
+      }
+    },
+    
+    {
+      "id": "icici-hpcl-super-saver-credit-card",
+      "name": "ICICI Bank HPCL Super Saver Credit Card",
+      "bank": "ICICI Bank",
+      "network": ["Visa"],
+      "tier": "Entry-level",
+      "category": "Fuel Co-brand",
+      "tags": ["Fuel", "Cashback", "Utilities", "HPCL", "Roadside Assistance", "Groceries"],
+      "launchDate": null,
+      "cardMaterial": "Plastic",
+      
+      "fees": {
+        "joining": 500,
+        "joiningGST": true,
+        "annual": 500,
+        "annualGST": true,
+        "addonCard": 100,
+        "waiverCondition": "₹1.5L spend in a year",
+        "waiverSpendThreshold": 150000
+      },
+      
+      "eligibility": {
+        "minAgeSalaried": 21,
+        "maxAgeSalaried": 65,
+        "minAgeSelfEmployed": 21,
+        "maxAgeSelfEmployed": 65,
+        "minIncomeSalariedMonthly": 15000,
+        "minIncomeSelfEmployedAnnual": 240000,
+        "minCreditScore": 700
+      },
+      
+      "welcomeBenefits": {
+        "total": "~₹600",
+        "details": [
+          {
+            "benefit": "Bonus Reward Points",
+            "value": 500,
+            "condition": "2,000 RP on paying joining fee + ₹5,000 spend in 45 days"
+          },
+          {
+            "benefit": "HP Pay Cashback",
+            "value": 100,
+            "condition": "On first fuel purchase of ₹1,000+ via HP Pay app"
+          }
+        ]
+      },
+      
+      "renewalBenefits": null,
+      
+      "rewardStructure": {
+        "rewardType": "Hybrid",
+        "rewardCurrency": "Cashback + ICICI Reward Points",
+        "pointValue": 0.25,
+        "pointValueUnit": "₹",
+        "pointExpiry": "2 years",
+        "earningRates": [
+          {
+            "category": "Fuel at HPCL Pumps",
+            "rate": "4% Cashback + 1% Surcharge Waiver",
+            "percentage": 5,
+            "cap": "₹200 cashback/month (covers ₹5,000 fuel spend)"
+          },
+          {
+            "category": "HP Pay App Fuel Purchases",
+            "rate": "Additional 1.5% as Reward Points",
+            "percentage": 1.5,
+            "cap": null
+          },
+          {
+            "category": "Utilities/Groceries/Departmental Stores",
+            "rate": "20 RP per ₹100",
+            "percentage": 5,
+            "cap": "400 RP/month (₹100 value)"
+          },
+          {
+            "category": "All Other Retail Spends",
+            "rate": "2 RP per ₹100",
+            "percentage": 0.5,
+            "cap": null
+          }
+        ],
+        "exclusions": ["Fuel (for RP earning)", "Rent", "EMI"],
+        "notes": "Total earning capped at ₹300/month across all accelerated categories. 1% transaction fee on education payments via third-party apps."
+      },
+      
+      "redemption": {
+        "bestOption": "Vouchers via ICICI Reward Portal",
+        "options": [
+          {
+            "method": "Gift Vouchers",
+            "value": "1 RP = ₹0.25",
+            "ratio": "4:1"
+          },
+          {
+            "method": "Merchandise",
+            "value": "Variable",
+            "ratio": "Variable"
+          },
+          {
+            "method": "Statement Credit",
+            "value": "1 RP = ₹0.25",
+            "ratio": "4:1"
+          }
+        ],
+        "restrictions": "₹99 redemption fee per request"
+      },
+      
+      "loungeAccess": {
+        "domestic": {
+          "count": 4,
+          "period": "year",
+          "maxPerQuarter": 1,
+          "spendRequirement": "₹35,000 in previous quarter",
+          "network": "Visa Domestic Lounge Program"
+        },
+        "international": null,
+        "railway": null,
+        "applicableTo": "Primary cardholder only"
+      },
+      
+      "travelBenefits": {
+        "forexMarkup": 3.5,
+        "fuelSurchargeWaiver": {
+          "percentage": 1,
+          "maxTransaction": 4000,
+          "note": "Part of 5% total fuel benefit"
+        },
+        "roadsideAssistance": {
+          "included": true,
+          "provider": "Allianz Partners",
+          "features": [
+            "24x7 toll-free helpline",
+            "On-site vehicle repair",
+            "Towing up to 50 km",
+            "Flat tire support",
+            "Fuel delivery (up to 5 liters)",
+            "Locked/lost key assistance",
+            "Battery jump-start",
+            "Taxi services",
+            "Accommodation assistance"
+          ]
+        }
+      },
+      
+      "lifestyleBenefits": {
+        "movies": {
+          "platform": ["BookMyShow", "INOX"],
+          "offer": "25% off up to ₹100 on min 2 tickets",
+          "frequency": "Twice per month per platform",
+          "maxSavings": "₹400/month"
+        },
+        "dining": {
+          "program": "ICICI Bank Culinary Treats Programme",
+          "details": "Discounts at partner restaurants"
+        }
+      },
+      
+      "milestones": null,
+      
+      "charges": {
+        "interestRate": {
+          "monthly": 3.50,
+          "annual": 42.00
+        },
+        "cashAdvanceFee": {
+          "percentage": 2.5,
+          "minimum": 500
+        },
+        "latePaymentFee": {
+          "upTo100": 0,
+          "101to500": 100,
+          "501to5000": 500,
+          "5001to10000": 600,
+          "above10000": 750
+        }
+      },
+      
+      "analysis": {
+        "bestFor": [
+          "Regular HPCL fuel users",
+          "Monthly fuel spend of ₹4,000-5,000",
+          "First-time credit card users",
+          "Those who pay utility bills via card"
+        ],
+        "pros": [
+          "5% total fuel benefit (best-in-class for entry cards)",
+          "Low annual fee (₹500)",
+          "Easy fee waiver at ₹1.5L",
+          "24x7 roadside assistance included",
+          "Rewards on utilities (often excluded elsewhere)",
+          "Additional 1.5% via HP Pay app"
+        ],
+        "cons": [
+          "Strict monthly caps limit total value to ₹300/month",
+          "Only useful at HPCL pumps (not universal)",
+          "Lounge access requires ₹35K quarterly spend",
+          "Poor redemption value (0.25/point)",
+          "High forex markup (3.5%)"
+        ],
+        "verdict": "Solid entry-level fuel card for HPCL loyalists. Best if you consistently spend ₹4,000-5,000/month on HPCL fuel and want roadside assistance. The ₹300/month cap makes it less attractive for heavy spenders - consider IDFC FIRST Power or BPCL SBI for higher limits.",
+        "rating": 3.8
+      }
+    },
+    
+    {
+      "id": "adani-one-icici-signature-credit-card",
+      "name": "Adani One ICICI Bank Signature Credit Card",
+      "bank": "ICICI Bank",
+      "network": ["Visa"],
+      "tier": "Premium",
+      "category": "Travel Co-brand",
+      "tags": ["Travel", "Adani Ecosystem", "Airport Benefits", "Pranaam", "Lounge", "Premium"],
+      "launchDate": "2024",
+      "cardMaterial": "Plastic",
+      
+      "fees": {
+        "joining": 5000,
+        "joiningGST": true,
+        "annual": 5000,
+        "annualGST": true,
+        "addonCard": null,
+        "waiverCondition": "₹6L spend in anniversary year",
+        "waiverSpendThreshold": 600000
+      },
+      
+      "eligibility": {
+        "minAgeSalaried": 21,
+        "maxAgeSalaried": 60,
+        "minAgeSelfEmployed": 21,
+        "maxAgeSelfEmployed": 65,
+        "minIncomeSalariedAnnual": 600000,
+        "minCreditScore": 750
+      },
+      
+      "welcomeBenefits": {
+        "total": "₹9,000",
+        "details": [
+          {
+            "benefit": "Hotel Voucher",
+            "value": 2000,
+            "condition": "On card activation",
+            "minBooking": 10000,
+            "validity": "6 months"
+          },
+          {
+            "benefit": "Holiday Voucher",
+            "value": 2000,
+            "condition": "On card activation",
+            "minBooking": 20000,
+            "validity": "6 months"
+          },
+          {
+            "benefit": "Flight Voucher",
+            "value": 5000,
+            "condition": "On ₹25,000 spend within 60 days",
+            "minBooking": null,
+            "validity": "6 months"
+          }
+        ]
+      },
+      
+      "renewalBenefits": {
+        "details": [
+          {
+            "benefit": "Similar voucher structure on annual fee payment",
+            "value": null
+          }
+        ]
+      },
+      
+      "rewardStructure": {
+        "rewardType": "Adani Reward Points",
+        "rewardCurrency": "Adani Reward Points",
+        "pointValue": 1,
+        "pointValueUnit": "₹",
+        "pointExpiry": "Check Adani One T&C",
+        "earningRates": [
+          {
+            "category": "Adani One Ecosystem (Flights, Airports, Trainman, Gas, Electricity)",
+            "rate": "7 Adani RP per ₹100",
+            "percentage": 7,
+            "cap": null
+          },
+          {
+            "category": "International Spends",
+            "rate": "2 Adani RP per ₹100",
+            "percentage": 2,
+            "cap": null
+          },
+          {
+            "category": "Domestic Spends",
+            "rate": "1.5 Adani RP per ₹100",
+            "percentage": 1.5,
+            "cap": null
+          },
+          {
+            "category": "Utility & Insurance Spends",
+            "rate": "0.5 Adani RP per ₹100",
+            "percentage": 0.5,
+            "cap": null
+          }
+        ],
+        "exclusions": ["Fuel", "Rent", "EMI"],
+        "notes": "YES Bank RP can be converted to Adani RP at 400:100 ratio"
+      },
+      
+      "redemption": {
+        "bestOption": "Travel bookings on Adani One platform",
+        "options": [
+          {
+            "method": "Flight Bookings (Adani One)",
+            "value": "1 Adani RP = ₹1",
+            "ratio": "1:1"
+          },
+          {
+            "method": "Hotel Bookings (Adani One)",
+            "value": "1 Adani RP = ₹1",
+            "ratio": "1:1"
+          },
+          {
+            "method": "Duty-Free at Adani Airports",
+            "value": "1 Adani RP = ₹1",
+            "ratio": "1:1"
+          },
+          {
+            "method": "Cab/Train/Bus on Adani One",
+            "value": "1 Adani RP = ₹1",
+            "ratio": "1:1"
+          },
+          {
+            "method": "Porter/Parking Services",
+            "value": "1 Adani RP = ₹1",
+            "ratio": "1:1"
+          },
+          {
+            "method": "YES Bank RP Conversion",
+            "value": "400 YES RP = 100 Adani RP",
+            "ratio": "4:1"
+          }
+        ]
+      },
+      
+      "loungeAccess": {
+        "domestic": {
+          "count": 16,
+          "period": "year",
+          "maxPerQuarter": 4,
+          "spendRequirement": null,
+          "network": "Adani-managed airports + Visa lounges"
+        },
+        "international": {
+          "count": 2,
+          "period": "year",
+          "membership": "Priority Pass",
+          "spendRequirement": null
+        },
+        "applicableTo": "Primary cardholder only"
+      },
+      
+      "airportBenefits": {
+        "applicableAirports": ["Mumbai T2", "Ahmedabad", "Lucknow", "Mangaluru", "Jaipur", "Guwahati", "Thiruvananthapuram"],
+        "pranaamMeetGreet": {
+          "count": 2,
+          "period": "year",
+          "unlockConditions": ["1 on card activation", "1 on ₹3L spend"],
+          "package": "Platinum Pranaam (worth ₹1,700)",
+          "includes": ["Welcome by Pranaam officer", "Dedicated porter", "Stress-free check-in"]
+        },
+        "premiumLoungeUpgrades": {
+          "count": 4,
+          "period": "quarter"
+        },
+        "valetParking": {
+          "count": 4,
+          "period": "year"
+        },
+        "premiumCarParking": {
+          "count": 4,
+          "period": "year"
+        },
+        "porterServices": {
+          "count": 8,
+          "period": "year"
+        }
+      },
+      
+      "travelBenefits": {
+        "forexMarkup": 3.5,
+        "fuelSurchargeWaiver": {
+          "percentage": 1,
+          "maxTransaction": 4000
+        },
+        "insurance": null
+      },
+      
+      "lifestyleBenefits": {
+        "movies": {
+          "platform": ["BookMyShow"],
+          "offer": "Buy 1 Get 25% off (up to ₹250) on 2nd ticket",
+          "frequency": "Twice per month",
+          "maxSavings": "₹1,000/month"
+        },
+        "dining": {
+          "program": "ICICI Bank Culinary Treats Programme"
+        }
+      },
+      
+      "milestones": [
+        {
+          "spend": 300000,
+          "benefit": "2nd Pranaam Meet & Greet Service"
+        }
+      ],
+      
+      "charges": {
+        "interestRate": {
+          "monthly": 3.50,
+          "annual": 42.00
+        }
+      },
+      
+      "analysis": {
+        "bestFor": [
+          "Frequent travelers using Adani-managed airports",
+          "Those who value Pranaam Meet & Greet services",
+          "Adani ecosystem users (Gas, Electricity, Trainman)",
+          "Premium travelers seeking airport conveniences"
+        ],
+        "pros": [
+          "Industry-leading 7% return on Adani ecosystem",
+          "Pranaam Meet & Greet (rare benefit removed from many premium cards)",
+          "Comprehensive airport services (valet, porter, parking)",
+          "Strong welcome benefits (₹9,000 value)",
+          "16 domestic + 2 international lounge visits",
+          "No spend requirement for lounge access"
+        ],
+        "cons": [
+          "High annual fee (₹5,000) with steep ₹6L waiver threshold",
+          "Benefits concentrated in Adani ecosystem",
+          "High forex markup (3.5%)",
+          "No insurance cover",
+          "Limited value if not using Adani airports"
+        ],
+        "verdict": "Exceptional for frequent flyers through Adani airports. The Pranaam service alone justifies the fee for some. However, value diminishes significantly if you don't use Adani ecosystem services regularly. Best paired with a low-forex card for international spends.",
+        "rating": 4.0
+      }
+    },
+    
+    {
+      "id": "adani-one-icici-platinum-credit-card",
+      "name": "Adani One ICICI Bank Platinum Credit Card",
+      "bank": "ICICI Bank",
+      "network": ["Visa"],
+      "tier": "Entry-level",
+      "category": "Travel Co-brand",
+      "tags": ["Travel", "Adani Ecosystem", "Budget Travel Card", "Airport Benefits", "Entry-level"],
+      "launchDate": "2024",
+      "cardMaterial": "Plastic",
+      
+      "fees": {
+        "joining": 750,
+        "joiningGST": true,
+        "annual": 750,
+        "annualGST": true,
+        "addonCard": null,
+        "waiverCondition": "₹3L spend in anniversary year",
+        "waiverSpendThreshold": 300000
+      },
+      
+      "eligibility": {
+        "minAgeSalaried": 21,
+        "maxAgeSalaried": 60,
+        "minAgeSelfEmployed": 21,
+        "maxAgeSelfEmployed": 65,
+        "minIncomeSalariedAnnual": 300000,
+        "minCreditScore": 700
+      },
+      
+      "welcomeBenefits": {
+        "total": "₹5,000",
+        "details": [
+          {
+            "benefit": "Hotel Voucher",
+            "value": 1000,
+            "condition": "On card activation",
+            "minBooking": 5000,
+            "validity": "6 months"
+          },
+          {
+            "benefit": "Holiday Voucher",
+            "value": 2000,
+            "condition": "On card activation",
+            "minBooking": 20000,
+            "validity": "6 months"
+          },
+          {
+            "benefit": "Flight Voucher",
+            "value": 2000,
+            "condition": "On ₹10,000 spend within 60 days",
+            "minBooking": null,
+            "validity": "6 months"
+          }
+        ]
+      },
+      
+      "renewalBenefits": {
+        "details": [
+          {
+            "benefit": "Similar voucher structure on annual fee payment",
+            "value": null
+          }
+        ]
+      },
+      
+      "rewardStructure": {
+        "rewardType": "Adani Reward Points",
+        "rewardCurrency": "Adani Reward Points",
+        "pointValue": 1,
+        "pointValueUnit": "₹",
+        "pointExpiry": "Check Adani One T&C",
+        "earningRates": [
+          {
+            "category": "Adani One Ecosystem (Flights, Airports, Trainman, Gas, Electricity)",
+            "rate": "3 Adani RP per ₹100",
+            "percentage": 3,
+            "cap": null
+          },
+          {
+            "category": "International Spends",
+            "rate": "1.5 Adani RP per ₹100",
+            "percentage": 1.5,
+            "cap": null
+          },
+          {
+            "category": "Domestic Spends",
+            "rate": "1 Adani RP per ₹100",
+            "percentage": 1,
+            "cap": null
+          },
+          {
+            "category": "Utility & Insurance Spends",
+            "rate": "0.5 Adani RP per ₹100",
+            "percentage": 0.5,
+            "cap": null
+          }
+        ],
+        "exclusions": ["Fuel", "Rent", "EMI"],
+        "notes": null
+      },
+      
+      "redemption": {
+        "bestOption": "Travel bookings on Adani One platform",
+        "options": [
+          {
+            "method": "Flight Bookings (Adani One)",
+            "value": "1 Adani RP = ₹1",
+            "ratio": "1:1"
+          },
+          {
+            "method": "Hotel Bookings (Adani One)",
+            "value": "1 Adani RP = ₹1",
+            "ratio": "1:1"
+          },
+          {
+            "method": "Duty-Free at Adani Airports",
+            "value": "1 Adani RP = ₹1",
+            "ratio": "1:1"
+          },
+          {
+            "method": "Cab/Train/Bus on Adani One",
+            "value": "1 Adani RP = ₹1",
+            "ratio": "1:1"
+          }
+        ]
+      },
+      
+      "loungeAccess": {
+        "domestic": {
+          "count": 8,
+          "period": "year",
+          "maxPerQuarter": 2,
+          "spendRequirement": null,
+          "network": "Adani-managed airports + Visa lounges"
+        },
+        "international": null,
+        "applicableTo": "Primary cardholder only"
+      },
+      
+      "airportBenefits": {
+        "applicableAirports": ["Mumbai T2", "Ahmedabad", "Lucknow", "Mangaluru", "Jaipur", "Guwahati", "Thiruvananthapuram"],
+        "premiumLoungeUpgrades": {
+          "count": 2,
+          "period": "quarter"
+        },
+        "valetParking": {
+          "count": 2,
+          "period": "year"
+        },
+        "premiumCarParking": {
+          "count": 2,
+          "period": "year"
+        },
+        "porterServices": {
+          "count": 4,
+          "period": "year",
+          "unlockConditions": ["2 on ₹1L spend", "2 more on ₹2L spend"]
+        }
+      },
+      
+      "travelBenefits": {
+        "forexMarkup": 3.5,
+        "fuelSurchargeWaiver": {
+          "percentage": 1,
+          "maxTransaction": 4000
+        },
+        "insurance": null
+      },
+      
+      "lifestyleBenefits": {
+        "movies": {
+          "platform": ["BookMyShow"],
+          "offer": "25% off up to ₹100 on min 2 tickets",
+          "frequency": "Twice per month",
+          "maxSavings": "₹400/month"
+        }
+      },
+      
+      "milestones": [
+        {
+          "spend": 100000,
+          "benefit": "2 Porter Services unlocked"
+        },
+        {
+          "spend": 200000,
+          "benefit": "2 more Porter Services unlocked"
+        }
+      ],
+      
+      "charges": {
+        "interestRate": {
+          "monthly": 3.50,
+          "annual": 42.00
+        }
+      },
+      
+      "analysis": {
+        "bestFor": [
+          "Budget-conscious travelers",
+          "Occasional Adani ecosystem users",
+          "Entry-level travel card seekers",
+          "Stepping stone to Signature variant"
+        ],
+        "pros": [
+          "Low fee (₹750) with ₹5,000 welcome benefits = net positive first year",
+          "Lounge access without spending requirement (rare at this price)",
+          "Reasonable ₹3L waiver threshold",
+          "Good 3% on Adani ecosystem spends",
+          "Premium airport services at entry-level pricing"
+        ],
+        "cons": [
+          "No international lounge access",
+          "High forex markup (3.5%)",
+          "Porter services locked behind spend milestones",
+          "No insurance benefits",
+          "Lower reward rates than Signature variant"
+        ],
+        "verdict": "Best value entry card for Adani ecosystem users. The ₹750 fee with ₹5,000 vouchers makes it essentially free for the first year. Good stepping stone before upgrading to Signature variant. Not ideal for international travelers.",
+        "rating": 3.9
+      }
+    },
+    
+    {
+      "id": "times-black-icici-credit-card",
+      "name": "Times Black ICICI Bank Credit Card",
+      "bank": "ICICI Bank",
+      "network": ["Visa"],
+      "tier": "Super-Premium",
+      "category": "Lifestyle/Travel Co-brand",
+      "tags": ["Metal", "Luxury", "Travel", "Lifestyle", "Unlimited Lounge", "Experiences", "Ultra-HNI", "Concierge"],
+      "launchDate": "December 2024",
+      "cardMaterial": "Metal (crafted from historic Times of India printing plates)",
+      "partnership": "Times Internet Ltd.",
+      
+      "fees": {
+        "joining": 20000,
+        "joiningGST": true,
+        "annual": 20000,
+        "annualGST": true,
+        "addonCard": 3500,
+        "addonCardGST": true,
+        "waiverCondition": "₹25L spend in anniversary year",
+        "waiverSpendThreshold": 2500000
+      },
+      
+      "eligibility": {
+        "minAgeSalaried": 21,
+        "maxAgeSalaried": 60,
+        "minAgeSelfEmployed": 21,
+        "maxAgeSelfEmployed": 65,
+        "minIncomeSalariedMonthly": 200000,
+        "minIncomeSalariedAnnual": 2400000,
+        "minIncomeSelfEmployedAnnual": 2400000,
+        "minCreditScore": 750,
+        "notes": "Easier approval than HDFC Infinia or ICICI Emeralde Private Metal"
+      },
+      
+      "welcomeBenefits": {
+        "total": "~₹25,000+",
+        "details": [
+          {
+            "benefit": "EaseMyTrip Luxury Stay Gift Card OR Lohono Stays Voucher",
+            "value": "₹10,000 OR ₹12,000",
+            "validity": "1 year"
+          },
+          {
+            "benefit": "Travel Visa Benefits (Atlys + OneVasco)",
+            "value": 10000,
+            "includes": "At-home biometric visa, visa fee waivers, lounge access, concierge"
+          },
+          {
+            "benefit": "Toni & Guy Voucher",
+            "value": 3000
+          },
+          {
+            "benefit": "Interflora Gift Card",
+            "value": 1000
+          },
+          {
+            "benefit": "Zomato Gold Annual Membership",
+            "value": null,
+            "included": true
+          },
+          {
+            "benefit": "The Quorum Club Access",
+            "value": null,
+            "included": true
+          }
+        ]
+      },
+      
+      "renewalBenefits": {
+        "details": [
+          {
+            "benefit": "Luxury Stay Gift Card",
+            "value": null
+          },
+          {
+            "benefit": "Continued memberships",
+            "value": null
+          }
+        ]
+      },
+      
+      "rewardStructure": {
+        "rewardType": "ICICI Bank Reward Points",
+        "rewardCurrency": "ICICI Reward Points",
+        "pointValue": {
+          "vouchers": 1,
+          "travel": 1,
+          "cashback": 0.40,
+          "catalogue": 0.60
+        },
+        "pointValueUnit": "₹",
+        "pointExpiry": "2-3 years (standard ICICI)",
+        "earningRates": [
+          {
+            "category": "Domestic Spends (incl. utilities, insurance, education, govt payments)",
+            "rate": "2 RP per ₹100",
+            "percentage": 2,
+            "cap": "5,000 RP/month on utilities/insurance/education/govt"
+          },
+          {
+            "category": "International Spends",
+            "rate": "2.5 RP per ₹100",
+            "percentage": 2.5,
+            "cap": null
+          },
+          {
+            "category": "Flights via iShop",
+            "rate": "6X = 12 RP per ₹100",
+            "percentage": 12,
+            "cap": "15,000 iShop RP/month (8,000/day)"
+          },
+          {
+            "category": "Vouchers via iShop",
+            "rate": "6X = 12 RP per ₹100",
+            "percentage": 12,
+            "cap": "15,000 iShop RP/month (8,000/day)",
+            "note": "Amazon Pay vouchers have 3% convenience fee, net ~9%"
+          },
+          {
+            "category": "Hotels via iShop",
+            "rate": "12X = 24 RP per ₹100",
+            "percentage": 24,
+            "cap": "15,000 iShop RP/month (8,000/day)"
+          }
+        ],
+        "exclusions": ["Fuel", "Rent", "EMI transactions"],
+        "notes": "One of few cards that rewards utilities, insurance, and govt payments"
+      },
+      
+      "redemption": {
+        "bestOption": "Products/Vouchers via ICICI Netbanking OR iShop travel bookings",
+        "options": [
+          {
+            "method": "Products & Vouchers",
+            "value": "1 RP = ₹1",
+            "ratio": "1:1"
+          },
+          {
+            "method": "Flight/Hotel bookings on iShop",
+            "value": "1 RP = ₹1",
+            "ratio": "1:1",
+            "note": "Can use up to 95% points"
+          },
+          {
+            "method": "Air India Miles",
+            "value": "1 RP = 1 Mile",
+            "ratio": "1:1"
+          },
+          {
+            "method": "Statement Credit/Cashback",
+            "value": "1 RP = ₹0.40",
+            "ratio": "2.5:1"
+          },
+          {
+            "method": "Rewards Catalogue",
+            "value": "1 RP = ₹0.60",
+            "ratio": "1.67:1"
+          }
+        ]
+      },
+      
+      "loungeAccess": {
+        "domestic": {
+          "count": "Unlimited",
+          "spendRequirement": null,
+          "network": "Times Black Card"
+        },
+        "international": {
+          "count": "Unlimited",
+          "membership": "Priority Pass",
+          "applicableTo": "Primary + Add-on cardholders",
+          "spendRequirement": null
+        },
+        "businessClassLounge": {
+          "included": true,
+          "lounges": ["Encalm Privé (Delhi)"],
+          "note": "Only credit card with access to this business class lounge"
+        }
+      },
+      
+      "travelBenefits": {
+        "forexMarkup": 1.49,
+        "forexNote": "Lower than industry standard 3.5%",
+        "fuelSurchargeWaiver": {
+          "percentage": 1,
+          "note": "All fuel transactions"
+        },
+        "insurance": {
+          "airAccident": true,
+          "amount": null
+        },
+        "concierge": {
+          "name": "CribLife Lifestyle Management",
+          "availability": "24x7",
+          "scope": "Domestic & International",
+          "exclusiveRequests": 6,
+          "examples": ["Concert tickets", "Restaurant reservations", "Event access"]
+        },
+        "doorstepVisa": {
+          "included": true,
+          "providers": ["Atlys", "OneVasco"],
+          "value": 10000,
+          "features": ["Biometric at home", "Visa fee waivers", "Concierge"]
+        },
+        "helicopterTransfer": {
+          "included": true,
+          "location": "Bangalore Airport to HAL only",
+          "value": 10000,
+          "unlockAt": "₹5L spend"
+        },
+        "luxuryCarTransfer": {
+          "included": true,
+          "provider": "Avis",
+          "count": 2,
+          "unlockAt": "₹5L spend",
+          "discount": "Up to 35% on Avis rentals"
+        },
+        "cancellationRefund": {
+          "included": true,
+          "covers": "Domestic flights and hotels",
+          "maxAmount": 12000
+        }
+      },
+      
+      "lifestyleBenefits": {
+        "theQuorumClub": {
+          "included": true,
+          "noMembershipRequired": true,
+          "benefits": [
+            "Access to exclusive events",
+            "20% discount at select premium restaurants",
+            "Complimentary co-working space access",
+            "15% discount on memberships"
+          ]
+        },
+        "dining": {
+          "zomatoGold": {
+            "included": true,
+            "validity": "Annual"
+          },
+          "quorumRestaurants": {
+            "discount": 20,
+            "restaurants": ["Torii (Mumbai)", "Other select premium restaurants"]
+          },
+          "culinaryTreats": {
+            "included": true
+          }
+        },
+        "events": {
+          "included": true,
+          "events": ["Times Lit Fest", "ET Startup Awards", "ET Conversations", "Art Soirée"],
+          "note": "Exclusive access to Times Group marquee events"
+        }
+      },
+      
+      "milestones": {
+        "totalValue": 70000,
+        "validity": "6 months from notification",
+        "tiers": [
+          {
+            "spend": 200000,
+            "benefit": "Klook International Experiences Voucher",
+            "value": 10000
+          },
+          {
+            "spend": 500000,
+            "benefit": "Luxury Airport Transfer (2 Avis pickups OR 1 Helicopter ride - Bangalore only)",
+            "value": 10000
+          },
+          {
+            "spend": 1000000,
+            "benefit": "Tata CLiQ Luxury Gift Card",
+            "value": 10000
+          },
+          {
+            "spend": 2000000,
+            "benefit": "One-night Luxury Stay at Ayatana Resorts OR Lohono Stays Voucher",
+            "value": 20000
+          },
+          {
+            "spend": 2500000,
+            "benefit": "Annual Fee Waiver",
+            "value": 20000
+          }
+        ]
+      },
+      
+      "charges": {
+        "interestRate": {
+          "monthly": 3.40,
+          "annual": 40.80
+        },
+        "latePaymentFee": {
+          "max": 750
+        },
+        "cashAdvanceFee": {
+          "percentage": 2.5,
+          "minimum": 500
+        }
+      },
+      
+      "analysis": {
+        "bestFor": [
+          "Ultra-HNIs spending ₹10L+ annually",
+          "Those who value unique experiences over pure reward rates",
+          "Frequent travelers wanting unlimited lounge access",
+          "People who'll use doorstep visa and concierge services",
+          "Those seeking easier approval than Infinia/Emeralde"
+        ],
+        "pros": [
+          "Unlimited domestic + international lounge (incl. business class)",
+          "Unique experiences (helicopter, doorstep visa, The Quorum Club)",
+          "Lower forex markup (1.49% vs 3.5% industry standard)",
+          "Rewards on usually excluded categories (utilities, insurance, govt)",
+          "Up to 24% return on iShop hotel bookings",
+          "Easier approval than HDFC Infinia or ICICI Emeralde Private Metal",
+          "Multiple milestone benefits at different thresholds",
+          "Metal card with unique design",
+          "Priority Pass for both primary and add-on cards"
+        ],
+        "cons": [
+          "Very high annual fee (₹20,000) with steep ₹25L waiver threshold",
+          "Base reward rate (2%) lower than competitors like HDFC Infinia (3.33%)",
+          "Milestone benefits are brand-specific and restrictive",
+          "Helicopter transfer limited to Bangalore only",
+          "5,000 RP cap on utility/govt categories",
+          "Milestone benefits expire in 6 months",
+          "Add-on card costs ₹3,500"
+        ],
+        "comparisons": {
+          "vsHDFCInfinia": "Infinia has better base rewards (3.33%) and lower fee (₹12,500), but harder to get",
+          "vsICICIEmeraldePrivate": "Emeralde has better rewards and lower fee (₹12,000), but invite-only",
+          "vsAxisOlympus": "Similar fee, Times Black has better experiences, Olympus has better rewards"
+        },
+        "verdict": "A lifestyle-first card rather than a pure rewards card. Best for those who'll actually use the unique experiences (visa services, events, lounges, luxury stays) and can spend ₹10-20L+ annually. If you're purely chasing reward rates, HDFC Infinia or ICICI Emeralde Private Metal offer better value. However, Times Black is significantly easier to get approved for, making it accessible to the aspirational premium segment.",
+        "rating": 4.1
+      }
+    }
+  ],
+  
+  "metadata": {
+    "lastUpdated": "January 2025",
+    "dataSource": "Official ICICI Bank, Paisabazaar, CardInsider, Official Partner Websites",
+    "notes": [
+      "All fees are subject to 18% GST",
+      "Benefits and charges may change - verify with official sources before applying",
+      "Reward rates and caps are based on latest available information as of January 2025"
+    ]
+  },
+  
+  "comparisonSummary": {
+    "table": [
+      {
+        "card": "MakeMyTrip ICICI",
+        "annualFee": 999,
+        "bestReturn": "6% (MMT Hotels)",
+        "loungesDomestic": "8/year",
+        "loungesInternational": "1/year",
+        "forexMarkup": "0.99%",
+        "keyStrength": "Travel rewards + lowest forex"
+      },
+      {
+        "card": "HPCL Super Saver",
+        "annualFee": 500,
+        "bestReturn": "5% (HPCL Fuel)",
+        "loungesDomestic": "4/year (conditional)",
+        "loungesInternational": "None",
+        "forexMarkup": "3.5%",
+        "keyStrength": "Fuel cashback + Roadside assist"
+      },
+      {
+        "card": "Adani One Signature",
+        "annualFee": 5000,
+        "bestReturn": "7% (Adani ecosystem)",
+        "loungesDomestic": "16/year",
+        "loungesInternational": "2/year",
+        "forexMarkup": "3.5%",
+        "keyStrength": "Pranaam + Airport services"
+      },
+      {
+        "card": "Adani One Platinum",
+        "annualFee": 750,
+        "bestReturn": "3% (Adani ecosystem)",
+        "loungesDomestic": "8/year",
+        "loungesInternational": "None",
+        "forexMarkup": "3.5%",
+        "keyStrength": "Low fee + Airport perks"
+      },
+      {
+        "card": "Times Black",
+        "annualFee": 20000,
+        "bestReturn": "24% (iShop Hotels)",
+        "loungesDomestic": "Unlimited",
+        "loungesInternational": "Unlimited",
+        "forexMarkup": "1.49%",
+        "keyStrength": "Unlimited lounges + Experiences"
+      }
+    ]
+  }
+}

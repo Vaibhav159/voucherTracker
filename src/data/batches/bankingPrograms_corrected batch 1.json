@@ -1,0 +1,1629 @@
+[
+  {
+    "id": "hdfc-bank",
+    "name": "HDFC Bank",
+    "tiers": [
+      {
+        "id": "hdfc-classic",
+        "name": "Classic",
+        "type": "Both",
+        "hasRM": false,
+        "eligibility": {
+          "amb": 100000,
+          "aqb": null,
+          "salary": 100000,
+          "nrv": 500000,
+          "description": "AMB of ₹1 Lakh in Savings OR ₹2 Lakhs in Current OR ₹1 Lakh net salary credit OR ₹5 Lakhs in Savings+FD combined"
+        },
+        "benefits": {
+          "welcomeBenefits": null,
+          "debitCard": {
+            "name": "HDFC Classic Debit Card",
+            "image": "/assets/cards/debit/hdfc-classic.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "None",
+              "international": "None"
+            },
+            "limits": {
+              "atm": 50000,
+              "purchase": 200000
+            },
+            "forex": {
+              "markup": 0.035,
+              "text": "3.5%"
+            }
+          },
+          "locker": {
+            "discount": 0,
+            "text": "Standard locker rates apply"
+          },
+          "investments": {
+            "dematAmc": 750,
+            "text": "Standard Demat account charges"
+          },
+          "features": [
+            "Nil charges on non-maintenance of minimum balance",
+            "Free NEFT/RTGS through online mode",
+            "Free chequebook issuance",
+            "Free DD/MC up to ₹1 Lakh per day",
+            "5 free cash transactions per month (limit ₹2.5 Lakh)"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Entry-level premium customers seeking basic enhanced banking services",
+          "rating": 3.5,
+          "pros": [
+            "Low minimum balance requirement",
+            "Wide ATM network",
+            "Good digital banking features",
+            "No non-maintenance charges"
+          ],
+          "cons": [
+            "No lounge access",
+            "No dedicated relationship manager",
+            "Standard forex markup"
+          ]
+        }
+      },
+      {
+        "id": "hdfc-preferred",
+        "name": "Preferred",
+        "type": "Both",
+        "hasRM": true,
+        "eligibility": {
+          "amb": 200000,
+          "aqb": null,
+          "salary": 200000,
+          "nrv": 1500000,
+          "description": "AMB of ₹2 Lakhs in Savings OR ₹5 Lakhs in Current OR ₹2 Lakhs net salary credit OR ₹15 Lakhs Retail Liability Value (Savings+FD)"
+        },
+        "benefits": {
+          "welcomeBenefits": "Preferred Platinum Chip Debit Card with premium benefits",
+          "debitCard": {
+            "name": "HDFC Preferred Platinum Chip Debit Card",
+            "image": "/assets/cards/debit/hdfc-preferred.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "4/year",
+              "international": "None"
+            },
+            "limits": {
+              "atm": 150000,
+              "purchase": 500000
+            },
+            "forex": {
+              "markup": 0.035,
+              "text": "3.5% (8 paise better on card rate for select currencies)"
+            }
+          },
+          "locker": {
+            "discount": 0.50,
+            "text": "50% discount on annual locker rent for first locker per group"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "Free Demat AMC with at least 1 transaction"
+          },
+          "features": [
+            "Dedicated Relationship Manager",
+            "7 free cash transactions per month (limit ₹5 Lakh)",
+            "Free IMPS transactions",
+            "Priority service at branches",
+            "Extend benefits to up to 8 family members",
+            "Preferential rates on forex and loans"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Professionals and high-salary individuals seeking dedicated banking support",
+          "rating": 4.0,
+          "pros": [
+            "Dedicated relationship manager",
+            "50% locker discount",
+            "Free Demat AMC",
+            "Family banking for up to 8 members"
+          ],
+          "cons": [
+            "No international lounge access",
+            "Standard forex markup",
+            "Limited domestic lounge visits"
+          ]
+        }
+      },
+      {
+        "id": "hdfc-imperia",
+        "name": "Imperia",
+        "type": "Both",
+        "hasRM": true,
+        "eligibility": {
+          "amb": 1000000,
+          "aqb": 1500000,
+          "salary": 300000,
+          "nrv": 3000000,
+          "description": "AMB of ₹10 Lakhs in Savings OR AQB ₹15 Lakhs in Current OR ₹3 Lakhs net salary credit OR ₹30 Lakhs in Savings+FD combined"
+        },
+        "benefits": {
+          "welcomeBenefits": "Premium Imperia welcome kit with Imperia Platinum Chip Debit Card and exclusive lifestyle privileges",
+          "debitCard": {
+            "name": "HDFC Imperia Platinum Chip Debit Card",
+            "image": "/assets/cards/debit/hdfc-imperia.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "Unlimited",
+              "international": "6/year"
+            },
+            "limits": {
+              "atm": 200000,
+              "purchase": 750000
+            },
+            "forex": {
+              "markup": 0.035,
+              "text": "3.5% (10 paise better on card rate for select currencies)"
+            }
+          },
+          "locker": {
+            "discount": 1.0,
+            "text": "Free locker (first locker per group)"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "Free Demat AMC for life with Special Demat Value Plan"
+          },
+          "features": [
+            "Dedicated Imperia Client Relationship Manager",
+            "Free locker annual rental",
+            "Unlimited domestic lounge access",
+            "International lounge access",
+            "Exclusive Imperia PhoneBanking (1800 266 3310)",
+            "Doorstep banking services",
+            "Exclusive quarterly Imperia e-magazine",
+            "24x7 concierge services",
+            "Visa at your Doorstep service"
+          ]
+        },
+        "metadata": {
+          "bestFor": "HNIs and senior professionals seeking comprehensive wealth management with lifestyle benefits",
+          "rating": 4.5,
+          "pros": [
+            "Free locker",
+            "Unlimited domestic lounge access",
+            "International lounge access",
+            "Dedicated senior relationship manager",
+            "Comprehensive lifestyle privileges"
+          ],
+          "cons": [
+            "High balance requirement",
+            "Forex markup not zero"
+          ]
+        }
+      },
+      {
+        "id": "hdfc-private-banking",
+        "name": "Private Banking",
+        "type": "Savings",
+        "hasRM": true,
+        "eligibility": {
+          "amb": null,
+          "aqb": null,
+          "salary": null,
+          "nrv": 100000000,
+          "description": "NRV of ₹10 Crores or above with HDFC Bank. By invitation only."
+        },
+        "benefits": {
+          "welcomeBenefits": "Exclusive onboarding experience with personalized wealth assessment",
+          "debitCard": {
+            "name": "HDFC Private World Debit Card",
+            "image": "/assets/cards/debit/hdfc-private.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "Unlimited",
+              "international": "Unlimited"
+            },
+            "limits": {
+              "atm": 500000,
+              "purchase": 2000000
+            },
+            "forex": {
+              "markup": 0,
+              "text": "Zero Forex Markup"
+            }
+          },
+          "locker": {
+            "discount": 1.0,
+            "text": "Complimentary premium locker"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "Free Demat with dedicated investment advisory and priority IPO processing"
+          },
+          "features": [
+            "Dedicated Private Banker",
+            "Family office services",
+            "Bespoke investment solutions",
+            "Estate and succession planning",
+            "Global investment opportunities",
+            "Art advisory and curation",
+            "Exclusive Private Banking events",
+            "Priority airport services",
+            "Luxury travel and lifestyle management"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Ultra HNIs requiring bespoke wealth management and family office services",
+          "rating": 5.0,
+          "pros": [
+            "Zero forex markup",
+            "Unlimited global lounge access",
+            "Comprehensive family office services",
+            "Bespoke wealth solutions"
+          ],
+          "cons": [
+            "Very high entry barrier (₹10 Cr NRV)",
+            "By invitation only"
+          ]
+        }
+      }
+    ],
+    "familyBanking": {
+      "name": "HDFC Family Banking",
+      "eligibility": {
+        "minGroupNRV": 0,
+        "description": "Up to 8 immediate family members can be grouped together to meet eligibility criteria"
+      },
+      "members": {
+        "maxCount": 8,
+        "allowed": ["Spouse", "Parents", "Children"]
+      },
+      "benefits": [
+        "Pooled balance for tier qualification",
+        "Shared locker benefits",
+        "Combined monthly SmartStatement",
+        "Single relationship manager for family"
+      ]
+    }
+  },
+  {
+    "id": "icici-bank",
+    "name": "ICICI Bank",
+    "tiers": [
+      {
+        "id": "icici-privilege-silver",
+        "name": "Privilege Banking - Silver",
+        "type": "Both",
+        "hasRM": false,
+        "eligibility": {
+          "amb": 25000,
+          "aqb": null,
+          "salary": null,
+          "nrv": null,
+          "description": "AMB of ₹25,000 in Savings Account or based on Total Relationship Value"
+        },
+        "benefits": {
+          "welcomeBenefits": null,
+          "debitCard": {
+            "name": "ICICI Privilege Titanium Debit Card",
+            "image": "/assets/cards/debit/icici-privilege-silver.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "None",
+              "international": "None"
+            },
+            "limits": {
+              "atm": 50000,
+              "purchase": 200000
+            },
+            "forex": {
+              "markup": 0.035,
+              "text": "3.5%"
+            }
+          },
+          "locker": {
+            "discount": 0,
+            "text": "Standard locker charges apply"
+          },
+          "investments": {
+            "dematAmc": 700,
+            "text": "Standard ICICI Direct charges"
+          },
+          "features": [
+            "Free Titanium Privilege Debit Card",
+            "iMobile Pay app access",
+            "Free NEFT/RTGS online",
+            "Basic insurance coverage"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Entry-level customers seeking basic privilege banking",
+          "rating": 3.3,
+          "pros": [
+            "Low minimum balance",
+            "Good mobile banking app",
+            "Wide branch network"
+          ],
+          "cons": [
+            "No lounge access",
+            "No dedicated RM",
+            "Standard charges apply"
+          ]
+        }
+      },
+      {
+        "id": "icici-privilege-gold",
+        "name": "Privilege Banking - Gold",
+        "type": "Both",
+        "hasRM": false,
+        "eligibility": {
+          "amb": 50000,
+          "aqb": null,
+          "salary": 50000,
+          "nrv": null,
+          "description": "AMB of ₹50,000 in Savings Account or salary credit of ₹50,000 per month"
+        },
+        "benefits": {
+          "welcomeBenefits": null,
+          "debitCard": {
+            "name": "ICICI Privilege Gold Debit Card",
+            "image": "/assets/cards/debit/icici-privilege-gold.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "2/year",
+              "international": "None"
+            },
+            "limits": {
+              "atm": 100000,
+              "purchase": 300000
+            },
+            "forex": {
+              "markup": 0.035,
+              "text": "3.5%"
+            }
+          },
+          "locker": {
+            "discount": 0.10,
+            "text": "10% discount on locker rent"
+          },
+          "investments": {
+            "dematAmc": 700,
+            "text": "Standard ICICI Direct charges"
+          },
+          "features": [
+            "Free Gold Privilege Debit Card",
+            "Domestic lounge access",
+            "Priority service at select branches",
+            "Free NEFT/RTGS",
+            "Higher transaction limits"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Mid-tier professionals seeking enhanced banking privileges",
+          "rating": 3.5,
+          "pros": [
+            "Domestic lounge access",
+            "Moderate minimum balance",
+            "Good transaction limits"
+          ],
+          "cons": [
+            "No international lounge",
+            "No dedicated RM",
+            "Limited lounge visits"
+          ]
+        }
+      },
+      {
+        "id": "icici-wealth-management",
+        "name": "Wealth Management",
+        "type": "Both",
+        "hasRM": true,
+        "eligibility": {
+          "amb": 1000000,
+          "aqb": null,
+          "salary": 300000,
+          "nrv": 5000000,
+          "description": "AMB of ₹10 Lakhs or NRV of ₹50 Lakhs or monthly salary of ₹3 Lakhs. Criteria flexible based on relationship."
+        },
+        "benefits": {
+          "welcomeBenefits": "ICICI Wealth Select VISA Infinite Lifetime Free Debit Card with premium banking kit",
+          "debitCard": {
+            "name": "ICICI Wealth Select VISA Infinite Debit Card",
+            "image": "/assets/cards/debit/icici-wealth.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "Unlimited",
+              "international": "4/year"
+            },
+            "limits": {
+              "atm": 200000,
+              "purchase": 600000
+            },
+            "forex": {
+              "markup": 0.02,
+              "text": "2%"
+            }
+          },
+          "locker": {
+            "discount": 0.25,
+            "text": "25% discount on locker rent"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "Free ICICI Direct Demat AMC with research-backed recommendations"
+          },
+          "features": [
+            "Dedicated Relationship Manager",
+            "VISA Infinite Debit Card (Lifetime Free)",
+            "Priority banking at branches",
+            "Unlimited domestic lounge access",
+            "International lounge access",
+            "Preferential loan and FD rates",
+            "Expert investment advisory",
+            "Complimentary health check-up"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Affluent individuals seeking comprehensive wealth management with dedicated support",
+          "rating": 4.3,
+          "pros": [
+            "Dedicated relationship manager",
+            "Unlimited domestic lounge",
+            "Lower forex markup",
+            "VISA Infinite debit card"
+          ],
+          "cons": [
+            "High AMB requirement",
+            "Limited international lounge visits"
+          ]
+        }
+      },
+      {
+        "id": "icici-private-banking",
+        "name": "Private Banking",
+        "type": "Savings",
+        "hasRM": true,
+        "eligibility": {
+          "amb": null,
+          "aqb": null,
+          "salary": null,
+          "nrv": 100000000,
+          "description": "NRV of ₹10 Crores or above. By invitation only."
+        },
+        "benefits": {
+          "welcomeBenefits": "Bespoke onboarding with personalized wealth planning and Emeralde Private Metal Credit Card eligibility",
+          "debitCard": {
+            "name": "ICICI Private Banking World Debit Card",
+            "image": "/assets/cards/debit/icici-private.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "Unlimited",
+              "international": "Unlimited"
+            },
+            "limits": {
+              "atm": 500000,
+              "purchase": 2500000
+            },
+            "forex": {
+              "markup": 0,
+              "text": "Zero Forex Markup"
+            }
+          },
+          "locker": {
+            "discount": 1.0,
+            "text": "Complimentary premium locker"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "Free Demat with exclusive investment products and dedicated advisory"
+          },
+          "features": [
+            "Dedicated Private Banker",
+            "Emeralde Private Metal Credit Card eligibility",
+            "Global investment opportunities",
+            "Estate and succession planning",
+            "Art and wine advisory",
+            "Family governance solutions",
+            "Philanthropic advisory",
+            "Exclusive access to IPOs and deals",
+            "Global medical assistance"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Ultra HNIs and families requiring multi-generational wealth management",
+          "rating": 5.0,
+          "pros": [
+            "Zero forex markup",
+            "Unlimited global lounge access",
+            "Comprehensive family office services",
+            "Premium credit card eligibility"
+          ],
+          "cons": [
+            "Very high entry requirement (₹10 Cr)",
+            "Invitation only"
+          ]
+        }
+      }
+    ],
+    "familyBanking": {
+      "name": "ICICI Family Banking",
+      "eligibility": {
+        "minGroupNRV": 5000000,
+        "description": "Combined NRV of ₹50 Lakhs across family members for Wealth Management tier"
+      },
+      "members": {
+        "maxCount": 5,
+        "allowed": ["Spouse", "Parents", "Children"]
+      },
+      "benefits": [
+        "Combined NRV for tier qualification",
+        "Family health insurance at preferential rates",
+        "Shared lounge access pool",
+        "Single RM for entire family"
+      ]
+    }
+  },
+  {
+    "id": "axis-bank",
+    "name": "Axis Bank",
+    "tiers": [
+      {
+        "id": "axis-priority",
+        "name": "Priority",
+        "type": "Both",
+        "hasRM": true,
+        "eligibility": {
+          "amb": 200000,
+          "aqb": null,
+          "salary": 100000,
+          "nrv": 1500000,
+          "description": "AMB of ₹2 Lakhs in Savings OR TRV of ₹15 Lakhs OR monthly net salary credit of ₹1 Lakh"
+        },
+        "benefits": {
+          "welcomeBenefits": "Priority Debit Card with cashback benefits",
+          "debitCard": {
+            "name": "Axis Priority Debit Card",
+            "image": "/assets/cards/debit/axis-priority.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "4/year",
+              "international": "None"
+            },
+            "limits": {
+              "atm": 100000,
+              "purchase": 400000
+            },
+            "forex": {
+              "markup": 0.035,
+              "text": "3.5%"
+            }
+          },
+          "locker": {
+            "discount": 0.15,
+            "text": "15% discount on locker rent"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "Free Demat AMC (first year) via Axis Direct"
+          },
+          "features": [
+            "Dedicated Relationship Manager",
+            "Priority Debit Card with 1% cashback on online spends",
+            "T+24 hour service guarantee for select requests",
+            "Priority service at branches",
+            "Complimentary health insurance policy",
+            "Preferential loan processing"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Professionals seeking dedicated banking support with reasonable balance requirements",
+          "rating": 4.0,
+          "pros": [
+            "Dedicated RM",
+            "Reasonable entry requirement",
+            "T+24 service guarantee",
+            "Good debit card cashback"
+          ],
+          "cons": [
+            "No international lounge",
+            "Standard forex markup",
+            "Limited lounge access"
+          ]
+        }
+      },
+      {
+        "id": "axis-burgundy",
+        "name": "Burgundy",
+        "type": "Both",
+        "hasRM": true,
+        "eligibility": {
+          "amb": 1000000,
+          "aqb": null,
+          "salary": 300000,
+          "nrv": 3000000,
+          "description": "AMB of ₹10 Lakhs across Savings & Current OR TRV of ₹30 Lakhs OR TRV ₹1 Crore (incl. Demat) OR monthly net salary credit of ₹3 Lakhs"
+        },
+        "benefits": {
+          "welcomeBenefits": "Exclusive Burgundy welcome box with lifestyle privileges",
+          "debitCard": {
+            "name": "Axis Burgundy Debit Card",
+            "image": "/assets/cards/debit/axis-burgundy.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "Unlimited",
+              "international": "4/year"
+            },
+            "limits": {
+              "atm": 200000,
+              "purchase": 800000
+            },
+            "forex": {
+              "markup": 0.02,
+              "text": "2%"
+            }
+          },
+          "locker": {
+            "discount": 0.60,
+            "text": "Up to 60% lifetime discount on locker rent"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "Free Demat with preferential brokerage via Axis Direct"
+          },
+          "features": [
+            "Senior Relationship Manager",
+            "Unlimited domestic lounge access",
+            "International lounge access",
+            "Complimentary BookMyShow tickets",
+            "Up to 60% locker discount",
+            "Doorstep banking",
+            "Wealth management solutions",
+            "Preferential rates on forex and loans"
+          ]
+        },
+        "metadata": {
+          "bestFor": "HNIs seeking premium banking with excellent lounge benefits and lifestyle privileges",
+          "rating": 4.5,
+          "pros": [
+            "Unlimited domestic lounge",
+            "Lower forex markup (2%)",
+            "Up to 60% locker discount",
+            "Comprehensive wealth management"
+          ],
+          "cons": [
+            "High AMB requirement",
+            "Limited international lounge"
+          ]
+        }
+      },
+      {
+        "id": "axis-burgundy-private",
+        "name": "Burgundy Private",
+        "type": "Savings",
+        "hasRM": true,
+        "eligibility": {
+          "amb": null,
+          "aqb": null,
+          "salary": 1000000,
+          "nrv": 50000000,
+          "description": "TRV of ₹5 Crores (excluding Demat holdings) OR monthly net salary credit of ₹10 Lakhs"
+        },
+        "benefits": {
+          "welcomeBenefits": "Ultra-premium onboarding with dedicated Private Client Director and Burgundy Private One Card",
+          "debitCard": {
+            "name": "Axis Burgundy Private World Debit Card",
+            "image": "/assets/cards/debit/axis-burgundy-private.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "Unlimited",
+              "international": "Unlimited"
+            },
+            "limits": {
+              "atm": 500000,
+              "purchase": 2000000
+            },
+            "forex": {
+              "markup": 0,
+              "text": "Zero Forex Markup"
+            }
+          },
+          "locker": {
+            "discount": 1.0,
+            "text": "Complimentary premium locker (after 12 months of relationship)"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "Free Demat with exclusive investment opportunities and advisory"
+          },
+          "features": [
+            "Dedicated Private Client Director",
+            "The One Card (combined Debit + Credit)",
+            "Zero forex markup",
+            "Unlimited global lounge access",
+            "Estate planning and succession services",
+            "Global investment advisory",
+            "Art and collectibles advisory",
+            "Exclusive access to pre-IPO deals",
+            "Private jet booking assistance",
+            "Global concierge services"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Ultra HNIs and business families requiring bespoke wealth solutions",
+          "rating": 4.9,
+          "pros": [
+            "Zero forex markup",
+            "Unlimited global lounge",
+            "The One Card unique proposition",
+            "Comprehensive private banking"
+          ],
+          "cons": [
+            "High entry barrier (₹5 Cr TRV)",
+            "Demat no longer counted in TRV"
+          ]
+        }
+      }
+    ],
+    "familyBanking": {
+      "name": "Burgundy Family Banking",
+      "eligibility": {
+        "minGroupNRV": 3000000,
+        "description": "Combined TRV of ₹30 Lakhs across family members for Burgundy tier"
+      },
+      "members": {
+        "maxCount": 6,
+        "allowed": ["Spouse", "Parents", "Children", "Siblings"]
+      },
+      "benefits": [
+        "Combined TRV for Burgundy qualification",
+        "All family members get Burgundy privileges with Burgundy Savings Account",
+        "Family lounge access sharing",
+        "Single relationship manager for family"
+      ]
+    }
+  },
+  {
+    "id": "sbi",
+    "name": "State Bank of India",
+    "tiers": [
+      {
+        "id": "sbi-silver",
+        "name": "Silver",
+        "type": "Both",
+        "hasRM": false,
+        "eligibility": {
+          "amb": null,
+          "aqb": 100000,
+          "salary": 25000,
+          "nrv": null,
+          "description": "AQB up to ₹1 Lakh across all deposits OR take-home salary between ₹10,000-₹25,000"
+        },
+        "benefits": {
+          "welcomeBenefits": null,
+          "debitCard": {
+            "name": "SBI Classic Debit Card",
+            "image": "/assets/cards/debit/sbi-silver.png",
+            "annualFee": 125,
+            "lounge": {
+              "domestic": "None",
+              "international": "None"
+            },
+            "limits": {
+              "atm": 40000,
+              "purchase": 100000
+            },
+            "forex": {
+              "markup": 0.035,
+              "text": "3.5%"
+            }
+          },
+          "locker": {
+            "discount": 0,
+            "text": "Standard locker charges apply"
+          },
+          "investments": {
+            "dematAmc": 600,
+            "text": "Standard SBI Securities charges"
+          },
+          "features": [
+            "Basic savings account features",
+            "Free NEFT/RTGS online",
+            "YONO digital banking",
+            "Basic personal accident cover"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Entry-level customers with basic banking needs",
+          "rating": 3.0,
+          "pros": [
+            "India's largest bank network",
+            "Trusted public sector bank",
+            "Good digital banking (YONO)"
+          ],
+          "cons": [
+            "No lounge access",
+            "No dedicated RM",
+            "Debit card annual fee"
+          ]
+        }
+      },
+      {
+        "id": "sbi-gold",
+        "name": "Gold",
+        "type": "Both",
+        "hasRM": false,
+        "eligibility": {
+          "amb": null,
+          "aqb": 500000,
+          "salary": 50000,
+          "nrv": null,
+          "description": "AQB of ₹1 Lakh to ₹5 Lakhs across all deposits OR take-home salary between ₹25,000-₹50,000"
+        },
+        "benefits": {
+          "welcomeBenefits": "SBI Gold Debit Card",
+          "debitCard": {
+            "name": "SBI Gold Debit Card",
+            "image": "/assets/cards/debit/sbi-gold.png",
+            "annualFee": 175,
+            "lounge": {
+              "domestic": "2/year",
+              "international": "None"
+            },
+            "limits": {
+              "atm": 100000,
+              "purchase": 200000
+            },
+            "forex": {
+              "markup": 0.035,
+              "text": "3.5%"
+            }
+          },
+          "locker": {
+            "discount": 0.10,
+            "text": "10% discount on locker rent"
+          },
+          "investments": {
+            "dematAmc": 600,
+            "text": "Standard SBI Securities charges"
+          },
+          "features": [
+            "Domestic lounge access (2/year)",
+            "Higher transaction limits",
+            "Free NEFT/RTGS",
+            "Personal accident insurance up to ₹4 Lakhs"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Customers seeking enhanced limits with basic lounge access",
+          "rating": 3.5,
+          "pros": [
+            "Domestic lounge access",
+            "Wide branch and ATM network",
+            "Trusted public sector bank"
+          ],
+          "cons": [
+            "Debit card annual fee",
+            "No dedicated RM",
+            "Limited lounge visits"
+          ]
+        }
+      },
+      {
+        "id": "sbi-diamond",
+        "name": "Diamond",
+        "type": "Both",
+        "hasRM": false,
+        "eligibility": {
+          "amb": null,
+          "aqb": 1000000,
+          "salary": 100000,
+          "nrv": null,
+          "description": "AQB of ₹5 Lakhs to ₹10 Lakhs across all deposits OR take-home salary between ₹50,000-₹1 Lakh"
+        },
+        "benefits": {
+          "welcomeBenefits": "SBI Diamond Debit Card with enhanced benefits",
+          "debitCard": {
+            "name": "SBI Global International Debit Card",
+            "image": "/assets/cards/debit/sbi-diamond.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "4/year",
+              "international": "None"
+            },
+            "limits": {
+              "atm": 150000,
+              "purchase": 300000
+            },
+            "forex": {
+              "markup": 0.03,
+              "text": "3%"
+            }
+          },
+          "locker": {
+            "discount": 0.15,
+            "text": "15% discount on locker rent"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "Free Demat AMC"
+          },
+          "features": [
+            "Free Debit Card",
+            "Enhanced domestic lounge access",
+            "Free Demat AMC",
+            "Priority token at branches",
+            "Personal accident insurance up to ₹10 Lakhs"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Upper middle-class customers seeking better benefits at PSB rates",
+          "rating": 3.8,
+          "pros": [
+            "Free debit card",
+            "More lounge visits",
+            "Free Demat AMC",
+            "Priority service"
+          ],
+          "cons": [
+            "No international lounge",
+            "No dedicated RM"
+          ]
+        }
+      },
+      {
+        "id": "sbi-platinum",
+        "name": "Platinum",
+        "type": "Both",
+        "hasRM": true,
+        "eligibility": {
+          "amb": 200000,
+          "aqb": 3000000,
+          "salary": 100000,
+          "nrv": null,
+          "description": "AQB of ₹30 Lakhs and above across deposits OR AMB ₹2 Lakhs in Savings OR Housing Loan of ₹1 Cr and above OR take-home salary above ₹1 Lakh"
+        },
+        "benefits": {
+          "welcomeBenefits": "SBI Platinum Debit Card with luxury benefits",
+          "debitCard": {
+            "name": "SBI Platinum Debit Card",
+            "image": "/assets/cards/debit/sbi-platinum.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "8/year",
+              "international": "2/year"
+            },
+            "limits": {
+              "atm": 200000,
+              "purchase": 400000
+            },
+            "forex": {
+              "markup": 0.025,
+              "text": "2.5%"
+            }
+          },
+          "locker": {
+            "discount": 0.25,
+            "text": "25% waiver on annual locker rent"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "Free Demat AMC"
+          },
+          "features": [
+            "Dedicated Relationship Manager",
+            "Platinum Debit Card with complimentary lounge access",
+            "International lounge access",
+            "Priority token at branches",
+            "25% locker rent waiver",
+            "Preferential loan rates",
+            "Personal accident insurance up to ₹20 Lakhs"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Affluent customers preferring PSB security with premium services",
+          "rating": 4.2,
+          "pros": [
+            "International lounge access",
+            "Dedicated RM",
+            "Lower forex markup",
+            "Government bank security"
+          ],
+          "cons": [
+            "Fewer lifestyle benefits than private banks",
+            "High AQB requirement"
+          ]
+        }
+      },
+      {
+        "id": "sbi-wealth",
+        "name": "SBI Wealth",
+        "type": "Savings",
+        "hasRM": true,
+        "eligibility": {
+          "amb": null,
+          "aqb": null,
+          "salary": null,
+          "nrv": 3000000,
+          "description": "NRV/TRV of ₹30 Lakhs and above with SBI (excluding PPF for Wealth account conversion)"
+        },
+        "benefits": {
+          "welcomeBenefits": "Premium SBI Wealth welcome experience with exclusive membership",
+          "debitCard": {
+            "name": "SBI Wealth Debit Card",
+            "image": "/assets/cards/debit/sbi-wealth.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "Unlimited",
+              "international": "6/year"
+            },
+            "limits": {
+              "atm": 300000,
+              "purchase": 750000
+            },
+            "forex": {
+              "markup": 0.0175,
+              "text": "1.75%"
+            }
+          },
+          "locker": {
+            "discount": 0.50,
+            "text": "50% discount on locker rent"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "Free Demat with dedicated wealth advisory"
+          },
+          "features": [
+            "Senior Dedicated Relationship Manager",
+            "Unlimited domestic lounge access",
+            "Access to SBI Wealth Centers",
+            "Exclusive wealth management services",
+            "Doorstep banking",
+            "Priority processing for all requests",
+            "Concierge services",
+            "Higher insurance coverage"
+          ]
+        },
+        "metadata": {
+          "bestFor": "HNIs preferring PSB security with private bank-like wealth services",
+          "rating": 4.3,
+          "pros": [
+            "Government bank security",
+            "Unlimited domestic lounge",
+            "Comprehensive wealth services",
+            "Lower forex markup"
+          ],
+          "cons": [
+            "Fewer lifestyle partnerships",
+            "Less brand prestige than private banks",
+            "PPF not counted for eligibility"
+          ]
+        }
+      }
+    ],
+    "familyBanking": {
+      "name": "SBI Rishtey Family Banking",
+      "eligibility": {
+        "minGroupNRV": 0,
+        "description": "Available for salary account holders with salary exceeding ₹25,000 per month"
+      },
+      "members": {
+        "maxCount": 4,
+        "allowed": ["Spouse", "Parents", "Children"]
+      },
+      "benefits": [
+        "Open savings accounts for up to 4 family members",
+        "Family accounts under single relationship",
+        "Joint locker benefits",
+        "Family insurance schemes"
+      ]
+    }
+  },
+  {
+    "id": "kotak-mahindra-bank",
+    "name": "Kotak Mahindra Bank",
+    "tiers": [
+      {
+        "id": "kotak-privy-league-prima",
+        "name": "Privy League Prima",
+        "type": "Both",
+        "hasRM": true,
+        "eligibility": {
+          "amb": 100000,
+          "aqb": null,
+          "salary": 100000,
+          "nrv": null,
+          "description": "AMB of ₹1 Lakh in Savings Account OR monthly salary credit of ₹1 Lakh"
+        },
+        "benefits": {
+          "welcomeBenefits": "Privy League Prima welcome kit",
+          "debitCard": {
+            "name": "Kotak Privy League Debit Card",
+            "image": "/assets/cards/debit/kotak-prima.png",
+            "annualFee": 500,
+            "lounge": {
+              "domestic": "2/quarter",
+              "international": "None"
+            },
+            "limits": {
+              "atm": 100000,
+              "purchase": 200000
+            },
+            "forex": {
+              "markup": 0.035,
+              "text": "3.5%"
+            }
+          },
+          "locker": {
+            "discount": 0.10,
+            "text": "10% discount on locker rent"
+          },
+          "investments": {
+            "dematAmc": 500,
+            "text": "Preferential Demat charges via Kotak Securities"
+          },
+          "features": [
+            "Relationship Manager",
+            "Privy League Signature Credit Card eligibility (paid variant)",
+            "Domestic lounge access",
+            "Priority banking at branches",
+            "ActivMoney for FD-like interest on savings"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Entry-level premium customers seeking RM support and basic Privy benefits",
+          "rating": 3.8,
+          "pros": [
+            "Low entry requirement",
+            "Dedicated RM access",
+            "Domestic lounge access",
+            "ActivMoney feature"
+          ],
+          "cons": [
+            "Debit card annual fee",
+            "No international lounge",
+            "Standard forex charges"
+          ]
+        }
+      },
+      {
+        "id": "kotak-privy-league-optima",
+        "name": "Privy League Optima",
+        "type": "Both",
+        "hasRM": true,
+        "eligibility": {
+          "amb": 1000000,
+          "aqb": null,
+          "salary": 300000,
+          "nrv": null,
+          "description": "AMB of ₹10 Lakhs in Savings Account OR monthly salary credit of ₹3 Lakhs"
+        },
+        "benefits": {
+          "welcomeBenefits": "Premium welcome hamper with lifestyle vouchers",
+          "debitCard": {
+            "name": "Kotak Privy League Signature Debit Card",
+            "image": "/assets/cards/debit/kotak-optima.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "2/quarter",
+              "international": "Via Priority Pass"
+            },
+            "limits": {
+              "atm": 300000,
+              "purchase": 400000
+            },
+            "forex": {
+              "markup": 0.02,
+              "text": "2%"
+            }
+          },
+          "locker": {
+            "discount": 0.30,
+            "text": "30% discount on locker rent"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "Free Demat with preferential brokerage rates via Kotak Securities"
+          },
+          "features": [
+            "Senior Relationship Manager",
+            "Privy League Signature Credit Card (free variant eligible)",
+            "Privy League Signature Debit Card (free)",
+            "Priority Pass eligibility for international lounges",
+            "3-in-1 integrated account (Banking + Demat + Trading)",
+            "Preferential loan and locker rates",
+            "Personal Accident Death Cover up to ₹15 Lakhs"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Affluent professionals seeking integrated banking and investment solutions",
+          "rating": 4.2,
+          "pros": [
+            "Free Signature Debit Card",
+            "Lower forex markup",
+            "3-in-1 integrated account",
+            "Priority Pass eligibility"
+          ],
+          "cons": [
+            "High AMB requirement",
+            "International lounge requires Priority Pass application"
+          ]
+        }
+      },
+      {
+        "id": "kotak-privy-league-insignia",
+        "name": "Privy League Insignia",
+        "type": "Both",
+        "hasRM": true,
+        "eligibility": {
+          "amb": null,
+          "aqb": null,
+          "salary": null,
+          "nrv": 10000000,
+          "description": "NRV of ₹1 Crore or above with Kotak Mahindra Bank"
+        },
+        "benefits": {
+          "welcomeBenefits": "Ultra-premium Insignia welcome experience with MMT Black Gold, EazyDiner Annual Prime, Taj Epicure Membership",
+          "debitCard": {
+            "name": "Kotak Premium Art Debit Card",
+            "image": "/assets/cards/debit/kotak-insignia.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "Unlimited",
+              "international": "8/year"
+            },
+            "limits": {
+              "atm": 300000,
+              "purchase": 450000
+            },
+            "forex": {
+              "markup": 0,
+              "text": "Zero Forex Markup (minimal markup)"
+            }
+          },
+          "locker": {
+            "discount": 0.50,
+            "text": "50% discount on locker rent"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "Free Demat with dedicated portfolio advisory and preferential brokerage"
+          },
+          "features": [
+            "Dedicated Senior Relationship Manager",
+            "White Reserve Credit Card (Lifetime Free)",
+            "Premium Art Debit Card",
+            "MMTBLACK Elite Annual Membership",
+            "EazyDiner Annual Prime Membership",
+            "Complimentary Taj Epicure Membership",
+            "Lafayette Luxury concierge",
+            "Unlimited domestic lounge access",
+            "3-in-1 integrated account",
+            "Preferential rates on loans and lockers"
+          ]
+        },
+        "metadata": {
+          "bestFor": "HNIs seeking comprehensive banking with premium lifestyle partnerships",
+          "rating": 4.6,
+          "pros": [
+            "Zero/minimal forex markup",
+            "Unlimited domestic lounge",
+            "Excellent lifestyle memberships",
+            "White Reserve Credit Card LTF"
+          ],
+          "cons": [
+            "High NRV requirement (₹1 Cr)",
+            "Limited international lounge visits"
+          ]
+        }
+      },
+      {
+        "id": "kotak-private-banking",
+        "name": "Kotak Private Banking",
+        "type": "Savings",
+        "hasRM": true,
+        "eligibility": {
+          "amb": null,
+          "aqb": null,
+          "salary": null,
+          "nrv": 70000000,
+          "description": "NRV of ₹7 Crores or above with Kotak, by invitation only"
+        },
+        "benefits": {
+          "welcomeBenefits": "Bespoke private banking onboarding with comprehensive wealth assessment",
+          "debitCard": {
+            "name": "Kotak Private Banking World Debit Card",
+            "image": "/assets/cards/debit/kotak-private.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "Unlimited",
+              "international": "Unlimited"
+            },
+            "limits": {
+              "atm": 500000,
+              "purchase": 2000000
+            },
+            "forex": {
+              "markup": 0,
+              "text": "Zero Forex Markup"
+            }
+          },
+          "locker": {
+            "discount": 1.0,
+            "text": "Complimentary premium locker"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "Free Demat with exclusive alternative investment access (AIFs, PMS)"
+          },
+          "features": [
+            "Dedicated Private Banker",
+            "Family office services",
+            "Global investment opportunities",
+            "Estate and succession planning",
+            "Art and passion investments advisory",
+            "Exclusive access to AIFs and PMS",
+            "Global concierge and travel services",
+            "Family governance consulting",
+            "Philanthropic advisory"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Ultra HNIs and families seeking comprehensive private banking with strong investment platform",
+          "rating": 4.8,
+          "pros": [
+            "Strong investment platform (Kotak Securities)",
+            "Comprehensive family office",
+            "Unlimited global lounge",
+            "Lower entry than some competitors (₹7 Cr)"
+          ],
+          "cons": [
+            "High entry barrier",
+            "Invitation only"
+          ]
+        }
+      }
+    ],
+    "familyBanking": {
+      "name": "Kotak Privy League Family Banking",
+      "eligibility": {
+        "minGroupNRV": 0,
+        "description": "Family members can be grouped to meet eligibility criteria at group level"
+      },
+      "members": {
+        "maxCount": 6,
+        "allowed": ["Spouse", "Parents", "Children", "Siblings"]
+      },
+      "benefits": [
+        "Pooled NRV for tier qualification",
+        "Family benefits extended to all grouped members",
+        "Shared lounge access",
+        "Single RM for family"
+      ]
+    }
+  },
+  {
+    "id": "idfc-first-bank",
+    "name": "IDFC FIRST Bank",
+    "tiers": [
+      {
+        "id": "idfc-first-select",
+        "name": "FIRST Select",
+        "type": "Both",
+        "hasRM": true,
+        "eligibility": {
+          "amb": 300000,
+          "aqb": null,
+          "salary": 200000,
+          "nrv": 1000000,
+          "description": "AMB of ₹3 Lakhs OR ORV of ₹10 Lakhs OR monthly net salary credit of ₹2 Lakhs for Corporate Salary customers"
+        },
+        "benefits": {
+          "welcomeBenefits": "FIRST Select VISA Infinite Debit Card with comprehensive insurance coverage",
+          "debitCard": {
+            "name": "IDFC FIRST Select VISA Infinite Debit Card",
+            "image": "/assets/cards/debit/idfc-first-select.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "1+1 per visit (cardholder + guest)",
+              "international": "Via Priority Pass"
+            },
+            "limits": {
+              "atm": 100000,
+              "purchase": 300000
+            },
+            "forex": {
+              "markup": 0,
+              "text": "Zero Forex Markup"
+            }
+          },
+          "locker": {
+            "discount": 0.20,
+            "text": "20% discount on locker rent"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "Free Demat AMC"
+          },
+          "features": [
+            "Zero Forex Markup on debit card",
+            "Dedicated Relationship Banker",
+            "VISA Infinite Debit Card (1+1 lounge access)",
+            "FIRST Select Credit Card eligibility (LTF)",
+            "Higher savings interest rates (up to 7.25%)",
+            "Personal Accident Insurance ₹50 Lakhs",
+            "Air Accident Insurance ₹1.5 Cr",
+            "24x7 VISA Concierge services",
+            "BookMyShow BOGO offers (350 cap)"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Value-conscious customers seeking zero forex and high savings rates with VISA Infinite benefits",
+          "rating": 4.3,
+          "pros": [
+            "Zero forex markup at entry level",
+            "VISA Infinite debit card with 1+1 lounge",
+            "Higher savings interest rate",
+            "Comprehensive insurance coverage"
+          ],
+          "cons": [
+            "Smaller branch network",
+            "Newer bank brand",
+            "International lounge requires Priority Pass"
+          ]
+        }
+      },
+      {
+        "id": "idfc-first-wealth",
+        "name": "FIRST Wealth",
+        "type": "Both",
+        "hasRM": true,
+        "eligibility": {
+          "amb": 1000000,
+          "aqb": null,
+          "salary": 500000,
+          "nrv": 3000000,
+          "description": "AMB of ₹10 Lakhs OR ORV of ₹30 Lakhs OR AUM of ₹20 Lakhs OR monthly net salary credit of ₹5 Lakhs"
+        },
+        "benefits": {
+          "welcomeBenefits": "Premium FIRST Wealth welcome experience with VISA Infinite Debit Card and lifestyle privileges",
+          "debitCard": {
+            "name": "IDFC FIRST Wealth VISA Infinite Debit Card",
+            "image": "/assets/cards/debit/idfc-first-wealth.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "Unlimited (1+1 per visit)",
+              "international": "4/year via Priority Pass"
+            },
+            "limits": {
+              "atm": 200000,
+              "purchase": 600000
+            },
+            "forex": {
+              "markup": 0,
+              "text": "Zero Forex Markup"
+            }
+          },
+          "locker": {
+            "discount": 0.40,
+            "text": "40% discount on locker rent"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "Free Demat with research and advisory access via Morningstar"
+          },
+          "features": [
+            "Zero Forex Markup",
+            "Senior Relationship Manager",
+            "Unlimited domestic lounge (1+1)",
+            "International lounge via Priority Pass",
+            "FIRST Wealth Credit Card eligibility (LTF)",
+            "Higher savings rates up to 7.25%",
+            "VISA Concierge 24x7",
+            "Priority customer service",
+            "Doorstep banking",
+            "BookMyShow BOGO offers (500 cap)"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Frequent travelers seeking zero forex with industry-leading savings returns and comprehensive wealth services",
+          "rating": 4.5,
+          "pros": [
+            "Zero forex markup",
+            "Industry-leading savings rates",
+            "Unlimited domestic lounge with guest",
+            "Comprehensive insurance coverage"
+          ],
+          "cons": [
+            "Smaller branch network",
+            "Limited lifestyle partnerships",
+            "Fewer exclusive experiences"
+          ]
+        }
+      },
+      {
+        "id": "idfc-first-private",
+        "name": "FIRST Private",
+        "type": "Savings",
+        "hasRM": true,
+        "eligibility": {
+          "amb": 5000000,
+          "aqb": null,
+          "salary": null,
+          "nrv": 10000000,
+          "description": "AMB of ₹50 Lakhs OR ORV of ₹1 Crore (criteria may be flexible based on investments - some reports indicate ₹25-50L with MF investments)"
+        },
+        "benefits": {
+          "welcomeBenefits": "Exclusive FIRST Private onboarding with personalized wealth planning and Metal Debit Card",
+          "debitCard": {
+            "name": "IDFC FIRST Private Metal Debit Card",
+            "image": "/assets/cards/debit/idfc-first-private.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "Unlimited",
+              "international": "Unlimited"
+            },
+            "limits": {
+              "atm": 400000,
+              "purchase": 1500000
+            },
+            "forex": {
+              "markup": 0,
+              "text": "Zero Forex Markup"
+            }
+          },
+          "locker": {
+            "discount": 1.0,
+            "text": "Complimentary locker (subject to availability)"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "Free Demat with alternative investment ecosystem - PMS, AIFs, Pre-IPO funds, Offshore solutions"
+          },
+          "features": [
+            "Zero Forex Markup",
+            "Dedicated Private Banker + Relationship Manager + Portfolio Specialists",
+            "Metal Debit Card",
+            "Unlimited global lounge access",
+            "FIRST Private Credit Card eligibility",
+            "Alternative Investment ecosystem (PMS, AIFs, Pre-IPO)",
+            "Offshore and immigration-linked investments",
+            "Strong in-house research + Morningstar insights",
+            "Global concierge services",
+            "BookMyShow BOGO offers (750 cap)"
+          ]
+        },
+        "metadata": {
+          "bestFor": "HNIs seeking modern digital-first private banking with zero forex and alternative investments",
+          "rating": 4.4,
+          "pros": [
+            "Zero forex markup",
+            "Lower entry barrier than traditional private banks",
+            "High savings interest rates",
+            "Modern digital experience",
+            "Metal debit card"
+          ],
+          "cons": [
+            "Smaller branch network",
+            "Less established private banking brand",
+            "Fewer lifestyle partnerships than legacy banks"
+          ]
+        }
+      }
+    ],
+    "familyBanking": {
+      "name": "IDFC FIRST Family Banking",
+      "eligibility": {
+        "minGroupNRV": 300000,
+        "description": "Family members can be grouped; combined AMB/AUM/ORV considered for tier qualification"
+      },
+      "members": {
+        "maxCount": 5,
+        "allowed": ["Spouse", "Parents", "Children"]
+      },
+      "benefits": [
+        "Pooled ORV for tier upgrades",
+        "Family zero forex benefits on all cards",
+        "Family members get Select/Wealth/Private debit cards",
+        "Shared lounge access pool",
+        "Single RM for family accounts"
+      ]
+    }
+  }
+]

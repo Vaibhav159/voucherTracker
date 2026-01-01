@@ -22,23 +22,26 @@ class CreditCard(models.Model):
     ]
 
     name = models.CharField(_("Name"), max_length=255)
+    slug = models.SlugField(_("Slug"), max_length=255, unique=True, blank=True, null=True)
     bank = models.CharField(_("Bank"), max_length=255, choices=BANK_CHOICES, db_index=True)
     category = models.CharField(_("Category"), max_length=255, blank=True, db_index=True)
     image = models.URLField(_("Image URL"), blank=True)
-    annual_fee = models.CharField(_("Annual Fee"), max_length=255, blank=True)
-    reward_rate = models.CharField(_("Reward Rate"), max_length=255, blank=True)
-    fx_markup = models.CharField(_("Forex Markup"), max_length=255, blank=True)
-    best_for = models.CharField(_("Best For"), max_length=255, blank=True)
-    reward_type = models.CharField(_("Reward Type"), max_length=50, blank=True)
-    reward_caps = models.JSONField(_("Reward Caps"), default=dict, blank=True)
+
+    # Structured JSON Fields
+    fees = models.JSONField(_("Fees"), default=dict, blank=True)
+    eligibility = models.JSONField(_("Eligibility"), default=dict, blank=True)
+    rewards = models.JSONField(_("Rewards"), default=dict, blank=True)
+    features = models.JSONField(_("Features"), default=dict, blank=True)
+    metadata = models.JSONField(_("Metadata"), default=dict, blank=True)
+    tags = models.JSONField(_("Tags"), default=list)
+
+    # Content fields
     verdict = ProseEditorField(_("Verdict"), blank=True)
     detailed_guide = ProseEditorField(_("Detailed Guide"), blank=True)
     apply_link = models.URLField(_("Apply Link"), blank=True)
-    features = models.JSONField(_("Features"), default=list)
-    tags = models.JSONField(_("Tags"), default=list)
-    
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.name
+        return f"{self.bank} - {self.name}"

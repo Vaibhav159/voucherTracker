@@ -1,0 +1,477 @@
+/**
+ * Performance & Polish Enhancements
+ *
+ * GPU-accelerated animations, consistent styling, performance optimizations
+ */
+
+/* ============================================
+   GPU-ACCELERATED TRANSITIONS
+   Use transform & opacity for 60fps animations
+   ============================================ */
+
+/* Optimize all animated elements */
+.voucher-card,
+.glass-panel,
+.platform-card,
+.category-item,
+.stat-item,
+.credit-card-item,
+.nav-item,
+.modal-container {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Cleanup will-change after interaction */
+.voucher-card:not(:hover),
+.glass-panel:not(:hover),
+.platform-card:not(:hover) {
+  will-change: auto;
+}
+
+/* ============================================
+   SMOOTHER CARD ANIMATIONS
+   ============================================ */
+
+/* Enhanced voucher card transitions */
+.voucher-card {
+  transition:
+    transform 0.35s var(--ease-out-expo),
+    box-shadow 0.35s var(--ease-out-expo),
+    border-color 0.25s ease;
+}
+
+.voucher-card:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow:
+    0 24px 48px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    0 0 80px rgba(139, 92, 246, 0.08);
+}
+
+.voucher-card:active {
+  transform: translateY(-4px) scale(1.01);
+  transition-duration: 0.15s;
+}
+
+/* ============================================
+   REFINED GLASS EFFECTS
+   ============================================ */
+
+/* Premium glass panel base */
+.glass-panel {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.glass-panel:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* ============================================
+   TYPOGRAPHY REFINEMENTS
+   ============================================ */
+
+/* Consistent heading hierarchy */
+h1, .h1 {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+}
+
+h2, .h2 {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+}
+
+h3, .h3 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-normal);
+}
+
+/* Improved text secondary styling */
+.text-secondary,
+.voucher-card__category,
+.stat-label,
+.platform-label {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ============================================
+   BUTTON MICRO-INTERACTIONS
+   ============================================ */
+
+/* Enhanced button hover states */
+.btn-primary {
+  position: relative;
+  transition:
+    transform 0.2s var(--ease-spring),
+    box-shadow 0.25s ease,
+    filter 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 24px rgba(139, 92, 246, 0.35),
+    0 0 40px rgba(139, 92, 246, 0.15);
+  filter: brightness(1.05);
+}
+
+.btn-primary:active {
+  transform: translateY(0) scale(0.98);
+  transition-duration: 0.1s;
+}
+
+/* Ghost button polish */
+.btn-ghost {
+  transition: all 0.2s ease;
+  border-radius: var(--radius-sm);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+}
+
+/* ============================================
+   FORM INPUT IMPROVEMENTS
+   ============================================ */
+
+/* Refined input styling */
+input[type="text"],
+input[type="number"],
+input[type="search"],
+select {
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--accent-violet);
+  box-shadow:
+    0 0 0 3px rgba(139, 92, 246, 0.12),
+    0 0 20px rgba(139, 92, 246, 0.08);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Search input polish */
+.search-input,
+.category-search-input {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.25s ease;
+}
+
+.search-input:hover,
+.category-search-input:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.search-input:focus,
+.category-search-input:focus {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--accent-violet);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+/* ============================================
+   MODAL PERFORMANCE
+   ============================================ */
+
+/* Optimized modal overlay */
+.modal-overlay {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Smoother modal entrance */
+.modal-container {
+  animation: modalEnter 0.3s var(--ease-out-expo);
+}
+
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ============================================
+   BADGE CONSISTENCY
+   ============================================ */
+
+/* Unified badge styling */
+.badge,
+.voucher-discount-badge,
+.platform-badge,
+.tier-badge {
+  font-weight: var(--font-semibold);
+  font-size: var(--text-xs);
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-sm);
+  transition: transform 0.2s ease;
+}
+
+.badge:hover,
+.platform-badge:hover {
+  transform: translateY(-1px);
+}
+
+/* Success badge (discount) */
+.badge-success,
+.voucher-discount-badge {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.25);
+}
+
+/* ============================================
+   LOADING STATE IMPROVEMENTS
+   ============================================ */
+
+/* Optimized skeleton loading */
+.skeleton,
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.02) 0%,
+    rgba(255, 255, 255, 0.06) 50%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.2s ease-in-out infinite;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Loading spinner optimization */
+.spinner {
+  will-change: transform;
+  animation: spin 0.7s linear infinite;
+}
+
+/* ============================================
+   SCROLL PERFORMANCE
+   ============================================ */
+
+/* Optimize scrollable containers */
+.category-list,
+.voucher-grid,
+.card-grid,
+.scrollable-container {
+  contain: content;
+  overflow-anchor: none;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ============================================
+   STAGGERED ANIMATIONS
+   ============================================ */
+
+/* Card entrance animations */
+.voucher-card,
+.credit-card-item {
+  opacity: 0;
+  animation: cardFadeIn 0.4s var(--ease-out-expo) forwards;
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   FOCUS ACCESSIBILITY
+   ============================================ */
+
+/* Clear focus indicators */
+:focus-visible {
+  outline: 2px solid var(--accent-violet);
+  outline-offset: 3px;
+}
+
+button:focus-visible,
+a:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 3px;
+  border-radius: var(--radius-xs);
+}
+
+/* ============================================
+   LIGHT MODE REFINEMENTS
+   ============================================ */
+
+[data-theme='light'] {
+  /* Lighter glass effect */
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow:
+      0 4px 24px rgba(0, 0, 0, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+
+  .glass-panel:hover {
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  }
+
+  /* Card hover for light mode */
+  .voucher-card:hover {
+    box-shadow:
+      0 24px 48px rgba(0, 0, 0, 0.1),
+      0 0 0 1px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Input focus for light mode */
+  input:focus,
+  select:focus {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow:
+      0 0 0 3px rgba(139, 92, 246, 0.08),
+      0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Skeleton loading for light mode */
+  .skeleton,
+  .skeleton-shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.04) 0%,
+      rgba(0, 0, 0, 0.08) 50%,
+      rgba(0, 0, 0, 0.04) 100%
+    );
+    background-size: 200% 100%;
+  }
+}
+
+/* ============================================
+   MOBILE OPTIMIZATIONS
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* Reduce animation complexity on mobile */
+  .voucher-card,
+  .glass-panel {
+    transition-duration: 0.2s;
+  }
+
+  /* Simpler hover effects on mobile */
+  .voucher-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Reduce backdrop-filter blur on mobile for performance */
+  .modal-overlay {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Disable hover transforms on touch */
+  .voucher-card:hover,
+  .glass-panel:hover {
+    transform: none;
+  }
+
+  /* Use active state instead */
+  .voucher-card:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
+
+  .btn-primary:active {
+    transform: scale(0.97);
+    filter: brightness(0.95);
+  }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-violet) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glow effect utility */
+.glow-violet {
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.3);
+}
+
+.glow-success {
+  box-shadow: 0 0 30px rgba(34, 197, 94, 0.3);
+}
+
+/* Fade mask utility */
+.fade-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to top, var(--bg-color), transparent);
+  pointer-events: none;
+}

@@ -25,7 +25,7 @@ export const useMyCards = () => {
 
 export const MyCardsProvider = ({ children }) => {
     const toast = useToast();
-    
+
     // Persisted state
     const [myCardIds, setMyCardIds] = useLocalStorage('myCards', []);
     const [primaryCards, setPrimaryCards] = useLocalStorage('primaryCards', {});
@@ -53,7 +53,16 @@ export const MyCardsProvider = ({ children }) => {
     // Calculate total annual value estimate
     const totalAnnualValue = useMemo(() => {
         return myCards.reduce((sum, card) => {
-            // Rough estimate based on card tier
+            // Priority 1: Use calculator monthly cap from new data
+            if (card.rewards?.calculator?.monthlyCap > 0) {
+                return sum + (card.rewards.calculator.monthlyCap * 12);
+            }
+            // Priority 2: Use calculator yearly cap
+            if (card.rewards?.calculator?.yearlyCap > 0) {
+                return sum + card.rewards.calculator.yearlyCap;
+            }
+
+            // Priority 3: Rough estimate based on card tier (Fallback)
             const tierValues = {
                 'super-premium': 50000,
                 'premium': 25000,
@@ -64,12 +73,17 @@ export const MyCardsProvider = ({ children }) => {
         }, 0);
     }, [myCards]);
 
+    // Calculate total monthly value estimate
+    const totalMonthlyValue = useMemo(() => {
+        return Math.round(totalAnnualValue / 12);
+    }, [totalAnnualValue]);
+
     // Get recommendations based on gaps
     const recommendations = useMemo(() => {
         const owned = new Set(myCardIds);
         const ownedTiers = new Set(myCards.map(c => c.tier));
         const ownedBanks = new Set(myCards.map(c => c.bank));
-        
+
         return creditCards
             .filter(card => !owned.has(card.id))
             .filter(card => {
@@ -80,7 +94,7 @@ export const MyCardsProvider = ({ children }) => {
                 const differentTier = !ownedTiers.has(card.tier);
                 const differentBank = !ownedBanks.has(card.bank);
                 const isPremium = card.tier === 'super-premium' || card.tier === 'premium';
-                
+
                 return (differentTier && isPremium) || differentBank;
             })
             .slice(0, 6);
@@ -88,15 +102,14 @@ export const MyCardsProvider = ({ children }) => {
 
     // Add a card to collection
     const addCard = useCallback((cardId, showToast = true) => {
-        const numericId = typeof cardId === 'string' ? parseInt(cardId, 10) : cardId;
-        const card = creditCards.find(c => c.id === numericId);
-        
+        const card = creditCards.find(c => c.id === cardId);
+
         setMyCardIds(prev => {
-            if (prev.includes(numericId)) {
+            if (prev.includes(cardId)) {
                 if (showToast) toast.info(`${card?.name || 'Card'} is already in your collection`);
                 return prev;
             }
-            
+
             if (showToast) {
                 // Haptic feedback
                 if (navigator.vibrate) {
@@ -104,31 +117,30 @@ export const MyCardsProvider = ({ children }) => {
                 }
                 toast.success(`${card?.name || 'Card'} added to your collection!`);
             }
-            
-            return [...prev, numericId];
+
+            return [...prev, cardId];
         });
     }, [setMyCardIds, toast]);
 
     // Remove a card from collection
     const removeCard = useCallback((cardId, showToast = true) => {
-        const numericId = typeof cardId === 'string' ? parseInt(cardId, 10) : cardId;
-        const card = creditCards.find(c => c.id === numericId);
-        
+        const card = creditCards.find(c => c.id === cardId);
+
         setMyCardIds(prev => {
-            if (!prev.includes(numericId)) return prev;
-            
+            if (!prev.includes(cardId)) return prev;
+
             if (showToast) {
                 toast.info(`${card?.name || 'Card'} removed from collection`);
             }
-            
-            return prev.filter(id => id !== numericId);
+
+            return prev.filter(id => id !== cardId);
         });
-        
+
         // Also remove from primary cards
         setPrimaryCards(prev => {
             const updated = { ...prev };
             Object.keys(updated).forEach(category => {
-                if (updated[category] === numericId) {
+                if (updated[category] === cardId) {
                     delete updated[category];
                 }
             });
@@ -138,22 +150,20 @@ export const MyCardsProvider = ({ children }) => {
 
     // Check if user has a card
     const hasCard = useCallback((cardId) => {
-        const numericId = typeof cardId === 'string' ? parseInt(cardId, 10) : cardId;
-        return myCardIds.includes(numericId);
+        return myCardIds.includes(cardId);
     }, [myCardIds]);
 
     // Set primary card for a category
     const setPrimaryCard = useCallback((category, cardId) => {
-        const numericId = typeof cardId === 'string' ? parseInt(cardId, 10) : cardId;
-        const card = creditCards.find(c => c.id === numericId);
-        
+        const card = creditCards.find(c => c.id === cardId);
+
         setPrimaryCards(prev => {
             const updated = { ...prev };
             if (cardId === null) {
                 delete updated[category];
                 toast.info(`Primary card cleared for ${category}`);
             } else {
-                updated[category] = numericId;
+                updated[category] = cardId;
                 toast.success(`${card?.name || 'Card'} set as primary for ${category}`);
             }
             return updated;
@@ -169,14 +179,13 @@ export const MyCardsProvider = ({ children }) => {
 
     // Set a note for a card
     const setCardNote = useCallback((cardId, note) => {
-        const numericId = typeof cardId === 'string' ? parseInt(cardId, 10) : cardId;
         setCardNotes(prev => {
             const updated = { ...prev };
             if (note && note.trim()) {
-                updated[numericId] = note.trim();
+                updated[cardId] = note.trim();
                 toast.success('Note saved');
             } else {
-                delete updated[numericId];
+                delete updated[cardId];
             }
             return updated;
         });
@@ -184,8 +193,7 @@ export const MyCardsProvider = ({ children }) => {
 
     // Get note for a card
     const getCardNote = useCallback((cardId) => {
-        const numericId = typeof cardId === 'string' ? parseInt(cardId, 10) : cardId;
-        return cardNotes[numericId] || '';
+        return cardNotes[cardId] || '';
     }, [cardNotes]);
 
     // Clear all cards
@@ -194,20 +202,20 @@ export const MyCardsProvider = ({ children }) => {
             toast.info('No cards to clear');
             return;
         }
-        
+
         const count = myCardIds.length;
-        
+
         // Backup for recovery
         sessionStorage.setItem('myCardsBackup', JSON.stringify({
             ids: myCardIds,
             primary: primaryCards,
             notes: cardNotes,
         }));
-        
+
         setMyCardIds([]);
         setPrimaryCards({});
         setCardNotes({});
-        
+
         toast.warning(`Removed ${count} card${count !== 1 ? 's' : ''} from collection`);
     }, [myCardIds, primaryCards, cardNotes, setMyCardIds, setPrimaryCards, setCardNotes, toast]);
 
@@ -233,6 +241,7 @@ export const MyCardsProvider = ({ children }) => {
             myCardIds,
             cardsByBank,
             totalAnnualValue,
+            totalMonthlyValue,
             recommendations,
             addCard,
             removeCard,

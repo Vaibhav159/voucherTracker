@@ -1,0 +1,882 @@
+[
+  {
+    "id": "idfc-first-private",
+    "name": "IDFC First Private Credit Card",
+    "bank": "IDFC First Bank",
+    "image": "/assets/cards/idfc-first-private.png",
+    "link": "https://www.idfcfirst.bank.in/credit-card/FIRSTPrivateCreditCard",
+    "fees": {
+      "joining": 50000,
+      "annual": 50000,
+      "currency": "INR",
+      "waivedOn": null,
+      "waiverText": "Invite-only. ₹50,000 + GST joining/annual fee. 50,000 welcome RPs + Club ITC Culinaire on joining. 25,000 RPs on renewal."
+    },
+    "eligibility": {
+      "income": 3600000,
+      "age": {
+        "min": 21,
+        "max": 65
+      },
+      "type": "Invite Only (HNI)",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Reward Points",
+      "baseRate": 0.00167,
+      "earningText": "10X on spends above threshold & birthday (1.67%); 6X on Travel & Shop app bookings; 3X on rent/edu/govt (0.5%); 1X on utilities/insurance (0.17%)",
+      "expiry": "Never Expires",
+      "joiningBonus": "50,000 Reward Points (₹12,500 value) + Club ITC Culinaire Hotel Membership",
+      "exclusions": "Fuel, EMI, Cash Withdrawals, Fees & Charges",
+      "calculator": {
+        "tier": "super-premium",
+        "monthlyCap": 25000,
+        "capResetPeriod": "calendar",
+        "specialLogic": "10X on eligible spends; 50X bonus on hotels, 20X bonus on flights via app. Monthly bonus cap 25,000 RPs. Annual redemption cap 3,00,000 RPs. Karma Points donated to charity on high spends.",
+        "categories": {
+          "travel": {
+            "rate": 0.10,
+            "label": "50X Bonus on Hotels via App (10% value-back)",
+            "cap": 6250
+          },
+          "dining": {
+            "rate": 0.0167,
+            "label": "10X Reward Points (1.67%)",
+            "cap": null
+          },
+          "online": {
+            "rate": 0.0167,
+            "label": "10X on incremental spends above threshold",
+            "cap": null
+          },
+          "fuel": {
+            "rate": 0,
+            "label": "No rewards on fuel",
+            "cap": null
+          },
+          "groceries": {
+            "rate": 0.0167,
+            "label": "10X on incremental spends above threshold",
+            "cap": null
+          },
+          "utilities": {
+            "rate": 0.00167,
+            "label": "1X Reward Points (0.17%)",
+            "cap": null
+          }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Travel bookings via IDFC App or Statement Credit at ₹0.25 per point",
+        "options": [
+          {
+            "type": "Statement Credit",
+            "value": 0.25,
+            "desc": "1 RP = ₹0.25",
+            "recommended": true
+          },
+          {
+            "type": "Travel Bookings (App)",
+            "value": 0.25,
+            "desc": "1 RP = ₹0.25 (up to 70% of booking)",
+            "recommended": true
+          },
+          {
+            "type": "Product Catalogue",
+            "value": 0.25,
+            "desc": "1 RP = ₹0.25",
+            "recommended": false
+          }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "Unlimited per quarter (Primary + Add-on)",
+        "international": "Unlimited per quarter (Primary + Add-on) + 4 guest visits/year at domestic",
+        "accessType": "DreamFolks"
+      },
+      "milestones": [
+        {
+          "spend": 1500000,
+          "benefit": "Taj Experiences Signature Dining Voucher (within 6 months)"
+        },
+        {
+          "spend": 4000000,
+          "benefit": "Club ITC Culinaire Membership renewed annually"
+        }
+      ],
+      "golf": {
+        "included": true,
+        "text": "Unlimited complimentary golf rounds/lessons monthly via Golftripz"
+      },
+      "movies": {
+        "included": true,
+        "text": "Up to ₹750 discount on BookMyShow twice per month"
+      },
+      "fuel": {
+        "surchargeWaiver": "1%",
+        "cap": null
+      },
+      "forex": {
+        "markup": 0,
+        "text": "Zero Forex Markup"
+      }
+    },
+    "metadata": {
+      "tags": [
+        "Super-Premium",
+        "Invite-Only",
+        "Zero Forex",
+        "Unlimited Lounge",
+        "Metal Card"
+      ],
+      "bestFor": "Ultra-HNIs seeking premium travel & lifestyle benefits with zero forex markup",
+      "rating": 4.2,
+      "verdict": "India's most exclusive card with unlimited lounges & zero forex, but lacks airmiles transfer partners",
+      "pros": [
+        "Zero forex markup on international transactions",
+        "Unlimited domestic & international lounge access",
+        "Unlimited golf rounds and premium memberships",
+        "Rewards on rent, education & usually excluded categories",
+        "No late payment or over-limit charges"
+      ],
+      "cons": [
+        "Very high ₹50,000 annual fee + GST",
+        "Invite-only, not available for direct application",
+        "Low redemption value at ₹0.25 per point",
+        "No airmiles transfer partners",
+        "Annual redemption cap of 3 lakh points"
+      ]
+    }
+  },
+  {
+    "id": "idfc-first-wealth",
+    "name": "IDFC First Wealth Credit Card",
+    "bank": "IDFC First Bank",
+    "image": "/assets/cards/idfc-first-wealth.png",
+    "link": "https://www.idfcfirst.bank.in/credit-card/wealth",
+    "fees": {
+      "joining": 0,
+      "annual": 0,
+      "currency": "INR",
+      "waivedOn": 0,
+      "waiverText": "Lifetime Free - No joining or annual fee ever"
+    },
+    "eligibility": {
+      "income": 3600000,
+      "age": {
+        "min": 21,
+        "max": 65
+      },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Reward Points",
+      "baseRate": 0.00375,
+      "earningText": "10X on spends above ₹20k/month & birthday (1.25%); 3X up to ₹20k (0.375%); 3X on rent/edu/govt; 1X on utilities/insurance. Effective Jan 18, 2026: Base changed from ₹150 to ₹200 per RP.",
+      "expiry": "Never Expires",
+      "joiningBonus": "₹500 gift voucher on spending ₹5,000 within 30 days + 5% cashback up to ₹1,000 on first EMI",
+      "exclusions": "Fuel, EMI, Cash Withdrawals. Rent/Edu/Govt/Wallet not counted for 10X threshold.",
+      "calculator": {
+        "tier": "premium",
+        "monthlyCap": null,
+        "capResetPeriod": "statement",
+        "specialLogic": "10X rewards on incremental spends above ₹20,000/month. 3X on base spends. 33% bonus RPs on hotel, 20% bonus on flights via app. New ₹200 base from Jan 18, 2026.",
+        "categories": {
+          "travel": {
+            "rate": 0.0417,
+            "label": "33% Bonus on Hotels via App (~4.17% total)",
+            "cap": 2000
+          },
+          "dining": {
+            "rate": 0.0125,
+            "label": "10X on spends above ₹20k threshold",
+            "cap": null
+          },
+          "online": {
+            "rate": 0.0125,
+            "label": "10X on spends above ₹20k threshold",
+            "cap": null
+          },
+          "fuel": {
+            "rate": 0,
+            "label": "No rewards on fuel",
+            "cap": null
+          },
+          "groceries": {
+            "rate": 0.0125,
+            "label": "10X on spends above ₹20k threshold",
+            "cap": null
+          },
+          "utilities": {
+            "rate": 0.00125,
+            "label": "1X Reward Points (0.125%)",
+            "cap": null
+          }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Pay with Points at checkout or redeem for vouchers via Poshvine portal",
+        "options": [
+          {
+            "type": "Pay with Points",
+            "value": 0.25,
+            "desc": "1 RP = ₹0.25 at online/in-store checkout",
+            "recommended": true
+          },
+          {
+            "type": "Gift Vouchers (Amazon/Flipkart)",
+            "value": 0.25,
+            "desc": "1 RP = ₹0.25",
+            "recommended": true
+          },
+          {
+            "type": "Travel Bookings (App)",
+            "value": 0.25,
+            "desc": "1 RP = ₹0.25",
+            "recommended": false
+          }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "1 per quarter (effective Apr 2026; requires ₹20k spend in previous month)",
+        "international": "1 per quarter (effective Apr 2026; requires ₹20k spend in previous month)",
+        "accessType": "DreamFolks"
+      },
+      "milestones": [
+        {
+          "spend": 800000,
+          "benefit": "7,500 Bonus Reward Points annually"
+        },
+        {
+          "spend": 1500000,
+          "benefit": "15,000 Bonus Reward Points annually"
+        }
+      ],
+      "golf": {
+        "included": true,
+        "text": "1 complimentary round per quarter on ₹20k spend/month (effective Apr 2026)"
+      },
+      "movies": {
+        "included": true,
+        "text": "BOGO up to ₹250 on District app, twice per month"
+      },
+      "fuel": {
+        "surchargeWaiver": "1%",
+        "cap": 300
+      },
+      "forex": {
+        "markup": 0.015,
+        "text": "1.5% Forex Markup"
+      }
+    },
+    "metadata": {
+      "tags": [
+        "Lifetime Free",
+        "Premium",
+        "Low Forex",
+        "Golf",
+        "Lounge Access"
+      ],
+      "bestFor": "High earners wanting premium benefits without annual fees and low forex charges",
+      "rating": 4.0,
+      "verdict": "Best lifetime-free premium card for high spenders, but reward value diminished post-2024 devaluation",
+      "pros": [
+        "Lifetime free with no annual fee conditions",
+        "Low 1.5% forex markup",
+        "Domestic & international lounge access",
+        "Rewards on rent, education & government payments",
+        "Golf privileges included"
+      ],
+      "cons": [
+        "High income eligibility (₹36 lakh p.a.)",
+        "10X rewards only above ₹20k/month threshold",
+        "Low redemption value at ₹0.25 per point",
+        "Lounge access reduced from Apr 2026",
+        "No airmiles transfer partners"
+      ]
+    }
+  },
+  {
+    "id": "idfc-first-select",
+    "name": "IDFC First Select Credit Card",
+    "bank": "IDFC First Bank",
+    "image": "/assets/cards/idfc-first-select.png",
+    "link": "https://www.idfcfirst.bank.in/credit-card/select",
+    "fees": {
+      "joining": 0,
+      "annual": 0,
+      "currency": "INR",
+      "waivedOn": 0,
+      "waiverText": "Lifetime Free - No joining or annual fee ever"
+    },
+    "eligibility": {
+      "income": 1200000,
+      "age": {
+        "min": 21,
+        "max": 65
+      },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Reward Points",
+      "baseRate": 0.00375,
+      "earningText": "10X on spends above ₹20k/month & birthday (1.25%); 3X up to ₹20k (0.375%); 3X on rent/edu/govt; 1X on utilities/insurance. Effective Jan 18, 2026: Base changed from ₹150 to ₹200 per RP.",
+      "expiry": "Never Expires",
+      "joiningBonus": "₹500 gift voucher on spending ₹5,000 within 30 days + 5% cashback up to ₹1,000 on first EMI",
+      "exclusions": "Fuel, EMI, Cash Withdrawals. Rent/Edu/Govt/Wallet not counted for 10X threshold.",
+      "calculator": {
+        "tier": "premium",
+        "monthlyCap": null,
+        "capResetPeriod": "statement",
+        "specialLogic": "10X rewards on incremental spends above ₹20,000/month. 3X on base spends. 50X bonus on hotels, 20X bonus on flights via app. New ₹200 base from Jan 18, 2026.",
+        "categories": {
+          "travel": {
+            "rate": 0.0833,
+            "label": "50X Bonus on Hotels via App (~8.33% total)",
+            "cap": 2000
+          },
+          "dining": {
+            "rate": 0.0125,
+            "label": "10X on spends above ₹20k threshold",
+            "cap": null
+          },
+          "online": {
+            "rate": 0.0125,
+            "label": "10X on spends above ₹20k threshold",
+            "cap": null
+          },
+          "fuel": {
+            "rate": 0,
+            "label": "No rewards on fuel (1% surcharge waiver instead)",
+            "cap": null
+          },
+          "groceries": {
+            "rate": 0.0125,
+            "label": "10X on spends above ₹20k threshold",
+            "cap": null
+          },
+          "utilities": {
+            "rate": 0.00125,
+            "label": "1X Reward Points (0.125%)",
+            "cap": null
+          }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Pay with Points at checkout or redeem for vouchers via Poshvine portal",
+        "options": [
+          {
+            "type": "Pay with Points",
+            "value": 0.25,
+            "desc": "1 RP = ₹0.25 at online/in-store checkout",
+            "recommended": true
+          },
+          {
+            "type": "Gift Vouchers (Amazon/Flipkart)",
+            "value": 0.25,
+            "desc": "1 RP = ₹0.25",
+            "recommended": true
+          },
+          {
+            "type": "Travel Bookings (App)",
+            "value": 0.25,
+            "desc": "1 RP = ₹0.25",
+            "recommended": false
+          }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "1 per quarter (effective Apr 2026; requires ₹20k spend in previous month)",
+        "international": "None",
+        "accessType": "DreamFolks"
+      },
+      "milestones": [],
+      "golf": {
+        "included": false,
+        "text": ""
+      },
+      "movies": {
+        "included": true,
+        "text": "BOGO up to ₹125 on District app, twice per month"
+      },
+      "fuel": {
+        "surchargeWaiver": "1%",
+        "cap": 300
+      },
+      "forex": {
+        "markup": 0.0199,
+        "text": "1.99% Forex Markup"
+      }
+    },
+    "metadata": {
+      "tags": [
+        "Lifetime Free",
+        "Railway Lounge",
+        "Airport Lounge",
+        "Low Forex"
+      ],
+      "bestFor": "Mid-range spenders wanting lifetime-free card with airport & railway lounge access",
+      "rating": 3.8,
+      "verdict": "Solid all-rounder with railway lounge access, but lounge benefits reduced from Apr 2026",
+      "pros": [
+        "Lifetime free with no conditions",
+        "Railway lounge access (4 per quarter)",
+        "Domestic airport lounge access",
+        "Low 1.99% forex markup",
+        "Rewards on rent & education payments"
+      ],
+      "cons": [
+        "10X rewards only above ₹20k/month threshold",
+        "No international lounge access",
+        "Low redemption value at ₹0.25 per point",
+        "Airport lounge reduced to 1/quarter from Apr 2026",
+        "No golf or premium lifestyle benefits"
+      ]
+    }
+  },
+  {
+    "id": "idfc-first-classic",
+    "name": "IDFC First Classic Credit Card",
+    "bank": "IDFC First Bank",
+    "image": "/assets/cards/idfc-first-classic.png",
+    "link": "https://www.idfcfirst.bank.in/credit-card/classic",
+    "fees": {
+      "joining": 0,
+      "annual": 0,
+      "currency": "INR",
+      "waivedOn": 0,
+      "waiverText": "Lifetime Free - No joining or annual fee ever"
+    },
+    "eligibility": {
+      "income": 300000,
+      "age": {
+        "min": 21,
+        "max": 65
+      },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 650
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Reward Points",
+      "baseRate": 0.00375,
+      "earningText": "10X on spends above ₹20k/month & birthday (1.25%); 3X up to ₹20k (0.375%); 3X on rent/edu/govt; 1X on utilities/insurance. Effective Jan 18, 2026: Base changed from ₹150 to ₹200 per RP.",
+      "expiry": "Never Expires",
+      "joiningBonus": "₹500 gift voucher on spending ₹5,000 within 30 days + 5% cashback up to ₹1,000 on first EMI",
+      "exclusions": "Fuel, EMI, Cash Withdrawals. Rent/Edu/Govt/Wallet not counted for 10X threshold.",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": null,
+        "capResetPeriod": "statement",
+        "specialLogic": "10X rewards on incremental spends above ₹20,000/month. 3X on all spends up to ₹20k. New ₹200 base from Jan 18, 2026.",
+        "categories": {
+          "travel": {
+            "rate": 0.0125,
+            "label": "10X on spends above ₹20k threshold",
+            "cap": null
+          },
+          "dining": {
+            "rate": 0.0125,
+            "label": "10X on spends above ₹20k threshold",
+            "cap": null
+          },
+          "online": {
+            "rate": 0.0125,
+            "label": "10X on spends above ₹20k threshold",
+            "cap": null
+          },
+          "fuel": {
+            "rate": 0,
+            "label": "No rewards on fuel (1% surcharge waiver instead)",
+            "cap": null
+          },
+          "groceries": {
+            "rate": 0.0125,
+            "label": "10X on spends above ₹20k threshold",
+            "cap": null
+          },
+          "utilities": {
+            "rate": 0.00125,
+            "label": "1X Reward Points (0.125%)",
+            "cap": null
+          }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Pay with Points at checkout or redeem for vouchers via Poshvine portal",
+        "options": [
+          {
+            "type": "Pay with Points",
+            "value": 0.25,
+            "desc": "1 RP = ₹0.25 at online/in-store checkout",
+            "recommended": true
+          },
+          {
+            "type": "Gift Vouchers (Amazon/Flipkart)",
+            "value": 0.25,
+            "desc": "1 RP = ₹0.25",
+            "recommended": true
+          },
+          {
+            "type": "Product Catalogue",
+            "value": 0.25,
+            "desc": "1 RP = ₹0.25",
+            "recommended": false
+          }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "None (Airport)",
+        "international": "None",
+        "accessType": "Railway Lounge Only - 4 per quarter via DreamFolks"
+      },
+      "milestones": [],
+      "golf": {
+        "included": false,
+        "text": ""
+      },
+      "movies": {
+        "included": true,
+        "text": "25% off up to ₹100 on District app, once per month"
+      },
+      "fuel": {
+        "surchargeWaiver": "1%",
+        "cap": 200
+      },
+      "forex": {
+        "markup": 0.035,
+        "text": "3.5% Forex Markup"
+      }
+    },
+    "metadata": {
+      "tags": [
+        "Lifetime Free",
+        "Entry Level",
+        "Railway Lounge",
+        "Beginner"
+      ],
+      "bestFor": "First-time credit card users or moderate spenders wanting a no-fee card with railway lounge access",
+      "rating": 3.5,
+      "verdict": "Best entry-level lifetime-free card with railway lounge access and unlimited rewards",
+      "pros": [
+        "Lifetime free with zero conditions",
+        "Low income eligibility (₹25k/month)",
+        "Railway lounge access (4 per quarter)",
+        "Rewards never expire",
+        "Roadside assistance included"
+      ],
+      "cons": [
+        "No airport lounge access",
+        "High 3.5% forex markup",
+        "10X rewards only above ₹20k/month",
+        "Low redemption value at ₹0.25 per point",
+        "Limited lifestyle benefits"
+      ]
+    }
+  },
+  {
+    "id": "idfc-first-millennia",
+    "name": "IDFC First Millennia Credit Card",
+    "bank": "IDFC First Bank",
+    "image": "/assets/cards/idfc-first-millennia.png",
+    "link": "https://www.idfcfirst.bank.in/credit-card/millennia",
+    "fees": {
+      "joining": 0,
+      "annual": 0,
+      "currency": "INR",
+      "waivedOn": 0,
+      "waiverText": "Lifetime Free - No joining or annual fee ever"
+    },
+    "eligibility": {
+      "income": 300000,
+      "age": {
+        "min": 21,
+        "max": 65
+      },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 650
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Reward Points",
+      "baseRate": 0.005,
+      "earningText": "10X on spends above ₹20k/month & birthday (1.67%); 3X up to ₹20k online & offline (0.5%); 3X on edu/wallet/govt; 1X on utilities/insurance",
+      "expiry": "Never Expires",
+      "joiningBonus": "₹500 gift voucher on spending ₹5,000 within 30 days + 5% cashback up to ₹1,000 on first EMI",
+      "exclusions": "Fuel, EMI, Cash Withdrawals, Insurance. Edu/Wallet/Govt not counted for 10X threshold.",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": null,
+        "capResetPeriod": "statement",
+        "specialLogic": "10X rewards on incremental spends above ₹20,000/month. 3X on all online & offline spends up to ₹20k. Base 1 RP per ₹150.",
+        "categories": {
+          "travel": {
+            "rate": 0.0167,
+            "label": "10X on spends above ₹20k threshold",
+            "cap": null
+          },
+          "dining": {
+            "rate": 0.0167,
+            "label": "10X on spends above ₹20k threshold",
+            "cap": null
+          },
+          "online": {
+            "rate": 0.0167,
+            "label": "10X on spends above ₹20k threshold",
+            "cap": null
+          },
+          "fuel": {
+            "rate": 0,
+            "label": "No rewards on fuel (1% surcharge waiver instead)",
+            "cap": null
+          },
+          "groceries": {
+            "rate": 0.0167,
+            "label": "10X on spends above ₹20k threshold",
+            "cap": null
+          },
+          "utilities": {
+            "rate": 0.00167,
+            "label": "1X Reward Points (0.17%)",
+            "cap": null
+          }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Pay with Points at checkout or redeem for vouchers via Poshvine portal",
+        "options": [
+          {
+            "type": "Pay with Points",
+            "value": 0.25,
+            "desc": "1 RP = ₹0.25 at online/in-store checkout",
+            "recommended": true
+          },
+          {
+            "type": "Gift Vouchers (Amazon/Flipkart)",
+            "value": 0.25,
+            "desc": "1 RP = ₹0.25",
+            "recommended": true
+          },
+          {
+            "type": "Product Catalogue",
+            "value": 0.25,
+            "desc": "1 RP = ₹0.25",
+            "recommended": false
+          }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "None (Airport)",
+        "international": "None",
+        "accessType": "Railway Lounge Only - 4 per quarter via DreamFolks"
+      },
+      "milestones": [],
+      "golf": {
+        "included": false,
+        "text": ""
+      },
+      "movies": {
+        "included": true,
+        "text": "25% off up to ₹100 on District/Paytm app, once per month"
+      },
+      "fuel": {
+        "surchargeWaiver": "1%",
+        "cap": 200
+      },
+      "forex": {
+        "markup": 0.035,
+        "text": "3.5% Forex Markup"
+      }
+    },
+    "metadata": {
+      "tags": [
+        "Lifetime Free",
+        "Entry Level",
+        "Millennials",
+        "Railway Lounge",
+        "Beginner"
+      ],
+      "bestFor": "Young professionals and first-time users wanting a no-fee card with decent rewards",
+      "rating": 3.5,
+      "verdict": "Ideal starter card for millennials with never-expiring rewards and railway lounge access",
+      "pros": [
+        "Lifetime free with zero conditions",
+        "Low income eligibility (₹25k/month)",
+        "Railway lounge access (4 per quarter)",
+        "Rewards never expire",
+        "Low interest rate option (0.75% p.m.)"
+      ],
+      "cons": [
+        "No airport lounge access",
+        "High 3.5% forex markup",
+        "10X rewards only above ₹20k/month",
+        "Low redemption value at ₹0.25 per point",
+        "Very similar to Classic card"
+      ]
+    }
+  },
+  {
+    "id": "idfc-first-wow",
+    "name": "IDFC First WOW! Credit Card",
+    "bank": "IDFC First Bank",
+    "image": "/assets/cards/idfc-first-wow.png",
+    "link": "https://www.idfcfirst.bank.in/credit-card/wow",
+    "fees": {
+      "joining": 0,
+      "annual": 0,
+      "currency": "INR",
+      "waivedOn": 0,
+      "waiverText": "Lifetime Free - Secured card against FD (minimum ₹20,000 or ₹25,000 FD required)"
+    },
+    "eligibility": {
+      "income": 0,
+      "age": {
+        "min": 18,
+        "max": 70
+      },
+      "type": "Anyone with FD (No income proof required)",
+      "creditScore": 0
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Reward Points",
+      "baseRate": 0.0067,
+      "earningText": "4X on all eligible spends (0.67%); 1X on utilities/insurance (0.17%); Credit limit = 100% of FD value",
+      "expiry": "Never Expires",
+      "joiningBonus": "5% cashback up to ₹1,000 on first EMI transaction within 90 days",
+      "exclusions": "Fuel, EMI, Cash Withdrawals",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": null,
+        "capResetPeriod": "statement",
+        "specialLogic": "Secured card backed by Fixed Deposit. 4X rewards on all spends. Zero forex markup. Interest-free cash withdrawal for up to 45 days.",
+        "categories": {
+          "travel": {
+            "rate": 0.0067,
+            "label": "4X Reward Points (0.67%)",
+            "cap": null
+          },
+          "dining": {
+            "rate": 0.0067,
+            "label": "4X Reward Points (0.67%)",
+            "cap": null
+          },
+          "online": {
+            "rate": 0.0067,
+            "label": "4X Reward Points (0.67%)",
+            "cap": null
+          },
+          "fuel": {
+            "rate": 0,
+            "label": "No rewards on fuel (1% surcharge waiver instead)",
+            "cap": null
+          },
+          "groceries": {
+            "rate": 0.0067,
+            "label": "4X Reward Points (0.67%)",
+            "cap": null
+          },
+          "utilities": {
+            "rate": 0.00167,
+            "label": "1X Reward Points (0.17%)",
+            "cap": null
+          }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.25,
+        "bestOption": "Pay with Points at checkout or redeem for vouchers via Poshvine portal",
+        "options": [
+          {
+            "type": "Pay with Points",
+            "value": 0.25,
+            "desc": "1 RP = ₹0.25 at online/in-store checkout",
+            "recommended": true
+          },
+          {
+            "type": "Gift Vouchers (Amazon/Flipkart)",
+            "value": 0.25,
+            "desc": "1 RP = ₹0.25",
+            "recommended": true
+          },
+          {
+            "type": "Product Catalogue",
+            "value": 0.25,
+            "desc": "1 RP = ₹0.25",
+            "recommended": false
+          }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "None",
+        "international": "None",
+        "accessType": "None"
+      },
+      "milestones": [],
+      "golf": {
+        "included": false,
+        "text": ""
+      },
+      "movies": {
+        "included": true,
+        "text": "50% off up to ₹300 on BookMyShow (Visa benefit)"
+      },
+      "fuel": {
+        "surchargeWaiver": "1%",
+        "cap": 200
+      },
+      "forex": {
+        "markup": 0,
+        "text": "Zero Forex Markup"
+      }
+    },
+    "metadata": {
+      "tags": [
+        "Secured Card",
+        "Zero Forex",
+        "No Credit History",
+        "FD Backed",
+        "Lifetime Free"
+      ],
+      "bestFor": "New-to-credit users, students, NRIs, or anyone wanting zero forex with no credit history required",
+      "rating": 4.0,
+      "verdict": "Best secured card in India with zero forex markup and decent rewards - perfect for building credit history",
+      "pros": [
+        "Zero forex markup (rare for secured cards)",
+        "No income proof or credit history required",
+        "Earn interest on FD while using credit",
+        "Interest-free cash withdrawal for 45 days",
+        "100% credit limit against FD"
+      ],
+      "cons": [
+        "No lounge access",
+        "Requires FD of minimum ₹20,000",
+        "Low redemption value at ₹0.25 per point",
+        "No 10X accelerated rewards",
+        "Limited lifestyle benefits"
+      ]
+    }
+  }
+]

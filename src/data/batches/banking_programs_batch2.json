@@ -1,0 +1,1139 @@
+[
+  {
+    "id": "idfc-first-bank",
+    "name": "IDFC FIRST Bank",
+    "tiers": [
+      {
+        "id": "idfc-first-wealth",
+        "name": "First Wealth",
+        "type": "Both",
+        "hasRM": true,
+        "eligibility": {
+          "amb": 1000000,
+          "aqb": 0,
+          "salary": 500000,
+          "nrv": 1000000,
+          "description": "AMB ≥₹10 Lakhs in Savings/Current Account OR AUM ≥₹10 Lakhs in Mutual Funds/Alternates OR ORV ≥₹10 Lakhs across accounts, deposits and investments OR Net Monthly Salary credit ≥₹5 Lakhs for IDFC FIRST Corporate Salary customers. Family grouping eligible."
+        },
+        "benefits": {
+          "welcomeBenefits": "Amazon vouchers worth ₹3,000+ on account opening with eligible criteria",
+          "debitCard": {
+            "name": "FIRST Wealth Visa Signature Debit Card",
+            "image": "/assets/cards/debit/idfc-first-wealth.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "3/quarter (₹2 access fee)",
+              "international": "2/quarter (USD 32 reversed)"
+            },
+            "limits": {
+              "atm": 700000,
+              "purchase": 1200000
+            },
+            "forex": {
+              "markup": 0.02,
+              "text": "2% forex markup on international transactions"
+            }
+          },
+          "locker": {
+            "discount": 0.25,
+            "text": "25% discount on locker rental"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "Free Demat account with preferential brokerage rates"
+          },
+          "features": [
+            "Monthly interest payout on savings account (unique industry feature)",
+            "Up to 7% p.a. interest on balances ≥₹5 Lakhs",
+            "Zero charges on 30+ banking services including NEFT/RTGS/IMPS",
+            "Dedicated Relationship Manager with priority phone/email support",
+            "VISA Concierge - 24/7 digital personal assistant",
+            "Complimentary FIRST Wealth Credit Card (LTF)",
+            "Personal Accident Insurance ₹50 Lakhs",
+            "Air Accident Insurance ₹1.5 Crore",
+            "Purchase Protection ₹1 Lakh",
+            "Lost Card Liability Cover ₹10 Lakhs",
+            "Preferential pricing on loans and forex"
+          ]
+        },
+        "metadata": {
+          "bestFor": "High-yield savings seekers wanting monthly interest compounding",
+          "rating": 4.5,
+          "pros": [
+            "Monthly interest payout accelerates compounding",
+            "Industry-leading 7% interest on high balances",
+            "Zero fee banking on all services",
+            "Lifetime free premium credit card bundled"
+          ],
+          "cons": [
+            "2% forex markup on debit card (not zero)",
+            "Limited branch network compared to larger banks",
+            "Lounge access requires nominal fee"
+          ]
+        }
+      },
+      {
+        "id": "idfc-first-private",
+        "name": "First Private",
+        "type": "Both",
+        "hasRM": true,
+        "eligibility": {
+          "amb": 5000000,
+          "aqb": 0,
+          "salary": 0,
+          "nrv": 5000000,
+          "description": "AMB/AUM/ORV ≥₹50 Lakhs across savings accounts, deposits, and investments. Dedicated Private Banker assigned. Family grouping eligible for NRV calculation."
+        },
+        "benefits": {
+          "welcomeBenefits": "Premium welcome kit with exclusive lifestyle benefits and Amazon vouchers",
+          "debitCard": {
+            "name": "FIRST Private Metal Debit Card",
+            "image": "/assets/cards/debit/idfc-first-private.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "4/quarter (₹2 access fee)",
+              "international": "6/quarter (USD 32 reversed)"
+            },
+            "limits": {
+              "atm": 1000000,
+              "purchase": 1500000
+            },
+            "forex": {
+              "markup": 0.02,
+              "text": "2% forex markup on international transactions"
+            }
+          },
+          "locker": {
+            "discount": 0.50,
+            "text": "50% discount on locker rental"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "Free Demat with premium brokerage services and Morningstar insights"
+          },
+          "features": [
+            "India's first standalone metal debit card",
+            "Monthly interest payout on savings account",
+            "Up to 7% p.a. interest on balances ≥₹5 Lakhs",
+            "Dedicated Private Banker + Relationship Manager + Portfolio Specialists",
+            "Alternative Investment ecosystem - Offshore solutions, PMS, AIFs, Pre-IPO funds",
+            "Strong in-house research team with Morningstar insights",
+            "Complimentary FIRST Private Credit Card (LTF)",
+            "1 complimentary golf access per month at partner clubs",
+            "10X reward points on debit card purchases",
+            "Air Accident Insurance ₹5 Crore",
+            "Personal Accident Cover ₹1.5 Crore",
+            "Purchase Protection ₹2 Lakhs",
+            "Lost Card Liability Cover ₹15 Lakhs"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Ultra HNIs seeking comprehensive wealth management with metal card prestige",
+          "rating": 4.7,
+          "pros": [
+            "Prestigious metal debit card - first in India",
+            "Comprehensive wealth management ecosystem",
+            "Access to alternative investments and offshore solutions",
+            "Highest insurance covers in the category"
+          ],
+          "cons": [
+            "High entry barrier at ₹50 Lakhs",
+            "Still has 2% forex markup unlike some competitors",
+            "Limited to select cities for full service experience"
+          ]
+        }
+      }
+    ],
+    "familyBanking": {
+      "name": "FIRST Family Banking",
+      "eligibility": {
+        "minGroupNRV": 1000000,
+        "description": "Eligibility criteria can include AMB/AUM/ORV maintained by family members when categorized in same relationship/group"
+      },
+      "members": {
+        "maxCount": 6,
+        "allowed": ["Spouse", "Children", "Parents", "Siblings"]
+      },
+      "benefits": [
+        "Combined NRV calculation across family members",
+        "Shared program benefits for all grouped accounts",
+        "Single Group ID for unified relationship tracking",
+        "Common Relationship Manager for entire family"
+      ]
+    }
+  },
+  {
+    "id": "indusind-bank",
+    "name": "IndusInd Bank",
+    "tiers": [
+      {
+        "id": "indusind-pioneer",
+        "name": "Pioneer",
+        "type": "Both",
+        "hasRM": true,
+        "eligibility": {
+          "amb": 0,
+          "aqb": 1000000,
+          "salary": 250000,
+          "nrv": 3000000,
+          "description": "AQB ≥₹10 Lakhs in Savings/Current Account (group-based) OR NRV ≥₹30 Lakhs (group-based) with AQB ≥₹1 Lakh OR Net Monthly Salary ≥₹2.5 Lakhs in Pioneer Salary Account. NMC charges applicable from Jan 2026."
+        },
+        "benefits": {
+          "welcomeBenefits": "Premium welcome kit with leather organizer and exclusive lifestyle vouchers",
+          "debitCard": {
+            "name": "Pioneer Visa Infinite/Mastercard World Debit Card",
+            "image": "/assets/cards/debit/indusind-pioneer.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "2/quarter",
+              "international": "Unlimited via Priority Pass (nominal fee)"
+            },
+            "limits": {
+              "atm": 500000,
+              "purchase": 1000000
+            },
+            "forex": {
+              "markup": 0.0,
+              "text": "Zero cross-currency markup on international transactions"
+            }
+          },
+          "locker": {
+            "discount": 1.0,
+            "text": "Complimentary small/medium locker; 75% off large, 50% off jumbo"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "IndusInd DP services with preferential brokerage"
+          },
+          "features": [
+            "Zero forex markup on debit card - key differentiator",
+            "Metal form factor debit cards available",
+            "My Account My Number - choose your account number",
+            "Doorstep banking - cash delivery/pickup up to ₹4 Lakhs/day free",
+            "Up to 10 family/business accounts grouping",
+            "Free unlimited ATM transactions at non-IndusInd ATMs",
+            "POS limit up to ₹10 Lakhs/day",
+            "Four-tiered investment program",
+            "VISA Concierge services",
+            "Document pickup from overseas (2 free/year)",
+            "Video banking with Branch Manager/RM"
+          ]
+        },
+        "metadata": {
+          "bestFor": "International travelers wanting zero forex markup on debit card",
+          "rating": 4.4,
+          "pros": [
+            "Zero forex markup - best for international spends",
+            "Generous locker benefits - free small/medium",
+            "Choose your own account number feature",
+            "Excellent doorstep banking services"
+          ],
+          "cons": [
+            "NMC charges starting Jan 2026",
+            "Available only at select locations",
+            "Branch service quality varies significantly"
+          ]
+        }
+      },
+      {
+        "id": "indusind-exclusive",
+        "name": "Exclusive",
+        "type": "Savings",
+        "hasRM": true,
+        "eligibility": {
+          "amb": 0,
+          "aqb": 200000,
+          "salary": 0,
+          "nrv": 0,
+          "description": "AQB ≥₹2 Lakhs in Savings Account OR Hold IndusInd Pinnacle/Indulge Credit Card (zero balance account eligible)"
+        },
+        "benefits": {
+          "welcomeBenefits": "BookMyShow vouchers and lifestyle offers",
+          "debitCard": {
+            "name": "Visa Signature Exclusive/Mastercard World Exclusive Debit Card",
+            "image": "/assets/cards/debit/indusind-exclusive.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "1/quarter",
+              "international": "Not included"
+            },
+            "limits": {
+              "atm": 200000,
+              "purchase": 400000
+            },
+            "forex": {
+              "markup": 0.0,
+              "text": "Zero cross-currency markup on Signature Exclusive card; 1% on Platinum variant"
+            }
+          },
+          "locker": {
+            "discount": 0.50,
+            "text": "50% off on standard/medium lockers; 25% off on large/jumbo"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "Demat AMC waiver for 2 years"
+          },
+          "features": [
+            "Zero forex markup on Signature variant",
+            "6X reward points program on debit card",
+            "20% off up to ₹500 on BigBasket (1st-25th monthly)",
+            "Buy 1 Get 1 on BookMyShow movie tickets",
+            "Up to 10% instant discount on Zomato",
+            "Complimentary insurance coverage ₹35.5 Lakhs",
+            "20% discount on loan processing fees",
+            "Up to 6 zero balance family accounts",
+            "Free unlimited ATM withdrawals in India and abroad"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Credit card holders wanting zero balance premium savings account",
+          "rating": 4.2,
+          "pros": [
+            "Zero balance if holding Pinnacle/Indulge credit card",
+            "Zero forex markup on international transactions",
+            "Excellent BigBasket monthly discount",
+            "Good insurance coverage bundled"
+          ],
+          "cons": [
+            "No international lounge access",
+            "Lower transaction limits than Pioneer",
+            "Limited branch awareness of credit card linkage benefit"
+          ]
+        }
+      }
+    ],
+    "familyBanking": {
+      "name": "Pioneer Family Banking",
+      "eligibility": {
+        "minGroupNRV": 3000000,
+        "description": "Group-based eligibility across family and business accounts"
+      },
+      "members": {
+        "maxCount": 10,
+        "allowed": ["Spouse", "Children", "Parents", "Business Entities"]
+      },
+      "benefits": [
+        "All group members get Pioneer benefits",
+        "Combined NRV/AQB calculation",
+        "Single relationship management",
+        "Extended locker discounts to 3 family members"
+      ]
+    }
+  },
+  {
+    "id": "yes-bank",
+    "name": "YES Bank",
+    "tiers": [
+      {
+        "id": "yes-first",
+        "name": "Yes First",
+        "type": "Both",
+        "hasRM": true,
+        "eligibility": {
+          "amb": 1000000,
+          "aqb": 0,
+          "salary": 300000,
+          "nrv": 4000000,
+          "description": "AMB ≥₹10 Lakhs across Savings and Current Accounts OR NRV ≥₹40 Lakhs OR Net Monthly Salary ≥₹3 Lakhs in YES First Salary Account OR based on loan relationship. Initial payment (IP) of ₹10 Lakhs required for primary account, ₹1 Lakh for secondary account."
+        },
+        "benefits": {
+          "welcomeBenefits": "Premium welcome kit with leather organizer and lifestyle vouchers",
+          "debitCard": {
+            "name": "YES First World Debit Card (Eclectic)",
+            "image": "/assets/cards/debit/yes-first.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "Unlimited",
+              "international": "4/year via Priority Pass"
+            },
+            "limits": {
+              "atm": 500000,
+              "purchase": 1000000
+            },
+            "forex": {
+              "markup": 0.0,
+              "text": "Zero forex markup on international transactions"
+            }
+          },
+          "locker": {
+            "discount": 0.50,
+            "text": "50% discount on locker rental"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "Free YES Securities Demat account with preferential brokerage"
+          },
+          "features": [
+            "Zero forex markup on debit card",
+            "Unlimited domestic lounge access",
+            "Complimentary YES First Credit Card eligibility",
+            "Zomato/Blinkit promotional offers",
+            "Movie tickets and F&B offers via BookMyShow",
+            "Golf access at select courses",
+            "High withdrawal limits",
+            "Family banking with unified NRV",
+            "YES Rewardz points on transactions",
+            "Priority servicing and dedicated RM"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Those seeking unlimited lounge access with zero forex markup",
+          "rating": 4.3,
+          "pros": [
+            "Unlimited domestic lounge access",
+            "Zero forex markup on debit card",
+            "Strong family banking program",
+            "Good credit card upgrade path"
+          ],
+          "cons": [
+            "High initial payment requirement (₹10 Lakhs)",
+            "NRV criteria recently increased",
+            "Limited international lounge visits"
+          ]
+        }
+      },
+      {
+        "id": "yes-premia",
+        "name": "Yes Premia",
+        "type": "Both",
+        "hasRM": true,
+        "eligibility": {
+          "amb": 200000,
+          "aqb": 0,
+          "salary": 150000,
+          "nrv": 1000000,
+          "description": "AMB ≥₹2 Lakhs across CASA OR NRV ≥₹10 Lakhs OR Net Monthly Salary ≥₹1.5 Lakhs in YES Premia Salary Account OR based on loan relationship"
+        },
+        "benefits": {
+          "welcomeBenefits": "Amazon/Flipkart voucher on meeting criteria in first month; Gyftr portal redemption",
+          "debitCard": {
+            "name": "YES Premia Debit Card",
+            "image": "/assets/cards/debit/yes-premia.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "2/quarter",
+              "international": "Not included"
+            },
+            "limits": {
+              "atm": 200000,
+              "purchase": 500000
+            },
+            "forex": {
+              "markup": 0.035,
+              "text": "3.5% forex markup; card rate applies for transactions <USD 20,000"
+            }
+          },
+          "locker": {
+            "discount": 0.25,
+            "text": "25% discount on locker rental"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "YES Securities with ₹1 per lot brokerage"
+          },
+          "features": [
+            "Dedicated Relationship Manager (select locations)",
+            "YES ELITE+ Credit Card eligibility",
+            "Complimentary health insurance from Reliance General",
+            "YES Rewardz program",
+            "Preferential trade and remittance pricing",
+            "POS machine with rental cashback",
+            "Digital debit transactions rewards",
+            "Family banking benefits"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Entry-level premium banking with reasonable NRV requirement",
+          "rating": 4.0,
+          "pros": [
+            "Lower entry barrier than Yes First",
+            "Good pathway to premium banking",
+            "Complimentary health insurance",
+            "Decent lounge access"
+          ],
+          "cons": [
+            "Higher forex markup (3.5%)",
+            "Limited international benefits",
+            "RM availability varies by location"
+          ]
+        }
+      }
+    ],
+    "familyBanking": {
+      "name": "YES Family Banking",
+      "eligibility": {
+        "minGroupNRV": 1000000,
+        "description": "Family relationship grouping for combined NRV calculation"
+      },
+      "members": {
+        "maxCount": 6,
+        "allowed": ["Spouse", "Children", "Parents"]
+      },
+      "benefits": [
+        "Combined NRV across family members",
+        "Secondary accounts with ₹1 Lakh IP",
+        "Shared program tier benefits",
+        "Minor accounts can be mapped under primary"
+      ]
+    }
+  },
+  {
+    "id": "rbl-bank",
+    "name": "RBL Bank",
+    "tiers": [
+      {
+        "id": "rbl-insignia",
+        "name": "Insignia Preferred Banking",
+        "type": "Both",
+        "hasRM": true,
+        "eligibility": {
+          "amb": 1000000,
+          "aqb": 0,
+          "salary": 0,
+          "nrv": 3000000,
+          "description": "Total Relationship Value ≥₹30 Lakhs (Savings, Term Deposits, Investment relationships) OR AMB ≥₹10 Lakhs in Current Account. Invite-only/relationship-based for credit card; existing banking relationship required."
+        },
+        "benefits": {
+          "welcomeBenefits": "28,000 bonus reward points on credit card (non-banking customers); premium welcome kit",
+          "debitCard": {
+            "name": "Insignia Preferred Banking Debit Card",
+            "image": "/assets/cards/debit/rbl-insignia.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "2/quarter",
+              "international": "6/year via Priority Pass"
+            },
+            "limits": {
+              "atm": 300000,
+              "purchase": 500000
+            },
+            "forex": {
+              "markup": 0.035,
+              "text": "3.5% forex markup on international transactions"
+            }
+          },
+          "locker": {
+            "discount": 0.50,
+            "text": "50% discount on locker rental"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "Wealth management services with dedicated advisors"
+          },
+          "features": [
+            "Invite-only exclusive program",
+            "Priority Pass membership with 6 international visits",
+            "24x7 Concierge Help Desk",
+            "₹500 flat discount on BookMyShow twice/month",
+            "Up to 50% discount at EazyDiner Prime restaurants",
+            "4 complimentary golf rounds/year + 1 lesson/month",
+            "Accor Plus membership benefits at 2400+ hotels globally",
+            "Unlimited free ATM transactions at RBL ATMs",
+            "Doorstep banking for cash/cheque/document pickup",
+            "Enhanced NEFT/RTGS limits up to ₹5 Crore/day",
+            "Insignia lounges and business centers access"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Those seeking exclusive invite-only banking with strong lifestyle benefits",
+          "rating": 4.3,
+          "pros": [
+            "Excellent movie and dining benefits",
+            "Strong golf program",
+            "Priority Pass with good international access",
+            "Premium concierge services"
+          ],
+          "cons": [
+            "Invite-only/relationship-based entry",
+            "Higher forex markup (3.5%)",
+            "Limited branch network"
+          ]
+        }
+      }
+    ],
+    "familyBanking": {
+      "name": "Insignia Family Banking",
+      "eligibility": {
+        "minGroupNRV": 3000000,
+        "description": "Family accounts can be grouped under primary Insignia relationship"
+      },
+      "members": {
+        "maxCount": 4,
+        "allowed": ["Spouse", "Children", "Parents"]
+      },
+      "benefits": [
+        "Extended Insignia privileges to family",
+        "Combined TRV calculation",
+        "Shared lifestyle benefits",
+        "Priority servicing for all members"
+      ]
+    }
+  },
+  {
+    "id": "au-small-finance-bank",
+    "name": "AU Small Finance Bank",
+    "tiers": [
+      {
+        "id": "au-royale",
+        "name": "Royale",
+        "type": "Both",
+        "hasRM": true,
+        "eligibility": {
+          "amb": 500000,
+          "aqb": 0,
+          "salary": 0,
+          "nrv": 500000,
+          "description": "AMB ≥₹5 Lakhs in Savings Account OR Cumulative AMB ≥₹5 Lakhs across family's Current Accounts (for Royale Business)"
+        },
+        "benefits": {
+          "welcomeBenefits": "Lifestyle vouchers on account opening (discontinued for accounts opened from Apr 2024)",
+          "debitCard": {
+            "name": "AU Royale Visa Signature Debit Card",
+            "image": "/assets/cards/debit/au-royale.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "2/quarter (requires ₹5,000 quarterly spend from Oct 2024)",
+              "international": "Not included"
+            },
+            "limits": {
+              "atm": 400000,
+              "purchase": 600000
+            },
+            "forex": {
+              "markup": 0.02,
+              "text": "2% forex markup (Zero markup available only on NRI Royale World variant)"
+            }
+          },
+          "locker": {
+            "discount": 0.25,
+            "text": "25% discount on locker rental"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "Free Demat account with ASBA facility"
+          },
+          "features": [
+            "Monthly interest payout on savings (like IDFC First)",
+            "Up to 7% p.a. interest on savings (tiered slabs)",
+            "1% monthly cashback on non-fuel spends up to ₹200",
+            "Buy 1 Get 1 on BookMyShow (twice/month, up to ₹250)",
+            "Visa Signature lifestyle privileges",
+            "Personal Accident Insurance ₹10 Lakhs",
+            "Air Accident Insurance ₹1 Crore",
+            "Purchase Protection ₹25,000",
+            "Card Liability Cover ₹4 Lakhs",
+            "BigBasket and Cleartrip offers",
+            "Extended banking hours at select branches"
+          ]
+        },
+        "metadata": {
+          "bestFor": "High-yield savings seekers at a small finance bank",
+          "rating": 4.1,
+          "pros": [
+            "High interest rate up to 7% p.a.",
+            "Monthly interest payout",
+            "Good cashback on debit card",
+            "Decent entertainment offers"
+          ],
+          "cons": [
+            "Lounge access now requires quarterly spend",
+            "Welcome benefits discontinued from Apr 2024",
+            "Small finance bank - DICGC cover limited to ₹5 Lakhs"
+          ]
+        }
+      },
+      {
+        "id": "au-platinum",
+        "name": "Platinum",
+        "type": "Savings",
+        "hasRM": false,
+        "eligibility": {
+          "amb": 100000,
+          "aqb": 0,
+          "salary": 75000,
+          "nrv": 0,
+          "description": "AMB ≥₹1 Lakh in Savings Account OR Salary Account with eligible corporate tie-up"
+        },
+        "benefits": {
+          "welcomeBenefits": "Lifestyle vouchers (discontinued from Apr 2024)",
+          "debitCard": {
+            "name": "AU Visa Platinum Debit Card",
+            "image": "/assets/cards/debit/au-platinum.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "1/quarter (requires ₹5,000 quarterly spend from Oct 2024)",
+              "international": "Not included"
+            },
+            "limits": {
+              "atm": 200000,
+              "purchase": 300000
+            },
+            "forex": {
+              "markup": 0.035,
+              "text": "3.5% forex markup on international transactions"
+            }
+          },
+          "locker": {
+            "discount": 0.10,
+            "text": "10% discount on locker rental"
+          },
+          "investments": {
+            "dematAmc": 500,
+            "text": "Demat account with standard AMC"
+          },
+          "features": [
+            "Monthly interest payout on savings",
+            "Up to 6.5% p.a. interest on savings",
+            "Visa Platinum benefits and offers",
+            "Personal Accident Insurance ₹5 Lakhs",
+            "Air Travel Insurance ₹50 Lakhs",
+            "Purchase Protection ₹10,000",
+            "Card Liability Cover ₹2 Lakhs",
+            "AU 0101 mobile banking app access"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Entry-level premium savings with high interest",
+          "rating": 3.8,
+          "pros": [
+            "Lower entry barrier (₹1 Lakh AMB)",
+            "Competitive interest rates",
+            "Monthly interest payout",
+            "Lifetime free debit card"
+          ],
+          "cons": [
+            "Higher forex markup (3.5%)",
+            "No dedicated RM",
+            "Limited lounge access"
+          ]
+        }
+      }
+    ],
+    "familyBanking": {
+      "name": "AU Family Banking",
+      "eligibility": {
+        "minGroupNRV": 500000,
+        "description": "Family accounts can be linked for combined AMB calculation"
+      },
+      "members": {
+        "maxCount": 5,
+        "allowed": ["Spouse", "Children", "Parents"]
+      },
+      "benefits": [
+        "Combined AMB calculation across family",
+        "Shared tier benefits",
+        "Family grouping for Royale Business accounts"
+      ]
+    }
+  },
+  {
+    "id": "hsbc-india",
+    "name": "HSBC India",
+    "tiers": [
+      {
+        "id": "hsbc-premier",
+        "name": "Premier",
+        "type": "Both",
+        "hasRM": true,
+        "eligibility": {
+          "amb": 0,
+          "aqb": 4000000,
+          "salary": 300000,
+          "nrv": 4000000,
+          "description": "Quarterly Total Relationship Balance (TRB) ≥₹40 Lakhs OR Mortgage ≥₹1.15 Crores (must meet TRB within 12 months) OR Corporate Salary Account with net monthly credit ≥₹3 Lakhs. Global Premier status from other countries also eligible."
+        },
+        "benefits": {
+          "welcomeBenefits": "20,000 reward points on Premier Credit Card (transferable 1:1 to airline/hotel partners worth ~₹40,000)",
+          "debitCard": {
+            "name": "HSBC Premier Debit Card",
+            "image": "/assets/cards/debit/hsbc-premier.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "Unlimited",
+              "international": "Unlimited via Priority Pass"
+            },
+            "limits": {
+              "atm": 500000,
+              "purchase": 1000000
+            },
+            "forex": {
+              "markup": 0.035,
+              "text": "3.5% forex markup on international transactions"
+            }
+          },
+          "locker": {
+            "discount": 0.50,
+            "text": "50% discount on locker rental"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "Comprehensive wealth management with curated mutual fund products"
+          },
+          "features": [
+            "Global View - View all HSBC accounts worldwide in one place",
+            "Global Transfers - Fee-free instant transfers between HSBC accounts globally",
+            "Worldwide Premier status automatically recognized",
+            "Overseas account opening support before arrival",
+            "Dedicated Premier Relationship Manager",
+            "Access to wealth specialists",
+            "Six Senses spa and wellness retreats benefits",
+            "Complimentary golf at top Indian courses with coaching",
+            "DreamFolks 3,000+ private clubs access globally",
+            "JLL property and relocation support",
+            "Overseas education support services",
+            "Airport transfers and meet & greet services",
+            "Bicester Collection private suite access",
+            "30% off dining via EazyDiner (max ₹1,250/month)"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Global citizens needing seamless international banking across countries",
+          "rating": 4.6,
+          "pros": [
+            "Unmatched Global View/Transfer features",
+            "Worldwide Premier status recognition",
+            "Excellent international banking network",
+            "Strong wealth management expertise"
+          ],
+          "cons": [
+            "Very high entry barrier (₹40 Lakhs TRB)",
+            "Higher forex markup (3.5%)",
+            "Limited branch network in India",
+            "Benefits vary between TRB vs salary/mortgage customers"
+          ]
+        }
+      },
+      {
+        "id": "hsbc-personal",
+        "name": "Personal Banking",
+        "type": "Both",
+        "hasRM": false,
+        "eligibility": {
+          "amb": 100000,
+          "aqb": 0,
+          "salary": 0,
+          "nrv": 0,
+          "description": "AMB ≥₹1 Lakh or as per account variant selected"
+        },
+        "benefits": {
+          "welcomeBenefits": null,
+          "debitCard": {
+            "name": "HSBC Visa/Mastercard Debit Card",
+            "image": "/assets/cards/debit/hsbc-personal.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "Not included",
+              "international": "Not included"
+            },
+            "limits": {
+              "atm": 100000,
+              "purchase": 200000
+            },
+            "forex": {
+              "markup": 0.035,
+              "text": "3.5% forex markup on international transactions"
+            }
+          },
+          "locker": {
+            "discount": 0.0,
+            "text": "Standard locker rates apply"
+          },
+          "investments": {
+            "dematAmc": 500,
+            "text": "Standard investment services"
+          },
+          "features": [
+            "HSBC India mobile app and net banking",
+            "International money transfers",
+            "Basic savings and current accounts",
+            "Access to HSBC credit cards",
+            "Home loans and personal loans"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Those wanting international bank presence without high balance",
+          "rating": 3.5,
+          "pros": [
+            "International bank credibility",
+            "Good digital banking platform",
+            "Gateway to Premier upgrade"
+          ],
+          "cons": [
+            "Limited benefits at base tier",
+            "No lounge access",
+            "Higher forex markup"
+          ]
+        }
+      }
+    ],
+    "familyBanking": {
+      "name": "HSBC Premier Family",
+      "eligibility": {
+        "minGroupNRV": 4000000,
+        "description": "Premier customers meeting TRB criteria can add family members"
+      },
+      "members": {
+        "maxCount": 5,
+        "allowed": ["Spouse", "Partners", "Children (up to 30 years)"]
+      },
+      "benefits": [
+        "Family members get Premier status",
+        "Combined wealth management",
+        "Global Premier benefits for family",
+        "Overseas education support for children"
+      ]
+    }
+  },
+  {
+    "id": "standard-chartered",
+    "name": "Standard Chartered Bank",
+    "tiers": [
+      {
+        "id": "sc-priority",
+        "name": "Priority",
+        "type": "Both",
+        "hasRM": true,
+        "eligibility": {
+          "amb": 5000000,
+          "aqb": 0,
+          "salary": 300000,
+          "nrv": 5000000,
+          "description": "Monthly Average FUM ≥₹50 Lakhs (Savings, Term Deposits, Investments, Life Insurance Premium, Demat Holdings) OR Monthly Salary Credit ≥₹3 Lakhs in SC Salary Account OR Mortgage Outstanding tiered by city (₹4Cr Mumbai/Delhi, ₹3Cr Bangalore/Chennai/Hyderabad/Pune/Kolkata, ₹2Cr other cities). Enhanced Priority at ₹2.5 Crores FUM."
+        },
+        "benefits": {
+          "welcomeBenefits": "30,000 reward points on joining",
+          "debitCard": {
+            "name": "Priority Visa Infinite Debit Card",
+            "image": "/assets/cards/debit/sc-priority.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "4/quarter",
+              "international": "Via Priority Pass (additional cost)"
+            },
+            "limits": {
+              "atm": 500000,
+              "purchase": 1000000
+            },
+            "forex": {
+              "markup": 0.035,
+              "text": "3.5% forex markup on international transactions"
+            }
+          },
+          "locker": {
+            "discount": 0.50,
+            "text": "50% discount on locker rental"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "SC Securities 3-in-1 account with preferential brokerage"
+          },
+          "features": [
+            "SC Wealth Academy trained relationship team",
+            "Priority status across 24 markets in Asia, Middle East, Africa",
+            "4 International Wealth Hubs access (Singapore, HK, UAE, Jersey)",
+            "Preferential FX rates on global transfers",
+            "SC Privileges integrated lifestyle platform",
+            "Up to 50% discount at 2000+ fine dine restaurants",
+            "Unlimited airport lounge access via credit card",
+            "Complimentary golf games",
+            "Priority Pass membership",
+            "Air Accident Cover ₹1 Crore",
+            "Purchase Protection ₹55,000",
+            "Family Priority status extension (spouse, children)"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Affluent individuals seeking global wealth expertise across markets",
+          "rating": 4.4,
+          "pros": [
+            "Strong international banking network (24 markets)",
+            "Excellent wealth management expertise",
+            "Family benefits included",
+            "Good dining and lifestyle privileges"
+          ],
+          "cons": [
+            "High entry barrier (₹50 Lakhs FUM)",
+            "Monthly charges on non-maintenance",
+            "Higher forex markup (3.5%)"
+          ]
+        }
+      },
+      {
+        "id": "sc-premium",
+        "name": "Premium",
+        "type": "Both",
+        "hasRM": true,
+        "eligibility": {
+          "amb": 1000000,
+          "aqb": 0,
+          "salary": 150000,
+          "nrv": 1000000,
+          "description": "Monthly Average FUM ≥₹10 Lakhs OR Monthly Salary Credit ≥₹1.5 Lakhs in SC Salary Account OR Mortgage ≥₹1 Crore (maintain >₹1 Cr outstanding after 12 months)"
+        },
+        "benefits": {
+          "welcomeBenefits": "Welcome vouchers on account opening",
+          "debitCard": {
+            "name": "Premium Visa Signature Debit Card",
+            "image": "/assets/cards/debit/sc-premium.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "1/month via Priority Pass",
+              "international": "Via Priority Pass (charged beyond free visit)"
+            },
+            "limits": {
+              "atm": 200000,
+              "purchase": 500000
+            },
+            "forex": {
+              "markup": 0.035,
+              "text": "3.5% forex markup on international transactions"
+            }
+          },
+          "locker": {
+            "discount": 0.25,
+            "text": "25% discount on locker rental"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "3-in-1 account with SC Securities"
+          },
+          "features": [
+            "Dedicated Relationship Manager",
+            "Insurance needs analysis tool",
+            "SC Invest - buy/pause/redeem funds easily",
+            "Free payable at par cheque book",
+            "24-hour and 365-day branches at select locations",
+            "Access to 20,000 ATMs in India, 1 million VISA ATMs globally",
+            "Premium dining offers",
+            "24-month e-statements and TDS certificates"
+          ]
+        },
+        "metadata": {
+          "bestFor": "Entry-level premium banking with SC's international network",
+          "rating": 4.0,
+          "pros": [
+            "Lower entry barrier than Priority",
+            "Good digital banking platform",
+            "Access to wealth solutions",
+            "Family benefits available"
+          ],
+          "cons": [
+            "Limited lounge access (1/month)",
+            "Higher forex markup",
+            "Fewer privileges than Priority tier"
+          ]
+        }
+      }
+    ],
+    "familyBanking": {
+      "name": "SC Family Banking",
+      "eligibility": {
+        "minGroupNRV": 1000000,
+        "description": "If one family member meets qualification, others can enjoy benefits"
+      },
+      "members": {
+        "maxCount": 4,
+        "allowed": ["Spouse", "Children", "Parents (if single status)"]
+      },
+      "benefits": [
+        "Complimentary Priority/Premium status for family",
+        "Travel and hospitality benefits extended",
+        "Wellness and overseas education benefits",
+        "Shared relationship management"
+      ]
+    }
+  },
+  {
+    "id": "bank-of-baroda",
+    "name": "Bank of Baroda",
+    "tiers": [
+      {
+        "id": "bob-radiance",
+        "name": "Baroda Radiance",
+        "type": "Both",
+        "hasRM": true,
+        "eligibility": {
+          "amb": 0,
+          "aqb": 3000000,
+          "salary": 0,
+          "nrv": 3000000,
+          "description": "QAB ≥₹30 Lakhs in Savings/Current Account OR Home Loan ≥₹3 Crores OR Auto Loan ≥₹25 Lakhs OR High-ranking Defence Officers (Colonel+)/Senior Government Officials (IAS/IPS/IFS/GM+)"
+        },
+        "benefits": {
+          "welcomeBenefits": "₹750 Lifestyle welcome voucher; premium welcome kit",
+          "debitCard": {
+            "name": "Baroda Sapphire Visa Signature Debit Card",
+            "image": "/assets/cards/debit/bob-radiance.png",
+            "annualFee": 0,
+            "lounge": {
+              "domestic": "2/quarter",
+              "international": "Not included"
+            },
+            "limits": {
+              "atm": 200000,
+              "purchase": 500000
+            },
+            "forex": {
+              "markup": 0.035,
+              "text": "3.5% forex markup on international transactions"
+            }
+          },
+          "locker": {
+            "discount": 0.50,
+            "text": "50% discount on locker rental"
+          },
+          "investments": {
+            "dematAmc": 0,
+            "text": "Wealth management services with certified professionals"
+          },
+          "features": [
+            "Dedicated Relationship Manager - non-pushy wealth advice",
+            "Complimentary Sapphire Visa Signature Debit Card (normally ₹750)",
+            "Eligibility for RuPay Select Debit Card",
+            "Complimentary Eterna Visa Infinite Credit Card (LTF for Radiance)",
+            "Baroda Radiance Lounges and Business Centers access",
+            "Customized financial planning program",
+            "Cutting-edge wealth management platform",
+            "BoB World app with full digital banking",
+            "Priority branch servicing",
+            "Home Loan with overdraft facility (like SBI MaxGain)"
+          ]
+        },
+        "metadata": {
+          "bestFor": "PSU bank customers seeking premium services with home loan overdraft",
+          "rating": 4.2,
+          "pros": [
+            "Excellent value at a PSU bank",
+            "LTF Eterna credit card for Radiance customers",
+            "Home loan overdraft facility (rare feature)",
+            "Non-pushy RM unlike private banks"
+          ],
+          "cons": [
+            "Branch staff often unaware of Radiance benefits",
+            "Must convert to Super Savings account for some cards",
+            "Limited international benefits",
+            "Slower processes compared to private banks"
+          ]
+        }
+      }
+    ],
+    "familyBanking": {
+      "name": "Baroda Radiance Family",
+      "eligibility": {
+        "minGroupNRV": 5000000,
+        "description": "Family banking available at higher threshold of ₹50 Lakhs QAB with primary maintaining minimum ₹30 Lakhs"
+      },
+      "members": {
+        "maxCount": 5,
+        "allowed": ["Spouse", "Children", "Parents"]
+      },
+      "benefits": [
+        "Uniform Radiance privileges for all family accounts",
+        "Combined QAB calculation",
+        "Shared RM and priority services",
+        "Extended locker and card benefits"
+      ]
+    }
+  }
+]

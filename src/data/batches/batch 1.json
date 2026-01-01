@@ -1,0 +1,346 @@
+[
+  {
+    "id": "hdfc-infinia-metal",
+    "name": "HDFC Infinia Metal Edition",
+    "bank": "HDFC Bank",
+    "image": "/assets/cards/hdfc-infinia-metal.png",
+    "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/infinia-credit-card",
+    "fees": {
+      "joining": 12500,
+      "annual": 12500,
+      "currency": "INR",
+      "waivedOn": 1000000,
+      "waiverText": "Waived on ₹10 lakh spend in preceding 12 months"
+    },
+    "eligibility": {
+      "income": 4800000,
+      "age": { "min": 21, "max": 60 },
+      "type": "Invite-only (HNI)"
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Reward Points",
+      "baseRate": 0.033,
+      "earningText": "5 Reward Points per ₹150 spent (3.3% via SmartBuy 1:1 redemption)",
+      "joiningBonus": "12,500 Reward Points + Club Marriott membership (1 year)",
+      "exclusions": "Fuel, Rent, Wallet loads, Govt payments",
+      "calculator": {
+        "tier": "super-premium",
+        "monthlyCap": 200000,
+        "capResetPeriod": "statement",
+        "specialLogic": null,
+        "categories": {
+          "travel": { "rate": 0.033, "label": "3.3% via SmartBuy (1 RP = ₹1)", "cap": null },
+          "dining": { "rate": 0.033, "label": "3.3% standard", "cap": null },
+          "online": { "rate": 0.033, "label": "3.3% standard", "cap": null },
+          "fuel": { "rate": 0, "label": "No rewards on fuel", "cap": null },
+          "groceries": { "rate": 0.033, "label": "3.3% (capped at 2,000 RP/month)", "cap": 667 },
+          "utilities": { "rate": 0.033, "label": "3.3% (capped at 2,000 RP/month)", "cap": 667 }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.0,
+        "bestOption": "Flights/Hotels via SmartBuy or Airmiles",
+        "options": [
+          { "type": "Travel (SmartBuy)", "value": 1.0, "desc": "1 RP = ₹1 for flights, hotels", "recommended": true },
+          { "type": "Apple/Tanishq (SmartBuy)", "value": 1.0, "desc": "1 RP = ₹1", "recommended": true },
+          { "type": "Airmiles", "value": 1.0, "desc": "1 RP = 1 Airmile", "recommended": true },
+          { "type": "Vouchers", "value": 0.50, "desc": "1 RP = ₹0.50", "recommended": false },
+          { "type": "Cashback", "value": 0.30, "desc": "1 RP = ₹0.30 (capped 50K RP/month)", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "Unlimited",
+        "international": "Unlimited via Priority Pass",
+        "accessType": "Priority Pass"
+      },
+      "milestones": [
+        { "spend": 1000000, "benefit": "Annual fee waiver + 12,500 RP on renewal" }
+      ],
+      "golf": { "included": true, "text": "Unlimited complimentary golf games & lessons at select courses" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 1000 },
+      "forex": { "markup": 0.02, "text": "2%" }
+    },
+    "metadata": {
+      "tags": ["Super-Premium", "Travel", "Invite-Only", "Metal"],
+      "bestFor": "Ultra-HNIs seeking best-in-class travel rewards & luxury benefits",
+      "rating": 4.8,
+      "verdict": "India's most aspirational card with 3.3% returns and unmatched travel perks"
+    }
+  },
+  {
+    "id": "sbi-cashback",
+    "name": "Cashback SBI Card",
+    "bank": "SBI Card",
+    "image": "/assets/cards/sbi-cashback.png",
+    "link": "https://www.sbicard.com/en/personal/credit-cards/rewards/cashback-sbi-card.page",
+    "fees": {
+      "joining": 999,
+      "annual": 999,
+      "currency": "INR",
+      "waivedOn": 200000,
+      "waiverText": "Waived on ₹2 lakh annual spend"
+    },
+    "eligibility": {
+      "income": 300000,
+      "age": { "min": 21, "max": 60 },
+      "type": "Salaried/Self-Employed"
+    },
+    "rewards": {
+      "type": "cashback",
+      "name": "Cashback",
+      "baseRate": 0.05,
+      "earningText": "5% cashback on online spends, 1% on offline",
+      "joiningBonus": "None",
+      "exclusions": "Fuel, Wallet, Rent, Jewelry, Education, Utility, Insurance, Railways, EMI",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": 5000,
+        "capResetPeriod": "statement",
+        "specialLogic": null,
+        "categories": {
+          "travel": { "rate": 0.05, "label": "5% online bookings", "cap": null },
+          "dining": { "rate": 0.05, "label": "5% online / 1% offline", "cap": null },
+          "online": { "rate": 0.05, "label": "5% all online spends", "cap": null },
+          "fuel": { "rate": 0, "label": "No cashback (1% surcharge waiver)", "cap": null },
+          "groceries": { "rate": 0.05, "label": "5% online / 1% offline", "cap": null },
+          "utilities": { "rate": 0, "label": "No cashback on utilities", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.0,
+        "bestOption": "Auto-credited to statement",
+        "options": [
+          { "type": "Statement Credit", "value": 1.0, "desc": "Auto-credited within 2 days of statement", "recommended": true }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "None",
+        "international": "None",
+        "accessType": "None"
+      },
+      "milestones": [],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 100 },
+      "forex": { "markup": 0.035, "text": "3.5%" }
+    },
+    "metadata": {
+      "tags": ["Cashback", "Online Shopping", "Entry-Level"],
+      "bestFor": "Online shoppers seeking simple, high-value cashback without points hassle",
+      "rating": 4.3,
+      "verdict": "Best pure cashback card in India with 5% on all online spends"
+    }
+  },
+  {
+    "id": "axis-magnus",
+    "name": "Axis Bank Magnus Credit Card",
+    "bank": "Axis Bank",
+    "image": "/assets/cards/axis-magnus.png",
+    "link": "https://www.axisbank.com/retail/cards/credit-card/axis-bank-magnus-credit-card",
+    "fees": {
+      "joining": 12500,
+      "annual": 12500,
+      "currency": "INR",
+      "waivedOn": 2500000,
+      "waiverText": "Waived on ₹25 lakh spend in preceding year"
+    },
+    "eligibility": {
+      "income": 2400000,
+      "age": { "min": 18, "max": 70 },
+      "type": "Salaried/Self-Employed"
+    },
+    "rewards": {
+      "type": "points",
+      "name": "EDGE Reward Points",
+      "baseRate": 0.012,
+      "earningText": "12 EDGE Points per ₹200 (up to ₹1.5L/month), 35 Points above ₹1.5L",
+      "joiningBonus": "₹12,500 voucher (Luxe/Postcard Hotels/Yatra) on first transaction within 30 days",
+      "exclusions": "Utility, Telecom, Rent (capped ₹50K), Wallet, Fuel, Insurance, Gold/Jewelry, Govt, EMI",
+      "calculator": {
+        "tier": "super-premium",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": null,
+        "categories": {
+          "travel": { "rate": 0.06, "label": "6% via Travel EDGE (60 pts/₹200 up to ₹2L)", "cap": null },
+          "dining": { "rate": 0.012, "label": "1.2% base (12 pts/₹200)", "cap": null },
+          "online": { "rate": 0.012, "label": "1.2% base (12 pts/₹200)", "cap": null },
+          "fuel": { "rate": 0, "label": "No rewards on fuel", "cap": null },
+          "groceries": { "rate": 0.012, "label": "1.2% base", "cap": null },
+          "utilities": { "rate": 0, "label": "No rewards on utilities", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.20,
+        "bestOption": "Transfer to Airline/Hotel partners (5:2 ratio)",
+        "options": [
+          { "type": "Partner Miles (Group B)", "value": 0.40, "desc": "5 EDGE = 2 partner miles (max 4L pts/year)", "recommended": true },
+          { "type": "Partner Miles (Group A)", "value": 0.40, "desc": "5 EDGE = 2 partner miles (max 1L pts/year)", "recommended": true },
+          { "type": "Vouchers/Products", "value": 0.20, "desc": "1 EDGE = ₹0.20", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "Unlimited (₹50K spend in preceding 3 months required)",
+        "international": "Unlimited via Priority Pass + 4 guest visits/year",
+        "accessType": "Priority Pass"
+      },
+      "milestones": [],
+      "golf": { "included": false, "text": "Available via Mastercard World (Dec 2024+)" },
+      "movies": { "included": true, "text": "BOGO up to ₹500 on District app (5 bookings/month)" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 400 },
+      "forex": { "markup": 0.02, "text": "2%" }
+    },
+    "metadata": {
+      "tags": ["Premium", "Travel", "Miles Transfer"],
+      "bestFor": "High spenders who can leverage miles transfer to airline/hotel partners",
+      "rating": 3.9,
+      "verdict": "Devalued but still offers strong lounge access and miles transfer flexibility"
+    }
+  },
+  {
+    "id": "amazon-pay-icici",
+    "name": "Amazon Pay ICICI Bank Credit Card",
+    "bank": "ICICI Bank",
+    "image": "/assets/cards/amazon-pay-icici.png",
+    "link": "https://www.icicibank.com/personal-banking/cards/credit-card/amazon-pay-credit-card",
+    "fees": {
+      "joining": 0,
+      "annual": 0,
+      "currency": "INR",
+      "waivedOn": null,
+      "waiverText": "Lifetime Free"
+    },
+    "eligibility": {
+      "income": 240000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Salaried/Self-Employed"
+    },
+    "rewards": {
+      "type": "cashback",
+      "name": "Amazon Pay Balance",
+      "baseRate": 0.05,
+      "earningText": "5% on Amazon (Prime), 3% (Non-Prime), 2% partners, 1% others",
+      "joiningBonus": "Welcome cashback up to ₹2,500",
+      "exclusions": "Fuel, Rent, Tax, Education, Utilities, EMI, Gold, International (from Oct 2025)",
+      "calculator": {
+        "tier": "co-branded",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": null,
+        "categories": {
+          "travel": { "rate": 0.05, "label": "5% via Amazon Pay (Prime)", "cap": null },
+          "dining": { "rate": 0.02, "label": "2% on Amazon Pay partners / 1% others", "cap": null },
+          "online": { "rate": 0.05, "label": "5% Amazon (Prime) / 3% (Non-Prime)", "cap": null },
+          "fuel": { "rate": 0, "label": "No cashback (1% surcharge waiver)", "cap": null },
+          "groceries": { "rate": 0.05, "label": "5% via Amazon Fresh (Prime)", "cap": null },
+          "utilities": { "rate": 0, "label": "No cashback on utilities", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.0,
+        "bestOption": "Amazon Pay Balance (auto-credited)",
+        "options": [
+          { "type": "Amazon Pay Balance", "value": 1.0, "desc": "1 Reward = ₹1 (auto-credited end of billing cycle)", "recommended": true }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "1 visit/quarter (₹75K spend required, Prime members only)",
+        "international": "None",
+        "accessType": "Conditional"
+      },
+      "milestones": [],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": null },
+      "forex": { "markup": 0.0199, "text": "1.99% (reduced from 3.5% in Oct 2025)" }
+    },
+    "metadata": {
+      "tags": ["Lifetime Free", "Co-branded", "Amazon", "Cashback"],
+      "bestFor": "Amazon Prime members seeking maximum value on Amazon ecosystem",
+      "rating": 4.5,
+      "verdict": "Best LTF card for Amazon loyalists with unlimited 5% cashback for Prime"
+    }
+  },
+  {
+    "id": "amex-platinum-travel",
+    "name": "American Express Platinum Travel Credit Card",
+    "bank": "American Express",
+    "image": "/assets/cards/amex-platinum-travel.png",
+    "link": "https://www.americanexpress.com/in/credit-cards/platinum-travel-credit-card/",
+    "fees": {
+      "joining": 5000,
+      "annual": 5000,
+      "currency": "INR",
+      "waivedOn": null,
+      "waiverText": "No annual fee waiver; milestone benefits offset cost"
+    },
+    "eligibility": {
+      "income": 600000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Salaried/Self-Employed"
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Membership Rewards Points",
+      "baseRate": 0.006,
+      "earningText": "1 MR Point per ₹50 spent (0.6% base, up to 5.5% with milestones)",
+      "joiningBonus": "10,000 MR Points on spending ₹15,000 within 90 days (worth ₹3,000)",
+      "exclusions": "Fuel, Insurance, Utilities, EMI conversions",
+      "calculator": {
+        "tier": "premium",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": null,
+        "categories": {
+          "travel": { "rate": 0.006, "label": "0.6% base (1 pt/₹50)", "cap": null },
+          "dining": { "rate": 0.006, "label": "0.6% base (1 pt/₹50)", "cap": null },
+          "online": { "rate": 0.006, "label": "0.6% base (1 pt/₹50)", "cap": null },
+          "fuel": { "rate": 0, "label": "No rewards on fuel", "cap": null },
+          "groceries": { "rate": 0.006, "label": "0.6% base", "cap": null },
+          "utilities": { "rate": 0, "label": "No rewards on utilities", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.30,
+        "bestOption": "Pay with Points on Amex Travel Online",
+        "options": [
+          { "type": "Amex Travel Online", "value": 0.30, "desc": "1 MR = ₹0.30 for flights/hotels", "recommended": true },
+          { "type": "Flipkart Voucher", "value": 0.30, "desc": "1 MR = ₹0.30", "recommended": true },
+          { "type": "Product Catalog", "value": 0.25, "desc": "1 MR = ~₹0.25", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "8 visits/year (max 2 per quarter)",
+        "international": "Priority Pass membership ($35 per visit)",
+        "accessType": "Complimentary domestic + Priority Pass"
+      },
+      "milestones": [
+        { "spend": 15000, "benefit": "10,000 Welcome MR Points (in first 90 days)" },
+        { "spend": 190000, "benefit": "15,000 Bonus MR Points" },
+        { "spend": 400000, "benefit": "25,000 Bonus MR Points + ₹10,000 Taj Voucher" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "Zero convenience fee at HPCL (<₹5,000)", "cap": null },
+      "forex": { "markup": 0.035, "text": "3.5%" }
+    },
+    "metadata": {
+      "tags": ["Travel", "Milestone", "Taj Hotels", "Amex"],
+      "bestFor": "Travelers who can hit ₹4L annual spend for milestone bonuses",
+      "rating": 4.1,
+      "verdict": "Excellent milestone value (up to 5.5%) with Taj perks for consistent spenders"
+    }
+  }
+]

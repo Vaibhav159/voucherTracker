@@ -1,0 +1,1035 @@
+[
+  {
+    "id": "hdfc-infinia-metal",
+    "name": "HDFC Infinia Metal Edition",
+    "bank": "HDFC Bank",
+    "image": "/assets/cards/hdfc-infinia-metal.png",
+    "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/infinia-credit-card",
+    "fees": {
+      "joining": 12500,
+      "annual": 12500,
+      "currency": "INR",
+      "waivedOn": 1000000,
+      "waiverText": "Waived on ₹10 Lakh spend in preceding 12 months"
+    },
+    "eligibility": {
+      "income": 2400000,
+      "age": { "min": 21, "max": 60 },
+      "type": "Invite Only",
+      "creditScore": 800
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Reward Points",
+      "baseRate": 0.033,
+      "earningText": "5 Reward Points per ₹150 spent (3.33% when redeemed at 1:1)",
+      "expiry": "3 years",
+      "joiningBonus": "12,500 Reward Points + Club Marriott Membership on fee payment",
+      "exclusions": "Fuel, Rent (via third-party apps), Government payments, Wallet loads",
+      "calculator": {
+        "tier": "super-premium",
+        "monthlyCap": null,
+        "capResetPeriod": "statement",
+        "specialLogic": null,
+        "categories": {
+          "travel": { "rate": 0.033, "label": "3.33% (5 RP/₹150)", "cap": null },
+          "dining": { "rate": 0.033, "label": "3.33% (5 RP/₹150)", "cap": null },
+          "online": { "rate": 0.033, "label": "3.33% (5 RP/₹150)", "cap": null },
+          "fuel": { "rate": 0.0, "label": "No rewards on fuel", "cap": null },
+          "groceries": { "rate": 0.033, "label": "3.33% (capped at 2,000 RP/month)", "cap": 2000 },
+          "utilities": { "rate": 0.033, "label": "3.33% (capped at 2,000 RP/month)", "cap": 2000 }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.0,
+        "bestOption": "Flights/Hotels on SmartBuy or Airmiles Transfer",
+        "options": [
+          { "type": "SmartBuy Flights/Hotels", "value": 1.0, "desc": "1 RP = ₹1 (up to 70% of booking, max 1.5L RP/month)", "recommended": true },
+          { "type": "Airmiles Transfer", "value": 1.0, "desc": "1 RP = 1 Airmile (InterMiles, Singapore Airlines, etc.)", "recommended": true },
+          { "type": "Apple Products", "value": 1.0, "desc": "1 RP = ₹1 via SmartBuy", "recommended": true },
+          { "type": "Tanishq Vouchers", "value": 1.0, "desc": "1 RP = ₹1 via SmartBuy", "recommended": true },
+          { "type": "Product Catalogue", "value": 0.50, "desc": "1 RP = ₹0.50", "recommended": false },
+          { "type": "Statement Credit", "value": 0.30, "desc": "1 RP = ₹0.30 (max 50K RP/month)", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "Unlimited",
+        "international": "Unlimited (Priority Pass)",
+        "accessType": "Priority Pass"
+      },
+      "milestones": [
+        { "spend": 0, "benefit": "12,500 RP + Club Marriott Membership on joining fee" },
+        { "spend": 0, "benefit": "12,500 RP on renewal fee payment" }
+      ],
+      "golf": { "included": true, "text": "Unlimited complimentary golf at partner courses" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 1000, "minTxn": 400, "maxTxn": 100000 },
+      "forex": { "markup": 0.02, "text": "2%" }
+    },
+    "metadata": {
+      "tags": ["Super Premium", "Travel", "Invite Only", "Metal Card", "Priority Pass"],
+      "bestFor": "Ultra HNIs seeking best-in-class rewards and unlimited premium benefits",
+      "rating": 4.8,
+      "verdict": "India's most aspirational credit card with 3.33% rewards and 1:1 airmile conversion",
+      "pros": [
+        "3.33% reward rate with 1:1 redemption",
+        "Up to 10X rewards via SmartBuy (33% returns)",
+        "Unlimited lounge access worldwide",
+        "Lowest forex markup at 2%",
+        "Rewards on insurance, utilities, education"
+      ],
+      "cons": [
+        "Invite only - extremely difficult to obtain",
+        "High annual fee ₹12,500 + GST",
+        "₹10L spend required for fee waiver",
+        "SmartBuy rewards capped at 15,000 RP/month",
+        "No rewards on fuel"
+      ]
+    }
+  },
+  {
+    "id": "hdfc-diners-club-black-metal",
+    "name": "HDFC Diners Club Black Metal Edition",
+    "bank": "HDFC Bank",
+    "image": "/assets/cards/hdfc-diners-black-metal.png",
+    "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/diners-club-black-metal-edition-credit-card",
+    "fees": {
+      "joining": 10000,
+      "annual": 10000,
+      "currency": "INR",
+      "waivedOn": 800000,
+      "waiverText": "Waived on ₹8 Lakh spend in card anniversary year"
+    },
+    "eligibility": {
+      "income": 1800000,
+      "age": { "min": 21, "max": 60 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Reward Points",
+      "baseRate": 0.033,
+      "earningText": "5 Reward Points per ₹150 spent (3.33% value back at 1:1 redemption)",
+      "expiry": "3 years",
+      "joiningBonus": "Club Marriott + Amazon Prime + Swiggy One on ₹1.5L spend in 90 days",
+      "exclusions": "Fuel, Rent, Government payments, Wallet loads",
+      "calculator": {
+        "tier": "super-premium",
+        "monthlyCap": 75000,
+        "capResetPeriod": "statement",
+        "specialLogic": null,
+        "categories": {
+          "travel": { "rate": 0.033, "label": "3.33% (5 RP/₹150)", "cap": null },
+          "dining": { "rate": 0.066, "label": "6.67% (10 RP/₹150 on weekends)", "cap": null },
+          "online": { "rate": 0.033, "label": "3.33% (5 RP/₹150)", "cap": null },
+          "fuel": { "rate": 0.0, "label": "No rewards on fuel", "cap": null },
+          "groceries": { "rate": 0.033, "label": "3.33% (capped at 2,000 RP/month)", "cap": 2000 },
+          "utilities": { "rate": 0.033, "label": "3.33% (capped at 2,000 RP/month)", "cap": 2000 }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.0,
+        "bestOption": "SmartBuy Flights/Hotels or Airmiles",
+        "options": [
+          { "type": "SmartBuy Flights/Hotels", "value": 1.0, "desc": "1 RP = ₹1 (max 75K RP/month)", "recommended": true },
+          { "type": "Airmiles Transfer", "value": 0.50, "desc": "2 RP = 1 Airmile (since Jan 2024)", "recommended": true },
+          { "type": "Product Catalogue", "value": 1.0, "desc": "1 RP = ₹1 for select items", "recommended": false },
+          { "type": "Vouchers", "value": 1.0, "desc": "1 RP = ₹1 for select vouchers", "recommended": false },
+          { "type": "Statement Credit", "value": 0.30, "desc": "1 RP = ₹0.30", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "Unlimited",
+        "international": "Unlimited (1300+ lounges)",
+        "accessType": "Diners Club Network"
+      },
+      "milestones": [
+        { "spend": 150000, "benefit": "Club Marriott + Amazon Prime + Swiggy One (in 90 days)" },
+        { "spend": 400000, "benefit": "10,000 Bonus RP per quarter (₹4L spend)" }
+      ],
+      "golf": { "included": true, "text": "6 complimentary golf games per quarter" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 500, "minTxn": 400, "maxTxn": 5000 },
+      "forex": { "markup": 0.02, "text": "2%" }
+    },
+    "metadata": {
+      "tags": ["Super Premium", "Travel", "Metal Card", "Diners Club"],
+      "bestFor": "Frequent travelers and high spenders wanting premium benefits without invite-only restrictions",
+      "rating": 4.6,
+      "verdict": "Best alternative to Infinia with similar benefits and easier acquisition",
+      "pros": [
+        "3.33% reward rate matching Infinia",
+        "Unlimited lounge access worldwide",
+        "10X rewards via SmartBuy",
+        "2X rewards on weekend dining",
+        "Quarterly milestone bonus of 10K RP"
+      ],
+      "cons": [
+        "₹10,000 + GST annual fee",
+        "Diners Club acceptance limited at some merchants",
+        "Airmile conversion devalued (2:1 ratio)",
+        "Max 75,000 RP earning per statement cycle",
+        "Insurance rewards capped at 5,000 RP/month"
+      ]
+    }
+  },
+  {
+    "id": "hdfc-tata-neu-infinity",
+    "name": "Tata Neu Infinity HDFC Bank Credit Card",
+    "bank": "HDFC Bank",
+    "image": "/assets/cards/hdfc-tata-neu-infinity.png",
+    "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/tata-neu-infinity-hdfc-bank-credit-card",
+    "fees": {
+      "joining": 1499,
+      "annual": 1499,
+      "currency": "INR",
+      "waivedOn": 300000,
+      "waiverText": "Waived on ₹3 Lakh spend in a year"
+    },
+    "eligibility": {
+      "income": 1200000,
+      "age": { "min": 21, "max": 60 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "NeuCoins",
+      "baseRate": 0.015,
+      "earningText": "1.5% NeuCoins on all spends, up to 10% on Tata Neu app",
+      "expiry": "12 months (from Aug 2025)",
+      "joiningBonus": "1,499 NeuCoins on first transaction within 30 days",
+      "exclusions": "Fuel, Rent, Government, Wallet loads, Online Gaming (from July 2025)",
+      "calculator": {
+        "tier": "co-branded",
+        "monthlyCap": 50000,
+        "capResetPeriod": "statement",
+        "specialLogic": "tata-neu-tiered",
+        "categories": {
+          "travel": { "rate": 0.015, "label": "1.5% NeuCoins", "cap": null },
+          "dining": { "rate": 0.015, "label": "1.5% NeuCoins", "cap": null },
+          "online": { "rate": 0.10, "label": "10% on Tata Neu (5%+5% NeuPass)", "cap": null },
+          "fuel": { "rate": 0.0, "label": "No NeuCoins on fuel", "cap": null },
+          "groceries": { "rate": 0.05, "label": "5% on BigBasket (Tata brand)", "cap": 2000 },
+          "utilities": { "rate": 0.015, "label": "1.5% (capped at 2,000/month)", "cap": 2000 }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.0,
+        "bestOption": "Tata Neu app/partner brands",
+        "options": [
+          { "type": "Tata Neu/Partners", "value": 1.0, "desc": "1 NeuCoin = ₹1 at BigBasket, Croma, Westside, Taj, etc.", "recommended": true },
+          { "type": "Tanishq", "value": 1.0, "desc": "1 NeuCoin = ₹1 for gold/jewellery", "recommended": true },
+          { "type": "Air India", "value": 1.0, "desc": "1 NeuCoin = ₹1 for flights", "recommended": true }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "8 per year (2/quarter on ₹50K spend) - milestone based from June 2025",
+        "international": "4 per year (1/quarter) via Priority Pass",
+        "accessType": "Priority Pass (Visa) / Voucher (RuPay)"
+      },
+      "milestones": [
+        { "spend": 50000, "benefit": "2 domestic lounge vouchers per quarter" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 500, "minTxn": 400, "maxTxn": 5000 },
+      "forex": { "markup": 0.02, "text": "2% + GST" }
+    },
+    "metadata": {
+      "tags": ["Co-branded", "Lifestyle", "Tata", "RuPay UPI"],
+      "bestFor": "Tata ecosystem loyalists who shop at BigBasket, Croma, Westside, Taj",
+      "rating": 4.2,
+      "verdict": "Best card for Tata brand users with up to 10% value back on ecosystem spends",
+      "pros": [
+        "Up to 10% NeuCoins on Tata Neu + NeuPass",
+        "5% on Tata partner brands (BigBasket, Croma, Taj)",
+        "1.5% on UPI spends via RuPay variant",
+        "Low forex markup at 2%",
+        "LTF offers available periodically"
+      ],
+      "cons": [
+        "NeuCoins validity reduced to 12 months",
+        "Lounge access now milestone-based",
+        "Multiple category caps (2,000/month each)",
+        "No rewards on rent, fuel, gaming"
+      ]
+    }
+  },
+  {
+    "id": "hdfc-swiggy",
+    "name": "Swiggy HDFC Bank Credit Card",
+    "bank": "HDFC Bank",
+    "image": "/assets/cards/hdfc-swiggy.png",
+    "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/swiggy-hdfc-bank-credit-card",
+    "fees": {
+      "joining": 500,
+      "annual": 500,
+      "currency": "INR",
+      "waivedOn": 200000,
+      "waiverText": "Waived on ₹2 Lakh spend in a year"
+    },
+    "eligibility": {
+      "income": 180000,
+      "age": { "min": 21, "max": 60 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "cashback",
+      "name": "Cashback",
+      "baseRate": 0.01,
+      "earningText": "10% on Swiggy, 5% on online shopping, 1% on others",
+      "expiry": "Statement credit (from June 2024)",
+      "joiningBonus": "3 months complimentary Swiggy One membership",
+      "exclusions": "Fuel, Rent, EMI, Wallet loads, Jewellery, Government, Utilities",
+      "calculator": {
+        "tier": "co-branded",
+        "monthlyCap": 3500,
+        "capResetPeriod": "statement",
+        "specialLogic": "swiggy-tiered",
+        "categories": {
+          "travel": { "rate": 0.05, "label": "5% (online travel booking)", "cap": 1500 },
+          "dining": { "rate": 0.10, "label": "10% on Swiggy/Dineout/Instamart/Genie", "cap": 1500 },
+          "online": { "rate": 0.05, "label": "5% on select MCCs", "cap": 1500 },
+          "fuel": { "rate": 0.0, "label": "No cashback on fuel", "cap": null },
+          "groceries": { "rate": 0.10, "label": "10% on Swiggy Instamart", "cap": 1500 },
+          "utilities": { "rate": 0.0, "label": "No cashback on utilities", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.0,
+        "bestOption": "Statement credit (auto-applied)",
+        "options": [
+          { "type": "Statement Credit", "value": 1.0, "desc": "Auto-credited to next statement balance", "recommended": true }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "None",
+        "international": "None",
+        "accessType": "None"
+      },
+      "milestones": [],
+      "golf": { "included": true, "text": "4 complimentary golf rounds per year (Mastercard World)" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "0%", "cap": 0 },
+      "forex": { "markup": 0.035, "text": "3.5% + GST" }
+    },
+    "metadata": {
+      "tags": ["Co-branded", "Food", "Cashback", "Entry Level"],
+      "bestFor": "Frequent Swiggy users who order food delivery, groceries via Instamart",
+      "rating": 4.0,
+      "verdict": "Best card for food delivery enthusiasts with 10% cashback on Swiggy ecosystem",
+      "pros": [
+        "10% cashback on Swiggy (Food, Instamart, Dineout, Genie)",
+        "5% on major online shopping platforms",
+        "Cashback now credited directly to statement",
+        "Low annual fee of ₹500",
+        "Free 3-month Swiggy One membership"
+      ],
+      "cons": [
+        "No airport lounge access",
+        "Monthly caps: ₹1,500 each for Swiggy and online",
+        "5% online cashback MCC-based, can be inconsistent",
+        "No fuel surcharge waiver",
+        "Short Swiggy One membership (3 months only)"
+      ]
+    }
+  },
+  {
+    "id": "hdfc-regalia-gold",
+    "name": "HDFC Regalia Gold Credit Card",
+    "bank": "HDFC Bank",
+    "image": "/assets/cards/hdfc-regalia-gold.png",
+    "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/regalia-gold-credit-card",
+    "fees": {
+      "joining": 2500,
+      "annual": 2500,
+      "currency": "INR",
+      "waivedOn": 400000,
+      "waiverText": "Waived on ₹4 Lakh spend in card anniversary year"
+    },
+    "eligibility": {
+      "income": 1800000,
+      "age": { "min": 21, "max": 60 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Reward Points",
+      "baseRate": 0.0267,
+      "earningText": "4 Reward Points per ₹150 spent (2.67% at 1:1, up to 13% on partners)",
+      "expiry": "2 years",
+      "joiningBonus": "₹2,500 gift voucher + Club Vistara Silver + MMT Black Elite (on ₹1L spend in 90 days)",
+      "exclusions": "Rent, Government payments (rewards available on fuel, utilities, insurance)",
+      "calculator": {
+        "tier": "premium",
+        "monthlyCap": null,
+        "capResetPeriod": "statement",
+        "specialLogic": null,
+        "categories": {
+          "travel": { "rate": 0.0267, "label": "2.67% (4 RP/₹150)", "cap": null },
+          "dining": { "rate": 0.0267, "label": "2.67% (4 RP/₹150)", "cap": null },
+          "online": { "rate": 0.133, "label": "13.3% on Myntra/Nykaa/Reliance Digital (5X)", "cap": 5000 },
+          "fuel": { "rate": 0.0267, "label": "2.67% (4 RP/₹150) + 1% surcharge waiver", "cap": null },
+          "groceries": { "rate": 0.0267, "label": "2.67% (4 RP/₹150)", "cap": null },
+          "utilities": { "rate": 0.0267, "label": "2.67% (4 RP/₹150)", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.50,
+        "bestOption": "SmartBuy Flights/Hotels or Gold Catalogue",
+        "options": [
+          { "type": "SmartBuy Flights/Hotels", "value": 0.50, "desc": "1 RP = ₹0.50 (up to 70% of booking, max 50K RP/month)", "recommended": true },
+          { "type": "Gold Catalogue", "value": 0.65, "desc": "1 RP = ₹0.65 (Apple, Bose, Fitbit)", "recommended": true },
+          { "type": "Airmiles", "value": 0.50, "desc": "1 RP = 0.5 Airmile", "recommended": false },
+          { "type": "Vouchers", "value": 0.35, "desc": "1 RP = ₹0.35", "recommended": false },
+          { "type": "Statement Credit", "value": 0.20, "desc": "1 RP = ₹0.20 (max 50K RP/month)", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "12 per year (no spending threshold)",
+        "international": "6 per year via Priority Pass",
+        "accessType": "Priority Pass"
+      },
+      "milestones": [
+        { "spend": 150000, "benefit": "₹1,500 voucher (Marriott/Myntra/M&S/Reliance Digital) per quarter" },
+        { "spend": 500000, "benefit": "₹5,000 SmartBuy flight voucher annually" },
+        { "spend": 750000, "benefit": "Additional ₹5,000 SmartBuy flight voucher annually" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 500, "minTxn": 400, "maxTxn": 5000 },
+      "forex": { "markup": 0.02, "text": "2%" }
+    },
+    "metadata": {
+      "tags": ["Premium", "Travel", "Lifestyle", "Priority Pass"],
+      "bestFor": "Frequent travelers wanting premium benefits at a moderate fee",
+      "rating": 4.4,
+      "verdict": "Best mid-tier premium card with solid rewards, lounge access, and travel perks",
+      "pros": [
+        "Rewards on insurance, utilities, education, fuel",
+        "5X on partner brands (Myntra, Nykaa, Reliance Digital)",
+        "12 domestic + 6 international lounge visits",
+        "Quarterly and annual milestone vouchers",
+        "Low forex markup at 2%"
+      ],
+      "cons": [
+        "₹2,500 + GST fee with ₹4L waiver threshold",
+        "Base redemption value (₹0.50) lower than Infinia",
+        "SmartBuy bonus capped at 5,000 RP/month",
+        "₹99 redemption fee applies"
+      ]
+    }
+  },
+  {
+    "id": "marriott-bonvoy-hdfc",
+    "name": "Marriott Bonvoy HDFC Bank Credit Card",
+    "bank": "HDFC Bank",
+    "image": "/assets/cards/hdfc-marriott-bonvoy.png",
+    "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/marriott-bonvoy-credit-card",
+    "fees": {
+      "joining": 3000,
+      "annual": 3000,
+      "currency": "INR",
+      "waivedOn": null,
+      "waiverText": "No fee waiver available"
+    },
+    "eligibility": {
+      "income": 1200000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Marriott Bonvoy Points",
+      "baseRate": 0.0133,
+      "earningText": "8 points/₹150 at Marriott Hotels, 4 points/₹150 on Travel/Dining, 2 points/₹150 on others",
+      "expiry": "Never (with activity every 24 months)",
+      "joiningBonus": "1 Free Night Award (up to 15,000 points) on first transaction or fee levy",
+      "exclusions": "Fuel, Wallet loads, Gift cards, Vouchers, Cash advances, EMI",
+      "calculator": {
+        "tier": "co-branded",
+        "monthlyCap": null,
+        "capResetPeriod": "statement",
+        "specialLogic": "marriott-tiered",
+        "categories": {
+          "travel": { "rate": 0.0267, "label": "2.67% (4 points/₹150)", "cap": null },
+          "dining": { "rate": 0.0267, "label": "2.67% (4 points/₹150)", "cap": null },
+          "online": { "rate": 0.0133, "label": "1.33% (2 points/₹150)", "cap": null },
+          "fuel": { "rate": 0.0, "label": "No points on fuel", "cap": null },
+          "groceries": { "rate": 0.0133, "label": "1.33% (2 points/₹150)", "cap": null },
+          "utilities": { "rate": 0.0133, "label": "1.33% (2 points/₹150)", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.70,
+        "bestOption": "Marriott Bonvoy hotel stays",
+        "options": [
+          { "type": "Marriott Hotel Stay", "value": 0.70, "desc": "Book at 8000+ properties worldwide", "recommended": true },
+          { "type": "Free Night Awards", "value": 0.70, "desc": "Redeem milestone Free Nights at Marriott properties", "recommended": true },
+          { "type": "Marriott Bonvoy Moments", "value": 0.50, "desc": "Experiences and events", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "12 per year (both domestic and international terminals)",
+        "international": "12 per year",
+        "accessType": "DCI Travel Tool App"
+      },
+      "milestones": [
+        { "spend": 0, "benefit": "1 Free Night Award (up to 15K points) on joining" },
+        { "spend": 600000, "benefit": "1 Free Night Award (up to 15K points)" },
+        { "spend": 900000, "benefit": "1 Free Night Award (up to 15K points)" },
+        { "spend": 1500000, "benefit": "1 Free Night Award (up to 15K points)" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "0%", "cap": 0 },
+      "forex": { "markup": 0.035, "text": "3.5%" }
+    },
+    "metadata": {
+      "tags": ["Co-branded", "Hotel", "Travel", "Marriott", "Diners Club"],
+      "bestFor": "Marriott loyalists who frequently stay at Marriott properties",
+      "rating": 4.1,
+      "verdict": "India's first hotel co-branded card with excellent Marriott-specific rewards",
+      "pros": [
+        "Up to 4 Free Night Awards annually on milestones",
+        "8X points at Marriott properties (5.33% value)",
+        "Complimentary Silver Elite status",
+        "12+12 lounge access (domestic + international)",
+        "Points never expire with activity"
+      ],
+      "cons": [
+        "No fee waiver option",
+        "Benefits limited to Marriott ecosystem",
+        "3.5% forex markup is high",
+        "Diners Club network has limited acceptance",
+        "No fuel surcharge waiver"
+      ]
+    }
+  },
+  {
+    "id": "hdfc-millennia",
+    "name": "HDFC Millennia Credit Card",
+    "bank": "HDFC Bank",
+    "image": "/assets/cards/hdfc-millennia.png",
+    "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/millennia-credit-card",
+    "fees": {
+      "joining": 1000,
+      "annual": 1000,
+      "currency": "INR",
+      "waivedOn": 100000,
+      "waiverText": "Waived on ₹1 Lakh spend in 12 months"
+    },
+    "eligibility": {
+      "income": 420000,
+      "age": { "min": 21, "max": 40 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "cashback",
+      "name": "CashPoints",
+      "baseRate": 0.01,
+      "earningText": "5% on 10 partner brands, 1% on other spends (as CashPoints)",
+      "expiry": "2 years",
+      "joiningBonus": "1,000 CashPoints on joining fee payment",
+      "exclusions": "Fuel, Rent, Government, Wallet loads, EMI, Education (via third-party apps)",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": 2000,
+        "capResetPeriod": "calendar",
+        "specialLogic": "millennia-partner",
+        "categories": {
+          "travel": { "rate": 0.01, "label": "1% CashPoints", "cap": 1000 },
+          "dining": { "rate": 0.05, "label": "5% on Swiggy, Zomato", "cap": 1000 },
+          "online": { "rate": 0.05, "label": "5% on Amazon, Flipkart, Myntra, etc.", "cap": 1000 },
+          "fuel": { "rate": 0.0, "label": "No CashPoints on fuel", "cap": null },
+          "groceries": { "rate": 0.01, "label": "1% CashPoints", "cap": 1000 },
+          "utilities": { "rate": 0.01, "label": "1% CashPoints", "cap": 1000 }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.0,
+        "bestOption": "Statement credit",
+        "options": [
+          { "type": "Statement Credit", "value": 1.0, "desc": "1 CashPoint = ₹1 (min 500 points, max 3K/month, ₹50 fee)", "recommended": true },
+          { "type": "SmartBuy Flights/Hotels", "value": 1.0, "desc": "1 CashPoint = ₹1 (up to 50% of booking, max 50K/month)", "recommended": true },
+          { "type": "Products/Vouchers", "value": 0.30, "desc": "1 CashPoint = ₹0.30", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "1 per quarter (bundled with milestone)",
+        "international": "None",
+        "accessType": "Card swipe"
+      },
+      "milestones": [
+        { "spend": 100000, "benefit": "₹1,000 gift voucher (BigBasket/BookMyShow/PVR/Pizza Hut) per quarter" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 250, "minTxn": 400, "maxTxn": 5000 },
+      "forex": { "markup": 0.035, "text": "3.5%" }
+    },
+    "metadata": {
+      "tags": ["Entry Level", "Cashback", "Millennials", "Online Shopping"],
+      "bestFor": "Young professionals who shop frequently on Amazon, Flipkart, Swiggy, Zomato",
+      "rating": 4.0,
+      "verdict": "Best entry-level card for millennials with 5% on top 10 online brands",
+      "pros": [
+        "5% on Amazon, Flipkart, Myntra, Swiggy, Zomato, Uber, etc.",
+        "1 CashPoint = ₹1 redemption (1:1 ratio)",
+        "Low ₹1 Lakh waiver threshold",
+        "Quarterly milestone vouchers",
+        "Good beginner card for credit building"
+      ],
+      "cons": [
+        "Separate 1,000 point caps on 5% and 1% categories",
+        "₹50 redemption fee from Aug 2024",
+        "Lounge access tied to milestone benefit",
+        "No international lounge access",
+        "3.5% forex markup"
+      ]
+    }
+  },
+  {
+    "id": "irctc-hdfc",
+    "name": "IRCTC HDFC Bank Credit Card",
+    "bank": "HDFC Bank",
+    "image": "/assets/cards/hdfc-irctc.png",
+    "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/irctc-credit-card",
+    "fees": {
+      "joining": 500,
+      "annual": 500,
+      "currency": "INR",
+      "waivedOn": 150000,
+      "waiverText": "Waived on ₹1.5 Lakh spend in anniversary year"
+    },
+    "eligibility": {
+      "income": 180000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Reward Points",
+      "baseRate": 0.01,
+      "earningText": "5 RP per ₹100 on IRCTC (5%), 1 RP per ₹100 on others (1%)",
+      "expiry": "2 years",
+      "joiningBonus": "₹500 gift voucher on first transaction within 37 days",
+      "exclusions": "Fuel, Wallet loads, Gift cards, Vouchers, EMI, Government, Education, Rent",
+      "calculator": {
+        "tier": "co-branded",
+        "monthlyCap": 1000,
+        "capResetPeriod": "calendar",
+        "specialLogic": "irctc-rail",
+        "categories": {
+          "travel": { "rate": 0.05, "label": "5% on IRCTC bookings (5 RP/₹100)", "cap": 1000 },
+          "dining": { "rate": 0.01, "label": "1% (1 RP/₹100)", "cap": null },
+          "online": { "rate": 0.01, "label": "1% (1 RP/₹100)", "cap": null },
+          "fuel": { "rate": 0.0, "label": "No rewards on fuel", "cap": null },
+          "groceries": { "rate": 0.01, "label": "1% (capped at 1,000 RP/month)", "cap": 1000 },
+          "utilities": { "rate": 0.01, "label": "1% (1 RP/₹100)", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.0,
+        "bestOption": "Train ticket booking via SmartBuy",
+        "options": [
+          { "type": "IRCTC Train Booking (SmartBuy)", "value": 1.0, "desc": "1 RP = ₹1 (up to 70% of fare, min 100 RP)", "recommended": true },
+          { "type": "IRCTC Vouchers", "value": 1.0, "desc": "1 RP = ₹1 via SmartBuy/NetBanking", "recommended": true }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "8 IRCTC Executive Lounge visits per year (2/quarter)",
+        "international": "None",
+        "accessType": "Railway Lounge"
+      },
+      "milestones": [
+        { "spend": 30000, "benefit": "₹500 gift voucher per quarter" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 250, "minTxn": 400, "maxTxn": 5000 },
+      "forex": { "markup": 0.035, "text": "3.5%" }
+    },
+    "metadata": {
+      "tags": ["Co-branded", "Travel", "Railways", "IRCTC", "RuPay UPI"],
+      "bestFor": "Frequent train travelers who book via IRCTC",
+      "rating": 3.8,
+      "verdict": "Best card for train travelers with 5% on IRCTC + 5% SmartBuy cashback",
+      "pros": [
+        "5% rewards on IRCTC bookings",
+        "Additional 5% cashback via SmartBuy",
+        "1% IRCTC transaction charge waiver",
+        "8 railway lounge visits/year",
+        "RuPay variant supports UPI with rewards"
+      ],
+      "cons": [
+        "Low 1% base reward rate on non-IRCTC spends",
+        "Monthly cap of 1,000 RP on accelerated rewards",
+        "No airport lounge access",
+        "Limited to train travel benefits",
+        "₹99 redemption fee"
+      ]
+    }
+  },
+  {
+    "id": "hdfc-pixel-play",
+    "name": "HDFC Pixel Play Credit Card",
+    "bank": "HDFC Bank",
+    "image": "/assets/cards/hdfc-pixel-play.png",
+    "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/pixel-play-credit-card",
+    "fees": {
+      "joining": 500,
+      "annual": 500,
+      "currency": "INR",
+      "waivedOn": 100000,
+      "waiverText": "Joining fee waived on ₹20K in 90 days; Annual fee waived on ₹1L/year"
+    },
+    "eligibility": {
+      "income": 300000,
+      "age": { "min": 21, "max": 60 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "cashback",
+      "name": "CashPoints",
+      "baseRate": 0.01,
+      "earningText": "5% on 2 chosen categories, 3% on 1 e-commerce merchant, 1% on others",
+      "expiry": "2 years",
+      "joiningBonus": "Joining fee waiver on ₹20,000 spend in 90 days",
+      "exclusions": "Fuel, Rent, EMI, Wallet loads, Government",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": 1500,
+        "capResetPeriod": "calendar",
+        "specialLogic": "pixel-customizable",
+        "categories": {
+          "travel": { "rate": 0.05, "label": "5% if Travel pack selected", "cap": 500 },
+          "dining": { "rate": 0.05, "label": "5% if Dining pack selected (BookMyShow, Zomato)", "cap": 500 },
+          "online": { "rate": 0.03, "label": "3% on Amazon/Flipkart/PayZapp (choose 1)", "cap": 500 },
+          "fuel": { "rate": 0.0, "label": "No CashPoints on fuel", "cap": null },
+          "groceries": { "rate": 0.05, "label": "5% if Grocery pack selected", "cap": 500 },
+          "utilities": { "rate": 0.01, "label": "1% CashPoints", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.0,
+        "bestOption": "PayZapp wallet for brand vouchers",
+        "options": [
+          { "type": "PayZapp Wallet", "value": 1.0, "desc": "Redeem for brand vouchers (min 1,000 CashPoints)", "recommended": true }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "None",
+        "international": "None",
+        "accessType": "None"
+      },
+      "milestones": [],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 250, "minTxn": 400, "maxTxn": 5000 },
+      "forex": { "markup": 0.035, "text": "3.5%" }
+    },
+    "metadata": {
+      "tags": ["Digital", "Customizable", "Cashback", "Entry Level", "PayZapp"],
+      "bestFor": "Digital-first users who want to customize their reward categories",
+      "rating": 3.9,
+      "verdict": "India's first customizable digital credit card with up to 5% on chosen categories",
+      "pros": [
+        "Choose 2 categories for 5% + 1 e-commerce for 3%",
+        "Customizable card design and billing cycle",
+        "Fully digital management via PayZapp",
+        "Low ₹500 annual fee with easy waiver",
+        "1% UPI cashback on RuPay variant"
+      ],
+      "cons": [
+        "500 points cap per category per month",
+        "Redemption only via PayZapp wallet",
+        "No lounge access",
+        "Categories changeable only every 3 months",
+        "Shared limit if existing HDFC card holder"
+      ]
+    }
+  },
+  {
+    "id": "hdfc-pixel-go",
+    "name": "HDFC Pixel Go Credit Card",
+    "bank": "HDFC Bank",
+    "image": "/assets/cards/hdfc-pixel-go.png",
+    "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/pixel-go-credit-card",
+    "fees": {
+      "joining": 250,
+      "annual": 250,
+      "currency": "INR",
+      "waivedOn": 50000,
+      "waiverText": "Joining fee waived on ₹10K in 90 days; Annual fee waived on ₹50K/year"
+    },
+    "eligibility": {
+      "income": 240000,
+      "age": { "min": 21, "max": 60 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 650
+    },
+    "rewards": {
+      "type": "cashback",
+      "name": "CashPoints",
+      "baseRate": 0.01,
+      "earningText": "5% on SmartBuy, 1% on all other eligible spends",
+      "expiry": "2 years",
+      "joiningBonus": "Joining fee waiver on ₹10,000 spend in 90 days",
+      "exclusions": "Fuel, Rent, EMI, Wallet loads, Government",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": null,
+        "categories": {
+          "travel": { "rate": 0.05, "label": "5% on SmartBuy travel", "cap": 500 },
+          "dining": { "rate": 0.01, "label": "1% CashPoints", "cap": null },
+          "online": { "rate": 0.05, "label": "5% on SmartBuy", "cap": 500 },
+          "fuel": { "rate": 0.0, "label": "No CashPoints on fuel", "cap": null },
+          "groceries": { "rate": 0.01, "label": "1% CashPoints", "cap": null },
+          "utilities": { "rate": 0.01, "label": "1% CashPoints", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.0,
+        "bestOption": "PayZapp wallet for brand vouchers",
+        "options": [
+          { "type": "PayZapp Wallet", "value": 1.0, "desc": "Redeem for brand vouchers (min 500 CashPoints)", "recommended": true }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "None",
+        "international": "None",
+        "accessType": "None"
+      },
+      "milestones": [],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 250, "minTxn": 400, "maxTxn": 5000 },
+      "forex": { "markup": 0.035, "text": "3.5%" }
+    },
+    "metadata": {
+      "tags": ["Digital", "Entry Level", "Cashback", "Beginner", "PayZapp"],
+      "bestFor": "Credit card beginners looking for a simple, low-fee digital card",
+      "rating": 3.6,
+      "verdict": "Best beginner card with simple 1% cashback and easy fee waiver",
+      "pros": [
+        "Lowest fee at ₹250 + GST",
+        "Easy ₹50K waiver threshold",
+        "1% unlimited cashback on most spends",
+        "5% on SmartBuy purchases",
+        "Fully digital via PayZapp"
+      ],
+      "cons": [
+        "Low 1% base reward rate",
+        "SmartBuy cashback capped at 500/month",
+        "No lounge access",
+        "Limited to PayZapp redemption",
+        "No customization like Pixel Play"
+      ]
+    }
+  },
+  {
+    "id": "hdfc-shoppers-stop",
+    "name": "Shoppers Stop HDFC Bank Credit Card",
+    "bank": "HDFC Bank",
+    "image": "/assets/cards/hdfc-shoppers-stop.png",
+    "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/shoppers-stop-hdfc-bank-credit-card",
+    "fees": {
+      "joining": 299,
+      "annual": 299,
+      "currency": "INR",
+      "waivedOn": null,
+      "waiverText": "No fee waiver (was LTF before March 2024)"
+    },
+    "eligibility": {
+      "income": 240000,
+      "age": { "min": 21, "max": 60 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Reward Points",
+      "baseRate": 0.01,
+      "earningText": "3% on Shoppers Stop, 1% on other spends (as HDFC Reward Points from Mar 2024)",
+      "expiry": "2 years",
+      "joiningBonus": "Shoppers Stop voucher worth ₹500 + Silver Edge Membership",
+      "exclusions": "Rent, Government payments (Grocery capped at 1,000 RP/month)",
+      "calculator": {
+        "tier": "co-branded",
+        "monthlyCap": 1500,
+        "capResetPeriod": "calendar",
+        "specialLogic": null,
+        "categories": {
+          "travel": { "rate": 0.01, "label": "1% (1 RP)", "cap": 1000 },
+          "dining": { "rate": 0.01, "label": "1% (1 RP)", "cap": 1000 },
+          "online": { "rate": 0.03, "label": "3% on Shoppers Stop online", "cap": 500 },
+          "fuel": { "rate": 0.01, "label": "1% + surcharge waiver", "cap": null },
+          "groceries": { "rate": 0.01, "label": "1% (capped at 1,000 RP/month)", "cap": 1000 },
+          "utilities": { "rate": 0.01, "label": "1% (1 RP)", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.0,
+        "bestOption": "Shoppers Stop vouchers",
+        "options": [
+          { "type": "Shoppers Stop Vouchers", "value": 1.0, "desc": "1 RP = ₹1 at Shoppers Stop", "recommended": true },
+          { "type": "SmartBuy Travel", "value": 0.20, "desc": "1 RP = ₹0.20", "recommended": false },
+          { "type": "Statement Credit", "value": 0.20, "desc": "1 RP = ₹0.20", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "None",
+        "international": "None",
+        "accessType": "None"
+      },
+      "milestones": [
+        { "spend": 15000, "benefit": "₹500 Shoppers Stop voucher on weekend purchase (max 5/year)" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 250, "minTxn": 400, "maxTxn": 5000 },
+      "forex": { "markup": 0.035, "text": "3.5%" }
+    },
+    "metadata": {
+      "tags": ["Co-branded", "Shopping", "Fashion", "Entry Level"],
+      "bestFor": "Shoppers Stop loyalists who frequently shop at the store",
+      "rating": 3.5,
+      "verdict": "Decent for Shoppers Stop customers with 3% rewards on store purchases",
+      "pros": [
+        "3% value back on Shoppers Stop spends",
+        "Free Silver Edge membership worth ₹350",
+        "₹500 welcome voucher",
+        "Weekend milestone vouchers",
+        "Low annual fee of ₹299"
+      ],
+      "cons": [
+        "No longer lifetime free (from Mar 2024)",
+        "Low 1% on non-Shoppers Stop spends",
+        "No lounge access",
+        "Limited redemption value outside Shoppers Stop",
+        "Monthly caps on rewards"
+      ]
+    }
+  },
+  {
+    "id": "hdfc-bizblack-metal",
+    "name": "HDFC BizBlack Metal Edition Credit Card",
+    "bank": "HDFC Bank",
+    "image": "/assets/cards/hdfc-bizblack-metal.png",
+    "link": "https://www.hdfcbank.com/personal/pay/cards/business-credit-cards/biz-black",
+    "fees": {
+      "joining": 10000,
+      "annual": 10000,
+      "currency": "INR",
+      "waivedOn": 750000,
+      "waiverText": "Joining waived on ₹1.5L in 90 days; Annual waived on ₹7.5L/year"
+    },
+    "eligibility": {
+      "income": 3000000,
+      "age": { "min": 21, "max": 65 },
+      "type": "Self-Employed (Business owners)",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Reward Points",
+      "baseRate": 0.033,
+      "earningText": "5 RP/₹150 on all spends, 5X on business spends (₹50K+ threshold)",
+      "expiry": "3 years",
+      "joiningBonus": "Club Marriott + Taj voucher ₹5,000 on ₹1.5L spend in 90 days",
+      "exclusions": "Fuel, Rent (beyond thresholds), Education (via third-party), Online gaming",
+      "calculator": {
+        "tier": "super-premium",
+        "monthlyCap": 150000,
+        "capResetPeriod": "statement",
+        "specialLogic": "bizblack-tiered",
+        "categories": {
+          "travel": { "rate": 0.166, "label": "16.6% (5X on MMT MyBiz)", "cap": 10000 },
+          "dining": { "rate": 0.033, "label": "3.33% (5 RP/₹150)", "cap": null },
+          "online": { "rate": 0.166, "label": "16.6% (5X on PayZapp bills)", "cap": 10000 },
+          "fuel": { "rate": 0.0, "label": "No rewards on fuel", "cap": null },
+          "groceries": { "rate": 0.033, "label": "3.33% (capped at 2,000 RP/month)", "cap": 2000 },
+          "utilities": { "rate": 0.033, "label": "3.33% (capped at 2,000 RP/month)", "cap": 2000 }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.0,
+        "bestOption": "SmartBuy Flights/Hotels",
+        "options": [
+          { "type": "SmartBuy Flights/Hotels", "value": 1.0, "desc": "1 RP = ₹1 (up to 70% of booking, max 75K RP/month)", "recommended": true },
+          { "type": "Airmiles", "value": 0.50, "desc": "2 RP = 1 Airmile", "recommended": false },
+          { "type": "Amazon Vouchers", "value": 0.70, "desc": "1 RP = ₹0.70", "recommended": true },
+          { "type": "Statement Credit", "value": 0.30, "desc": "1 RP = ₹0.30", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "Unlimited",
+        "international": "Unlimited (Priority Pass)",
+        "accessType": "Priority Pass"
+      },
+      "milestones": [
+        { "spend": 150000, "benefit": "Club Marriott + Taj ₹5K voucher (in 90 days)" },
+        { "spend": 500000, "benefit": "SmartBuy Flight/Taj voucher ₹5,000" }
+      ],
+      "golf": { "included": true, "text": "6 complimentary golf games per quarter" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "0%", "cap": 0 },
+      "forex": { "markup": 0.02, "text": "2%" }
+    },
+    "metadata": {
+      "tags": ["Business", "Super Premium", "Metal Card", "Tax Rewards", "Diners Club"],
+      "bestFor": "Business owners paying GST/Income Tax seeking rewards on business expenses",
+      "rating": 4.5,
+      "verdict": "India's best business credit card with 5X on taxes, bills, and business tools",
+      "pros": [
+        "Industry-first 5X on Income Tax and GST payments",
+        "5X on business tools (Tally, AWS, Azure, Office 365)",
+        "5X on PayZapp bill payments",
+        "Unlimited lounge access worldwide",
+        "55 days interest-free credit period"
+      ],
+      "cons": [
+        "High ₹10,000 + GST annual fee",
+        "Requires ₹50K minimum spend for 5X activation",
+        "ITR requirement of ₹21-30 Lakh+",
+        "Diners Club limited acceptance",
+        "No fuel surcharge waiver"
+      ]
+    }
+  }
+]

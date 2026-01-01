@@ -49,6 +49,8 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
     const [hasLounge, setHasLounge] = useState(false);
     const [networkFilter, setNetworkFilter] = useState('all');
     const [selectedPreset, setSelectedPreset] = useState(null);
+    const [activeFeeType, setActiveFeeType] = useState(null);
+    const [activeTier, setActiveTier] = useState(null);
 
     // Simulate initial load for skeleton
     useEffect(() => {
@@ -56,7 +58,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
         return () => clearTimeout(timer);
     }, []);
 
-    const getCardDetails = (id) => creditCards.find(card => card.id === id);
+    const getCardDetails = (id) => creditCards.find(card => card.id === id || card.slug === id || String(card.id) === String(id));
 
     const openModal = (card, e) => {
         e.stopPropagation();
@@ -70,8 +72,8 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
         const card = getCardDetails(cardId);
         const isSelected = selectedCards.includes(cardId);
 
-        if (!isSelected && selectedCards.length >= 4) {
-            toast.warning('Maximum 4 cards can be compared at once');
+        if (!isSelected && selectedCards.length >= 3) { // Changed limit to 3
+            toast.error('You can compare up to 3 cards');
             return;
         }
 
@@ -84,8 +86,10 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
 
         if (!isSelected) {
             toast.success(`${card?.name} added to comparison`);
+        } else {
+            toast.info(`${card?.name} removed from comparison`);
         }
-    }, [selectedCards, toggleCardSelection, toast]);
+    }, [selectedCards, toggleCardSelection, toast, getCardDetails]);
 
     // Enhanced clear with toast
     const handleClearSelection = useCallback(() => {
@@ -120,7 +124,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                 url: url
             }).catch(() => { });
         }
-    }, [selectedCards]);
+    }, [selectedCards, getCardDetails]);
 
     // Keyboard handlers
     useEffect(() => {
@@ -203,51 +207,124 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
             }
 
             if (activeFilter === 'All') return true;
+
+            // Helper to get tags from either old or new format
+            const getTags = (c) => (c.metadata?.tags || c.tags || []).map(t => t.toLowerCase());
+            const getFeatures = (c) => {
+                if (Array.isArray(c.features)) return c.features.join(' ').toLowerCase();
+                if (c.features && typeof c.features === 'object') {
+                    return Object.values(c.features).map(v => typeof v === 'string' ? v : JSON.stringify(v)).join(' ').toLowerCase();
+                }
+                return '';
+            };
+            const getBestFor = (c) => (c.metadata?.bestFor || c.bestFor || '').toLowerCase();
+            const getTier = (c) => (c.tier || '').toLowerCase();
+            const getRewardType = (c) => (c.rewards?.type || c.rewardType || '').toLowerCase();
+            const getAnnualFee = (c) => c.fees?.annual ?? c.annualFee;
+
             if (activeFilter === 'Lifetime Free') {
-                const feeLower = card.annualFee?.toLowerCase() || '';
-                return feeLower.includes('lifetime free') || feeLower.includes('₹0') || feeLower === 'free';
+                const feeValue = getAnnualFee(card);
+                if (typeof feeValue === 'number') return feeValue === 0;
+                const feeLower = String(feeValue || '').toLowerCase();
+                return feeLower.includes('lifetime free') || feeLower.includes('₹0') || feeLower === 'free' || feeLower === '0';
             }
             if (activeFilter === 'Low Forex') {
-                const fxNum = parseFloat(card.fxMarkup?.replace('%', '') || '100');
+                const fxMarkup = card.features?.forex?.markup || card.fxMarkup;
+                const fxNum = typeof fxMarkup === 'number' ? fxMarkup * 100 : parseFloat(String(fxMarkup || '').replace('%', '') || '100');
                 return fxNum <= 2;
             }
             if (activeFilter === 'Fuel') {
-                if (card.category === 'Fuel') return true;
-                const lower = (card.name + ' ' + card.features?.join(' ')).toLowerCase();
-                return lower.includes('fuel') || lower.includes('petrol');
+                const tags = getTags(card);
+                if (tags.includes('fuel')) return true;
+                const features = getFeatures(card);
+                const name = card.name?.toLowerCase() || '';
+                return features.includes('fuel') || name.includes('fuel') || name.includes('petrol');
             }
             if (activeFilter === 'Shopping') {
-                if (card.category === 'Shopping') return true;
-                const lower = (card.name + ' ' + card.bestFor + ' ' + card.features?.join(' ')).toLowerCase();
-                return lower.includes('shopping') || lower.includes('amazon') || lower.includes('flipkart');
+                const tags = getTags(card);
+                if (tags.includes('shopping') || tags.includes('online shopping')) return true;
+                const features = getFeatures(card);
+                const bestFor = getBestFor(card);
+                return features.includes('shopping') || bestFor.includes('shopping') || bestFor.includes('amazon') || bestFor.includes('flipkart');
             }
             if (activeFilter === 'Lounge') {
-                const features = card.features?.join(' ').toLowerCase() || '';
+                const tags = getTags(card);
+                if (tags.includes('lounge') || tags.includes('lounge access')) return true;
+                const features = getFeatures(card);
+                const loungeInfo = card.features?.lounge;
+                if (loungeInfo && (loungeInfo.domestic !== 'None' || loungeInfo.international !== 'None')) return true;
                 return features.includes('lounge');
             }
             if (activeFilter === 'Cashback') {
-                return card.rewardType === 'cashback' || card.category === 'Cashback';
+                const rewardType = getRewardType(card);
+                const tags = getTags(card);
+                return rewardType === 'cashback' || tags.includes('cashback');
             }
             if (activeFilter === 'Travel') {
-                if (card.category === 'Travel') return true;
-                const tags = card.tags?.map(t => t.toLowerCase()) || [];
-                return tags.includes('travel');
+                const tags = getTags(card);
+                return tags.includes('travel') || tags.includes('travel card');
             }
             if (activeFilter === 'Premium') {
-                if (card.category === 'Premium') return true;
-                const tags = card.tags?.map(t => t.toLowerCase()) || [];
-                return tags.includes('premium') || tags.includes('super-premium') || tags.includes('invite only');
+                const tier = getTier(card);
+                const tags = getTags(card);
+                return tier.includes('premium') || tier.includes('super premium') || tier.includes('super-premium') ||
+                    tags.includes('premium') || tags.includes('super-premium') || tags.includes('invite only');
             }
             if (activeFilter === 'Dining') {
-                const tags = card.tags?.map(t => t.toLowerCase()) || [];
-                const features = card.features?.join(' ').toLowerCase() || '';
-                const bestFor = card.bestFor?.toLowerCase() || '';
-                return tags.includes('dining') || tags.includes('food delivery') ||
+                const tags = getTags(card);
+                const features = getFeatures(card);
+                const bestFor = getBestFor(card);
+                return tags.includes('dining') || tags.includes('food delivery') || tags.includes('food') ||
                     features.includes('dining') || bestFor.includes('food') || bestFor.includes('dining');
             }
-            return card.category === activeFilter;
+            if (activeFilter === 'Co-branded') {
+                const tier = getTier(card);
+                const tags = getTags(card);
+                return tier.includes('co-branded') || tier.includes('cobranded') ||
+                    tags.includes('co-branded') || tags.includes('cobranded');
+            }
+            if (activeFilter === 'Entry Level') {
+                const tier = getTier(card);
+                const tags = getTags(card);
+                return tier.includes('entry') || tags.includes('entry level') || tags.includes('entry-level');
+            }
+            if (activeFilter === 'Miles') {
+                const rewardType = getRewardType(card);
+                const features = getFeatures(card);
+                const tags = getTags(card);
+                return rewardType === 'miles' || tags.includes('miles') || tags.includes('airmiles') ||
+                    features.includes('miles') || features.includes('airmiles');
+            }
+            if (activeFilter === 'UPI') {
+                const features = getFeatures(card);
+                const name = card.name?.toLowerCase() || '';
+                const tags = getTags(card);
+                return tags.includes('upi') || tags.includes('rupay') ||
+                    features.includes('upi') || name.includes('upi') || name.includes('rupay');
+            }
+            return false;
+        }).filter(card => {
+            // Fee Type filter
+            if (activeFeeType) {
+                const fee = parseFee(card.annualFee);
+                const feeLower = card.annualFee?.toLowerCase() || '';
+                const isLTF = feeLower.includes('lifetime free') || feeLower.includes('₹0') || feeLower === 'free' || fee === 0;
+
+                if (activeFeeType === 'ltf' && !isLTF) return false;
+                if (activeFeeType === 'low' && (isLTF || fee >= 1000)) return false;
+                if (activeFeeType === 'mid' && (fee < 1000 || fee >= 5000)) return false;
+                if (activeFeeType === 'premium' && fee < 5000) return false;
+            }
+            return true;
+        }).filter(card => {
+            // Tier filter
+            if (activeTier) {
+                const cardTier = card.tier?.toLowerCase().replace(' ', '-') || '';
+                return cardTier === activeTier || cardTier.includes(activeTier);
+            }
+            return true;
         });
-    }, [searchTerm, activeBank, activeFilter, feeRange, forexFilter, hasLounge, networkFilter, creditCards]);
+    }, [searchTerm, activeBank, activeFilter, feeRange, forexFilter, hasLounge, networkFilter, creditCards, activeFeeType, activeTier]);
 
     // Sort cards
     const sortedCards = useMemo(() => {
@@ -275,7 +352,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
     }, [filteredCards, sortBy, activeFilter]);
 
     // Categories - only filters with actual implementation
-    const cardFilters = ['All', 'Lifetime Free', 'Low Forex', 'Cashback', 'Travel', 'Premium', 'Shopping', 'Dining', 'Fuel', 'Lounge'];
+    const cardFilters = ['All', 'Lifetime Free', 'Low Forex', 'Cashback', 'Travel', 'Premium', 'Shopping', 'Dining', 'Fuel', 'Lounge', 'Co-branded', 'Entry Level', 'Miles', 'UPI'];
 
     const getTierColor = (tier) => {
         const colors = {
@@ -319,54 +396,27 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
         return lower.includes('free') || lower.includes('₹0');
     };
 
-    // Handle preset comparison selection - find cards by name and select them
-    const handlePresetSelection = useCallback((cardNames, presetName) => {
-        // Find card IDs that match the card names with improved matching
+    // Handle preset comparison selection - find cards by ID and select them
+    const handlePresetSelection = useCallback((cardIds, presetName) => {
         const matchedIds = [];
 
-        cardNames.forEach(searchName => {
-            const searchLower = searchName.toLowerCase().trim();
-            const searchWords = searchLower.split(/\s+/).filter(word => word.length > 2);
-
-            // Try to find the best match using different strategies
-            let found = null;
-
-            // Strategy 1: Exact match
-            found = creditCards.find(card => card.name.toLowerCase() === searchLower);
-
-            // Strategy 2: Card name starts with search term
-            if (!found) {
-                found = creditCards.find(card => card.name.toLowerCase().startsWith(searchLower));
-            }
-
-            // Strategy 3: Card name contains the full search term
-            if (!found) {
-                found = creditCards.find(card => card.name.toLowerCase().includes(searchLower));
-            }
-
-            // Strategy 4: All significant search words appear in card name (in order)
-            if (!found && searchWords.length > 0) {
-                found = creditCards.find(card => {
-                    const cardNameLower = card.name.toLowerCase();
-                    // All words from searchName must be in the card name
-                    return searchWords.every(word => cardNameLower.includes(word));
-                });
-            }
-
-            // Strategy 5: Match by key identifying words (bank + card type)
-            if (!found && searchWords.length >= 2) {
-                found = creditCards.find(card => {
-                    const cardNameLower = card.name.toLowerCase();
-                    const cardWords = cardNameLower.split(/\s+/);
-                    // Check if at least 2 key words match and the first word matches
-                    const firstWordMatch = cardWords[0].includes(searchWords[0]) || searchWords[0].includes(cardWords[0]);
-                    const secondWordMatch = searchWords.length > 1 && cardWords.some(w => w.includes(searchWords[1]) || searchWords[1].includes(w));
-                    return firstWordMatch && secondWordMatch;
-                });
-            }
+        cardIds.forEach(id => {
+            // Direct ID match
+            const found = creditCards.find(card => card.id === id || card.slug === id || card.id === parseInt(id));
 
             if (found && !matchedIds.includes(found.id)) {
                 matchedIds.push(found.id);
+            } else {
+                // Legacy fallback: Try fuzzy name match if ID fails (e.g. for user custom presets if any)
+                // This keeps backward compatibility just in case
+                const searchLower = id.toLowerCase();
+                const foundByName = creditCards.find(card =>
+                    card.name.toLowerCase() === searchLower ||
+                    card.name.toLowerCase().includes(searchLower)
+                );
+                if (foundByName && !matchedIds.includes(foundByName.id)) {
+                    matchedIds.push(foundByName.id);
+                }
             }
         });
 
@@ -379,21 +429,57 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
             // Scroll to top to show comparison table
             window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
-            toast.warning('Could not find matching cards');
+            toast.warning('Could not find matching cards for this preset');
         }
     }, [clearSelection, toggleCardSelection, toast, creditCards, setSelectedPreset]);
 
     // Popular comparisons for empty state
     const popularComparisons = [
-        { name: '⛽ Fuel Savers', desc: 'Maximum savings on fuel purchases and surcharge waiver', cards: ['IndianOil RBL Bank XTRA', 'BPCL SBI Card', 'IndianOil Axis Bank'] },
-        { name: '🍽️ Dining Delights', desc: 'Best rewards on restaurants, food delivery, and dining', cards: ['HDFC Swiggy Credit Card', 'IndusInd EazyDiner Credit Card', 'HSBC Live+ Credit Card'] },
-        { name: '🎬 Entertainment Buffs', desc: 'Free movie tickets, BOGO offers, and entertainment perks', cards: ['PVR INOX Kotak Credit Card', 'Axis MyZone Credit Card', 'IndusInd Legend Credit Card'] },
-        { name: '📱 UPI Champions', desc: 'Best rewards on UPI scan & pay transactions', cards: ['HDFC Tata Neu Infinity', 'Kiwi RuPay Credit Card', 'Jupiter Edge CSB'] },
-        { name: '💡 Utility Warriors', desc: 'Best cashback on electricity, broadband, and bill payments', cards: ['Axis Airtel Credit Card', 'Axis Bank Ace', 'PhonePe HDFC Ultimo'] },
-        { name: '🆓 Lifetime Free Stars', desc: 'Best value with zero annual fees forever', cards: ['Amazon Pay ICICI', 'IDFC First Select', 'Scapia Federal Credit Card'] },
-        { name: '🌟 Beginners\' Best', desc: 'Perfect first credit cards for new users', cards: ['Axis Neo Credit Card', 'SBI SimplyCLICK Credit Card', 'OneCard Credit Card'] },
-        { name: '🏨 Hotel Loyalists', desc: 'Best cards for hotel points, elite status, and stays', cards: ['Marriott Bonvoy HDFC', 'Axis Reserve', 'HDFC Regalia Gold'] },
-        { name: '✈️ Airline Miles', desc: 'Best for air miles accumulation and transfers', cards: ['Axis Atlas Credit Card', 'Air India SBI', 'Amex Platinum Travel'] },
+        {
+            name: '⛽ Fuel Savers',
+            desc: 'Maximum savings on fuel purchases and surcharge waiver',
+            cards: ['bpcl-sbi-octane', 'axis-indianoil', 'icici-hpcl-super-saver']
+        },
+        {
+            name: '🍽️ Dining Delights',
+            desc: 'Best rewards on restaurants, food delivery, and dining',
+            cards: ['hdfc-swiggy', 'indusind-eazydiner-platinum', 'hsbc-live-plus']
+        },
+        {
+            name: '🎬 Entertainment Buffs',
+            desc: 'Free movie tickets, BOGO offers, and entertainment perks',
+            cards: ['kotak-pvr-inox', 'axis-myzone', 'indusind-legend']
+        },
+        {
+            name: '📱 UPI Champions',
+            desc: 'Best rewards on UPI scan & pay transactions',
+            cards: ['tata-neu-infinity-hdfc', 'kiwi-rupay-credit-card', 'jupiter-edge-csb-rupay-credit-card']
+        },
+        {
+            name: '💡 Utility Warriors',
+            desc: 'Best cashback on electricity, broadband, and bill payments',
+            cards: ['axis-airtel', 'axis-ace', 'sbi-cashback']
+        },
+        {
+            name: '🆓 Lifetime Free Stars',
+            desc: 'Best value with zero annual fees forever',
+            cards: ['amazon-pay-icici', 'idfc-first-select', 'scapia-federal-credit-card']
+        },
+        {
+            name: '🌟 Beginners Best',
+            desc: 'Perfect first credit cards for new users',
+            cards: ['axis-neo', 'sbi-simplyclick', 'onecard-credit-card']
+        },
+        {
+            name: '🏨 Hotel Loyalists',
+            desc: 'Best cards for hotel points, elite status, and stays',
+            cards: ['marriott-bonvoy-hdfc', 'axis-reserve', 'hdfc-regalia-gold']
+        },
+        {
+            name: '✈️ Airline Miles',
+            desc: 'Best for air miles accumulation and transfers',
+            cards: ['axis-atlas', 'club-vistara-sbi-prime', 'amex-platinum-travel']
+        },
     ];
 
     // Render Comparison Table
@@ -402,189 +488,259 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
 
         if (cards.length === 0) return null;
 
+        // Dynamic column width based on number of cards
+        const getColumnWidth = () => {
+            if (cards.length === 1) return '350px';
+            if (cards.length === 2) return '280px';
+            return '220px'; // 3 cards
+        };
+        const colWidth = getColumnWidth();
+
         return (
-            <div className="comparison-table-wrapper" style={{ overflowX: 'auto', marginTop: '1.5rem' }}>
-                <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '600px' }}>
-                    {/* Header - Card Images */}
-                    <thead>
-                        <tr>
-                            <th style={{
-                                padding: '1rem',
-                                textAlign: 'left',
-                                borderBottom: '2px solid var(--glass-border)',
-                                background: 'rgba(139, 92, 246, 0.05)',
-                                width: '160px',
-                            }}>
-                                <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                    💳 Card
-                                </span>
-                            </th>
-                            {cards.map(card => (
-                                <th key={card.id} style={{
-                                    padding: '1.5rem 1rem',
-                                    textAlign: 'center',
-                                    borderBottom: '2px solid var(--glass-border)',
-                                    background: 'rgba(139, 92, 246, 0.05)',
-                                    position: 'relative',
-                                    minWidth: '180px',
+            <div className="liquid-glass" style={{ marginTop: '1.5rem', position: 'relative' }}>
+                <div className="comparison-table-wrapper" style={{ overflowX: 'auto', borderRadius: 'inherit', maxWidth: '100%' }}>
+                    <style>
+                        {`
+                    .comparison-row:hover {
+                        background: rgba(255, 255, 255, 0.03) !important;
+                    }
+                    .comparison-row:hover td {
+                         color: var(--text-primary) !important;
+                    }
+                    `}
+                    </style>
+                    <table style={{ width: '100%', borderCollapse: 'separate', borderSpacing: 0 }}>
+                        {/* Header - Card Images */}
+                        <thead>
+                            <tr>
+                                <th className="glass-sticky-header" style={{
+                                    padding: '0.5rem',
+                                    textAlign: 'left',
+                                    position: 'sticky',
+                                    top: 0,
+                                    left: 0,
+                                    zIndex: 30,
+                                    width: '130px'
                                 }}>
-                                    {/* Remove button */}
-                                    <button
-                                        onClick={() => toggleCardSelection(card.id)}
-                                        style={{
-                                            position: 'absolute',
-                                            top: '8px',
-                                            right: '8px',
-                                            width: '24px',
-                                            height: '24px',
-                                            borderRadius: '50%',
-                                            background: 'rgba(239, 68, 68, 0.1)',
-                                            border: '1px solid rgba(239, 68, 68, 0.3)',
-                                            color: '#ef4444',
-                                            cursor: 'pointer',
-                                            fontSize: '12px',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                        }}
-                                        title="Remove from comparison"
-                                    >
-                                        ✕
-                                    </button>
-
-                                    {/* Card Image */}
-                                    <div style={{ height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.75rem' }}>
-                                        <CardImage card={card} style={{ maxWidth: '120px', maxHeight: '75px' }} />
-                                    </div>
-
-                                    {/* Card Name */}
-                                    <div style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
-                                        {card.name}
-                                    </div>
-
-                                    {/* Tier Badge */}
-                                    {card.tier && (
-                                        <span style={{
-                                            display: 'inline-block',
-                                            padding: '2px 8px',
-                                            borderRadius: '10px',
-                                            fontSize: '0.65rem',
-                                            fontWeight: 600,
-                                            textTransform: 'uppercase',
-                                            background: `${getTierColor(card.tier)}20`,
-                                            color: getTierColor(card.tier),
-                                        }}>
-                                            {card.tier?.replace('-', ' ')}
-                                        </span>
-                                    )}
+                                    <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                        💳 Card
+                                    </span>
                                 </th>
-                            ))}
-                        </tr>
-                    </thead>
+                                {cards.map(card => (
+                                    <th key={card.id} className="glass-sticky-header" style={{
+                                        padding: '0.75rem 0.5rem',
+                                        textAlign: 'center',
+                                        position: 'sticky',
+                                        top: 0,
+                                        zIndex: 20,
+                                        width: colWidth,
+                                        minWidth: colWidth,
+                                        maxWidth: colWidth
+                                    }}>
+                                        {/* Remove button */}
+                                        <button
+                                            onClick={() => toggleCardSelection(card.id)}
+                                            style={{
+                                                position: 'absolute',
+                                                top: '8px',
+                                                right: '8px',
+                                                width: '24px',
+                                                height: '24px',
+                                                borderRadius: '50%',
+                                                background: 'rgba(239, 68, 68, 0.1)',
+                                                border: '1px solid rgba(239, 68, 68, 0.3)',
+                                                color: '#ef4444',
+                                                cursor: 'pointer',
+                                                fontSize: '12px',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                            }}
+                                            title="Remove from comparison"
+                                        >
+                                            ✕
+                                        </button>
 
-                    {/* Body - Comparison Rows */}
-                    <tbody>
-                        {COMPARISON_ROWS.map((row, idx) => (
-                            <tr key={row.key} style={{ background: idx % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.01)' }}>
-                                <td style={{
-                                    padding: '1rem',
+                                        {/* Card Image */}
+                                        <div style={{ height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.25rem' }}>
+                                            <CardImage card={card} style={{ maxWidth: '80px', maxHeight: '45px' }} />
+                                        </div>
+
+                                        {/* Card Name */}
+                                        <div style={{ fontWeight: 600, fontSize: '0.75rem', color: 'var(--text-primary)', marginBottom: '0.25rem', lineHeight: '1.2' }}>
+                                            {card.name}
+                                        </div>
+
+                                        {/* Tier Badge */}
+                                        {card.tier && (
+                                            <span style={{
+                                                display: 'inline-block',
+                                                padding: '2px 8px',
+                                                borderRadius: '10px',
+                                                fontSize: '0.65rem',
+                                                fontWeight: 600,
+                                                textTransform: 'uppercase',
+                                                background: `${getTierColor(card.tier)}20`,
+                                                color: getTierColor(card.tier),
+                                            }}>
+                                                {card.tier?.replace('-', ' ')}
+                                            </span>
+                                        )}
+                                    </th>
+                                ))}
+                            </tr>
+                        </thead>
+
+                        {/* Body - Comparison Rows */}
+                        <tbody>
+                            {COMPARISON_ROWS.map((row, idx) => (
+                                <tr key={row.key} className="comparison-row" style={{
+                                    background: idx % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.01)',
+                                    transition: 'background 0.2s ease'
+                                }}>
+                                    <td className="glass-sticky-col" style={{
+                                        padding: '0.5rem',
+                                        borderBottom: '1px solid var(--glass-border)',
+                                        color: 'var(--text-secondary)',
+                                        fontWeight: 500,
+                                        fontSize: '0.85rem',
+                                        position: 'sticky',
+                                        left: 0,
+                                        zIndex: 10
+                                    }}>
+                                        <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                            <span>{row.icon}</span>
+                                            <span>{row.label}</span>
+                                        </span>
+                                    </td>
+                                    {cards.map(card => {
+                                        const value = getComparisonValue(card, row.key);
+
+                                        // Special rendering for Reward Rate to show Multiplier Badge
+                                        if (row.key === 'rewardRate' && card.multiplierBadge) {
+                                            return (
+                                                <td key={card.id} style={{
+                                                    padding: '0.5rem',
+                                                    textAlign: 'center',
+                                                    borderBottom: '1px solid var(--glass-border)',
+                                                    color: 'var(--text-primary)',
+                                                    background: 'rgba(34, 197, 94, 0.03)',
+                                                    borderLeft: '1px dashed rgba(34, 197, 94, 0.2)',
+                                                    borderRight: '1px dashed rgba(34, 197, 94, 0.2)',
+                                                    width: colWidth,
+                                                    minWidth: colWidth,
+                                                    maxWidth: colWidth,
+                                                    whiteSpace: 'normal',
+                                                    fontSize: '0.75rem',
+                                                    lineHeight: '1.3'
+                                                }}>
+                                                    <div style={{ fontWeight: 500 }}>{value}</div>
+                                                    <div style={{ marginTop: '6px', fontSize: '0.7rem', color: '#22c55e', fontWeight: 600, background: 'rgba(34,197,94,0.1)', padding: '2px 6px', borderRadius: '4px', display: 'inline-block' }}>
+                                                        {card.multiplierBadge}
+                                                    </div>
+                                                </td>
+                                            );
+                                        }
+                                        const isHighlight = (row.key === 'annualFee' && isFreeCard(value));
+
+                                        return (
+                                            <td key={card.id} style={{
+                                                padding: '0.5rem',
+                                                textAlign: 'center',
+                                                borderBottom: '1px solid var(--glass-border)',
+                                                color: isHighlight ? '#22c55e' : 'var(--text-primary)',
+                                                fontWeight: isHighlight ? 600 : 400,
+                                                fontSize: '0.75rem',
+                                                width: colWidth,
+                                                minWidth: colWidth,
+                                                maxWidth: colWidth,
+                                                whiteSpace: 'normal',
+                                                lineHeight: '1.3'
+                                            }}>
+                                                {value}
+                                            </td>
+                                        );
+                                    })}
+                                </tr>
+                            ))}
+
+                            {/* Features Row */}
+                            <tr>
+                                <td className="glass-sticky-col" style={{
+                                    padding: '0.5rem',
                                     borderBottom: '1px solid var(--glass-border)',
                                     color: 'var(--text-secondary)',
                                     fontWeight: 500,
-                                    fontSize: '0.85rem',
+                                    fontSize: '0.75rem',
+                                    verticalAlign: 'top',
+                                    position: 'sticky',
+                                    left: 0,
+                                    zIndex: 10
                                 }}>
-                                    <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        <span>{row.icon}</span>
-                                        <span>{row.label}</span>
+                                    <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                        <span>✨</span>
+                                        <span>Key Features</span>
                                     </span>
                                 </td>
-                                {cards.map(card => {
-                                    const value = getComparisonValue(card, row.key);
-                                    const isHighlight = (row.key === 'annualFee' && isFreeCard(value));
-
-                                    return (
-                                        <td key={card.id} style={{
-                                            padding: '1rem',
-                                            textAlign: 'center',
-                                            borderBottom: '1px solid var(--glass-border)',
-                                            color: isHighlight ? '#22c55e' : 'var(--text-primary)',
-                                            fontWeight: isHighlight ? 600 : 400,
-                                            fontSize: '0.85rem',
-                                        }}>
-                                            {value}
-                                        </td>
-                                    );
-                                })}
+                                {cards.map(card => (
+                                    <td key={card.id} style={{
+                                        padding: '0.5rem',
+                                        borderBottom: '1px solid var(--glass-border)',
+                                        textAlign: 'left',
+                                        fontSize: '0.7rem',
+                                        verticalAlign: 'top',
+                                        lineHeight: '1.4',
+                                        width: colWidth,
+                                        minWidth: colWidth,
+                                        maxWidth: colWidth,
+                                        whiteSpace: 'normal'
+                                    }}>
+                                        {card.features && card.features.length > 0 ? (
+                                            <ul style={{ margin: 0, paddingLeft: '1rem', color: 'var(--text-secondary)' }}>
+                                                {card.features.slice(0, 3).map((f, i) => (
+                                                    <li key={i} style={{ marginBottom: '2px' }}>{f}</li>
+                                                ))}
+                                                {card.features.length > 3 && (
+                                                    <li style={{ color: 'var(--accent-violet)', fontStyle: 'italic' }}>
+                                                        +{card.features.length - 3} more
+                                                    </li>
+                                                )}
+                                            </ul>
+                                        ) : (
+                                            <span style={{ color: 'var(--text-secondary)', opacity: 0.5 }}>-</span>
+                                        )}
+                                    </td>
+                                ))}
                             </tr>
-                        ))}
+                        </tbody>
 
-                        {/* Features Row */}
-                        <tr>
-                            <td style={{
-                                padding: '1rem',
-                                borderBottom: '1px solid var(--glass-border)',
-                                color: 'var(--text-secondary)',
-                                fontWeight: 500,
-                                fontSize: '0.85rem',
-                                verticalAlign: 'top',
-                            }}>
-                                <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                    <span>✨</span>
-                                    <span>Key Features</span>
-                                </span>
-                            </td>
-                            {cards.map(card => (
-                                <td key={card.id} style={{
-                                    padding: '1rem',
-                                    borderBottom: '1px solid var(--glass-border)',
-                                    textAlign: 'left',
-                                    fontSize: '0.8rem',
-                                }}>
-                                    {card.features && card.features.length > 0 ? (
-                                        <ul style={{ margin: 0, paddingLeft: '1.25rem', color: 'var(--text-secondary)' }}>
-                                            {card.features.slice(0, 4).map((f, i) => (
-                                                <li key={i} style={{ marginBottom: '4px' }}>{f}</li>
-                                            ))}
-                                            {card.features.length > 4 && (
-                                                <li style={{ color: 'var(--accent-violet)', fontStyle: 'italic' }}>
-                                                    +{card.features.length - 4} more
-                                                </li>
-                                            )}
-                                        </ul>
-                                    ) : (
-                                        <span style={{ color: 'var(--text-secondary)', opacity: 0.5 }}>-</span>
-                                    )}
-                                </td>
-                            ))}
-                        </tr>
-                    </tbody>
-
-                    {/* Footer - Action Buttons */}
-                    <tfoot>
-                        <tr>
-                            <td style={{ padding: '1rem' }}></td>
-                            {cards.map(card => (
-                                <td key={card.id} style={{ padding: '1rem', textAlign: 'center' }}>
-                                    <Link
-                                        to={`/card-guide/${card.id}`}
-                                        style={{
-                                            display: 'inline-block',
-                                            padding: '8px 16px',
-                                            background: 'linear-gradient(135deg, var(--accent-cyan), var(--accent-pink))',
-                                            color: '#000',
-                                            textDecoration: 'none',
-                                            borderRadius: '8px',
-                                            fontSize: '0.8rem',
-                                            fontWeight: 600,
-                                        }}
-                                    >
-                                        View Details →
-                                    </Link>
-                                </td>
-                            ))}
-                        </tr>
-                    </tfoot>
-                </table>
+                        {/* Footer - Action Buttons */}
+                        <tfoot>
+                            <tr>
+                                <td style={{ padding: '0.5rem' }}></td>
+                                {cards.map(card => (
+                                    <td key={card.id} style={{ padding: '0.5rem', textAlign: 'center' }}>
+                                        <Link
+                                            to={`/card-guide/${card.slug || card.id}`}
+                                            style={{
+                                                display: 'inline-block',
+                                                padding: '8px 16px',
+                                                background: 'linear-gradient(135deg, var(--accent-cyan), var(--accent-pink))',
+                                                color: '#000',
+                                                textDecoration: 'none',
+                                                borderRadius: '8px',
+                                                fontSize: '0.8rem',
+                                                fontWeight: 600,
+                                            }}
+                                        >
+                                            View Details →
+                                        </Link>
+                                    </td>
+                                ))}
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
             </div>
         );
     };
@@ -614,7 +770,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
             <div style={{ paddingTop: '1rem', paddingBottom: '4rem' }}>
                 <header style={{ marginBottom: '2.5rem', textAlign: 'center' }}>
                     <h2 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>
-                        Browse Credit Cards
+                        Browse Cards
                     </h2>
                     <p style={{ color: 'var(--text-secondary)' }}>Loading cards...</p>
                 </header>
@@ -624,19 +780,21 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
     }
 
     return (
-        <div style={{ paddingTop: '1rem', paddingBottom: '4rem' }}>
+        <div style={{ paddingTop: view === 'grid' ? '1rem' : '0', paddingBottom: '4rem' }}>
             {/* Header - Dynamic based on view */}
-            <header style={{ marginBottom: '2.5rem', textAlign: 'center' }}>
-                <h2 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '0.5rem', fontStyle: 'italic' }}>
-                    {view === 'grid' ? 'Browse Credit Cards' : 'Compare Credit Cards'}
-                </h2>
-                <p style={{ color: 'var(--text-secondary)' }}>
-                    {view === 'grid'
-                        ? `${creditCards.length} cards available • Click to compare`
-                        : `Comparing ${selectedCards.length} cards • Features and benefits`
-                    }
-                </p>
-            </header>
+            {view === 'grid' ? (
+                <header style={{ marginBottom: '2.5rem', textAlign: 'center' }}>
+                    <h2 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '0.25rem', fontStyle: 'italic' }}>
+                        Browse Cards
+                    </h2>
+                </header>
+            ) : (
+                <header style={{ marginBottom: '0.75rem', textAlign: 'center' }}>
+                    <h2 className="text-gradient" style={{ fontSize: '2rem', margin: 0, fontStyle: 'italic' }}>
+                        Compare Credit Cards
+                    </h2>
+                </header>
+            )}
 
 
             {/* Grid View */}
@@ -693,50 +851,47 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                         <div style={{
                             display: 'flex',
                             alignItems: 'center',
-                            gap: '16px',
-                            marginBottom: '24px',
+                            justifyContent: 'space-between',
+                            gap: '12px',
+                            marginBottom: '16px',
                             position: 'relative',
                             zIndex: 1,
+                            flexWrap: 'wrap',
                         }}>
-                            {/* Search Input - Glass Style */}
-                            <div style={{ flex: '1 1 300px', position: 'relative', minWidth: '200px' }}>
+                            {/* Search Input - Left */}
+                            <div style={{ flex: '0 1 200px', position: 'relative', minWidth: '160px' }}>
                                 <input
                                     type="text"
-                                    placeholder="Search credit cards..."
+                                    placeholder="Search cards..."
                                     value={searchTerm}
                                     onChange={(e) => setSearchTerm(e.target.value)}
                                     style={{
                                         width: '100%',
-                                        minWidth: '200px',
-                                        padding: '16px 20px',
-                                        paddingLeft: '52px',
-                                        borderRadius: '16px',
+                                        padding: '6px 10px',
+                                        paddingLeft: '32px',
+                                        borderRadius: '8px',
                                         border: '1px solid rgba(255,255,255,0.15)',
                                         background: 'rgba(255,255,255,0.05)',
-                                        backdropFilter: 'blur(10px)',
                                         color: 'var(--text-primary)',
-                                        fontSize: '0.95rem',
+                                        fontSize: '0.85rem',
                                         outline: 'none',
-                                        transition: 'all 0.3s ease',
-                                        boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.1)',
+                                        transition: 'all 0.2s ease',
                                     }}
                                     onFocus={(e) => {
                                         e.target.style.borderColor = 'rgba(6, 182, 212, 0.6)';
-                                        e.target.style.boxShadow = '0 0 20px rgba(6, 182, 212, 0.2), inset 0 1px 2px rgba(0,0,0,0.1)';
                                     }}
                                     onBlur={(e) => {
                                         e.target.style.borderColor = 'rgba(255,255,255,0.15)';
-                                        e.target.style.boxShadow = 'inset 0 1px 2px rgba(0,0,0,0.1)';
                                     }}
                                 />
                                 <svg
                                     style={{
                                         position: 'absolute',
-                                        left: '18px',
+                                        left: '10px',
                                         top: '50%',
                                         transform: 'translateY(-50%)',
-                                        width: '20px',
-                                        height: '20px',
+                                        width: '14px',
+                                        height: '14px',
                                         opacity: 0.5,
                                     }}
                                     fill="none"
@@ -747,62 +902,57 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                                 </svg>
                             </div>
 
-                            {/* Bank Filter - Glass Style */}
-                            <select
-                                value={activeBank}
-                                onChange={(e) => setActiveBank(e.target.value)}
-                                style={{
-                                    padding: '16px 20px',
-                                    borderRadius: '16px',
-                                    border: '1px solid rgba(255,255,255,0.15)',
-                                    background: 'rgba(255,255,255,0.05)',
-                                    backdropFilter: 'blur(10px)',
-                                    color: 'var(--text-primary)',
-                                    fontSize: '0.9rem',
-                                    cursor: 'pointer',
-                                    outline: 'none',
-                                    minWidth: '160px',
-                                    boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.1)',
-                                    transition: 'all 0.3s ease',
-                                }}
-                            >
-                                {banks.map(bank => (
-                                    <option key={bank} value={bank}>{bank === 'All' ? 'All Banks' : bank}</option>
-                                ))}
-                            </select>
+                            {/* Dropdowns - Right aligned */}
+                            <div style={{ display: 'flex', gap: '6px', flex: '0 0 auto' }}>
+                                {/* Bank Filter */}
+                                <select
+                                    value={activeBank}
+                                    onChange={(e) => setActiveBank(e.target.value)}
+                                    style={{
+                                        padding: '5px 8px',
+                                        borderRadius: '6px',
+                                        border: '1px solid rgba(255,255,255,0.12)',
+                                        background: 'rgba(255,255,255,0.04)',
+                                        color: 'var(--text-primary)',
+                                        fontSize: '0.75rem',
+                                        cursor: 'pointer',
+                                        outline: 'none',
+                                    }}
+                                >
+                                    {banks.map(bank => (
+                                        <option key={bank} value={bank}>{bank === 'All' ? 'All Banks' : bank}</option>
+                                    ))}
+                                </select>
 
-                            {/* Sort - Glass Style */}
-                            <select
-                                value={sortBy}
-                                onChange={(e) => setSortBy(e.target.value)}
-                                style={{
-                                    padding: '16px 20px',
-                                    borderRadius: '16px',
-                                    border: '1px solid rgba(255,255,255,0.15)',
-                                    background: 'rgba(255,255,255,0.05)',
-                                    backdropFilter: 'blur(10px)',
-                                    color: 'var(--text-primary)',
-                                    fontSize: '0.9rem',
-                                    cursor: 'pointer',
-                                    outline: 'none',
-                                    minWidth: '150px',
-                                    boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.1)',
-                                    transition: 'all 0.3s ease',
-                                }}
-                            >
-                                <option value="recommended">Recommended</option>
-                                <option value="fee-low">Fee: Low to High</option>
-                                <option value="fee-high">Fee: High to Low</option>
-                                <option value="reward-high">Highest Rewards</option>
-                                <option value="name">Name A-Z</option>
-                            </select>
+                                {/* Sort */}
+                                <select
+                                    value={sortBy}
+                                    onChange={(e) => setSortBy(e.target.value)}
+                                    style={{
+                                        padding: '5px 8px',
+                                        borderRadius: '6px',
+                                        border: '1px solid rgba(255,255,255,0.12)',
+                                        background: 'rgba(255,255,255,0.04)',
+                                        color: 'var(--text-primary)',
+                                        fontSize: '0.75rem',
+                                        cursor: 'pointer',
+                                        outline: 'none',
+                                    }}
+                                >
+                                    <option value="recommended">Recommended</option>
+                                    <option value="fee-low">Fee ↑</option>
+                                    <option value="fee-high">Fee ↓</option>
+                                    <option value="reward-high">Rewards</option>
+                                    <option value="name">A-Z</option>
+                                </select>
+                            </div>
                         </div>
 
                         {/* Category Filters - Glass Pills */}
                         <div style={{
                             display: 'flex',
                             flexWrap: 'wrap',
-                            gap: '12px',
+                            gap: '8px',
                             position: 'relative',
                             zIndex: 1,
                         }}>
@@ -811,9 +961,9 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                                 return (
                                     <button
                                         key={filter}
-                                        onClick={() => setActiveFilter(filter)}
+                                        onClick={() => setActiveFilter(isActive ? 'All' : filter)}
                                         style={{
-                                            padding: '12px 24px',
+                                            padding: '6px 14px',
                                             borderRadius: '50px',
                                             border: isActive
                                                 ? '1px solid rgba(6, 182, 212, 0.5)'
@@ -821,34 +971,26 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                                             background: isActive
                                                 ? 'linear-gradient(135deg, rgba(6, 182, 212, 0.3), rgba(139, 92, 246, 0.3))'
                                                 : 'rgba(255,255,255,0.04)',
-                                            backdropFilter: 'blur(8px)',
                                             color: isActive ? '#fff' : 'rgba(255,255,255,0.6)',
                                             cursor: 'pointer',
-                                            fontSize: '0.9rem',
+                                            fontSize: '0.75rem',
                                             fontWeight: isActive ? '600' : '500',
-                                            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                                            transition: 'all 0.2s ease',
                                             boxShadow: isActive
-                                                ? '0 4px 20px rgba(6, 182, 212, 0.25), inset 0 1px 1px rgba(255,255,255,0.1)'
-                                                : 'inset 0 1px 1px rgba(255,255,255,0.05)',
-                                            position: 'relative',
-                                            overflow: 'hidden',
+                                                ? '0 2px 10px rgba(6, 182, 212, 0.2)'
+                                                : 'none',
+                                            whiteSpace: 'nowrap',
                                         }}
                                         onMouseEnter={(e) => {
                                             if (!isActive) {
                                                 e.target.style.background = 'rgba(255,255,255,0.08)';
-                                                e.target.style.borderColor = 'rgba(255,255,255,0.2)';
                                                 e.target.style.color = 'rgba(255,255,255,0.9)';
-                                                e.target.style.transform = 'translateY(-2px)';
-                                                e.target.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2), inset 0 1px 1px rgba(255,255,255,0.1)';
                                             }
                                         }}
                                         onMouseLeave={(e) => {
                                             if (!isActive) {
                                                 e.target.style.background = 'rgba(255,255,255,0.04)';
-                                                e.target.style.borderColor = 'rgba(255,255,255,0.12)';
                                                 e.target.style.color = 'rgba(255,255,255,0.6)';
-                                                e.target.style.transform = 'translateY(0)';
-                                                e.target.style.boxShadow = 'inset 0 1px 1px rgba(255,255,255,0.05)';
                                             }
                                         }}
                                     >
@@ -856,6 +998,11 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                                     </button>
                                 );
                             })}
+                        </div>
+
+                        {/* Dynamic Card Count */}
+                        <div style={{ marginTop: '16px', textAlign: 'center', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
+                            {filteredCards.length} cards match your criteria
                         </div>
                     </div>
 
@@ -983,6 +1130,25 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                                             )}
                                         </div>
 
+                                        {/* Multiplier Badge */}
+                                        {card.multiplierBadge && (
+                                            <div style={{
+                                                marginBottom: '10px',
+                                                background: 'linear-gradient(90deg, rgba(34, 197, 94, 0.15), rgba(6, 182, 212, 0.15))',
+                                                border: '1px dashed rgba(34, 197, 94, 0.4)',
+                                                borderRadius: '8px',
+                                                padding: '6px 10px',
+                                                fontSize: '0.75rem',
+                                                fontWeight: '600',
+                                                color: '#22c55e',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                gap: '6px'
+                                            }}>
+                                                {card.multiplierBadge}
+                                            </div>
+                                        )}
+
                                         {/* Quick Stats */}
                                         <div style={{
                                             display: 'grid',
@@ -1034,7 +1200,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                             boxShadow: '0 10px 40px rgba(0,0,0,0.4)',
                         }}>
                             <span style={{ fontWeight: 600 }}>
-                                {selectedCards.length}/4 cards selected
+                                {selectedCards.length}/3 cards selected
                             </span>
                             <Link
                                 to="/compare-cards"
@@ -1075,17 +1241,17 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
             {view === 'table' && (
                 <>
                     {selectedCards.length > 0 ? (
-                        <div className="glass-panel" style={{ padding: '2rem', overflowX: 'auto' }}>
+                        <div className="glass-panel" style={{ padding: '1.5rem', maxWidth: '100%', overflow: 'hidden' }}>
                             {/* Header */}
                             <div style={{
                                 display: 'flex',
                                 justifyContent: 'space-between',
                                 alignItems: 'center',
-                                marginBottom: '1.5rem',
+                                marginBottom: '1rem',
                                 borderBottom: '1px solid var(--glass-border)',
-                                paddingBottom: '1rem',
+                                paddingBottom: '0.75rem',
                                 flexWrap: 'wrap',
-                                gap: '1rem'
+                                gap: '0.75rem'
                             }}>
                                 <h3 style={{ margin: 0, display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
                                     {selectedPreset ? (
@@ -1101,9 +1267,41 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                                         fontSize: '0.85rem',
                                         fontWeight: 600,
                                     }}>
-                                        {selectedCards.length}/4
+                                        {selectedCards.length}/3
                                     </span>
                                 </h3>
+
+                                {/* Add Card Dropdown - Only show if less than 3 cards */}
+                                {selectedCards.length < 3 && (
+                                    <select
+                                        defaultValue=""
+                                        onChange={(e) => {
+                                            if (e.target.value) {
+                                                handleCardSelection(e.target.value);
+                                                e.target.value = '';
+                                            }
+                                        }}
+                                        style={{
+                                            padding: '6px 12px',
+                                            borderRadius: '8px',
+                                            border: '1px solid rgba(6, 182, 212, 0.4)',
+                                            background: 'rgba(6, 182, 212, 0.1)',
+                                            color: 'var(--accent-cyan)',
+                                            fontSize: '0.85rem',
+                                            cursor: 'pointer',
+                                            outline: 'none',
+                                        }}
+                                    >
+                                        <option value="" disabled>+ Add Card...</option>
+                                        {creditCards
+                                            .filter(card => !selectedCards.includes(card.id) && !selectedCards.includes(card.slug))
+                                            .sort((a, b) => a.name.localeCompare(b.name))
+                                            .map(card => (
+                                                <option key={card.id} value={card.id}>{card.name}</option>
+                                            ))
+                                        }
+                                    </select>
+                                )}
 
                                 <div style={{ display: 'flex', gap: '8px' }}>
                                     <button
@@ -1241,7 +1439,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                                                         color: 'var(--accent-cyan)',
                                                     }}
                                                 >
-                                                    {card}
+                                                    {getCardDetails(card)?.name || card}
                                                 </span>
                                             ))}
                                         </div>
@@ -1290,9 +1488,13 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                         style={{
                             maxWidth: '500px',
                             width: '100%',
-                            padding: '2rem',
-                            maxHeight: '80vh',
-                            overflow: 'auto',
+                            padding: '1.5rem',
+                            maxHeight: '90vh',
+                            overflowY: 'auto',
+                            overflowX: 'hidden',
+                            position: 'relative',
+                            borderRadius: '24px',
+                            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
                         }}
                         onClick={(e) => e.stopPropagation()}
                     >
@@ -1312,39 +1514,39 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                             ×
                         </button>
 
-                        <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-                            <CardImage card={modalCard} style={{ maxWidth: '200px', margin: '0 auto 1rem' }} />
-                            <h3 style={{ margin: '0 0 0.25rem' }}>{modalCard.name}</h3>
-                            <p style={{ color: 'var(--text-secondary)', margin: 0 }}>{modalCard.bank}</p>
+                        <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+                            <CardImage card={modalCard} style={{ maxWidth: '150px', margin: '0 auto 0.75rem' }} />
+                            <h3 style={{ margin: '0 0 0.25rem', fontSize: '1.1rem' }}>{modalCard.name}</h3>
+                            <p style={{ color: 'var(--text-secondary)', margin: 0, fontSize: '0.9rem' }}>{modalCard.bank}</p>
                         </div>
 
-                        <div style={{ display: 'grid', gap: '1rem', marginBottom: '1.5rem' }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                <span style={{ color: 'var(--text-secondary)' }}>Annual Fee</span>
-                                <span style={{ fontWeight: 600, color: parseFee(modalCard.annualFee) === 0 ? '#22c55e' : 'var(--text-primary)' }}>
+                        <div style={{ display: 'grid', gap: '0.75rem', marginBottom: '1rem', fontSize: '0.9rem' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                <span style={{ color: 'var(--text-secondary)', minWidth: '100px' }}>Annual Fee</span>
+                                <span style={{ fontWeight: 600, color: parseFee(modalCard.annualFee) === 0 ? '#22c55e' : 'var(--text-primary)', textAlign: 'right' }}>
                                     {modalCard.annualFee || 'N/A'}
                                 </span>
                             </div>
-                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                <span style={{ color: 'var(--text-secondary)' }}>Reward Rate</span>
-                                <span style={{ fontWeight: 600 }}>{modalCard.rewardRate || 'Varies'}</span>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem' }}>
+                                <span style={{ color: 'var(--text-secondary)', minWidth: '100px', flexShrink: 0, marginTop: '2px' }}>Reward Rate</span>
+                                <span style={{ fontWeight: 600, textAlign: 'right', flex: 1, lineHeight: '1.5' }}>{modalCard.rewardRate || 'Varies'}</span>
                             </div>
-                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                <span style={{ color: 'var(--text-secondary)' }}>Forex Markup</span>
-                                <span style={{ fontWeight: 600 }}>{modalCard.fxMarkup || 'N/A'}</span>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                <span style={{ color: 'var(--text-secondary)', minWidth: '90px' }}>Forex Markup</span>
+                                <span style={{ fontWeight: 600, textAlign: 'right' }}>{modalCard.fxMarkup || 'N/A'}</span>
                             </div>
-                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                <span style={{ color: 'var(--text-secondary)' }}>Best For</span>
-                                <span style={{ fontWeight: 600 }}>{modalCard.bestFor || '-'}</span>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem' }}>
+                                <span style={{ color: 'var(--text-secondary)', minWidth: '100px', flexShrink: 0, marginTop: '2px' }}>Best For</span>
+                                <span style={{ fontWeight: 600, textAlign: 'right', flex: 1, lineHeight: '1.5' }}>{modalCard.bestFor || '-'}</span>
                             </div>
                         </div>
 
                         {modalCard.features && (
-                            <div style={{ marginBottom: '1.5rem' }}>
-                                <h4 style={{ margin: '0 0 0.75rem', color: 'var(--accent-cyan)' }}>Key Features</h4>
-                                <ul style={{ margin: 0, paddingLeft: '1.25rem', color: 'var(--text-secondary)' }}>
-                                    {modalCard.features.slice(0, 5).map((f, i) => (
-                                        <li key={i} style={{ marginBottom: '0.5rem' }}>{f}</li>
+                            <div style={{ marginBottom: '1.25rem' }}>
+                                <h4 style={{ margin: '0 0 0.5rem', color: 'var(--accent-cyan)', fontSize: '0.95rem' }}>Key Features</h4>
+                                <ul style={{ margin: 0, paddingLeft: '1.25rem', color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
+                                    {modalCard.features.slice(0, 4).map((f, i) => (
+                                        <li key={i} style={{ marginBottom: '0.25rem' }}>{f}</li>
                                     ))}
                                 </ul>
                             </div>
@@ -1370,7 +1572,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                                 {selectedCards.includes(modalCard.id) ? 'Remove from Compare' : 'Add to Compare'}
                             </button>
                             <Link
-                                to={`/card-guide/${modalCard.id}`}
+                                to={`/card-guide/${modalCard.slug || modalCard.id}`}
                                 style={{
                                     flex: 1,
                                     padding: '12px',

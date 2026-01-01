@@ -1,0 +1,1013 @@
+[
+  {
+    "id": "axis-atlas",
+    "name": "Axis Atlas Credit Card",
+    "bank": "Axis Bank",
+    "image": "/assets/cards/axis-atlas.png",
+    "link": "https://www.axisbank.com/retail/cards/credit-card/axis-bank-atlas-credit-card",
+    "fees": {
+      "joining": 5000,
+      "annual": 5000,
+      "currency": "INR",
+      "waivedOn": null,
+      "waiverText": "No annual fee waiver available. Renewal benefits based on tier."
+    },
+    "eligibility": {
+      "income": 1200000,
+      "age": { "min": 18, "max": 70 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 750
+    },
+    "rewards": {
+      "type": "miles",
+      "name": "EDGE Miles",
+      "baseRate": 0.02,
+      "earningText": "2 EDGE Miles per ₹100 on all eligible spends; 5 EDGE Miles per ₹100 on travel (airlines, hotels, Travel Edge)",
+      "expiry": "3 years from earning date",
+      "joiningBonus": "2,500 EDGE Miles on first transaction within 37 days of card issuance",
+      "exclusions": "Gold/Jewellery, Rent, Wallet, Government Institutions, Insurance, Fuel, Utilities, Telecom",
+      "calculator": {
+        "tier": "premium",
+        "monthlyCap": 10000,
+        "capResetPeriod": "calendar",
+        "specialLogic": "5X miles on travel capped at ₹2L/month spend; Tier system (Silver/Gold/Platinum) with milestone benefits",
+        "categories": {
+          "travel": { "rate": 0.05, "label": "5 EDGE Miles/₹100 on Travel Edge, Airlines, Hotels", "cap": 10000 },
+          "dining": { "rate": 0.02, "label": "2 EDGE Miles/₹100", "cap": null },
+          "online": { "rate": 0.02, "label": "2 EDGE Miles/₹100", "cap": null },
+          "fuel": { "rate": 0.0, "label": "No miles on fuel", "cap": null },
+          "groceries": { "rate": 0.02, "label": "2 EDGE Miles/₹100", "cap": null },
+          "utilities": { "rate": 0.0, "label": "No miles on utilities", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.00,
+        "bestOption": "Transfer to airline/hotel partners at 1:2 ratio (1 EDGE Mile = 2 Partner Points)",
+        "options": [
+          { "type": "Travel Edge Portal", "value": 1.00, "desc": "1 EDGE Mile = ₹1 on flights/hotels", "recommended": false },
+          { "type": "Partner Airlines/Hotels", "value": 2.00, "desc": "1 EDGE Mile = 2 Partner Points (except Marriott 2:1)", "recommended": true },
+          { "type": "Product Catalogue", "value": 1.00, "desc": "1 EDGE Mile = ₹1", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "Silver: 4/year, Gold: 12/year, Platinum: Unlimited",
+        "international": "Silver: 2/year, Gold: 6/year, Platinum: Unlimited",
+        "accessType": "Tier-based"
+      },
+      "milestones": [
+        { "spend": 300000, "benefit": "2,500 EDGE Miles (Silver Tier)" },
+        { "spend": 750000, "benefit": "5,000 EDGE Miles (Gold Tier) + Silver benefits" },
+        { "spend": 1500000, "benefit": "10,000 EDGE Miles (Platinum Tier) + Gold + Silver benefits" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "0%", "cap": 0 },
+      "forex": { "markup": 0.02, "text": "2% + GST" }
+    },
+    "metadata": {
+      "tags": ["Travel", "Miles", "Premium", "Airline Partners"],
+      "bestFor": "Frequent travelers who want flexible airline/hotel point transfers",
+      "rating": 4.5,
+      "verdict": "Best mid-premium travel card with excellent 1:2 partner transfer ratio",
+      "pros": ["5X miles on travel up to ₹2L/month", "1:2 partner transfer ratio", "Tier-based milestone benefits", "Flexible redemption across 20+ partners"],
+      "cons": ["No fee waiver option", "Accelerated miles capped at ₹2L/month", "Group A partners capped at 30K miles/year"]
+    }
+  },
+  {
+    "id": "axis-reserve",
+    "name": "Axis Reserve Credit Card",
+    "bank": "Axis Bank",
+    "image": "/assets/cards/axis-reserve.png",
+    "link": "https://www.axisbank.com/retail/cards/credit-card/reserve-credit-card",
+    "fees": {
+      "joining": 50000,
+      "annual": 50000,
+      "currency": "INR",
+      "waivedOn": 3500000,
+      "waiverText": "Annual fee waived on spending ₹35 Lakh in preceding anniversary year"
+    },
+    "eligibility": {
+      "income": 3000000,
+      "age": { "min": 21, "max": 70 },
+      "type": "Invite Only",
+      "creditScore": 800
+    },
+    "rewards": {
+      "type": "points",
+      "name": "EDGE Reward Points",
+      "baseRate": 0.015,
+      "earningText": "15 EDGE Reward Points per ₹200 spent (1.5% value-back); 2X on international spends",
+      "expiry": "3 years from earning date",
+      "joiningBonus": "15,000 EDGE Reward Points on first transaction within 30 days",
+      "exclusions": "Fuel, Wallet, Utilities, Government Institutions, Insurance, Gold, Rent (capped at ₹1L/month)",
+      "calculator": {
+        "tier": "super-premium",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "2X points (3% value-back) on international spends up to credit limit; Rental transactions capped at ₹1L/month",
+        "categories": {
+          "travel": { "rate": 0.03, "label": "2X (30 points/₹200 = 3% value-back) on international spends", "cap": null },
+          "dining": { "rate": 0.015, "label": "15 EDGE Points/₹200 (1.5%)", "cap": null },
+          "online": { "rate": 0.015, "label": "15 EDGE Points/₹200 (1.5%)", "cap": null },
+          "fuel": { "rate": 0.0, "label": "No points on fuel", "cap": null },
+          "groceries": { "rate": 0.015, "label": "15 EDGE Points/₹200 (1.5%)", "cap": null },
+          "utilities": { "rate": 0.0, "label": "No points on utilities", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.20,
+        "bestOption": "Transfer to travel partners at 5:2 ratio",
+        "options": [
+          { "type": "Partner Airmiles", "value": 0.40, "desc": "5 EDGE RP = 2 Partner Points", "recommended": true },
+          { "type": "Product Catalogue", "value": 0.20, "desc": "1 RP = ₹0.20", "recommended": false },
+          { "type": "Cashback", "value": 0.20, "desc": "1 RP = ₹0.20 statement credit", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "Unlimited for primary and add-on",
+        "international": "Unlimited via Priority Pass + 12 guest visits/year",
+        "accessType": "Priority Pass"
+      },
+      "milestones": [],
+      "golf": { "included": true, "text": "50 complimentary golf rounds per financial year" },
+      "movies": { "included": true, "text": "BOGO on BookMyShow (up to ₹500 off 2nd ticket, 5x/month)" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 400 },
+      "forex": { "markup": 0.02, "text": "2% + GST" }
+    },
+    "metadata": {
+      "tags": ["Super-Premium", "Golf", "Unlimited Lounge", "Metal Card"],
+      "bestFor": "Ultra-high spenders seeking premium golf and unlimited lounge benefits",
+      "rating": 4.2,
+      "verdict": "Premium lifestyle card with excellent golf benefits but devalued rewards",
+      "pros": ["Unlimited lounge access", "50 golf rounds/year", "Club ITC, Accor Plus, Marriott memberships", "1.5% value-back (7.5 RP/₹100)"],
+      "cons": ["₹50K annual fee", "5:2 transfer ratio (lower than before)", "Annual transfer cap of 5L points"]
+    }
+  },
+  {
+    "id": "axis-olympus",
+    "name": "Axis Bank Olympus Credit Card",
+    "bank": "Axis Bank",
+    "image": "/assets/cards/axis-olympus.png",
+    "link": "https://www.axisbank.com/retail/cards/credit-card/olympus-credit-card",
+    "fees": {
+      "joining": 20000,
+      "annual": 20000,
+      "currency": "INR",
+      "waivedOn": null,
+      "waiverText": "No fee waiver. Compensated with ₹10K Taj/ITC vouchers + 2,500 EDGE Miles as welcome/renewal benefit"
+    },
+    "eligibility": {
+      "income": 1800000,
+      "age": { "min": 21, "max": 70 },
+      "type": "Salaried/Self-Employed/Citi Prestige Migration",
+      "creditScore": 780
+    },
+    "rewards": {
+      "type": "miles",
+      "name": "EDGE Miles",
+      "baseRate": 0.01,
+      "earningText": "1 EDGE Mile per ₹100 on domestic spends; 2 EDGE Miles per ₹100 on international spends",
+      "expiry": "3 years from earning date",
+      "joiningBonus": "₹10,000 Taj/ITC Hotel voucher + 2,500 EDGE Miles on first transaction within 30 days",
+      "exclusions": "Fuel, Wallet, Utilities, Government Institutions, Insurance, Gold, Rent",
+      "calculator": {
+        "tier": "super-premium",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "1:4 partner transfer ratio makes low earn rate worthwhile; 7.5L EDGE Miles annual transfer cap",
+        "categories": {
+          "travel": { "rate": 0.02, "label": "2 EDGE Miles/₹100 on international", "cap": null },
+          "dining": { "rate": 0.01, "label": "1 EDGE Mile/₹100", "cap": null },
+          "online": { "rate": 0.01, "label": "1 EDGE Mile/₹100", "cap": null },
+          "fuel": { "rate": 0.0, "label": "No miles on fuel", "cap": null },
+          "groceries": { "rate": 0.01, "label": "1 EDGE Mile/₹100", "cap": null },
+          "utilities": { "rate": 0.0, "label": "No miles on utilities", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.00,
+        "bestOption": "Transfer to partners at 1:4 ratio (best in market)",
+        "options": [
+          { "type": "Partner Airlines/Hotels", "value": 4.00, "desc": "1 EDGE Mile = 4 Partner Points", "recommended": true },
+          { "type": "Travel Edge Portal", "value": 1.00, "desc": "1 EDGE Mile = ₹1", "recommended": false },
+          { "type": "Product Catalogue", "value": 1.00, "desc": "1 EDGE Mile = ₹1", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "Unlimited + 10 guest visits/year",
+        "international": "Unlimited via Priority Pass",
+        "accessType": "Priority Pass"
+      },
+      "milestones": [
+        { "spend": 50000, "benefit": "Unlock additional golf rounds per billing cycle" }
+      ],
+      "golf": { "included": true, "text": "8 complimentary golf rounds/year; additional rounds on ₹50K+ monthly spend" },
+      "movies": { "included": true, "text": "Buy 1 Get 1 on BookMyShow" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 400 },
+      "forex": { "markup": 0.018, "text": "1.8% + GST" }
+    },
+    "metadata": {
+      "tags": ["Super-Premium", "Citi Prestige Replacement", "Travel", "Golf"],
+      "bestFor": "Ex-Citi Prestige holders and travelers seeking best-in-class 1:4 partner transfer",
+      "rating": 4.4,
+      "verdict": "Excellent 1:4 transfer ratio compensates for low earn rate; great for travel redemptions",
+      "pros": ["Best-in-market 1:4 partner transfer", "Taj Epicure membership", "Unlimited lounge access", "₹10K hotel vouchers on joining/renewal"],
+      "cons": ["Low 1% earn rate on domestic spends", "₹20K annual fee with no waiver", "No milestone spend benefits"]
+    }
+  },
+  {
+    "id": "axis-horizon",
+    "name": "Axis Bank Horizon Credit Card",
+    "bank": "Axis Bank",
+    "image": "/assets/cards/axis-horizon.png",
+    "link": "https://www.axisbank.com/retail/cards/credit-card/axis-horizon-credit-card",
+    "fees": {
+      "joining": 3000,
+      "annual": 3000,
+      "currency": "INR",
+      "waivedOn": null,
+      "waiverText": "No fee waiver available. 1,500 EDGE Miles renewal benefit on card anniversary"
+    },
+    "eligibility": {
+      "income": 600000,
+      "age": { "min": 18, "max": 70 },
+      "type": "Salaried/Self-Employed/Citi PremierMiles Migration",
+      "creditScore": 720
+    },
+    "rewards": {
+      "type": "miles",
+      "name": "EDGE Miles",
+      "baseRate": 0.02,
+      "earningText": "2 EDGE Miles per ₹100 on all eligible spends; 5 EDGE Miles per ₹100 on Travel Edge and direct airline spends",
+      "expiry": "3 years from earning date",
+      "joiningBonus": "5,000 EDGE Miles on first transaction of ₹1,000+ within 30 days",
+      "exclusions": "Fuel, Utilities, Rent, Insurance, Transportation/Tolls, Educational Institutions, Government Institutions, Wallet",
+      "calculator": {
+        "tier": "premium",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "1:1 partner transfer ratio; 5L annual miles transfer cap",
+        "categories": {
+          "travel": { "rate": 0.05, "label": "5 EDGE Miles/₹100 on Travel Edge & Airlines", "cap": null },
+          "dining": { "rate": 0.02, "label": "2 EDGE Miles/₹100", "cap": null },
+          "online": { "rate": 0.02, "label": "2 EDGE Miles/₹100", "cap": null },
+          "fuel": { "rate": 0.0, "label": "No miles on fuel", "cap": null },
+          "groceries": { "rate": 0.02, "label": "2 EDGE Miles/₹100", "cap": null },
+          "utilities": { "rate": 0.0, "label": "No miles on utilities", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.00,
+        "bestOption": "Transfer to airline/hotel partners at 1:1 ratio",
+        "options": [
+          { "type": "Partner Airlines/Hotels", "value": 1.00, "desc": "1 EDGE Mile = 1 Partner Point", "recommended": true },
+          { "type": "Travel Edge Portal", "value": 1.00, "desc": "1 EDGE Mile = ₹1", "recommended": false },
+          { "type": "Product Catalogue", "value": 1.00, "desc": "1 EDGE Mile = ₹1", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "6/quarter (Mastercard) or 8/quarter (Visa Signature)",
+        "international": "8 per calendar year",
+        "accessType": "Card-based"
+      },
+      "milestones": [],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 400 },
+      "forex": { "markup": 0.035, "text": "3.5% + GST" }
+    },
+    "metadata": {
+      "tags": ["Travel", "Miles", "Mid-Premium", "Citi PremierMiles Replacement"],
+      "bestFor": "Budget-conscious travelers seeking travel miles with good lounge access",
+      "rating": 4.0,
+      "verdict": "Affordable travel card with 5% on travel and decent lounge access",
+      "pros": ["5X miles on travel spends", "Good lounge access for the fee", "5,000 welcome miles", "Wednesday travel offers"],
+      "cons": ["1:1 transfer ratio (inferior to Atlas)", "No fee waiver", "3.5% forex markup"]
+    }
+  },
+  {
+    "id": "axis-select",
+    "name": "Axis Bank SELECT Credit Card",
+    "bank": "Axis Bank",
+    "image": "/assets/cards/axis-select.png",
+    "link": "https://www.axisbank.com/retail/cards/credit-card/axis-bank-select-credit-card",
+    "fees": {
+      "joining": 3000,
+      "annual": 3000,
+      "currency": "INR",
+      "waivedOn": 800000,
+      "waiverText": "Annual fee waived on spending ₹8 Lakh in card anniversary year"
+    },
+    "eligibility": {
+      "income": 600000,
+      "age": { "min": 18, "max": 70 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 720
+    },
+    "rewards": {
+      "type": "points",
+      "name": "EDGE Reward Points",
+      "baseRate": 0.01,
+      "earningText": "10 EDGE Reward Points per ₹200 spent; 2X (20 points) on retail shopping up to ₹20K/month",
+      "expiry": "3 years from earning date",
+      "joiningBonus": "10,000 EDGE Reward Points (₹2,000 value) on first transaction within 30 days",
+      "exclusions": "Insurance, Rent, Fuel, Educational Services, Utilities & Telecom, Wallet, Gold/Jewellery, Government Services",
+      "calculator": {
+        "tier": "premium",
+        "monthlyCap": 4000,
+        "capResetPeriod": "calendar",
+        "specialLogic": "2X rewards on retail shopping capped at ₹20K/month; 5,000 bonus points on ₹3L annual spend",
+        "categories": {
+          "travel": { "rate": 0.01, "label": "10 EDGE Points/₹200", "cap": null },
+          "dining": { "rate": 0.01, "label": "10 EDGE Points/₹200", "cap": null },
+          "online": { "rate": 0.01, "label": "10 EDGE Points/₹200", "cap": null },
+          "fuel": { "rate": 0.0, "label": "No points on fuel", "cap": null },
+          "groceries": { "rate": 0.02, "label": "2X (20 Points/₹200) on retail stores", "cap": 4000 },
+          "utilities": { "rate": 0.0, "label": "No points on utilities", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.20,
+        "bestOption": "Transfer to airline partners",
+        "options": [
+          { "type": "Partner Airmiles", "value": 0.20, "desc": "10 RP = 1 Partner Point", "recommended": true },
+          { "type": "Product Catalogue", "value": 0.20, "desc": "1 RP = ₹0.20", "recommended": false },
+          { "type": "Cashback", "value": 0.20, "desc": "1 RP = ₹0.20 statement credit", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "2/quarter on ₹50K spend in previous quarter",
+        "international": "6/year via Priority Pass (additional 6 on ₹3L spend)",
+        "accessType": "Priority Pass"
+      },
+      "milestones": [
+        { "spend": 300000, "benefit": "5,000 bonus EDGE Reward Points + Priority Pass renewal + 6 more int'l lounge visits" }
+      ],
+      "golf": { "included": true, "text": "6 complimentary rounds; 6 more on ₹3L annual spend (12 total)" },
+      "movies": { "included": true, "text": "BOGO via District app, twice/month (up to ₹250 off)" },
+      "fuel": { "surchargeWaiver": "0%", "cap": 0 },
+      "forex": { "markup": 0.035, "text": "3.5% + GST" }
+    },
+    "metadata": {
+      "tags": ["Lifestyle", "Golf", "Lounge Access", "Retail Shopping"],
+      "bestFor": "Retail shoppers and those seeking golf + lounge benefits at mid-tier pricing",
+      "rating": 4.1,
+      "verdict": "Solid all-rounder with good lounge access, golf benefits, and retail rewards",
+      "pros": ["2X rewards on retail shopping", "12 golf rounds possible", "Priority Pass with 12 visits", "BigBasket & Swiggy discounts"],
+      "cons": ["Low 10:1 redemption ratio", "No fuel rewards", "Retail 2X capped at ₹20K/month"]
+    }
+  },
+  {
+    "id": "axis-privilege",
+    "name": "Axis Bank Privilege Credit Card",
+    "bank": "Axis Bank",
+    "image": "/assets/cards/axis-privilege.png",
+    "link": "https://www.axisbank.com/retail/cards/credit-card/privilege-credit-card-with-unlimited-benefits",
+    "fees": {
+      "joining": 1500,
+      "annual": 1500,
+      "currency": "INR",
+      "waivedOn": 500000,
+      "waiverText": "Annual fee waived on spending ₹5 Lakh in card anniversary year"
+    },
+    "eligibility": {
+      "income": 600000,
+      "age": { "min": 18, "max": 70 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "points",
+      "name": "EDGE Reward Points",
+      "baseRate": 0.01,
+      "earningText": "10 EDGE Reward Points per ₹200 spent on all eligible domestic and international transactions",
+      "expiry": "3 years from earning date",
+      "joiningBonus": "12,500 EDGE Reward Points (₹2,500 value) on joining fee payment + first transaction within 30 days",
+      "exclusions": "Fuel, Rent, Utilities, Insurance, Gold, Government Services, Educational Services, Wallet",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "Uncapped rewards on all eligible spends; 10,000 bonus points on ₹2.5L annual spend",
+        "categories": {
+          "travel": { "rate": 0.01, "label": "10 EDGE Points/₹200", "cap": null },
+          "dining": { "rate": 0.01, "label": "10 EDGE Points/₹200", "cap": null },
+          "online": { "rate": 0.01, "label": "10 EDGE Points/₹200", "cap": null },
+          "fuel": { "rate": 0.0, "label": "No points on fuel", "cap": null },
+          "groceries": { "rate": 0.01, "label": "10 EDGE Points/₹200", "cap": null },
+          "utilities": { "rate": 0.0, "label": "No points on utilities", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.20,
+        "bestOption": "Transfer to partner airlines/hotels or catalogue",
+        "options": [
+          { "type": "Partner Airmiles", "value": 0.20, "desc": "10 RP = 1-2 Partner Points depending on partner", "recommended": true },
+          { "type": "Product Catalogue", "value": 0.20, "desc": "1 RP = ₹0.20", "recommended": false },
+          { "type": "Cashback", "value": 0.20, "desc": "1 RP = ₹0.20 statement credit", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "2/quarter on ₹50K spend in previous quarter (max 8/year)",
+        "international": "None",
+        "accessType": "Spend-based"
+      },
+      "milestones": [
+        { "spend": 250000, "benefit": "10,000 bonus EDGE Reward Points (₹2,000 value)" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": true, "text": "BOGO on District app" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 400 },
+      "forex": { "markup": 0.035, "text": "3.5% + GST" }
+    },
+    "metadata": {
+      "tags": ["Entry-Level", "Rewards", "Unlimited Earn", "Dining"],
+      "bestFor": "Those seeking uncapped reward earning at low annual fee",
+      "rating": 3.8,
+      "verdict": "Decent entry-level rewards card with uncapped earning but low redemption value",
+      "pros": ["Uncapped reward points", "Low annual fee ₹1,500", "12,500 welcome points", "Dining discounts via EazyDiner"],
+      "cons": ["Low 1% reward rate", "Domestic lounges only (spend-based)", "No international lounge access"]
+    }
+  },
+  {
+    "id": "axis-myzone",
+    "name": "Axis Bank MY ZONE Credit Card",
+    "bank": "Axis Bank",
+    "image": "/assets/cards/axis-myzone.png",
+    "link": "https://www.axisbank.com/retail/cards/credit-card/axis-bank-my-zone-credit-card",
+    "fees": {
+      "joining": 500,
+      "annual": 500,
+      "currency": "INR",
+      "waivedOn": null,
+      "waiverText": "SonyLIV Premium renewal on spending ₹1.5L in anniversary year"
+    },
+    "eligibility": {
+      "income": 300000,
+      "age": { "min": 18, "max": 70 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 680
+    },
+    "rewards": {
+      "type": "points",
+      "name": "EDGE Reward Points",
+      "baseRate": 0.004,
+      "earningText": "4 EDGE Reward Points per ₹200 spent",
+      "expiry": "3 years from earning date",
+      "joiningBonus": "Complimentary SonyLIV Premium membership (₹999 value) on first spend within 30 days",
+      "exclusions": "Movies, Fuel, Rent, Insurance, Utilities, Jewellery, Education, Government Institutions, Wallet, EMI",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "Focus on OTT subscription and brand discounts rather than rewards",
+        "categories": {
+          "travel": { "rate": 0.004, "label": "4 EDGE Points/₹200", "cap": null },
+          "dining": { "rate": 0.004, "label": "4 EDGE Points/₹200", "cap": null },
+          "online": { "rate": 0.004, "label": "4 EDGE Points/₹200", "cap": null },
+          "fuel": { "rate": 0.0, "label": "No points on fuel", "cap": null },
+          "groceries": { "rate": 0.004, "label": "4 EDGE Points/₹200", "cap": null },
+          "utilities": { "rate": 0.0, "label": "No points on utilities", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.20,
+        "bestOption": "Redeem for vouchers or products",
+        "options": [
+          { "type": "Product Catalogue", "value": 0.20, "desc": "1 RP = ₹0.20", "recommended": true },
+          { "type": "Cashback", "value": 0.20, "desc": "1 RP = ₹0.20 statement credit", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "1/quarter on ₹50K spend in previous 3 months",
+        "international": "None",
+        "accessType": "Spend-based"
+      },
+      "milestones": [
+        { "spend": 150000, "benefit": "1,000 EDGE Reward Points + SonyLIV renewal (₹1.5L in anniversary year)" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": true, "text": "BOGO on movie tickets" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 400 },
+      "forex": { "markup": 0.035, "text": "3.5% + GST" }
+    },
+    "metadata": {
+      "tags": ["Entry-Level", "Entertainment", "OTT", "Movies"],
+      "bestFor": "Entertainment lovers seeking OTT subscription and movie discounts",
+      "rating": 3.5,
+      "verdict": "Best for SonyLIV subscribers and Swiggy/movie enthusiasts on a budget",
+      "pros": ["Free SonyLIV Premium (₹999 value)", "BOGO movie tickets", "Swiggy ₹120 off (2x/month)", "Low ₹500 annual fee"],
+      "cons": ["Very low 0.4% reward rate", "Movie spends excluded from rewards", "Limited lounge access"]
+    }
+  },
+  {
+    "id": "axis-neo",
+    "name": "Axis Bank NEO Credit Card",
+    "bank": "Axis Bank",
+    "image": "/assets/cards/axis-neo.png",
+    "link": "https://www.axisbank.com/retail/cards/credit-card/axis-bank-neo-credit-card",
+    "fees": {
+      "joining": 250,
+      "annual": 250,
+      "currency": "INR",
+      "waivedOn": null,
+      "waiverText": "Lifetime free from select channels"
+    },
+    "eligibility": {
+      "income": 180000,
+      "age": { "min": 18, "max": 70 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 650
+    },
+    "rewards": {
+      "type": "points",
+      "name": "EDGE Reward Points",
+      "baseRate": 0.001,
+      "earningText": "1 EDGE Reward Point per ₹200 spent",
+      "expiry": "3 years from earning date",
+      "joiningBonus": "100% cashback up to ₹300 on first utility bill payment within 30 days",
+      "exclusions": "Fuel, Utilities, Insurance, EMI, Wallet, Rent, Government, Education",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "Focus on brand discounts (Zomato, Myntra, Blinkit) rather than rewards",
+        "categories": {
+          "travel": { "rate": 0.001, "label": "1 EDGE Point/₹200", "cap": null },
+          "dining": { "rate": 0.001, "label": "1 EDGE Point/₹200", "cap": null },
+          "online": { "rate": 0.001, "label": "1 EDGE Point/₹200", "cap": null },
+          "fuel": { "rate": 0.0, "label": "No points on fuel", "cap": null },
+          "groceries": { "rate": 0.001, "label": "1 EDGE Point/₹200", "cap": null },
+          "utilities": { "rate": 0.0, "label": "No points on utilities", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.20,
+        "bestOption": "Redeem for vouchers",
+        "options": [
+          { "type": "Product Catalogue", "value": 0.20, "desc": "1 RP = ₹0.20", "recommended": true }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "None",
+        "international": "None",
+        "accessType": "None"
+      },
+      "milestones": [],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": true, "text": "25% cashback on movie tickets via BookMyShow (capped)" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 400 },
+      "forex": { "markup": 0.035, "text": "3.5% + GST" }
+    },
+    "metadata": {
+      "tags": ["Entry-Level", "Lifestyle", "Zomato", "Discount"],
+      "bestFor": "First-time cardholders who order frequently on Zomato and shop on Myntra",
+      "rating": 3.2,
+      "verdict": "Ultra-basic card best for Zomato 40% off and brand discounts; poor reward rate",
+      "pros": ["₹250 annual fee (often LTF)", "40% off on Zomato (₹120 max, 2x/month)", "Myntra ₹150 off", "Blinkit discounts"],
+      "cons": ["Worst reward rate at 0.1%", "No lounge access", "Very limited benefits"]
+    }
+  },
+  {
+    "id": "flipkart-axis",
+    "name": "Flipkart Axis Bank Credit Card",
+    "bank": "Axis Bank",
+    "image": "/assets/cards/flipkart-axis.png",
+    "link": "https://www.axisbank.com/retail/cards/credit-card/flipkart-axisbank-credit-card",
+    "fees": {
+      "joining": 500,
+      "annual": 500,
+      "currency": "INR",
+      "waivedOn": 350000,
+      "waiverText": "Annual fee waived on spending ₹3.5 Lakh in preceding year"
+    },
+    "eligibility": {
+      "income": 300000,
+      "age": { "min": 18, "max": 70 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 680
+    },
+    "rewards": {
+      "type": "cashback",
+      "name": "Direct Cashback",
+      "baseRate": 0.01,
+      "earningText": "5% on Flipkart & Cleartrip; 7.5% on Myntra; 4% on Swiggy, Uber, PVR, cult.fit; 1% on others",
+      "expiry": "N/A - Direct statement credit",
+      "joiningBonus": "Flipkart voucher worth ₹250 + Swiggy 50% off (up to ₹100) for new users",
+      "exclusions": "Fuel, Rent, Insurance, Utilities, Education, Gift Cards, Gold, Wallet, EMI conversions",
+      "calculator": {
+        "tier": "co-branded",
+        "monthlyCap": 4000,
+        "capResetPeriod": "statement-quarter",
+        "specialLogic": "₹4,000 cashback cap per quarter each for Flipkart, Cleartrip, Myntra",
+        "categories": {
+          "travel": { "rate": 0.05, "label": "5% cashback on Cleartrip", "cap": 4000 },
+          "dining": { "rate": 0.04, "label": "4% cashback on Swiggy", "cap": null },
+          "online": { "rate": 0.075, "label": "7.5% on Myntra; 5% on Flipkart", "cap": 4000 },
+          "fuel": { "rate": 0.0, "label": "No cashback on fuel", "cap": null },
+          "groceries": { "rate": 0.01, "label": "1% on other spends", "cap": null },
+          "utilities": { "rate": 0.0, "label": "No cashback on utilities", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.00,
+        "bestOption": "Automatic statement credit",
+        "options": [
+          { "type": "Statement Credit", "value": 1.00, "desc": "Cashback auto-credited to statement", "recommended": true }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "Discontinued from June 2025",
+        "international": "None",
+        "accessType": "None"
+      },
+      "milestones": [],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": true, "text": "100% off on 2nd movie ticket via District app (₹250 max, 1x/month)" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 400 },
+      "forex": { "markup": 0.035, "text": "3.5% + GST" }
+    },
+    "metadata": {
+      "tags": ["Co-branded", "Cashback", "Flipkart", "Online Shopping"],
+      "bestFor": "Flipkart and Myntra shoppers seeking high cashback",
+      "rating": 4.0,
+      "verdict": "Best card for Flipkart/Myntra shoppers with good cashback on partners",
+      "pros": ["7.5% on Myntra", "5% on Flipkart & Cleartrip", "4% on Swiggy/Uber/PVR", "Direct statement cashback"],
+      "cons": ["₹4K/quarter cap on each merchant", "Lounge access discontinued", "Many exclusions"]
+    }
+  },
+  {
+    "id": "axis-airtel",
+    "name": "Airtel Axis Bank Credit Card",
+    "bank": "Axis Bank",
+    "image": "/assets/cards/axis-airtel.png",
+    "link": "https://www.axisbank.com/retail/cards/credit-card/airtel-axis-bank-credit-card",
+    "fees": {
+      "joining": 500,
+      "annual": 500,
+      "currency": "INR",
+      "waivedOn": 200000,
+      "waiverText": "Annual fee waived on spending ₹2 Lakh in preceding year"
+    },
+    "eligibility": {
+      "income": 300000,
+      "age": { "min": 18, "max": 70 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 680
+    },
+    "rewards": {
+      "type": "cashback",
+      "name": "Direct Cashback",
+      "baseRate": 0.01,
+      "earningText": "25% on Airtel bills (via Thanks app); 10% on utilities & food delivery; 1% on others",
+      "expiry": "N/A - Direct statement credit",
+      "joiningBonus": "Amazon e-voucher worth ₹500 on first transaction within 30 days",
+      "exclusions": "Fuel, Rent, Insurance, Education, Gold, Wallet, EMI, Government",
+      "calculator": {
+        "tier": "co-branded",
+        "monthlyCap": 250,
+        "capResetPeriod": "statement",
+        "specialLogic": "Cashback only via Airtel Thanks app for Airtel & utility bills",
+        "categories": {
+          "travel": { "rate": 0.01, "label": "1% cashback", "cap": null },
+          "dining": { "rate": 0.10, "label": "10% on Swiggy/Zomato/BigBasket (₹500/month cap)", "cap": 500 },
+          "online": { "rate": 0.01, "label": "1% cashback", "cap": null },
+          "fuel": { "rate": 0.0, "label": "No cashback on fuel", "cap": null },
+          "groceries": { "rate": 0.10, "label": "10% on BigBasket", "cap": 500 },
+          "utilities": { "rate": 0.10, "label": "10% via Airtel Thanks (₹250/month cap)", "cap": 250 }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.00,
+        "bestOption": "Automatic statement credit",
+        "options": [
+          { "type": "Statement Credit", "value": 1.00, "desc": "Cashback auto-credited to statement", "recommended": true }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "4/year on ₹50K spend in previous 3 months",
+        "international": "None",
+        "accessType": "Spend-based"
+      },
+      "milestones": [],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 500 },
+      "forex": { "markup": 0.035, "text": "3.5% + GST" }
+    },
+    "metadata": {
+      "tags": ["Co-branded", "Cashback", "Airtel", "Utilities"],
+      "bestFor": "Airtel customers who pay bills via Airtel Thanks app",
+      "rating": 3.8,
+      "verdict": "Best for Airtel ecosystem users; excellent utility bill cashback",
+      "pros": ["25% on Airtel bills", "10% on utilities via Thanks app", "10% on Swiggy/Zomato/BigBasket", "Low ₹500 fee"],
+      "cons": ["Must use Airtel Thanks app", "Low monthly caps (₹250-500)", "Only domestic lounges"]
+    }
+  },
+  {
+    "id": "axis-ace",
+    "name": "Axis Bank ACE Credit Card",
+    "bank": "Axis Bank",
+    "image": "/assets/cards/axis-ace.png",
+    "link": "https://www.axisbank.com/retail/cards/credit-card/axis-bank-ace-credit-card",
+    "fees": {
+      "joining": 499,
+      "annual": 499,
+      "currency": "INR",
+      "waivedOn": 200000,
+      "waiverText": "Joining fee reversed on ₹10K spend in first 45 days; Annual fee waived on ₹2L spend"
+    },
+    "eligibility": {
+      "income": 300000,
+      "age": { "min": 18, "max": 70 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 680
+    },
+    "rewards": {
+      "type": "cashback",
+      "name": "Direct Cashback",
+      "baseRate": 0.015,
+      "earningText": "5% on Google Pay bill payments; 4% on Swiggy/Zomato/Ola; 1.5% on others",
+      "expiry": "N/A - Direct statement credit",
+      "joiningBonus": "Joining fee reversed on spending ₹10,000 within 45 days",
+      "exclusions": "Fuel, Rent, Insurance, Utilities (non-GPay), Education, Gold, Wallet, EMI, Government",
+      "calculator": {
+        "tier": "co-branded",
+        "monthlyCap": 500,
+        "capResetPeriod": "statement",
+        "specialLogic": "5% on bills only via Google Pay; Combined cap of ₹500/month on 5% + 4% categories",
+        "categories": {
+          "travel": { "rate": 0.015, "label": "1.5% cashback", "cap": null },
+          "dining": { "rate": 0.04, "label": "4% on Swiggy/Zomato", "cap": 500 },
+          "online": { "rate": 0.015, "label": "1.5% cashback", "cap": null },
+          "fuel": { "rate": 0.0, "label": "No cashback on fuel", "cap": null },
+          "groceries": { "rate": 0.015, "label": "1.5% cashback", "cap": null },
+          "utilities": { "rate": 0.05, "label": "5% via Google Pay only", "cap": 500 }
+        }
+      },
+      "redemption": {
+        "baseValue": 1.00,
+        "bestOption": "Automatic statement credit",
+        "options": [
+          { "type": "Statement Credit", "value": 1.00, "desc": "Cashback auto-credited to statement", "recommended": true }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "4/year on ₹50K spend in previous 3 months",
+        "international": "None",
+        "accessType": "Spend-based"
+      },
+      "milestones": [],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 500 },
+      "forex": { "markup": 0.035, "text": "3.5% + GST" }
+    },
+    "metadata": {
+      "tags": ["Co-branded", "Cashback", "Google Pay", "Utilities"],
+      "bestFor": "Google Pay users who pay utility bills and order frequently on Swiggy/Zomato",
+      "rating": 4.1,
+      "verdict": "Top cashback card for utility bills via GPay and food delivery apps",
+      "pros": ["5% on utility bills via GPay", "4% on Swiggy/Zomato/Ola", "1.5% base rate (unlimited)", "Low ₹499 fee"],
+      "cons": ["Must use Google Pay for 5% utility cashback", "₹500/month combined cap on 5%+4%", "iOS users can't use GPay pay feature"]
+    }
+  },
+  {
+    "id": "axis-indianoil",
+    "name": "IndianOil Axis Bank Credit Card",
+    "bank": "Axis Bank",
+    "image": "/assets/cards/axis-indianoil.png",
+    "link": "https://www.axisbank.com/retail/cards/credit-card/indianoil-axis-bank-credit-card",
+    "fees": {
+      "joining": 500,
+      "annual": 500,
+      "currency": "INR",
+      "waivedOn": 350000,
+      "waiverText": "Annual fee waived on spending ₹3.5 Lakh in card anniversary year"
+    },
+    "eligibility": {
+      "income": 240000,
+      "age": { "min": 18, "max": 70 },
+      "type": "Salaried/Self-Employed",
+      "creditScore": 650
+    },
+    "rewards": {
+      "type": "points",
+      "name": "EDGE Reward Points",
+      "baseRate": 0.02,
+      "earningText": "4% value-back (20 RP per ₹100) on IOCL fuel; 1% (5 RP per ₹100) on online shopping",
+      "expiry": "3 years from earning date",
+      "joiningBonus": "Up to 1,250 EDGE Reward Points (₹250 value) on first fuel transaction within 30 days",
+      "exclusions": "Education, Government, Utilities, Rent, Wallet, Jewellery/Gold, Insurance",
+      "calculator": {
+        "tier": "co-branded",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "4% on fuel only at IOCL outlets; fuel transactions ₹400-₹4,000 only",
+        "categories": {
+          "travel": { "rate": 0.01, "label": "1 EDGE Point/₹200", "cap": null },
+          "dining": { "rate": 0.01, "label": "1 EDGE Point/₹200", "cap": null },
+          "online": { "rate": 0.01, "label": "5 EDGE Points/₹100 (1%)", "cap": null },
+          "fuel": { "rate": 0.04, "label": "20 EDGE Points/₹100 at IOCL (4%)", "cap": null },
+          "groceries": { "rate": 0.01, "label": "1 EDGE Point/₹200", "cap": null },
+          "utilities": { "rate": 0.0, "label": "No points on utilities", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.20,
+        "bestOption": "Redeem for IOCL fuel or catalogue products",
+        "options": [
+          { "type": "IOCL Fuel", "value": 0.20, "desc": "Redeem at IOCL outlets", "recommended": true },
+          { "type": "Product Catalogue", "value": 0.20, "desc": "1 RP = ₹0.20", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "None",
+        "international": "None",
+        "accessType": "None"
+      },
+      "milestones": [],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": true, "text": "10% off on BookMyShow" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 50 },
+      "forex": { "markup": 0.035, "text": "3.5% + GST" }
+    },
+    "metadata": {
+      "tags": ["Co-branded", "Fuel", "IOCL", "Entry-Level"],
+      "bestFor": "Regular commuters who fuel up at IndianOil outlets",
+      "rating": 3.5,
+      "verdict": "Best budget fuel card for IOCL customers with 4% value-back on fuel",
+      "pros": ["4% value-back on IOCL fuel", "Low ₹500 annual fee", "1% on online shopping", "Fuel surcharge waiver"],
+      "cons": ["Only works at IOCL outlets", "No lounge access", "₹50 fuel surcharge waiver cap", "Fuel txn must be ₹400-₹4,000"]
+    }
+  },
+  {
+    "id": "axis-lic-signature",
+    "name": "LIC Axis Bank Signature Credit Card",
+    "bank": "Axis Bank",
+    "image": "/assets/cards/axis-lic-signature.png",
+    "link": "https://www.axisbank.com/retail/cards/credit-card/lic-axis-bank-signature-credit-card",
+    "fees": {
+      "joining": 0,
+      "annual": 0,
+      "currency": "INR",
+      "waivedOn": null,
+      "waiverText": "Lifetime Free - No joining or annual fee"
+    },
+    "eligibility": {
+      "income": 500000,
+      "age": { "min": 18, "max": 70 },
+      "type": "LIC Policyholders/Salaried/Self-Employed",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "points",
+      "name": "Reward Points",
+      "baseRate": 0.002,
+      "earningText": "2 Reward Points per ₹100 on LIC premium & international spends; 1 RP per ₹100 on others",
+      "expiry": "12 months from earning date",
+      "joiningBonus": "None",
+      "exclusions": "Fuel, Wallet, EMI, Utilities & Telecom, Education, Rent, Government, Gold/Jewellery",
+      "calculator": {
+        "tier": "co-branded",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "2X rewards on LIC premium payments and international transactions",
+        "categories": {
+          "travel": { "rate": 0.002, "label": "2 RP/₹100 on international", "cap": null },
+          "dining": { "rate": 0.001, "label": "1 RP/₹100", "cap": null },
+          "online": { "rate": 0.001, "label": "1 RP/₹100", "cap": null },
+          "fuel": { "rate": 0.0, "label": "No points on fuel", "cap": null },
+          "groceries": { "rate": 0.001, "label": "1 RP/₹100", "cap": null },
+          "utilities": { "rate": 0.0, "label": "No points on utilities", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.20,
+        "bestOption": "Redeem for vouchers or products via LIC Cards catalogue",
+        "options": [
+          { "type": "Product Catalogue", "value": 0.20, "desc": "Redeem via LIC Cards portal", "recommended": true },
+          { "type": "Gift Vouchers", "value": 0.20, "desc": "E-vouchers and gift cards", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "8 per calendar year",
+        "international": "None",
+        "accessType": "Card-based"
+      },
+      "milestones": [],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 400 },
+      "forex": { "markup": 0.035, "text": "3.5% + GST" }
+    },
+    "metadata": {
+      "tags": ["Co-branded", "LIC", "Insurance", "Free Card"],
+      "bestFor": "LIC policyholders seeking rewards on premium payments",
+      "rating": 3.6,
+      "verdict": "Free card for LIC customers with 2X on premiums and 8 lounge visits",
+      "pros": ["Zero annual fee (lifetime free)", "2X on LIC premiums & international", "8 domestic lounge visits", "Lost card liability cover"],
+      "cons": ["Very low 0.2% reward rate", "Only 12-month reward validity", "No international lounge", "Basic benefits"]
+    }
+  },
+  {
+    "id": "axis-rewards",
+    "name": "Axis Bank Rewards Credit Card",
+    "bank": "Axis Bank",
+    "image": "/assets/cards/axis-rewards.png",
+    "link": "https://www.axisbank.com/retail/cards/credit-card/rewards-credit-card",
+    "fees": {
+      "joining": 1000,
+      "annual": 1000,
+      "currency": "INR",
+      "waivedOn": 200000,
+      "waiverText": "Annual fee waived on spending ₹2 Lakh in card anniversary year"
+    },
+    "eligibility": {
+      "income": 500000,
+      "age": { "min": 18, "max": 70 },
+      "type": "Salaried/Self-Employed/Citi Rewards Migration",
+      "creditScore": 700
+    },
+    "rewards": {
+      "type": "points",
+      "name": "EDGE Reward Points",
+      "baseRate": 0.0032,
+      "earningText": "2 EDGE Reward Points per ₹125 spent; 10X (20 RP) on apparel & departmental stores",
+      "expiry": "3 years from earning date",
+      "joiningBonus": "5,000 EDGE Reward Points (₹1,000 value) on ₹1,000 spend within 30 days",
+      "exclusions": "Fuel, Wallet, Rent, Insurance, Utilities, Education, Government, EMI, Cash Advances",
+      "calculator": {
+        "tier": "entry",
+        "monthlyCap": null,
+        "capResetPeriod": "calendar",
+        "specialLogic": "10X rewards on apparel & departmental stores (up to ₹7K/month); 1,500 bonus RP on ₹30K monthly spend",
+        "categories": {
+          "travel": { "rate": 0.0032, "label": "2 EDGE Points/₹125", "cap": null },
+          "dining": { "rate": 0.0032, "label": "2 EDGE Points/₹125", "cap": null },
+          "online": { "rate": 0.0032, "label": "2 EDGE Points/₹125", "cap": null },
+          "fuel": { "rate": 0.0, "label": "No points on fuel", "cap": null },
+          "groceries": { "rate": 0.032, "label": "10X (20 RP/₹125) on apparel/dept stores", "cap": null },
+          "utilities": { "rate": 0.0, "label": "No points on utilities", "cap": null }
+        }
+      },
+      "redemption": {
+        "baseValue": 0.20,
+        "bestOption": "Transfer to partner airlines or redeem for products",
+        "options": [
+          { "type": "Partner Airmiles", "value": 0.20, "desc": "10 RP = 1 Partner Point", "recommended": true },
+          { "type": "Product Catalogue", "value": 0.20, "desc": "1 RP = ₹0.20", "recommended": false },
+          { "type": "Cashback", "value": 0.20, "desc": "1 RP = ₹0.20 statement credit", "recommended": false }
+        ]
+      }
+    },
+    "features": {
+      "lounge": {
+        "domestic": "2/quarter on ₹50K spend in previous quarter",
+        "international": "None",
+        "accessType": "Spend-based"
+      },
+      "milestones": [
+        { "spend": 30000, "benefit": "1,500 EDGE Reward Points per month (on ₹30K+ monthly spend)" }
+      ],
+      "golf": { "included": false, "text": "" },
+      "movies": { "included": false, "text": "" },
+      "fuel": { "surchargeWaiver": "1%", "cap": 400 },
+      "forex": { "markup": 0.035, "text": "3.5% + GST" }
+    },
+    "metadata": {
+      "tags": ["Rewards", "Shopping", "Apparel", "Citi Rewards Replacement"],
+      "bestFor": "Shoppers at apparel and departmental stores seeking 10X rewards",
+      "rating": 3.7,
+      "verdict": "Decent for apparel shoppers with 10X rewards but low base rate otherwise",
+      "pros": ["10X rewards on apparel/dept stores", "1,500 monthly milestone bonus", "Swiggy 30% off", "Membership bouquet ₹1,000/year"],
+      "cons": ["Low base reward rate (0.3%)", "10X accelerated capped at ₹7K", "Only domestic lounges (spend-based)"]
+    }
+  }
+]

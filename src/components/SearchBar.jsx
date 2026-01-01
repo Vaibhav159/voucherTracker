@@ -10,10 +10,12 @@ const SearchBar = ({ value, onChange, sortOption, onSortChange, onOpenShortcuts 
                 style={{
                     display: 'flex',
                     alignItems: 'center',
-                    padding: '1rem 1.5rem',
+                    padding: '0.75rem 1rem',
                     boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
                     borderRadius: '16px',
-                    background: 'rgba(255,255,255,0.03)'
+                    background: 'rgba(255,255,255,0.03)',
+                    maxWidth: '600px',
+                    margin: '0 auto'
                 }}
             >
                 <svg
@@ -74,7 +76,7 @@ const SearchBar = ({ value, onChange, sortOption, onSortChange, onOpenShortcuts 
                         <span className="hide-mobile">Shortcuts</span>
                     </button>
 
-                    <div style={{ position: 'relative', paddingLeft: '1rem', borderLeft: '1px solid rgba(255,255,255,0.1)' }}>
+                    <div style={{ position: 'relative', paddingLeft: '1rem', borderLeft: '1px solid rgba(255,255,255,0.1)', minWidth: '180px' }}>
                         <select
                             value={sortOption || 'Recommended'}
                             onChange={(e) => onSortChange(e.target.value)}
@@ -87,7 +89,8 @@ const SearchBar = ({ value, onChange, sortOption, onSortChange, onOpenShortcuts 
                                 cursor: 'pointer',
                                 outline: 'none',
                                 appearance: 'none', // Remove default arrow
-                                paddingRight: '1.2rem'
+                                paddingRight: '1.5rem',
+                                width: '100%'
                             }}
                         >
                             <option value="Recommended">Recommended</option>
