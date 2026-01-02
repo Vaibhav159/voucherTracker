@@ -47,13 +47,13 @@ export const FavoritesProvider = ({ children }) => {
     }, [toast]);
 
     const toggleFavoriteCard = useCallback((cardId, cardName = 'Card') => {
-        const numericId = typeof cardId === 'string' ? parseInt(cardId, 10) : cardId;
+        const strId = String(cardId);
 
         setFavoriteCards(prev => {
-            const isRemoving = prev.includes(numericId);
+            const isRemoving = prev.includes(strId);
             const newFavorites = isRemoving
-                ? prev.filter(id => id !== numericId)
-                : [...prev, numericId];
+                ? prev.filter(id => id !== strId)
+                : [...prev, strId];
 
             // Haptic feedback
             if (navigator.vibrate) {
@@ -121,8 +121,7 @@ export const FavoritesProvider = ({ children }) => {
     }, [toast, setFavoriteGuides]);
 
     const isCardFavorite = useCallback((cardId) => {
-        const numericId = typeof cardId === 'string' ? parseInt(cardId, 10) : cardId;
-        return favoriteCards.includes(numericId);
+        return favoriteCards.includes(String(cardId));
     }, [favoriteCards]);
 
     const isVoucherFavorite = useCallback((voucherId) => {

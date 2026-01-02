@@ -251,7 +251,7 @@ const QuickCardPicker = () => {
             style={{
               width: '90%',
               maxWidth: '480px',
-              background: 'var(--glass-bg, rgba(30, 30, 40, 0.95))',
+              background: 'var(--modal-bg)', // Adapts to light/dark mode
               borderRadius: '20px',
               border: '1px solid var(--glass-border, rgba(255,255,255,0.1))',
               boxShadow: '0 20px 60px rgba(0, 0, 0, 0.5)',
@@ -334,7 +334,7 @@ const QuickCardPicker = () => {
                         style={{
                           padding: '14px 16px',
                           borderRadius: '12px',
-                          background: idx === 0 
+                          background: idx === 0
                             ? 'linear-gradient(135deg, rgba(34,197,94,0.15), rgba(6,182,212,0.15))'
                             : 'rgba(255,255,255,0.03)',
                           border: `1px solid ${idx === 0 ? 'rgba(34,197,94,0.3)' : 'var(--glass-border, rgba(255,255,255,0.1))'}`,

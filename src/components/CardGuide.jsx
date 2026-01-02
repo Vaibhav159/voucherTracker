@@ -178,6 +178,49 @@ const CardGuide = () => {
                         </section>
                     )}
 
+                    {/* Related Guides Section */}
+                    {card.related_guides && card.related_guides.length > 0 && (
+                        <section style={{ marginTop: '2rem', padding: '1.5rem', background: 'rgba(99, 102, 241, 0.05)', borderRadius: '12px', border: '1px solid var(--glass-border)' }}>
+                            <h2 style={{ color: 'var(--accent-purple)', fontSize: '1.5rem', marginBottom: '1.2rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                📚 Related Guides & Resources
+                            </h2>
+                            <div style={{ display: 'grid', gap: '1rem' }}>
+                                {card.related_guides.map((guide) => (
+                                    <a
+                                        key={guide.id}
+                                        href={guide.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style={{
+                                            textDecoration: 'none',
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            gap: '4px',
+                                            padding: '1rem',
+                                            background: 'rgba(255, 255, 255, 0.03)',
+                                            borderRadius: '8px',
+                                            border: '1px solid var(--glass-border)',
+                                            transition: 'all 0.2s ease'
+                                        }}
+                                        onMouseEnter={(e) => {
+                                            e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)';
+                                            e.currentTarget.style.borderColor = 'var(--accent-purple)';
+                                        }}
+                                        onMouseLeave={(e) => {
+                                            e.currentTarget.style.background = 'rgba(255, 255, 255, 0.03)';
+                                            e.currentTarget.style.borderColor = 'var(--glass-border)';
+                                        }}
+                                    >
+                                        <div style={{ fontWeight: '600', color: 'var(--text-primary)', fontSize: '1.05rem' }}>{guide.title}</div>
+                                        {guide.author && (
+                                            <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>By {guide.author}</div>
+                                        )}
+                                    </a>
+                                ))}
+                            </div>
+                        </section>
+                    )}
+
                     {/* Dynamic Rewards & Fees Sections (only if detailedGuide is missing) */}
                     {!card.detailedGuide && (
                         <>

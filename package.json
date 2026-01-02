@@ -21,6 +21,7 @@
     "prop-types": "^15.8.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-helmet-async": "^2.0.5",
     "react-markdown": "^10.1.0",
     "react-router-dom": "^7.11.0"
   },
@@ -36,5 +37,9 @@
     "globals": "^16.5.0",
     "terser": "^5.44.1",
     "vite": "^7.2.4"
+  },
+  "overrides": {
+    "react": "$react",
+    "react-dom": "$react-dom"
   }
 }

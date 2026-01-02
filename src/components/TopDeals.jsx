@@ -60,97 +60,119 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
           <span className="header-icon">⚡</span>
           <div>
             <h2>Daily Essentials</h2>
-            <p>Deals you use everyday</p>
+            <p>Premium deals on your favorite brands</p>
           </div>
         </div>
       </div>
 
-      <div className="essentials-grid">
-        {dailyDeals.map((voucher) => (
-          <button
-            key={voucher.id}
-            className="essential-card-v2"
-            onClick={() => onVoucherClick(voucher)}
-            title={voucher.brand}
-            data-brand={voucher.brand.toLowerCase()}
-          >
-            {voucher.maxDiscount > 0 && (
-              <span className="discount-badge">
-                {voucher.maxDiscount}% OFF
-              </span>
-            )}
-            {/* ... rest of the card content ... */}
-
-            <div className="card-logo">
-              {voucher.logo ? (
-                <img
-                  src={voucher.logo}
-                  alt={voucher.brand}
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'flex';
-                  }}
-                />
-              ) : null}
-              <span
-                className="brand-fallback"
-                style={{ display: voucher.logo ? 'none' : 'flex' }}
-              >
-                {voucher.brand.charAt(0).toUpperCase()}
-              </span>
-            </div>
-          </button>
-        ))}
+      <div className="essentials-scroll-container">
+        <div className="essentials-grid">
+          {dailyDeals.map((voucher) => (
+            <button
+              key={voucher.id}
+              className="essential-card-v2"
+              onClick={() => onVoucherClick(voucher)}
+              title={voucher.brand}
+              data-brand={voucher.brand.toLowerCase()}
+            >
+              <div className="card-logo">
+                {voucher.logo ? (
+                  <img
+                    src={voucher.logo}
+                    alt={voucher.brand}
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                  />
+                ) : null}
+                <span
+                  className="brand-fallback"
+                  style={{ display: voucher.logo ? 'none' : 'flex' }}
+                >
+                  {voucher.brand.charAt(0).toUpperCase()}
+                </span>
+              </div>
+              {voucher.maxDiscount > 0 && (
+                <div className="discount-chip">
+                  {voucher.maxDiscount}% OFF
+                </div>
+              )}
+            </button>
+          ))}
+        </div>
       </div>
 
       <style>{`
         .daily-essentials-v2 {
-          margin-bottom: 2rem;
+          margin-bottom: 2.5rem;
+          position: relative;
         }
 
         .section-header {
-          margin-bottom: 1rem;
+          margin-bottom: 1.25rem;
+          padding: 0 4px;
         }
 
         .header-content {
           display: flex;
           align-items: center;
-          gap: 12px;
+          gap: 14px;
         }
 
         .header-icon {
-          font-size: 1.75rem;
+          font-size: 1.5rem;
+          background: linear-gradient(135deg, #fbbf24, #f59e0b);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.4));
         }
 
         .section-header h2 {
           margin: 0;
-          font-size: 1.25rem;
-          font-weight: 600;
+          font-size: 1.35rem;
+          font-weight: 700;
           color: var(--text-primary);
+          letter-spacing: -0.02em;
         }
 
         .section-header p {
           margin: 0;
           font-size: 0.85rem;
           color: var(--text-secondary);
+          opacity: 0.8;
+        }
+
+        .essentials-scroll-container {
+          position: relative;
+          margin: 0 -1rem;
+          padding: 0 1rem;
+        }
+
+        /* Fading masks for better scroll UI */
+        .essentials-scroll-container::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          width: 40px;
+          background: linear-gradient(to left, var(--bg-color, #0f172a), transparent);
+          pointer-events: none;
+          z-index: 5;
         }
 
         .essentials-grid {
           display: flex;
           overflow-x: auto;
-          gap: 0.75rem;
-          padding-bottom: 0.5rem;
-          scrollbar-width: thin;
+          gap: 1rem;
+          padding: 0.5rem 0.5rem 1.5rem 0;
+          scrollbar-width: none; /* Firefox */
           -webkit-overflow-scrolling: touch;
         }
         
         .essentials-grid::-webkit-scrollbar {
-          height: 4px;
-        }
-        
-        .essentials-grid::-webkit-scrollbar-thumb {
-          background-color: rgba(255, 255, 255, 0.1);
-          border-radius: 4px;
+          display: none; /* Hide scrollbar for cleaner look */
         }
 
         .essential-card-v2 {
@@ -160,47 +182,54 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
           align-items: center;
           justify-content: center;
           padding: 0;
-          background: #1c1c1e; /* iOS Dark Mode Grey */
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          border-radius: 22px; /* iOS Squircle approximation */
+          background: rgba(30, 41, 59, 0.4);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 20px;
           cursor: pointer;
-          transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); /* Bouncy press */
-          min-width: 84px;
-          width: 84px;
-          height: 84px;
+          transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+          min-width: 92px;
+          width: 92px;
+          height: 92px;
           flex-shrink: 0;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.3);
+          overflow: visible;
         }
 
         .essential-card-v2:hover {
-          transform: scale(1.05); /* App icon hover effect */
-          border-color: rgba(255, 255, 255, 0.3);
+          transform: translateY(-4px) scale(1.02);
+          background: rgba(51, 65, 85, 0.5);
+          border-color: rgba(255, 255, 255, 0.2);
+          box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.5), 
+                      0 0 15px rgba(255, 255, 255, 0.05);
           z-index: 10;
         }
 
         .essential-card-v2:active {
-           transform: scale(0.95);
+           transform: translateY(-1px) scale(0.96);
         }
 
-        .discount-badge {
+        .discount-chip {
           position: absolute;
-          top: -6px;
-          right: -6px;
-          height: 22px;
-          min-width: 22px;
-          padding: 0 6px;
+          bottom: -8px;
+          left: 50%;
+          transform: translateX(-50%);
+          height: 20px;
+          padding: 0 10px;
           display: flex;
           align-items: center;
           justify-content: center;
-          background: #ff3b30; /* iOS Red */
-          border: 2px solid var(--bg-color); /* Cutout effect */
-          border-radius: 11px;
-          font-size: 0.7rem;
-          font-weight: 700;
+          background: linear-gradient(135deg, #ef4444, #b91c1c);
+          border-radius: 10px;
+          font-size: 0.65rem;
+          font-weight: 800;
           color: white;
           white-space: nowrap;
           z-index: 2;
-          box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+          box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+          letter-spacing: 0.02em;
+          border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .card-logo {
@@ -209,38 +238,51 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
           display: flex;
           align-items: center;
           justify-content: center;
-          overflow: hidden;
-          margin-bottom: 0;
+          padding: 18px;
+          transition: transform 0.3s ease;
+        }
+
+        .essential-card-v2:hover .card-logo {
+          transform: scale(1.1);
         }
 
         .card-logo img {
           width: 100%;
           height: 100%;
-          object-fit: contain !important;
-          border-radius: 0;
-          padding: 8px;
+          object-fit: contain;
+          filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
         }
 
-        /* Removed specific logo scalings as full bleed cover handles it better */
-
         .brand-fallback {
-          font-size: 1.75rem;
-          font-weight: 700;
-          color: var(--accent-violet);
+          font-size: 2rem;
+          font-weight: 800;
+          background: linear-gradient(135deg, var(--accent-violet, #8b5cf6), var(--accent-cyan, #06b6d4));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
 
         @media (max-width: 640px) {
+          .daily-essentials-v2 {
+            margin-bottom: 2rem;
+          }
+          .section-header h2 {
+            font-size: 1.2rem;
+          }
           .essentials-grid {
-             gap: 0.6rem;
+             gap: 0.85rem;
           }
           .essential-card-v2 {
-             min-width: 70px;
-             width: 70px;
-             height: 70px;
+             min-width: 78px;
+             width: 78px;
+             height: 78px;
+             border-radius: 18px;
           }
-          .card-logo img {
-            width: 48px;
-            height: 48px;
+          .card-logo {
+            padding: 14px;
+          }
+          .discount-chip {
+            padding: 0 8px;
+            font-size: 0.6rem;
           }
         }
       `}</style>

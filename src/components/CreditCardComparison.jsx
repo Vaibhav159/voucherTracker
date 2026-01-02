@@ -16,6 +16,7 @@ import { useFavorites } from '../context/FavoritesContext';
 import { useToast } from './UXPolish';
 import { CreditCardGridSkeleton } from './Skeleton';
 import LoadingSpinner from './LoadingSpinner';
+import { Helmet } from 'react-helmet-async';
 
 // Comparison rows configuration
 const COMPARISON_ROWS = [
@@ -863,12 +864,23 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
             {/* Header - Dynamic based on view */}
             {view === 'grid' ? (
                 <header style={{ marginBottom: '2.5rem', textAlign: 'center' }}>
+                    <Helmet>
+                        <title>Best Credit Cards in India 2025 - Compare Fees & Rewards | Voucher Tracker</title>
+                        <meta name="description" content="Compare the best credit cards in India. Find top cards for cashback, travel, and lounge access. Check eligibility and apply online." />
+                        <meta name="keywords" content="best credit card, credit card comparison, best rewards card in India, lifetime free credit cards, voucher tracker" />
+                        <link rel="canonical" href="https://vaibhav159.github.io/voucherTracker/#/know-your-cards" />
+                    </Helmet>
                     <h2 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '0.25rem', fontStyle: 'italic' }}>
                         Browse Cards
                     </h2>
                 </header>
             ) : (
                 <header style={{ marginBottom: '0.75rem', textAlign: 'center' }}>
+                    <Helmet>
+                        <title>Compare Credit Cards | Voucher Tracker</title>
+                        <meta name="description" content="Compare selected credit cards side-by-side. Analyze fees, rewards, and features to choose the best card for you." />
+                        <link rel="canonical" href="https://vaibhav159.github.io/voucherTracker/#/compare-cards" />
+                    </Helmet>
                     <h2 className="text-gradient" style={{ fontSize: '2rem', margin: 0, fontStyle: 'italic' }}>
                         Compare Credit Cards
                     </h2>
@@ -879,209 +891,241 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
             {/* Grid View */}
             {view === 'grid' && (
                 <>
-                    {/* Premium Filter Section - Liquid Glass */}
+                    {/* Premium Filter Section - Refined Glassmorphism */}
                     <div style={{
-                        background: 'linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))',
-                        backdropFilter: 'blur(20px)',
-                        WebkitBackdropFilter: 'blur(20px)',
-                        borderRadius: '24px',
-                        padding: '28px 32px',
-                        marginBottom: '2.5rem',
-                        border: '1px solid rgba(255,255,255,0.18)',
-                        boxShadow: `
-                            0 8px 32px rgba(0,0,0,0.3),
-                            inset 0 1px 1px rgba(255,255,255,0.1),
-                            inset 0 -1px 1px rgba(0,0,0,0.1)
-                        `,
+                        marginBottom: '3rem',
                         position: 'relative',
-                        overflow: 'hidden',
                     }}>
-                        {/* Glass Shine Effect */}
+                        {/* Container */}
                         <div style={{
-                            position: 'absolute',
-                            top: 0,
-                            left: 0,
-                            right: 0,
-                            height: '50%',
-                            background: 'linear-gradient(180deg, rgba(255,255,255,0.08) 0%, transparent 100%)',
-                            borderRadius: '24px 24px 0 0',
-                            pointerEvents: 'none',
-                        }} />
-                        {/* Accent Glow */}
-                        <div style={{
-                            position: 'absolute',
-                            top: '-50%',
-                            left: '-20%',
-                            width: '60%',
-                            height: '100%',
-                            background: 'radial-gradient(ellipse, rgba(6, 182, 212, 0.15) 0%, transparent 70%)',
-                            pointerEvents: 'none',
-                        }} />
-                        <div style={{
-                            position: 'absolute',
-                            bottom: '-50%',
-                            right: '-20%',
-                            width: '60%',
-                            height: '100%',
-                            background: 'radial-gradient(ellipse, rgba(139, 92, 246, 0.12) 0%, transparent 70%)',
-                            pointerEvents: 'none',
-                        }} />
-                        {/* Top Row - Search & Controls */}
-                        <div style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'space-between',
-                            gap: '12px',
-                            marginBottom: '16px',
+                            background: 'rgba(30, 41, 59, 0.4)',
+                            backdropFilter: 'blur(16px)',
+                            WebkitBackdropFilter: 'blur(16px)',
+                            borderRadius: '24px',
+                            padding: '1.5rem',
+                            border: '1px solid rgba(255,255,255,0.08)',
+                            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
                             position: 'relative',
-                            zIndex: 1,
-                            flexWrap: 'wrap',
+                            overflow: 'hidden'
                         }}>
-                            {/* Search Input - Left */}
-                            <div style={{ flex: '0 1 200px', position: 'relative', minWidth: '160px' }}>
-                                <input
-                                    type="text"
-                                    placeholder="Search cards..."
-                                    value={searchTerm}
-                                    onChange={(e) => setSearchTerm(e.target.value)}
-                                    style={{
-                                        width: '100%',
-                                        padding: '6px 10px',
-                                        paddingLeft: '32px',
-                                        borderRadius: '8px',
-                                        border: '1px solid rgba(255,255,255,0.15)',
-                                        background: 'rgba(255,255,255,0.05)',
-                                        color: 'var(--text-primary)',
-                                        fontSize: '0.85rem',
-                                        outline: 'none',
-                                        transition: 'all 0.2s ease',
-                                    }}
-                                    onFocus={(e) => {
-                                        e.target.style.borderColor = 'rgba(6, 182, 212, 0.6)';
-                                    }}
-                                    onBlur={(e) => {
-                                        e.target.style.borderColor = 'rgba(255,255,255,0.15)';
-                                    }}
-                                />
-                                <svg
-                                    style={{
+                            {/* Gradient Overlay */}
+                            <div style={{
+                                position: 'absolute',
+                                inset: 0,
+                                background: 'linear-gradient(180deg, rgba(255,255,255,0.03) 0%, transparent 100%)',
+                                pointerEvents: 'none',
+                            }} />
+
+                            {/* Top Row: Search & Dropdowns */}
+                            <div style={{
+                                display: 'flex',
+                                gap: '1rem',
+                                marginBottom: '1.5rem',
+                                flexWrap: 'wrap',
+                                alignItems: 'center',
+                                position: 'relative',
+                                zIndex: 2
+                            }}>
+                                {/* Search Bar */}
+                                <div style={{ flex: '1 1 300px', position: 'relative' }}>
+                                    <div style={{
                                         position: 'absolute',
-                                        left: '10px',
+                                        left: '14px',
                                         top: '50%',
                                         transform: 'translateY(-50%)',
-                                        width: '14px',
-                                        height: '14px',
-                                        opacity: 0.5,
-                                    }}
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                                </svg>
-                            </div>
-
-                            {/* Dropdowns - Right aligned */}
-                            <div style={{ display: 'flex', gap: '6px', flex: '0 0 auto' }}>
-                                {/* Bank Filter */}
-                                <select
-                                    value={activeBank}
-                                    onChange={(e) => setActiveBank(e.target.value)}
-                                    style={{
-                                        padding: '5px 8px',
-                                        borderRadius: '6px',
-                                        border: '1px solid rgba(255,255,255,0.12)',
-                                        background: 'rgba(255,255,255,0.04)',
-                                        color: 'var(--text-primary)',
-                                        fontSize: '0.75rem',
-                                        cursor: 'pointer',
-                                        outline: 'none',
-                                    }}
-                                >
-                                    {banks.map(bank => (
-                                        <option key={bank} value={bank}>{bank === 'All' ? 'All Banks' : bank}</option>
-                                    ))}
-                                </select>
-
-                                {/* Sort */}
-                                <select
-                                    value={sortBy}
-                                    onChange={(e) => setSortBy(e.target.value)}
-                                    style={{
-                                        padding: '5px 8px',
-                                        borderRadius: '6px',
-                                        border: '1px solid rgba(255,255,255,0.12)',
-                                        background: 'rgba(255,255,255,0.04)',
-                                        color: 'var(--text-primary)',
-                                        fontSize: '0.75rem',
-                                        cursor: 'pointer',
-                                        outline: 'none',
-                                    }}
-                                >
-                                    <option value="recommended">Recommended</option>
-                                    <option value="fee-low">Fee ↑</option>
-                                    <option value="fee-high">Fee ↓</option>
-                                    <option value="reward-high">Rewards</option>
-                                    <option value="name">A-Z</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        {/* Category Filters - Glass Pills */}
-                        <div style={{
-                            display: 'flex',
-                            flexWrap: 'wrap',
-                            gap: '8px',
-                            position: 'relative',
-                            zIndex: 1,
-                        }}>
-                            {cardFilters.map(filter => {
-                                const isActive = activeFilter === filter;
-                                return (
-                                    <button
-                                        key={filter}
-                                        onClick={() => setActiveFilter(isActive ? 'All' : filter)}
+                                        color: 'var(--text-secondary)',
+                                        pointerEvents: 'none',
+                                        transition: 'color 0.2s',
+                                        zIndex: 10
+                                    }}>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                            <circle cx="11" cy="11" r="8"></circle>
+                                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                        </svg>
+                                    </div>
+                                    <input
+                                        type="text"
+                                        placeholder="Search cards..."
+                                        value={searchTerm}
+                                        onChange={(e) => setSearchTerm(e.target.value)}
                                         style={{
-                                            padding: '6px 14px',
-                                            borderRadius: '50px',
-                                            border: isActive
-                                                ? '1px solid rgba(6, 182, 212, 0.5)'
-                                                : '1px solid rgba(255,255,255,0.12)',
-                                            background: isActive
-                                                ? 'linear-gradient(135deg, rgba(6, 182, 212, 0.3), rgba(139, 92, 246, 0.3))'
-                                                : 'rgba(255,255,255,0.04)',
-                                            color: isActive ? '#fff' : 'rgba(255,255,255,0.6)',
-                                            cursor: 'pointer',
-                                            fontSize: '0.75rem',
-                                            fontWeight: isActive ? '600' : '500',
-                                            transition: 'all 0.2s ease',
-                                            boxShadow: isActive
-                                                ? '0 2px 10px rgba(6, 182, 212, 0.2)'
-                                                : 'none',
-                                            whiteSpace: 'nowrap',
+                                            width: '100%',
+                                            padding: '10px 16px 10px 42px',
+                                            background: 'rgba(0, 0, 0, 0.2)',
+                                            border: '1px solid rgba(255, 255, 255, 0.1)',
+                                            borderRadius: '12px',
+                                            color: 'var(--text-primary)',
+                                            fontSize: '0.9rem',
+                                            outline: 'none',
+                                            transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
                                         }}
-                                        onMouseEnter={(e) => {
-                                            if (!isActive) {
-                                                e.target.style.background = 'rgba(255,255,255,0.08)';
-                                                e.target.style.color = 'rgba(255,255,255,0.9)';
-                                            }
+                                        onFocus={(e) => {
+                                            e.target.style.borderColor = 'var(--accent-cyan)';
+                                            e.target.style.background = 'rgba(0, 0, 0, 0.3)';
+                                            e.target.style.boxShadow = '0 0 0 4px rgba(6, 182, 212, 0.1)';
+                                            e.target.previousSibling.style.color = 'var(--accent-cyan)';
                                         }}
-                                        onMouseLeave={(e) => {
-                                            if (!isActive) {
-                                                e.target.style.background = 'rgba(255,255,255,0.04)';
-                                                e.target.style.color = 'rgba(255,255,255,0.6)';
-                                            }
+                                        onBlur={(e) => {
+                                            e.target.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                                            e.target.style.background = 'rgba(0, 0, 0, 0.2)';
+                                            e.target.style.boxShadow = 'none';
+                                            e.target.previousSibling.style.color = 'var(--text-secondary)';
                                         }}
-                                    >
-                                        {filter}
-                                    </button>
-                                );
-                            })}
-                        </div>
+                                    />
+                                </div>
 
-                        {/* Dynamic Card Count */}
-                        <div style={{ marginTop: '16px', textAlign: 'center', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                            {filteredCards.length} cards match your criteria
+                                {/* Controls Right */}
+                                <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                                    {/* Bank Select */}
+                                    <div style={{ position: 'relative' }}>
+                                        <select
+                                            value={activeBank}
+                                            onChange={(e) => setActiveBank(e.target.value)}
+                                            style={{
+                                                appearance: 'none',
+                                                padding: '8px 32px 8px 12px',
+                                                background: 'rgba(255, 255, 255, 0.05)',
+                                                border: '1px solid rgba(255, 255, 255, 0.1)',
+                                                borderRadius: '10px',
+                                                color: 'var(--text-primary)',
+                                                fontSize: '0.9rem',
+                                                cursor: 'pointer',
+                                                outline: 'none',
+                                                minWidth: '120px',
+                                                transition: 'all 0.2s',
+                                            }}
+                                            onFocus={(e) => e.target.style.borderColor = 'var(--accent-cyan)'}
+                                            onBlur={(e) => e.target.style.borderColor = 'rgba(255, 255, 255, 0.1)'}
+                                        >
+                                            {banks.map(bank => {
+                                                let label = bank;
+                                                if (bank === 'All') {
+                                                    label = 'All Banks';
+                                                } else if (bank.includes('/') && bank.length > 24) {
+                                                    // Handle multi-bank entries usually found in co-branded cards
+                                                    label = `${bank.split('/')[0].trim()} & Partners`;
+                                                } else if (bank.length > 24) {
+                                                    label = `${bank.substring(0, 22)}...`;
+                                                }
+                                                return <option key={bank} value={bank}>{label}</option>;
+                                            })}
+                                        </select>
+                                        <div style={{
+                                            position: 'absolute',
+                                            right: '10px',
+                                            top: '50%',
+                                            transform: 'translateY(-50%)',
+                                            pointerEvents: 'none',
+                                            color: 'var(--text-secondary)'
+                                        }}>
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                        </div>
+                                    </div>
+
+                                    {/* Sort Select */}
+                                    <div style={{ position: 'relative' }}>
+                                        <select
+                                            value={sortBy}
+                                            onChange={(e) => setSortBy(e.target.value)}
+                                            style={{
+                                                appearance: 'none',
+                                                padding: '8px 32px 8px 12px',
+                                                background: 'rgba(255, 255, 255, 0.05)',
+                                                border: '1px solid rgba(255, 255, 255, 0.1)',
+                                                borderRadius: '10px',
+                                                color: 'var(--text-primary)',
+                                                fontSize: '0.9rem',
+                                                cursor: 'pointer',
+                                                outline: 'none',
+                                                minWidth: '140px',
+                                                transition: 'all 0.2s',
+                                            }}
+                                            onFocus={(e) => e.target.style.borderColor = 'var(--accent-cyan)'}
+                                            onBlur={(e) => e.target.style.borderColor = 'rgba(255, 255, 255, 0.1)'}
+                                        >
+                                            <option value="recommended">Recommended</option>
+                                            <option value="fee-low">Fee: Low to High</option>
+                                            <option value="fee-high">Fee: High to Low</option>
+                                            <option value="reward-high">Rewards: High to Low</option>
+                                            <option value="name">Name: A-Z</option>
+                                        </select>
+                                        <div style={{
+                                            position: 'absolute',
+                                            right: '10px',
+                                            top: '50%',
+                                            transform: 'translateY(-50%)',
+                                            pointerEvents: 'none',
+                                            color: 'var(--text-secondary)'
+                                        }}>
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Filter Chips - Horizontal Scroll */}
+                            <div style={{
+                                display: 'flex',
+                                gap: '0.75rem',
+                                overflowX: 'auto',
+                                paddingBottom: '4px',
+                                scrollbarWidth: 'none',
+                                msOverflowStyle: 'none',
+                                position: 'relative',
+                                zIndex: 2
+                            }}>
+                                {cardFilters.map(filter => {
+                                    const isActive = activeFilter === filter;
+                                    return (
+                                        <button
+                                            key={filter}
+                                            onClick={() => setActiveFilter(isActive ? 'All' : filter)}
+                                            style={{
+                                                whiteSpace: 'nowrap',
+                                                padding: '6px 16px',
+                                                borderRadius: '20px',
+                                                fontSize: '0.85rem',
+                                                fontWeight: isActive ? 600 : 500,
+                                                cursor: 'pointer',
+                                                transition: 'all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1)',
+                                                border: isActive ? '1px solid rgba(6, 182, 212, 0.5)' : '1px solid rgba(255, 255, 255, 0.1)',
+                                                background: isActive
+                                                    ? 'linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(139, 92, 246, 0.2))'
+                                                    : 'transparent',
+                                                color: isActive ? '#fff' : 'rgba(255, 255, 255, 0.7)',
+                                                boxShadow: isActive ? '0 4px 12px rgba(6, 182, 212, 0.15)' : 'none',
+                                            }}
+                                            onMouseEnter={(e) => {
+                                                if (!isActive) {
+                                                    e.target.style.background = 'rgba(255, 255, 255, 0.05)';
+                                                    e.target.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                                                    e.target.style.color = '#fff';
+                                                }
+                                            }}
+                                            onMouseLeave={(e) => {
+                                                if (!isActive) {
+                                                    e.target.style.background = 'transparent';
+                                                    e.target.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                                                    e.target.style.color = 'rgba(255, 255, 255, 0.7)';
+                                                }
+                                            }}
+                                        >
+                                            {filter}
+                                        </button>
+                                    );
+                                })}
+                            </div>
+
+                            {/* Results Count Fade-in */}
+                            <div style={{
+                                marginTop: '1rem',
+                                fontSize: '0.85rem',
+                                color: 'var(--text-secondary)',
+                                textAlign: 'right',
+                                opacity: 0.8
+                            }}>
+                                Found {filteredCards.length} cards
+                            </div>
                         </div>
                     </div>
 
