@@ -34,9 +34,9 @@ const GlobalSearch = () => {
     const inputRef = useRef(null);
     const resultsRef = useRef(null);
     const lastShiftKeyTime = useRef(0);
-    const { vouchers } = useVouchers();
-    const { creditCards } = useCreditCards();
-    const { guides: guidesData } = useGuides();
+    const { vouchers } = useVouchers({ enabled: isOpen });
+    const { creditCards } = useCreditCards({ enabled: isOpen });
+    const { guides: guidesData } = useGuides({ enabled: isOpen });
 
     // Pages
     const pages = [

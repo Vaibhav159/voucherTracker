@@ -5,17 +5,24 @@ import guidesData from '../data/guides.json';
 // Simple in-memory cache
 const cache = {
     data: null,
+    promise: null,
     timestamp: 0,
 };
 
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
-export const useGuides = () => {
+export const useGuides = (options = {}) => {
+    const { enabled = true } = options;
     const [guides, setGuides] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        if (!enabled) {
+            setLoading(false);
+            return;
+        }
+
         const fetchGuides = async () => {
             // Check feature flag first
             if (!featureFlags.useBackendApi || !featureFlags.useGuidesApi) {
@@ -34,37 +41,54 @@ export const useGuides = () => {
                 return;
             }
 
-            try {
-                const response = await fetch('/api/guides/');
-                if (!response.ok) {
-                    throw new Error('Failed to fetch guides');
-                }
-                const data = await response.json();
-
-                // Backend returns paginated response or list? 
-                // ViewSet defaults to pagination usually unless configured otherwise.
-                // If StandardResultsSetPagination is global default, it returns { count, next, previous, results: [] }
-                // Let's assume pagination is active as per Vouchers.
-                // We should handle both cases or verify backend response structure.
-                // VoucherViewSet uses StandardResultsSetPagination. 
-                // GuideViewSet code: class GuideViewSet(viewsets.ReadOnlyModelViewSet) ...
-                // If settings.REST_FRAMEWORK.DEFAULT_PAGINATION_CLASS is set, it will be paginated.
-                // Let's assume it is and check for 'results' property.
-
-                let processedData = data;
-                if (data.results && Array.isArray(data.results)) {
-                    processedData = data.results;
-                }
-
-                if (!processedData || processedData.length === 0) {
-                    console.warn('API returned empty guides list, using fallback');
+            // Check if fetch in progress
+            if (cache.promise) {
+                try {
+                    const data = await cache.promise;
+                    setGuides(data);
+                } catch (err) {
+                    console.error("Error waiting for shared guides fetch:", err);
                     setGuides(guidesData);
-                } else {
-                    setGuides(processedData);
-                    // Update cache
-                    cache.data = processedData;
-                    cache.timestamp = now;
+                } finally {
+                    setLoading(false);
                 }
+                return;
+            }
+
+            // Start new fetch
+            cache.promise = (async () => {
+                try {
+                    const response = await fetch('/api/guides/');
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch guides');
+                    }
+                    const data = await response.json();
+
+                    let processedData = data;
+                    if (data.results && Array.isArray(data.results)) {
+                        processedData = data.results;
+                    }
+
+                    if (!processedData || processedData.length === 0) {
+                        console.warn('API returned empty guides list, using fallback');
+                        cache.data = guidesData;
+                        cache.timestamp = Date.now();
+                        return guidesData;
+                    } else {
+                        // Update cache
+                        cache.data = processedData;
+                        cache.timestamp = Date.now();
+                        return processedData;
+                    }
+                } catch (err) {
+                    cache.promise = null;
+                    throw err;
+                }
+            })();
+
+            try {
+                const data = await cache.promise;
+                setGuides(data);
             } catch (err) {
                 console.error('Error fetching guides:', err);
                 // Fallback to local data on error
@@ -76,7 +100,7 @@ export const useGuides = () => {
         };
 
         fetchGuides();
-    }, []);
+    }, [enabled]);
 
     return { guides, loading, error };
 };
