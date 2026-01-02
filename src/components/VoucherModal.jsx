@@ -16,14 +16,8 @@ import { getPlatformStyle } from '../utils/platformLogos';
 import { Link } from 'react-router-dom';
 import { useModalKeyHandler } from '../hooks/useModalKeyHandler';
 import { useDiscountParser } from '../hooks/useDiscountParser';
-import { useReviews } from '../hooks/useReviews';
-import { usePriceHistory } from '../hooks/usePriceHistory';
 import { useFavorites } from '../context/FavoritesContext';
 import { useToast } from './UXPolish';
-import RatingStars from './RatingStars';
-import ReviewModal from './ReviewModal';
-import ReviewsList from './ReviewsList';
-import PriceHistoryChart from './PriceHistoryChart';
 import ExpiryBadge from './ExpiryBadge';
 
 const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
@@ -31,18 +25,12 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
     const { toggleFavoriteVoucher, isVoucherFavorite } = useFavorites();
 
     const [activeTab, setActiveTab] = useState('offers');
-    const [showReviewModal, setShowReviewModal] = useState(false);
     const [copiedLink, setCopiedLink] = useState(null);
     const [showShareMenu, setShowShareMenu] = useState(null);
-    const [selectedPlatformForHistory, setSelectedPlatformForHistory] = useState(
-        voucher?.platforms[0]?.name || null
-    );
 
     // Hooks
     useModalKeyHandler(true, onClose);
     const { getBestPlatform } = useDiscountParser();
-    const { reviews, averageRating, reviewCount, addReview, markHelpful } = useReviews(voucher?.id);
-    const { priceHistory } = usePriceHistory(voucher?.id);
 
     const isFavorite = isVoucherFavorite(voucher?.id);
 
@@ -176,9 +164,7 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                                     size="xs"
                                 />
                             )}
-                            {averageRating > 0 && (
-                                <RatingStars rating={averageRating} size="xs" reviewCount={reviewCount} />
-                            )}
+
                         </div>
                     </div>
 
@@ -450,21 +436,7 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                 {/* Reviews and Price History tabs hidden for now */}
 
                 {/* Review Modal */}
-                {
-                    showReviewModal && (
-                        <ReviewModal
-                            voucherId={voucher.id}
-                            brandName={voucher.brand}
-                            platforms={voucher.platforms.map(p => p.name)}
-                            onClose={() => setShowReviewModal(false)}
-                            onSubmit={(review) => {
-                                addReview(review);
-                                setShowReviewModal(false);
-                                toast.success('Thanks for your review!');
-                            }}
-                        />
-                    )
-                }
+
 
                 {/* Animation styles */}
                 <style>{`
