@@ -7,6 +7,7 @@ import { creditCards as localCreditCards } from '../data/creditCards';
 // Simple in-memory cache
 const cache = {
     data: null,
+    promise: null,
     timestamp: 0,
 };
 
@@ -175,31 +176,59 @@ export const useCreditCards = () => {
                 return;
             }
 
-            try {
-                const response = await fetch('/api/credit-cards/');
-                if (!response.ok) {
-                    throw new Error('Failed to fetch credit cards');
-                }
-                const data = await response.json();
-
-                // Handle pagination
-                let processedData = data;
-                if (data.results && Array.isArray(data.results)) {
-                    processedData = data.results;
-                }
-
-                // Ensure robust fallback if data is messed up
-                if (!processedData || !Array.isArray(processedData) || processedData.length === 0) {
-                    console.warn('API returned invalid/empty credit cards, using fallback');
+            // Check if fetch in progress
+            if (cache.promise) {
+                try {
+                    const data = await cache.promise;
+                    setCreditCards(data);
+                } catch (err) {
+                    console.error("Error waiting for shared credit cards fetch:", err);
                     const transformedCards = localCreditCards.map(transformCreditCard);
                     setCreditCards(transformedCards);
-                } else {
-                    const transformedCards = processedData.map(transformCreditCard);
-                    setCreditCards(transformedCards);
-                    cache.data = transformedCards;
-                    cache.timestamp = now;
+                } finally {
+                    setLoading(false);
                 }
+                return;
+            }
 
+            // Start new fetch
+            cache.promise = (async () => {
+                try {
+                    const response = await fetch('/api/credit-cards/');
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch credit cards');
+                    }
+                    const data = await response.json();
+
+                    // Handle pagination
+                    let processedData = data;
+                    if (data.results && Array.isArray(data.results)) {
+                        processedData = data.results;
+                    }
+
+                    // Ensure robust fallback if data is messed up
+                    if (!processedData || !Array.isArray(processedData) || processedData.length === 0) {
+                        console.warn('API returned invalid/empty credit cards, using fallback');
+                        const transformedCards = localCreditCards.map(transformCreditCard);
+                        cache.data = transformedCards;
+                        cache.timestamp = Date.now();
+                        return transformedCards;
+                    } else {
+                        const transformedCards = processedData.map(transformCreditCard);
+                        cache.data = transformedCards;
+                        cache.timestamp = Date.now();
+                        return transformedCards;
+                    }
+
+                } catch (err) {
+                    cache.promise = null;
+                    throw err;
+                }
+            })();
+
+            try {
+                const data = await cache.promise;
+                setCreditCards(data);
             } catch (err) {
                 console.error('Error fetching credit cards:', err);
                 const transformedCards = localCreditCards.map(transformCreditCard);
