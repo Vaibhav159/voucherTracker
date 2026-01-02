@@ -25,7 +25,7 @@ export default defineConfig({
 
           // Data chunks
           'data-vouchers': ['./src/data/vouchers.json'],
-          'data-cards': ['./src/data/creditCards.js'],
+          'data-cards': ['./src/data/creditCards.json'],
           'data-guides': ['./src/data/guides.json'],
 
           // Route chunks (lazy loaded components)
