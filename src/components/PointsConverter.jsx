@@ -527,9 +527,9 @@ const PointsConverter = () => {
           padding: 1.5rem;
           margin-bottom: 0;
           border-radius: 16px;
-          background: rgba(15, 15, 25, 0.6);
-          border: 1px solid rgba(6, 182, 212, 0.2);
-          box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+          background: var(--glass-bg);
+          border: 1px solid var(--glass-border);
+          box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
         }
 
         .calc-section {
@@ -568,7 +568,7 @@ const PointsConverter = () => {
           align-items: center;
           gap: 10px;
           padding: 12px 14px;
-          background: rgba(0, 0, 0, 0.3);
+          background: var(--item-bg);
           border: 1px solid var(--glass-border);
           border-radius: 10px;
           color: var(--text-primary);
@@ -580,7 +580,7 @@ const PointsConverter = () => {
 
         .card-selector-btn:hover {
           border-color: var(--accent-cyan);
-          background: rgba(0, 0, 0, 0.4);
+          background: var(--nav-bg-hover);
         }
 
         .selector-icon {
@@ -636,10 +636,10 @@ const PointsConverter = () => {
           width: 92%;
           max-width: 550px;
           max-height: 75vh;
-          background: rgba(22, 22, 42, 0.85); /* Slightly more transparent */
+          background: var(--modal-bg);
           backdrop-filter: blur(20px); /* Heavy blur for glass effect */
           -webkit-backdrop-filter: blur(20px);
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          border: 1px solid var(--glass-border);
           border-radius: 24px; /* More rounded */
           z-index: 1001;
           box-shadow: 
@@ -669,8 +669,8 @@ const PointsConverter = () => {
           align-items: center;
           justify-content: space-between;
           padding: 20px 24px;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-          background: rgba(0, 0, 0, 0.2);
+          border-bottom: 1px solid var(--glass-border);
+          background: var(--nav-bg);
         }
 
         .modal-title {
@@ -702,8 +702,8 @@ const PointsConverter = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: rgba(255, 255, 255, 0.05);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: var(--btn-secondary-bg);
+          border: 1px solid var(--glass-border);
           border-radius: 10px;
           color: var(--text-secondary);
           cursor: pointer;
@@ -720,7 +720,7 @@ const PointsConverter = () => {
         .modal-search {
           position: relative;
           padding: 16px 24px;
-          background: rgba(0, 0, 0, 0.15);
+          background: var(--item-bg);
         }
 
         .modal-search .search-icon {
@@ -735,8 +735,8 @@ const PointsConverter = () => {
         .modal-search input {
           width: 100%;
           padding: 14px 16px 14px 44px;
-          background: rgba(0, 0, 0, 0.4);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: var(--modal-bg);
+          border: 1px solid var(--glass-border);
           border-radius: 14px;
           color: var(--text-primary);
           font-size: 0.95rem;
@@ -746,7 +746,7 @@ const PointsConverter = () => {
         }
 
         .modal-search input:focus {
-          background: rgba(0, 0, 0, 0.6);
+          background: var(--item-bg);
           border-color: var(--accent-violet);
           box-shadow: 
             0 0 0 4px rgba(139, 92, 246, 0.15),
