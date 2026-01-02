@@ -259,7 +259,15 @@ function Home({ data, onOpenShortcuts }) {
 
       {/* Main Content */}
       <main>
-        {/* Search Bar - Always visible at top */}
+        {/* Show Stats and Top Deals only when no filters active - Moved to Top */}
+        {!searchTerm && !selectedPlatform && !selectedCategory && (
+          <>
+            <StatsBar vouchers={data} platforms={ALL_PLATFORMS} />
+            <TopDeals vouchers={data} onVoucherClick={handleVoucherSelect} />
+          </>
+        )}
+
+        {/* Search Bar - Sticky below stats */}
         <SearchBar
           value={inputValue}
           onChange={handleSearchChange}
@@ -267,14 +275,6 @@ function Home({ data, onOpenShortcuts }) {
           onSortChange={setSortOption}
           onOpenShortcuts={onOpenShortcuts}
         />
-
-        {/* Show Stats and Top Deals only when no filters active */}
-        {!searchTerm && !selectedPlatform && !selectedCategory && (
-          <>
-            <StatsBar vouchers={data} platforms={ALL_PLATFORMS} />
-            <TopDeals vouchers={data} onVoucherClick={handleVoucherSelect} />
-          </>
-        )}
 
         <VoucherGrid
           vouchers={filteredVouchers}
