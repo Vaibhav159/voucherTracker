@@ -3,7 +3,7 @@ import { useFavorites } from '../context/FavoritesContext';
 import { useVouchers } from '../hooks/useVouchers';
 import { useCreditCards } from '../hooks/useCreditCards';
 import { useGuides } from '../hooks/useGuides';
-import VoucherCard from './VoucherCard';
+import VoucherCard from './VoucherCardPolished';
 import { Link } from 'react-router-dom';
 import { wealthBanking, familyBanking } from '../data/bankingPrograms';
 import CardImage from './CardImage';
