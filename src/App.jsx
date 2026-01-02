@@ -388,15 +388,16 @@ function App() {
                       {featureFlags.pointsConverter && (
                         <Route path="/points-converter" element={<PointsConverter />} />
                       )}
+                      {featureFlags.askAI && (
+                        <Route path="/ask-ai" element={<AskAI />} />
+                      )}
                       {featureFlags.bankingGuides && (
                         <Route path="/banking-guides" element={<BankingGuides />} />
                       )}
                       <Route path="/browse-banking" element={<BankingGuides />} />
                       <Route path="/compare-banking" element={<CompareBanking />} />
                       <Route path="/voucher/:id" element={<VoucherDetail vouchers={vouchers} />} />
-                      {featureFlags.askAI && (
-                        <Route path="/ask-ai" element={<AskAI />} />
-                      )}
+
                       <Route path="/favorites" element={<Favorites />} />
                       {/* New UX Feature Routes */}
                       <Route path="/spend-optimizer" element={<SpendOptimizer />} />
