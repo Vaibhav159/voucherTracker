@@ -155,13 +155,14 @@ const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
                 aria-busy={isLoading}
                 aria-label={`${stats.total} vouchers available`}
                 style={{
-                    height: 'calc(100vh - 350px)',
+                    flex: 1,
                     minHeight: '500px',
                     overflow: 'auto',
                     overflowX: 'hidden', // PREVENT HORIZONTAL SCROLL
                     contain: 'strict',
                     padding: '0 8px',
                     boxSizing: 'border-box',
+                    width: '100%',
                 }}
             >
                 <div

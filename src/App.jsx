@@ -263,7 +263,14 @@ function Home({ data, onOpenShortcuts }) {
 
 
       {/* Main Content */}
-      <main style={{ transform: 'scale(0.9)', transformOrigin: 'top left', width: '111.11%' }}>
+      <main style={{
+        transform: 'scale(0.9)',
+        transformOrigin: 'top left',
+        width: '111.11%',
+        height: '111.11vh', // Compensate for scale: 100 / 0.9 = 111.11
+        display: 'flex',
+        flexDirection: 'column'
+      }}>
         {/* Show Stats and Top Deals only when no filters active - Moved to Top */}
         {!searchTerm && !selectedPlatform && !selectedCategory && (
           <>
