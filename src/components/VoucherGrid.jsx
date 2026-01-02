@@ -15,8 +15,8 @@ import EmptyState from './EmptyState';
 import { VoucherGridSkeleton } from './Skeleton';
 
 const CARD_MIN_WIDTH = 280;
-const CARD_GAP = 24;
-const CARD_HEIGHT = 280;
+const CARD_GAP = 32;
+const CARD_HEIGHT = 400;
 const OVERSCAN = 5;
 
 const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
@@ -47,7 +47,7 @@ const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
             // Calculate how many cards can fit
             // Formula: (width + gap) / (cardWidth + gap) = number of cards
             const possibleCols = Math.floor((width + CARD_GAP) / (CARD_MIN_WIDTH + CARD_GAP));
-            const cols = Math.max(1, Math.min(possibleCols, 2)); // Max 2 columns
+            const cols = Math.max(1, possibleCols); // Remove 2-column limit
 
             setColumns(cols);
         };
@@ -191,6 +191,7 @@ const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
                                     gridTemplateColumns: `repeat(${columns}, 1fr)`,
                                     gap: `${CARD_GAP}px`,
                                     boxSizing: 'border-box',
+                                    paddingBottom: `${CARD_GAP}px`, // Enforce vertical spacing
                                 }}
                             >
                                 {rowVouchers.map((voucher, colIndex) => (
