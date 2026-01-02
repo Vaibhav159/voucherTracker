@@ -13,12 +13,18 @@ const cache = {
 
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
-export const useVouchers = () => {
+export const useVouchers = (options = {}) => {
+    const { enabled = true } = options;
     const [vouchers, setVouchers] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        if (!enabled) {
+            setLoading(false);
+            return;
+        }
+
         const fetchVouchers = async () => {
             // Check feature flag first
             if (!featureFlags.useBackendApi) {
@@ -96,7 +102,7 @@ export const useVouchers = () => {
         };
 
         fetchVouchers();
-    }, []);
+    }, [enabled]);
 
     // Helper to process and sort voucher data
     const processVouchers = (items) => {

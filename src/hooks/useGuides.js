@@ -11,12 +11,18 @@ const cache = {
 
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
-export const useGuides = () => {
+export const useGuides = (options = {}) => {
+    const { enabled = true } = options;
     const [guides, setGuides] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        if (!enabled) {
+            setLoading(false);
+            return;
+        }
+
         const fetchGuides = async () => {
             // Check feature flag first
             if (!featureFlags.useBackendApi || !featureFlags.useGuidesApi) {
@@ -94,7 +100,7 @@ export const useGuides = () => {
         };
 
         fetchGuides();
-    }, []);
+    }, [enabled]);
 
     return { guides, loading, error };
 };

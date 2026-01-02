@@ -152,12 +152,18 @@ const transformCreditCard = (card) => {
     };
 };
 
-export const useCreditCards = () => {
+export const useCreditCards = (options = {}) => {
+    const { enabled = true } = options;
     const [creditCards, setCreditCards] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        if (!enabled) {
+            setLoading(false);
+            return;
+        }
+
         const fetchCreditCards = async () => {
             // Check feature flag first
             if (!featureFlags.useBackendApi || !featureFlags.useCreditCardsApi) {
@@ -240,7 +246,7 @@ export const useCreditCards = () => {
         };
 
         fetchCreditCards();
-    }, []);
+    }, [enabled]);
 
     return { creditCards, loading, error };
 };
