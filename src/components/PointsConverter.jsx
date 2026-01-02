@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { pointsConversion, getCardNames, tierConfig, getAllBanks } from '../data/pointsConversion';
 
@@ -135,6 +135,18 @@ const PointsConverter = () => {
     }
   }, [searchQuery, filteredCardsByBank]);
 
+  // Close on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (showCardList && e.key === 'Escape') {
+        setShowCardList(false);
+        setSearchQuery('');
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [showCardList]);
+
   // Calculate conversions
   const conversions = useMemo(() => {
     if (!cardData || !points) return [];
@@ -234,7 +246,9 @@ const PointsConverter = () => {
                             </div>
                           </div>
                           <button
+                            type="button"
                             className="modal-close"
+                            aria-label="Close modal"
                             onClick={() => {
                               setShowCardList(false);
                               setSearchQuery('');
