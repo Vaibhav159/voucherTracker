@@ -258,7 +258,7 @@ function Home({ data, onOpenShortcuts }) {
 
 
       {/* Main Content */}
-      <main>
+      <main style={{ transform: 'scale(0.9)', transformOrigin: 'top left', width: '111.11%' }}>
         {/* Show Stats and Top Deals only when no filters active - Moved to Top */}
         {!searchTerm && !selectedPlatform && !selectedCategory && (
           <>
