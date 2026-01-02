@@ -97,8 +97,12 @@ const BankingCompareModal = ({ selectedTiers, onClose, onRemoveTier }) => {
 const BankingCompareBar = ({ selectedTiers, onRemoveTier, onClearAll, onCompare }) => {
     if (selectedTiers.length === 0) return null;
 
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
     return (
-        <div className="banking-compare-bar">
+        <div className="banking-compare-bar" style={{
+            bottom: isMobile ? 'calc(80px + env(safe-area-inset-bottom, 0px))' : undefined,
+        }}>
             <div className="compare-items">
                 <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
                     Comparing {selectedTiers.length} tier{selectedTiers.length > 1 ? 's' : ''}:
@@ -456,16 +460,16 @@ const WealthBankingContent = ({ bank, onToggleCompare, isTierSelected }) => {
 
             <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                gap: '1rem'
+                gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                gap: '0.75rem'
             }}>
                 {bankData.tiers.map((tier, idx) => (
                     <div
                         key={idx}
-                        className={`glass-panel tier-card animate-fade-in-up stagger-${Math.min(idx + 1, 5)}`}
+                        className={`glass-panel tier-card tier-card-compact animate-fade-in-up stagger-${Math.min(idx + 1, 5)}`}
                         style={{
-                            padding: '1.5rem',
-                            borderTop: `3px solid ${getTierColor(idx, bankData.tiers.length)}`,
+                            padding: '1rem',
+                            borderTop: `2px solid ${getTierColor(idx, bankData.tiers.length)}`,
                             position: 'relative'
                         }}
                     >
@@ -474,10 +478,10 @@ const WealthBankingContent = ({ bank, onToggleCompare, isTierSelected }) => {
                             onClick={() => toggleFavoriteGuide(`${bank}::wealth::${tier.name}`)}
                             style={{
                                 position: 'absolute',
-                                top: '12px',
-                                right: '12px',
-                                height: '32px',
-                                width: '32px',
+                                top: '8px',
+                                right: '8px',
+                                height: '26px',
+                                width: '26px',
                                 borderRadius: '50%',
                                 backgroundColor: isGuideFavorite(`${bank}::wealth::${tier.name}`)
                                     ? 'rgba(236, 72, 153, 0.2)'
@@ -489,7 +493,7 @@ const WealthBankingContent = ({ bank, onToggleCompare, isTierSelected }) => {
                                 alignItems: 'center',
                                 justifyContent: 'center',
                                 cursor: 'pointer',
-                                fontSize: '14px',
+                                fontSize: '12px',
                                 transition: 'all 0.2s ease'
                             }}
                             title={isGuideFavorite(`${bank}::wealth::${tier.name}`) ? 'Remove from favorites' : 'Add to favorites'}
@@ -497,39 +501,44 @@ const WealthBankingContent = ({ bank, onToggleCompare, isTierSelected }) => {
                             {isGuideFavorite(`${bank}::wealth::${tier.name}`) ? '❤️' : '🤍'}
                         </button>
                         {/* Tier Header */}
-                        <div style={{ marginBottom: '1rem' }}>
+                        <div style={{ marginBottom: '0.6rem' }}>
                             <h4 style={{
-                                margin: '0 0 0.5rem',
+                                margin: '0 0 0.25rem',
                                 color: getTierColor(idx, bankData.tiers.length),
-                                fontSize: '1.2rem'
+                                fontSize: '1rem',
+                                fontWeight: '600',
+                                lineHeight: 1.2
                             }}>
                                 {tier.name}
                             </h4>
                             <div style={{
-                                fontSize: '0.9rem',
+                                fontSize: '0.75rem',
                                 color: 'var(--accent-cyan)',
-                                fontWeight: '600'
+                                fontWeight: '500',
+                                lineHeight: 1.4
                             }}>
                                 {tier.minNRV}
                             </div>
                         </div>
 
                         {/* Eligible Cards */}
-                        <div style={{ marginBottom: '1rem' }}>
+                        <div style={{ marginBottom: '0.6rem' }}>
                             <div style={{
-                                fontSize: '0.75rem',
+                                fontSize: '0.65rem',
                                 color: 'var(--text-secondary)',
-                                marginBottom: '0.25rem'
+                                marginBottom: '0.2rem',
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.5px'
                             }}>
                                 Eligible Cards
                             </div>
-                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
+                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '3px' }}>
                                 {tier.eligibleCards.map((card, i) => (
                                     <span key={i} style={{
-                                        fontSize: '0.75rem',
-                                        padding: '2px 6px',
-                                        borderRadius: '4px',
-                                        background: 'rgba(255,255,255,0.1)',
+                                        fontSize: '0.65rem',
+                                        padding: '2px 5px',
+                                        borderRadius: '3px',
+                                        background: 'rgba(255,255,255,0.08)',
                                         color: 'var(--text-secondary)'
                                     }}>
                                         {card}
@@ -541,34 +550,42 @@ const WealthBankingContent = ({ bank, onToggleCompare, isTierSelected }) => {
                         {/* Benefits */}
                         <div>
                             <div style={{
-                                fontSize: '0.75rem',
+                                fontSize: '0.65rem',
                                 color: 'var(--text-secondary)',
-                                marginBottom: '0.25rem'
+                                marginBottom: '0.2rem',
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.5px'
                             }}>
                                 Benefits
                             </div>
                             <ul style={{
                                 margin: 0,
-                                paddingLeft: '1rem',
-                                fontSize: '0.8rem',
-                                color: 'var(--text-primary)'
+                                paddingLeft: '0.9rem',
+                                fontSize: '0.7rem',
+                                color: 'var(--text-primary)',
+                                lineHeight: 1.4
                             }}>
-                                {tier.benefits.map((benefit, i) => (
-                                    <li key={i} style={{ marginBottom: '0.25rem' }}>
+                                {tier.benefits.slice(0, 5).map((benefit, i) => (
+                                    <li key={i} style={{ marginBottom: '0.15rem' }}>
                                         {benefit}
                                     </li>
                                 ))}
+                                {tier.benefits.length > 5 && (
+                                    <li style={{ color: 'var(--text-secondary)', fontStyle: 'italic' }}>
+                                        +{tier.benefits.length - 5} more
+                                    </li>
+                                )}
                             </ul>
                         </div>
 
                         {/* RM Badge */}
                         {tier.rm && (
                             <div style={{
-                                marginTop: '1rem',
-                                padding: '0.5rem',
+                                marginTop: '0.6rem',
+                                padding: '0.35rem 0.5rem',
                                 background: 'rgba(34, 197, 94, 0.1)',
-                                borderRadius: '6px',
-                                fontSize: '0.75rem',
+                                borderRadius: '4px',
+                                fontSize: '0.65rem',
                                 color: '#4ade80',
                                 textAlign: 'center'
                             }}>
@@ -577,24 +594,23 @@ const WealthBankingContent = ({ bank, onToggleCompare, isTierSelected }) => {
                         )}
 
                         {/* Key Takeaways */}
-                        <div className="key-takeaways-box">
+                        <div className="key-takeaways-box key-takeaways-compact">
                             <h5>💡 Key Takeaways</h5>
                             <ul>
                                 <li>Best card: {tier.eligibleCards[0]}</li>
-                                <li>{tier.benefits[0]}</li>
                                 {tier.rm && <li>Dedicated RM included</li>}
                             </ul>
                         </div>
 
                         {/* Action Buttons */}
-                        <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
+                        <div style={{ display: 'flex', gap: '0.4rem', marginTop: '0.6rem' }}>
                             {/* Compare Button */}
                             <button
-                                className={`tier-compare-checkbox ${isTierSelected(bank, tier.name) ? 'selected' : ''}`}
+                                className={`tier-compare-checkbox tier-compare-compact ${isTierSelected(bank, tier.name) ? 'selected' : ''}`}
                                 onClick={() => onToggleCompare(bank, tier)}
                                 style={{ flex: 1 }}
                             >
-                                {isTierSelected(bank, tier.name) ? '✓ Added to Compare' : '⚖️ Compare'}
+                                {isTierSelected(bank, tier.name) ? '✓ Compare' : '⚖️ Compare'}
                             </button>
                         </div>
                     </div>

@@ -147,7 +147,38 @@ const QuickCardPicker = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedMerchant, setSelectedMerchant] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [shouldHide, setShouldHide] = useState(false);
   const inputRef = useRef(null);
+
+  // Check for mobile on mount and resize
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Check if FAB should be hidden (modal/sidebar open)
+  useEffect(() => {
+    const checkHidden = () => {
+      // Check for any modal overlay or if body overflow is hidden
+      const hasModal = document.querySelector('.modal-overlay, .guide-modal-overlay, .banking-compare-modal-overlay');
+      const bodyHidden = document.body.style.overflow === 'hidden';
+      const sidebarOpen = document.querySelector('.nav-mobile.open, .mobile-overlay.active');
+      setShouldHide(!!(hasModal || bodyHidden || sidebarOpen));
+    };
+
+    // Check initially and on DOM changes
+    checkHidden();
+    const observer = new MutationObserver(checkHidden);
+    observer.observe(document.body, { attributes: true, childList: true, subtree: true });
+
+    return () => observer.disconnect();
+  }, []);
 
   // Keyboard shortcut: Ctrl/Cmd + Shift + C
   useEffect(() => {
@@ -195,87 +226,109 @@ const QuickCardPicker = () => {
   // Floating button + Modal
   return createPortal(
     <>
-      {/* Floating Action Button */}
-      <button
-        onClick={() => setIsOpen(true)}
-        style={{
-          position: 'fixed',
-          bottom: '24px',
-          right: '24px',
-          width: '60px',
-          height: '60px',
-          borderRadius: '50%',
-          background: 'linear-gradient(135deg, #06b6d4, #8b5cf6)',
-          border: 'none',
-          boxShadow: '0 4px 20px rgba(6, 182, 212, 0.4)',
-          cursor: 'pointer',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: '1.5rem',
-          zIndex: 1000,
-          transition: 'transform 0.2s, box-shadow 0.2s',
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.transform = 'scale(1.1)';
-          e.currentTarget.style.boxShadow = '0 6px 25px rgba(6, 182, 212, 0.5)';
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.transform = 'scale(1)';
-          e.currentTarget.style.boxShadow = '0 4px 20px rgba(6, 182, 212, 0.4)';
-        }}
-        title="Quick Card Picker (Ctrl+Shift+C)"
-      >
-        💳
-      </button>
+      {/* Floating Action Button - FIXED POSITIONING */}
+      {!shouldHide && (
+        <button
+          onClick={() => setIsOpen(true)}
+          className="quick-card-picker-fab"
+          style={{
+            position: 'fixed',
+            // Mobile: position above bottom nav (which is ~60px) + safe area
+            // Desktop: bottom right corner
+            bottom: isMobile ? '140px' : '24px',
+            left: isMobile ? '16px' : 'auto',
+            right: isMobile ? 'auto' : '24px',
+            width: isMobile ? '48px' : '60px',
+            height: isMobile ? '48px' : '60px',
+            borderRadius: '50%',
+            background: 'linear-gradient(135deg, #06b6d4, #8b5cf6)',
+            border: 'none',
+            boxShadow: '0 4px 20px rgba(6, 182, 212, 0.4)',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: isMobile ? '1.2rem' : '1.5rem',
+            zIndex: 900, // Lower than modals and sidebar
+            transition: 'transform 0.2s, box-shadow 0.2s',
+          }}
+          onMouseEnter={(e) => {
+            if (!isMobile) {
+              e.currentTarget.style.transform = 'scale(1.05)';
+              e.currentTarget.style.boxShadow = '0 6px 25px rgba(6, 182, 212, 0.5)';
+            }
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'scale(1)';
+            e.currentTarget.style.boxShadow = '0 4px 20px rgba(6, 182, 212, 0.4)';
+          }}
+          aria-label="Quick Card Picker"
+          title="Quick Card Picker (Ctrl+Shift+C)"
+        >
+          💳
+        </button>
+      )}
 
-      {/* Modal Overlay */}
+      {/* Modal */}
       {isOpen && (
         <div
           onClick={handleClose}
           style={{
             position: 'fixed',
             inset: 0,
-            background: 'rgba(0, 0, 0, 0.7)',
+            background: 'rgba(0,0,0,0.6)',
             backdropFilter: 'blur(4px)',
             zIndex: 1001,
             display: 'flex',
-            alignItems: 'flex-start',
-            justifyContent: 'center',
-            paddingTop: '15vh',
+            alignItems: isMobile ? 'flex-end' : 'flex-start',
+            justifyContent: isMobile ? 'center' : 'flex-end',
+            padding: isMobile ? '0' : '100px 24px 24px',
           }}
         >
-          {/* Modal Content */}
           <div
             onClick={(e) => e.stopPropagation()}
             style={{
-              width: '90%',
-              maxWidth: '480px',
-              background: 'var(--modal-bg)', // Adapts to light/dark mode
-              borderRadius: '20px',
+              width: isMobile ? '100%' : '380px',
+              maxWidth: isMobile ? '100%' : '90vw',
+              background: 'rgba(20, 20, 35, 0.98)',
+              borderRadius: isMobile ? '20px 20px 0 0' : '16px',
               border: '1px solid var(--glass-border, rgba(255,255,255,0.1))',
-              boxShadow: '0 20px 60px rgba(0, 0, 0, 0.5)',
+              boxShadow: '0 20px 50px rgba(0,0,0,0.5)',
+              animation: isMobile ? 'slideUp 0.3s ease-out' : 'slideDown 0.3s ease-out',
+              maxHeight: isMobile ? '85vh' : '70vh',
               overflow: 'hidden',
-              animation: 'slideDown 0.2s ease-out',
+              display: 'flex',
+              flexDirection: 'column',
             }}
           >
-            {/* Search Header */}
+            {/* Drag handle for mobile */}
+            {isMobile && (
+              <div style={{
+                width: '40px',
+                height: '4px',
+                background: 'rgba(255,255,255,0.2)',
+                borderRadius: '2px',
+                margin: '12px auto 8px',
+              }} />
+            )}
+
+            {/* Header */}
             {!selectedMerchant && (
-              <div style={{ padding: '20px 20px 0' }}>
+              <div style={{ padding: isMobile ? '8px 16px 16px' : '20px 20px 16px' }}>
                 <div style={{
                   display: 'flex',
                   alignItems: 'center',
                   gap: '12px',
                   padding: '12px 16px',
-                  background: 'rgba(0, 0, 0, 0.3)',
                   borderRadius: '12px',
+                  background: 'rgba(255,255,255,0.05)',
                   border: '1px solid var(--glass-border, rgba(255,255,255,0.1))',
                 }}>
                   <span style={{ fontSize: '1.2rem' }}>🔍</span>
                   <input
                     ref={inputRef}
                     type="text"
-                    placeholder="Where are you paying? (Amazon, Swiggy, PVR...)"
+                    placeholder={isMobile ? "Where are you paying?" : "Where are you paying? (Amazon, Swiggy, PVR...)"}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     style={{
@@ -284,24 +337,31 @@ const QuickCardPicker = () => {
                       border: 'none',
                       outline: 'none',
                       color: 'var(--text-primary, #fff)',
-                      fontSize: '1rem',
+                      fontSize: isMobile ? '0.9rem' : '1rem',
                     }}
                   />
-                  <kbd style={{
-                    padding: '2px 6px',
-                    borderRadius: '4px',
-                    background: 'rgba(255,255,255,0.1)',
-                    fontSize: '0.7rem',
-                    color: 'var(--text-secondary, #888)',
-                  }}>
-                    ESC
-                  </kbd>
+                  {!isMobile && (
+                    <kbd style={{
+                      padding: '2px 6px',
+                      borderRadius: '4px',
+                      background: 'rgba(255,255,255,0.1)',
+                      fontSize: '0.7rem',
+                      color: 'var(--text-secondary, #888)',
+                    }}>
+                      ESC
+                    </kbd>
+                  )}
                 </div>
               </div>
             )}
 
             {/* Merchant List or Selected Merchant */}
-            <div style={{ padding: '16px 20px 20px' }}>
+            <div style={{
+              padding: isMobile ? '0 16px 16px' : '16px 20px 20px',
+              overflowY: 'auto',
+              flex: 1,
+              paddingBottom: isMobile ? '24px' : '20px',
+            }}>
               {selectedMerchant ? (
                 // Selected Merchant View
                 <div>
@@ -340,7 +400,7 @@ const QuickCardPicker = () => {
                           border: `1px solid ${idx === 0 ? 'rgba(34,197,94,0.3)' : 'var(--glass-border, rgba(255,255,255,0.1))'}`,
                         }}
                       >
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '8px' }}>
                           <div>
                             <div style={{
                               fontSize: '0.95rem',
@@ -366,6 +426,7 @@ const QuickCardPicker = () => {
                             color: idx === 0 ? '#22c55e' : '#06b6d4',
                             fontSize: '0.8rem',
                             fontWeight: '600',
+                            whiteSpace: 'nowrap',
                           }}>
                             {card.reward}
                           </span>
@@ -424,11 +485,17 @@ const QuickCardPicker = () => {
                         }}
                       >
                         <span style={{ fontSize: '1.5rem' }}>{data.icon}</span>
-                        <div style={{ flex: 1 }}>
+                        <div style={{ flex: 1, minWidth: 0 }}>
                           <div style={{ fontWeight: '600', color: 'var(--text-primary, #fff)' }}>
                             {data.name}
                           </div>
-                          <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary, #888)' }}>
+                          <div style={{
+                            fontSize: '0.75rem',
+                            color: 'var(--text-secondary, #888)',
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                            whiteSpace: 'nowrap',
+                          }}>
                             Best: {data.cards[0].name} ({data.cards[0].reward})
                           </div>
                         </div>
@@ -477,6 +544,16 @@ const QuickCardPicker = () => {
           from {
             opacity: 0;
             transform: translateY(-20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes slideUp {
+          from {
+            opacity: 0;
+            transform: translateY(100%);
           }
           to {
             opacity: 1;

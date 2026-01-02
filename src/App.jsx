@@ -258,7 +258,7 @@ function Home({ data, onOpenShortcuts }) {
 
 
       {/* Main Content */}
-      <main>
+      <div style={{ flex: 1, width: '100%' }}>
         {/* Search Bar - Always visible at top */}
         <SearchBar
           value={inputValue}
@@ -280,7 +280,7 @@ function Home({ data, onOpenShortcuts }) {
           vouchers={filteredVouchers}
           onVoucherClick={handleVoucherSelect}
         />
-      </main>
+      </div>
 
 
       {selectedVoucher && (

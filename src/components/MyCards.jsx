@@ -194,7 +194,7 @@ const MyCards = () => {
           </div>
 
           {/* Stats Dashboard */}
-          <div className="mc-stats">
+          <div className="mc-stats mc-stats-compact">
             <div className="stat-pill">
               <div className="stat-icon">💳</div>
               <span className="sp-label">Total Cards</span>
@@ -202,18 +202,8 @@ const MyCards = () => {
             </div>
             <div className="stat-pill">
               <div className="stat-icon">💰</div>
-              <span className="sp-label">Monthly Savings</span>
+              <span className="sp-label">Max Monthly Savings</span>
               <span className="sp-value green">₹{totalMonthlyValue > 0 ? totalMonthlyValue.toLocaleString() : '0'}</span>
-            </div>
-            <div className="stat-pill">
-              <div className="stat-icon">👑</div>
-              <span className="sp-label">Annual Value</span>
-              <span className="sp-value purple">₹{totalAnnualValue > 0 ? totalAnnualValue.toLocaleString() : '0'}</span>
-            </div>
-            <div className="stat-pill">
-              <div className="stat-icon">🏦</div>
-              <span className="sp-label">Active Banks</span>
-              <span className="sp-value">{Object.keys(cardsByBank).length}</span>
             </div>
           </div>
         </div>
@@ -537,6 +527,11 @@ const MyCards = () => {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
           gap: 0.875rem;
+        }
+
+        .mc-stats-compact {
+          grid-template-columns: repeat(2, 1fr);
+          max-width: 600px;
         }
         
         .stat-pill {

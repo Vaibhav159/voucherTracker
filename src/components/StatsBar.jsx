@@ -96,7 +96,8 @@ const StatsBar = ({ vouchers = [], platforms = [] }) => {
           -webkit-backdrop-filter: blur(20px);
           border: 1px solid rgba(255, 255, 255, 0.08);
           border-radius: 20px;
-          margin-bottom: 2rem;
+          margin-top: 0.5rem;
+          margin-bottom: 1.5rem;
           overflow: hidden;
           box-shadow: 
             0 4px 24px rgba(0, 0, 0, 0.15),

@@ -17,6 +17,7 @@
 @import './styles/ui-fixes.css';
 @import './styles/performance-polish.css';
 @import './styles/components/guides.css';
+@import './styles/mobile-fixes.css';
 
 :root {
   --font-family: 'Outfit', sans-serif;
@@ -978,14 +979,15 @@ button:active:not(:disabled),
 /* Mobile Media Queries */
 @media (max-width: 768px) {
 
-  /* Fix #root padding from App.css */
+  /* Reduce root padding on mobile */
   #root {
-    padding: 1rem !important;
-    /* Override App.css */
+    padding: 0 !important;
+    /* Remove altogether on mobile */
   }
 
   .app-header {
-    padding: 1rem 0;
+    padding: 0.5rem 0;
+    /* Reduced from 1rem */
     position: sticky;
     top: 0;
     z-index: 100;
@@ -1210,9 +1212,17 @@ button:active:not(:disabled),
   /* Sticky Search Bar on Mobile */
   .sticky-search-bar {
     position: sticky !important;
-    top: 70px;
-    z-index: 90 !important;
-    margin-bottom: 1.5rem;
+    top: 85px;
+    /* Match header height */
+    z-index: 40;
+    /* Below header (50+), above content */
+    margin-bottom: 0.5rem;
+    padding-bottom: 1rem;
+    padding-top: 0.5rem;
+    /* Add breathing room */
+    background: var(--bg-primary);
+    /* Ensure this is solid! */
+    transition: top 0.2s ease;
   }
 
   .sticky-search-bar .glass-panel {
@@ -1257,7 +1267,8 @@ button:active:not(:disabled),
   }
 
   .main-content {
-    padding: 1rem 0;
+    padding: 0.5rem 0 1rem 0;
+    /* Reduced top padding on mobile */
   }
 
   /* Mobile Launch Site Button */
@@ -2572,6 +2583,41 @@ a:focus-visible {
   transform: translateY(-4px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
   border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Compact Tier Card Variant */
+.tier-card-compact {
+  padding: 0.875rem !important;
+}
+
+.tier-card-compact:hover {
+  transform: translateY(-3px);
+}
+
+/* Compact Key Takeaways */
+.key-takeaways-compact {
+  padding: 0.6rem 0.75rem !important;
+  margin-top: 0.6rem !important;
+}
+
+.key-takeaways-compact h5 {
+  margin-bottom: 0.35rem !important;
+  font-size: 0.75rem !important;
+}
+
+.key-takeaways-compact ul {
+  padding-left: 0.9rem !important;
+  font-size: 0.7rem !important;
+}
+
+.key-takeaways-compact li {
+  margin-bottom: 0.1rem !important;
+}
+
+/* Compact Compare Button */
+.tier-compare-compact {
+  padding: 6px 10px !important;
+  font-size: 0.7rem !important;
 }
 
 /* Compare Checkbox on Tier Card */

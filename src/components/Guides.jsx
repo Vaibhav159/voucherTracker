@@ -114,8 +114,11 @@ const GuideModal = ({ guide, onClose }) => {
         return 'Open Link';
     };
 
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
     return (
         <div
+            className="guide-modal-overlay"
             style={{
                 position: 'fixed',
                 top: 0,
@@ -126,26 +129,29 @@ const GuideModal = ({ guide, onClose }) => {
                 backdropFilter: 'blur(8px)',
                 zIndex: 9999,
                 display: 'flex',
-                alignItems: 'center',
+                alignItems: isMobile ? 'flex-end' : 'center',
                 justifyContent: 'center',
-                padding: '2rem',
+                padding: isMobile ? '0' : '1rem',
                 overflowY: 'auto'
             }}
             onClick={onClose}
         >
             <div
+                className="guide-modal-container"
                 style={{
                     background: 'var(--modal-bg)',
                     border: '1px solid var(--modal-border)',
-                    borderRadius: '24px',
+                    borderRadius: isMobile ? '20px 20px 0 0' : '20px',
                     width: '100%',
-                    maxWidth: '600px',
-                    maxHeight: '85vh',
+                    maxWidth: isMobile ? '100%' : '700px',
+                    maxHeight: isMobile ? '95vh' : '90vh',
                     overflowY: 'auto',
                     position: 'relative',
                     boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
-                    padding: '2rem',
-                    margin: 'auto'
+                    padding: isMobile ? '1rem' : '1.5rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center'
                 }}
                 onClick={e => e.stopPropagation()}
             >
@@ -173,10 +179,10 @@ const GuideModal = ({ guide, onClose }) => {
                     ×
                 </button>
 
-                <h3 style={{ margin: '0 0 1.5rem 0', fontSize: '1.5rem', paddingRight: '2rem' }}>{guide.title}</h3>
+                <h3 style={{ margin: '0 0 1.5rem 0', fontSize: '1.5rem', paddingRight: '2rem', width: '100%', maxWidth: '800px', textAlign: 'center' }}>{guide.title}</h3>
 
                 {guide.content ? (
-                    <div style={{ color: 'var(--text-primary)', lineHeight: '1.6' }}>
+                    <div style={{ color: 'var(--text-primary)', lineHeight: '1.6', width: 'min(90vw, 800px)' }}>
                         <Markdown components={{
                             h1: ({ node, ...props }) => <h1 style={{ fontSize: '1.8rem', margin: '1.5rem 0 1rem' }} {...props} />,
                             h2: ({ node, ...props }) => <h2 style={{ fontSize: '1.5rem', margin: '1.5rem 0 1rem', color: 'var(--accent-cyan)' }} {...props} />,
@@ -199,9 +205,13 @@ const GuideModal = ({ guide, onClose }) => {
                         </Markdown>
                     </div>
                 ) : guide.embedHtml && guide.embedHtml.includes('blockquote class="reddit-embed-bq"') ? (
-                    <RedditEmbed embedHtml={guide.embedHtml} theme={theme} />
+                    <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                        <RedditEmbed embedHtml={guide.embedHtml} theme={theme} />
+                    </div>
                 ) : (
-                    <div dangerouslySetInnerHTML={{ __html: guide.embedHtml }} />
+                    <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                        <div dangerouslySetInnerHTML={{ __html: guide.embedHtml }} />
+                    </div>
                 )}
 
                 {guide.link && guide.link !== '#' && (

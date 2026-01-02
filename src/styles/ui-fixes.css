@@ -100,8 +100,15 @@
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 .clearButton {
@@ -169,34 +176,40 @@
 /* Cards getting cut off on the right side */
 
 /* Prevent horizontal scroll on containers */
-.app-layout,
-#root,
-body,
-main {
+/* Prevent horizontal scroll on containers */
+html {
   overflow-x: hidden;
-  max-width: 100vw;
+  height: 100%;
 }
 
-/* Fix the voucher grid virtual container */
+body {
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100%;
+}
+
+/* Fix the voucher grid virtual container - ADAPTED FOR WINDOW SCROLL */
 .voucher-grid-virtual-container {
-  max-width: 100% !important;
-  overflow-x: hidden !important;
-  overflow-y: auto !important;
-  padding-right: 4px;
+  max-width: 100%;
+  padding-right: 0;
   box-sizing: border-box;
+  /* Removed fixed height/overflow to allow window scroll */
 }
 
 /* Fix the inner container */
-.voucher-grid-virtual-container > div {
+.voucher-grid-virtual-container>div {
   max-width: 100% !important;
   box-sizing: border-box;
 }
 
-/* Fix absolute positioned grid rows - this is the main culprit */
+/* Fix absolute positioned grid rows */
 .voucher-grid-virtual-container div[style*="position: absolute"] {
-  max-width: calc(100% - 8px) !important;
-  padding-right: 4px !important;
+  max-width: 100% !important;
   box-sizing: border-box !important;
+  left: 0 !important;
 }
 
 /* Ensure cards fit within their grid cells */
@@ -208,7 +221,6 @@ main {
 }
 
 /* Better grid template for responsiveness */
-/* Override inline grid-template-columns if possible */
 @media (max-width: 900px) {
   .voucher-grid-virtual-container div[style*="display: grid"] {
     grid-template-columns: repeat(2, 1fr) !important;
@@ -229,21 +241,21 @@ main {
     padding: 0.75rem;
     gap: 0.5rem;
   }
-  
+
   .inputField {
     width: 100%;
     order: 1;
   }
-  
+
   .submitButton {
     flex: 1;
     order: 2;
   }
-  
+
   .voiceButton {
     order: 3;
   }
-  
+
   .clearButton {
     order: 4;
   }
