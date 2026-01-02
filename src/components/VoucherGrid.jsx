@@ -14,14 +14,14 @@ import VoucherCard from './VoucherCardPolished';
 import EmptyState from './EmptyState';
 import { VoucherGridSkeleton } from './Skeleton';
 
-const CARD_MIN_WIDTH = 280;
+const CARD_MIN_WIDTH = 200;
 const CARD_GAP = 32;
 const CARD_HEIGHT = 400;
 const OVERSCAN = 5;
 
 const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
     const parentRef = useRef(null);
-    const [columns, setColumns] = useState(2);
+    const [columns, setColumns] = useState(3);
     const [containerWidth, setContainerWidth] = useState(0);
     const [isInitialLoad, setIsInitialLoad] = useState(true);
 

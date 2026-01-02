@@ -185,69 +185,74 @@ function Home({ data, onOpenShortcuts }) {
         onClick={() => setActiveMobileFilter('none')}
       />
 
-      {/* Sidebar */}
-      <aside data-tour="filters" className={`glass-panel sidebar 
-        ${activeMobileFilter !== 'none' ? 'mobile-visible' : ''} 
-        ${activeMobileFilter === 'platform' ? 'show-platform' : ''} 
-        ${activeMobileFilter === 'category' ? 'show-category' : ''}
-      `}>
-        {/* Close handle/indicator for mobile */}
-        <div style={{
-          width: '40px',
-          height: '4px',
-          background: 'var(--glass-border)',
-          borderRadius: '2px',
-          margin: '8px auto',
-          display: activeMobileFilter !== 'none' ? 'block' : 'none'
-        }} onClick={() => setActiveMobileFilter('none')} />
+      {/* Left Column: Stats + Sidebar */}
+      <div className="left-sidebar-wrapper">
+        <StatsBar vouchers={data} platforms={ALL_PLATFORMS} variant="sidebar" />
 
-        <div className="sidebar-content-wrapper">
-          <div className="platform-section">
-            <h3 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--nav-text)' }}>
-              Filter By Platform
-            </h3>
-            <PlatformFilter
-              selectedPlatform={selectedPlatform}
-              onPlatformSelect={(p) => {
-                // Toggle behavior: if clicking selected, unselect it
-                handlePlatformSelect(p === selectedPlatform ? null : p);
-              }}
-              platforms={ALL_PLATFORMS}
-            />
-          </div>
+        {/* Sidebar */}
+        <aside data-tour="filters" className={`glass-panel sidebar 
+          ${activeMobileFilter !== 'none' ? 'mobile-visible' : ''} 
+          ${activeMobileFilter === 'platform' ? 'show-platform' : ''} 
+          ${activeMobileFilter === 'category' ? 'show-category' : ''}
+        `}>
+          {/* Close handle/indicator for mobile */}
+          <div style={{
+            width: '40px',
+            height: '4px',
+            background: 'var(--glass-border)',
+            borderRadius: '2px',
+            margin: '8px auto',
+            display: activeMobileFilter !== 'none' ? 'block' : 'none'
+          }} onClick={() => setActiveMobileFilter('none')} />
 
-          <div className="sidebar-divider" /> {/* Added divider */}
-
-          <div className="category-section" style={{
-            display: 'flex',
-            flexDirection: 'column',
-            minHeight: '200px', // Ensure minimum visible height for categories
-            flex: 1,
-            overflow: 'visible'
-          }}>
-            <h3 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--nav-text)' }}>
-              Filter By Category
-            </h3>
-            <div style={{
-              display: 'flex',
-              flexDirection: 'column',
-              flex: 1,
-              minHeight: '150px',
-              overflow: 'auto'
-            }}>
-              <CategoryFilter
-                selectedCategory={selectedCategory}
-                onCategorySelect={(c) => {
-                  // Toggle behavior
-                  handleCategorySelect(c === selectedCategory ? null : c);
+          <div className="sidebar-content-wrapper">
+            <div className="platform-section">
+              <h3 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--nav-text)' }}>
+                Filter By Platform
+              </h3>
+              <PlatformFilter
+                selectedPlatform={selectedPlatform}
+                onPlatformSelect={(p) => {
+                  // Toggle behavior: if clicking selected, unselect it
+                  handlePlatformSelect(p === selectedPlatform ? null : p);
                 }}
-                categories={ALL_CATEGORIES}
+                platforms={ALL_PLATFORMS}
               />
             </div>
-          </div>
 
-        </div>
-      </aside>
+            <div className="sidebar-divider" /> {/* Added divider */}
+
+            <div className="category-section" style={{
+              display: 'flex',
+              flexDirection: 'column',
+              minHeight: '200px', // Ensure minimum visible height for categories
+              flex: 1,
+              overflow: 'visible'
+            }}>
+              <h3 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--nav-text)' }}>
+                Filter By Category
+              </h3>
+              <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                flex: 1,
+                minHeight: '150px',
+                overflow: 'auto'
+              }}>
+                <CategoryFilter
+                  selectedCategory={selectedCategory}
+                  onCategorySelect={(c) => {
+                    // Toggle behavior
+                    handleCategorySelect(c === selectedCategory ? null : c);
+                  }}
+                  categories={ALL_CATEGORIES}
+                />
+              </div>
+            </div>
+
+          </div>
+        </aside>
+      </div>
 
       {/* Mobile Sticky Bar */}
       <MobileStickyFilterBar
@@ -262,7 +267,6 @@ function Home({ data, onOpenShortcuts }) {
         {/* Show Stats and Top Deals only when no filters active - Moved to Top */}
         {!searchTerm && !selectedPlatform && !selectedCategory && (
           <>
-            <StatsBar vouchers={data} platforms={ALL_PLATFORMS} />
             <TopDeals vouchers={data} onVoucherClick={handleVoucherSelect} />
           </>
         )}

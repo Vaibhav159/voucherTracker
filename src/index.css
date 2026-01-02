@@ -899,14 +899,28 @@ button:active:not(:disabled),
 }
 
 
-.sidebar {
-  padding: 1.5rem;
+
+.left-sidebar-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   position: sticky;
   top: 2rem;
   max-height: calc(100vh - 4rem);
-  /* Constrain height to viewport */
+}
+
+.sidebar {
+  padding: 1.5rem;
+  /* Removed sticky from here as wrapper handles it, or keep it static inside wrapper */
+  /* If wrapper is sticky, children flow naturally. */
+  /* However, if wrapper is larger than viewport (unlikely with minified stats + filters), we might want internal scrolling. */
+  /* Let's make wrapper sticky and sidebar flex-1 with overflow if needed. */
   display: flex;
   flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  /* Prevent double scrollbars, sidebar-content-wrapper handles scroll */
 }
 
 .sidebar-content-wrapper {
