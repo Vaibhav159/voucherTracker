@@ -1,24 +1,19 @@
-
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState, useMemo, useRef } from 'react';
 import { useGuides } from '../hooks/useGuides';
 import Markdown from 'react-markdown';
 import { useTheme } from '../context/ThemeContext';
 import { useFavorites } from '../context/FavoritesContext';
 import LoadingSpinner from './LoadingSpinner';
 
-
 const RedditEmbed = ({ embedHtml, theme, onLoad }) => {
-    // ... (unchanged)
+    // ... (same implementation as before)
     const containerRef = React.useRef(null);
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
         if (!containerRef.current || !embedHtml) return;
 
-        // Strip existing script tags to prevent conflicts
         const cleanHtml = embedHtml.replace(/<script\b[^>]*>([\s\S]*?)<\/script>/gim, "");
-
-        // Inject content manually to prevent React reconciliation from undoing the iframe transformation
         containerRef.current.innerHTML = cleanHtml;
 
         const blockquote = containerRef.current.querySelector('blockquote');
@@ -30,7 +25,6 @@ const RedditEmbed = ({ embedHtml, theme, onLoad }) => {
             }
         }
 
-        // Reload Reddit widgets script
         const scriptId = 'reddit-wjs';
         let script = document.getElementById(scriptId);
         if (script) {
@@ -43,7 +37,6 @@ const RedditEmbed = ({ embedHtml, theme, onLoad }) => {
         script.charset = "UTF-8";
         document.body.appendChild(script);
 
-        // Check for iframe creation
         const checkIframe = setInterval(() => {
             if (containerRef.current) {
                 const iframe = containerRef.current.querySelector('iframe');
@@ -55,10 +48,8 @@ const RedditEmbed = ({ embedHtml, theme, onLoad }) => {
             }
         }, 100);
 
-        // Cleanup
         const timeout = setTimeout(() => {
             clearInterval(checkIframe);
-            // Fallback: assume loaded if timeout hits to show whatever we have
             setIsLoaded(true);
             onLoad && onLoad();
         }, 8000);
@@ -100,19 +91,15 @@ const GuideModal = ({ guide, onClose }) => {
     const { theme } = useTheme();
 
     useEffect(() => {
-        // Re-scan for Twitter widgets when modal opens
         if (window.twttr && window.twttr.widgets) {
             window.twttr.widgets.load();
         }
-
-        // Prevent background scrolling
         document.body.style.overflow = 'hidden';
         return () => {
             document.body.style.overflow = 'unset';
         };
     }, [guide]);
 
-    // Close on escape key
     useEffect(() => {
         const handleEsc = (e) => {
             if (e.key === 'Escape') onClose();
@@ -121,7 +108,6 @@ const GuideModal = ({ guide, onClose }) => {
         return () => window.removeEventListener('keydown', handleEsc);
     }, [onClose]);
 
-    // Determine platform label
     const getPlatformLabel = () => {
         if (guide.link.includes('reddit.com')) return 'Open on Reddit';
         if (guide.link.includes('twitter.com') || guide.link.includes('x.com')) return 'Open on Twitter';
@@ -189,7 +175,6 @@ const GuideModal = ({ guide, onClose }) => {
 
                 <h3 style={{ margin: '0 0 1.5rem 0', fontSize: '1.5rem', paddingRight: '2rem' }}>{guide.title}</h3>
 
-                {/* Embed Container */}
                 {guide.content ? (
                     <div style={{ color: 'var(--text-primary)', lineHeight: '1.6' }}>
                         <Markdown components={{
@@ -242,7 +227,12 @@ const Guides = () => {
     const [selectedGuide, setSelectedGuide] = useState(null);
     const [selectedTag, setSelectedTag] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
+    const [visibleCount, setVisibleCount] = useState(9); // Pagination state
     const { toggleFavoriteGuide, isGuideFavorite } = useFavorites();
+
+    // Dropdown state
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const dropdownRef = useRef(null);
 
     // Extract unique tags
     const allTags = useMemo(() => {
@@ -256,17 +246,19 @@ const Guides = () => {
         return Array.from(tags).sort();
     }, [guidesData]);
 
-    // ... (rest of filtering logic)
+    // Reset pagination when filters change
+    useEffect(() => {
+        setVisibleCount(9);
+    }, [selectedTag, searchTerm]);
+
     const filteredGuides = useMemo(() => {
         if (!guidesData) return [];
-        let guides = [...guidesData]; // Copy to avoid mutation
+        let guides = [...guidesData];
 
-        // Filter by tag
         if (selectedTag) {
             guides = guides.filter(guide => guide.tags && guide.tags.includes(selectedTag));
         }
 
-        // Filter by search term
         if (searchTerm.trim()) {
             const lowerSearch = searchTerm.toLowerCase();
             guides = guides.filter(guide =>
@@ -280,6 +272,11 @@ const Guides = () => {
         return guides;
     }, [guidesData, selectedTag, searchTerm]);
 
+    // Apply pagination
+    const displayedGuides = useMemo(() => {
+        return filteredGuides.slice(0, visibleCount);
+    }, [filteredGuides, visibleCount]);
+
     useEffect(() => {
         // Load Twitter Widget Script globally
         if (!document.getElementById('twitter-wjs')) {
@@ -290,6 +287,15 @@ const Guides = () => {
             script.charset = "utf-8";
             document.body.appendChild(script);
         }
+
+        // Click outside handler for dropdown
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsDropdownOpen(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
     if (loading) {
@@ -310,116 +316,92 @@ const Guides = () => {
     }
 
     return (
-        <div style={{ maxWidth: '1200px', margin: '0 auto', paddingBottom: '4rem' }}>
-            <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                <h2 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Community Guides</h2>
-                <p style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
+        <div className="guides-container">
+            <header className="guides-header">
+                <h2 className="guides-title">Community Guides</h2>
+                <p className="guides-subtitle">
                     Curated discussions and threads to help you maximize savings.
                 </p>
-            </div>
+            </header>
 
-            {/* Search Bar */}
-            <div style={{ maxWidth: '500px', margin: '0 auto 2rem' }}>
-                <div className="glass-panel" style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    padding: '0.75rem 1rem',
-                    borderRadius: '12px',
-                    background: 'rgba(255,255,255,0.03)'
-                }}>
-                    <span style={{ marginRight: '0.75rem', color: 'var(--text-secondary)' }}>🔍</span>
+            {/* Minimalist Control Bar */}
+            <div className="guides-control-bar">
+                <div className="guides-search-wrapper">
+                    <span className="guides-search-icon">🔍</span>
                     <input
                         type="text"
-                        placeholder="Search guides..."
+                        className="guides-search-input"
+                        placeholder="Search guides, authors, topics..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        style={{
-                            background: 'transparent',
-                            border: 'none',
-                            color: 'var(--text-primary)',
-                            fontSize: '1rem',
-                            width: '100%',
-                            outline: 'none'
-                        }}
                     />
-                    {searchTerm && (
-                        <button
-                            onClick={() => setSearchTerm('')}
-                            style={{
-                                background: 'rgba(255,255,255,0.1)',
-                                border: 'none',
-                                color: 'var(--text-secondary)',
-                                borderRadius: '50%',
-                                width: '24px',
-                                height: '24px',
-                                cursor: 'pointer',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                fontSize: '0.8rem'
+                </div>
+
+                <div className="guides-divider"></div>
+
+                <div style={{ position: 'relative' }} ref={dropdownRef}>
+                    <button
+                        className={`guides-filter-trigger ${isDropdownOpen ? 'open' : ''} ${selectedTag ? 'has-selection' : ''}`}
+                        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                    >
+                        <span>{selectedTag || 'Filter by Category'}</span>
+                        {selectedTag && (
+                            <span
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setSelectedTag(null);
+                                }}
+                                style={{
+                                    background: 'rgba(255,255,255,0.2)',
+                                    borderRadius: '50%',
+                                    width: '16px',
+                                    height: '16px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    fontSize: '0.6rem',
+                                    marginLeft: '4px'
+                                }}
+                            >
+                                ✕
+                            </span>
+                        )}
+                        {!selectedTag && <span className="arrow">▼</span>}
+                    </button>
+
+                    <div className={`guides-dropdown-menu ${isDropdownOpen ? 'open' : ''}`}>
+                        <div
+                            className={`guides-dropdown-item ${!selectedTag ? 'selected' : ''}`}
+                            onClick={() => {
+                                setSelectedTag(null);
+                                setIsDropdownOpen(false);
                             }}
                         >
-                            ✕
-                        </button>
-                    )}
+                            <span>All Categories</span>
+                            <span className="guides-filter-count">{guidesData?.length}</span>
+                        </div>
+                        {allTags.map(tag => (
+                            <div
+                                key={tag}
+                                className={`guides-dropdown-item ${selectedTag === tag ? 'selected' : ''}`}
+                                onClick={() => {
+                                    setSelectedTag(tag);
+                                    setIsDropdownOpen(false);
+                                }}
+                            >
+                                <span>{tag}</span>
+                                <span className="guides-filter-count">
+                                    {guidesData.filter(g => g.tags && g.tags.includes(tag)).length}
+                                </span>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
 
-            {/* Tag Filter */}
-            <div style={{
-                display: 'flex',
-                gap: '12px',
-                justifyContent: 'center',
-                flexWrap: 'wrap',
-                marginBottom: '3rem',
-                maxWidth: '900px',
-                margin: '0 auto 3rem'
-            }}>
-                <button
-                    onClick={() => setSelectedTag(null)}
-                    style={{
-                        background: !selectedTag ? 'var(--nav-bg-active)' : 'var(--tag-bg)',
-                        color: !selectedTag ? 'var(--nav-text-hover)' : 'var(--nav-text)',
-                        border: '1px solid var(--glass-border)',
-                        padding: '8px 20px',
-                        borderRadius: '100px',
-                        cursor: 'pointer',
-                        fontWeight: 600,
-                        fontSize: '0.9rem',
-                        transition: 'all 0.2s'
-                    }}
-                >
-                    All
-                </button>
-                {allTags.map(tag => (
-                    <button
-                        key={tag}
-                        onClick={() => setSelectedTag(tag === selectedTag ? null : tag)}
-                        style={{
-                            background: selectedTag === tag ? 'var(--accent-cyan)' : 'var(--tag-bg)',
-                            color: selectedTag === tag ? '#000' : 'var(--nav-text)',
-                            border: selectedTag === tag ? '1px solid var(--accent-cyan)' : '1px solid var(--glass-border)',
-                            padding: '8px 16px',
-                            borderRadius: '100px',
-                            cursor: 'pointer',
-                            fontWeight: 500,
-                            fontSize: '0.9rem',
-                            transition: 'all 0.2s',
-                            boxShadow: selectedTag === tag ? '0 0 15px rgba(0, 240, 255, 0.3)' : 'none'
-                        }}
-                    >
-                        {tag}
-                    </button>
-                ))}
-            </div>
-
-            <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))',
-                gap: '2rem',
-                alignItems: 'start'
-            }}>
-                {filteredGuides.map(guide => {
+            {/* Guides Grid */}
+            <div className="guides-grid">
+                {displayedGuides.map(guide => {
                     const hasEmbed = !!guide.embedHtml;
                     const hasContent = !!guide.content;
                     const isInternal = hasEmbed || hasContent;
@@ -427,7 +409,7 @@ const Guides = () => {
                     return (
                         <div
                             key={guide.id}
-                            className="glass-panel"
+                            className="guide-card"
                             onClick={() => {
                                 if (isInternal) {
                                     setSelectedGuide(guide);
@@ -435,136 +417,70 @@ const Guides = () => {
                                     window.open(guide.link, '_blank');
                                 }
                             }}
-                            style={{
-                                padding: '1.5rem',
-                                border: '1px solid var(--item-border)',
-                                background: 'var(--item-bg)',
-                                transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-                                cursor: 'pointer',
-                                position: 'relative'
-                            }}
                         >
-                            {/* Favorite Toggle Button */}
-                            <button
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    toggleFavoriteGuide(guide.id);
-                                }}
-                                title={isGuideFavorite(guide.id) ? 'Remove from favorites' : 'Add to favorites'}
-                                style={{
-                                    position: 'absolute',
-                                    top: '1rem',
-                                    right: '1rem',
-                                    background: isGuideFavorite(guide.id) ? 'rgba(239, 68, 68, 0.15)' : 'rgba(255, 255, 255, 0.05)',
-                                    border: isGuideFavorite(guide.id) ? '1px solid rgba(239, 68, 68, 0.3)' : '1px solid var(--glass-border)',
-                                    borderRadius: '50%',
-                                    width: '36px',
-                                    height: '36px',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    cursor: 'pointer',
-                                    transition: 'all 0.2s ease',
-                                    fontSize: '1rem',
-                                    zIndex: 5
-                                }}
-                            >
-                                {isGuideFavorite(guide.id) ? '❤️' : '🤍'}
-                            </button>
-                            {/* Header: Tags */}
-                            <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '1rem' }}>
-                                {guide.tags.slice(0, 3).map(tag => (
+                            <div className="guide-card-content">
+                                <div className="guide-card-header">
+                                    <div className="guide-tags-wrapper">
+                                        {guide.tags.slice(0, 2).map(tag => (
+                                            <span key={tag} className="guide-tag-pill">{tag}</span>
+                                        ))}
+                                        {guide.tags.length > 2 && (
+                                            <span className="guide-tag-pill">+{guide.tags.length - 2}</span>
+                                        )}
+                                    </div>
                                     <button
-                                        key={tag}
+                                        className="guide-fav-btn"
                                         onClick={(e) => {
                                             e.stopPropagation();
-                                            setSelectedTag(tag);
+                                            toggleFavoriteGuide(guide.id);
                                         }}
+                                        title={isGuideFavorite(guide.id) ? 'Remove from favorites' : 'Add to favorites'}
                                         style={{
-                                            fontSize: '0.7rem',
-                                            padding: '4px 8px',
-                                            borderRadius: '6px',
-                                            background: selectedTag === tag ? 'var(--accent-cyan-dim)' : 'var(--tag-bg)',
-                                            color: selectedTag === tag ? 'var(--accent-cyan)' : 'var(--tag-text)',
-                                            fontWeight: 500,
-                                            border: selectedTag === tag ? '1px solid var(--accent-cyan)' : '1px solid var(--tag-border)',
-                                            cursor: 'pointer'
+                                            color: isGuideFavorite(guide.id) ? '#ef4444' : 'var(--text-secondary)'
                                         }}
                                     >
-                                        {tag}
+                                        {isGuideFavorite(guide.id) ? '❤️' : '🤍'}
                                     </button>
-                                ))}
-                            </div>
-
-                            {/* Title */}
-                            <h3 style={{ margin: '0 0 0.8rem 0', fontSize: '1.2rem', lineHeight: '1.4', color: 'var(--card-title)' }}>
-                                <a
-                                    href={guide.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    style={{ color: 'inherit', textDecoration: 'none' }}
-                                    className="hover-underline"
-                                    onClick={(e) => e.stopPropagation()}
-                                >
-                                    {guide.title}
-                                </a>
-                            </h3>
-
-                            <p style={{ margin: '0 0 1.5rem 0', color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.5' }}>
-                                {guide.description}
-                            </p>
-
-                            {/* Footer */}
-                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 'auto', paddingTop: '1rem', borderTop: '1px solid var(--item-border)' }}>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                                    <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-                                        {guide.author}
-                                    </span>
                                 </div>
 
-                                {isInternal ? (
-                                    <button
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            setSelectedGuide(guide);
-                                        }}
-                                        style={{
-                                            background: 'var(--accent-cyan)',
-                                            color: '#000',
-                                            border: 'none',
-                                            padding: '8px 16px',
-                                            borderRadius: '20px',
-                                            fontSize: '0.85rem',
-                                            fontWeight: 600,
-                                            cursor: 'pointer',
-                                            transition: 'transform 0.2s',
-                                            boxShadow: '0 4px 12px rgba(0, 240, 255, 0.3)'
-                                        }}
-                                        onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'}
-                                        onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
-                                    >
-                                        {hasContent ? 'Read Guide' : 'Read Thread'}
-                                    </button>
-                                ) : (
-                                    <a
-                                        href={guide.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        onClick={(e) => e.stopPropagation()}
-                                        style={{ color: 'var(--accent-cyan)', fontSize: '0.85rem', fontWeight: 600, textDecoration: 'none' }}
-                                    >
-                                        Visit Link ↗
-                                    </a>
-                                )}
+                                <h3 className="guide-card-title">{guide.title}</h3>
+                                <p className="guide-card-description">{guide.description}</p>
+
+                                <div className="guide-card-footer">
+                                    <span className="guide-author">
+                                        {guide.author}
+                                    </span>
+                                    {isInternal ? (
+                                        <button className="guide-action-btn">
+                                            {hasContent ? 'Read Guide' : 'Read Thread'}
+                                        </button>
+                                    ) : (
+                                        <span className="guide-action-btn" style={{ border: 'none', background: 'transparent', padding: '0' }}>
+                                            Visit Link ↗
+                                        </span>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     );
                 })}
             </div>
 
+            {/* Load More Button */}
+            {visibleCount < filteredGuides.length && (
+                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '3rem' }}>
+                    <button
+                        className="guide-load-more-btn"
+                        onClick={() => setVisibleCount(prev => prev + 9)}
+                    >
+                        Load More Guides
+                    </button>
+                </div>
+            )}
+
             {filteredGuides.length === 0 && (
                 <div style={{ textAlign: 'center', padding: '4rem', color: 'var(--text-secondary)' }}>
-                    No guides found for tag "{selectedTag}".
+                    No guides found matching your filters.
                 </div>
             )}
 
@@ -574,10 +490,6 @@ const Guides = () => {
                     onClose={() => setSelectedGuide(null)}
                 />
             )}
-
-            <style>{`
-                .hover-underline:hover { text-decoration: underline !important; }
-            `}</style>
         </div>
     );
 };

@@ -16,6 +16,7 @@
 @import './styles/global-redesign.css';
 @import './styles/ui-fixes.css';
 @import './styles/performance-polish.css';
+@import './styles/components/guides.css';
 
 :root {
   --font-family: 'Outfit', sans-serif;
