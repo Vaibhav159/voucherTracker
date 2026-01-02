@@ -714,29 +714,7 @@ button:active:not(:disabled),
   text-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
 }
 
-.launch-site-btn {
-  text-decoration: none;
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 6px 12px;
-  border-radius: 8px;
-  background: var(--tag-bg);
-  border: 1px solid var(--item-border);
-  margin-right: 8px;
-  transition: all 0.2s;
-}
 
-.launch-site-btn .btn-text-mobile {
-  display: none;
-}
-
-.launch-site-btn:hover {
-  background: var(--item-border);
-  color: var(--text-primary);
-}
 
 .btn-primary {
   background: linear-gradient(90deg, var(--accent-violet), var(--accent-pink));

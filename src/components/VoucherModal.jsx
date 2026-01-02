@@ -227,10 +227,32 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="launch-site-btn"
+                                style={{
+                                    textDecoration: 'none',
+                                    padding: '8px 16px',
+                                    borderRadius: '8px',
+                                    background: 'rgba(255, 255, 255, 0.08)',
+                                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                                    color: 'var(--text-primary)',
+                                    fontSize: '0.85rem',
+                                    fontWeight: '500',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '6px',
+                                    transition: 'all 0.2s ease',
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.target.style.background = 'rgba(255, 255, 255, 0.15)';
+                                    e.target.style.transform = 'translateY(-1px)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.target.style.background = 'rgba(255, 255, 255, 0.08)';
+                                    e.target.style.transform = 'translateY(0)';
+                                }}
                             >
-                                <span className="btn-text-desktop">Launch Site</span>
+                                <span className="btn-text-desktop">Visit Site</span>
                                 <span className="btn-text-mobile">Site</span>
-                                <span className="btn-icon">↗</span>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                             </a>
                         )}
                         <button
@@ -249,9 +271,18 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                     <div className="modal-section-header" style={{
                         display: 'flex',
                         justifyContent: 'space-between',
-                        alignItems: 'center'
+                        alignItems: 'center',
+                        marginBottom: '12px',
+                        paddingLeft: '4px',
+                        paddingTop: '16px'
                     }}>
-                        <span>AVAILABLE OFFERS</span>
+                        <span style={{
+                            fontSize: '0.85rem',
+                            fontWeight: '600',
+                            letterSpacing: '0.05em',
+                            color: 'var(--text-secondary)',
+                            textTransform: 'uppercase'
+                        }}>Available Offers</span>
                     </div>
 
                     <div className="platforms-grid">
@@ -266,6 +297,7 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                                     key={idx}
                                     className={`platform-offer ${isBest ? 'best' : ''} ${isSelected ? 'selected' : ''}`}
                                     style={{
+                                        position: 'relative',
                                         animation: `fadeInUp 0.3s ease-out ${idx * 0.1}s both`,
                                     }}
                                 >
@@ -277,6 +309,17 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                                             🏆 BEST RATE
                                         </div>
                                     )}
+
+                                    {/* Monthly Cap - Top Right */}
+                                    <div style={{
+                                        position: 'absolute',
+                                        top: '16px',
+                                        right: '16px',
+                                        textAlign: 'right'
+                                    }}>
+                                        <div className="platform-offer__metric-label" style={{ fontSize: '0.75rem', marginBottom: '2px' }}>Monthly Cap</div>
+                                        <div className="platform-offer__metric-value" style={{ fontSize: '0.9rem' }}>{platform.cap}</div>
+                                    </div>
 
                                     <div className="platform-offer__header">
                                         <div
@@ -319,16 +362,12 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                                             </span>
                                         </div>
 
-                                        <div className="platform-offer__details">
+                                        <div className="platform-offer__details" style={{ paddingRight: '100px' }}>
                                             <div className="platform-offer__metric">
                                                 <div className="platform-offer__metric-label">{label}</div>
                                                 <div className={`platform-offer__metric-value ${label === 'Savings' ? 'savings' : ''}`}>
                                                     {value}
                                                 </div>
-                                            </div>
-                                            <div className="platform-offer__metric">
-                                                <div className="platform-offer__metric-label">Monthly Cap</div>
-                                                <div className="platform-offer__metric-value">{platform.cap}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -343,55 +382,52 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                                             )}
                                         </div>
 
-                                        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                                            {/* Copy Button */}
-                                            <button
-                                                onClick={() => copyLink(platform.link, platform.name)}
-                                                title="Copy link"
-                                                style={{
-                                                    padding: '8px 12px',
-                                                    borderRadius: '8px',
-                                                    border: copiedLink === platform.name
-                                                        ? '1px solid #22c55e'
-                                                        : '1px solid var(--glass-border)',
-                                                    background: copiedLink === platform.name
-                                                        ? 'rgba(34, 197, 94, 0.15)'
-                                                        : 'transparent',
-                                                    color: copiedLink === platform.name
-                                                        ? '#22c55e'
-                                                        : 'var(--text-secondary)',
-                                                    cursor: 'pointer',
-                                                    fontSize: '0.8rem',
-                                                    transition: 'all 0.2s',
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    gap: '4px',
-                                                }}
-                                            >
-                                                📋 {copiedLink === platform.name ? 'Copied!' : 'Copy'}
-                                            </button>
-
-                                            {/* Buy Button - Clean style like production */}
+                                        <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                            {/* Buy Button - Prominent & First */}
                                             <a
                                                 href={platform.link}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="btn-secondary"
                                                 style={{
-                                                    textDecoration: 'none',
+                                                    flex: 1,
+                                                    justifyContent: 'center',
                                                     padding: '8px 16px',
-                                                    borderRadius: '8px',
+                                                    background: 'rgba(255, 255, 255, 0.05)',
                                                     border: '1px solid var(--glass-border)',
-                                                    background: 'transparent',
+                                                    borderRadius: '8px',
                                                     color: 'var(--text-primary)',
-                                                    fontSize: '0.8rem',
-                                                    display: 'inline-flex',
-                                                    alignItems: 'center',
-                                                    gap: '4px',
+                                                    transition: 'all 0.2s',
                                                 }}
                                             >
-                                                Buy on {platform.name} ↗
+                                                Buy Now <span style={{ opacity: 0.5 }}>↗</span>
                                             </a>
+
+                                            {/* Copy Button - Subtle & Second */}
+                                            <button
+                                                onClick={() => copyLink(platform.link, platform.name)}
+                                                title="Copy link"
+                                                className="btn-text"
+                                                style={{
+                                                    padding: '8px',
+                                                    borderRadius: '8px',
+                                                    color: copiedLink === platform.name ? '#22c55e' : 'var(--text-secondary)',
+                                                    fontSize: '0.9rem',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    width: '36px',
+                                                    height: '36px',
+                                                    transition: 'all 0.2s',
+                                                    background: copiedLink === platform.name ? 'rgba(34, 197, 94, 0.1)' : 'transparent',
+                                                }}
+                                            >
+                                                {copiedLink === platform.name ? (
+                                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                                ) : (
+                                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                                )}
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
