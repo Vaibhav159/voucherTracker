@@ -1,6 +1,6 @@
 // Points conversion data for major Indian credit cards (January 2026)
 // Now dynamically generated from creditCards.js for consistency
-import { creditCards } from './creditCards';
+import creditCards from './creditCards.json';
 
 // Tier colors and labels for UI
 export const tierConfig = {
