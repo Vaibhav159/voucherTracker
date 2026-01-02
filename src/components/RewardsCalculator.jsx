@@ -1,5 +1,5 @@
 import { useState, useMemo, useCallback } from 'react';
-import { creditCards } from '../data/creditCards';
+import creditCards from '../data/creditCards.json';
 import { SPENDING_PRESETS, SPENDING_CATEGORIES, BANKS } from '../data/calculatorConfig';
 
 const parseAnnualFee = (feeString) => {

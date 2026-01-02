@@ -390,6 +390,85 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
         return value;
     };
 
+    // Get highlighted features for a card
+    const getCardHighlights = (card) => {
+        const highlights = [];
+
+        // Check smartBuy for accelerated rewards
+        const smartBuy = card.rewards?.calculator?.smartBuy;
+        if (smartBuy?.merchants) {
+            const topMultiplier = Object.values(smartBuy.merchants).reduce((max, m) => {
+                const mult = parseInt(m.multiplier?.replace('X', '') || '0');
+                return mult > max.value ? { value: mult, label: m.label } : max;
+            }, { value: 0, label: '' });
+
+            if (topMultiplier.value >= 5) {
+                highlights.push({
+                    icon: '🚀',
+                    text: topMultiplier.label || `${topMultiplier.value}X Rewards`,
+                    color: '#22c55e'
+                });
+            }
+        }
+
+        // Check for lounge access
+        const lounge = card.features?.lounge;
+        if (lounge && lounge.domestic !== 'None' && !lounge.domestic?.includes('None')) {
+            const domesticMatch = lounge.domestic?.match(/(\d+)/);
+            const unlimited = lounge.domestic?.toLowerCase().includes('unlimited');
+            highlights.push({
+                icon: '✈️',
+                text: unlimited ? 'Unlimited Lounge' : domesticMatch ? `${domesticMatch[1]} Lounge Visits` : 'Lounge Access',
+                color: '#a855f7'
+            });
+        }
+
+        // Check for low forex
+        const fxMarkup = card.features?.forex?.markup;
+        if (fxMarkup && fxMarkup <= 0.02) {
+            highlights.push({
+                icon: '🌍',
+                text: `${(fxMarkup * 100).toFixed(1)}% Forex`,
+                color: '#3b82f6'
+            });
+        }
+
+        // Check for fuel benefits
+        const fuelBenefit = card.features?.fuel;
+        if (fuelBenefit?.surchargeWaiver && fuelBenefit.surchargeWaiver !== '0%') {
+            highlights.push({
+                icon: '⛽',
+                text: `Fuel Waiver ${fuelBenefit.surchargeWaiver}`,
+                color: '#f59e0b'
+            });
+        }
+
+        // Check for lifetime free
+        const annualFee = card.fees?.annual;
+        if (annualFee === 0 || String(annualFee).toLowerCase().includes('free')) {
+            highlights.push({
+                icon: '🆓',
+                text: 'Lifetime Free',
+                color: '#10b981'
+            });
+        }
+
+        // Check for milestone benefits
+        const milestones = card.features?.milestones;
+        if (milestones && milestones.length > 0) {
+            const topMilestone = milestones[0];
+            if (topMilestone?.reward) {
+                highlights.push({
+                    icon: '🎁',
+                    text: topMilestone.reward.substring(0, 25) + (topMilestone.reward.length > 25 ? '...' : ''),
+                    color: '#ec4899'
+                });
+            }
+        }
+
+        return highlights.slice(0, 3); // Limit to 3 highlights
+    };
+
     // Check if fee is free
     const isFreeCard = (fee) => {
         if (!fee) return false;
@@ -1174,7 +1253,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                                             )}
                                         </div>
 
-                                        {/* Multiplier Badge */}
+                                        {/* Multiplier Badge - Simple */}
                                         {card.multiplierBadge && (
                                             <div style={{
                                                 marginBottom: '10px',
@@ -1189,7 +1268,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                                                 alignItems: 'center',
                                                 gap: '6px'
                                             }}>
-                                                {card.multiplierBadge}
+                                                🚀 {card.multiplierBadge}
                                             </div>
                                         )}
 

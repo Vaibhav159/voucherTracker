@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { useMyCards } from '../context/MyCardsContext';
-import { creditCards } from '../data/creditCards';
+import creditCards from '../data/creditCards.json';
 import CardImage from './CardImage';
 
 /**

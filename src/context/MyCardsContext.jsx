@@ -10,7 +10,7 @@
 
 import { createContext, useContext, useMemo, useCallback } from 'react';
 import { useLocalStorage } from '../hooks/useLocalStorage';
-import { creditCards } from '../data/creditCards';
+import { useCreditCards } from '../hooks/useCreditCards';
 import { useToast } from '../components/UXPolish';
 
 const MyCardsContext = createContext();
@@ -25,6 +25,7 @@ export const useMyCards = () => {
 
 export const MyCardsProvider = ({ children }) => {
     const toast = useToast();
+    const { creditCards, loading } = useCreditCards();
 
     // Persisted state
     const [myCardIds, setMyCardIds] = useLocalStorage('myCards', []);
@@ -33,10 +34,11 @@ export const MyCardsProvider = ({ children }) => {
 
     // Get full card objects for user's cards
     const myCards = useMemo(() => {
+        if (loading || !creditCards.length) return [];
         return myCardIds
             .map(id => creditCards.find(c => c.id === id))
             .filter(Boolean);
-    }, [myCardIds]);
+    }, [myCardIds, creditCards, loading]);
 
     // Group cards by bank
     const cardsByBank = useMemo(() => {
@@ -86,6 +88,7 @@ export const MyCardsProvider = ({ children }) => {
 
         return creditCards
             .filter(card => !owned.has(card.id))
+
             .filter(card => {
                 // Recommend if:
                 // 1. It's a different tier than what user has
@@ -175,7 +178,7 @@ export const MyCardsProvider = ({ children }) => {
         const cardId = primaryCards[category];
         if (!cardId) return null;
         return creditCards.find(c => c.id === cardId);
-    }, [primaryCards]);
+    }, [primaryCards, creditCards]);
 
     // Set a note for a card
     const setCardNote = useCallback((cardId, note) => {
