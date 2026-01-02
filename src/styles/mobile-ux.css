@@ -10,6 +10,22 @@
  */
 
 /* ============================================
+   VIEWPORT UTILITIES
+   ============================================ */
+
+:root {
+    /* Fallback for browsers that don't support dvh */
+    --vh: 1vh;
+    --full-dvh: 100vh;
+}
+
+@supports (height: 100dvh) {
+    :root {
+        --full-dvh: 100dvh;
+    }
+}
+
+/* ============================================
    TOUCH TARGETS
    ============================================ */
 
@@ -38,7 +54,8 @@
     .platform-card,
     .category-item {
         min-height: 48px;
-        padding: 12px 16px;
+        padding: 12px 14px;
+        /* Relaxed horizontal padding */
     }
 
     /* Form inputs */
@@ -46,8 +63,8 @@
     select,
     textarea {
         min-height: 48px;
-        font-size: 16px;
-        /* Prevents iOS zoom */
+        font-size: 16px !important;
+        /* Force 16px to prevent iOS zoom */
     }
 
     /* Navigation items */
@@ -171,10 +188,8 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Prevent overscroll on body */
-body {
-    overscroll-behavior-y: contain;
-}
+/* Prevent overscroll on body - Removed to prevent scroll issues */
+/* body { overscroll-behavior-y: contain; } */
 
 /* Momentum scrolling on iOS */
 .scroll-container {
@@ -621,5 +636,19 @@ body {
 
     .chat-input-container button {
         width: 100% !important;
+    }
+}
+
+/* ============================================
+   MOBILE SPECIFIC COMPONENTS
+   ============================================ */
+
+.mobile-scroll-hint {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-scroll-hint {
+        display: block;
     }
 }

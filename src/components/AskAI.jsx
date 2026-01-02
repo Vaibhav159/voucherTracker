@@ -736,7 +736,7 @@ const AskAI = () => {
             </button>
 
             {/* Split Panel Layout */}
-            <div style={{ display: 'flex', gap: '1.5rem', height: 'calc(100vh - 200px)', minHeight: '600px' }}>
+            <div style={{ display: 'flex', gap: '1.5rem', height: 'calc(var(--full-dvh, 100vh) - 180px)', minHeight: '500px' }}>
 
                 {/* Left Sidebar - Presets */}
                 <aside

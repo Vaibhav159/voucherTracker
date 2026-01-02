@@ -10,7 +10,7 @@
  * - Animated interactions
  */
 
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { getPlatformStyle } from '../utils/platformLogos';
 import { Link } from 'react-router-dom';
@@ -33,6 +33,24 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
 
     const isFavorite = isVoucherFavorite(voucher?.id);
 
+    // Lock body scroll when modal is open
+    useEffect(() => {
+        document.body.style.overflow = 'hidden';
+        return () => {
+            document.body.style.overflow = ''; // Restore original
+        };
+    }, []);
+
+    // Copy link with toast
+    const copyLink = useCallback((link, platformName) => {
+        navigator.clipboard.writeText(link).then(() => {
+            setCopiedLink(platformName);
+            toast.success(`Link copied for ${platformName}!`);
+            setTimeout(() => setCopiedLink(null), 2000);
+        }).catch(() => {
+            toast.error('Failed to copy link');
+        });
+    }, [toast]);
     // Share functionality
     const shareVoucher = useCallback((platform, method) => {
         const url = platform.link;
@@ -234,7 +252,10 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                             className="btn-close"
                             aria-label="Close modal"
                         >
-                            ×
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
                         </button>
                     </div>
 
