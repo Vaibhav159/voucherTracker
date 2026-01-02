@@ -3,7 +3,7 @@
     "id": "sbi-cashback",
     "name": "Cashback SBI Card",
     "bank": "SBI Card",
-    "image": "/assets/images/sbi card/240759_SBI_Cashback_139-x-218px-01.png",
+    "image": "assets/images/sbi card/240759_SBI_Cashback_139-x-218px-01.png",
     "link": "https://www.sbicard.com/en/personal/credit-cards/rewards/cashback-sbi-card.page",
     "fees": {
       "joining": 999,
@@ -137,7 +137,7 @@
     "id": "icici-emeralde-private-metal",
     "name": "ICICI Emeralde Private Metal",
     "bank": "ICICI Bank",
-    "image": "/assets/images/icici/emaralde-private.webp",
+    "image": "assets/images/icici/emaralde-private.webp",
     "link": "https://www.icicibank.com/personal-banking/cards/credit-card/emeralde-private-metal-credit-card",
     "fees": {
       "joining": 12499,
@@ -323,7 +323,7 @@
     "id": "amazon-pay-icici",
     "name": "Amazon Pay ICICI Bank Credit Card",
     "bank": "ICICI Bank",
-    "image": "/assets/images/icici/amazon pay icici.webp",
+    "image": "assets/images/icici/amazon pay icici.webp",
     "link": "https://www.icicibank.com/personal-banking/cards/credit-card/amazon-pay-credit-card",
     "fees": {
       "joining": 0,
@@ -509,7 +509,7 @@
     "id": "hdfc-infinia-metal",
     "name": "HDFC Infinia Metal Edition",
     "bank": "HDFC Bank",
-    "image": "/assets/cards/hdfc-infinia-metal.png",
+    "image": "assets/cards/hdfc-infinia-metal.png",
     "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/infinia-credit-card",
     "fees": {
       "joining": 12500,
@@ -776,7 +776,7 @@
     "id": "hdfc-diners-club-black-metal",
     "name": "HDFC Diners Club Black Metal Edition",
     "bank": "HDFC Bank",
-    "image": "/assets/images/hdfc/diners-club-black-metal.png",
+    "image": "assets/images/hdfc/diners-club-black-metal.png",
     "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/diners-club-black-metal-edition-credit-card",
     "fees": {
       "joining": 10000,
@@ -1027,7 +1027,7 @@
     "id": "hdfc-diners-club-black",
     "name": "HDFC Diners Club Black Credit Card",
     "bank": "HDFC Bank",
-    "image": "/assets/images/hdfc/diners-club-black-metal.png",
+    "image": "assets/images/hdfc/diners-club-black-metal.png",
     "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/diners-club-black-credit-card",
     "fees": {
       "joining": 10000,
@@ -1163,7 +1163,7 @@
     "id": "hdfc-diners-club-privilege",
     "name": "HDFC Diners Club Privilege Credit Card",
     "bank": "HDFC Bank",
-    "image": "/assets/images/hdfc/diners-club-privilege.png",
+    "image": "assets/images/hdfc/diners-club-privilege.png",
     "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/diners-club-privilege-credit-card",
     "fees": {
       "joining": 1000,
@@ -1297,7 +1297,7 @@
     "id": "hdfc-moneyback-plus",
     "name": "HDFC Bank MoneyBack+ Credit Card",
     "bank": "HDFC Bank",
-    "image": "/assets/images/hdfc/moneyback-plus-credit-card.png",
+    "image": "assets/images/hdfc/moneyback-plus-credit-card.png",
     "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/moneyback-plus-credit-card",
     "fees": {
       "joining": 500,
@@ -1414,7 +1414,7 @@
     "id": "hdfc-freedom",
     "name": "HDFC Bank Freedom Credit Card",
     "bank": "HDFC Bank",
-    "image": "/assets/images/hdfc/freedom-credit-card.png",
+    "image": "assets/images/hdfc/freedom-credit-card.png",
     "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/freedom-credit-card",
     "fees": {
       "joining": 500,
@@ -1529,7 +1529,7 @@
     "id": "hdfc-bizpower",
     "name": "HDFC Bank BizPower Credit Card",
     "bank": "HDFC Bank",
-    "image": "/assets/images/hdfc/hdfc-bizpower.png",
+    "image": "assets/images/hdfc/hdfc-bizpower.png",
     "link": "https://www.hdfcbank.com/personal/pay/cards/business-credit-cards/biz-power/biz-power-credit-card",
     "fees": {
       "joining": 2500,
@@ -1655,7 +1655,7 @@
     "id": "hdfc-regalia",
     "name": "HDFC Regalia Credit Card",
     "bank": "HDFC Bank",
-    "image": "/assets/images/hdfc/HDFC-Regalia.webp",
+    "image": "assets/images/hdfc/HDFC-Regalia.webp",
     "fees": {
       "joining": 2500,
       "annual": 2500,
@@ -1763,7 +1763,7 @@
     "id": "hdfc-tata-neu-infinity",
     "name": "Tata Neu Infinity HDFC Bank Credit Card",
     "bank": "HDFC Bank",
-    "image": "/assets/images/hdfc/tata neu infinity.webp",
+    "image": "assets/images/hdfc/tata neu infinity.webp",
     "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/tata-neu-infinity-hdfc-bank-credit-card",
     "fees": {
       "joining": 1499,
@@ -1966,7 +1966,7 @@
     "id": "hdfc-tata-neu-plus",
     "name": "Tata Neu Plus HDFC Bank Credit Card",
     "bank": "HDFC Bank",
-    "image": "/assets/images/hdfc/tata-neu-plus-hdfc.jpg",
+    "image": "assets/images/hdfc/tata-neu-plus-hdfc.jpg",
     "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/tata-neu-plus-hdfc-bank-credit-card",
     "fees": {
       "joining": 499,
@@ -2087,7 +2087,7 @@
     "id": "amex-platinum-travel",
     "name": "American Express Platinum Travel Credit Card",
     "bank": "American Express",
-    "image": "/assets/images/amex/American Express® Platinum Travel Credit Card .webp",
+    "image": "assets/images/amex/American Express® Platinum Travel Credit Card .webp",
     "link": "https://www.americanexpress.com/in/credit-cards/platinum-travel-credit-card/",
     "fees": {
       "joining": 5000,
@@ -2346,7 +2346,7 @@
     "fxMarkup": "3.5%",
     "category": "Cashback",
     "bank": "Kiwi Card",
-    "image": "/assets/images/others/kiwi-credit-card.png",
+    "image": "assets/images/others/kiwi-credit-card.png",
     "annualFee": "Lifetime Free",
     "rewardRate": "1% - 5% (Kiwis)",
     "rewardType": "cashback",
@@ -2363,7 +2363,7 @@
     "id": "hdfc-regalia-gold",
     "name": "HDFC Regalia Gold Credit Card",
     "bank": "HDFC Bank",
-    "image": "/assets/images/hdfc/regalia-gold-credit-card.png",
+    "image": "assets/images/hdfc/regalia-gold-credit-card.png",
     "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/regalia-gold-credit-card",
     "fees": {
       "joining": 2500,
@@ -2617,7 +2617,7 @@
     "id": "yes-bank-marquee",
     "name": "Yes Bank Marquee Credit Card",
     "bank": "Yes Bank",
-    "image": "/assets/images/yes bank/marquee-card-img.png",
+    "image": "assets/images/yes bank/marquee-card-img.png",
     "link": "https://www.yesbank.in/personal-banking/yes-individual/cards/credit-cards/marquee-credit-card",
     "fees": {
       "joining": 9999,
@@ -2787,7 +2787,7 @@
     "id": "marriott-bonvoy-hdfc",
     "name": "Marriott Bonvoy HDFC Bank Credit Card",
     "bank": "HDFC Bank",
-    "image": "/assets/images/hdfc/marriott_facia-1.webp",
+    "image": "assets/images/hdfc/marriott_facia-1.webp",
     "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/marriott-bonvoy-credit-card",
     "fees": {
       "joining": 3000,
@@ -2949,7 +2949,7 @@
     "id": "irctc-sbi-premier",
     "name": "IRCTC SBI Card Premier",
     "bank": "SBI Card",
-    "image": "/assets/images/sbi card/irctc-sbi-card-premier.png",
+    "image": "assets/images/sbi card/irctc-sbi-card-premier.png",
     "link": "https://www.sbicard.com/en/personal/credit-cards/travel/irctc-premier-card.page",
     "fees": {
       "joining": 1499,
@@ -3097,7 +3097,7 @@
     "id": "hdfc-millennia",
     "name": "HDFC Millennia Credit Card",
     "bank": "HDFC Bank",
-    "image": "/assets/images/hdfc/millennia-credit-card.png",
+    "image": "assets/images/hdfc/millennia-credit-card.png",
     "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/millennia-credit-card",
     "fees": {
       "joining": 1000,
@@ -3320,7 +3320,7 @@
     "fxMarkup": "1%",
     "category": "Cashback",
     "bank": "OneCard",
-    "image": "/assets/images/others/onecard.png",
+    "image": "assets/images/others/onecard.png",
     "annualFee": "Lifetime Free",
     "rewardRate": "5X on Top 2 Categories (~5%)",
     "rewardType": "points",
@@ -3342,7 +3342,7 @@
     "id": "irctc-hdfc",
     "name": "IRCTC HDFC Bank Credit Card",
     "bank": "HDFC Bank",
-    "image": "/assets/images/hdfc/IRCTC-HDFC-Bank-Credit-Card-Image.png.webp",
+    "image": "assets/images/hdfc/IRCTC-HDFC-Bank-Credit-Card-Image.png.webp",
     "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/irctc-credit-card",
     "fees": {
       "joining": 500,
@@ -3488,7 +3488,7 @@
     "id": "hdfc-pixel-play",
     "name": "HDFC Pixel Play Credit Card",
     "bank": "HDFC Bank",
-    "image": "/assets/images/hdfc/hdfc-pixel-play.png",
+    "image": "assets/images/hdfc/hdfc-pixel-play.png",
     "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/pixel-play-credit-card",
     "fees": {
       "joining": 500,
@@ -3623,7 +3623,7 @@
     "id": "hdfc-pixel-go",
     "name": "HDFC Pixel Go Credit Card",
     "bank": "HDFC Bank",
-    "image": "/assets/images/hdfc/hdfc-pixel-go.jpg",
+    "image": "assets/images/hdfc/hdfc-pixel-go.jpg",
     "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/pixel-go-credit-card",
     "fees": {
       "joining": 250,
@@ -3786,7 +3786,7 @@
     "id": "axis-magnus",
     "name": "Axis Magnus Credit Card",
     "bank": "Axis Bank",
-    "image": "/assets/images/axis/Axis-Magnus-Credit-Card-image.webp",
+    "image": "assets/images/axis/Axis-Magnus-Credit-Card-image.webp",
     "link": "https://www.axisbank.com/retail/cards/credit-card/axis-bank-magnus-credit-card",
     "fees": {
       "joining": 12500,
@@ -3981,7 +3981,7 @@
     "fxMarkup": "2%",
     "category": "Lifestyle",
     "bank": "Federal Bank",
-    "image": "/assets/images/federal/Visa Celesta.jpg",
+    "image": "assets/images/federal/Visa Celesta.jpg",
     "annualFee": "Lifetime Free",
     "rewardRate": "3X travel/2X dining/1X others",
     "rewardType": "points",
@@ -4035,7 +4035,7 @@
     "fxMarkup": "3.5%",
     "category": "Cashback",
     "bank": "CSB Bank",
-    "image": "/assets/images/jupiter csb/jupiter edge csb.webp",
+    "image": "assets/images/jupiter csb/jupiter edge csb.webp",
     "annualFee": "Lifetime Free (Edge+ ₹499 one-time)",
     "rewardRate": "2% selected, 0.4% others (Jewels)",
     "rewardType": "cashback",
@@ -4062,7 +4062,7 @@
     "fxMarkup": "0%",
     "category": "Lifestyle",
     "bank": "Federal Bank",
-    "image": "/assets/images/amplifi fi federal/intro.webp",
+    "image": "assets/images/amplifi fi federal/intro.webp",
     "annualFee": "₹2,000 (waived on ₹2.5L)",
     "rewardRate": "3% on brands, 0.6% base",
     "rewardType": "points",
@@ -4080,7 +4080,7 @@
     "id": "hdfc-swiggy",
     "name": "Swiggy HDFC Bank Credit Card",
     "bank": "HDFC Bank",
-    "image": "/assets/images/hdfc/card-facia-swiggy.png",
+    "image": "assets/images/hdfc/card-facia-swiggy.png",
     "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/swiggy-hdfc-bank-credit-card",
     "fees": {
       "joining": 500,
@@ -4264,7 +4264,7 @@
     "id": "hdfc-shoppers-stop",
     "name": "Shoppers Stop HDFC Bank Credit Card",
     "bank": "HDFC Bank",
-    "image": "/assets/images/hdfc/facia_shoppers_stop_mass.png",
+    "image": "assets/images/hdfc/facia_shoppers_stop_mass.png",
     "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/shoppers-stop-hdfc-bank-credit-card",
     "fees": {
       "joining": 299,
@@ -4415,7 +4415,7 @@
     "id": "hdfc-bizblack-metal",
     "name": "HDFC BizBlack Metal Edition Credit Card",
     "bank": "HDFC Bank",
-    "image": "/assets/images/hdfc/bizblack-metal-edition.webp",
+    "image": "assets/images/hdfc/bizblack-metal-edition.webp",
     "link": "https://www.hdfcbank.com/personal/pay/cards/business-credit-cards/biz-black",
     "fees": {
       "joining": 10000,
@@ -4586,7 +4586,7 @@
     "id": "axis-atlas",
     "name": "Axis Atlas Credit Card",
     "bank": "Axis Bank",
-    "image": "/assets/images/axis/Axis-Atlas-1.webp",
+    "image": "assets/images/axis/Axis-Atlas-1.webp",
     "link": "https://www.axisbank.com/retail/cards/credit-card/axis-bank-atlas-credit-card",
     "fees": {
       "joining": 5000,
@@ -4740,7 +4740,7 @@
     "id": "axis-reserve",
     "name": "Axis Reserve Credit Card",
     "bank": "Axis Bank",
-    "image": "/assets/images/axis/card.webp",
+    "image": "assets/images/axis/card.webp",
     "link": "https://www.axisbank.com/retail/cards/credit-card/reserve-credit-card",
     "fees": {
       "joining": 50000,
@@ -4881,7 +4881,7 @@
     "id": "axis-olympus",
     "name": "Axis Bank Olympus Credit Card",
     "bank": "Axis Bank",
-    "image": "/assets/images/axis/Axis-Bank-Olympus-Credit-Card-379x600.webp",
+    "image": "assets/images/axis/Axis-Bank-Olympus-Credit-Card-379x600.webp",
     "link": "https://www.axisbank.com/retail/cards/credit-card/olympus-credit-card",
     "fees": {
       "joining": 20000,
@@ -5027,7 +5027,7 @@
     "id": "axis-horizon",
     "name": "Axis Bank Horizon Credit Card",
     "bank": "Axis Bank",
-    "image": "/assets/images/axis/Axis-Bank-Horizon-Credit-Card.webp",
+    "image": "assets/images/axis/Axis-Bank-Horizon-Credit-Card.webp",
     "link": "https://www.axisbank.com/retail/cards/credit-card/axis-horizon-credit-card",
     "fees": {
       "joining": 3000,
@@ -5168,7 +5168,7 @@
     "id": "axis-select",
     "name": "Axis Bank SELECT Credit Card",
     "bank": "Axis Bank",
-    "image": "/assets/images/axis/Axis-Bank-Select-Credit-Card.webp",
+    "image": "assets/images/axis/Axis-Bank-Select-Credit-Card.webp",
     "link": "https://www.axisbank.com/retail/cards/credit-card/axis-bank-select-credit-card",
     "fees": {
       "joining": 3000,
@@ -5314,7 +5314,7 @@
     "id": "axis-privilege",
     "name": "Axis Bank Privilege Credit Card",
     "bank": "Axis Bank",
-    "image": "/assets/images/axis/Axis-Privilege-credit-card.png.webp",
+    "image": "assets/images/axis/Axis-Privilege-credit-card.png.webp",
     "link": "https://www.axisbank.com/retail/cards/credit-card/privilege-credit-card-with-unlimited-benefits",
     "fees": {
       "joining": 1500,
@@ -5460,7 +5460,7 @@
     "id": "axis-myzone",
     "name": "Axis Bank MY ZONE Credit Card",
     "bank": "Axis Bank",
-    "image": "/assets/images/axis/Axis-my-zone.webp",
+    "image": "assets/images/axis/Axis-my-zone.webp",
     "link": "https://www.axisbank.com/retail/cards/credit-card/axis-bank-my-zone-credit-card",
     "fees": {
       "joining": 500,
@@ -5600,7 +5600,7 @@
     "id": "axis-neo",
     "name": "Axis Bank NEO Credit Card",
     "bank": "Axis Bank",
-    "image": "/assets/images/axis/Axis-Bank-Neo-Credit-Card.webp",
+    "image": "assets/images/axis/Axis-Bank-Neo-Credit-Card.webp",
     "link": "https://www.axisbank.com/retail/cards/credit-card/axis-bank-neo-credit-card",
     "fees": {
       "joining": 250,
@@ -5729,7 +5729,7 @@
     "id": "flipkart-axis",
     "name": "Flipkart Axis Bank Credit Card",
     "bank": "Axis Bank",
-    "image": "/assets/images/axis/Flipkart-Axis-Bank-Credit-Card.webp",
+    "image": "assets/images/axis/Flipkart-Axis-Bank-Credit-Card.webp",
     "link": "https://www.axisbank.com/retail/cards/credit-card/flipkart-axisbank-credit-card",
     "fees": {
       "joining": 500,
@@ -5858,7 +5858,7 @@
     "id": "axis-airtel",
     "name": "Airtel Axis Bank Credit Card",
     "bank": "Axis Bank",
-    "image": "/assets/images/axis/airtel-axis-bank-credit-card.png",
+    "image": "assets/images/axis/airtel-axis-bank-credit-card.png",
     "link": "https://www.axisbank.com/retail/cards/credit-card/airtel-axis-bank-credit-card",
     "fees": {
       "joining": 500,
@@ -5987,7 +5987,7 @@
     "id": "axis-ace",
     "name": "Axis Bank ACE Credit Card",
     "bank": "Axis Bank",
-    "image": "/assets/images/axis/axis-bank-ace-credit-card.webp",
+    "image": "assets/images/axis/axis-bank-ace-credit-card.webp",
     "link": "https://www.axisbank.com/retail/cards/credit-card/axis-bank-ace-credit-card",
     "fees": {
       "joining": 499,
@@ -6116,7 +6116,7 @@
     "id": "axis-indianoil",
     "name": "IndianOil Axis Bank Credit Card",
     "bank": "Axis Bank",
-    "image": "/assets/images/axis/IndianOil-Axis-Bank-Credit-Card.png.webp",
+    "image": "assets/images/axis/IndianOil-Axis-Bank-Credit-Card.png.webp",
     "link": "https://www.axisbank.com/retail/cards/credit-card/indianoil-axis-bank-credit-card",
     "fees": {
       "joining": 500,
@@ -6252,7 +6252,7 @@
     "id": "axis-lic-signature",
     "name": "LIC Axis Bank Signature Credit Card",
     "bank": "Axis Bank",
-    "image": "/assets/images/axis/axis lic.jpeg.webp",
+    "image": "assets/images/axis/axis lic.jpeg.webp",
     "link": "https://www.axisbank.com/retail/cards/credit-card/lic-axis-bank-signature-credit-card",
     "fees": {
       "joining": 0,
@@ -6388,7 +6388,7 @@
     "id": "axis-rewards",
     "name": "Axis Bank Rewards Credit Card",
     "bank": "Axis Bank",
-    "image": "/assets/images/axis/Axis-Bank-Rewards-Credit-Card.webp",
+    "image": "assets/images/axis/Axis-Bank-Rewards-Credit-Card.webp",
     "link": "https://www.axisbank.com/retail/cards/credit-card/rewards-credit-card",
     "fees": {
       "joining": 1000,
@@ -6534,7 +6534,7 @@
     "id": "sbi-aurum",
     "name": "SBI Aurum Credit Card",
     "bank": "SBI Card",
-    "image": "/assets/images/sbi card/sbi-aurum.jpg.webp",
+    "image": "assets/images/sbi card/sbi-aurum.jpg.webp",
     "link": "https://www.aurumcreditcard.com/",
     "fees": {
       "joining": 9999,
@@ -6695,7 +6695,7 @@
     "id": "sbi-elite",
     "name": "SBI Elite Credit Card",
     "bank": "SBI Card",
-    "image": "/assets/images/sbi card/Elite_349x218-px-Front.png",
+    "image": "assets/images/sbi card/Elite_349x218-px-Front.png",
     "link": "https://www.sbicard.com/en/personal/credit-cards/lifestyle/sbi-card-elite.page",
     "fees": {
       "joining": 4999,
@@ -6856,7 +6856,7 @@
     "id": "sbi-prime",
     "name": "SBI Prime Credit Card",
     "bank": "SBI Card",
-    "image": "/assets/images/sbi card/Prime_349x218-px-Front.png",
+    "image": "assets/images/sbi card/Prime_349x218-px-Front.png",
     "link": "https://www.sbicard.com/en/personal/credit-cards/rewards/sbi-card-prime.page",
     "fees": {
       "joining": 2999,
@@ -7009,7 +7009,7 @@
     "id": "sbi-simplyclick",
     "name": "SBI SimplyCLICK Credit Card",
     "bank": "SBI Card",
-    "image": "/assets/images/sbi card/Simplyclick_349x218-Front.png",
+    "image": "assets/images/sbi card/Simplyclick_349x218-Front.png",
     "link": "https://www.sbicard.com/en/personal/credit-cards/shopping/simplyclick-sbi-card.page",
     "fees": {
       "joining": 499,
@@ -7161,7 +7161,7 @@
     "id": "sbi-simplysave",
     "name": "SBI SimplySAVE Credit Card",
     "bank": "SBI Card",
-    "image": "/assets/images/sbi card/SimplySave_349x218-px-Front.png",
+    "image": "assets/images/sbi card/SimplySave_349x218-px-Front.png",
     "link": "https://www.sbicard.com/en/personal/credit-cards/shopping/simplysave-sbi-card.page",
     "fees": {
       "joining": 499,
@@ -7305,7 +7305,7 @@
     "id": "sbi-pulse",
     "name": "SBI Pulse Credit Card",
     "bank": "SBI Card",
-    "image": "/assets/images/sbi card/240759_SBI_Pulse_349-x-218px-01.png",
+    "image": "assets/images/sbi card/240759_SBI_Pulse_349-x-218px-01.png",
     "link": "https://www.sbicard.com/en/personal/credit-cards/lifestyle/sbi-card-pulse.page",
     "fees": {
       "joining": 1499,
@@ -7454,7 +7454,7 @@
     "id": "club-vistara-sbi-prime",
     "name": "Club Vistara SBI Card PRIME",
     "bank": "SBI Card",
-    "image": "/assets/images/sbi card/Club-Vistara-SBI-Card-Prime.webp",
+    "image": "assets/images/sbi card/Club-Vistara-SBI-Card-Prime.webp",
     "link": "https://www.sbicard.com/en/personal/credit-cards/travel/club-vistara-sbi-card-prime.page",
     "fees": {
       "joining": 2999,
@@ -7615,7 +7615,7 @@
     "id": "club-vistara-sbi",
     "name": "Club Vistara SBI Card",
     "bank": "SBI Card",
-    "image": "/assets/images/sbi card/club-vistara-pruple-front-1.png.webp",
+    "image": "assets/images/sbi card/club-vistara-pruple-front-1.png.webp",
     "link": "https://www.sbicard.com/en/personal/credit-cards/travel/club-vistara-sbi-card.page",
     "fees": {
       "joining": 1499,
@@ -7769,7 +7769,7 @@
     "id": "bpcl-sbi-octane",
     "name": "BPCL SBI Card OCTANE",
     "bank": "SBI Card",
-    "image": "/assets/images/sbi card/BPCL-SBI-Octane-Credit-Card.webp",
+    "image": "assets/images/sbi card/BPCL-SBI-Octane-Credit-Card.webp",
     "link": "https://www.sbicard.com/en/personal/credit-cards/travel/bpcl-sbi-card-octane.page",
     "fees": {
       "joining": 1499,
@@ -7918,7 +7918,7 @@
     "id": "bpcl-sbi",
     "name": "BPCL SBI Credit Card",
     "bank": "SBI Card",
-    "image": "/assets/images/sbi card/bpcl-sbi-credit-card.png",
+    "image": "assets/images/sbi card/bpcl-sbi-credit-card.png",
     "link": "https://www.sbicard.com/en/personal/credit-cards/travel/bpcl-sbi-card.page",
     "fees": {
       "joining": 499,
@@ -8061,7 +8061,7 @@
     "id": "yatra-sbi",
     "name": "Yatra SBI Credit Card",
     "bank": "SBI Card",
-    "image": "/assets/images/sbi card/yatra-sbi-1.jpg.webp",
+    "image": "assets/images/sbi card/yatra-sbi-1.jpg.webp",
     "link": "https://www.sbicard.com/en/personal/credit-cards/travel/yatra-sbi-card.page",
     "fees": {
       "joining": 499,
@@ -8205,7 +8205,7 @@
     "id": "sbi-simplysave-upi-rupay",
     "name": "SimplySAVE UPI SBI Card (RuPay)",
     "bank": "SBI Card",
-    "image": "/assets/images/sbi card/sbi simply save rupay.png",
+    "image": "assets/images/sbi card/sbi simply save rupay.png",
     "link": "https://www.sbicard.com/en/personal/credit-cards/shopping/simplysave-upi-rupay-card.page",
     "fees": {
       "joining": 499,
@@ -8350,7 +8350,7 @@
     "id": "icici-emeralde",
     "name": "ICICI Emeralde Credit Card",
     "bank": "ICICI Bank",
-    "image": "/assets/images/icici/emeralde.webp",
+    "image": "assets/images/icici/emeralde.webp",
     "link": "https://www.icicibank.com/personal-banking/cards/credit-card/emeralde-credit-card",
     "fees": {
       "joining": 12000,
@@ -8524,7 +8524,7 @@
     "id": "icici-sapphiro",
     "name": "ICICI Sapphiro Credit Card",
     "bank": "ICICI Bank",
-    "image": "/assets/images/icici/sapphiro-desktop.webp",
+    "image": "assets/images/icici/sapphiro-desktop.webp",
     "link": "https://www.icicibank.com/personal-banking/cards/credit-card/sapphiro-card",
     "fees": {
       "joining": 6500,
@@ -8706,7 +8706,7 @@
     "id": "icici-rubyx",
     "name": "ICICI Rubyx Credit Card",
     "bank": "ICICI Bank",
-    "image": "/assets/images/icici/rubyx.webp",
+    "image": "assets/images/icici/rubyx.webp",
     "link": "https://www.icicibank.com/personal-banking/cards/credit-card/rubyx-credit-card",
     "fees": {
       "joining": 3000,
@@ -8882,7 +8882,7 @@
     "id": "icici-coral",
     "name": "ICICI Coral Credit Card",
     "bank": "ICICI Bank",
-    "image": "/assets/images/icici/coral.webp",
+    "image": "assets/images/icici/coral.webp",
     "link": "https://www.icicibank.com/personal-banking/cards/credit-card/coral-credit-card",
     "fees": {
       "joining": 500,
@@ -9066,7 +9066,7 @@
     "id": "icici-manchester-united-signature",
     "name": "ICICI Manchester United Signature Credit Card",
     "bank": "ICICI Bank",
-    "image": "/assets/images/icici/manchester-signature-desktop.webp",
+    "image": "assets/images/icici/manchester-signature-desktop.webp",
     "link": "https://www.icicibank.com/personal-banking/cards/credit-card/manchester-credit-card/signature-card",
     "fees": {
       "joining": 2499,
@@ -9249,7 +9249,7 @@
     "id": "icici-platinum-chip",
     "name": "ICICI Platinum Chip Credit Card",
     "bank": "ICICI Bank",
-    "image": "/assets/images/icici/platinum-desktop.webp",
+    "image": "assets/images/icici/platinum-desktop.webp",
     "link": "https://www.icicibank.com/personal-banking/cards/credit-card/platinum-chip-credit-card",
     "fees": {
       "joining": 0,
@@ -9397,7 +9397,7 @@
     "id": "icici-makemytrip-signature",
     "name": "MakeMyTrip ICICI Bank Signature Credit Card",
     "bank": "ICICI Bank",
-    "image": "/assets/images/icici/makemytrip-desk-banner.png",
+    "image": "assets/images/icici/makemytrip-desk-banner.png",
     "link": "https://www.icicibank.com/personal-banking/cards/credit-card/makemytrip-signature-credit-card",
     "fees": {
       "joining": 999,
@@ -9510,7 +9510,7 @@
     "id": "icici-hpcl-super-saver",
     "name": "ICICI Bank HPCL Super Saver Credit Card",
     "bank": "ICICI Bank",
-    "image": "/assets/images/icici/hpcl-supersaver.webp",
+    "image": "assets/images/icici/hpcl-supersaver.webp",
     "link": "https://www.icicibank.com/personal-banking/cards/credit-card/hpcl-super-saver-credit-card",
     "fees": {
       "joining": 500,
@@ -9609,7 +9609,7 @@
     "id": "adani-one-icici-signature",
     "name": "Adani One ICICI Bank Signature Credit Card",
     "bank": "ICICI Bank",
-    "image": "/assets/images/icici/adani-signature.webp",
+    "image": "assets/images/icici/adani-signature.webp",
     "link": "https://www.icicibank.com/personal-banking/cards/credit-card/adani-one-icici-bank-signature-credit-card",
     "fees": {
       "joining": 5000,
@@ -9708,7 +9708,7 @@
     "id": "adani-one-icici-platinum",
     "name": "Adani One ICICI Bank Platinum Credit Card",
     "bank": "ICICI Bank",
-    "image": "/assets/images/icici/adani-platinum.webp",
+    "image": "assets/images/icici/adani-platinum.webp",
     "link": "https://www.icicibank.com/personal-banking/cards/credit-card/adani-one-icici-bank-platinum-credit-card",
     "fees": {
       "joining": 750,
@@ -9800,7 +9800,7 @@
     "id": "icici-times-black",
     "name": "Times Black ICICI Bank Credit Card",
     "bank": "ICICI Bank",
-    "image": "/assets/images/icici/times-black-banner.webp",
+    "image": "assets/images/icici/times-black-banner.webp",
     "link": "https://www.icicibank.com/personal-banking/cards/credit-card/times-black-credit-card",
     "fees": {
       "joining": 20000,
@@ -9909,7 +9909,7 @@
     "id": "amex-platinum-charge",
     "name": "American Express Platinum Charge Card",
     "bank": "American Express",
-    "image": "/assets/images/amex/American Express® Platinum Card .avif",
+    "image": "assets/images/amex/American Express® Platinum Card .avif",
     "link": "https://www.americanexpress.com/in/charge-cards/platinum-card/",
     "fees": {
       "joining": 66000,
@@ -10096,7 +10096,7 @@
     "id": "amex-gold-charge",
     "name": "American Express Gold Charge Card",
     "bank": "American Express",
-    "image": "/assets/images/amex/American Express® Gold Card .avif",
+    "image": "assets/images/amex/American Express® Gold Card .avif",
     "link": "https://www.americanexpress.com/in/charge-cards/gold-card/",
     "fees": {
       "joining": 1000,
@@ -10278,7 +10278,7 @@
     "id": "amex-mrcc",
     "name": "American Express Membership Rewards Credit Card",
     "bank": "American Express",
-    "image": "/assets/images/amex/American Express Membership Rewards® Credit Card .avif",
+    "image": "assets/images/amex/American Express Membership Rewards® Credit Card .avif",
     "link": "https://www.americanexpress.com/in/credit-cards/membership-rewards-card/",
     "fees": {
       "joining": 1000,
@@ -10463,7 +10463,7 @@
     "id": "amex-smartearn",
     "name": "American Express SmartEarn Credit Card",
     "bank": "American Express",
-    "image": "/assets/images/amex/American Express SmartEarn™ Credit Card .avif",
+    "image": "assets/images/amex/American Express SmartEarn™ Credit Card .avif",
     "link": "https://www.americanexpress.com/in/credit-cards/smartearn-credit-card/",
     "fees": {
       "joining": 495,
@@ -10642,7 +10642,7 @@
     "id": "amex-platinum-reserve",
     "name": "American Express Platinum Reserve Credit Card",
     "bank": "American Express",
-    "image": "/assets/images/amex/American Express® Platinum ReserveSM Credit Card .avif",
+    "image": "assets/images/amex/American Express® Platinum ReserveSM Credit Card .avif",
     "link": "https://www.americanexpress.com/in/credit-cards/platinum-reserve-credit-card/",
     "fees": {
       "joining": 5000,
@@ -10829,7 +10829,7 @@
     "id": "idfc-first-private",
     "name": "IDFC First Private Credit Card",
     "bank": "IDFC First Bank",
-    "image": "/assets/images/idfc/private-card.webp",
+    "image": "assets/images/idfc/private-card.webp",
     "link": "https://www.idfcfirst.bank.in/credit-card/FIRSTPrivateCreditCard",
     "fees": {
       "joining": 50000,
@@ -10993,7 +10993,7 @@
     "id": "idfc-first-wealth",
     "name": "IDFC First Wealth Credit Card",
     "bank": "IDFC First Bank",
-    "image": "/assets/images/idfc/Wealth_Visa-Infinite-Credit-Cards.webp",
+    "image": "assets/images/idfc/Wealth_Visa-Infinite-Credit-Cards.webp",
     "link": "https://www.idfcfirst.bank.in/credit-card/wealth",
     "fees": {
       "joining": 0,
@@ -11157,7 +11157,7 @@
     "id": "idfc-first-select",
     "name": "IDFC First Select Credit Card",
     "bank": "IDFC First Bank",
-    "image": "/assets/images/idfc/Select-Visa-Signature_Maroon.avif",
+    "image": "assets/images/idfc/Select-Visa-Signature_Maroon.avif",
     "link": "https://www.idfcfirst.bank.in/credit-card/select",
     "fees": {
       "joining": 0,
@@ -11311,7 +11311,7 @@
     "id": "idfc-first-classic",
     "name": "IDFC First Classic Credit Card",
     "bank": "IDFC First Bank",
-    "image": "/assets/images/idfc/Classic_Blue-Classic-Visa-Platinum.avif",
+    "image": "assets/images/idfc/Classic_Blue-Classic-Visa-Platinum.avif",
     "link": "https://www.idfcfirst.bank.in/credit-card/classic",
     "fees": {
       "joining": 0,
@@ -11465,7 +11465,7 @@
     "id": "idfc-first-millennia",
     "name": "IDFC First Millennia Credit Card",
     "bank": "IDFC First Bank",
-    "image": "/assets/images/idfc/first millenia.webp",
+    "image": "assets/images/idfc/first millenia.webp",
     "link": "https://www.idfcfirst.bank.in/credit-card/millennia",
     "fees": {
       "joining": 0,
@@ -11620,7 +11620,7 @@
     "id": "idfc-first-wow",
     "name": "IDFC First WOW! Credit Card",
     "bank": "IDFC First Bank",
-    "image": "/assets/images/idfc/first black wow.avif",
+    "image": "assets/images/idfc/first black wow.avif",
     "link": "https://www.idfcfirst.bank.in/credit-card/wow",
     "fees": {
       "joining": 0,
@@ -11765,7 +11765,7 @@
     "id": "kotak-white-reserve",
     "name": "Kotak White Reserve Credit Card",
     "bank": "Kotak Mahindra Bank",
-    "image": "/assets/cards/kotak-white-reserve.png",
+    "image": "assets/cards/kotak-white-reserve.png",
     "link": "https://www.kotak.com/en/personal-banking/cards/credit-cards/white-reserve-credit-card.html",
     "fees": {
       "joining": 12500,
@@ -11939,7 +11939,7 @@
     "id": "kotak-white",
     "name": "Kotak White Credit Card",
     "bank": "Kotak Mahindra Bank",
-    "image": "/assets/cards/kotak-white.png",
+    "image": "assets/cards/kotak-white.png",
     "link": "https://www.kotak.com/en/personal-banking/cards/credit-cards/white-credit-card.html",
     "fees": {
       "joining": 3000,
@@ -12081,7 +12081,7 @@
     "id": "kotak-mojo-platinum",
     "name": "Kotak Mojo Platinum Credit Card",
     "bank": "Kotak Mahindra Bank",
-    "image": "/assets/cards/kotak-mojo-platinum.png",
+    "image": "assets/cards/kotak-mojo-platinum.png",
     "link": "https://www.kotak.com/en/personal-banking/cards/credit-cards/mojo-platinum-credit-card.html",
     "fees": {
       "joining": 1000,
@@ -12226,7 +12226,7 @@
     "id": "kotak-zen-signature",
     "name": "Kotak Zen Signature Credit Card",
     "bank": "Kotak Mahindra Bank",
-    "image": "/assets/cards/kotak-zen-signature.png",
+    "image": "assets/cards/kotak-zen-signature.png",
     "link": "https://www.kotak.com/en/personal-banking/cards/credit-cards/zen-signature-credit-card.html",
     "fees": {
       "joining": 1500,
@@ -12381,7 +12381,7 @@
     "id": "kotak-pvr-inox",
     "name": "Kotak PVR INOX Credit Card",
     "bank": "Kotak Mahindra Bank",
-    "image": "/assets/cards/kotak-pvr-inox.png",
+    "image": "assets/cards/kotak-pvr-inox.png",
     "link": "https://www.kotak.com/en/personal-banking/cards/credit-cards/pvr-inox-kotak-credit-card.html",
     "fees": {
       "joining": 0,
@@ -12530,7 +12530,7 @@
     "id": "kotak-myntra",
     "name": "Kotak Myntra Credit Card",
     "bank": "Kotak Mahindra Bank",
-    "image": "/assets/cards/kotak-myntra.png",
+    "image": "assets/cards/kotak-myntra.png",
     "link": "https://www.kotak.com/en/personal-banking/cards/credit-cards/myntra-kotak-credit-card.html",
     "fees": {
       "joining": 500,
@@ -12672,7 +12672,7 @@
     "id": "indusind-indulge",
     "name": "IndusInd Indulge Credit Card",
     "bank": "IndusInd Bank",
-    "image": "/assets/images/indusind/indulge_credit_card.webp",
+    "image": "assets/images/indusind/indulge_credit_card.webp",
     "link": "https://www.indusind.com/in/en/personal/cards/credit-card/indulge-credit-card.html",
     "fees": {
       "joining": 75000,
@@ -12831,7 +12831,7 @@
     "id": "indusind-pinnacle",
     "name": "IndusInd Pinnacle World Credit Card",
     "bank": "IndusInd Bank",
-    "image": "/assets/images/indusind/IB_Pinnacle-Card_397x257.webp",
+    "image": "assets/images/indusind/IB_Pinnacle-Card_397x257.webp",
     "link": "https://www.indusind.com/in/en/personal/cards/credit-card/pinnacle-world-credit-card.html",
     "fees": {
       "joining": 15000,
@@ -12989,7 +12989,7 @@
     "id": "indusind-legend",
     "name": "IndusInd Legend Credit Card",
     "bank": "IndusInd Bank",
-    "image": "/assets/images/indusind/Legend_card-image_396x257px.webp",
+    "image": "assets/images/indusind/Legend_card-image_396x257px.webp",
     "link": "https://www.indusind.com/in/en/personal/cards/credit-card/legend-credit-card.html",
     "fees": {
       "joining": 0,
@@ -13149,7 +13149,7 @@
     "id": "indusind-club-vistara-explorer",
     "name": "Club Vistara IndusInd Bank Explorer Credit Card",
     "bank": "IndusInd Bank",
-    "image": "/assets/images/indusind/club-vistara-explorer.webp",
+    "image": "assets/images/indusind/club-vistara-explorer.webp",
     "link": "https://www.indusind.com/in/en/personal/cards/credit-card/club-vistara-indusInd-bank-explorer-credit-card.html",
     "fees": {
       "joining": 40000,
@@ -13330,7 +13330,7 @@
     "id": "indusind-eazydiner-platinum",
     "name": "EazyDiner IndusInd Bank Platinum Credit Card",
     "bank": "IndusInd Bank",
-    "image": "/assets/images/indusind/th-EazyDiner_banner.webp",
+    "image": "assets/images/indusind/th-EazyDiner_banner.webp",
     "link": "https://www.indusind.com/in/en/personal/cards/credit-card/eazydiner-platinum-credit-card.html",
     "fees": {
       "joining": 0,
@@ -13486,7 +13486,7 @@
     "id": "indusind-platinum-aura-edge",
     "name": "IndusInd Platinum Aura Edge Credit Card",
     "bank": "IndusInd Bank",
-    "image": "/assets/images/indusind/PlatinumAuraEdgeCreditCard396x257px.webp",
+    "image": "assets/images/indusind/PlatinumAuraEdgeCreditCard396x257px.webp",
     "link": "https://www.indusind.com/in/en/personal/cards/credit-card/platinum-aura-edge-visa-and-mastercard-credit-card-easy-credit.html",
     "fees": {
       "joining": 0,
@@ -13642,7 +13642,7 @@
     "id": "rbl-world-safari",
     "name": "RBL World Safari Credit Card",
     "bank": "RBL Bank",
-    "image": "/assets/cards/rbl-world-safari.png",
+    "image": "assets/cards/rbl-world-safari.png",
     "link": "https://www.rblbank.com/personal-banking/cards/credit-cards/world-safari-credit-card",
     "fees": {
       "joining": 3000,
@@ -13807,7 +13807,7 @@
     "id": "rbl-insignia-preferred-banking",
     "name": "RBL Insignia Preferred Banking World Credit Card",
     "bank": "RBL Bank",
-    "image": "/assets/cards/rbl-insignia-preferred.png",
+    "image": "assets/cards/rbl-insignia-preferred.png",
     "link": "https://www.rblbank.com/personal-banking/cards/credit-cards/insignia-preferred-banking-credit-card",
     "fees": {
       "joining": 7000,
@@ -13971,7 +13971,7 @@
     "id": "rbl-icon",
     "name": "RBL Icon Credit Card",
     "bank": "RBL Bank",
-    "image": "/assets/cards/rbl-icon.png",
+    "image": "assets/cards/rbl-icon.png",
     "link": "https://www.rblbank.com/personal-banking/cards/credit-cards/icon-credit-card",
     "fees": {
       "joining": 5000,
@@ -14138,7 +14138,7 @@
     "id": "rbl-platinum-maxima",
     "name": "RBL Platinum Maxima Credit Card",
     "bank": "RBL Bank",
-    "image": "/assets/cards/rbl-platinum-maxima.png",
+    "image": "assets/cards/rbl-platinum-maxima.png",
     "link": "https://www.rblbank.com/personal-banking/cards/credit-cards/platinum-maxima-credit-card",
     "fees": {
       "joining": 2000,
@@ -14293,7 +14293,7 @@
     "id": "rbl-shoprite",
     "name": "RBL ShopRite Credit Card",
     "bank": "RBL Bank",
-    "image": "/assets/cards/rbl-shoprite.png",
+    "image": "assets/cards/rbl-shoprite.png",
     "link": "https://www.rblbank.com/personal-banking/cards/credit-cards/shoprite-credit-card",
     "fees": {
       "joining": 500,
@@ -14440,7 +14440,7 @@
     "id": "yes-bank-reserv",
     "name": "Yes Bank RESERV Credit Card",
     "bank": "Yes Bank",
-    "image": "/assets/images/yes bank/reserv-card-img.png",
+    "image": "assets/images/yes bank/reserv-card-img.png",
     "link": "https://www.yesbank.in/personal-banking/yes-individual/cards/credit-cards/reserv-credit-card",
     "fees": {
       "joining": 2499,
@@ -14604,7 +14604,7 @@
     "id": "yes-bank-byoc",
     "name": "Yes Bank BYOC (Build Your Own Card)",
     "bank": "Yes Bank",
-    "image": "/assets/images/yes bank/byoc-card-img.png",
+    "image": "assets/images/yes bank/byoc-card-img.png",
     "link": "https://www.yesbank.in/personal-banking/yes-individual/cards/credit-cards/byoc-credit-card",
     "fees": {
       "joining": 249,
@@ -14757,7 +14757,7 @@
     "id": "yes-bank-elite-plus",
     "name": "Yes Bank ELITE+ Credit Card",
     "bank": "Yes Bank",
-    "image": "/assets/images/yes bank/elite-card-img.png",
+    "image": "assets/images/yes bank/elite-card-img.png",
     "link": "https://www.yesbank.in/personal-banking/yes-individual/cards/credit-cards/elite-plus-credit-card",
     "fees": {
       "joining": 999,
@@ -14919,7 +14919,7 @@
     "id": "yes-bank-ace",
     "name": "Yes Bank ACE Credit Card",
     "bank": "Yes Bank",
-    "image": "/assets/images/yes bank/ace-card-img.png",
+    "image": "assets/images/yes bank/ace-card-img.png",
     "link": "https://www.yesbank.in/personal-banking/yes-individual/cards/credit-cards/ace-credit-card",
     "fees": {
       "joining": 499,
@@ -15088,7 +15088,7 @@
     "id": "bob-eterna",
     "name": "BOB Eterna Credit Card",
     "bank": "Bank of Baroda",
-    "image": "/assets/images/bob/BOB-Eterna-Credit-Card.webp",
+    "image": "assets/images/bob/BOB-Eterna-Credit-Card.webp",
     "link": "https://www.bobcard.co.in/credit-card-types/eterna",
     "fees": {
       "joining": 2499,
@@ -15245,7 +15245,7 @@
     "id": "bob-premier",
     "name": "BOB Premier Credit Card",
     "bank": "Bank of Baroda",
-    "image": "/assets/images/bob/Bank-of-Baroda-Premier-Credit-Card.webp",
+    "image": "assets/images/bob/Bank-of-Baroda-Premier-Credit-Card.webp",
     "link": "https://www.bobcard.co.in/credit-card-types/premier",
     "fees": {
       "joining": 1000,
@@ -15389,7 +15389,7 @@
     "id": "sc-ultimate",
     "name": "Standard Chartered Ultimate Credit Card",
     "bank": "Standard Chartered",
-    "image": "/assets/images/sc/Standard-Chartered-Ultimate-Credit-Card.webp",
+    "image": "assets/images/sc/Standard-Chartered-Ultimate-Credit-Card.webp",
     "link": "https://www.sc.com/in/credit-cards/ultimate-card/",
     "fees": {
       "joining": 5000,
@@ -15541,7 +15541,7 @@
     "id": "sc-smart",
     "name": "Standard Chartered Smart Credit Card",
     "bank": "Standard Chartered",
-    "image": "/assets/images/sc/Standard-Chartered-Bank-Smart-Credit-Card.webp",
+    "image": "assets/images/sc/Standard-Chartered-Bank-Smart-Credit-Card.webp",
     "link": "https://www.sc.com/in/credit-cards/smart-credit-card/",
     "fees": {
       "joining": 499,
@@ -15676,7 +15676,7 @@
     "id": "hsbc-live-plus",
     "name": "HSBC Live+ Credit Card",
     "bank": "HSBC",
-    "image": "/assets/images/hsbc/live plus.jpeg",
+    "image": "assets/images/hsbc/live plus.jpeg",
     "link": "https://www.hsbc.co.in/credit-cards/products/live-plus/",
     "fees": {
       "joining": 999,
@@ -15809,7 +15809,7 @@
     "id": "hsbc-premier",
     "name": "HSBC Premier Credit Card",
     "bank": "HSBC",
-    "image": "/assets/images/hsbc/hsbc premier.jpg",
+    "image": "assets/images/hsbc/hsbc premier.jpg",
     "link": "https://www.hsbc.co.in/credit-cards/products/premier/",
     "fees": {
       "joining": 12000,
@@ -15962,7 +15962,7 @@
     "id": "au-zenith-plus",
     "name": "AU Zenith+ Credit Card",
     "bank": "AU Small Finance Bank",
-    "image": "/assets/images/au/au zenith plus.png",
+    "image": "assets/images/au/au zenith plus.png",
     "link": "https://www.au.bank.in/premium-banking/credit-cards/zenith-plus-credit-card",
     "fees": {
       "joining": 4999,
@@ -16119,7 +16119,7 @@
     "id": "ixigo-au",
     "name": "ixigo AU Credit Card",
     "bank": "AU Small Finance Bank",
-    "image": "/assets/images/au/Ixigo-AU-Credit-Card.webp",
+    "image": "assets/images/au/Ixigo-AU-Credit-Card.webp",
     "link": "https://www.aubank.in/personal-banking/credit-cards/ixigo-au-travel-credit-card",
     "fees": {
       "joining": 0,
@@ -16261,294 +16261,294 @@
     "id": "sc-rewards",
     "name": "Standard Chartered Rewards Credit Card",
     "bank": "Standard Chartered",
-    "image": "/assets/images/sc/Standard-Chartered-Rewards-Credit-Card.png.webp",
+    "image": "assets/images/sc/Standard-Chartered-Rewards-Credit-Card.png.webp",
     "slug": "sc-rewards"
   },
   {
     "id": "sc-platinum-rewards",
     "name": "Standard Chartered Platinum Rewards Credit Card",
     "bank": "Standard Chartered",
-    "image": "/assets/images/sc/Standard-Chartered-Platinum-Rewards-Credit-Card.jpg.webp",
+    "image": "assets/images/sc/Standard-Chartered-Platinum-Rewards-Credit-Card.jpg.webp",
     "slug": "sc-platinum-rewards"
   },
   {
     "id": "sc-easemytrip",
     "name": "Standard Chartered EaseMyTrip Credit Card",
     "bank": "Standard Chartered",
-    "image": "/assets/images/sc/Standard-Chartered-EaseMyTrip-Credit-Card.jpeg.webp",
+    "image": "assets/images/sc/Standard-Chartered-EaseMyTrip-Credit-Card.jpeg.webp",
     "slug": "sc-easemytrip"
   },
   {
     "id": "idfc-mayura",
     "name": "IDFC First Mayura Credit Card",
     "bank": "IDFC First Bank",
-    "image": "/assets/images/idfc/Mayura-Landing-page-460X290-image-01.avif",
+    "image": "assets/images/idfc/Mayura-Landing-page-460X290-image-01.avif",
     "slug": "idfc-mayura"
   },
   {
     "id": "idfc-ashva",
     "name": "IDFC First Ashva Credit Card",
     "bank": "IDFC First Bank",
-    "image": "/assets/images/idfc/Ashva-Landing-page-460X290.avif",
+    "image": "assets/images/idfc/Ashva-Landing-page-460X290.avif",
     "slug": "idfc-ashva"
   },
   {
     "id": "idfc-diamondr-reserve",
     "name": "IDFC First Diamondr Reserve Credit Card",
     "bank": "IDFC First Bank",
-    "image": "/assets/images/idfc/dimanondr reserve idfc.avif",
+    "image": "assets/images/idfc/dimanondr reserve idfc.avif",
     "slug": "idfc-diamondr-reserve"
   },
   {
     "id": "idfc-swyp",
     "name": "IDFC First SWYP Credit Card",
     "bank": "IDFC First Bank",
-    "image": "/assets/images/idfc/SWYP-Exit-Intent.png",
+    "image": "assets/images/idfc/SWYP-Exit-Intent.png",
     "slug": "idfc-swyp"
   },
   {
     "id": "idfc-indigo",
     "name": "IDFC First IndiGo Credit Card",
     "bank": "IDFC First Bank",
-    "image": "/assets/images/idfc/indigo.avif",
+    "image": "assets/images/idfc/indigo.avif",
     "slug": "idfc-indigo"
   },
   {
     "id": "idfc-power-plus",
     "name": "IDFC First Power+ Credit Card",
     "bank": "IDFC First Bank",
-    "image": "/assets/images/idfc/Powerplus-new-desk-01.webp",
+    "image": "assets/images/idfc/Powerplus-new-desk-01.webp",
     "slug": "idfc-power-plus"
   },
   {
     "id": "idfc-gaj",
     "name": "IDFC First Gaj Credit Card",
     "bank": "IDFC First Bank",
-    "image": "/assets/images/idfc/gaj-card idfc.avif",
+    "image": "assets/images/idfc/gaj-card idfc.avif",
     "slug": "idfc-gaj"
   },
   {
     "id": "yes-bank-select",
     "name": "Yes Bank Select Credit Card",
     "bank": "Yes Bank",
-    "image": "/assets/images/yes bank/select-card-img.png",
+    "image": "assets/images/yes bank/select-card-img.png",
     "slug": "yes-bank-select"
   },
   {
     "id": "yes-bank-pop",
     "name": "Yes Bank POP Credit Card",
     "bank": "Yes Bank",
-    "image": "/assets/images/yes bank/pop-club-cc-icon-image.png",
+    "image": "assets/images/yes bank/pop-club-cc-icon-image.png",
     "slug": "yes-bank-pop"
   },
   {
     "id": "yes-bank-private",
     "name": "Yes Bank Private Credit Card",
     "bank": "Yes Bank",
-    "image": "/assets/images/yes bank/yes-private-img-icon.png",
+    "image": "assets/images/yes bank/yes-private-img-icon.png",
     "slug": "yes-bank-private"
   },
   {
     "id": "indusind-platinum",
     "name": "IndusInd Platinum Credit Card",
     "bank": "IndusInd Bank",
-    "image": "/assets/images/indusind/Platinum396x257px.webp",
+    "image": "assets/images/indusind/Platinum396x257px.webp",
     "slug": "indusind-platinum"
   },
   {
     "id": "indusind-pioneer-heritage",
     "name": "IndusInd Pioneer Heritage Credit Card",
     "bank": "IndusInd Bank",
-    "image": "/assets/images/indusind/th-pioneer-heritage-credit-card1.png",
+    "image": "assets/images/indusind/th-pioneer-heritage-credit-card1.png",
     "slug": "indusind-pioneer-heritage"
   },
   {
     "id": "indusind-avios",
     "name": "IndusInd Avios Credit Card",
     "bank": "IndusInd Bank",
-    "image": "/assets/images/indusind/Avios-Visa-BG-Card.webp",
+    "image": "assets/images/indusind/Avios-Visa-BG-Card.webp",
     "slug": "indusind-avios"
   },
   {
     "id": "indusind-platinum-rupay",
     "name": "IndusInd Platinum RuPay Credit Card",
     "bank": "IndusInd Bank",
-    "image": "/assets/images/indusind/IndusInd-Platinum-Rupay-Credit-Card-397x257.webp",
+    "image": "assets/images/indusind/IndusInd-Platinum-Rupay-Credit-Card-397x257.webp",
     "slug": "indusind-platinum-rupay"
   },
   {
     "id": "indusind-tiger",
     "name": "IndusInd Tiger Credit Card",
     "bank": "IndusInd Bank",
-    "image": "/assets/images/indusind/Card-Tiger-CC.webp",
+    "image": "assets/images/indusind/Card-Tiger-CC.webp",
     "slug": "indusind-tiger"
   },
   {
     "id": "indusind-pioneer-legacy",
     "name": "IndusInd Pioneer Legacy World Credit Card",
     "bank": "IndusInd Bank",
-    "image": "/assets/images/indusind/pioneer_legacy_world_card.webp",
+    "image": "assets/images/indusind/pioneer_legacy_world_card.webp",
     "slug": "indusind-pioneer-legacy"
   },
   {
     "id": "hdfc-shoppers-stop-black",
     "name": "Shoppers Stop HDFC Bank Black Credit Card",
     "bank": "HDFC Bank",
-    "image": "/assets/images/hdfc/facia_shoppers_stop_black.png",
+    "image": "assets/images/hdfc/facia_shoppers_stop_black.png",
     "slug": "hdfc-shoppers-stop-black"
   },
   {
     "id": "bob-uni",
     "name": "BOB UNI Credit Card",
     "bank": "Bank of Baroda",
-    "image": "/assets/images/bob/bob-uni.png",
+    "image": "assets/images/bob/bob-uni.png",
     "slug": "bob-uni"
   },
   {
     "id": "bob-etihad-premier",
     "name": "BOB Etihad Guest Premier Credit Card",
     "bank": "Bank of Baroda",
-    "image": "/assets/images/bob/etihad-guest-premier.png",
+    "image": "assets/images/bob/etihad-guest-premier.png",
     "slug": "bob-etihad-premier"
   },
   {
     "id": "bob-etihad",
     "name": "BOB Etihad Guest Credit Card",
     "bank": "Bank of Baroda",
-    "image": "/assets/images/bob/etihad-guest.png",
+    "image": "assets/images/bob/etihad-guest.png",
     "slug": "bob-etihad"
   },
   {
     "id": "bob-cashback",
     "name": "BOB Cashback Credit Card",
     "bank": "Bank of Baroda",
-    "image": "/assets/images/bob/bob-cashback.png",
+    "image": "assets/images/bob/bob-cashback.png",
     "slug": "bob-cashback"
   },
   {
     "id": "bob-easy",
     "name": "BOB Easy Credit Card",
     "bank": "Bank of Baroda",
-    "image": "/assets/images/bob/BOB-Easy-Credit-Card.png.webp",
+    "image": "assets/images/bob/BOB-Easy-Credit-Card.png.webp",
     "slug": "bob-easy"
   },
   {
     "id": "axis-cashback",
     "name": "Axis Bank Cashback Credit Card",
     "bank": "Axis Bank",
-    "image": "/assets/images/axis/Axis-Bank-Cashback-Credit-Card.png.webp",
+    "image": "assets/images/axis/Axis-Bank-Cashback-Credit-Card.png.webp",
     "slug": "axis-cashback"
   },
   {
     "id": "icici-manchester-platinum",
     "name": "ICICI Manchester United Platinum Credit Card",
     "bank": "ICICI Bank",
-    "image": "/assets/images/icici/manchester-platinum-desktop.webp",
+    "image": "assets/images/icici/manchester-platinum-desktop.webp",
     "slug": "icici-manchester-platinum"
   },
   {
     "id": "icici-emirates-rubyx",
     "name": "ICICI Emirates Skywards Rubyx Credit Card",
     "bank": "ICICI Bank",
-    "image": "/assets/images/icici/emirates-rubyx.webp",
+    "image": "assets/images/icici/emirates-rubyx.webp",
     "slug": "icici-emirates-rubyx"
   },
   {
     "id": "icici-emirates-sapphiro",
     "name": "ICICI Emirates Skywards Sapphiro Credit Card",
     "bank": "ICICI Bank",
-    "image": "/assets/images/icici/emirates-sapphiro.webp",
+    "image": "assets/images/icici/emirates-sapphiro.webp",
     "slug": "icici-emirates-sapphiro"
   },
   {
     "id": "icici-emirates-emeralde",
     "name": "ICICI Emirates Skywards Emeralde Credit Card",
     "bank": "ICICI Bank",
-    "image": "/assets/images/icici/emirates-emeralde.webp",
+    "image": "assets/images/icici/emirates-emeralde.webp",
     "slug": "icici-emirates-emeralde"
   },
   {
     "id": "hsbc-platinum-rupay",
     "name": "HSBC Platinum RuPay Credit Card",
     "bank": "HSBC",
-    "image": "/assets/images/hsbc/hsbc platinum rupay.jpg",
+    "image": "assets/images/hsbc/hsbc platinum rupay.jpg",
     "slug": "hsbc-platinum-rupay"
   },
   {
     "id": "hsbc-rupay-cashback",
     "name": "HSBC RuPay Cashback Credit Card",
     "bank": "HSBC",
-    "image": "/assets/images/hsbc/hsbc rupay cashback.jpg",
+    "image": "assets/images/hsbc/hsbc rupay cashback.jpg",
     "slug": "hsbc-rupay-cashback"
   },
   {
     "id": "hsbc-platinum",
     "name": "HSBC Platinum Credit Card",
     "bank": "HSBC",
-    "image": "/assets/images/hsbc/hsbc platinum.jpg",
+    "image": "assets/images/hsbc/hsbc platinum.jpg",
     "slug": "hsbc-platinum"
   },
   {
     "id": "hsbc-traveller-one",
     "name": "HSBC TravellerOne Credit Card",
     "bank": "HSBC",
-    "image": "/assets/images/hsbc/travell one.jpg",
+    "image": "assets/images/hsbc/travell one.jpg",
     "slug": "hsbc-traveller-one"
   },
   {
     "id": "hsbc-taj",
     "name": "HSBC Taj Credit Card",
     "bank": "HSBC",
-    "image": "/assets/images/hsbc/hsbc taj.jpeg",
+    "image": "assets/images/hsbc/hsbc taj.jpeg",
     "slug": "hsbc-taj"
   },
   {
     "id": "au-zenith",
     "name": "AU Zenith Credit Card",
     "bank": "AU Small Finance Bank",
-    "image": "/assets/images/au/AU-Zenith-Credit-Card.webp",
+    "image": "assets/images/au/AU-Zenith-Credit-Card.webp",
     "slug": "au-zenith"
   },
   {
     "id": "au-lit",
     "name": "AU LIT Credit Card",
     "bank": "AU Small Finance Bank",
-    "image": "/assets/images/au/au-lit-cover.png.webp",
+    "image": "assets/images/au/au-lit-cover.png.webp",
     "slug": "au-lit"
   },
   {
     "id": "au-vetta",
     "name": "AU Vetta Credit Card",
     "bank": "AU Small Finance Bank",
-    "image": "/assets/images/au/au vetta.png",
+    "image": "assets/images/au/au vetta.png",
     "slug": "au-vetta"
   },
   {
     "id": "sbi-paytm",
     "name": "Paytm SBI Credit Card",
     "bank": "SBI Card",
-    "image": "/assets/images/sbi card/Paytm-SBI-Base-349x218-01.png",
+    "image": "assets/images/sbi card/Paytm-SBI-Base-349x218-01.png",
     "slug": "sbi-paytm"
   },
   {
     "id": "sbi-paytm-select",
     "name": "Paytm SBI Select Credit Card",
     "bank": "SBI Card",
-    "image": "/assets/images/sbi card/Paytm-SBI-Select_1.png",
+    "image": "assets/images/sbi card/Paytm-SBI-Select_1.png",
     "slug": "sbi-paytm-select"
   },
   {
     "id": "sbi-apollo",
     "name": "Apollo SBI Credit Card",
     "bank": "SBI Card",
-    "image": "/assets/images/sbi card/apollo-cardface-front.png",
+    "image": "assets/images/sbi card/apollo-cardface-front.png",
     "slug": "sbi-apollo"
   },
   {
     "id": "sbi-phonepe",
     "name": "PhonePe SBI Credit Card",
     "bank": "SBI Card",
-    "image": "/assets/images/sbi card/PhonePe-SBI-Base-f.png",
+    "image": "assets/images/sbi card/PhonePe-SBI-Base-f.png",
     "slug": "sbi-phonepe"
   },
   {
