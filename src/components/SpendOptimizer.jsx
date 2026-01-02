@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { creditCards } from '../data/creditCards';
+import creditCards from '../data/creditCards.json';
 
 /**
  * SpendOptimizer - Redesigned
@@ -216,8 +216,8 @@ const SpendOptimizer = () => {
             {SPENDING_CATEGORIES.map(cat => (
               <div key={cat.key} className="spending-row">
                 <div className="spending-category">
-                  <span 
-                    className="category-icon" 
+                  <span
+                    className="category-icon"
                     style={{ background: `${cat.color}20` }}
                   >
                     {cat.icon}

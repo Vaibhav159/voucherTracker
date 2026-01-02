@@ -1,4 +1,4 @@
-import { creditCards } from '../data/creditCards';
+import creditCards from '../data/creditCards.json';
 import { vouchers } from '../data/vouchers';
 
 // ========== MCC EXCLUSION DATABASE ==========

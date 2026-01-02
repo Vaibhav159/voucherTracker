@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { featureFlags } from '../config/featureFlags';
 // We need to import creditCards from creditCards.js
 // Note: creditCards.js has named export 'creditCards'
-import { creditCards as localCreditCards } from '../data/creditCards';
+import localCreditCards from '../data/creditCards.json';
 
 // Simple in-memory cache
 const cache = {

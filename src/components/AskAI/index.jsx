@@ -29,7 +29,7 @@ import { useQueryProcessor } from './hooks/useQueryProcessor';
 import styles from './styles/AskAI.module.css';
 
 // Import data directly for standalone usage
-import { creditCards as defaultCreditCards } from '../../data/creditCards';
+import defaultCreditCards from '../../data/creditCards.json';
 import { vouchers as defaultVouchers } from '../../data/vouchers';
 import { wealthBanking as defaultWealthBanking, familyBanking as defaultFamilyBanking, getBankNames as defaultGetBankNames } from '../../data/bankingPrograms';
 
