@@ -218,7 +218,6 @@
 
 .guide-card {
     /* Glass styles handled by .glass-panel utility class */
-    border-radius: 24px;
     overflow: hidden;
     transition: transform var(--duration-normal) var(--ease-out),
         box-shadow var(--duration-normal) var(--ease-out),
