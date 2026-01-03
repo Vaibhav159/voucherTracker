@@ -42,11 +42,6 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
     { path: '/compare-cards', label: 'Compare Cards', icon: '⚖️', badge: selectedCardsCount },
   ];
 
-  const bankingLinks = [
-    { path: '/browse-banking', label: 'Browse Banking', icon: '🏦' },
-    { path: '/compare-banking', label: 'Compare Banking', icon: '⚖️' },
-  ];
-
   const toolsLinks = [
     featureFlags.rewardsCalculator && { path: '/rewards-calculator', label: 'Rewards Calculator', icon: '🧮' },
     featureFlags.pointsConverter && { path: '/points-converter', label: 'Points Value', icon: '💎' },
@@ -152,13 +147,13 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
               isActiveCheck={() => isActiveGroup(['/know-your-cards', '/compare-cards'])}
             />
 
-            <NavDropdown
-              name="banking"
-              label="Banking"
-              icon="🏦"
-              links={bankingLinks}
-              isActiveCheck={() => isActiveGroup(['/browse-banking', '/compare-banking'])}
-            />
+            <Link
+              to="/browse-banking"
+              className={`nav-link ${isActiveGroup(['/browse-banking', '/compare-banking']) ? 'active' : ''}`}
+            >
+              <span className="nav-icon">🏦</span>
+              <span>Banking</span>
+            </Link>
 
             {featureFlags.askAI && (
               <Link
@@ -271,6 +266,10 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
               <span className="mobile-nav-icon">📚</span>
               <span>Guides</span>
             </Link>
+            <Link to="/browse-banking" className={`mobile-nav-link ${isActiveGroup(['/browse-banking', '/compare-banking']) ? 'active' : ''}`}>
+              <span className="mobile-nav-icon">🏦</span>
+              <span>Banking</span>
+            </Link>
             {featureFlags.askAI && (
               <Link to="/ask-ai" className={`mobile-nav-link highlight ${isActive('/ask-ai') ? 'active' : ''}`}>
                 <span className="mobile-nav-icon">✨</span>
@@ -294,19 +293,7 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
             ))}
           </div>
 
-          <div className="mobile-nav-section">
-            <span className="mobile-section-label">Banking</span>
-            {bankingLinks.map(link => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`mobile-nav-link ${isActive(link.path) ? 'active' : ''}`}
-              >
-                <span className="mobile-nav-icon">{link.icon}</span>
-                <span>{link.label}</span>
-              </Link>
-            ))}
-          </div>
+
 
           <div className="mobile-nav-section">
             <span className="mobile-section-label">Tools</span>
