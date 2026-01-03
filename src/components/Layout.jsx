@@ -336,7 +336,7 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
         </div>
       </nav>
 
-      <main className="container main-content">
+      <main className={`${isActive('/') ? 'main-content header-offset' : 'container main-content'}`}>
         {children}
       </main>
 

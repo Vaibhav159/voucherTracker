@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const SearchBar = ({ value, onChange, sortOption, onSortChange, onOpenShortcuts }) => {
     return (
-        <div className="sticky-search-bar" data-tour="search" style={{ marginBottom: '2rem', position: 'relative', zIndex: 10 }}>
+        <div className="sticky-search-bar" data-tour="search" style={{ marginBottom: '2rem', position: 'sticky', top: '20px', zIndex: 100 }}>
             {/* Search Input */}
             <div
                 className="glass-panel"

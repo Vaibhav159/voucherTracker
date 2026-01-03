@@ -40,8 +40,7 @@ const MyCards = () => {
     removeCard,
     addCard,
     hasCard,
-    setCardNote,
-    getCardNote,
+
   } = useMyCards();
 
   const [activeTab, setActiveTab] = useState('collection');
@@ -50,8 +49,7 @@ const MyCards = () => {
   const [sortBy, setSortBy] = useState('name');
   const [collectionSearch, setCollectionSearch] = useState('');
   const [collectionFilter, setCollectionFilter] = useState('all');
-  const [editingNote, setEditingNote] = useState(null);
-  const [noteText, setNoteText] = useState('');
+
 
   // Banks in user's collection
   const myBanks = useMemo(() => {
@@ -130,11 +128,7 @@ const MyCards = () => {
     return grouped;
   }, [filteredCards]);
 
-  const handleSaveNote = (cardId) => {
-    setCardNote(cardId, noteText);
-    setEditingNote(null);
-    setNoteText('');
-  };
+
 
   // Helper to get card's main benefit text
   const getCardBenefit = (card) => {
@@ -295,7 +289,7 @@ const MyCards = () => {
                 <div className="card-grid">
                   {sortedMyCards.map(card => {
                     const tier = getCardTier(card);
-                    const note = getCardNote(card.id);
+
                     const benefit = getCardBenefit(card);
                     const network = getNetwork(card);
                     const fee = card.fees?.annual || card.annualFee || 0;
@@ -352,27 +346,7 @@ const MyCards = () => {
                           </div>
                         </div>
 
-                        {/* Note Section */}
-                        <div className="tile-note">
-                          {editingNote === card.id ? (
-                            <input
-                              autoFocus
-                              className="note-input"
-                              value={noteText}
-                              onChange={(e) => setNoteText(e.target.value)}
-                              onBlur={() => handleSaveNote(card.id)}
-                              onKeyDown={(e) => e.key === 'Enter' && handleSaveNote(card.id)}
-                              placeholder="Add a note..."
-                            />
-                          ) : (
-                            <button
-                              className={`note-btn ${note ? 'has-note' : ''}`}
-                              onClick={() => { setEditingNote(card.id); setNoteText(note); }}
-                            >
-                              {note ? `📝 ${note}` : '+ Note'}
-                            </button>
-                          )}
-                        </div>
+
                       </div>
                     );
                   })}
@@ -1060,50 +1034,7 @@ const MyCards = () => {
           text-shadow: 0 0 12px rgba(74, 222, 128, 0.3);
         }
 
-        /* ===== NOTE SECTION ===== */
-        .tile-note {
-          padding: 0 1.5rem 1.25rem;
-        }
-        
-        .note-btn {
-          width: 100%;
-          padding: 0.65rem 0.75rem;
-          background: rgba(255, 255, 255, 0.03);
-          border: 1px dashed rgba(255, 255, 255, 0.12);
-          border-radius: 10px;
-          color: rgba(148, 163, 184, 0.7);
-          font-size: 0.85rem;
-          cursor: pointer;
-          text-align: left;
-          transition: all 0.25s ease;
-        }
-        
-        .note-btn:hover {
-          border-color: rgba(99, 102, 241, 0.4);
-          background: rgba(99, 102, 241, 0.05);
-          color: rgba(148, 163, 184, 0.9);
-        }
-        
-        .note-btn.has-note {
-          background: rgba(139, 92, 246, 0.1);
-          border: 1px solid rgba(139, 92, 246, 0.3);
-          color: #c084fc;
-        }
-        
-        .note-input {
-          width: 100%;
-          padding: 0.65rem 0.75rem;
-          background: rgba(0, 0, 0, 0.3);
-          border: 1px solid #6366f1;
-          border-radius: 10px;
-          color: #fff;
-          font-size: 0.9rem;
-          box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
-        }
-        
-        .note-input:focus {
-          outline: none;
-        }
+
 
         /* ===== ADD VIEW ===== */
         .add-view {

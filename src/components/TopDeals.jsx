@@ -1,4 +1,5 @@
-import { useMemo } from 'react';
+
+import { useMemo, useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 /**
@@ -14,24 +15,23 @@ const DAILY_ESSENTIALS = [
 ];
 
 const TopDeals = ({ vouchers, onVoucherClick }) => {
+  const scrollRef = useRef(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
   const dailyDeals = useMemo(() => {
     const seenBrands = new Set();
-
     const essentials = vouchers
       .map(v => {
         const brandLower = v.brand.toLowerCase();
-
         if (brandLower.includes('e-gift') || brandLower.includes('money') || v.brand.length <= 2) {
           return null;
         }
-
         const matchedEssential = DAILY_ESSENTIALS.find(e =>
           brandLower.includes(e) || brandLower.startsWith(e)
         );
-
         if (!matchedEssential || seenBrands.has(matchedEssential)) return null;
         seenBrands.add(matchedEssential);
-
         const priority = DAILY_ESSENTIALS.indexOf(matchedEssential);
         const maxDiscount = Math.max(0, ...v.platforms.map(p => {
           const fee = p.fee || '';
@@ -41,15 +41,52 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
           }
           return 0;
         }));
-
         return { ...v, maxDiscount, priority, essentialBrand: matchedEssential };
       })
       .filter(v => v !== null)
-      .sort((a, b) => a.priority - b.priority)
-      .slice(0, 8);
+      .sort((a, b) => a.priority - b.priority);
+    // REMOVED .slice(0, 8) to show all
 
     return essentials;
   }, [vouchers]);
+
+  const checkScroll = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 5); // 5px tolerance
+    }
+  };
+
+  useEffect(() => {
+    checkScroll();
+    const currentRef = scrollRef.current;
+    if (currentRef) {
+      currentRef.addEventListener('scroll', checkScroll);
+    }
+    window.addEventListener('resize', checkScroll);
+    return () => {
+      if (currentRef) {
+        currentRef.removeEventListener('scroll', checkScroll);
+      }
+      window.removeEventListener('resize', checkScroll);
+    };
+  }, [dailyDeals]);
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const container = scrollRef.current;
+      const scrollAmount = container.clientWidth * 0.75; // Scroll 75% of view
+      const targetScroll = direction === 'left'
+        ? container.scrollLeft - scrollAmount
+        : container.scrollLeft + scrollAmount;
+
+      container.scrollTo({
+        left: targetScroll,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   if (dailyDeals.length === 0) return null;
 
@@ -66,7 +103,25 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
       </div>
 
       <div className="essentials-scroll-container">
-        <div className="essentials-grid">
+        {/* Left Scroll Gradient & Button */}
+        <div className={`scroll-control-left ${canScrollLeft ? 'visible' : ''}`}>
+          <div className="scroll-gradient-mask left"></div>
+          <button
+            className="scroll-btn scroll-left"
+            onClick={() => scroll('left')}
+            aria-label="Scroll left"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+        </div>
+
+        <div
+          className="essentials-grid"
+          ref={scrollRef}
+          onScroll={checkScroll}
+        >
           {dailyDeals.map((voucher) => (
             <button
               key={voucher.id}
@@ -100,6 +155,22 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
               )}
             </button>
           ))}
+          {/* Spacer to ensure last item is easily visible/snappable */}
+          <div style={{ minWidth: '1px', flexShrink: 0 }}></div>
+        </div>
+
+        {/* Right Scroll Gradient & Button */}
+        <div className={`scroll-control-right ${canScrollRight ? 'visible' : ''}`}>
+          <div className="scroll-gradient-mask right"></div>
+          <button
+            className="scroll-btn scroll-right"
+            onClick={() => scroll('right')}
+            aria-label="Scroll right"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
         </div>
       </div>
 
@@ -145,34 +216,112 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
 
         .essentials-scroll-container {
           position: relative;
-          margin: 0 -1rem;
-          padding: 0 1rem;
+          margin: 0 -1.5rem;
+          padding: 0 1.5rem;
+          display: flex;
+          align-items: center;
         }
 
-        /* Fading masks for better scroll UI */
-        .essentials-scroll-container::after {
-          content: '';
+        /* Control Containers with Masks */
+        .scroll-control-left, .scroll-control-right {
           position: absolute;
           top: 0;
-          right: 0;
           bottom: 0;
-          width: 40px;
-          background: linear-gradient(to left, var(--bg-color, #0f172a), transparent);
-          pointer-events: none;
           z-index: 5;
+          pointer-events: none; /* Let clicks pass unless on button */
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        .scroll-control-left.visible, .scroll-control-right.visible {
+          opacity: 1;
+        }
+
+        .scroll-control-left {
+          left: 0;
+          width: 80px;
+        }
+
+        .scroll-control-right {
+          right: 0;
+          width: 80px;
+        }
+
+        .scroll-gradient-mask {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 100%;
+        }
+
+        .scroll-gradient-mask.left {
+          left: 0;
+          background: linear-gradient(to right, var(--bg-color, #0f172a) 20%, transparent 100%);
+        }
+
+        .scroll-gradient-mask.right {
+          right: 0;
+          background: linear-gradient(to left, var(--bg-color, #0f172a) 20%, transparent 100%);
         }
 
         .essentials-grid {
           display: flex;
           overflow-x: auto;
           gap: 1rem;
-          padding: 0.5rem 0.5rem 1.5rem 0;
-          scrollbar-width: none; /* Firefox */
+          padding: 0.5rem 0.5rem 1.5rem 0.5rem;
+          scrollbar-width: none;
           -webkit-overflow-scrolling: touch;
+          scroll-behavior: smooth;
+          flex: 1;
+          
+          /* SCROLL SNAP LOGIC */
+          scroll-snap-type: x mandatory;
+          scroll-padding: 0 1rem;
         }
         
         .essentials-grid::-webkit-scrollbar {
-          display: none; /* Hide scrollbar for cleaner look */
+          display: none;
+        }
+
+        /* Scroll Buttons */
+        .scroll-btn {
+          position: absolute;
+          top: 45%; 
+          transform: translateY(-50%);
+          width: 40px; 
+          height: 40px;
+          border-radius: 50%;
+          background: rgba(15, 23, 42, 0.9);
+          backdrop-filter: blur(4px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          pointer-events: auto; /* Enable clicks */
+          z-index: 20;
+          transition: all 0.2s ease;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+
+        .scroll-btn:hover {
+          background: #fff;
+          color: #0f172a;
+          transform: translateY(-50%) scale(1.1);
+          border-color: #fff;
+        }
+
+        .scroll-btn:active {
+          transform: translateY(-50%) scale(0.95);
+        }
+
+        .scroll-left {
+          left: 1.5rem; /* Inside padding */
+        }
+
+        .scroll-right {
+          right: 1.5rem; /* Inside padding */
         }
 
         .essential-card-v2 {
@@ -195,6 +344,9 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
           flex-shrink: 0;
           box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.3);
           overflow: visible;
+          
+          /* Snap Alignment */
+          scroll-snap-align: start;
         }
 
         .essential-card-v2:hover {
@@ -207,7 +359,7 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
         }
 
         .essential-card-v2:active {
-           transform: translateY(-1px) scale(0.96);
+          transform: translateY(-1px) scale(0.96);
         }
 
         .discount-chip {
@@ -250,7 +402,7 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
           width: 100%;
           height: 100%;
           object-fit: contain;
-          filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+          filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
         }
 
         .brand-fallback {
@@ -283,6 +435,12 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
           .discount-chip {
             padding: 0 8px;
             font-size: 0.6rem;
+          }
+          /* Always show scroll buttons on mobile or hide? Usually hiding is better as touch works. 
+             Let's keep them hidden on touch devices if possible, or small. 
+             Actually, touch scrolling is better essentially. */
+          .scroll-btn {
+             display: none;
           }
         }
       `}</style>

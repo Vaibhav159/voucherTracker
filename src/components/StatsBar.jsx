@@ -7,7 +7,9 @@ import PropTypes from 'prop-types';
  * Cleaner stats display for the home page
  */
 
-const StatsBar = ({ vouchers = [], platforms = [] }) => {
+const StatsBar = ({ vouchers = [], platforms = [], variant = 'full' }) => {
+  const isSidebar = variant === 'sidebar';
+
   const stats = useMemo(() => {
     // Count vouchers
     const voucherCount = vouchers.length;
@@ -37,12 +39,12 @@ const StatsBar = ({ vouchers = [], platforms = [] }) => {
   }, [vouchers, platforms]);
 
   return (
-    <div className="stats-bar-premium">
-      <div className="stats-bar-glow"></div>
-      <div className="stats-bar-content">
+    <div className={`stats-bar-premium ${isSidebar ? 'stats-bar-sidebar' : ''}`}>
+      {!isSidebar && <div className="stats-bar-glow"></div>}
+      <div className={`stats-bar-content ${isSidebar ? 'sidebar-content' : ''}`}>
         <div className="stat-item-premium">
           <div className="stat-icon-wrapper voucher-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width={isSidebar ? "18" : "22"} height={isSidebar ? "18" : "22"} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
               <path d="M13 5v2" />
               <path d="M13 17v2" />
@@ -57,15 +59,17 @@ const StatsBar = ({ vouchers = [], platforms = [] }) => {
           </div>
         </div>
 
-        <div className="stat-divider-premium">
-          <div className="divider-line"></div>
-          <div className="divider-dot"></div>
-          <div className="divider-line"></div>
-        </div>
+        {!isSidebar && (
+          <div className="stat-divider-premium">
+            <div className="divider-line"></div>
+            <div className="divider-dot"></div>
+            <div className="divider-line"></div>
+          </div>
+        )}
 
         <div className="stat-item-premium">
           <div className="stat-icon-wrapper platform-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width={isSidebar ? "18" : "22"} height={isSidebar ? "18" : "22"} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <rect x="3" y="3" width="7" height="7" rx="1" />
               <rect x="14" y="3" width="7" height="7" rx="1" />
               <rect x="14" y="14" width="7" height="7" rx="1" />
@@ -103,6 +107,18 @@ const StatsBar = ({ vouchers = [], platforms = [] }) => {
             inset 0 1px 0 rgba(255, 255, 255, 0.05);
         }
 
+
+        .stats-bar-premium.stats-bar-sidebar {
+          padding: 1.25rem 1rem;
+          margin-bottom: 1rem;
+          border-radius: 16px;
+          flex-direction: column;
+          background: rgba(255, 255, 255, 0.02);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          overflow: visible; /* Ensure content isn't clipped */
+          min-height: auto;
+        }
+
         .stats-bar-glow {
           position: absolute;
           top: -50%;
@@ -134,12 +150,27 @@ const StatsBar = ({ vouchers = [], platforms = [] }) => {
           flex-wrap: wrap;
         }
 
+        .stats-bar-content.sidebar-content {
+          gap: 1rem;
+          justify-content: space-between;
+          width: 100%;
+          flex-direction: row; /* Keep side-by-side but compact */
+        }
+
         .stat-item-premium {
           display: flex;
           align-items: center;
           gap: 14px;
           padding: 0.5rem;
           transition: transform 0.3s ease;
+        }
+
+        .stats-bar-sidebar .stat-item-premium {
+            padding: 0;
+            gap: 10px;
+            flex-direction: column;
+            text-align: center;
+            flex: 1;
         }
 
         .stat-item-premium:hover {
@@ -157,6 +188,12 @@ const StatsBar = ({ vouchers = [], platforms = [] }) => {
           position: relative;
           transition: all 0.3s ease;
           box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .stats-bar-sidebar .stat-icon-wrapper {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
         }
 
         .stat-item-premium:hover .stat-icon-wrapper {
@@ -185,6 +222,10 @@ const StatsBar = ({ vouchers = [], platforms = [] }) => {
           gap: 2px;
         }
 
+        .stats-bar-sidebar .stat-content-premium {
+            align-items: center;
+        }
+
         .stat-value-premium {
           font-size: 1.5rem;
           font-weight: 700;
@@ -193,6 +234,10 @@ const StatsBar = ({ vouchers = [], platforms = [] }) => {
           letter-spacing: -0.02em;
           display: flex;
           align-items: baseline;
+        }
+
+        .stats-bar-sidebar .stat-value-premium {
+            font-size: 1.2rem;
         }
 
         .stat-plus {
@@ -208,6 +253,13 @@ const StatsBar = ({ vouchers = [], platforms = [] }) => {
           text-transform: uppercase;
           letter-spacing: 0.08em;
           font-weight: 500;
+        }
+
+        .stats-bar-sidebar .stat-label-premium {
+            font-size: 0.7rem;
+            margin-top: 4px;
+            display: block; /* Ensure it takes up space */
+            opacity: 0.8;
         }
 
         .stat-divider-premium {
@@ -321,6 +373,7 @@ const StatsBar = ({ vouchers = [], platforms = [] }) => {
 StatsBar.propTypes = {
   vouchers: PropTypes.array,
   platforms: PropTypes.array,
+  variant: PropTypes.oneOf(['full', 'sidebar']),
 };
 
 export default StatsBar;

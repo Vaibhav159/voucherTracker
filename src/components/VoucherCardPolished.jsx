@@ -13,13 +13,10 @@ import React, { memo, useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import { getPlatformLogo } from '../utils/platformLogos';
 import ExpiryBadge from './ExpiryBadge';
-import RatingStars from './RatingStars';
-import { useReviews } from '../hooks/useReviews';
 import { useFavorites } from '../context/FavoritesContext';
 
 const VoucherCard = memo(({ voucher, onClick, index = 0 }) => {
     const platformNames = voucher.platforms.map(p => p.name);
-    const { averageRating, reviewCount } = useReviews(voucher.id);
     const { toggleFavoriteVoucher, isVoucherFavorite } = useFavorites();
     const isFavorite = isVoucherFavorite(voucher.id);
 
@@ -174,11 +171,7 @@ const VoucherCard = memo(({ voucher, onClick, index = 0 }) => {
                             />
                         )}
                     </div>
-                    {averageRating > 0 && (
-                        <div style={{ marginTop: '6px' }}>
-                            <RatingStars rating={averageRating} size="xs" reviewCount={reviewCount} />
-                        </div>
-                    )}
+
                 </div>
             </div>
 

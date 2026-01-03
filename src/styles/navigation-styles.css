@@ -148,6 +148,7 @@
     opacity: 0;
     transform: translateX(-50%) translateY(-8px);
   }
+
   to {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
@@ -473,12 +474,12 @@
   .nav-desktop {
     gap: 0.125rem;
   }
-  
+
   .nav-link {
     padding: 0.5rem 0.625rem;
     font-size: 0.85rem;
   }
-  
+
   .nav-icon {
     display: none;
   }
@@ -488,19 +489,19 @@
   .header-container {
     padding: 0.75rem 1rem;
   }
-  
+
   .logo-text {
     font-size: 1.25rem;
   }
-  
+
   .nav-desktop {
     display: none;
   }
-  
+
   .mobile-menu-btn {
     display: flex;
   }
-  
+
   .twitter-btn {
     display: none;
   }
@@ -510,7 +511,7 @@
   .logo-secondary {
     display: none;
   }
-  
+
   .theme-toggle-wrapper {
     display: none;
   }
