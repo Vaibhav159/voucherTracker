@@ -40,8 +40,6 @@ const MilestoneTracker = lazy(() => import('./components/MilestoneTracker'));
 const SavingsDashboard = lazy(() => import('./components/SavingsDashboard'));
 const MyCards = lazy(() => import('./components/MyCards'));
 
-// Global floating components (non-lazy for immediate availability)
-import QuickCardPicker from './components/QuickCardPicker';
 
 const LoadingScreen = () => (
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', flexDirection: 'column', gap: '1rem' }}>
@@ -417,8 +415,6 @@ function App() {
                       <Route path="/my-cards" element={<MyCards />} />
                     </Routes>
                   </Suspense>
-                  {/* Global floating components */}
-                  <QuickCardPicker />
                 </ErrorBoundary>
               </Layout>
             </Router>
