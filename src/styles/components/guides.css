@@ -189,8 +189,8 @@
 /* Guide Grid */
 .guides-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    /* Slightly wider cards */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    /* Adjusted for 4 columns */
     gap: 1.5rem;
     width: 100%;
 }
@@ -214,22 +214,15 @@
 /* GUIDE CARD STYLES - REDESIGNED */
 /* GUIDE CARD STYLES - REDESIGNED */
 /* Local overrides for specific dark/light behavior on cards */
-:root {
-    --guide-card-bg: #050510;
-    --guide-card-border: rgba(255, 255, 255, 0.08);
-}
-
-[data-theme='light'] {
-    --guide-card-bg: #ffffff;
-    --guide-card-border: rgba(0, 0, 0, 0.1);
-}
+/* Removed local overrides to use global glass system */
 
 .guide-card {
-    background: var(--guide-card-bg);
-    border: 1px solid var(--guide-card-border);
+    /* Glass styles handled by .glass-panel utility class */
     border-radius: 24px;
     overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--duration-normal) var(--ease-out),
+        box-shadow var(--duration-normal) var(--ease-out),
+        border-color var(--duration-normal) var(--ease-out);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -238,9 +231,12 @@
 }
 
 .guide-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px) rotateX(2deg);
+    box-shadow:
+        0 12px 40px rgba(6, 182, 212, 0.2),
+        0 0 20px rgba(6, 182, 212, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
     border-color: var(--accent-cyan);
-    box-shadow: var(--shadow-xl);
 }
 
 .guide-card-content {
