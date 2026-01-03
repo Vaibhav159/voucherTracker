@@ -1,0 +1,1024 @@
+[
+    {
+        "id": "au-zenith",
+        "name": "AU Zenith Credit Card",
+        "bank": "AU Small Finance Bank",
+        "image": "/assets/cards/au-zenith.png",
+        "link": "https://www.au.bank.in/personal-banking/credit-cards/zenith-credit-card",
+        "fees": {
+            "joining": 7999,
+            "annual": 7999,
+            "currency": "INR",
+            "waivedOn": 500000,
+            "waiverText": "First year: ₹1,25,000 retail spends within 90 days. Second year onwards: ₹5,00,000 retail spends in previous anniversary year"
+        },
+        "rewards": {
+            "type": "points",
+            "baseRate": 0.0075,
+            "earningText": "3 RP per ₹100 on general spends (effective Jan 1, 2026)",
+            "expiry": "3 years from date of accrual",
+            "calculator": {
+                "tier": "premium",
+                "monthlyCap": 5000,
+                "monthlyCapNote": "5,000 RP cap on dining spends per statement cycle; 100 RP cap per transaction on utility/telecom",
+                "categories": {
+                    "dining": {
+                        "rate": 0.0125,
+                        "label": "1.25% (5 RP/₹100)",
+                        "note": "Standalone restaurants only"
+                    },
+                    "travel": {
+                        "rate": 0.0125,
+                        "label": "1.25% (5 RP/₹100)",
+                        "note": "International transactions"
+                    },
+                    "groceries": {
+                        "rate": 0.0125,
+                        "label": "1.25% (5 RP/₹100)"
+                    },
+                    "departmentalStores": {
+                        "rate": 0.0125,
+                        "label": "1.25% (5 RP/₹100)"
+                    },
+                    "online": {
+                        "rate": 0.0075,
+                        "label": "0.75% (3 RP/₹100)"
+                    },
+                    "utilities": {
+                        "rate": 0.0025,
+                        "label": "0.25% (1 RP/₹100)",
+                        "note": "Max 100 RP per transaction"
+                    },
+                    "insurance": {
+                        "rate": 0.0025,
+                        "label": "0.25% (1 RP/₹100)"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    },
+                    "rent": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    },
+                    "government": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    },
+                    "emi": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 0.25,
+                "bestOption": "E-vouchers, Flight/Hotel bookings on AU Rewardz",
+                "redemptionFee": 99,
+                "options": [
+                    {
+                        "type": "E-vouchers",
+                        "value": 0.20,
+                        "desc": "1 RP = ₹0.20"
+                    },
+                    {
+                        "type": "Merchandise",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25"
+                    },
+                    {
+                        "type": "Flight/Hotel Bookings",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25"
+                    },
+                    {
+                        "type": "Mobile/DTH Recharges",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25"
+                    }
+                ]
+            },
+            "devaluationNote": "Effective January 1, 2026: Dining reduced from 20 RP to 5 RP; International/Grocery/Dept stores reduced from 10 RP to 5 RP; Others reduced from 5 RP to 3 RP per ₹100"
+        },
+        "features": {
+            "lounge": {
+                "domestic": "2 per quarter (requires ₹20,000 spend in previous quarter)",
+                "international": "2 per quarter via Priority Pass",
+                "railway": "2 per quarter at select stations",
+                "accessType": "Visa Domestic Lounge Program / Priority Pass",
+                "note": "Add-on cardholders can also avail lounge benefits within complimentary limits"
+            },
+            "milestones": [
+                {
+                    "spend": 200000,
+                    "period": "quarter",
+                    "benefit": "₹1,000 vouchers from top brands"
+                },
+                {
+                    "spend": 800000,
+                    "period": "year",
+                    "benefit": "Complimentary Taj Epicure Membership"
+                },
+                {
+                    "spend": 100000,
+                    "period": "welcome",
+                    "benefit": "10,000 Bonus RP (within 60 days)",
+                    "note": "Plus ₹1,000 voucher on first POS transaction"
+                }
+            ],
+            "birthday": {
+                "included": true,
+                "text": "2,500 Bonus RP on completing one retail transaction on birthday"
+            },
+            "golf": {
+                "included": false,
+                "text": ""
+            },
+            "movies": {
+                "included": true,
+                "text": "BookMyShow: 50% off up to ₹250 once per calendar month"
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "cap": 1000,
+                "capPeriod": "statement cycle",
+                "minTransaction": 400,
+                "maxTransaction": 5000
+            },
+            "forex": {
+                "markup": 0.0199,
+                "text": "1.99% markup on foreign currency transactions"
+            },
+            "insurance": {
+                "airAccident": 20000000,
+                "creditShield": 1500000,
+                "purchaseProtection": 50000,
+                "zeroLiability": true,
+                "baggageLoss": true,
+                "flightDelay": true
+            },
+            "concierge": {
+                "included": true,
+                "text": "24x7 Global Concierge at 1800 210 0298"
+            },
+            "memberships": [
+                {
+                    "name": "Zomato Pro",
+                    "type": "welcome",
+                    "condition": "5 retail transactions within first 60 days"
+                }
+            ]
+        },
+        "metadata": {
+            "network": "Visa / RuPay",
+            "tags": [
+                "Premium",
+                "Travel",
+                "Dining",
+                "Low Forex",
+                "Lounge Access"
+            ],
+            "bestFor": "Frequent travelers and high spenders seeking lounge access and accelerated rewards on dining/groceries",
+            "rating": 4.0,
+            "verdict": "A solid premium card with comprehensive travel benefits including low forex markup (1.99%) and good lounge access. However, the January 2026 devaluation significantly reduced earning potential. Best suited for those who can meet spending milestones and primarily spend on dining and groceries.",
+            "pros": [
+                "Low forex markup at 1.99%",
+                "Comprehensive lounge access (domestic, international, railway)",
+                "Good insurance coverage including air accident cover of ₹2 Cr",
+                "Achievable fee waiver at ₹5 lakh annual spend",
+                "24x7 concierge services"
+            ],
+            "cons": [
+                "Significant reward devaluation from January 2026",
+                "High annual fee of ₹7,999",
+                "₹99 redemption fee on each redemption",
+                "No rewards on fuel, rent, government, EMI transactions",
+                "Domestic lounge access requires ₹20,000 quarterly spend"
+            ],
+            "eligibility": {
+                "minAge": 21,
+                "maxAge": 60,
+                "selfEmployedMinAge": 25,
+                "selfEmployedMaxAge": 65,
+                "minIncome": null,
+                "note": "Offered LTF to government and select MNC employees"
+            }
+        }
+    },
+    {
+        "id": "au-lit",
+        "name": "AU LIT Credit Card",
+        "bank": "AU Small Finance Bank",
+        "image": "/assets/cards/au-lit.png",
+        "link": "https://www.au.bank.in/personal-banking/credit-cards/lit-credit-card",
+        "fees": {
+            "joining": 0,
+            "annual": 0,
+            "currency": "INR",
+            "waivedOn": null,
+            "waiverText": "Lifetime Free card - No joining or annual fee. Optional feature fees range from ₹49 to ₹499 per 90-day period"
+        },
+        "rewards": {
+            "type": "points",
+            "baseRate": 0.0025,
+            "earningText": "1 RP per ₹100 on all retail spends (base). Up to 10X with paid features",
+            "expiry": "3 years from date of accrual",
+            "calculator": {
+                "tier": "entry",
+                "monthlyCap": 10000,
+                "monthlyCapNote": "Max 10,000 RP per month with accelerated features",
+                "categories": {
+                    "online": {
+                        "rate": 0.025,
+                        "label": "2.5% (10X)",
+                        "note": "With paid feature at ₹299/90 days"
+                    },
+                    "offline": {
+                        "rate": 0.0125,
+                        "label": "1.25% (5X)",
+                        "note": "With paid feature at ₹199/90 days"
+                    },
+                    "groceries": {
+                        "rate": 0.05,
+                        "label": "5% cashback",
+                        "note": "Category cashback feature"
+                    },
+                    "apparel": {
+                        "rate": 0.05,
+                        "label": "5% cashback",
+                        "note": "Category cashback feature"
+                    },
+                    "travel": {
+                        "rate": 0.05,
+                        "label": "5% cashback",
+                        "note": "With category feature"
+                    },
+                    "dining": {
+                        "rate": 0.05,
+                        "label": "5% cashback",
+                        "note": "With category feature"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    },
+                    "rent": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    },
+                    "emi": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 0.25,
+                "bestOption": "E-vouchers including Amazon Pay",
+                "redemptionFee": 99,
+                "options": [
+                    {
+                        "type": "E-vouchers",
+                        "value": 0.20,
+                        "desc": "1 RP = ₹0.20"
+                    },
+                    {
+                        "type": "Merchandise",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25"
+                    },
+                    {
+                        "type": "Flight/Hotel Bookings",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25"
+                    },
+                    {
+                        "type": "Mobile/DTH Recharges",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25"
+                    },
+                    {
+                        "type": "Air Miles Conversion",
+                        "value": null,
+                        "desc": "Convert to CV Points"
+                    }
+                ]
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": "Up to 2-4 per 90 days (paid feature at ₹199-₹299)",
+                "international": null,
+                "railway": null,
+                "accessType": "Via paid feature activation",
+                "note": "Lounge access is a customizable paid feature, max 4 visits per quarter"
+            },
+            "customizableFeatures": [
+                {
+                    "name": "10X Online Rewards",
+                    "fee": 299,
+                    "period": "90 days"
+                },
+                {
+                    "name": "5X Offline Rewards",
+                    "fee": 199,
+                    "period": "90 days"
+                },
+                {
+                    "name": "5% Milestone Cashback",
+                    "fee": 199,
+                    "period": "90 days",
+                    "minSpend": 7500
+                },
+                {
+                    "name": "2% Milestone Cashback",
+                    "fee": 149,
+                    "period": "90 days",
+                    "minSpend": 10000
+                },
+                {
+                    "name": "Category Cashback (Travel/Dining/Grocery)",
+                    "fee": 299,
+                    "period": "90 days"
+                },
+                {
+                    "name": "1 Lounge Access",
+                    "fee": 199,
+                    "period": "90 days"
+                },
+                {
+                    "name": "2 Lounge Access",
+                    "fee": 299,
+                    "period": "90 days"
+                },
+                {
+                    "name": "Fuel Surcharge Waiver",
+                    "fee": 49,
+                    "period": "90 days"
+                },
+                {
+                    "name": "ZEE5 Membership",
+                    "fee": 0,
+                    "period": "90 days",
+                    "minSpend": 5000,
+                    "penalty": 50
+                },
+                {
+                    "name": "Amazon Prime Membership",
+                    "fee": 0,
+                    "period": "90 days",
+                    "minSpend": 10000,
+                    "penalty": 299
+                }
+            ],
+            "milestones": [
+                {
+                    "spend": 10000,
+                    "period": "30 days",
+                    "benefit": "5% cashback up to ₹500",
+                    "note": "With milestone feature at ₹199/90 days"
+                },
+                {
+                    "spend": 15000,
+                    "period": "30 days",
+                    "benefit": "2% cashback up to ₹1,000",
+                    "note": "With milestone feature at ₹149/90 days"
+                }
+            ],
+            "golf": {
+                "included": false,
+                "text": ""
+            },
+            "movies": {
+                "included": false,
+                "text": ""
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "cap": null,
+                "capPeriod": "statement cycle",
+                "minTransaction": 400,
+                "maxTransaction": 5000,
+                "note": "Requires paid feature activation at ₹49/90 days"
+            },
+            "forex": {
+                "markup": 0.0349,
+                "text": "3.49% markup on foreign currency transactions"
+            },
+            "insurance": {
+                "creditShield": 150000,
+                "zeroLiability": true
+            }
+        },
+        "metadata": {
+            "network": "Visa",
+            "tags": [
+                "Lifetime Free",
+                "Customizable",
+                "Entry-Level",
+                "Cashback",
+                "Flexible"
+            ],
+            "bestFor": "Users who want flexibility to pay only for features they use, and those seeking a no-annual-fee card with decent rewards",
+            "rating": 3.7,
+            "verdict": "India's first customizable credit card offering flexibility to choose and pay for only the features you need. While the card itself is lifetime free, extracting maximum value requires activating multiple paid features which can add up. Best suited for users who have consistent spending patterns in specific categories and can maximize individual features.",
+            "pros": [
+                "Zero joining and annual fee (Lifetime Free)",
+                "Highly customizable - pay only for features you use",
+                "Up to 10X rewards on online spends with paid feature",
+                "5% cashback available on groceries and apparel",
+                "Free OTT memberships (ZEE5, Amazon Prime) with minimum spend"
+            ],
+            "cons": [
+                "Feature fees can add up significantly (up to ₹14k/year if all features activated)",
+                "Features auto-renew - must manually disable",
+                "Low base reward rate of just 0.25%",
+                "No international lounge access",
+                "Complex reward structure requires active management",
+                "₹99 redemption fee"
+            ],
+            "eligibility": {
+                "minAge": 21,
+                "maxAge": 60,
+                "selfEmployedMinAge": 25,
+                "selfEmployedMaxAge": 65,
+                "minIncome": 400000,
+                "note": "Annual income of ₹4 lakh"
+            }
+        }
+    },
+    {
+        "id": "au-vetta",
+        "name": "AU Vetta Credit Card",
+        "bank": "AU Small Finance Bank",
+        "image": "/assets/cards/au-vetta.png",
+        "link": "https://www.au.bank.in/personal-banking/credit-cards/vetta-credit-card",
+        "fees": {
+            "joining": 2999,
+            "annual": 2999,
+            "currency": "INR",
+            "waivedOn": 150000,
+            "waiverText": "First year: ₹40,000 retail spends within 90 days. Second year onwards: ₹1,50,000 retail spends in previous anniversary year"
+        },
+        "rewards": {
+            "type": "points",
+            "baseRate": 0.005,
+            "earningText": "2 RP per ₹100 on general spends, 4 RP on grocery/departmental stores",
+            "expiry": "3 years from date of accrual",
+            "calculator": {
+                "tier": "mid-range",
+                "monthlyCap": null,
+                "monthlyCapNote": "Max 100 RP per transaction on utility/telecom",
+                "categories": {
+                    "groceries": {
+                        "rate": 0.01,
+                        "label": "1% (4 RP/₹100)"
+                    },
+                    "departmentalStores": {
+                        "rate": 0.01,
+                        "label": "1% (4 RP/₹100)"
+                    },
+                    "utilities": {
+                        "rate": 0.0025,
+                        "label": "0.25% (1 RP/₹100)",
+                        "note": "Max 100 RP per transaction"
+                    },
+                    "dining": {
+                        "rate": 0.005,
+                        "label": "0.5% (2 RP/₹100)"
+                    },
+                    "travel": {
+                        "rate": 0.005,
+                        "label": "0.5% (2 RP/₹100)"
+                    },
+                    "online": {
+                        "rate": 0.005,
+                        "label": "0.5% (2 RP/₹100)"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    },
+                    "rent": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    },
+                    "government": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    },
+                    "emi": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 0.25,
+                "bestOption": "E-vouchers, Flight/Hotel bookings on AU Rewardz",
+                "redemptionFee": 99,
+                "options": [
+                    {
+                        "type": "E-vouchers",
+                        "value": 0.20,
+                        "desc": "1 RP = ₹0.20"
+                    },
+                    {
+                        "type": "Merchandise",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25"
+                    },
+                    {
+                        "type": "Flight/Hotel Bookings",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25"
+                    },
+                    {
+                        "type": "Mobile/DTH Recharges",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25"
+                    }
+                ]
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": "1 per quarter (requires ₹20,000 spend in previous quarter)",
+                "international": "1 per quarter via Priority Pass",
+                "railway": "2 per quarter at select stations (New Delhi, Ahmedabad, Jaipur, Kolkata Sealdah, Agra, Madurai)",
+                "accessType": "Visa Domestic Lounge Program / Priority Pass",
+                "note": "Priority Pass issued on request. Usage within India is chargeable at $27 + taxes"
+            },
+            "milestones": [
+                {
+                    "spend": 50000,
+                    "period": "quarter",
+                    "benefit": "500 Bonus RP"
+                },
+                {
+                    "spend": 100000,
+                    "period": "quarter",
+                    "benefit": "Additional 1,000 Bonus RP (Total 1,500 RP)"
+                },
+                {
+                    "spend": 250000,
+                    "period": "year",
+                    "benefit": "₹1,000 vouchers from top brands"
+                }
+            ],
+            "welcome": {
+                "included": true,
+                "text": "₹2,000 vouchers on minimum retail spend of ₹30,000 within 60 days"
+            },
+            "birthday": {
+                "included": true,
+                "text": "1,000 Bonus RP on completing one retail transaction on birthday"
+            },
+            "golf": {
+                "included": false,
+                "text": ""
+            },
+            "movies": {
+                "included": false,
+                "text": ""
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "cap": 250,
+                "capPeriod": "statement cycle",
+                "minTransaction": 400,
+                "maxTransaction": 5000
+            },
+            "forex": {
+                "markup": 0.0299,
+                "text": "2.99% markup on foreign currency transactions"
+            },
+            "insurance": {
+                "airAccident": 5000000,
+                "creditShield": 500000,
+                "purchaseProtection": 25000,
+                "zeroLiability": true,
+                "cardLiability": true
+            },
+            "concierge": {
+                "included": true,
+                "text": "24x7 Global Concierge at 1800 210 0298 or 022-42320298"
+            },
+            "memberships": [
+                {
+                    "name": "Zomato Pro (1 year)",
+                    "type": "milestone",
+                    "condition": "₹50,000 monthly spend"
+                }
+            ]
+        },
+        "metadata": {
+            "network": "Visa / RuPay",
+            "tags": [
+                "Mid-Range",
+                "Grocery",
+                "Lounge Access",
+                "Lifestyle"
+            ],
+            "bestFor": "Regular spenders focused on grocery and departmental store purchases seeking moderate lounge benefits",
+            "rating": 3.8,
+            "verdict": "A decent mid-tier card with accelerated rewards on everyday grocery spends. Offers basic lounge access and insurance benefits at a reasonable annual fee. The fee waiver threshold of ₹1.5 lakh is achievable for moderate spenders. Best suited for those who don't need premium travel perks but want solid everyday rewards.",
+            "pros": [
+                "4X rewards on grocery and departmental store spends",
+                "Reasonable fee waiver threshold at ₹1.5 lakh",
+                "Both domestic and international lounge access",
+                "Railway lounge access at 6 stations",
+                "24x7 concierge services",
+                "Good birthday bonus of 1,000 RP"
+            ],
+            "cons": [
+                "Higher forex markup at 2.99%",
+                "Only 1 lounge visit per quarter (vs 2 for Zenith)",
+                "Domestic lounge requires ₹20,000 quarterly spend",
+                "Priority Pass usage within India is chargeable",
+                "No movie or golf benefits",
+                "₹99 redemption fee"
+            ],
+            "eligibility": {
+                "minAge": 21,
+                "maxAge": 60,
+                "selfEmployedMinAge": 25,
+                "selfEmployedMaxAge": 65,
+                "minIncome": null,
+                "note": "Offered LTF to government and select MNC employees"
+            }
+        }
+    },
+    {
+        "id": "sbi-paytm",
+        "name": "Paytm SBI Card",
+        "bank": "SBI Card",
+        "image": "/assets/cards/sbi-paytm.png",
+        "link": "https://www.sbicard.com/en/personal/credit-cards/travel/paytm-sbi-card.page",
+        "fees": {
+            "joining": 499,
+            "annual": 499,
+            "currency": "INR",
+            "waivedOn": null,
+            "waiverText": "No annual fee waiver available"
+        },
+        "rewards": {
+            "type": "points",
+            "baseRate": 0.01,
+            "earningText": "1 RP per ₹100 on general spends, 3 RP on Paytm Travel/Movies/Mall. 1 RP = ₹1",
+            "expiry": "3 years from date of accrual",
+            "programNote": "Effective July 1, 2024: Cashback replaced with Reward Points of equivalent value. 1 RP = ₹1",
+            "calculator": {
+                "tier": "entry",
+                "monthlyCap": null,
+                "categories": {
+                    "paytmTravel": {
+                        "rate": 0.03,
+                        "label": "3% (3 RP/₹100)",
+                        "note": "Bookings via Paytm App"
+                    },
+                    "paytmMovies": {
+                        "rate": 0.03,
+                        "label": "3% (3 RP/₹100)",
+                        "note": "Movie tickets via Paytm"
+                    },
+                    "paytmMall": {
+                        "rate": 0.03,
+                        "label": "3% (3 RP/₹100)",
+                        "note": "Paytm Mall purchases"
+                    },
+                    "paytmOther": {
+                        "rate": 0.02,
+                        "label": "2% (2 RP/₹100)",
+                        "note": "Other Paytm App spends"
+                    },
+                    "qrPayments": {
+                        "rate": 0.01,
+                        "label": "1% (1 RP/₹100)",
+                        "note": "QR code transactions via Paytm"
+                    },
+                    "online": {
+                        "rate": 0.01,
+                        "label": "1% (1 RP/₹100)"
+                    },
+                    "offline": {
+                        "rate": 0.01,
+                        "label": "1% (1 RP/₹100)"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    },
+                    "walletLoad": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    },
+                    "rent": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    },
+                    "government": {
+                        "rate": 0,
+                        "label": "No rewards",
+                        "note": "Discontinued from July 15, 2024"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 1.0,
+                "bestOption": "Paytm Gift Voucher (auto-credited to Paytm Wallet)",
+                "options": [
+                    {
+                        "type": "Paytm Gift Voucher",
+                        "value": 1.0,
+                        "desc": "1 RP = ₹1 (auto-credited)"
+                    }
+                ]
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": null,
+                "international": null,
+                "accessType": null,
+                "note": "No lounge access with this card"
+            },
+            "welcome": {
+                "included": true,
+                "text": "Complimentary Paytm First Membership (worth ₹750) on card activation"
+            },
+            "milestones": [
+                {
+                    "spend": 100000,
+                    "period": "year",
+                    "benefit": "Renewal of Paytm First Membership"
+                }
+            ],
+            "golf": {
+                "included": false,
+                "text": ""
+            },
+            "movies": {
+                "included": false,
+                "text": ""
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "cap": 100,
+                "capPeriod": "statement cycle",
+                "minTransaction": 500,
+                "maxTransaction": 3000
+            },
+            "forex": {
+                "markup": 0.035,
+                "text": "3.5% markup on foreign currency transactions"
+            },
+            "insurance": {
+                "cyberFraud": 100000,
+                "zeroLiability": true
+            },
+            "memberships": [
+                {
+                    "name": "Paytm First Membership",
+                    "type": "welcome",
+                    "worth": 750,
+                    "benefits": "Free delivery, priority support, exclusive offers up to ₹50,000"
+                }
+            ]
+        },
+        "metadata": {
+            "network": "Visa",
+            "tags": [
+                "Entry-Level",
+                "Paytm",
+                "Cashback",
+                "Co-branded",
+                "Low Fee"
+            ],
+            "bestFor": "Frequent Paytm users who shop on Paytm Mall and book travel/movies via Paytm App",
+            "rating": 3.5,
+            "cobranded": true,
+            "partner": "Paytm",
+            "status": "Active",
+            "statusNote": "Card remains active despite Paytm's regulatory changes in 2024. Reward structure changed from cashback to reward points effective July 1, 2024",
+            "verdict": "An entry-level co-branded card designed for Paytm ecosystem users. Offers solid 3% rewards on Paytm travel, movies, and mall purchases. The Paytm First Membership welcome benefit provides good initial value. However, without lounge access and with the inability to waive annual fee, its appeal is limited to dedicated Paytm users.",
+            "pros": [
+                "3% rewards on Paytm travel, movies, and mall spends",
+                "1:1 reward redemption ratio (₹1 per point)",
+                "Complimentary Paytm First Membership worth ₹750",
+                "Low annual fee of ₹499",
+                "Cyber fraud insurance of ₹1 lakh",
+                "Auto-redemption to Paytm Wallet"
+            ],
+            "cons": [
+                "No airport lounge access",
+                "No annual fee waiver option",
+                "Higher forex markup at 3.5%",
+                "Benefits limited to Paytm ecosystem",
+                "Low fuel surcharge waiver cap of ₹100",
+                "No rewards on wallet load, fuel, rent, government transactions"
+            ],
+            "eligibility": {
+                "minAge": 21,
+                "maxAge": null,
+                "minIncome": null,
+                "note": "Primarily issued through Paytm App"
+            }
+        }
+    },
+    {
+        "id": "sbi-paytm-select",
+        "name": "Paytm SBI Card SELECT",
+        "bank": "SBI Card",
+        "image": "/assets/cards/sbi-paytm-select.png",
+        "link": "https://www.sbicard.com/en/personal/credit-cards/travel/paytm-sbi-card-select.page",
+        "fees": {
+            "joining": 1499,
+            "annual": 1499,
+            "currency": "INR",
+            "waivedOn": 200000,
+            "waiverText": "Annual fee waived on ₹2,00,000 retail spends in previous year"
+        },
+        "rewards": {
+            "type": "points",
+            "baseRate": 0.01,
+            "earningText": "1 RP per ₹100 on general spends, 5 RP on Paytm Travel/Movies/Mall. 1 RP = ₹1",
+            "expiry": "3 years from date of accrual",
+            "programNote": "Effective July 1, 2024: Cashback replaced with Reward Points of equivalent value. 1 RP = ₹1",
+            "calculator": {
+                "tier": "mid-range",
+                "monthlyCap": null,
+                "categories": {
+                    "paytmTravel": {
+                        "rate": 0.05,
+                        "label": "5% (5 RP/₹100)",
+                        "note": "Bookings via Paytm App"
+                    },
+                    "paytmMovies": {
+                        "rate": 0.05,
+                        "label": "5% (5 RP/₹100)",
+                        "note": "Movie tickets via Paytm"
+                    },
+                    "paytmMall": {
+                        "rate": 0.05,
+                        "label": "5% (5 RP/₹100)",
+                        "note": "Paytm Mall purchases"
+                    },
+                    "paytmOther": {
+                        "rate": 0.02,
+                        "label": "2% (2 RP/₹100)",
+                        "note": "Other Paytm App spends"
+                    },
+                    "qrPayments": {
+                        "rate": 0.01,
+                        "label": "1% (1 RP/₹100)",
+                        "note": "QR code transactions via Paytm"
+                    },
+                    "online": {
+                        "rate": 0.01,
+                        "label": "1% (1 RP/₹100)"
+                    },
+                    "offline": {
+                        "rate": 0.01,
+                        "label": "1% (1 RP/₹100)"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    },
+                    "walletLoad": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    },
+                    "rent": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    },
+                    "government": {
+                        "rate": 0,
+                        "label": "No rewards",
+                        "note": "Discontinued from July 15, 2024"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 1.0,
+                "bestOption": "Paytm Gift Voucher (auto-credited to Paytm Wallet)",
+                "options": [
+                    {
+                        "type": "Paytm Gift Voucher",
+                        "value": 1.0,
+                        "desc": "1 RP = ₹1 (auto-credited)"
+                    }
+                ]
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": "4 per year (1 per quarter)",
+                "international": "Priority Pass membership (visits chargeable at $27 + taxes)",
+                "accessType": "SBI Domestic Lounge Program (Set A) / Priority Pass",
+                "note": "New lounge program from Jan 10, 2026. Priority Pass membership complimentary for first 2 years. No complimentary international visits."
+            },
+            "welcome": {
+                "included": true,
+                "text": "₹750 reward points on first transaction + Complimentary Paytm First Membership"
+            },
+            "milestones": [
+                {
+                    "spend": 100000,
+                    "period": "year",
+                    "benefit": "Renewal of Paytm First Membership"
+                },
+                {
+                    "spend": 400000,
+                    "period": "year",
+                    "benefit": "₹2,000 gift voucher (Bata/Hush Puppies/Pantaloons)"
+                },
+                {
+                    "spend": 600000,
+                    "period": "year",
+                    "benefit": "₹4,000 gift voucher (Bata/Hush Puppies/Pantaloons)"
+                }
+            ],
+            "golf": {
+                "included": false,
+                "text": ""
+            },
+            "movies": {
+                "included": false,
+                "text": ""
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "cap": 250,
+                "capPeriod": "statement cycle",
+                "minTransaction": 500,
+                "maxTransaction": 4000
+            },
+            "forex": {
+                "markup": 0.035,
+                "text": "3.5% markup on foreign currency transactions"
+            },
+            "insurance": {
+                "cyberFraud": 200000,
+                "zeroLiability": true
+            },
+            "memberships": [
+                {
+                    "name": "Paytm First Membership",
+                    "type": "welcome",
+                    "worth": 750,
+                    "benefits": "Free delivery, priority support, exclusive offers up to ₹75,000"
+                },
+                {
+                    "name": "Priority Pass",
+                    "type": "welcome",
+                    "worth": 8000,
+                    "note": "Complimentary for first 2 years, visits chargeable"
+                }
+            ]
+        },
+        "metadata": {
+            "network": "Visa",
+            "tags": [
+                "Mid-Range",
+                "Paytm",
+                "Cashback",
+                "Co-branded",
+                "Lounge Access",
+                "Travel"
+            ],
+            "bestFor": "Regular Paytm users who want lounge access and higher rewards on Paytm ecosystem spends",
+            "rating": 3.8,
+            "cobranded": true,
+            "partner": "Paytm",
+            "status": "Active",
+            "statusNote": "Card remains active despite Paytm's regulatory changes in 2024. Part of SBI Card's new domestic lounge program (Set A) from January 10, 2026",
+            "verdict": "A solid mid-tier co-branded card for Paytm enthusiasts with added travel perks. Offers 5% rewards on Paytm travel/movies/mall - among the highest for Paytm spends. The inclusion of domestic lounge access and Priority Pass membership sets it apart from the base variant. Annual fee waiver at ₹2 lakh is achievable for moderate spenders.",
+            "pros": [
+                "5% rewards on Paytm travel, movies, and mall spends",
+                "1:1 reward redemption ratio (₹1 per point)",
+                "4 complimentary domestic lounge visits per year",
+                "Priority Pass membership worth $99 for 2 years",
+                "₹750 welcome bonus + Paytm First Membership",
+                "Achievable fee waiver at ₹2 lakh annual spend",
+                "Cyber fraud insurance of ₹2 lakh",
+                "Higher fuel surcharge waiver cap of ₹250"
+            ],
+            "cons": [
+                "International lounge visits are chargeable ($27 + taxes)",
+                "Higher forex markup at 3.5%",
+                "Benefits concentrated on Paytm ecosystem",
+                "No rewards on wallet load, fuel, rent, government transactions",
+                "Higher annual fee than base variant"
+            ],
+            "eligibility": {
+                "minAge": 21,
+                "maxAge": null,
+                "minIncome": 400000,
+                "note": "Suggested minimum income ₹4-5 lakh; CIBIL 700+ recommended"
+            }
+        }
+    }
+]

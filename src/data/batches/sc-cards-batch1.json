@@ -1,0 +1,425 @@
+[
+    {
+        "id": "sc-rewards",
+        "name": "Standard Chartered Rewards Credit Card",
+        "bank": "Standard Chartered",
+        "image": "/assets/cards/sc-rewards.png",
+        "link": "https://www.sc.com/in/credit-cards/rewards-credit-card/",
+        "fees": {
+            "joining": 0,
+            "annual": 1000,
+            "currency": "INR",
+            "waivedOn": 150000,
+            "waiverText": "Waived on ₹1.5 Lakh annual spend; 4000 RPs credited if annual fee is paid"
+        },
+        "rewards": {
+            "type": "points",
+            "baseRate": 0.0067,
+            "earningText": "4 Reward Points per ₹150 spent on retail; 8 RP per ₹150 on monthly spends above ₹20,000",
+            "expiry": "2 years",
+            "calculator": {
+                "tier": "entry",
+                "monthlyCap": null,
+                "bonusCap": 2000,
+                "categories": {
+                    "travel": {
+                        "rate": 0.0067,
+                        "label": "4 RP/₹150 (0.67%)"
+                    },
+                    "dining": {
+                        "rate": 0.0067,
+                        "label": "4 RP/₹150 (0.67%)"
+                    },
+                    "online": {
+                        "rate": 0.0067,
+                        "label": "4 RP/₹150 (0.67%)"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No RPs on Fuel (only surcharge waiver)"
+                    },
+                    "groceries": {
+                        "rate": 0.0067,
+                        "label": "4 RP/₹150 (0.67%)"
+                    },
+                    "utilities": {
+                        "rate": 0.0067,
+                        "label": "4 RP/₹150 (0.67%)"
+                    },
+                    "government": {
+                        "rate": 0.0017,
+                        "label": "1 RP/₹150 (0.17%)"
+                    },
+                    "insurance": {
+                        "rate": 0.0017,
+                        "label": "1 RP/₹150 (0.17%)"
+                    }
+                },
+                "acceleratedRate": {
+                    "threshold": 20000,
+                    "rate": 0.0133,
+                    "label": "8 RP/₹150 (1.33%) on monthly spends above ₹20,000",
+                    "bonusCap": 2000
+                }
+            },
+            "redemption": {
+                "baseValue": 0.25,
+                "bestOption": "360° Rewards Catalogue Vouchers",
+                "options": [
+                    {
+                        "type": "Catalogue Redemption",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25 on 360° Rewards portal"
+                    },
+                    {
+                        "type": "Statement Credit",
+                        "value": 0.20,
+                        "desc": "1 RP = ₹0.20 (min 1000 RP required)"
+                    }
+                ]
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": "4 per year (1 per calendar quarter)",
+                "international": "None",
+                "accessType": "Mastercard Domestic Lounge Network"
+            },
+            "milestones": [
+                {
+                    "spend": null,
+                    "benefit": "4000 Reward Points on payment of annual fees (if not waived)"
+                }
+            ],
+            "golf": {
+                "included": false,
+                "text": ""
+            },
+            "movies": {
+                "included": false,
+                "text": ""
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "cap": 400,
+                "minTxn": 400,
+                "maxTxn": 2000
+            },
+            "forex": {
+                "markup": 0.035,
+                "text": "3.5% + GST"
+            },
+            "rentalFee": {
+                "rate": 0.01,
+                "text": "1% processing fee on rental payments"
+            }
+        },
+        "metadata": {
+            "cardNetwork": "Mastercard",
+            "tags": [
+                "Rewards",
+                "Lounge Access",
+                "Entry Level",
+                "Mastercard"
+            ],
+            "bestFor": "Users seeking a no-joining-fee card with decent rewards and complimentary domestic lounge access",
+            "rating": 3.5,
+            "verdict": "A solid entry-level rewards card with 4 domestic lounge visits and up to 1.33% value-back for high spenders. The ₹1.5L waiver threshold is achievable, and the 4000 RP compensation on fee payment ensures value even if you pay the annual fee.",
+            "pros": [
+                "No joining fee",
+                "4 complimentary domestic lounge visits per year",
+                "Up to 8X rewards (1.33%) on monthly spends above ₹20,000",
+                "Easy annual fee waiver at ₹1.5 Lakh spend",
+                "4000 RPs credited if annual fee is paid (worth ₹1000)",
+                "1% fuel surcharge waiver (up to ₹400/month)"
+            ],
+            "cons": [
+                "Base reward rate of 0.67% is below average",
+                "No reward points on Fuel transactions",
+                "Bonus rewards capped at 2000 RP per month",
+                "Reduced rewards (0.17%) on Government & Insurance payments",
+                "₹99 redemption fee per request",
+                "Limited redemption options on 360° Rewards portal"
+            ]
+        }
+    },
+    {
+        "id": "sc-platinum-rewards",
+        "name": "Standard Chartered Platinum Rewards Credit Card",
+        "bank": "Standard Chartered",
+        "image": "/assets/cards/sc-platinum-rewards.png",
+        "link": "https://www.sc.com/in/credit-cards/platinum-rewards/",
+        "fees": {
+            "joining": 250,
+            "annual": 250,
+            "currency": "INR",
+            "waivedOn": 500,
+            "waiverText": "Joining fee waived on spending ₹500 within 30 days; effectively Lifetime Free"
+        },
+        "rewards": {
+            "type": "points",
+            "baseRate": 0.0017,
+            "earningText": "5X Reward Points per ₹150 on Dining & Fuel; 1X RP per ₹150 on all other categories",
+            "expiry": "2 years",
+            "calculator": {
+                "tier": "entry",
+                "monthlyCap": null,
+                "categories": {
+                    "travel": {
+                        "rate": 0.0017,
+                        "label": "1 RP/₹150 (0.17%)"
+                    },
+                    "dining": {
+                        "rate": 0.0083,
+                        "label": "5X - 5 RP/₹150 (0.83%)"
+                    },
+                    "online": {
+                        "rate": 0.0017,
+                        "label": "1 RP/₹150 (0.17%)"
+                    },
+                    "fuel": {
+                        "rate": 0.0083,
+                        "label": "5X - 5 RP/₹150 (0.83%)"
+                    },
+                    "groceries": {
+                        "rate": 0.0017,
+                        "label": "1 RP/₹150 (0.17%)"
+                    },
+                    "utilities": {
+                        "rate": 0.0017,
+                        "label": "1 RP/₹150 (0.17%)"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 0.25,
+                "bestOption": "360° Rewards Catalogue Vouchers",
+                "options": [
+                    {
+                        "type": "Catalogue Redemption",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25 on 360° Rewards portal"
+                    },
+                    {
+                        "type": "Statement Credit",
+                        "value": 0.20,
+                        "desc": "1 RP = ₹0.20"
+                    }
+                ]
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": "None",
+                "international": "None",
+                "accessType": "No complimentary lounge access"
+            },
+            "milestones": [],
+            "golf": {
+                "included": false,
+                "text": ""
+            },
+            "movies": {
+                "included": false,
+                "text": ""
+            },
+            "fuel": {
+                "surchargeWaiver": null,
+                "text": "No fuel surcharge waiver"
+            },
+            "forex": {
+                "markup": 0.035,
+                "text": "3.5% + GST"
+            },
+            "rentalFee": {
+                "rate": 0.01,
+                "text": "1% processing fee on rental payments"
+            }
+        },
+        "metadata": {
+            "cardNetwork": "Visa",
+            "tags": [
+                "Rewards",
+                "Fuel",
+                "Dining",
+                "Lifetime Free",
+                "Visa"
+            ],
+            "bestFor": "Users with high dining and fuel spends looking for a lifetime free card with accelerated category rewards",
+            "rating": 3.0,
+            "verdict": "An easily lifetime-free card ideal for users who spend significantly on dining and fuel. The 5X rewards (0.83% value-back) on these categories with no monthly cap makes it decent for specific use cases, but the low base rate on other categories limits overall utility.",
+            "pros": [
+                "Effectively Lifetime Free (₹500 spend waives fee)",
+                "5X rewards on Dining & Fuel with no monthly cap",
+                "No annual fee after first year on minimal spend",
+                "Free supplementary cards for family",
+                "Easy eligibility (₹20,000 monthly income)"
+            ],
+            "cons": [
+                "Very low base reward rate (0.17%) on non-bonus categories",
+                "No airport lounge access",
+                "No fuel surcharge waiver",
+                "No milestone benefits",
+                "₹99 redemption fee per request",
+                "Limited to Visa network only"
+            ]
+        }
+    },
+    {
+        "id": "sc-easemytrip",
+        "name": "Standard Chartered EaseMyTrip Credit Card",
+        "bank": "Standard Chartered",
+        "image": "/assets/cards/sc-easemytrip.png",
+        "link": "https://www.sc.com/in/credit-cards/easemytrip-credit-card/",
+        "fees": {
+            "joining": 350,
+            "annual": 350,
+            "currency": "INR",
+            "waivedOn": 50000,
+            "waiverText": "Annual fee waived on ₹50,000 spend in previous year"
+        },
+        "rewards": {
+            "type": "points",
+            "baseRate": 0.005,
+            "earningText": "10 Reward Points per ₹100 on standalone airline/hotel websites; 2 RP per ₹100 on all other retail",
+            "expiry": "2 years",
+            "calculator": {
+                "tier": "co-branded",
+                "monthlyCap": null,
+                "categories": {
+                    "travel": {
+                        "rate": 0.025,
+                        "label": "10 RP/₹100 on airline/hotel direct (2.5%)"
+                    },
+                    "dining": {
+                        "rate": 0.005,
+                        "label": "2 RP/₹100 (0.5%)"
+                    },
+                    "online": {
+                        "rate": 0.005,
+                        "label": "2 RP/₹100 (0.5%)"
+                    },
+                    "fuel": {
+                        "rate": 0.005,
+                        "label": "2 RP/₹100 (0.5%)"
+                    },
+                    "groceries": {
+                        "rate": 0.005,
+                        "label": "2 RP/₹100 (0.5%)"
+                    },
+                    "utilities": {
+                        "rate": 0.005,
+                        "label": "2 RP/₹100 (0.5%)"
+                    },
+                    "easemytrip": {
+                        "rate": 0.005,
+                        "label": "2 RP/₹100 (0.5%) + Platform Discounts"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 0.25,
+                "bestOption": "360° Rewards Catalogue Vouchers",
+                "options": [
+                    {
+                        "type": "Catalogue Redemption",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25 (2 RP = ₹0.50)"
+                    }
+                ]
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": "2 per year",
+                "international": "Discontinued (as of Oct 15, 2024)",
+                "accessType": "Visa Domestic Lounge Network"
+            },
+            "milestones": [],
+            "golf": {
+                "included": false,
+                "text": ""
+            },
+            "movies": {
+                "included": false,
+                "text": ""
+            },
+            "fuel": {
+                "surchargeWaiver": null,
+                "cap": null
+            },
+            "forex": {
+                "markup": 0.035,
+                "text": "3.5% + GST"
+            },
+            "rentalFee": {
+                "rate": 0.01,
+                "text": "1% processing fee on rental payments"
+            },
+            "partnerBenefits": {
+                "platform": "EaseMyTrip",
+                "couponCode": "EMTSCB",
+                "discounts": [
+                    {
+                        "category": "Domestic Hotels",
+                        "discount": "20%",
+                        "maxSavings": 5000,
+                        "frequency": "Once per month"
+                    },
+                    {
+                        "category": "International Hotels",
+                        "discount": "20%",
+                        "maxSavings": 10000,
+                        "frequency": "Once per month"
+                    },
+                    {
+                        "category": "Domestic Flights",
+                        "discount": "10%",
+                        "maxSavings": 1000,
+                        "frequency": "Once per month"
+                    },
+                    {
+                        "category": "International Flights",
+                        "discount": "10%",
+                        "maxSavings": 5000,
+                        "frequency": "Once per month"
+                    },
+                    {
+                        "category": "Bus Bookings",
+                        "discount": "Flat ₹125 off",
+                        "minBooking": 500,
+                        "frequency": "Once per month"
+                    }
+                ]
+            }
+        },
+        "metadata": {
+            "cardNetwork": "Visa",
+            "tags": [
+                "Travel",
+                "Co-branded",
+                "EaseMyTrip",
+                "Lounge Access",
+                "Visa"
+            ],
+            "bestFor": "Frequent travelers who book through EaseMyTrip and want platform discounts plus accelerated rewards on direct airline/hotel bookings",
+            "rating": 3.5,
+            "verdict": "The most affordable travel co-branded card in India with genuine platform discounts up to 20% on hotels and 10% on flights. The 2.5% value-back on direct airline/hotel bookings is excellent for travel enthusiasts. However, the discontinuation of international lounge access in Oct 2024 reduces its premium appeal.",
+            "pros": [
+                "Low annual fee (₹350) with easy waiver at ₹50,000 spend",
+                "Excellent platform discounts: 20% on hotels, 10% on flights via EaseMyTrip",
+                "2.5% value-back on direct airline/hotel bookings",
+                "2 complimentary domestic lounge visits per year",
+                "No minimum booking value for EaseMyTrip discounts"
+            ],
+            "cons": [
+                "International lounge access discontinued (Oct 2024)",
+                "Low base reward rate (0.5%) on non-travel categories",
+                "No fuel surcharge waiver",
+                "EaseMyTrip bookings don't earn accelerated rewards (only base 2 RP)",
+                "Platform discounts capped and limited to once per month per category",
+                "₹99 redemption fee per request"
+            ]
+        }
+    }
+]

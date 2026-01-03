@@ -1,0 +1,792 @@
+[
+    {
+        "id": "bob-eterna",
+        "name": "Bank of Baroda Eterna Credit Card",
+        "bank": "Bank of Baroda",
+        "network": "Mastercard",
+        "image": "/assets/cards/bob-eterna.png",
+        "link": "https://www.bobcard.co.in/credit-card-types/eterna",
+        "fees": {
+            "joining": 2499,
+            "annual": 2499,
+            "currency": "INR",
+            "gstExtra": true,
+            "waivedOn": 250000,
+            "waiverText": "Annual fee waived on ₹2.5 Lakh annual spend. Joining fee waived on ₹25,000 spend in first 60 days."
+        },
+        "rewards": {
+            "type": "points",
+            "programName": "BOBCARD Reward Points",
+            "baseRate": 0.0075,
+            "earningText": "3 Reward Points per ₹100 on regular spends",
+            "expiry": "24 months from earning date",
+            "calculator": {
+                "tier": "premium",
+                "acceleratedCap": 5000,
+                "acceleratedCapPeriod": "statement cycle",
+                "categories": {
+                    "travel": {
+                        "rate": 0.0375,
+                        "multiplier": "5X",
+                        "label": "15 RP per ₹100 (3.75%)",
+                        "note": "Includes flights, hotels via any channel. Extra 12 RP/₹100 on flights & 30 RP/₹100 on hotels via BOBCARD SmartDeal"
+                    },
+                    "dining": {
+                        "rate": 0.0375,
+                        "multiplier": "5X",
+                        "label": "15 RP per ₹100 (3.75%)"
+                    },
+                    "online": {
+                        "rate": 0.0375,
+                        "multiplier": "5X",
+                        "label": "15 RP per ₹100 (3.75%)",
+                        "note": "Online shopping only, excludes special MCCs"
+                    },
+                    "international": {
+                        "rate": 0.0375,
+                        "multiplier": "5X",
+                        "label": "15 RP per ₹100 (3.75%)",
+                        "note": "Effective ~1.75% after 2% forex markup"
+                    },
+                    "movies": {
+                        "rate": 0.0375,
+                        "multiplier": "5X",
+                        "label": "15 RP per ₹100 (3.75%)"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No reward points",
+                        "note": "1% surcharge waiver only"
+                    },
+                    "utilities": {
+                        "rate": 0.0075,
+                        "label": "3 RP per ₹100 (0.75%)"
+                    },
+                    "other": {
+                        "rate": 0.0075,
+                        "label": "3 RP per ₹100 (0.75%)"
+                    }
+                },
+                "exclusions": [
+                    "Fuel transactions",
+                    "Rent payments",
+                    "Education fees",
+                    "Government payments",
+                    "Insurance premiums",
+                    "Wallet loads",
+                    "Charity donations",
+                    "Supermarket purchases (select MCCs)"
+                ]
+            },
+            "redemption": {
+                "baseValue": 0.25,
+                "bestOption": "Statement Credit / Cashback",
+                "options": [
+                    {
+                        "type": "Statement Credit",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25 cashback"
+                    },
+                    {
+                        "type": "Gift Vouchers",
+                        "value": 0.25,
+                        "desc": "Various brand vouchers"
+                    },
+                    {
+                        "type": "Merchandise",
+                        "value": "varies",
+                        "desc": "Products from rewards catalog"
+                    }
+                ]
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": "Unlimited",
+                "domesticNote": "Subject to ₹40,000 spend in preceding calendar quarter (effective Jan 1, 2025). Primary + Add-on cardholders eligible.",
+                "international": "None",
+                "accessType": "Mastercard",
+                "loungeCount": "60+ domestic lounges"
+            },
+            "welcome": {
+                "benefit": "6-month FITPASS Pro Membership",
+                "value": 15000,
+                "condition": "Activate within 60 days of card issuance",
+                "additionalBenefit": "10,000 Bonus RP on spending ₹50,000 in first 60 days"
+            },
+            "milestones": [
+                {
+                    "spend": 50000,
+                    "period": "first 60 days",
+                    "benefit": "10,000 Bonus Reward Points (₹2,500 value)"
+                },
+                {
+                    "spend": 500000,
+                    "period": "annual",
+                    "benefit": "20,000 Bonus Reward Points (₹5,000 value)"
+                }
+            ],
+            "golf": {
+                "included": false,
+                "text": "Not available (previously offered, now discontinued)"
+            },
+            "movies": {
+                "included": true,
+                "platform": "District",
+                "text": "Buy 1 Get 1 Free (up to ₹250 off), once per month"
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "minTransaction": 400,
+                "maxTransaction": 5000,
+                "cap": 250,
+                "capPeriod": "statement cycle"
+            },
+            "forex": {
+                "markup": 0.02,
+                "text": "2% foreign currency markup"
+            },
+            "insurance": {
+                "airAccident": 10000000,
+                "nonAirAccident": 1000000,
+                "lostCard": true,
+                "lostCardText": "Zero liability on reporting card loss"
+            },
+            "emi": {
+                "available": true,
+                "minAmount": 2500,
+                "tenure": "6 to 48 months"
+            },
+            "addOn": {
+                "available": true,
+                "count": 3,
+                "fee": 0,
+                "text": "Up to 3 lifetime free add-on cards"
+            },
+            "contactless": {
+                "enabled": true,
+                "limit": 5000
+            }
+        },
+        "metadata": {
+            "tags": [
+                "Premium",
+                "Travel",
+                "Dining",
+                "Cashback",
+                "Lounge Access",
+                "Low Forex"
+            ],
+            "bestFor": "Frequent domestic travelers and online shoppers who want premium benefits at mid-range fees. Ideal for those spending heavily on dining, travel, and online shopping.",
+            "rating": 4.3,
+            "verdict": "One of the best value-for-money premium cards in India. The 3.75% reward rate on multiple categories and unlimited domestic lounge access (with spend conditions) make it excellent for frequent travelers. The 2% forex markup is among the lowest in this segment. Best suited for those who can hit the ₹40K quarterly spend threshold.",
+            "incomeRequirement": 1200000,
+            "pros": [
+                "3.75% reward rate on travel, dining, online & international spends",
+                "Unlimited domestic lounge access (with spend criteria)",
+                "Low 2% forex markup",
+                "Achievable fee waiver at ₹2.5 Lakh annual spend",
+                "Generous milestone bonuses up to 30,000 RP annually",
+                "Welcome benefit (FITPASS) exceeds joining fee value"
+            ],
+            "cons": [
+                "5X rewards capped at 5,000 RP per statement cycle (₹33,333 accelerated spend)",
+                "Lounge access requires ₹40,000 quarterly spend from Jan 2025",
+                "Long list of excluded MCCs for rewards",
+                "No international lounge access",
+                "Golf benefits discontinued"
+            ],
+            "lastVerified": "2026-01-03"
+        }
+    },
+    {
+        "id": "bob-premier",
+        "name": "Bank of Baroda Premier Credit Card",
+        "bank": "Bank of Baroda",
+        "network": "Mastercard",
+        "image": "/assets/cards/bob-premier.png",
+        "link": "https://www.bobcard.co.in/credit-card-types/premier",
+        "fees": {
+            "joining": 1000,
+            "annual": 1000,
+            "currency": "INR",
+            "gstExtra": true,
+            "waivedOn": 120000,
+            "waiverText": "Annual fee waived on ₹1.2 Lakh annual spend. Joining fee waived on ₹10,000 spend in first 60 days."
+        },
+        "rewards": {
+            "type": "points",
+            "programName": "BOBCARD Reward Points",
+            "baseRate": 0.005,
+            "earningText": "2 Reward Points per ₹100 on regular spends",
+            "expiry": "24 months from earning date",
+            "calculator": {
+                "tier": "mid-range",
+                "acceleratedCap": 2000,
+                "acceleratedCapPeriod": "month",
+                "categories": {
+                    "travel": {
+                        "rate": 0.025,
+                        "multiplier": "5X",
+                        "label": "10 RP per ₹100 (2.5%)"
+                    },
+                    "dining": {
+                        "rate": 0.025,
+                        "multiplier": "5X",
+                        "label": "10 RP per ₹100 (2.5%)"
+                    },
+                    "international": {
+                        "rate": 0.025,
+                        "multiplier": "5X",
+                        "label": "10 RP per ₹100 (2.5%)",
+                        "note": "Effective ~-1% after 3.5% forex markup"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No reward points",
+                        "note": "1% surcharge waiver only"
+                    },
+                    "other": {
+                        "rate": 0.005,
+                        "label": "2 RP per ₹100 (0.5%)"
+                    }
+                },
+                "exclusions": [
+                    "Fuel transactions"
+                ]
+            },
+            "redemption": {
+                "baseValue": 0.25,
+                "bestOption": "Statement Credit / Cashback",
+                "options": [
+                    {
+                        "type": "Statement Credit",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25 cashback"
+                    },
+                    {
+                        "type": "Gift Vouchers",
+                        "value": 0.25,
+                        "desc": "Various brand vouchers"
+                    },
+                    {
+                        "type": "Merchandise",
+                        "value": "varies",
+                        "desc": "Products from rewards catalog"
+                    }
+                ]
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": "1 per quarter",
+                "domesticNote": "Subject to ₹20,000 spend in preceding calendar quarter (effective Jan 1, 2025)",
+                "international": "None",
+                "accessType": "Mastercard",
+                "loungeCount": "35+ domestic lounges across 22 cities"
+            },
+            "welcome": {
+                "benefit": "500 Bonus Reward Points",
+                "value": 125,
+                "condition": "On card activation"
+            },
+            "milestones": [],
+            "golf": {
+                "included": false,
+                "text": "Not available"
+            },
+            "movies": {
+                "included": false,
+                "text": "Not available"
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "minTransaction": 400,
+                "maxTransaction": 5000,
+                "cap": 250,
+                "capPeriod": "statement cycle"
+            },
+            "forex": {
+                "markup": 0.035,
+                "text": "3.5% foreign currency markup"
+            },
+            "insurance": {
+                "personalAccident": true,
+                "lostCard": true,
+                "lostCardText": "Zero liability on reporting card loss"
+            },
+            "emi": {
+                "available": true,
+                "minAmount": 2500,
+                "tenure": "6 to 12 months"
+            },
+            "addOn": {
+                "available": true,
+                "fee": 0,
+                "text": "Lifetime free add-on cards"
+            },
+            "concierge": {
+                "available": true,
+                "text": "24x7 concierge assistance"
+            }
+        },
+        "metadata": {
+            "tags": [
+                "Travel",
+                "Dining",
+                "Mid-Range",
+                "Lounge Access"
+            ],
+            "bestFor": "Budget-conscious travelers and diners who want accelerated rewards without high annual fees. Good entry point to travel cards.",
+            "rating": 3.8,
+            "verdict": "A decent mid-tier travel card with 2.5% rewards on travel/dining categories. The low ₹1,000 annual fee and easy ₹1.2 Lakh waiver threshold make it accessible. However, the high 3.5% forex markup negates international spending benefits. Best for domestic travelers who dine out frequently.",
+            "incomeRequirement": 720000,
+            "pros": [
+                "Low annual fee of ₹1,000 + GST",
+                "Easy fee waiver at ₹1.2 Lakh spend",
+                "2.5% rewards on travel, dining, international",
+                "Quarterly domestic lounge access",
+                "Lifetime free add-on cards"
+            ],
+            "cons": [
+                "High 3.5% forex markup makes international use unviable",
+                "5X rewards capped at 2,000 RP per month (₹20,000 accelerated spend)",
+                "Low base reward rate of 0.5%",
+                "Lounge access limited to 1 per quarter with spend criteria",
+                "No welcome benefit of significant value",
+                "No milestone bonuses"
+            ],
+            "lastVerified": "2026-01-03"
+        }
+    },
+    {
+        "id": "hsbc-platinum",
+        "name": "HSBC Visa Platinum Credit Card",
+        "bank": "HSBC Bank",
+        "network": "Visa Signature",
+        "image": "/assets/cards/hsbc-platinum.png",
+        "link": "https://www.hsbc.co.in/credit-cards/products/visa-platinum/",
+        "fees": {
+            "joining": 0,
+            "annual": 0,
+            "currency": "INR",
+            "gstExtra": false,
+            "waivedOn": null,
+            "waiverText": "Lifetime Free - No joining or annual fee"
+        },
+        "rewards": {
+            "type": "points",
+            "programName": "HSBC Reward Points",
+            "baseRate": 0.0033,
+            "earningText": "2 Reward Points per ₹150 spent (~0.33% base, ~0.66% with air miles conversion)",
+            "expiry": "Based on program terms",
+            "calculator": {
+                "tier": "entry-level",
+                "acceleratedCap": 18000,
+                "acceleratedCapPeriod": "month",
+                "categories": {
+                    "travel": {
+                        "rate": 0.02,
+                        "multiplier": "6X",
+                        "label": "Up to 6X on Travel with Points portal",
+                        "note": "Via HSBC Travel with Points portal only. Valid till Dec 31, 2025 (check renewal)"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No reward points"
+                    },
+                    "utilities": {
+                        "rate": 0,
+                        "label": "No reward points"
+                    },
+                    "insurance": {
+                        "rate": 0,
+                        "label": "No reward points"
+                    },
+                    "other": {
+                        "rate": 0.0033,
+                        "label": "2 RP per ₹150 (~0.33%)"
+                    }
+                },
+                "exclusions": [
+                    "Utilities (electric, gas, water)",
+                    "Tax payments",
+                    "Real estate services",
+                    "Non-financial institutions",
+                    "Money transfers",
+                    "Jewelry purchases",
+                    "Insurance payments",
+                    "Fuel transactions",
+                    "Financial institutions",
+                    "E-wallet loads",
+                    "Bail & bond payments"
+                ]
+            },
+            "redemption": {
+                "baseValue": 0.50,
+                "bestOption": "Air Miles Conversion",
+                "options": [
+                    {
+                        "type": "Air Miles",
+                        "value": "2:1 ratio",
+                        "desc": "2 RP = 1 Air Mile (British Airways, Singapore Airlines, Air India, Etihad)",
+                        "partners": [
+                            "British Airways",
+                            "Singapore Airlines",
+                            "Air India",
+                            "Etihad Airways"
+                        ]
+                    },
+                    {
+                        "type": "Hotel Loyalty Points",
+                        "value": "varies",
+                        "desc": "Convert to hotel loyalty programs via app"
+                    },
+                    {
+                        "type": "Gift Vouchers",
+                        "value": "varies",
+                        "desc": "Lifestyle, fashion, electronics vouchers"
+                    },
+                    {
+                        "type": "Merchandise",
+                        "value": "varies",
+                        "desc": "Products from HSBC rewards catalog"
+                    }
+                ]
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": "None",
+                "international": "None",
+                "accessType": null,
+                "note": "No complimentary lounge access"
+            },
+            "welcome": {
+                "benefit": "2,000 Reward Points + ₹250 Amazon Voucher + 3-month Swiggy One",
+                "value": 1250,
+                "condition": "Spend ₹5,000 in first 30 days and download HSBC India app",
+                "components": [
+                    "2,000 Reward Points on ₹5,000 spend in 30 days",
+                    "₹250 Amazon eGift Card on Video KYC completion",
+                    "3-month complimentary Swiggy One membership"
+                ]
+            },
+            "milestones": [
+                {
+                    "spend": 400000,
+                    "period": "annual",
+                    "benefit": "5X accelerated reward points on subsequent spends",
+                    "note": "After crossing ₹4 Lakh annual spend"
+                }
+            ],
+            "golf": {
+                "included": false,
+                "text": "Not available"
+            },
+            "movies": {
+                "included": true,
+                "platform": "BookMyShow",
+                "text": "Buy 1 Get 1 Free on Saturdays, max ₹250 off per ticket, once per month"
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "minTransaction": 400,
+                "maxTransaction": 4000,
+                "cap": 250,
+                "capPeriod": "month",
+                "additionalBenefit": "₹250 cashback on tap-and-pay fuel spends when quarterly spend exceeds ₹10,000"
+            },
+            "forex": {
+                "markup": 0.035,
+                "text": "3.5% foreign currency markup"
+            },
+            "insurance": {
+                "lostCard": true,
+                "lostCardCoverage": 300000,
+                "lostCardText": "₹3 Lakh coverage for unauthorized transactions reported within 24 hours"
+            },
+            "emi": {
+                "available": true,
+                "text": "EMI conversion available on eligible purchases"
+            },
+            "visaSignature": {
+                "included": true,
+                "benefits": [
+                    "12-month complimentary Times Prime subscription (includes Discovery+, JioHotstar, Uber One)",
+                    "2 complimentary flight seat selections per year on MakeMyTrip domestic flights (code: VISAFREESEAT)",
+                    "15% cashback on MakeMyTrip hotel bookings in India (code: VISASIGNATURE)"
+                ]
+            }
+        },
+        "metadata": {
+            "tags": [
+                "Lifetime Free",
+                "Air Miles",
+                "Entry Level",
+                "Visa Signature",
+                "Movies"
+            ],
+            "bestFor": "First-time credit card users and those seeking a zero-fee card with air miles earning capability. Ideal for movie enthusiasts and those who want Visa Signature benefits without paying annual fees.",
+            "rating": 3.9,
+            "verdict": "One of the best lifetime free credit cards from a global bank in India. The ability to convert points to air miles is rare for a zero-fee card. Visa Signature benefits like Times Prime subscription add significant value. However, the low base reward rate and extensive exclusions limit everyday earning potential.",
+            "incomeRequirement": 400000,
+            "eligibleCities": [
+                "Chennai",
+                "Gurgaon",
+                "Delhi NCR",
+                "Pune",
+                "Noida",
+                "Hyderabad",
+                "Mumbai",
+                "Bengaluru",
+                "Kochi",
+                "Coimbatore",
+                "Jaipur",
+                "Chandigarh",
+                "Ahmedabad",
+                "Kolkata",
+                "Amritsar",
+                "Baroda",
+                "Indore",
+                "Lucknow"
+            ],
+            "pros": [
+                "Lifetime free - no joining or annual fee ever",
+                "Air miles conversion with major airlines (British Airways, Singapore Airlines, Air India, Etihad)",
+                "Visa Signature benefits including 12-month Times Prime subscription",
+                "BOGO movie tickets on BookMyShow",
+                "Welcome benefits worth ~₹1,250",
+                "Fuel surcharge waiver + cashback on tap-and-pay"
+            ],
+            "cons": [
+                "Very low base reward rate (~0.33%)",
+                "Extensive list of reward exclusions",
+                "No lounge access",
+                "High 3.5% forex markup",
+                "Air miles conversion ratio (2:1) not the best",
+                "Limited to select cities for application"
+            ],
+            "lastVerified": "2026-01-03"
+        }
+    },
+    {
+        "id": "hsbc-cashback",
+        "name": "HSBC Live+ Credit Card",
+        "alternateName": "HSBC Cashback Credit Card",
+        "bank": "HSBC Bank",
+        "network": "Visa",
+        "image": "/assets/cards/hsbc-cashback.png",
+        "link": "https://www.hsbc.co.in/credit-cards/products/live-plus/",
+        "fees": {
+            "joining": 999,
+            "annual": 999,
+            "currency": "INR",
+            "gstExtra": true,
+            "waivedOn": 200000,
+            "waiverText": "Annual fee waived on ₹2 Lakh annual spend"
+        },
+        "rewards": {
+            "type": "cashback",
+            "programName": "HSBC Live+ Cashback",
+            "baseRate": 0.015,
+            "earningText": "1.5% unlimited cashback on eligible spends; 10% on dining/grocery/food delivery",
+            "expiry": null,
+            "creditTiming": "Within 45 days of statement date",
+            "calculator": {
+                "tier": "cashback",
+                "monthlyCap": 1000,
+                "monthlyCapNote": "₹1,000 cap applies only to 10% accelerated cashback categories",
+                "categories": {
+                    "dining": {
+                        "rate": 0.10,
+                        "label": "10% Cashback",
+                        "cap": 1000,
+                        "capPeriod": "billing cycle",
+                        "note": "Restaurants, cafes, bars"
+                    },
+                    "foodDelivery": {
+                        "rate": 0.10,
+                        "label": "10% Cashback",
+                        "cap": 1000,
+                        "capPeriod": "billing cycle",
+                        "note": "Swiggy, Zomato, and similar platforms"
+                    },
+                    "groceries": {
+                        "rate": 0.10,
+                        "label": "10% Cashback",
+                        "cap": 1000,
+                        "capPeriod": "billing cycle",
+                        "note": "BigBasket, Blinkit, DMart, Reliance Smart, etc."
+                    },
+                    "online": {
+                        "rate": 0.015,
+                        "label": "1.5% Cashback (unlimited)"
+                    },
+                    "offline": {
+                        "rate": 0.015,
+                        "label": "1.5% Cashback (unlimited)"
+                    },
+                    "entertainment": {
+                        "rate": 0.015,
+                        "label": "1.5% Cashback (unlimited)"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No cashback"
+                    },
+                    "utilities": {
+                        "rate": 0,
+                        "label": "No cashback"
+                    },
+                    "rent": {
+                        "rate": 0,
+                        "label": "No cashback"
+                    },
+                    "insurance": {
+                        "rate": 0,
+                        "label": "No cashback"
+                    }
+                },
+                "exclusions": [
+                    "Fuel transactions",
+                    "E-wallet loads",
+                    "Property management fees",
+                    "Rental payments and commissions",
+                    "Vendor payments (rent MCCs)",
+                    "Education fees",
+                    "Government-related transactions",
+                    "Insurance payments",
+                    "Jewelry and antique items",
+                    "Gambling transactions",
+                    "Tolls and bridge fees",
+                    "Collection agencies",
+                    "Charity donations",
+                    "Money transfers",
+                    "Wholesale clubs",
+                    "EMI transactions",
+                    "Fees and charges"
+                ],
+                "importantNote": "Spends exceeding ₹10,000 on 10% categories in a month do NOT earn 1.5% on the excess - they earn 0%"
+            },
+            "redemption": {
+                "baseValue": 1,
+                "bestOption": "Auto-credited to statement",
+                "options": [
+                    {
+                        "type": "Statement Credit",
+                        "value": 1,
+                        "desc": "Cashback automatically credited within 45 days of statement date"
+                    }
+                ]
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": "4 per year",
+                "domesticNote": "1 per quarter, no spend criteria required",
+                "international": "None",
+                "accessType": "Visa"
+            },
+            "welcome": {
+                "benefit": "₹1,000 Cashback + ₹250 Amazon Voucher",
+                "value": 1250,
+                "condition": "₹1,000 cashback on spending ₹20,000 in first 30 days via HSBC app; ₹250 Amazon voucher on Video KYC",
+                "components": [
+                    "₹1,000 cashback on ₹20,000 spend in 30 days (via app)",
+                    "₹250 Amazon eGift Card on Video KYC completion"
+                ]
+            },
+            "milestones": [],
+            "golf": {
+                "included": false,
+                "text": "Not available"
+            },
+            "movies": {
+                "included": true,
+                "platform": "BookMyShow",
+                "text": "Buy 2 Get 1 Free on Saturdays, max ₹250 off per ticket"
+            },
+            "dining": {
+                "included": true,
+                "program": "Live+ Dining Programme",
+                "text": "Up to 15% off at 200+ partner restaurants via Visa Digital Concierge app"
+            },
+            "fuel": {
+                "surchargeWaiver": false,
+                "note": "No fuel surcharge waiver on this card"
+            },
+            "forex": {
+                "markup": 0.035,
+                "text": "3.5% foreign currency markup"
+            },
+            "insurance": {
+                "lostCard": true,
+                "lostCardCoverage": 300000,
+                "lostCardText": "₹3 Lakh coverage for unauthorized transactions reported within 24 hours"
+            },
+            "emi": {
+                "available": true,
+                "text": "EMI conversion available on eligible purchases",
+                "note": "EMI transactions don't earn cashback"
+            },
+            "addOn": {
+                "available": true,
+                "text": "Supplementary cards available via HSBC India app"
+            }
+        },
+        "metadata": {
+            "tags": [
+                "Cashback",
+                "Dining",
+                "Groceries",
+                "Food Delivery",
+                "Lounge Access"
+            ],
+            "bestFor": "Urban professionals and families with regular dining, grocery, and food delivery expenses. Ideal for those who prefer straightforward cashback over complex reward points systems.",
+            "rating": 4.1,
+            "verdict": "One of the best cashback cards for dining, grocery, and food delivery in India. The 10% cashback on these essential categories (capped at ₹1,000/month) provides real value for urban spenders. The 1.5% unlimited cashback on other eligible spends adds flexibility. However, the extensive exclusion list and no fuel benefits are notable drawbacks.",
+            "incomeRequirement": 400000,
+            "eligibleCities": [
+                "Chennai",
+                "Gurgaon",
+                "Delhi NCR",
+                "Pune",
+                "Noida",
+                "Hyderabad",
+                "Mumbai",
+                "Bengaluru",
+                "Kochi",
+                "Coimbatore",
+                "Jaipur",
+                "Chandigarh",
+                "Ahmedabad",
+                "Kolkata",
+                "Amritsar",
+                "Baroda",
+                "Indore",
+                "Lucknow"
+            ],
+            "selfEmployedEligible": false,
+            "selfEmployedNote": "Generally not available to self-employed unless high NRV savings account with HSBC",
+            "pros": [
+                "10% cashback on dining, groceries, and food delivery",
+                "1.5% unlimited cashback on other eligible retail spends",
+                "Simple cashback structure - no points to track or redeem",
+                "4 complimentary domestic lounge visits per year",
+                "Welcome benefits exceed first year fee",
+                "Up to 15% dining discounts via Live+ Dining Programme"
+            ],
+            "cons": [
+                "10% cashback capped at ₹1,000/month (optimal at ₹10,000 monthly spend)",
+                "Spends on 10% categories above ₹10,000 earn 0% (not 1.5%)",
+                "No fuel surcharge waiver",
+                "Long list of exclusions for 1.5% cashback",
+                "No international lounge access",
+                "High 3.5% forex markup",
+                "Limited to salaried individuals in select cities"
+            ],
+            "lastVerified": "2026-01-03"
+        }
+    }
+]
