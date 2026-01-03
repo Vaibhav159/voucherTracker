@@ -268,7 +268,6 @@ function Home({ data, onOpenShortcuts }) {
             <TopDeals vouchers={data} onVoucherClick={handleVoucherSelect} />
           </>
         )}
-
         {/* Search Bar - Always visible at top */}
         <SearchBar
           value={inputValue}
