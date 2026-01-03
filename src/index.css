@@ -3,18 +3,14 @@
 /* Design System - Modular CSS */
 @import './styles/tokens.css';
 @import './styles/utils.css';
-@import './styles/tokens-enhanced.css';
-@import './styles/utils-enhanced.css';
 @import './styles/components/buttons.css';
 @import './styles/components/cards.css';
 @import './styles/components/modals.css';
 @import './styles/components/forms.css';
 @import './styles/components/filters.css';
-@import './styles/polish.css';
+@import './styles/components/ask-ai.css';
 @import './styles/mobile-ux.css';
 @import './styles/navigation-styles.css';
-@import './styles/global-redesign.css';
-@import './styles/ui-fixes.css';
 @import './styles/performance-polish.css';
 @import './styles/components/guides.css';
 
@@ -626,6 +622,90 @@ button:active:not(:disabled),
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-cyan);
+}
+
+/* ============================================
+   GLOBAL POLISH (Migrated from polish.css & global-redesign.css)
+   ============================================ */
+
+/* Improved Focus States (Accessibility) */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Better Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
+}
+
+/* Selection Color */
+::selection {
+  background: rgba(6, 182, 212, 0.35);
+  color: inherit;
+}
+
+::-moz-selection {
+  background: rgba(6, 182, 212, 0.35);
+  color: inherit;
+}
+
+/* Text Gradient Animation */
+@keyframes gradientShift {
+
+  0%,
+  100% {
+    background-position: 0% center;
+  }
+
+  50% {
+    background-position: 100% center;
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(135deg,
+      var(--gradient-text-start) 0%,
+      var(--accent-cyan) 50%,
+      var(--accent-pink) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: gradientShift 8s ease infinite;
 }
 
 /* Utilities */

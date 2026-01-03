@@ -409,7 +409,7 @@ const Guides = () => {
                     return (
                         <div
                             key={guide.id}
-                            className="guide-card"
+                            className="guide-card glass-panel"
                             onClick={() => {
                                 if (isInternal) {
                                     setSelectedGuide(guide);
