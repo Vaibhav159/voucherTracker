@@ -40,12 +40,6 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
   const cardsLinks = [
     { path: '/know-your-cards', label: 'Browse Cards', icon: '🎴' },
     { path: '/compare-cards', label: 'Compare Cards', icon: '⚖️', badge: selectedCardsCount },
-    { path: '/my-cards', label: 'My Wallet', icon: '👛' },
-  ];
-
-  const bankingLinks = [
-    { path: '/browse-banking', label: 'Browse Banking', icon: '🏦' },
-    { path: '/compare-banking', label: 'Compare Banking', icon: '⚖️' },
   ];
 
   const toolsLinks = [
@@ -150,16 +144,16 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
               label="Cards"
               icon="💳"
               links={cardsLinks}
-              isActiveCheck={() => isActiveGroup(['/know-your-cards', '/compare-cards', '/my-cards'])}
+              isActiveCheck={() => isActiveGroup(['/know-your-cards', '/compare-cards'])}
             />
 
-            <NavDropdown
-              name="banking"
-              label="Banking"
-              icon="🏦"
-              links={bankingLinks}
-              isActiveCheck={() => isActiveGroup(['/browse-banking', '/compare-banking'])}
-            />
+            <Link
+              to="/browse-banking"
+              className={`nav-link ${isActiveGroup(['/browse-banking', '/compare-banking']) ? 'active' : ''}`}
+            >
+              <span className="nav-icon">🏦</span>
+              <span>Banking</span>
+            </Link>
 
             {featureFlags.askAI && (
               <Link
@@ -182,6 +176,18 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
 
           {/* Right Side Actions */}
           <div className="header-actions">
+            <Link
+              to="/my-cards"
+              className={`action-btn ${isActive('/my-cards') ? 'active' : ''}`}
+              aria-label="My Wallet"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20 12V8H6a2 2 0 0 1-2-2 2 2 0 0 1 2-2h12" />
+                <path d="M4 6v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2H4.5" />
+                <path d="M18 12v2" />
+              </svg>
+            </Link>
+
             <Link
               to="/favorites"
               className={`action-btn favorites-btn ${isActive('/favorites') ? 'active' : ''}`}
@@ -260,6 +266,10 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
               <span className="mobile-nav-icon">📚</span>
               <span>Guides</span>
             </Link>
+            <Link to="/browse-banking" className={`mobile-nav-link ${isActiveGroup(['/browse-banking', '/compare-banking']) ? 'active' : ''}`}>
+              <span className="mobile-nav-icon">🏦</span>
+              <span>Banking</span>
+            </Link>
             {featureFlags.askAI && (
               <Link to="/ask-ai" className={`mobile-nav-link highlight ${isActive('/ask-ai') ? 'active' : ''}`}>
                 <span className="mobile-nav-icon">✨</span>
@@ -283,19 +293,7 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
             ))}
           </div>
 
-          <div className="mobile-nav-section">
-            <span className="mobile-section-label">Banking</span>
-            {bankingLinks.map(link => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`mobile-nav-link ${isActive(link.path) ? 'active' : ''}`}
-              >
-                <span className="mobile-nav-icon">{link.icon}</span>
-                <span>{link.label}</span>
-              </Link>
-            ))}
-          </div>
+
 
           <div className="mobile-nav-section">
             <span className="mobile-section-label">Tools</span>
@@ -314,6 +312,16 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
 
           <div className="mobile-nav-section">
             <span className="mobile-section-label">More</span>
+            <Link to="/my-cards" className={`mobile-nav-link ${isActive('/my-cards') ? 'active' : ''}`}>
+              <span className="mobile-nav-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 12V8H6a2 2 0 0 1-2-2 2 2 0 0 1 2-2h12" />
+                  <path d="M4 6v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2H4.5" />
+                  <path d="M18 12v2" />
+                </svg>
+              </span>
+              <span>My Wallet</span>
+            </Link>
             <Link to="/favorites" className={`mobile-nav-link ${isActive('/favorites') ? 'active' : ''}`}>
               <span className="mobile-nav-icon">❤️</span>
               <span>Favorites</span>
