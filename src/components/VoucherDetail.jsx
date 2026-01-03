@@ -130,14 +130,6 @@ const VoucherDetail = () => {
                                     {platform.fee}
                                 </span>
                             </div>
-                            <div>
-                                <span style={{ display: 'block', color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>Denominations</span>
-                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                                    {platform.denominations.map(d => (
-                                        <span key={d} style={{ background: 'rgba(255,255,255,0.1)', padding: '2px 8px', borderRadius: '4px', fontSize: '0.85rem' }}>₹{d}</span>
-                                    ))}
-                                </div>
-                            </div>
                         </div>
                     </div>
                 ))}

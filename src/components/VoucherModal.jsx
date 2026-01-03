@@ -25,7 +25,6 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
     const { toggleFavoriteVoucher, isVoucherFavorite } = useFavorites();
 
     const [activeTab, setActiveTab] = useState('offers');
-    const [copiedLink, setCopiedLink] = useState(null);
     const [showShareMenu, setShowShareMenu] = useState(null);
 
     // Hooks
@@ -33,17 +32,6 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
     const { getBestPlatform } = useDiscountParser();
 
     const isFavorite = isVoucherFavorite(voucher?.id);
-
-    // Copy link with toast
-    const copyLink = useCallback((link, platformName) => {
-        navigator.clipboard.writeText(link).then(() => {
-            setCopiedLink(platformName);
-            toast.success(`Link copied for ${platformName}!`);
-            setTimeout(() => setCopiedLink(null), 2000);
-        }).catch(() => {
-            toast.error('Failed to copy link');
-        });
-    }, [toast]);
 
     // Share functionality
     const shareVoucher = useCallback((platform, method) => {
@@ -285,6 +273,7 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                                     style={{
                                         position: 'relative',
                                         animation: `fadeInUp 0.3s ease-out ${idx * 0.1}s both`,
+                                        minHeight: '105px'
                                     }}
                                 >
                                     {isBest && (
@@ -307,48 +296,53 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                                         <div className="platform-offer__metric-value" style={{ fontSize: '0.9rem' }}>{platform.cap}</div>
                                     </div>
 
-                                    <div className="platform-offer__header">
-                                        <div
-                                            className="platform-offer__logo"
-                                            style={{
-                                                background: style.bg,
-                                                padding: style.padding,
-                                                borderRadius: '12px',
-                                                width: '56px',
-                                                height: '56px',
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                justifyContent: 'center',
-                                                flexShrink: 0,
-                                                overflow: 'hidden'
-                                            }}
-                                        >
-                                            {style.logo ? (
-                                                <img
-                                                    src={style.logo}
-                                                    alt={platform.name}
-                                                    style={{
-                                                        maxWidth: '100%',
-                                                        maxHeight: '100%',
-                                                        objectFit: 'contain'
-                                                    }}
-                                                    onError={(e) => {
-                                                        e.target.style.display = 'none';
-                                                        e.target.nextSibling.style.display = 'flex';
-                                                    }}
-                                                />
-                                            ) : null}
-                                            <span style={{
-                                                color: '#fff',
-                                                fontWeight: 'bold',
-                                                fontSize: '1.2rem',
-                                                display: style.logo ? 'none' : 'flex'
-                                            }}>
-                                                {platform.name[0]}
+                                    <div className="platform-offer__header" style={{ alignItems: 'flex-start' }}>
+                                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', minWidth: '70px' }}>
+                                            <div
+                                                className="platform-offer__logo"
+                                                style={{
+                                                    background: style.bg,
+                                                    padding: style.padding,
+                                                    borderRadius: '12px',
+                                                    width: '56px',
+                                                    height: '56px',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    flexShrink: 0,
+                                                    overflow: 'hidden'
+                                                }}
+                                            >
+                                                {style.logo ? (
+                                                    <img
+                                                        src={style.logo}
+                                                        alt={platform.name}
+                                                        style={{
+                                                            maxWidth: '100%',
+                                                            maxHeight: '100%',
+                                                            objectFit: 'contain'
+                                                        }}
+                                                        onError={(e) => {
+                                                            e.target.style.display = 'none';
+                                                            e.target.nextSibling.style.display = 'flex';
+                                                        }}
+                                                    />
+                                                ) : null}
+                                                <span style={{
+                                                    color: '#fff',
+                                                    fontWeight: 'bold',
+                                                    fontSize: '1.2rem',
+                                                    display: style.logo ? 'none' : 'flex'
+                                                }}>
+                                                    {platform.name[0]}
+                                                </span>
+                                            </div>
+                                            <span style={{ fontSize: '1rem', fontWeight: 600, textAlign: 'center', lineHeight: '1.2', color: 'var(--text-primary)' }}>
+                                                {platform.name}
                                             </span>
                                         </div>
 
-                                        <div className="platform-offer__details" style={{ paddingRight: '100px' }}>
+                                        <div className="platform-offer__details" style={{ marginLeft: '16px', flex: 1 }}>
                                             <div className="platform-offer__metric">
                                                 <div className="platform-offer__metric-label">{label}</div>
                                                 <div className={`platform-offer__metric-value ${label === 'Savings' ? 'savings' : ''}`}>
@@ -358,64 +352,29 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                                         </div>
                                     </div>
 
-                                    <div className="platform-offer__footer">
-                                        <div className="platform-offer__denominations">
-                                            {platform.denominations?.slice(0, 4).map(d => (
-                                                <span key={d} className="denomination-badge">₹{d}</span>
-                                            ))}
-                                            {platform.denominations?.length > 4 && (
-                                                <span className="text-secondary text-xs">+more</span>
-                                            )}
-                                        </div>
-
-                                        <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                                            {/* Buy Button - Prominent & First */}
-                                            <a
-                                                href={platform.link}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="btn-secondary"
-                                                style={{
-                                                    flex: 1,
-                                                    justifyContent: 'center',
-                                                    padding: '8px 16px',
-                                                    background: 'rgba(255, 255, 255, 0.05)',
-                                                    border: '1px solid var(--glass-border)',
-                                                    borderRadius: '8px',
-                                                    color: 'var(--text-primary)',
-                                                    transition: 'all 0.2s',
-                                                }}
-                                            >
-                                                Buy Now <span style={{ opacity: 0.5 }}>↗</span>
-                                            </a>
-
-                                            {/* Copy Button - Subtle & Second */}
-                                            <button
-                                                onClick={() => copyLink(platform.link, platform.name)}
-                                                title="Copy link"
-                                                className="btn-text"
-                                                style={{
-                                                    padding: '8px',
-                                                    borderRadius: '8px',
-                                                    color: copiedLink === platform.name ? '#22c55e' : 'var(--text-secondary)',
-                                                    fontSize: '0.9rem',
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
-                                                    width: '36px',
-                                                    height: '36px',
-                                                    transition: 'all 0.2s',
-                                                    background: copiedLink === platform.name ? 'rgba(34, 197, 94, 0.1)' : 'transparent',
-                                                }}
-                                            >
-                                                {copiedLink === platform.name ? (
-                                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                                ) : (
-                                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                                                )}
-                                            </button>
-                                        </div>
-                                    </div>
+                                    {/* Buy Button - Absolute Bottom Right */}
+                                    <a
+                                        href={platform.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="btn-secondary"
+                                        style={{
+                                            position: 'absolute',
+                                            bottom: '12px',
+                                            right: '12px',
+                                            minWidth: '100px',
+                                            justifyContent: 'center',
+                                            padding: '6px 16px',
+                                            background: 'rgba(255, 255, 255, 0.05)',
+                                            border: '1px solid var(--glass-border)',
+                                            borderRadius: '8px',
+                                            color: 'var(--text-primary)',
+                                            transition: 'all 0.2s',
+                                            fontSize: '0.9rem'
+                                        }}
+                                    >
+                                        Buy Now <span style={{ opacity: 0.5 }}>↗</span>
+                                    </a>
                                 </div>
                             );
                         })}
