@@ -21,7 +21,13 @@ const OVERSCAN = 5;
 
 const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
     const parentRef = useRef(null);
-    const [columns, setColumns] = useState(3);
+    // Initialize columns based on window width to prevent flash of wrong layout
+    const [columns, setColumns] = useState(() => {
+        if (typeof window !== 'undefined') {
+            return window.innerWidth <= 768 ? 1 : 3;
+        }
+        return 3;
+    });
     const [containerWidth, setContainerWidth] = useState(0);
     const [isInitialLoad, setIsInitialLoad] = useState(true);
 
@@ -36,6 +42,12 @@ const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
     // Calculate columns based on container width - FIXED VERSION
     useEffect(() => {
         const calculateColumns = () => {
+            // Mobile Override: Force 1 column if width <= 768px
+            if (window.innerWidth <= 768) {
+                setColumns(1);
+                return;
+            }
+
             if (!parentRef.current) return;
 
             // Get actual available width (accounting for padding/scrollbar)

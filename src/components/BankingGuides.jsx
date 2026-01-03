@@ -446,13 +446,35 @@ const WealthBankingContent = ({ bank, onToggleCompare, isTierSelected }) => {
 
     return (
         <div>
-            <h3 style={{
-                textAlign: 'center',
-                marginBottom: '1.5rem',
-                color: 'var(--text-primary)'
+            <div style={{
+                position: 'sticky',
+                top: '120px',
+                zIndex: 80,
+                background: 'rgba(15, 15, 25, 0.85)',
+                backdropFilter: 'blur(16px)',
+                WebkitBackdropFilter: 'blur(16px)',
+                padding: '0.6rem 2rem',
+                margin: '0 auto 1.5rem',
+                borderRadius: '50px',
+                border: '1px solid rgba(255, 255, 255, 0.12)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.25)',
+                width: 'fit-content',
+                maxWidth: '95%',
+                transition: 'all 0.3s ease'
             }}>
-                {bank} Wealth Banking Tiers
-            </h3>
+                <h3 className="text-gradient" style={{
+                    textAlign: 'center',
+                    margin: 0,
+                    fontSize: '1.6rem',
+                    fontWeight: '700',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    letterSpacing: '-0.02em'
+                }}>
+                    {bank} Wealth Banking Tiers
+                </h3>
+            </div>
 
             <div style={{
                 display: 'grid',
@@ -618,10 +640,10 @@ const FamilyBankingContent = ({ bank }) => {
             }}>
                 {/* Header */}
                 <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                    <h3 style={{
+                    <h3 className="text-gradient" style={{
                         margin: '0 0 0.5rem',
-                        color: 'var(--text-primary)',
-                        fontSize: '1.4rem'
+                        fontSize: '2.2rem',
+                        fontWeight: '700'
                     }}>
                         {bankData.name}
                     </h3>
