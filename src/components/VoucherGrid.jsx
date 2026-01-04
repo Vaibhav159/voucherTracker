@@ -14,7 +14,7 @@ import VoucherCard from './VoucherCardPolished';
 import EmptyState from './EmptyState';
 import { VoucherGridSkeleton } from './Skeleton';
 
-const CARD_MIN_WIDTH = 200;
+const CARD_MIN_WIDTH = 260;
 const CARD_GAP = 20;
 const CARD_HEIGHT = 225;
 const OVERSCAN = 5;
@@ -41,28 +41,34 @@ const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
     }, [vouchers]);
 
     // Calculate columns based on container width - FIXED VERSION
+    // Calculate columns based on container width - ROBUST VERSION
     useEffect(() => {
-        const calculateColumns = () => {
-            // Mobile Override: Force 1 column if width <= 768px
+        if (!parentRef.current) return;
+
+        const updateColumns = (width) => {
+            // Mobile Override: Force 1 column if width <= 768px (using window width for mobile check is safer for responsive breakpoints)
             if (window.innerWidth <= 768) {
                 setColumns(1);
                 return;
             }
-            if (!parentRef.current) return;
-
-            const containerRect = parentRef.current.getBoundingClientRect();
-            const width = containerRect.width - 16; // Padding
 
             const possibleCols = Math.floor((width + CARD_GAP) / (CARD_MIN_WIDTH + CARD_GAP));
-            const cols = Math.max(1, possibleCols); // Remove 2-column limit to fit more cards
-
-            // Adjust for desktop if needed, but keeping original logic
+            const cols = Math.max(1, possibleCols);
             setColumns(cols);
         };
 
-        calculateColumns();
-        window.addEventListener('resize', calculateColumns);
-        return () => window.removeEventListener('resize', calculateColumns);
+        // Initial calculation
+        updateColumns(parentRef.current.getBoundingClientRect().width);
+
+        const observer = new ResizeObserver((entries) => {
+            for (const entry of entries) {
+                updateColumns(entry.contentRect.width);
+            }
+        });
+
+        observer.observe(parentRef.current);
+
+        return () => observer.disconnect();
     }, []);
 
     useEffect(() => {

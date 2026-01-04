@@ -185,7 +185,7 @@ function Home({ data, onOpenShortcuts }) {
       />
 
       {/* Left Column: Stats + Sidebar */}
-      <div className="left-sidebar-wrapper">
+      <div className="left-sidebar-wrapper" style={{ zIndex: activeMobileFilter !== 'none' ? 1001 : 'auto' }}>
         <StatsBar vouchers={filteredVouchers} platforms={ALL_PLATFORMS} variant="sidebar" />
 
         {/* Sidebar */}
