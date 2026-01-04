@@ -9,19 +9,19 @@
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
   </defs>
-  
+
   <!-- Ticket Shape -->
   <path d="M60 140 H160 A40 40 0 0 1 160 220 H60 V140 M452 140 H352 A40 40 0 0 0 352 220 H452 V140" fill="none" /> <!-- Decorative edge bits, actually lets make a full shape -->
-  
+
   <rect x="64" y="128" width="384" height="256" rx="30" fill="url(#ticketGrad)" filter="url(#glow)" />
-  
+
   <!-- Side Cutouts to look like a ticket -->
   <circle cx="64" cy="256" r="30" fill="#000000" />
   <circle cx="448" cy="256" r="30" fill="#000000" />
-  
+
   <!-- Dashed Line -->
   <line x1="160" y1="148" x2="160" y2="364" stroke="white" stroke-width="8" stroke-dasharray="20 15" stroke-opacity="0.6" />
-  
+
   <!-- Percentage Symbol -->
   <text x="290" y="320" font-family="Arial, sans-serif" font-weight="bold" font-size="180" fill="white" text-anchor="middle">%</text>
 </svg>
