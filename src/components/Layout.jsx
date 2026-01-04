@@ -348,12 +348,14 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
         {children}
       </main>
 
-      <footer className="app-footer">
-        <p>© {new Date().getFullYear()} Voucher Tracker. Open Source Community Project.</p>
-        <p className="footer-credit">
-          Created by <a href="https://twitter.com/vaibhav_lodha" target="_blank" rel="noopener noreferrer">@vaibhav_lodha</a>
-        </p>
-      </footer>
+      {!isActive('/') && (
+        <footer className="app-footer">
+          <p>© {new Date().getFullYear()} Voucher Tracker.</p>
+          <p className="footer-credit">
+            Created by <a href="https://twitter.com/vaibhav_lodha" target="_blank" rel="noopener noreferrer">@vaibhav_lodha</a>
+          </p>
+        </footer>
+      )}
     </div>
   );
 };

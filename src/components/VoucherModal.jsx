@@ -159,104 +159,103 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                             }}
                         />
                     </div>
-                    <div className="modal-header__info" style={{ flex: 1 }}>
-                        <h2 id="voucher-modal-title" className="modal-header__title">{voucher.brand}</h2>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '4px', flexWrap: 'wrap' }}>
-                            <span className="modal-header__tag">{voucher.category}</span>
-                            {voucher.expiryDays && voucher.lastUpdated && (
-                                <ExpiryBadge
-                                    lastUpdated={voucher.lastUpdated}
-                                    expiryDays={voucher.expiryDays}
-                                    size="xs"
-                                />
-                            )}
+                    <div className="modal-header-wrapper" style={{ flex: 1, display: 'flex', justifyContent: 'space-between', gap: '12px' }}>
+                        <div className="modal-header__info" style={{ flex: 1 }}>
+                            <h2 id="voucher-modal-title" className="modal-header__title">{voucher.brand}</h2>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '4px', flexWrap: 'wrap' }}>
+                                <span className="modal-header__tag">{voucher.category}</span>
+                                {voucher.expiryDays && voucher.lastUpdated && (
+                                    <ExpiryBadge
+                                        lastUpdated={voucher.lastUpdated}
+                                        expiryDays={voucher.expiryDays}
+                                        size="xs"
+                                    />
+                                )}
 
+                            </div>
                         </div>
-                    </div>
 
-                    {/* Action Buttons - Clean like production */}
-                    <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                        {/* Share to X button */}
-                        <button
-                            onClick={() => {
-                                const url = `${window.location.origin}${window.location.pathname}#/?voucher=${voucher.id}`;
-                                const text = `Check out ${voucher.brand} voucher deals on Voucher Tracker! 🎫💰`;
-                                window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
-                                toast.success('Opening X/Twitter...');
-                            }}
-                            style={{
-                                padding: '8px 14px',
-                                borderRadius: '8px',
-                                border: '1px solid rgba(255, 255, 255, 0.2)',
-                                background: 'linear-gradient(135deg, #000, #1a1a1a)',
-                                color: '#fff',
-                                cursor: 'pointer',
-                                fontSize: '0.85rem',
-                                fontWeight: '600',
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '6px',
-                                transition: 'all 0.2s ease',
-                            }}
-                            onMouseEnter={(e) => {
-                                e.target.style.background = 'linear-gradient(135deg, #1a1a1a, #333)';
-                                e.target.style.transform = 'translateY(-1px)';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.target.style.background = 'linear-gradient(135deg, #000, #1a1a1a)';
-                                e.target.style.transform = 'translateY(0)';
-                            }}
-                            title="Share to X (Twitter)"
-                        >
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                            </svg>
-                            Share
-                        </button>
-                        {voucher.site && (
-                            <a
-                                href={voucher.site}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="launch-site-btn"
+                        {/* Action Buttons - Clean like production */}
+                        <div className="modal-actions" style={{ display: 'flex', gap: '8px', alignItems: 'center', alignSelf: 'flex-start' }}>
+                            {/* Share to X button */}
+                            <button
+                                onClick={() => {
+                                    const url = `${window.location.origin}${window.location.pathname}#/?voucher=${voucher.id}`;
+                                    const text = `Check out ${voucher.brand} voucher deals on Voucher Tracker! 🎫💰`;
+                                    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+                                    toast.success('Opening X/Twitter...');
+                                }}
                                 style={{
-                                    textDecoration: 'none',
-                                    padding: '8px 16px',
+                                    padding: '8px 14px',
                                     borderRadius: '8px',
-                                    background: 'rgba(255, 255, 255, 0.08)',
-                                    border: '1px solid rgba(255, 255, 255, 0.1)',
-                                    color: 'var(--text-primary)',
+                                    border: '1px solid rgba(255, 255, 255, 0.2)',
+                                    background: 'linear-gradient(135deg, #000, #1a1a1a)',
+                                    color: '#fff',
+                                    cursor: 'pointer',
                                     fontSize: '0.85rem',
-                                    fontWeight: '500',
+                                    fontWeight: '600',
                                     display: 'flex',
                                     alignItems: 'center',
                                     gap: '6px',
                                     transition: 'all 0.2s ease',
                                 }}
                                 onMouseEnter={(e) => {
-                                    e.target.style.background = 'rgba(255, 255, 255, 0.15)';
+                                    e.target.style.background = 'linear-gradient(135deg, #1a1a1a, #333)';
                                     e.target.style.transform = 'translateY(-1px)';
                                 }}
                                 onMouseLeave={(e) => {
-                                    e.target.style.background = 'rgba(255, 255, 255, 0.08)';
+                                    e.target.style.background = 'linear-gradient(135deg, #000, #1a1a1a)';
                                     e.target.style.transform = 'translateY(0)';
                                 }}
+                                title="Share to X (Twitter)"
                             >
-                                <span className="btn-text-desktop">Visit Site</span>
-                                <span className="btn-text-mobile">Site</span>
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                            </a>
-                        )}
-                        <button
-                            onClick={onClose}
-                            className="btn-close"
-                            aria-label="Close modal"
-                        >
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg>
-                        </button>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg>
+                                Share
+                            </button>
+                            {voucher.site && (
+                                <a
+                                    href={voucher.site}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="launch-site-btn"
+                                    style={{
+                                        textDecoration: 'none',
+                                        padding: '8px 16px',
+                                        borderRadius: '8px',
+                                        background: 'rgba(255, 255, 255, 0.08)',
+                                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                                        color: 'var(--text-primary)',
+                                        fontSize: '0.85rem',
+                                        fontWeight: '500',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '6px',
+                                        transition: 'all 0.2s ease',
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.target.style.background = 'rgba(255, 255, 255, 0.15)';
+                                        e.target.style.transform = 'translateY(-1px)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.target.style.background = 'rgba(255, 255, 255, 0.08)';
+                                        e.target.style.transform = 'translateY(0)';
+                                    }}
+                                >
+                                    <span className="btn-text-desktop">Visit Site</span>
+                                    <span className="btn-text-mobile">Site</span>
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                                </a>
+                            )}
+                            <button
+                                onClick={onClose}
+                                className="btn-close"
+                                aria-label="Close modal"
+                            >
+                                ×
+                            </button>
+                        </div>
                     </div>
 
                 </div>

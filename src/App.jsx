@@ -10,7 +10,7 @@ import { useDiscountParser } from './hooks/useDiscountParser';
 import { useVouchers } from './hooks/useVouchers';
 import Layout from './components/Layout';
 import SearchBar from './components/SearchBar';
-import CategoryFilter from './components/CategoryFilter';
+import SearchableDropdown from './components/SearchableDropdown';
 import VoucherGrid from './components/VoucherGrid';
 import VoucherModal from './components/VoucherModal';
 import PlatformFilter from './components/PlatformFilter';
@@ -218,36 +218,21 @@ function Home({ data, onOpenShortcuts }) {
               />
             </div>
 
-            <div className="sidebar-divider" /> {/* Added divider */}
+            <div className="sidebar-divider" />
 
-            <div className="category-section" style={{
-              display: 'flex',
-              flexDirection: 'column',
-              minHeight: '200px', // Ensure minimum visible height for categories
-              flex: 1,
-              overflow: 'visible'
-            }}>
-              <h3 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--nav-text)' }}>
+            <div className="category-section" style={{ overflow: 'visible' }}>
+              <div style={{ marginBottom: '1rem', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--nav-text)' }}>
                 Filter By Category
-              </h3>
-              <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                flex: 1,
-                minHeight: '150px',
-                overflow: 'auto'
-              }}>
-                <CategoryFilter
-                  selectedCategory={selectedCategory}
-                  onCategorySelect={(c) => {
-                    // Toggle behavior
-                    handleCategorySelect(c === selectedCategory ? null : c);
-                  }}
-                  categories={ALL_CATEGORIES}
-                />
               </div>
+              <SearchableDropdown
+                options={ALL_CATEGORIES}
+                value={selectedCategory}
+                onChange={handleCategorySelect}
+                label="Category"
+                placeholder="Search categories..."
+                icon="🏷️"
+              />
             </div>
-
           </div>
         </aside>
       </div>
