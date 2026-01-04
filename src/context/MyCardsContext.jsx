@@ -1,6 +1,6 @@
 /**
  * MyCardsContext - Enhanced with Toast Notifications
- * 
+ *
  * Provides toast feedback for card collection actions:
  * - Adding cards to collection
  * - Removing cards

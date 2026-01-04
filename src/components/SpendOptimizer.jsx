@@ -4,7 +4,7 @@ import creditCards from '../data/creditCards.json';
 
 /**
  * SpendOptimizer - Redesigned
- * 
+ *
  * Cleaner 3-column layout with better visual hierarchy
  */
 

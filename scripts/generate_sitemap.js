@@ -35,7 +35,7 @@ const generateSitemap = () => {
 ${routes.map(route => {
         // For HashRouter, the URL fragment is part of the URL.
         // However, technically standard sitemaps act on the path.
-        // It is debated if Hashbangs are fully supported in standard sitemaps, 
+        // It is debated if Hashbangs are fully supported in standard sitemaps,
         // but for SPA on GH Pages, this is a common workaround.
         // We will list the full URL including the hash.
         const url = `${BASE_URL}/#${route}`;

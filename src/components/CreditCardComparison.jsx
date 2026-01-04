@@ -1,6 +1,6 @@
 /**
  * CreditCardComparison - FIXED VERSION
- * 
+ *
  * Fixes:
  * - Added actual comparison table (was placeholder)
  * - Proper card data display

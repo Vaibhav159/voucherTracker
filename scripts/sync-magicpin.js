@@ -53,7 +53,7 @@ async function syncMagicPinData() {
             console.log(`Fetching MagicPin data (offset: ${nextOffset})...`);
 
             const payload = {
-                "next": nextOffset, // Correct logic actually requires sending the `next` value from PRIVATE response, but initial usage sends 0? Or is 'start' the key? 
+                "next": nextOffset, // Correct logic actually requires sending the `next` value from PRIVATE response, but initial usage sends 0? Or is 'start' the key?
                 // The bash command sent "next": 20 and "start": "0".
                 // Usually "params"."start" controls offset for this API based on typical patterns, but let's observe response `next`.
                 // Actually, let's look at the curl again. `data-raw '{"next":20,"params":{"lon":77.209021,"start":"0",...}`

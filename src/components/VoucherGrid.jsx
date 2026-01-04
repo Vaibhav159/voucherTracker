@@ -1,6 +1,6 @@
 /**
  * VoucherGrid - FIXED VERSION
- * 
+ *
  * Fixes:
  * - Proper width calculation to prevent horizontal overflow
  * - Cards no longer cut off on the right

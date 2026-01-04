@@ -81,7 +81,7 @@ export const useVouchers = (options = {}) => {
                     cache.timestamp = Date.now();
                     return processed;
                 } catch (err) {
-                    // Reset promise so existing failures don't block future retries forever, 
+                    // Reset promise so existing failures don't block future retries forever,
                     // though for this session we might just fallback.
                     cache.promise = null;
                     throw err;

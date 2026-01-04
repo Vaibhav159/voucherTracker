@@ -1,8 +1,8 @@
 /**
  * VoucherTracker UX Features
- * 
+ *
  * 8 production-ready components to enhance user experience:
- * 
+ *
  * 1. SpendOptimizer - Optimal card rotation based on spending categories
  * 3. MilestoneTracker - Track spending goals, fee waivers, bonus unlocks
  * 4. SavingsDashboard - Visual summary of savings

@@ -1,6 +1,6 @@
 /**
  * EmptyState - Enhanced with Better Illustrations & Actions
- * 
+ *
  * Improvements:
  * - Context-aware illustrations
  * - Suggested actions
@@ -32,16 +32,16 @@ const EmptyBoxIllustration = () => (
 
 const HeartIllustration = () => (
     <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-        <path 
-            d="M60 100C60 100 20 70 20 45C20 25 35 15 50 15C60 15 60 25 60 25C60 25 60 15 70 15C85 15 100 25 100 45C100 70 60 100 60 100Z" 
-            stroke="var(--text-secondary)" 
-            strokeWidth="2" 
+        <path
+            d="M60 100C60 100 20 70 20 45C20 25 35 15 50 15C60 15 60 25 60 25C60 25 60 15 70 15C85 15 100 25 100 45C100 70 60 100 60 100Z"
+            stroke="var(--text-secondary)"
+            strokeWidth="2"
             strokeDasharray="4 4"
             opacity="0.3"
         />
-        <path 
-            d="M60 85C60 85 35 65 35 50C35 38 44 32 52 32C58 32 60 38 60 38C60 38 62 32 68 32C76 32 85 38 85 50C85 65 60 85 60 85Z" 
-            fill="var(--accent-pink)" 
+        <path
+            d="M60 85C60 85 35 65 35 50C35 38 44 32 52 32C58 32 60 38 60 38C60 38 62 32 68 32C76 32 85 38 85 50C85 65 60 85 60 85Z"
+            fill="var(--accent-pink)"
             opacity="0.15"
         />
     </svg>

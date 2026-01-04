@@ -205,7 +205,7 @@ export const recognizeIntent = (query) => {
 
   // Fallback: Try to identify any keywords
   const fallbackIntent = identifyFallbackIntent(normalizedQuery);
-  
+
   return {
     intent: fallbackIntent.intent,
     confidence: fallbackIntent.confidence,
@@ -263,7 +263,7 @@ export const extractAmount = (query) => {
     if (match) {
       let amount = parseFloat(match[1].replace(/,/g, ''));
       const unit = match[2]?.toLowerCase();
-      
+
       if (query.toLowerCase().includes('crore') || unit?.startsWith('c')) {
         amount *= 10000000;
       } else if (query.toLowerCase().includes('lakh') || query.toLowerCase().includes('lac') || unit === 'l') {
@@ -271,7 +271,7 @@ export const extractAmount = (query) => {
       } else if (unit === 'k') {
         amount *= 1000;
       }
-      
+
       return amount;
     }
   }
@@ -292,7 +292,7 @@ export const extractBrand = (query) => {
   ];
 
   const lowerQuery = query.toLowerCase();
-  
+
   for (const brand of commonBrands) {
     if (lowerQuery.includes(brand)) {
       return brand;

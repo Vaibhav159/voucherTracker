@@ -513,4 +513,3 @@ const CardGuide = () => {
 };
 
 export default CardGuide;
-

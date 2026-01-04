@@ -1,6 +1,6 @@
 /**
  * VoucherCard - Polished Version
- * 
+ *
  * Improvements:
  * - Animated favorite button with haptic feedback
  * - Better hover states

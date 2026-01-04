@@ -10,7 +10,7 @@
       "tags": ["Travel", "Co-branded", "Hotels", "Flights", "MMT Ecosystem", "Low Forex"],
       "launchDate": "October 2024",
       "cardMaterial": "Plastic",
-      
+
       "fees": {
         "joining": 999,
         "joiningGST": true,
@@ -20,7 +20,7 @@
         "waiverCondition": "₹3L spend in anniversary year",
         "waiverSpendThreshold": 300000
       },
-      
+
       "eligibility": {
         "minAgeSalaried": 21,
         "maxAgeSalaried": 65,
@@ -30,7 +30,7 @@
         "minIncomeSelfEmployedAnnual": 300000,
         "minCreditScore": 700
       },
-      
+
       "welcomeBenefits": {
         "total": "~₹8,000+",
         "details": [
@@ -48,7 +48,7 @@
           }
         ]
       },
-      
+
       "renewalBenefits": {
         "details": [
           {
@@ -58,7 +58,7 @@
           }
         ]
       },
-      
+
       "rewardStructure": {
         "rewardType": "myCash",
         "rewardCurrency": "myCash",
@@ -100,7 +100,7 @@
         "exclusions": ["Fuel", "Rent", "EMI", "Cash Advances", "Joining/Annual Fee", "Balance Transfers"],
         "notes": "Rewards are over and above MMT platform discounts. UPI transactions via RuPay card earn 1% myCash."
       },
-      
+
       "redemption": {
         "bestOption": "Travel bookings on MakeMyTrip",
         "options": [
@@ -132,7 +132,7 @@
         ],
         "restrictions": "Cannot redeem for cash/statement credit. myCash usable only on MakeMyTrip platform."
       },
-      
+
       "loungeAccess": {
         "domestic": {
           "count": 8,
@@ -150,7 +150,7 @@
         "railway": null,
         "applicableTo": "Primary cardholder only"
       },
-      
+
       "travelBenefits": {
         "forexMarkup": 0.99,
         "forexNote": "Effectively zero - earns 1% myCash on international spends",
@@ -163,7 +163,7 @@
         "concierge": null,
         "noCoastEMI": "Available on MMT travel bookings (3-month tenure)"
       },
-      
+
       "lifestyleBenefits": {
         "movies": {
           "platform": ["BookMyShow", "INOX"],
@@ -183,9 +183,9 @@
           }
         ]
       },
-      
+
       "milestones": null,
-      
+
       "charges": {
         "interestRate": {
           "monthly": 3.49,
@@ -207,7 +207,7 @@
         },
         "chequeReturnFee": 500
       },
-      
+
       "analysis": {
         "bestFor": [
           "Frequent MakeMyTrip users",
@@ -234,7 +234,7 @@
         "rating": 4.2
       }
     },
-    
+
     {
       "id": "icici-hpcl-super-saver-credit-card",
       "name": "ICICI Bank HPCL Super Saver Credit Card",
@@ -245,7 +245,7 @@
       "tags": ["Fuel", "Cashback", "Utilities", "HPCL", "Roadside Assistance", "Groceries"],
       "launchDate": null,
       "cardMaterial": "Plastic",
-      
+
       "fees": {
         "joining": 500,
         "joiningGST": true,
@@ -255,7 +255,7 @@
         "waiverCondition": "₹1.5L spend in a year",
         "waiverSpendThreshold": 150000
       },
-      
+
       "eligibility": {
         "minAgeSalaried": 21,
         "maxAgeSalaried": 65,
@@ -265,7 +265,7 @@
         "minIncomeSelfEmployedAnnual": 240000,
         "minCreditScore": 700
       },
-      
+
       "welcomeBenefits": {
         "total": "~₹600",
         "details": [
@@ -281,9 +281,9 @@
           }
         ]
       },
-      
+
       "renewalBenefits": null,
-      
+
       "rewardStructure": {
         "rewardType": "Hybrid",
         "rewardCurrency": "Cashback + ICICI Reward Points",
@@ -319,7 +319,7 @@
         "exclusions": ["Fuel (for RP earning)", "Rent", "EMI"],
         "notes": "Total earning capped at ₹300/month across all accelerated categories. 1% transaction fee on education payments via third-party apps."
       },
-      
+
       "redemption": {
         "bestOption": "Vouchers via ICICI Reward Portal",
         "options": [
@@ -341,7 +341,7 @@
         ],
         "restrictions": "₹99 redemption fee per request"
       },
-      
+
       "loungeAccess": {
         "domestic": {
           "count": 4,
@@ -354,7 +354,7 @@
         "railway": null,
         "applicableTo": "Primary cardholder only"
       },
-      
+
       "travelBenefits": {
         "forexMarkup": 3.5,
         "fuelSurchargeWaiver": {
@@ -378,7 +378,7 @@
           ]
         }
       },
-      
+
       "lifestyleBenefits": {
         "movies": {
           "platform": ["BookMyShow", "INOX"],
@@ -391,9 +391,9 @@
           "details": "Discounts at partner restaurants"
         }
       },
-      
+
       "milestones": null,
-      
+
       "charges": {
         "interestRate": {
           "monthly": 3.50,
@@ -411,7 +411,7 @@
           "above10000": 750
         }
       },
-      
+
       "analysis": {
         "bestFor": [
           "Regular HPCL fuel users",
@@ -438,7 +438,7 @@
         "rating": 3.8
       }
     },
-    
+
     {
       "id": "adani-one-icici-signature-credit-card",
       "name": "Adani One ICICI Bank Signature Credit Card",
@@ -449,7 +449,7 @@
       "tags": ["Travel", "Adani Ecosystem", "Airport Benefits", "Pranaam", "Lounge", "Premium"],
       "launchDate": "2024",
       "cardMaterial": "Plastic",
-      
+
       "fees": {
         "joining": 5000,
         "joiningGST": true,
@@ -459,7 +459,7 @@
         "waiverCondition": "₹6L spend in anniversary year",
         "waiverSpendThreshold": 600000
       },
-      
+
       "eligibility": {
         "minAgeSalaried": 21,
         "maxAgeSalaried": 60,
@@ -468,7 +468,7 @@
         "minIncomeSalariedAnnual": 600000,
         "minCreditScore": 750
       },
-      
+
       "welcomeBenefits": {
         "total": "₹9,000",
         "details": [
@@ -495,7 +495,7 @@
           }
         ]
       },
-      
+
       "renewalBenefits": {
         "details": [
           {
@@ -504,7 +504,7 @@
           }
         ]
       },
-      
+
       "rewardStructure": {
         "rewardType": "Adani Reward Points",
         "rewardCurrency": "Adani Reward Points",
@@ -540,7 +540,7 @@
         "exclusions": ["Fuel", "Rent", "EMI"],
         "notes": "YES Bank RP can be converted to Adani RP at 400:100 ratio"
       },
-      
+
       "redemption": {
         "bestOption": "Travel bookings on Adani One platform",
         "options": [
@@ -576,7 +576,7 @@
           }
         ]
       },
-      
+
       "loungeAccess": {
         "domestic": {
           "count": 16,
@@ -593,7 +593,7 @@
         },
         "applicableTo": "Primary cardholder only"
       },
-      
+
       "airportBenefits": {
         "applicableAirports": ["Mumbai T2", "Ahmedabad", "Lucknow", "Mangaluru", "Jaipur", "Guwahati", "Thiruvananthapuram"],
         "pranaamMeetGreet": {
@@ -620,7 +620,7 @@
           "period": "year"
         }
       },
-      
+
       "travelBenefits": {
         "forexMarkup": 3.5,
         "fuelSurchargeWaiver": {
@@ -629,7 +629,7 @@
         },
         "insurance": null
       },
-      
+
       "lifestyleBenefits": {
         "movies": {
           "platform": ["BookMyShow"],
@@ -641,21 +641,21 @@
           "program": "ICICI Bank Culinary Treats Programme"
         }
       },
-      
+
       "milestones": [
         {
           "spend": 300000,
           "benefit": "2nd Pranaam Meet & Greet Service"
         }
       ],
-      
+
       "charges": {
         "interestRate": {
           "monthly": 3.50,
           "annual": 42.00
         }
       },
-      
+
       "analysis": {
         "bestFor": [
           "Frequent travelers using Adani-managed airports",
@@ -682,7 +682,7 @@
         "rating": 4.0
       }
     },
-    
+
     {
       "id": "adani-one-icici-platinum-credit-card",
       "name": "Adani One ICICI Bank Platinum Credit Card",
@@ -693,7 +693,7 @@
       "tags": ["Travel", "Adani Ecosystem", "Budget Travel Card", "Airport Benefits", "Entry-level"],
       "launchDate": "2024",
       "cardMaterial": "Plastic",
-      
+
       "fees": {
         "joining": 750,
         "joiningGST": true,
@@ -703,7 +703,7 @@
         "waiverCondition": "₹3L spend in anniversary year",
         "waiverSpendThreshold": 300000
       },
-      
+
       "eligibility": {
         "minAgeSalaried": 21,
         "maxAgeSalaried": 60,
@@ -712,7 +712,7 @@
         "minIncomeSalariedAnnual": 300000,
         "minCreditScore": 700
       },
-      
+
       "welcomeBenefits": {
         "total": "₹5,000",
         "details": [
@@ -739,7 +739,7 @@
           }
         ]
       },
-      
+
       "renewalBenefits": {
         "details": [
           {
@@ -748,7 +748,7 @@
           }
         ]
       },
-      
+
       "rewardStructure": {
         "rewardType": "Adani Reward Points",
         "rewardCurrency": "Adani Reward Points",
@@ -784,7 +784,7 @@
         "exclusions": ["Fuel", "Rent", "EMI"],
         "notes": null
       },
-      
+
       "redemption": {
         "bestOption": "Travel bookings on Adani One platform",
         "options": [
@@ -810,7 +810,7 @@
           }
         ]
       },
-      
+
       "loungeAccess": {
         "domestic": {
           "count": 8,
@@ -822,7 +822,7 @@
         "international": null,
         "applicableTo": "Primary cardholder only"
       },
-      
+
       "airportBenefits": {
         "applicableAirports": ["Mumbai T2", "Ahmedabad", "Lucknow", "Mangaluru", "Jaipur", "Guwahati", "Thiruvananthapuram"],
         "premiumLoungeUpgrades": {
@@ -843,7 +843,7 @@
           "unlockConditions": ["2 on ₹1L spend", "2 more on ₹2L spend"]
         }
       },
-      
+
       "travelBenefits": {
         "forexMarkup": 3.5,
         "fuelSurchargeWaiver": {
@@ -852,7 +852,7 @@
         },
         "insurance": null
       },
-      
+
       "lifestyleBenefits": {
         "movies": {
           "platform": ["BookMyShow"],
@@ -861,7 +861,7 @@
           "maxSavings": "₹400/month"
         }
       },
-      
+
       "milestones": [
         {
           "spend": 100000,
@@ -872,14 +872,14 @@
           "benefit": "2 more Porter Services unlocked"
         }
       ],
-      
+
       "charges": {
         "interestRate": {
           "monthly": 3.50,
           "annual": 42.00
         }
       },
-      
+
       "analysis": {
         "bestFor": [
           "Budget-conscious travelers",
@@ -905,7 +905,7 @@
         "rating": 3.9
       }
     },
-    
+
     {
       "id": "times-black-icici-credit-card",
       "name": "Times Black ICICI Bank Credit Card",
@@ -917,7 +917,7 @@
       "launchDate": "December 2024",
       "cardMaterial": "Metal (crafted from historic Times of India printing plates)",
       "partnership": "Times Internet Ltd.",
-      
+
       "fees": {
         "joining": 20000,
         "joiningGST": true,
@@ -928,7 +928,7 @@
         "waiverCondition": "₹25L spend in anniversary year",
         "waiverSpendThreshold": 2500000
       },
-      
+
       "eligibility": {
         "minAgeSalaried": 21,
         "maxAgeSalaried": 60,
@@ -940,7 +940,7 @@
         "minCreditScore": 750,
         "notes": "Easier approval than HDFC Infinia or ICICI Emeralde Private Metal"
       },
-      
+
       "welcomeBenefits": {
         "total": "~₹25,000+",
         "details": [
@@ -974,7 +974,7 @@
           }
         ]
       },
-      
+
       "renewalBenefits": {
         "details": [
           {
@@ -987,7 +987,7 @@
           }
         ]
       },
-      
+
       "rewardStructure": {
         "rewardType": "ICICI Bank Reward Points",
         "rewardCurrency": "ICICI Reward Points",
@@ -1035,7 +1035,7 @@
         "exclusions": ["Fuel", "Rent", "EMI transactions"],
         "notes": "One of few cards that rewards utilities, insurance, and govt payments"
       },
-      
+
       "redemption": {
         "bestOption": "Products/Vouchers via ICICI Netbanking OR iShop travel bookings",
         "options": [
@@ -1067,7 +1067,7 @@
           }
         ]
       },
-      
+
       "loungeAccess": {
         "domestic": {
           "count": "Unlimited",
@@ -1086,7 +1086,7 @@
           "note": "Only credit card with access to this business class lounge"
         }
       },
-      
+
       "travelBenefits": {
         "forexMarkup": 1.49,
         "forexNote": "Lower than industry standard 3.5%",
@@ -1130,7 +1130,7 @@
           "maxAmount": 12000
         }
       },
-      
+
       "lifestyleBenefits": {
         "theQuorumClub": {
           "included": true,
@@ -1161,7 +1161,7 @@
           "note": "Exclusive access to Times Group marquee events"
         }
       },
-      
+
       "milestones": {
         "totalValue": 70000,
         "validity": "6 months from notification",
@@ -1193,7 +1193,7 @@
           }
         ]
       },
-      
+
       "charges": {
         "interestRate": {
           "monthly": 3.40,
@@ -1207,7 +1207,7 @@
           "minimum": 500
         }
       },
-      
+
       "analysis": {
         "bestFor": [
           "Ultra-HNIs spending ₹10L+ annually",
@@ -1246,7 +1246,7 @@
       }
     }
   ],
-  
+
   "metadata": {
     "lastUpdated": "January 2025",
     "dataSource": "Official ICICI Bank, Paisabazaar, CardInsider, Official Partner Websites",
@@ -1256,7 +1256,7 @@
       "Reward rates and caps are based on latest available information as of January 2025"
     ]
   },
-  
+
   "comparisonSummary": {
     "table": [
       {

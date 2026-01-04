@@ -150,7 +150,7 @@ export const getAllPlatformIds = () => Object.keys(PLATFORM_INFO);
  */
 export const getPlatformsForBank = (bankName) => {
   if (!bankName) return Object.values(PLATFORM_INFO);
-  
+
   const normalizedBank = bankName.toLowerCase();
   return Object.values(PLATFORM_INFO).filter(
     (p) => !p.bank || p.bank.toLowerCase().includes(normalizedBank)

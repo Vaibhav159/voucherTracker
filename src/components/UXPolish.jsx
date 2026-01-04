@@ -1,6 +1,6 @@
 /**
  * VoucherTracker UX Polish Package
- * 
+ *
  * Improvements for maximum user satisfaction:
  * 1. Toast notifications for user feedback
  * 2. Skeleton loaders for perceived performance
@@ -275,7 +275,7 @@ export const VoucherGridSkeleton = ({ count = 6 }) => (
 // 3. ENHANCED EMPTY STATE
 // ============================================
 
-export const EnhancedEmptyState = ({ 
+export const EnhancedEmptyState = ({
     title = "No results found",
     description = "Try adjusting your search or filters",
     icon = "🔍",
@@ -297,7 +297,7 @@ export const EnhancedEmptyState = ({
         }}>
             {icon}
         </div>
-        
+
         <h3 style={{
             fontSize: '1.5rem',
             fontWeight: 600,
@@ -306,7 +306,7 @@ export const EnhancedEmptyState = ({
         }}>
             {title}
         </h3>
-        
+
         <p style={{
             color: 'var(--text-secondary)',
             fontSize: '0.95rem',
@@ -378,23 +378,23 @@ export const EnhancedEmptyState = ({
 // 4. IMPROVED FAVORITE BUTTON WITH ANIMATION
 // ============================================
 
-export const AnimatedFavoriteButton = ({ 
-    isFavorite, 
-    onToggle, 
+export const AnimatedFavoriteButton = ({
+    isFavorite,
+    onToggle,
     size = 32,
-    showLabel = false 
+    showLabel = false
 }) => {
     const [isAnimating, setIsAnimating] = useState(false);
 
     const handleClick = (e) => {
         e.stopPropagation();
         setIsAnimating(true);
-        
+
         // Haptic feedback
         if (navigator.vibrate) {
             navigator.vibrate(isFavorite ? 30 : [30, 50, 30]);
         }
-        
+
         onToggle();
         setTimeout(() => setIsAnimating(false), 300);
     };
@@ -427,7 +427,7 @@ export const AnimatedFavoriteButton = ({
             }}>
                 {isFavorite ? '❤️' : '🤍'}
             </span>
-            
+
             {/* Burst particles on favorite */}
             {isAnimating && isFavorite && (
                 <div style={{
@@ -454,7 +454,7 @@ export const AnimatedFavoriteButton = ({
                     ))}
                 </div>
             )}
-            
+
             <style>{`
                 @keyframes burst {
                     0% { opacity: 1; transform: rotate(inherit) translateY(-${size * 0.3}px) scale(1); }
@@ -514,14 +514,14 @@ export const CopyButton = ({ text, label = 'Copy', successLabel = 'Copied!' }) =
 // 6. LOADING BUTTON
 // ============================================
 
-export const LoadingButton = ({ 
-    children, 
-    onClick, 
+export const LoadingButton = ({
+    children,
+    onClick,
     isLoading = false,
     loadingText = 'Loading...',
     variant = 'primary',
     disabled = false,
-    ...props 
+    ...props
 }) => {
     const baseStyles = {
         padding: '12px 24px',
@@ -775,9 +775,9 @@ export const PolishStyles = () => (
 
         /* Loading Shimmer */
         .skeleton-shimmer {
-            background: linear-gradient(90deg, 
-                rgba(255,255,255,0.03) 0%, 
-                rgba(255,255,255,0.08) 50%, 
+            background: linear-gradient(90deg,
+                rgba(255,255,255,0.03) 0%,
+                rgba(255,255,255,0.08) 50%,
                 rgba(255,255,255,0.03) 100%
             );
             background-size: 200% 100%;
