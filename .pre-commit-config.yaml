@@ -1,8 +1,8 @@
-exclude: '^docs/|/migrations/|devcontainer.json'
+exclude: '^backend/docs/|.*/migrations/|devcontainer\.json'
 default_stages: [pre-commit]
 
 default_language_version:
-  python: python3.12
+  python: python3.13
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -20,15 +20,9 @@ repos:
       - id: check-docstring-first
       - id: detect-private-key
 
-  - repo: https://github.com/adamchainz/django-upgrade
-    rev: '1.22.1'
-    hooks:
-      - id: django-upgrade
-        args: ['--target-version', '5.0']
-
   # Run the Ruff linter.
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.6.9
+    rev: v0.14.10
     hooks:
       # Linter
       - id: ruff
@@ -42,8 +36,12 @@ repos:
       - id: djlint-reformat-django
       - id: djlint-django
 
-# sets up .pre-commit-ci.yaml to ensure pre-commit dependencies stay up to date
-ci:
-  autoupdate_schedule: weekly
-  skip: []
-  submodules: false
+  # Frontend hooks (Local to use project's ESLint config and plugins)
+  # This requires 'npm install' to be run in the project root beforehand.
+  - repo: local
+    hooks:
+      - id: eslint
+        name: eslint
+        entry: npx eslint
+        language: system
+        types_or: [javascript, jsx]

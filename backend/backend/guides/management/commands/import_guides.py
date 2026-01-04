@@ -1,20 +1,22 @@
-from django.core.management.base import BaseCommand
 import json
-import os
+
 from django.conf import settings
+from django.core.management.base import BaseCommand
+
 from backend.guides.models import Guide
 
+
 class Command(BaseCommand):
-    help = 'Import guides from JSON file'
+    help = "Import guides from JSON file"
 
     def handle(self, *args, **kwargs):
         # We copied guides.json to the same directory as this command
         json_file_path = settings.BASE_DIR / "backend/guides/management/commands/guides.json"
-        
+
         self.stdout.write(f"Reading from {json_file_path}")
-        
+
         try:
-            with open(json_file_path, "r") as f:
+            with open(json_file_path) as f:
                 guides_data = json.load(f)
         except FileNotFoundError:
             self.stdout.write(self.style.ERROR(f"File not found: {json_file_path}"))
@@ -30,9 +32,9 @@ class Command(BaseCommand):
                     "tags": item.get("tags", []),
                     "author": item.get("author"),
                     "embed_html": item.get("embedHtml", ""),
-                }
+                },
             )
-            
+
             if created:
                 self.stdout.write(self.style.SUCCESS(f"Created guide: {guide.title}"))
             else:

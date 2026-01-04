@@ -2,12 +2,11 @@ from django.conf import settings
 from rest_framework.routers import DefaultRouter
 from rest_framework.routers import SimpleRouter
 
+from backend.credit_cards.views import CreditCardViewSet
+from backend.guides.views import GuideViewSet
 from backend.users.api.views import UserViewSet
-from backend.vouchers.views import PlatformViewSet, VoucherViewSet
-from backend.guides.views import GuideViewSet
-from backend.credit_cards.views import CreditCardViewSet
-from backend.credit_cards.views import CreditCardViewSet
-from backend.guides.views import GuideViewSet
+from backend.vouchers.views import PlatformViewSet
+from backend.vouchers.views import VoucherViewSet
 
 router = DefaultRouter() if settings.DEBUG else SimpleRouter()
 

@@ -1,7 +1,12 @@
 import json
 import os
+
 from django.core.management.base import BaseCommand
-from backend.vouchers.models import Voucher, Platform, VoucherPlatform, VoucherAlias
+
+from backend.vouchers.models import Platform
+from backend.vouchers.models import Voucher
+from backend.vouchers.models import VoucherAlias
+from backend.vouchers.models import VoucherPlatform
 
 # Platform logos hardcoded from src/utils/platformLogos.js since we can't easily import JS
 PLATFORM_STYLES = {
@@ -22,44 +27,45 @@ PLATFORM_STYLES = {
     },
     "SaveSage": {
         "logo": "https://savesage.club/SaveSage-Symbol-on-Light-Background.png",
-    }
+    },
 }
 
+
 class Command(BaseCommand):
-    help = 'Populate vouchers from vouchers.json and brand_aliases.json'
+    help = "Populate vouchers from vouchers.json and brand_aliases.json"
 
     def handle(self, *args, **options):
         # 1. Populate Vouchers
-        file_path = '/app/vouchers.json'
+        file_path = "/app/vouchers.json"
         if not os.path.exists(file_path):
-             self.stdout.write(self.style.ERROR(f'File not found: {file_path}'))
-             return
+            self.stdout.write(self.style.ERROR(f"File not found: {file_path}"))
+            return
 
         # Pre-populate platforms with icons
         for p_name, p_data in PLATFORM_STYLES.items():
             Platform.objects.update_or_create(
                 name=p_name,
-                defaults={'icon_url': p_data.get('logo', '')}
+                defaults={"icon_url": p_data.get("logo", "")},
             )
 
-        with open(file_path, 'r') as f:
+        with open(file_path) as f:
             data = json.load(f)
 
         for item in data:
-            name = item.get('brand')
-            logo = item.get('logo', '')
-            category = item.get('category', 'Other')
-            site_link = item.get('site', '')
+            name = item.get("brand")
+            logo = item.get("logo", "")
+            category = item.get("category", "Other")
+            site_link = item.get("site", "")
 
             voucher, created = Voucher.objects.get_or_create(
                 name=name,
                 defaults={
-                    'logo': logo,
-                    'category': category,
-                    'site_link': site_link
-                }
+                    "logo": logo,
+                    "category": category,
+                    "site_link": site_link,
+                },
             )
-            
+
             if not created:
                 voucher.logo = logo
                 voucher.category = category
@@ -67,12 +73,12 @@ class Command(BaseCommand):
                 voucher.save()
 
             if created:
-                self.stdout.write(self.style.SUCCESS(f'Created Voucher: {name}'))
+                self.stdout.write(self.style.SUCCESS(f"Created Voucher: {name}"))
 
-            platforms_data = item.get('platforms', [])
-            
+            platforms_data = item.get("platforms", [])
+
             for i, p_data in enumerate(platforms_data):
-                p_name = p_data.get('name')
+                p_name = p_data.get("name")
                 if not p_name:
                     continue
 
@@ -82,42 +88,44 @@ class Command(BaseCommand):
                     voucher=voucher,
                     platform=platform,
                     defaults={
-                        'cap': p_data.get('cap', ''),
-                        'fee': p_data.get('fee', ''),
-                        'denominations': p_data.get('denominations', []),
-                        'link': p_data.get('link', ''),
-                        'color': p_data.get('color', ''),
-                        'priority': i
-                    }
+                        "cap": p_data.get("cap", ""),
+                        "fee": p_data.get("fee", ""),
+                        "denominations": p_data.get("denominations", []),
+                        "link": p_data.get("link", ""),
+                        "color": p_data.get("color", ""),
+                        "priority": i,
+                    },
                 )
 
-        self.stdout.write(self.style.SUCCESS('Successfully populated vouchers'))
+        self.stdout.write(self.style.SUCCESS("Successfully populated vouchers"))
 
         # 2. Populate Aliases
-        alias_file_path = '/app/brand_aliases.json'
+        alias_file_path = "/app/brand_aliases.json"
         if not os.path.exists(alias_file_path):
-             self.stdout.write(self.style.WARNING(f'Alias file not found: {alias_file_path}, skipping aliases.'))
-             return
+            self.stdout.write(self.style.WARNING(f"Alias file not found: {alias_file_path}, skipping aliases."))
+            return
 
-        with open(alias_file_path, 'r') as f:
+        with open(alias_file_path) as f:
             alias_data = json.load(f)
-        
+
         for alias_name, voucher_name in alias_data.items():
             try:
                 # Find the target voucher. Case-insensitive lookup might be safer but starting with exact match
                 voucher = Voucher.objects.filter(name__iexact=voucher_name).first()
                 if not voucher:
-                     self.stdout.write(self.style.WARNING(f'Voucher not found for alias "{alias_name}" -> "{voucher_name}"'))
-                     continue
-                
+                    self.stdout.write(
+                        self.style.WARNING(f'Voucher not found for alias "{alias_name}" -> "{voucher_name}"'),
+                    )
+                    continue
+
                 _, created = VoucherAlias.objects.get_or_create(
                     name=alias_name,
-                    voucher=voucher
+                    voucher=voucher,
                 )
                 if created:
-                     self.stdout.write(self.style.SUCCESS(f'Created Alias: "{alias_name}" -> "{voucher_name}"'))
+                    self.stdout.write(self.style.SUCCESS(f'Created Alias: "{alias_name}" -> "{voucher_name}"'))
 
             except Exception as e:
-                self.stdout.write(self.style.ERROR(f'Error creating alias {alias_name}: {e}'))
+                self.stdout.write(self.style.ERROR(f"Error creating alias {alias_name}: {e}"))
 
-        self.stdout.write(self.style.SUCCESS('Successfully populated aliases'))
+        self.stdout.write(self.style.SUCCESS("Successfully populated aliases"))

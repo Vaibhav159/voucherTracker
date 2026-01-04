@@ -1,5 +1,8 @@
 from rest_framework import serializers
-from .models import Voucher, VoucherAlias, Platform, VoucherPlatform
+
+from .models import Platform
+from .models import Voucher
+from .models import VoucherPlatform
 
 
 class PlatformSerializer(serializers.ModelSerializer):
@@ -9,7 +12,7 @@ class PlatformSerializer(serializers.ModelSerializer):
 
 
 class VoucherPlatformSerializer(serializers.ModelSerializer):
-    name = serializers.CharField(source='platform.name', read_only=True)
+    name = serializers.CharField(source="platform.name", read_only=True)
 
     class Meta:
         model = VoucherPlatform
@@ -18,10 +21,10 @@ class VoucherPlatformSerializer(serializers.ModelSerializer):
 
 class VoucherSerializer(serializers.ModelSerializer):
     id = serializers.CharField(read_only=True)
-    brand = serializers.CharField(source='name')
-    site = serializers.CharField(source='site_link')
+    brand = serializers.CharField(source="name")
+    site = serializers.CharField(source="site_link")
     platforms = VoucherPlatformSerializer(many=True, read_only=True)
-    lastUpdated = serializers.DateTimeField(source='updated_at', format="%Y-%m-%d", read_only=True)
+    lastUpdated = serializers.DateTimeField(source="updated_at", format="%Y-%m-%d", read_only=True)
     expiry_date = serializers.SerializerMethodField()
 
     class Meta:
