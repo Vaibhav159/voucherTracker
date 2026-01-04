@@ -152,3 +152,47 @@
         order: 4;
     }
 }
+
+/* ============================================
+   ASK AI MOBILE POLISH (Migrated from mobile-ux.css)
+   ============================================ */
+@media (max-width: 480px) {
+
+    /* Clear chat button repositioned */
+    .ask-ai-header button {
+        position: static !important;
+        margin: 0.5rem auto !important;
+    }
+
+    /* Quick actions wrap better */
+    .ask-ai-actions {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Ask AI compact buttons */
+    .ask-ai-actions button {
+        padding: 4px 8px !important;
+        font-size: 0.7rem !important;
+    }
+
+    /* Chat messages compact */
+    .chat-message {
+        max-width: 90% !important;
+        padding: 10px 12px !important;
+    }
+
+    /* Input area full width */
+    .chat-input-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .chat-input-container input {
+        width: 100% !important;
+    }
+
+    .chat-input-container button {
+        width: 100% !important;
+    }
+}

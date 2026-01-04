@@ -146,40 +146,19 @@ const GuideModal = ({ guide, onClose }) => {
                     maxWidth: isMobile ? '100%' : '700px',
                     maxHeight: isMobile ? '95vh' : '90vh',
                     overflowY: 'auto',
-                    position: 'relative',
                     boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
-                    padding: isMobile ? '1rem' : '1.5rem',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center'
                 }}
                 onClick={e => e.stopPropagation()}
             >
-                <button
-                    onClick={onClose}
-                    style={{
-                        position: 'absolute',
-                        top: '1.5rem',
-                        right: '1.5rem',
-                        background: 'var(--btn-secondary-bg)',
-                        border: 'none',
-                        color: 'var(--text-primary)',
-                        width: '32px',
-                        height: '32px',
-                        borderRadius: '50%',
-                        cursor: 'pointer',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: '1.2rem',
-                        transition: 'background 0.2s',
-                        zIndex: 10
-                    }}
-                >
-                    ×
-                </button>
-
-                <h3 style={{ margin: '0 0 1.5rem 0', fontSize: '1.5rem', paddingRight: '2rem', width: '100%', maxWidth: '800px', textAlign: 'center' }}>{guide.title}</h3>
+                <div className="guide-modal-header-wrapper">
+                    <h3 className="guide-modal-title">{guide.title}</h3>
+                    <button
+                        className="guide-modal-close-btn"
+                        onClick={onClose}
+                    >
+                        ×
+                    </button>
+                </div>
 
                 {guide.content ? (
                     <div style={{ color: 'var(--text-primary)', lineHeight: '1.6', width: 'min(90vw, 800px)' }}>
@@ -209,7 +188,7 @@ const GuideModal = ({ guide, onClose }) => {
                         <RedditEmbed embedHtml={guide.embedHtml} theme={theme} />
                     </div>
                 ) : (
-                    <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                    <div className="guide-embed-wrapper">
                         <div dangerouslySetInnerHTML={{ __html: guide.embedHtml }} />
                     </div>
                 )}

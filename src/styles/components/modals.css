@@ -345,11 +345,141 @@
     font-size: 1.1rem;
   }
 
-  .global-search-overlay {
-    padding-top: 10vh;
-  }
-
   .global-search-container {
     width: 95%;
+  }
+}
+
+/* ============================================
+   MOBILE MODAL POLISH (Migrated from mobile-ux.css)
+   ============================================ */
+@media (max-width: 768px) {
+
+  /* Full-width modals on mobile */
+  .modal-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: 90vh;
+    border-radius: 20px 20px 0 0;
+    margin: auto 0 0 0;
+  }
+
+  /* Bottom sheet style override */
+  .modal-overlay {
+    align-items: flex-end;
+    padding: env(safe-area-inset-top, 20px) env(safe-area-inset-right, 20px) env(safe-area-inset-bottom, 20px) env(safe-area-inset-left, 20px);
+  }
+
+  /* Drag handle for modals */
+  .modal-content::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 4px;
+    background: var(--glass-border);
+    border-radius: 2px;
+    margin: 12px auto;
+  }
+
+  /* Better header alignment for wrapping text */
+  .modal-header {
+    align-items: flex-start !important;
+  }
+
+  /* Wrap header content on mobile */
+  .modal-header-wrapper {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  .modal-header__logo {
+    margin-top: 4px;
+  }
+
+  .modal-actions {
+    width: 100%;
+    margin-top: 4px;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+  }
+
+  /* Ensure close button isn't too far */
+  .btn-close {
+    margin-left: auto;
+  }
+}
+
+/* KEYBOARD VISIBILITY - MODAL ADJUSTMENT */
+@media (max-height: 500px) and (max-width: 768px) {
+  .modal-content {
+    max-height: 100vh;
+  }
+}
+
+/* TOAST POSITIONING ON MOBILE */
+@media (max-width: 768px) {
+
+  /* Move toasts above mobile nav */
+  .toast-container {
+    bottom: 80px !important;
+    left: 12px !important;
+    right: 12px !important;
+  }
+
+  .toast-container>div {
+    max-width: 100% !important;
+  }
+}
+
+/* SMALL DEVICE MODAL SPECIFICS */
+@media (max-width: 480px) {
+
+  /* Card selector modal - full width */
+  .modal-content,
+  .card-selector-modal,
+  .modal-container,
+  .premium-card-modal {
+    width: calc(100% - 16px) !important;
+    max-width: calc(100% - 16px) !important;
+    margin: 8px !important;
+  }
+
+  /* Scrollable modal body */
+  .modal-body,
+  .modal-content>div {
+    max-height: 70vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Points converter specific */
+  [class*="PointsConverter"] .glass-panel,
+  [class*="converter"] .glass-panel {
+    padding: 1rem !important;
+  }
+
+  /* Search input full width */
+  input[type="search"],
+  input[type="text"],
+  .search-input {
+    width: 100% !important;
+  }
+
+  /* Points Converter modal fixes (XS Devices) */
+  @media (max-width: 390px) {
+    .card-selector-modal .modal-content {
+      padding: 1rem !important;
+      max-height: 85vh !important;
+    }
+
+    .card-selector-modal .card-grid {
+      gap: 0.75rem !important;
+    }
+
+    .card-selector-modal .card-item {
+      padding: 0.75rem !important;
+    }
   }
 }

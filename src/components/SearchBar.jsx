@@ -6,11 +6,11 @@ const SearchBar = ({ value, onChange, sortOption, onSortChange, onOpenShortcuts 
         <div className="sticky-search-bar" data-tour="search" style={{ marginBottom: '1rem' }}>
             {/* Search Input */}
             <div
-                className="glass-panel"
+                className="glass-panel search-glass-panel"
                 style={{
                     display: 'flex',
                     alignItems: 'center',
-                    padding: '0.75rem 1rem',
+                    // padding handled by CSS class search-glass-panel
                     boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
                     borderRadius: '16px',
                     maxWidth: '600px',
@@ -27,14 +27,14 @@ const SearchBar = ({ value, onChange, sortOption, onSortChange, onOpenShortcuts 
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    style={{ marginRight: '1rem' }}
+                    style={{ marginRight: '0.5rem' }} // reduced margin
                 >
                     <circle cx="11" cy="11" r="8"></circle>
                     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
                 <input
                     type="text"
-                    placeholder="Search for brands..."
+                    placeholder="Search..." // shortened placeholder
                     value={value}
                     onChange={(e) => onChange(e.target.value)}
                     style={{
@@ -42,7 +42,9 @@ const SearchBar = ({ value, onChange, sortOption, onSortChange, onOpenShortcuts 
                         border: 'none',
                         color: '#fff',
                         fontSize: '1rem',
-                        width: '100%',
+                        flex: 1, // take remaining space
+                        minWidth: 0, // allow shrinking
+                        width: 'auto',
                         outline: 'none',
                         fontFamily: 'inherit',
                         fontWeight: 400
@@ -75,7 +77,7 @@ const SearchBar = ({ value, onChange, sortOption, onSortChange, onOpenShortcuts 
                         <span className="hide-mobile">Shortcuts</span>
                     </button>
 
-                    <div style={{ position: 'relative', paddingLeft: '1rem', borderLeft: '1px solid rgba(255,255,255,0.1)', minWidth: '180px' }}>
+                    <div className="search-sort-container" style={{ position: 'relative', paddingLeft: '0.75rem', borderLeft: '1px solid rgba(255,255,255,0.1)' }}>
                         <select
                             value={sortOption || 'Recommended'}
                             onChange={(e) => onSortChange(e.target.value)}
@@ -88,9 +90,11 @@ const SearchBar = ({ value, onChange, sortOption, onSortChange, onOpenShortcuts 
                                 cursor: 'pointer',
                                 outline: 'none',
                                 appearance: 'none', // Remove default arrow
-                                paddingRight: '1.5rem',
-                                width: '100%'
+                                paddingRight: '1.25rem',
+                                width: '100%',
+                                textOverflow: 'ellipsis'
                             }}
+                            className="mobile-sort-select"
                         >
                             <option value="Recommended">Recommended</option>
                             <option value="Alphabetical">A-Z</option>
@@ -104,14 +108,37 @@ const SearchBar = ({ value, onChange, sortOption, onSortChange, onOpenShortcuts 
                 </div>
             </div>
             <style>{`
+                .search-sort-container {
+                    min-width: 180px;
+                    flex-shrink: 0;
+                }
+                .search-glass-panel {
+                    padding: 0.75rem 1rem;
+                    gap: 1rem;
+                }
                 @media (max-width: 600px) {
                     .hide-mobile {
                         display: none;
                     }
-                    /* Also hide the button itself on mobile if desired, or keep icon only */
-                    /* User request: "we dont have those shortcuts there" -> imply hiding the button */
                     button[title="View Keyboard Shortcuts"] {
                         display: none !important;
+                    }
+                    .search-glass-panel {
+                        padding: 0.75rem 0.75rem !important; /* Reduce padding */
+                        gap: 0.5rem !important; /* Reduce gap */
+                    }
+                    .search-sort-container {
+                        min-width: auto;
+                        padding-left: 0.5rem !important;
+                        flex-shrink: 0;
+                        /* Removed max-width to allow "Recommended" to fit */
+                    }
+                    .mobile-sort-select {
+                        font-size: 0.8rem !important; /* Smaller font on mobile */
+                        padding-right: 1rem !important;
+                    }
+                    input::placeholder {
+                       font-size: 0.9rem;
                     }
                 }
             `}</style>
