@@ -17,6 +17,7 @@ import PlatformFilter from './components/PlatformFilter';
 import MobileStickyFilterBar from './components/MobileStickyFilterBar';
 import TopDeals from './components/TopDeals';
 import StatsBar from './components/StatsBar';
+import VouchersHero from './components/VouchersHero';
 import LoadingSpinner from './components/LoadingSpinner';
 import { featureFlags } from './config/featureFlags';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -39,6 +40,11 @@ const SpendOptimizer = lazy(() => import('./components/SpendOptimizer'));
 const MilestoneTracker = lazy(() => import('./components/MilestoneTracker'));
 const SavingsDashboard = lazy(() => import('./components/SavingsDashboard'));
 const MyCards = lazy(() => import('./components/MyCards'));
+const LandingPage = lazy(() => import('./components/LandingPage'));
+const CardsPage = lazy(() => import('./components/CardsPage'));
+const BankingPage = lazy(() => import('./components/BankingPage'));
+const ToolsPage = lazy(() => import('./components/ToolsPage'));
+const AskAIPage = lazy(() => import('./components/AskAIPage'));
 
 
 const LoadingScreen = () => (
@@ -61,6 +67,7 @@ function Home({ data, onOpenShortcuts }) {
   const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || null);
   const [selectedVoucher, setSelectedVoucher] = useState(null); // Local state fallback, but we primarily use URL now
   const [activeMobileFilter, setActiveMobileFilter] = useState('none'); // 'none', 'platform', 'category'
+  const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'list'
 
   const [sortOption, setSortOption] = useState('Recommended');
 
@@ -174,108 +181,120 @@ function Home({ data, onOpenShortcuts }) {
 
   }, [searchParams, selectedPlatform, selectedCategory, searchTerm]);
   return (
-    <div className="home-container">
-      {/* Mobile Filter Toggle Removed */}
-
-      {/* Backdrop for mobile filters */}
-      <div
-        className={`mobile-filter-overlay ${activeMobileFilter !== 'none' ? 'active' : ''}`}
-        onClick={() => setActiveMobileFilter('none')}
+    <div className="vouchers-page">
+      {/* Hero Banner */}
+      <VouchersHero
+        voucherCount={data.length}
+        platformCount={ALL_PLATFORMS.length}
+        maxSavings={21}
       />
 
-      {/* Left Column: Stats + Sidebar */}
-      <div className="left-sidebar-wrapper">
-        <StatsBar vouchers={data} platforms={ALL_PLATFORMS} variant="sidebar" />
+      <div className="home-container">
+        {/* Mobile Filter Toggle Removed */}
 
-        {/* Sidebar */}
-        <aside data-tour="filters" className={`glass-panel sidebar 
+        {/* Backdrop for mobile filters */}
+        <div
+          className={`mobile-filter-overlay ${activeMobileFilter !== 'none' ? 'active' : ''}`}
+          onClick={() => setActiveMobileFilter('none')}
+        />
+
+        {/* Left Column: Stats + Sidebar */}
+        <div className="left-sidebar-wrapper">
+          <StatsBar vouchers={data} platforms={ALL_PLATFORMS} variant="sidebar" />
+
+          {/* Sidebar */}
+          <aside data-tour="filters" className={`glass-panel sidebar 
           ${activeMobileFilter !== 'none' ? 'mobile-visible' : ''} 
           ${activeMobileFilter === 'platform' ? 'show-platform' : ''} 
           ${activeMobileFilter === 'category' ? 'show-category' : ''}
         `}>
-          {/* Close handle/indicator for mobile */}
-          <div style={{
-            width: '40px',
-            height: '4px',
-            background: 'var(--glass-border)',
-            borderRadius: '2px',
-            margin: '8px auto',
-            display: activeMobileFilter !== 'none' ? 'block' : 'none'
-          }} onClick={() => setActiveMobileFilter('none')} />
+            {/* Close handle/indicator for mobile */}
+            <div style={{
+              width: '40px',
+              height: '4px',
+              background: 'var(--glass-border)',
+              borderRadius: '2px',
+              margin: '8px auto',
+              display: activeMobileFilter !== 'none' ? 'block' : 'none'
+            }} onClick={() => setActiveMobileFilter('none')} />
 
-          <div className="sidebar-content-wrapper">
-            <div className="platform-section">
-              <h3 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--nav-text)' }}>
-                Filter By Platform
-              </h3>
-              <PlatformFilter
-                selectedPlatform={selectedPlatform}
-                onPlatformSelect={(p) => {
-                  // Toggle behavior: if clicking selected, unselect it
-                  handlePlatformSelect(p === selectedPlatform ? null : p);
-                }}
-                platforms={ALL_PLATFORMS}
-              />
-            </div>
-
-            <div className="sidebar-divider" />
-
-            <div className="category-section" style={{ overflow: 'visible' }}>
-              <div style={{ marginBottom: '1rem', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--nav-text)' }}>
-                Filter By Category
+            <div className="sidebar-content-wrapper">
+              <div className="platform-section">
+                <h3 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--nav-text)' }}>
+                  Filter By Platform
+                </h3>
+                <PlatformFilter
+                  selectedPlatform={selectedPlatform}
+                  onPlatformSelect={(p) => {
+                    // Toggle behavior: if clicking selected, unselect it
+                    handlePlatformSelect(p === selectedPlatform ? null : p);
+                  }}
+                  platforms={ALL_PLATFORMS}
+                />
               </div>
-              <SearchableDropdown
-                options={ALL_CATEGORIES}
-                value={selectedCategory}
-                onChange={handleCategorySelect}
-                label="Category"
-                placeholder="Search categories..."
-                icon="🏷️"
-              />
+
+              <div className="sidebar-divider" />
+
+              <div className="category-section" style={{ overflow: 'visible' }}>
+                <div style={{ marginBottom: '1rem', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--nav-text)' }}>
+                  Filter By Category
+                </div>
+                <SearchableDropdown
+                  options={ALL_CATEGORIES}
+                  value={selectedCategory}
+                  onChange={handleCategorySelect}
+                  label="Category"
+                  placeholder="Search categories..."
+                  icon="🏷️"
+                />
+              </div>
             </div>
-          </div>
-        </aside>
-      </div>
+          </aside>
+        </div>
 
-      {/* Mobile Sticky Bar */}
-      <MobileStickyFilterBar
-        activeFilter={activeMobileFilter}
-        onSortClick={() => setActiveMobileFilter(prev => prev === 'platform' ? 'none' : 'platform')}
-        onFilterClick={() => setActiveMobileFilter(prev => prev === 'category' ? 'none' : 'category')}
-      />
+        {/* Mobile Sticky Bar */}
+        <MobileStickyFilterBar
+          activeFilter={activeMobileFilter}
+          onSortClick={() => setActiveMobileFilter(prev => prev === 'platform' ? 'none' : 'platform')}
+          onFilterClick={() => setActiveMobileFilter(prev => prev === 'category' ? 'none' : 'category')}
+        />
 
 
-      {/* Main Content */}
-      <div style={{ flex: 1, width: '100%' }}>
-        {/* Show Stats and Top Deals only when no filters active - Moved to Top */}
-        {!searchTerm && !selectedPlatform && !selectedCategory && (
-          <>
-            <TopDeals vouchers={data} onVoucherClick={handleVoucherSelect} />
-          </>
+        {/* Main Content */}
+        <div style={{ flex: 1, width: '100%' }}>
+          {/* Show Stats and Top Deals only when no filters active - Moved to Top */}
+          {!searchTerm && !selectedPlatform && !selectedCategory && (
+            <>
+              <TopDeals vouchers={data} onVoucherClick={handleVoucherSelect} />
+            </>
+          )}
+          {/* Search Bar - Always visible at top */}
+          <SearchBar
+            value={inputValue}
+            onChange={handleSearchChange}
+            sortOption={sortOption}
+            onSortChange={setSortOption}
+            onOpenShortcuts={onOpenShortcuts}
+            viewMode={viewMode}
+            onViewChange={setViewMode}
+          />
+
+          <VoucherGrid
+            vouchers={filteredVouchers}
+            onVoucherClick={handleVoucherSelect}
+            viewMode={viewMode}
+          />
+        </div>
+
+
+        {selectedVoucher && (
+          <VoucherModal
+            voucher={selectedVoucher}
+            selectedPlatform={selectedPlatform} // Pass selected platform context
+            onClose={() => handleVoucherSelect(null)}
+          />
         )}
-        {/* Search Bar - Always visible at top */}
-        <SearchBar
-          value={inputValue}
-          onChange={handleSearchChange}
-          sortOption={sortOption}
-          onSortChange={setSortOption}
-          onOpenShortcuts={onOpenShortcuts}
-        />
-
-        <VoucherGrid
-          vouchers={filteredVouchers}
-          onVoucherClick={handleVoucherSelect}
-        />
       </div>
-
-
-      {selectedVoucher && (
-        <VoucherModal
-          voucher={selectedVoucher}
-          selectedPlatform={selectedPlatform} // Pass selected platform context
-          onClose={() => handleVoucherSelect(null)}
-        />
-      )}
     </div>
   );
 }
@@ -343,19 +362,10 @@ function App() {
                 <ErrorBoundary>
                   <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '400px' }}><LoadingSpinner size="lg" text="Loading..." /></div>}>
                     <Routes>
-                      <Route path="/" element={<Home data={vouchers} onOpenShortcuts={() => setIsShortcutsOpen(true)} />} />
+                      <Route path="/" element={<LandingPage />} />
+                      <Route path="/vouchers" element={<Home data={vouchers} onOpenShortcuts={() => setIsShortcutsOpen(true)} />} />
                       <Route path="/guides" element={<Guides />} />
-                      <Route
-                        path="/know-your-cards"
-                        element={
-                          <CreditCardComparison
-                            view="grid"
-                            selectedCards={selectedCards}
-                            toggleCardSelection={toggleCardSelection}
-                            clearSelection={() => setSelectedCards([])}
-                          />
-                        }
-                      />
+                      <Route path="/know-your-cards" element={<CardsPage />} />
                       <Route
                         path="/compare-cards"
                         element={
@@ -380,7 +390,9 @@ function App() {
                       {featureFlags.bankingGuides && (
                         <Route path="/banking-guides" element={<BankingGuides />} />
                       )}
-                      <Route path="/browse-banking" element={<BankingGuides />} />
+                      <Route path="/browse-banking" element={<BankingPage />} />
+                      <Route path="/card-genius" element={<ToolsPage />} />
+                      <Route path="/ask-ai" element={<AskAIPage />} />
                       <Route path="/compare-banking" element={<CompareBanking />} />
                       <Route path="/voucher/:id" element={<VoucherDetail vouchers={vouchers} />} />
 

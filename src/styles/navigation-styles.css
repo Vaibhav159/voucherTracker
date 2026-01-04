@@ -33,25 +33,31 @@
 }
 
 .logo-icon {
-  width: 32px;
-  height: 32px;
+  width: 38px;
+  height: 38px;
+  background: var(--gradient-emerald-teal, linear-gradient(135deg, #065f46 0%, #14b8a6 100%));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 25px var(--accent-emerald-glow, rgba(16, 185, 129, 0.3));
 }
 
 .logo-text {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 700;
   letter-spacing: -0.02em;
+  font-family: var(--font-family-heading, Georgia, serif);
 }
 
 .logo-primary {
-  background: linear-gradient(135deg, var(--accent-cyan, #00f0ff) 0%, var(--accent-pink, #ff6b9d) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--text-primary, #fff);
+  -webkit-text-fill-color: initial;
+  background: none;
 }
 
 .logo-secondary {
-  color: var(--text-primary, #fff);
+  color: var(--accent-gold, #d4a574);
 }
 
 /* ===== DESKTOP NAVIGATION ===== */
@@ -84,22 +90,31 @@
 }
 
 .nav-link.active {
-  color: var(--text-primary, #fff);
-  background: var(--nav-bg-active, rgba(255, 255, 255, 0.12));
+  color: var(--accent-emerald, #10b981);
+  background: var(--nav-bg-active, rgba(16, 185, 129, 0.15));
 }
 
+/* Ask AI Premium Gold Button */
 .nav-link-highlight {
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(236, 72, 153, 0.15));
-  border: 1px solid rgba(139, 92, 246, 0.3);
+  background: var(--gradient-gold-button, linear-gradient(135deg, #d4a574 0%, #b8956a 100%));
+  color: #000 !important;
+  border: none;
+  border-radius: 25px;
+  padding: 0.5rem 1.25rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(212, 165, 116, 0.3);
 }
 
 .nav-link-highlight:hover {
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.25), rgba(236, 72, 153, 0.25));
-  border-color: rgba(139, 92, 246, 0.5);
+  background: var(--gradient-gold-button, linear-gradient(135deg, #e8c49a 0%, #d4a574 100%));
+  color: #000 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 25px rgba(212, 165, 116, 0.4);
 }
 
 .nav-link-highlight.active {
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(236, 72, 153, 0.3));
+  background: var(--gradient-gold-button, linear-gradient(135deg, #d4a574 0%, #b8956a 100%));
+  color: #000 !important;
 }
 
 .nav-icon {
@@ -172,8 +187,8 @@
 }
 
 .dropdown-item.active {
-  background: var(--accent-violet-dim, rgba(139, 92, 246, 0.15));
-  color: var(--accent-violet, #8B5CF6);
+  background: var(--accent-emerald-dim, rgba(16, 185, 129, 0.15));
+  color: var(--accent-emerald, #10b981);
 }
 
 .dropdown-item-icon {
@@ -188,8 +203,8 @@
 }
 
 .dropdown-item-badge {
-  background: var(--accent-pink, #ec4899);
-  color: white;
+  background: var(--accent-emerald, #10b981);
+  color: #000;
   font-size: 0.7rem;
   font-weight: 600;
   padding: 2px 6px;
@@ -227,7 +242,7 @@
 }
 
 .action-btn.active {
-  color: var(--accent-pink, #ec4899);
+  color: var(--accent-emerald, #10b981);
 }
 
 .favorites-btn svg {
@@ -242,8 +257,8 @@
   position: absolute;
   top: 4px;
   right: 4px;
-  background: var(--accent-pink, #ec4899);
-  color: white;
+  background: var(--accent-emerald, #10b981);
+  color: #000;
   font-size: 0.65rem;
   font-weight: 700;
   min-width: 16px;
@@ -416,13 +431,14 @@
 }
 
 .mobile-nav-link.active {
-  background: var(--accent-violet-dim, rgba(139, 92, 246, 0.12));
-  color: var(--accent-violet, #8B5CF6);
+  background: var(--accent-emerald-dim, rgba(16, 185, 129, 0.12));
+  color: var(--accent-emerald, #10b981);
 }
 
 .mobile-nav-link.highlight {
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1));
-  border: 1px solid rgba(139, 92, 246, 0.2);
+  background: var(--accent-gold-dim, rgba(212, 165, 116, 0.15));
+  border: 1px solid rgba(212, 165, 116, 0.3);
+  color: var(--accent-gold, #d4a574);
 }
 
 .mobile-nav-icon {
@@ -435,8 +451,8 @@
 
 .mobile-badge {
   margin-left: auto;
-  background: var(--accent-pink, #ec4899);
-  color: white;
+  background: var(--accent-emerald, #10b981);
+  color: #000;
   font-size: 0.7rem;
   font-weight: 600;
   padding: 2px 8px;
@@ -460,13 +476,13 @@
 }
 
 .footer-credit a {
-  color: var(--accent-cyan, #00f0ff);
+  color: var(--accent-gold, #d4a574);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .footer-credit a:hover {
-  color: var(--accent-pink, #ec4899);
+  color: var(--accent-gold-light, #e8c49a);
 }
 
 /* ===== RESPONSIVE - TABLET & MOBILE ===== */

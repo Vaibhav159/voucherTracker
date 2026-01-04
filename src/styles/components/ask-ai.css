@@ -22,7 +22,7 @@
 }
 
 .inputField:focus {
-    border-color: var(--accent-violet, #8b5cf6);
+    border-color: var(--accent-gold, #d4a574);
 }
 
 .inputField::placeholder {
@@ -40,10 +40,10 @@
     justify-content: center;
     padding: 12px 20px;
     min-width: 70px;
-    background: linear-gradient(135deg, var(--accent-violet, #8b5cf6), var(--accent-pink, #ec4899));
+    background: var(--gradient-gold-button, linear-gradient(135deg, #d4a574 0%, #b8956a 100%));
     border: none;
     border-radius: 12px;
-    color: white;
+    color: #000;
     font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
@@ -53,7 +53,7 @@
 
 .submitButton:hover:not(:disabled) {
     transform: scale(1.02);
-    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+    box-shadow: 0 4px 20px rgba(212, 165, 116, 0.4);
 }
 
 .submitButton:disabled {

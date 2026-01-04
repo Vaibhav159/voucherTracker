@@ -125,9 +125,17 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
           <nav className="nav-desktop" data-tour="navigation">
             <Link
               to="/"
-              className={`nav-link ${isActive('/') ? 'active' : ''}`}
+              className={`nav-link ${isActive('/') && !isActive('/vouchers') ? 'active' : ''}`}
             >
-              <span className="nav-icon">🏷️</span>
+              <span className="nav-icon">🏠</span>
+              <span>Home</span>
+            </Link>
+
+            <Link
+              to="/vouchers"
+              className={`nav-link ${isActive('/vouchers') ? 'active' : ''}`}
+            >
+              <span className="nav-icon">🎟️</span>
               <span>Vouchers</span>
             </Link>
 
@@ -258,8 +266,12 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
         <div className="mobile-nav-content">
           <div className="mobile-nav-section">
             <span className="mobile-section-label">Main</span>
-            <Link to="/" className={`mobile-nav-link ${isActive('/') ? 'active' : ''}`}>
-              <span className="mobile-nav-icon">🏷️</span>
+            <Link to="/" className={`mobile-nav-link ${isActive('/') && !isActive('/vouchers') ? 'active' : ''}`}>
+              <span className="mobile-nav-icon">🏠</span>
+              <span>Home</span>
+            </Link>
+            <Link to="/vouchers" className={`mobile-nav-link ${isActive('/vouchers') ? 'active' : ''}`}>
+              <span className="mobile-nav-icon">🎟️</span>
               <span>Vouchers</span>
             </Link>
             <Link to="/guides" className={`mobile-nav-link ${isActive('/guides') ? 'active' : ''}`}>

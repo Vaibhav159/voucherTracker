@@ -105,11 +105,54 @@ const SearchBar = ({ value, onChange, sortOption, onSortChange, onOpenShortcuts 
                             <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="var(--text-secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 1l4 4 4-4" /></svg>
                         </div>
                     </div>
+
+                    {/* View Toggle - Matches v3 mockup style */}
+                    {onViewChange && (
+                        <div style={{
+                            display: 'flex',
+                            background: 'rgba(255,255,255,0.05)',
+                            borderRadius: '12px',
+                            border: '1px solid rgba(255,255,255,0.1)',
+                            overflow: 'hidden',
+                            marginLeft: '8px'
+                        }}>
+                            <button
+                                onClick={() => onViewChange('grid')}
+                                style={{
+                                    padding: '8px 12px',
+                                    background: viewMode === 'grid' ? 'var(--accent-emerald)' : 'transparent',
+                                    border: 'none',
+                                    color: viewMode === 'grid' ? '#000' : 'var(--text-secondary)',
+                                    cursor: 'pointer',
+                                    fontSize: '16px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    transition: 'all 0.2s'
+                                }}
+                                title="Grid View"
+                            >⊞</button>
+                            <button
+                                onClick={() => onViewChange('list')}
+                                style={{
+                                    padding: '8px 12px',
+                                    background: viewMode === 'list' ? 'var(--accent-emerald)' : 'transparent',
+                                    border: 'none',
+                                    color: viewMode === 'list' ? '#000' : 'var(--text-secondary)',
+                                    cursor: 'pointer',
+                                    fontSize: '16px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    transition: 'all 0.2s'
+                                }}
+                                title="List View"
+                            >☰</button>
+                        </div>
+                    )}
                 </div>
             </div>
             <style>{`
                 .search-sort-container {
-                    min-width: 180px;
+                    min-width: 140px; /* Reduced min-width to fit toggle */
                     flex-shrink: 0;
                 }
                 .search-glass-panel {
@@ -138,7 +181,7 @@ const SearchBar = ({ value, onChange, sortOption, onSortChange, onOpenShortcuts 
                         padding-right: 1rem !important;
                     }
                     input::placeholder {
-                       font-size: 0.9rem;
+                        font-size: 0.9rem;
                     }
                 }
             `}</style>

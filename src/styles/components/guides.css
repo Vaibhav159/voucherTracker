@@ -17,10 +17,11 @@
     font-size: 2.5rem;
     font-weight: 700;
     margin: 0 0 0.5rem 0;
-    background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-cyan) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-family: var(--font-family-heading, Georgia, serif);
+    font-style: italic;
+    color: var(--accent-gold-light, #e8c49a);
+    -webkit-text-fill-color: initial;
+    background: none;
 }
 
 .guides-subtitle {
@@ -51,8 +52,8 @@
 }
 
 .guides-control-bar:focus-within {
-    border-color: var(--accent-cyan-dim);
-    box-shadow: 0 10px 50px -10px rgba(0, 240, 255, 0.15);
+    border-color: var(--accent-emerald-dim, rgba(16, 185, 129, 0.3));
+    box-shadow: 0 10px 50px -10px var(--accent-emerald-glow, rgba(16, 185, 129, 0.15));
 }
 
 .guides-search-wrapper {
@@ -127,7 +128,7 @@
 }
 
 .guides-filter-count {
-    background: var(--accent-cyan);
+    background: var(--accent-emerald, #10b981);
     color: #000;
     font-size: 0.75rem;
     padding: 2px 6px;
@@ -181,8 +182,8 @@
 }
 
 .guides-dropdown-item.selected {
-    background: rgba(0, 240, 255, 0.1);
-    color: var(--accent-cyan);
+    background: var(--accent-emerald-dim, rgba(16, 185, 129, 0.1));
+    color: var(--accent-emerald, #10b981);
     font-weight: 600;
 }
 
@@ -232,10 +233,10 @@
 .guide-card:hover {
     transform: translateY(-6px) rotateX(2deg);
     box-shadow:
-        0 12px 40px rgba(6, 182, 212, 0.2),
-        0 0 20px rgba(6, 182, 212, 0.1),
+        0 12px 40px var(--accent-emerald-glow, rgba(16, 185, 129, 0.2)),
+        0 0 20px var(--accent-emerald-glow, rgba(16, 185, 129, 0.1)),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    border-color: var(--accent-cyan);
+    border-color: var(--accent-emerald, #10b981);
 }
 
 .guide-card-content {
@@ -339,7 +340,7 @@
 .guide-action-btn {
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--accent-cyan);
+    color: var(--accent-gold, #d4a574);
     text-decoration: none;
     background: transparent;
     border: none;
@@ -351,7 +352,7 @@
 
 .guide-action-btn:hover {
     text-decoration: none;
-    filter: brightness(1.2);
+    color: var(--accent-gold-light, #e8c49a);
     transform: translateX(2px);
 }
 
@@ -378,8 +379,8 @@
 /* Load More Button */
 .guide-load-more-btn {
     background: transparent;
-    border: 1px solid var(--accent-cyan);
-    color: var(--accent-cyan);
+    border: 1px solid var(--accent-gold, #d4a574);
+    color: var(--accent-gold, #d4a574);
     padding: 12px 32px;
     border-radius: 100px;
     font-size: 1rem;
@@ -389,13 +390,13 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
+    box-shadow: 0 0 15px rgba(212, 165, 116, 0.1);
 }
 
 .guide-load-more-btn:hover {
-    background: rgba(0, 240, 255, 0.1);
+    background: var(--accent-gold-dim, rgba(212, 165, 116, 0.1));
     transform: translateY(-2px);
-    box-shadow: 0 0 25px rgba(0, 240, 255, 0.2);
+    box-shadow: 0 0 25px rgba(212, 165, 116, 0.2);
 }
 
 .guide-load-more-btn:active {

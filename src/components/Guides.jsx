@@ -4,6 +4,7 @@ import Markdown from 'react-markdown';
 import { useTheme } from '../context/ThemeContext';
 import { useFavorites } from '../context/FavoritesContext';
 import LoadingSpinner from './LoadingSpinner';
+import GuidesHero from './GuidesHero';
 
 const RedditEmbed = ({ embedHtml, theme, onLoad }) => {
     // ... (same implementation as before)
@@ -305,180 +306,138 @@ const Guides = () => {
     }
 
     return (
-        <div className="guides-container">
-            <header className="guides-header">
-                <h2 className="guides-title">Community Guides</h2>
-                <p className="guides-subtitle">
-                    Curated discussions and threads to help you maximize savings.
-                </p>
-            </header>
+        <div className="guides-page">
+            <GuidesHero />
 
-            {/* Minimalist Control Bar */}
-            <div className="guides-control-bar">
-                <div className="guides-search-wrapper">
-                    <span className="guides-search-icon">🔍</span>
-                    <input
-                        type="text"
-                        className="guides-search-input"
-                        placeholder="Search guides, authors, topics..."
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                    />
-                </div>
+            <div className="guides-container">
 
-                <div className="guides-divider"></div>
-
-                <div style={{ position: 'relative' }} ref={dropdownRef}>
+                {/* V3 Category Filters */}
+                <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '32px' }}>
+                  <button
+                    onClick={() => setSelectedTag(null)}
+                    style={{
+                      padding: '12px 24px',
+                      background: !selectedTag ? 'var(--accent-gold)' : 'var(--bg-card)',
+                      color: !selectedTag ? '#000' : 'var(--text-secondary)',
+                      border: !selectedTag ? '1px solid var(--accent-gold)' : '1px solid var(--border-color)',
+                      borderRadius: '25px',
+                      fontSize: '14px',
+                      fontWeight: '600',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s',
+                    }}
+                  >All Categories</button>
+                  {allTags.map(tag => (
                     <button
-                        className={`guides-filter-trigger ${isDropdownOpen ? 'open' : ''} ${selectedTag ? 'has-selection' : ''}`}
-                        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                    >
-                        <span>{selectedTag || 'Filter by Category'}</span>
-                        {selectedTag && (
-                            <span
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    setSelectedTag(null);
-                                }}
-                                style={{
-                                    background: 'rgba(255,255,255,0.2)',
-                                    borderRadius: '50%',
-                                    width: '16px',
-                                    height: '16px',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    fontSize: '0.6rem',
-                                    marginLeft: '4px'
-                                }}
-                            >
-                                ✕
-                            </span>
-                        )}
-                        {!selectedTag && <span className="arrow">▼</span>}
-                    </button>
-
-                    <div className={`guides-dropdown-menu ${isDropdownOpen ? 'open' : ''}`}>
-                        <div
-                            className={`guides-dropdown-item ${!selectedTag ? 'selected' : ''}`}
-                            onClick={() => {
-                                setSelectedTag(null);
-                                setIsDropdownOpen(false);
-                            }}
-                        >
-                            <span>All Categories</span>
-                            <span className="guides-filter-count">{guidesData?.length}</span>
-                        </div>
-                        {allTags.map(tag => (
-                            <div
-                                key={tag}
-                                className={`guides-dropdown-item ${selectedTag === tag ? 'selected' : ''}`}
-                                onClick={() => {
-                                    setSelectedTag(tag);
-                                    setIsDropdownOpen(false);
-                                }}
-                            >
-                                <span>{tag}</span>
-                                <span className="guides-filter-count">
-                                    {guidesData.filter(g => g.tags && g.tags.includes(tag)).length}
-                                </span>
-                            </div>
-                        ))}
-                    </div>
+                      key={tag}
+                      onClick={() => setSelectedTag(tag)}
+                      style={{
+                        padding: '12px 24px',
+                        background: selectedTag === tag ? 'var(--accent-gold)' : 'var(--bg-card)',
+                        color: selectedTag === tag ? '#000' : 'var(--text-secondary)',
+                        border: selectedTag === tag ? '1px solid var(--accent-gold)' : '1px solid var(--border-color)',
+                        borderRadius: '25px',
+                        fontSize: '14px',
+                        fontWeight: '600',
+                        cursor: 'pointer',
+                        transition: 'all 0.2s',
+                      }}
+                    >{tag}</button>
+                  ))}
                 </div>
-            </div>
 
-            {/* Guides Grid */}
-            <div className="guides-grid">
-                {displayedGuides.map(guide => {
-                    const hasEmbed = !!guide.embedHtml;
-                    const hasContent = !!guide.content;
-                    const isInternal = hasEmbed || hasContent;
+                {/* Guides Grid */}
+                <div className="guides-grid">
+                    {displayedGuides.map(guide => {
+                        const hasEmbed = !!guide.embedHtml;
+                        const hasContent = !!guide.content;
+                        const isInternal = hasEmbed || hasContent;
 
-                    return (
-                        <div
-                            key={guide.id}
-                            className="guide-card glass-panel"
-                            onClick={() => {
-                                if (isInternal) {
-                                    setSelectedGuide(guide);
-                                } else {
-                                    window.open(guide.link, '_blank');
-                                }
-                            }}
-                        >
-                            <div className="guide-card-content">
-                                <div className="guide-card-header">
-                                    <div className="guide-tags-wrapper">
-                                        {guide.tags.slice(0, 2).map(tag => (
-                                            <span key={tag} className="guide-tag-pill">{tag}</span>
-                                        ))}
-                                        {guide.tags.length > 2 && (
-                                            <span className="guide-tag-pill">+{guide.tags.length - 2}</span>
+                        return (
+                            <div
+                                key={guide.id}
+                                className="guide-card glass-panel"
+                                onClick={() => {
+                                    if (isInternal) {
+                                        setSelectedGuide(guide);
+                                    } else {
+                                        window.open(guide.link, '_blank');
+                                    }
+                                }}
+                            >
+                                <div className="guide-card-content">
+                                    <div className="guide-card-header">
+                                        <div className="guide-tags-wrapper">
+                                            {guide.tags.slice(0, 2).map(tag => (
+                                                <span key={tag} className="guide-tag-pill">{tag}</span>
+                                            ))}
+                                            {guide.tags.length > 2 && (
+                                                <span className="guide-tag-pill">+{guide.tags.length - 2}</span>
+                                            )}
+                                        </div>
+                                        <button
+                                            className="guide-fav-btn"
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                toggleFavoriteGuide(guide.id);
+                                            }}
+                                            title={isGuideFavorite(guide.id) ? 'Remove from favorites' : 'Add to favorites'}
+                                            style={{
+                                                color: isGuideFavorite(guide.id) ? '#ef4444' : 'var(--text-secondary)'
+                                            }}
+                                        >
+                                            {isGuideFavorite(guide.id) ? '❤️' : '🤍'}
+                                        </button>
+                                    </div>
+
+                                    <h3 className="guide-card-title">{guide.title}</h3>
+                                    <p className="guide-card-description">{guide.description}</p>
+
+                                    <div className="guide-card-footer">
+                                        <span className="guide-author">
+                                            {guide.author}
+                                        </span>
+                                        {isInternal ? (
+                                            <button className="guide-action-btn">
+                                                {hasContent ? 'Read Guide' : 'Read Thread'}
+                                            </button>
+                                        ) : (
+                                            <span className="guide-action-btn" style={{ border: 'none', background: 'transparent', padding: '0' }}>
+                                                Visit Link ↗
+                                            </span>
                                         )}
                                     </div>
-                                    <button
-                                        className="guide-fav-btn"
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            toggleFavoriteGuide(guide.id);
-                                        }}
-                                        title={isGuideFavorite(guide.id) ? 'Remove from favorites' : 'Add to favorites'}
-                                        style={{
-                                            color: isGuideFavorite(guide.id) ? '#ef4444' : 'var(--text-secondary)'
-                                        }}
-                                    >
-                                        {isGuideFavorite(guide.id) ? '❤️' : '🤍'}
-                                    </button>
-                                </div>
-
-                                <h3 className="guide-card-title">{guide.title}</h3>
-                                <p className="guide-card-description">{guide.description}</p>
-
-                                <div className="guide-card-footer">
-                                    <span className="guide-author">
-                                        {guide.author}
-                                    </span>
-                                    {isInternal ? (
-                                        <button className="guide-action-btn">
-                                            {hasContent ? 'Read Guide' : 'Read Thread'}
-                                        </button>
-                                    ) : (
-                                        <span className="guide-action-btn" style={{ border: 'none', background: 'transparent', padding: '0' }}>
-                                            Visit Link ↗
-                                        </span>
-                                    )}
                                 </div>
                             </div>
-                        </div>
-                    );
-                })}
+                        );
+                    })}
+                </div>
+
+                {/* Load More Button */}
+                {visibleCount < filteredGuides.length && (
+                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '3rem' }}>
+                        <button
+                            className="guide-load-more-btn"
+                            onClick={() => setVisibleCount(prev => prev + 9)}
+                        >
+                            Load More Guides
+                        </button>
+                    </div>
+                )}
+
+                {filteredGuides.length === 0 && (
+                    <div style={{ textAlign: 'center', padding: '4rem', color: 'var(--text-secondary)' }}>
+                        No guides found matching your filters.
+                    </div>
+                )}
+
+                {selectedGuide && (
+                    <GuideModal
+                        guide={selectedGuide}
+                        onClose={() => setSelectedGuide(null)}
+                    />
+                )}
             </div>
-
-            {/* Load More Button */}
-            {visibleCount < filteredGuides.length && (
-                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '3rem' }}>
-                    <button
-                        className="guide-load-more-btn"
-                        onClick={() => setVisibleCount(prev => prev + 9)}
-                    >
-                        Load More Guides
-                    </button>
-                </div>
-            )}
-
-            {filteredGuides.length === 0 && (
-                <div style={{ textAlign: 'center', padding: '4rem', color: 'var(--text-secondary)' }}>
-                    No guides found matching your filters.
-                </div>
-            )}
-
-            {selectedGuide && (
-                <GuideModal
-                    guide={selectedGuide}
-                    onClose={() => setSelectedGuide(null)}
-                />
-            )}
         </div>
     );
 };

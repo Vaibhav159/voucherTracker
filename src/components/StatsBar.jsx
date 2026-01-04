@@ -128,8 +128,8 @@ const StatsBar = ({ vouchers = [], platforms = [], variant = 'full' }) => {
           height: 200%;
           background: radial-gradient(
             ellipse at center,
-            rgba(139, 92, 246, 0.08) 0%,
-            rgba(59, 130, 246, 0.05) 30%,
+            rgba(16, 185, 129, 0.08) 0%,
+            rgba(212, 165, 116, 0.05) 30%,
             transparent 70%
           );
           animation: pulseGlow 8s ease-in-out infinite;
@@ -203,18 +203,18 @@ const StatsBar = ({ vouchers = [], platforms = [], variant = 'full' }) => {
         }
 
         .voucher-icon {
-          background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-          box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+          background: linear-gradient(135deg, var(--accent-gold, #d4a574) 0%, var(--accent-gold-dark, #b8956a) 100%);
+          box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
         }
 
         .platform-icon {
-          background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
-          box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+          background: linear-gradient(135deg, var(--accent-blue, #3b82f6) 0%, var(--accent-blue-dark, #1e40af) 100%);
+          box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
         }
 
         .savings-icon {
-          background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-          box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+          background: linear-gradient(135deg, var(--accent-emerald, #10b981) 0%, var(--accent-emerald-dark, #059669) 100%);
+          box-shadow: 0 4px 15px var(--accent-emerald-glow, rgba(16, 185, 129, 0.3));
         }
 
         .stat-content-premium {

@@ -52,14 +52,14 @@
 }
 
 .category-filter__item.active {
-  background: var(--accent-cyan-dim);
-  border-color: var(--accent-cyan);
-  color: var(--accent-cyan);
+  background: var(--accent-emerald-dim, rgba(16, 185, 129, 0.15));
+  border-color: var(--accent-emerald, #10b981);
+  color: var(--accent-emerald, #10b981);
   font-weight: var(--font-semibold);
 }
 
 .category-filter__item:focus-visible {
-  outline: 2px solid var(--accent-cyan);
+  outline: 2px solid var(--accent-emerald, #10b981);
   outline-offset: 2px;
 }
 
@@ -74,8 +74,8 @@
 }
 
 .category-filter__item.active .category-filter__count {
-  background: var(--accent-cyan);
-  color: #fff;
+  background: var(--accent-emerald, #10b981);
+  color: #000;
 }
 
 .category-filter__empty {
@@ -120,18 +120,18 @@
 
 .platform-filter__chip:hover {
   background: var(--item-hover-bg);
-  border-color: var(--accent-cyan);
+  border-color: var(--accent-emerald, #10b981);
 }
 
 .platform-filter__chip.active {
-  background: var(--accent-cyan-dim);
-  border-color: var(--accent-cyan);
-  color: var(--accent-cyan);
+  background: var(--accent-emerald-dim, rgba(16, 185, 129, 0.15));
+  border-color: var(--accent-emerald, #10b981);
+  color: var(--accent-emerald, #10b981);
   font-weight: var(--font-semibold);
 }
 
 .platform-filter__chip:focus-visible {
-  outline: 2px solid var(--accent-cyan);
+  outline: 2px solid var(--accent-emerald, #10b981);
   outline-offset: 2px;
 }
 
@@ -149,12 +149,12 @@
 }
 
 .favorites-toggle:hover {
-  border-color: var(--accent-pink);
+  border-color: var(--accent-gold, #d4a574);
 }
 
 .favorites-toggle.active {
-  background: rgba(139, 92, 246, 0.1);
-  border-color: var(--accent-pink);
+  background: var(--accent-gold-dim, rgba(212, 165, 116, 0.1));
+  border-color: var(--accent-gold, #d4a574);
 }
 
 .favorites-toggle__label {
@@ -196,16 +196,16 @@
 }
 
 .filter-actions__clear:focus-visible {
-  outline: 2px solid var(--accent-cyan);
+  outline: 2px solid var(--accent-emerald, #10b981);
   outline-offset: 2px;
 }
 
 .filter-actions__apply {
   padding: var(--space-sm) var(--space-md);
-  background: var(--accent-cyan);
-  border: 1px solid var(--accent-cyan);
+  background: var(--accent-emerald, #10b981);
+  border: 1px solid var(--accent-emerald, #10b981);
   border-radius: var(--radius-sm);
-  color: #fff;
+  color: #000;
   font-size: var(--text-sm);
   font-weight: var(--font-semibold);
   cursor: pointer;
@@ -213,12 +213,12 @@
 }
 
 .filter-actions__apply:hover {
-  background: #0891b2;
-  border-color: #0891b2;
+  background: var(--accent-emerald-dark, #059669);
+  border-color: var(--accent-emerald-dark, #059669);
 }
 
 .filter-actions__apply:focus-visible {
-  outline: 2px solid var(--accent-cyan);
+  outline: 2px solid var(--accent-emerald, #10b981);
   outline-offset: 2px;
 }
 
@@ -246,10 +246,10 @@
   align-items: center;
   gap: var(--space-xs);
   padding: var(--space-xs) var(--space-sm);
-  background: var(--accent-cyan-dim);
-  border: 1px solid var(--accent-cyan);
+  background: var(--accent-emerald-dim, rgba(16, 185, 129, 0.15));
+  border: 1px solid var(--accent-emerald, #10b981);
   border-radius: var(--radius-full);
-  color: var(--accent-cyan);
+  color: var(--accent-emerald, #10b981);
   font-size: var(--text-xs);
   font-weight: var(--font-semibold);
 }
@@ -257,7 +257,7 @@
 .active-filter-tag__remove {
   background: transparent;
   border: none;
-  color: var(--accent-cyan);
+  color: var(--accent-emerald, #10b981);
   cursor: pointer;
   padding: 0;
   font-size: var(--text-sm);
@@ -358,21 +358,21 @@
 
 .discount-chip:hover {
   background: var(--nav-bg-hover);
-  border-color: var(--accent-cyan);
+  border-color: var(--accent-emerald, #10b981);
   color: var(--text-primary);
   transform: translateY(-1px);
 }
 
 .discount-chip.active {
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
-  border-color: var(--accent-cyan);
-  color: var(--accent-cyan);
+  background: var(--accent-emerald-dim, rgba(16, 185, 129, 0.15));
+  border-color: var(--accent-emerald, #10b981);
+  color: var(--accent-emerald, #10b981);
   font-weight: var(--font-semibold);
-  box-shadow: 0 0 12px rgba(6, 182, 212, 0.2);
+  box-shadow: 0 0 12px var(--accent-emerald-glow, rgba(16, 185, 129, 0.2));
 }
 
 .discount-chip:focus-visible {
-  outline: 2px solid var(--accent-cyan);
+  outline: 2px solid var(--accent-emerald, #10b981);
   outline-offset: 2px;
 }
 

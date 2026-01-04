@@ -1,0 +1,241 @@
+/* ============================================
+   HERO BANNER COMPONENTS
+   Premium Dark Luxe Design
+   ============================================ */
+
+/* Base Hero Banner */
+.hero-banner {
+    position: relative;
+    padding: 60px 48px;
+    background: linear-gradient(135deg, #0a1a0a 0%, var(--bg-color, #0a0a0a) 50%, #0a0a1a 100%);
+    overflow: hidden;
+}
+
+.hero-banner-purple {
+    background: linear-gradient(135deg, #1a0f1a 0%, var(--bg-color, #0a0a0a) 50%, #0f1a1a 100%);
+}
+
+.hero-banner-gold {
+    background: linear-gradient(135deg, #1a0f00 0%, var(--bg-color, #0a0a0a) 50%, #001a1a 100%);
+}
+
+.hero-banner-content {
+    position: relative;
+    z-index: 1;
+    max-width: var(--container-max, 1400px);
+    margin: 0 auto;
+}
+
+/* Decorative Gradient Orbs */
+.hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+}
+
+.hero-orb-emerald {
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+}
+
+.hero-orb-gold {
+    background: radial-gradient(circle, rgba(212, 165, 116, 0.1) 0%, transparent 70%);
+}
+
+.hero-orb-purple {
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+}
+
+.hero-orb-1 {
+    top: -100px;
+    right: 10%;
+    width: 400px;
+    height: 400px;
+}
+
+.hero-orb-2 {
+    bottom: -50px;
+    left: 5%;
+    width: 300px;
+    height: 300px;
+}
+
+.hero-orb-3 {
+    top: 10%;
+    right: 15%;
+    width: 350px;
+    height: 350px;
+}
+
+/* Hero Title */
+.hero-title {
+    font-family: var(--font-family-heading, Georgia, serif);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--accent-gold-light, #e8c49a);
+    line-height: 1.1;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.hero-title-icon {
+    font-size: 48px;
+}
+
+.hero-title-text {
+    font-size: clamp(32px, 5vw, 52px);
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: var(--text-secondary, #9ca3af);
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+.hero-subtitle-highlight {
+    color: var(--accent-emerald, #10b981);
+    font-weight: 700;
+}
+
+/* Hero Stats Row */
+.hero-stats {
+    display: flex;
+    gap: 32px;
+}
+
+.hero-stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 24px 32px;
+    text-align: center;
+    border: 1px solid var(--border-color, #262626);
+}
+
+.hero-stat-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.hero-stat-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--accent-emerald, #10b981);
+}
+
+.hero-stat-label {
+    font-size: 14px;
+    color: var(--text-secondary, #9ca3af);
+}
+
+/* Page Section Headers */
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 14px;
+    color: var(--text-secondary, #9ca3af);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section-title-gold {
+    color: var(--accent-gold, #d4a574);
+    font-weight: 600;
+}
+
+.section-view-all {
+    background: none;
+    border: none;
+    color: var(--accent-gold, #d4a574);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.section-view-all:hover {
+    color: var(--accent-gold-light, #e8c49a);
+}
+
+/* Pro Tip Box */
+.pro-tip-box {
+    padding: 20px;
+    background: var(--accent-gold-dim, rgba(212, 165, 116, 0.1));
+    border-radius: 16px;
+    border: 1px solid rgba(212, 165, 116, 0.2);
+}
+
+.pro-tip-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent-gold-light, #e8c49a);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pro-tip-content {
+    font-size: 13px;
+    color: var(--text-secondary, #9ca3af);
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-banner {
+        padding: 40px 20px;
+    }
+
+    .hero-title-text {
+        font-size: 28px;
+    }
+
+    .hero-title-icon {
+        font-size: 32px;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .hero-stat-card {
+        padding: 16px 20px;
+    }
+
+    .hero-stat-value {
+        font-size: 24px;
+    }
+}
+
+/* Light Mode */
+[data-theme='light'] .hero-banner {
+    background: linear-gradient(135deg, #f0f9f0 0%, var(--bg-color, #f8fafc) 50%, #f0f0f9 100%);
+}
+
+[data-theme='light'] .hero-orb-emerald {
+    background: radial-gradient(circle, rgba(5, 150, 105, 0.08) 0%, transparent 70%);
+}
+
+[data-theme='light'] .hero-orb-gold {
+    background: radial-gradient(circle, rgba(184, 149, 106, 0.08) 0%, transparent 70%);
+}
+
+[data-theme='light'] .hero-stat-card {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: var(--border-color, #e2e8f0);
+}

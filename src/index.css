@@ -9,6 +9,7 @@
 @import './styles/components/forms.css';
 @import './styles/components/filters.css';
 @import './styles/components/ask-ai.css';
+@import './styles/components/hero-banner.css';
 
 @import './styles/navigation-styles.css';
 @import './styles/performance-polish.css';
@@ -17,24 +18,57 @@
 
 :root {
   --font-family: 'Outfit', sans-serif;
+  --font-family-heading: 'Georgia', serif;
 
-  /* Deep Space Theme (Default Dark) */
-  --bg-color: #030014;
+  /* ============================================
+     PREMIUM DARK LUXE THEME (Default Dark)
+     ============================================ */
+  --bg-color: #0a0a0a;
+  --bg-card: #141414;
+  --bg-card-hover: #1a1a1a;
+  --bg-elevated: #1e1e1e;
   --text-primary: #ffffff;
-  --text-secondary: #94a3b8;
+  --text-secondary: #9ca3af;
+  --text-dim: #6b7280;
 
-  /* Neon Accents */
-  --primary-glow: conic-gradient(from 180deg at 50% 50%, #16abff33 0deg, #0885ff33 55deg, #54d6ff33 120deg, #0071ff33 160deg, transparent 360deg);
-  --accent-cyan: #00f0ff;
-  --accent-pink: #8B5CF6;
-  /* Changed from #7000ff to #8B5CF6 for WCAG AA compliance (4.5:1 contrast ratio) */
+  /* Emerald Accent (Primary) */
+  --accent-emerald: #10b981;
+  --accent-emerald-dark: #059669;
+  --accent-emerald-glow: rgba(16, 185, 129, 0.3);
+  --accent-emerald-dim: rgba(16, 185, 129, 0.15);
+
+  /* Gold Accent (Secondary) */
+  --accent-gold: #d4a574;
+  --accent-gold-light: #e8c49a;
+  --accent-gold-dark: #b8956a;
+  --accent-gold-dim: rgba(212, 165, 116, 0.15);
+
+  /* Legacy accent aliases (for backward compatibility) */
+  --accent-cyan: var(--accent-emerald);
+  --accent-pink: #8b5cf6;
   --accent-violet: #4a00e0;
-  --accent-cyan-dim: rgba(0, 240, 255, 0.1);
+  --accent-cyan-dim: var(--accent-emerald-dim);
+
+  /* Blue & Purple accents */
+  --accent-blue: #3b82f6;
+  --accent-blue-dark: #1e40af;
+  --accent-purple: #8b5cf6;
+
+  /* Gradient Presets */
+  --gradient-emerald-teal: linear-gradient(135deg, #065f46 0%, #0d9488 50%, #14b8a6 100%);
+  --gradient-blue-indigo: linear-gradient(135deg, #1e3a8a 0%, #3730a3 50%, #4f46e5 100%);
+  --gradient-purple-pink: linear-gradient(135deg, #581c87 0%, #7c3aed 50%, #a855f7 100%);
+  --gradient-gold-copper: linear-gradient(135deg, #78350f 0%, #d97706 50%, #fbbf24 100%);
+  --gradient-gold-button: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-dark) 100%);
 
   /* Glass v2 */
   --glass-bg: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-highlight: rgba(255, 255, 255, 0.15);
+
+  /* Borders */
+  --border-color: #262626;
+  --border-light: #333333;
 
   --card-radius: 24px;
   --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -44,9 +78,9 @@
   --nav-text-hover: #ffffff;
   --nav-bg: rgba(255, 255, 255, 0.03);
   --nav-bg-hover: rgba(255, 255, 255, 0.1);
-  --nav-bg-active: rgba(255, 255, 255, 0.15);
+  --nav-bg-active: var(--accent-emerald-dim);
 
-  --header-bg: rgba(0, 0, 0, 0.2);
+  --header-bg: rgba(10, 10, 10, 0.95);
   --gradient-text-start: #ffffff;
 
   --spinner-border: rgba(255, 255, 255, 0.1);
@@ -67,58 +101,82 @@
   --card-title: #ffffff;
 
   /* Status Colors (Default Dark) */
-  --color-success: #22c55e;
+  --color-success: var(--accent-emerald);
   --text-on-success: #000000;
 }
 
 [data-theme='light'] {
-  --bg-color: #f1f5f9;
-  /* Darkened slightly from f8fafc for better contrast */
+  /* ============================================
+     PREMIUM LIGHT THEME
+     ============================================ */
+  --bg-color: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --bg-elevated: #f1f5f9;
   --text-primary: #0f172a;
   --text-secondary: #475569;
+  --text-dim: #64748b;
 
-  /* Light Accents - slightly darkened for visibility on light bg */
-  --accent-cyan: #0284c7;
-  /* Darker blue-cyan */
-  --accent-pink: #7209b7;
+  /* Emerald Accent (Light variants) */
+  --accent-emerald: #059669;
+  --accent-emerald-dark: #047857;
+  --accent-emerald-glow: rgba(5, 150, 105, 0.2);
+  --accent-emerald-dim: rgba(5, 150, 105, 0.1);
+
+  /* Gold Accent (Light variants) */
+  --accent-gold: #b8956a;
+  --accent-gold-light: #d4a574;
+  --accent-gold-dark: #92703d;
+  --accent-gold-dim: rgba(184, 149, 106, 0.15);
+
+  /* Legacy accent aliases */
+  --accent-cyan: var(--accent-emerald);
+  --accent-pink: #7c3aed;
   --accent-violet: #4361ee;
-  --accent-cyan-dim: rgba(2, 132, 199, 0.1);
+  --accent-cyan-dim: var(--accent-emerald-dim);
 
-  --glass-bg: rgba(255, 255, 255, 0.8);
-  --glass-border: rgba(148, 163, 184, 0.2);
-  /* Slate-400 with opacity */
+  /* Blue & Purple accents */
+  --accent-blue: #2563eb;
+  --accent-purple: #7c3aed;
+
+  /* Borders */
+  --border-color: #e2e8f0;
+  --border-light: #cbd5e1;
+
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(148, 163, 184, 0.25);
   --glass-highlight: rgba(255, 255, 255, 1.0);
 
   /* Nav overrides */
   --nav-text: #475569;
   --nav-text-hover: #0f172a;
-  --nav-bg: rgba(0, 0, 0, 0.05);
-  --nav-bg-hover: rgba(0, 0, 0, 0.1);
-  --nav-bg-active: #ffffff;
+  --nav-bg: rgba(0, 0, 0, 0.03);
+  --nav-bg-hover: rgba(0, 0, 0, 0.08);
+  --nav-bg-active: rgba(5, 150, 105, 0.1);
 
-  --header-bg: rgba(255, 255, 255, 0.8);
+  --header-bg: rgba(255, 255, 255, 0.95);
   --gradient-text-start: #0f172a;
 
   --spinner-border: rgba(0, 0, 0, 0.1);
-  --card-hover-border: rgba(0, 0, 0, 0.1);
+  --card-hover-border: rgba(0, 0, 0, 0.15);
 
   /* Light Mode Modal Overrides */
   --modal-bg: #ffffff;
   --modal-border: rgba(0, 0, 0, 0.1);
   --item-bg: #ffffff;
-  --item-border: rgba(0, 0, 0, 0.05);
+  --item-border: rgba(0, 0, 0, 0.08);
   --tag-bg: rgba(0, 0, 0, 0.05);
   --tag-text: #475569;
-  --tag-border: rgba(0, 0, 0, 0.05);
+  --tag-border: rgba(0, 0, 0, 0.08);
   --btn-secondary-bg: rgba(0, 0, 0, 0.05);
   --btn-secondary-text: #0f172a;
   --btn-secondary-hover-bg: #0f172a;
   --btn-secondary-hover-text: #ffffff;
-  --btn-secondary-hover-text: #ffffff;
   --card-title: #0f172a;
 
   /* Status Colors (Light) */
-  --color-success: #16a34a;
+  --color-success: var(--accent-emerald);
   --text-on-success: #ffffff;
 }
 

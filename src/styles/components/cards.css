@@ -28,10 +28,10 @@
 .voucher-card:hover {
   transform: translateY(-6px) rotateX(2deg);
   box-shadow:
-    0 12px 40px rgba(6, 182, 212, 0.2),
-    0 0 20px rgba(6, 182, 212, 0.1),
+    0 12px 40px var(--accent-emerald-glow, rgba(16, 185, 129, 0.2)),
+    0 0 20px var(--accent-emerald-glow, rgba(16, 185, 129, 0.1)),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  border-color: var(--accent-cyan);
+  border-color: var(--accent-emerald, #10b981);
 }
 
 .voucher-card:hover .voucher-card__logo {
@@ -66,7 +66,7 @@
 }
 
 .voucher-card:focus-visible {
-  outline: 2px solid var(--accent-cyan);
+  outline: 2px solid var(--accent-emerald, #10b981);
   outline-offset: 2px;
 }
 
@@ -111,8 +111,8 @@
 
 .voucher-card__category {
   font-size: var(--text-xs);
-  color: var(--accent-cyan);
-  background: var(--accent-cyan-dim);
+  color: var(--accent-emerald, #10b981);
+  background: var(--accent-emerald-dim, rgba(16, 185, 129, 0.15));
   padding: 4px 10px;
   border-radius: var(--radius-full);
   font-weight: var(--font-semibold);
@@ -194,12 +194,12 @@
 
 .credit-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.15);
-  border-color: var(--accent-pink);
+  box-shadow: 0 8px 24px var(--accent-emerald-glow, rgba(16, 185, 129, 0.15));
+  border-color: var(--accent-emerald, #10b981);
 }
 
 .credit-card:focus-visible {
-  outline: 2px solid var(--accent-pink);
+  outline: 2px solid var(--accent-emerald, #10b981);
   outline-offset: 2px;
 }
 
@@ -286,8 +286,8 @@
 }
 
 .platform-offer.selected {
-  border: 1px solid var(--accent-cyan);
-  background: var(--accent-cyan-dim);
+  border: 1px solid var(--accent-emerald, #10b981);
+  background: var(--accent-emerald-dim, rgba(16, 185, 129, 0.1));
 }
 
 .platform-offer__badge {
@@ -350,7 +350,7 @@
 }
 
 .platform-offer__metric-value.savings {
-  color: #4ade80;
+  color: var(--accent-emerald, #10b981);
 }
 
 .platform-offer__footer {

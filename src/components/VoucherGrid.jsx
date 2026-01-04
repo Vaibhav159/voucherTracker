@@ -11,6 +11,7 @@ import React, { useRef, useMemo, useCallback, useState, useEffect } from 'react'
 import PropTypes from 'prop-types';
 import { useWindowVirtualizer } from '@tanstack/react-virtual';
 import VoucherCard from './VoucherCardPolished';
+import VoucherListRow from './VoucherListRow';
 import EmptyState from './EmptyState';
 import { VoucherGridSkeleton } from './Skeleton';
 
@@ -19,7 +20,7 @@ const CARD_GAP = 32;
 const CARD_HEIGHT = 400;
 const OVERSCAN = 5;
 
-const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
+const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false, viewMode = 'grid' }) => {
     const parentRef = useRef(null);
     // Initialize columns based on window width to prevent flash of wrong layout
     const [columns, setColumns] = useState(() => {
@@ -42,6 +43,12 @@ const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
     // Calculate columns based on container width - FIXED VERSION
     useEffect(() => {
         const calculateColumns = () => {
+            // Force 1 column if viewMode is 'list'
+            if (viewMode === 'list') {
+                setColumns(1);
+                return;
+            }
+
             // Mobile Override: Force 1 column if width <= 768px
             if (window.innerWidth <= 768) {
                 setColumns(1);
@@ -64,7 +71,7 @@ const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
         calculateColumns();
         window.addEventListener('resize', calculateColumns);
         return () => window.removeEventListener('resize', calculateColumns);
-    }, []);
+    }, [viewMode]); // Re-run when viewMode changes
 
     // Group vouchers into rows
     const rows = useMemo(() => {
@@ -174,12 +181,21 @@ const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
                             }}
                         >
                             {rowVouchers.map((voucher, colIndex) => (
-                                <VoucherCard
-                                    key={voucher.id}
-                                    voucher={voucher}
-                                    onClick={onVoucherClick}
-                                    index={virtualRow.index * columns + colIndex}
-                                />
+                                viewMode === 'list' ? (
+                                    <VoucherListRow
+                                        key={voucher.id}
+                                        voucher={voucher}
+                                        onClick={onVoucherClick}
+                                        style={{ height: '100%' }}
+                                    />
+                                ) : (
+                                    <VoucherCard
+                                        key={voucher.id}
+                                        voucher={voucher}
+                                        onClick={onVoucherClick}
+                                        index={virtualRow.index * columns + colIndex}
+                                    />
+                                )
                             ))}
                         </div>
                     );

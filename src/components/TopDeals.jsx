@@ -193,10 +193,10 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
 
         .header-icon {
           font-size: 1.5rem;
-          background: linear-gradient(135deg, #fbbf24, #f59e0b);
+          background: linear-gradient(135deg, var(--accent-gold, #d4a574), var(--accent-gold-dark, #b8956a));
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
-          filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.4));
+          filter: drop-shadow(0 0 8px rgba(212, 165, 116, 0.4));
         }
 
         .section-header h2 {
@@ -372,14 +372,14 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: linear-gradient(135deg, #ef4444, #b91c1c);
+          background: var(--accent-emerald, #10b981);
           border-radius: 10px;
           font-size: 0.65rem;
           font-weight: 800;
-          color: white;
+          color: #000;
           white-space: nowrap;
           z-index: 2;
-          box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+          box-shadow: 0 4px 10px var(--accent-emerald-glow, rgba(16, 185, 129, 0.3));
           letter-spacing: 0.02em;
           border: 1px solid rgba(255, 255, 255, 0.2);
         }
@@ -408,7 +408,7 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
         .brand-fallback {
           font-size: 2rem;
           font-weight: 800;
-          background: linear-gradient(135deg, var(--accent-violet, #8b5cf6), var(--accent-cyan, #06b6d4));
+          background: linear-gradient(135deg, var(--accent-emerald, #10b981), var(--accent-gold, #d4a574));
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
