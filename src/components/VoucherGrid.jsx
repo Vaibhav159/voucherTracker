@@ -28,8 +28,9 @@ const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
         }
         return 3;
     });
-    const [containerWidth, setContainerWidth] = useState(0);
+
     const [isInitialLoad, setIsInitialLoad] = useState(true);
+    const [scrollMargin, setScrollMargin] = useState(0);
 
     // Simulate initial load delay for skeleton demo
     useEffect(() => {
@@ -52,7 +53,7 @@ const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
             const containerRect = parentRef.current.getBoundingClientRect();
             const width = containerRect.width - 16; // Padding
 
-            setContainerWidth(width);
+
 
             const possibleCols = Math.floor((width + CARD_GAP) / (CARD_MIN_WIDTH + CARD_GAP));
             const cols = Math.max(1, Math.min(possibleCols, 2)); // Max 2 columns on mobile/tablet usually
@@ -66,6 +67,11 @@ const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
         return () => window.removeEventListener('resize', calculateColumns);
     }, []);
 
+    useEffect(() => {
+        if (parentRef.current) {
+            setScrollMargin(parentRef.current.offsetTop);
+        }
+    }, []);
     // Group vouchers into rows
     const rows = useMemo(() => {
         if (!vouchers || vouchers.length === 0) return [];
@@ -82,7 +88,7 @@ const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
         count: rows.length,
         estimateSize: getRowHeight,
         overscan: OVERSCAN,
-        scrollMargin: parentRef.current?.offsetTop ?? 0,
+        scrollMargin,
     });
 
     // Calculate stats
@@ -171,6 +177,7 @@ const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
                                 gridTemplateColumns: `repeat(${columns}, 1fr)`,
                                 gap: `${CARD_GAP}px`,
                                 boxSizing: 'border-box',
+                                paddingBottom: `${CARD_GAP}px`,
                             }}
                         >
                             {rowVouchers.map((voucher, colIndex) => (
