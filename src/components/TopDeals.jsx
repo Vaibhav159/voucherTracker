@@ -149,7 +149,7 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
                 </span>
               </div>
               {voucher.maxDiscount > 0 && (
-                <div className="discount-chip">
+                <div className="essential-discount-chip">
                   {voucher.maxDiscount}% OFF
                 </div>
               )}
@@ -362,7 +362,7 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
           transform: translateY(-1px) scale(0.96);
         }
 
-        .discount-chip {
+        .essential-discount-chip {
           position: absolute;
           bottom: -8px;
           left: 50%;
@@ -432,7 +432,7 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
           .card-logo {
             padding: 14px;
           }
-          .discount-chip {
+          .essential-discount-chip {
             padding: 0 8px;
             font-size: 0.6rem;
           }
