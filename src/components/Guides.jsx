@@ -90,6 +90,21 @@ const RedditEmbed = ({ embedHtml, theme, onLoad }) => {
 const GuideModal = ({ guide, onClose }) => {
     const { theme } = useTheme();
 
+    const processedEmbedHtml = useMemo(() => {
+        if (!guide.embedHtml) return '';
+        // Inject theme for Twitter embeds
+        if (guide.embedHtml.includes('twitter-tweet')) {
+            // Check if it already has data-theme to allow manual override if needed, otherwise inject
+            if (!guide.embedHtml.includes('data-theme=')) {
+                return guide.embedHtml.replace(
+                    /class=["']twitter-tweet["']/,
+                    `class="twitter-tweet" data-theme="${theme}"`
+                );
+            }
+        }
+        return guide.embedHtml;
+    }, [guide.embedHtml, theme]);
+
     useEffect(() => {
         if (window.twttr && window.twttr.widgets) {
             window.twttr.widgets.load();
@@ -98,7 +113,7 @@ const GuideModal = ({ guide, onClose }) => {
         return () => {
             document.body.style.overflow = 'unset';
         };
-    }, [guide]);
+    }, [guide, theme]);
 
     useEffect(() => {
         const handleEsc = (e) => {
@@ -125,13 +140,13 @@ const GuideModal = ({ guide, onClose }) => {
                 left: 0,
                 right: 0,
                 bottom: 0,
-                background: 'rgba(0, 0, 0, 0.8)',
+                background: 'rgba(0, 0, 0, 0.85)',
                 backdropFilter: 'blur(8px)',
                 zIndex: 9999,
                 display: 'flex',
-                alignItems: isMobile ? 'flex-end' : 'center',
+                alignItems: 'flex-start', // Changed from center to prevent top cropping
                 justifyContent: 'center',
-                padding: isMobile ? '0' : '1rem',
+                padding: '2rem 1rem', // Add padding for safe area
                 overflowY: 'auto'
             }}
             onClick={onClose}
@@ -141,12 +156,13 @@ const GuideModal = ({ guide, onClose }) => {
                 style={{
                     background: 'var(--modal-bg)',
                     border: '1px solid var(--modal-border)',
-                    borderRadius: isMobile ? '20px 20px 0 0' : '20px',
+                    borderRadius: '20px',
                     width: '100%',
-                    maxWidth: isMobile ? '100%' : '700px',
-                    maxHeight: isMobile ? '95vh' : '90vh',
-                    overflowY: 'auto',
+                    maxWidth: '700px',
+                    // maxHeight: isMobile ? '95vh' : '90vh', // Removed max-height constraint to let page scroll
+                    margin: 'auto', // Centers vertically if content is short
                     boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+                    position: 'relative'
                 }}
                 onClick={e => e.stopPropagation()}
             >
@@ -161,7 +177,7 @@ const GuideModal = ({ guide, onClose }) => {
                 </div>
 
                 {guide.content ? (
-                    <div style={{ color: 'var(--text-primary)', lineHeight: '1.6', width: 'min(90vw, 800px)' }}>
+                    <div style={{ color: 'var(--text-primary)', lineHeight: '1.6', width: '100%' }}>
                         <Markdown components={{
                             h1: ({ node, ...props }) => <h1 style={{ fontSize: '1.8rem', margin: '1.5rem 0 1rem' }} {...props} />,
                             h2: ({ node, ...props }) => <h2 style={{ fontSize: '1.5rem', margin: '1.5rem 0 1rem', color: 'var(--accent-cyan)' }} {...props} />,
@@ -189,7 +205,7 @@ const GuideModal = ({ guide, onClose }) => {
                     </div>
                 ) : (
                     <div className="guide-embed-wrapper">
-                        <div dangerouslySetInnerHTML={{ __html: guide.embedHtml }} />
+                        <div dangerouslySetInnerHTML={{ __html: processedEmbedHtml }} />
                     </div>
                 )}
 

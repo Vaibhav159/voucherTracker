@@ -431,16 +431,14 @@
     max-width: 800px;
     text-align: center;
     line-height: 1.4;
-    padding: 0 60px;
-    /* Safe padding for desktop */
+    padding: 0 40px;
+    /* Space for close button */
     word-break: break-word;
-    /* Prevent overflow */
 }
 
 .guide-modal-close-btn {
     position: absolute;
-    top: -4px;
-    /* Slight optical adjustment */
+    top: 0;
     right: 0;
     background: var(--btn-secondary-bg);
     border: none;
@@ -467,8 +465,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    overflow: hidden;
-    /* Prevent overflow */
+    /* overflow: hidden; removed to prevent clipping */
 }
 
 .guide-embed-wrapper>div {
@@ -480,7 +477,7 @@
 /* Force responsive twitter embeds */
 .guide-embed-wrapper iframe,
 .guide-embed-wrapper .twitter-tweet {
-    max-width: 100% !important;
+    max-width: 550px !important;
     min-width: auto !important;
     width: 100% !important;
     margin: 0 auto !important;
@@ -493,8 +490,6 @@
     }
 
     .guide-modal-title {
-        padding: 0 50px;
-        /* Ensure 50px padding on both sides */
         font-size: 1.3rem;
         /* Slightly smaller on mobile to fit more text */
     }
