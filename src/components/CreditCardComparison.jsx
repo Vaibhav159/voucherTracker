@@ -52,6 +52,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
     const [selectedPreset, setSelectedPreset] = useState(null);
     const [activeFeeType, setActiveFeeType] = useState(null);
     const [activeTier, setActiveTier] = useState(null);
+    const [mobileActiveCardIndex, setMobileActiveCardIndex] = useState(0); // For mobile tabbed comparison
 
     // Simulate initial load for skeleton
     useEffect(() => {
@@ -568,17 +569,37 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
 
         if (cards.length === 0) return null;
 
-        // Dynamic column width based on number of cards
+        // Dynamic column width based on number of cards and screen size
+        const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+        const screenWidth = typeof window !== 'undefined' ? window.innerWidth : 400;
+
         const getColumnWidth = () => {
+            if (isMobile) {
+                // Fixed width per card on mobile - allows horizontal scroll
+                return '130px';
+            }
+            // Desktop sizes
             if (cards.length === 1) return '350px';
             if (cards.length === 2) return '280px';
             return '220px'; // 3 cards
         };
         const colWidth = getColumnWidth();
+        const labelWidth = isMobile ? '75px' : '130px';
 
+        // Always use table view - compact on mobile
         return (
-            <div className="liquid-glass" style={{ marginTop: '1.5rem', position: 'relative' }}>
-                <div className="comparison-table-wrapper" style={{ overflowX: 'auto', borderRadius: 'inherit', maxWidth: '100%' }}>
+            <div className="liquid-glass" style={{ marginTop: '1rem', position: 'relative' }}>
+                <div className="comparison-table-wrapper" style={{
+                    overflowX: 'auto',
+                    borderRadius: 'inherit',
+                    maxWidth: '100vw',
+                    width: '100%',
+                    scrollBehavior: 'smooth',
+                    WebkitOverflowScrolling: 'touch',
+                    position: 'relative',
+                    margin: isMobile ? '0 -1rem' : 0,
+                    padding: isMobile ? '0 1rem' : 0,
+                }}>
                     <style>
                         {`
                     .comparison-row:hover {
@@ -1081,6 +1102,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                                             key={filter}
                                             onClick={() => setActiveFilter(isActive ? 'All' : filter)}
                                             style={{
+                                                flexShrink: 0,
                                                 whiteSpace: 'nowrap',
                                                 padding: '6px 16px',
                                                 borderRadius: '20px',
@@ -1305,58 +1327,71 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                     </div>
 
                     {/* Selected Cards Floating Bar */}
-                    {selectedCards.length > 0 && (
-                        <div style={{
-                            position: 'fixed',
-                            bottom: '24px',
-                            left: '50%',
-                            transform: 'translateX(-50%)',
-                            background: 'rgba(20, 20, 35, 0.95)',
-                            backdropFilter: 'blur(20px)',
-                            border: '1px solid var(--glass-border)',
-                            borderRadius: '16px',
-                            padding: '12px 20px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '16px',
-                            zIndex: 100,
-                            boxShadow: '0 10px 40px rgba(0,0,0,0.4)',
-                        }}>
-                            <span style={{ fontWeight: 600 }}>
-                                {selectedCards.length}/3 cards selected
-                            </span>
-                            <Link
-                                to="/compare-cards"
-                                state={{ view: 'table' }}
-                                onClick={() => { }}
+                    {selectedCards.length > 0 && (() => {
+                        const isMobileBar = typeof window !== 'undefined' && window.innerWidth < 768;
+                        return (
+                            <div
+                                className="floating-compare-bar"
                                 style={{
-                                    padding: '10px 20px',
-                                    background: 'linear-gradient(135deg, var(--accent-cyan), var(--accent-pink))',
-                                    color: '#000',
-                                    textDecoration: 'none',
-                                    borderRadius: '10px',
-                                    fontWeight: 600,
-                                    fontSize: '0.9rem',
-                                }}
-                            >
-                                Compare Now →
-                            </Link>
-                            <button
-                                onClick={handleClearSelection}
-                                style={{
-                                    padding: '10px 16px',
-                                    background: 'transparent',
-                                    border: '1px solid rgba(239, 68, 68, 0.5)',
-                                    color: '#ef4444',
-                                    borderRadius: '10px',
-                                    cursor: 'pointer',
-                                    fontSize: '0.85rem',
-                                }}
-                            >
-                                Clear
-                            </button>
-                        </div>
-                    )}
+                                    position: 'fixed',
+                                    bottom: isMobileBar
+                                        ? 'calc(80px + env(safe-area-inset-bottom, 0px))'
+                                        : 'calc(24px + env(safe-area-inset-bottom, 0px))',
+                                    left: isMobileBar ? '1rem' : '50%',
+                                    right: isMobileBar ? '1rem' : 'auto',
+                                    transform: isMobileBar ? 'none' : 'translateX(-50%)',
+                                    background: 'rgba(20, 20, 35, 0.98)',
+                                    backdropFilter: 'blur(20px)',
+                                    border: '1px solid var(--glass-border)',
+                                    borderRadius: isMobileBar ? '12px' : '16px',
+                                    padding: isMobileBar ? '10px 14px' : '12px 20px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: isMobileBar ? '8px' : '12px',
+                                    zIndex: 1000,
+                                    boxShadow: '0 10px 40px rgba(0,0,0,0.5)',
+                                    maxWidth: isMobileBar ? 'calc(100vw - 2rem)' : 'calc(100vw - 32px)',
+                                    flexWrap: 'wrap',
+                                    justifyContent: 'center',
+                                }}>
+                                <span style={{ fontWeight: 600, whiteSpace: 'nowrap' }}>
+                                    {selectedCards.length}/3 cards
+                                </span>
+                                <Link
+                                    to="/compare-cards"
+                                    state={{ view: 'table' }}
+                                    onClick={() => { }}
+                                    style={{
+                                        padding: '10px 16px',
+                                        background: 'linear-gradient(135deg, var(--accent-cyan), var(--accent-pink))',
+                                        color: '#000',
+                                        textDecoration: 'none',
+                                        borderRadius: '10px',
+                                        fontWeight: 600,
+                                        fontSize: '0.85rem',
+                                        whiteSpace: 'nowrap',
+                                    }}
+                                >
+                                    Compare →
+                                </Link>
+                                <button
+                                    onClick={handleClearSelection}
+                                    style={{
+                                        padding: '10px 14px',
+                                        background: 'transparent',
+                                        border: '1px solid rgba(239, 68, 68, 0.5)',
+                                        color: '#ef4444',
+                                        borderRadius: '10px',
+                                        cursor: 'pointer',
+                                        fontSize: '0.85rem',
+                                        whiteSpace: 'nowrap',
+                                    }}
+                                >
+                                    Clear
+                                </button>
+                            </div>
+                        );
+                    })()}
                 </>
             )}
 

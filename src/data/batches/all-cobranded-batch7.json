@@ -1,0 +1,556 @@
+[
+    {
+        "id": "sbi-flipkart",
+        "name": "Flipkart SBI Credit Card",
+        "bank": "SBI Card",
+        "partner": "Flipkart",
+        "network": "Mastercard/Visa",
+        "image": "/assets/cards/sbi-flipkart.png",
+        "link": "https://www.sbicard.com/en/personal/credit-cards/rewards/flipkart-sbi-card.page",
+        "fees": {
+            "joining": 500,
+            "annual": 500,
+            "currency": "INR",
+            "gstExtra": true,
+            "waivedOn": 350000,
+            "waiverText": "Annual fee reversed on spending ₹3.5 Lakh in the previous membership year"
+        },
+        "rewards": {
+            "type": "cashback",
+            "baseRate": 0.01,
+            "earningText": "7.5% on Myntra, 5% on Flipkart/Shopsy/Cleartrip, 4% on partners, 1% others",
+            "expiry": "Never Expires (Auto Credit)",
+            "calculator": {
+                "tier": "cashback",
+                "monthlyCap": null,
+                "categories": {
+                    "myntra": {
+                        "rate": 0.075,
+                        "label": "7.5% Cashback on Myntra",
+                        "cap": 4000,
+                        "capPeriod": "quarter"
+                    },
+                    "flipkart": {
+                        "rate": 0.05,
+                        "label": "5% Cashback on Flipkart",
+                        "cap": 4000,
+                        "capPeriod": "quarter"
+                    },
+                    "shopsy": {
+                        "rate": 0.05,
+                        "label": "5% Cashback on Shopsy",
+                        "cap": 4000,
+                        "capPeriod": "quarter"
+                    },
+                    "cleartrip": {
+                        "rate": 0.05,
+                        "label": "5% Cashback on Cleartrip",
+                        "cap": 4000,
+                        "capPeriod": "quarter"
+                    },
+                    "partners": {
+                        "rate": 0.04,
+                        "label": "4% on Zomato, Uber, PVR, Netmeds",
+                        "cap": 4000,
+                        "capPeriod": "quarter"
+                    },
+                    "others": {
+                        "rate": 0.01,
+                        "label": "1% Unlimited Cashback"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No cashback"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 1,
+                "bestOption": "Auto Statement Credit",
+                "options": [
+                    {
+                        "type": "Auto Credit",
+                        "value": 1,
+                        "desc": "Cashback automatically credited to card account"
+                    }
+                ]
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": "Not available",
+                "international": "Not available",
+                "accessType": "None"
+            },
+            "milestones": [],
+            "welcome": {
+                "included": true,
+                "text": "₹1,250 worth benefits (₹250 Flipkart GC + ₹500 Flipkart e-GC + ₹500 Cleartrip coupon)"
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "cap": 400,
+                "capPeriod": "statement cycle"
+            },
+            "forex": {
+                "markup": 0.035,
+                "text": "3.5% Forex Markup"
+            }
+        },
+        "metadata": {
+            "tags": [
+                "Cashback",
+                "Shopping",
+                "Co-branded",
+                "E-commerce"
+            ],
+            "bestFor": "Flipkart & Myntra Shoppers (Moderate to High Spenders)",
+            "rating": 4.3,
+            "verdict": "Excellent cashback card for frequent Flipkart ecosystem users. The 7.5% on Myntra and 5% on Flipkart are industry-leading rates. However, quarterly caps of ₹4,000 per category limit maximum savings to around ₹20,000/year. Best suited for moderate to high spenders within the Flipkart ecosystem.",
+            "pros": [
+                "Industry-best 7.5% cashback on Myntra",
+                "Excellent 5% cashback on Flipkart, Shopsy, Cleartrip",
+                "4% on popular partners (Zomato, Uber, PVR, Netmeds)",
+                "1% unlimited cashback on all other spends",
+                "Auto-credit cashback",
+                "Achievable fee waiver (₹3.5L)"
+            ],
+            "cons": [
+                "₹4,000 quarterly cap on each accelerated category",
+                "No airport lounge access",
+                "No international travel benefits",
+                "Fuel excluded from cashback"
+            ]
+        }
+    },
+    {
+        "id": "sbi-apollo",
+        "name": "Apollo SBI Card SELECT",
+        "bank": "SBI Card",
+        "partner": "Apollo Health & Lifestyle",
+        "network": "Mastercard/RuPay",
+        "image": "/assets/cards/sbi-apollo.png",
+        "link": "https://www.sbicard.com/en/personal/credit-cards/rewards/apollo-sbi-card-select.page",
+        "fees": {
+            "joining": 1499,
+            "annual": 1499,
+            "currency": "INR",
+            "gstExtra": true,
+            "waivedOn": 300000,
+            "waiverText": "Annual fee reversed on spending ₹3 Lakh in the previous membership year"
+        },
+        "rewards": {
+            "type": "points",
+            "baseRate": 0.005,
+            "earningText": "10 RP per ₹100 on Apollo (10%), 2 RP per ₹100 on Dining/Movies/Travel (2%), 1 RP per ₹200 others",
+            "expiry": "24 months",
+            "calculator": {
+                "tier": "points",
+                "monthlyCap": 5000,
+                "categories": {
+                    "apollo": {
+                        "rate": 0.10,
+                        "label": "10 RP per ₹100 (10%)",
+                        "cap": 5000,
+                        "capPeriod": "statement cycle"
+                    },
+                    "dining": {
+                        "rate": 0.02,
+                        "label": "2 RP per ₹100 (2%)",
+                        "cap": 5000,
+                        "capPeriod": "statement cycle"
+                    },
+                    "entertainment": {
+                        "rate": 0.02,
+                        "label": "2 RP per ₹100 (2%)",
+                        "cap": 5000,
+                        "capPeriod": "statement cycle"
+                    },
+                    "travel": {
+                        "rate": 0.02,
+                        "label": "2 RP per ₹100 (2%)",
+                        "cap": 5000,
+                        "capPeriod": "statement cycle"
+                    },
+                    "others": {
+                        "rate": 0.005,
+                        "label": "1 RP per ₹200 (0.5%)"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 1,
+                "bestOption": "Apollo Health Credits",
+                "options": [
+                    {
+                        "type": "Apollo Health Credits",
+                        "value": 1,
+                        "desc": "1 RP = ₹1 Health Credit"
+                    }
+                ]
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": "4 per year (1 per quarter)",
+                "international": "Priority Pass Membership ($99 value) - Visits Chargeable",
+                "accessType": "Visa/Mastercard Program"
+            },
+            "milestones": [
+                {
+                    "spend": 600000,
+                    "benefit": "Noise Smartwatch worth ₹7,999"
+                }
+            ],
+            "welcome": {
+                "included": true,
+                "text": "₹1,500 Apollo e-Gift Voucher + Complimentary Apollo Circle Membership + 1-year FITPASS PRO"
+            },
+            "health": {
+                "included": true,
+                "text": "Apollo Circle membership (15% off medicines, 30% off diagnostics) + Complimentary Health Check-up on ₹50K spend"
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "cap": 100
+            },
+            "forex": {
+                "markup": 0.035,
+                "text": "3.5% Forex Markup"
+            }
+        },
+        "metadata": {
+            "tags": [
+                "Healthcare",
+                "Rewards",
+                "Co-branded",
+                "Wellness"
+            ],
+            "bestFor": "Apollo ecosystem users, health-conscious individuals",
+            "rating": 4.1,
+            "verdict": "India's premier healthcare-focused credit card. Excellent for those who regularly use Apollo services - 10% reward rate on Apollo spends is exceptional. The built-in Apollo Circle membership adds significant value. However, rewards are limited to Apollo ecosystem redemption.",
+            "pros": [
+                "10% rewards on Apollo ecosystem",
+                "Apollo Circle membership included",
+                "Domestic lounge access",
+                "Milestone smartwatch reward",
+                "FITPASS PRO membership"
+            ],
+            "cons": [
+                "Rewards only redeemable as Apollo Health Credits",
+                "Low 0.5% base reward rate",
+                "Monthly caps on rewards",
+                "International lounge visits chargeable"
+            ]
+        }
+    },
+    {
+        "id": "axis-cashback",
+        "name": "Axis Bank Cashback Credit Card",
+        "bank": "Axis Bank",
+        "network": "Visa/Mastercard",
+        "image": "/assets/cards/axis-cashback.png",
+        "link": "https://www.axisbank.com/retail/cards/credit-card/cashback-credit-card",
+        "fees": {
+            "joining": 1000,
+            "annual": 1000,
+            "currency": "INR",
+            "gstExtra": true,
+            "waivedOn": 400000,
+            "waiverText": "Annual fee waived on ₹4 Lakh spend in previous year"
+        },
+        "rewards": {
+            "type": "cashback",
+            "baseRate": 0.0075,
+            "earningText": "Up to 7% on online spends (tiered), 0.75% offline/travel, 0.5% utilities",
+            "expiry": "Never Expires (Auto Credit)",
+            "calculator": {
+                "tier": "cashback",
+                "monthlyCap": 4000,
+                "categories": {
+                    "online_tier1": {
+                        "rate": 0.02,
+                        "label": "2% on online spends up to ₹5,000"
+                    },
+                    "online_tier2": {
+                        "rate": 0.05,
+                        "label": "5% on online spends ₹5,001 - ₹40,000"
+                    },
+                    "online_tier3": {
+                        "rate": 0.07,
+                        "label": "7% on online spends above ₹40,000"
+                    },
+                    "offline": {
+                        "rate": 0.0075,
+                        "label": "0.75% offline spends"
+                    },
+                    "utilities": {
+                        "rate": 0.005,
+                        "label": "0.5% utilities",
+                        "cap": 100
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No cashback"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 1,
+                "bestOption": "Auto Statement Credit"
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": "Not available",
+                "international": "Not available",
+                "accessType": "None"
+            },
+            "milestones": [],
+            "dining": {
+                "included": true,
+                "text": "25% off up to ₹800/month on EazyDiner"
+            },
+            "fuel": {
+                "surchargeWaiver": null,
+                "note": "No fuel surcharge waiver"
+            },
+            "forex": {
+                "markup": 0.035,
+                "text": "3.5% Forex Markup"
+            },
+            "welcome": {
+                "included": true,
+                "text": "5,000 EDGE Reward Points (worth ₹1,000) on first transaction"
+            }
+        },
+        "metadata": {
+            "tags": [
+                "Cashback",
+                "Online Shopping",
+                "Premium Cashback"
+            ],
+            "bestFor": "Heavy online spenders (₹70,000+/month online)",
+            "rating": 4.0,
+            "verdict": "One of the best cashback cards for heavy online shoppers. The tiered structure means effective rate is ~5.6% for optimal spenders. Best suited for those who spend ₹70,000+ monthly online. Lack of lounge access and high fee waiver threshold are drawbacks.",
+            "pros": [
+                "Up to 7% cashback on online spends",
+                "Auto-credit cashback",
+                "0.5% on utilities",
+                "Dining discounts via EazyDiner"
+            ],
+            "cons": [
+                "No lounge access",
+                "No fuel surcharge waiver",
+                "Tiered structure can be confusing",
+                "High ₹4 Lakh fee waiver threshold"
+            ]
+        }
+    },
+    {
+        "id": "icici-manchester-platinum",
+        "name": "ICICI Bank Manchester United Platinum Credit Card",
+        "bank": "ICICI Bank",
+        "partner": "Manchester United",
+        "network": "Visa",
+        "image": "/assets/cards/icici-manchester-platinum.png",
+        "link": "https://www.icicibank.com/personal-banking/cards/credit-card/manchester-platinum-card",
+        "fees": {
+            "joining": 499,
+            "annual": 499,
+            "currency": "INR",
+            "gstExtra": true,
+            "waivedOn": 125000,
+            "waiverText": "Annual fee waived on ₹1.25 Lakh spend in previous year"
+        },
+        "rewards": {
+            "type": "points",
+            "baseRate": 0.005,
+            "earningText": "2 RP per ₹100 (0.5%), 3 RP per ₹100 on Match Days (0.75%)",
+            "expiry": "2 years",
+            "calculator": {
+                "tier": "entry-level",
+                "categories": {
+                    "regular": {
+                        "rate": 0.005,
+                        "label": "2 RP per ₹100 (0.5%)"
+                    },
+                    "matchDay": {
+                        "rate": 0.0075,
+                        "label": "3 RP per ₹100 on Match Days (0.75%)"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 0.25,
+                "bestOption": "Cashback / Vouchers",
+                "redemptionFee": 99
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": "1 per quarter (4/year)",
+                "international": "Not available",
+                "accessType": "Visa Domestic",
+                "spendRequirement": "Varies (check with bank, typically ₹5,000-₹35,000)"
+            },
+            "exclusive": {
+                "included": true,
+                "text": "Manchester United Welcome Gift (Football), Top Spend Rewards (Signed Jersey/Old Trafford Experience)"
+            },
+            "movies": {
+                "included": true,
+                "text": "25% off up to ₹100 on BookMyShow/INOX, twice per month"
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "cap": null,
+                "condition": "HPCL pumps only"
+            },
+            "forex": {
+                "markup": 0.035,
+                "text": "3.5% Forex Markup"
+            }
+        },
+        "metadata": {
+            "tags": [
+                "Co-branded",
+                "Sports",
+                "Entry-level",
+                "Football"
+            ],
+            "bestFor": "Manchester United fans seeking exclusive merchandise and experiences",
+            "rating": 3.8,
+            "verdict": "Niche card exclusively for Manchester United fans. The value lies in the welcome gift and experiential rewards (stadium tours, signed jerseys). As a rewards card, it's weak (0.5% return), but as a fan loyalty card, it's unique.",
+            "pros": [
+                "Manchester United branded football welcome gift",
+                "Chance to win Old Trafford experiences",
+                "Domestic lounge access",
+                "Low annual fee and waiver"
+            ],
+            "cons": [
+                "Low reward rate (0.5%)",
+                "Redemption fee applicable",
+                "No international lounge access"
+            ]
+        }
+    },
+    {
+        "id": "icici-emirates-emeralde",
+        "name": "Emirates Skywards ICICI Bank Emeralde Credit Card",
+        "bank": "ICICI Bank",
+        "partner": "Emirates Skywards",
+        "network": "Visa/Mastercard",
+        "image": "/assets/cards/icici-emirates-emeralde.png",
+        "link": "https://www.icicibank.com/personal-banking/cards/credit-card/emirates-emeralde-credit-card",
+        "fees": {
+            "joining": 10000,
+            "annual": 10000,
+            "currency": "INR",
+            "gstExtra": true,
+            "waivedOn": null,
+            "waiverText": "No fee waiver available"
+        },
+        "rewards": {
+            "type": "miles",
+            "baseRate": 0.025,
+            "earningText": "2.5 Skywards Miles per ₹100 on retail, 1 Mile per ₹100 on utilities/insurance",
+            "expiry": "3 years",
+            "calculator": {
+                "tier": "miles",
+                "categories": {
+                    "retail": {
+                        "rate": 0.025,
+                        "label": "2.5 Miles per ₹100 (~2.5%)"
+                    },
+                    "utilities": {
+                        "rate": 0.01,
+                        "label": "1 Mile per ₹100 (~1%)"
+                    },
+                    "insurance": {
+                        "rate": 0.01,
+                        "label": "1 Mile per ₹100 (~1%)"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No miles"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 1,
+                "bestOption": "Emirates Flights",
+                "options": [
+                    {
+                        "type": "Award Flights",
+                        "value": 1,
+                        "desc": "Emirates Flights & Upgrades"
+                    }
+                ]
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": "Unlimited",
+                "international": "Unlimited via Priority Pass",
+                "accessType": "Priority Pass / Dreamfolks",
+                "spa": "Unlimited domestic airport spa access"
+            },
+            "milestones": [
+                {
+                    "spend": 1500000,
+                    "benefit": "Emirates Skywards Gold Tier Membership (requires ₹50K flight booking)"
+                }
+            ],
+            "welcome": {
+                "included": true,
+                "text": "10,000 Bonus Skywards Miles + Emirates Skywards Silver Tier Membership"
+            },
+            "movies": {
+                "included": true,
+                "text": "BOGO up to ₹750 off on BookMyShow, 4 times per month"
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "cap": 250
+            },
+            "forex": {
+                "markup": 0.035,
+                "text": "3.5% Forex Markup"
+            }
+        },
+        "metadata": {
+            "tags": [
+                "Travel",
+                "Co-branded",
+                "Miles",
+                "Premium",
+                "Emirates"
+            ],
+            "bestFor": "Frequent Emirates flyers and premium travelers seeking unlimited lounge access",
+            "rating": 4.4,
+            "verdict": "Premium travel card for Emirates loyalists. 2.5 Miles per ₹100 is solid earning. Unlimited domestic and international lounge access + spa is a huge perk. The ₹10,000 fee is offset by welcome miles and Silver Tier status. High forex markup is the main downside for a travel card.",
+            "pros": [
+                "2.5 Skywards Miles earning rate",
+                "Unlimited global lounge access",
+                "Emirates Silver Tier + 10,000 Bonus Miles",
+                "Generous BOGO movie offer (4x/month)",
+                "Unlimited spa access"
+            ],
+            "cons": [
+                "High ₹10,000 annual fee (non-waivable)",
+                "High 3.5% forex markup",
+                "Rewards locked to Emirates ecosystem",
+                "Gold Tier requires high spend"
+            ]
+        }
+    }
+]

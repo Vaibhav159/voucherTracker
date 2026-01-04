@@ -1,0 +1,1024 @@
+[
+    {
+        "id": "sbi-tata-neu-infinity",
+        "name": "Tata Card Select",
+        "nameNote": "ID originally had 'Tata Neu' which is HDFC branding. This is the SBI Tata Card Select (Platinum tier).",
+        "bank": "SBI Card",
+        "network": "Mastercard",
+        "image": "/assets/cards/sbi-tata-neu-infinity.png",
+        "link": "https://www.sbicard.com/en/personal/credit-cards/shopping/tata-card-select.page",
+        "fees": {
+            "joining": 2999,
+            "annual": 2999,
+            "currency": "INR",
+            "waivedOn": 200000,
+            "waiverText": "Annual fee waived on spending ₹2 lakh in the previous year"
+        },
+        "rewards": {
+            "type": "points",
+            "baseRate": 0.01,
+            "earningText": "1 Reward Point per ₹100 on regular spends; 3 RPs per ₹100 on grocery, departmental, dining & international spends",
+            "expiry": "2 years from earning",
+            "calculator": {
+                "tier": "mid-range",
+                "monthlyCap": null,
+                "categories": {
+                    "tata_outlets": {
+                        "rate": 0.05,
+                        "label": "5% at Tata Retail Outlets (5 RP/₹100)"
+                    },
+                    "grocery_departmental": {
+                        "rate": 0.03,
+                        "label": "3% on Grocery & Departmental Stores"
+                    },
+                    "dining": {
+                        "rate": 0.03,
+                        "label": "3% on Dining"
+                    },
+                    "international": {
+                        "rate": 0.03,
+                        "label": "3% on International Spends"
+                    },
+                    "online": {
+                        "rate": 0.01,
+                        "label": "1% on Other Spends"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No rewards on fuel"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 1.0,
+                "bestOption": "Tata Brand e-Gift Vouchers",
+                "options": [
+                    {
+                        "type": "E-Vouchers",
+                        "value": 1.0,
+                        "desc": "1 RP = ₹1 (Tata brands)"
+                    },
+                    {
+                        "type": "Statement Credit",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25"
+                    }
+                ]
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": "8 per year (max 2 per quarter)",
+                "international": "None",
+                "accessType": "Mastercard"
+            },
+            "milestones": [
+                {
+                    "spend": 400000,
+                    "benefit": "₹3,000 STAR e-Gift Voucher"
+                },
+                {
+                    "spend": 500000,
+                    "benefit": "₹3,000 STAR e-Gift Voucher (additional)"
+                }
+            ],
+            "welcome": {
+                "benefit": "₹3,500 STAR e-Gift Voucher",
+                "condition": "On joining fee payment"
+            },
+            "renewal": {
+                "benefit": "₹3,000 STAR e-Gift Voucher",
+                "condition": "On spending ₹2 lakh in previous year"
+            },
+            "movies": {
+                "included": false,
+                "text": null
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "cap": 250,
+                "minTxn": 500,
+                "maxTxn": 4000
+            },
+            "forex": {
+                "markup": 0.035,
+                "text": "3.5%"
+            }
+        },
+        "metadata": {
+            "tags": [
+                "Shopping",
+                "Tata",
+                "Lifestyle",
+                "Rewards"
+            ],
+            "bestFor": "Tata brand loyalists who shop at Westside, Titan, Croma, Tata CLiQ, STAR",
+            "rating": 3.8,
+            "verdict": "Best for Tata ecosystem shoppers. Offers 5% valueback at Tata retail outlets with good milestone e-vouchers, but lacks international lounge access.",
+            "pros": [
+                "5% valueback at Tata Retail Outlets",
+                "1:1 reward redemption ratio for Tata vouchers",
+                "8 domestic lounge visits per year",
+                "₹6,500+ in e-vouchers on joining & milestones"
+            ],
+            "cons": [
+                "No international lounge access",
+                "Benefits limited to Tata brand ecosystem",
+                "High annual fee of ₹2,999",
+                "Poor statement credit redemption value"
+            ]
+        }
+    },
+    {
+        "id": "sbi-tata-neu-plus",
+        "name": "Tata Card",
+        "nameNote": "ID originally had 'Tata Neu Plus' which is HDFC branding. This is the SBI Tata Card (Titanium tier, entry-level).",
+        "bank": "SBI Card",
+        "network": "Mastercard",
+        "image": "/assets/cards/sbi-tata-neu-plus.png",
+        "link": "https://www.sbicard.com/en/personal/credit-cards/shopping/tata-card.page",
+        "fees": {
+            "joining": 499,
+            "annual": 499,
+            "currency": "INR",
+            "waivedOn": null,
+            "waiverText": "No fee waiver available"
+        },
+        "rewards": {
+            "type": "points",
+            "baseRate": 0.01,
+            "earningText": "1 Empower Point per ₹100 on regular spends; 3 EPs per ₹100 on grocery & departmental stores",
+            "expiry": "2 years from earning",
+            "calculator": {
+                "tier": "entry-level",
+                "monthlyCap": null,
+                "categories": {
+                    "tata_outlets": {
+                        "rate": 0.05,
+                        "label": "5% at Tata Retail Outlets (5 EP/₹100)"
+                    },
+                    "croma": {
+                        "rate": 0.015,
+                        "label": "1.5% at Croma"
+                    },
+                    "grocery_departmental": {
+                        "rate": 0.03,
+                        "label": "3% on Grocery & Departmental Stores"
+                    },
+                    "online": {
+                        "rate": 0.01,
+                        "label": "1% on Other Spends"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No rewards on fuel"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 1.0,
+                "bestOption": "Tata Brand Vouchers",
+                "options": [
+                    {
+                        "type": "Vouchers",
+                        "value": 1.0,
+                        "desc": "1 EP = ₹1"
+                    }
+                ]
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": "None",
+                "international": "None",
+                "accessType": "None"
+            },
+            "milestones": [],
+            "welcome": {
+                "benefit": "500 Empower Points (₹500)",
+                "condition": "On spending ₹2,000 within 60 days of card issuance"
+            },
+            "movies": {
+                "included": false,
+                "text": null
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "cap": 100,
+                "minTxn": 500,
+                "maxTxn": 3000
+            },
+            "forex": {
+                "markup": 0.035,
+                "text": "3.5%"
+            }
+        },
+        "metadata": {
+            "tags": [
+                "Shopping",
+                "Tata",
+                "Entry-Level",
+                "Budget"
+            ],
+            "bestFor": "Entry-level Tata shoppers seeking low-fee card with Tata ecosystem benefits",
+            "rating": 3.2,
+            "verdict": "Affordable entry card for Tata brand shoppers. Low fee of ₹499 makes it accessible, but lacks lounge access and milestone benefits.",
+            "pros": [
+                "Low joining/annual fee of ₹499",
+                "5% valueback at Tata Retail Outlets",
+                "Good reward rate on grocery/departmental stores",
+                "1:1 reward redemption"
+            ],
+            "cons": [
+                "No lounge access",
+                "No milestone benefits",
+                "No annual fee waiver option",
+                "Limited to Tata ecosystem benefits"
+            ]
+        }
+    },
+    {
+        "id": "sbi-reliance",
+        "name": "Reliance SBI Card",
+        "bank": "SBI Card",
+        "network": "RuPay/Mastercard",
+        "image": "/assets/cards/sbi-reliance.png",
+        "link": "https://www.sbicard.com/en/personal/credit-cards/shopping/reliance-sbi-card.page",
+        "fees": {
+            "joining": 499,
+            "annual": 499,
+            "currency": "INR",
+            "waivedOn": 100000,
+            "waiverText": "Annual fee waived on spending ₹1 lakh in the previous year"
+        },
+        "rewards": {
+            "type": "points",
+            "baseRate": 0.0125,
+            "earningText": "10 RP per ₹100 on AJIO & JioMart; 5 RP per ₹100 on Reliance Retail; 5 RP on dining/movies; 1 RP on others",
+            "expiry": "2 years from earning",
+            "calculator": {
+                "tier": "entry-level",
+                "monthlyCap": null,
+                "categories": {
+                    "ajio_jiomart": {
+                        "rate": 0.025,
+                        "label": "2.5% on AJIO & JioMart (10 RP/₹100)"
+                    },
+                    "reliance_retail": {
+                        "rate": 0.0125,
+                        "label": "1.25% at Reliance Retail Stores (5 RP/₹100)"
+                    },
+                    "reliance_upi": {
+                        "rate": 0.0025,
+                        "label": "0.25% via UPI at Reliance (1 RP/₹100)"
+                    },
+                    "dining": {
+                        "rate": 0.0125,
+                        "label": "1.25% on Dining (5 RP/₹100)"
+                    },
+                    "movies": {
+                        "rate": 0.0125,
+                        "label": "1.25% on Movies (5 RP/₹100)"
+                    },
+                    "online": {
+                        "rate": 0.0025,
+                        "label": "0.25% on Other Spends (1 RP/₹100)"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No rewards on fuel"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 0.25,
+                "bestOption": "Reliance Retail Vouchers",
+                "options": [
+                    {
+                        "type": "Reliance Vouchers",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25"
+                    }
+                ]
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": "None",
+                "international": "None",
+                "accessType": "None"
+            },
+            "milestones": [
+                {
+                    "spend": 25000,
+                    "benefit": "₹500 Reliance Retail Voucher"
+                },
+                {
+                    "spend": 50000,
+                    "benefit": "₹750 Reliance Retail Voucher"
+                },
+                {
+                    "spend": 80000,
+                    "benefit": "₹1,000 Reliance Retail Voucher"
+                }
+            ],
+            "welcome": {
+                "benefit": "₹500 Reliance Retail Voucher + ₹3,200 discount vouchers",
+                "condition": "On joining fee payment"
+            },
+            "movies": {
+                "included": false,
+                "text": null
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "cap": 100,
+                "minTxn": 500,
+                "maxTxn": 4000
+            },
+            "forex": {
+                "markup": 0.035,
+                "text": "3.5%"
+            }
+        },
+        "metadata": {
+            "tags": [
+                "Shopping",
+                "Reliance",
+                "Budget",
+                "JioMart",
+                "AJIO"
+            ],
+            "bestFor": "Regular Reliance shoppers looking for an affordable entry-level card",
+            "rating": 3.5,
+            "verdict": "Good entry-level card for Reliance loyalists. Low ₹499 fee with decent rewards on Reliance ecosystem, but lacks lounge access and has limited redemption value.",
+            "pros": [
+                "Low annual fee of ₹499",
+                "2.5% valueback on AJIO & JioMart",
+                "Easy ₹1 lakh spend for fee waiver",
+                "Welcome vouchers worth ₹3,700+",
+                "UPI linkable (RuPay variant)"
+            ],
+            "cons": [
+                "No lounge access",
+                "Low base reward rate on non-Reliance spends",
+                "Redemption value only ₹0.25/point",
+                "Milestone benefits require Reliance store spends only"
+            ]
+        }
+    },
+    {
+        "id": "sbi-reliance-prime",
+        "name": "Reliance SBI Card PRIME",
+        "bank": "SBI Card",
+        "network": "RuPay/Mastercard",
+        "image": "/assets/cards/sbi-reliance-prime.png",
+        "link": "https://www.sbicard.com/en/personal/credit-cards/shopping/reliance-sbi-card-prime.page",
+        "fees": {
+            "joining": 2999,
+            "annual": 2999,
+            "currency": "INR",
+            "waivedOn": 300000,
+            "waiverText": "Annual fee waived on spending ₹3 lakh in the previous year"
+        },
+        "rewards": {
+            "type": "points",
+            "baseRate": 0.025,
+            "earningText": "20 RP per ₹100 on AJIO & JioMart; 10 RP on other Reliance Retail; 5 RP on dining/movies/airlines/intl; 2 RP on others",
+            "expiry": "2 years from earning",
+            "calculator": {
+                "tier": "mid-range",
+                "monthlyCap": null,
+                "categories": {
+                    "ajio_jiomart": {
+                        "rate": 0.05,
+                        "label": "5% on AJIO & JioMart (20 RP/₹100)"
+                    },
+                    "reliance_retail": {
+                        "rate": 0.025,
+                        "label": "2.5% at Reliance Retail Stores (10 RP/₹100)"
+                    },
+                    "reliance_upi": {
+                        "rate": 0.005,
+                        "label": "0.5% via UPI at Reliance (2 RP/₹100)"
+                    },
+                    "dining": {
+                        "rate": 0.0125,
+                        "label": "1.25% on Dining (5 RP/₹100)"
+                    },
+                    "movies": {
+                        "rate": 0.0125,
+                        "label": "1.25% on Movies & Entertainment"
+                    },
+                    "domestic_airlines": {
+                        "rate": 0.0125,
+                        "label": "1.25% on Domestic Airlines"
+                    },
+                    "international": {
+                        "rate": 0.0125,
+                        "label": "1.25% on International Spends"
+                    },
+                    "online": {
+                        "rate": 0.005,
+                        "label": "0.5% on Other Spends (2 RP/₹100)"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No rewards on fuel"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 0.25,
+                "bestOption": "Reliance Retail Vouchers",
+                "options": [
+                    {
+                        "type": "Reliance Vouchers",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25"
+                    }
+                ]
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": "8 per year (2 per quarter)",
+                "international": "4 per year via Priority Pass (2 per quarter)",
+                "accessType": "Priority Pass + Mastercard"
+            },
+            "milestones": [
+                {
+                    "spend": 75000,
+                    "benefit": "₹1,500 Reliance Retail Voucher"
+                },
+                {
+                    "spend": 150000,
+                    "benefit": "₹2,250 Reliance Retail Voucher"
+                },
+                {
+                    "spend": 300000,
+                    "benefit": "₹5,000 Reliance Retail Voucher"
+                }
+            ],
+            "welcome": {
+                "benefit": "₹3,000 Reliance Retail Voucher + ₹11,999 discount vouchers",
+                "condition": "On joining fee payment"
+            },
+            "movies": {
+                "included": true,
+                "text": "1 free movie ticket per month worth ₹250 (convenience fee extra)"
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "cap": 100,
+                "minTxn": 500,
+                "maxTxn": 4000
+            },
+            "forex": {
+                "markup": 0.035,
+                "text": "3.5%"
+            },
+            "priorityPass": {
+                "included": true,
+                "complimentaryVisits": 4,
+                "usageFee": "$27 + taxes after free visits",
+                "validity": "2 years"
+            }
+        },
+        "metadata": {
+            "tags": [
+                "Shopping",
+                "Reliance",
+                "Premium",
+                "JioMart",
+                "AJIO",
+                "Travel",
+                "Lounge"
+            ],
+            "bestFor": "Heavy Reliance spenders who want lounge access and premium benefits",
+            "rating": 4.0,
+            "verdict": "Premium Reliance card with excellent 5% valueback on AJIO/JioMart. Good lounge access and milestone vouchers, but high annual fee and redemption limited to Reliance ecosystem.",
+            "pros": [
+                "5% valueback on AJIO & JioMart",
+                "8 domestic + 4 international lounge visits",
+                "Priority Pass membership included",
+                "Welcome benefits worth ₹14,999+",
+                "1 free movie ticket monthly",
+                "UPI linkable (RuPay variant)"
+            ],
+            "cons": [
+                "High annual fee of ₹2,999",
+                "Redemption value only ₹0.25/point",
+                "Benefits concentrated in Reliance ecosystem",
+                "3.5% forex markup is high"
+            ]
+        }
+    },
+    {
+        "id": "sbi-indigo",
+        "name": "IndiGo SBI Card",
+        "bank": "SBI Card",
+        "network": "RuPay/Mastercard",
+        "image": "/assets/cards/sbi-indigo.png",
+        "link": "https://www.sbicard.com/en/personal/credit-cards/travel/indigo-sbi-card.page",
+        "fees": {
+            "joining": 1499,
+            "annual": 1499,
+            "currency": "INR",
+            "waivedOn": null,
+            "waiverText": "No annual fee waiver available"
+        },
+        "rewards": {
+            "type": "bluchips",
+            "baseRate": 0.01,
+            "earningText": "3 BluChips per ₹100 on IndiGo App/Web; 2 BluChips on Hotels/Travel; 1 BluChip on other spends",
+            "expiry": "As per IndiGo BluChip program terms",
+            "calculator": {
+                "tier": "mid-range",
+                "monthlyCap": null,
+                "categories": {
+                    "indigo": {
+                        "rate": 0.03,
+                        "label": "3% on IndiGo App & Website (3 BluChips/₹100)"
+                    },
+                    "hotels_travel": {
+                        "rate": 0.02,
+                        "label": "2% on Hotels/Lodging & Travel MCCs"
+                    },
+                    "online": {
+                        "rate": 0.01,
+                        "label": "1% on Other Spends (1 BluChip/₹100)"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No rewards on fuel"
+                    },
+                    "utilities": {
+                        "rate": 0,
+                        "label": "No rewards on utilities/govt/rental"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 1.0,
+                "bestOption": "IndiGo Flights via App/Website",
+                "options": [
+                    {
+                        "type": "IndiGo Flights",
+                        "value": 1.0,
+                        "desc": "1 BluChip = ₹1 (approx.)"
+                    },
+                    {
+                        "type": "6E Services",
+                        "value": 1.0,
+                        "desc": "Seat upgrades, meals, Fast Forward"
+                    }
+                ]
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": "4 per year (1 per quarter, requires ₹50K quarterly spend)",
+                "international": "None",
+                "accessType": "Mastercard/RuPay"
+            },
+            "milestones": [
+                {
+                    "spend": 200000,
+                    "benefit": "2,500 IndiGo BluChips"
+                },
+                {
+                    "spend": 400000,
+                    "benefit": "2,500 IndiGo BluChips (additional)"
+                },
+                {
+                    "spend": 600000,
+                    "benefit": "2,500 IndiGo BluChips (additional)"
+                }
+            ],
+            "welcome": {
+                "benefit": "2,500 IndiGo BluChips",
+                "condition": "On first transaction within 60 days"
+            },
+            "renewal": {
+                "benefit": "2,500 IndiGo BluChips",
+                "condition": "On annual fee payment"
+            },
+            "movies": {
+                "included": false,
+                "text": null
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "cap": 200,
+                "minTxn": 500,
+                "maxTxn": 4000
+            },
+            "forex": {
+                "markup": 0.035,
+                "text": "3.5%"
+            }
+        },
+        "metadata": {
+            "tags": [
+                "Travel",
+                "IndiGo",
+                "Airlines",
+                "BluChips",
+                "Frequent Flyer"
+            ],
+            "bestFor": "Frequent IndiGo flyers looking for affordable airline co-brand card",
+            "rating": 3.7,
+            "verdict": "Good entry-level IndiGo card with decent rewards on flights. Welcome BluChips roughly offset the joining fee. Lounge access requires quarterly spend threshold.",
+            "pros": [
+                "3% valueback on IndiGo bookings",
+                "2,500 BluChips welcome bonus (~₹2,500 value)",
+                "1:1 BluChip redemption on IndiGo",
+                "UPI linkable (RuPay variant)",
+                "4 domestic lounge visits (spend-based)"
+            ],
+            "cons": [
+                "No international lounge access",
+                "Lounge visits require ₹50K quarterly spend",
+                "No annual fee waiver option",
+                "Lower reward rate vs IndiGo Kotak card"
+            ]
+        }
+    },
+    {
+        "id": "sbi-miles-elite",
+        "name": "SBI Card MILES ELITE",
+        "bank": "SBI Card",
+        "network": "RuPay/Mastercard",
+        "image": "/assets/cards/sbi-miles-elite.png",
+        "link": "https://www.sbicard.com/en/personal/credit-cards/travel/sbi-card-miles-elite.page",
+        "fees": {
+            "joining": 4999,
+            "annual": 4999,
+            "currency": "INR",
+            "waivedOn": 1500000,
+            "waiverText": "Annual fee waived on spending ₹15 lakh in the previous year"
+        },
+        "rewards": {
+            "type": "travel_credits",
+            "baseRate": 0.015,
+            "earningText": "6 Travel Credits per ₹200 on travel; 2 Travel Credits per ₹200 on other spends",
+            "expiry": "2 years from earning",
+            "calculator": {
+                "tier": "premium",
+                "monthlyCap": null,
+                "categories": {
+                    "travel": {
+                        "rate": 0.03,
+                        "label": "3% on Travel (Airlines, Hotels, OTAs, Tolls, Taxis)"
+                    },
+                    "online": {
+                        "rate": 0.01,
+                        "label": "1% on Other Spends"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No rewards on fuel"
+                    },
+                    "utilities": {
+                        "rate": 0,
+                        "label": "No rewards on utilities/insurance/wallet/rental"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 1.0,
+                "bestOption": "Airline/Hotel Partner Transfer (1:1 ratio)",
+                "options": [
+                    {
+                        "type": "Airline Miles",
+                        "value": 1.0,
+                        "desc": "1 TC = 1 Mile (Air Canada, Cathay Pacific, British Airways, Air France-KLM at 1:1)"
+                    },
+                    {
+                        "type": "Hotel Points",
+                        "value": 1.0,
+                        "desc": "1 TC = 1 Point (select partners at 1:1)"
+                    },
+                    {
+                        "type": "Travel Bookings",
+                        "value": 0.5,
+                        "desc": "1 TC = ₹0.50 via SBI travel portal"
+                    },
+                    {
+                        "type": "Shop & Smile",
+                        "value": 0.25,
+                        "desc": "1 TC = ₹0.25 for merchandise"
+                    }
+                ]
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": "8 per year (2 per quarter) + 1 extra per ₹1L spend (max 15 additional)",
+                "international": "6 per year via Priority Pass (2 per quarter)",
+                "accessType": "Priority Pass + Mastercard/RuPay"
+            },
+            "milestones": [
+                {
+                    "spend": 1200000,
+                    "benefit": "20,000 Bonus Travel Credits"
+                }
+            ],
+            "welcome": {
+                "benefit": "5,000 Travel Credits",
+                "condition": "On spending ₹1 lakh within 60 days of card issuance + joining fee payment"
+            },
+            "renewal": {
+                "benefit": "Travel Credits on renewal",
+                "condition": "Details on SBI Card website"
+            },
+            "movies": {
+                "included": false,
+                "text": null
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "cap": 500,
+                "minTxn": 500,
+                "maxTxn": 4000
+            },
+            "forex": {
+                "markup": 0.0199,
+                "text": "1.99% (low)"
+            },
+            "priorityPass": {
+                "included": true,
+                "complimentaryVisits": 6,
+                "validity": "2 years"
+            }
+        },
+        "metadata": {
+            "tags": [
+                "Travel",
+                "Miles",
+                "Premium",
+                "Lounge",
+                "Airlines",
+                "Hotels"
+            ],
+            "bestFor": "Frequent travelers who want miles transfer to airlines/hotels with global lounge access",
+            "rating": 3.8,
+            "verdict": "Premium travel card with excellent 1:1 miles transfer to top airlines. Low 1.99% forex markup is standout. However, 3% travel reward rate underwhelms vs competitors.",
+            "pros": [
+                "1:1 transfer to major airlines (Air Canada, Cathay, BA, KLM)",
+                "Low 1.99% forex markup",
+                "8+15 domestic + 6 international lounge visits",
+                "20,000 bonus credits on ₹12L spend",
+                "Spend-linked additional lounge access"
+            ],
+            "cons": [
+                "High ₹4,999 annual fee",
+                "3% travel reward rate lower than Axis Atlas (5%)",
+                "₹15L spend for fee waiver is very high",
+                "No utilities/insurance/fuel rewards"
+            ]
+        }
+    },
+    {
+        "id": "sbi-phonepe",
+        "name": "PhonePe SBI Card PURPLE",
+        "bank": "SBI Card",
+        "network": "RuPay/Visa",
+        "image": "/assets/cards/sbi-phonepe.png",
+        "link": "https://www.sbicard.com/en/personal/credit-cards/rewards/phonepe-sbi-card-purple.page",
+        "fees": {
+            "joining": 499,
+            "annual": 499,
+            "currency": "INR",
+            "waivedOn": 100000,
+            "waiverText": "Annual fee waived on spending ₹1 lakh in the previous year"
+        },
+        "rewards": {
+            "type": "points",
+            "baseRate": 0.01,
+            "earningText": "3 RP per ₹100 on PhonePe/Pincode spends; 2 RP on other online; 1 RP on all else. 1 RP = ₹1",
+            "expiry": "13 months",
+            "calculator": {
+                "tier": "entry-level",
+                "monthlyCap": 1000,
+                "categories": {
+                    "phonepe_pincode": {
+                        "rate": 0.03,
+                        "label": "3% on PhonePe & Pincode"
+                    },
+                    "online": {
+                        "rate": 0.02,
+                        "label": "2% on Other Online Spends"
+                    },
+                    "offline": {
+                        "rate": 0.01,
+                        "label": "1% on Offline & UPI Scan-to-Pay"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No rewards on fuel"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 1.0,
+                "bestOption": "Statement Credit or E-Vouchers",
+                "options": [
+                    {
+                        "type": "Statement Credit",
+                        "value": 1.0,
+                        "desc": "1 RP = ₹1"
+                    },
+                    {
+                        "type": "E-Vouchers",
+                        "value": 1.0,
+                        "desc": "1 RP = ₹1 via SBI Rewards Portal"
+                    }
+                ]
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": "None",
+                "international": "None",
+                "accessType": "None"
+            },
+            "milestones": [
+                {
+                    "spend": 300000,
+                    "benefit": "₹3,000 Yatra Travel Voucher"
+                }
+            ],
+            "welcome": {
+                "benefit": "₹500 PhonePe Gift Card",
+                "condition": "On joining fee payment"
+            },
+            "movies": {
+                "included": false,
+                "text": null
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "cap": 100,
+                "minTxn": 500,
+                "maxTxn": 3000
+            },
+            "forex": {
+                "markup": 0.035,
+                "text": "3.5%"
+            }
+        },
+        "metadata": {
+            "tags": [
+                "Digital Payments",
+                "PhonePe",
+                "UPI",
+                "Cashback",
+                "Entry-Level",
+                "Online Shopping"
+            ],
+            "bestFor": "Digital-first users who pay bills and shop via PhonePe",
+            "rating": 3.8,
+            "verdict": "Excellent entry-level digital payments card. 3% on PhonePe spends is generous for ₹499 fee. 1:1 redemption and UPI compatibility (RuPay) make it very practical.",
+            "pros": [
+                "3% valueback on PhonePe spends",
+                "2% on all online shopping",
+                "1% on UPI Scan-to-Pay (RuPay)",
+                "1:1 statement credit redemption",
+                "Low ₹499 annual fee"
+            ],
+            "cons": [
+                "No lounge access",
+                "1,000 points monthly cap per category",
+                "13-month reward expiry",
+                "No premium travel benefits"
+            ]
+        }
+    },
+    {
+        "id": "sbi-phonepe-select",
+        "name": "PhonePe SBI Card SELECT BLACK",
+        "bank": "SBI Card",
+        "network": "RuPay/Visa",
+        "image": "/assets/cards/sbi-phonepe-select.png",
+        "link": "https://www.sbicard.com/en/personal/credit-cards/rewards/phonepe-sbi-card-select-black.page",
+        "fees": {
+            "joining": 1499,
+            "annual": 1499,
+            "currency": "INR",
+            "waivedOn": 300000,
+            "waiverText": "Annual fee waived on spending ₹3 lakh in the previous year"
+        },
+        "rewards": {
+            "type": "points",
+            "baseRate": 0.01,
+            "earningText": "10 RP per ₹100 on PhonePe/Pincode; 5 RP on other online; 1 RP on all else. 1 RP = ₹1",
+            "expiry": "13 months",
+            "calculator": {
+                "tier": "mid-range",
+                "monthlyCap": 2000,
+                "categories": {
+                    "phonepe_pincode": {
+                        "rate": 0.10,
+                        "label": "10% on PhonePe & Pincode"
+                    },
+                    "online": {
+                        "rate": 0.05,
+                        "label": "5% on Other Online Spends"
+                    },
+                    "offline": {
+                        "rate": 0.01,
+                        "label": "1% on Offline & UPI Scan-to-Pay"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No rewards on fuel"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 1.0,
+                "bestOption": "Statement Credit or E-Vouchers",
+                "options": [
+                    {
+                        "type": "Statement Credit",
+                        "value": 1.0,
+                        "desc": "1 RP = ₹1"
+                    },
+                    {
+                        "type": "E-Vouchers",
+                        "value": 1.0,
+                        "desc": "1 RP = ₹1 via SBI Rewards Portal"
+                    }
+                ]
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": "4 per year (1 per quarter)",
+                "international": "Priority Pass membership (complimentary)",
+                "accessType": "Priority Pass"
+            },
+            "milestones": [
+                {
+                    "spend": 500000,
+                    "benefit": "₹5,000 Yatra Travel Voucher"
+                }
+            ],
+            "welcome": {
+                "benefit": "₹1,500 PhonePe Gift Card",
+                "condition": "On joining fee payment"
+            },
+            "movies": {
+                "included": false,
+                "text": null
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "cap": 250,
+                "minTxn": 500,
+                "maxTxn": 4000
+            },
+            "forex": {
+                "markup": 0.035,
+                "text": "3.5%"
+            },
+            "priorityPass": {
+                "included": true,
+                "complimentaryVisits": 0,
+                "membershipOnly": true,
+                "validity": "2 years",
+                "note": "Membership complimentary, visits not included (pay per use)"
+            }
+        },
+        "metadata": {
+            "tags": [
+                "Digital Payments",
+                "PhonePe",
+                "UPI",
+                "Cashback",
+                "Premium",
+                "Online Shopping",
+                "Lounge"
+            ],
+            "bestFor": "Heavy PhonePe users and online shoppers seeking high cashback with lounge access",
+            "rating": 4.3,
+            "verdict": "Outstanding digital payments card. 10% on PhonePe and 5% on ALL online spends is exceptional. Welcome gift matches joining fee. 1:1 redemption + domestic lounges.",
+            "pros": [
+                "10% valueback on PhonePe spends",
+                "5% on ALL online shopping",
+                "1% on UPI Scan-to-Pay (RuPay)",
+                "1:1 statement credit redemption",
+                "4 domestic lounge visits",
+                "Priority Pass membership included"
+            ],
+            "cons": [
+                "2,000 points monthly cap per category",
+                "13-month reward expiry",
+                "Priority Pass visits not complimentary (membership only)",
+                "Excludes fuel/wallet/rent/edu/govt spends"
+            ]
+        }
+    }
+]

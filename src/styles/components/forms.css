@@ -16,7 +16,7 @@ select {
   padding: var(--space-sm) var(--space-md);
   outline: none;
   transition: border-color var(--duration-normal),
-              box-shadow var(--duration-normal);
+    box-shadow var(--duration-normal);
 }
 
 input[type="text"]:focus,
@@ -232,15 +232,15 @@ textarea::placeholder {
   border-radius: 50%;
 }
 
-.toggle input:checked + .toggle__slider {
+.toggle input:checked+.toggle__slider {
   background-color: var(--accent-cyan);
 }
 
-.toggle input:checked + .toggle__slider:before {
+.toggle input:checked+.toggle__slider:before {
   transform: translateX(24px);
 }
 
-.toggle input:focus-visible + .toggle__slider {
+.toggle input:focus-visible+.toggle__slider {
   outline: 2px solid var(--accent-cyan);
   outline-offset: 2px;
 }
@@ -309,5 +309,25 @@ textarea {
 
   .search-bar__icon {
     left: var(--space-sm);
+  }
+}
+
+/* ============================================
+   REWARDS CALCULATOR MOBILE (Migrated from mobile-ux.css)
+   ============================================ */
+@media (max-width: 768px) {
+
+  /* Spending categories compact */
+  .spending-categories {
+    gap: 0.75rem !important;
+  }
+
+  .spending-category {
+    padding: 0.75rem !important;
+  }
+
+  /* Results grid single column */
+  .results-grid {
+    grid-template-columns: 1fr !important;
   }
 }

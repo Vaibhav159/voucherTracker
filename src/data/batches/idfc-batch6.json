@@ -1,0 +1,604 @@
+[
+    {
+        "id": "idfc-mayura",
+        "name": "IDFC FIRST Mayura Credit Card",
+        "bank": "IDFC First Bank",
+        "image": "/assets/cards/idfc-mayura.png",
+        "link": "https://www.idfcfirst.bank.in/credit-card/metal-credit-card/mayura",
+        "network": "Mastercard World",
+        "fees": {
+            "joining": 5999,
+            "annual": 5999,
+            "currency": "INR",
+            "gstExtra": true,
+            "waivedOn": null,
+            "waiverText": "No annual fee waiver available"
+        },
+        "rewards": {
+            "type": "points",
+            "baseRate": 0.0083,
+            "earningText": "5X RP per ₹150 (up to ₹20K spend), 10X RP per ₹150 (above ₹20K spend)",
+            "expiry": "Never Expires",
+            "calculator": {
+                "tier": "premium",
+                "monthlyCap": null,
+                "spendThreshold": 20000,
+                "categories": {
+                    "domestic": {
+                        "belowThreshold": {
+                            "rate": 0.0083,
+                            "label": "5X RP per ₹150 (0.83%)"
+                        },
+                        "aboveThreshold": {
+                            "rate": 0.0166,
+                            "label": "10X RP per ₹150 (1.66%)"
+                        }
+                    },
+                    "international": {
+                        "belowThreshold": {
+                            "rate": 0.0083,
+                            "label": "5X RP per ₹150 (effective Jan 18, 2026)"
+                        },
+                        "aboveThreshold": {
+                            "rate": 0.0166,
+                            "label": "10X RP per ₹150 (requires ₹20K monthly spend)"
+                        }
+                    },
+                    "rent": {
+                        "rate": 0.005,
+                        "label": "3X RP per ₹150 (0.5%) + 1% fee"
+                    },
+                    "education": {
+                        "rate": 0.005,
+                        "label": "3X RP per ₹150 (0.5%)"
+                    },
+                    "walletLoad": {
+                        "rate": 0.005,
+                        "label": "3X RP per ₹150 (0.5%)"
+                    },
+                    "government": {
+                        "rate": 0.005,
+                        "label": "3X RP per ₹150 (0.5%)"
+                    },
+                    "utilities": {
+                        "rate": 0.00166,
+                        "label": "1X RP per ₹150 (0.166%)"
+                    },
+                    "insurance": {
+                        "rate": 0.00166,
+                        "label": "1X RP per ₹150 (0.166%)"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    },
+                    "birthday": {
+                        "rate": 0.0166,
+                        "label": "10X RP per ₹150 (1.66%)"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 0.25,
+                "bestOption": "Travel Bookings via IDFC App",
+                "options": [
+                    {
+                        "type": "Statement Credit",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25"
+                    },
+                    {
+                        "type": "Travel Bookings (IDFC App)",
+                        "value": 0.50,
+                        "desc": "1 RP = ₹0.50"
+                    },
+                    {
+                        "type": "Gift Vouchers",
+                        "value": 0.25,
+                        "desc": "Amazon, Flipkart, Myntra, BigBasket"
+                    }
+                ],
+                "redemptionFee": 99
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": "4 per quarter (16/year)",
+                "international": "4 per quarter (16/year)",
+                "railway": "4 per quarter (16/year)",
+                "guestAccess": "1 guest per quarter (domestic)",
+                "accessType": "DreamFolks Card",
+                "spendRequirement": "₹20,000 in previous month to unlock",
+                "spaAccess": "4 per quarter at Indian airports"
+            },
+            "milestones": [
+                {
+                    "spend": 800000,
+                    "benefit": "7,500 RP (worth ₹3,750)"
+                },
+                {
+                    "spend": 1500000,
+                    "benefit": "15,000 RP (worth ₹7,500)"
+                }
+            ],
+            "welcome": {
+                "included": true,
+                "text": "12,000 Bonus RP (4,000 on joining + 4,000 each on ₹20K+ spend in 2nd/3rd months)"
+            },
+            "golf": {
+                "included": true,
+                "text": "4 complimentary rounds + 12 lessons per year globally (India + APAC)"
+            },
+            "movies": {
+                "included": true,
+                "text": "BOGO up to ₹500 off, twice per month via District by Zomato"
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "cap": 300,
+                "capPeriod": "statement cycle"
+            },
+            "forex": {
+                "markup": 0,
+                "text": "0% Forex Markup"
+            },
+            "insurance": {
+                "airAccident": 10000000,
+                "tripCancellation": 50000,
+                "travelInsurance": "USD 1,200 comprehensive cover"
+            },
+            "roadsideAssistance": {
+                "included": true,
+                "text": "Complimentary Roadside Assistance worth ₹1,399 (4 times/year)"
+            }
+        },
+        "metadata": {
+            "tags": [
+                "Metal",
+                "Zero Forex",
+                "Premium",
+                "Travel",
+                "10X Rewards"
+            ],
+            "bestFor": "Frequent international travelers, high spenders (₹20K+/month), premium lifestyle seekers",
+            "rating": 4.0,
+            "verdict": "Excellent zero forex metal card for travelers. The 10X rewards (1.66% return) require ₹20K monthly spend threshold. Trip cancellation cover and complimentary lounges add good value. However, ₹5,999 annual fee with no waiver option makes it expensive if benefits aren't maximized.",
+            "pros": [
+                "0% forex markup - best for international spends",
+                "Premium metal card design (17 grams)",
+                "Generous lounge access (16 domestic + 16 international/year)",
+                "Trip cancellation cover up to ₹50,000",
+                "Reward points never expire",
+                "Higher redemption value (₹0.50) on travel bookings"
+            ],
+            "cons": [
+                "High annual fee of ₹5,999 with no waiver",
+                "Low base reward rate (0.83%) below ₹20K spend",
+                "Lounge access requires ₹20K monthly spend",
+                "International rewards reduced to 5X from 10X (Jan 2026 change)"
+            ]
+        }
+    },
+    {
+        "id": "idfc-ashva",
+        "name": "IDFC FIRST Ashva Credit Card",
+        "bank": "IDFC First Bank",
+        "image": "/assets/cards/idfc-ashva.png",
+        "link": "https://www.idfcfirst.bank.in/credit-card/metal-credit-card/ashva",
+        "network": "Visa Infinite",
+        "fees": {
+            "joining": 2999,
+            "annual": 2999,
+            "currency": "INR",
+            "gstExtra": true,
+            "waivedOn": null,
+            "waiverText": "No annual fee waiver available"
+        },
+        "rewards": {
+            "type": "points",
+            "baseRate": 0.0083,
+            "earningText": "5X RP per ₹150 (up to ₹20K spend), 10X RP per ₹150 (above ₹20K spend)",
+            "expiry": "Never Expires",
+            "calculator": {
+                "tier": "semi-premium",
+                "monthlyCap": null,
+                "spendThreshold": 20000,
+                "categories": {
+                    "domestic": {
+                        "belowThreshold": {
+                            "rate": 0.0083,
+                            "label": "5X RP per ₹150 (0.83%)"
+                        },
+                        "aboveThreshold": {
+                            "rate": 0.0166,
+                            "label": "10X RP per ₹150 (1.66%)"
+                        }
+                    },
+                    "international": {
+                        "belowThreshold": {
+                            "rate": 0.0083,
+                            "label": "5X RP per ₹150 (effective Jan 18, 2026)"
+                        },
+                        "aboveThreshold": {
+                            "rate": 0.0166,
+                            "label": "10X RP per ₹150 (requires ₹20K monthly spend)"
+                        }
+                    },
+                    "rent": {
+                        "rate": 0.005,
+                        "label": "3X RP per ₹150 (0.5%) + 1% fee"
+                    },
+                    "education": {
+                        "rate": 0.005,
+                        "label": "3X RP per ₹150 (0.5%)"
+                    },
+                    "walletLoad": {
+                        "rate": 0.005,
+                        "label": "3X RP per ₹150 (0.5%)"
+                    },
+                    "government": {
+                        "rate": 0.005,
+                        "label": "3X RP per ₹150 (0.5%)"
+                    },
+                    "utilities": {
+                        "rate": 0.00166,
+                        "label": "1X RP per ₹150 (0.166%)"
+                    },
+                    "insurance": {
+                        "rate": 0.00166,
+                        "label": "1X RP per ₹150 (0.166%)"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    },
+                    "birthday": {
+                        "rate": 0.0166,
+                        "label": "10X RP per ₹150 (1.66%)"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 0.25,
+                "bestOption": "Travel Bookings via IDFC App",
+                "options": [
+                    {
+                        "type": "Statement Credit",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25"
+                    },
+                    {
+                        "type": "Travel Bookings (IDFC App)",
+                        "value": 0.40,
+                        "desc": "1 RP = ₹0.40"
+                    },
+                    {
+                        "type": "Gift Vouchers",
+                        "value": 0.25,
+                        "desc": "Amazon, Flipkart, Myntra, BigBasket"
+                    }
+                ],
+                "redemptionFee": 99
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": "4 per quarter (16/year)",
+                "international": "2 per quarter (8/year)",
+                "railway": "4 per quarter (16/year)",
+                "accessType": "DreamFolks Card",
+                "spendRequirement": "₹20,000 in previous month to unlock"
+            },
+            "milestones": [
+                {
+                    "spend": 800000,
+                    "benefit": "7,500 RP (worth ₹3,000)"
+                }
+            ],
+            "welcome": {
+                "included": true,
+                "text": "7,500 Bonus RP (2,500 on joining + 2,500 each on ₹20K+ spend in 2nd/3rd months)"
+            },
+            "golf": {
+                "included": true,
+                "text": "Up to 2 rounds or lessons per month (1 free per ₹20,000 monthly spend)"
+            },
+            "movies": {
+                "included": true,
+                "text": "BOGO up to ₹400 off, twice per month via District by Zomato"
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "cap": 300,
+                "capPeriod": "statement cycle"
+            },
+            "forex": {
+                "markup": 1,
+                "text": "1% Forex Markup (+GST)"
+            },
+            "insurance": {
+                "airAccident": 10000000,
+                "tripCancellation": 25000,
+                "travelInsurance": "USD 1,200 comprehensive cover"
+            },
+            "roadsideAssistance": {
+                "included": true,
+                "text": "Complimentary Roadside Assistance worth ₹1,399 (4 times/year)"
+            }
+        },
+        "metadata": {
+            "tags": [
+                "Metal",
+                "Low Forex",
+                "Visa Infinite",
+                "Travel",
+                "Lifestyle"
+            ],
+            "bestFor": "Mid-tier spenders seeking metal card experience, frequent domestic travelers, lifestyle benefit seekers",
+            "rating": 3.8,
+            "verdict": "More affordable metal card alternative to Mayura with similar reward structure but fewer international benefits. The 1% forex markup is still competitive. Good value if you can consistently meet ₹20K monthly spend threshold for 10X rewards and lounge access. Visa Infinite privileges add extra value.",
+            "pros": [
+                "Affordable metal card at ₹2,999 fee",
+                "Low forex markup (1%)",
+                "Visa Infinite privileges",
+                "Good lounge access (domestic + international)",
+                "Trip cancellation cover",
+                "Reward points never expire"
+            ],
+            "cons": [
+                "No annual fee waiver option",
+                "1% forex markup (vs 0% on Mayura)",
+                "Lower international lounge quota than Mayura",
+                "Lounge access requires ₹20K monthly spend"
+            ]
+        }
+    },
+    {
+        "id": "idfc-swyp",
+        "name": "IDFC FIRST SWYP Credit Card",
+        "bank": "IDFC First Bank",
+        "image": "/assets/cards/idfc-swyp.png",
+        "link": "https://www.idfcfirst.bank.in/credit-card/swyp-emi-credit-card",
+        "network": "Mastercard",
+        "fees": {
+            "joining": 499,
+            "annual": 499,
+            "currency": "INR",
+            "gstExtra": true,
+            "waivedOn": null,
+            "waiverText": "Fee waiver available via referral program (1 successful referral)",
+            "upiCardFee": 199
+        },
+        "rewards": {
+            "type": "milestone-based",
+            "baseRate": 0,
+            "earningText": "Milestone-based rewards only. 200 RP on ₹5K, 500 RP on ₹10K, 1000 RP on ₹15K.",
+            "expiry": "Never Expires",
+            "calculator": {
+                "tier": "entry-level",
+                "monthlyCap": null,
+                "milestoneRewards": {
+                    "spend5000": {
+                        "points": 200,
+                        "rate": 0.01,
+                        "label": "200 RP on ₹5K+ spend (1%)"
+                    },
+                    "spend10000": {
+                        "points": 500,
+                        "rate": 0.0125,
+                        "label": "500 RP on ₹10K+ spend (1.25%)"
+                    },
+                    "spend15000": {
+                        "points": 1000,
+                        "rate": 0.0166,
+                        "label": "1000 RP on ₹15K+ spend (1.66%)"
+                    }
+                },
+                "exclusions": [
+                    "UPI",
+                    "Fuel",
+                    "Rental",
+                    "Utility",
+                    "Cash Withdrawal"
+                ]
+            },
+            "redemption": {
+                "baseValue": 0.25,
+                "bestOption": "Statement Credit / Vouchers",
+                "options": [
+                    {
+                        "type": "Statement Credit",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25"
+                    },
+                    {
+                        "type": "Gift Vouchers",
+                        "value": 0.25,
+                        "desc": "Various merchant vouchers"
+                    }
+                ],
+                "redemptionFee": 99
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": "Via referral program only (10 referrals = 4 visits)",
+                "international": "Not included",
+                "railwayLounge": "4 per quarter (16/year)",
+                "spendRequirement": "₹20,000 in previous month for railway"
+            },
+            "welcome": {
+                "included": true,
+                "text": "₹500 Amazon Voucher (on ₹5K spend) + EaseMyTrip coupons + Lenskart Gold Membership"
+            },
+            "referralProgram": {
+                "included": true,
+                "text": "Earn up to ₹11,299 value. 1 referral = Fee Waiver. 10 referrals = 4 Lounge Visits."
+            },
+            "emiFeature": {
+                "included": true,
+                "text": "No-interest EMI model. Monthly fee from ₹49 based on transaction value."
+            },
+            "movies": {
+                "included": true,
+                "text": "25% off up to ₹100, once per month via District by Zomato"
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "cap": 200,
+                "capPeriod": "statement cycle"
+            },
+            "forex": {
+                "markup": 3.5,
+                "text": "3.5% Forex Markup"
+            },
+            "roadsideAssistance": {
+                "included": true,
+                "text": "Complimentary Roadside Assistance (4 times/year)"
+            }
+        },
+        "metadata": {
+            "tags": [
+                "Gen-Z",
+                "EMI Card",
+                "Entry Level",
+                "Referral Rewards",
+                "UPI Enabled"
+            ],
+            "bestFor": "Young adults, Gen-Z, first-time credit card users, those who prefer EMI over revolving credit",
+            "rating": 3.5,
+            "verdict": "Innovative entry-level card targeting Gen-Z with unique EMI-only payment model (no revolving credit). The milestone-based rewards and strong referral program can unlock significant value. Railway lounge access is a standout for a ₹499 card. Best suited for disciplined spenders who can leverage the referral program.",
+            "pros": [
+                "Very low annual fee (₹499)",
+                "Unique no-interest EMI model",
+                "Complimentary railway lounge access",
+                "Strong referral program",
+                "Fee waiver possible via 1 referral"
+            ],
+            "cons": [
+                "No airport lounge access (without referrals)",
+                "Milestone rewards not as rewarding as per-transaction",
+                "High forex markup (3.5%)",
+                "Must pay full amount or convert to EMI"
+            ]
+        }
+    },
+    {
+        "id": "idfc-power-plus",
+        "name": "IDFC FIRST HPCL Power+ Credit Card",
+        "bank": "IDFC First Bank",
+        "image": "/assets/cards/idfc-power-plus.png",
+        "link": "https://www.idfcfirstbank.com/credit-card/fuel-credit-card/hpcl-idfc-first-power-plus-credit-card",
+        "network": "RuPay Select",
+        "fees": {
+            "joining": 499,
+            "annual": 499,
+            "currency": "INR",
+            "gstExtra": true,
+            "waivedOn": 150000,
+            "waiverText": "Annual fee waived on ₹1.5 lakh spend in previous year"
+        },
+        "rewards": {
+            "type": "points",
+            "baseRate": 0.005,
+            "earningText": "Up to 6.5% return on HPCL fuel (5% RP + 1.5% HP Pay Coins)",
+            "expiry": "Never Expires",
+            "calculator": {
+                "tier": "fuel-focused",
+                "categories": {
+                    "hpclFuel": {
+                        "rate": 0.05,
+                        "label": "30 RP per ₹150 (5%)",
+                        "cap": 2400,
+                        "capText": "2,400 RP per statement cycle",
+                        "note": "Plus 1.5% as HP Pay Coins via HP Pay App"
+                    },
+                    "groceryAndUtility": {
+                        "rate": 0.05,
+                        "label": "30 RP per ₹150 (5%)",
+                        "cap": 400,
+                        "capText": "400 RP combined cap (₹2,000 spend)"
+                    },
+                    "fastagRecharge": {
+                        "rate": 0.05,
+                        "label": "30 RP per ₹150 (5%)",
+                        "cap": 200
+                    },
+                    "otherRetail": {
+                        "rate": 0.005,
+                        "label": "3 RP per ₹150 (0.5%)"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 0.25,
+                "bestOption": "Statement Credit / HP Pay Coins",
+                "options": [
+                    {
+                        "type": "Statement Credit",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25"
+                    },
+                    {
+                        "type": "HP Pay Happy Coins",
+                        "value": 0.25,
+                        "desc": "Redeemable at HPCL outlets"
+                    }
+                ],
+                "redemptionFee": 99
+            }
+        },
+        "features": {
+            "lounge": {
+                "domestic": "1 per quarter (4/year)",
+                "international": "Not included",
+                "spendRequirement": "₹20,000 in previous month to unlock"
+            },
+            "welcome": {
+                "included": true,
+                "text": "₹500 Fuel Voucher on 1st HPCL txn + 5% cashback on first EMI"
+            },
+            "movies": {
+                "included": true,
+                "text": "25% off up to ₹100, once per month via District by Zomato"
+            },
+            "fuel": {
+                "surchargeWaiver": null,
+                "note": "No fuel surcharge waiver (Rewards cover it)"
+            },
+            "forex": {
+                "markup": 3.5,
+                "text": "3.5% Forex Markup"
+            },
+            "roadsideAssistance": {
+                "included": true,
+                "text": "Complimentary Roadside Assistance (4 times/year)"
+            }
+        },
+        "metadata": {
+            "tags": [
+                "Fuel Card",
+                "HPCL Co-brand",
+                "RuPay",
+                "UPI Enabled",
+                "Entry Level"
+            ],
+            "bestFor": "HPCL loyalists, frequent fuel spenders (₹8K-12K/month), users seeking utility & grocery rewards",
+            "rating": 3.7,
+            "verdict": "Best-in-class entry-level fuel card for HPCL users offering up to 6.5% return on fuel. The 5% rewards on groceries, utilities, and FASTag add everyday value. However, benefits are capped and HPCL-exclusive. Good choice if your monthly fuel spend is ₹8,000-₹12,000 at HPCL stations.",
+            "pros": [
+                "Up to 6.5% return on HPCL fuel",
+                "5% rewards on grocery, utility, FASTag",
+                "Annual fee waiver at ₹1.5 lakh spend",
+                "RuPay Select - UPI enabled",
+                "Roadside assistance included"
+            ],
+            "cons": [
+                "Rewards limited to HPCL only",
+                "Multiple reward caps limit earning potential",
+                "No fuel surcharge waiver",
+                "High forex markup (3.5%)"
+            ]
+        }
+    }
+]

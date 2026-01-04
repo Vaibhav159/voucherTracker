@@ -1,0 +1,981 @@
+[
+    {
+        "id": "rbl-world-safari",
+        "name": "RBL Bank World Safari Credit Card",
+        "bank": "RBL Bank",
+        "network": "Mastercard/Visa",
+        "image": "/assets/cards/rbl-world-safari.png",
+        "link": "https://www.rblbank.com/personal-banking/cards/credit-cards/world-safari-credit-card",
+        "fees": {
+            "joining": 3000,
+            "annual": 3000,
+            "currency": "INR",
+            "gst": true,
+            "waivedOn": null,
+            "waiverText": "No fee waiver available. Welcome voucher worth ₹3,000 offsets joining fee."
+        },
+        "rewards": {
+            "type": "points",
+            "pointName": "Travel Points",
+            "baseRate": 0.005,
+            "earningText": "2 Travel Points per ₹100 on domestic spends, 5 Travel Points per ₹100 on travel. No points on international transactions.",
+            "expiry": "3 years from earning date",
+            "calculator": {
+                "tier": "mid-range",
+                "monthlyCap": null,
+                "categories": {
+                    "travel": {
+                        "rate": 0.0125,
+                        "label": "5 TP/₹100 (1.25%)"
+                    },
+                    "dining": {
+                        "rate": 0.005,
+                        "label": "2 TP/₹100 (0.5%)"
+                    },
+                    "online": {
+                        "rate": 0.005,
+                        "label": "2 TP/₹100 (0.5%)"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    },
+                    "groceries": {
+                        "rate": 0.005,
+                        "label": "2 TP/₹100 (0.5%)"
+                    },
+                    "utilities": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    },
+                    "international": {
+                        "rate": 0,
+                        "label": "No rewards (but 0% forex!)"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 0.25,
+                "bestOption": "Flights & Hotels via RBL Rewards",
+                "options": [
+                    {
+                        "type": "Flights/Hotels",
+                        "value": 0.25,
+                        "desc": "1 TP = ₹0.25"
+                    },
+                    {
+                        "type": "Vouchers",
+                        "value": 0.25,
+                        "desc": "1 TP = ₹0.25"
+                    },
+                    {
+                        "type": "Shopping",
+                        "value": 0.20,
+                        "desc": "1 TP = ₹0.20 approx"
+                    }
+                ],
+                "redemptionFee": 99,
+                "redemptionFeeGst": true
+            }
+        },
+        "features": {
+            "welcome": {
+                "benefit": "MakeMyTrip voucher worth ₹3,000",
+                "condition": "Transact within 30 days & pay membership fee by due date",
+                "creditTimeline": "Within 60 days of card issuance"
+            },
+            "lounge": {
+                "domestic": "2 per quarter (requires ₹35,000+ spend in previous quarter w.e.f. July 2025)",
+                "international": "2 per year via Priority Pass + 1 extra per quarter on ₹50,000+ quarterly spend",
+                "accessType": "Mastercard/Visa Lounge Program (India), Priority Pass (International)",
+                "spendRequirement": {
+                    "domestic": 35000,
+                    "internationalExtra": 50000
+                }
+            },
+            "milestones": [
+                {
+                    "spend": 250000,
+                    "benefit": "10,000 Bonus Travel Points"
+                },
+                {
+                    "spend": 500000,
+                    "benefit": "15,000 Bonus Travel Points"
+                },
+                {
+                    "spend": 750000,
+                    "benefit": "₹10,000 Gift Voucher (Taj/Amazon/Croma/Myntra/MMT)"
+                }
+            ],
+            "golf": {
+                "included": true,
+                "text": "4 complimentary green fee rounds/year + 1 golf lesson/month. 50% off beyond 4 rounds. (Mastercard holders only)"
+            },
+            "movies": {
+                "included": false,
+                "text": "Not available"
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "minTransaction": 500,
+                "maxTransaction": 4000,
+                "cap": 250,
+                "capPeriod": "monthly"
+            },
+            "forex": {
+                "markup": 0,
+                "text": "0% Forex Markup - India's first retail card with zero forex markup"
+            },
+            "insurance": {
+                "included": true,
+                "coverage": [
+                    "Personal Liability Coverage",
+                    "Trip Delay",
+                    "Baggage Loss",
+                    "Loss of Passport",
+                    "Dental Treatment"
+                ]
+            },
+            "concierge": {
+                "included": true,
+                "text": "24x7 Concierge Desk for golf, hotel, dining, spa reservations"
+            }
+        },
+        "metadata": {
+            "tags": [
+                "Travel",
+                "Zero Forex",
+                "International",
+                "Priority Pass",
+                "Golf",
+                "Travel Insurance"
+            ],
+            "bestFor": "International travelers seeking zero forex markup and travel-focused rewards",
+            "rating": 4.2,
+            "verdict": "India's first retail credit card with 0% forex markup. Best for frequent international travelers. The lack of reward points on international spends is a drawback, but the forex savings (3.5%+ on other cards) more than compensates. Excellent travel insurance and Priority Pass access make it a solid travel card.",
+            "pros": [
+                "0% forex markup on all foreign transactions",
+                "Comprehensive travel insurance included",
+                "Priority Pass with 2+ free international lounge visits",
+                "₹3,000 MMT voucher offsets joining fee",
+                "Golf privileges for Mastercard holders"
+            ],
+            "cons": [
+                "No reward points on international transactions",
+                "Annual fee not waivable",
+                "Domestic lounge access now requires ₹35,000+ quarterly spend",
+                "₹99 redemption fee on reward points"
+            ]
+        }
+    },
+    {
+        "id": "rbl-insignia-preferred-banking",
+        "name": "RBL Bank Insignia Preferred Banking Credit Card",
+        "bank": "RBL Bank",
+        "network": "Mastercard World",
+        "image": "/assets/cards/rbl-insignia-preferred-banking.png",
+        "link": "https://www.rblbank.com/preferred-banking/insignia/cards/insignia-preferred-banking-credit-card",
+        "fees": {
+            "joining": 7000,
+            "annual": 7000,
+            "currency": "INR",
+            "gst": true,
+            "waivedOn": 1000000,
+            "waiverText": "Free for Insignia Preferred Banking customers. Others: Fee waived on ₹10 lakh annual spend."
+        },
+        "rewards": {
+            "type": "points",
+            "pointName": "Reward Points",
+            "baseRate": 0.0125,
+            "earningText": "5 Reward Points per ₹100 on domestic spends, 10 Reward Points per ₹100 on international spends",
+            "expiry": "3 years from earning date",
+            "calculator": {
+                "tier": "premium",
+                "monthlyCap": null,
+                "categories": {
+                    "travel": {
+                        "rate": 0.0125,
+                        "label": "5 RP/₹100 (1.25%)"
+                    },
+                    "dining": {
+                        "rate": 0.0125,
+                        "label": "5 RP/₹100 (1.25%)"
+                    },
+                    "online": {
+                        "rate": 0.0125,
+                        "label": "5 RP/₹100 (1.25%)"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    },
+                    "groceries": {
+                        "rate": 0.0125,
+                        "label": "5 RP/₹100 (1.25%)"
+                    },
+                    "utilities": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    },
+                    "international": {
+                        "rate": 0.025,
+                        "label": "10 RP/₹100 (2.5%)"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 0.25,
+                "bestOption": "Vouchers & Travel via RBL Rewards",
+                "options": [
+                    {
+                        "type": "Vouchers",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25"
+                    },
+                    {
+                        "type": "Travel",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25"
+                    },
+                    {
+                        "type": "Shopping",
+                        "value": 0.20,
+                        "desc": "1 RP = ₹0.20 approx"
+                    }
+                ],
+                "redemptionFee": 99,
+                "redemptionFeeGst": true
+            }
+        },
+        "features": {
+            "welcome": {
+                "benefit": "None specified",
+                "condition": "N/A",
+                "creditTimeline": "N/A"
+            },
+            "lounge": {
+                "domestic": "2 per quarter via Mastercard Lounge Program",
+                "international": "6 per year via Priority Pass (can be shared with guests). Extra visit on ₹1 lakh+ monthly spend.",
+                "accessType": "Mastercard Lounge Program (India), Priority Pass (International)",
+                "spendRequirement": {
+                    "domestic": null,
+                    "internationalExtra": 100000
+                }
+            },
+            "milestones": [
+                {
+                    "spend": 800000,
+                    "benefit": "₹8,000 worth vouchers (Amazon/Myntra/Croma/MMT/Taj)"
+                }
+            ],
+            "golf": {
+                "included": true,
+                "text": "4 complimentary green fee rounds/year + 1 golf lesson/month (Mastercard holders)"
+            },
+            "movies": {
+                "included": true,
+                "text": "₹500 off on BookMyShow every month"
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "minTransaction": 500,
+                "maxTransaction": 4000,
+                "cap": 250,
+                "capPeriod": "monthly"
+            },
+            "forex": {
+                "markup": 1.77,
+                "text": "1.5% + 18% GST = ~1.77% forex markup"
+            },
+            "dining": {
+                "included": true,
+                "text": "25-50% discount via EazyDiner Prime, 1+1 Buffet privileges at premium restaurants"
+            },
+            "hotels": {
+                "included": true,
+                "partners": [
+                    "Marriott",
+                    "Accor",
+                    "IHG",
+                    "Mandarin Oriental",
+                    "Shangri-La"
+                ],
+                "benefits": "Early check-in, late check-out, room upgrade, complimentary breakfast for 2, hotel credit"
+            },
+            "concierge": {
+                "included": true,
+                "text": "24x7 Premium Concierge Services"
+            }
+        },
+        "metadata": {
+            "tags": [
+                "Premium",
+                "Priority Pass",
+                "Invite Only",
+                "Golf",
+                "Movies",
+                "Dining"
+            ],
+            "bestFor": "RBL Insignia Preferred Banking customers seeking a premium lifestyle card with no annual fee",
+            "rating": 4.3,
+            "verdict": "Excellent premium card for Insignia banking customers as the fee is completely waived. Strong international reward rate at 2.5%, generous Priority Pass (6 visits sharable with guests), and solid lifestyle benefits. Non-Insignia customers face a steep ₹7,000 fee making it less attractive.",
+            "pros": [
+                "Lifetime free for Insignia Preferred Banking members",
+                "6 international lounge visits via Priority Pass",
+                "High 2.5% reward rate on international spends",
+                "₹500/month BookMyShow discount",
+                "Premium hotel benefits across global chains",
+                "EazyDiner Prime dining privileges"
+            ],
+            "cons": [
+                "₹7,000 annual fee for non-Insignia customers",
+                "Requires ₹30 lakh TRV or ₹10 lakh AMB for Insignia eligibility",
+                "1.77% forex markup (not ideal for forex-heavy users)",
+                "Limited welcome benefits"
+            ]
+        }
+    },
+    {
+        "id": "rbl-icon",
+        "name": "RBL Bank Icon Credit Card",
+        "bank": "RBL Bank",
+        "network": "Mastercard/Visa",
+        "image": "/assets/cards/rbl-icon.png",
+        "link": "https://www.rblbank.com/personal-banking/cards/credit-cards/icon-credit-card",
+        "fees": {
+            "joining": 5000,
+            "annual": 5000,
+            "currency": "INR",
+            "gst": true,
+            "waivedOn": null,
+            "waiverText": "No fee waiver. 20,000 welcome points (worth ₹5,000) offset joining fee."
+        },
+        "rewards": {
+            "type": "points",
+            "pointName": "Reward Points",
+            "baseRate": 0.005,
+            "earningText": "2 Reward Points per ₹100 on regular spends. 20 Reward Points per ₹100 on international & weekend dining (max 2,000 RP/month each category).",
+            "expiry": "3 years from earning date",
+            "calculator": {
+                "tier": "mid-range",
+                "monthlyCap": 2000,
+                "monthlyCapNote": "2,000 RP/month each for international and weekend dining categories",
+                "categories": {
+                    "travel": {
+                        "rate": 0.005,
+                        "label": "2 RP/₹100 (0.5%)"
+                    },
+                    "dining": {
+                        "rate": 0.05,
+                        "label": "20 RP/₹100 on weekends (5%) - capped"
+                    },
+                    "online": {
+                        "rate": 0.005,
+                        "label": "2 RP/₹100 (0.5%)"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    },
+                    "groceries": {
+                        "rate": 0.005,
+                        "label": "2 RP/₹100 (0.5%)"
+                    },
+                    "utilities": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    },
+                    "international": {
+                        "rate": 0.05,
+                        "label": "20 RP/₹100 (5%) - capped"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 0.25,
+                "bestOption": "Flights/Hotels/Vouchers via RBL Rewards",
+                "options": [
+                    {
+                        "type": "Vouchers",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25"
+                    },
+                    {
+                        "type": "Travel",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25"
+                    },
+                    {
+                        "type": "Shopping",
+                        "value": 0.20,
+                        "desc": "1 RP = ₹0.20 approx"
+                    }
+                ],
+                "redemptionFee": 99,
+                "redemptionFeeGst": true
+            }
+        },
+        "features": {
+            "welcome": {
+                "benefit": "20,000 Bonus Reward Points (worth ₹5,000)",
+                "condition": "Transact within 30 days & pay annual fee by due date",
+                "creditTimeline": "Within 60 days of card issuance"
+            },
+            "lounge": {
+                "domestic": "2 per quarter (requires ₹35,000+ spend in previous quarter w.e.f. July 2025)",
+                "international": "No complimentary visits. Access available at $35/visit via Priority Pass.",
+                "accessType": "Mastercard/Visa Lounge Program (India), Priority Pass membership (paid visits)",
+                "spendRequirement": {
+                    "domestic": 35000,
+                    "internationalExtra": null
+                }
+            },
+            "milestones": [
+                {
+                    "spend": 300000,
+                    "benefit": "10,000 Bonus Reward Points"
+                },
+                {
+                    "spend": 500000,
+                    "benefit": "Additional 15,000 Bonus Reward Points"
+                },
+                {
+                    "spend": 800000,
+                    "benefit": "Additional 20,000 Bonus Reward Points"
+                }
+            ],
+            "golf": {
+                "included": true,
+                "text": "4 complimentary green fee rounds/year + 12 golf lessons (1/month). 50% off beyond 4 rounds."
+            },
+            "movies": {
+                "included": true,
+                "text": "Buy 1 Get 1 on BookMyShow (up to ₹200 off), twice per month"
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "minTransaction": 500,
+                "maxTransaction": 4000,
+                "cap": 200,
+                "capPeriod": "monthly"
+            },
+            "forex": {
+                "markup": 3.5,
+                "text": "3.5% forex markup on international transactions"
+            },
+            "concierge": {
+                "included": true,
+                "text": "24x7 Concierge Services for golf, hotel, dining, car rental, events"
+            }
+        },
+        "metadata": {
+            "tags": [
+                "Lifestyle",
+                "Weekend Dining",
+                "Golf",
+                "Movies",
+                "Milestones"
+            ],
+            "bestFor": "Weekend diners and those seeking strong milestone benefits with lifestyle perks",
+            "rating": 3.9,
+            "verdict": "A lifestyle-focused card with excellent weekend dining rewards (5%) and solid milestone benefits up to 45,000 points. The 20,000 welcome points effectively make the first year free. However, the high 3.5% forex markup and no free international lounge access limit its appeal for travelers.",
+            "pros": [
+                "20,000 welcome points offset joining fee",
+                "5% rewards on weekend dining and international (capped)",
+                "Up to 45,000 milestone points annually",
+                "BOGO movie tickets twice monthly",
+                "Golf privileges included"
+            ],
+            "cons": [
+                "High 3.5% forex markup",
+                "No free international lounge access",
+                "Accelerated categories are capped at 2,000 RP/month each",
+                "Domestic lounge requires ₹35,000 quarterly spend",
+                "₹99 redemption fee"
+            ]
+        }
+    },
+    {
+        "id": "rbl-platinum-maxima",
+        "name": "RBL Bank Platinum Maxima Credit Card",
+        "bank": "RBL Bank",
+        "network": "Mastercard/Visa",
+        "image": "/assets/cards/rbl-platinum-maxima.png",
+        "link": "https://www.rblbank.com/personal-banking/cards/credit-cards/platinum-maxima-credit-card",
+        "fees": {
+            "joining": 2000,
+            "annual": 2000,
+            "currency": "INR",
+            "gst": true,
+            "waivedOn": null,
+            "waiverText": "No fee waiver available"
+        },
+        "rewards": {
+            "type": "points",
+            "pointName": "Reward Points",
+            "baseRate": 0.005,
+            "earningText": "2 Reward Points per ₹100 on regular spends. 10 Reward Points per ₹100 on Dining, Grocery, Entertainment & International (max 1,000 RP/month).",
+            "expiry": "3 years from earning date",
+            "calculator": {
+                "tier": "entry-mid",
+                "monthlyCap": 1000,
+                "monthlyCapNote": "1,000 RP/month cap for accelerated categories combined",
+                "categories": {
+                    "travel": {
+                        "rate": 0.005,
+                        "label": "2 RP/₹100 (0.5%)"
+                    },
+                    "dining": {
+                        "rate": 0.025,
+                        "label": "10 RP/₹100 (2.5%) - capped"
+                    },
+                    "online": {
+                        "rate": 0.005,
+                        "label": "2 RP/₹100 (0.5%)"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    },
+                    "groceries": {
+                        "rate": 0.025,
+                        "label": "10 RP/₹100 (2.5%) - capped"
+                    },
+                    "utilities": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    },
+                    "entertainment": {
+                        "rate": 0.025,
+                        "label": "10 RP/₹100 (2.5%) - capped"
+                    },
+                    "international": {
+                        "rate": 0.025,
+                        "label": "10 RP/₹100 (2.5%) - capped"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 0.25,
+                "bestOption": "Vouchers via RBL Rewards",
+                "options": [
+                    {
+                        "type": "Vouchers",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25"
+                    },
+                    {
+                        "type": "Travel",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25"
+                    }
+                ],
+                "redemptionFee": 99,
+                "redemptionFeeGst": true
+            }
+        },
+        "features": {
+            "welcome": {
+                "benefit": "8,000 Bonus Reward Points (worth ₹2,000)",
+                "condition": "Transact within 30 days & pay annual fee by due date",
+                "creditTimeline": "Within 60 days of card issuance"
+            },
+            "lounge": {
+                "domestic": "1 per quarter (requires ₹35,000+ spend in previous quarter w.e.f. July 2025)",
+                "international": "Not available",
+                "accessType": "Mastercard/Visa Lounge Program (India only)",
+                "spendRequirement": {
+                    "domestic": 35000,
+                    "internationalExtra": null
+                }
+            },
+            "milestones": [
+                {
+                    "spend": 200000,
+                    "benefit": "10,000 Bonus Reward Points"
+                },
+                {
+                    "spend": 400000,
+                    "benefit": "Additional 10,000 Bonus Reward Points"
+                }
+            ],
+            "golf": {
+                "included": false,
+                "text": "Not available"
+            },
+            "movies": {
+                "included": true,
+                "text": "Buy 1 Get 1 on BookMyShow (up to ₹100 off), once per month (max 15 times/year)"
+            },
+            "fuel": {
+                "surchargeWaiver": "0%",
+                "minTransaction": null,
+                "maxTransaction": null,
+                "cap": null,
+                "capPeriod": null,
+                "note": "No fuel surcharge waiver on Platinum Maxima"
+            },
+            "forex": {
+                "markup": 3.5,
+                "text": "3.5% forex markup on international transactions"
+            }
+        },
+        "metadata": {
+            "tags": [
+                "Entry-Level",
+                "Movies",
+                "Dining",
+                "Grocery",
+                "Milestones"
+            ],
+            "bestFor": "Budget-conscious users seeking dining, grocery & entertainment rewards with movie benefits",
+            "rating": 3.4,
+            "verdict": "A decent entry-to-mid level card for those spending on dining, groceries and entertainment. Welcome bonus effectively makes first year free. The 1,000 RP monthly cap significantly limits earning potential. Best for moderate spenders who value movie discounts and don't travel internationally.",
+            "pros": [
+                "8,000 welcome points offset joining fee",
+                "5X rewards on dining, grocery, entertainment, international",
+                "Monthly movie BOGO offer",
+                "Milestone rewards up to 20,000 points",
+                "Lower annual fee at ₹2,000"
+            ],
+            "cons": [
+                "Very low 1,000 RP/month cap on accelerated categories",
+                "No fee waiver option",
+                "No international lounge access",
+                "Only 1 domestic lounge visit per quarter",
+                "High 3.5% forex markup",
+                "BOGO movie discount capped at ₹100 only",
+                "No fuel surcharge waiver"
+            ]
+        }
+    },
+    {
+        "id": "rbl-shoprite",
+        "name": "RBL Bank ShopRite Credit Card",
+        "bank": "RBL Bank",
+        "network": "RuPay/Mastercard/Visa",
+        "image": "/assets/cards/rbl-shoprite.png",
+        "link": "https://www.rblbank.com/personal-banking/cards/credit-cards/shoprite-credit-card",
+        "fees": {
+            "joining": 500,
+            "annual": 500,
+            "currency": "INR",
+            "gst": true,
+            "waivedOn": 150000,
+            "waiverText": "Annual fee waived on ₹1.5 lakh spend in previous year. Available as Lifetime Free through select channels."
+        },
+        "rewards": {
+            "type": "points",
+            "pointName": "Reward Points",
+            "baseRate": 0.0025,
+            "earningText": "1 Reward Point per ₹100 on regular spends. 20 Reward Points per ₹100 on groceries (max 1,000 RP/month). No points on fuel.",
+            "expiry": "3 years from earning date",
+            "calculator": {
+                "tier": "entry-level",
+                "monthlyCap": 1000,
+                "monthlyCapNote": "1,000 RP/month cap for grocery category",
+                "categories": {
+                    "travel": {
+                        "rate": 0.0025,
+                        "label": "1 RP/₹100 (0.25%)"
+                    },
+                    "dining": {
+                        "rate": 0.0025,
+                        "label": "1 RP/₹100 (0.25%)"
+                    },
+                    "online": {
+                        "rate": 0.0025,
+                        "label": "1 RP/₹100 (0.25%)"
+                    },
+                    "fuel": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    },
+                    "groceries": {
+                        "rate": 0.05,
+                        "label": "20 RP/₹100 (5%) - capped"
+                    },
+                    "utilities": {
+                        "rate": 0,
+                        "label": "No rewards"
+                    },
+                    "international": {
+                        "rate": 0.0025,
+                        "label": "1 RP/₹100 (0.25%)"
+                    }
+                }
+            },
+            "redemption": {
+                "baseValue": 0.25,
+                "bestOption": "Vouchers via RBL Rewards",
+                "options": [
+                    {
+                        "type": "Vouchers",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25"
+                    },
+                    {
+                        "type": "Travel",
+                        "value": 0.25,
+                        "desc": "1 RP = ₹0.25"
+                    }
+                ],
+                "redemptionFee": 99,
+                "redemptionFeeGst": true
+            }
+        },
+        "features": {
+            "welcome": {
+                "benefit": "2,000 Bonus Reward Points (worth ₹500)",
+                "condition": "Transact within 30 days & download RBL MyCard app",
+                "creditTimeline": "Within 60 days of card issuance"
+            },
+            "lounge": {
+                "domestic": "Not available",
+                "international": "Not available",
+                "accessType": "None"
+            },
+            "milestones": [],
+            "golf": {
+                "included": false,
+                "text": "Not available"
+            },
+            "movies": {
+                "included": true,
+                "text": "10% discount (up to ₹100) on BookMyShow, 15 times per year"
+            },
+            "fuel": {
+                "surchargeWaiver": "1%",
+                "minTransaction": 500,
+                "maxTransaction": 4000,
+                "cap": 100,
+                "capPeriod": "monthly"
+            },
+            "forex": {
+                "markup": 3.5,
+                "text": "3.5% forex markup on international transactions"
+            }
+        },
+        "metadata": {
+            "tags": [
+                "Entry-Level",
+                "Grocery",
+                "Movies",
+                "Budget",
+                "Lifetime Free"
+            ],
+            "bestFor": "First-time cardholders and grocery shoppers looking for an affordable entry-level card",
+            "rating": 3.3,
+            "verdict": "An excellent entry-level card for grocery-focused spenders. The 5% value-back on groceries (up to ₹5,000/month spend) is solid for a ₹500 fee card. Available as lifetime free through select channels. Best for beginners building credit history or as a dedicated grocery card.",
+            "pros": [
+                "Very low ₹500 annual fee (waivable on ₹1.5L spend)",
+                "Available as Lifetime Free through select channels",
+                "Strong 5% rewards on grocery shopping",
+                "10% movie discount 15 times/year",
+                "Fuel surcharge waiver",
+                "Good for building credit history"
+            ],
+            "cons": [
+                "Very low 0.25% base reward rate",
+                "No lounge access",
+                "No milestone benefits",
+                "Grocery rewards capped at 1,000 RP/month",
+                "High 3.5% forex markup",
+                "₹99 redemption fee eats into rewards"
+            ]
+        }
+    },
+    {
+        "id": "onecard",
+        "name": "OneCard Metal Credit Card",
+        "bank": "OneCard (FPL Technologies)",
+        "issuingPartners": [
+            "SBM Bank",
+            "South Indian Bank",
+            "Federal Bank",
+            "BOB Financial",
+            "Indian Bank",
+            "CSB Bank"
+        ],
+        "network": "Visa Signature",
+        "image": "/assets/cards/onecard.png",
+        "link": "https://www.getonecard.app/",
+        "fees": {
+            "joining": 0,
+            "annual": 0,
+            "currency": "INR",
+            "gst": false,
+            "waivedOn": null,
+            "waiverText": "Lifetime Free - No joining or annual fees ever"
+        },
+        "rewards": {
+            "type": "points",
+            "pointName": "Reward Points",
+            "baseRate": 0.002,
+            "earningText": "1 Reward Point per ₹50 spent. 5X Reward Points on top 2 spending categories of the month. Fractional points awarded. Points never expire.",
+            "expiry": "Never expires",
+            "calculator": {
+                "tier": "entry-level",
+                "monthlyCap": null,
+                "monthlyCapNote": "No cap on reward points",
+                "dynamicCategories": true,
+                "categoryNote": "Top 2 spend categories each month get 5X rewards automatically",
+                "categories": {
+                    "travel": {
+                        "rate": 0.01,
+                        "label": "5X if in top 2 categories (1%)"
+                    },
+                    "dining": {
+                        "rate": 0.01,
+                        "label": "5X if in top 2 categories (1%)"
+                    },
+                    "online": {
+                        "rate": 0.01,
+                        "label": "5X if in top 2 categories (1%)"
+                    },
+                    "fuel": {
+                        "rate": 0.01,
+                        "label": "5X if in top 2 categories (1%)"
+                    },
+                    "groceries": {
+                        "rate": 0.01,
+                        "label": "5X if in top 2 categories (1%)"
+                    },
+                    "utilities": {
+                        "rate": 0.01,
+                        "label": "5X if in top 2 categories (1%)"
+                    },
+                    "international": {
+                        "rate": 0.01,
+                        "label": "5X if in top 2 categories (1%)"
+                    },
+                    "base": {
+                        "rate": 0.002,
+                        "label": "1 RP/₹50 (0.2%)"
+                    }
+                },
+                "exclusions": [
+                    "Money transfers",
+                    "Rent payments",
+                    "Cash withdrawals",
+                    "Wallet loading/top-ups"
+                ]
+            },
+            "redemption": {
+                "baseValue": 0.10,
+                "bestOption": "Statement Credit / Cashback",
+                "options": [
+                    {
+                        "type": "Cashback/Statement Credit",
+                        "value": 0.10,
+                        "desc": "1 RP = ₹0.10"
+                    },
+                    {
+                        "type": "EMI Payments",
+                        "value": 0.10,
+                        "desc": "Use points to pay EMIs"
+                    }
+                ],
+                "redemptionFee": 0,
+                "redemptionFeeGst": false
+            }
+        },
+        "features": {
+            "welcome": {
+                "benefit": "None",
+                "condition": "N/A",
+                "creditTimeline": "N/A"
+            },
+            "lounge": {
+                "domestic": "Not available",
+                "international": "Not available",
+                "accessType": "None"
+            },
+            "milestones": [],
+            "golf": {
+                "included": false,
+                "text": "Not available"
+            },
+            "movies": {
+                "included": false,
+                "text": "Not available. Occasional app-based offers on Swiggy, 1mg, etc."
+            },
+            "fuel": {
+                "surchargeWaiver": "0%",
+                "minTransaction": null,
+                "maxTransaction": null,
+                "cap": null,
+                "capPeriod": null,
+                "note": "No fuel surcharge waiver"
+            },
+            "forex": {
+                "markup": 1.0,
+                "text": "1% forex markup - among the lowest in India"
+            },
+            "metalCard": {
+                "included": true,
+                "text": "Premium metal card with clean minimalist design. Replacement fee: ₹3,000 for metal, ₹145 for plastic (2nd onwards)."
+            },
+            "appControl": {
+                "included": true,
+                "features": [
+                    "Instant card lock/unlock",
+                    "Transaction limits control",
+                    "Domestic/International toggle",
+                    "Online/Offline toggle",
+                    "Contactless toggle",
+                    "Real-time spend tracking"
+                ]
+            },
+            "instantActivation": {
+                "included": true,
+                "text": "Virtual card activated in minutes. Physical metal card delivered in 3-5 days."
+            },
+            "emiFlexibility": {
+                "included": true,
+                "text": "Convert purchases to EMI in-app. Earn points on EMI transactions. Pay EMIs with reward points."
+            }
+        },
+        "chargesDetail": {
+            "interestRate": "3.75% per month (45% p.a.)",
+            "interestFreePeriod": "Up to 48 days",
+            "overLimitFee": "2.5% (min ₹500)",
+            "emiProcessingFee": "1% (min ₹99)",
+            "emiForeclosureFee": "3% (min ₹99)",
+            "earlyClosureFee": "₹3,000 if closed within 6 months of virtual card activation"
+        },
+        "metadata": {
+            "tags": [
+                "Lifetime Free",
+                "Metal Card",
+                "Fintech",
+                "Low Forex",
+                "No Annual Fee",
+                "5X Rewards"
+            ],
+            "bestFor": "First-time cardholders, tech-savvy users, and those wanting a premium metal card with no fees",
+            "rating": 3.7,
+            "verdict": "A unique proposition - India's only lifetime free metal credit card. The dynamic 5X rewards on top 2 categories is innovative, giving up to 1% back. Low 1% forex markup is excellent for international spends. However, base reward rate of 0.2% is poor, no lounge access, and the early closure fee of ₹3,000 is a concern. Best as a secondary card or for beginners building credit.",
+            "pros": [
+                "Lifetime free with no hidden charges",
+                "Premium metal card at zero cost",
+                "5X rewards on top 2 spending categories",
+                "Industry-low 1% forex markup",
+                "Reward points never expire",
+                "Fractional points awarded",
+                "Excellent app with granular controls",
+                "Instant virtual card activation"
+            ],
+            "cons": [
+                "Very low 0.2% base reward rate",
+                "No lounge access whatsoever",
+                "No fuel surcharge waiver",
+                "No welcome bonus",
+                "₹3,000 early closure fee within 6 months",
+                "₹3,000 metal card replacement fee",
+                "Mixed customer service reviews",
+                "5X category is auto-determined, not user-chosen"
+            ]
+        }
+    }
+]

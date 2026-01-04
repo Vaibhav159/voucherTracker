@@ -1,0 +1,849 @@
+{
+    "generatedAt": "2026-01-03T00:00:00Z",
+    "version": "1.0",
+    "verificationNotes": "Data verified as of January 3, 2026. Includes Q4 2025 devaluations: IndusInd Legend lounge discontinued (Mar 2025), YES Bank reward point value reduced (Nov 2024), YES Bank lounge spend criteria increased (Apr 2025).",
+    "cards": [
+        {
+            "id": "indusind-platinum",
+            "name": "IndusInd Platinum Aura Edge Credit Card",
+            "bank": "IndusInd Bank",
+            "image": "/assets/cards/indusind-platinum.png",
+            "link": "https://www.indusind.bank.in/in/en/personal/cards/credit-card/platinum-aura-edge-visa-and-mastercard-credit-card-easy-credit.html",
+            "fees": {
+                "joining": 0,
+                "annual": 0,
+                "currency": "INR",
+                "waivedOn": null,
+                "waiverText": "Lifetime Free"
+            },
+            "rewards": {
+                "type": "points",
+                "baseRate": 0.002,
+                "earningText": "0.5 Saving Points per ₹100 (base) | Up to 4 Points per ₹100 on selected plan category",
+                "expiry": "No expiry (while account active)",
+                "calculator": {
+                    "tier": "entry",
+                    "monthlyCap": 2500,
+                    "monthlyCapNote": "Max 2,500 points for cash redemption per month (effective Sep 2024)",
+                    "categories": {
+                        "travel": {
+                            "rate": 0.02,
+                            "label": "2% on Travel (under Travel Plan)",
+                            "note": "4 points per ₹100 at ₹0.50/point"
+                        },
+                        "dining": {
+                            "rate": 0.02,
+                            "label": "2% on Dining (under Party Plan)",
+                            "note": "4 points per ₹100 at ₹0.50/point"
+                        },
+                        "online": {
+                            "rate": 0.002,
+                            "label": "0.2% base rate on Online",
+                            "note": "0.5 points per ₹100 at ₹0.40/point"
+                        },
+                        "fuel": {
+                            "rate": 0,
+                            "label": "No reward points on fuel (since Apr 2018)",
+                            "cap": null
+                        },
+                        "groceries": {
+                            "rate": 0.02,
+                            "label": "2% on Groceries (under Shop/Home Plan)",
+                            "note": "4 points per ₹100 at ₹0.50/point"
+                        },
+                        "utilities": {
+                            "rate": 0.0125,
+                            "label": "1.25% on Utilities (under Home Plan)",
+                            "note": "2.5 points per ₹100 at ₹0.50/point"
+                        },
+                        "departmentStores": {
+                            "rate": 0.02,
+                            "label": "2% on Department Stores (under Shop Plan)",
+                            "note": "4 points per ₹100 at ₹0.50/point"
+                        }
+                    }
+                },
+                "redemption": {
+                    "baseValue": 0.40,
+                    "bestOption": "Non-Cash Credit / IndusMoments",
+                    "options": [
+                        {
+                            "type": "Cash Credit",
+                            "value": 0.40,
+                            "desc": "1 RP = ₹0.40 (max 2,500 points/month)"
+                        },
+                        {
+                            "type": "Non-Cash Credit",
+                            "value": 0.50,
+                            "desc": "1 RP = ₹0.50 (vouchers, merchandise)"
+                        },
+                        {
+                            "type": "KrisFlyer Miles",
+                            "value": 0.25,
+                            "desc": "400 RP = 100 KrisFlyer Miles (4:1 ratio, max 10,000 RP/month)"
+                        }
+                    ],
+                    "discontinuedPrograms": [
+                        {
+                            "program": "InterMiles",
+                            "discontinuedDate": "2025-01-21"
+                        }
+                    ]
+                },
+                "rewardPlans": [
+                    {
+                        "name": "Shop Plan",
+                        "categories": [
+                            "Department Stores",
+                            "Electronics",
+                            "Restaurants"
+                        ]
+                    },
+                    {
+                        "name": "Home Plan",
+                        "categories": [
+                            "Groceries",
+                            "Medical",
+                            "Utilities",
+                            "Insurance"
+                        ]
+                    },
+                    {
+                        "name": "Travel Plan",
+                        "categories": [
+                            "Airlines",
+                            "Hotels",
+                            "Car Rentals",
+                            "Rail"
+                        ]
+                    },
+                    {
+                        "name": "Party Plan",
+                        "categories": [
+                            "Dining",
+                            "Bars/Pubs",
+                            "Movies",
+                            "Entertainment"
+                        ]
+                    }
+                ],
+                "exclusions": [
+                    "Fuel",
+                    "EMI conversions",
+                    "Cash withdrawals",
+                    "Wallet loads"
+                ]
+            },
+            "features": {
+                "lounge": {
+                    "domestic": "None",
+                    "international": "None",
+                    "accessType": "N/A",
+                    "note": "No lounge access on this card"
+                },
+                "milestones": [],
+                "golf": {
+                    "included": false,
+                    "text": ""
+                },
+                "movies": {
+                    "included": false,
+                    "text": "No complimentary movie benefits"
+                },
+                "fuel": {
+                    "surchargeWaiver": "1%",
+                    "cap": 100,
+                    "capPeriod": "per billing cycle",
+                    "validRange": "₹400 - ₹4,000"
+                },
+                "forex": {
+                    "markup": 0.035,
+                    "text": "3.5%"
+                },
+                "insurance": {
+                    "airAccident": 2500000,
+                    "lostBaggage": 100000,
+                    "delayedBaggage": 25000,
+                    "lostPassport": 50000,
+                    "lostTicket": 25000,
+                    "missedConnection": 25000
+                },
+                "concierge": false,
+                "contactless": true,
+                "welcomeBenefits": {
+                    "included": true,
+                    "text": "Discount vouchers from Amazon, Flipkart, Zee5, Apollo, Uber, Ola etc. (on select fee plans only)"
+                }
+            },
+            "metadata": {
+                "tags": [
+                    "Lifetime Free",
+                    "Rewards",
+                    "Entry Level",
+                    "Customizable Plans"
+                ],
+                "bestFor": "First-time credit card users looking for customizable reward plans without annual fees",
+                "rating": 3.5,
+                "verdict": "A solid entry-level lifetime free card with unique customizable reward plans. The 4-points-per-₹100 earning on selected categories is decent, but the 0.5 base rate on other spends is low. Lack of lounge access and movie benefits limits its appeal for lifestyle seekers. Best suited for focused spenders who can maximize one category.",
+                "pros": [
+                    "Lifetime Free - no joining or annual fee",
+                    "Customizable reward plans (Shop/Home/Travel/Party)",
+                    "Up to 2% value back on selected categories",
+                    "Multiple redemption options including KrisFlyer Miles",
+                    "Travel insurance coverage included"
+                ],
+                "cons": [
+                    "Very low base reward rate (0.2%) outside selected plan",
+                    "No lounge access",
+                    "No movie or dining benefits",
+                    "Can only change reward plan after 6 months",
+                    "Cash redemption capped at 2,500 points/month",
+                    "High forex markup (3.5%)"
+                ]
+            }
+        },
+        {
+            "id": "indusind-legend",
+            "name": "IndusInd Legend Credit Card",
+            "bank": "IndusInd Bank",
+            "image": "/assets/cards/indusind-legend.png",
+            "link": "https://www.indusind.bank.in/in/en/personal/cards/credit-card/legend-credit-card.html",
+            "fees": {
+                "joining": 0,
+                "annual": 0,
+                "currency": "INR",
+                "waivedOn": null,
+                "waiverText": "Lifetime Free (LTF variant available)",
+                "paidVariant": {
+                    "joining": 9999,
+                    "annual": 0,
+                    "note": "Paid variant includes welcome benefits"
+                }
+            },
+            "rewards": {
+                "type": "points",
+                "baseRate": 0.005,
+                "earningText": "1 RP per ₹100 (Weekdays) | 2 RP per ₹100 (Weekends)",
+                "expiry": "No expiry (while account active)",
+                "calculator": {
+                    "tier": "mid-range",
+                    "monthlyCap": null,
+                    "statementCycleCapCash": 5000,
+                    "categories": {
+                        "travel": {
+                            "rate": 0.005,
+                            "label": "0.5% on Weekdays, 1% on Weekends",
+                            "note": "Weekday: 1 RP × ₹0.50 = 0.5%; Weekend: 2 RP × ₹0.50 = 1%"
+                        },
+                        "dining": {
+                            "rate": 0.005,
+                            "label": "0.5% on Weekdays, 1% on Weekends",
+                            "note": "Same as travel"
+                        },
+                        "online": {
+                            "rate": 0.005,
+                            "label": "0.5% on Weekdays, 1% on Weekends",
+                            "note": "Same as travel"
+                        },
+                        "fuel": {
+                            "rate": 0,
+                            "label": "No reward points on fuel (since Apr 2018)",
+                            "cap": null
+                        },
+                        "groceries": {
+                            "rate": 0.005,
+                            "label": "0.5% on Weekdays, 1% on Weekends",
+                            "note": "Same as travel"
+                        },
+                        "utilities": {
+                            "rate": 0.005,
+                            "label": "0.5% on Weekdays, 1% on Weekends",
+                            "note": "Same as travel"
+                        },
+                        "medical": {
+                            "rate": 0.005,
+                            "label": "Reduced rate (since Jan 2022)",
+                            "note": "Medical, Automobiles & Telecom earn 1 RP per ₹100 on both weekdays and weekends"
+                        }
+                    }
+                },
+                "redemption": {
+                    "baseValue": 0.50,
+                    "bestOption": "Cash Credit or Non-Cash (Pay with Points)",
+                    "options": [
+                        {
+                            "type": "Cash Credit",
+                            "value": 0.50,
+                            "desc": "1 RP = ₹0.50 (max 5,000 points per statement cycle)"
+                        },
+                        {
+                            "type": "Non-Cash/Pay with Points",
+                            "value": 0.75,
+                            "desc": "1 RP = up to ₹0.75"
+                        },
+                        {
+                            "type": "KrisFlyer Miles",
+                            "value": 0.25,
+                            "desc": "400 RP = 100 KrisFlyer Miles (4:1 ratio)",
+                            "note": "Poor value vs cash; only consider if you highly value KrisFlyer miles"
+                        },
+                        {
+                            "type": "Air India Maharaja Club",
+                            "value": 0.25,
+                            "desc": "400 RP = 100 Air India Miles (4:1 ratio)"
+                        }
+                    ],
+                    "discontinuedPrograms": [
+                        {
+                            "program": "InterMiles",
+                            "discontinuedDate": "2025-01-21"
+                        },
+                        {
+                            "program": "Club Vistara",
+                            "discontinuedDate": "2024-10-31"
+                        }
+                    ]
+                },
+                "exclusions": [
+                    "Fuel",
+                    "EMI conversions",
+                    "Cash withdrawals"
+                ]
+            },
+            "features": {
+                "lounge": {
+                    "domestic": "DISCONTINUED (effective March 7, 2025)",
+                    "international": "DISCONTINUED (effective March 7, 2025)",
+                    "accessType": "N/A",
+                    "note": "Lounge access discontinued from March 7, 2025. Priority Pass membership still provided but no complimentary visits.",
+                    "devaluationDate": "2025-03-07"
+                },
+                "milestones": [
+                    {
+                        "spend": 500000,
+                        "reward": "3,000 bonus Reward Points",
+                        "period": "Within 1 year from card issue date",
+                        "note": "Revised effective December 15, 2024 (earlier: 4,000 RP on ₹6L spend)"
+                    }
+                ],
+                "golf": {
+                    "included": false,
+                    "text": ""
+                },
+                "movies": {
+                    "included": true,
+                    "text": "Buy 1 Get 1 Free on BookMyShow - up to 3 free tickets per month (max ₹200 per ticket), ₹50 off on F&B"
+                },
+                "fuel": {
+                    "surchargeWaiver": "1%",
+                    "cap": 100,
+                    "capPeriod": "per month",
+                    "validRange": "₹500 - ₹3,000"
+                },
+                "forex": {
+                    "markup": 0.018,
+                    "text": "1.8% (Industry low)"
+                },
+                "insurance": {
+                    "airAccident": 2500000,
+                    "lostBaggage": 100000,
+                    "delayedBaggage": 25000,
+                    "lostPassport": 50000,
+                    "lostTicket": 25000,
+                    "missedConnection": 25000
+                },
+                "concierge": true,
+                "contactless": true,
+                "autoAssist": true,
+                "welcomeBenefits": {
+                    "included": true,
+                    "text": "5,000 welcome reward points on paid variant; Luxe Gift Card, Montblanc, Postcard Hotels vouchers on select fee plans",
+                    "forLTF": false
+                },
+                "cashAdvanceFee": {
+                    "included": false,
+                    "text": "No cash advance fee (rare feature)"
+                }
+            },
+            "metadata": {
+                "tags": [
+                    "Lifetime Free",
+                    "Low Forex",
+                    "Weekend Rewards",
+                    "Movies",
+                    "No Cash Advance Fee"
+                ],
+                "bestFor": "Weekend spenders, international travelers seeking low forex markup, and movie enthusiasts",
+                "rating": 3.8,
+                "verdict": "A unique lifetime free card with industry-leading 1.8% forex markup and weekend reward acceleration. The March 2025 lounge access discontinuation significantly impacts its travel value proposition. However, the BOGO movie benefit and low forex make it valuable for specific use cases. Best kept as a secondary card for forex spends and weekend shopping.",
+                "pros": [
+                    "Lifetime Free (LTF variant)",
+                    "Industry-low 1.8% forex markup - excellent for international spends",
+                    "2X rewards on weekends (1% effective value)",
+                    "Buy 1 Get 1 Free movie tickets (3/month)",
+                    "No cash advance fee",
+                    "24/7 concierge service",
+                    "Reward points never expire"
+                ],
+                "cons": [
+                    "Lounge access DISCONTINUED since March 2025",
+                    "Low weekday reward rate (0.5%)",
+                    "No dining or golf benefits",
+                    "Cash redemption capped at 5,000 points/cycle",
+                    "Milestone revised downward (Dec 2024)",
+                    "InterMiles and Vistara redemption discontinued"
+                ]
+            }
+        },
+        {
+            "id": "yes-bank-reserv",
+            "name": "YES Bank RESERV Credit Card",
+            "bank": "YES BANK",
+            "image": "/assets/cards/yes-bank-reserv.png",
+            "link": "https://www.yes.bank.in/personal-banking/cards/credit-card/reserv-credit-card",
+            "previousName": "YES FIRST Exclusive Credit Card",
+            "fees": {
+                "joining": 2499,
+                "annual": 2499,
+                "currency": "INR",
+                "waivedOn": {
+                    "joining": {
+                        "spend": 40000,
+                        "period": "within 30 days"
+                    },
+                    "annual": {
+                        "spend": 300000,
+                        "period": "in anniversary year"
+                    }
+                },
+                "waiverText": "Joining waived on ₹40K/30 days; Annual waived on ₹3L/year",
+                "renewalBenefit": "8,000 YES Rewardz Points on renewal fee payment"
+            },
+            "rewards": {
+                "type": "points",
+                "baseRate": 0.009,
+                "earningText": "24 RP per ₹200 (Online) | 12 RP per ₹200 (Offline) | 6 RP per ₹200 (Select)",
+                "expiry": "3 years from credit date",
+                "calculator": {
+                    "tier": "premium",
+                    "statementCycleCap": 36000,
+                    "categories": {
+                        "travel": {
+                            "rate": 0.009,
+                            "label": "0.9% on Offline Travel bookings",
+                            "note": "12 RP per ₹200 × ₹0.15 (gift voucher value)"
+                        },
+                        "dining": {
+                            "rate": 0.009,
+                            "label": "0.9% on Dining",
+                            "note": "12 RP per ₹200 × ₹0.15"
+                        },
+                        "online": {
+                            "rate": 0.018,
+                            "label": "1.8% on ALL Online spends",
+                            "note": "24 RP per ₹200 × ₹0.15 (devalued Nov 2024)"
+                        },
+                        "fuel": {
+                            "rate": 0,
+                            "label": "No reward points on fuel",
+                            "cap": null
+                        },
+                        "groceries": {
+                            "rate": 0.009,
+                            "label": "0.9% on Groceries",
+                            "note": "12 RP per ₹200 × ₹0.15"
+                        },
+                        "utilities": {
+                            "rate": 0.0045,
+                            "label": "0.45% on Utilities (Select category)",
+                            "note": "6 RP per ₹200 × ₹0.15"
+                        },
+                        "insurance": {
+                            "rate": 0.0045,
+                            "label": "0.45% on Insurance (Select category)",
+                            "note": "6 RP per ₹200 × ₹0.15"
+                        },
+                        "education": {
+                            "rate": 0.0045,
+                            "label": "0.45% on Education (Select category)",
+                            "note": "6 RP per ₹200 × ₹0.15"
+                        }
+                    }
+                },
+                "redemption": {
+                    "baseValue": 0.15,
+                    "previousValue": 0.25,
+                    "devaluationDate": "2024-11-13",
+                    "devaluationNote": "Gift voucher value reduced from ₹0.25 to ₹0.15 (40% devaluation)",
+                    "bestOption": "Travel Bookings (still at ₹0.25 value)",
+                    "options": [
+                        {
+                            "type": "Gift Vouchers",
+                            "value": 0.15,
+                            "desc": "1 RP = ₹0.15 (DEVALUED Nov 2024)"
+                        },
+                        {
+                            "type": "Travel Bookings",
+                            "value": 0.25,
+                            "desc": "1 RP = ₹0.25 (via YES Rewardz portal)"
+                        },
+                        {
+                            "type": "InterMiles",
+                            "value": 0.10,
+                            "desc": "10 RP = 1 InterMile"
+                        }
+                    ],
+                    "redemptionFee": 100
+                },
+                "subscriptionPlans": {
+                    "available": true,
+                    "plans": [
+                        {
+                            "name": "3X Plan",
+                            "fee": 3500,
+                            "gst": true,
+                            "multiplier": "2X on online, 3X on offline & select",
+                            "effectiveRate": {
+                                "online": 0.036,
+                                "offline": 0.027
+                            },
+                            "maxAdditionalPoints": 75000
+                        },
+                        {
+                            "name": "5X Plan",
+                            "fee": 5000,
+                            "gst": true,
+                            "multiplier": "3X on online, 5X on Travel/Dining/Fashion/Healthcare",
+                            "effectiveRate": {
+                                "online": 0.054,
+                                "selectedCategories": 0.045
+                            },
+                            "maxAdditionalPoints": 75000,
+                            "eligibleCategories": [
+                                "Travel",
+                                "Dining",
+                                "Fashion",
+                                "Healthcare"
+                            ]
+                        }
+                    ]
+                },
+                "exclusions": [
+                    "Fuel",
+                    "Rent",
+                    "Wallet loads",
+                    "Cash withdrawals",
+                    "EMI transactions",
+                    "Government transactions"
+                ]
+            },
+            "features": {
+                "lounge": {
+                    "domestic": "3 per quarter (SPEND-BASED from Apr 2025)",
+                    "international": "6 per year",
+                    "accessType": "Priority Pass / Card-based",
+                    "spendCriteria": {
+                        "effectiveDate": "2025-04-01",
+                        "domestic": {
+                            "required": 100000,
+                            "period": "previous quarter",
+                            "note": "Must spend ₹1,00,000 in previous quarter to qualify"
+                        }
+                    },
+                    "note": "International lounge access available for primary and add-on cardholders. Domestic access now spend-based.",
+                    "quarterDefinition": "21st Dec-20th Mar, 21st Mar-20th Jun, 21st Jun-20th Sep, 21st Sep-20th Dec"
+                },
+                "milestones": [],
+                "golf": {
+                    "included": true,
+                    "text": "4 complimentary green fees per calendar year at select golf courses; 1 complimentary lesson per month"
+                },
+                "movies": {
+                    "included": false,
+                    "text": "No complimentary movie benefits"
+                },
+                "fuel": {
+                    "surchargeWaiver": "1%",
+                    "cap": 1000,
+                    "capPeriod": "per month",
+                    "validRange": "₹400 - ₹5,000",
+                    "feeOnHighValue": {
+                        "effectiveDate": "2025-10-15",
+                        "fee": "1% + GST on fuel/tolls above ₹10,000 per transaction"
+                    }
+                },
+                "forex": {
+                    "markup": 0.0175,
+                    "text": "1.75%"
+                },
+                "insurance": {
+                    "creditShield": 1500000,
+                    "airAccident": 30000000,
+                    "medicalEmergency": 5000000,
+                    "lostCardLiability": {
+                        "min": 1500000,
+                        "max": 3000000
+                    },
+                    "purchaseProtection": {
+                        "included": true,
+                        "coverage": "Accidental damage for 6 months on online purchases",
+                        "exclusions": [
+                            "Burglary (excluded from Apr 2024)"
+                        ]
+                    }
+                },
+                "concierge": true,
+                "contactless": true
+            },
+            "metadata": {
+                "tags": [
+                    "Online Shopping",
+                    "Low Forex",
+                    "Lounge Access",
+                    "Golf",
+                    "Subscription Plans"
+                ],
+                "bestFor": "High online spenders who can meet ₹1L quarterly spend for lounge access and value accelerated rewards with subscription plans",
+                "rating": 3.6,
+                "verdict": "YES Reserv was a strong mid-range card but has been significantly devalued. The November 2024 reward point devaluation (₹0.25 → ₹0.15) and April 2025 ₹1L spend requirement for domestic lounges diminish its value. The subscription plans can boost returns up to 5.4% on online spends, but require additional investment. Best for those who can maximize online shopping and meet steep lounge thresholds.",
+                "pros": [
+                    "High earn rate on online spends (24 RP per ₹200)",
+                    "Low forex markup (1.75%)",
+                    "Rewards on usually-excluded categories (insurance, utilities, education)",
+                    "Subscription plans for accelerated earning (up to 5X)",
+                    "International lounge access included",
+                    "Golf benefits included",
+                    "₹3 crore air accident cover"
+                ],
+                "cons": [
+                    "Reward points DEVALUED 40% in Nov 2024 (₹0.25 → ₹0.15)",
+                    "Domestic lounge requires ₹1L quarterly spend (Apr 2025)",
+                    "Annual fee of ₹2,499 (though waivable)",
+                    "3-year point expiry",
+                    "₹100 redemption fee",
+                    "No movie benefits",
+                    "Subscription plans add to annual cost"
+                ]
+            }
+        },
+        {
+            "id": "yes-bank-select",
+            "name": "YES Bank SELECT Credit Card",
+            "bank": "YES BANK",
+            "image": "/assets/cards/yes-bank-select.png",
+            "link": "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/select-credit-card",
+            "previousName": "YES Prosperity Edge Credit Card",
+            "fees": {
+                "joining": 399,
+                "annual": 399,
+                "currency": "INR",
+                "waivedOn": {
+                    "joining": {
+                        "spend": 10000,
+                        "period": "within 30 days"
+                    },
+                    "annual": {
+                        "spend": 100000,
+                        "period": "in previous year"
+                    }
+                },
+                "waiverText": "Joining waived on ₹10K/30 days; Annual waived on ₹1L/year"
+            },
+            "rewards": {
+                "type": "points",
+                "baseRate": 0.003,
+                "earningText": "8 RP per ₹200 (Online) | 4 RP per ₹200 (Offline) | 2 RP per ₹200 (Select)",
+                "expiry": "3 years from credit date",
+                "calculator": {
+                    "tier": "entry",
+                    "monthlyCap": null,
+                    "categories": {
+                        "travel": {
+                            "rate": 0.006,
+                            "label": "0.6% on Travel (Travel & Dining accelerated)",
+                            "note": "8 RP per ₹200 on travel & dining × ₹0.15"
+                        },
+                        "dining": {
+                            "rate": 0.006,
+                            "label": "0.6% on Dining (Travel & Dining accelerated)",
+                            "note": "8 RP per ₹200 × ₹0.15"
+                        },
+                        "online": {
+                            "rate": 0.006,
+                            "label": "0.6% on Online spends",
+                            "note": "8 RP per ₹200 × ₹0.15 (devalued)"
+                        },
+                        "fuel": {
+                            "rate": 0,
+                            "label": "No reward points on fuel",
+                            "cap": null
+                        },
+                        "groceries": {
+                            "rate": 0.003,
+                            "label": "0.3% on Groceries",
+                            "note": "4 RP per ₹200 × ₹0.15"
+                        },
+                        "utilities": {
+                            "rate": 0.0015,
+                            "label": "0.15% on Utilities (Select category)",
+                            "note": "2 RP per ₹200 × ₹0.15"
+                        },
+                        "insurance": {
+                            "rate": 0.0015,
+                            "label": "0.15% on Insurance (Select category)",
+                            "note": "2 RP per ₹200 × ₹0.15"
+                        }
+                    }
+                },
+                "redemption": {
+                    "baseValue": 0.15,
+                    "previousValue": 0.25,
+                    "devaluationDate": "2024-11-13",
+                    "devaluationNote": "Gift voucher value reduced from ₹0.25 to ₹0.15 (40% devaluation)",
+                    "bestOption": "Travel Bookings (still at ₹0.25 value)",
+                    "options": [
+                        {
+                            "type": "Gift Vouchers",
+                            "value": 0.15,
+                            "desc": "1 RP = ₹0.15 (DEVALUED Nov 2024)"
+                        },
+                        {
+                            "type": "Travel Bookings",
+                            "value": 0.25,
+                            "desc": "1 RP = ₹0.25 (via YES Rewardz portal)"
+                        },
+                        {
+                            "type": "Airmiles",
+                            "value": 0.10,
+                            "desc": "10 RP = 1 InterMile/1 CV Point"
+                        }
+                    ],
+                    "redemptionFee": 100
+                },
+                "subscriptionPlans": {
+                    "available": true,
+                    "plans": [
+                        {
+                            "name": "3X Plan",
+                            "fee": 1500,
+                            "gst": true,
+                            "multiplier": "2X on online, 3X on offline & select",
+                            "maxAdditionalPoints": 75000
+                        },
+                        {
+                            "name": "5X Plan",
+                            "fee": 2000,
+                            "gst": true,
+                            "multiplier": "3X on online, 5X on Travel/Dining/Fashion/Healthcare",
+                            "eligibleCategories": [
+                                "Travel",
+                                "Dining",
+                                "Fashion",
+                                "Healthcare"
+                            ],
+                            "maxAdditionalPoints": 75000
+                        }
+                    ]
+                },
+                "exclusions": [
+                    "Fuel",
+                    "Rent",
+                    "Wallet loads",
+                    "Cash withdrawals",
+                    "EMI transactions",
+                    "Government transactions"
+                ]
+            },
+            "features": {
+                "lounge": {
+                    "domestic": "1 per quarter (SPEND-BASED from Apr 2025)",
+                    "international": "None (US $27 + GST charge)",
+                    "accessType": "Mastercard Lounge / LoungeKey (VISA)",
+                    "spendCriteria": {
+                        "effectiveDate": "2025-04-01",
+                        "domestic": {
+                            "required": 50000,
+                            "period": "previous quarter",
+                            "note": "Must spend ₹50,000 in previous quarter to qualify"
+                        }
+                    },
+                    "note": "Only domestic lounge access. International lounges at US $27 + GST per visit.",
+                    "quarterDefinition": "21st Dec-20th Mar, 21st Mar-20th Jun, 21st Jun-20th Sep, 21st Sep-20th Dec"
+                },
+                "milestones": [
+                    {
+                        "spend": 600000,
+                        "reward": "15,000 bonus Reward Points",
+                        "period": "in each anniversary year"
+                    }
+                ],
+                "golf": {
+                    "included": true,
+                    "text": "4 complimentary green fees per calendar year; 1 complimentary lesson per month at select golf courses"
+                },
+                "movies": {
+                    "included": false,
+                    "text": "No complimentary movie benefits"
+                },
+                "fuel": {
+                    "surchargeWaiver": "1%",
+                    "cap": null,
+                    "capPeriod": null,
+                    "validRange": "₹400 - ₹5,000",
+                    "feeOnHighValue": {
+                        "effectiveDate": "2025-10-15",
+                        "fee": "1% + GST on fuel/tolls above ₹10,000 per transaction"
+                    }
+                },
+                "forex": {
+                    "markup": 0.03,
+                    "text": "3%"
+                },
+                "insurance": {
+                    "creditShield": "Available",
+                    "airAccident": 5000000,
+                    "medicalEmergency": 1500000,
+                    "purchaseProtection": {
+                        "included": true,
+                        "coverage": "Accidental damage for 6 months on online mobile/electronics purchases"
+                    }
+                },
+                "concierge": false,
+                "contactless": true,
+                "yesPayNow": {
+                    "included": true,
+                    "bonus": "5X reward points on first 3 transactions of first 5 registered billers"
+                }
+            },
+            "metadata": {
+                "tags": [
+                    "Low Fee",
+                    "Online Shopping",
+                    "Golf",
+                    "Entry Level"
+                ],
+                "bestFor": "Budget-conscious users seeking basic rewards on online shopping with low annual fee",
+                "rating": 3.2,
+                "verdict": "YES Select is a basic entry-level card that has lost much of its appeal after the November 2024 devaluation. The effective reward rate of 0.6% on online spends (post-devaluation) is poor compared to alternatives like Amazon Pay ICICI (5% Amazon, 2% online). The ₹50K quarterly spend for a single lounge visit is steep. Consider only if you can waive annual fee and need golf benefits.",
+                "pros": [
+                    "Low annual fee (₹399, waivable on ₹1L spend)",
+                    "Golf benefits included (4 green fees + lessons)",
+                    "Rewards on select categories (utilities, insurance)",
+                    "Purchase protection on electronics",
+                    "15,000 milestone bonus on ₹6L spend",
+                    "Easy fee waiver threshold"
+                ],
+                "cons": [
+                    "Reward points DEVALUED 40% in Nov 2024",
+                    "Very low effective reward rate (0.6% online, 0.3% offline)",
+                    "Domestic lounge requires ₹50K quarterly spend (Apr 2025)",
+                    "No international lounge access",
+                    "High forex markup (3%)",
+                    "No movie or dining benefits",
+                    "3-year point expiry",
+                    "₹100 redemption fee"
+                ]
+            }
+        }
+    ]
+}

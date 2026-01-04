@@ -394,3 +394,100 @@
     font-size: var(--text-xl);
   }
 }
+
+/* ============================================
+   MOBILE CARD POLISH (Migrated from mobile-ux.css)
+   ============================================ */
+/* FAVORITES PAGE MOBILE POLISH */
+@media (max-width: 480px) {
+
+  /* Stats cards compact */
+  .favorites-stats {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.5rem !important;
+  }
+
+  .favorites-stats>div {
+    padding: 0.75rem !important;
+  }
+
+  .favorites-stats .stat-value {
+    font-size: 1.25rem !important;
+  }
+
+  /* Tab buttons compact */
+  .favorites-tabs button,
+  [class*="tab"] button {
+    padding: 8px 12px !important;
+    font-size: 0.8rem !important;
+  }
+
+  /* Grid single column */
+  .favorites-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* CREDIT CARD COMPARISON MOBILE */
+@media (max-width: 768px) {
+
+  /* Card grid 2 columns */
+  .credit-card-grid,
+  [class*="card-grid"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+
+  /* Category filters horizontal scroll */
+  .category-quick-filters {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.5rem;
+    padding-bottom: 8px;
+  }
+
+  .category-quick-filters button {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* Card grid single column */
+  .credit-card-grid,
+  [class*="card-grid"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* EXTRA SMALL DEVICE POLISH (< 390px) - Cards Specific */
+@media (max-width: 390px) {
+
+  /* Compact cards */
+  .glass-panel {
+    padding: 0.75rem !important;
+  }
+
+  /* Compact voucher cards */
+  .voucher-card {
+    padding: 0.75rem !important;
+  }
+
+  /* Stats bar compact */
+  .stats-bar {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .stats-bar>div {
+    flex: 1 1 45%;
+    min-width: 120px;
+  }
+
+  /* Banking tier cards */
+  .tier-card {
+    min-height: auto !important;
+  }
+}
