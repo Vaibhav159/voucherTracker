@@ -15,8 +15,8 @@ import EmptyState from './EmptyState';
 import { VoucherGridSkeleton } from './Skeleton';
 
 const CARD_MIN_WIDTH = 200;
-const CARD_GAP = 32;
-const CARD_HEIGHT = 400;
+const CARD_GAP = 20;
+const CARD_HEIGHT = 225;
 const OVERSCAN = 5;
 
 const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
@@ -53,10 +53,8 @@ const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
             const containerRect = parentRef.current.getBoundingClientRect();
             const width = containerRect.width - 16; // Padding
 
-
-
             const possibleCols = Math.floor((width + CARD_GAP) / (CARD_MIN_WIDTH + CARD_GAP));
-            const cols = Math.max(1, Math.min(possibleCols, 2)); // Max 2 columns on mobile/tablet usually
+            const cols = Math.max(1, possibleCols); // Remove 2-column limit to fit more cards
 
             // Adjust for desktop if needed, but keeping original logic
             setColumns(cols);
