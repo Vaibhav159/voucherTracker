@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect, lazy, Suspense } from 'react';
+import { useState, useMemo, useEffect, lazy, Suspense, useCallback } from 'react';
 import { HashRouter as Router, Routes, Route, useSearchParams } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import { FavoritesProvider } from './context/FavoritesContext';
@@ -69,7 +69,7 @@ function Home({ data, onOpenShortcuts }) {
   const debouncedSearchValue = useDebounce(inputValue, 300);
 
   // Helper to update URL params and local state
-  const updateParams = (key, value, setStateFn) => {
+  const updateParams = useCallback((key, value, setStateFn) => {
     setSearchParams(prev => {
       const newParams = new URLSearchParams(prev);
       if (value) {
@@ -80,14 +80,14 @@ function Home({ data, onOpenShortcuts }) {
       return newParams;
     }, { replace: true });
     if (setStateFn) setStateFn(value);
-  };
+  }, [setSearchParams]);
 
   // Update searchTerm when debounced value changes
   useEffect(() => {
     if (debouncedSearchValue !== searchTerm) {
       updateParams('search', debouncedSearchValue, setSearchTerm);
     }
-  }, [debouncedSearchValue]);
+  }, [debouncedSearchValue, searchTerm, updateParams]);
 
   const handleSearchChange = (val) => setInputValue(val);
   const handlePlatformSelect = (p) => updateParams('platform', p, setSelectedPlatform);
@@ -136,10 +136,11 @@ function Home({ data, onOpenShortcuts }) {
     }
 
     return result;
-  }, [searchResults, selectedPlatform, selectedCategory, sortOption, searchTerm, getMaxDiscount]);
+  }, [searchResults, selectedPlatform, selectedCategory, sortOption, searchTerm, getMaxDiscount, data]);
 
 
   // Sync URL to State (Deep linking / External navigation)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const currentPlatform = searchParams.get('platform');
     const currentCategory = searchParams.get('category');
@@ -172,7 +173,7 @@ function Home({ data, onOpenShortcuts }) {
       setSelectedVoucher(null);
     }
 
-  }, [searchParams, selectedPlatform, selectedCategory, searchTerm]);
+  }, [searchParams, selectedPlatform, selectedCategory, searchTerm, data]);
   return (
     <div className="home-container">
       {/* Mobile Filter Toggle Removed */}
@@ -185,7 +186,7 @@ function Home({ data, onOpenShortcuts }) {
 
       {/* Left Column: Stats + Sidebar */}
       <div className="left-sidebar-wrapper">
-        <StatsBar vouchers={data} platforms={ALL_PLATFORMS} variant="sidebar" />
+        <StatsBar vouchers={filteredVouchers} platforms={ALL_PLATFORMS} variant="sidebar" />
 
         {/* Sidebar */}
         <aside data-tour="filters" className={`glass-panel sidebar
