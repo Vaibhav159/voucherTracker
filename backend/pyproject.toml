@@ -54,12 +54,13 @@ indent_size = 2
 indent_size = 2
 
 [tool.ruff]
-target-version = "py312"
+target-version = "py313"
 # Exclude a variety of commonly ignored directories.
 extend-exclude = [
     "*/migrations/*.py",
     "staticfiles/*",
 ]
+line-length = 120
 
 [tool.ruff.lint]
 select = [
@@ -126,6 +127,8 @@ ignore = [
           # of types for comparison.
           # Deactivated because it can make the code slow:
           # https://github.com/astral-sh/ruff/issues/7871
+  "RUF100",
+  "PGH004",
 ]
 # The fixes in extend-unsafe-fixes will require
 # provide the `--unsafe-fixes` flag when fixing.

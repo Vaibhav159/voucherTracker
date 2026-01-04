@@ -1,45 +1,50 @@
+import json
 import os
 import re
-import json
 from pathlib import Path
-from django.core.management.base import BaseCommand
+
 from django.conf import settings
+from django.core.management.base import BaseCommand
+
 from backend.credit_cards.models import CreditCard
 
+
 class Command(BaseCommand):
-    help = 'Import credit cards from JS file'
+    help = "Import credit cards from JS file"
 
     def handle(self, *args, **kwargs):
         # Possible paths to the source JS file
         possible_paths = [
-            settings.BASE_DIR.parent / "src/data/creditCards.js", # Standard project structure (local)
-            settings.BASE_DIR / "creditCards.js",                # Fallback for Docker (if copied manually)
-            settings.BASE_DIR / "management/commands/creditCards.js", # Another fallback
-            Path("/app/creditCards.js"),                         # Container absolute path (if copied to backend root)
-            Path("/app/src/data/creditCards.js"),                # Container absolute path (if mounted)
+            settings.BASE_DIR.parent / "src/data/creditCards.js",  # Standard project structure (local)
+            settings.BASE_DIR / "creditCards.js",  # Fallback for Docker (if copied manually)
+            settings.BASE_DIR / "management/commands/creditCards.js",  # Another fallback
+            Path("/app/creditCards.js"),  # Container absolute path (if copied to backend root)
+            Path("/app/src/data/creditCards.js"),  # Container absolute path (if mounted)
         ]
-        
+
         js_file_path = None
         for path in possible_paths:
             if os.path.exists(path):
                 js_file_path = path
                 break
-        
+
         if not js_file_path:
-            self.stdout.write(self.style.ERROR(f"Source file creditCards.js not found in any of the expected locations."))
+            self.stdout.write(
+                self.style.ERROR("Source file creditCards.js not found in any of the expected locations."),
+            )
             return
 
         self.stdout.write(f"Reading from {js_file_path}")
 
         try:
-            with open(js_file_path, "r", encoding='utf-8') as f:
+            with open(js_file_path, encoding="utf-8") as f:
                 content = f.read()
 
             # Extract the array from the JS file using regex
-            match = re.search(r'export const creditCards = (\[.*\]);', content, re.DOTALL)
+            match = re.search(r"export const creditCards = (\[.*\]);", content, re.DOTALL)
             if not match:
                 # Try without trailing semicolon
-                match = re.search(r'export const creditCards = (\[.*\])', content, re.DOTALL)
+                match = re.search(r"export const creditCards = (\[.*\])", content, re.DOTALL)
 
             if not match:
                 self.stdout.write(self.style.ERROR("Could not find creditCards array in the JS file"))
@@ -71,7 +76,7 @@ class Command(BaseCommand):
                 # Extract category
                 category = item.get("category", "")
                 if not category and tags:
-                    for t in ['Travel', 'Cashback', 'Premium', 'Shopping', 'Dining', 'Fuel', 'Co-branded']:
+                    for t in ["Travel", "Cashback", "Premium", "Shopping", "Dining", "Fuel", "Co-branded"]:
                         if t in tags:
                             category = t
                             break
@@ -104,6 +109,7 @@ class Command(BaseCommand):
             self.stdout.write(self.style.SUCCESS(f"Successfully imported {count} cards"))
 
         except Exception as e:
-            self.stdout.write(self.style.ERROR(f"Error importing: {str(e)}"))
+            self.stdout.write(self.style.ERROR(f"Error importing: {e!s}"))
             import traceback
+
             self.stdout.write(traceback.format_exc())

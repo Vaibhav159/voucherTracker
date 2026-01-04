@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django_prose_editor.fields import ProseEditorField
 
+
 class CreditCard(models.Model):
     BANK_CHOICES = [
         ("SBI Card", "SBI Card"),

@@ -3,7 +3,9 @@ import json
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from backend.vouchers.choices import VoucherCategory, VoucherMismatchStatus, PlatformName
+from backend.vouchers.choices import PlatformName
+from backend.vouchers.choices import VoucherCategory
+from backend.vouchers.choices import VoucherMismatchStatus
 
 
 class Voucher(models.Model):
@@ -57,11 +59,21 @@ class VoucherMismatch(models.Model):
     external_id = models.CharField(_("External ID"), max_length=255)
     brand_name = models.CharField(_("Brand Name"), max_length=255)  # Raw brand from source
     gift_card_name = models.CharField(_("Gift Card Name"), max_length=255)
-    match_with_voucher = models.ForeignKey(Voucher, on_delete=models.SET_NULL, null=True, blank=True,
-                                           related_name="mismatches", verbose_name=_("Map to Voucher"))
+    match_with_voucher = models.ForeignKey(
+        Voucher,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="mismatches",
+        verbose_name=_("Map to Voucher"),
+    )
     raw_data = models.JSONField(_("Raw Data"), default=dict)
-    status = models.CharField(_("Status"), max_length=20, choices=VoucherMismatchStatus,
-                              default=VoucherMismatchStatus.PENDING)
+    status = models.CharField(
+        _("Status"),
+        max_length=20,
+        choices=VoucherMismatchStatus,
+        default=VoucherMismatchStatus.PENDING,
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

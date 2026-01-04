@@ -1,9 +1,13 @@
-from django.contrib import admin
 from django import forms
+from django.contrib import admin
 from django.db import models
 
 from .choices import VoucherMismatchStatus
-from .models import Voucher, VoucherAlias, Platform, VoucherPlatform, VoucherMismatch
+from .models import Platform
+from .models import Voucher
+from .models import VoucherAlias
+from .models import VoucherMismatch
+from .models import VoucherPlatform
 
 
 class VoucherAliasInline(admin.TabularInline):
@@ -16,7 +20,7 @@ class VoucherPlatformInline(admin.TabularInline):
     extra = 1
     autocomplete_fields = ["platform"]
     formfield_overrides = {
-        models.JSONField: {'widget': forms.Textarea(attrs={'rows': 2, 'cols': 40, 'style': 'font-family: monospace;'})},
+        models.JSONField: {"widget": forms.Textarea(attrs={"rows": 2, "cols": 40, "style": "font-family: monospace;"})},
     }
 
 
@@ -51,8 +55,17 @@ class VoucherAliasAdmin(admin.ModelAdmin):
 
 @admin.register(VoucherMismatch)
 class VoucherMismatchAdmin(admin.ModelAdmin):
-    list_display = ["brand_name", "gift_card_name", "platform", "status", "match_with_voucher", "created_at",
-                    "get_category", "get_external_id", "get_logo"]
+    list_display = [
+        "brand_name",
+        "gift_card_name",
+        "platform",
+        "status",
+        "match_with_voucher",
+        "created_at",
+        "get_category",
+        "get_external_id",
+        "get_logo",
+    ]
     list_filter = ["status", "platform", "created_at"]
     search_fields = ["brand_name", "gift_card_name", "external_id"]
     readonly_fields = ["created_at", "updated_at", "raw_data", "get_category", "get_external_id", "get_logo"]
@@ -77,7 +90,7 @@ class VoucherMismatchAdmin(admin.ModelAdmin):
                 defaults={
                     "category": mismatch.get_category(),
                     "logo": mismatch.get_logo(),
-                }  # Default category
+                },  # Default category
             )
 
             if created:
@@ -97,7 +110,7 @@ class VoucherMismatchAdmin(admin.ModelAdmin):
 
             _, created = VoucherAlias.objects.get_or_create(
                 name=mismatch.gift_card_name,
-                voucher=mismatch.match_with_voucher
+                voucher=mismatch.match_with_voucher,
             )
 
             if created:
