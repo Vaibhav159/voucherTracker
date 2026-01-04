@@ -1,8 +1,8 @@
 /**
  * AskAI Component (Refactored)
- * 
+ *
  * AI-powered assistant for credit cards, vouchers, and banking queries.
- * 
+ *
  * Features:
  * - Intent recognition for natural language queries
  * - Fuzzy search for cards and vouchers
@@ -11,7 +11,7 @@
  * - Voice input support
  * - Chat history persistence
  * - Accessible and responsive design
- * 
+ *
  * @version 2.0.0
  */
 

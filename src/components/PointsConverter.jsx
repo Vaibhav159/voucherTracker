@@ -5,7 +5,7 @@ import '../styles/components/points-converter.css';
 
 /**
  * PointsConverter - Premium Redesigned
- * 
+ *
  * Features:
  * - Premium glassmorphism card selector
  * - Grouped by bank with visual hierarchy

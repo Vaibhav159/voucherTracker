@@ -27,7 +27,7 @@ const BRAND_STRATEGIES = {
     recommendedCards: ['Amazon Pay ICICI', 'ICICI Emeralde'],
     platform: 'Amazon',
   },
-  
+
   flipkart: {
     keywords: ['flipkart'],
     strategy: `**Flipkart Savings Strategy:**
@@ -45,7 +45,7 @@ const BRAND_STRATEGIES = {
     recommendedCards: ['Flipkart Axis Bank', 'ICICI Emeralde'],
     platform: 'Flipkart',
   },
-  
+
   swiggy: {
     keywords: ['swiggy'],
     strategy: `**Swiggy Savings Strategy:**
@@ -62,7 +62,7 @@ const BRAND_STRATEGIES = {
     recommendedCards: ['HDFC Swiggy', 'ICICI Emeralde', 'HDFC Regalia'],
     platform: 'Swiggy',
   },
-  
+
   zomato: {
     keywords: ['zomato'],
     strategy: `**Zomato Savings Strategy:**
@@ -80,7 +80,7 @@ const BRAND_STRATEGIES = {
     recommendedCards: ['IndusInd EazyDiner', 'HDFC Diners Club Black', 'ICICI Emeralde'],
     platform: 'Zomato',
   },
-  
+
   pvr: {
     keywords: ['pvr', 'inox', 'movie', 'cinema'],
     strategy: `**PVR/INOX Savings Strategy:**
@@ -98,7 +98,7 @@ const BRAND_STRATEGIES = {
     recommendedCards: ['Kotak PVR', 'HDFC Diners Club Black', 'ICICI Sapphiro'],
     platform: 'PVR',
   },
-  
+
   bigbasket: {
     keywords: ['bigbasket', 'grocery', 'groceries'],
     strategy: `**BigBasket/Grocery Savings Strategy:**
@@ -116,7 +116,7 @@ const BRAND_STRATEGIES = {
     recommendedCards: ['ICICI Emeralde', 'SBI Cashback', 'HDFC Millennia'],
     platform: 'BigBasket',
   },
-  
+
   myntra: {
     keywords: ['myntra', 'fashion'],
     strategy: `**Myntra Savings Strategy:**
@@ -133,7 +133,7 @@ const BRAND_STRATEGIES = {
     recommendedCards: ['ICICI Emeralde', 'ICICI Sapphiro', 'SBI Cashback'],
     platform: 'Myntra',
   },
-  
+
   default: {
     keywords: [],
     strategy: `**General Savings Strategy:**
@@ -165,10 +165,10 @@ export const getComboRecommendation = (vouchers, cards, brand) => {
   }
 
   const lowerBrand = brand.toLowerCase().trim();
-  
+
   // Find matching voucher
   const matchingVoucher = findVoucherByBrand(vouchers, brand);
-  
+
   // Find matching strategy
   let strategy = BRAND_STRATEGIES.default;
   for (const [key, strategyConfig] of Object.entries(BRAND_STRATEGIES)) {
@@ -184,7 +184,7 @@ export const getComboRecommendation = (vouchers, cards, brand) => {
 
   // Find recommended cards
   const recommendedCards = strategy.recommendedCards
-    .map((cardName) => 
+    .map((cardName) =>
       cards.find((c) => c.name?.toLowerCase().includes(cardName.toLowerCase()))
     )
     .filter(Boolean)
@@ -206,7 +206,7 @@ export const getComboRecommendation = (vouchers, cards, brand) => {
 - Use ICICI cards for additional rewards
 - Potential total savings: ${Math.min(bestPlatformInfo.discount + 18, 40)}%`;
     }
-    
+
     if (hasSmartbuy && !customStrategy.includes('SmartBuy')) {
       customStrategy += `\n\n**🔵 SmartBuy Available!**
 - Use HDFC premium cards for 10X rewards
@@ -299,7 +299,7 @@ export const calculateTotalSavings = (voucher, card, platform) => {
     }
     // SmartBuy + HDFC cards
     else if (platform?.toLowerCase() === 'smartbuy' && card.bank === 'HDFC Bank') {
-      if (card.name?.toLowerCase().includes('infinia') || 
+      if (card.name?.toLowerCase().includes('infinia') ||
           card.name?.toLowerCase().includes('diners')) {
         cardReward = 33;
       } else if (card.name?.toLowerCase().includes('regalia')) {

@@ -135,7 +135,7 @@ ${(card.features || []).slice(0, 5).map((f) => `- ${f}`).join('\n')}
           case 'VOUCHER_SEARCH':
           case 'GENERAL_VOUCHER_SEARCH': {
             const { category } = entities;
-            
+
             // Check if it's a platform-specific search
             const platformMatch = query.toLowerCase().match(/(ishop|gyftr|smartbuy|maximize|magicpin)/);
             if (platformMatch) {

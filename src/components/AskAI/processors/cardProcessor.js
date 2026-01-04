@@ -63,10 +63,10 @@ export const parseRewardRate = (rate) => {
  */
 export const searchCardsFuzzy = (cards, query, limit = 6) => {
   if (!query || !cards?.length) return [];
-  
+
   const fuse = getFuseInstance(cards);
   const results = fuse.search(query);
-  
+
   return results.slice(0, limit).map((result) => ({
     ...result.item,
     relevanceScore: 1 - (result.score || 0),
@@ -78,9 +78,9 @@ export const searchCardsFuzzy = (cards, query, limit = 6) => {
  */
 export const filterCardsByKeyword = (cards, keyword) => {
   if (!keyword || !cards?.length) return { cards: [], explanation: '' };
-  
+
   const lowerKeyword = keyword.toLowerCase().trim();
-  
+
   // Check for exact keyword match in our keywords map
   for (const [key, config] of Object.entries(CARD_KEYWORDS)) {
     if (lowerKeyword.includes(key)) {
@@ -92,7 +92,7 @@ export const filterCardsByKeyword = (cards, keyword) => {
       };
     }
   }
-  
+
   return { cards: [], explanation: '', keyword: null };
 };
 
@@ -101,7 +101,7 @@ export const filterCardsByKeyword = (cards, keyword) => {
  */
 export const searchCards = (cards, query, options = {}) => {
   const { limit = 6, sortBy = 'relevance' } = options;
-  
+
   if (!query || !cards?.length) {
     return {
       cards: [],
@@ -116,7 +116,7 @@ export const searchCards = (cards, query, options = {}) => {
 
   // Step 1: Try keyword-based filtering first
   const keywordResult = filterCardsByKeyword(cards, lowerQuery);
-  
+
   if (keywordResult.cards.length > 0) {
     results = keywordResult.cards;
     explanation = keywordResult.explanation;
@@ -185,20 +185,20 @@ export const sortCards = (cards, sortBy = 'relevance') => {
  */
 export const getCardsForPlatform = (cards, platform) => {
   const platformLower = platform.toLowerCase();
-  
+
   const platformBankMap = {
     ishop: 'ICICI Bank',
     smartbuy: 'HDFC Bank',
   };
-  
+
   const targetBank = platformBankMap[platformLower];
-  
+
   if (targetBank) {
     const bankCards = cards.filter((c) => c.bank === targetBank);
     // Sort by category (Premium first) then by reward rate
     return sortCards(bankCards, 'premium_first').slice(0, 6);
   }
-  
+
   // For other platforms, return high-reward cards
   return sortCards(cards, 'reward_rate').slice(0, 6);
 };
@@ -222,7 +222,7 @@ export const getSpendingRecommendations = (cards, monthlySpend) => {
   }
 
   recommendedCardNames = tier.recommendations;
-  
+
   // Find actual cards matching recommendations
   const recommendedCards = recommendedCardNames
     .map((name) => cards.find((c) => c.name?.toLowerCase().includes(name.toLowerCase())))
@@ -230,8 +230,8 @@ export const getSpendingRecommendations = (cards, monthlySpend) => {
     .slice(0, 4);
 
   // Generate advice based on tier
-  const formattedSpend = monthlySpend >= 100000 
-    ? `₹${(monthlySpend / 100000).toFixed(1)}L` 
+  const formattedSpend = monthlySpend >= 100000
+    ? `₹${(monthlySpend / 100000).toFixed(1)}L`
     : `₹${(monthlySpend / 1000).toFixed(0)}K`;
 
   switch (tier.key) {
@@ -280,10 +280,10 @@ export const getSpendingRecommendations = (cards, monthlySpend) => {
  * Compare two cards
  */
 export const compareCards = (cards, cardName1, cardName2) => {
-  const card1 = cards.find((c) => 
+  const card1 = cards.find((c) =>
     c.name?.toLowerCase().includes(cardName1.toLowerCase())
   );
-  const card2 = cards.find((c) => 
+  const card2 = cards.find((c) =>
     c.name?.toLowerCase().includes(cardName2.toLowerCase())
   );
 
@@ -333,15 +333,15 @@ export const compareCards = (cards, cardName1, cardName2) => {
 const generateComparisonRecommendation = (card1, card2) => {
   const fee1 = parseFee(card1.annualFee);
   const fee2 = parseFee(card2.annualFee);
-  
+
   if (card1.category === 'Premium' && card2.category !== 'Premium') {
     return `**${card1.name}** is the premium choice with better benefits, but **${card2.name}** might be better value for money.`;
   }
-  
+
   if (fee1 === 0 && fee2 > 0) {
     return `**${card1.name}** is lifetime free - better for cost-conscious users. Choose **${card2.name}** if you can justify the fee with spending.`;
   }
-  
+
   if (fee2 === 0 && fee1 > 0) {
     return `**${card2.name}** is lifetime free - better for cost-conscious users. Choose **${card1.name}** if you can justify the fee with spending.`;
   }

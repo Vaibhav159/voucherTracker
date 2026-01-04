@@ -1,6 +1,6 @@
 /**
  * FavoritesContext - Enhanced with Toast Notifications
- * 
+ *
  * Provides toast feedback for all favorite actions:
  * - Adding/removing card favorites
  * - Adding/removing voucher favorites

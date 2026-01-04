@@ -181,7 +181,7 @@ describe('AskAI', () => {
   it('renders without crashing', () => {
     render(<AskAI creditCards={[]} vouchers={[]} />);
   });
-  
+
   it('processes user input', async () => {
     // Test user interaction
   });

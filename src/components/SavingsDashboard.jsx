@@ -57,7 +57,7 @@ export const useSavingsTracker = () => {
 
     setSavingsHistory(prev => {
       const updated = [entry, ...prev].slice(0, 100);
-      
+
       // Update monthly totals
       const month = new Date().toISOString().slice(0, 7);
       const newTotals = {
@@ -65,7 +65,7 @@ export const useSavingsTracker = () => {
         [month]: (monthlyTotals[month] || 0) + (saving.amount || 0),
       };
       setMonthlyTotals(newTotals);
-      
+
       saveData(updated, newTotals);
       return updated;
     });
@@ -298,7 +298,7 @@ const SavingsChart = ({ data, maxValue }) => {
           <div
             style={{
               width: '100%',
-              background: item.amount > 0 
+              background: item.amount > 0
                 ? 'linear-gradient(180deg, #06b6d4, #8b5cf6)'
                 : 'rgba(255,255,255,0.1)',
               borderRadius: '6px 6px 0 0',

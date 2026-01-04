@@ -1,6 +1,6 @@
 /**
  * GlobalSearch - Polished Version
- * 
+ *
  * Improvements:
  * - Better keyboard navigation (↑↓ with scroll into view)
  * - Recent searches with clear option
@@ -736,11 +736,11 @@ const GlobalSearch = () => {
                     to { opacity: 1; }
                 }
                 @keyframes slideDown {
-                    from { 
+                    from {
                         opacity: 0;
                         transform: translateY(-20px) scale(0.98);
                     }
-                    to { 
+                    to {
                         opacity: 1;
                         transform: translateY(0) scale(1);
                     }

@@ -83,8 +83,8 @@ async function applyPatch() {
         // 4. Fallback for absolutely missing images?
         // If image is still missing or empty, maybe set a placeholder?
         // We won't do that yet, user just wants "broken links" fixed.
-        // If the file doesn't exist, it's still "broken". 
-        // But fix-images-v2 only put entries in patch if file existed. 
+        // If the file doesn't exist, it's still "broken".
+        // But fix-images-v2 only put entries in patch if file existed.
         // So applied patches are valid.
 
         return newCard;

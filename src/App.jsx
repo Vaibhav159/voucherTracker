@@ -188,9 +188,9 @@ function Home({ data, onOpenShortcuts }) {
         <StatsBar vouchers={data} platforms={ALL_PLATFORMS} variant="sidebar" />
 
         {/* Sidebar */}
-        <aside data-tour="filters" className={`glass-panel sidebar 
-          ${activeMobileFilter !== 'none' ? 'mobile-visible' : ''} 
-          ${activeMobileFilter === 'platform' ? 'show-platform' : ''} 
+        <aside data-tour="filters" className={`glass-panel sidebar
+          ${activeMobileFilter !== 'none' ? 'mobile-visible' : ''}
+          ${activeMobileFilter === 'platform' ? 'show-platform' : ''}
           ${activeMobileFilter === 'category' ? 'show-category' : ''}
         `}>
           {/* Close handle/indicator for mobile */}

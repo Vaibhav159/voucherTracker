@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 /**
  * TopDeals (Daily Essentials) - Redesigned
- * 
+ *
  * Cleaner card design with better hover states
  */
 
@@ -273,12 +273,12 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
           -webkit-overflow-scrolling: touch;
           scroll-behavior: smooth;
           flex: 1;
-          
+
           /* SCROLL SNAP LOGIC */
           scroll-snap-type: x mandatory;
           scroll-padding: 0 1rem;
         }
-        
+
         .essentials-grid::-webkit-scrollbar {
           display: none;
         }
@@ -286,9 +286,9 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
         /* Scroll Buttons */
         .scroll-btn {
           position: absolute;
-          top: 45%; 
+          top: 45%;
           transform: translateY(-50%);
-          width: 40px; 
+          width: 40px;
           height: 40px;
           border-radius: 50%;
           background: rgba(15, 23, 42, 0.9);
@@ -344,7 +344,7 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
           flex-shrink: 0;
           box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.3);
           overflow: visible;
-          
+
           /* Snap Alignment */
           scroll-snap-align: start;
         }
@@ -353,7 +353,7 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
           transform: translateY(-4px) scale(1.02);
           background: rgba(51, 65, 85, 0.5);
           border-color: rgba(255, 255, 255, 0.2);
-          box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.5), 
+          box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.5),
                       0 0 15px rgba(255, 255, 255, 0.05);
           z-index: 10;
         }
@@ -436,8 +436,8 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
             padding: 0 8px;
             font-size: 0.6rem;
           }
-          /* Always show scroll buttons on mobile or hide? Usually hiding is better as touch works. 
-             Let's keep them hidden on touch devices if possible, or small. 
+          /* Always show scroll buttons on mobile or hide? Usually hiding is better as touch works.
+             Let's keep them hidden on touch devices if possible, or small.
              Actually, touch scrolling is better essentially. */
           .scroll-btn {
              display: none;

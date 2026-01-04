@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 /**
  * StatsBar - Redesigned
- * 
+ *
  * Cleaner stats display for the home page
  */
 
@@ -91,8 +91,8 @@ const StatsBar = ({ vouchers = [], platforms = [], variant = 'full' }) => {
           align-items: center;
           justify-content: center;
           padding: 1.5rem 2.5rem;
-          background: linear-gradient(135deg, 
-            rgba(255, 255, 255, 0.03) 0%, 
+          background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.03) 0%,
             rgba(255, 255, 255, 0.06) 50%,
             rgba(255, 255, 255, 0.03) 100%
           );
@@ -103,7 +103,7 @@ const StatsBar = ({ vouchers = [], platforms = [], variant = 'full' }) => {
           margin-top: 0.5rem;
           margin-bottom: 1.5rem;
           overflow: hidden;
-          box-shadow: 
+          box-shadow:
             0 4px 24px rgba(0, 0, 0, 0.15),
             inset 0 1px 0 rgba(255, 255, 255, 0.05);
         }
@@ -274,8 +274,8 @@ const StatsBar = ({ vouchers = [], platforms = [], variant = 'full' }) => {
         .divider-line {
           width: 1px;
           flex: 1;
-          background: linear-gradient(to bottom, 
-            transparent 0%, 
+          background: linear-gradient(to bottom,
+            transparent 0%,
             rgba(255, 255, 255, 0.15) 50%,
             transparent 100%
           );

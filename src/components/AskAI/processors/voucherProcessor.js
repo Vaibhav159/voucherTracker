@@ -41,12 +41,12 @@ export const parseDiscount = (fee) => {
   if (!fee) return 0;
   const match = fee.match(/(\d+(?:\.\d+)?)/);
   if (!match) return 0;
-  
+
   const percentage = parseFloat(match[1]);
-  const isDiscount = fee.toLowerCase().includes('discount') || 
+  const isDiscount = fee.toLowerCase().includes('discount') ||
                      fee.toLowerCase().includes('save') ||
                      fee.toLowerCase().includes('%');
-  
+
   return isDiscount ? percentage : 0;
 };
 
@@ -81,10 +81,10 @@ export const getBestPlatform = (voucher) => {
  */
 export const searchVouchersFuzzy = (vouchers, query, limit = 10) => {
   if (!query || !vouchers?.length) return [];
-  
+
   const fuse = getFuseInstance(vouchers);
   const results = fuse.search(query);
-  
+
   return results.slice(0, limit).map((result) => ({
     ...result.item,
     relevanceScore: 1 - (result.score || 0),
@@ -100,10 +100,10 @@ export const filterVouchersByCategory = (vouchers, category) => {
   }
 
   const lowerCategory = category.toLowerCase().trim();
-  
+
   // Find matching category
   const matchedCategory = VOUCHER_CATEGORIES.find(
-    (cat) => cat.toLowerCase().includes(lowerCategory) || 
+    (cat) => cat.toLowerCase().includes(lowerCategory) ||
              lowerCategory.includes(cat.toLowerCase())
   );
 
@@ -131,7 +131,7 @@ export const filterVouchersByPlatform = (vouchers, platform) => {
 
   const lowerPlatform = platform.toLowerCase().trim();
   const platformInfo = PLATFORM_INFO[lowerPlatform];
-  
+
   const filtered = vouchers.filter((v) =>
     v.platforms?.some((p) => p.name?.toLowerCase().includes(lowerPlatform))
   );
@@ -164,7 +164,7 @@ export const searchVouchers = (vouchers, query, options = {}) => {
   // Step 1: Check for platform filter
   const platformKeys = Object.keys(PLATFORM_INFO);
   const platformMatch = platformKeys.find((p) => lowerQuery.includes(p));
-  
+
   if (platformMatch) {
     const platformResult = filterVouchersByPlatform(vouchers, platformMatch);
     if (platformResult.vouchers.length > 0) {
@@ -245,14 +245,14 @@ export const sortVouchers = (vouchers, sortBy = 'discount') => {
  */
 export const findVoucherByBrand = (vouchers, brand) => {
   if (!brand || !vouchers?.length) return null;
-  
+
   const lowerBrand = brand.toLowerCase().trim();
-  
+
   // Exact match first
   let voucher = vouchers.find(
     (v) => v.brand?.toLowerCase() === lowerBrand
   );
-  
+
   // Partial match
   if (!voucher) {
     voucher = vouchers.find(
@@ -292,10 +292,10 @@ export const getExpiringSoon = (vouchers, days = 30, limit = 10) => {
 export const getVoucherStats = (vouchers) => {
   const categories = new Set(vouchers.map((v) => v.category).filter(Boolean));
   const platforms = new Set(vouchers.flatMap((v) => v.platforms?.map((p) => p.name) || []));
-  
+
   let totalMaxDiscount = 0;
   let highestDiscount = { discount: 0, voucher: null };
-  
+
   for (const voucher of vouchers) {
     const best = getBestPlatform(voucher);
     if (best && best.discount > highestDiscount.discount) {
@@ -322,9 +322,9 @@ const calculateAverageDiscount = (vouchers) => {
   const discounts = vouchers
     .map((v) => getBestPlatform(v)?.discount || 0)
     .filter((d) => d > 0);
-  
+
   if (discounts.length === 0) return 0;
-  
+
   return discounts.reduce((sum, d) => sum + d, 0) / discounts.length;
 };
 

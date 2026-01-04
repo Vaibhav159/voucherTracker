@@ -8,21 +8,21 @@ import { useState, useMemo, useEffect } from 'react';
 const CARD_MILESTONES = {
   'HDFC Infinia Metal': {
     milestones: [
-      { 
-        type: 'quarterly', 
-        target: 150000, 
+      {
+        type: 'quarterly',
+        target: 150000,
         reward: '15,000 bonus points',
         description: 'Quarterly milestone bonus',
       },
-      { 
-        type: 'annual', 
-        target: 800000, 
+      {
+        type: 'annual',
+        target: 800000,
         reward: '₹6,000 SmartBuy voucher',
         description: 'Annual spend benefit',
       },
-      { 
-        type: 'annual', 
-        target: 1000000, 
+      {
+        type: 'annual',
+        target: 1000000,
         reward: 'Annual fee waiver',
         description: 'Fee waiver on ₹10L spend',
       },
@@ -31,9 +31,9 @@ const CARD_MILESTONES = {
   },
   'HDFC Regalia Credit Card': {
     milestones: [
-      { 
-        type: 'annual', 
-        target: 300000, 
+      {
+        type: 'annual',
+        target: 300000,
         reward: 'Annual fee waiver',
         description: 'Fee waiver on ₹3L spend',
       },
@@ -42,15 +42,15 @@ const CARD_MILESTONES = {
   },
   'Axis Magnus Credit Card': {
     milestones: [
-      { 
-        type: 'monthly', 
-        target: 100000, 
+      {
+        type: 'monthly',
+        target: 100000,
         reward: 'Tier 2 unlock (35 EP/₹200)',
         description: 'Monthly spend for better rewards',
       },
-      { 
-        type: 'annual', 
-        target: 1500000, 
+      {
+        type: 'annual',
+        target: 1500000,
         reward: 'Annual fee waiver',
         description: 'Fee waiver on ₹15L spend',
       },
@@ -59,15 +59,15 @@ const CARD_MILESTONES = {
   },
   'ICICI Emeralde Private Metal': {
     milestones: [
-      { 
-        type: 'annual', 
-        target: 800000, 
+      {
+        type: 'annual',
+        target: 800000,
         reward: '₹6,000 EaseMyTrip vouchers',
         description: 'Annual spend benefit',
       },
-      { 
-        type: 'annual', 
-        target: 1000000, 
+      {
+        type: 'annual',
+        target: 1000000,
         reward: 'Annual fee waiver',
         description: 'Fee waiver on ₹10L spend',
       },
@@ -76,9 +76,9 @@ const CARD_MILESTONES = {
   },
   'SBI Cashback Credit Card': {
     milestones: [
-      { 
-        type: 'annual', 
-        target: 200000, 
+      {
+        type: 'annual',
+        target: 200000,
         reward: 'Annual fee waiver',
         description: 'Fee waiver on ₹2L spend',
       },
@@ -87,15 +87,15 @@ const CARD_MILESTONES = {
   },
   'Axis Atlas Credit Card': {
     milestones: [
-      { 
-        type: 'annual', 
-        target: 900000, 
+      {
+        type: 'annual',
+        target: 900000,
         reward: '25,000 bonus miles',
         description: 'Annual milestone benefit',
       },
-      { 
-        type: 'annual', 
-        target: 1500000, 
+      {
+        type: 'annual',
+        target: 1500000,
         reward: 'Annual fee waiver',
         description: 'Fee waiver on ₹15L spend',
       },
@@ -104,15 +104,15 @@ const CARD_MILESTONES = {
   },
   'HDFC Diners Club Black Metal': {
     milestones: [
-      { 
-        type: 'annual', 
-        target: 500000, 
+      {
+        type: 'annual',
+        target: 500000,
         reward: '₹5,000 bonus voucher',
         description: 'Annual milestone benefit',
       },
-      { 
-        type: 'annual', 
-        target: 800000, 
+      {
+        type: 'annual',
+        target: 800000,
         reward: 'Annual fee waiver',
         description: 'Fee waiver on ₹8L spend',
       },
@@ -121,9 +121,9 @@ const CARD_MILESTONES = {
   },
   'Amazon Pay ICICI': {
     milestones: [
-      { 
-        type: 'info', 
-        target: 0, 
+      {
+        type: 'info',
+        target: 0,
         reward: 'Lifetime Free',
         description: 'No milestones needed - LTF card!',
       },
@@ -273,7 +273,7 @@ const MilestoneTracker = () => {
 
       {/* Add Card Panel */}
       {showAddCard && (
-        <div 
+        <div
           className="glass-panel"
           style={{
             maxWidth: '900px',
@@ -390,7 +390,7 @@ const MilestoneTracker = () => {
       {activeTab === 'progress' && (
         <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 1rem' }}>
           {trackedCards.length === 0 ? (
-            <div 
+            <div
               className="glass-panel"
               style={{
                 padding: '3rem',
@@ -427,15 +427,15 @@ const MilestoneTracker = () => {
                 const spends = cardSpends[cardName] || { monthly: 0, quarterly: 0, annual: 0 };
 
                 return (
-                  <div 
+                  <div
                     key={cardName}
                     className="glass-panel"
                     style={{ padding: '1.5rem' }}
                   >
                     {/* Card Header */}
-                    <div style={{ 
-                      display: 'flex', 
-                      justifyContent: 'space-between', 
+                    <div style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
                       alignItems: 'flex-start',
                       marginBottom: '1.5rem',
                     }}>
@@ -464,9 +464,9 @@ const MilestoneTracker = () => {
                     </div>
 
                     {/* Spend Inputs */}
-                    <div style={{ 
-                      display: 'grid', 
-                      gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', 
+                    <div style={{
+                      display: 'grid',
+                      gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
                       gap: '1rem',
                       marginBottom: '1.5rem',
                       padding: '1rem',
@@ -475,9 +475,9 @@ const MilestoneTracker = () => {
                     }}>
                       {['monthly', 'quarterly', 'annual'].map(period => (
                         <div key={period}>
-                          <label style={{ 
-                            display: 'block', 
-                            fontSize: '0.75rem', 
+                          <label style={{
+                            display: 'block',
+                            fontSize: '0.75rem',
                             color: 'var(--text-secondary)',
                             marginBottom: '4px',
                             textTransform: 'capitalize',
@@ -516,8 +516,8 @@ const MilestoneTracker = () => {
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                       {cardData.milestones.map((milestone, idx) => {
                         const currentSpend = spends[milestone.type] || 0;
-                        const progress = milestone.target > 0 
-                          ? Math.min(100, (currentSpend / milestone.target) * 100) 
+                        const progress = milestone.target > 0
+                          ? Math.min(100, (currentSpend / milestone.target) * 100)
                           : 100;
                         const remaining = Math.max(0, milestone.target - currentSpend);
                         const isCompleted = progress >= 100;
@@ -529,30 +529,30 @@ const MilestoneTracker = () => {
                             style={{
                               padding: '1rem',
                               borderRadius: '12px',
-                              background: isCompleted 
-                                ? 'rgba(34, 197, 94, 0.1)' 
+                              background: isCompleted
+                                ? 'rgba(34, 197, 94, 0.1)'
                                 : 'rgba(255,255,255,0.03)',
                               border: `1px solid ${isCompleted ? 'rgba(34,197,94,0.3)' : 'var(--glass-border)'}`,
                             }}
                           >
-                            <div style={{ 
-                              display: 'flex', 
-                              justifyContent: 'space-between', 
+                            <div style={{
+                              display: 'flex',
+                              justifyContent: 'space-between',
                               alignItems: 'flex-start',
                               marginBottom: '8px',
                             }}>
                               <div>
-                                <div style={{ 
-                                  display: 'flex', 
-                                  alignItems: 'center', 
+                                <div style={{
+                                  display: 'flex',
+                                  alignItems: 'center',
                                   gap: '8px',
                                   marginBottom: '2px',
                                 }}>
                                   <span style={{
                                     padding: '2px 8px',
                                     borderRadius: '4px',
-                                    background: milestone.type === 'monthly' 
-                                      ? 'rgba(239,68,68,0.2)' 
+                                    background: milestone.type === 'monthly'
+                                      ? 'rgba(239,68,68,0.2)'
                                       : milestone.type === 'quarterly'
                                         ? 'rgba(245,158,11,0.2)'
                                         : 'rgba(34,197,94,0.2)',
@@ -567,8 +567,8 @@ const MilestoneTracker = () => {
                                   }}>
                                     {milestone.type}
                                   </span>
-                                  <span style={{ 
-                                    fontWeight: '600', 
+                                  <span style={{
+                                    fontWeight: '600',
                                     color: 'var(--text-primary)',
                                     fontSize: '0.95rem',
                                   }}>
@@ -580,7 +580,7 @@ const MilestoneTracker = () => {
                                 </div>
                               </div>
                               {milestone.type !== 'info' && (
-                                <div style={{ 
+                                <div style={{
                                   textAlign: 'right',
                                   fontSize: '0.75rem',
                                   color: 'var(--text-secondary)',
@@ -603,7 +603,7 @@ const MilestoneTracker = () => {
                                   <div style={{
                                     height: '100%',
                                     width: `${progress}%`,
-                                    background: isCompleted 
+                                    background: isCompleted
                                       ? 'linear-gradient(90deg, #22c55e, #4ade80)'
                                       : 'linear-gradient(90deg, #06b6d4, #8b5cf6)',
                                     borderRadius: '4px',
@@ -612,8 +612,8 @@ const MilestoneTracker = () => {
                                 </div>
 
                                 {/* Progress Text */}
-                                <div style={{ 
-                                  display: 'flex', 
+                                <div style={{
+                                  display: 'flex',
                                   justifyContent: 'space-between',
                                   fontSize: '0.8rem',
                                 }}>

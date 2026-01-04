@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// Simulate the environment for the potentially non-module JS file if needed, 
+// Simulate the environment for the potentially non-module JS file if needed,
 // or just try to import it if it's an ES module (it uses 'export const').
 // Since the source is 'export const creditCards = [...]', dynamic import should work if package.json allows or we use .mjs
 

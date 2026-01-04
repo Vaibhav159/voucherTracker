@@ -6,7 +6,7 @@ import CardImage from './CardImage';
 
 /**
  * MyCards V2 - Complete Overhaul
- * 
+ *
  * Features:
  * - Compact stat pills
  * - Sorting & filtering toolbar
@@ -447,7 +447,7 @@ const MyCards = () => {
         /* ========================================
            MY WALLET - PREMIUM GLASSMORPHISM DESIGN
            ======================================== */
-        
+
         .mc-page {
           max-width: 1400px;
           margin: 0 auto;
@@ -460,24 +460,24 @@ const MyCards = () => {
         .mc-header {
           margin-bottom: 2.5rem;
         }
-        
+
         .mc-title-row {
           display: flex;
           flex-direction: column;
           gap: 2rem;
         }
-        
+
         .mc-title {
           display: flex;
           align-items: center;
           gap: 1rem;
         }
-        
+
         .mc-emoji {
           font-size: 2.75rem;
           filter: drop-shadow(0 4px 12px rgba(251, 191, 36, 0.4));
         }
-        
+
         .mc-title h1 {
           margin: 0;
           font-size: 2.25rem;
@@ -488,7 +488,7 @@ const MyCards = () => {
           -webkit-text-fill-color: transparent;
           background-clip: text;
         }
-        
+
         .mc-title p {
           margin: 0.25rem 0 0;
           font-size: 1rem;
@@ -507,7 +507,7 @@ const MyCards = () => {
           grid-template-columns: repeat(2, 1fr);
           max-width: 600px;
         }
-        
+
         .stat-pill {
           position: relative;
           display: flex;
@@ -524,7 +524,7 @@ const MyCards = () => {
           will-change: transform;
           transition: transform 0.2s ease, border-color 0.2s ease;
         }
-        
+
         .stat-pill::before {
           content: '';
           position: absolute;
@@ -539,17 +539,17 @@ const MyCards = () => {
             transparent 100%
           );
         }
-        
+
         .stat-pill:hover {
           transform: translateY(-2px);
           border-color: rgba(255, 255, 255, 0.12);
         }
-        
+
         .stat-pill:nth-child(1) { --accent: #60a5fa; }
         .stat-pill:nth-child(2) { --accent: #4ade80; }
         .stat-pill:nth-child(3) { --accent: #c084fc; }
         .stat-pill:nth-child(4) { --accent: #94a3b8; }
-        
+
         .stat-pill .stat-icon {
           width: 36px;
           height: 36px;
@@ -562,7 +562,7 @@ const MyCards = () => {
           font-size: 1.1rem;
           margin-bottom: 0.75rem;
         }
-        
+
         .sp-label {
           font-size: 0.8rem;
           text-transform: capitalize;
@@ -571,7 +571,7 @@ const MyCards = () => {
           margin-bottom: 0.25rem;
           font-weight: 500;
         }
-        
+
         .sp-value {
           font-size: 1.75rem;
           font-weight: 800;
@@ -579,14 +579,14 @@ const MyCards = () => {
           letter-spacing: -0.02em;
           line-height: 1.1;
         }
-        
-        .sp-value.green { 
-          color: #4ade80; 
+
+        .sp-value.green {
+          color: #4ade80;
           text-shadow: 0 0 20px rgba(74, 222, 128, 0.3);
         }
-        
-        .sp-value.purple { 
-          color: #c084fc; 
+
+        .sp-value.purple {
+          color: #c084fc;
           text-shadow: 0 0 20px rgba(192, 132, 252, 0.3);
         }
 
@@ -594,7 +594,7 @@ const MyCards = () => {
         .mc-tabs {
           margin-bottom: 2rem;
         }
-        
+
         .tabs-container {
           display: flex;
           gap: 0.5rem;
@@ -602,7 +602,7 @@ const MyCards = () => {
           background: transparent;
           border: none;
         }
-        
+
         .tab-btn {
           display: flex;
           align-items: center;
@@ -618,24 +618,24 @@ const MyCards = () => {
           cursor: pointer;
           transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
         }
-        
+
         .tab-btn:hover {
           color: #fff;
           border-color: rgba(99, 102, 241, 0.4);
           background: rgba(99, 102, 241, 0.15);
         }
-        
+
         .tab-btn.active {
           background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
           color: #fff;
           border-color: transparent;
           box-shadow: 0 4px 16px rgba(99, 102, 241, 0.35);
         }
-        
+
         .tab-btn span:first-child {
           display: none;
         }
-        
+
         .tab-count {
           background: rgba(255, 255, 255, 0.2);
           padding: 2px 8px;
@@ -660,20 +660,20 @@ const MyCards = () => {
           border-radius: 24px;
           border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        
+
         .empty-icon {
           font-size: 5rem;
           margin-bottom: 1.5rem;
           filter: grayscale(0.3);
         }
-        
+
         .empty-state h2 {
           margin: 0 0 0.75rem;
           font-size: 1.75rem;
           font-weight: 700;
           color: #fff;
         }
-        
+
         .empty-state p {
           color: rgba(148, 163, 184, 0.8);
           margin: 0 0 2rem;
@@ -699,12 +699,12 @@ const MyCards = () => {
           transition: all 0.3s ease;
           box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
         }
-        
+
         .btn-primary:hover {
           transform: translateY(-3px);
           box-shadow: 0 8px 30px rgba(99, 102, 241, 0.5);
         }
-        
+
         .btn-text {
           color: rgba(148, 163, 184, 0.9);
           text-decoration: none;
@@ -712,7 +712,7 @@ const MyCards = () => {
           font-weight: 500;
           transition: color 0.2s;
         }
-        
+
         .btn-text:hover {
           color: #fff;
         }
@@ -724,7 +724,7 @@ const MyCards = () => {
           margin-bottom: 1.5rem;
           flex-wrap: wrap;
         }
-        
+
         .search-box {
           flex: 1;
           min-width: 220px;
@@ -736,21 +736,21 @@ const MyCards = () => {
           padding: 0 1rem;
           transition: border-color 0.2s ease;
         }
-        
+
         .search-box:focus-within {
           border-color: rgba(99, 102, 241, 0.4);
         }
-        
+
         .search-box.large {
           flex: 2;
         }
-        
+
         .search-icon {
           margin-right: 0.6rem;
           opacity: 0.5;
           font-size: 1rem;
         }
-        
+
         .search-box input {
           flex: 1;
           background: transparent;
@@ -759,20 +759,20 @@ const MyCards = () => {
           color: #fff;
           font-size: 0.9rem;
         }
-        
+
         .search-box input:focus {
           outline: none;
         }
-        
+
         .search-box input::placeholder {
           color: rgba(148, 163, 184, 0.5);
         }
-        
+
         .toolbar-controls {
           display: flex;
           gap: 0.5rem;
         }
-        
+
         .filter-select, .sort-select {
           background: rgba(30, 41, 59, 0.8);
           border: 1px solid rgba(255, 255, 255, 0.06);
@@ -783,11 +783,11 @@ const MyCards = () => {
           cursor: pointer;
           transition: border-color 0.2s ease;
         }
-        
+
         .filter-select:hover, .sort-select:hover {
           border-color: rgba(255, 255, 255, 0.12);
         }
-        
+
         .filter-select option, .sort-select option {
           background: #1e293b;
           color: #fff;
@@ -799,7 +799,7 @@ const MyCards = () => {
           grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
           gap: 1.25rem;
         }
-        
+
         .card-tile {
           position: relative;
           background: linear-gradient(
@@ -813,7 +813,7 @@ const MyCards = () => {
           will-change: transform, box-shadow;
           transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
         }
-        
+
         .card-tile::before {
           content: '';
           position: absolute;
@@ -829,11 +829,11 @@ const MyCards = () => {
           );
           z-index: 1;
         }
-        
+
         .card-tile:hover {
           transform: translateY(-4px);
           border-color: rgba(139, 92, 246, 0.35);
-          box-shadow: 
+          box-shadow:
             0 16px 40px rgba(0, 0, 0, 0.5),
             0 0 30px rgba(139, 92, 246, 0.08);
         }
@@ -852,7 +852,7 @@ const MyCards = () => {
           );
           overflow: hidden;
         }
-        
+
         .tile-top::before {
           content: '';
           position: absolute;
@@ -860,32 +860,32 @@ const MyCards = () => {
           left: 0;
           right: 0;
           bottom: 0;
-          background: 
+          background:
             radial-gradient(ellipse at 30% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
             radial-gradient(ellipse at 70% 80%, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
           pointer-events: none;
         }
-        
+
         .tile-image {
           width: 180px;
           position: relative;
           z-index: 1;
         }
-        
+
         .tile-image img {
           width: 100%;
           height: auto;
           border-radius: 10px;
-          box-shadow: 
+          box-shadow:
             0 8px 24px rgba(0, 0, 0, 0.4),
             0 0 0 1px rgba(255, 255, 255, 0.1);
           transition: transform 0.3s ease;
         }
-        
+
         .card-tile:hover .tile-image img {
           transform: scale(1.03);
         }
-        
+
         .tile-actions {
           position: absolute;
           top: 12px;
@@ -897,12 +897,12 @@ const MyCards = () => {
           transition: all 0.25s ease;
           z-index: 10;
         }
-        
+
         .card-tile:hover .tile-actions {
           opacity: 1;
           transform: translateY(0);
         }
-        
+
         .action-btn {
           width: 32px;
           height: 32px;
@@ -917,29 +917,29 @@ const MyCards = () => {
           text-decoration: none;
           backdrop-filter: blur(10px);
         }
-        
+
         .action-btn.view {
           background: rgba(99, 102, 241, 0.9);
           color: #fff;
         }
-        
+
         .action-btn.view:hover {
           background: #6366f1;
           transform: scale(1.1);
           box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
         }
-        
+
         .action-btn.remove {
           background: rgba(239, 68, 68, 0.85);
           color: #fff;
         }
-        
+
         .action-btn.remove:hover {
           background: #ef4444;
           transform: scale(1.1);
           box-shadow: 0 4px 16px rgba(239, 68, 68, 0.4);
         }
-        
+
         /* ===== TIER BADGE - PREMIUM STYLING ===== */
         .tier-badge {
           position: absolute;
@@ -958,11 +958,11 @@ const MyCards = () => {
           border: 1px solid rgba(255, 255, 255, 0.1);
           z-index: 5;
         }
-        
+
         .card-tile:hover .tile-actions {
           opacity: 1;
         }
-        
+
         .card-tile:hover .tier-badge {
           opacity: 0;
         }
@@ -971,11 +971,11 @@ const MyCards = () => {
         .tile-info {
           padding: 1.25rem 1.5rem 1rem;
         }
-        
+
         .tile-header {
           margin-bottom: 1rem;
         }
-        
+
         .tile-name {
           margin: 0 0 0.25rem;
           font-size: 1.1rem;
@@ -986,30 +986,30 @@ const MyCards = () => {
           text-overflow: ellipsis;
           letter-spacing: -0.01em;
         }
-        
+
         .tile-bank {
           font-size: 0.85rem;
           color: rgba(148, 163, 184, 0.8);
           font-weight: 500;
         }
-        
+
         .tile-metrics {
           display: flex;
           gap: 1.5rem;
           padding: 0.75rem 0;
           border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
-        
+
         .metric {
           display: flex;
           flex-direction: column;
           gap: 0.2rem;
         }
-        
+
         .metric.small {
           margin-left: auto;
         }
-        
+
         .m-label {
           font-size: 0.7rem;
           text-transform: uppercase;
@@ -1017,13 +1017,13 @@ const MyCards = () => {
           color: rgba(148, 163, 184, 0.7);
           font-weight: 600;
         }
-        
+
         .m-value {
           font-size: 0.95rem;
           font-weight: 700;
           color: #fff;
         }
-        
+
         .m-value.highlight {
           color: #4ade80;
           text-shadow: 0 0 12px rgba(74, 222, 128, 0.3);
@@ -1035,19 +1035,19 @@ const MyCards = () => {
         .add-view {
           padding: 0;
         }
-        
+
         .add-toolbar {
           display: flex;
           gap: 1rem;
           margin-bottom: 2rem;
         }
-        
+
         .add-results {
           display: flex;
           flex-direction: column;
           gap: 1.5rem;
         }
-        
+
         .no-results {
           text-align: center;
           padding: 4rem;
@@ -1056,7 +1056,7 @@ const MyCards = () => {
           border-radius: 16px;
           border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        
+
         .bank-group {
           background: rgba(30, 41, 59, 0.4);
           border: 1px solid rgba(255, 255, 255, 0.06);
@@ -1064,7 +1064,7 @@ const MyCards = () => {
           overflow: hidden;
           backdrop-filter: blur(10px);
         }
-        
+
         .bank-name {
           margin: 0;
           padding: 1rem 1.25rem;
@@ -1076,12 +1076,12 @@ const MyCards = () => {
           background: rgba(255, 255, 255, 0.02);
           border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
-        
+
         .bank-cards {
           display: flex;
           flex-direction: column;
         }
-        
+
         .add-card-row {
           display: flex;
           justify-content: space-between;
@@ -1090,40 +1090,40 @@ const MyCards = () => {
           border-bottom: 1px solid rgba(255, 255, 255, 0.04);
           transition: all 0.2s;
         }
-        
+
         .add-card-row:last-child {
           border-bottom: none;
         }
-        
+
         .add-card-row:hover {
           background: rgba(99, 102, 241, 0.05);
         }
-        
+
         .add-card-info {
           display: flex;
           align-items: center;
           gap: 1rem;
         }
-        
+
         .tier-dot {
           width: 10px;
           height: 10px;
           border-radius: 50%;
           box-shadow: 0 0 8px currentColor;
         }
-        
+
         .add-card-name {
           font-weight: 600;
           color: #fff;
           font-size: 0.95rem;
         }
-        
+
         .add-card-fee {
           font-size: 0.85rem;
           color: rgba(148, 163, 184, 0.7);
           font-weight: 500;
         }
-        
+
         .add-btn {
           padding: 0.6rem 1.25rem;
           background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
@@ -1136,7 +1136,7 @@ const MyCards = () => {
           transition: all 0.25s;
           box-shadow: 0 4px 12px rgba(34, 197, 94, 0.25);
         }
-        
+
         .add-btn:hover {
           transform: translateY(-2px);
           box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
@@ -1146,13 +1146,13 @@ const MyCards = () => {
         .rec-view {
           padding: 0;
         }
-        
+
         .rec-grid {
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
           gap: 1.5rem;
         }
-        
+
         .rec-card {
           background: linear-gradient(145deg, rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.4));
           border: 1px solid rgba(255, 255, 255, 0.08);
@@ -1161,13 +1161,13 @@ const MyCards = () => {
           transition: all 0.3s ease;
           backdrop-filter: blur(20px);
         }
-        
+
         .rec-card:hover {
           transform: translateY(-4px);
           border-color: rgba(99, 102, 241, 0.3);
           box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
         }
-        
+
         .rec-badge {
           padding: 0.75rem 1.25rem;
           background: linear-gradient(90deg, rgba(99, 102, 241, 0.15), transparent);
@@ -1176,7 +1176,7 @@ const MyCards = () => {
           font-weight: 600;
           border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
-        
+
         .rec-image {
           height: 160px;
           display: flex;
@@ -1188,23 +1188,23 @@ const MyCards = () => {
             rgba(139, 92, 246, 0.05) 100%
           );
         }
-        
+
         .rec-info {
           padding: 1.25rem 1.5rem;
         }
-        
+
         .rec-info h3 {
           margin: 0 0 0.35rem;
           font-size: 1.15rem;
           font-weight: 700;
         }
-        
+
         .rec-info p {
           margin: 0 0 1.25rem;
           font-size: 0.9rem;
           color: rgba(148, 163, 184, 0.8);
         }
-        
+
         .rec-actions {
           display: flex;
           align-items: center;
@@ -1217,80 +1217,80 @@ const MyCards = () => {
             grid-template-columns: repeat(2, 1fr);
           }
         }
-        
+
         @media (max-width: 768px) {
           .mc-page {
             padding: 1.25rem;
           }
-          
+
           .mc-title h1 {
             font-size: 1.75rem;
           }
-          
+
           .mc-stats {
             grid-template-columns: repeat(2, 1fr);
             gap: 0.75rem;
           }
-          
+
           .stat-pill {
             padding: 1rem;
           }
-          
+
           .sp-value {
             font-size: 1.35rem;
           }
-          
+
           .tabs-container {
             width: 100%;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
             padding-bottom: 0.5rem;
           }
-          
+
           .tab-btn {
             padding: 0.75rem 1.25rem;
             font-size: 0.85rem;
             white-space: nowrap;
           }
-          
+
           .portfolio-toolbar {
             flex-direction: column;
           }
-          
+
           .toolbar-controls {
             width: 100%;
           }
-          
+
           .filter-select, .sort-select {
             flex: 1;
           }
-          
+
           .card-grid {
             grid-template-columns: 1fr;
           }
-          
+
           .add-toolbar {
             flex-direction: column;
           }
-          
+
           .rec-grid {
             grid-template-columns: 1fr;
           }
         }
-        
+
         @media (max-width: 480px) {
           .mc-stats {
             grid-template-columns: repeat(2, 1fr);
           }
-          
+
           .stat-pill {
             padding: 0.875rem 0.75rem;
           }
-          
+
           .sp-value {
             font-size: 1.2rem;
           }
-          
+
           .sp-label {
             font-size: 0.7rem;
           }

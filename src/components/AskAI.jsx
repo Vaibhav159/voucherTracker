@@ -1099,7 +1099,7 @@ const AskAI = () => {
             {/* Styles for layout */}
             <style>{`
                 @keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
-                
+
                 /* Mobile responsive */
                 @media (max-width: 768px) {
                     .ask-ai-sidebar {
@@ -1114,11 +1114,11 @@ const AskAI = () => {
                         z-index: 1000;
                         border-radius: 0 !important;
                     }
-                    
+
                     .ask-ai-sidebar.mobile-visible {
                         display: flex !important;
                     }
-                    
+
                     .mobile-sidebar-toggle {
                         display: flex !important;
                         justify-content: center;

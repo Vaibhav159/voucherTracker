@@ -489,4 +489,3 @@ const CompareBanking = () => {
 };
 
 export default CompareBanking;
-

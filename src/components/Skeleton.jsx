@@ -1,6 +1,6 @@
 /**
  * Skeleton Loading Components
- * 
+ *
  * Content-aware skeleton loaders that match actual component shapes.
  * Provides better perceived performance than generic spinners.
  */
@@ -23,9 +23,9 @@ const shimmerStyle = `
 /**
  * Base Skeleton element with shimmer effect
  */
-const SkeletonBase = memo(({ 
-  width = '100%', 
-  height = '20px', 
+const SkeletonBase = memo(({
+  width = '100%',
+  height = '20px',
   borderRadius = '8px',
   style = {},
   className = '',
@@ -55,8 +55,8 @@ SkeletonBase.displayName = 'SkeletonBase';
 /**
  * Skeleton Text - Single line of text
  */
-export const SkeletonText = memo(({ 
-  width = '100%', 
+export const SkeletonText = memo(({
+  width = '100%',
   height = '14px',
   lines = 1,
   gap = '8px',
@@ -94,20 +94,20 @@ SkeletonCircle.displayName = 'SkeletonCircle';
 /**
  * Skeleton Image - For images and thumbnails
  */
-export const SkeletonImage = memo(({ 
-  width = '100%', 
+export const SkeletonImage = memo(({
+  width = '100%',
   height = '200px',
   aspectRatio,
 }) => (
-  <div style={{ 
-    width, 
+  <div style={{
+    width,
     aspectRatio: aspectRatio || undefined,
     height: aspectRatio ? 'auto' : height,
   }}>
-    <SkeletonBase 
-      width="100%" 
-      height={aspectRatio ? '100%' : height} 
-      borderRadius="12px" 
+    <SkeletonBase
+      width="100%"
+      height={aspectRatio ? '100%' : height}
+      borderRadius="12px"
     />
   </div>
 ));
@@ -117,8 +117,8 @@ SkeletonImage.displayName = 'SkeletonImage';
 /**
  * Skeleton Button
  */
-export const SkeletonButton = memo(({ 
-  width = '120px', 
+export const SkeletonButton = memo(({
+  width = '120px',
   height = '40px',
 }) => (
   <SkeletonBase width={width} height={height} borderRadius="10px" />
@@ -225,20 +225,20 @@ export const CreditCardSkeleton = memo(() => (
   >
     {/* Card image */}
     <SkeletonImage aspectRatio="1.586" />
-    
+
     {/* Card name */}
     <SkeletonText width="80%" height="20px" />
-    
+
     {/* Bank */}
     <SkeletonText width="50%" height="14px" />
-    
+
     {/* Tags */}
     <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
       <SkeletonBase width="70px" height="24px" borderRadius="12px" />
       <SkeletonBase width="90px" height="24px" borderRadius="12px" />
       <SkeletonBase width="60px" height="24px" borderRadius="12px" />
     </div>
-    
+
     {/* Buttons */}
     <div style={{ display: 'flex', gap: '8px', marginTop: 'auto' }}>
       <SkeletonButton width="100%" height="36px" />
@@ -335,9 +335,9 @@ export const ModalContentSkeleton = memo(() => (
 
     {/* Content */}
     <SkeletonText lines={4} gap="12px" />
-    
+
     <div style={{ height: '24px' }} />
-    
+
     {/* Action area */}
     <div style={{ display: 'flex', gap: '12px' }}>
       <SkeletonButton width="120px" height="44px" />
@@ -354,10 +354,10 @@ ModalContentSkeleton.displayName = 'ModalContentSkeleton';
  * Chart Skeleton
  */
 export const ChartSkeleton = memo(({ height = '200px' }) => (
-  <div style={{ 
-    display: 'flex', 
-    alignItems: 'flex-end', 
-    gap: '8px', 
+  <div style={{
+    display: 'flex',
+    alignItems: 'flex-end',
+    gap: '8px',
     height,
     padding: '0 16px',
   }}>
@@ -379,7 +379,7 @@ ChartSkeleton.displayName = 'ChartSkeleton';
 export const SearchResultsSkeleton = memo(({ count = 5 }) => (
   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
     {Array.from({ length: count }).map((_, i) => (
-      <div 
+      <div
         key={i}
         style={{
           display: 'flex',

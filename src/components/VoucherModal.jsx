@@ -1,6 +1,6 @@
 /**
  * VoucherModal - Polished Version
- * 
+ *
  * Improvements:
  * - Toast notifications on copy
  * - Share to WhatsApp/Twitter
