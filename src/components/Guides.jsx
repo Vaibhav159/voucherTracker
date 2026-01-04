@@ -58,7 +58,7 @@ const RedditEmbed = ({ embedHtml, theme, onLoad }) => {
             clearInterval(checkIframe);
             clearTimeout(timeout);
         };
-    }, [embedHtml, theme]);
+    }, [embedHtml, theme, onLoad]);
 
     return (
         <div style={{ position: 'relative', minHeight: isLoaded ? '0' : '300px' }}>
@@ -129,7 +129,7 @@ const GuideModal = ({ guide, onClose }) => {
         return 'Open Link';
     };
 
-    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
 
     return (
         <div
@@ -179,13 +179,13 @@ const GuideModal = ({ guide, onClose }) => {
                 {guide.content ? (
                     <div style={{ color: 'var(--text-primary)', lineHeight: '1.6', width: '100%' }}>
                         <Markdown components={{
-                            h1: ({ node, ...props }) => <h1 style={{ fontSize: '1.8rem', margin: '1.5rem 0 1rem' }} {...props} />,
-                            h2: ({ node, ...props }) => <h2 style={{ fontSize: '1.5rem', margin: '1.5rem 0 1rem', color: 'var(--accent-cyan)' }} {...props} />,
-                            h3: ({ node, ...props }) => <h3 style={{ fontSize: '1.2rem', margin: '1.2rem 0 0.8rem' }} {...props} />,
-                            p: ({ node, ...props }) => <p style={{ marginBottom: '1rem' }} {...props} />,
-                            ul: ({ node, ...props }) => <ul style={{ marginBottom: '1rem', paddingLeft: '1.5rem' }} {...props} />,
-                            li: ({ node, ...props }) => <li style={{ marginBottom: '0.5rem' }} {...props} />,
-                            blockquote: ({ node, ...props }) => (
+                            h1: ({ ...props }) => <h1 style={{ fontSize: '1.8rem', margin: '1.5rem 0 1rem' }} {...props} />,
+                            h2: ({ ...props }) => <h2 style={{ fontSize: '1.5rem', margin: '1.5rem 0 1rem', color: 'var(--accent-cyan)' }} {...props} />,
+                            h3: ({ ...props }) => <h3 style={{ fontSize: '1.2rem', margin: '1.2rem 0 0.8rem' }} {...props} />,
+                            p: ({ ...props }) => <p style={{ marginBottom: '1rem' }} {...props} />,
+                            ul: ({ ...props }) => <ul style={{ marginBottom: '1rem', paddingLeft: '1.5rem' }} {...props} />,
+                            li: ({ ...props }) => <li style={{ marginBottom: '0.5rem' }} {...props} />,
+                            blockquote: ({ ...props }) => (
                                 <blockquote style={{
                                     borderLeft: '4px solid var(--accent-cyan)',
                                     margin: '1rem 0',
@@ -194,7 +194,7 @@ const GuideModal = ({ guide, onClose }) => {
                                     fontStyle: 'italic'
                                 }} {...props} />
                             ),
-                            a: ({ node, ...props }) => <a style={{ color: 'var(--accent-cyan)' }} {...props} />
+                            a: ({ ...props }) => <a style={{ color: 'var(--accent-cyan)' }} {...props} />
                         }}>
                             {guide.content}
                         </Markdown>
@@ -252,9 +252,12 @@ const Guides = () => {
     }, [guidesData]);
 
     // Reset pagination when filters change
+    // Reset pagination when filters change - REMOVED to avoid effect loop, moved to handlers
+    /*
     useEffect(() => {
         setVisibleCount(9);
     }, [selectedTag, searchTerm]);
+    */
 
     const filteredGuides = useMemo(() => {
         if (!guidesData) return [];
@@ -332,13 +335,21 @@ const Guides = () => {
             {/* Minimalist Control Bar */}
             <div className="guides-control-bar">
                 <div className="guides-search-wrapper">
-                    <span className="guides-search-icon">🔍</span>
+                    <div className="guides-search-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
                     <input
                         type="text"
                         className="guides-search-input"
                         placeholder="Search guides, authors, topics..."
                         value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
+                        onChange={(e) => {
+                            setSearchTerm(e.target.value);
+                            setVisibleCount(9);
+                        }}
                     />
                 </div>
 
@@ -355,6 +366,7 @@ const Guides = () => {
                                 onClick={(e) => {
                                     e.stopPropagation();
                                     setSelectedTag(null);
+                                    setVisibleCount(9);
                                 }}
                                 style={{
                                     background: 'rgba(255,255,255,0.2)',
@@ -371,7 +383,13 @@ const Guides = () => {
                                 ✕
                             </span>
                         )}
-                        {!selectedTag && <span className="arrow">▼</span>}
+                        {!selectedTag && (
+                            <span className="arrow">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </span>
+                        )}
                     </button>
 
                     <div className={`guides-dropdown-menu ${isDropdownOpen ? 'open' : ''}`}>
@@ -379,6 +397,7 @@ const Guides = () => {
                             className={`guides-dropdown-item ${!selectedTag ? 'selected' : ''}`}
                             onClick={() => {
                                 setSelectedTag(null);
+                                setVisibleCount(9);
                                 setIsDropdownOpen(false);
                             }}
                         >
@@ -391,6 +410,7 @@ const Guides = () => {
                                 className={`guides-dropdown-item ${selectedTag === tag ? 'selected' : ''}`}
                                 onClick={() => {
                                     setSelectedTag(tag);
+                                    setVisibleCount(9);
                                     setIsDropdownOpen(false);
                                 }}
                             >
