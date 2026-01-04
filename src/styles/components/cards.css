@@ -15,14 +15,14 @@
   cursor: pointer;
   color: var(--text-primary);
   font: inherit;
-  padding: var(--space-lg);
+  padding: 1.25rem;
   border-radius: var(--card-radius);
   transition: transform var(--duration-normal) var(--ease-out),
     box-shadow var(--duration-normal) var(--ease-out),
     border-color var(--duration-normal) var(--ease-out);
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: 0.75rem;
 }
 
 .voucher-card:hover {
@@ -74,13 +74,13 @@
 .voucher-card__header {
   display: flex;
   align-items: flex-start;
-  gap: 18px;
+  gap: 12px;
 }
 
 /* Voucher Card Logo Container */
 .voucher-card__logo {
-  width: 64px;
-  height: 64px;
+  width: 48px;
+  height: 48px;
   border-radius: var(--radius-lg);
   background: #fff;
   padding: var(--space-sm);
@@ -102,8 +102,8 @@
 }
 
 .voucher-card__brand {
-  margin: 0 0 6px 0;
-  font-size: var(--text-2xl);
+  margin: 0 0 4px 0;
+  font-size: 1.15rem;
   font-weight: var(--font-semibold);
   letter-spacing: var(--tracking-tight);
   color: var(--text-primary);
@@ -127,11 +127,11 @@
 }
 
 .voucher-card__platforms-section {
-  margin-bottom: var(--space-lg);
+  margin-bottom: 8px;
 }
 
 .voucher-card__platforms-label {
-  margin: 0 0 var(--space-sm) 0;
+  margin: 0 0 4px 0;
   font-size: var(--text-sm);
   color: var(--text-secondary);
 }
@@ -148,7 +148,7 @@
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid var(--glass-border);
-  padding-top: var(--space-md);
+  padding-top: 8px;
 }
 
 .voucher-card__cta-text {

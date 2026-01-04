@@ -58,7 +58,7 @@ const RedditEmbed = ({ embedHtml, theme, onLoad }) => {
             clearInterval(checkIframe);
             clearTimeout(timeout);
         };
-    }, [embedHtml, theme]);
+    }, [embedHtml, theme, onLoad]);
 
     return (
         <div style={{ position: 'relative', minHeight: isLoaded ? '0' : '300px' }}>
@@ -90,6 +90,21 @@ const RedditEmbed = ({ embedHtml, theme, onLoad }) => {
 const GuideModal = ({ guide, onClose }) => {
     const { theme } = useTheme();
 
+    const processedEmbedHtml = useMemo(() => {
+        if (!guide.embedHtml) return '';
+        // Inject theme for Twitter embeds
+        if (guide.embedHtml.includes('twitter-tweet')) {
+            // Check if it already has data-theme to allow manual override if needed, otherwise inject
+            if (!guide.embedHtml.includes('data-theme=')) {
+                return guide.embedHtml.replace(
+                    /class=["']twitter-tweet["']/,
+                    `class="twitter-tweet" data-theme="${theme}"`
+                );
+            }
+        }
+        return guide.embedHtml;
+    }, [guide.embedHtml, theme]);
+
     useEffect(() => {
         if (window.twttr && window.twttr.widgets) {
             window.twttr.widgets.load();
@@ -98,7 +113,7 @@ const GuideModal = ({ guide, onClose }) => {
         return () => {
             document.body.style.overflow = 'unset';
         };
-    }, [guide]);
+    }, [guide, theme]);
 
     useEffect(() => {
         const handleEsc = (e) => {
@@ -114,7 +129,7 @@ const GuideModal = ({ guide, onClose }) => {
         return 'Open Link';
     };
 
-    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
 
     return (
         <div
@@ -125,13 +140,13 @@ const GuideModal = ({ guide, onClose }) => {
                 left: 0,
                 right: 0,
                 bottom: 0,
-                background: 'rgba(0, 0, 0, 0.8)',
+                background: 'rgba(0, 0, 0, 0.85)',
                 backdropFilter: 'blur(8px)',
                 zIndex: 9999,
                 display: 'flex',
-                alignItems: isMobile ? 'flex-end' : 'center',
+                alignItems: 'flex-start', // Changed from center to prevent top cropping
                 justifyContent: 'center',
-                padding: isMobile ? '0' : '1rem',
+                padding: '2rem 1rem', // Add padding for safe area
                 overflowY: 'auto'
             }}
             onClick={onClose}
@@ -141,12 +156,13 @@ const GuideModal = ({ guide, onClose }) => {
                 style={{
                     background: 'var(--modal-bg)',
                     border: '1px solid var(--modal-border)',
-                    borderRadius: isMobile ? '20px 20px 0 0' : '20px',
+                    borderRadius: '20px',
                     width: '100%',
-                    maxWidth: isMobile ? '100%' : '700px',
-                    maxHeight: isMobile ? '95vh' : '90vh',
-                    overflowY: 'auto',
+                    maxWidth: '700px',
+                    // maxHeight: isMobile ? '95vh' : '90vh', // Removed max-height constraint to let page scroll
+                    margin: 'auto', // Centers vertically if content is short
                     boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+                    position: 'relative'
                 }}
                 onClick={e => e.stopPropagation()}
             >
@@ -161,15 +177,15 @@ const GuideModal = ({ guide, onClose }) => {
                 </div>
 
                 {guide.content ? (
-                    <div style={{ color: 'var(--text-primary)', lineHeight: '1.6', width: 'min(90vw, 800px)' }}>
+                    <div style={{ color: 'var(--text-primary)', lineHeight: '1.6', width: '100%' }}>
                         <Markdown components={{
-                            h1: ({ node, ...props }) => <h1 style={{ fontSize: '1.8rem', margin: '1.5rem 0 1rem' }} {...props} />,
-                            h2: ({ node, ...props }) => <h2 style={{ fontSize: '1.5rem', margin: '1.5rem 0 1rem', color: 'var(--accent-cyan)' }} {...props} />,
-                            h3: ({ node, ...props }) => <h3 style={{ fontSize: '1.2rem', margin: '1.2rem 0 0.8rem' }} {...props} />,
-                            p: ({ node, ...props }) => <p style={{ marginBottom: '1rem' }} {...props} />,
-                            ul: ({ node, ...props }) => <ul style={{ marginBottom: '1rem', paddingLeft: '1.5rem' }} {...props} />,
-                            li: ({ node, ...props }) => <li style={{ marginBottom: '0.5rem' }} {...props} />,
-                            blockquote: ({ node, ...props }) => (
+                            h1: ({ ...props }) => <h1 style={{ fontSize: '1.8rem', margin: '1.5rem 0 1rem' }} {...props} />,
+                            h2: ({ ...props }) => <h2 style={{ fontSize: '1.5rem', margin: '1.5rem 0 1rem', color: 'var(--accent-cyan)' }} {...props} />,
+                            h3: ({ ...props }) => <h3 style={{ fontSize: '1.2rem', margin: '1.2rem 0 0.8rem' }} {...props} />,
+                            p: ({ ...props }) => <p style={{ marginBottom: '1rem' }} {...props} />,
+                            ul: ({ ...props }) => <ul style={{ marginBottom: '1rem', paddingLeft: '1.5rem' }} {...props} />,
+                            li: ({ ...props }) => <li style={{ marginBottom: '0.5rem' }} {...props} />,
+                            blockquote: ({ ...props }) => (
                                 <blockquote style={{
                                     borderLeft: '4px solid var(--accent-cyan)',
                                     margin: '1rem 0',
@@ -178,7 +194,7 @@ const GuideModal = ({ guide, onClose }) => {
                                     fontStyle: 'italic'
                                 }} {...props} />
                             ),
-                            a: ({ node, ...props }) => <a style={{ color: 'var(--accent-cyan)' }} {...props} />
+                            a: ({ ...props }) => <a style={{ color: 'var(--accent-cyan)' }} {...props} />
                         }}>
                             {guide.content}
                         </Markdown>
@@ -189,7 +205,7 @@ const GuideModal = ({ guide, onClose }) => {
                     </div>
                 ) : (
                     <div className="guide-embed-wrapper">
-                        <div dangerouslySetInnerHTML={{ __html: guide.embedHtml }} />
+                        <div dangerouslySetInnerHTML={{ __html: processedEmbedHtml }} />
                     </div>
                 )}
 
@@ -236,9 +252,12 @@ const Guides = () => {
     }, [guidesData]);
 
     // Reset pagination when filters change
+    // Reset pagination when filters change - REMOVED to avoid effect loop, moved to handlers
+    /*
     useEffect(() => {
         setVisibleCount(9);
     }, [selectedTag, searchTerm]);
+    */
 
     const filteredGuides = useMemo(() => {
         if (!guidesData) return [];
@@ -316,13 +335,21 @@ const Guides = () => {
             {/* Minimalist Control Bar */}
             <div className="guides-control-bar">
                 <div className="guides-search-wrapper">
-                    <span className="guides-search-icon">🔍</span>
+                    <div className="guides-search-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
                     <input
                         type="text"
                         className="guides-search-input"
                         placeholder="Search guides, authors, topics..."
                         value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
+                        onChange={(e) => {
+                            setSearchTerm(e.target.value);
+                            setVisibleCount(9);
+                        }}
                     />
                 </div>
 
@@ -339,6 +366,7 @@ const Guides = () => {
                                 onClick={(e) => {
                                     e.stopPropagation();
                                     setSelectedTag(null);
+                                    setVisibleCount(9);
                                 }}
                                 style={{
                                     background: 'rgba(255,255,255,0.2)',
@@ -355,7 +383,13 @@ const Guides = () => {
                                 ✕
                             </span>
                         )}
-                        {!selectedTag && <span className="arrow">▼</span>}
+                        {!selectedTag && (
+                            <span className="arrow">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </span>
+                        )}
                     </button>
 
                     <div className={`guides-dropdown-menu ${isDropdownOpen ? 'open' : ''}`}>
@@ -363,6 +397,7 @@ const Guides = () => {
                             className={`guides-dropdown-item ${!selectedTag ? 'selected' : ''}`}
                             onClick={() => {
                                 setSelectedTag(null);
+                                setVisibleCount(9);
                                 setIsDropdownOpen(false);
                             }}
                         >
@@ -375,6 +410,7 @@ const Guides = () => {
                                 className={`guides-dropdown-item ${selectedTag === tag ? 'selected' : ''}`}
                                 onClick={() => {
                                     setSelectedTag(tag);
+                                    setVisibleCount(9);
                                     setIsDropdownOpen(false);
                                 }}
                             >

@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
  * Cleaner stats display for the home page
  */
 
-const StatsBar = ({ vouchers = [], platforms = [], variant = 'full' }) => {
+const StatsBar = ({ vouchers = [], variant = 'full' }) => {
   const isSidebar = variant === 'sidebar';
 
   const stats = useMemo(() => {
@@ -15,7 +15,10 @@ const StatsBar = ({ vouchers = [], platforms = [], variant = 'full' }) => {
     const voucherCount = vouchers.length;
 
     // Count unique platforms
-    const platformCount = platforms.length || 6;
+    const uniquePlatforms = new Set(
+      vouchers.flatMap(v => v.platforms?.map(p => p.name) || [])
+    );
+    const platformCount = uniquePlatforms.size;
 
     // Find max discount
     let maxDiscount = 0;
@@ -36,7 +39,7 @@ const StatsBar = ({ vouchers = [], platforms = [], variant = 'full' }) => {
       maxDiscount: Math.round(maxDiscount),
       avgSavings: '₹1,139', // Placeholder - calculate from actual data if available
     };
-  }, [vouchers, platforms]);
+  }, [vouchers]);
 
   return (
     <div className={`stats-bar-premium ${isSidebar ? 'stats-bar-sidebar' : ''}`}>
