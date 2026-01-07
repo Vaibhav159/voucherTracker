@@ -4,22 +4,17 @@ import Home from './pages/Home';
 import Cards from './pages/Cards';
 import Vouchers from './pages/Vouchers';
 import Banking from './pages/Banking';
-import Guides from './pages/Guides';
-import AskAI from './pages/AskAI';
-import Calculator from './pages/Calculator';
-import PointsTransfer from './pages/PointsTransfer';
-import Favourites from './pages/Favourites';
-import MyCards from './pages/MyCards';
-import Privacy from './pages/Privacy';
-import Terms from './pages/Terms';
-import Contact from './pages/Contact';
-import About from './pages/About';
-import Signup from './pages/Signup';
-import MilestoneTracker from './pages/MilestoneTracker';
-import LoungeAccess from './pages/LoungeAccess';
-import MCC from './pages/MCC';
-import WhereToSwipe from './pages/WhereToSwipe';
-import CompareCards from './pages/CompareCards';
+
+// Placeholder components for routes not yet fully implemented
+const Guides = () => <div className="p-8 text-white">Guides Page - Coming Soon</div>;
+const AskAI = () => <div className="p-8 text-white">Ask AI - Coming Soon</div>;
+const Calculator = () => <div className="p-8 text-white">Rewards Calculator - Coming Soon</div>;
+const PointsConverter = () => <div className="p-8 text-white">Points Converter - Coming Soon</div>;
+const Favourites = () => <div className="p-8 text-white">Favourites - Coming Soon</div>;
+const MyWallet = () => <div className="p-8 text-white">My Wallet - Coming Soon</div>;
+const Privacy = () => <div className="p-8 text-white">Privacy Policy - Coming Soon</div>;
+const Terms = () => <div className="p-8 text-white">Terms of Service - Coming Soon</div>;
+const Contact = () => <div className="p-8 text-white">Contact - Coming Soon</div>;
 
 function App() {
   return (
@@ -81,10 +76,10 @@ function App() {
         }
       />
       <Route
-        path="/points-transfer"
+        path="/points-converter"
         element={
           <Layout>
-            <PointsTransfer />
+            <PointsConverter />
           </Layout>
         }
       />
@@ -97,50 +92,10 @@ function App() {
         }
       />
       <Route
-        path="/my-cards"
+        path="/my-wallet"
         element={
           <Layout>
-            <MyCards />
-          </Layout>
-        }
-      />
-      <Route
-        path="/milestone-tracker"
-        element={
-          <Layout>
-            <MilestoneTracker />
-          </Layout>
-        }
-      />
-      <Route
-        path="/lounge-access"
-        element={
-          <Layout>
-            <LoungeAccess />
-          </Layout>
-        }
-      />
-      <Route
-        path="/mcc"
-        element={
-          <Layout>
-            <MCC />
-          </Layout>
-        }
-      />
-      <Route
-        path="/where-to-swipe"
-        element={
-          <Layout>
-            <WhereToSwipe />
-          </Layout>
-        }
-      />
-      <Route
-        path="/compare-cards"
-        element={
-          <Layout showSidebar={false}>
-            <CompareCards />
+            <MyWallet />
           </Layout>
         }
       />
@@ -165,22 +120,6 @@ function App() {
         element={
           <Layout>
             <Contact />
-          </Layout>
-        }
-      />
-      <Route
-        path="/about"
-        element={
-          <Layout>
-            <About />
-          </Layout>
-        }
-      />
-      <Route
-        path="/signup"
-        element={
-          <Layout showSidebar={false}>
-            <Signup />
           </Layout>
         }
       />
