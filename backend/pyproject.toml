@@ -129,6 +129,13 @@ ignore = [
           # https://github.com/astral-sh/ruff/issues/7871
   "RUF100",
   "PGH004",
+    "N806",
+    "BLE001",
+    "EM101",
+    "TRY003",
+    "T201",
+    "TRY301",
+    "PLR2004"
 ]
 # The fixes in extend-unsafe-fixes will require
 # provide the `--unsafe-fixes` flag when fixing.

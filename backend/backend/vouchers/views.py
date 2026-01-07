@@ -1,6 +1,13 @@
+import hashlib
+import json
 from collections import defaultdict
 
 import requests
+from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives.ciphers import Cipher
+from cryptography.hazmat.primitives.ciphers import algorithms
+from cryptography.hazmat.primitives.ciphers import modes
+from django.core.cache import cache
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
 from django_filters.rest_framework import DjangoFilterBackend
@@ -43,7 +50,7 @@ class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
 
         if voucher:
             # Upsert VoucherPlatform
-            vp, vp_created = VoucherPlatform.objects.update_or_create(
+            _, vp_created = VoucherPlatform.objects.update_or_create(
                 voucher=voucher,
                 platform=platform,
                 defaults={
@@ -142,8 +149,6 @@ class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
                             updated_count += 1
                         elif status == "mismatch":
                             skipped_items.append(data)
-
-            from django.core.cache import cache
 
             cache.clear()  # Invalidate cache after sync
 
@@ -256,7 +261,7 @@ class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
                         external_id = str(item.get("id"))
 
                         if voucher:
-                            vp, vp_created = VoucherPlatform.objects.update_or_create(
+                            _, vp_created = VoucherPlatform.objects.update_or_create(
                                 voucher=voucher,
                                 platform=platform,
                                 defaults={
@@ -307,6 +312,153 @@ class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
                     "updated": updated_count,
                     "skipped_count": len(skipped_items),
                     # "skipped_items": skipped_items # Can be large
+                },
+            )
+
+        except Exception as e:
+            return response.Response({"status": "error", "message": str(e)}, status=500)
+
+    def _decrypt_ishop_data(self, encrypted_str, theme_id):
+        try:
+            # 1. Split the response string
+            parts = encrypted_str.split(".")
+            if len(parts) != 4:
+                raise ValueError("Invalid format: Expected 4 dot-separated parts")
+
+            ciphertext_hex, iv_hex, tag_hex, _ = parts
+
+            # 2. Convert Hex to Bytes
+            ciphertext = bytes.fromhex(ciphertext_hex)
+            iv = bytes.fromhex(iv_hex)
+            tag = bytes.fromhex(tag_hex)
+
+            # 3. Generate the Key (SHA-256 hash of themeId)
+            key = hashlib.sha256(theme_id.encode("utf-8")).digest()
+
+            # 4. Decrypt using AES-GCM
+            decryptor = Cipher(
+                algorithms.AES(key),
+                modes.GCM(iv, tag),
+                backend=default_backend(),
+            ).decryptor()
+
+            decrypted_data = decryptor.update(ciphertext) + decryptor.finalize()
+
+            # 5. Parse JSON
+            return json.loads(decrypted_data.decode("utf-8"))
+
+        except Exception as e:
+            return {"error": str(e)}
+
+    @decorators.action(detail=False, methods=["post"], permission_classes=[permissions.AllowAny])
+    def sync_ishop(self, request):
+        # TODO: Replace these with actual values
+        # Placeholder URL based on finding 'ishop.reward360.in' in vouchers.json
+        # The user likely needs to provide the specific endpoint for 'all vouchers' or a search query.
+        # But for now, we'll assume a generic listing endpoint or let the user fix it.
+        # Actually, let's use a dummy URL that stands out so they know to change it.
+        ISHOP_THEME_ID = "REPLACE_WITH_ACTUAL_THEME_ID"
+
+        try:
+            # 1. Fetch Encrypted Data
+
+            # Heuristic: check if response is JSON
+            json_data = request.data
+
+            # 2. Decrypt
+            decrypted_items = self._decrypt_ishop_data(json_data, ISHOP_THEME_ID)
+
+            if isinstance(decrypted_items, dict) and "error" in decrypted_items:
+                return response.Response(
+                    {"status": "error", "message": f"Decryption failed: {decrypted_items['error']}"},
+                    status=400,
+                )
+
+            if not isinstance(decrypted_items, list):
+                # It might be wrapped in keys like {"data": [...]}
+                if isinstance(decrypted_items, dict) and "data" in decrypted_items:
+                    decrypted_items = decrypted_items["data"]
+                else:
+                    return response.Response({"status": "error", "message": "Decrypted data is not a list"}, status=400)
+
+            # 3. Process Items
+            # Ensure "iShop" platform exists
+            platform, _ = Platform.objects.get_or_create(
+                name=PlatformName.ISHOP,
+                defaults={"icon_url": "https://ishop.reward360.in/favicon.ico"},
+            )
+
+            created_count = 0
+            updated_count = 0
+            skipped_items = []
+
+            for item in decrypted_items:
+                # Key fields from ishop.json:
+                brand_name = item.get("brand")
+                name = item.get("name")
+                sku = item.get("sku")
+
+                if not brand_name:
+                    continue
+
+                # Search for Voucher
+                voucher = Voucher.objects.filter(name__iexact=brand_name).first()
+                if not voucher:
+                    # Fallback: check aliases
+                    voucher = Voucher.objects.filter(aliases__name__iexact=brand_name).first()
+
+                external_id = str(sku) if sku else str(item.get("_id"))
+
+                # Reward Value / Fee
+                reward_value = item.get("reward_value", "")
+                fee_text = reward_value if reward_value else "Check Site"
+
+                # Construct Link
+                link = "https://ishop.reward360.in/"
+
+                if voucher:
+                    _, vp_created = VoucherPlatform.objects.update_or_create(
+                        voucher=voucher,
+                        platform=platform,
+                        defaults={
+                            "external_id": external_id,
+                            "fee": fee_text,
+                            "link": link,
+                        },
+                    )
+                    if vp_created:
+                        created_count += 1
+                    else:
+                        updated_count += 1
+                else:
+                    # Log mismatch
+                    VoucherMismatch.objects.update_or_create(
+                        platform=platform,
+                        external_id=external_id,
+                        defaults={
+                            "brand_name": brand_name,
+                            "gift_card_name": name,
+                            "raw_data": item,
+                            "status": VoucherMismatchStatus.PENDING,
+                        },
+                    )
+                    skipped_items.append(
+                        {
+                            "brand": brand_name,
+                            "name": name,
+                            "sku": sku,
+                        },
+                    )
+
+            cache.clear()
+
+            return response.Response(
+                {
+                    "status": "success",
+                    "message": f"Synced {len(decrypted_items)} items from iShop.",
+                    "created": created_count,
+                    "updated": updated_count,
+                    "skipped_count": len(skipped_items),
                 },
             )
 
