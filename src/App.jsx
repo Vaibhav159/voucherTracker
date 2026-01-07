@@ -172,7 +172,7 @@ function Home({ data, onOpenShortcuts }) {
       setSelectedVoucher(null);
     }
 
-  }, [searchParams, selectedPlatform, selectedCategory, searchTerm]);
+  }, [searchParams]);
   return (
     <div className="home-container">
       {/* Mobile Filter Toggle Removed */}
