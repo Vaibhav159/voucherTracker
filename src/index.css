@@ -1837,7 +1837,7 @@ a:focus:not(:focus-visible) {
     padding-bottom: 1rem;
     padding-top: 0.5rem;
     /* Add breathing room */
-    background: var(--bg-primary);
+    background: var(--bg-color);
     /* Ensure this is solid! */
     transition: top 0.2s ease;
   }
