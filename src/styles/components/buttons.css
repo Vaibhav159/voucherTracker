@@ -214,3 +214,32 @@ button {
   outline: 2px solid var(--accent-cyan);
   outline-offset: 2px;
 }
+
+/* ============================================
+   BUTTON MICRO-INTERACTIONS & POLISH
+   ============================================ */
+
+/* Ghost button polish */
+.btn-ghost {
+  transition: all 0.2s ease;
+  border-radius: var(--radius-sm);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+}
+
+/* Enhanced Primary Button Hover (Matches performance-polish.css) */
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 24px rgba(139, 92, 246, 0.35),
+    0 0 40px rgba(139, 92, 246, 0.15);
+  filter: brightness(1.05);
+}
+
+.btn-primary:active {
+  transform: translateY(0) scale(0.98);
+  transition-duration: 0.1s;
+}

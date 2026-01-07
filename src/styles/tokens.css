@@ -1,165 +1,212 @@
 /* Design Tokens - VoucherTracker */
 
 :root {
-   /* ============================================
+  /* ============================================
+     THEME COLORS (Deep Space / Default Dark)
+     ============================================ */
+  --bg-color: #030014;
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+
+  /* Neon Accents */
+  --primary-glow: conic-gradient(from 180deg at 50% 50%, #16abff33 0deg, #0885ff33 55deg, #54d6ff33 120deg, #0071ff33 160deg, transparent 360deg);
+  --accent-cyan: #00f0ff;
+  --accent-pink: #8B5CF6;
+  /* Changed from #7000ff to #8B5CF6 for WCAG AA */
+  --accent-violet: #4a00e0;
+  --accent-cyan-dim: rgba(0, 240, 255, 0.1);
+  --font-family: 'Outfit', sans-serif;
+
+
+  /* Glass v2 */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-highlight: rgba(255, 255, 255, 0.15);
+
+  --card-radius: 24px;
+  --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* Semantic UI Colors */
+  --nav-text: var(--text-secondary);
+  --nav-text-hover: #ffffff;
+  --nav-bg: rgba(255, 255, 255, 0.03);
+  --nav-bg-hover: rgba(255, 255, 255, 0.1);
+  --nav-bg-active: rgba(255, 255, 255, 0.15);
+
+  --header-bg: rgba(0, 0, 0, 0.2);
+  --gradient-text-start: #ffffff;
+
+  --spinner-border: rgba(255, 255, 255, 0.1);
+  --card-hover-border: rgba(255, 255, 255, 0.3);
+
+  /* Modal & Item Colors */
+  --modal-bg: #0a0a0a;
+  --modal-border: rgba(255, 255, 255, 0.1);
+  --item-bg: rgba(255, 255, 255, 0.02);
+  --item-border: rgba(255, 255, 255, 0.08);
+  --tag-bg: rgba(255, 255, 255, 0.1);
+  --tag-text: #ffffff;
+  --tag-border: transparent;
+  --btn-secondary-bg: rgba(255, 255, 255, 0.1);
+  --btn-secondary-text: #ffffff;
+  --bg-color: #030014;
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+
+  /* Neon Accents */
+  --primary-glow: conic-gradient(from 180deg at 50% 50%, #16abff33 0deg, #0885ff33 55deg, #54d6ff33 120deg, #0071ff33 160deg, transparent 360deg);
+  --accent-cyan: #00f0ff;
+  --accent-pink: #8B5CF6;
+  --accent-violet: #4a00e0;
+  --accent-cyan-dim: rgba(0, 240, 255, 0.1);
+
+  /* Glass v2 */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-highlight: rgba(255, 255, 255, 0.15);
+
+  --card-radius: 24px;
+
+  /* Semantic UI Colors */
+  --nav-text: var(--text-secondary);
+  --nav-text-hover: #ffffff;
+  --nav-bg: rgba(255, 255, 255, 0.03);
+  --nav-bg-hover: rgba(255, 255, 255, 0.1);
+  --nav-bg-active: rgba(255, 255, 255, 0.15);
+
+  --header-bg: rgba(0, 0, 0, 0.2);
+  --gradient-text-start: #ffffff;
+
+  --spinner-border: rgba(255, 255, 255, 0.1);
+  --card-hover-border: rgba(255, 255, 255, 0.3);
+
+  /* Modal & Item Colors */
+  --modal-bg: #0a0a0a;
+  --modal-border: rgba(255, 255, 255, 0.1);
+  --item-bg: rgba(255, 255, 255, 0.02);
+  --item-border: rgba(255, 255, 255, 0.08);
+  --tag-bg: rgba(255, 255, 255, 0.1);
+  --tag-text: #ffffff;
+  --tag-border: transparent;
+  --btn-secondary-bg: rgba(255, 255, 255, 0.1);
+  --btn-secondary-text: #ffffff;
+  --btn-secondary-hover-bg: #ffffff;
+  --btn-secondary-hover-text: #000000;
+  --card-title: #ffffff;
+
+  /* Status Colors */
+  --color-success: #22c55e;
+  --text-on-success: #000000;
+
+  /* ============================================
      SPACING SCALE
      ============================================ */
-   --space-xs: 0.25rem;
-   /* 4px */
-   --space-sm: 0.5rem;
-   /* 8px */
-   --space-md: 1rem;
-   /* 16px */
-   --space-lg: 1.5rem;
-   /* 24px */
-   --space-xl: 2rem;
-   /* 32px */
-   --space-2xl: 3rem;
-   /* 48px */
-   --space-3xl: 4rem;
-   /* 64px */
+  --space-0: 0;
+  --space-xs: 0.25rem;
+  /* 4px */
+  --space-sm: 0.5rem;
+  /* 8px */
+  --space-md: 1rem;
+  /* 16px */
+  --space-lg: 1.5rem;
+  /* 24px */
+  --space-xl: 2rem;
+  /* 32px */
+  --space-2xl: 3rem;
+  /* 48px */
+  --space-3xl: 4rem;
+  /* 64px */
 
-   /* ============================================
+  /* ============================================
      BORDER RADIUS
      ============================================ */
-   --radius-xs: 4px;
-   --radius-sm: 8px;
-   --radius-md: 12px;
-   --radius-lg: 16px;
-   --radius-xl: 20px;
-   --radius-2xl: 24px;
-   --radius-full: 9999px;
+  --radius-none: 0;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-3xl: 24px;
+  --radius-full: 9999px;
 
-   /* ============================================
+  /* Border Widths */
+  --border-width-thin: 1px;
+  --border-width-medium: 2px;
+  --border-width-thick: 3px;
+
+  /* ============================================
      TYPOGRAPHY SCALE
      ============================================ */
-   --text-xs: 0.75rem;
-   /* 12px */
-   --text-sm: 0.8rem;
-   /* 12.8px */
-   --text-base: 0.85rem;
-   /* 13.6px */
-   --text-md: 1rem;
-   /* 16px */
-   --text-lg: 1.125rem;
-   /* 18px */
-   --text-xl: 1.25rem;
-   /* 20px */
-   --text-2xl: 1.35rem;
-   /* 21.6px */
-   --text-3xl: 1.5rem;
-   /* 24px */
-   --text-4xl: 2rem;
-   /* 32px */
+  --text-xs: 0.75rem;
+  --text-sm: 0.8rem;
+  --text-base: 0.85rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.35rem;
+  --text-3xl: 1.5rem;
+  --text-4xl: 2rem;
 
-   /* Font Weights */
-   --font-normal: 400;
-   --font-medium: 500;
-   --font-semibold: 600;
-   --font-bold: 700;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
 
-   /* Line Heights */
-   --leading-tight: 1.2;
-   --leading-normal: 1.5;
-   --leading-relaxed: 1.75;
+  --leading-tight: 1.2;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.75;
 
-   /* Letter Spacing */
-   --tracking-tight: -0.5px;
-   --tracking-normal: 0;
-   --tracking-wide: 0.5px;
-   --tracking-wider: 1px;
+  --tracking-tight: -0.5px;
+  --tracking-normal: 0;
+  --tracking-wide: 0.5px;
+  --tracking-wider: 1px;
 
-   /* ============================================
+  /* ============================================
      SHADOWS
      ============================================ */
-   --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
-   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-   --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
-   --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.2);
-   --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.5);
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.5);
+  --shadow-2xl: 0 20px 40px rgba(0, 0, 0, 0.25);
 
-   /* ============================================
+  /* Glow Shadows */
+  --shadow-glow-cyan: 0 0 20px rgba(6, 182, 212, 0.4);
+  --shadow-glow-purple: 0 0 20px rgba(139, 92, 246, 0.4);
+  --shadow-glow-green: 0 0 20px rgba(34, 197, 94, 0.4);
+  --shadow-glow-red: 0 0 20px rgba(239, 68, 68, 0.4);
+
+  /* ============================================
      TRANSITIONS
      ============================================ */
-   --duration-fast: 150ms;
-   --duration-normal: 200ms;
-   --duration-slow: 300ms;
-   --duration-slower: 500ms;
-
-   --ease-in: cubic-bezier(0.4, 0, 1, 1);
-   --ease-out: cubic-bezier(0, 0, 0.2, 1);
-   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-
-   /* Spring/Bounce Easing for natural feel */
-   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-   --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
-   --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
-
-   /* Stagger Delays for sequential animations */
-   --stagger-1: 0.02s;
-   --stagger-2: 0.04s;
-   --stagger-3: 0.06s;
-   --stagger-4: 0.08s;
-   --stagger-5: 0.10s;
-
-   /* ============================================
-     Z-INDEX SCALE
-     ============================================ */
-   --z-base: 0;
-   --z-dropdown: 100;
-   --z-sticky: 200;
-   --z-modal-backdrop: 9999;
-   --z-modal: 10000;
-   --z-tooltip: 10001;
-
-   /* ============================================
-     LAYOUT
-     ============================================ */
-   --container-max: 1400px;
-   --container-padding: var(--space-lg);
-   --grid-gap: var(--space-lg);
-   --card-padding: var(--space-lg);
-}
-
-/* ============================================
-   REDUCED MOTION SUPPORT
-   ============================================ */
-@media (prefers-reduced-motion: reduce) {
-   :root {
-      --duration-fast: 0.01ms;
-      --duration-normal: 0.01ms;
-      --duration-slow: 0.01ms;
-      --duration-slower: 0.01ms;
-   }
-}/**
- * Enhanced Design Tokens
- *
- * Additional CSS custom properties for consistent styling.
- * Add this to your existing tokens.css or index.css.
- */
-
-:root {
-  /* ============================================
-     TIMING & EASING
-     ============================================ */
-
-  /* Durations */
   --duration-instant: 50ms;
   --duration-fast: 150ms;
-  --duration-normal: 250ms;
-  --duration-slow: 400ms;
-  --duration-slower: 600ms;
+  --duration-normal: 200ms;
+  --duration-slow: 300ms;
+  --duration-slower: 500ms;
 
-  /* Easing curves */
   --ease-linear: linear;
   --ease-in: cubic-bezier(0.4, 0, 1, 1);
   --ease-out: cubic-bezier(0, 0, 0.2, 1);
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
   --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
-  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-  /* Stagger delays for sequential animations */
+  --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* Compound Transitions */
+  --transition-colors: color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+  --transition-transform: transform var(--duration-fast) var(--ease-out);
+  --transition-opacity: opacity var(--duration-fast) var(--ease-out);
+  --transition-shadow: box-shadow var(--duration-fast) var(--ease-out);
+  --transition-all: all var(--duration-normal) var(--ease-out);
+
+  /* Stagger Delays */
   --stagger-1: 0.02s;
   --stagger-2: 0.04s;
   --stagger-3: 0.06s;
@@ -167,149 +214,108 @@
   --stagger-5: 0.10s;
 
   /* ============================================
-     SPACING
-     ============================================ */
-
-  --space-0: 0;
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 20px;
-  --space-6: 24px;
-  --space-8: 32px;
-  --space-10: 40px;
-  --space-12: 48px;
-  --space-16: 64px;
-
-  /* ============================================
-     TYPOGRAPHY
-     ============================================ */
-
-  --font-size-xs: 0.75rem;   /* 12px */
-  --font-size-sm: 0.875rem;  /* 14px */
-  --font-size-base: 1rem;    /* 16px */
-  --font-size-lg: 1.125rem;  /* 18px */
-  --font-size-xl: 1.25rem;   /* 20px */
-  --font-size-2xl: 1.5rem;   /* 24px */
-  --font-size-3xl: 1.875rem; /* 30px */
-  --font-size-4xl: 2.25rem;  /* 36px */
-
-  --font-weight-light: 300;
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-
-  --line-height-tight: 1.25;
-  --line-height-normal: 1.5;
-  --line-height-relaxed: 1.75;
-
-  --letter-spacing-tight: -0.025em;
-  --letter-spacing-normal: 0;
-  --letter-spacing-wide: 0.025em;
-  --letter-spacing-wider: 0.05em;
-  --letter-spacing-widest: 0.1em;
-
-  /* ============================================
-     BORDERS & RADIUS
-     ============================================ */
-
-  --radius-none: 0;
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
-  --radius-2xl: 20px;
-  --radius-3xl: 24px;
-  --radius-full: 9999px;
-
-  --border-width-thin: 1px;
-  --border-width-medium: 2px;
-  --border-width-thick: 3px;
-
-  /* ============================================
-     SHADOWS
-     ============================================ */
-
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
-  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
-  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.2);
-  --shadow-2xl: 0 20px 40px rgba(0, 0, 0, 0.25);
-
-  /* Glow shadows */
-  --shadow-glow-cyan: 0 0 20px rgba(6, 182, 212, 0.4);
-  --shadow-glow-purple: 0 0 20px rgba(139, 92, 246, 0.4);
-  --shadow-glow-green: 0 0 20px rgba(34, 197, 94, 0.4);
-  --shadow-glow-red: 0 0 20px rgba(239, 68, 68, 0.4);
-
-  /* ============================================
-     SKELETON LOADING
-     ============================================ */
-
-  --skeleton-base: rgba(255, 255, 255, 0.05);
-  --skeleton-highlight: rgba(255, 255, 255, 0.1);
-
-  /* ============================================
      Z-INDEX SCALE
      ============================================ */
-
+  --z-base: 0;
   --z-dropdown: 100;
   --z-sticky: 200;
   --z-fixed: 300;
-  --z-modal-backdrop: 400;
-  --z-modal: 500;
+  --z-modal-backdrop: 9999;
+  --z-modal: 10000;
+  --z-tooltip: 10001;
   --z-popover: 600;
-  --z-tooltip: 700;
   --z-toast: 800;
   --z-max: 9999;
 
   /* ============================================
-     FOCUS STATES
+     LAYOUT
      ============================================ */
+  --container-max: 1400px;
+  --container-padding: var(--space-lg);
+  --grid-gap: var(--space-lg);
+  --card-padding: var(--space-lg);
 
+  /* Focus Rings */
   --focus-ring-width: 2px;
   --focus-ring-offset: 2px;
   --focus-ring-color: var(--accent-cyan);
 
-  /* ============================================
-     TRANSITIONS
-     ============================================ */
+  /* Skeleton */
+  --skeleton-base: rgba(255, 255, 255, 0.05);
+  --skeleton-highlight: rgba(255, 255, 255, 0.1);
 
-  --transition-colors: color var(--duration-fast) var(--ease-out),
-                       background-color var(--duration-fast) var(--ease-out),
-                       border-color var(--duration-fast) var(--ease-out);
-  --transition-transform: transform var(--duration-fast) var(--ease-out);
-  --transition-opacity: opacity var(--duration-fast) var(--ease-out);
-  --transition-shadow: box-shadow var(--duration-fast) var(--ease-out);
-  --transition-all: all var(--duration-normal) var(--ease-out);
-
-  /* ============================================
-     SAFE AREA (for mobile notches)
-     ============================================ */
-
+  /* Safe Areas */
   --safe-area-inset-top: env(safe-area-inset-top, 0px);
   --safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
   --safe-area-inset-left: env(safe-area-inset-left, 0px);
   --safe-area-inset-right: env(safe-area-inset-right, 0px);
 }
 
-/* Light theme skeleton adjustments */
+/* ============================================
+   LIGHT THEME OVERRIDES
+   ============================================ */
 [data-theme='light'] {
-  --skeleton-base: rgba(0, 0, 0, 0.06);
-  --skeleton-highlight: rgba(0, 0, 0, 0.12);
+  --bg-color: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
 
+  /* Light Accents */
+  --accent-cyan: #0284c7;
+  --accent-pink: #7209b7;
+  --accent-violet: #4361ee;
+  --accent-cyan-dim: rgba(2, 132, 199, 0.1);
+
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(148, 163, 184, 0.2);
+  --glass-highlight: rgba(255, 255, 255, 1.0);
+
+  /* Nav overrides */
+  --nav-text: #475569;
+  --nav-text-hover: #0f172a;
+  --nav-bg: rgba(0, 0, 0, 0.05);
+  --nav-bg-hover: rgba(0, 0, 0, 0.1);
+  --nav-bg-active: #ffffff;
+
+  --header-bg: rgba(255, 255, 255, 0.8);
+  --gradient-text-start: #0f172a;
+
+  --spinner-border: rgba(0, 0, 0, 0.1);
+  --card-hover-border: rgba(0, 0, 0, 0.1);
+
+  /* Light Mode Modal Overrides */
+  --modal-bg: #ffffff;
+  --modal-border: rgba(0, 0, 0, 0.1);
+  --item-bg: #ffffff;
+  --item-border: rgba(0, 0, 0, 0.05);
+  --tag-bg: rgba(0, 0, 0, 0.05);
+  --tag-text: #475569;
+  --tag-border: rgba(0, 0, 0, 0.05);
+  --btn-secondary-bg: rgba(0, 0, 0, 0.05);
+  --btn-secondary-text: #0f172a;
+  --btn-secondary-hover-bg: #0f172a;
+  --btn-secondary-hover-text: #ffffff;
+  --card-title: #0f172a;
+
+  /* Status Colors (Light) */
+  --color-success: #16a34a;
+  --text-on-success: #ffffff;
+
+  /* Shadows Light */
   --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.08);
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
   --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
   --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.18);
   --shadow-2xl: 0 20px 40px rgba(0, 0, 0, 0.22);
+
+  /* Skeleton Light */
+  --skeleton-base: rgba(0, 0, 0, 0.06);
+  --skeleton-highlight: rgba(0, 0, 0, 0.12);
 }
 
-/* Reduced motion support */
+/* ============================================
+   REDUCED MOTION SUPPORT
+   ============================================ */
 @media (prefers-reduced-motion: reduce) {
   :root {
     --duration-instant: 0ms;
