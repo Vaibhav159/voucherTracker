@@ -1,0 +1,313 @@
+import { useState } from 'react';
+
+// Static placeholder data for vouchers
+const categories = [
+    'All', 'Dining & Food', 'Fashion & Accessories', 'Travel & Leisure',
+    'E-commerce & Technology', 'Groceries & Essentials', 'Entertainment & OTT',
+    'Home & Living', 'Health & Wellness', 'Miscellaneous', 'Jewellery',
+    'New', 'Books & Stationery', 'Beauty & Personal Care', 'Sports & Fitness',
+    'Shopping', 'Gaming'
+];
+
+const popularVouchers = [
+    {
+        id: 1,
+        name: 'Taj Hotels',
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAnAtu-QR6_CP0UCf8hGSh8dHj4yewlwefB85eeU3BS67QiT7BNghVu9jovQ5g2OuIII8B0wauqVKWqqCrofZcXz0omkiYX35URgsMko3joKfPbkQsF_sRvdJxwC_Pnn_BRHGBiyN5K0gGvsWk1fvDf6cyKuYfTOg44NoaPrw00xleFvYnwpgoWJLM09qfojjO1qaFokVb9vgJfD7C5MzT830-eVg4Ak1RW0Ae7pG9ix5luRmVLwxhBJEaehh0XhzGMADwLxoMZDmzL',
+        discount: '15% OFF',
+        description: 'Flat discount on dining & stay vouchers.',
+        badge: 'Ends in 4h',
+        badgeType: 'timer'
+    },
+    {
+        id: 2,
+        name: 'Ethos Watches',
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAFfCT9brPI76WstLeXdvhwzyQzMLCmk_VJo_BgYOUfSuz6yDuPO3Q-NpYfSWOCHy2UpDqsrvtHw8738PhRs4Ro0dG5a1DXkP893rGvFLYHPtGPEnecAoY-vUUnJ-8vPcKRHnWos6qtatC0zPIllktk9dCLUSv-8SWvqCJ0wmUzRraxbmwunVBDN-KJ0MfegzEsFnFgadnh0puXm2jibqALd_pOA_41ZainYE6z1xaN5cqiSBpwyh_yRjMBesbNp_NDedAvXiWlHk9k',
+        discount: '5% Back',
+        description: 'Plus free comprehensive insurance.',
+        badge: 'Cashback',
+        badgeType: 'cashback'
+    },
+    {
+        id: 3,
+        name: 'Singapore Air',
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBx03ltNqZoOIZlJQYFqxtEjXqM_Jvl2Sxh2m7-XZoaCpaWnH3Y4-4FT-IScynKfw9ksaBpcVNWoDKW0ASAJbdAHJo2SzmSmO3NQQKR3iqnDHG9aG3fCl6AJ1gn6QiEQR4Y8X_NF-Xyv3_TORTYc8ys7ARPGCNUwy09SxhNmlpKyxyOujhiBcweVI590fLu36KfGS7vCD-UvgPnotDjf4QeBArbf51KpNn5f_cGRvnBEs2GAZetuyGqYAw6ipdJS5jrHyF0m0fcvPaV',
+        discount: '2x Pts',
+        description: 'Double points on Business Class bookings.',
+        badge: 'Multiplier',
+        badgeType: 'multiplier'
+    }
+];
+
+const allVouchers = [
+    { id: 1, name: 'Amazon Pay', category: 'Shopping & Utilities', rate: '3.0%', value: '₹5k - ₹50k', logo: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD6ooTpHUSnAD9hmeg7s1PEfgLoq7kgBpeRRPU3a3UGNEWHnVXEA_L6LkoilChCHJwo4H14Mk62SWPWZVKKi_pFE1dyrTT77oFgpp4bOtByYracviXGTEh65FgAUKScYl3rY3QI9gzY1vbSfsWghAyIcNJ4MhbN_Bdp7S7VK_e4cbFbzKKus6pwVFAIbWJPHz4M5GQOGUoTXsUXOvPKZVohrvtzk6ijpTy6Srrf_i6qx_xl253JXbk3WyVqWZn0PaTesO0ZpzCTJpfi' },
+    { id: 2, name: 'Flipkart', category: 'Electronics & Fashion', rate: '4.5%', value: '₹2k - ₹25k', logo: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCSMojF3rvw73gprVwzCBUCoYRgI7GOdnc5eaplizQrIJFpqkUc82WRJCdZquN9bFgBtvpP4YlW1Lm194FZ0zp-U3RXf6JrB9pOap1dkSJXo6R3my73kgrwLyzDQpCV4kIYR2ZpIGcbtp21fSPMrxinvCds4i4Vai7MVmm2VYwzCrkvohNi29HXy1KvU4Va4i3tzSK2H0YHgtp0KCNnYMu4WNfuCLpGpRDjdNodgD1O90-NtzIftNXGAk74yLUJLeLMgymQetDZiqAY' },
+    { id: 3, name: 'Tata CLiQ Lux', category: 'Premium Brands', rate: '8.0%', value: '₹10k - ₹1L', logo: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAEdbAgcCQMfi9KSzqnzCkFTwBfgbiHmvO4JYxSLr-QOKwrsZ8RuVC1zMGzO7Qpn7r7Jqd1WxR41uPbdKQuH9Qf4Tw5F1k1-9F-QSCK2Y3fmFgvZBG5F3fnjXYThBhD6wMvrlzs15z2Ti6ndRui3p3Q0bD-sQX8pV_4A-1G0MDkXdgWA2SONVMyMY_M2oydYeutePq7VEVqMACY2-dPZGNrPEpwnaLc3t_6hA17oH3yD8M3fqlM4gzSXtiw26o513btn_K0OcKP9f12' },
+    { id: 4, name: 'MakeMyTrip', category: 'Flights & Hotels', rate: '6.5%', value: '₹5k - ₹50k', logo: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCM-ONx7YRVj3FdDI7tiF6jXggWo8vVeNsdhmAYpSva-x39r2gRDg2MuwUK1ln_XSPJldShfEX1j95iBTv4RPvUA-0-ZrzUT4DPxVlrmKOTFKFJNAA-DxsIa4oSwTNiS5VANIKVCyzPYhhEZLCqfrT9Nvda9LQcB2Wjcm6BDfhdeG13QGkpyA0OO1IZqjs29PqRSFgyNz12sw5HzSz_s5W45A_HQj3bKMYUl5h13-Lq0D0ve-4Y06wOlIdJxYAruOA5D9mqEOQ2QLyc' },
+    { id: 5, name: 'Croma', category: 'Electronics', rate: '2.5%', value: '₹1k - ₹20k', logo: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDqEG-P67B28mebCrP1nukI8G_eCwTqUK7Lx0oZknEOlpKdz4VRBIdFrJlfukKbWnLdPxI9VOAjfQygXpMM75e4uHL3zOCQMQLw05jzckvAlTUeS6d9MGNV07y5CoSaIxE_pJXWBwunxq7Ms4IsV2vcF5s9eNMRrt8EKnGZMkHUpM-yLMawMt2GhJXIL_GqWMuM0ryNo1Hp0FsiczJ3FcAj7KPCSRY5an8AoW9iTbYeZwBfcp_KhhpkcRB9t2qnqhpaqOxuaGBZShwE' },
+    { id: 6, name: 'Zomato Gold', category: 'Dining', rate: '9.0%', value: '₹500 - ₹2k', logo: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCBDsnC14q0_RtAr00y67eEuLu8dLGD68k501H14IrHKN_BNxt9vv8diQPGeelzcAwSEPSGkq0vZ9pebC204ch2vPFsNlJGdMAaLQPu4XotNdynDU1rvyEA3PkNy0iJDndHsrbXxXuJn5sPT09ltohF_BuHPccFAbpaCWDGT7QnNGTm-dx4dbfwO2c2zguNuv6Ckylis_NbykYPBreFM-F4GHg05m2uYwHQxHxm9pb05NsSOg5GMd0FoSuCorZktrSJkJI6jkmTBjBw' },
+    { id: 7, name: 'Uber', category: 'Travel & Commute', rate: '4.0%', value: '₹250 - ₹1k', logo: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCjrU0BovYB7KFoJhxYaf2i-WqsZTevE70yUIKVEMbNBZhTsoPXjT7aqYFOAUil2l5t8O8MFYglpR_hW5eHBWDhGsUmgsy_hF9Q5s-C8cmQ11T7T9Q9gPvwV27ntdl0cMGJkBgIeeh6ZC7qim8E-RMPNbBqISe1ePwrqn-bP6NdFyLwtnvJ0VvJu8GiDE8VfTijj24fd4Y2upd6CJdCz-77xzTdIF9Myw8Ou_2JRZ9FL3m0LZbvi5O_TT4cDD5UuET-ALKanV6kjJxe' },
+    { id: 8, name: 'Pantaloons', category: 'Fashion Retail', rate: '7.5%', value: '₹1k - ₹10k', logo: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBrkvktUP3yXOPrJLGn0AA6smpfIUsoQK99C-5YueLjRuPK00TgFDvZNaZmi1Li5CSzosnNv1NDHYfyAgXSVoFKNy9ee0mh5MHcrTFVjvCorI8FiU7dwyvjEL2STBXZti9nAMJmNI_tpTiVWHNY0vKhKeuvawd6vKzeDv_gUb4PbNNVTKwu5XunDVSuD7y_WF1g8IwHLcP79RA33q6HBZTeYnLc3W7va1wMxuycU3N6Ths8WvSqZNVU30TfCdBQA4yXnI1mqjQUZi8l' },
+];
+
+export default function Vouchers() {
+    const [selectedCategory, setSelectedCategory] = useState('All');
+    const [sortBy, setSortBy] = useState('recommended');
+    const [searchQuery, setSearchQuery] = useState('');
+    const [viewMode, setViewMode] = useState('grid');
+
+    return (
+        <div className="flex flex-col h-full overflow-hidden">
+            <div className="flex flex-1 overflow-hidden">
+                {/* Sidebar */}
+                <aside className="w-64 flex-shrink-0 flex flex-col bg-background-dark border-r border-primary/20 relative z-20 overflow-y-auto hide-scrollbar pb-6">
+                    <div className="p-6 pb-2">
+                        <h3 className="text-gold-text font-serif font-bold text-lg mb-1">Filter Vouchers</h3>
+                        <p className="text-warm-gray text-xs mb-6">Refine by category & preferences</p>
+
+                        {/* Search in sidebar */}
+                        <div className="relative w-full mb-4 group">
+                            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gold-dim group-focus-within:text-primary transition-colors material-symbols-outlined text-[18px]">search</span>
+                            <input
+                                className="w-full bg-surface-dark border border-primary/20 rounded-lg py-2 pl-9 pr-4 text-xs text-warm-white focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50 placeholder-warm-gray/50 transition-all font-light"
+                                placeholder="Search filters..."
+                                type="text"
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                            />
+                        </div>
+
+                        {/* Reset button */}
+                        <div className="mb-8">
+                            <button
+                                className="w-full flex items-center justify-center gap-2 rounded-lg py-2.5 bg-gradient-to-r from-primary to-[#8c5341] text-background-dark text-xs font-bold uppercase tracking-wider hover:shadow-[0_0_15px_rgba(200,127,69,0.4)] transition-shadow"
+                                onClick={() => {
+                                    setSelectedCategory('All');
+                                    setSortBy('recommended');
+                                    setSearchQuery('');
+                                }}
+                            >
+                                <span className="material-symbols-outlined text-sm">filter_alt_off</span>
+                                RESET FILTERS
+                            </button>
+                        </div>
+
+                        {/* Categories */}
+                        <div className="mb-8">
+                            <h4 className="text-primary text-xs font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
+                                <span className="material-symbols-outlined text-sm">category</span> Categories
+                            </h4>
+                            <div className="flex flex-wrap gap-2">
+                                {categories.map((cat) => (
+                                    <button
+                                        key={cat}
+                                        onClick={() => setSelectedCategory(cat)}
+                                        className={`px-3 py-1.5 rounded-md text-[11px] font-medium transition-all ${selectedCategory === cat
+                                                ? 'bg-primary/20 border border-primary text-white shadow-[0_0_8px_rgba(200,127,69,0.3)]'
+                                                : 'bg-surface-dark border border-primary/20 text-warm-white hover:bg-white/5 hover:border-primary/50 hover:text-white'
+                                            }`}
+                                    >
+                                        {cat}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Sort By */}
+                        <div className="mb-8">
+                            <h4 className="text-primary text-xs font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
+                                <span className="material-symbols-outlined text-sm">sort</span> Sort By
+                            </h4>
+                            <div className="flex flex-col gap-2">
+                                <label className="flex items-center gap-3 group cursor-pointer">
+                                    <input
+                                        checked={sortBy === 'recommended'}
+                                        onChange={() => setSortBy('recommended')}
+                                        className="bg-surface-dark border-primary/30 text-primary focus:ring-primary/50 focus:ring-offset-background-dark"
+                                        name="sortby"
+                                        type="radio"
+                                    />
+                                    <span className={`text-sm transition-colors ${sortBy === 'recommended' ? 'text-warm-white' : 'text-gold-dim'} group-hover:text-white`}>Recommended</span>
+                                </label>
+                                <label className="flex items-center gap-3 group cursor-pointer">
+                                    <input
+                                        checked={sortBy === 'highest-roi'}
+                                        onChange={() => setSortBy('highest-roi')}
+                                        className="bg-surface-dark border-primary/30 text-primary focus:ring-primary/50 focus:ring-offset-background-dark"
+                                        name="sortby"
+                                        type="radio"
+                                    />
+                                    <span className={`text-sm transition-colors ${sortBy === 'highest-roi' ? 'text-warm-white' : 'text-gold-dim'} group-hover:text-white`}>Highest ROI</span>
+                                </label>
+                                <label className="flex items-center gap-3 group cursor-pointer">
+                                    <input
+                                        checked={sortBy === 'expires-soon'}
+                                        onChange={() => setSortBy('expires-soon')}
+                                        className="bg-surface-dark border-primary/30 text-primary focus:ring-primary/50 focus:ring-offset-background-dark"
+                                        name="sortby"
+                                        type="radio"
+                                    />
+                                    <span className={`text-sm transition-colors ${sortBy === 'expires-soon' ? 'text-warm-white' : 'text-gold-dim'} group-hover:text-white`}>Expires Soon</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                {/* Main Content */}
+                <main className="flex-1 flex flex-col h-full overflow-hidden relative bg-gradient-to-br from-background-dark to-[#0f0502]">
+                    <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+                    <div className="flex-1 overflow-y-auto hide-scrollbar p-8 pb-20">
+                        <div className="max-w-[1200px] mx-auto flex flex-col gap-10">
+                            {/* Header */}
+                            <div className="flex flex-col gap-6">
+                                <div className="flex flex-wrap items-end justify-between gap-4">
+                                    <div>
+                                        <h2 className="text-4xl font-serif text-warm-white mb-2">Exclusive Vouchers</h2>
+                                        <p className="text-warm-gray font-light">Negotiated rates for premium cardholders. Maximize your <span className="text-primary font-medium">Reward ROI</span>.</p>
+                                    </div>
+
+                                    {/* Rate Ticker */}
+                                    <div className="flex items-center gap-4 bg-surface-dark border border-primary/20 rounded-lg p-2 pr-4 shadow-lg shadow-black/30">
+                                        <div className="bg-primary/10 rounded px-2 py-1">
+                                            <span className="material-symbols-outlined text-primary text-sm">monitoring</span>
+                                        </div>
+                                        <div className="flex flex-col">
+                                            <span className="text-[10px] text-gold-dim uppercase tracking-wide">Gold (24k)</span>
+                                            <span className="text-xs font-bold text-gold-text">₹7,200/g <span className="text-green-500 ml-1">+0.4%</span></span>
+                                        </div>
+                                        <div className="w-px h-6 bg-white/10 mx-2"></div>
+                                        <div className="flex flex-col">
+                                            <span className="text-[10px] text-gold-dim uppercase tracking-wide">USD Buy</span>
+                                            <span className="text-xs font-bold text-gold-text">₹83.50 <span className="text-red-400 ml-1">-0.05%</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Popular Vouchers */}
+                            <section className="flex flex-col gap-4">
+                                <div className="flex items-center justify-between">
+                                    <h3 className="text-lg font-serif text-warm-white flex items-center gap-2">
+                                        <span className="material-symbols-outlined text-primary text-sm">hotel_class</span>
+                                        Popular Vouchers
+                                    </h3>
+                                    <div className="flex gap-2">
+                                        <button className="p-1 rounded hover:bg-surface-dark-hover border border-transparent hover:border-primary/20 text-warm-white transition-all">
+                                            <span className="material-symbols-outlined">chevron_left</span>
+                                        </button>
+                                        <button className="p-1 rounded hover:bg-surface-dark-hover border border-transparent hover:border-primary/20 text-warm-white transition-all">
+                                            <span className="material-symbols-outlined">chevron_right</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                    {popularVouchers.map((voucher) => (
+                                        <div key={voucher.id} className="relative group bg-surface-dark rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 transition-all duration-300 shadow-xl hover:shadow-primary/10">
+                                            <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/50 to-transparent z-10"></div>
+                                            <div
+                                                className="h-48 w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                                                style={{ backgroundImage: `url("${voucher.image}")` }}
+                                            ></div>
+                                            <div className="absolute bottom-0 left-0 w-full p-5 z-20 flex flex-col gap-2">
+                                                <div className="flex justify-between items-start">
+                                                    <div>
+                                                        <p className={`text-[10px] font-bold uppercase tracking-widest mb-1 flex items-center gap-1 ${voucher.badgeType === 'timer' ? 'text-primary' :
+                                                                voucher.badgeType === 'cashback' ? 'text-green-400' : 'text-primary'
+                                                            }`}>
+                                                            {voucher.badgeType === 'timer' && <span className="material-symbols-outlined text-[10px]">timer</span>}
+                                                            {voucher.badge}
+                                                        </p>
+                                                        <h4 className="text-xl font-serif text-warm-white">{voucher.name}</h4>
+                                                    </div>
+                                                    <span className={`text-xs font-bold px-2 py-1 rounded shadow-lg shadow-black/40 ${voucher.badgeType === 'timer'
+                                                            ? 'bg-primary text-background-dark'
+                                                            : 'bg-white/10 backdrop-blur text-gold-text border border-gold-dim/30'
+                                                        }`}>
+                                                        {voucher.discount}
+                                                    </span>
+                                                </div>
+                                                <p className="text-sm text-warm-gray">{voucher.description}</p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </section>
+
+                            {/* All Offers Header */}
+                            <div className="flex items-center justify-between border-b border-primary/10 pb-4">
+                                <h3 className="text-lg font-serif text-warm-white">All Offers</h3>
+                                <div className="flex items-center gap-4">
+                                    <span className="text-xs text-gold-dim uppercase tracking-wider font-medium">View:</span>
+                                    <div className="flex gap-1">
+                                        <button
+                                            onClick={() => setViewMode('grid')}
+                                            className={`transition-colors ${viewMode === 'grid' ? 'text-primary' : 'text-gold-dim'} hover:text-white`}
+                                        >
+                                            <span className="material-symbols-outlined">grid_view</span>
+                                        </button>
+                                        <button
+                                            onClick={() => setViewMode('list')}
+                                            className={`transition-colors ${viewMode === 'list' ? 'text-primary' : 'text-gold-dim'} hover:text-white`}
+                                        >
+                                            <span className="material-symbols-outlined">view_list</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Voucher Grid */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                                {allVouchers.map((voucher) => (
+                                    <div key={voucher.id} className="bg-surface-dark rounded-xl p-5 border border-white/5 hover:border-primary/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,0,0,0.4)] group flex flex-col gap-4 relative overflow-hidden">
+                                        <div className="absolute top-0 right-0 p-5 z-10">
+                                            <button className="text-gold-dim hover:text-primary transition-colors">
+                                                <span className="material-symbols-outlined">favorite</span>
+                                            </button>
+                                        </div>
+
+                                        <div className="bg-white rounded-lg p-2 size-12 flex items-center justify-center shadow-lg">
+                                            <img className="w-full h-auto opacity-90" src={voucher.logo} alt={voucher.name} />
+                                        </div>
+
+                                        <div>
+                                            <h4 className="text-gold-text font-semibold text-lg">{voucher.name}</h4>
+                                            <p className="text-warm-gray text-xs mt-1">{voucher.category}</p>
+                                        </div>
+
+                                        <div className="py-3 border-t border-dashed border-primary/20">
+                                            <div className="flex justify-between items-end">
+                                                <div>
+                                                    <p className="text-[10px] uppercase text-gold-dim/70 font-bold">Effective Rate</p>
+                                                    <p className="text-2xl font-bold text-primary">{voucher.rate}</p>
+                                                </div>
+                                                <div className="text-right">
+                                                    <p className="text-[10px] uppercase text-gold-dim/70 font-bold">Value</p>
+                                                    <p className="text-sm font-medium text-warm-white">{voucher.value}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button className="w-full py-2 rounded-lg bg-surface-dark border border-primary/30 text-primary font-bold text-sm hover:bg-primary hover:text-background-dark transition-all shadow-[0_4px_10px_rgba(0,0,0,0.2)]">
+                                            Buy Voucher
+                                        </button>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* Load More */}
+                            <div className="flex justify-center mt-6">
+                                <button className="text-warm-gray hover:text-primary flex items-center gap-2 text-sm font-medium group transition-colors">
+                                    Load More Vouchers
+                                    <span className="material-symbols-outlined group-hover:translate-y-1 transition-transform">expand_more</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    );
+}

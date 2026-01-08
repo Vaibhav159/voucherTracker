@@ -1,0 +1,143 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+/* Tailwind v4 Theme Configuration */
+@theme {
+  /* Colors */
+  --color-primary: #c87f45;
+  --color-primary-hover: #df955d;
+  --color-background-light: #fffaf5;
+  --color-background-dark: #1a0f0c;
+  --color-surface-dark: #2b1813;
+  --color-surface-dark-hover: #3c221b;
+  --color-gold-text: #eecfa1;
+  --color-gold-dim: #a68a6d;
+  --color-warm-white: #f5e6d3;
+  --color-warm-gray: #bba595;
+  --color-accent-red: #9c3838;
+
+  /* Espresso shades */
+  --color-espresso-950: #0F0A08;
+  --color-espresso-900: #18100C;
+  --color-espresso-800: #241A15;
+  --color-espresso-700: #3D2E26;
+
+  /* Gold shades */
+  --color-gold-300: #E5C875;
+  --color-gold-400: #D4AF37;
+  --color-gold-500: #B59428;
+  --color-gold-600: #967A1D;
+
+  /* Copper shades */
+  --color-copper-400: #E09F7D;
+  --color-copper-500: #CD7F32;
+  --color-copper-600: #A05A1C;
+
+  --color-ivory: #F9FAF5;
+
+  /* Fonts */
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-display: "Inter", sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a0f0c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3c221b;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c87f45;
+}
+
+/* Hide scrollbar utility */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Text gradient utilities */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #F9FAF5 0%, #D4AF37 50%, #B59428 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-copper {
+  background: linear-gradient(135deg, #E09F7D 0%, #CD7F32 60%, #A05A1C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hero background shimmer */
+.hero-bg-shimmer {
+  background: linear-gradient(125deg, rgba(212, 175, 55, 0.05), rgba(15, 10, 8, 0.95), rgba(205, 127, 50, 0.08));
+  background-size: 200% 200%;
+  animation: shimmer 15s ease infinite;
+}
+
+/* Border gradient */
+.border-gradient-gold {
+  border-image: linear-gradient(to right, #D4AF37, #3D2E26) 1;
+}
+
+/* Active nav link */
+.nav-link-active {
+  background-color: rgba(212, 175, 55, 0.08);
+  color: #D4AF37;
+  border-left: 2px solid #D4AF37;
+}
+
+/* Background texture */
+.bg-texture {
+  background-image: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.03) 0%, transparent 70%);
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Material Symbols sizing helper */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.material-symbols-outlined.filled {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
