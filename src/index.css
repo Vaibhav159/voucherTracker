@@ -1515,6 +1515,7 @@ a:focus:not(:focus-visible) {
   align-items: start;
   padding: 0 2rem;
   width: 100%;
+  min-height: calc(100vh + 150px);
 }
 
 /* Fix for grid items not shrinking below content size (causing scroll issues) */
