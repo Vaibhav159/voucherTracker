@@ -1528,17 +1528,16 @@ a:focus:not(:focus-visible) {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  position: sticky;
-  top: 2rem;
-  max-height: calc(100vh - 4rem);
+  /* Removed sticky from wrapper so StatsBar (first child) scrolls away */
 }
 
 .sidebar {
   padding: 1.5rem;
-  /* Removed sticky from here as wrapper handles it, or keep it static inside wrapper */
-  /* If wrapper is sticky, children flow naturally. */
-  /* However, if wrapper is larger than viewport (unlikely with minified stats + filters), we might want internal scrolling. */
-  /* Let's make wrapper sticky and sidebar flex-1 with overflow if needed. */
+  /* Add sticky here so only the filter panel sticks */
+  position: sticky;
+  top: 2rem;
+  max-height: calc(100vh - 4rem);
+
   display: flex;
   flex-direction: column;
   flex: 1;
