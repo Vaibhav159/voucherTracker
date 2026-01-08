@@ -1,27 +1,55 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 const SearchBar = ({ value, onChange, sortOption, onSortChange, onOpenShortcuts }) => {
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 20) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-        <div className="sticky-search-bar" data-tour="search" style={{ marginBottom: '1.5rem', width: '100%', margin: '0 auto 1.5rem' }}>
-            <div style={{ display: 'flex', gap: '1rem', width: '100%', alignItems: 'stretch' }}>
+        <div
+            className={`sticky-search-bar ${isScrolled ? 'scrolled' : ''}`}
+            data-tour="search"
+            style={{
+                marginBottom: '1.5rem',
+                width: '100%',
+                margin: '0 auto 1.5rem',
+                position: 'sticky',
+                top: '80px',
+                zIndex: 90,
+                transition: 'all 0.3s ease',
+            }}
+        >
+            <div className="search-container-inner" style={{ transition: 'all 0.3s ease' }}>
                 {/* Search Input Container */}
                 <div
                     className="search-input-container"
                     style={{
                         display: 'flex',
                         alignItems: 'center',
-                        background: 'var(--glass-bg)',
-                        backdropFilter: 'blur(10px)',
-                        WebkitBackdropFilter: 'blur(10px)',
-                        border: '1px solid var(--glass-border)',
-                        borderRadius: '12px',
+                        // Styles matching Guides search bar
+                        background: 'rgba(20, 20, 30, 0.4)',
+                        backdropFilter: 'blur(12px)',
+                        WebkitBackdropFilter: 'blur(12px)',
+                        border: '1px solid rgba(255, 255, 255, 0.08)',
+                        borderRadius: '16px', // Slightly rounder like guides
                         padding: '0 1rem',
                         flex: 1,
                         height: '48px',
-                        transition: 'all 0.2s ease',
+                        transition: 'all 0.3s ease',
                         position: 'relative',
-                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
+                        boxShadow: isScrolled ? '0 10px 40px -10px rgba(0, 0, 0, 0.3)' : '0 4px 20px rgba(0, 0, 0, 0.2)'
                     }}
                 >
                     <svg
@@ -100,7 +128,15 @@ const SearchBar = ({ value, onChange, sortOption, onSortChange, onOpenShortcuts 
                     className="sort-dropdown-container"
                     style={{
                         position: 'relative',
-                        minWidth: '160px'
+                        minWidth: isScrolled ? '0px' : '160px',
+                        maxWidth: isScrolled ? '0px' : '200px',
+                        width: isScrolled ? '0px' : 'auto',
+                        opacity: isScrolled ? 0 : 1,
+                        overflow: 'hidden',
+                        marginLeft: isScrolled ? '0' : '0', // Gap handled by parent flex gap, need to be careful
+                        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                        pointerEvents: isScrolled ? 'none' : 'auto',
+                        transform: isScrolled ? 'translateX(20px)' : 'translateX(0)',
                     }}
                 >
                     <select
@@ -110,11 +146,11 @@ const SearchBar = ({ value, onChange, sortOption, onSortChange, onOpenShortcuts 
                             width: '100%',
                             height: '48px',
                             appearance: 'none',
-                            background: 'var(--glass-bg)',
-                            backdropFilter: 'blur(10px)',
-                            WebkitBackdropFilter: 'blur(10px)',
-                            border: '1px solid var(--glass-border)',
-                            borderRadius: '12px',
+                            background: 'rgba(20, 20, 30, 0.4)',
+                            backdropFilter: 'blur(12px)',
+                            WebkitBackdropFilter: 'blur(12px)',
+                            border: '1px solid rgba(255, 255, 255, 0.08)',
+                            borderRadius: '16px',
                             padding: '0 2.5rem 0 1rem',
                             color: 'var(--text-primary)',
                             fontSize: '0.9rem',
@@ -122,7 +158,8 @@ const SearchBar = ({ value, onChange, sortOption, onSortChange, onOpenShortcuts 
                             cursor: 'pointer',
                             outline: 'none',
                             fontFamily: 'inherit',
-                            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
+                            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)',
+                            whiteSpace: 'nowrap'
                         }}
                     >
                         <option value="Recommended">Recommended</option>
@@ -137,7 +174,9 @@ const SearchBar = ({ value, onChange, sortOption, onSortChange, onOpenShortcuts 
                         transform: 'translateY(-50%)',
                         pointerEvents: 'none',
                         color: 'var(--text-secondary)',
-                        display: 'flex'
+                        display: 'flex',
+                        opacity: isScrolled ? 0 : 1,
+                        transition: 'opacity 0.2s'
                     }}>
                         <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 1l4 4 4-4" /></svg>
                     </div>
@@ -145,36 +184,85 @@ const SearchBar = ({ value, onChange, sortOption, onSortChange, onOpenShortcuts 
             </div>
 
             <style>{`
+                .search-container-inner {
+                    display: flex;
+                    gap: ${isScrolled ? '0' : '1rem'};
+                    width: 100%;
+                    align-items: stretch;
+                }
                 .sticky-search-bar input::placeholder {
                     color: var(--text-secondary);
                     opacity: 0.5;
                 }
                 .search-input-container:focus-within,
                 .sort-dropdown-container select:focus {
-                    border-color: rgba(255, 255, 255, 0.2) !important;
-                    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05) !important;
+                    border-color: rgba(6, 182, 212, 0.5) !important;
+                    box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.1) !important;
                 }
 
                 @media (max-width: 600px) {
+                    .search-container-inner {
+                        flex-direction: row; /* Side by side on mobile for premium look */
+                        gap: 10px; /* Tighter gap */
+                        align-items: center;
+                    }
+
                     .hide-mobile {
                         display: none;
                     }
+
                     .sticky-search-bar {
-                        padding: 0 1rem;
+                        padding: 0 16px; /* Standard mobile padding */
+                        top: 68px !important; /* Visual fix: closer to header (64px approx height) */
                     }
+
+                    /* Refined Search Input on Mobile */
+                    .search-input-container {
+                        flex: 1; /* Take available space */
+                        min-width: 0;
+                        padding: 0 12px !important;
+                        background: rgba(20, 20, 30, 0.6) !important; /* Slightly darker for contrast */
+                        height: 44px !important; /* Standard mobile touch target */
+                    }
+
+                    .search-input-container svg {
+                        width: 16px;
+                        height: 16px;
+                        margin-right: 8px !important;
+                    }
+
+                    .search-input-container input {
+                        font-size: 14px !important; /* Prevent zoom on iOS */
+                    }
+
                     .shortcuts-badge {
-                        padding: 4px 6px !important;
+                        display: none !important;
                     }
+
+                    /* Refined Sort Dropdown on Mobile */
                     .sort-dropdown-container {
-                        min-width: 50px !important; /* Shrink to icon only possibly? Or just smaller */
+                        min-width: auto !important;
+                        width: 110px !important; /* Fixed compact width */
+                        max-width: 110px !important; /* Ensure it doesn't grow */
                         flex-shrink: 0;
+                        height: 44px !important;
+                        transform: ${isScrolled ? 'translateX(10px)' : 'none'}; /* Subtle hide animation if needed, or remove */
+                        opacity: ${isScrolled ? '0' : '1'};
+                        width: ${isScrolled ? '0 !important' : '110px !important'};
+                        margin-right: ${isScrolled ? '-10px' : '0'};
                     }
+
                     .sort-dropdown-container select {
-                        padding-right: 1.5rem !important;
-                        font-size: 0.85rem !important;
-                        text-overflow: clip; /* Or hide text and show icon? For now keep text */
+                        padding: 0 24px 0 12px !important; /* Tighter padding */
+                        font-size: 13px !important;
+                        height: 44px !important;
+                        background: rgba(20, 20, 30, 0.6) !important;
                     }
-                    /* For separate line on mobile? No, let's keep side-by-side but squeeze */
+
+                    /* Adjust arrow position */
+                    .sort-dropdown-container div {
+                         right: 8px !important;
+                    }
                 }
             `}</style>
         </div>
