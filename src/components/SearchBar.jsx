@@ -12,7 +12,7 @@ const SearchBar = ({ value, onChange, sortOption, onSortChange, onOpenShortcuts 
     };
 
     return (
-        <div className="guides-control-bar" style={{ marginBottom: '1.5rem' }} data-tour="search">
+        <div className="guides-control-bar" style={{ marginBottom: '1.5rem', width: '100%', maxWidth: '100%' }} data-tour="search">
             <div className="guides-search-wrapper">
                 <div className="guides-search-icon">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
