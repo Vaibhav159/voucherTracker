@@ -249,11 +249,7 @@ function Home({ data, onOpenShortcuts }) {
       {/* Main Content */}
       <div style={{ flex: 1, width: '100%' }}>
         {/* Show Stats and Top Deals only when no filters active - Moved to Top */}
-        {!searchTerm && !selectedPlatform && !selectedCategory && (
-          <>
-            <TopDeals vouchers={data} onVoucherClick={handleVoucherSelect} />
-          </>
-        )}
+        <TopDeals vouchers={data} onVoucherClick={handleVoucherSelect} />
         {/* Search Bar - Always visible at top */}
         <SearchBar
           value={inputValue}
