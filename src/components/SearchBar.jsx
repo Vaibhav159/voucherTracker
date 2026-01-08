@@ -6,262 +6,255 @@ const SearchBar = ({ value, onChange, sortOption, onSortChange, onOpenShortcuts 
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 20) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
+            setIsScrolled(window.scrollY > 20);
         };
 
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     return (
-        <div
-            className={`sticky-search-bar ${isScrolled ? 'scrolled' : ''}`}
-            data-tour="search"
-            style={{
-                marginBottom: '1.5rem',
-                width: '100%',
-                margin: '0 auto 1.5rem',
-                position: 'sticky',
-                top: '80px',
-                zIndex: 90,
-                transition: 'all 0.3s ease',
-            }}
-        >
-            <div className="search-container-inner" style={{ transition: 'all 0.3s ease' }}>
-                {/* Search Input Container */}
-                <div
-                    className="search-input-container"
-                    style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        // Styles matching Guides search bar
-                        background: 'rgba(20, 20, 30, 0.4)',
-                        backdropFilter: 'blur(12px)',
-                        WebkitBackdropFilter: 'blur(12px)',
-                        border: '1px solid rgba(255, 255, 255, 0.08)',
-                        borderRadius: '16px', // Slightly rounder like guides
-                        padding: '0 1rem',
-                        flex: 1,
-                        height: '48px',
-                        transition: 'all 0.3s ease',
-                        position: 'relative',
-                        boxShadow: isScrolled ? '0 10px 40px -10px rgba(0, 0, 0, 0.3)' : '0 4px 20px rgba(0, 0, 0, 0.2)'
-                    }}
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="var(--text-secondary)"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        style={{ marginRight: '0.75rem', opacity: 0.7 }}
-                    >
+        <div className={`sticky-search-bar ${isScrolled ? 'scrolled' : ''}`} data-tour="search">
+            <div className="search-container-inner">
+
+                {/* Search Input Group */}
+                <div className="search-input-group">
+                    <svg className="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <circle cx="11" cy="11" r="8"></circle>
                         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                     </svg>
+
                     <input
                         type="text"
                         placeholder="Search..."
                         value={value}
                         onChange={(e) => onChange(e.target.value)}
-                        style={{
-                            background: 'transparent',
-                            border: 'none',
-                            color: 'var(--text-primary)',
-                            fontSize: '0.95rem',
-                            flex: 1,
-                            minWidth: 0,
-                            height: '100%',
-                            outline: 'none',
-                            fontFamily: 'inherit',
-                            fontWeight: 400
-                        }}
                     />
 
-                    {/* Shortcuts Badge */}
                     <button
+                        type="button"
                         onClick={onOpenShortcuts}
                         title="View Keyboard Shortcuts"
                         className="shortcuts-badge"
-                        style={{
-                            background: 'rgba(255,255,255,0.05)',
-                            border: '1px solid rgba(255,255,255,0.1)',
-                            borderRadius: '6px',
-                            padding: '4px 8px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '6px',
-                            cursor: 'pointer',
-                            color: 'var(--text-secondary)',
-                            fontSize: '0.7rem',
-                            fontWeight: 600,
-                            letterSpacing: '0.5px',
-                            height: '28px',
-                            marginLeft: '0.5rem',
-                            textTransform: 'uppercase',
-                            transition: 'all 0.2s ease'
-                        }}
-                        onMouseEnter={(e) => {
-                            e.currentTarget.style.background = 'rgba(255,255,255,0.1)';
-                            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)';
-                        }}
-                        onMouseLeave={(e) => {
-                            e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
-                            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
-                        }}
                     >
                         <span>⌘</span>
                         <span className="hide-mobile">SHORTCUTS</span>
                     </button>
                 </div>
 
-                {/* Sort Dropdown Container */}
-                <div
-                    className="sort-dropdown-container"
-                    style={{
-                        position: 'relative',
-                        minWidth: isScrolled ? '0px' : '160px',
-                        maxWidth: isScrolled ? '0px' : '200px',
-                        width: isScrolled ? '0px' : 'auto',
-                        opacity: isScrolled ? 0 : 1,
-                        overflow: 'hidden',
-                        marginLeft: isScrolled ? '0' : '0', // Gap handled by parent flex gap, need to be careful
-                        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                        pointerEvents: isScrolled ? 'none' : 'auto',
-                        transform: isScrolled ? 'translateX(20px)' : 'translateX(0)',
-                    }}
-                >
-                    <select
-                        value={sortOption || 'Recommended'}
-                        onChange={(e) => onSortChange(e.target.value)}
-                        style={{
-                            width: '100%',
-                            height: '48px',
-                            appearance: 'none',
-                            background: 'rgba(20, 20, 30, 0.4)',
-                            backdropFilter: 'blur(12px)',
-                            WebkitBackdropFilter: 'blur(12px)',
-                            border: '1px solid rgba(255, 255, 255, 0.08)',
-                            borderRadius: '16px',
-                            padding: '0 2.5rem 0 1rem',
-                            color: 'var(--text-primary)',
-                            fontSize: '0.9rem',
-                            fontWeight: 400,
-                            cursor: 'pointer',
-                            outline: 'none',
-                            fontFamily: 'inherit',
-                            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)',
-                            whiteSpace: 'nowrap'
-                        }}
-                    >
-                        <option value="Recommended">Recommended</option>
-                        <option value="Alphabetical">A-Z</option>
-                        <option value="Discount">Best Discount</option>
-                    </select>
-                    {/* Custom Arrow */}
-                    <div style={{
-                        position: 'absolute',
-                        right: '1rem',
-                        top: '50%',
-                        transform: 'translateY(-50%)',
-                        pointerEvents: 'none',
-                        color: 'var(--text-secondary)',
-                        display: 'flex',
-                        opacity: isScrolled ? 0 : 1,
-                        transition: 'opacity 0.2s'
-                    }}>
-                        <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 1l4 4 4-4" /></svg>
+                {/* Sort Dropdown Group */}
+                <div className="sort-dropdown-group">
+                    <div className="select-wrapper">
+                        <select
+                            value={sortOption || 'Recommended'}
+                            onChange={(e) => onSortChange(e.target.value)}
+                            aria-label="Sort options"
+                        >
+                            <option value="Recommended">Recommended</option>
+                            <option value="Alphabetical">A-Z</option>
+                            <option value="Discount">Best Discount</option>
+                        </select>
+                        <div className="select-arrow">
+                            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M1 1l4 4 4-4" />
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <style>{`
+                /* --- Desktop Layout (Standard) --- */
+                .sticky-search-bar {
+                    margin: 0 auto 1.5rem;
+                    width: 100%;
+                    position: sticky;
+                    top: 80px; /* Adjust this based on your Header height */
+                    z-index: 90;
+                    transition: all 0.3s ease;
+                    padding: 0 1rem; /* Added base padding for safety */
+                }
+
                 .search-container-inner {
                     display: flex;
-                    gap: ${isScrolled ? '0' : '1rem'};
+                    gap: 1rem;
                     width: 100%;
+                    max-width: 1200px; /* Optional: Constrain max width */
+                    margin: 0 auto;
                     align-items: stretch;
-                }
-                .sticky-search-bar input::placeholder {
-                    color: var(--text-secondary);
-                    opacity: 0.5;
-                }
-                .search-input-container:focus-within,
-                .sort-dropdown-container select:focus {
-                    border-color: rgba(6, 182, 212, 0.5) !important;
-                    box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.1) !important;
+                    transition: gap 0.3s ease;
                 }
 
+                /* Collapse gap when scrolled (Desktop Only) */
+                .sticky-search-bar.scrolled .search-container-inner {
+                    gap: 0;
+                }
+
+                /* --- Search Input Group --- */
+                .search-input-group {
+                    display: flex;
+                    align-items: center;
+                    background: rgba(20, 20, 30, 0.4);
+                    backdrop-filter: blur(12px);
+                    -webkit-backdrop-filter: blur(12px);
+                    border: 1px solid rgba(255, 255, 255, 0.08);
+                    border-radius: 16px;
+                    padding: 0 1rem;
+                    flex: 1;
+                    height: 48px;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+                }
+
+                .sticky-search-bar.scrolled .search-input-group {
+                    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.3);
+                }
+
+                .search-input-group:focus-within {
+                    border-color: rgba(6, 182, 212, 0.5);
+                    box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.1);
+                }
+
+                .search-icon {
+                    width: 18px;
+                    height: 18px;
+                    margin-right: 0.75rem;
+                    opacity: 0.7;
+                    stroke: var(--text-secondary);
+                    flex-shrink: 0; /* Prevent icon squishing */
+                }
+
+                .search-input-group input {
+                    background: transparent;
+                    border: none;
+                    color: var(--text-primary);
+                    font-size: 0.95rem;
+                    flex: 1;
+                    min-width: 0;
+                    height: 100%;
+                    outline: none;
+                    font-family: inherit;
+                    font-weight: 400;
+                }
+
+                .shortcuts-badge {
+                    background: rgba(255, 255, 255, 0.05);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    border-radius: 6px;
+                    padding: 4px 8px;
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                    cursor: pointer;
+                    color: var(--text-secondary);
+                    font-size: 0.7rem;
+                    font-weight: 600;
+                    height: 28px;
+                    margin-left: 0.5rem;
+                    transition: all 0.2s ease;
+                }
+
+                /* --- Sort Dropdown Group --- */
+                .sort-dropdown-group {
+                    position: relative;
+                    min-width: 160px;
+                    max-width: 200px;
+                    width: auto;
+                    opacity: 1;
+                    transform: translateX(0);
+                    overflow: hidden;
+                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                }
+
+                /* Collapsed State (Desktop Only) */
+                .sticky-search-bar.scrolled .sort-dropdown-group {
+                    min-width: 0;
+                    max-width: 0;
+                    width: 0;
+                    opacity: 0;
+                    transform: translateX(20px);
+                    pointer-events: none;
+                }
+
+                .select-wrapper select {
+                    width: 100%;
+                    height: 48px;
+                    appearance: none;
+                    background: rgba(20, 20, 30, 0.4);
+                    backdrop-filter: blur(12px);
+                    -webkit-backdrop-filter: blur(12px);
+                    border: 1px solid rgba(255, 255, 255, 0.08);
+                    border-radius: 16px;
+                    padding: 0 2.5rem 0 1rem;
+                    color: var(--text-primary);
+                    font-size: 0.9rem;
+                    cursor: pointer;
+                    outline: none;
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+                }
+
+                .select-arrow {
+                    position: absolute;
+                    right: 1rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    pointer-events: none;
+                    color: var(--text-secondary);
+                }
+
+                /* --- MOBILE FIXES --- */
                 @media (max-width: 600px) {
-                    .search-container-inner {
-                        flex-direction: row; /* Side by side on mobile for premium look */
-                        gap: 10px; /* Tighter gap */
-                        align-items: center;
+                    .sticky-search-bar {
+                        padding: 0 12px;
+                        top: 68px; /* Ensure this matches your Header height! */
                     }
 
-                    .hide-mobile {
+                    .search-container-inner {
+                        gap: 10px !important; /* Force gap to stay */
+                    }
+
+                    /* 1. Stop the Collapse Animation on Mobile */
+                    /* Users want to sort while scrolling without jumping to top */
+                    .sticky-search-bar.scrolled .sort-dropdown-group,
+                    .sort-dropdown-group {
+                        width: 110px !important;
+                        min-width: 110px !important;
+                        max-width: 110px !important;
+                        opacity: 1 !important;
+                        transform: none !important;
+                        pointer-events: auto !important;
+                    }
+
+                    /* 2. Stabilize Input Height */
+                    .search-input-group,
+                    .select-wrapper select {
+                        height: 44px; /* Standard mobile tap size */
+                    }
+
+                    /* 3. Refine Input Font Size (stops iOS zoom) */
+                    .search-input-group input,
+                    .select-wrapper select {
+                        font-size: 16px;
+                    }
+
+                    /* 4. Hide Shortcuts */
+                    .shortcuts-badge, .hide-mobile {
                         display: none;
                     }
 
-                    .sticky-search-bar {
-                        padding: 0 16px; /* Standard mobile padding */
-                        top: 68px !important; /* Visual fix: closer to header (64px approx height) */
+                    /* 5. Tighter Mobile Padding inside inputs */
+                    .search-input-group {
+                        padding: 0 10px;
+                        background: rgba(20, 20, 30, 0.7); /* Slightly darker for contrast */
                     }
 
-                    /* Refined Search Input on Mobile */
-                    .search-input-container {
-                        flex: 1; /* Take available space */
-                        min-width: 0;
-                        padding: 0 12px !important;
-                        background: rgba(20, 20, 30, 0.6) !important; /* Slightly darker for contrast */
-                        height: 44px !important; /* Standard mobile touch target */
+                    .select-wrapper select {
+                        padding: 0 24px 0 10px;
+                        background: rgba(20, 20, 30, 0.7);
                     }
 
-                    .search-input-container svg {
-                        width: 16px;
-                        height: 16px;
-                        margin-right: 8px !important;
-                    }
-
-                    .search-input-container input {
-                        font-size: 14px !important; /* Prevent zoom on iOS */
-                    }
-
-                    .shortcuts-badge {
-                        display: none !important;
-                    }
-
-                    /* Refined Sort Dropdown on Mobile */
-                    .sort-dropdown-container {
-                        min-width: auto !important;
-                        width: 110px !important; /* Fixed compact width */
-                        max-width: 110px !important; /* Ensure it doesn't grow */
-                        flex-shrink: 0;
-                        height: 44px !important;
-                        transform: ${isScrolled ? 'translateX(10px)' : 'none'}; /* Subtle hide animation if needed, or remove */
-                        opacity: ${isScrolled ? '0' : '1'};
-                        width: ${isScrolled ? '0 !important' : '110px !important'};
-                        margin-right: ${isScrolled ? '-10px' : '0'};
-                    }
-
-                    .sort-dropdown-container select {
-                        padding: 0 24px 0 12px !important; /* Tighter padding */
-                        font-size: 13px !important;
-                        height: 44px !important;
-                        background: rgba(20, 20, 30, 0.6) !important;
-                    }
-
-                    /* Adjust arrow position */
-                    .sort-dropdown-container div {
-                         right: 8px !important;
+                    .select-arrow {
+                        right: 8px;
                     }
                 }
             `}</style>
