@@ -1512,10 +1512,9 @@ a:focus:not(:focus-visible) {
   display: grid;
   grid-template-columns: 280px 1fr;
   gap: 2rem;
-  align-items: start;
   padding: 0 2rem;
   width: 100%;
-  min-height: calc(100vh + 150px);
+  min-height: calc(100vh + 400px);
 }
 
 /* Fix for grid items not shrinking below content size (causing scroll issues) */
