@@ -35,12 +35,12 @@ class PlatformViewSet(viewsets.ReadOnlyModelViewSet):
 
 @method_decorator(cache_page(60 * 15), name="dispatch")
 class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Voucher.objects.prefetch_related("platforms", "platforms__platform", "aliases").all()
+    queryset = Voucher.objects.prefetch_related("platforms", "platforms__platform").all()
     serializer_class = VoucherSerializer
     permission_classes = [permissions.AllowAny]
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
     filterset_fields = ["category"]
-    search_fields = ["name", "aliases__name"]
+    search_fields = ["name"]
 
     def _handle_voucher_sync(self, voucher: Voucher, platform: Platform, item):
         external_id = str(item.get("id"))
@@ -299,8 +299,6 @@ class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
                 except Exception as brand_err:
                     print(f"Error fetching brands for {cat_slug}: {brand_err}")
                     continue
-
-            from django.core.cache import cache
 
             cache.clear()
 
