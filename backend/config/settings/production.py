@@ -37,6 +37,8 @@ CACHES = {
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 # https://docs.djangoproject.com/en/dev/ref/settings/#secure-ssl-redirect
 SECURE_SSL_REDIRECT = env.bool("DJANGO_SECURE_SSL_REDIRECT", default=True)
+# https://docs.djangoproject.com/en/dev/ref/settings/#use-x-forwarded-host
+USE_X_FORWARDED_HOST = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#session-cookie-secure
 SESSION_COOKIE_SECURE = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#session-cookie-name
@@ -158,6 +160,8 @@ SPECTACULAR_SETTINGS["SERVERS"] = [
 # Your stuff...
 # ------------------------------------------------------------------------------
 CORS_ALLOWED_ORIGINS = ["https://vaibhav159.github.io"]
+CSRF_TRUSTED_ORIGINS = ["https://vaibhav159.github.io"]
+CORS_ALLOW_CREDENTIALS = True
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
