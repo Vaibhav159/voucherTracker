@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import { featureFlags } from '../config/featureFlags';
+import { API_BASE_URL } from '../config/api';
 import vouchersData from '../data/vouchers.json';
 import { sortPlatforms } from '../utils/sortUtils';
 
@@ -59,7 +60,7 @@ export const useVouchers = (options = {}) => {
             // Start new fetch and assign to cache.promise
             cache.promise = (async () => {
                 try {
-                    const response = await fetch('/api/vouchers/');
+                    const response = await fetch(`${API_BASE_URL}/vouchers/`);
                     if (!response.ok) {
                         throw new Error(`API Error: ${response.status} ${response.statusText}`);
                     }

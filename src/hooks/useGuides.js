@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { featureFlags } from '../config/featureFlags';
 import guidesData from '../data/guides.json';
+import { API_BASE_URL } from '../config/api';
 
 // Simple in-memory cache
 const cache = {
@@ -58,7 +59,7 @@ export const useGuides = (options = {}) => {
             // Start new fetch
             cache.promise = (async () => {
                 try {
-                    const response = await fetch('/api/v2/pages/?type=guides.GuidePage&fields=_,title,intro,body,tags,author,external_link');
+                    const response = await fetch(`${API_BASE_URL}/v2/pages/?type=guides.GuidePage&fields=_,title,intro,body,tags,author,external_link`);
                     if (!response.ok) {
                         throw new Error('Failed to fetch guides');
                     }

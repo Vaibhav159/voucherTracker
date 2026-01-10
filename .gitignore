@@ -30,3 +30,4 @@ save*.json
 venv
 .claude/
 ishop.json
+.env
