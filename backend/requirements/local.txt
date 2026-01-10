@@ -3,6 +3,7 @@
 watchdog==4.0.2 # https://github.com/gorakhargosh/watchdog
 Werkzeug[watchdog]==3.0.4 # https://github.com/pallets/werkzeug
 ipdb==0.13.13  # https://github.com/gotcha/ipdb
+ipython>=8.10.0  # https://github.com/ipython/ipython
 psycopg[binary]==3.2.3 ; sys_platform == 'darwin'
 psycopg[c]==3.2.3      ; sys_platform == 'linux'
 
