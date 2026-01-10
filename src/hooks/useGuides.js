@@ -59,7 +59,7 @@ export const useGuides = (options = {}) => {
             // Start new fetch
             cache.promise = (async () => {
                 try {
-                    const response = await fetch(`${API_BASE_URL}/v2/pages/?type=guides.GuidePage&fields=_,title,intro,body,tags,author,external_link`);
+                    const response = await fetch(`${API_BASE_URL}/v2/pages/?type=guides.GuidePage&fields=_,id,title,intro,body,tags,author,external_link`);
                     if (!response.ok) {
                         throw new Error('Failed to fetch guides');
                     }

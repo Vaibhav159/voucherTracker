@@ -91,7 +91,7 @@ const GuideModal = ({ guide, onClose }) => {
     const { theme } = useTheme();
 
     const processedEmbedHtml = useMemo(() => {
-        if (!guide.embedHtml) return '';
+        if (!guide.embedHtml || typeof guide.embedHtml !== 'string') return '';
         // Inject theme for Twitter embeds
         if (guide.embedHtml.includes('twitter-tweet')) {
             // Check if it already has data-theme to allow manual override if needed, otherwise inject
@@ -186,6 +186,13 @@ const GuideModal = ({ guide, onClose }) => {
                                 return <div key={index} style={{ marginBottom: '1rem' }} dangerouslySetInnerHTML={{ __html: block.value }} />;
                             }
                             if (block.type === 'embed') {
+                                if (block.value && typeof block.value === 'string' && block.value.includes('reddit-embed-bq')) {
+                                    return (
+                                        <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                                            <RedditEmbed embedHtml={block.value} theme={theme} />
+                                        </div>
+                                    );
+                                }
                                 return <div key={index} className="guide-embed-wrapper" dangerouslySetInnerHTML={{ __html: block.value }} />;
                             }
                             return null;
@@ -442,7 +449,7 @@ const Guides = () => {
             {/* Guides Grid */}
             <div className="guides-grid">
                 {displayedGuides.map(guide => {
-                    const hasEmbed = !!guide.embedHtml;
+                    const hasEmbed = !!guide.embedHtml || guide?.contentHtml?.some(block => block.type == "embed");
                     const hasContent = !!guide.content;
                     const hasContentHtml = !!guide.contentHtml;
                     const isInternal = hasEmbed || hasContent || hasContentHtml;
