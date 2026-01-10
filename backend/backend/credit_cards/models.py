@@ -1,6 +1,5 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from django_prose_editor.fields import ProseEditorField
 
 
 class CreditCard(models.Model):
@@ -37,8 +36,8 @@ class CreditCard(models.Model):
     tags = models.JSONField(_("Tags"), default=list)
 
     # Content fields
-    verdict = ProseEditorField(_("Verdict"), blank=True)
-    detailed_guide = ProseEditorField(_("Detailed Guide"), blank=True)
+    verdict = models.TextField(_("Verdict"), blank=True)
+    detailed_guide = models.TextField(_("Detailed Guide"), blank=True)
     apply_link = models.URLField(_("Apply Link"), blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)

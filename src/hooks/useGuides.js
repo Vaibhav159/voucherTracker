@@ -58,28 +58,33 @@ export const useGuides = (options = {}) => {
             // Start new fetch
             cache.promise = (async () => {
                 try {
-                    const response = await fetch('/api/guides/');
+                    const response = await fetch('/api/v2/pages/?type=guides.GuidePage&fields=_,title,intro,body,tags,author,external_link');
                     if (!response.ok) {
                         throw new Error('Failed to fetch guides');
                     }
                     const data = await response.json();
 
-                    let processedData = data;
-                    if (data.results && Array.isArray(data.results)) {
-                        processedData = data.results;
+                    let backendGuides = [];
+                    if (data.items && Array.isArray(data.items)) {
+                        backendGuides = data.items.map(page => ({
+                            id: `cms-${page.id}`,
+                            title: page.title,
+                            description: page.intro,
+                            contentHtml: (page.body && page.body.length > 0) ? page.body : null,
+                            tags: page.tags || [],
+                            author: page.author,
+                            // If external_link is present, use it. Otherwise use '#'.
+                            // Note: frontend uses presence of content/embed to decide if internal.
+                            link: page.external_link || '#'
+                        }));
+                    } else if (data.results) { // Fallback if structure differs
+                        backendGuides = data.results;
                     }
 
-                    if (!processedData || processedData.length === 0) {
-                        console.warn('API returned empty guides list, using fallback');
-                        cache.data = guidesData;
-                        cache.timestamp = Date.now();
-                        return guidesData;
-                    } else {
-                        // Update cache
-                        cache.data = processedData;
-                        cache.timestamp = Date.now();
-                        return processedData;
-                    }
+                    // Update cache
+                    cache.data = backendGuides;
+                    cache.timestamp = Date.now();
+                    return backendGuides;
                 } catch (err) {
                     cache.promise = null;
                     throw err;
