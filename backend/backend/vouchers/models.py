@@ -11,7 +11,7 @@ from backend.vouchers.choices import VoucherMismatchStatus
 class Voucher(models.Model):
     name = models.CharField(_("Name"), max_length=255, db_index=True)
     logo = models.URLField(_("Logo URL"), blank=True)
-    category = models.CharField(_("Category"), max_length=50, choices=VoucherCategory, db_index=True)
+    category = models.CharField(_("Category"), max_length=50, choices=VoucherCategory.choices, db_index=True)
     site_link = models.URLField(_("Site Link"), blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -71,7 +71,7 @@ class VoucherMismatch(models.Model):
     status = models.CharField(
         _("Status"),
         max_length=20,
-        choices=VoucherMismatchStatus,
+        choices=VoucherMismatchStatus.choices,
         default=VoucherMismatchStatus.PENDING,
     )
     created_at = models.DateTimeField(auto_now_add=True)

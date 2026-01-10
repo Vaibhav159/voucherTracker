@@ -91,7 +91,7 @@ const GuideModal = ({ guide, onClose }) => {
     const { theme } = useTheme();
 
     const processedEmbedHtml = useMemo(() => {
-        if (!guide.embedHtml) return '';
+        if (!guide.embedHtml || typeof guide.embedHtml !== 'string') return '';
         // Inject theme for Twitter embeds
         if (guide.embedHtml.includes('twitter-tweet')) {
             // Check if it already has data-theme to allow manual override if needed, otherwise inject
@@ -176,7 +176,29 @@ const GuideModal = ({ guide, onClose }) => {
                     </button>
                 </div>
 
-                {guide.content ? (
+                {guide.contentHtml && Array.isArray(guide.contentHtml) ? (
+                    <div className="wagtail-content" style={{ color: 'var(--text-primary)', lineHeight: '1.6', width: '100%' }}>
+                        {guide.contentHtml.map((block, index) => {
+                            if (block.type === 'heading') {
+                                return <h3 key={index} style={{ fontSize: '1.3rem', margin: '1.5rem 0 1rem', color: 'var(--text-primary)' }}>{block.value}</h3>;
+                            }
+                            if (block.type === 'paragraph') {
+                                return <div key={index} style={{ marginBottom: '1rem' }} dangerouslySetInnerHTML={{ __html: block.value }} />;
+                            }
+                            if (block.type === 'embed') {
+                                if (block.value && typeof block.value === 'string' && block.value.includes('reddit-embed-bq')) {
+                                    return (
+                                        <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                                            <RedditEmbed embedHtml={block.value} theme={theme} />
+                                        </div>
+                                    );
+                                }
+                                return <div key={index} className="guide-embed-wrapper" dangerouslySetInnerHTML={{ __html: block.value }} />;
+                            }
+                            return null;
+                        })}
+                    </div>
+                ) : guide.content ? (
                     <div style={{ color: 'var(--text-primary)', lineHeight: '1.6', width: '100%' }}>
                         <Markdown components={{
                             h1: ({ ...props }) => <h1 style={{ fontSize: '1.8rem', margin: '1.5rem 0 1rem' }} {...props} />,
@@ -427,9 +449,10 @@ const Guides = () => {
             {/* Guides Grid */}
             <div className="guides-grid">
                 {displayedGuides.map(guide => {
-                    const hasEmbed = !!guide.embedHtml;
+                    const hasEmbed = !!guide.embedHtml || guide?.contentHtml?.some(block => block.type == "embed");
                     const hasContent = !!guide.content;
-                    const isInternal = hasEmbed || hasContent;
+                    const hasContentHtml = !!guide.contentHtml;
+                    const isInternal = hasEmbed || hasContent || hasContentHtml;
 
                     return (
                         <div

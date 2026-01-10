@@ -1,7 +1,4 @@
-from django.db.models import Q
 from rest_framework import serializers
-
-from backend.guides.models import Guide
 
 from .models import CreditCard
 
@@ -33,8 +30,4 @@ class CreditCardSerializer(serializers.ModelSerializer):
         ]
 
     def get_related_guides(self, obj: CreditCard):
-        all_guides = Guide.objects.filter(
-            Q(tags__contains=[obj.name]) | Q(tags__contains=[obj.slug]),
-        ).values()[:5]
-
-        return all_guides
+        return []
