@@ -50,7 +50,7 @@ urlpatterns += [
     path("api/v2/", wagtail_api_router.urls),
     path("cms/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),
-    path("", include(wagtail_urls)),
+    path("guides/", include(wagtail_urls)),
 ]
 
 if settings.DEBUG:

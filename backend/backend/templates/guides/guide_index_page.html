@@ -1,0 +1,59 @@
+{% extends "guides/guide_base.html" %}
+
+{% load wagtailcore_tags static %}
+
+{% block title %}All Guides | Voucher Tracker{% endblock %}
+{% block content %}
+  <header style="text-align: center; margin-bottom: 4rem;">
+    <h1>Guides & Resources</h1>
+    <p style="max-width: 600px; margin: 0 auto;">Expert insights on credit cards, banking, and maximizing rewards.</p>
+  </header>
+  <div class="guides-grid"
+       style="display: grid;
+              grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+              gap: 2rem">
+    {% for guide in guides %}
+      <a href="{{ guide.url }}"
+         class="guide-card glass-panel"
+         style="display: flex;
+                flex-direction: column;
+                height: 100%;
+                color: inherit;
+                padding: 0;
+                transition: transform 0.2s">
+        <div class="guide-card-content"
+             style="padding: 1.5rem;
+                    display: flex;
+                    flex-direction: column;
+                    height: 100%">
+          <h3 class="guide-card-title"
+              style="margin-bottom: 0.5rem;
+                     font-size: 1.25rem">{{ guide.title }}</h3>
+          {% if guide.intro %}
+            <p class="guide-card-description"
+               style="font-size: 0.95rem;
+                      line-height: 1.5;
+                      margin-bottom: 1.5rem;
+                      flex-grow: 1">{{ guide.intro }}</p>
+          {% endif %}
+          <div class="guide-card-footer"
+               style="margin-top: auto;
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      font-size: 0.85rem;
+                      color: var(--text-secondary)">
+            <span>{{ guide.last_published_at|date:"M j, Y" }}</span>
+            <span style="color: var(--accent-cyan); font-weight: 500;">Read Guide →</span>
+          </div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+  <style>
+    .guide-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-cyan);
+    }
+  </style>
+{% endblock %}
