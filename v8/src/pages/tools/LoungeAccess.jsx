@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const lounges = [
     {
         id: 1,
         name: '080 Domestic Lounge',
         airport: 'BLR',
+        airportName: 'Kempegowda International',
         terminal: 'Terminal 1, Departure',
         hours: 'Open 24 Hours',
         guests: 'Cardholder + 1',
@@ -15,6 +17,7 @@ const lounges = [
         id: 2,
         name: 'Adani Lounge East Wing',
         airport: 'BOM',
+        airportName: 'Chhatrapati Shivaji Maharaj',
         terminal: 'Terminal 2, International',
         hours: '04:00 - 02:00 Daily',
         guests: 'Cardholder Only',
@@ -26,6 +29,7 @@ const lounges = [
         id: 3,
         name: 'Encalm Privé',
         airport: 'DEL',
+        airportName: 'Indira Gandhi International',
         terminal: 'Terminal 3, Domestic',
         hours: 'Premium Bar Access',
         guests: 'Cardholder + 1',
@@ -36,6 +40,7 @@ const lounges = [
         id: 4,
         name: 'Travel Club Lounge',
         airport: 'MAA',
+        airportName: 'Chennai International',
         terminal: 'Terminal 2, Domestic',
         hours: 'Spa Services',
         guests: 'Cardholder + 1',
@@ -44,9 +49,82 @@ const lounges = [
     },
 ];
 
+const airports = [
+    { code: 'BLR', name: 'Bengaluru - Kempegowda International' },
+    { code: 'BOM', name: 'Mumbai - Chhatrapati Shivaji Maharaj' },
+    { code: 'DEL', name: 'Delhi - Indira Gandhi International' },
+    { code: 'MAA', name: 'Chennai - Chennai International' },
+    { code: 'HYD', name: 'Hyderabad - Rajiv Gandhi International' },
+    { code: 'CCU', name: 'Kolkata - Netaji Subhas Chandra Bose' },
+];
+
+const cards = [
+    { id: 1, name: 'HDFC Infinia Credit Card Metal Edition', bank: 'HDFC', network: 'Visa Infinite', ending: '8892' },
+    { id: 2, name: 'Axis Magnus Burgundy', bank: 'Axis', network: 'Visa Signature', ending: '4092' },
+    { id: 3, name: 'Amex Platinum Charge', bank: 'Amex', network: 'American Express', ending: '1005' },
+];
+
 export default function LoungeAccess() {
-    const [searchQuery, setSearchQuery] = useState('HDFC Infinia Credit Card Metal Edition');
-    const [filterType, setFilterType] = useState('domestic');
+    const { mode: modeParam, selection: selectionParam } = useParams();
+    const navigate = useNavigate();
+
+    // Initialize from URL params
+    const initialMode = modeParam === 'airport' ? 'airport' : 'card';
+    const initialCard = selectionParam
+        ? cards.find(c => c.name.toLowerCase().replace(/\s+/g, '-') === selectionParam) || cards[0]
+        : cards[0];
+    const initialAirport = modeParam === 'airport' && selectionParam
+        ? airports.find(a => a.code.toLowerCase() === selectionParam.toLowerCase())
+        : null;
+
+    const [searchQuery, setSearchQuery] = useState('');
+    const [filterType, setFilterType] = useState(initialMode);
+    const [selectedCard, setSelectedCard] = useState(initialCard);
+    const [selectedAirport, setSelectedAirport] = useState(initialAirport);
+    const [loungeType, setLoungeType] = useState('domestic');
+
+    // Update URL when state changes
+    const updateUrl = (mode, selection) => {
+        if (selection) {
+            navigate(`/tools/lounge/${mode}/${selection}`, { replace: true });
+        } else {
+            navigate(`/tools/lounge/${mode}`, { replace: true });
+        }
+    };
+
+    const handleModeChange = (newMode) => {
+        setFilterType(newMode);
+        setSearchQuery('');
+        if (newMode === 'card') {
+            setSelectedAirport(null);
+            updateUrl('card', selectedCard.name.toLowerCase().replace(/\s+/g, '-'));
+        } else {
+            updateUrl('airport', selectedAirport?.code?.toLowerCase() || '');
+        }
+    };
+
+    // Filter lounges based on mode
+    const filteredLounges = filterType === 'airport' && selectedAirport
+        ? lounges.filter(l => l.airport === selectedAirport.code)
+        : lounges;
+
+    const placeholder = filterType === 'card'
+        ? "Search for your credit card (e.g. HDFC Infinia, Amex Platinum)..."
+        : "Search for an airport (e.g. BLR, DEL, Mumbai)...";
+
+    const handleSearch = (query) => {
+        setSearchQuery(query);
+        if (filterType === 'airport') {
+            const found = airports.find(a =>
+                a.code.toLowerCase().includes(query.toLowerCase()) ||
+                a.name.toLowerCase().includes(query.toLowerCase())
+            );
+            setSelectedAirport(found || null);
+            if (found) {
+                updateUrl('airport', found.code.toLowerCase());
+            }
+        }
+    };
 
     return (
         <div className="flex flex-1 overflow-hidden relative bg-espresso-900">
@@ -66,14 +144,14 @@ export default function LoungeAccess() {
                             </div>
                             <div className="bg-espresso-950 p-1.5 rounded-full border border-espresso-700 flex relative">
                                 <button
-                                    onClick={() => setFilterType('card')}
+                                    onClick={() => handleModeChange('card')}
                                     className={`px-6 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 transition-all ${filterType === 'card' ? 'bg-gold-400 text-espresso-950 shadow-[0_0_15px_rgba(205,160,45,0.1)]' : 'text-copper hover:text-white'}`}
                                 >
                                     <span className="material-symbols-outlined text-[18px]">credit_card</span>
                                     Check by Card
                                 </button>
                                 <button
-                                    onClick={() => setFilterType('airport')}
+                                    onClick={() => handleModeChange('airport')}
                                     className={`px-6 py-2.5 rounded-full font-medium text-sm flex items-center gap-2 transition-all ${filterType === 'airport' ? 'bg-gold-400 text-espresso-950 shadow-[0_0_15px_rgba(205,160,45,0.1)]' : 'text-copper hover:text-white'}`}
                                 >
                                     <span className="material-symbols-outlined text-[18px]">location_on</span>
@@ -85,114 +163,185 @@ export default function LoungeAccess() {
                         {/* Search Input */}
                         <div className="w-full relative group z-20">
                             <div className="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none">
-                                <span className="material-symbols-outlined text-gold-400 text-3xl group-focus-within:text-white transition-colors">search</span>
+                                <span className="material-symbols-outlined text-gold-400 text-3xl group-focus-within:text-white transition-colors">
+                                    {filterType === 'card' ? 'search' : 'flight'}
+                                </span>
                             </div>
                             <input
                                 className="w-full bg-espresso-950 border border-espresso-700 text-white text-xl md:text-2xl placeholder:text-espresso-700 rounded-2xl py-6 pl-16 pr-6 focus:ring-2 focus:ring-gold-400/50 focus:border-gold-400 outline-none shadow-xl transition-all font-light"
-                                placeholder="Search for your credit card (e.g. HDFC Infinia, Amex Platinum)..."
+                                placeholder={placeholder}
                                 type="text"
                                 value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
+                                onChange={(e) => handleSearch(e.target.value)}
                             />
                             <div className="absolute right-4 top-1/2 -translate-y-1/2 hidden md:flex items-center gap-2">
-                                <span className="text-xs text-copper uppercase tracking-widest font-bold px-2">Card Selected</span>
+                                <span className="text-xs text-copper uppercase tracking-widest font-bold px-2">
+                                    {filterType === 'card' ? 'Card Selected' : 'Airport Selected'}
+                                </span>
                             </div>
                         </div>
 
-                        {/* Selected Card Display */}
-                        <div className="flex items-center gap-6 p-6 rounded-2xl bg-gradient-to-r from-espresso-950 to-espresso-800/30 border border-espresso-700">
-                            <div className="relative w-32 h-20 md:w-48 md:h-28 rounded-xl shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500 cursor-pointer group">
-                                <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-black rounded-xl border border-gray-600 overflow-hidden">
-                                    <div className="p-3 md:p-4 flex flex-col justify-between h-full">
-                                        <div className="flex justify-between items-start">
-                                            <div className="h-4 w-8 bg-gray-400/50 rounded"></div>
-                                            <span className="text-[10px] md:text-xs text-gray-300 font-mono">INFINIA</span>
+                        {/* Card Mode: Selected Card Display */}
+                        {filterType === 'card' && (
+                            <div className="flex items-center gap-6 p-6 rounded-2xl bg-gradient-to-r from-espresso-950 to-espresso-800/30 border border-espresso-700">
+                                <div className="relative w-32 h-20 md:w-48 md:h-28 rounded-xl shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500 cursor-pointer group">
+                                    <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-black rounded-xl border border-gray-600 overflow-hidden">
+                                        <div className="p-3 md:p-4 flex flex-col justify-between h-full">
+                                            <div className="flex justify-between items-start">
+                                                <div className="h-4 w-8 bg-gray-400/50 rounded"></div>
+                                                <span className="text-[10px] md:text-xs text-gray-300 font-mono">INFINIA</span>
+                                            </div>
+                                            <div className="flex items-center gap-2">
+                                                <div className="h-6 w-10 bg-orange-500/80 rounded-sm"></div>
+                                            </div>
                                         </div>
-                                        <div className="flex items-center gap-2">
-                                            <div className="h-6 w-10 bg-orange-500/80 rounded-sm"></div>
+                                    </div>
+                                </div>
+                                <div className="flex flex-col gap-1">
+                                    <div className="flex items-center gap-2">
+                                        <h3 className="text-xl md:text-2xl font-bold text-white">{selectedCard.name}</h3>
+                                        <span className="material-symbols-outlined text-gold-400 text-xl" title="Verified Card">verified</span>
+                                    </div>
+                                    <p className="text-copper text-sm">{selectedCard.network} • Ends in {selectedCard.ending}</p>
+                                    <div className="flex items-center gap-4 mt-2">
+                                        <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 text-xs font-medium">
+                                            <span className="material-symbols-outlined text-[14px]">check_circle</span>
+                                            Unlimited Access
+                                        </div>
+                                        <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-400/10 border border-gold-400/30 text-gold-400 text-xs font-medium">
+                                            <span className="material-symbols-outlined text-[14px]">group_add</span>
+                                            +1 Guest Allowed
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div className="flex flex-col gap-1">
-                                <div className="flex items-center gap-2">
-                                    <h3 className="text-xl md:text-2xl font-bold text-white">HDFC Infinia Metal Edition</h3>
-                                    <span className="material-symbols-outlined text-gold-400 text-xl" title="Verified Card">verified</span>
+                        )}
+
+                        {/* Airport Mode: Selected Airport Display */}
+                        {filterType === 'airport' && (
+                            <div className="flex items-center gap-6 p-6 rounded-2xl bg-gradient-to-r from-espresso-950 to-espresso-800/30 border border-espresso-700">
+                                <div className="flex h-20 w-20 md:h-28 md:w-28 items-center justify-center rounded-xl bg-espresso-800 border border-espresso-700">
+                                    <span className="material-symbols-outlined text-gold-400 text-4xl md:text-5xl">flight_takeoff</span>
                                 </div>
-                                <p className="text-copper text-sm">Visa Infinite • Ends in 8892</p>
-                                <div className="flex items-center gap-4 mt-2">
-                                    <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 text-xs font-medium">
-                                        <span className="material-symbols-outlined text-[14px]">check_circle</span>
-                                        Unlimited Access
-                                    </div>
-                                    <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-400/10 border border-gold-400/30 text-gold-400 text-xs font-medium">
-                                        <span className="material-symbols-outlined text-[14px]">group_add</span>
-                                        +1 Guest Allowed
-                                    </div>
+                                <div className="flex flex-col gap-1">
+                                    {selectedAirport ? (
+                                        <>
+                                            <div className="flex items-center gap-2">
+                                                <h3 className="text-xl md:text-2xl font-bold text-white">{selectedAirport.code}</h3>
+                                                <span className="material-symbols-outlined text-emerald-400 text-xl">check_circle</span>
+                                            </div>
+                                            <p className="text-copper text-sm">{selectedAirport.name}</p>
+                                            <p className="text-gold-dim text-xs mt-2">
+                                                {filteredLounges.length} lounge{filteredLounges.length !== 1 ? 's' : ''} available at this airport
+                                            </p>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <h3 className="text-xl md:text-2xl font-bold text-white/50">Select an Airport</h3>
+                                            <p className="text-copper text-sm">Search above or select from popular airports below</p>
+                                            <div className="flex flex-wrap gap-2 mt-3">
+                                                {airports.slice(0, 4).map(airport => (
+                                                    <button
+                                                        key={airport.code}
+                                                        onClick={() => { setSelectedAirport(airport); setSearchQuery(airport.code); }}
+                                                        className="px-3 py-1.5 rounded-lg bg-espresso-800 border border-espresso-700 text-gold-400 text-xs font-bold hover:border-gold-400/50 transition-colors"
+                                                    >
+                                                        {airport.code}
+                                                    </button>
+                                                ))}
+                                            </div>
+                                        </>
+                                    )}
                                 </div>
                             </div>
-                        </div>
+                        )}
 
                         {/* Lounges Header */}
                         <div className="flex items-center gap-4">
-                            <h4 className="text-lg font-bold text-gold-400 whitespace-nowrap">Eligible Lounges</h4>
+                            <h4 className="text-lg font-bold text-gold-400 whitespace-nowrap">
+                                {filterType === 'airport' && selectedAirport
+                                    ? `Lounges at ${selectedAirport.code}`
+                                    : 'Eligible Lounges'}
+                            </h4>
                             <div className="h-[1px] w-full bg-espresso-700"></div>
                             <div className="flex gap-2">
-                                <button className="px-3 py-1 rounded-lg bg-espresso-800 text-white text-xs border border-gold-400/30">Domestic</button>
-                                <button className="px-3 py-1 rounded-lg bg-transparent text-gold-dim text-xs border border-espresso-700 hover:border-gold-400/50 transition-colors">International</button>
+                                <button
+                                    onClick={() => setLoungeType('domestic')}
+                                    className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${loungeType === 'domestic'
+                                        ? 'bg-gold-400 text-espresso-950 shadow-[0_0_10px_rgba(205,160,45,0.3)]'
+                                        : 'bg-transparent text-gold-dim border border-espresso-700 hover:border-gold-400/50'}`}
+                                >
+                                    Domestic
+                                </button>
+                                <button
+                                    onClick={() => setLoungeType('international')}
+                                    className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${loungeType === 'international'
+                                        ? 'bg-gold-400 text-espresso-950 shadow-[0_0_10px_rgba(205,160,45,0.3)]'
+                                        : 'bg-transparent text-gold-dim border border-espresso-700 hover:border-gold-400/50'}`}
+                                >
+                                    International
+                                </button>
                             </div>
                         </div>
 
                         {/* Lounge Grid */}
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-12">
-                            {lounges.map((lounge) => (
-                                <div
-                                    key={lounge.id}
-                                    className={`group bg-espresso-800 rounded-xl overflow-hidden border border-espresso-700 hover:border-${lounge.status === 'criteria' ? 'amber-500' : 'gold-400'}/50 transition-all duration-300 hover:shadow-[0_0_15px_rgba(205,160,45,0.1)] hover:-translate-y-1 relative`}
-                                >
-                                    {/* Image */}
-                                    <div className="relative h-48 w-full overflow-hidden bg-espresso-700">
-                                        <div className="absolute inset-0 bg-gradient-to-br from-espresso-700 to-espresso-900 flex items-center justify-center">
-                                            <span className="material-symbols-outlined text-6xl text-espresso-600">chair</span>
+                            {filteredLounges.length > 0 ? (
+                                filteredLounges.map((lounge) => (
+                                    <div
+                                        key={lounge.id}
+                                        className={`group bg-espresso-800 rounded-xl overflow-hidden border border-espresso-700 hover:border-${lounge.status === 'criteria' ? 'amber-500' : 'gold-400'}/50 transition-all duration-300 hover:shadow-[0_0_15px_rgba(205,160,45,0.1)] hover:-translate-y-1 relative`}
+                                    >
+                                        {/* Image */}
+                                        <div className="relative h-48 w-full overflow-hidden bg-espresso-700">
+                                            <div className="absolute inset-0 bg-gradient-to-br from-espresso-700 to-espresso-900 flex items-center justify-center">
+                                                <span className="material-symbols-outlined text-6xl text-espresso-600">chair</span>
+                                            </div>
+                                            <div className="absolute inset-0 bg-gradient-to-t from-espresso-800 via-transparent to-transparent opacity-90"></div>
+                                            <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-md px-2 py-1 rounded text-xs font-bold text-white border border-white/10">
+                                                {lounge.airport}
+                                            </div>
                                         </div>
-                                        <div className="absolute inset-0 bg-gradient-to-t from-espresso-800 via-transparent to-transparent opacity-90"></div>
-                                        <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-md px-2 py-1 rounded text-xs font-bold text-white border border-white/10">
-                                            {lounge.airport}
-                                        </div>
-                                    </div>
 
-                                    {/* Content */}
-                                    <div className="p-5 relative -mt-6">
-                                        <div className="flex justify-between items-start mb-2">
-                                            <div>
-                                                <h3 className="text-xl font-bold text-gold-400 group-hover:text-white transition-colors">{lounge.name}</h3>
-                                                <p className="text-sm text-gray-300 mt-0.5">{lounge.terminal}</p>
-                                            </div>
-                                        </div>
-                                        <div className="flex items-center gap-2 text-xs text-copper mb-4">
-                                            <span className="material-symbols-outlined text-[16px]">schedule</span>
-                                            <span>{lounge.hours}</span>
-                                        </div>
-                                        <div className="pt-4 border-t border-white/5 flex items-center justify-between">
-                                            <div className="flex items-center gap-2">
-                                                <span className="material-symbols-outlined text-white/60 text-[18px]">person</span>
-                                                <span className="text-sm text-white font-medium">{lounge.guests}</span>
-                                            </div>
-                                            {lounge.status === 'unlocked' ? (
-                                                <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-br from-emerald-600 to-emerald-900 border border-copper/40 text-white text-xs font-bold shadow-lg hover:shadow-[0_0_15px_rgba(16,185,129,0.4)] hover:scale-105 transition-all duration-300">
-                                                    <span className="material-symbols-outlined text-[16px] text-emerald-100 drop-shadow-sm" style={{ fontVariationSettings: "'FILL' 1" }}>lock_open</span>
-                                                    <span className="tracking-wide text-[11px] uppercase">Unlocked</span>
+                                        {/* Content */}
+                                        <div className="p-5 relative -mt-6">
+                                            <div className="flex justify-between items-start mb-2">
+                                                <div>
+                                                    <h3 className="text-xl font-bold text-gold-400 group-hover:text-white transition-colors">{lounge.name}</h3>
+                                                    <p className="text-sm text-gray-300 mt-0.5">{lounge.terminal}</p>
                                                 </div>
-                                            ) : (
-                                                <div className="group/badge relative flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-br from-amber-600 to-amber-800 border border-copper/50 text-white text-xs font-bold shadow-lg cursor-help">
-                                                    <span className="material-symbols-outlined text-[16px] text-amber-100 drop-shadow-sm">lock</span>
-                                                    <span className="tracking-wide text-[11px] uppercase">Spend Criteria</span>
+                                            </div>
+                                            <div className="flex items-center gap-2 text-xs text-copper mb-4">
+                                                <span className="material-symbols-outlined text-[16px]">schedule</span>
+                                                <span>{lounge.hours}</span>
+                                            </div>
+                                            <div className="pt-4 border-t border-white/5 flex items-center justify-between">
+                                                <div className="flex items-center gap-2">
+                                                    <span className="material-symbols-outlined text-white/60 text-[18px]">person</span>
+                                                    <span className="text-sm text-white font-medium">{lounge.guests}</span>
                                                 </div>
-                                            )}
+                                                {lounge.status === 'unlocked' ? (
+                                                    <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-br from-emerald-600 to-emerald-900 border border-copper/40 text-white text-xs font-bold shadow-lg hover:shadow-[0_0_15px_rgba(16,185,129,0.4)] hover:scale-105 transition-all duration-300">
+                                                        <span className="material-symbols-outlined text-[16px] text-emerald-100 drop-shadow-sm" style={{ fontVariationSettings: "'FILL' 1" }}>lock_open</span>
+                                                        <span className="tracking-wide text-[11px] uppercase">Unlocked</span>
+                                                    </div>
+                                                ) : (
+                                                    <div className="group/badge relative flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-br from-amber-600 to-amber-800 border border-copper/50 text-white text-xs font-bold shadow-lg cursor-help">
+                                                        <span className="material-symbols-outlined text-[16px] text-amber-100 drop-shadow-sm">lock</span>
+                                                        <span className="tracking-wide text-[11px] uppercase">Spend Criteria</span>
+                                                    </div>
+                                                )}
+                                            </div>
                                         </div>
                                     </div>
+                                ))
+                            ) : (
+                                <div className="col-span-full flex flex-col items-center justify-center py-16 text-center">
+                                    <span className="material-symbols-outlined text-6xl text-espresso-700 mb-4">search_off</span>
+                                    <h3 className="text-xl font-bold text-white mb-2">No lounges found</h3>
+                                    <p className="text-gold-dim">Try selecting a different airport or check your search query.</p>
                                 </div>
-                            ))}
+                            )}
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useFavorites } from '../context/FavoritesContext';
 
 const categories = [
     { id: 'wealth', label: 'Wealth Management', active: true },
@@ -85,6 +87,16 @@ const trendingArticles = [
 export default function Guides() {
     const [selectedCategory, setSelectedCategory] = useState('wealth');
     const [searchQuery, setSearchQuery] = useState('');
+    const { isFavorite, toggleFavorite, getFavoriteCount, clearFavorites, notification } = useFavorites();
+
+    const handleToggleFavorite = (e, id, type) => {
+        e.stopPropagation();
+        e.preventDefault();
+        toggleFavorite(type, id);
+    };
+
+    // Calculate total favorites across guides-related types
+    const totalGuideFavorites = getFavoriteCount('guides') + getFavoriteCount('articles') + getFavoriteCount('trending');
 
     return (
         <div className="flex h-full w-full">
@@ -114,8 +126,8 @@ export default function Guides() {
                                 key={cat.id}
                                 onClick={() => setSelectedCategory(cat.id)}
                                 className={`group flex items-center justify-between px-3 py-2.5 rounded-lg transition-all ${selectedCategory === cat.id
-                                        ? 'bg-surface-dark-hover border border-primary/20 hover:border-primary/50 shadow-sm'
-                                        : 'border border-transparent hover:bg-surface-dark-hover hover:border-espresso-700/50'
+                                    ? 'bg-surface-dark-hover border border-primary/20 hover:border-primary/50 shadow-sm'
+                                    : 'border border-transparent hover:bg-surface-dark-hover hover:border-espresso-700/50'
                                     }`}
                             >
                                 <span className={`text-sm font-medium transition-colors ${selectedCategory === cat.id ? 'text-primary font-display tracking-wide' : 'text-gold-dim group-hover:text-warm-white'
@@ -198,8 +210,16 @@ export default function Guides() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#050302] via-[#050302]/70 to-transparent z-10 opacity-90"></div>
                                 <div className="absolute inset-0 bg-gradient-to-r from-[#050302]/90 via-transparent to-transparent z-10"></div>
 
-                                <button className="absolute top-6 right-6 z-30 size-10 flex items-center justify-center rounded-full bg-surface-dark/40 backdrop-blur-md border border-white/10 text-gold-dim hover:text-copper hover:border-copper/50 transition-all duration-300">
-                                    <span className="material-symbols-outlined text-[20px]">favorite</span>
+                                <button
+                                    className={`absolute top-6 right-6 z-30 size-10 flex items-center justify-center rounded-full bg-surface-dark/40 backdrop-blur-md border transition-all duration-300 ${isFavorite('guides', featuredGuides.main.id) ? 'text-red-500 border-red-500/50' : 'border-white/10 text-gold-dim hover:text-copper hover:border-copper/50'}`}
+                                    onClick={(e) => handleToggleFavorite(e, featuredGuides.main.id, 'guides')}
+                                >
+                                    <span
+                                        className="material-symbols-outlined text-[20px]"
+                                        style={isFavorite('guides', featuredGuides.main.id) ? { fontVariationSettings: "'FILL' 1" } : {}}
+                                    >
+                                        favorite
+                                    </span>
                                 </button>
 
                                 <div className="absolute bottom-0 left-0 z-20 p-8 md:p-12 w-full md:w-5/6 flex flex-col items-start">
@@ -238,8 +258,16 @@ export default function Guides() {
                                         </div>
                                         <div className="absolute inset-0 bg-gradient-to-t from-[#050302] via-[#050302]/40 to-transparent z-10"></div>
 
-                                        <button className="absolute top-4 right-4 z-30 size-8 flex items-center justify-center rounded-full bg-surface-dark/40 backdrop-blur-md border border-white/10 text-gold-dim hover:text-copper hover:border-copper/50 transition-all duration-300">
-                                            <span className="material-symbols-outlined text-[16px]">favorite</span>
+                                        <button
+                                            className={`absolute top-4 right-4 z-30 size-8 flex items-center justify-center rounded-full bg-surface-dark/40 backdrop-blur-md border transition-all duration-300 ${isFavorite('guides', guide.id) ? 'text-red-500 border-red-500/50' : 'border-white/10 text-gold-dim hover:text-copper hover:border-copper/50'}`}
+                                            onClick={(e) => handleToggleFavorite(e, guide.id, 'guides')}
+                                        >
+                                            <span
+                                                className="material-symbols-outlined text-[16px]"
+                                                style={isFavorite('guides', guide.id) ? { fontVariationSettings: "'FILL' 1" } : {}}
+                                            >
+                                                favorite
+                                            </span>
                                         </button>
 
                                         <div className="absolute bottom-0 left-0 z-20 p-6 md:p-8 w-full flex flex-col items-start">
@@ -287,8 +315,16 @@ export default function Guides() {
                                                 <div className="absolute top-4 left-4">
                                                     <span className="bg-surface-dark/90 backdrop-blur-sm text-copper text-[10px] font-bold px-2.5 py-1 rounded-[2px] border border-copper/20 uppercase tracking-widest shadow-md">{article.categoryBadge}</span>
                                                 </div>
-                                                <button className="absolute top-4 right-4 z-20 size-8 flex items-center justify-center rounded-full bg-surface-dark/60 backdrop-blur-sm border border-white/10 text-warm-white hover:text-copper hover:border-copper transition-all duration-300 shadow-lg">
-                                                    <span className="material-symbols-outlined text-[18px]">favorite</span>
+                                                <button
+                                                    className={`absolute top-4 right-4 z-20 size-8 flex items-center justify-center rounded-full bg-surface-dark/60 backdrop-blur-sm border shadow-lg transition-all duration-300 ${isFavorite('articles', article.id) ? 'text-red-500 border-red-500/50' : 'border-white/10 text-warm-white hover:text-copper hover:border-copper'}`}
+                                                    onClick={(e) => handleToggleFavorite(e, article.id, 'articles')}
+                                                >
+                                                    <span
+                                                        className="material-symbols-outlined text-[18px]"
+                                                        style={isFavorite('articles', article.id) ? { fontVariationSettings: "'FILL' 1" } : {}}
+                                                    >
+                                                        favorite
+                                                    </span>
                                                 </button>
                                             </div>
                                             <div className={`p-6 ${article.featured ? 'sm:w-3/5' : ''} flex flex-col ${article.featured ? 'justify-center' : 'flex-1'} relative`}>
@@ -347,8 +383,16 @@ export default function Guides() {
                                                             <span>{article.date}</span>
                                                         </div>
                                                     </div>
-                                                    <button className="absolute right-0 top-2 size-6 flex items-center justify-center text-gold-dim/20 hover:text-copper transition-all duration-300">
-                                                        <span className="material-symbols-outlined text-[18px]">favorite</span>
+                                                    <button
+                                                        className={`absolute right-0 top-2 size-6 flex items-center justify-center transition-all duration-300 ${isFavorite('trending', article.id) ? 'text-red-500' : 'text-gold-dim/20 hover:text-copper'}`}
+                                                        onClick={(e) => handleToggleFavorite(e, article.id, 'trending')}
+                                                    >
+                                                        <span
+                                                            className="material-symbols-outlined text-[18px]"
+                                                            style={isFavorite('trending', article.id) ? { fontVariationSettings: "'FILL' 1" } : {}}
+                                                        >
+                                                            favorite
+                                                        </span>
                                                     </button>
                                                 </div>
                                                 {idx < trendingArticles.length - 1 && (
@@ -395,6 +439,38 @@ export default function Guides() {
                     </section>
                 </div>
             </main>
+
+            {/* Floating Favorites Bar */}
+            {notification.show && ['guides', 'articles', 'trending'].includes(notification.type) && (
+                <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[60] animate-fade-in-up">
+                    <div className="bg-surface-dark border-2 border-red-500/50 rounded-full px-6 py-3 flex items-center gap-4 shadow-[0_10px_40px_rgba(0,0,0,0.6),0_0_20px_rgba(239,68,68,0.2)]">
+                        <div className="flex items-center gap-3">
+                            <div className="size-10 rounded-full bg-red-500/20 border border-red-500/50 flex items-center justify-center">
+                                <span className="material-symbols-outlined text-red-500 text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>favorite</span>
+                            </div>
+                            <div>
+                                <p className="text-warm-white text-sm font-bold">{totalGuideFavorites} {totalGuideFavorites === 1 ? 'Item' : 'Items'} Saved</p>
+                                <p className="text-gold-dim text-[10px] uppercase tracking-wider">View your favorites</p>
+                            </div>
+                        </div>
+                        <div className="h-8 w-px bg-red-500/30"></div>
+                        <Link
+                            to="/favorites"
+                            className="px-5 py-2.5 rounded-full bg-red-500 text-white text-xs font-bold uppercase tracking-wider transition-all hover:bg-red-400 shadow-lg flex items-center gap-2"
+                        >
+                            View Favorites
+                            <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                        </Link>
+                        <button
+                            onClick={() => { clearFavorites('guides'); clearFavorites('articles'); clearFavorites('trending'); }}
+                            className="size-8 rounded-full bg-transparent border border-white/10 text-white/40 hover:text-white hover:border-white/30 flex items-center justify-center transition-all"
+                            title="Clear favorites"
+                        >
+                            <span className="material-symbols-outlined text-[18px]">close</span>
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

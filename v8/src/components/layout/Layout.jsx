@@ -5,9 +5,9 @@ import Sidebar from './Sidebar';
 export default function Layout() {
     const location = useLocation();
 
-    // Pages that need the default sidebar (home has sidebar, vouchers has its own)
-    const pagesWithSidebar = ['/'];
-    const showSidebar = pagesWithSidebar.includes(location.pathname);
+    // Pages that have their own sidebar or don't need the global sidebar
+    const pagesWithoutSidebar = ['/vouchers', '/cards', '/banking', '/guides', '/settings', '/tools/perk-ai'];
+    const showSidebar = !pagesWithoutSidebar.some(p => location.pathname === p || location.pathname.startsWith(p + '/'));
 
     return (
         <div className="flex h-screen w-full flex-col overflow-hidden bg-texture">

@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const popularSearches = [
     { id: 'amazon', name: 'Amazon', mcc: '5311', logo: 'A', bgColor: 'bg-orange-500' },
@@ -8,7 +9,11 @@ const popularSearches = [
 ];
 
 export default function MCCFinder() {
-    const [searchQuery, setSearchQuery] = useState('Starbucks');
+    const { query: queryParam } = useParams();
+    const navigate = useNavigate();
+
+    // Initialize from URL param or default
+    const [searchQuery, setSearchQuery] = useState(queryParam ? decodeURIComponent(queryParam) : 'Starbucks');
     const [searchResult] = useState({
         name: 'Starbucks India',
         verified: true,
@@ -18,6 +23,16 @@ export default function MCCFinder() {
         rewardMultiplier: '5X',
         recommendedCard: 'Amex Platinum Travel',
     });
+
+    // Update URL when search changes
+    const handleSearch = (query) => {
+        setSearchQuery(query);
+        if (query.trim()) {
+            navigate(`/tools/mcc/${encodeURIComponent(query.trim())}`, { replace: true });
+        } else {
+            navigate('/tools/mcc', { replace: true });
+        }
+    };
 
     const getStatusColor = (status) => {
         switch (status) {
@@ -62,19 +77,19 @@ export default function MCCFinder() {
                                     placeholder="e.g. Amazon India, Paytm Utilities, Starbucks..."
                                     type="text"
                                     value={searchQuery}
-                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                    onChange={(e) => handleSearch(e.target.value)}
                                 />
                                 {searchQuery && (
                                     <button
                                         className="text-gold-dim hover:text-white transition-colors"
-                                        onClick={() => setSearchQuery('')}
+                                        onClick={() => handleSearch('')}
                                         title="Clear"
                                     >
                                         <span className="material-symbols-outlined">close</span>
                                     </button>
                                 )}
                             </div>
-                            <div className="mt-2 pl-4">
+                            <div className="mt-4 pl-4">
                                 <p className="text-sm text-gold-dim">Did you mean: <button className="text-gold-400 font-bold hover:underline font-serif">Starbucks Coffee</button>?</p>
                             </div>
                         </div>

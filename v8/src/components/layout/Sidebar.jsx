@@ -31,10 +31,6 @@ export default function Sidebar() {
                             <span className="material-symbols-outlined text-[20px]">swipe</span>
                             Where To Swipe
                         </Link>
-                        <Link to="/tools/perk-ai" className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all ${isActive('/tools/perk-ai') ? 'bg-gold-400/10 text-gold-400 border-l-2 border-gold-400' : 'text-gray-400 hover:bg-white/5 hover:text-gold-300'}`}>
-                            <span className="material-symbols-outlined text-[20px]">auto_awesome</span>
-                            Perk AI
-                        </Link>
                         <Link to="/tools/lounge" className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all ${isActive('/tools/lounge') ? 'bg-gold-400/10 text-gold-400 border-l-2 border-gold-400' : 'text-gray-400 hover:bg-white/5 hover:text-gold-300'}`}>
                             <span className="material-symbols-outlined text-[20px]">airline_seat_recline_extra</span>
                             Lounge Access
@@ -50,7 +46,7 @@ export default function Sidebar() {
                             <span className="material-symbols-outlined text-[20px]">compare</span>
                             Compare Cards
                         </Link>
-                        <Link to="/banking" className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all ${isActive('/banking') ? 'bg-gold-400/10 text-gold-400 border-l-2 border-gold-400' : 'text-gray-400 hover:bg-white/5 hover:text-gold-300'}`}>
+                        <Link to="/compare-banks" className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all ${isActive('/compare-banks') ? 'bg-gold-400/10 text-gold-400 border-l-2 border-gold-400' : 'text-gray-400 hover:bg-white/5 hover:text-gold-300'}`}>
                             <span className="material-symbols-outlined text-[20px]">account_balance</span>
                             Compare Banks
                         </Link>
@@ -79,10 +75,10 @@ export default function Sidebar() {
                     <span className="material-symbols-outlined text-[20px]">close</span>
                     Follow X
                 </a>
-                <button className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-gray-400 transition-all hover:bg-white/5 hover:text-white">
+                <Link to="/settings" className={`flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-all ${isActive('/settings') ? 'bg-gold-400/10 text-gold-400' : 'text-gray-400 hover:bg-white/5 hover:text-white'}`}>
                     <span className="material-symbols-outlined text-[20px]">settings</span>
                     Settings
-                </button>
+                </Link>
             </div>
         </aside>
     );

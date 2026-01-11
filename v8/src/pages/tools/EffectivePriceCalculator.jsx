@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { parseAmount, formatAmountForUrl } from '../../utils/slugify';
 
 const brands = [
     { id: 'amazon', name: 'Amazon', initial: 'A' },
@@ -28,10 +30,25 @@ const paymentCards = [
 ];
 
 export default function EffectivePriceCalculator() {
-    const [spendAmount, setSpendAmount] = useState(10000);
+    const { amount: amountParam } = useParams();
+    const navigate = useNavigate();
+
+    // Initialize from URL param or default
+    const initialAmount = amountParam ? parseAmount(amountParam) || 10000 : 10000;
+
+    const [spendAmount, setSpendAmount] = useState(initialAmount);
     const [selectedBrand, setSelectedBrand] = useState('amazon');
     const [selectedCard, setSelectedCard] = useState('infinia');
     const [pointValue, setPointValue] = useState(1.0);
+
+    // Update URL when amount changes (debounced on blur)
+    const handleAmountBlur = () => {
+        if (spendAmount > 0) {
+            navigate(`/tools/effective-price/${formatAmountForUrl(spendAmount)}`, { replace: true });
+        } else {
+            navigate('/tools/effective-price', { replace: true });
+        }
+    };
 
     // Calculate effective values
     const savings = Math.round(spendAmount * 0.165);
@@ -42,15 +59,15 @@ export default function EffectivePriceCalculator() {
     return (
         <div className="flex flex-1 overflow-hidden relative">
             {/* Main Content */}
-            <main className="flex-1 overflow-y-auto bg-espresso-950 scroll-smooth relative">
+            <main className="flex-1 overflow-y-auto bg-espresso-950 bg-espresso-texture scroll-smooth relative">
                 <div className="max-w-7xl mx-auto px-6 py-8 relative z-10">
                     {/* Header */}
                     <div className="mb-8 flex flex-col md:flex-row justify-between items-end gap-4">
                         <div>
-                            <h1 className="font-display text-3xl md:text-4xl font-bold text-white mb-2">Effective Price Calculator</h1>
+                            <h1 className="font-serif text-3xl md:text-4xl font-bold text-white mb-2">Effective Price Calculator</h1>
                             <p className="text-gold-dim text-sm">Optimize every transaction. Calculate the true effective price for maximum savings.</p>
                         </div>
-                        <div className="flex items-center gap-2 bg-espresso-800 border border-primary/40 px-3 py-1.5 rounded-sm shadow-[0_0_15px_rgba(205,127,50,0.15)] animate-pulse">
+                        <div className="flex items-center gap-2 bg-espresso-900 border border-copper-500/40 px-3 py-1.5 rounded-lg shadow-glow-copper animate-pulse">
                             <span className="material-symbols-outlined text-gold-400 text-lg">hotel_class</span>
                             <span className="text-xs font-bold text-gold-400 uppercase tracking-wider">Best Value Found</span>
                         </div>
@@ -60,23 +77,24 @@ export default function EffectivePriceCalculator() {
                         {/* Input Section */}
                         <div className="lg:col-span-5 space-y-6">
                             {/* Spend Amount */}
-                            <div className="bg-espresso-800 p-6 rounded-sm border border-espresso-700 relative group focus-within:border-primary transition-colors shadow-sm">
+                            <div className="bg-espresso-900 p-6 rounded-xl border border-copper-500/30 relative group focus-within:border-copper-500 transition-colors shadow-lg">
                                 <label className="block text-xs font-bold text-gold-400 uppercase tracking-wider mb-2">Spend Amount</label>
                                 <div className="relative">
-                                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-primary font-display text-lg">₹</span>
+                                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-copper-500 font-serif text-lg">₹</span>
                                     <input
-                                        className="w-full bg-espresso-950 border border-espresso-700 text-white text-xl font-display py-3 pl-10 pr-4 rounded-sm focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder-gold-dim/30"
+                                        className="w-full bg-espresso-950 border border-copper-500/30 text-white text-xl font-serif py-3 pl-10 pr-4 rounded-lg focus:ring-1 focus:ring-copper-500 focus:border-copper-500 outline-none transition-all placeholder-white/20"
                                         placeholder="0"
                                         type="number"
                                         value={spendAmount}
                                         onChange={(e) => setSpendAmount(Number(e.target.value))}
+                                        onBlur={handleAmountBlur}
                                     />
                                 </div>
                                 <p className="text-[10px] text-gold-dim mt-2">Enter the total transaction value</p>
                             </div>
 
                             {/* Brand Selection */}
-                            <div className="bg-espresso-800 p-6 rounded-sm border border-espresso-700 shadow-sm">
+                            <div className="bg-espresso-900 p-6 rounded-xl border border-copper-500/30 shadow-lg">
                                 <div className="flex justify-between items-center mb-4">
                                     <label className="block text-xs font-bold text-gold-400 uppercase tracking-wider">Brand / Category</label>
                                     <span className="text-[10px] text-primary cursor-pointer hover:text-gold-400 transition-all">View All Brands</span>
@@ -102,7 +120,7 @@ export default function EffectivePriceCalculator() {
                             </div>
 
                             {/* Payment Mode */}
-                            <div className="bg-espresso-800 p-6 rounded-sm border border-espresso-700 shadow-sm">
+                            <div className="bg-espresso-900 p-6 rounded-xl border border-copper-500/30 shadow-lg">
                                 <label className="block text-xs font-bold text-gold-400 uppercase tracking-wider mb-4">Payment Mode</label>
                                 <div className="space-y-3">
                                     {paymentCards.map((card) => (
@@ -136,7 +154,7 @@ export default function EffectivePriceCalculator() {
                             </div>
 
                             {/* Point Valuation */}
-                            <div className="bg-espresso-800 p-6 rounded-sm border border-espresso-700 shadow-sm">
+                            <div className="bg-espresso-900 p-6 rounded-xl border border-copper-500/30 shadow-lg">
                                 <div className="flex justify-between items-center mb-6">
                                     <div className="flex items-center gap-2">
                                         <label className="text-xs font-bold text-gold-400 uppercase tracking-wider">Point Valuation</label>
@@ -166,7 +184,7 @@ export default function EffectivePriceCalculator() {
                         <div className="lg:col-span-7 flex flex-col gap-6">
                             {/* Stats Cards */}
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <div className="bg-espresso-800 p-5 rounded-sm border border-espresso-700 flex flex-col relative overflow-hidden group hover:border-gold-400/30 transition-colors shadow-sm">
+                                <div className="bg-espresso-900 p-5 rounded-xl border border-copper-500/30 flex flex-col relative overflow-hidden group hover:border-gold-400/50 transition-colors shadow-lg">
                                     <div className="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-20 transition-opacity">
                                         <span className="material-symbols-outlined text-4xl text-gold-400">payments</span>
                                     </div>
@@ -175,7 +193,7 @@ export default function EffectivePriceCalculator() {
                                     <span className="text-[10px] text-gold-dim mt-auto line-through decoration-primary/50">Original: ₹{spendAmount.toLocaleString()}</span>
                                 </div>
 
-                                <div className="bg-espresso-800 p-5 rounded-sm border border-primary flex flex-col relative overflow-hidden shadow-[0_0_20px_rgba(205,127,50,0.15)] group hover:shadow-[0_0_25px_rgba(205,127,50,0.25)] transition-all">
+                                <div className="bg-espresso-900 p-5 rounded-xl border border-copper-500 flex flex-col relative overflow-hidden shadow-glow-copper group hover:shadow-[0_0_30px_rgba(205,127,50,0.4)] transition-all">
                                     <div className="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-20 transition-opacity">
                                         <span className="material-symbols-outlined text-4xl text-primary">savings</span>
                                     </div>
@@ -186,7 +204,7 @@ export default function EffectivePriceCalculator() {
                                     </div>
                                 </div>
 
-                                <div className="bg-espresso-800 p-5 rounded-sm border border-espresso-700 flex flex-col relative overflow-hidden group hover:border-gold-400/50 transition-colors shadow-sm">
+                                <div className="bg-espresso-900 p-5 rounded-xl border border-copper-500/30 flex flex-col relative overflow-hidden group hover:border-gold-400/50 transition-colors shadow-lg">
                                     <div className="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-20 transition-opacity">
                                         <span className="material-symbols-outlined text-4xl text-gold-400">stars</span>
                                     </div>
@@ -202,7 +220,7 @@ export default function EffectivePriceCalculator() {
                             {/* Charts and Comparison */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-full">
                                 {/* Donut Chart */}
-                                <div className="bg-espresso-800 p-6 rounded-sm border border-espresso-700 flex flex-col items-center justify-center relative shadow-sm">
+                                <div className="bg-espresso-900 p-6 rounded-xl border border-copper-500/30 flex flex-col items-center justify-center relative shadow-lg">
                                     <h4 className="w-full text-xs font-bold text-gold-400 uppercase tracking-wider mb-6 text-left flex items-center gap-2">
                                         Cost Breakdown
                                         <span className="material-symbols-outlined text-[14px] text-espresso-700 cursor-help">help</span>
@@ -235,7 +253,7 @@ export default function EffectivePriceCalculator() {
                                 </div>
 
                                 {/* Comparison */}
-                                <div className="bg-espresso-800 p-6 rounded-sm border border-espresso-700 flex flex-col shadow-sm">
+                                <div className="bg-espresso-900 p-6 rounded-xl border border-copper-500/30 flex flex-col shadow-lg">
                                     <div className="flex justify-between items-start mb-6">
                                         <h4 className="text-xs font-bold text-gold-400 uppercase tracking-wider">Comparison</h4>
                                         <div className="text-[10px] bg-primary/10 text-primary px-2 py-1 rounded border border-primary/20 font-medium">
@@ -285,7 +303,7 @@ export default function EffectivePriceCalculator() {
                             </div>
 
                             {/* Milestone Progress */}
-                            <div className="bg-espresso-800 p-4 rounded-sm border border-espresso-700 shadow-sm">
+                            <div className="bg-espresso-900 p-4 rounded-xl border border-copper-500/30 shadow-lg">
                                 <div className="flex justify-between items-center mb-2">
                                     <span className="text-xs font-bold text-white flex items-center gap-2">
                                         <span className="material-symbols-outlined text-gold-400 text-sm animate-bounce">flag</span>
@@ -303,7 +321,7 @@ export default function EffectivePriceCalculator() {
                             </div>
 
                             {/* Execution Plan */}
-                            <div className="bg-espresso-950 p-4 rounded-sm border border-primary/30 border-dashed relative overflow-hidden">
+                            <div className="bg-espresso-900 p-4 rounded-xl border border-copper-500/30 border-dashed relative overflow-hidden">
                                 <div className="absolute top-0 right-0 p-3 opacity-5">
                                     <span className="material-symbols-outlined text-6xl">stairs</span>
                                 </div>

@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { parseAmount, formatAmountForUrl } from '../../utils/slugify';
 
 const categories = [
     { id: 'shopping', name: 'Shopping', icon: 'shopping_cart', selected: true },
@@ -10,8 +12,39 @@ const categories = [
 ];
 
 export default function WhereToSwipe() {
-    const [selectedCategory, setSelectedCategory] = useState('shopping');
-    const [amount, setAmount] = useState('25,000');
+    const { category: categoryParam, amount: amountParam } = useParams();
+    const navigate = useNavigate();
+
+    // Initialize from URL params or defaults
+    const initialCategory = categories.find(c => c.id === categoryParam)?.id || 'shopping';
+    const initialAmount = amountParam ? parseAmount(amountParam)?.toLocaleString('en-IN') || '25,000' : '25,000';
+
+    const [selectedCategory, setSelectedCategory] = useState(initialCategory);
+    const [amount, setAmount] = useState(initialAmount);
+
+    // Update URL when state changes
+    const updateUrl = (newCategory, newAmount) => {
+        const amountValue = parseAmount(newAmount);
+        if (amountValue) {
+            navigate(`/tools/swipe/${newCategory}/${formatAmountForUrl(amountValue)}`, { replace: true });
+        } else {
+            navigate(`/tools/swipe/${newCategory}`, { replace: true });
+        }
+    };
+
+    const handleCategoryChange = (catId) => {
+        setSelectedCategory(catId);
+        updateUrl(catId, amount);
+    };
+
+    const handleAmountChange = (newAmount) => {
+        setAmount(newAmount);
+        // Debounce URL update - only update on blur or when user stops typing
+    };
+
+    const handleAmountBlur = () => {
+        updateUrl(selectedCategory, amount);
+    };
 
     const recommendation = {
         bestCard: {
@@ -36,13 +69,13 @@ export default function WhereToSwipe() {
     };
 
     return (
-        <div className="flex flex-1 overflow-hidden relative bg-espresso-900">
+        <div className="flex flex-1 overflow-hidden relative bg-espresso-950 bg-espresso-texture">
             {/* Main Content */}
-            <main className="flex-1 flex flex-col h-full relative overflow-y-auto bg-espresso-900">
+            <main className="flex-1 flex flex-col h-full relative overflow-y-auto bg-transparent">
                 <div className="flex-1 p-6 lg:p-10 max-w-[1600px] mx-auto w-full">
                     {/* Mobile Header */}
                     <div className="md:hidden mb-6">
-                        <h2 className="text-2xl font-display font-bold text-white mb-2">Where Should I Swipe?</h2>
+                        <h2 className="text-2xl font-serif font-bold text-white mb-2">Where Should I Swipe?</h2>
                         <p className="text-gold-dim text-sm">Maximize your rewards for every transaction.</p>
                     </div>
 
@@ -51,18 +84,18 @@ export default function WhereToSwipe() {
                         <div className="lg:col-span-5 flex flex-col gap-8">
                             {/* Category Selection */}
                             <div className="flex flex-col gap-5">
-                                <div className="flex items-baseline justify-between">
+                                <div className="flex flex-col gap-1">
                                     <label className="text-copper text-xs font-bold tracking-wider uppercase">Step 1</label>
-                                    <span className="text-white font-display text-lg">Select Category</span>
+                                    <span className="text-white font-display text-xl font-medium">Select Category</span>
                                 </div>
                                 <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
                                     {categories.map((cat) => (
                                         <button
                                             key={cat.id}
-                                            onClick={() => setSelectedCategory(cat.id)}
+                                            onClick={() => handleCategoryChange(cat.id)}
                                             className={`relative flex flex-col items-center justify-center aspect-[1.1/1] rounded-xl transition-all duration-300 active:scale-95 group overflow-hidden ${selectedCategory === cat.id
-                                                ? 'bg-espresso-800 border-2 border-primary shadow-[0_0_15px_rgba(187,155,114,0.3)]'
-                                                : 'bg-espresso-950 border border-copper/30 hover:border-copper hover:shadow-[0_4px_20px_rgba(184,115,51,0.15)] hover:-translate-y-1'
+                                                ? 'bg-espresso-900 border-2 border-copper-500 shadow-glow-copper'
+                                                : 'bg-espresso-950 border border-copper-500/30 hover:border-copper-500 hover:shadow-[0_4px_20px_rgba(184,115,51,0.15)] hover:-translate-y-1'
                                                 }`}
                                         >
                                             {selectedCategory === cat.id && (
@@ -89,27 +122,28 @@ export default function WhereToSwipe() {
 
                             {/* Spend Amount */}
                             <div className="flex flex-col gap-4">
-                                <div className="flex items-baseline justify-between">
+                                <div className="flex flex-col gap-1">
                                     <label className="text-copper text-xs font-bold tracking-wider uppercase">Step 2</label>
-                                    <span className="text-white font-display text-lg">Spend Amount</span>
+                                    <span className="text-white font-display text-xl font-medium">Spend Amount</span>
                                 </div>
                                 <div className="relative group">
                                     <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                         <span className="text-3xl text-primary font-display">₹</span>
                                     </div>
                                     <input
-                                        className="block w-full pl-12 pr-4 py-6 bg-espresso-950 border-b-2 border-primary text-white text-4xl font-display placeholder-espresso-700 focus:outline-none focus:border-white transition-colors"
+                                        className="block w-full pl-12 pr-4 py-6 bg-espresso-900 border-b-2 border-copper-500 text-white text-4xl font-serif placeholder-espresso-700 focus:outline-none focus:border-white transition-colors"
                                         placeholder="0.00"
                                         type="text"
                                         value={amount}
-                                        onChange={(e) => setAmount(e.target.value)}
+                                        onChange={(e) => handleAmountChange(e.target.value)}
+                                        onBlur={handleAmountBlur}
                                     />
                                     <div className="absolute bottom-2 right-2 text-xs text-gold-dim">INR</div>
                                 </div>
                             </div>
 
                             {/* Optimize Button */}
-                            <button className="w-full mt-2 bg-primary hover:bg-primary-hover text-espresso-950 font-bold py-4 rounded-xl shadow-lg transition-all hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2">
+                            <button className="w-full mt-2 bg-gradient-to-r from-copper-600 to-copper-500 hover:from-copper-500 hover:to-copper-400 text-white font-bold py-4 rounded-xl shadow-lg transition-all hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2 btn-press">
                                 <span className="material-symbols-outlined">auto_awesome</span>
                                 Optimize Spend
                             </button>
@@ -117,7 +151,7 @@ export default function WhereToSwipe() {
 
                         {/* Right Panel - Results */}
                         <div className="lg:col-span-7 flex flex-col h-full">
-                            <div className="flex-1 bg-espresso-800 rounded-3xl p-8 border border-espresso-700 relative overflow-hidden flex flex-col items-center">
+                            <div className="flex-1 bg-espresso-900 rounded-3xl p-8 border border-copper-500/30 relative overflow-hidden flex flex-col items-center">
                                 {/* Background effects */}
                                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-64 bg-gradient-to-b from-primary/10 to-transparent pointer-events-none"></div>
                                 <div className="absolute -top-20 -right-20 w-64 h-64 bg-copper/20 blur-[100px] rounded-full pointer-events-none"></div>
@@ -125,8 +159,8 @@ export default function WhereToSwipe() {
                                 <div className="relative w-full flex flex-col items-center z-10 flex-1 justify-center min-h-[400px]">
                                     {/* Best Choice Badge */}
                                     <div className="flex items-center gap-2 mb-6 animate-bounce" style={{ animationDuration: '3s' }}>
-                                        <span className="material-symbols-outlined text-4xl text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>emoji_events</span>
-                                        <span className="text-primary font-bold tracking-widest uppercase text-sm">Best Choice</span>
+                                        <span className="material-symbols-outlined text-4xl text-gold-400" style={{ fontVariationSettings: "'FILL' 1" }}>emoji_events</span>
+                                        <span className="text-gold-400 font-bold tracking-widest uppercase text-sm">Best Choice</span>
                                     </div>
 
                                     {/* Card Display */}
@@ -145,13 +179,13 @@ export default function WhereToSwipe() {
 
                                         {/* Best Card */}
                                         <div className="relative z-20 transform hover:-translate-y-2 transition-transform duration-500">
-                                            <div className="w-[340px] aspect-[1.586] rounded-2xl bg-gradient-to-br from-[#1a1a1a] via-[#2a2a2a] to-black border border-primary shadow-[0_0_30px_rgba(187,155,114,0.5)] overflow-hidden relative group">
+                                            <div className="w-[340px] aspect-[1.586] rounded-2xl bg-gradient-to-br from-[#1a1a1a] via-[#2a2a2a] to-black border border-copper-500/50 shadow-[0_0_30px_rgba(187,155,114,0.5)] overflow-hidden relative group">
                                                 <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
                                                 <div className="absolute top-6 right-6">
                                                     <div className="h-8 w-12 bg-white/10 rounded border border-white/20"></div>
                                                 </div>
                                                 <div className="absolute bottom-6 left-6 flex flex-col gap-1">
-                                                    <p className="text-primary/80 text-xs font-mono uppercase tracking-widest">{recommendation.bestCard.name}</p>
+                                                    <p className="text-gold-300/80 text-xs font-mono uppercase tracking-widest">{recommendation.bestCard.name}</p>
                                                     <p className="text-white/90 text-sm font-mono tracking-widest">**** {recommendation.bestCard.lastFour}</p>
                                                 </div>
                                                 <div className="absolute top-6 left-6 text-white font-display font-bold text-xl italic tracking-tighter">{recommendation.bestCard.bank}</div>
@@ -162,7 +196,7 @@ export default function WhereToSwipe() {
                                     {/* Savings Display */}
                                     <div className="text-center space-y-2 z-10">
                                         <p className="text-gold-dim text-sm font-medium uppercase tracking-widest">Total Savings</p>
-                                        <h3 className="text-4xl lg:text-5xl font-display font-bold text-primary drop-shadow-lg">
+                                        <h3 className="text-4xl lg:text-5xl font-serif font-bold text-gold-400 drop-shadow-lg">
                                             <span className="text-2xl align-top">₹</span>{recommendation.bestCard.savings.toLocaleString()}
                                         </h3>
                                         <p className="text-xs text-copper bg-copper/10 px-3 py-1 rounded-full inline-block mt-2 border border-copper/20">
@@ -174,20 +208,20 @@ export default function WhereToSwipe() {
                                 {/* Explanation Box */}
                                 <div className="w-full mt-6 bg-espresso-950/50 rounded-xl border border-espresso-700 overflow-hidden">
                                     <div className="p-4 flex items-start gap-4">
-                                        <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                                        <div className="p-2 rounded-lg bg-copper-500/10 text-copper-500">
                                             <span className="material-symbols-outlined">psychology</span>
                                         </div>
                                         <div className="flex-1">
                                             <h4 className="text-white font-bold text-sm mb-1">Why this card?</h4>
                                             <p className="text-gold-dim text-sm leading-relaxed">
-                                                The <span className="text-white font-medium">{recommendation.explanation.card}</span> gives you <span className="text-primary">{recommendation.explanation.bonus}</span> {recommendation.explanation.detail}. This transaction earns you {recommendation.explanation.points} points valued at {recommendation.explanation.value} for travel booking.
+                                                The <span className="text-white font-medium">{recommendation.explanation.card}</span> gives you <span className="text-gold-400 font-bold">{recommendation.explanation.bonus}</span> {recommendation.explanation.detail}. This transaction earns you {recommendation.explanation.points} points valued at {recommendation.explanation.value} for travel booking.
                                             </p>
                                             <div className="mt-3 pt-3 border-t border-white/5 flex gap-4 text-xs">
                                                 <div className="flex items-center gap-1 text-gold-dim">
                                                     <span className="material-symbols-outlined text-sm">payments</span>
                                                     <span>Base: 1.5%</span>
                                                 </div>
-                                                <div className="flex items-center gap-1 text-primary">
+                                                <div className="flex items-center gap-1 text-gold-400">
                                                     <span className="material-symbols-outlined text-sm">trending_up</span>
                                                     <span>Bonus: +3.5%</span>
                                                 </div>

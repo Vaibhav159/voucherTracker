@@ -57,7 +57,7 @@ export default function Home() {
                                     <div className="flex items-start justify-between">
                                         <div className="flex items-center gap-4">
                                             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-gold-300 to-gold-600 shadow-lg ring-1 ring-white/20">
-                                                <span className="material-symbols-outlined text-espresso-950 text-2xl">diamond</span>
+                                                <img src="/assets/logo.jpg" alt="CardPerks Logo" className="h-8 w-8 object-contain rounded-sm animate-pulse" />
                                             </div>
                                             <div className="flex flex-col">
                                                 <span className="font-serif text-lg font-bold text-gold-300 tracking-wide">CardPerks</span>

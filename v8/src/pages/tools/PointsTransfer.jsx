@@ -20,45 +20,6 @@ export default function PointsTransfer() {
 
     return (
         <div className="flex flex-1 overflow-hidden relative bg-espresso-950">
-            {/* Sidebar */}
-            <aside className="hidden w-64 flex-col justify-between border-r border-espresso-700 bg-espresso-900 md:flex">
-                <div className="flex flex-col gap-6 p-6">
-                    <div className="flex flex-col gap-1">
-                        <h1 className="text-xl font-bold tracking-tight bg-gradient-to-r from-gold-400 to-copper bg-clip-text text-transparent">CardPerks</h1>
-                        <p className="text-xs font-medium text-gold-dim">Espresso & Copper Edition</p>
-                    </div>
-                    <nav className="flex flex-col gap-1">
-                        <a className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-gold-dim hover:bg-white/5 transition-colors" href="/">
-                            <span className="material-symbols-outlined text-[20px]">dashboard</span>
-                            Dashboard
-                        </a>
-                        <a className="flex items-center gap-3 rounded-lg bg-gold-400/10 px-3 py-2 text-sm font-medium text-gold-400 border-l-2 border-gold-400 transition-colors" href="#">
-                            <span className="material-symbols-outlined text-[20px]">currency_exchange</span>
-                            Points Transfer
-                        </a>
-                        <a className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-gold-dim hover:bg-white/5 transition-colors" href="#">
-                            <span className="material-symbols-outlined text-[20px]">trending_up</span>
-                            Trends & History
-                        </a>
-                        <a className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-gold-dim hover:bg-white/5 transition-colors" href="/my-cards">
-                            <span className="material-symbols-outlined text-[20px]">credit_card</span>
-                            Cards Portfolio
-                        </a>
-                        <div className="my-2 h-px bg-espresso-700"></div>
-                        <a className="group flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-gold-dim hover:bg-white/5 transition-colors" href="#">
-                            <span className="material-symbols-outlined text-[20px] group-hover:text-gold-400 transition-colors">auto_awesome</span>
-                            Partner Suggestions
-                        </a>
-                    </nav>
-                </div>
-                <div className="flex flex-col gap-2 p-6">
-                    <button className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-gold-dim hover:bg-white/5 transition-colors">
-                        <span className="material-symbols-outlined text-[20px]">settings</span>
-                        Settings
-                    </button>
-                </div>
-            </aside>
-
             {/* Main Content */}
             <main className="flex-1 overflow-y-auto bg-espresso-950 relative">
                 <div className="absolute inset-0 bg-noise opacity-20 pointer-events-none"></div>
@@ -241,7 +202,7 @@ export default function PointsTransfer() {
                             <div className="rounded-2xl border border-espresso-700 bg-espresso-800">
                                 <div className="flex items-center justify-between border-b border-espresso-700 px-6 py-4">
                                     <h3 className="font-bold text-white">Partners</h3>
-                                    <a className="text-xs font-semibold text-gold-400 hover:text-gold-300" href="#">View All</a>
+                                    <span className="text-xs font-semibold text-gold-dim/50">All Partners</span>
                                 </div>
                                 <div className="divide-y divide-espresso-700">
                                     {partners.map((partner) => (

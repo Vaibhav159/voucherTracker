@@ -53,7 +53,7 @@ export default function MilestoneTracker() {
     const [spendAmount, setSpendAmount] = useState('87,600');
 
     return (
-        <div className="flex flex-1 overflow-hidden relative bg-espresso-950">
+        <div className="flex flex-1 overflow-hidden relative bg-espresso-950 bg-espresso-texture">
             {/* Main Content */}
             <div className="flex-1 flex flex-col h-full min-w-0 overflow-hidden relative">
                 <main className="flex-1 overflow-y-auto p-4 sm:p-8 scroll-smooth">
@@ -61,7 +61,7 @@ export default function MilestoneTracker() {
                         {/* Header */}
                         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                             <div>
-                                <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-white mb-2">Axis Magnus Tracker</h1>
+                                <h1 className="text-3xl sm:text-4xl font-serif font-bold tracking-tight text-white mb-2">Axis Magnus Tracker</h1>
                                 <p className="text-gold-dim text-base font-normal">Manage your spend milestones and capping limits.</p>
                             </div>
                             <div className="flex items-center gap-2 text-sm text-gold-dim">
@@ -72,7 +72,7 @@ export default function MilestoneTracker() {
 
                         {/* Card and Spend Input */}
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                            <div className="lg:col-span-2 bg-espresso-800 rounded-xl border border-espresso-700 p-6 shadow-xl relative overflow-hidden group">
+                            <div className="lg:col-span-2 bg-espresso-900 rounded-xl border border-copper-500/30 p-6 shadow-xl relative overflow-hidden group">
                                 <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
                                 <div className="flex flex-col md:flex-row gap-8 items-center md:items-stretch">
                                     {/* Card Visual */}
@@ -105,7 +105,7 @@ export default function MilestoneTracker() {
                                         <div className="relative flex items-center">
                                             <span className="absolute left-4 text-gold-dim text-xl font-light">₹</span>
                                             <input
-                                                className="w-full bg-espresso-950 text-white text-3xl font-bold py-4 pl-10 pr-24 rounded-lg border border-espresso-700 focus:border-primary focus:ring-0 outline-none transition-all placeholder:text-espresso-700"
+                                                className="w-full bg-espresso-950 text-white text-3xl font-bold py-4 pl-10 pr-24 rounded-lg border border-copper-500/30 focus:border-copper-500 focus:shadow-glow-copper focus:ring-0 outline-none transition-all placeholder:text-white/20"
                                                 id="spend-input"
                                                 placeholder="0"
                                                 type="text"
@@ -122,7 +122,7 @@ export default function MilestoneTracker() {
                             </div>
 
                             {/* Milestone Gap Card */}
-                            <div className="bg-espresso-800 rounded-xl border border-espresso-700 p-6 shadow-xl flex flex-col justify-between relative overflow-hidden group">
+                            <div className="bg-espresso-900 rounded-xl border border-copper-500/30 p-6 shadow-xl flex flex-col justify-between relative overflow-hidden group">
                                 <div className="relative z-10 flex flex-col h-full justify-between">
                                     <div>
                                         <div className="flex items-center justify-between mb-4">
@@ -155,11 +155,11 @@ export default function MilestoneTracker() {
                         {milestones.map((milestone) => (
                             <div
                                 key={milestone.id}
-                                className={`bg-espresso-800 rounded-xl border p-6 shadow-lg flex flex-col gap-6 group transition-colors duration-300 ${milestone.color === 'red'
+                                className={`bg-espresso-900 rounded-xl border p-6 shadow-lg flex flex-col gap-6 group transition-colors duration-300 ${milestone.color === 'red'
                                     ? 'border-red-500/30 shadow-[0_0_20px_rgba(244,67,54,0.15)]'
                                     : milestone.color === 'amber'
-                                        ? 'border-espresso-700 hover:border-amber-400/30'
-                                        : 'border-espresso-700 hover:border-emerald-400/30'
+                                        ? 'border-copper-500/30 hover:border-amber-400/50'
+                                        : 'border-copper-500/30 hover:border-emerald-400/50'
                                     }`}
                             >
                                 <div className="flex justify-between items-start">
@@ -236,7 +236,7 @@ export default function MilestoneTracker() {
                         {/* Recent Transactions */}
                         <div className="mt-4">
                             <h3 className="text-lg font-bold text-white mb-4">Recent Qualifying Spends</h3>
-                            <div className="bg-espresso-800 border border-espresso-700 rounded-xl overflow-hidden">
+                            <div className="bg-espresso-900 border border-copper-500/30 rounded-xl overflow-hidden">
                                 <table className="w-full text-left text-sm">
                                     <thead className="bg-espresso-950 text-gold-dim">
                                         <tr>
@@ -248,7 +248,7 @@ export default function MilestoneTracker() {
                                     </thead>
                                     <tbody className="divide-y divide-espresso-700">
                                         {recentTransactions.map((tx) => (
-                                            <tr key={tx.id} className="hover:bg-espresso-900 transition-colors">
+                                            <tr key={tx.id} className="hover:bg-white/5 transition-colors">
                                                 <td className="px-6 py-4 font-medium text-white flex items-center gap-3">
                                                     <div className={`size-8 rounded ${tx.bgColor} flex items-center justify-center`}>
                                                         <span className="text-white font-bold text-xs">{tx.logo}</span>

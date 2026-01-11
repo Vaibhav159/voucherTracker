@@ -1,35 +1,60 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useFavorites } from '../../context/FavoritesContext';
 
-const favoriteVouchers = [
-    { id: 1, name: 'Amazon Pay', category: 'Shopping', rate: '98.5%', trend: '+0.5%', trendType: 'up', logo: 'Am' },
-    { id: 2, name: 'Swiggy Money', category: 'Food & Dining', rate: '96.0%', trend: 'Stable', trendType: 'stable', logo: 'Sw' },
-    { id: 3, name: 'Myntra Luxe', category: 'Fashion', rate: '94.2%', trend: '-1.2%', trendType: 'down', logo: 'My' },
+// Import data sources - these would typically come from APIs or centralized data files
+const allVouchers = [
+    { id: 1, name: 'Amazon Pay', category: 'Shopping', rate: '98.5%', trend: '+0.5%', trendType: 'up', icon: 'shopping_bag', color: 'text-orange-400' },
+    { id: 2, name: 'Swiggy Money', category: 'Food & Dining', rate: '96.0%', trend: 'Stable', trendType: 'stable', icon: 'restaurant', color: 'text-orange-500' },
+    { id: 3, name: 'Myntra Luxe', category: 'Fashion', rate: '94.2%', trend: '-1.2%', trendType: 'down', icon: 'checkroom', color: 'text-pink-400' },
+    { id: 4, name: 'Flipkart', category: 'Shopping', rate: '97.0%', trend: '+0.3%', trendType: 'up', icon: 'shopping_cart', color: 'text-blue-400' },
+    { id: 5, name: 'Zomato', category: 'Food & Dining', rate: '95.5%', trend: 'Stable', trendType: 'stable', icon: 'dinner_dining', color: 'text-red-400' },
 ];
 
-const favoriteCards = [
-    { id: 1, name: 'HDFC Infinia Metal', bank: 'HDFC BANK', tier: 'Super Premium', lastFour: '8892', rewardRate: '3.3% - 33%', annualFee: '₹12,500 + GST', bgFrom: '#1a120b', bgTo: '#2b2016' },
-    { id: 2, name: 'Axis Magnus Burgundy', bank: 'AXIS BANK', tier: 'Premium Lifestyle', lastFour: '4521', rewardRate: '4.8% - 24%', annualFee: '₹30,000 + GST', bgFrom: '#3b211a', bgTo: '#1a110d' },
+const allCards = [
+    { id: 1, name: 'HDFC Infinia Metal', bank: 'HDFC BANK', tier: 'Super Premium', rewardRate: '3.3% - 33%', annualFee: '₹12,500 + GST', image: '/assets/cards/hdfc-infinia.webp', bgFrom: '#1a120b', bgTo: '#2b2016' },
+    { id: 2, name: 'Axis Magnus Burgundy', bank: 'AXIS BANK', tier: 'Premium Lifestyle', rewardRate: '4.8% - 24%', annualFee: '₹30,000 + GST', image: '/assets/cards/axis-magnus.webp', bgFrom: '#3b211a', bgTo: '#1a110d' },
+    { id: 3, name: 'ICICI Sapphiro', bank: 'ICICI BANK', tier: 'Super Premium', rewardRate: '2% - 10%', annualFee: '₹6,500 + GST', image: '/assets/cards/icici-sapphiro.webp', bgFrom: '#1a2030', bgTo: '#0d1520' },
 ];
 
-const favoriteBanking = [
-    { id: 1, bank: 'HDFC Bank', name: 'Imperia Banking', features: ['Dedicated Relationship Manager', 'Preferential Loan Rates', 'Lifetime Free Imperia Card'] },
-    { id: 2, bank: 'ICICI Bank', name: 'Wealth Mgmt', features: ['Family Wealth Account', 'Unlimited Lounge Access', 'Zero Forex Markup'] },
+const allGuides = [
+    { id: 1, title: 'Wealth Preservation in Volatile Markets', category: 'Wealth Management', readTime: '12 min read' },
+    { id: 2, title: 'The 2024 Metal Card Hierarchy', category: 'Cards', readTime: '8 min read' },
+    { id: 3, title: 'Unlocking First Class Upgrades', category: 'Travel', readTime: '5 min read' },
 ];
 
-const favoriteGuides = [
-    { id: 1, title: 'Maximizing HDFC Infinia for international flights', category: 'Travel', readTime: '5 min read' },
-    { id: 2, title: 'Ultimate guide to hitting spending milestones', category: 'Strategy', readTime: '8 min read' },
+const allArticles = [
+    { id: 4, title: 'Amex Platinum vs. Axis Magnus: The 2024 Showdown', category: 'Analysis', readTime: '6 min read' },
+    { id: 5, title: 'Concierge Secrets: Booking Impossible Tables', category: 'Lifestyle', readTime: '4 min' },
+    { id: 6, title: 'Hidden Lounge Networks in SE Asia', category: 'Travel', readTime: '5 min' },
+];
+
+const allBanking = [
+    { id: 'hdfc-imperia', bank: 'HDFC', tierType: 'Private Wealth', tierName: 'Imperia Banking', tagline: 'Top-tier wealth management for HNWIs.', bankColor: '#004c8f' },
+    { id: 'icici-wealth', bank: 'ICICI', tierType: 'Wealth Mgmt', tierName: 'Wealth Management', tagline: 'Holistic family banking solutions.', bankColor: '#f37e20' },
+    { id: 'axis-burgundy', bank: 'AXIS', tierType: 'Burgundy', tierName: 'Burgundy', tagline: 'Curated banking for the affluent.', bankColor: '#97144d' },
 ];
 
 const tabs = ['All', 'Vouchers', 'Cards', 'Banking', 'Guides'];
 
 export default function Favorites() {
     const [activeTab, setActiveTab] = useState('All');
+    const { favorites, toggleFavorite, getFavoriteCount } = useFavorites();
+
+    // Filter data based on favorited IDs
+    const favoriteVouchers = allVouchers.filter(v => favorites.vouchers?.has(v.id));
+    const favoriteCards = allCards.filter(c => favorites.cards?.has(c.id));
+    const favoriteGuides = allGuides.filter(g => favorites.guides?.has(g.id));
+    const favoriteArticles = allArticles.filter(a => favorites.articles?.has(a.id));
+    const favoriteBanking = allBanking.filter(b => favorites.banking?.has(b.id));
 
     const showVouchers = activeTab === 'All' || activeTab === 'Vouchers';
     const showCards = activeTab === 'All' || activeTab === 'Cards';
     const showBanking = activeTab === 'All' || activeTab === 'Banking';
     const showGuides = activeTab === 'All' || activeTab === 'Guides';
+
+    const totalFavorites = getFavoriteCount();
+    const hasAnyFavorites = totalFavorites > 0;
 
     return (
         <div className="flex flex-1 overflow-hidden relative bg-espresso-950">
@@ -42,7 +67,11 @@ export default function Favorites() {
                             <h1 className="text-3xl font-black text-warm-white md:text-4xl">
                                 Your <span className="bg-gradient-to-r from-gold-400 via-warm-white to-copper bg-clip-text text-transparent">Favourites</span>
                             </h1>
-                            <p className="mt-2 text-lg text-gold-dim">Manage your tracked items across all categories.</p>
+                            <p className="mt-2 text-lg text-gold-dim">
+                                {hasAnyFavorites
+                                    ? `Manage your ${totalFavorites} tracked items across all categories.`
+                                    : 'Start adding items to your favorites to see them here.'}
+                            </p>
                         </div>
 
                         <div className="flex gap-1 overflow-x-auto rounded-lg bg-espresso-800 p-1 border border-white/5 shadow-inner hide-scrollbar">
@@ -61,8 +90,29 @@ export default function Favorites() {
                         </div>
                     </div>
 
+                    {/* Empty State */}
+                    {!hasAnyFavorites && (
+                        <div className="flex flex-col items-center justify-center py-20 text-center">
+                            <div className="size-24 rounded-full bg-espresso-800 border border-white/5 flex items-center justify-center mb-6">
+                                <span className="material-symbols-outlined text-gold-dim text-[48px]">favorite</span>
+                            </div>
+                            <h2 className="text-2xl font-bold text-warm-white mb-3">No Favorites Yet</h2>
+                            <p className="text-gold-dim max-w-md mb-8">
+                                Browse our vouchers, cards, and guides to start building your personalized collection of favorites.
+                            </p>
+                            <div className="flex gap-4">
+                                <Link to="/vouchers" className="px-6 py-3 rounded-lg bg-primary text-espresso-950 font-bold text-sm hover:bg-primary-hover transition-colors">
+                                    Explore Vouchers
+                                </Link>
+                                <Link to="/cards" className="px-6 py-3 rounded-lg border border-copper/30 text-copper font-bold text-sm hover:bg-copper/10 transition-colors">
+                                    Browse Cards
+                                </Link>
+                            </div>
+                        </div>
+                    )}
+
                     {/* Vouchers Section */}
-                    {showVouchers && (
+                    {showVouchers && favoriteVouchers.length > 0 && (
                         <section className="mb-12">
                             <div className="mb-6 flex items-center justify-between">
                                 <h2 className="flex items-center gap-2 text-xl font-bold text-warm-white">
@@ -76,12 +126,18 @@ export default function Favorites() {
                                     <div key={voucher.id} className="group relative overflow-hidden rounded-xl border border-white/5 bg-espresso-800 p-5 transition-all hover:border-primary/50 hover:shadow-lg">
                                         <div className="mb-2 flex justify-between items-center">
                                             <span className="inline-flex items-center rounded-md bg-white/5 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-gold-dim">Voucher</span>
-                                            <button className="flex h-8 w-8 items-center justify-center rounded-full text-gold-dim transition-colors hover:bg-red-500/10 hover:text-red-500" title="Remove from Favourites">
-                                                <span className="material-symbols-outlined text-[20px]">delete</span>
+                                            <button
+                                                className="flex h-8 w-8 items-center justify-center rounded-full text-red-500 transition-colors hover:bg-red-500/10"
+                                                title="Remove from Favourites"
+                                                onClick={() => toggleFavorite('vouchers', voucher.id)}
+                                            >
+                                                <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>favorite</span>
                                             </button>
                                         </div>
                                         <div className="flex items-center gap-4">
-                                            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-espresso-950 text-xl font-bold text-primary">{voucher.logo}</div>
+                                            <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-espresso-700 ${voucher.color || 'text-gold-400'}`}>
+                                                <span className="material-symbols-outlined text-2xl">{voucher.icon || 'sell'}</span>
+                                            </div>
                                             <div className="flex flex-col">
                                                 <h3 className="text-base font-bold text-warm-white line-clamp-1">{voucher.name}</h3>
                                                 <p className="text-xs font-medium text-gold-dim">{voucher.category}</p>
@@ -101,7 +157,7 @@ export default function Favorites() {
                                         </div>
                                         <p className="mt-2 text-[11px] text-gold-dim">Real-time market rate</p>
                                         <div className="mt-5 flex gap-3">
-                                            <button className="flex-1 rounded-lg bg-white/5 py-2.5 text-xs font-bold uppercase tracking-wider text-warm-white transition-colors hover:bg-white/10">Details</button>
+                                            <Link to="/vouchers" className="flex-1 rounded-lg bg-white/5 py-2.5 text-xs font-bold uppercase tracking-wider text-warm-white transition-colors hover:bg-white/10 text-center">Details</Link>
                                             <button className="flex-1 rounded-lg bg-primary py-2.5 text-xs font-bold uppercase tracking-wider text-espresso-950 transition-transform hover:scale-[1.02]">Buy Now</button>
                                         </div>
                                     </div>
@@ -111,7 +167,7 @@ export default function Favorites() {
                     )}
 
                     {/* Cards Section */}
-                    {showCards && (
+                    {showCards && favoriteCards.length > 0 && (
                         <section className="mb-12">
                             <div className="mb-6 flex items-center justify-between">
                                 <h2 className="flex items-center gap-2 text-xl font-bold text-warm-white">
@@ -131,10 +187,6 @@ export default function Favorites() {
                                                 </div>
                                                 <div>
                                                     <div className="mb-2 text-xs text-white/50">{card.name.toUpperCase()}</div>
-                                                    <div className="flex items-center gap-2">
-                                                        <div className="h-6 w-10 rounded bg-white/20"></div>
-                                                        <div className="text-sm tracking-widest text-white/90">•••• {card.lastFour}</div>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -145,8 +197,12 @@ export default function Favorites() {
                                                     <h3 className="font-bold text-warm-white">{card.name}</h3>
                                                     <p className="text-xs text-gold-dim">{card.tier}</p>
                                                 </div>
-                                                <button className="flex h-8 w-8 items-center justify-center rounded-full text-gold-dim transition-colors hover:bg-red-500/10 hover:text-red-500" title="Remove from Favourites">
-                                                    <span className="material-symbols-outlined text-[20px]">delete</span>
+                                                <button
+                                                    className="flex h-8 w-8 items-center justify-center rounded-full text-red-500 transition-colors hover:bg-red-500/10"
+                                                    title="Remove from Favourites"
+                                                    onClick={() => toggleFavorite('cards', card.id)}
+                                                >
+                                                    <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>favorite</span>
                                                 </button>
                                             </div>
                                             <div className="mt-4 space-y-3">
@@ -160,28 +216,18 @@ export default function Favorites() {
                                                 </div>
                                             </div>
                                             <div className="mt-5 grid grid-cols-2 gap-3">
-                                                <button className="rounded-lg bg-white/5 py-2 text-xs font-bold text-warm-white hover:bg-white/10">View Details</button>
+                                                <Link to={`/cards/${card.id}`} className="rounded-lg bg-white/5 py-2 text-xs font-bold text-warm-white hover:bg-white/10 text-center">View Details</Link>
                                                 <button className="rounded-lg border border-primary/30 bg-primary/10 py-2 text-xs font-bold text-primary hover:bg-primary/20">Apply Now</button>
                                             </div>
                                         </div>
                                     </div>
                                 ))}
-
-                                {/* Add Card CTA */}
-                                <div className="group flex flex-col items-center justify-center rounded-xl border border-dashed border-copper/20 bg-transparent p-6 text-center transition-all hover:border-primary/50 hover:bg-white/5">
-                                    <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-white/5 text-copper transition-colors group-hover:bg-primary/10 group-hover:text-primary">
-                                        <span className="material-symbols-outlined text-[24px]">add</span>
-                                    </div>
-                                    <h3 className="text-sm font-bold text-warm-white">Find More Cards</h3>
-                                    <p className="mt-1 text-xs text-gold-dim">Browse our database to add more favorites.</p>
-                                    <a className="mt-4 text-xs font-bold text-primary hover:underline" href="#">Browse Directory</a>
-                                </div>
                             </div>
                         </section>
                     )}
 
                     {/* Banking Section */}
-                    {showBanking && (
+                    {showBanking && favoriteBanking.length > 0 && (
                         <section className="mb-12">
                             <div className="mb-6 flex items-center justify-between">
                                 <h2 className="flex items-center gap-2 text-xl font-bold text-warm-white">
@@ -195,33 +241,33 @@ export default function Favorites() {
                                     <div key={tier.id} className="group relative flex flex-col overflow-hidden rounded-xl border border-white/5 bg-espresso-800 p-5 transition-all hover:border-primary/50 hover:shadow-lg">
                                         <div className="mb-4 flex justify-between items-start">
                                             <div className="flex gap-4 items-center">
-                                                <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-white/10 bg-espresso-900 text-primary">
-                                                    <span className="material-symbols-outlined">account_balance</span>
+                                                <div
+                                                    className="flex h-12 w-12 items-center justify-center rounded-lg text-white font-bold text-[10px] tracking-tighter"
+                                                    style={{ backgroundColor: tier.bankColor }}
+                                                >
+                                                    {tier.bank}
                                                 </div>
                                                 <div>
                                                     <span className="inline-flex items-center rounded-md bg-white/5 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-gold-dim mb-1">Banking Tier</span>
                                                     <div className="flex flex-col">
-                                                        <p className="text-[10px] font-bold uppercase tracking-wider text-gold-dim">{tier.bank}</p>
-                                                        <h3 className="text-lg font-bold text-warm-white leading-tight">{tier.name}</h3>
+                                                        <p className="text-[10px] font-bold uppercase tracking-wider text-gold-dim">{tier.tierType}</p>
+                                                        <h3 className="text-lg font-bold text-warm-white leading-tight">{tier.tierName}</h3>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <button className="flex h-8 w-8 items-center justify-center rounded-full text-gold-dim transition-colors hover:bg-red-500/10 hover:text-red-500" title="Remove from Favourites">
-                                                <span className="material-symbols-outlined text-[20px]">delete</span>
+                                            <button
+                                                className="flex h-8 w-8 items-center justify-center rounded-full text-red-500 transition-colors hover:bg-red-500/10"
+                                                title="Remove from Favourites"
+                                                onClick={() => toggleFavorite('banking', tier.id)}
+                                            >
+                                                <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>favorite</span>
                                             </button>
                                         </div>
                                         <div className="mt-2 mb-6 border-t border-dashed border-white/5 pt-4 flex-1">
-                                            <ul className="space-y-3">
-                                                {tier.features.map((feature, idx) => (
-                                                    <li key={idx} className="flex items-start gap-2.5 text-sm text-warm-white/80">
-                                                        <span className="material-symbols-outlined text-[18px] text-copper shrink-0 mt-0.5">diamond</span>
-                                                        <span>{feature}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
+                                            <p className="text-sm text-warm-white/80">{tier.tagline}</p>
                                         </div>
                                         <div className="mt-auto">
-                                            <button className="w-full rounded-lg bg-white/5 py-2.5 text-xs font-bold uppercase tracking-wider text-warm-white transition-colors hover:bg-white/10">View Details</button>
+                                            <Link to={`/banking/${tier.id}`} className="w-full block text-center rounded-lg bg-white/5 py-2.5 text-xs font-bold uppercase tracking-wider text-warm-white transition-colors hover:bg-white/10">View Details</Link>
                                         </div>
                                     </div>
                                 ))}
@@ -230,26 +276,31 @@ export default function Favorites() {
                     )}
 
                     {/* Guides Section */}
-                    {showGuides && (
-                        <section>
+                    {showGuides && (favoriteGuides.length > 0 || favoriteArticles.length > 0) && (
+                        <section className="mb-12">
                             <div className="mb-6 flex items-center justify-between">
                                 <h2 className="flex items-center gap-2 text-xl font-bold text-warm-white">
                                     <span className="material-symbols-outlined text-primary">menu_book</span>
-                                    Saved Guides
+                                    Saved Guides & Articles
                                 </h2>
+                                <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary ring-1 ring-primary/20">{favoriteGuides.length + favoriteArticles.length} Saved</span>
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                {favoriteGuides.map((guide) => (
+                                {[...favoriteGuides, ...favoriteArticles].map((guide) => (
                                     <div key={guide.id} className="flex flex-col gap-4 rounded-xl border border-white/5 bg-espresso-800 p-4 transition-all hover:border-primary/30 sm:flex-row">
                                         <div className="aspect-video w-full overflow-hidden rounded-lg bg-espresso-900 sm:w-40 shrink-0 flex items-center justify-center">
-                                            <span className="material-symbols-outlined text-4xl text-espresso-700">credit_score</span>
+                                            <span className="material-symbols-outlined text-4xl text-espresso-700">article</span>
                                         </div>
                                         <div className="flex flex-1 flex-col justify-between">
                                             <div className="flex flex-col gap-1">
                                                 <div className="flex items-center justify-between">
                                                     <span className="inline-flex items-center rounded-md bg-primary/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary">Guide • {guide.category}</span>
-                                                    <button className="flex h-6 w-6 items-center justify-center rounded-full text-gold-dim transition-colors hover:bg-red-500/10 hover:text-red-500" title="Remove from Favourites">
-                                                        <span className="material-symbols-outlined text-[18px]">delete</span>
+                                                    <button
+                                                        className="flex h-6 w-6 items-center justify-center rounded-full text-red-500 transition-colors hover:bg-red-500/10"
+                                                        title="Remove from Favourites"
+                                                        onClick={() => toggleFavorite(favoriteGuides.includes(guide) ? 'guides' : 'articles', guide.id)}
+                                                    >
+                                                        <span className="material-symbols-outlined text-[18px]" style={{ fontVariationSettings: "'FILL' 1" }}>favorite</span>
                                                     </button>
                                                 </div>
                                                 <h3 className="text-base font-bold leading-tight text-warm-white hover:text-primary cursor-pointer transition-colors mt-1">{guide.title}</h3>
@@ -259,7 +310,7 @@ export default function Favorites() {
                                                     <span className="material-symbols-outlined text-[14px] text-copper">schedule</span>
                                                     {guide.readTime}
                                                 </div>
-                                                <button className="text-xs font-bold text-gold-dim hover:text-primary">Read Now</button>
+                                                <Link to="/guides" className="text-xs font-bold text-gold-dim hover:text-primary">Read Now</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -271,9 +322,9 @@ export default function Favorites() {
                     {/* Footer */}
                     <footer className="mt-20 border-t border-copper/20 py-10 text-center">
                         <div className="flex flex-wrap justify-center gap-8 md:gap-12">
-                            <a className="text-sm text-gold-dim hover:text-primary" href="#">Privacy Policy</a>
-                            <a className="text-sm text-gold-dim hover:text-primary" href="#">Terms of Service</a>
-                            <a className="text-sm text-gold-dim hover:text-primary" href="#">Contact Support</a>
+                            <Link className="text-sm text-gold-dim hover:text-primary" to="/privacy">Privacy Policy</Link>
+                            <Link className="text-sm text-gold-dim hover:text-primary" to="/terms">Terms of Service</Link>
+                            <Link className="text-sm text-gold-dim hover:text-primary" to="/contact">Contact Support</Link>
                         </div>
                         <p className="mt-8 text-sm text-espresso-600">© 2024 CardPerks. All rights reserved.</p>
                     </footer>
