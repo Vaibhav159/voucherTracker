@@ -49,6 +49,7 @@ class VoucherPlatform(models.Model):
 
     class Meta:
         ordering = ["priority"]
+        unique_together = [["voucher", "platform"]]
 
     def __str__(self):
         return f"{self.voucher.name} on {self.platform.name}"
