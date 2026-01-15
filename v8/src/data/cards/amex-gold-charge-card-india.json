@@ -1,0 +1,1173 @@
+{
+  "id": "amex-gold-charge-card",
+  "name": "American Express Gold Charge Card",
+  "bank": "American Express Banking Corp.",
+  "slug": "american-express-gold-charge-card-india",
+  "image": "assets/cards/amex/gold-charge-card.png",
+  "link": "https://www.americanexpress.com/in/charge-cards/gold-card/",
+  "isActive": true,
+
+  "network": {
+    "type": "American Express",
+    "variant": "Gold",
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "mid",
+    "isCobranded": false,
+    "cobrandPartner": {
+      "name": null,
+      "type": null,
+      "loyaltyProgram": null
+    },
+    "material": "plastic",
+    "chargeCard": true,
+    "note": "This is a Charge Card, not a Credit Card. Full balance must be paid by due date. EMI conversion is not available."
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 1000,
+      "gstApplicable": true,
+      "totalWithGST": 1180,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 4500,
+      "gstApplicable": true,
+      "totalWithGST": 5310,
+      "firstYearWaived": false,
+      "firstYearFee": 1000,
+      "firstYearFeeWithGST": 1180,
+      "renewalWaiver": {
+        "available": false,
+        "spendThreshold": null,
+        "spendPeriod": null,
+        "waiverText": "No official fee waiver. Contact customer service for potential retention offers. Reports suggest 50-100% waiver possible with annual spends over ₹2 Lakhs.",
+        "retentionOffers": true
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": 2,
+      "joiningFee": 1500,
+      "annualFee": 1500,
+      "rewardSharing": true,
+      "note": "First 2 supplementary cards are free. ₹1,500 + GST applies from 3rd card onwards."
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "5% of unpaid balance (called Delinquency Fee for Charge Cards)",
+      "minimumFee": 300,
+      "percentage": 5,
+      "note": "Delinquency Fee is levied if full amount is not paid by due date. 5% of unpaid balance with minimum ₹300 + GST."
+    },
+    "overLimit": {
+      "amount": null,
+      "percentage": null,
+      "note": "Not applicable - Charge card has no preset spending limit"
+    },
+    "chequeReturn": 250,
+    "cardReplacement": null,
+    "duplicateStatement": 100,
+    "recordOfChargeRetrieval": 100,
+    "cashAdvanceFee": {
+      "percentage": 3.5,
+      "minFee": 250,
+      "note": "3.5% of cash advance amount, minimum ₹250"
+    },
+    "railwayBookingSurcharge": {
+      "percentage": 1.8,
+      "minFee": 10,
+      "note": "1.8% or minimum ₹10 + GST on IRCTC bookings"
+    },
+    "fuelConvenienceFee": {
+      "HPCL": {
+        "below5000": "0%",
+        "above5000": "1% per transaction"
+      },
+      "BPCL_IOCL": {
+        "percentage": 1,
+        "minFee": 10,
+        "note": "1% of transaction value, minimum ₹10 + GST"
+      },
+      "others": {
+        "percentage": 2.5,
+        "minFee": 10,
+        "note": "2.5% of transaction value, minimum ₹10 + GST"
+      }
+    }
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": null,
+        "annual": 600000
+      },
+      "selfEmployed": {
+        "itr": 600000
+      }
+    },
+    "age": {
+      "min": 18,
+      "max": null,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": "Existing Amex cardholders may get faster approval"
+    },
+    "geography": {
+      "availableIn": [
+        "Delhi/NCR",
+        "Mumbai",
+        "Bangalore",
+        "Chennai",
+        "Pune",
+        "Hyderabad",
+        "Jaipur",
+        "Kolkata",
+        "Indore",
+        "Coimbatore",
+        "Chandigarh/Tricity",
+        "Ahmedabad",
+        "Surat",
+        "Vadodara",
+        "Bhopal",
+        "Bhubaneshwar",
+        "Ernakulam",
+        "Vijayawada",
+        "Lucknow",
+        "Ludhiana",
+        "Nagpur",
+        "Nasik",
+        "Trivandrum",
+        "Mysuru",
+        "Cuttack",
+        "Vizag"
+      ],
+      "restrictions": "Only available to residents of select cities in India"
+    },
+    "citizenship": "Indian Resident",
+    "documentation": {
+      "identity": ["PAN Card", "Aadhaar Card", "Passport", "Voter ID"],
+      "address": ["Aadhaar Card", "Passport", "Utility Bill (3 months)", "Bank Statement"],
+      "income": ["Salary Slips", "Form 16", "Bank Statements (3 months)", "ITR"],
+      "note": "Video KYC (vKYC) available for instant approval"
+    }
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": null,
+      "max": null
+    },
+    "noPresetLimit": true,
+    "creditSupport": true,
+    "factors": "No preset spending limit. Charges approved based on spending pattern, financials, credit record, and account history. American Express may deny any transaction. Cardmember can call helpline to understand available spending capacity.",
+    "note": "Shadow limit (Credit Support) varies based on usage pattern. Some users report limits from ₹1 Lakh to ₹20+ Lakhs based on profile."
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": null,
+      "monthlyRate": null,
+      "note": "Not applicable - Charge card requires full payment by due date"
+    },
+    "cashAdvanceAPR": {
+      "annualRate": null,
+      "monthlyRate": null,
+      "note": "Not applicable - No revolving credit"
+    },
+    "gracePeriod": {
+      "days": 48,
+      "note": "Up to 48 days interest-free credit period from transaction date to due date"
+    },
+    "minPayment": {
+      "percentage": 100,
+      "minAmount": null,
+      "calculation": "Full amount due must be paid by due date (Charge Card requirement)"
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null,
+      "note": "Delinquency Fee applies instead - 5% of unpaid balance, minimum ₹300"
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 3.5,
+    "minFee": 250,
+    "maxFee": null,
+    "limitPercentage": null,
+    "domesticAvailability": false,
+    "internationalLimit": {
+      "amount": 129,
+      "currency": "USD",
+      "period": "14 days",
+      "note": "US$129 or equivalent every 14 days for international ATMs only"
+    },
+    "interestFromDay1": false,
+    "note": "Cash withdrawal services suspended in India. Available only at international ATM locations."
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "Membership Rewards Points",
+      "symbol": "MR",
+      "singularUnit": "point",
+      "pluralUnit": "points"
+    },
+    "baseRate": {
+      "rate": 1,
+      "spendUnit": 50,
+      "effectivePercentage": 0.5,
+      "effectivePercentageGoldCollection": 1.125,
+      "note": "Base value ₹0.25/point. Up to ₹0.56/point with Gold Collection redemption"
+    },
+    "earningText": "Earn 1 Membership Rewards Point for every ₹50 spent",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Insurance premium payments",
+        "Cash withdrawals/advances",
+        "Fuel (effective 12 June 2025)"
+      ],
+      "mccs": null,
+      "note": "Insurance and Cash transactions do not earn MR points. Effective 12 June 2025, Fuel payments (petrol, diesel, CNG from OMCs) do not earn MR points."
+    },
+
+    "caps": {
+      "monthly": {
+        "utilities": {
+          "points": 10000,
+          "note": "Utility payments capped at 10,000 MR points per calendar month"
+        }
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": "calendar",
+      "perTransaction": null
+    },
+
+    "expiry": {
+      "hasExpiry": false,
+      "period": null,
+      "condition": "Points do not expire as long as card account remains active",
+      "forfeiture": "Points forfeited for billing cycle if full payment not received by due date"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": 4000,
+        "cashback": null,
+        "vouchers": null,
+        "spendCondition": {
+          "amount": 10000,
+          "period": "90 days",
+          "transactionCount": null
+        },
+        "validity": "Within 90 days of Cardmembership",
+        "description": "Get 4,000 Bonus Membership Rewards Points on spending ₹10,000 within 90 days of cardmembership and on payment of first year fee",
+        "referralBonus": {
+          "enabled": true,
+          "additionalPoints": 4000,
+          "spendCondition": {
+            "amount": 5000,
+            "period": "90 days"
+          },
+          "note": "Additional 4,000 points when applying via referral link and spending ₹5,000 within 90 days"
+        }
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": true,
+        "points": 5000,
+        "condition": "On payment of first renewal annual fee",
+        "note": "5,000 MR points credited within 90 days of card renewal. Applicable only for 1st renewal."
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": true,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": "Referral program terms vary; check current offers"
+      },
+      "monthlyBonus": {
+        "enabled": true,
+        "points": 1000,
+        "condition": "Complete 6 transactions of ₹1,000 or more each during a calendar month",
+        "transactionCount": 6,
+        "minTransactionAmount": 1000,
+        "period": "calendar month",
+        "annualPotential": 12000,
+        "note": "This is a key benefit - 1,000 bonus points every month for 6 qualifying transactions"
+      }
+    },
+
+    "categories": {
+      "general": {
+        "rate": 1,
+        "spendUnit": 50,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "note": "1 MR point per ₹50 on all eligible spends"
+      },
+      "utilities": {
+        "rate": 1,
+        "spendUnit": 50,
+        "cap": 10000,
+        "capPeriod": "monthly",
+        "eligibleProviders": ["Electricity", "Water", "Gas bills"],
+        "note": "Utility payments earn 1 MR/₹50, capped at 10,000 points per calendar month. Effective July 2021."
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "effectiveDate": "12 June 2025",
+        "note": "No MR points on fuel payments effective 12 June 2025. Fuel includes petrol, diesel, CNG from OMCs."
+      },
+      "insurance": {
+        "rate": 0,
+        "cap": null,
+        "note": "No MR points on insurance premium payments"
+      },
+      "telecommunications": {
+        "rate": 1,
+        "spendUnit": 50,
+        "note": "Telecom payments (landline, mobile, internet, cable) earn standard 1 MR/₹50"
+      }
+    },
+
+    "accelerators": {
+      "rewardMultiplier": {
+        "enabled": true,
+        "name": "Reward Multiplier",
+        "multiplier": 5,
+        "totalRate": "5X (4 bonus + 1 base)",
+        "cap": null,
+        "capPeriod": null,
+        "merchants": [
+          "Flipkart",
+          "Myntra",
+          "Amazon (via vouchers)",
+          "Nykaa",
+          "Forest Essentials",
+          "Dyson",
+          "Ajio",
+          "Lenovo",
+          "MakeMyTrip (Hotels)",
+          "MakeMyTrip (Flights)",
+          "Apple",
+          "Tanishq",
+          "E-Vouchers"
+        ],
+        "link": "https://www.americanexpress.com/in/benefits/rewards-program.html",
+        "exclusions": [
+          "Gold & Silver coins",
+          "Gift Cards (on some merchants)",
+          "Bill payments",
+          "iPhone latest models",
+          "Apple Vision Pro",
+          "Beats products on Apple"
+        ],
+        "fulfillmentTime": "120 business days (up to 150 days during disruptions)",
+        "note": "Shop via Reward Multiplier portal to earn 5X MR points. 4 additional bonus points credited to account within 120 business days."
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": null,
+        "note": "Partner merchant accelerated rewards available through Reward Multiplier portal"
+      }
+    },
+
+    "redemption": {
+      "baseValue": 0.25,
+      "bestValue": 0.58,
+      "bestOption": "24 Karat Gold Collection - Taj Voucher (₹14,000 for 24,000 points = ₹0.58/point)",
+      "minRedemption": null,
+      "redemptionIncrement": null,
+      "convenienceFee": null,
+      "monthlyRedemptionLimit": null,
+      "maxTransferPerYear": 900000,
+
+      "goldCollection": {
+        "enabled": true,
+        "tiers": {
+          "24Karat": {
+            "pointsRequired": 24000,
+            "options": [
+              {"brand": "Taj Hotels", "value": 14000, "pointValue": 0.58},
+              {"brand": "Shoppers Stop", "value": 10000, "pointValue": 0.42},
+              {"brand": "Tata CLiQ", "value": 9000, "pointValue": 0.375},
+              {"brand": "Tanishq", "value": 9000, "pointValue": 0.375},
+              {"brand": "Amazon", "value": 8000, "pointValue": 0.33},
+              {"brand": "Flipkart", "value": 8000, "pointValue": 0.33},
+              {"brand": "Reliance Digital", "value": 8000, "pointValue": 0.33}
+            ]
+          },
+          "18Karat": {
+            "pointsRequired": 18000,
+            "options": [
+              {"brand": "Taj Hotels", "value": 10000, "pointValue": 0.56},
+              {"brand": "Shoppers Stop", "value": 7500, "pointValue": 0.42},
+              {"brand": "Tanishq", "value": 6750, "pointValue": 0.375},
+              {"brand": "Amazon", "value": 6000, "pointValue": 0.33},
+              {"brand": "Flipkart", "value": 6000, "pointValue": 0.33}
+            ],
+            "note": "Options and values may vary; check official catalog"
+          }
+        }
+      },
+
+      "options": [
+        {
+          "type": "goldCollection",
+          "value": 0.58,
+          "description": "18 Karat and 24 Karat Gold Collection vouchers",
+          "recommended": true,
+          "minPoints": 18000,
+          "processingFee": 0,
+          "partners": ["Taj", "Tanishq", "Shoppers Stop", "Amazon", "Flipkart", "Tata CLiQ", "Reliance Digital", "Myntra"],
+          "note": "Best value redemption. Taj vouchers offer highest value at ₹0.56-0.58 per point."
+        },
+        {
+          "type": "vouchers",
+          "value": 0.25,
+          "description": "General vouchers from rewards catalog",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["Various brands"],
+          "note": "Lower value than Gold Collection"
+        },
+        {
+          "type": "statementCredit",
+          "value": 0.25,
+          "description": "Redeem against card statement",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": null,
+          "partners": [],
+          "note": "Available for eligible purchases"
+        },
+        {
+          "type": "travel",
+          "value": null,
+          "description": "American Express Travel Online bookings",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["Amex Travel Portal"],
+          "note": "Book flights, hotels, car rentals. Pay fully with points or partial points+card."
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": true,
+      "eligibleCards": ["amex-gold-charge-card", "amex-platinum-charge-card", "amex-mrcc", "amex-platinum-travel"],
+      "enrollmentRequired": true,
+      "enrollmentName": "Membership Rewards Traveller Option",
+      "partners": [
+        {
+          "name": "Singapore Airlines KrisFlyer",
+          "type": "airline",
+          "program": "KrisFlyer",
+          "alliance": "Star Alliance",
+          "ratio": {
+            "cardPoints": 1,
+            "partnerPoints": 1,
+            "display": "1:1"
+          },
+          "minTransfer": 1000,
+          "maxTransfer": 900000,
+          "transferFee": 0,
+          "transferTime": "Up to 24 hours",
+          "transferMethod": "Online via Membership Rewards portal",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Best value airline partner. Access to Star Alliance redemptions."
+        },
+        {
+          "name": "Marriott Bonvoy",
+          "type": "hotel",
+          "program": "Marriott Bonvoy",
+          "alliance": null,
+          "ratio": {
+            "cardPoints": 1,
+            "partnerPoints": 1,
+            "display": "1:1"
+          },
+          "minTransfer": 1000,
+          "maxTransfer": 900000,
+          "transferFee": 0,
+          "transferTime": "Instant",
+          "transferMethod": "Online via Membership Rewards portal",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Marriott has 40+ airline transfer partners for further flexibility"
+        },
+        {
+          "name": "Hilton Honors",
+          "type": "hotel",
+          "program": "Hilton Honors",
+          "alliance": null,
+          "ratio": {
+            "cardPoints": 1,
+            "partnerPoints": 2,
+            "display": "1:2"
+          },
+          "minTransfer": 1000,
+          "maxTransfer": 900000,
+          "transferFee": 0,
+          "transferTime": "Instant",
+          "transferMethod": "Online via Membership Rewards portal",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Double points but Hilton points have lower value"
+        }
+      ],
+      "globalPartners": {
+        "note": "Amex India offers limited transfer partners compared to US. Global partners like Emirates, Etihad, British Airways, ANA, etc. may be available - verify on portal.",
+        "potentialPartners": [
+          "Emirates Skywards",
+          "Etihad Guest",
+          "British Airways Executive Club",
+          "ANA Mileage Club",
+          "Cathay Pacific Asia Miles",
+          "Air France-KLM Flying Blue"
+        ]
+      },
+      "currentBonus": {
+        "active": false,
+        "bonusPercentage": null,
+        "validUntil": null,
+        "applicablePartners": [],
+        "note": "Check Amex India portal for current transfer bonuses"
+      }
+    },
+
+    "pooling": {
+      "enabled": true,
+      "eligibleCards": ["All Amex cards of same cardmember earning MR points"],
+      "acrossUsers": false,
+      "note": "MR points can be pooled across your Amex cards (Gold Charge, MRCC, Platinum Travel, etc.) via same Membership Rewards account"
+    },
+
+    "specialLogic": "Monthly bonus of 1000 points requires exactly 6 transactions of ₹1000+ each in a calendar month. Can be combined with Reward Multiplier purchases (e.g., buying 6 x ₹1000 vouchers via Reward Multiplier earns monthly bonus + 5X accelerated rewards).",
+
+    "calculator": {
+      "enabled": true,
+      "formula": "basePoints = (spend / 50) * 1; monthlyBonus = 1000 (if 6+ txns of ₹1000+); rewardMultiplierBonus = spend * 4 / 50 (if via portal)",
+      "variables": ["spend", "transactionCount", "isRewardMultiplier", "category"],
+      "officialCalculator": "https://www.americanexpress.com/en-in/benefits/the-gold-card/benefits-calculator/"
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "note": "No complimentary domestic airport or railway lounge access"
+      },
+      "international": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "note": "No complimentary international airport lounge access"
+      }
+    },
+
+    "milestones": [
+      {
+        "spend": null,
+        "period": "monthly",
+        "transactionCount": 6,
+        "minTransactionAmount": 1000,
+        "benefit": "1,000 Bonus Membership Rewards Points",
+        "benefitType": "points",
+        "value": 250,
+        "valueGoldCollection": 560,
+        "conditions": "Complete 6 transactions of ₹1,000 or more each during calendar month"
+      }
+    ],
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": false,
+      "lessonIncluded": false,
+      "note": null
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": "Check Amex Offers for periodic movie deals"
+    },
+
+    "dining": {
+      "included": true,
+      "programs": [
+        {
+          "name": "Amex Dining Offers",
+          "discount": "Up to 20% off",
+          "cap": null,
+          "frequency": "Per visit",
+          "note": "At select partner restaurants across India. Offer varies by restaurant."
+        }
+      ],
+      "hotelDining": {
+        "included": false,
+        "hotels": null,
+        "offer": null
+      },
+      "globalDiningCollection": {
+        "included": true,
+        "note": "Access to Global Dining Collection exclusive reservations at select restaurants worldwide"
+      }
+    },
+
+    "theHotelCollection": {
+      "included": true,
+      "benefits": {
+        "hotelCredit": {
+          "amount": 100,
+          "currency": "USD",
+          "usableFor": ["Dining", "Spa", "Resort activities"]
+        },
+        "roomUpgrade": {
+          "included": true,
+          "condition": "Subject to availability at check-in"
+        },
+        "minimumStay": "2 consecutive nights",
+        "maxRooms": 3
+      },
+      "participatingHotels": ["Hilton Hotels", "Hyatt Hotels", "InterContinental", "400+ curated properties worldwide"],
+      "bookingMethod": "Book via American Express Travel",
+      "note": "Room upgrade and $100 hotel credit on minimum 2-night stay at participating hotels"
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverDetails": {
+        "HPCL": {
+          "below5000": "0% convenience fee",
+          "above5000": "1% convenience fee per transaction"
+        },
+        "BPCL_IOCL": {
+          "percentage": 1,
+          "minFee": 10,
+          "note": "1% waiver, minimum ₹10 + GST charged"
+        },
+        "others": {
+          "percentage": 2.5,
+          "minFee": 10,
+          "note": "2.5% waiver, minimum ₹10 + GST charged"
+        }
+      },
+      "rewardsOnFuel": false,
+      "rewardsEndDate": "12 June 2025",
+      "note": "Fuel convenience fees vary by OMC. No MR points on fuel effective 12 June 2025."
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% currency conversion factor on international transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "recommendation": "Always decline DCC and pay in local currency to avoid double conversion charges"
+      },
+      "crossCurrencyCharges": 3.5,
+      "nepalBhutan": {
+        "conversionApplicable": false,
+        "note": "Charges in Nepal and Bhutan are denominated in INR; no forex markup applies"
+      },
+      "note": "3.5% markup on all foreign currency transactions converted to INR"
+    },
+
+    "concierge": {
+      "included": true,
+      "availability": "24/7",
+      "type": "Card Services",
+      "services": [
+        "Card-related assistance",
+        "Emergency card replacement",
+        "Dispute resolution",
+        "Insurance queries",
+        "Statement queries"
+      ],
+      "contactNumber": {
+        "primary": "0124 673 6600",
+        "tollFree": "1800 419 1120"
+      },
+      "note": "24x7 card-related assistance. Full concierge services available on Platinum Charge Card."
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": null,
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": false,
+      "brandName": null,
+      "noCostEMI": null,
+      "conversionFee": null,
+      "minAmount": null,
+      "tenures": null,
+      "interestRates": null,
+      "note": "EMI conversion NOT available on Charge Cards. Full balance must be paid by due date."
+    },
+
+    "balanceTransfer": {
+      "available": false,
+      "note": "Not available on Charge Cards"
+    },
+
+    "memberships": [
+      {
+        "name": "The Hotel Collection",
+        "type": "travel",
+        "value": null,
+        "duration": "Ongoing",
+        "condition": "Active cardmembership",
+        "note": "Access to hotel benefits at 400+ properties"
+      }
+    ],
+
+    "grooming": {
+      "included": true,
+      "programs": [
+        {
+          "name": "Toni & Guy",
+          "discount": "20% off",
+          "minSpend": 2500,
+          "note": "Flat 20% off on minimum spend of ₹2,500 at participating Toni & Guy stores"
+        }
+      ]
+    },
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": null,
+      "companionPass": null,
+      "upgradeVouchers": null,
+      "loyaltyTierCredit": null
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null,
+        "note": "Elite status benefits available on Platinum Charge Card"
+      },
+      "freeNights": null,
+      "roomUpgrade": true,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": true,
+        "amount": 100,
+        "currency": "USD",
+        "condition": "Via The Hotel Collection, 2-night minimum stay"
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": true,
+      "cover": 3000000,
+      "coverText": "₹30,00,000",
+      "condition": "Air ticket must be purchased with the Gold Card",
+      "provider": "ICICI Lombard General Insurance",
+      "beneficiary": "Basic Cardmember only",
+      "supplementaryCardCoverage": false,
+      "note": "Covers death due to air accident when ticket is booked on card"
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null,
+      "note": "Available on Platinum Charge Card"
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": false,
+      "condition": null,
+      "note": "Overseas Medical Insurance available on Platinum Charge Card"
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": null,
+      "fraudLiability": {
+        "included": true,
+        "cover": null,
+        "reportingWindow": "3 working days",
+        "zeroLiability": true,
+        "liabilityBeyond3Days": 1000,
+        "note": "Zero liability if reported within 3 working days. Maximum ₹1,000 liability if reported later."
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "deathOutstandingWaiver": {
+      "included": true,
+      "maxAmount": 50000,
+      "condition": "Waiver of outstandings up to ₹50,000 in case of death of basic cardmember",
+      "note": "If outstanding exceeds ₹50,000, next of kin will be contacted for balance"
+    },
+    "nominationRequired": true,
+    "insuranceProvider": "ICICI Lombard General Insurance Co. Ltd.",
+    "claimProcess": "Claims to be settled directly with ICICI Lombard",
+    "note": "Insurance coverage limited compared to Platinum Charge Card. Nomination form must be submitted for insurance benefits."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000,
+      "note": "Contactless payments up to ₹5,000 without PIN. Higher amounts require Tap+PIN or Chip+PIN."
+    },
+    "virtualCard": {
+      "available": false,
+      "instantIssuance": false,
+      "singleUse": false,
+      "spendControls": false
+    },
+    "walletSupport": {
+      "googlePay": false,
+      "applePay": false,
+      "samsungPay": false,
+      "payTM": false,
+      "phonePe": false,
+      "note": "Amex cards have limited mobile wallet support in India"
+    },
+    "upiLinking": {
+      "available": false,
+      "rewardsOnUPI": false,
+      "note": "Amex cards cannot be linked to UPI in India"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "View balance and transactions",
+        "Enable/Disable online transactions",
+        "Enable/Disable international transactions",
+        "Enable/Disable contactless",
+        "Block/Replace card",
+        "Real-time transaction alerts",
+        "Pay bill online"
+      ],
+      "app": "American Express App",
+      "website": "americanexpress.co.in"
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true,
+      "whatsapp": true,
+      "whatsappOptOut": "SMS STOP to 7075000735"
+    },
+    "emiAtPOS": false,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount via NACH/Direct Debit"],
+      "note": "Recommended to set up auto-debit for full amount to avoid delinquency fees"
+    },
+    "eStatements": {
+      "available": true,
+      "paperStatementFee": null,
+      "historicalStatementFee": 100,
+      "note": "E-statements via email. Paper statements also available."
+    },
+    "defaultSettings": {
+      "onRenewalReplacement": {
+        "enabled": ["In-store/POS (Chip)", "ATM transactions in India"],
+        "disabled": ["Online transactions", "International transactions", "Contactless"],
+        "note": "Online, international, and contactless must be manually enabled on renewal/replacement"
+      }
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [
+      {
+        "cardId": "amex-mrcc",
+        "cardName": "American Express Membership Rewards Credit Card",
+        "spendRequired": null,
+        "tenure": null,
+        "autoUpgrade": false,
+        "note": "Can hold both cards simultaneously"
+      }
+    ],
+    "upgradesTo": [
+      {
+        "cardId": "amex-platinum-charge-card",
+        "cardName": "American Express Platinum Charge Card",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false,
+        "note": "Apply separately. Income requirement ₹15-25 Lakhs. Annual fee ₹66,000 + GST."
+      }
+    ],
+    "cardHoldingRules": {
+      "maxChargeCards": 1,
+      "maxCreditCards": 2,
+      "note": "Amex allows holding 1 Charge Card + 2 Credit Cards simultaneously"
+    }
+  },
+
+  "meta": {
+    "tags": [
+      "Charge Card",
+      "No Preset Limit",
+      "Rewards",
+      "Gold Collection",
+      "Reward Multiplier",
+      "Monthly Bonus",
+      "Transfer Partners",
+      "The Hotel Collection"
+    ],
+    "bestFor": "Those who want flexible spending limits, can pay full balance monthly, value reward points with Gold Collection redemption, and can complete 6 monthly transactions of ₹1,000+",
+    "notRecommendedFor": "Those who need EMI facility, want lounge access, prefer UPI payments, have low monthly transaction frequency, or cannot pay full balance by due date",
+    "uniqueSellingPoints": [
+      "No preset spending limit (flexible credit support)",
+      "Iconic gold card design",
+      "5X rewards via Reward Multiplier",
+      "1,000 monthly bonus points on 6 qualifying transactions",
+      "Best-in-class customer service",
+      "Gold Collection redemption offers excellent value (up to ₹0.58/point)",
+      "Transfer partners including Singapore Airlines KrisFlyer and Marriott Bonvoy",
+      "Low first year fee (₹1,000 + GST)"
+    ],
+    "rating": {
+      "overall": 4.0,
+      "rewards": 4.2,
+      "benefits": 3.5,
+      "value": 4.0,
+      "acceptance": 3.0
+    },
+    "verdict": "The American Express Gold Charge Card is an excellent entry-level charge card for those who can pay their full balance monthly and want to maximize rewards. The card shines with its 5X Reward Multiplier, monthly bonus points milestone, and high-value Gold Collection redemptions. However, the lack of lounge access, no EMI option, limited acceptance at smaller merchants, and requirement to pay full balance make it unsuitable for everyone. Best combined with another card for broader acceptance and EMI needs.",
+    "pros": [
+      "No preset spending limit - flexible for large purchases",
+      "Excellent reward rate up to 13%+ when optimized",
+      "5X points via Reward Multiplier on partner merchants",
+      "1,000 bonus points monthly on 6 qualifying transactions",
+      "Gold Collection offers up to ₹0.58/point redemption value",
+      "Low first year fee of ₹1,000 + GST",
+      "Transfer partners include Singapore Airlines and Marriott",
+      "Beautiful iconic card design",
+      "World-class customer service",
+      "Points pooling across Amex cards",
+      "Zero lost card liability (if reported within 3 days)",
+      "The Hotel Collection benefits ($100 credit + room upgrade)"
+    ],
+    "cons": [
+      "No airport or railway lounge access",
+      "Cannot convert purchases to EMI (full payment required)",
+      "High renewal fee of ₹4,500 + GST with no official waiver",
+      "3.5% forex markup is relatively high",
+      "Limited acceptance at smaller merchants in India",
+      "No UPI linking possible",
+      "No mobile wallet support",
+      "No fuel rewards effective June 2025",
+      "Cash withdrawal not available domestically",
+      "Limited insurance benefits compared to Platinum",
+      "Available only in select cities"
+    ],
+    "alternatives": [
+      {
+        "cardId": "amex-mrcc",
+        "name": "American Express Membership Rewards Credit Card",
+        "reason": "If you need EMI facility and want fee waiver on spends"
+      },
+      {
+        "cardId": "amex-platinum-travel",
+        "name": "American Express Platinum Travel Credit Card",
+        "reason": "If you want lounge access and milestone rewards"
+      },
+      {
+        "cardId": "hdfc-regalia-gold",
+        "name": "HDFC Regalia Gold",
+        "reason": "If you want lounge access and better acceptance"
+      },
+      {
+        "cardId": "axis-magnus",
+        "name": "Axis Bank Magnus",
+        "reason": "If you want lounge access, transfer partners, and EMI"
+      }
+    ],
+    "lastVerified": "2026-01-05",
+    "dataSource": [
+      "Official American Express India website (americanexpress.com/in)",
+      "MITC document dated 11 August 2025",
+      "American Express Reward Multiplier portal",
+      "CardExpert.in (February 2025)",
+      "TechnoFino.in community discussions",
+      "PaisaBazaar.com",
+      "PointsMath.com (January 2025)"
+    ],
+    "changelog": [
+      {
+        "date": "2025-06-12",
+        "change": "Fuel payments no longer earn Membership Rewards points",
+        "source": "Official Amex India website"
+      },
+      {
+        "date": "2021-07-01",
+        "change": "Utility payments now earn 1 MR point per ₹50 (capped at 10,000 points/month)",
+        "source": "Official T&C update"
+      }
+    ],
+    "disclaimer": "Information compiled from official sources and community discussions. Fees, benefits, and terms are subject to change. Always verify current details on the official American Express India website before applying. This data is for informational purposes only."
+  }
+}

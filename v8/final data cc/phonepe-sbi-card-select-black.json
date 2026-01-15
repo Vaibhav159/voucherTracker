@@ -1,0 +1,932 @@
+{
+  "id": "phonepe-sbi-card-select-black",
+  "name": "PhonePe SBI Card SELECT BLACK",
+  "bank": "SBI Card",
+  "slug": "phonepe-sbi-card-select-black",
+  "image": "assets/cards/sbicard/phonepe-sbi-card-select-black.png",
+  "link": "https://www.sbicard.com/en/personal/credit-cards/rewards/phonepe-sbi-card-select-black.page",
+  "isActive": true,
+
+  "network": {
+    "type": "Visa | RuPay",
+    "variant": "Signature",
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "premium",
+    "isCobranded": true,
+    "cobrandPartner": {
+      "name": "PhonePe",
+      "type": "Digital Payments Platform",
+      "loyaltyProgram": null
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 1499,
+      "waivable": false,
+      "waiverCondition": null,
+      "gstApplicable": true,
+      "totalWithGST": 1769
+    },
+    "annual": {
+      "amount": 1499,
+      "firstYearWaived": false,
+      "gstApplicable": true,
+      "totalWithGST": 1769,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 300000,
+        "spendPeriod": "previous membership year",
+        "waiverText": "Annual fee reversed on spends of Rs. 3 lakh or more in the previous membership year"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": 3,
+      "joiningFee": 0,
+      "annualFee": 0,
+      "rewardSharing": true,
+      "eligibleRelations": ["Spouse", "Parents", "Children (18+)", "Siblings (18+)"]
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 500, "fee": 0},
+        {"minAmount": 501, "maxAmount": 1000, "fee": 400},
+        {"minAmount": 1001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 950},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ],
+      "additionalCharge": {
+        "amount": 100,
+        "condition": "Additional Rs. 100 charged if MAD missed for 2 consecutive cycles"
+      }
+    },
+    "overLimit": {
+      "amount": 600,
+      "percentage": 2.5,
+      "note": "2.5% of overlimit amount or Rs. 600, whichever is higher"
+    },
+    "chequeReturn": 500,
+    "cardReplacement": {
+      "min": 100,
+      "max": 250
+    },
+    "duplicateStatement": null,
+    "cashPaymentFee": 250,
+    "chequePaymentFee": 200,
+    "rentPaymentProcessingFee": 199,
+    "utilityPaymentFee": {
+      "percentage": 1,
+      "threshold": 50000,
+      "note": "1% of total utility payments if exceeds Rs. 50,000 in a billing cycle"
+    },
+    "walletLoadFee": {
+      "percentage": 1,
+      "threshold": 1000,
+      "note": "1% on wallet load transactions exceeding Rs. 1,000 (w.e.f. 1st Nov 2025)"
+    },
+    "educationPaymentFee": {
+      "percentage": 1,
+      "condition": "Via third-party apps only",
+      "exemption": "Direct payments to colleges/schools exempt"
+    }
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": null,
+        "annual": 400000
+      },
+      "selfEmployed": {
+        "itr": 400000
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 70,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": "Applied via PhonePe app"
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident",
+    "applicationMethod": "PhonePe App (phased rollout)"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 50000,
+      "max": 500000
+    },
+    "factors": "Based on income, credit score, and PhonePe usage history",
+    "enhancementCriteria": "Good repayment history for 6+ months"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": 50,
+      "minDays": 20,
+      "note": "20-50 days interest-free period on retail purchases if previous balance paid in full"
+    },
+    "minPayment": {
+      "percentage": 0.02,
+      "minAmount": 200,
+      "calculation": "100% of GST + 100% of EMI amount + 100% of Fees/Charges + 100% of Finance charges + Overlimit Amount + 2% of Remaining Balance Outstanding"
+    },
+    "minFinanceCharge": 25
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": null,
+    "dailyLimit": 15000,
+    "interestFromDay1": true,
+    "note": "Cash advance limit is part of overall credit limit"
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "Reward Points",
+      "symbol": "RP",
+      "singularUnit": "Reward Point",
+      "pluralUnit": "Reward Points"
+    },
+    "baseRate": {
+      "rate": 1,
+      "spendUnit": 100,
+      "effectivePercentage": 0.01,
+      "note": "1% value back on other spends"
+    },
+    "earningText": "Earn 10 Reward Points per Rs. 100 on PhonePe spends, 5 Reward Points per Rs. 100 on online spends, 1 Reward Point per Rs. 100 on other spends",
+    "minTransactionForRewards": 100,
+
+    "exclusions": {
+      "categories": [
+        "Fuel purchases",
+        "E-wallet loading",
+        "Rent payments",
+        "Property management payments",
+        "School & educational services",
+        "Government spends",
+        "Digital gaming platforms",
+        "Financial charges",
+        "Disputed transactions",
+        "Encash",
+        "ATM withdrawals",
+        "Flexipay transactions",
+        "Merchant EMI transactions"
+      ],
+      "mccs": ["5172", "5541", "5542", "5983", "6540", "6541", "6513", "8211", "8241", "8244", "8249", "8299", "9311", "9399", "5816", "7993", "7994"],
+      "note": "Transactions at these MCCs do not earn reward points"
+    },
+
+    "caps": {
+      "monthly": {
+        "phonepeSpends": 2000,
+        "onlineSpends": 2000,
+        "otherSpends": 2000,
+        "utilitiesOutsidePhonePe": 500
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": "statement",
+      "perTransaction": null,
+      "note": "2,000 reward points/month cap for each category (10X, 5X, 1X), except utilities/insurance outside PhonePe capped at 500 points/month"
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "24 months",
+      "condition": "From date of earning"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": null,
+        "cashback": null,
+        "vouchers": "Rs. 1,500 PhonePe Gift Card",
+        "spendCondition": {
+          "amount": null,
+          "period": null,
+          "transactionCount": null
+        },
+        "validity": "Within 45 days of joining fee realization",
+        "description": "Get Rs. 1,500 PhonePe Gift Card on payment of joining fee (effectively offsets the joining fee)"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "phonePeSpends": {
+        "rate": 10,
+        "multiplier": 10,
+        "cap": 2000,
+        "capPeriod": "monthly",
+        "merchants": ["PhonePe App", "PhonePe PINCODE"],
+        "eligibleSpends": ["Recharges", "Utilities", "Bill Payments", "Insurance", "Travel", "PhonePe PINCODE orders"],
+        "note": "10 Reward Points per Rs. 100 on eligible PhonePe and PINCODE spends"
+      },
+      "online": {
+        "rate": 5,
+        "multiplier": 5,
+        "cap": 2000,
+        "capPeriod": "monthly",
+        "merchants": ["Amazon", "Flipkart", "Myntra", "Swiggy", "Zomato", "Uber", "Nykaa", "BookMyShow", "MakeMyTrip", "Blinkit", "Zepto", "Rapido", "Ajio", "Dunzo"],
+        "note": "5 Reward Points per Rs. 100 on eligible online spends (1000+ brands)"
+      },
+      "scanAndPay": {
+        "rate": 1,
+        "multiplier": 1,
+        "cap": 2000,
+        "capPeriod": "monthly",
+        "note": "1% value back on all Scan & Pay UPI transactions on any UPI app"
+      },
+      "offline": {
+        "rate": 1,
+        "multiplier": 1,
+        "cap": 2000,
+        "capPeriod": "monthly",
+        "note": "1 Reward Point per Rs. 100 on other spends including Tap & Pay"
+      },
+      "utilitiesOutsidePhonePe": {
+        "rate": 1,
+        "multiplier": 1,
+        "cap": 500,
+        "capPeriod": "monthly",
+        "mccs": ["4900", "4814", "4899"],
+        "note": "Utilities/Insurance spends outside PhonePe earn 1 RP/Rs. 100, capped at 500 points/month"
+      },
+      "insuranceOutsidePhonePe": {
+        "rate": 1,
+        "multiplier": 1,
+        "cap": 500,
+        "capPeriod": "monthly",
+        "mccs": ["5960", "6300", "6380"],
+        "note": "Insurance spends outside PhonePe earn 1 RP/Rs. 100, capped at 500 points/month"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on fuel transactions, but 1% fuel surcharge waiver available"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on rent payments; Rs. 199 processing fee applicable"
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on wallet loads"
+      },
+      "international": {
+        "rate": 1,
+        "multiplier": 1,
+        "cap": 2000,
+        "capPeriod": "monthly",
+        "note": "Standard rewards on international transactions; 3.5% forex markup applies"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": false,
+        "name": null,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "link": null,
+        "note": null
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": null,
+        "note": null
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": null
+      },
+      "milestoneAccelerators": null
+    },
+
+    "redemption": {
+      "baseValue": 1.0,
+      "bestValue": 1.0,
+      "bestOption": "Statement credit or gift vouchers at Rs. 1 = 1 Reward Point",
+      "minRedemption": 500,
+      "redemptionIncrement": null,
+      "convenienceFee": 99,
+      "convenienceFeeNote": "Rs. 99 fee applicable only on physical products, statement credit, and physically sent vouchers",
+      "monthlyRedemptionLimit": null,
+
+      "pointsPlusPay": {
+        "enabled": false,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": null,
+        "note": null
+      },
+
+      "options": [
+        {
+          "type": "statement_credit",
+          "value": 1.0,
+          "description": "Statement credit to reduce outstanding balance",
+          "recommended": true,
+          "minPoints": 500,
+          "processingFee": 99,
+          "partners": [],
+          "note": "1 Reward Point = Rs. 1"
+        },
+        {
+          "type": "vouchers",
+          "value": 1.0,
+          "description": "E-gift vouchers from SBI Card Rewards portal",
+          "recommended": true,
+          "minPoints": 500,
+          "processingFee": 99,
+          "partners": ["Amazon", "Flipkart", "Various brands"],
+          "note": "Wide array of vouchers available"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": null,
+      "partners": null,
+      "currentBonus": null
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": null,
+      "acrossUsers": false,
+      "note": null
+    },
+
+    "specialLogic": {
+      "acceleratedRewardsIdentification": "Based on PhonePe's Merchant Identification Number (MID) or Terminal Identification Number (TID)",
+      "note": "Accelerated rewards on PhonePe categories are identified by MID/TID on best effort basis"
+    },
+
+    "calculator": {
+      "enabled": true,
+      "formula": "PhonePe spends: (spend/100)*10 (max 2000/month); Online spends: (spend/100)*5 (max 2000/month); Other spends: (spend/100)*1 (max 2000/month)",
+      "variables": ["spend", "category", "isPhonePeApp", "isOnline"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": true,
+        "complimentaryCount": 4,
+        "period": "year",
+        "maxPerQuarter": 1,
+        "accessType": "Domestic Airport Lounges",
+        "accessProvider": null,
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "No minimum spend required for domestic lounge access"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "eligibleLounges": "https://www.sbicard.com/en/personal/credit-cards/rewards/phonepe-sbi-card-select-black.page"
+      },
+      "international": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": "Priority Pass Membership Only",
+        "accessProvider": "Priority Pass",
+        "membershipValue": 8000,
+        "membershipValueUSD": 99,
+        "membershipDuration": "First 2 years",
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": null
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "eligibleLounges": "https://prioritypass.com/lounges",
+        "note": "Priority Pass membership provided, but lounge visits are chargeable (up to $27/visit)"
+      },
+      "internationalLoungeCharges": {
+        "viaInternationalProgram": {
+          "chargePerVisit": 27,
+          "currency": "USD",
+          "note": "International lounge visits via Priority Pass charged up to USD 27 per visit + applicable taxes"
+        }
+      }
+    },
+
+    "milestones": [
+      {
+        "spend": 500000,
+        "period": "annual",
+        "benefit": "Rs. 5,000 Yatra Voucher",
+        "benefitType": "voucher",
+        "value": 5000,
+        "conditions": "On achieving annual spends of Rs. 5 lakh or more in a membership year",
+        "voucherUsage": "Valid for booking domestic/international flights, domestic hotels and holidays on Yatra website"
+      }
+    ],
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": null,
+      "lessonIncluded": null,
+      "note": null
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": null
+    },
+
+    "dining": {
+      "included": false,
+      "programs": null,
+      "hotelDining": null
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 500,
+      "maxTransaction": 4000,
+      "monthlyCap": 250,
+      "monthlyCapNote": "Maximum fuel surcharge waiver of Rs. 250 per statement cycle, per credit card account",
+      "applicableStations": "All petrol pumps in India",
+      "rewardsOnFuel": false,
+      "gstNote": "Transaction limits exclusive of GST and other charges",
+      "note": "1% fuel surcharge waiver on transactions from Rs. 500 to Rs. 4,000"
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% on international transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "fee": 3.5,
+        "minTransaction": 1000,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "Forex markup will not be reversed in case of transaction refunds"
+    },
+
+    "concierge": {
+      "included": false,
+      "availability": null,
+      "type": null,
+      "services": null,
+      "contactNumber": null,
+      "note": null
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": null,
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "Flexipay",
+      "noCostEMI": {
+        "available": true,
+        "merchants": null,
+        "note": "Available on select merchants and products"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": null,
+        "minFee": null
+      },
+      "minAmount": 2500,
+      "tenures": null,
+      "interestRates": {
+        "min": null,
+        "max": null
+      },
+      "preclosureFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "cancellationPeriod": null,
+      "note": "Convert transactions of Rs. 2,500 or more into Flexipay within 30 days of purchase via sbicard.com"
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": 0,
+        "promotionalPeriod": "60 days",
+        "regular": 0.017
+      },
+      "regularPeriod": "180 days",
+      "regularAnnualRate": 0.204,
+      "processingFee": {
+        "percentage": null,
+        "minFee": null,
+        "note": "One-time processing fee applicable over and above ROI"
+      },
+      "tenures": null,
+      "maxAmount": null,
+      "preclosureFee": null,
+      "note": "Transfer outstanding balance of other bank credit cards at lower interest rates"
+    },
+
+    "memberships": [],
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "condition": null
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": null,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": null,
+      "fraudLiability": {
+        "included": true,
+        "cover": null,
+        "reportingWindow": "Report immediately",
+        "note": "SBI Card offers complimentary lost/stolen card insurance cover; claims handled by ICICI Lombard General Insurance Company Limited"
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "Insurance coverage details should be confirmed from the card welcome kit or official SBI Card website"
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000,
+      "note": "Visa PayWave contactless technology"
+    },
+    "virtualCard": {
+      "available": true,
+      "instantIssuance": true,
+      "singleUse": false,
+      "spendControls": true
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": true,
+      "rewardsOnUPI": true,
+      "note": "RuPay variant can be linked to UPI for Scan & Pay transactions earning 1% rewards"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "View transactions",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Real-time alerts",
+        "Bill payments"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"],
+      "method": "NACH (National Automated Clearing House)"
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": null,
+    "upgradesTo": null,
+    "note": "Card is newly launched (July 2025); upgrade pathways may be established later"
+  },
+
+  "meta": {
+    "tags": [
+      "Digital Payments",
+      "UPI Rewards",
+      "Online Shopping",
+      "Utility Bill Payments",
+      "Insurance Payments",
+      "Lounge Access",
+      "PhonePe",
+      "RuPay",
+      "Visa",
+      "Cashback Equivalent"
+    ],
+    "bestFor": "Heavy PhonePe users who frequently pay bills, make recharges, book travel, and shop online; those who want rewards on utility and insurance payments which are typically excluded from other cards",
+    "notRecommendedFor": "Low spenders, those who don't use PhonePe, international travelers (due to 3.5% forex markup and no complimentary international lounge visits)",
+    "rating": {
+      "overall": 4.2,
+      "rewards": 4.5,
+      "benefits": 3.8,
+      "value": 4.3
+    },
+    "verdict": "The PhonePe SBI Card SELECT BLACK is an excellent choice for digital-savvy users who extensively use PhonePe for bill payments, recharges, insurance, and travel bookings. The 10% reward rate on PhonePe spends is industry-leading for these typically excluded categories. The 1:1 redemption ratio (1 point = Rs. 1) makes calculations simple. The welcome benefit effectively offsets the joining fee, and the Rs. 3 lakh annual spend requirement for fee waiver is reasonable. Domestic lounge access without any spend requirement is a solid benefit. However, the Priority Pass membership only provides membership without complimentary visits, and the 3.5% forex markup is on the higher side.",
+    "pros": [
+      "10% rewards on PhonePe spends including utilities, insurance, and travel",
+      "5% rewards on all online spends (not restricted to specific merchants)",
+      "1% rewards on UPI Scan & Pay transactions",
+      "1:1 redemption ratio (1 point = Rs. 1)",
+      "Welcome voucher worth Rs. 1,500 offsets joining fee",
+      "4 complimentary domestic lounge visits per year with no spend requirement",
+      "Annual fee waiver at reasonable Rs. 3 lakh spend",
+      "Available on both Visa and RuPay networks",
+      "UPI integration with RuPay variant"
+    ],
+    "cons": [
+      "2,000 points/month cap per reward category limits maximum earnings",
+      "Priority Pass membership without complimentary international lounge visits",
+      "3.5% forex markup is high for international usage",
+      "No transfer partners or airmiles conversion",
+      "Limited insurance coverage",
+      "Application currently restricted to select PhonePe users",
+      "No renewal benefit"
+    ],
+    "alternatives": [
+      "phonepe-hdfc-ultimo",
+      "sbi-cashback",
+      "tata-neu-infinity-sbi",
+      "axis-ace"
+    ],
+    "launchDate": "July 22, 2025",
+    "lastVerified": "2026-01-06",
+    "dataSource": [
+      "Official SBI Card product page",
+      "Official PhonePe website",
+      "SBI Card MITC document (December 2025)",
+      "PhonePe SBI Card SELECT BLACK Reward Program T&C PDF",
+      "PhonePe SBI Card SELECT BLACK Terms & Conditions Booklet (ekit PDF)",
+      "Paisabazaar.com",
+      "CardInsider.com",
+      "CardExpert.in",
+      "BankBazaar.com",
+      "MyMoneyMantra.com"
+    ],
+    "changelog": [
+      {
+        "date": "2025-07-22",
+        "change": "Card launched as co-branded offering between PhonePe and SBI Card",
+        "source": "Official press release"
+      },
+      {
+        "date": "2025-11-01",
+        "change": "1% fee on wallet load transactions exceeding Rs. 1,000 introduced",
+        "source": "SBI Card MITC"
+      },
+      {
+        "date": "2025-11-01",
+        "change": "1% fee on education payments via third-party apps introduced",
+        "source": "SBI Card MITC"
+      }
+    ]
+  }
+}

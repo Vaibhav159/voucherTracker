@@ -1,0 +1,987 @@
+{
+  "id": "sbi-card-prime",
+  "name": "SBI Card PRIME",
+  "bank": "SBI Card",
+  "slug": "sbi-card-prime",
+  "image": "assets/cards/sbi/sbi-card-prime.png",
+  "link": "https://www.sbicard.com/en/personal/credit-cards/rewards/sbi-card-prime.page",
+  "isActive": true,
+
+  "network": {
+    "type": "Visa | Mastercard | RuPay | American Express",
+    "variant": "Signature",
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "mid",
+    "isCobranded": false,
+    "cobrandPartner": {
+      "name": null,
+      "type": null,
+      "loyaltyProgram": null
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 2999,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 2999,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 300000,
+        "spendPeriod": "12 months",
+        "waiverText": "Renewal fee waived on annual spends of Rs. 3 Lakhs or more in the preceding year"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": 2,
+      "joiningFee": 0,
+      "annualFee": 0,
+      "rewardSharing": true
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 500, "fee": 0},
+        {"minAmount": 501, "maxAmount": 1000, "fee": 400},
+        {"minAmount": 1001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 950},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ]
+    },
+    "overLimit": {
+      "amount": 600,
+      "percentage": 2.5
+    },
+    "chequeReturn": 500,
+    "cardReplacement": 250,
+    "duplicateStatement": null,
+    "gstApplicable": true,
+    "gstRate": 18
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 32000,
+        "annual": 384000
+      },
+      "selfEmployed": {
+        "itr": 600000
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 70,
+      "addOnMin": 18,
+      "selfEmployedMin": 25
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": null
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident | NRI"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 50000,
+      "max": 500000
+    },
+    "factors": "Based on income, credit score, credit history, and repayment behavior",
+    "enhancementCriteria": "Good repayment history and income documentation"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": 50,
+      "note": "20-50 days interest-free period applicable only on retail purchases if previous month's outstanding is paid in full"
+    },
+    "minPayment": {
+      "percentage": 0.02,
+      "minAmount": 200,
+      "calculation": "100% of GST + 100% of EMI amount + 100% of Fees/Charges + 100% of Finance Charges + Overlimit Amount (if any) + 2% of Remaining Balance Outstanding or Rs 200 (whichever is greater)"
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": null,
+    "dailyLimit": 15000,
+    "interestFromDay1": true
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "Reward Points",
+      "symbol": "RP",
+      "singularUnit": "point",
+      "pluralUnit": "points"
+    },
+    "baseRate": {
+      "rate": 2,
+      "spendUnit": 100,
+      "effectivePercentage": 0.005
+    },
+    "earningText": "Earn 2 Reward Points for every Rs. 100 spent on all retail purchases (except fuel)",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Fuel",
+        "Rent payments",
+        "Wallet loads",
+        "EMI transactions",
+        "Cash withdrawals",
+        "Insurance premium payments (from April 2024)"
+      ],
+      "mccs": ["5541", "5542", "5983", "6513", "6540", "6541"],
+      "note": "No reward points on fuel transactions. Rs. 199 processing fee on rent payments (MCC 6513). 1% fee on wallet loads exceeding Rs. 1,000 (w.e.f. Nov 2025). 1% fee on utility payments exceeding Rs. 50,000/billing cycle (w.e.f. Dec 2024)"
+    },
+
+    "caps": {
+      "monthly": {
+        "points": null,
+        "cashback": null
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": "statement",
+      "perTransaction": null,
+      "birthdayRewards": {
+        "annual": 2000,
+        "note": "Birthday reward points capped at 2,000 points per calendar year"
+      }
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "24 months",
+      "condition": "Reward Points are valid for 24 months from date of earning. Points not redeemed within this period will expire."
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": null,
+        "cashback": null,
+        "vouchers": "E-gift voucher worth Rs. 3,000 from Yatra, Aditya Birla Fashion, Bata/Hush Puppies, Shoppers Stop, or Pantaloons",
+        "spendCondition": {
+          "amount": null,
+          "period": null,
+          "transactionCount": null
+        },
+        "validity": "On payment of annual fee",
+        "description": "Welcome e-gift voucher worth Rs. 3,000 from select brands upon joining"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "birthday": {
+        "enabled": true,
+        "multiplier": 10,
+        "bonusPoints": null,
+        "validity": "One day before, on birthday, and one day after",
+        "rate": "20 Reward Points per Rs. 100 spent",
+        "cap": 2000,
+        "capPeriod": "calendar year"
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "dining": {
+        "rate": 10,
+        "multiplier": 5,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["Restaurants", "Food delivery"],
+        "mccs": ["5812", "5813", "5814"],
+        "weekendRate": null,
+        "note": "10 Reward Points per Rs. 100 spent on dining (5X accelerated rewards)"
+      },
+      "groceries": {
+        "rate": 10,
+        "multiplier": 5,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["Supermarkets", "Grocery stores"],
+        "mccs": ["5411", "5422"],
+        "note": "10 Reward Points per Rs. 100 spent on groceries"
+      },
+      "departmentalStores": {
+        "rate": 10,
+        "multiplier": 5,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["Departmental stores"],
+        "mccs": ["5311", "5651"],
+        "note": "10 Reward Points per Rs. 100 spent at departmental stores"
+      },
+      "movies": {
+        "rate": 10,
+        "multiplier": 5,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["Movie theatres", "Cinema halls"],
+        "mccs": ["7832"],
+        "note": "10 Reward Points per Rs. 100 spent on movies"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No reward points on fuel transactions. 1% fuel surcharge waiver available."
+      },
+      "utilities": {
+        "rate": 2,
+        "cap": null,
+        "note": "Base 2 Reward Points per Rs. 100. 1% fee on utility payments exceeding Rs. 50,000 per billing cycle (w.e.f. Dec 2024)"
+      },
+      "international": {
+        "rate": 2,
+        "multiplier": null,
+        "cap": null,
+        "note": "Base reward rate on international transactions"
+      },
+      "insurance": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on insurance payments (from April 2024)"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on rent payments. Rs. 199 processing fee applies on all rent payments (MCC 6513)"
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on wallet loads. 1% fee on wallet loads exceeding Rs. 1,000 (w.e.f. Nov 2025)"
+      },
+      "education": {
+        "rate": 2,
+        "note": "1% fee on education payments made through third-party apps like CRED, Cheq, MobiKwik (w.e.f. Nov 2025). Direct payments to colleges/schools not charged."
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": false,
+        "name": null,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "link": null,
+        "note": "SBI Card does not have a shopping portal like HDFC SmartBuy"
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": [],
+        "note": "No specific merchant accelerators"
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": []
+      },
+      "milestoneAccelerators": []
+    },
+
+    "redemption": {
+      "baseValue": 0.25,
+      "bestValue": 0.25,
+      "bestOption": "Gift vouchers or statement credit at 4 RP = Rs. 1",
+      "minRedemption": null,
+      "redemptionIncrement": null,
+      "convenienceFee": 99,
+      "monthlyRedemptionLimit": null,
+
+      "pointsPlusPay": {
+        "enabled": true,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": null,
+        "note": "Pay card outstanding with reward points at 4 RP = Rs. 1"
+      },
+
+      "options": [
+        {
+          "type": "statement_credit",
+          "value": 0.25,
+          "description": "Pay card outstanding with reward points",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 99,
+          "partners": [],
+          "note": "4 Reward Points = Rs. 1"
+        },
+        {
+          "type": "vouchers",
+          "value": 0.25,
+          "description": "Gift vouchers from catalog",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 99,
+          "partners": ["Various brands"],
+          "note": "4 Reward Points = Rs. 1"
+        },
+        {
+          "type": "products",
+          "value": 0.25,
+          "description": "Products from SBI Card rewards catalog",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 99,
+          "partners": [],
+          "note": "Physical products require Rs. 99 redemption fee"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": [],
+      "partners": [],
+      "currentBonus": {
+        "active": false,
+        "bonusPercentage": null,
+        "validUntil": null,
+        "applicablePartners": []
+      },
+      "note": "SBI Prime Credit Card does not have airline or hotel transfer partners"
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": [],
+      "acrossUsers": false,
+      "note": null
+    },
+
+    "specialLogic": null,
+
+    "calculator": {
+      "enabled": true,
+      "formula": "basePoints = (spend / 100) * rate; For accelerated categories (dining, groceries, departmental stores, movies): rate = 10; For other retail: rate = 2; For fuel, rent, wallet, EMI, insurance: rate = 0",
+      "variables": ["spend", "category"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": true,
+        "complimentaryCount": 8,
+        "period": "year",
+        "accessType": "Visa/Mastercard Lounge",
+        "accessProvider": "Visa/Mastercard",
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "No spend requirement for domestic lounge access"
+        },
+        "perQuarter": 2,
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "eligibleLounges": "https://www.sbicard.com/lounge-access"
+      },
+      "international": {
+        "included": true,
+        "complimentaryCount": 4,
+        "period": "year",
+        "accessType": "Priority Pass",
+        "accessProvider": "Priority Pass",
+        "membershipValue": null,
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "No spend requirement for Priority Pass lounge access"
+        },
+        "perQuarter": 2,
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": "USD 27 + taxes per visit"
+        },
+        "eligibleLounges": "https://www.prioritypass.com/lounges",
+        "additionalVisitFee": "USD 27 + taxes per visit after complimentary visits exhausted"
+      },
+      "note": "All Airport Lounge visits within India through International Lounge Access Programs (like Priority Pass) will be charged a usage fee of up to USD 27 per visit + taxes"
+    },
+
+    "milestones": [
+      {
+        "spend": 50000,
+        "period": "quarterly",
+        "benefit": "Pizza Hut e-Voucher worth Rs. 1,000",
+        "benefitType": "voucher",
+        "value": 1000,
+        "conditions": "Pizza Hut e-Voucher will be sent to registered mobile number within 30 days of achieving spends of Rs. 50,000"
+      },
+      {
+        "spend": 500000,
+        "period": "annual",
+        "benefit": "E-Gift Voucher worth Rs. 7,000 from Yatra.com or Pantaloons",
+        "benefitType": "voucher",
+        "value": 7000,
+        "conditions": "SMS to choose e-Gift Voucher option sent within 21 working days of achieving Rs. 5 Lakh spends"
+      },
+      {
+        "spend": 300000,
+        "period": "annual",
+        "benefit": "Renewal fee waiver",
+        "benefitType": "fee_waiver",
+        "value": 2999,
+        "conditions": "Annual fee waived for next year if Rs. 3 Lakh spent in preceding year"
+      }
+    ],
+
+    "golf": {
+      "included": true,
+      "complimentaryRounds": 4,
+      "period": "year",
+      "courses": "Select courses in India",
+      "greenFeeWaiver": true,
+      "discount": "Up to 50% off on golf games",
+      "lessonIncluded": true,
+      "lessonsPerMonth": 1,
+      "note": "Golf benefits available with Mastercard variant only. 4 rounds of complimentary green fees access and up to 50% off on golf games along with 1 complimentary lesson per month at selected golf courses across India"
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": "No standalone movie offers, but 10 Reward Points per Rs. 100 on movie spends"
+    },
+
+    "dining": {
+      "included": true,
+      "programs": [
+        {
+          "name": "SBI Card Dining Offers",
+          "discount": "Up to 20% off",
+          "cap": null,
+          "frequency": "Per visit",
+          "note": "Up to 20% discount at more than 700+ restaurants including Café Noir, Lord of the Drinks, Yo China, 1441 Pizzeria, The Beer Café and more"
+        }
+      ],
+      "hotelDining": {
+        "included": true,
+        "hotels": ["Lalit Hotels"],
+        "offer": "Up to 15% discount on best available room rates and up to 15% discount on F&B"
+      }
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 500,
+      "maxTransaction": 4000,
+      "monthlyCap": 250,
+      "applicableStations": "All fuel stations in India",
+      "rewardsOnFuel": false,
+      "note": "1% fuel surcharge waiver on transaction amount ranging from Rs. 500 to Rs. 4,000 across all petrol pumps. Maximum surcharge waiver of Rs. 250 per statement cycle. GST applicable on surcharge."
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% foreign currency transaction fee on international transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "fee": 3.5,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "Foreign Currency Transaction Fee of 3.5% applicable on all foreign currency transactions. Same rate applies for Dynamic Currency Conversion. Fee will not be reversed in case of transaction refunds."
+    },
+
+    "concierge": {
+      "included": false,
+      "availability": null,
+      "type": null,
+      "services": [],
+      "contactNumber": null,
+      "note": "No dedicated concierge service"
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": [],
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "Flexipay",
+      "noCostEMI": {
+        "available": false,
+        "merchants": [],
+        "note": null
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": null,
+        "minFee": null
+      },
+      "minAmount": 2500,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": null,
+        "max": null
+      },
+      "preclosureFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "cancellationPeriod": null,
+      "note": "Convert transactions of Rs. 2,500 or more into EMIs within 30 days of purchase via sbicard.com"
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": 0,
+        "promotionalPeriod": "60 days",
+        "regular": 0.0170
+      },
+      "regularRate": {
+        "monthlyRate": 0.0170,
+        "annualRate": 0.2040,
+        "tenure": "180 days"
+      },
+      "processingFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "tenures": [60, 180],
+      "maxAmount": null,
+      "preclosureFee": null,
+      "note": "Transfer outstanding balance of other banks' credit cards to SBI Card PRIME at lower interest rates. 0% for 60 days or 1.7% p.m. (20.40% p.a.) for 180 days."
+    },
+
+    "memberships": [
+      {
+        "name": "Club ITC Silver Tier Membership",
+        "type": "hotel",
+        "value": null,
+        "duration": "1 year",
+        "condition": "Only eligible cards sourced from 1st September 2025. First transaction within 60 days of card issuance required.",
+        "note": "Complimentary 1-year Club ITC Silver Tier Membership with discounts at ITC Hotels"
+      },
+      {
+        "name": "Tablet Plus Membership",
+        "type": "hotel",
+        "value": null,
+        "duration": null,
+        "condition": "Available with American Express variant only",
+        "note": "Complimentary Tablet Plus membership for VIP upgrades and privileges at hotels worldwide"
+      }
+    ],
+
+    "discontinuedMemberships": [
+      {
+        "name": "Club Vistara Silver Membership",
+        "status": "Discontinued",
+        "note": "Previously offered complimentary Club Vistara Silver membership - now discontinued"
+      },
+      {
+        "name": "Trident Privilege Red Tier Membership",
+        "status": "Discontinued",
+        "note": "Previously offered complimentary Trident Privilege Red Tier membership - now discontinued"
+      }
+    ],
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": true,
+        "tier": "Silver",
+        "program": "Club ITC",
+        "condition": "Cards sourced from Sept 2025 onwards only"
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "condition": null,
+      "discontinuedDate": "2025-07-15",
+      "note": "Air Accident insurance coverage of Rs. 50 lakhs discontinued with effect from 15 July 2025"
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": []
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": [],
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": false,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": 100000,
+      "fraudLiability": {
+        "included": true,
+        "cover": 100000,
+        "reportingWindow": "Valid from 48 hours prior to reporting of loss to 7 days post reporting of loss"
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": []
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": [],
+      "excludedCountries": [],
+      "excludedVehicleTypes": []
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "Air Accident Liability Cover of Rs. 50 lakhs was offered until 15 July 2025 - now discontinued. Credit card Fraud Liability Cover of Rs. 1 lakh continues to be offered. Insurance provided by Oriental Insurance Company Ltd."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000
+    },
+    "virtualCard": {
+      "available": false,
+      "instantIssuance": false,
+      "singleUse": false,
+      "spendControls": false
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": true,
+      "rewardsOnUPI": true,
+      "note": "RuPay variant can be linked to UPI platforms for payments with base reward earnings"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Real-time alerts"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    },
+    "chipAndPin": true
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [
+      {
+        "cardId": "sbi-simplysave",
+        "spendRequired": null,
+        "tenure": null,
+        "autoUpgrade": false
+      },
+      {
+        "cardId": "sbi-simplyclick",
+        "spendRequired": null,
+        "tenure": null,
+        "autoUpgrade": false
+      }
+    ],
+    "upgradesTo": [
+      {
+        "cardId": "sbi-elite",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false
+      }
+    ],
+    "note": "Upgrade eligibility based on spend history, credit score, and relationship with SBI Card"
+  },
+
+  "meta": {
+    "tags": [
+      "Rewards",
+      "Lifestyle",
+      "Lounge Access",
+      "Dining",
+      "Groceries"
+    ],
+    "bestFor": "Individuals who spend significantly on dining, groceries, movies, and departmental stores and can spend Rs. 5 Lakh annually to maximize milestone benefits",
+    "notRecommendedFor": "Those seeking premium travel benefits, transfer partners, or low annual fee. Also not ideal for those with low monthly spends.",
+    "rating": {
+      "overall": 3.5,
+      "rewards": 3.5,
+      "benefits": 3.0,
+      "value": 3.5
+    },
+    "verdict": "SBI Card PRIME is a mid-tier lifestyle card offering 5X rewards on dining, groceries, movies, and departmental stores. The card provides good value for high spenders who can achieve milestone benefits (Rs. 50,000 quarterly for Pizza Hut voucher, Rs. 5 Lakh annually for Rs. 7,000 voucher). Lounge access (8 domestic + 4 international) is a decent perk. However, the base reward rate of 0.5% is low, the annual fee of Rs. 2,999 is relatively high for the benefits, and key travel perks like Club Vistara and Trident memberships have been discontinued. Air accident insurance was also discontinued in July 2025. Better alternatives exist at similar or lower price points.",
+    "pros": [
+      "5X rewards (10 RP per Rs. 100) on dining, groceries, movies, and departmental stores",
+      "Milestone benefits worth up to Rs. 11,000 annually",
+      "8 domestic + 4 international lounge visits per year",
+      "1% fuel surcharge waiver up to Rs. 250/month",
+      "Birthday bonus of 20 RP per Rs. 100 (up to 2,000 RP)",
+      "Rs. 3,000 welcome voucher",
+      "Available in multiple network variants (Visa, Mastercard, RuPay, Amex)",
+      "RuPay variant supports UPI linking with rewards"
+    ],
+    "cons": [
+      "Low base reward rate of 0.5% (2 RP per Rs. 100)",
+      "Annual fee of Rs. 2,999 is high for benefits offered",
+      "Air accident insurance discontinued from July 2025",
+      "Club Vistara Silver and Trident memberships discontinued",
+      "No transfer partners for reward points",
+      "Reward points expire in 24 months",
+      "Rs. 99 redemption fee applies",
+      "3.5% forex markup is high",
+      "Processing fee on rent (Rs. 199), wallet loads (1% above Rs. 1,000), utilities (1% above Rs. 50,000)",
+      "No rewards on fuel, rent, wallet loads, EMI, and insurance"
+    ],
+    "alternatives": [
+      "sbi-elite",
+      "hdfc-regalia",
+      "axis-ace",
+      "cashback-sbi-card"
+    ],
+    "lastVerified": "2026-01-05",
+    "dataSource": [
+      "Official SBI Card website - https://www.sbicard.com/en/personal/credit-cards/rewards/sbi-card-prime.page",
+      "SBI Card MITC document dated December 2025",
+      "CardInsider.com",
+      "PaisaBazaar.com",
+      "BankBazaar.com",
+      "MyMoneyMantra.com"
+    ],
+    "changelog": [
+      {
+        "date": "2025-09-01",
+        "change": "Club ITC Silver Tier Membership introduced for cards sourced from this date",
+        "source": "Official SBI Card website"
+      },
+      {
+        "date": "2025-07-15",
+        "change": "Air Accident insurance coverage of Rs. 50 lakhs discontinued",
+        "source": "Official SBI Card website"
+      },
+      {
+        "date": "2025-11-01",
+        "change": "1% fee introduced on education payments via third-party apps and wallet loads exceeding Rs. 1,000",
+        "source": "SBI Card MITC"
+      },
+      {
+        "date": "2024-12-01",
+        "change": "1% fee introduced on utility payments exceeding Rs. 50,000 per billing cycle",
+        "source": "SBI Card MITC"
+      },
+      {
+        "date": "2024-04-01",
+        "change": "Reward points on rental payments discontinued for all SBI Credit Cards",
+        "source": "SBI Card communication"
+      }
+    ]
+  }
+}

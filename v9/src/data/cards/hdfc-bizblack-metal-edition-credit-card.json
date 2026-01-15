@@ -1,0 +1,1179 @@
+{
+  "id": "hdfc-bizblack-metal-edition",
+  "name": "HDFC Bank BizBlack Metal Edition Credit Card",
+  "bank": "HDFC Bank",
+  "slug": "hdfc-bizblack-metal-edition-credit-card",
+  "image": "assets/cards/hdfc/bizblack-metal-edition.png",
+  "link": "https://www.hdfcbank.com/personal/pay/cards/business-credit-cards/biz-black",
+  "isActive": true,
+
+  "network": {
+    "type": "Diners Club",
+    "variant": "Black",
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "business",
+    "tier": "super-premium",
+    "isCobranded": false,
+    "cobrandPartner": {
+      "name": null,
+      "type": null,
+      "loyaltyProgram": null
+    },
+    "material": "metal"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 10000,
+      "amountWithTax": 11800,
+      "waivable": true,
+      "waiverCondition": "Spend ₹1.5 lakh within first 90 days of card issuance"
+    },
+    "annual": {
+      "amount": 10000,
+      "amountWithTax": 11800,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 750000,
+        "spendPeriod": "12 months (anniversary year)",
+        "waiverText": "Spend ₹7.5 lakh in anniversary year (12 billing cycles) for renewal fee waiver"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": null,
+      "joiningFee": 0,
+      "annualFee": 0,
+      "rewardSharing": true,
+      "note": "Add-on cards share same card number as primary card"
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on total amount due",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 100, "fee": 0},
+        {"minAmount": 101, "maxAmount": 500, "fee": 100},
+        {"minAmount": 501, "maxAmount": 5000, "fee": 500},
+        {"minAmount": 5001, "maxAmount": 10000, "fee": 700},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 900},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ]
+    },
+    "overLimit": {
+      "amount": null,
+      "percentage": 2.5
+    },
+    "chequeReturn": 500,
+    "cardReplacement": 200,
+    "duplicateStatement": 100,
+    "rentPaymentFee": {
+      "percentage": 1,
+      "note": "1% fee on rent payments through third-party merchants"
+    },
+    "dynamicCurrencyConversionFee": {
+      "percentage": 1,
+      "note": "1% charged for DCC transactions at international locations"
+    }
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": null,
+        "annual": null
+      },
+      "selfEmployed": {
+        "itr": 3000000,
+        "note": "Annual ITR above ₹30 lakh (some sources indicate ₹21 lakh minimum)"
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 65,
+      "addOnMin": 18
+    },
+    "employmentType": "Self-Employed",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": "Can apply with ITR, GST returns, Bank Statements, or Merchant payment reports"
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident",
+    "businessTypes": "Sole proprietor, Partnership, Private Limited Company, LLP"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 300000,
+      "max": 2500000
+    },
+    "factors": "Based on ITR, business turnover, GST returns, and credit history",
+    "enhancementCriteria": "Good repayment history and increased business income",
+    "upgradeFromExisting": "Existing HDFC credit card limit of ₹6 lakh+ may qualify"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.2388,
+      "monthlyRate": 0.0199
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.2388,
+      "monthlyRate": 0.0199
+    },
+    "gracePeriod": {
+      "days": 55,
+      "note": "Up to 55 days interest-free credit period on retail purchases"
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 200,
+      "calculation": "5% of total outstanding or ₹200, whichever is higher"
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": 30,
+    "dailyLimit": null,
+    "interestFromDay1": true,
+    "note": "2.5% of amount or ₹500, whichever is higher"
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "Reward Points",
+      "symbol": "RP",
+      "singularUnit": "point",
+      "pluralUnit": "points"
+    },
+    "baseRate": {
+      "rate": 5,
+      "spendUnit": 150,
+      "effectivePercentage": 0.0333,
+      "note": "5 Reward Points per ₹150 spent = 3.33% reward rate at 1:1 redemption"
+    },
+    "earningText": "Earn 5 Reward Points for every ₹150 spent on all retail business spends",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "Rent payments",
+        "Wallet loads",
+        "Education payments",
+        "EMI transactions",
+        "Government services",
+        "Cash withdrawals",
+        "Balance transfers",
+        "Online skill-based gaming"
+      ],
+      "mccs": null,
+      "note": "No reward points on fuel, rent, wallet, education, EMI, and government service transactions"
+    },
+
+    "caps": {
+      "monthly": {
+        "points": 150000,
+        "note": "Maximum 1,50,000 Reward Points per statement cycle"
+      },
+      "accelerated5X": {
+        "points": 7500,
+        "note": "Maximum 7,500 RP at accelerated 5X rate per statement cycle (equivalent to ₹56,250 spend)"
+      },
+      "utility": {
+        "points": 2000,
+        "period": "monthly",
+        "note": "Utility transactions capped at 2,000 RP per month"
+      },
+      "insurance": {
+        "points": 5000,
+        "period": "daily",
+        "note": "Insurance transactions capped at 5,000 RP per day"
+      },
+      "grocery": {
+        "points": 2000,
+        "period": "monthly",
+        "note": "Grocery purchases capped at 2,000 RP per month"
+      },
+      "resetPeriod": "statement",
+      "perTransaction": null
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "3 years",
+      "condition": "From date of accumulation"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": null,
+        "cashback": null,
+        "vouchers": "Club Marriott Annual Membership + Taj Stay voucher worth ₹5,000",
+        "spendCondition": {
+          "amount": 150000,
+          "period": "90 days",
+          "transactionCount": null
+        },
+        "validity": "Within 90 days of card issuance",
+        "description": "Spend ₹1.5 lakh within first 90 days to get Club Marriott membership and Taj Stay voucher worth ₹5,000",
+        "note": "Effective from 25th October 2025, welcome benefit applicable only to first-time cardholders, not for conversions, migrations, or upgrades"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "businessSpends": {
+        "rate": 25,
+        "multiplier": 5,
+        "spendUnit": 150,
+        "minMonthlySpend": 50000,
+        "cap": 7500,
+        "capPeriod": "statement cycle",
+        "eligibleSpends": [
+          "Bill payments via PayZapp and SmartPay",
+          "Income Tax/Advance Tax via eportal.incometax.gov.in",
+          "GST payments via payment.gst.gov.in",
+          "Hotel & flight bookings on MMT MyBiz via SmartBuy BizDeals",
+          "Business productivity tools (Tally, Office 365, AWS, Google, Credflow, Azure) via SmartBuy BizDeals - Nuclei",
+          "Google Ads, Meta Ads, Reliance Digital purchases"
+        ],
+        "note": "5X rewards (25 RP per ₹150) on eligible business spends when monthly card spend exceeds ₹50,000"
+      },
+      "travel": {
+        "rate": 5,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["MMT MyBiz"],
+        "mccs": null,
+        "note": "Regular 5 RP per ₹150; 5X available via MMT MyBiz on SmartBuy BizDeals"
+      },
+      "dining": {
+        "rate": 5,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["Swiggy Dineout - 10% extra off"],
+        "note": "Regular 5 RP per ₹150 spent"
+      },
+      "online": {
+        "rate": 5,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "note": "All online transactions except excluded categories"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on fuel transactions. No fuel surcharge waiver."
+      },
+      "groceries": {
+        "rate": 5,
+        "multiplier": null,
+        "cap": 2000,
+        "capPeriod": "monthly",
+        "note": "Capped at 2,000 points per month"
+      },
+      "utilities": {
+        "rate": 5,
+        "cap": 2000,
+        "capPeriod": "monthly",
+        "note": "Capped at 2,000 points per month; 5X available via PayZapp/SmartPay"
+      },
+      "international": {
+        "rate": 5,
+        "multiplier": null,
+        "cap": null,
+        "note": "Regular 5 RP per ₹150 on international transactions"
+      },
+      "insurance": {
+        "rate": 5,
+        "cap": 5000,
+        "capPeriod": "daily",
+        "note": "Capped at 5,000 RP per day"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on rent payments"
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on wallet loads"
+      },
+      "education": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on education payments"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": true,
+        "name": "SmartBuy BizDeals",
+        "multiplier": 5,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["MMT MyBiz", "Nuclei Business Tools", "Tally", "AWS", "Google Workspace", "Office 365", "Azure", "Credflow"],
+        "link": "https://smartbuy.hdfcbank.com/business",
+        "note": "Up to 40% savings on business travel and software via SmartBuy BizDeals"
+      },
+      "partnerMerchants": {
+        "enabled": true,
+        "merchants": [
+          {
+            "name": "PayZapp/SmartPay",
+            "type": "Bill Payments",
+            "multiplier": 5,
+            "cap": null,
+            "capPeriod": null,
+            "note": "Utility and vendor bill payments"
+          },
+          {
+            "name": "Income Tax Portal",
+            "type": "Tax Payments",
+            "multiplier": 5,
+            "cap": null,
+            "capPeriod": null,
+            "url": "eportal.incometax.gov.in",
+            "note": "Income Tax and Advance Tax payments"
+          },
+          {
+            "name": "GST Portal",
+            "type": "Tax Payments",
+            "multiplier": 5,
+            "cap": null,
+            "capPeriod": null,
+            "url": "payment.gst.gov.in",
+            "note": "GST payments"
+          }
+        ],
+        "note": "5X rewards on business spends when monthly spend exceeds ₹50,000"
+      },
+      "spendUnlock": {
+        "enabled": true,
+        "tiers": [
+          {
+            "spendThreshold": 50000,
+            "period": "statement cycle",
+            "newMultiplier": 5,
+            "applicableCategories": ["Business spends as listed"],
+            "note": "Spend ₹50,000 in statement cycle to unlock 5X on eligible business spends"
+          }
+        ]
+      },
+      "milestoneAccelerators": null
+    },
+
+    "redemption": {
+      "baseValue": 0.30,
+      "bestValue": 1.0,
+      "bestOption": "Flight/Hotel bookings via SmartBuy at 1 RP = ₹1",
+      "minRedemption": 2500,
+      "redemptionIncrement": null,
+      "convenienceFee": 0,
+      "monthlyRedemptionLimit": {
+        "flightsHotels": 75000,
+        "statementCredit": 50000
+      },
+
+      "pointsPlusPay": {
+        "enabled": true,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": 70,
+        "note": "Redeem up to 70% of booking/product value through Reward Points, pay remaining via credit card"
+      },
+
+      "options": [
+        {
+          "type": "travel",
+          "value": 1.0,
+          "description": "Flight & Hotel bookings via SmartBuy",
+          "recommended": true,
+          "minPoints": 2500,
+          "processingFee": 0,
+          "partners": ["SmartBuy", "EaseMyTrip", "Yatra", "Cleartrip", "Goibibo"],
+          "cap": 75000,
+          "capPeriod": "monthly",
+          "note": "Best value redemption - 1 RP = ₹1. Max 70% booking value via points."
+        },
+        {
+          "type": "businessCatalogue",
+          "value": 1.0,
+          "description": "Business catalogue via NetBanking",
+          "recommended": true,
+          "minPoints": 2500,
+          "processingFee": 0,
+          "partners": ["Amazon Pay Voucher"],
+          "note": "1 RP = ₹1 for select business catalogue items"
+        },
+        {
+          "type": "products",
+          "value": 0.50,
+          "description": "Product catalogue via NetBanking/SmartBuy",
+          "recommended": false,
+          "minPoints": 2500,
+          "processingFee": 0,
+          "partners": ["Various brands"],
+          "note": "1 RP = ₹0.50 for regular product catalogue"
+        },
+        {
+          "type": "vouchers",
+          "value": 0.50,
+          "description": "Instant vouchers",
+          "recommended": false,
+          "minPoints": 2500,
+          "processingFee": 0,
+          "partners": ["Amazon", "Flipkart", "Croma", "Reliance Digital", "Raymond"],
+          "note": "1 RP = ₹0.50 for instant vouchers"
+        },
+        {
+          "type": "statement_credit",
+          "value": 0.30,
+          "description": "Statement credit / Cashback",
+          "recommended": false,
+          "minPoints": 2500,
+          "processingFee": 0,
+          "cap": 50000,
+          "capPeriod": "monthly",
+          "note": "1 RP = ₹0.30 for statement credit. Lowest value - avoid if possible."
+        },
+        {
+          "type": "airmiles",
+          "value": "varies",
+          "description": "Transfer to airline partners",
+          "recommended": true,
+          "minPoints": 500,
+          "processingFee": 0,
+          "partners": ["Singapore Airlines KrisFlyer", "InterMiles", "Air India Flying Returns"],
+          "note": "Transfer ratios vary by partner. Available via NetBanking."
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": true,
+      "eligibleCards": ["hdfc-bizblack-metal-edition"],
+      "partners": [
+        {
+          "name": "Singapore Airlines KrisFlyer",
+          "type": "airline",
+          "program": "KrisFlyer",
+          "alliance": "Star Alliance",
+          "ratio": {
+            "cardPoints": 1,
+            "partnerPoints": 1,
+            "display": "1:1"
+          },
+          "minTransfer": 500,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "2-3 days",
+          "transferMethod": "NetBanking",
+          "blackoutDates": false,
+          "note": "Good value for Star Alliance redemptions"
+        },
+        {
+          "name": "InterMiles",
+          "type": "airline",
+          "program": "InterMiles",
+          "alliance": null,
+          "ratio": {
+            "cardPoints": 1,
+            "partnerPoints": 1,
+            "display": "1:1"
+          },
+          "minTransfer": 500,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "Instant",
+          "transferMethod": "NetBanking",
+          "blackoutDates": false,
+          "note": "Low value - avoid unless topping up existing miles"
+        },
+        {
+          "name": "Air India Flying Returns",
+          "type": "airline",
+          "program": "Flying Returns",
+          "alliance": "Star Alliance",
+          "ratio": {
+            "cardPoints": 2,
+            "partnerPoints": 1,
+            "display": "2:1"
+          },
+          "minTransfer": 500,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "2-3 hours",
+          "transferMethod": "SmartBuy",
+          "blackoutDates": false,
+          "note": "Added post Vistara merger"
+        }
+      ],
+      "currentBonus": {
+        "active": false,
+        "bonusPercentage": null,
+        "validUntil": null,
+        "applicablePartners": []
+      }
+    },
+
+    "pooling": {
+      "enabled": true,
+      "eligibleCards": ["All HDFC credit cards of same customer"],
+      "acrossUsers": false,
+      "note": "Pool points across your HDFC cards via NetBanking"
+    },
+
+    "specialLogic": "5X acceleration requires minimum ₹50,000 total spend in statement cycle first. Base earn of 5 RP per ₹150 applies to all other spends except exclusions.",
+
+    "calculator": {
+      "enabled": true,
+      "formula": "basePoints = (eligibleSpend / 150) * 5; acceleratedPoints = 5X on business spends if total monthly spend > ₹50,000",
+      "variables": ["spend", "category", "isBusinessSpend", "monthlyTotalSpend"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": true,
+        "complimentaryCount": "unlimited",
+        "period": "month",
+        "accessType": "Diners Club",
+        "accessProvider": "Diners Club",
+        "spendRequired": {
+          "amount": 1,
+          "period": "previous month",
+          "note": "Cardholder must be 'Active' - minimum 1 online/in-store transaction in previous month to get unlimited lounge access for current month"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null,
+          "note": "Guest access at lounge discretion"
+        },
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "eligibleLounges": "https://www.hdfcbank.com/content/bbp/repositories/723fb80a-2dde-42a3-9793-7ae1be57c87f/?path=/Personal/Pay/Cards/Business+Credit+Card/Biz+Black/BizBlack-domestic-lounge-list.pdf"
+      },
+      "international": {
+        "included": true,
+        "complimentaryCount": "unlimited",
+        "period": "month",
+        "accessType": "Diners Club",
+        "accessProvider": "Diners Club (No Priority Pass required)",
+        "membershipValue": null,
+        "spendRequired": {
+          "amount": 1,
+          "period": "previous month",
+          "note": "Cardholder must be 'Active' - minimum 1 online/in-store transaction in previous month"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null,
+          "note": "Guest access at lounge discretion"
+        },
+        "eligibleLounges": "https://www.hdfcbank.com/content/bbp/repositories/723fb80a-2dde-42a3-9793-7ae1be57c87f/?path=/Personal/Pay/Cards/Business+Credit+Card/Biz+Black/BizBlack-international-lounge-list.pdf",
+        "note": "Access 1000+ lounges globally using Diners Club card directly"
+      },
+      "addOnCardLounge": {
+        "included": true,
+        "accessType": "Same as primary",
+        "note": "Add-on cardholders also get unlimited lounge access when active"
+      }
+    },
+
+    "milestones": [
+      {
+        "spend": 500000,
+        "period": "calendar year",
+        "benefit": "₹5,000 SmartBuy Flight voucher OR Taj Stay voucher",
+        "benefitType": "voucher",
+        "value": 5000,
+        "conditions": "All retail spends except rent and fuel. Can earn up to 4 vouchers (₹20,000) per calendar year on ₹20 lakh spend.",
+        "redemptionWindow": "90 days from qualification",
+        "voucherValidity": "Flight voucher: 6 months; Taj voucher: 365 days from redemption"
+      }
+    ],
+
+    "golf": {
+      "included": true,
+      "complimentaryRounds": 6,
+      "period": "quarter",
+      "courses": "15+ courses in India and 100+ globally",
+      "greenFeeWaiver": true,
+      "greenFeeWaiverNote": "100% green fee waiver at Indian courses",
+      "lessonIncluded": false,
+      "bookingContact": "1800 118 887 (India) / 022 42320226",
+      "note": "24/7 Golf Concierge assistance. Book/cancel 48 hours in advance."
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": null
+    },
+
+    "dining": {
+      "included": true,
+      "programs": [
+        {
+          "name": "Swiggy Dineout",
+          "discount": "FLAT 10% EXTRA OFF",
+          "cap": null,
+          "frequency": "Per visit",
+          "note": "Pay with Diners BizBlack Card at 35K+ restaurants"
+        }
+      ],
+      "hotelDining": {
+        "included": true,
+        "hotels": ["Club Marriott partner properties"],
+        "offer": "Up to 20% off on dining with Club Marriott membership"
+      }
+    },
+
+    "fuel": {
+      "surchargeWaiver": false,
+      "waiverPercentage": null,
+      "minTransaction": null,
+      "maxTransaction": null,
+      "monthlyCap": null,
+      "applicableStations": null,
+      "rewardsOnFuel": false,
+      "note": "No fuel surcharge waiver. No rewards on fuel transactions."
+    },
+
+    "forex": {
+      "markupPercentage": 2,
+      "markupText": "2% + GST on international transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 2,
+      "globalValueProgram": {
+        "available": true,
+        "cashback": 1,
+        "netForexCost": 1,
+        "note": "Activate Global Value Program for 1% cashback on forex spends, net forex cost becomes ~1%"
+      },
+      "note": "Lower forex markup compared to standard 3.5% on most cards"
+    },
+
+    "concierge": {
+      "included": true,
+      "availability": "24/7",
+      "type": "Diners Club Concierge",
+      "services": [
+        "Travel bookings",
+        "Restaurant reservations",
+        "Event tickets",
+        "Golf bookings",
+        "Airport VIP service (meet-and-greet)",
+        "Gift procurement",
+        "General information"
+      ],
+      "contactNumber": "1800 118 887 (India) / 022 42320226",
+      "internationalContact": "022-6171 7606",
+      "note": null
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": null,
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "EasyEMI / SmartEMI",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Select merchants at POS and online"],
+        "note": "EasyEMI available at POS and online. SmartEMI for post-purchase conversion."
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": 199,
+        "minFee": 199,
+        "note": "₹199 + GST for SmartEMI conversion"
+      },
+      "minAmount": 2500,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": 0.12,
+        "max": 0.18
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": 0
+      },
+      "cancellationPeriod": null,
+      "note": "Reward points reversed when retail transaction converted to SmartEMI"
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": null
+      },
+      "processingFee": {
+        "percentage": 1,
+        "minFee": 250,
+        "note": "1% or ₹250, whichever is higher"
+      },
+      "tenures": null,
+      "maxAmount": null,
+      "preclosureFee": null,
+      "note": null
+    },
+
+    "memberships": [
+      {
+        "name": "Club Marriott",
+        "type": "club",
+        "value": 12000,
+        "duration": "1 year",
+        "condition": "Spend ₹1.5 lakh within 90 days of card issuance",
+        "benefits": [
+          "Up to 20% off on Best Available Rate of rooms",
+          "Up to 25% off on dining at Marriott properties",
+          "Up to 25% off on spa services"
+        ],
+        "note": "Part of welcome benefit package"
+      }
+    ],
+
+    "businessInsurance": {
+      "included": true,
+      "provider": "HDFC Bank partner insurers",
+      "annualPremium": 3785,
+      "coverage": [
+        {
+          "type": "Fire & Burglary",
+          "cover": 500000,
+          "note": "For shop up to ₹5 lakh"
+        }
+      ],
+      "optionalHigherCoverage": true,
+      "note": "Business Insurance package starting at ₹3,785 including GST. Higher coverage available."
+    },
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": {
+        "included": true,
+        "note": "Via Club Marriott membership at participating properties"
+      },
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      },
+      "tajBenefits": {
+        "included": true,
+        "value": 5000,
+        "type": "Stay voucher",
+        "condition": "Spend ₹1.5 lakh within 90 days (welcome) or ₹5 lakh (milestone)"
+      }
+    },
+
+    "healthWellness": {
+      "included": true,
+      "discount": "Up to 15% off",
+      "categories": ["Fitness membership", "Pharmacy purchases"],
+      "note": "Health & Wellness benefits available"
+    },
+
+    "spaAndSalon": {
+      "included": true,
+      "note": "Discounts and deals at leading spas, salons, and gyms"
+    }
+  },
+
+  "insurance": {
+    "creditLiabilityCover": {
+      "included": true,
+      "cover": 900000,
+      "note": "₹9 lakh credit liability cover"
+    },
+    "zeroLostCardLiability": {
+      "included": true,
+      "condition": "On immediate reporting to 24-hour call centre",
+      "contactNumber": "1800 266 3310"
+    },
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "condition": null
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": null,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": 900000,
+      "fraudLiability": {
+        "included": true,
+        "cover": 900000,
+        "reportingWindow": "Immediate reporting required"
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "Primary insurance coverage is credit liability cover of ₹9 lakh and zero lost card liability. Business Insurance package available separately starting at ₹3,785/year."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000,
+      "note": "Contactless transactions up to ₹5,000 without PIN"
+    },
+    "virtualCard": {
+      "available": false,
+      "instantIssuance": false,
+      "singleUse": false,
+      "spendControls": false
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true,
+      "note": "Diners Club acceptance may vary on some platforms"
+    },
+    "upiLinking": {
+      "available": false,
+      "rewardsOnUPI": false,
+      "note": "Diners Club cards not supported on UPI"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "platform": "HDFC Bank MyCards",
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Real-time alerts",
+        "View transactions",
+        "View reward points",
+        "View statements"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"],
+      "platform": "SmartPay"
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [
+      {
+        "cardId": "hdfc-business-regalia",
+        "spendRequired": null,
+        "tenure": null,
+        "autoUpgrade": false,
+        "note": "Upgrade from Business Regalia based on spend history"
+      },
+      {
+        "cardId": "hdfc-diners-black-metal",
+        "spendRequired": null,
+        "tenure": null,
+        "autoUpgrade": false,
+        "note": "Can be added as floater/add-on card for existing Diners Black Metal holders"
+      }
+    ],
+    "upgradesTo": [
+      {
+        "cardId": null,
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": null,
+        "note": "BizBlack is the top-tier HDFC business credit card currently"
+      }
+    ],
+    "note": "This is the flagship super-premium business credit card from HDFC Bank"
+  },
+
+  "meta": {
+    "tags": [
+      "Business",
+      "Super Premium",
+      "Metal Card",
+      "Diners Club",
+      "Tax Payments",
+      "GST Payments",
+      "Unlimited Lounge",
+      "Golf",
+      "Self-Employed",
+      "SME"
+    ],
+    "bestFor": "Self-employed professionals and business owners with ITR above ₹30 lakh who have significant tax/GST payments, business tool subscriptions, and want unlimited lounge access",
+    "notRecommendedFor": "Salaried individuals, low spenders, those who need wide card acceptance (Diners Club has limited acceptance), UPI users",
+    "rating": {
+      "overall": 4.3,
+      "rewards": 4.5,
+      "benefits": 4.5,
+      "value": 4.0,
+      "acceptance": 3.5
+    },
+    "verdict": "HDFC BizBlack Metal Edition is arguably the best business credit card in India for self-employed professionals. The 5X rewards on tax payments, GST, business tools, and travel bookings offer exceptional value (up to 16.5% return on business spends). Unlimited lounge access, 6 quarterly golf games, and Club Marriott membership add lifestyle value. However, Diners Club acceptance can be an issue - best used alongside a Visa/Mastercard. The ₹10,000 annual fee is easily justified if you maximize the business spend categories.",
+    "pros": [
+      "5X rewards (16.5% return) on tax payments, GST, and business tools - industry first",
+      "Unlimited domestic and international lounge access for active cardholders",
+      "6 complimentary golf games per quarter",
+      "Low forex markup of 2% + GST",
+      "Club Marriott membership + Taj vouchers as welcome benefit",
+      "Up to ₹20,000 in milestone vouchers per year",
+      "55 days interest-free credit period",
+      "1:1 reward redemption for flights/hotels on SmartBuy",
+      "Add-on cards also get unlimited lounge access"
+    ],
+    "cons": [
+      "Diners Club has limited merchant acceptance in India",
+      "₹10,000 joining/annual fee (waivable)",
+      "No UPI support",
+      "Requires minimum ₹50,000 monthly spend for 5X acceleration",
+      "No fuel surcharge waiver",
+      "Limited travel insurance coverage",
+      "High ITR requirement (₹30 lakh+) for eligibility",
+      "Not suitable for salaried employees"
+    ],
+    "alternatives": [
+      "hdfc-diners-black-metal-edition",
+      "hdfc-infinia",
+      "hdfc-business-regalia",
+      "axis-magnus",
+      "amex-platinum-business"
+    ],
+    "lastVerified": "2026-01-08",
+    "dataSource": [
+      "HDFC Bank official website - www.hdfcbank.com",
+      "HDFC Bank BizBlack product page",
+      "HDFC Bank MITC document (Nov 2025)",
+      "HDFC Bank FAQ-Biz-Black.pdf",
+      "BizBlack-Metal-Edition-Credit-Card-Reward-Points-Program.pdf",
+      "CardExpert.in review (April 2024)",
+      "Paisabazaar.com (January 2026)",
+      "CardInsider.com",
+      "BankBazaar.com"
+    ],
+    "changelog": [
+      {
+        "date": "2025-10-25",
+        "change": "Welcome benefit now applicable only to first-time cardholders, not for conversions/migrations/upgrades",
+        "source": "HDFC Bank official website"
+      },
+      {
+        "date": "2024-04",
+        "change": "Card launched as flagship business credit card",
+        "source": "HDFC Bank"
+      }
+    ]
+  }
+}

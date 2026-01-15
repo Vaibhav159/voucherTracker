@@ -87,26 +87,26 @@ export default function CompareBanks() {
     };
 
     return (
-        <div className="flex flex-1 overflow-hidden relative bg-espresso-950">
+        <div className="flex flex-1 overflow-hidden relative bg-theme-bg">
             {/* Main Content */}
-            <main className="flex-1 flex flex-col min-w-0 bg-espresso-950 relative">
+            <main className="flex-1 flex flex-col min-w-0 bg-theme-bg relative">
                 {/* Header */}
-                <header className="flex items-center justify-between gap-4 px-6 py-3 border-b border-espresso-700 bg-espresso-950/95 backdrop-blur-md z-20 sticky top-0 h-16 shrink-0">
-                    <div className="hidden lg:flex items-center gap-2 text-xs text-gold-dim">
+                <header className="flex items-center justify-between gap-4 px-6 py-3 border-b border-theme-border bg-theme-bg/95 backdrop-blur-md z-20 sticky top-0 h-16 shrink-0">
+                    <div className="hidden lg:flex items-center gap-2 text-xs text-accent-dim">
                         <span className="material-symbols-outlined text-base">home</span>
                         <span className="material-symbols-outlined text-[10px]">chevron_right</span>
                         <span>Banking</span>
                         <span className="material-symbols-outlined text-[10px]">chevron_right</span>
-                        <span className="text-white font-medium">Compare</span>
+                        <span className="text-theme-primary font-medium">Compare</span>
                     </div>
 
                     <div className="flex-1 max-w-md mx-auto">
                         <div className="relative w-full group">
-                            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gold-dim group-focus-within:text-gold-400 transition-colors">
+                            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-accent-dim group-focus-within:text-accent transition-colors">
                                 <span className="material-symbols-outlined text-[18px]">search</span>
                             </div>
                             <input
-                                className="block w-full py-2 pl-9 pr-3 text-sm text-white border border-espresso-700 rounded-md bg-espresso-800 focus:ring-1 focus:ring-gold-400 focus:border-gold-400 placeholder-gold-dim/50 transition-all"
+                                className="block w-full py-2 pl-9 pr-3 text-sm text-theme-primary border border-theme-border rounded-md bg-theme-surface focus:ring-1 focus:ring-accent focus:border-accent placeholder-theme-muted transition-all"
                                 placeholder="Search banks or features..."
                                 type="text"
                             />
@@ -114,14 +114,14 @@ export default function CompareBanks() {
                     </div>
 
                     <div className="flex items-center gap-2">
-                        <button className="p-2 text-gold-dim hover:text-white hover:bg-espresso-700 rounded-md transition-colors">
+                        <button className="p-2 text-accent-dim hover:text-theme-primary hover:bg-theme-border rounded-md transition-colors">
                             <span className="material-symbols-outlined text-[20px]">notifications</span>
                         </button>
                         <button
                             onClick={copyShareLink}
                             className={`flex items-center gap-2 px-3 py-1.5 rounded-md border transition-colors text-xs font-medium ${copied
                                 ? 'border-green-500 bg-green-500/10 text-green-400'
-                                : 'border-espresso-700 bg-espresso-800 text-white hover:bg-espresso-700'}`}
+                                : 'border-theme-border bg-theme-surface text-theme-primary hover:bg-theme-border'}`}
                         >
                             <span className="material-symbols-outlined text-base">{copied ? 'check' : 'share'}</span>
                             {copied ? 'Copied!' : 'Share'}
@@ -134,64 +134,64 @@ export default function CompareBanks() {
                     <div className="max-w-[1500px] mx-auto h-full flex flex-col">
                         <div className="flex justify-between items-end mb-4">
                             <div>
-                                <h1 className="text-3xl font-serif text-white tracking-tight mb-1">Bank Comparison</h1>
-                                <p className="text-gold-dim text-sm">Compare premium banking accounts and their privileges.</p>
+                                <h1 className="text-3xl font-serif text-theme-primary tracking-tight mb-1">Bank Comparison</h1>
+                                <p className="text-accent-dim text-sm">Compare premium banking accounts and their privileges.</p>
                             </div>
-                            <div className="flex items-center gap-2 text-xs text-gold-dim">
-                                <span className="flex items-center gap-1"><span className="size-2 rounded-full bg-gold-400"></span>Best Value</span>
+                            <div className="flex items-center gap-2 text-xs text-accent-dim">
+                                <span className="flex items-center gap-1"><span className="size-2 rounded-full bg-accent"></span>Best Value</span>
                                 <span className="flex items-center gap-1"><span className="size-2 rounded-full bg-copper"></span>Featured</span>
                             </div>
                         </div>
 
                         {/* Comparison Table */}
-                        <div className="w-full overflow-x-auto rounded-lg border border-espresso-700 bg-espresso-900 shadow-2xl shadow-black/60 hide-scrollbar">
+                        <div className="w-full overflow-x-auto rounded-lg border border-theme-border bg-theme-surface shadow-2xl shadow-black/60 hide-scrollbar">
                             <div className="min-w-[900px] grid grid-cols-[220px_1fr_1fr_1fr]">
                                 {/* Header Row */}
-                                <div className="sticky top-0 z-30 bg-espresso-900 border-b border-espresso-700 p-4 flex flex-col justify-end shadow-md">
-                                    <span className="text-[10px] uppercase tracking-widest text-gold-dim/70 font-bold">Metrics</span>
+                                <div className="sticky top-0 z-30 bg-theme-surface border-b border-theme-border p-4 flex flex-col justify-end shadow-md">
+                                    <span className="text-[10px] uppercase tracking-widest text-accent-dim/70 font-bold">Metrics</span>
                                 </div>
 
                                 {/* Bank 1 Header */}
-                                <div className="sticky top-0 z-30 bg-espresso-800 border-b border-l border-espresso-700 p-4 flex flex-col items-center gap-3 group relative shadow-md">
-                                    <button className="absolute top-2 right-2 text-gold-dim hover:text-red-400 transition-colors" title="Remove Bank">
+                                <div className="sticky top-0 z-30 bg-theme-surface border-b border-l border-theme-border p-4 flex flex-col items-center gap-3 group relative shadow-md">
+                                    <button className="absolute top-2 right-2 text-accent-dim hover:text-red-400 transition-colors" title="Remove Bank">
                                         <span className="material-symbols-outlined text-lg">close</span>
                                     </button>
                                     <div className={`relative w-16 h-16 rounded-full shadow-lg group-hover:-translate-y-1 transition-transform duration-300 bg-gradient-to-br ${selectedBank1.gradient} flex items-center justify-center`}>
-                                        <span className="text-white font-bold text-lg">{selectedBank1.shortName}</span>
+                                        <span className="text-theme-primary font-bold text-lg">{selectedBank1.shortName}</span>
                                     </div>
                                     <div className="text-center w-full">
-                                        <h3 className="font-serif text-base text-white font-bold leading-tight">{selectedBank1.name}</h3>
-                                        <p className="text-[10px] text-gold-dim uppercase tracking-wider mt-0.5">{selectedBank1.tier}</p>
+                                        <h3 className="font-serif text-base text-theme-primary font-bold leading-tight">{selectedBank1.name}</h3>
+                                        <p className="text-[10px] text-accent-dim uppercase tracking-wider mt-0.5">{selectedBank1.tier}</p>
                                     </div>
-                                    <button className="w-full max-w-[140px] py-1.5 bg-gold-400 hover:bg-white text-espresso-950 font-bold text-xs uppercase tracking-wide rounded transition-all shadow-lg">
+                                    <button className="w-full max-w-[140px] py-1.5 bg-accent hover:bg-white text-theme-primary font-bold text-xs uppercase tracking-wide rounded transition-all shadow-lg">
                                         Open Account
                                     </button>
                                 </div>
 
                                 {/* Bank 2 Header */}
-                                <div className="sticky top-0 z-30 bg-espresso-800 border-b border-l border-espresso-700 p-4 flex flex-col items-center gap-3 group relative shadow-md">
-                                    <button className="absolute top-2 right-2 text-gold-dim hover:text-red-400 transition-colors" title="Remove Bank">
+                                <div className="sticky top-0 z-30 bg-theme-surface border-b border-l border-theme-border p-4 flex flex-col items-center gap-3 group relative shadow-md">
+                                    <button className="absolute top-2 right-2 text-accent-dim hover:text-red-400 transition-colors" title="Remove Bank">
                                         <span className="material-symbols-outlined text-lg">close</span>
                                     </button>
                                     <div className={`relative w-16 h-16 rounded-full shadow-lg group-hover:-translate-y-1 transition-transform duration-300 bg-gradient-to-br ${selectedBank2.gradient} flex items-center justify-center`}>
-                                        <span className="text-white font-bold text-lg">{selectedBank2.shortName}</span>
+                                        <span className="text-theme-primary font-bold text-lg">{selectedBank2.shortName}</span>
                                     </div>
                                     <div className="text-center w-full">
-                                        <h3 className="font-serif text-base text-white font-bold leading-tight">{selectedBank2.name}</h3>
-                                        <p className="text-[10px] text-gold-dim uppercase tracking-wider mt-0.5">{selectedBank2.tier}</p>
+                                        <h3 className="font-serif text-base text-theme-primary font-bold leading-tight">{selectedBank2.name}</h3>
+                                        <p className="text-[10px] text-accent-dim uppercase tracking-wider mt-0.5">{selectedBank2.tier}</p>
                                     </div>
-                                    <button className="w-full max-w-[140px] py-1.5 bg-gold-400 hover:bg-white text-espresso-950 font-bold text-xs uppercase tracking-wide rounded transition-all shadow-lg">
+                                    <button className="w-full max-w-[140px] py-1.5 bg-accent hover:bg-white text-theme-primary font-bold text-xs uppercase tracking-wide rounded transition-all shadow-lg">
                                         Open Account
                                     </button>
                                 </div>
 
                                 {/* Add Bank Column */}
-                                <div className="sticky top-0 z-30 bg-espresso-800 border-b border-l border-espresso-700 p-4 flex flex-col items-center justify-center relative shadow-md">
+                                <div className="sticky top-0 z-30 bg-theme-surface border-b border-l border-theme-border p-4 flex flex-col items-center justify-center relative shadow-md">
                                     <div className="flex flex-col items-center justify-center gap-3 w-full h-full rounded-xl border border-dashed border-copper/30 bg-copper/5 hover:bg-copper/10 hover:border-copper/60 transition-all cursor-pointer group py-4">
-                                        <div className="size-10 rounded-full bg-espresso-700 flex items-center justify-center group-hover:bg-gold-400 group-hover:text-espresso-950 transition-colors shadow-inner">
+                                        <div className="size-10 rounded-full bg-theme-border flex items-center justify-center group-hover:bg-accent group-hover:text-theme-primary transition-colors shadow-inner">
                                             <span className="material-symbols-outlined text-xl">add_business</span>
                                         </div>
-                                        <span className="text-xs font-semibold text-copper group-hover:text-gold-400 transition-colors">Add Bank</span>
+                                        <span className="text-xs font-semibold text-accent-secondary group-hover:text-accent transition-colors">Add Bank</span>
                                     </div>
                                 </div>
 
@@ -199,26 +199,26 @@ export default function CompareBanks() {
                                 {Object.entries(compareData).map(([key, section]) => (
                                     <>
                                         {/* Section Header */}
-                                        <div key={`${key}-header`} className="col-span-full bg-gradient-to-r from-espresso-700/40 to-transparent px-4 py-2 border-b border-copper/20 flex items-center gap-2 mt-4">
+                                        <div key={`${key}-header`} className="col-span-full bg-gradient-to-r from-theme-surface/40 to-transparent px-4 py-2 border-b border-copper/20 flex items-center gap-2 mt-4">
                                             <span className="text-sm">{section.icon}</span>
-                                            <h4 className="text-xs font-bold text-gold-400 uppercase tracking-wider">{section.title}</h4>
+                                            <h4 className="text-xs font-bold text-accent uppercase tracking-wider">{section.title}</h4>
                                         </div>
 
                                         {/* Data Rows */}
                                         {section.rows.map((row, idx) => (
                                             <>
-                                                <div key={`${key}-${idx}-metric`} className="px-4 py-3 border-b border-espresso-700/50 text-gold-dim text-xs font-medium bg-espresso-900/50">{row.metric}</div>
-                                                <div key={`${key}-${idx}-bank1`} className="px-4 py-3 border-b border-l border-espresso-700/50 text-center relative">
-                                                    {row.bank1Best && <span className="text-[10px] text-gold-400 border border-gold-400/30 px-1 rounded absolute top-1 right-1">Best</span>}
-                                                    <div className={`text-sm ${row.bank1Green ? 'text-green-400' : row.copper ? 'text-copper font-medium' : row.highlight ? 'text-gold-400 font-bold' : 'text-white'}`}>{row.bank1}</div>
-                                                    {row.bank1Sub && <div className="text-[10px] text-gold-dim">{row.bank1Sub}</div>}
+                                                <div key={`${key}-${idx}-metric`} className="px-4 py-3 border-b border-theme-border/50 text-accent-dim text-xs font-medium bg-theme-surface/50">{row.metric}</div>
+                                                <div key={`${key}-${idx}-bank1`} className="px-4 py-3 border-b border-l border-theme-border/50 text-center relative">
+                                                    {row.bank1Best && <span className="text-[10px] text-accent border border-accent/30 px-1 rounded absolute top-1 right-1">Best</span>}
+                                                    <div className={`text-sm ${row.bank1Green ? 'text-green-400' : row.copper ? 'text-accent-secondary font-medium' : row.highlight ? 'text-accent font-bold' : 'text-theme-primary'}`}>{row.bank1}</div>
+                                                    {row.bank1Sub && <div className="text-[10px] text-accent-dim">{row.bank1Sub}</div>}
                                                 </div>
-                                                <div key={`${key}-${idx}-bank2`} className="px-4 py-3 border-b border-l border-espresso-700/50 text-center relative">
-                                                    {row.bank2Best && <span className="text-[10px] text-gold-400 border border-gold-400/30 px-1 rounded absolute top-1 right-1">Best</span>}
-                                                    <div className={`text-sm ${row.copper ? 'text-copper font-medium' : row.highlight ? 'text-gold-400 font-bold' : 'text-white'}`}>{row.bank2}</div>
-                                                    {row.bank2Sub && <div className="text-[10px] text-gold-dim">{row.bank2Sub}</div>}
+                                                <div key={`${key}-${idx}-bank2`} className="px-4 py-3 border-b border-l border-theme-border/50 text-center relative">
+                                                    {row.bank2Best && <span className="text-[10px] text-accent border border-accent/30 px-1 rounded absolute top-1 right-1">Best</span>}
+                                                    <div className={`text-sm ${row.copper ? 'text-accent-secondary font-medium' : row.highlight ? 'text-accent font-bold' : 'text-theme-primary'}`}>{row.bank2}</div>
+                                                    {row.bank2Sub && <div className="text-[10px] text-accent-dim">{row.bank2Sub}</div>}
                                                 </div>
-                                                <div key={`${key}-${idx}-empty`} className="px-4 py-3 border-b border-l border-espresso-700/50 text-center text-gold-dim/20 text-sm">-</div>
+                                                <div key={`${key}-${idx}-empty`} className="px-4 py-3 border-b border-l border-theme-border/50 text-center text-accent-dim/20 text-sm">-</div>
                                             </>
                                         ))}
                                     </>
@@ -226,7 +226,7 @@ export default function CompareBanks() {
                             </div>
                         </div>
 
-                        <p className="text-[10px] text-gold-dim/40 text-center mt-6">
+                        <p className="text-[10px] text-accent-dim/40 text-center mt-6">
                             *Features, rates, and eligibility criteria are subject to change by the bank. CardPerks is not affiliated with these banks. Data updated Jan 2024.
                         </p>
                     </div>

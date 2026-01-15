@@ -1,0 +1,965 @@
+{
+  "id": "icici-rubyx",
+  "name": "ICICI Bank Rubyx Credit Card",
+  "bank": "ICICI Bank",
+  "slug": "icici-bank-rubyx-credit-card",
+  "image": "assets/cards/icici/rubyx.png",
+  "link": "https://www.icici.bank.in/personal-banking/cards/credit-card/rubyx-credit-card",
+  "isActive": true,
+
+  "network": {
+    "type": "Visa | Mastercard | RuPay | American Express",
+    "variant": "Platinum",
+    "bin": null,
+    "note": "Card is offered in multiple network variants - Visa, Mastercard, RuPay, and American Express. Originally launched as India's first dual credit card with two variants linked to one account."
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "mid-premium",
+    "isCobranded": false,
+    "cobrandPartner": {
+      "name": null,
+      "type": null,
+      "loyaltyProgram": null
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 3000,
+      "amountWithGST": 3540,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 2000,
+      "amountWithGST": 2360,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 300000,
+        "spendPeriod": "12 months (anniversary year)",
+        "waiverText": "Spend ₹3 lakh in the previous anniversary year to waive annual fee"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": 0,
+      "joiningFee": 0,
+      "annualFee": 199,
+      "annualFeeNote": "₹199 annual fee for supplementary cardholders effective Nov 15, 2024",
+      "rewardSharing": true
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 100, "fee": 0},
+        {"minAmount": 101, "maxAmount": 500, "fee": 100},
+        {"minAmount": 501, "maxAmount": 1000, "fee": 500},
+        {"minAmount": 1001, "maxAmount": 5000, "fee": 600},
+        {"minAmount": 5001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 900},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ],
+      "effectiveDate": "2024-11-15"
+    },
+    "overLimit": {
+      "percentage": 2.5,
+      "minFee": 500
+    },
+    "chequeReturn": 500,
+    "cardReplacement": 200,
+    "duplicateStatement": 100,
+    "cashPaymentAtBranch": 100
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 75000,
+        "annual": 900000,
+        "note": "Some sources indicate ₹50,000/month minimum; official ICICI page shows ₹75,000/month"
+      },
+      "selfEmployed": {
+        "itr": 900000,
+        "note": "Some sources indicate ₹5.5 lakh minimum; official ICICI page shows ₹9 lakh"
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 65,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": "Card also available against Fixed Deposit with minimum ₹75,000 FD"
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 50000,
+      "max": 500000
+    },
+    "factors": "Based on income, credit score, and existing relationship. Typically 1-3x monthly income",
+    "enhancementCriteria": "Good repayment history and increased usage"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375,
+      "note": "3.75% per month (45% p.a.) effective Nov 15, 2024"
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": 48,
+      "note": "18-48 days interest-free period from statement date to due date if previous balance paid in full"
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 200,
+      "calculation": "5% of total outstanding or ₹200, whichever is higher"
+    },
+    "penaltyAPR": {
+      "rate": 0.456,
+      "monthlyRate": 0.038,
+      "triggerCondition": "May increase up to 3.8% per month (45.6% p.a.) in event of default"
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": 30,
+    "dailyLimit": null,
+    "interestFromDay1": true,
+    "note": "Interest charged from transaction date until paid in full. No interest-free period."
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "ICICI Bank Reward Points",
+      "symbol": "RP",
+      "singularUnit": "point",
+      "pluralUnit": "points"
+    },
+    "baseRate": {
+      "domestic": {
+        "rate": 2,
+        "spendUnit": 100,
+        "effectivePercentage": 0.005,
+        "note": "2 Reward Points per ₹100 spent on domestic transactions (excluding fuel)"
+      },
+      "international": {
+        "rate": 4,
+        "spendUnit": 100,
+        "effectivePercentage": 0.01,
+        "note": "4 Reward Points per ₹100 spent on international transactions"
+      },
+      "utilityAndInsurance": {
+        "rate": 1,
+        "spendUnit": 100,
+        "effectivePercentage": 0.0025,
+        "note": "1 Reward Point per ₹100 spent on utility and insurance payments"
+      }
+    },
+    "earningText": "Earn 2 RP/₹100 domestic, 4 RP/₹100 international, 1 RP/₹100 utility & insurance",
+    "minTransactionForRewards": 100,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "Rent payments",
+        "Third-party wallet loads (Paytm, Amazon Pay, MobiKwik, Freecharge, OlaMoney)",
+        "Government services transactions",
+        "Tax payments",
+        "Property management payments",
+        "Cash withdrawals",
+        "Balance transfers",
+        "EMI transactions"
+      ],
+      "mccs": ["5541", "5542", "5983", "6513", "9311", "9222"],
+      "note": "These categories do not earn reward points. Effective January 2026, additional exclusions apply."
+    },
+
+    "caps": {
+      "monthly": {
+        "transportation": 20000,
+        "utility": 80000,
+        "insurance": 80000,
+        "groceries": 40000,
+        "note": "Monthly reward earning caps effective Nov 2024"
+      },
+      "annual": {
+        "milestonePoints": 15000
+      },
+      "resetPeriod": "calendar month",
+      "perTransaction": null
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "3 years",
+      "condition": "From date of earning"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": null,
+        "cashback": null,
+        "vouchers": "Vouchers worth over ₹5,000",
+        "voucherBreakdown": {
+          "tataCliq": 2000,
+          "easeMyTrip": 2000,
+          "croma": 1000,
+          "eazyDinerMembership": 1095,
+          "note": "TataCliQ ₹2,000 + EaseMyTrip ₹2,000 (2x₹1,000) + Croma ₹1,000 (2x₹500) + EazyDiner Prime 3-month membership"
+        },
+        "spendCondition": {
+          "amount": null,
+          "period": null,
+          "transactionCount": null
+        },
+        "validity": "Within 45 days of joining fee payment",
+        "description": "Welcome vouchers worth over ₹5,000 from Tata CLiQ, EaseMyTrip, Croma, and EazyDiner Prime membership"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "milestones": [
+      {
+        "spend": 300000,
+        "period": "anniversary year",
+        "benefit": "3,000 Reward Points",
+        "benefitType": "points",
+        "value": 750,
+        "conditions": "First milestone at ₹3 lakh spend"
+      },
+      {
+        "spend": 100000,
+        "period": "per additional ₹1 lakh after first ₹3 lakh",
+        "benefit": "1,500 Reward Points per ₹1 lakh",
+        "benefitType": "points",
+        "value": 375,
+        "conditions": "Maximum 15,000 bonus points per year"
+      }
+    ],
+
+    "categories": {
+      "domestic": {
+        "rate": 2,
+        "spendUnit": 100,
+        "effectivePercentage": 0.005,
+        "cap": null,
+        "capPeriod": null,
+        "note": "Standard domestic retail transactions except fuel"
+      },
+      "international": {
+        "rate": 4,
+        "spendUnit": 100,
+        "effectivePercentage": 0.01,
+        "cap": null,
+        "capPeriod": null,
+        "note": "2X rewards on international transactions"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on fuel transactions"
+      },
+      "utilities": {
+        "rate": 1,
+        "spendUnit": 100,
+        "cap": 80000,
+        "capPeriod": "monthly",
+        "note": "Capped at ₹80,000 monthly spend"
+      },
+      "insurance": {
+        "rate": 1,
+        "spendUnit": 100,
+        "cap": 80000,
+        "capPeriod": "monthly",
+        "note": "Capped at ₹80,000 monthly spend"
+      },
+      "groceries": {
+        "rate": 2,
+        "spendUnit": 100,
+        "cap": 40000,
+        "capPeriod": "monthly",
+        "note": "Capped at ₹40,000 monthly spend"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on rent payments"
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on wallet loads. 1% fee on wallet loads above ₹5,000/month effective Jan 2026"
+      },
+      "government": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on government services"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": true,
+        "name": "iShop",
+        "multipliers": {
+          "flights": { "rate": 12, "description": "12X on flight bookings" },
+          "bus": { "rate": 12, "description": "12X on bus bookings" },
+          "hotels": { "rate": 12, "description": "12X on hotel bookings" },
+          "vouchers": { "rate": 12, "description": "12X on shopping vouchers" },
+          "amazonPrime": { "rate": 6, "description": "6X on Amazon Prime" },
+          "makeMyTrip": { "rate": 6, "description": "6X on MakeMyTrip" },
+          "hamleys": { "rate": 6, "description": "6X on Hamleys" }
+        },
+        "cap": null,
+        "capPeriod": null,
+        "link": "https://www.icici.bank.in/ishop.html",
+        "note": "Earn 6X to 12X reward points on iShop portal"
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": [],
+        "note": null
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": []
+      }
+    },
+
+    "redemption": {
+      "baseValue": 0.25,
+      "bestValue": 0.25,
+      "bestOption": "Redemption against vouchers, lifestyle products, travel",
+      "minRedemption": 500,
+      "redemptionIncrement": null,
+      "convenienceFee": 99,
+      "monthlyRedemptionLimit": null,
+
+      "options": [
+        {
+          "type": "vouchers",
+          "value": 0.25,
+          "description": "Gift vouchers and shopping vouchers",
+          "recommended": true,
+          "minPoints": 500,
+          "processingFee": 99,
+          "partners": ["Various retail partners"],
+          "note": "1 RP = ₹0.25"
+        },
+        {
+          "type": "products",
+          "value": 0.25,
+          "description": "Lifestyle products, mobiles, appliances",
+          "recommended": true,
+          "minPoints": 500,
+          "processingFee": 99,
+          "partners": ["Various"],
+          "note": "Redemption via PAYBACK catalog or ICICI rewards portal"
+        },
+        {
+          "type": "travel",
+          "value": 0.25,
+          "description": "Travel vouchers",
+          "recommended": true,
+          "minPoints": 500,
+          "processingFee": 99,
+          "partners": [],
+          "note": "Travel redemption options"
+        },
+        {
+          "type": "statement_credit",
+          "value": 0.25,
+          "description": "Statement credit / Cash credit",
+          "recommended": false,
+          "minPoints": 500,
+          "processingFee": 99,
+          "partners": [],
+          "note": "Credit to card account within 7 working days"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "partners": [],
+      "note": "ICICI Rubyx does not have airline/hotel transfer partners"
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": null,
+      "acrossUsers": false,
+      "note": null
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": true,
+        "complimentaryCount": 8,
+        "period": "year (2 per quarter)",
+        "accessType": "Domestic Airport Lounge",
+        "accessProvider": "DreamFolks",
+        "spendRequired": {
+          "amount": 75000,
+          "period": "quarterly",
+          "note": "Spend ₹75,000 in a calendar quarter to unlock 2 lounge accesses for the following quarter. Updated requirement from Nov 2024 - previously was ₹5,000 for some variants"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "railwayLounge": {
+          "included": true,
+          "count": 8,
+          "period": "year (2 per quarter)",
+          "note": "2 complimentary railway lounge accesses per quarter. Available only for primary cardholders."
+        },
+        "eligibleLounges": "https://www.icici.bank.in/content/dam/icicibank/india/managed-assets/revamp-page-images/docs/pdf/domestic_consolidated_lounge_list-1.pdf",
+        "variantNote": "Airport lounge access primarily available on Visa variant with ₹5,000 spend requirement. ₹75,000 spend requirement applies for higher benefits."
+      },
+      "international": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "note": "International lounge access not included with Rubyx card"
+      }
+    },
+
+    "golf": {
+      "included": true,
+      "complimentaryRounds": 2,
+      "period": "month",
+      "courses": "Select courses in India via Golftripz",
+      "greenFeeWaiver": true,
+      "lessonIncluded": true,
+      "spendCondition": {
+        "amount": 50000,
+        "period": "previous calendar month",
+        "roundsPerSpend": 1,
+        "note": "1 complimentary round/lesson for every ₹50,000 retail spend in previous month"
+      },
+      "bookingMethod": "Book via Golftripz website (teetimes.golftripz.com) using registered email ID",
+      "benefitCreditDate": "Benefits credited by 10th day of following month, valid for 2 months",
+      "conciergeNumber": "1800-26-70731 (toll-free) or 022-67872016",
+      "courseList": "https://www.icici.bank.in/content/dam/icicibank/india/managed-assets/revamp-page-images/docs/pdf/golf-courses-17.pdf"
+    },
+
+    "movies": {
+      "included": true,
+      "platform": "BookMyShow and INOX",
+      "offer": "25% off up to ₹150",
+      "freeTickets": null,
+      "frequency": "2 times per month (once per variant on dual card)",
+      "cap": 150,
+      "minTickets": 2,
+      "spendCondition": {
+        "required": true,
+        "amount": 25000,
+        "period": "previous calendar quarter",
+        "note": "Spend ₹25,000 in previous quarter to unlock movie benefits (effective Jan 2026)"
+      },
+      "note": "25% discount up to ₹150 on purchase of minimum 2 tickets. Available on both BookMyShow and INOX."
+    },
+
+    "dining": {
+      "included": true,
+      "programs": [
+        {
+          "name": "ICICI Bank Culinary Treats",
+          "discount": "Minimum 15% off",
+          "cap": null,
+          "frequency": "Per visit",
+          "restaurants": "2,500+ partner restaurants across India",
+          "note": "Download 'ICICI Bank Culinary Treats Mobile App' for restaurant list"
+        }
+      ],
+      "hotelDining": {
+        "included": false,
+        "hotels": null,
+        "offer": null
+      }
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 400,
+      "maxTransaction": 4000,
+      "monthlyCap": null,
+      "applicableStations": "All fuel stations in India",
+      "rewardsOnFuel": false,
+      "transactionFee": {
+        "threshold": 10000,
+        "feePercentage": 1,
+        "note": "1% fee on fuel transactions above ₹10,000/month (effective Jan 2026)"
+      },
+      "note": "1% fuel surcharge waiver on transactions ₹400-₹4,000 at all fuel pumps"
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% + GST on international transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "feePercentage": 1,
+        "recommendation": "Always decline DCC and pay in local currency to avoid additional 1% fee"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "Forex markup applies to all non-INR transactions. Despite offering accelerated rewards on international spends, the 3.5% markup is relatively high."
+    },
+
+    "concierge": {
+      "included": true,
+      "availability": "24/7",
+      "type": "i-Assist Premium Concierge",
+      "services": [
+        "Travel bookings (flights, hotels)",
+        "Restaurant reservations and referrals",
+        "Movie ticket bookings and delivery",
+        "Car rental services",
+        "Flower and gift delivery",
+        "Medical concierge privileges",
+        "Emergency auto assistance",
+        "General information"
+      ],
+      "contactNumber": {
+        "tollFree": "1800-26-70731",
+        "regular": "022-67872016",
+        "rupayVariant": "1800-26-78729"
+      },
+      "note": "24/7 premium concierge service for travel, lifestyle, and emergency assistance"
+    },
+
+    "roadsideAssistance": {
+      "included": true,
+      "provider": "Emergency auto assistance via i-Assist",
+      "value": null,
+      "services": [
+        "Emergency auto assistance"
+      ],
+      "coverageArea": "Pan India",
+      "callsPerYear": null,
+      "note": "Available through i-Assist concierge"
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "Flexipay / EMI on Call",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Select merchants"],
+        "note": "No-cost EMI on select merchants and products"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": null,
+        "minFee": null
+      },
+      "minAmount": 2500,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": 0.12,
+        "max": 0.18
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": 0
+      },
+      "cancellationPeriod": null,
+      "note": "EMI conversion available for retail transactions"
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": 0.0375
+      },
+      "processingFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "tenures": null,
+      "maxAmount": null,
+      "preclosureFee": null,
+      "note": "Balance transfer facility available"
+    },
+
+    "memberships": [
+      {
+        "name": "EazyDiner Prime",
+        "type": "subscription",
+        "value": 1095,
+        "duration": "3 months",
+        "condition": "On joining fee payment",
+        "validityPeriod": "Activation between July 3, 2025 - June 30, 2026. Coupon valid until June 30, 2027",
+        "note": "Complimentary 3-month EazyDiner Prime membership as part of welcome benefit"
+      }
+    ],
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": true,
+      "cover": 10000000,
+      "coverType": "Death only",
+      "condition": "Card must be used at least once in 60 days prior to event. Covers international travel only when ticket purchased with card. Primary cardholder only - supplementary cardholders not covered.",
+      "note": "₹1 crore air accident insurance cover"
+    },
+    "lostCard": {
+      "included": true,
+      "cover": 50000,
+      "fraudLiability": {
+        "included": true,
+        "cover": 50000,
+        "reportingWindow": "Covers loss up to 2 days prior to reporting"
+      },
+      "note": "Lost card liability of ₹50,000"
+    },
+    "accountTakeoverCover": {
+      "included": true,
+      "cover": null,
+      "note": "Protection against personal details being accessed and misused by third party"
+    },
+    "creditShield": {
+      "included": true,
+      "cover": 50000,
+      "note": "Credit shield protection"
+    },
+    "baggageInsurance": {
+      "included": true,
+      "cover": 25000,
+      "note": "Baggage insurance up to ₹25,000"
+    },
+    "lostCheckedBaggage": {
+      "included": true,
+      "cover": 84000,
+      "note": "Loss of checked-in baggage cover"
+    },
+    "baggageDelay": {
+      "included": true,
+      "cover": 21000,
+      "note": "Delay of checked-in baggage cover"
+    },
+    "lostPassport": {
+      "included": true,
+      "cover": 35000,
+      "note": "Loss of passport and travel-related documents cover"
+    },
+    "missedConnection": {
+      "included": true,
+      "cover": 21000,
+      "note": "Missing connecting international flights during transit cover"
+    },
+    "planeHijacking": {
+      "included": true,
+      "cover": 75000,
+      "note": "Plane hijacking cover"
+    },
+    "personalAccident": {
+      "included": true,
+      "cover": 200000,
+      "note": "Personal Accident Insurance Cover (RuPay variant) - ₹2 lakh"
+    },
+    "note": "All insurance covers subject to terms in policy document. Card must be used at least once in last 60 days before event for coverage. For complete terms: https://www.icici.bank.in/content/dam/icicibank/managed-assets/docs/Comprehensive-Insurance-Cover-and-t-and-c.pdf"
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000
+    },
+    "virtualCard": {
+      "available": true,
+      "instantIssuance": true,
+      "singleUse": false,
+      "spendControls": true
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": true,
+      "rewardsOnUPI": true,
+      "note": "RuPay variant can be linked to UPI"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Real-time alerts via iMobile app"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    },
+    "chipAndPin": {
+      "enabled": true,
+      "note": "EMV chip for enhanced security against counterfeiting and duplication"
+    },
+    "3DSecure": {
+      "enabled": true,
+      "note": "Register for 3D Secure for online transactions"
+    }
+  },
+
+  "transactionFees2026": {
+    "effectiveDate": "2026-01-15",
+    "gaming": {
+      "feePercentage": 2,
+      "note": "2% fee on gaming platform transactions (Dream11, Rummy Culture, MPL, etc.)"
+    },
+    "walletLoads": {
+      "threshold": 5000,
+      "feePercentage": 1,
+      "note": "1% fee on wallet loads exceeding ₹5,000/month"
+    },
+    "transportation": {
+      "threshold": 50000,
+      "feePercentage": 1,
+      "note": "1% fee on transportation spends exceeding ₹50,000"
+    },
+    "utility": {
+      "threshold": 50000,
+      "feePercentage": 1,
+      "note": "1% fee on utility payments above ₹50,000/month"
+    },
+    "fuel": {
+      "threshold": 10000,
+      "feePercentage": 1,
+      "note": "1% fee on fuel purchases exceeding ₹10,000/month"
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [
+      {
+        "cardId": "icici-coral",
+        "spendRequired": null,
+        "tenure": null,
+        "autoUpgrade": false
+      }
+    ],
+    "upgradesTo": [
+      {
+        "cardId": "icici-sapphiro",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false
+      },
+      {
+        "cardId": "icici-emeralde",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false
+      }
+    ],
+    "note": "Upgrade eligibility based on spend history, credit score, and relationship with bank"
+  },
+
+  "meta": {
+    "tags": [
+      "Lifestyle",
+      "Travel",
+      "Entertainment",
+      "Golf",
+      "Movies",
+      "Lounge Access",
+      "Dining",
+      "Dual Card",
+      "Mid-Premium"
+    ],
+    "bestFor": "Frequent domestic travelers and lifestyle spenders who can meet ₹75,000 quarterly spend for lounge access and want all-round benefits across movies, dining, and golf",
+    "notRecommendedFor": "Low spenders, those seeking high reward rates, international travelers (due to 3.5% forex markup), or those who primarily need airline/hotel transfer partners",
+    "rating": {
+      "overall": 3.8,
+      "rewards": 3.0,
+      "benefits": 4.0,
+      "value": 3.5
+    },
+    "verdict": "The ICICI Rubyx is a solid mid-premium card offering diverse lifestyle benefits across movies, dining, golf, and lounge access. However, the reward rate is modest compared to competitors, and the lounge access now requires significant quarterly spend (₹75,000). Best suited for those who can meet spend thresholds and want a single card covering multiple lifestyle categories. The 3.5% forex markup makes it less attractive for international use despite 2X rewards on foreign spend.",
+    "pros": [
+      "Multiple network variants (Visa, Mastercard, RuPay, Amex)",
+      "Welcome vouchers worth over ₹5,000",
+      "Comprehensive lifestyle benefits (movies, dining, golf)",
+      "Up to 15,000 milestone reward points annually",
+      "₹1 crore air accident insurance",
+      "Easily achievable annual fee waiver (₹3 lakh spend)",
+      "2X rewards on international transactions",
+      "6X-12X rewards on iShop portal"
+    ],
+    "cons": [
+      "Low base reward rate (2 RP/₹100 = 0.5% effective)",
+      "High forex markup of 3.5%",
+      "Lounge access requires ₹75,000 quarterly spend",
+      "No airline/hotel transfer partners",
+      "Recent devaluations with new caps and fees (Jan 2026)",
+      "₹99 redemption convenience fee",
+      "Multiple reward exclusions (fuel, rent, wallet, govt)",
+      "MovieOffer now requires ₹25,000 quarterly spend"
+    ],
+    "alternatives": [
+      "axis-select",
+      "sbi-elite",
+      "hdfc-regalia-gold",
+      "icici-sapphiro"
+    ],
+    "lastVerified": "2026-01-05",
+    "dataSource": [
+      "Official ICICI Bank website (icici.bank.in)",
+      "ICICI Bank MITC document",
+      "CardInsider.com",
+      "PaisaBazaar.com",
+      "MyMoneyMantra.com",
+      "Finology Select",
+      "BusinessToday.in (Nov 2024 changes)"
+    ],
+    "changelog": [
+      {
+        "date": "2024-11-15",
+        "change": "Lounge access now requires ₹75,000 quarterly spend. Late payment charges restructured. Finance charges increased to 3.75%/month.",
+        "source": "Official ICICI Bank communication"
+      },
+      {
+        "date": "2024-11-15",
+        "change": "Add-on card annual fee of ₹199 introduced",
+        "source": "Official ICICI Bank T&C update"
+      },
+      {
+        "date": "2026-01-15",
+        "change": "New transaction fees: 2% on gaming, 1% on wallet loads >₹5K, 1% on transport >₹50K. Reward exclusions for fuel, rent, govt, wallets",
+        "source": "ICICI Bank January 2026 revisions"
+      },
+      {
+        "date": "2026-02-01",
+        "change": "BookMyShow BOGO requires ₹25,000 quarterly spend",
+        "source": "ICICI Bank credit card changes 2026"
+      }
+    ]
+  }
+}

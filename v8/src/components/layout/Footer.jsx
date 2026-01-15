@@ -2,19 +2,19 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
     return (
-        <footer className="mt-auto border-t border-espresso-700 bg-espresso-900 py-16 text-center">
+        <footer className="mt-auto border-t border-theme-border bg-theme-surface py-16 text-center">
             <div className="max-w-[1200px] mx-auto px-4">
                 <div className="mb-10 flex flex-col items-center justify-center gap-4">
-                    <span className="material-symbols-outlined text-gold-500 text-5xl">diamond</span>
-                    <span className="font-serif text-2xl font-bold text-white tracking-wide">
-                        Voucher<span className="text-gold-400">Tracker</span>
+                    <span className="material-symbols-outlined text-accent text-5xl">diamond</span>
+                    <span className="font-serif text-2xl font-bold text-theme-primary tracking-wide">
+                        Voucher<span className="text-accent">Tracker</span>
                     </span>
                 </div>
                 <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-10">
-                    <p className="text-gray-400 font-medium">
+                    <p className="text-theme-secondary font-medium">
                         An Open Source Community Project created by{' '}
                         <a
-                            className="text-gold-400 hover:text-gold-300 font-bold transition-colors"
+                            className="text-accent hover:text-accent font-bold transition-colors"
                             href="https://x.com/vaibhav_lodha"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -28,13 +28,13 @@ export default function Footer() {
                     <span className="text-sm font-semibold text-green-400 tracking-wide">100% Free. No Ads. Just Savings.</span>
                 </div>
                 <div className="flex flex-wrap justify-center gap-8 mb-8">
-                    <Link to="/privacy" className="text-sm text-gray-500 hover:text-gold-400 transition-colors">Privacy Policy</Link>
-                    <Link to="/terms" className="text-sm text-gray-500 hover:text-gold-400 transition-colors">Terms of Service</Link>
-                    <Link to="/contact" className="text-sm text-gray-500 hover:text-gold-400 transition-colors">Contact Support</Link>
+                    <Link to="/privacy" className="text-sm text-theme-muted hover:text-accent transition-colors">Privacy Policy</Link>
+                    <Link to="/terms" className="text-sm text-theme-muted hover:text-accent transition-colors">Terms of Service</Link>
+                    <Link to="/contact" className="text-sm text-theme-muted hover:text-accent transition-colors">Contact Support</Link>
                 </div>
                 <div className="flex justify-center gap-6">
                     <a
-                        className="text-gray-600 transition-colors hover:text-gold-400 p-2 rounded-full hover:bg-espresso-800"
+                        className="text-theme-muted transition-colors hover:text-accent p-2 rounded-full hover:bg-theme-surface"
                         href="https://vouchertracker.in"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -42,13 +42,13 @@ export default function Footer() {
                         <span className="material-symbols-outlined">public</span>
                     </a>
                     <a
-                        className="text-gray-600 transition-colors hover:text-gold-400 p-2 rounded-full hover:bg-espresso-800"
+                        className="text-theme-muted transition-colors hover:text-accent p-2 rounded-full hover:bg-theme-surface"
                         href="mailto:support@vouchertracker.in"
                     >
                         <span className="material-symbols-outlined">mail</span>
                     </a>
                 </div>
-                <p className="mt-8 text-xs text-gray-700">© 2024 CardPerks. Premium Financial Dashboard.</p>
+                <p className="mt-8 text-xs text-theme-muted">© 2024 CardPerks. Premium Financial Dashboard.</p>
             </div>
         </footer>
     );

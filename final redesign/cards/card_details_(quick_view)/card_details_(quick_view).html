@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Espresso Finance - Card Quick View</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c0a15d",
+                        "primary-hover": "#d4b572",
+                        "espresso-dark": "#161513",
+                        "espresso-card": "#24221e",
+                        "espresso-border": "#4e4a41",
+                        "text-muted": "#b2aea3",
+                        "copper-light": "#eecda3",
+                        "copper-border": "#8e6e3e",
+                    },
+                    fontFamily: {
+                        "display": ["Noto Serif", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"],
+                    },
+                    boxShadow: {
+                        'premium': '0 25px 50px -12px rgba(0, 0, 0, 0.55)',
+                        'gold-glow': '0 0 20px rgba(192, 161, 93, 0.15)',
+                        'inner-light': 'inset 0 1px 0 0 rgba(255, 255, 255, 0.05)',
+                        'engraved': '0 1px 1px rgba(0,0,0,0.8)',
+                    },
+                    animation: {
+                        'weighted-entry': 'weightedEntry 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
+                    },
+                    keyframes: {
+                        weightedEntry: {
+                            '0%': { opacity: '0', transform: 'translateY(40px) scale(0.95)' },
+                            '100%': { opacity: '1', transform: 'translateY(0) scale(1)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+<style>::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1d1b15; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4e4a41; 
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c0a15d; 
+        }@keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+        .glass-panel {
+            background: rgba(36, 34, 30, 0.95);
+            backdrop-filter: blur(8px);
+        }
+        .text-engraved {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.9);
+        }
+    </style>
+</head>
+<body class="bg-[#161513] text-white font-sans overflow-hidden antialiased selection:bg-primary selection:text-espresso-dark">
+<div class="flex h-screen w-full relative">
+<aside class="w-64 h-full flex flex-col bg-[#161513] border-r border-[#35322c] shrink-0 blur-[2px] opacity-40 pointer-events-none transition-all duration-300 z-0">
+<div class="p-6 pb-8 border-b border-[#24221e]">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 bg-primary/20 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">coffee</span>
+</div>
+<div>
+<h1 class="font-display font-bold text-lg leading-tight">Espresso</h1>
+<p class="text-xs text-text-muted tracking-wide uppercase">Finance</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto py-6 px-3 flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-text-muted hover:bg-[#24221e] hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium">Overview</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg bg-[#24221e] text-primary border border-[#35322c]" href="#">
+<span class="material-symbols-outlined fill-1">credit_card</span>
+<span class="font-medium">Cards</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-text-muted hover:bg-[#24221e] hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-medium">Transactions</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-text-muted hover:bg-[#24221e] hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">diamond</span>
+<span class="font-medium">Rewards</span>
+</a>
+</nav>
+<div class="p-4 border-t border-[#24221e]">
+<div class="flex items-center gap-3 px-2">
+<div class="h-8 w-8 rounded-full bg-gradient-to-br from-primary to-amber-700"></div>
+<div>
+<p class="text-sm font-medium">Aditya R.</p>
+<p class="text-xs text-text-muted">Premium Member</p>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col h-full bg-[#161513] relative z-0 blur-[2px] opacity-40 pointer-events-none">
+<header class="h-20 border-b border-[#35322c] flex items-center justify-between px-8">
+<h2 class="font-display text-2xl font-medium">My Collection</h2>
+<div class="flex items-center gap-4">
+<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-[#24221e] text-text-muted transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-[#24221e] text-text-muted transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 h-2 w-2 rounded-full bg-primary"></span>
+</button>
+</div>
+</header>
+<div class="p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="aspect-[1.586] rounded-xl bg-[#24221e] border border-[#35322c]"></div>
+<div class="aspect-[1.586] rounded-xl bg-[#24221e] border border-[#35322c]"></div>
+<div class="aspect-[1.586] rounded-xl bg-[#24221e] border border-[#35322c]"></div>
+</div>
+</main>
+<div class="absolute inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fade-in">
+<div class="relative w-full max-w-[850px] bg-[#1a1814] rounded-lg border border-[#4e4a41] shadow-premium overflow-hidden flex flex-col md:flex-row animate-weighted-entry group ring-1 ring-[#c0a15d]/20">
+<button class="absolute top-4 right-4 z-20 h-8 w-8 flex items-center justify-center rounded-full bg-black/40 hover:bg-primary text-text-muted hover:text-[#161513] transition-all cursor-pointer border border-white/5 hover:border-primary duration-300">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+<div class="w-full md:w-5/12 bg-[#201e1a] relative overflow-hidden flex flex-col items-center justify-center p-10 border-b md:border-b-0 md:border-r border-[#35322c]">
+<div class="absolute inset-0 opacity-[0.07]" style="background-image: radial-gradient(#c0a15d 1px, transparent 1px); background-size: 24px 24px;"></div>
+<div class="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/40"></div>
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[120%] bg-gradient-to-b from-primary/10 via-transparent to-transparent pointer-events-none blur-3xl"></div>
+<div class="relative z-10 w-full aspect-[1.586/1] transform transition-transform duration-700 hover:scale-[1.02] group-hover:shadow-2xl rounded-[14px] p-[1px] bg-gradient-to-b from-[#8e6e3e] to-[#4e3e26]">
+<div class="w-full h-full rounded-[13px] overflow-hidden relative bg-[#161513]">
+<img alt="Sleek black metal credit card with gold chip on dark background" class="w-full h-full object-cover shadow-inner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHozc-gF9lzKcpGvGv8ZNiXnpUZI41yACc3GHleqSezA2nYurc02RaO-O1DMr_58hwVcnNbNuwyhFHo_vmS2q0W6Mu1aoHJm5uYvFKUbSpd5Ur4OVU9k_FixGIPB5X-HiylORNZ7hDDKetYFGxIYg9-UUleBxGSmVDZseuSYU3m8ny_sGRxrCGtm1oUU8RpqmBZWr6owLAWxwD51vCcGx6rS_WvPzN92zF2fCPue3YETeW78xxnJe4nJsHWQSJ7EMs_JI8viY3W5y8"/>
+<div class="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/10 to-white/0 pointer-events-none mix-blend-overlay"></div>
+</div>
+</div>
+<div class="mt-8 text-center relative z-10">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] tracking-[0.2em] font-bold text-copper-light border border-primary/20 bg-primary/5 uppercase shadow-gold-glow">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                            Live Status
+                        </div>
+</div>
+</div>
+<div class="w-full md:w-7/12 flex flex-col bg-[#1d1b15]">
+<div class="p-8 pb-6 border-b border-[#2a2824]">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="text-3xl font-display font-bold text-white mb-1 tracking-tight text-shadow-sm">HDFC Infinia</h2>
+<p class="text-primary text-sm font-medium tracking-widest uppercase flex items-center gap-2">
+<span class="h-[1px] w-6 bg-gradient-to-r from-primary/0 via-primary to-primary/0"></span>
+                                Metal Edition
+                                <span class="h-[1px] w-6 bg-gradient-to-r from-primary/0 via-primary to-primary/0"></span>
+</p>
+</div>
+<div class="hidden md:block">
+<img alt="Bank Logo" class="h-8 opacity-80 invert brightness-0 sepia saturate-50 hue-rotate-[10deg]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb7OzLk_bUNT74QL8gz93hd9q8ScpXUwC_y7AueNcAhZdA-FA2UX68XGm52RSgT5PpdtPjQ9LTsZxZ1zghdxbkAegH1Xk2ootC7lOBdQDCxGEe64nVRdb_HuWVkDVFv9ep0AacxEFjxYZttXBp1Duo5DSf7ohwpy7hnQJCING0fmCzPLtKo6FGEyC0LeF99wykl9rMeGZiqmZ5HHKEPZSHq37wpvibh67rhPVmNXv6iRBHjHnG_wsPVRrce9XHTbx_uqfJu1pP7Srw"/>
+</div>
+</div>
+</div>
+<div class="flex-1 px-8 py-6 overflow-y-auto max-h-[380px] space-y-8 custom-scrollbar">
+<div class="grid grid-cols-2 gap-4">
+<div class="relative p-5 rounded-lg bg-[#22201c] border border-[#35322c] shadow-inner-light group/fee hover:border-primary/30 transition-colors">
+<p class="text-text-muted text-[10px] uppercase tracking-widest mb-2 font-bold opacity-70">Annual Fee</p>
+<div class="flex items-baseline gap-1">
+<p class="text-white font-display text-xl font-bold">₹12,500</p>
+<span class="text-[10px] text-text-muted">+ GST</span>
+</div>
+<div class="absolute top-0 right-0 p-1.5 opacity-0 group-hover/fee:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary text-sm">info</span>
+</div>
+</div>
+<div class="relative p-5 rounded-lg bg-[#22201c] border border-[#35322c] shadow-inner-light group/fee hover:border-primary/30 transition-colors">
+<p class="text-text-muted text-[10px] uppercase tracking-widest mb-2 font-bold opacity-70">Joining Fee</p>
+<div class="flex items-baseline gap-1">
+<p class="text-white font-display text-xl font-bold">₹12,500</p>
+<span class="text-[10px] text-text-muted">+ GST</span>
+</div>
+</div>
+</div>
+<div class="space-y-5">
+<h3 class="flex items-center gap-3 text-copper-light text-xs font-bold uppercase tracking-[0.2em] opacity-90">
+<span class="material-symbols-outlined text-sm">stars</span>
+                            Privileges
+                            <span class="h-[1px] flex-1 bg-gradient-to-r from-[#35322c] to-transparent"></span>
+</h3>
+<div class="flex items-start gap-4 group/item">
+<div class="h-10 w-10 shrink-0 rounded-full flex items-center justify-center bg-gradient-to-b from-[#2a2824] to-[#1a1814] border border-[#35322c] text-primary shadow-lg group-hover/item:text-white group-hover/item:border-primary/40 transition-all duration-300">
+<span class="material-symbols-outlined text-[20px]">flight_takeoff</span>
+</div>
+<div>
+<h4 class="text-white font-medium mb-1 text-sm text-engraved group-hover/item:text-primary transition-colors">Global Lounge Access</h4>
+<p class="text-[#9ca3af] text-xs leading-relaxed font-normal">Unlimited complimentary access to 1000+ airport lounges worldwide.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 group/item">
+<div class="h-10 w-10 shrink-0 rounded-full flex items-center justify-center bg-gradient-to-b from-[#2a2824] to-[#1a1814] border border-[#35322c] text-primary shadow-lg group-hover/item:text-white group-hover/item:border-primary/40 transition-all duration-300">
+<span class="material-symbols-outlined text-[20px]">currency_exchange</span>
+</div>
+<div>
+<h4 class="text-white font-medium mb-1 text-sm text-engraved group-hover/item:text-primary transition-colors">Accelerated Rewards</h4>
+<p class="text-[#9ca3af] text-xs leading-relaxed font-normal">Earn 5 Reward Points for every ₹150 spent. Up to 10X points on SmartBuy.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 group/item">
+<div class="h-10 w-10 shrink-0 rounded-full flex items-center justify-center bg-gradient-to-b from-[#2a2824] to-[#1a1814] border border-[#35322c] text-primary shadow-lg group-hover/item:text-white group-hover/item:border-primary/40 transition-all duration-300">
+<span class="material-symbols-outlined text-[20px]">concierge</span>
+</div>
+<div>
+<h4 class="text-white font-medium mb-1 text-sm text-engraved group-hover/item:text-primary transition-colors">24/7 Concierge</h4>
+<p class="text-[#9ca3af] text-xs leading-relaxed font-normal">Dedicated support for travel bookings, dining reservations, and golf.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="p-8 pt-4 border-t border-[#2a2824] bg-[#1a1814]">
+<button class="group w-full relative overflow-hidden flex items-center justify-center gap-3 bg-gradient-to-b from-[#c0a15d] to-[#9a7d3e] text-[#161513] font-bold py-3.5 px-6 rounded shadow-[0_4px_14px_0_rgba(192,161,93,0.39)] hover:shadow-[0_6px_20px_rgba(192,161,93,0.23)] hover:brightness-110 active:scale-[0.99] transition-all duration-200 border border-[#d4b572]/50">
+<div class="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent z-0"></div>
+<span class="relative z-10 font-sans tracking-wide">View Full Details</span>
+<span class="relative z-10 material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<div class="mt-4 flex justify-center gap-6 text-[11px] text-text-muted">
+<a class="hover:text-primary transition-colors cursor-pointer border-b border-transparent hover:border-primary/50 pb-0.5">Compare</a>
+<span class="opacity-30">|</span>
+<a class="hover:text-primary transition-colors cursor-pointer border-b border-transparent hover:border-primary/50 pb-0.5">Share</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

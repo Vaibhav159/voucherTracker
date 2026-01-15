@@ -99,41 +99,41 @@ const Banking = () => {
     };
 
     return (
-        <div className="flex flex-1 overflow-hidden relative font-display text-gold-100 bg-espresso-950">
+        <div className="flex flex-1 overflow-hidden relative font-display text-theme-primary bg-theme-bg">
 
             {/* Sidebar */}
-            <aside className="w-72 flex-shrink-0 flex flex-col bg-espresso-900 border-r border-espresso-700 overflow-y-auto z-20 hidden lg:flex scrollbar-thin scrollbar-thumb-espresso-700">
+            <aside className="w-72 flex-shrink-0 flex flex-col bg-theme-surface border-r border-theme-border overflow-y-auto z-20 hidden lg:flex scrollbar-thin scrollbar-theme">
                 <div className="p-6 flex flex-col gap-6 flex-1">
                     {/* Header */}
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
-                            <span className="material-symbols-outlined text-copper-500 text-lg">tune</span>
-                            <h3 className="text-white text-sm font-bold uppercase tracking-widest">Filters</h3>
+                            <span className="material-symbols-outlined text-accent-secondary-500 text-lg">tune</span>
+                            <h3 className="text-theme-primary text-sm font-bold uppercase tracking-widest">Filters</h3>
                         </div>
-                        <button className="text-copper-400 hover:text-white text-[10px] font-bold uppercase tracking-wider transition-colors">
+                        <button className="text-accent-secondary hover:text-theme-primary text-[10px] font-bold uppercase tracking-wider transition-colors">
                             Reset
                         </button>
                     </div>
 
                     {/* Search */}
                     <div className="relative">
-                        <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-lg">search</span>
+                        <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-theme-muted text-lg">search</span>
                         <input
-                            className="w-full bg-espresso-800 border border-espresso-700 rounded-lg py-2.5 pl-10 pr-4 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-copper-500 transition-all"
+                            className="w-full bg-theme-surface border border-theme-border rounded-lg py-2.5 pl-10 pr-4 text-sm text-theme-primary placeholder-gray-500 focus:outline-none focus:border-accent-secondary transition-all"
                             placeholder="Find a bank..."
                             type="text"
                         />
                     </div>
 
                     {/* Institutions */}
-                    <div className="border-t border-espresso-700 pt-5">
+                    <div className="border-t border-theme-border pt-5">
                         <div className="flex items-center gap-2 mb-4">
-                            <span className="material-symbols-outlined text-copper-500 text-lg">account_balance</span>
-                            <h4 className="text-white text-xs font-bold uppercase tracking-widest">Institutions</h4>
+                            <span className="material-symbols-outlined text-accent-secondary-500 text-lg">account_balance</span>
+                            <h4 className="text-theme-primary text-xs font-bold uppercase tracking-widest">Institutions</h4>
                         </div>
                         <div className="flex flex-col gap-2">
                             {banks.map((bank) => (
-                                <label key={bank.id} className="flex items-center justify-between px-2 py-2 rounded-lg hover:bg-espresso-800 cursor-pointer group transition-all">
+                                <label key={bank.id} className="flex items-center justify-between px-2 py-2 rounded-lg hover:bg-theme-surface cursor-pointer group transition-all">
                                     <div className="flex items-center gap-3">
                                         <input
                                             type="checkbox"
@@ -151,24 +151,24 @@ const Banking = () => {
                                             }}
                                             className="hidden peer"
                                         />
-                                        <div className="w-4 h-4 rounded border border-copper-500/50 bg-espresso-950 flex items-center justify-center transition-all peer-checked:bg-copper-500 peer-checked:border-copper-500">
-                                            <svg className="w-2.5 h-2.5 text-espresso-950" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                                        <div className="w-4 h-4 rounded border border-accent-secondary/50 bg-theme-bg flex items-center justify-center transition-all peer-checked:bg-accent-secondary peer-checked:border-accent-secondary">
+                                            <svg className="w-2.5 h-2.5 text-theme-primary" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
                                                 <path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" />
                                             </svg>
                                         </div>
-                                        <span className="text-sm text-gray-300 group-hover:text-white transition-colors">{bank.name}</span>
+                                        <span className="text-sm text-theme-secondary group-hover:text-theme-primary transition-colors">{bank.name}</span>
                                     </div>
-                                    <span className="text-xs text-gray-500">{bank.count}</span>
+                                    <span className="text-xs text-theme-muted">{bank.count}</span>
                                 </label>
                             ))}
                         </div>
                     </div>
 
                     {/* Tier Level */}
-                    <div className="border-t border-espresso-700 pt-5">
+                    <div className="border-t border-theme-border pt-5">
                         <div className="flex items-center gap-2 mb-4">
-                            <span className="material-symbols-outlined text-copper-500 text-lg">diamond</span>
-                            <h4 className="text-white text-xs font-bold uppercase tracking-widest">Tier Level</h4>
+                            <span className="material-symbols-outlined text-accent-secondary-500 text-lg">diamond</span>
+                            <h4 className="text-theme-primary text-xs font-bold uppercase tracking-widest">Tier Level</h4>
                         </div>
                         <div className="flex flex-col gap-1">
                             {tiers.map((tier) => (
@@ -176,12 +176,12 @@ const Banking = () => {
                                     key={tier.id}
                                     onClick={() => setSelectedTier(tier.id)}
                                     className={`flex items-center justify-between px-3 py-2.5 rounded-lg transition-all text-left ${selectedTier === tier.id
-                                        ? 'bg-copper-500/10 border-l-2 border-copper-500 text-gold-400'
-                                        : 'hover:bg-espresso-800 text-gray-400 hover:text-white border-l-2 border-transparent'
+                                        ? 'bg-accent-secondary/10 border-l-2 border-accent-secondary text-accent'
+                                        : 'hover:bg-theme-surface text-theme-secondary hover:text-theme-primary border-l-2 border-transparent'
                                         }`}
                                 >
                                     <span className="text-sm font-medium">{tier.name}</span>
-                                    <span className={`text-xs font-bold px-1.5 py-0.5 rounded ${selectedTier === tier.id ? 'bg-copper-500 text-espresso-950' : 'text-gray-500'
+                                    <span className={`text-xs font-bold px-1.5 py-0.5 rounded ${selectedTier === tier.id ? 'bg-accent-secondary text-theme-primary' : 'text-theme-muted'
                                         }`}>
                                         {tier.count}
                                     </span>
@@ -191,13 +191,13 @@ const Banking = () => {
                     </div>
 
                     {/* Pro Tip */}
-                    <div className="mt-auto border border-espresso-700 bg-espresso-800/50 rounded-xl p-4">
+                    <div className="mt-auto border border-theme-border bg-theme-surface/50 rounded-xl p-4">
                         <div className="flex items-center gap-2 mb-2">
-                            <span className="material-symbols-outlined text-gold-400 text-lg">lightbulb</span>
-                            <span className="text-xs font-bold text-copper-400 uppercase tracking-widest">Pro Tip</span>
+                            <span className="material-symbols-outlined text-accent text-lg">lightbulb</span>
+                            <span className="text-xs font-bold text-accent-secondary uppercase tracking-widest">Pro Tip</span>
                         </div>
-                        <p className="text-xs text-gray-400 leading-relaxed">
-                            Grouping family accounts can fast-track your upgrade to <span className="text-gold-400 font-semibold">Imperia</span> status instantly.
+                        <p className="text-xs text-theme-secondary leading-relaxed">
+                            Grouping family accounts can fast-track your upgrade to <span className="text-accent font-semibold">Imperia</span> status instantly.
                         </p>
                     </div>
                 </div>
@@ -208,34 +208,34 @@ const Banking = () => {
                 {/* Page Header */}
                 <div className="mb-8">
                     <div className="flex items-center gap-2 mb-3">
-                        <span className="material-symbols-outlined text-gold-400 text-lg">verified_user</span>
-                        <span className="text-xs font-semibold text-gold-400 uppercase tracking-widest">Private Banking Selection</span>
+                        <span className="material-symbols-outlined text-accent text-lg">verified_user</span>
+                        <span className="text-xs font-semibold text-accent uppercase tracking-widest">Private Banking Selection</span>
                     </div>
-                    <h1 className="text-3xl md:text-4xl font-serif font-bold text-white tracking-wide mb-2">
+                    <h1 className="text-3xl md:text-4xl font-serif font-bold text-theme-primary tracking-wide mb-2">
                         Banking Tiers Decoded
                     </h1>
-                    <p className="text-sm text-gray-400 max-w-2xl">
+                    <p className="text-sm text-theme-secondary max-w-2xl">
                         Compare wealth and family banking eligibility across India's premier banks. Find the tier that matches your lifestyle and financial stature.
                     </p>
                 </div>
 
                 {/* Compare Bar */}
                 {compareList.length > 0 && (
-                    <div className="mb-6 p-4 bg-espresso-900 border border-copper-500/30 rounded-xl flex items-center justify-between animate-fade-in">
+                    <div className="mb-6 p-4 bg-theme-surface border border-accent-secondary/30 rounded-xl flex items-center justify-between animate-fade-in">
                         <div className="flex items-center gap-3">
-                            <span className="material-symbols-outlined text-copper-500">compare_arrows</span>
-                            <span className="text-sm text-white font-medium">
+                            <span className="material-symbols-outlined text-accent-secondary-500">compare_arrows</span>
+                            <span className="text-sm text-theme-primary font-medium">
                                 {compareList.length} tier{compareList.length > 1 ? 's' : ''} selected for comparison
                             </span>
                         </div>
                         <div className="flex items-center gap-3">
                             <button
                                 onClick={() => setCompareList([])}
-                                className="text-xs text-gray-400 hover:text-white transition-colors"
+                                className="text-xs text-theme-secondary hover:text-theme-primary transition-colors"
                             >
                                 Clear
                             </button>
-                            <button className="px-4 py-2 rounded-lg bg-copper-500 text-espresso-950 text-xs font-bold uppercase tracking-wider hover:bg-copper-400 transition-colors">
+                            <button className="px-4 py-2 rounded-lg bg-accent-secondary text-theme-primary text-xs font-bold uppercase tracking-wider hover:bg-accent transition-colors">
                                 Compare Now
                             </button>
                         </div>
@@ -247,14 +247,14 @@ const Banking = () => {
                     {bankingTiers.map((tier) => (
                         <div
                             key={tier.id}
-                            className={`bg-espresso-900 border rounded-xl overflow-hidden flex flex-col hover:border-gold-400/50 hover:shadow-glow-copper transition-all duration-300 group ${compareList.includes(tier.id) ? 'border-copper-500 ring-2 ring-copper-500/30' : 'border-espresso-700'
+                            className={`bg-theme-surface border rounded-xl overflow-hidden flex flex-col hover:border-accent/50 hover:shadow-glow-copper transition-all duration-300 group ${compareList.includes(tier.id) ? 'border-accent-secondary ring-2 ring-accent-secondary/30' : 'border-theme-border'
                                 }`}
                         >
                             {/* Card Header */}
-                            <div className="p-5 border-b border-espresso-700 bg-espresso-900/50">
+                            <div className="p-5 border-b border-theme-border bg-theme-surface/50">
                                 <div className="flex justify-between items-start mb-3">
                                     <div
-                                        className="h-8 w-8 rounded-lg flex items-center justify-center text-white font-bold text-[9px] tracking-tighter"
+                                        className="h-8 w-8 rounded-lg flex items-center justify-center text-theme-primary font-bold text-[9px] tracking-tighter"
                                         style={{ backgroundColor: tier.bankColor }}
                                     >
                                         {tier.bank}
@@ -263,8 +263,8 @@ const Banking = () => {
                                         <button
                                             onClick={() => toggleCompare(tier.id)}
                                             className={`transition-colors ${compareList.includes(tier.id)
-                                                ? 'text-copper-400'
-                                                : 'text-gray-500 hover:text-gold-400'
+                                                ? 'text-accent-secondary'
+                                                : 'text-theme-muted hover:text-accent'
                                                 }`}
                                             title={compareList.includes(tier.id) ? 'Remove from compare' : 'Add to compare'}
                                         >
@@ -274,7 +274,7 @@ const Banking = () => {
                                             onClick={() => toggleFavorite(tier.id)}
                                             className={`transition-colors ${isFavorite('banking', tier.id)
                                                 ? 'text-red-500'
-                                                : 'text-gray-500 hover:text-red-400'
+                                                : 'text-theme-muted hover:text-red-400'
                                                 }`}
                                             title={isFavorite('banking', tier.id) ? 'Remove from favorites' : 'Add to favorites'}
                                         >
@@ -287,27 +287,27 @@ const Banking = () => {
                                         </button>
                                     </div>
                                 </div>
-                                <span className="block text-[10px] font-semibold text-copper-500 uppercase tracking-widest mb-1">
+                                <span className="block text-[10px] font-semibold text-accent-secondary-500 uppercase tracking-widest mb-1">
                                     {tier.tierType}
                                 </span>
-                                <h3 className="text-lg font-serif font-bold text-white group-hover:text-gold-400 transition-colors">
+                                <h3 className="text-lg font-serif font-bold text-theme-primary group-hover:text-accent transition-colors">
                                     {tier.tierName}
                                 </h3>
-                                <p className="text-xs text-gray-500 italic mt-1">{tier.tagline}</p>
+                                <p className="text-xs text-theme-muted italic mt-1">{tier.tagline}</p>
                             </div>
 
                             {/* Card Body */}
                             <div className="p-5 flex-1">
                                 {/* Eligibility */}
                                 <div className="mb-5">
-                                    <h4 className="text-[10px] font-bold text-copper-400 uppercase tracking-widest mb-3">
+                                    <h4 className="text-[10px] font-bold text-accent-secondary uppercase tracking-widest mb-3">
                                         Eligibility
                                     </h4>
                                     <div className="space-y-2">
                                         {tier.eligibility.map((item, idx) => (
-                                            <div key={idx} className="flex justify-between items-center py-1.5 border-b border-espresso-700 last:border-0">
-                                                <span className="text-xs text-gray-400">{item.label}</span>
-                                                <span className="text-xs font-semibold text-white">{item.value}</span>
+                                            <div key={idx} className="flex justify-between items-center py-1.5 border-b border-theme-border last:border-0">
+                                                <span className="text-xs text-theme-secondary">{item.label}</span>
+                                                <span className="text-xs font-semibold text-theme-primary">{item.value}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -315,15 +315,15 @@ const Banking = () => {
 
                                 {/* Benefits */}
                                 <div>
-                                    <h4 className="text-[10px] font-bold text-copper-400 uppercase tracking-widest mb-3">
+                                    <h4 className="text-[10px] font-bold text-accent-secondary uppercase tracking-widest mb-3">
                                         Benefits
                                     </h4>
                                     <ul className="space-y-2">
                                         {tier.benefits.map((benefit, idx) => (
-                                            <li key={idx} className="flex items-start gap-2 text-xs text-gray-400">
-                                                <span className="h-px w-2 bg-copper-500 mt-2 shrink-0"></span>
+                                            <li key={idx} className="flex items-start gap-2 text-xs text-theme-secondary">
+                                                <span className="h-px w-2 bg-accent-secondary mt-2 shrink-0"></span>
                                                 <span>
-                                                    <strong className="text-gold-400">{benefit.title}:</strong> {benefit.desc}
+                                                    <strong className="text-accent">{benefit.title}:</strong> {benefit.desc}
                                                 </span>
                                             </li>
                                         ))}
@@ -335,7 +335,7 @@ const Banking = () => {
                             <div className="p-5 pt-0">
                                 <Link
                                     to={`/banking/${tier.id}`}
-                                    className="w-full py-2.5 rounded-lg bg-gradient-to-r from-copper-600 to-copper-500 text-white text-xs font-bold uppercase tracking-widest hover:from-copper-500 hover:to-copper-400 transition-all shadow-md flex items-center justify-center gap-2 group/btn"
+                                    className="w-full py-2.5 rounded-lg bg-accent-secondary hover:bg-accent text-theme-primary text-xs font-bold uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2 group/btn"
                                 >
                                     {tier.cta}
                                     <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
@@ -346,19 +346,19 @@ const Banking = () => {
                 </div>
 
                 {/* Family Banking Callout */}
-                <div className="bg-espresso-900 border border-espresso-700 rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="bg-theme-surface border border-theme-border rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-6">
                     <div className="flex items-center gap-4">
-                        <div className="h-14 w-14 rounded-full bg-espresso-800 flex items-center justify-center border border-copper-500/30">
-                            <span className="material-symbols-outlined text-gold-400 text-2xl">family_restroom</span>
+                        <div className="h-14 w-14 rounded-full bg-theme-surface flex items-center justify-center border border-accent-secondary/30">
+                            <span className="material-symbols-outlined text-accent text-2xl">family_restroom</span>
                         </div>
                         <div>
-                            <h4 className="text-lg font-serif font-bold text-white mb-1">Family Banking Advantage</h4>
-                            <p className="text-xs text-gray-400 max-w-xl">
+                            <h4 className="text-lg font-serif font-bold text-theme-primary mb-1">Family Banking Advantage</h4>
+                            <p className="text-xs text-theme-secondary max-w-xl">
                                 Did you know? HDFC Imperia allows grouping up to 4 family members to maintain the TRV requirement collectively, making it easier to upgrade everyone's status instantly.
                             </p>
                         </div>
                     </div>
-                    <button className="px-5 py-2 rounded-lg border border-copper-500 text-copper-400 text-xs font-bold uppercase tracking-widest hover:bg-copper-500 hover:text-white transition-all whitespace-nowrap">
+                    <button className="px-5 py-2 rounded-lg border border-accent-secondary text-accent-secondary text-xs font-bold uppercase tracking-widest hover:bg-accent-secondary hover:text-theme-primary transition-all whitespace-nowrap">
                         Read Grouping Guide
                     </button>
                 </div>

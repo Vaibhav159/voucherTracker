@@ -1,0 +1,1242 @@
+{
+  "id": "hdfc-marriott-bonvoy",
+  "name": "Marriott Bonvoy HDFC Bank Credit Card",
+  "bank": "HDFC Bank",
+  "slug": "marriott-bonvoy-hdfc-bank-credit-card",
+  "image": "assets/cards/hdfc/marriott-bonvoy.png",
+  "link": "https://applyonline.hdfcbank.com/cards/credit-cards.html?CHANNELSOURCE=MRTB",
+  "isActive": true,
+
+  "network": {
+    "type": "Diners Club",
+    "variant": "International",
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "premium",
+    "isCobranded": true,
+    "cobrandPartner": {
+      "name": "Marriott International",
+      "type": "hotel",
+      "loyaltyProgram": "Marriott Bonvoy"
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 3000,
+      "gstApplicable": true,
+      "effectiveAmount": 3540,
+      "waivable": false,
+      "waiverCondition": null,
+      "chargeDay": "45th day from card issuance (for cards issued on or after December 1, 2023)"
+    },
+    "annual": {
+      "amount": 3000,
+      "gstApplicable": true,
+      "effectiveAmount": 3540,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": false,
+        "spendThreshold": null,
+        "spendPeriod": null,
+        "waiverText": "No fee waiver option available for this card"
+      },
+      "chargeTime": "1st month of the anniversary year"
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": null,
+      "joiningFee": null,
+      "annualFee": null,
+      "rewardSharing": true,
+      "note": "Supplementary cardholders earn points credited to primary cardholder's Marriott Bonvoy account"
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding (as per HDFC standard MITC)",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 100, "fee": 0},
+        {"minAmount": 101, "maxAmount": 500, "fee": 100},
+        {"minAmount": 501, "maxAmount": 5000, "fee": 500},
+        {"minAmount": 5001, "maxAmount": 10000, "fee": 600},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 800},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ],
+      "note": "Late payment charges updated as per August 2024 HDFC policy"
+    },
+    "overLimit": {
+      "amount": null,
+      "percentage": 2.5
+    },
+    "chequeReturn": 500,
+    "cardReplacement": 200,
+    "duplicateStatement": 100,
+    "railwayTicketFee": {
+      "percentage": 1,
+      "applicableTaxes": true
+    },
+    "rentPaymentFee": {
+      "percentage": 1,
+      "maxFee": 3000,
+      "note": "Applicable for rent payments through third-party apps like CRED, PayTM, etc."
+    },
+    "utilityTransactionFee": {
+      "percentage": 1,
+      "threshold": 50000,
+      "maxFee": 3000,
+      "note": "1% fee (capped at ₹3,000) for transactions above ₹50,000"
+    }
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 100000,
+        "annual": 1200000
+      },
+      "selfEmployed": {
+        "itr": 1500000
+      }
+    },
+    "age": {
+      "salaried": {
+        "min": 21,
+        "max": 60
+      },
+      "selfEmployed": {
+        "min": 21,
+        "max": 65
+      },
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": "Existing HDFC customers can apply as floater card with shared limit (minimum ₹1 lakh credit limit required)"
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident",
+    "documentsRequired": {
+      "identityProof": ["Aadhaar Card", "PAN Card"],
+      "addressProof": ["Latest utility bill", "Passport"],
+      "incomeProof": {
+        "salaried": ["Latest salary slips"],
+        "selfEmployed": ["Income tax returns"]
+      }
+    }
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 100000,
+      "max": 500000
+    },
+    "factors": "Based on income, credit score, and existing relationship with HDFC Bank",
+    "enhancementCriteria": "Good repayment history for 6+ months",
+    "floaterCardNote": "For existing HDFC cardholders, issued with ₹5,000 temporary limit for 5-7 working days, then updated to shared limit"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.432,
+      "monthlyRate": 0.036
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.432,
+      "monthlyRate": 0.036
+    },
+    "gracePeriod": {
+      "days": 50,
+      "note": "From transaction date if previous balance paid in full"
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 200,
+      "calculation": "5% of total outstanding or ₹200, whichever is higher"
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": 30,
+    "dailyLimit": null,
+    "interestFromDay1": true
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "Marriott Bonvoy Points",
+      "symbol": "MB",
+      "singularUnit": "point",
+      "pluralUnit": "points"
+    },
+    "baseRate": {
+      "rate": 2,
+      "spendUnit": 150,
+      "effectivePercentage": 0.0133,
+      "pointValueINR": 0.35,
+      "effectiveRewardRate": "0.47%"
+    },
+    "earningText": "Earn 2 Marriott Bonvoy Points for every ₹150 spent on eligible purchases",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "Smart EMI / Dial an EMI transactions",
+        "Wallet loads",
+        "Gift or Prepaid Card loads",
+        "Voucher purchases",
+        "Cash advances",
+        "Payment of outstanding balances",
+        "Payment of card fees and other charges",
+        "Government related transactions",
+        "Rental transactions"
+      ],
+      "mccs": null,
+      "note": "EMI principal amounts earn points, but interest, processing fees & GST do not earn points"
+    },
+
+    "caps": {
+      "monthly": {
+        "marriottHotels": {
+          "spendThreshold": 1000000,
+          "maxPoints": 53333,
+          "note": "Earn 8 points per ₹150 up to ₹10 lakh monthly spend at Marriott hotels; 2 points per ₹150 thereafter"
+        },
+        "travelDiningEntertainment": {
+          "spendThreshold": 500000,
+          "maxPoints": 13333,
+          "note": "Earn 4 points per ₹150 up to ₹5 lakh monthly spend; 2 points per ₹150 thereafter"
+        },
+        "groceries": {
+          "spendThreshold": 150000,
+          "maxPoints": 2000,
+          "note": "Earn 2 points per ₹150 up to ₹1.5 lakh monthly spend; no points thereafter"
+        }
+      },
+      "quarterly": null,
+      "annual": null,
+      "resetPeriod": "calendar",
+      "perTransaction": null,
+      "insuranceSpends": {
+        "capped": false,
+        "note": "No cap on points earned for insurance spends"
+      }
+    },
+
+    "expiry": {
+      "hasExpiry": false,
+      "period": null,
+      "condition": "Points do not expire as long as there is qualifying activity (earning or redemption) at least once every 24 months in Marriott Bonvoy account"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": null,
+        "cashback": null,
+        "freeNightAward": {
+          "value": 15000,
+          "validity": "12 months",
+          "condition": "On first eligible spend transaction of ₹500 OR on levy of joining fee"
+        },
+        "silverEliteStatus": true,
+        "eliteNightCredits": 10,
+        "spendCondition": {
+          "amount": 500,
+          "period": null,
+          "transactionCount": 1
+        },
+        "validity": null,
+        "description": "1 Free Night Award (up to 15,000 points) + Marriott Bonvoy Silver Elite Status + 10 Elite Night Credits"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": true,
+        "freeNightAward": {
+          "value": 15000,
+          "validity": "12 months"
+        },
+        "condition": "On payment of annual fee"
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "marriottHotels": {
+        "rate": 8,
+        "spendUnit": 150,
+        "multiplier": 4,
+        "effectivePercentage": 0.0533,
+        "cap": {
+          "monthlySpend": 1000000,
+          "maxPoints": 53333
+        },
+        "merchants": ["All hotels participating in Marriott Bonvoy"],
+        "mccs": null,
+        "note": "Earn 8 Marriott Bonvoy Points per ₹150 spent at Marriott hotels; 2 points per ₹150 after monthly cap"
+      },
+      "travel": {
+        "rate": 4,
+        "spendUnit": 150,
+        "multiplier": 2,
+        "effectivePercentage": 0.0267,
+        "cap": {
+          "monthlySpend": 500000,
+          "maxPoints": 13333
+        },
+        "merchants": null,
+        "mccs": null,
+        "note": "Travel category spends"
+      },
+      "dining": {
+        "rate": 4,
+        "spendUnit": 150,
+        "multiplier": 2,
+        "effectivePercentage": 0.0267,
+        "cap": {
+          "monthlySpend": 500000,
+          "maxPoints": 13333
+        },
+        "merchants": null,
+        "note": "Dining and food & beverages"
+      },
+      "entertainment": {
+        "rate": 4,
+        "spendUnit": 150,
+        "multiplier": 2,
+        "effectivePercentage": 0.0267,
+        "cap": {
+          "monthlySpend": 500000,
+          "maxPoints": 13333
+        },
+        "merchants": null,
+        "note": "Entertainment category spends"
+      },
+      "groceries": {
+        "rate": 2,
+        "spendUnit": 150,
+        "multiplier": 1,
+        "effectivePercentage": 0.0133,
+        "cap": {
+          "monthlySpend": 150000,
+          "maxPoints": 2000
+        },
+        "merchants": null,
+        "note": "No rewards after ₹1.5 lakh monthly grocery spend"
+      },
+      "other": {
+        "rate": 2,
+        "spendUnit": 150,
+        "multiplier": 1,
+        "effectivePercentage": 0.0133,
+        "cap": null,
+        "note": "All other eligible spends"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on fuel transactions"
+      },
+      "international": {
+        "rate": 2,
+        "spendUnit": 150,
+        "multiplier": 1,
+        "cap": null,
+        "note": "Standard 2 points per ₹150 on international transactions (subject to forex markup)"
+      },
+      "insurance": {
+        "rate": 2,
+        "spendUnit": 150,
+        "cap": null,
+        "note": "No cap on points earned for insurance spends"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on rental transactions"
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on wallet loads, gift cards, prepaid cards, voucher purchases"
+      },
+      "government": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on government related transactions"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": true,
+        "name": "SmartBuy",
+        "cashbackPercentage": 5,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "link": "https://offers.smartbuy.hdfcbank.com",
+        "note": "Up to 5% cashback on SmartBuy portal purchases"
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": [],
+        "note": null
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": []
+      },
+      "milestoneAccelerators": []
+    },
+
+    "redemption": {
+      "baseValueINR": 0.35,
+      "baseValueUSD": 0.008,
+      "bestValueINR": 1.0,
+      "bestValueUSD": 0.012,
+      "bestOption": "Hotel stays at Marriott Bonvoy properties, especially at high-value properties or during promotional periods",
+      "minRedemption": null,
+      "redemptionIncrement": null,
+      "convenienceFee": null,
+      "monthlyRedemptionLimit": null,
+
+      "options": [
+        {
+          "type": "hotel_stays",
+          "valueINR": "0.35-1.0",
+          "description": "Free night stays at Marriott Bonvoy properties worldwide",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["Marriott Bonvoy properties worldwide (35+ brands including St. Regis, JW Marriott, Ritz-Carlton, W Hotels, Westin, Sheraton, Le Méridien, Four Points, etc.)"],
+          "note": "Dynamic pricing applies - points required vary by property, date, and availability"
+        },
+        {
+          "type": "marriott_moments",
+          "valueINR": null,
+          "description": "Exclusive experiences and events through Marriott Bonvoy Moments",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["Marriott Bonvoy Moments"],
+          "note": "Auction-style and instant redemption experiences available"
+        },
+        {
+          "type": "airline_miles",
+          "valueINR": null,
+          "description": "Transfer to 38 airline partners at 3:1 ratio with 5,000 bonus miles per 60,000 points",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["Air India", "Emirates", "Etihad", "Singapore Airlines", "United Airlines", "British Airways", "and 30+ more"],
+          "note": "3 Marriott Bonvoy points = 1 airline mile; bonus 5,000 miles per 60,000 points transferred"
+        },
+        {
+          "type": "merchandise",
+          "valueINR": null,
+          "description": "Products and merchandise through Marriott Bonvoy catalog",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["Shop Marriott", "Shop Westin"],
+          "note": "Lower value compared to hotel stays"
+        },
+        {
+          "type": "gift_cards",
+          "valueINR": null,
+          "description": "Gift cards through Marriott Bonvoy platform",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": null,
+          "note": "Generally lower value redemption"
+        }
+      ],
+
+      "pointsPlusPay": {
+        "enabled": true,
+        "note": "Combine Free Night Awards with up to 15,000 additional Marriott Bonvoy points to book higher-value rooms"
+      }
+    },
+
+    "transferPartners": {
+      "enabled": true,
+      "note": "Marriott Bonvoy points can be transferred to 38+ airline frequent flyer programs",
+      "partners": [
+        {
+          "name": "Air India Flying Returns",
+          "type": "airline",
+          "program": "Flying Returns",
+          "alliance": "Star Alliance",
+          "ratio": {
+            "cardPoints": 3,
+            "partnerPoints": 1,
+            "display": "3:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "Varies",
+          "transferMethod": "Marriott Bonvoy account",
+          "blackoutDates": false,
+          "note": "Bonus 5,000 miles per 60,000 points transferred"
+        },
+        {
+          "name": "Emirates Skywards",
+          "type": "airline",
+          "program": "Skywards",
+          "alliance": null,
+          "ratio": {
+            "cardPoints": 3,
+            "partnerPoints": 1,
+            "display": "3:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "Varies",
+          "transferMethod": "Marriott Bonvoy account",
+          "blackoutDates": false,
+          "note": "Bonus 5,000 miles per 60,000 points transferred"
+        },
+        {
+          "name": "Singapore Airlines KrisFlyer",
+          "type": "airline",
+          "program": "KrisFlyer",
+          "alliance": "Star Alliance",
+          "ratio": {
+            "cardPoints": 3,
+            "partnerPoints": 1,
+            "display": "3:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "Varies",
+          "transferMethod": "Marriott Bonvoy account",
+          "blackoutDates": false,
+          "note": "Bonus 5,000 miles per 60,000 points transferred"
+        },
+        {
+          "name": "British Airways Executive Club",
+          "type": "airline",
+          "program": "Executive Club (Avios)",
+          "alliance": "OneWorld",
+          "ratio": {
+            "cardPoints": 3,
+            "partnerPoints": 1,
+            "display": "3:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "Varies",
+          "transferMethod": "Marriott Bonvoy account",
+          "blackoutDates": false,
+          "note": "Bonus 5,000 miles per 60,000 points transferred"
+        },
+        {
+          "name": "United MileagePlus",
+          "type": "airline",
+          "program": "MileagePlus",
+          "alliance": "Star Alliance",
+          "ratio": {
+            "cardPoints": 3,
+            "partnerPoints": 1.1,
+            "display": "3:1.1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "Varies",
+          "transferMethod": "Marriott Bonvoy account",
+          "blackoutDates": false,
+          "note": "10% bonus on transfers; plus bonus 5,000 miles per 60,000 points"
+        }
+      ],
+      "totalPartners": 38,
+      "currentBonus": {
+        "active": false,
+        "bonusPercentage": null,
+        "validUntil": null,
+        "applicablePartners": []
+      }
+    },
+
+    "pooling": {
+      "enabled": true,
+      "eligibleCards": ["All Marriott Bonvoy members in the same household"],
+      "acrossUsers": true,
+      "note": "Marriott Bonvoy allows point transfers between members; HDFC card points go to linked Marriott Bonvoy account"
+    },
+
+    "specialLogic": {
+      "pointsCrediting": "Points credited to Marriott Bonvoy Member Account within 12 weeks of transaction",
+      "marriottMembership": "Automatic enrollment in Marriott Bonvoy program if not already a member",
+      "membershipMerge": "30-day waiting period to merge Marriott Bonvoy accounts"
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": true,
+        "complimentaryCount": 12,
+        "period": "year",
+        "accessType": "Diners Club Lounge Access",
+        "accessProvider": "Diners Club International",
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "No spend requirement for lounge access"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null,
+          "note": "Guests are not eligible for lounge access"
+        },
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "eligibleLounges": "View via Diners Travel Tools App",
+        "note": "Access at both domestic and international terminals within India"
+      },
+      "international": {
+        "included": true,
+        "complimentaryCount": 12,
+        "period": "year",
+        "accessType": "Diners Club Lounge Access",
+        "accessProvider": "Diners Club International",
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": null
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null,
+          "note": "Guests are not eligible for lounge access"
+        },
+        "eligibleLounges": "View via DCI Travel Tool App",
+        "note": "Access at lounges outside India"
+      },
+      "accessRules": {
+        "cardValidation": "Card must be validated at point of entry by swiping a transaction of a nominal charge",
+        "quotaExceeded": "Transaction will be declined if quota exceeded",
+        "bothCardholders": "Primary and add-on cardholders must present their individual cards"
+      }
+    },
+
+    "milestones": [
+      {
+        "spend": 600000,
+        "period": "anniversary year",
+        "benefit": "1 Free Night Award (up to 15,000 points)",
+        "benefitType": "free_night",
+        "value": "~10000",
+        "valueNote": "Based on Fairfield by Marriott rates",
+        "conditions": "Excludes fuel, wallet loads, EMI, government transactions"
+      },
+      {
+        "spend": 900000,
+        "period": "anniversary year",
+        "benefit": "1 Free Night Award (up to 15,000 points)",
+        "benefitType": "free_night",
+        "value": "~10000",
+        "conditions": "Cumulative with ₹6 lakh milestone"
+      },
+      {
+        "spend": 1500000,
+        "period": "anniversary year",
+        "benefit": "1 Free Night Award (up to 15,000 points)",
+        "benefitType": "free_night",
+        "value": "~10000",
+        "conditions": "Cumulative with ₹6 lakh and ₹9 lakh milestones"
+      }
+    ],
+
+    "golf": {
+      "included": true,
+      "complimentaryRounds": 2,
+      "complimentaryLessons": 2,
+      "period": "quarter",
+      "courses": "Select golf courses worldwide",
+      "greenFeeWaiver": true,
+      "lessonIncluded": true,
+      "note": "2 complimentary golf course accesses + 2 golf lessons per quarter via Diners Club Golf Program"
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": null
+    },
+
+    "dining": {
+      "included": false,
+      "programs": [],
+      "hotelDining": {
+        "included": true,
+        "hotels": ["Marriott Bonvoy properties"],
+        "offer": "Earn 8 Marriott Bonvoy points per ₹150 spent on dining at participating hotels"
+      }
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 400,
+      "maxTransaction": 5000,
+      "monthlyCap": 250,
+      "applicableStations": "All fuel stations in India",
+      "rewardsOnFuel": false,
+      "note": "1% surcharge waiver on fuel (excluding GST), capped at ₹250 per billing cycle. No rewards on fuel."
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% + GST on international transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "Forex markup applies to all non-INR transactions"
+    },
+
+    "concierge": {
+      "included": true,
+      "availability": "9:00 AM to 9:00 PM",
+      "type": "Marriott Bonvoy Concierge",
+      "services": [
+        "Travel bookings",
+        "Restaurant reservations",
+        "General assistance"
+      ],
+      "contactNumber": "1800 309 3100 (Toll-free)",
+      "email": "support@marriotthdfcbank.com",
+      "note": "Dedicated concierge services for cardholders"
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": [],
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "Smart EMI",
+      "noCostEMI": {
+        "available": true,
+        "merchants": null,
+        "note": "No-cost EMI on select merchants and products"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": 299,
+        "minFee": null,
+        "note": "Up to ₹299 + taxes"
+      },
+      "minAmount": null,
+      "tenures": null,
+      "interestRates": {
+        "min": null,
+        "max": null
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": null
+      },
+      "cancellationPeriod": null,
+      "note": "Convert big spends into EMI after purchase. Only downpayment amounts earn Marriott Bonvoy points."
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": null
+      },
+      "processingFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "tenures": null,
+      "maxAmount": null,
+      "preclosureFee": null,
+      "note": "Balance transfer facility available"
+    },
+
+    "memberships": [
+      {
+        "name": "Marriott Bonvoy Silver Elite Status",
+        "type": "hotel_status",
+        "value": null,
+        "duration": "Anniversary year",
+        "condition": "On card activation and each anniversary year",
+        "benefits": [
+          "10% bonus points on eligible hotel stays",
+          "Member-only room rates",
+          "Priority late checkout (subject to availability)",
+          "Complimentary in-room internet access"
+        ],
+        "note": "Automatically receive Silver Elite status with 10 Elite Night Credits per year"
+      }
+    ],
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": true,
+        "tier": "Silver Elite",
+        "program": "Marriott Bonvoy",
+        "benefits": [
+          "10% bonus points on eligible hotel stays",
+          "Member-only room rates",
+          "Priority late checkout",
+          "Complimentary in-room internet"
+        ]
+      },
+      "eliteNightCredits": {
+        "included": true,
+        "count": 10,
+        "period": "calendar year",
+        "note": "Helps fast-track to Gold Elite status"
+      },
+      "freeNights": {
+        "included": true,
+        "count": "Up to 4 per year",
+        "condition": "1 on welcome/renewal + up to 3 on spend milestones",
+        "maxValue": 15000,
+        "valueUnit": "Marriott Bonvoy points"
+      },
+      "roomUpgrade": {
+        "included": false,
+        "note": "Available at Gold Elite and above"
+      },
+      "lateCheckout": {
+        "included": true,
+        "note": "Priority late checkout subject to availability (Silver Elite benefit)"
+      },
+      "breakfastIncluded": {
+        "included": false,
+        "note": "Available at Gold Elite and above"
+      },
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": true,
+      "cover": 1041875,
+      "coverUSD": 12500,
+      "condition": "Ticket booked with card"
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": true,
+      "cover": 20833,
+      "coverUSD": 250,
+      "perBag": null,
+      "condition": "Checked baggage only"
+    },
+    "baggageDelay": {
+      "included": true,
+      "cover": 20833,
+      "coverUSD": 250,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": true,
+      "cover": 20833,
+      "coverUSD": 250,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": true,
+      "cover": 1562500,
+      "coverUSD": 18750,
+      "overseas": true,
+      "condition": "While travelling"
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostTravelDocuments": {
+      "included": true,
+      "cover": 20833,
+      "coverUSD": 250
+    },
+    "lostCard": {
+      "included": true,
+      "cover": 100000,
+      "fraudLiability": {
+        "included": true,
+        "cover": 100000,
+        "reportingWindow": null
+      }
+    },
+    "creditShield": {
+      "included": true,
+      "cover": 100000,
+      "note": "Credit shield cover"
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "Insurance benefits subject to terms and conditions. USD values converted at approximate rate of ₹83.35/USD."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000,
+      "note": "Contactless payments for Diners cards accepted only at HDFC Bank POS machines; PIN required for other machines"
+    },
+    "virtualCard": {
+      "available": false,
+      "instantIssuance": false,
+      "singleUse": false,
+      "spendControls": false
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true,
+      "note": "Diners Club network may have limited wallet compatibility"
+    },
+    "upiLinking": {
+      "available": false,
+      "rewardsOnUPI": false,
+      "note": "Diners Club cards do not support UPI linking as of now"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Real-time alerts"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [],
+    "upgradesTo": [],
+    "note": "This is a co-branded card with specific benefits; upgrade pathway not typically applicable"
+  },
+
+  "applicationProcess": {
+    "online": {
+      "available": true,
+      "url": "https://applyonline.hdfcbank.com/cards/credit-cards.html?CHANNELSOURCE=MRTB",
+      "steps": [
+        "Visit HDFC Bank website",
+        "Navigate to Credit Cards > Co-Brand Cards",
+        "Select Marriott Bonvoy HDFC Bank Credit Card",
+        "Click Apply Now",
+        "Fill personal and financial details",
+        "Submit application"
+      ]
+    },
+    "netBanking": {
+      "available": true,
+      "eligibility": "Existing HDFC Bank customers",
+      "path": "Login to NetBanking > Cards section > Apply for Credit Card"
+    },
+    "branch": {
+      "available": true,
+      "note": "Visit nearest HDFC Bank branch with required documents"
+    },
+    "approvalTime": "3-5 business days",
+    "deliveryTime": "7 working days after approval",
+    "membershipGeneration": "10 working days after card approval; communication from Marriott within 72 hours"
+  },
+
+  "networkLimitations": {
+    "acceptanceIssues": {
+      "noted": true,
+      "description": "Diners Club network has limited acceptance compared to Visa/Mastercard in some regions",
+      "affectedRegions": ["Some international locations", "Some domestic merchants"],
+      "userReports": [
+        "Some merchants in Bali/Indonesia reported as not accepting the card",
+        "Limited POS acceptance at some locations"
+      ]
+    },
+    "recommendations": [
+      "Carry a backup Visa/Mastercard for better acceptance",
+      "Confirm acceptance at merchant before relying solely on this card"
+    ]
+  },
+
+  "meta": {
+    "tags": [
+      "Hotel",
+      "Co-branded",
+      "Marriott",
+      "Travel",
+      "Premium",
+      "Lounge Access",
+      "Golf",
+      "Free Night Awards",
+      "Elite Status",
+      "Diners Club"
+    ],
+    "bestFor": "Marriott loyalists who frequently stay at Marriott properties and can leverage Free Night Awards and Elite Status benefits",
+    "notRecommendedFor": [
+      "Users who need wider card acceptance (Diners Club has limited acceptance)",
+      "Those looking for general travel rewards without hotel-specific benefits",
+      "Users who prefer lower forex markup for international transactions",
+      "Those seeking fee waiver options"
+    ],
+    "rating": {
+      "overall": 4.0,
+      "rewards": 4.2,
+      "benefits": 4.3,
+      "value": 4.0,
+      "acceptance": 3.2
+    },
+    "verdict": "India's first hotel co-branded credit card offering excellent value for Marriott loyalists. The card provides strong benefits including up to 4 Free Night Awards per year, complimentary Silver Elite status, 24 complimentary lounge visits, and golf access. However, the Diners Club network may pose acceptance challenges, and the 3.5% forex markup is higher than premium travel cards. Best suited for frequent travelers who stay at Marriott properties multiple times a year and can maximize the Free Night Awards through spend milestones.",
+    "pros": [
+      "Up to 4 Free Night Awards per year (worth ~₹40,000 at mid-range properties)",
+      "Complimentary Marriott Bonvoy Silver Elite status with 10 Elite Night Credits",
+      "12 domestic + 12 international lounge visits with no spend requirement",
+      "8X rewards at Marriott hotels (effective 5.33% reward rate)",
+      "Complimentary golf course access and lessons (2+2 per quarter)",
+      "Marriott Bonvoy points don't expire with activity every 24 months",
+      "Comprehensive travel insurance coverage",
+      "Reasonable annual fee of ₹3,540 for benefits offered"
+    ],
+    "cons": [
+      "Diners Club network has limited acceptance in India and internationally",
+      "No annual fee waiver option",
+      "High forex markup of 3.5%",
+      "Benefits primarily focused on Marriott properties",
+      "Lower reward rate (1.33%) for non-Marriott, non-travel spends",
+      "No UPI credit card functionality",
+      "Contactless works only at HDFC Bank POS terminals",
+      "Points take up to 12 weeks to credit to Marriott Bonvoy account"
+    ],
+    "alternatives": [
+      {
+        "id": "hdfc-regalia-gold",
+        "reason": "Better general travel rewards with wider acceptance"
+      },
+      {
+        "id": "axis-atlas",
+        "reason": "Better for airline miles and Edge Rewards"
+      },
+      {
+        "id": "amex-platinum-travel",
+        "reason": "Broader travel benefits across multiple hotel chains"
+      },
+      {
+        "id": "hsbc-taj-credit-card",
+        "reason": "Alternative hotel co-branded card for Taj Hotels loyalists"
+      }
+    ],
+    "lastVerified": "2026-01-05",
+    "dataSource": [
+      "HDFC Bank official website (v.hdfcbank.com/marriott)",
+      "HDFC Bank Marriott Bonvoy product page (hdfc.bank.in)",
+      "Marriott International official credit cards page (marriott.com)",
+      "HDFC Bank MITC documents",
+      "HDFC Bank Marriott Bonvoy FAQs PDF",
+      "Marriott Bonvoy HDFC Bank Terms & Conditions PDF",
+      "CardInsider.com review (August 2025)",
+      "PaisaBazaar.com (July 2024)",
+      "Finology Select",
+      "TechnoFino community discussions"
+    ],
+    "changelog": [
+      {
+        "date": "2023-08-01",
+        "change": "Card launched - India's first hotel co-branded credit card",
+        "source": "HDFC Bank official announcement"
+      },
+      {
+        "date": "2023-12-01",
+        "change": "Joining fee charge timing changed from 90 days to 45 days from card issuance",
+        "source": "Official HDFC Bank FAQs"
+      },
+      {
+        "date": "2024-08-01",
+        "change": "HDFC Bank updated late payment fee structure and added utility/rent transaction fees",
+        "source": "HDFC Bank policy update"
+      },
+      {
+        "date": "2025-10-06",
+        "change": "Terms and conditions document updated",
+        "source": "Official HDFC Bank T&C PDF"
+      }
+    ]
+  }
+}

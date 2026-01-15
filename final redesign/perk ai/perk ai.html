@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Perk AI - VoucherTracker Premium</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e6a57e", // Brighter Copper
+                        "primary-dim": "#cfa080",
+                        "gold": "#f0d5a3", // Brighter, cleaner Gold
+                        "gold-dim": "#bfa070", 
+                        "text-main": "#ffffff", // Crisp White
+                        "text-secondary": "#e2e2e2", 
+                        "text-muted": "#a3a3a3", 
+                        "background-light": "#f8f6f4",
+                        "background-dark": "#140e0c", // Deep Rich Espresso
+                        "surface-dark": "#1e1513", 
+                        "surface-darker": "#0a0706",
+                        "sidebar-bg": "#0f0a09", 
+                        "border-copper": "#5c3a2e", 
+                        "border-subtle": "#3a2622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    boxShadow: {
+                        'glow': '0 0 25px rgba(230, 165, 126, 0.15)',
+                        'glow-lg': '0 0 50px rgba(230, 165, 126, 0.25)',
+                        'surface': '0 4px 20px rgba(0,0,0,0.6)',
+                        'inner-copper': 'inset 0 0 0 1px rgba(230, 165, 126, 0.2)'
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'breathe': 'breathe 10s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        breathe: {
+                            '0%, 100%': { transform: 'scale(1)', opacity: '0.4' },
+                            '50%': { transform: 'scale(1.15)', opacity: '0.7' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        ::-webkit-scrollbar {
+            width: 5px
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f0a09
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3e2b26;
+            border-radius: 4px
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5c3a2e;
+        }
+        .gold-text-gradient {
+            background: linear-gradient(to right, #e6a57e, #fefce8, #e6a57e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .bg-matte-texture {
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAlKdW6qVQE76aB6Ks0Ke49WHCBnUQqPO1FoZz6LMSE3NeKA8l7hT4_FZbfEuT8CkQmGyDXvW0KuNm49auycqFvyQgW1vK1GZ0Gwwu2AsEWgFB9Gs-G_-ejJlLAVuj9ZND_sJVVugvKU9SW8ve9_Gq_usS2sEOEMjBNDJgeAj4pvCFZPN-FzAtA2WZKQyxmkJ7KsVsqCVAs4ee2BwOQXJEa2E_VX6sOKDXiSJudYCp7A5PaucvwykIX7Jo8rE7Eqtk5fgrDGFlmsWCa);
+            background-repeat: repeat;
+        }
+        .ai-response strong {
+            color: #e6a57e;
+            font-weight: 600;
+        }
+        .ai-response ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 0.5rem;
+        }
+        .ai-response li::before {
+            content: "•";
+            color: #e6a57e;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .chip-appear {
+            animation: fadeInUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            opacity: 0;
+        }
+        .delay-75 { animation-delay: 75ms; }
+        .delay-150 { animation-delay: 150ms; }
+        .delay-225 { animation-delay: 225ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-375 { animation-delay: 375ms; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-text-main antialiased transition-colors duration-200 h-screen overflow-hidden flex flex-col selection:bg-primary/30 selection:text-white">
+<header class="w-full h-18 bg-sidebar-bg border-b border-border-copper/40 z-30 shrink-0 flex items-center justify-between px-4 md:px-6 shadow-surface relative">
+<div class="flex items-center gap-8 h-full">
+<div class="flex flex-col justify-center">
+<h1 class="text-white text-xl font-extrabold tracking-tight flex items-center gap-2">
+<span class="material-symbols-outlined text-gold">token</span>
+                    VoucherTracker
+                </h1>
+<p class="text-[10px] uppercase tracking-widest text-primary font-bold hidden md:block pl-8">Premium Dashboard</p>
+</div>
+<nav class="hidden md:flex items-center gap-2 h-full ml-4">
+<a class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-white/70 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-[20px] text-gold group-hover:text-primary transition-colors">search</span>
+                    Search
+                </a>
+<a class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-white/70 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-[20px] text-gold group-hover:text-primary transition-colors">home</span>
+                    Home
+                </a>
+<a class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-white/70 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-[20px] text-gold group-hover:text-primary transition-colors">sell</span>
+                    Voucher
+                </a>
+<a class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-white/70 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-[20px] text-gold group-hover:text-primary transition-colors">credit_card</span>
+                    Cards
+                </a>
+<a class="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-bold text-white bg-primary/10 border border-primary/40 shadow-[0_0_15px_rgba(230,165,126,0.15)] transition-all hover:bg-primary/20 hover:border-primary/60" href="#">
+<span class="material-symbols-outlined filled text-[20px] text-primary animate-pulse-slow">smart_toy</span>
+                    Perk AI
+                </a>
+<a class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-white/70 hover:text-white hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-[20px] text-gold group-hover:text-primary transition-colors">menu_book</span>
+                    Guides
+                </a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-white/5 text-gold hover:text-white transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-gradient-to-br from-primary to-border-copper p-[1px]">
+<div class="h-full w-full rounded-full bg-surface-darker flex items-center justify-center text-xs font-bold text-white">JD</div>
+</div>
+<button class="md:hidden p-2 text-white hover:text-primary transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<div class="flex flex-1 w-full overflow-hidden">
+<aside class="hidden w-64 flex-col justify-between border-r border-border-subtle bg-sidebar-bg md:flex z-20">
+<div class="flex flex-col gap-6 p-6">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between mb-2 px-3">
+<p class="text-[10px] font-bold text-primary uppercase tracking-widest opacity-90">History</p>
+<button class="text-white/40 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-white hover:bg-white/5 hover:text-primary transition-colors group relative overflow-hidden" href="#">
+<span class="material-symbols-outlined text-[18px] text-white/40 group-hover:text-primary transition-colors">history</span>
+<span class="truncate">Infinia vs Magnus</span>
+<div class="absolute right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[14px] text-white/40 hover:text-white">more_horiz</span>
+</div>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-white/70 hover:bg-white/5 hover:text-primary transition-colors group relative overflow-hidden" href="#">
+<span class="material-symbols-outlined text-[18px] text-white/40 group-hover:text-primary transition-colors">history</span>
+<span class="truncate">Amazon Voucher Rates</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-white/70 hover:bg-white/5 hover:text-primary transition-colors group relative overflow-hidden" href="#">
+<span class="material-symbols-outlined text-[18px] text-white/40 group-hover:text-primary transition-colors">history</span>
+<span class="truncate">London Lounge Access</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-white/70 hover:bg-white/5 hover:text-primary transition-colors group relative overflow-hidden" href="#">
+<span class="material-symbols-outlined text-[18px] text-white/40 group-hover:text-primary transition-colors">history</span>
+<span class="truncate">Transfer Partners</span>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-2 mt-2">
+<p class="text-[10px] font-bold text-primary uppercase tracking-widest px-3 mb-1 opacity-90">Pinned</p>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-white/70 hover:bg-white/5 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-[18px] text-gold group-hover:text-primary transition-colors">push_pin</span>
+<span class="truncate">Monthly Optimization</span>
+</a>
+</nav>
+</div>
+</div>
+<div class="flex flex-col gap-2 p-6 border-t border-border-subtle bg-surface-dark/50">
+<button class="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-white/70 hover:bg-white/5 hover:text-white transition-colors group">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">settings</span>
+                    AI Settings
+                </button>
+<button class="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-white/70 hover:bg-white/5 hover:text-white transition-colors group">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">delete</span>
+                    Clear History
+                </button>
+</div>
+</aside>
+<main class="relative flex-1 flex flex-col items-center justify-center bg-black overflow-hidden">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_#1e1513_0%,_#0f0a09_40%,_#050303_100%)]"></div>
+<div class="absolute inset-0 overflow-hidden pointer-events-none">
+<div class="absolute top-[-15%] left-[50%] -translate-x-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[100px] animate-breathe mix-blend-screen"></div>
+<div class="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-primary-dim/5 rounded-full blur-[140px] animate-pulse-slow"></div>
+</div>
+<div class="absolute inset-0 bg-matte-texture opacity-[0.08] mix-blend-overlay pointer-events-none"></div>
+<div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_40%,rgba(0,0,0,0.85)_100%)]"></div>
+<div class="relative z-10 w-full max-w-4xl px-6 flex flex-col items-center justify-center h-full pb-10">
+<div class="mb-10 flex flex-col items-center text-center space-y-6">
+<div class="relative h-16 w-16 rounded-2xl bg-surface-darker border border-primary/30 shadow-glow flex items-center justify-center group">
+<div class="absolute inset-0 rounded-2xl bg-primary/10 blur-md group-hover:bg-primary/20 transition-all duration-500"></div>
+<span class="material-symbols-outlined text-[36px] text-primary relative z-10">smart_toy</span>
+</div>
+<div>
+<h1 class="text-3xl md:text-5xl font-bold tracking-tight mb-3 text-white drop-shadow-sm">
+                            Hello, I'm <span class="gold-text-gradient">Perk AI</span>.
+                        </h1>
+<div class="max-w-lg mx-auto bg-surface-dark/40 border border-white/5 rounded-xl p-4 text-left backdrop-blur-sm shadow-xl">
+<p class="text-sm md:text-base text-text-secondary font-light leading-relaxed ai-response">
+                                I can analyze your <strong>spending patterns</strong>, compare <strong>real-time voucher rates</strong>, or help you craft the perfect <strong>redemption strategy</strong> for your next trip.
+                            </p>
+</div>
+</div>
+</div>
+<div class="w-full max-w-2xl relative group z-20">
+<div class="absolute -inset-0.5 bg-gradient-to-r from-primary/30 via-gold/10 to-primary/30 rounded-full blur opacity-20 group-hover:opacity-40 transition duration-700"></div>
+<div class="relative flex items-center bg-surface-darker/90 backdrop-blur-md rounded-full border border-primary/30 shadow-surface focus-within:border-primary focus-within:ring-1 focus-within:ring-primary/50 focus-within:shadow-glow transition-all duration-300">
+<div class="pl-6 pr-3 py-4 text-primary/60">
+<span class="material-symbols-outlined text-[24px]">spark</span>
+</div>
+<input autofocus="" class="w-full bg-transparent border-none p-0 py-4 text-lg text-white placeholder-white/30 focus:ring-0 focus:outline-none font-medium tracking-wide" placeholder="Ask about cards, points, or rewards..." type="text"/>
+<div class="pr-2 pl-2 flex items-center gap-2">
+<button class="flex items-center justify-center h-10 w-10 rounded-full bg-surface-dark border border-white/10 hover:bg-primary hover:border-primary text-white hover:text-surface-darker transition-all duration-200">
+<span class="material-symbols-outlined text-[20px] ml-0.5">arrow_upward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-10 w-full">
+<p class="text-center text-primary/60 text-xs font-semibold uppercase tracking-widest mb-4 opacity-80 shadow-black drop-shadow-md">Suggested Prompts</p>
+<div class="flex flex-wrap justify-center gap-3">
+<button class="chip-appear delay-75 group relative flex items-center gap-2.5 rounded-xl border border-primary/40 bg-surface-darker px-4 py-3 text-sm font-medium text-white shadow-md transition-all duration-300 hover:border-primary hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(230,165,126,0.25)] overflow-hidden">
+<div class="absolute inset-0 bg-matte-texture opacity-20 pointer-events-none"></div>
+<span class="material-symbols-outlined text-[18px] text-primary group-hover:text-white transition-colors">flight_takeoff</span>
+<span class="relative z-10">Optimize my rewards for upcoming travel.</span>
+</button>
+<button class="chip-appear delay-150 group relative flex items-center gap-2.5 rounded-xl border border-primary/40 bg-surface-darker px-4 py-3 text-sm font-medium text-white shadow-md transition-all duration-300 hover:border-primary hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(230,165,126,0.25)] overflow-hidden">
+<div class="absolute inset-0 bg-matte-texture opacity-20 pointer-events-none"></div>
+<span class="material-symbols-outlined text-[18px] text-primary group-hover:text-white transition-colors">restaurant</span>
+<span class="relative z-10">Compare premium credit cards for dining benefits.</span>
+</button>
+<button class="chip-appear delay-225 group relative flex items-center gap-2.5 rounded-xl border border-primary/40 bg-surface-darker px-4 py-3 text-sm font-medium text-white shadow-md transition-all duration-300 hover:border-primary hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(230,165,126,0.25)] overflow-hidden">
+<div class="absolute inset-0 bg-matte-texture opacity-20 pointer-events-none"></div>
+<span class="material-symbols-outlined text-[18px] text-primary group-hover:text-white transition-colors">diamond</span>
+<span class="relative z-10">Show me the best vouchers for luxury shopping.</span>
+</button>
+<button class="chip-appear delay-300 group relative flex items-center gap-2.5 rounded-xl border border-primary/40 bg-surface-darker px-4 py-3 text-sm font-medium text-white shadow-md transition-all duration-300 hover:border-primary hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(230,165,126,0.25)] overflow-hidden">
+<div class="absolute inset-0 bg-matte-texture opacity-20 pointer-events-none"></div>
+<span class="material-symbols-outlined text-[18px] text-primary group-hover:text-white transition-colors">query_stats</span>
+<span class="relative z-10">Analyze my spending patterns for the last quarter.</span>
+</button>
+<button class="chip-appear delay-375 group relative flex items-center gap-2.5 rounded-xl border border-primary/40 bg-surface-darker px-4 py-3 text-sm font-medium text-white shadow-md transition-all duration-300 hover:border-primary hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(230,165,126,0.25)] overflow-hidden">
+<div class="absolute inset-0 bg-matte-texture opacity-20 pointer-events-none"></div>
+<span class="material-symbols-outlined text-[18px] text-primary group-hover:text-white transition-colors">account_balance</span>
+<span class="relative z-10">What are the eligibility criteria for HDFC Private Banking?</span>
+</button>
+</div>
+</div>
+<div class="absolute bottom-6 w-full text-center px-4">
+<p class="text-[11px] text-text-muted/40 font-medium tracking-wide">
+                        Perk AI provides estimates based on current market data. Always verify specific terms with issuers.
+                    </p>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

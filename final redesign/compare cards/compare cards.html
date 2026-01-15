@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Compare Cards - Espresso Financial</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#b8880f", // Gold
+                        "primary-hover": "#d4a01e",
+                        "accent-copper": "#b87333",
+                        "espresso-dark": "#13110d", // Darker for contrast
+                        "espresso-medium": "#1e1a14",
+                        "espresso-light": "#322c22",
+                        "text-muted": "#a8a293",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "serif": ["Noto Serif", "serif"],
+                    },
+                    backgroundImage: {
+                        'metallic-gradient': 'linear-gradient(135deg, #b8880f 0%, #e6c86e 50%, #b8880f 100%)',
+                        'copper-gradient': 'linear-gradient(135deg, #b87333 0%, #d69e6b 50%, #b87333 100%)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #13110d; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #322c22; 
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b87333; 
+        }
+    </style>
+</head>
+<body class="bg-espresso-dark text-white font-display overflow-hidden h-screen flex selection:bg-primary/30">
+<aside class="hidden md:flex flex-col w-64 h-full border-r border-espresso-light bg-[#16130e] shrink-0 z-30">
+<div class="p-5 flex items-center gap-3">
+<div class="size-8 rounded-full bg-gradient-to-br from-primary to-accent-copper flex items-center justify-center text-espresso-dark shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-lg">coffee</span>
+</div>
+<h1 class="text-lg font-bold font-serif tracking-tight text-white">Espresso</h1>
+</div>
+<div class="flex flex-col gap-4 px-3 mt-2">
+<div class="flex gap-3 p-2.5 rounded-xl bg-espresso-medium border border-espresso-light/40 hover:border-primary/30 transition-colors cursor-pointer group">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-9 shrink-0 border border-white/10 group-hover:border-primary/50 transition-colors" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCZWsIaZBFv2uagWjNIzpJkK9RBn_5TUvnkaSMF5hWkNPiU6Ml-39KMgc9Za20vIojlqVTULo8MCxpk13ZLozJMUs_oToN1GUtOlUaThIeitXJsYFdC0fds3dnXTde0hXQhgW6OXo0zv_msJXBIAebGHmKRWq-owATtF11U7xtgKCyrs6IMC7hoi-T_qOIxhDcb872Qglnz9_wUWmWmO3lGA28tgFU8omKEiGcv7BG5hGfuVt5_2QGrpn14CGXMWgVTfi7eHBfnyKNV");'></div>
+<div class="flex flex-col justify-center overflow-hidden">
+<h2 class="text-white text-sm font-semibold truncate group-hover:text-primary transition-colors">Arjun Mehta</h2>
+<p class="text-text-muted text-[11px]">Imperia Member</p>
+</div>
+</div>
+<nav class="flex flex-col gap-0.5">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-espresso-light/50 text-text-muted hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-espresso-light/50 text-text-muted hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">credit_card</span>
+<span class="text-sm font-medium">My Cards</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-espresso-light/60 border border-primary/10 text-white shadow-inner transition-all group" href="#">
+<span class="material-symbols-outlined text-[20px] text-primary">compare_arrows</span>
+<span class="text-sm font-medium">Compare</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-espresso-light/50 text-text-muted hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">analytics</span>
+<span class="text-sm font-medium">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-espresso-light/50 text-text-muted hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">diamond</span>
+<span class="text-sm font-medium">Rewards</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-4 border-t border-espresso-light/50">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-espresso-light/50 text-text-muted hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</div>
+</aside>
+<main class="flex-1 flex flex-col min-w-0 bg-espresso-dark relative">
+<header class="flex items-center justify-between gap-4 px-6 py-3 border-b border-espresso-light bg-espresso-dark/95 backdrop-blur-md z-20 sticky top-0 h-16 shrink-0">
+<div class="hidden lg:flex items-center gap-2 text-xs text-text-muted">
+<span class="material-symbols-outlined text-base">home</span>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<span>Credit Cards</span>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<span class="text-white font-medium">Compare</span>
+</div>
+<div class="flex-1 max-w-md mx-auto">
+<div class="relative w-full group">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-text-muted group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">search</span>
+</div>
+<input class="block w-full py-2 pl-9 pr-3 text-sm text-white border border-espresso-light rounded-md bg-espresso-medium focus:ring-1 focus:ring-primary focus:border-primary placeholder-text-muted/50 transition-all" placeholder="Search cards or benefits..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-text-muted hover:text-white hover:bg-espresso-light rounded-md transition-colors">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<div class="h-4 w-px bg-espresso-light mx-1"></div>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-md border border-espresso-light bg-espresso-medium text-white hover:bg-espresso-light hover:border-text-muted/30 transition-colors text-xs font-medium">
+<span class="material-symbols-outlined text-base">share</span> Share
+                </button>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto overflow-x-hidden relative scroll-smooth p-6">
+<div class="max-w-[1500px] mx-auto h-full flex flex-col">
+<div class="flex justify-between items-end mb-4">
+<div>
+<h1 class="text-3xl font-serif text-white tracking-tight mb-1">Detailed Comparison</h1>
+<p class="text-text-muted text-sm">Analyzing privileges across fees, rewards, and lifestyle.</p>
+</div>
+<div class="flex items-center gap-2 text-xs text-text-muted">
+<span class="flex items-center gap-1"><span class="size-2 rounded-full bg-primary"></span> Best Value</span>
+<span class="flex items-center gap-1"><span class="size-2 rounded-full bg-accent-copper"></span> Featured</span>
+</div>
+</div>
+<div class="w-full overflow-x-auto rounded-lg border border-espresso-light bg-[#16130e] shadow-2xl shadow-black/60 scrollbar-hide">
+<div class="min-w-[900px] grid grid-cols-[220px_1fr_1fr_1fr]">
+<div class="sticky top-0 z-30 bg-[#16130e] border-b border-espresso-light p-4 flex flex-col justify-end shadow-md">
+<span class="text-[10px] uppercase tracking-widest text-text-muted/70 font-bold">Metrics</span>
+</div>
+<div class="sticky top-0 z-30 bg-[#1e1a14] border-b border-l border-espresso-light/40 p-4 flex flex-col items-center gap-3 group relative shadow-md">
+<button class="absolute top-2 right-2 text-text-muted/50 hover:text-red-400 transition-colors" title="Remove Card">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+<div class="relative w-32 aspect-[1.586] rounded-lg shadow-lg group-hover:-translate-y-1 transition-transform duration-300">
+<div class="w-full h-full bg-cover bg-center rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuARdMJ76fbg7ElM4I30ghnjBbc5QSCZEZjGlPFTm0aj_CpFosivrIdRiDNB-9BK_TV545zq954_cYP83t2ONvJAUBYBUITbcNHTfLRxAiTlXfRlsAUufQC4jd6FQN14isZZOC_KH7PYFwTPgiwp_bugyBg27vfRwFDc6j4apYRiwZ-EynQlVhFsE8eab7EAWkuIgTWoQ5FUDG2uuK5zJ5pPQxCH42K4UMmWf8DTItaoHa7oYDieM2Yzq-Tv6tye_V6dbJFkWbBAKs7i");'></div>
+<div class="absolute inset-0 rounded-lg ring-1 ring-inset ring-white/10"></div>
+</div>
+<div class="text-center w-full">
+<h3 class="font-serif text-base text-white font-bold leading-tight">Infinia Metal</h3>
+<p class="text-[10px] text-text-muted uppercase tracking-wider mt-0.5">HDFC Bank</p>
+</div>
+<button class="w-full max-w-[140px] py-1.5 bg-primary hover:bg-white text-espresso-dark font-bold text-xs uppercase tracking-wide rounded transition-all shadow-lg shadow-primary/10">
+                                Apply Now
+                            </button>
+</div>
+<div class="sticky top-0 z-30 bg-[#1e1a14] border-b border-l border-espresso-light/40 p-4 flex flex-col items-center gap-3 group relative shadow-md">
+<button class="absolute top-2 right-2 text-text-muted/50 hover:text-red-400 transition-colors" title="Remove Card">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+<div class="relative w-32 aspect-[1.586] rounded-lg shadow-lg group-hover:-translate-y-1 transition-transform duration-300">
+<div class="w-full h-full bg-cover bg-center rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAfIi1EGXNYlOCnsZIcBXwgzEXjW0kDMbzFhb2Zzkzcz7D2uWVDqTgVfQ8i2yGqc-cxSKgfbH-knsQjylIzr3o9QJwEHu7UZjFkuAkYrGdLXYHMNPujT0I64eoiqYRabsR8D91PHPmItNcO9nrmNg1PduTT15eVydgmmodq9K0gtyQyDie0OQKqnECZG5TZvuQJ2kSEaMJpRlB77XpY57W_mkO_8a3IIAkh4SjhznSIoB89JoC-sXbv_lrbeK7sy_tJo03-JSPTbTzt");'></div>
+<div class="absolute inset-0 rounded-lg ring-1 ring-inset ring-white/10"></div>
+</div>
+<div class="text-center w-full">
+<h3 class="font-serif text-base text-white font-bold leading-tight">Magnus Burgundy</h3>
+<p class="text-[10px] text-text-muted uppercase tracking-wider mt-0.5">Axis Bank</p>
+</div>
+<button class="w-full max-w-[140px] py-1.5 bg-primary hover:bg-white text-espresso-dark font-bold text-xs uppercase tracking-wide rounded transition-all shadow-lg shadow-primary/10">
+                                Apply Now
+                            </button>
+</div>
+<div class="sticky top-0 z-30 bg-[#1e1a14] border-b border-l border-espresso-light/40 p-4 flex flex-col items-center justify-center relative shadow-md">
+<div class="flex flex-col items-center justify-center gap-3 w-full h-full rounded-xl border border-dashed border-accent-copper/30 bg-accent-copper/5 hover:bg-accent-copper/10 hover:border-accent-copper/60 transition-all cursor-pointer group py-4">
+<div class="size-10 rounded-full bg-espresso-light flex items-center justify-center group-hover:bg-primary group-hover:text-espresso-dark transition-colors shadow-inner">
+<span class="material-symbols-outlined text-xl">add_card</span>
+</div>
+<span class="text-xs font-semibold text-accent-copper group-hover:text-primary transition-colors">Add Card</span>
+</div>
+</div>
+<div class="col-span-full bg-gradient-to-r from-espresso-light/40 to-transparent px-4 py-2 border-b border-accent-copper/20 flex items-center gap-2">
+<span class="text-sm">💰</span>
+<h4 class="text-xs font-bold text-primary uppercase tracking-wider">Fees &amp; Charges</h4>
+</div>
+<div class="px-4 py-3 border-b border-espresso-light/30 text-text-muted text-xs font-medium bg-[#1a1712]">Joining Fee</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-white text-sm text-center">₹ 12,500 <span class="text-text-muted text-xs">+ GST</span></div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-white text-sm text-center">₹ 30,000 <span class="text-text-muted text-xs">+ GST</span></div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-text-muted/20 text-sm text-center">-</div>
+<div class="px-4 py-3 border-b border-espresso-light/30 text-text-muted text-xs font-medium bg-[#1a1712]">Renewal Fee</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-white text-sm text-center">₹ 12,500 <span class="text-text-muted text-xs">+ GST</span></div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-white text-sm text-center">₹ 30,000 <span class="text-text-muted text-xs">+ GST</span></div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-text-muted/20 text-sm text-center">-</div>
+<div class="px-4 py-3 border-b border-espresso-light/30 text-text-muted text-xs font-medium bg-[#1a1712]">Fee Waiver</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-white text-sm text-center">Spends &gt; ₹10L</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-white text-sm text-center">Spends &gt; ₹25L</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-text-muted/20 text-sm text-center">-</div>
+<div class="px-4 py-3 border-b border-espresso-light/30 text-text-muted text-xs font-medium bg-[#1a1712]">Forex Markup</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-primary font-bold text-sm text-center">2%</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-primary font-bold text-sm text-center">2%</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-text-muted/20 text-sm text-center">-</div>
+<div class="col-span-full bg-gradient-to-r from-espresso-light/40 to-transparent px-4 py-2 border-b border-accent-copper/20 flex items-center gap-2 mt-4">
+<span class="text-sm">💎</span>
+<h4 class="text-xs font-bold text-primary uppercase tracking-wider">Rewards &amp; Value</h4>
+</div>
+<div class="px-4 py-3 border-b border-espresso-light/30 text-text-muted text-xs font-medium bg-[#1a1712]">Base Reward Rate</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center">
+<span class="block text-white font-semibold text-sm">3.3%</span>
+</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center">
+<span class="block text-white font-semibold text-sm">4.8%</span>
+</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-text-muted/20 text-sm">-</div>
+<div class="px-4 py-3 border-b border-espresso-light/30 text-text-muted text-xs font-medium bg-[#1a1712]">Accelerated Rate</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center relative">
+<span class="text-[10px] text-primary border border-primary/30 px-1 rounded absolute top-1 right-1">Best</span>
+<div class="text-white text-sm">Up to 33% (10X)</div>
+<div class="text-[10px] text-text-muted">SmartBuy</div>
+</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center">
+<div class="text-white text-sm">Up to 24% (5X)</div>
+<div class="text-[10px] text-text-muted">Travel Edge</div>
+</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-text-muted/20 text-sm">-</div>
+<div class="px-4 py-3 border-b border-espresso-light/30 text-text-muted text-xs font-medium bg-[#1a1712]">Reward Type</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-sm text-white">Points</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-sm text-white">Edge Miles</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-text-muted/20 text-sm">-</div>
+<div class="px-4 py-3 border-b border-espresso-light/30 text-text-muted text-xs font-medium bg-[#1a1712]">1 Point Value</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-sm text-accent-copper font-medium">₹ 1.00</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-sm text-accent-copper font-medium">₹ 0.80</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-text-muted/20 text-sm">-</div>
+<div class="px-4 py-3 border-b border-espresso-light/30 text-text-muted text-xs font-medium bg-[#1a1712]">Redemption Partners</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-sm text-white">14+ (Air/Hotel)</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-sm text-white">20+ (Air/Hotel)</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-text-muted/20 text-sm">-</div>
+<div class="px-4 py-3 border-b border-espresso-light/30 text-text-muted text-xs font-medium bg-[#1a1712]">Capping</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-sm text-green-400">None</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-sm text-white">25k pts / month</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-text-muted/20 text-sm">-</div>
+<div class="col-span-full bg-gradient-to-r from-espresso-light/40 to-transparent px-4 py-2 border-b border-accent-copper/20 flex items-center gap-2 mt-4">
+<span class="text-sm">🎯</span>
+<h4 class="text-xs font-bold text-primary uppercase tracking-wider">Milestones</h4>
+</div>
+<div class="px-4 py-3 border-b border-espresso-light/30 text-text-muted text-xs font-medium bg-[#1a1712]">Spend Benefits</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-sm text-text-muted">-</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-sm text-white">
+                            25k Pts
+                            <div class="text-[10px] text-text-muted">on ₹1.5L spend/mo</div>
+</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-text-muted/20 text-sm">-</div>
+<div class="col-span-full bg-gradient-to-r from-espresso-light/40 to-transparent px-4 py-2 border-b border-accent-copper/20 flex items-center gap-2 mt-4">
+<span class="text-sm">✈️</span>
+<h4 class="text-xs font-bold text-primary uppercase tracking-wider">Travel &amp; Lounge</h4>
+</div>
+<div class="px-4 py-3 border-b border-espresso-light/30 text-text-muted text-xs font-medium bg-[#1a1712]">Domestic Lounge</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-sm text-white">Unlimited</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-sm text-white">Unlimited</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-text-muted/20 text-sm">-</div>
+<div class="px-4 py-3 border-b border-espresso-light/30 text-text-muted text-xs font-medium bg-[#1a1712]">Intl. Lounge</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-sm text-white">Unlimited (PP)</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-sm text-white">Unlimited (PP)</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-text-muted/20 text-sm">-</div>
+<div class="px-4 py-3 border-b border-espresso-light/30 text-text-muted text-xs font-medium bg-[#1a1712]">Guest Access</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-sm text-white">Unlimited</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-sm text-white">8 Guests / Year</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-text-muted/20 text-sm">-</div>
+<div class="col-span-full bg-gradient-to-r from-espresso-light/40 to-transparent px-4 py-2 border-b border-accent-copper/20 flex items-center gap-2 mt-4">
+<span class="text-sm">⛳</span>
+<h4 class="text-xs font-bold text-primary uppercase tracking-wider">Lifestyle</h4>
+</div>
+<div class="px-4 py-3 border-b border-espresso-light/30 text-text-muted text-xs font-medium bg-[#1a1712]">Golf Games</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-sm text-white">Unlimited</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-sm text-white">Unlimited</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-text-muted/20 text-sm">-</div>
+<div class="px-4 py-3 border-b border-espresso-light/30 text-text-muted text-xs font-medium bg-[#1a1712]">Movies / Dining</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-sm text-white">B1G1 (ITC Buffets)</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-sm text-white">B1G1 (BookMyShow)</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-text-muted/20 text-sm">-</div>
+<div class="px-4 py-3 border-b border-espresso-light/30 text-text-muted text-xs font-medium bg-[#1a1712]">Concierge</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-sm text-accent-copper font-medium">24/7 Global</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-sm text-accent-copper font-medium">24/7 Dedicated</div>
+<div class="px-4 py-3 border-b border-l border-espresso-light/30 text-center text-text-muted/20 text-sm">-</div>
+</div>
+</div>
+<p class="text-[10px] text-text-muted/40 text-center mt-6">
+                    *Interest rates, rewards, and fee structures are subject to change by the issuing bank. Espresso Financial is not a direct issuer. Data updated Oct 2023.
+                </p>
+</div>
+</div>
+</main>
+
+</body></html>

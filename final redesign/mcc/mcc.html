@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Espresso Finance - MCC Search Tool</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "espresso-rich": "#362C25",
+                        "espresso-darker": "#2A221D",
+                        "espresso-light": "#47382E",
+                        "gold-opulent": "#CFA947",
+                        "gold-muted": "#8A703F",
+                        "copper-subtle": "#B47563",
+                        "copper-hover": "#D68C76",
+                        "status-safe": "#3D8B4D",
+                        "status-caution": "#FFAB00",
+                        "status-excluded": "#B03A2E",
+                        "status-safe-metallic": "#1B4D28", 
+                        "white-crisp": "#FFFFFF",
+                        "white-muted": "rgba(255, 255, 255, 0.7)",
+                    },
+                    fontFamily: {
+                        "sans": ["Manrope", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                        "mono": ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "4px",
+                        "sm": "2px",
+                        "md": "4px",
+                        "lg": "8px",
+                        "xl": "12px",
+                    },
+                    boxShadow: {
+                        "glow": "0 0 20px -5px rgba(207, 169, 71, 0.15)",
+                        "ambient": "0 10px 30px -5px rgba(0, 0, 0, 0.4)",
+                        "emboss": "inset 0 1px 1px 0 rgba(255, 255, 255, 0.15), inset 0 -2px 4px 0 rgba(0, 0, 0, 0.4)",
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+                        'zoom-in-status': 'zoomInStatus 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards',
+                        'pulse-glow': 'pulseGlow 3s infinite ease-in-out',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        zoomInStatus: {
+                            '0%': { opacity: '0', transform: 'scale(0.8)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 15px -5px rgba(61, 139, 77, 0.2)' },
+                            '50%': { boxShadow: '0 0 25px -2px rgba(61, 139, 77, 0.5)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #362C25;
+            color: #FFFFFF;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #362C25;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #47382E;
+            border-radius: 4px;
+            border: 1px solid #362C25;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #B47563;
+        }
+        .search-input-wrapper:focus-within {
+            border-color: #CFA947;
+            box-shadow: 0 0 0 1px #CFA947;
+        }
+    </style>
+</head>
+<body class="overflow-hidden h-screen flex flex-col bg-espresso-rich text-white-crisp">
+<div class="flex flex-1 h-full overflow-hidden">
+<aside class="w-20 lg:w-64 flex-shrink-0 border-r border-white/10 bg-espresso-light flex flex-col justify-between transition-all duration-300">
+<div>
+<div class="h-16 flex items-center justify-center lg:justify-start lg:px-6 border-b border-white/5">
+<div class="size-8 rounded bg-gradient-to-br from-gold-opulent to-gold-muted flex items-center justify-center text-espresso-rich font-bold text-xl mr-0 lg:mr-3 shadow-lg font-serif">
+                        E
+                    </div>
+<span class="font-bold text-lg text-white tracking-tight hidden lg:block font-serif">Espresso Finance</span>
+</div>
+<nav class="flex flex-col gap-2 p-3 mt-4">
+<a class="flex items-center gap-4 px-3 py-3 rounded text-white-muted hover:text-white hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[24px]">dashboard</span>
+<span class="font-medium hidden lg:block">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-3 py-3 rounded bg-gold-opulent/10 border-l-2 border-gold-opulent text-gold-opulent" href="#">
+<span class="material-symbols-outlined text-[24px] fill-1">search</span>
+<span class="font-bold hidden lg:block">MCC Search</span>
+</a>
+<a class="flex items-center gap-4 px-3 py-3 rounded text-white-muted hover:text-white hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[24px]">credit_card</span>
+<span class="font-medium hidden lg:block">My Cards</span>
+</a>
+<a class="flex items-center gap-4 px-3 py-3 rounded text-white-muted hover:text-white hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[24px]">groups</span>
+<span class="font-medium hidden lg:block">Community</span>
+</a>
+<a class="flex items-center gap-4 px-3 py-3 rounded text-white-muted hover:text-white hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[24px]">bookmark</span>
+<span class="font-medium hidden lg:block">Saved</span>
+</a>
+</nav>
+</div>
+<div class="p-3 border-t border-white/5">
+<a class="flex items-center gap-4 px-3 py-3 rounded text-white-muted hover:text-white hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+<span class="font-medium hidden lg:block">Settings</span>
+</a>
+</div>
+</aside>
+<main class="flex-1 flex flex-col relative overflow-hidden bg-espresso-rich">
+<header class="h-16 flex items-center justify-between px-6 border-b border-white/5 bg-espresso-rich/95 backdrop-blur z-20">
+<div class="flex items-center text-gold-muted text-sm font-medium tracking-wide">
+<span class="material-symbols-outlined text-lg mr-2">verified_user</span>
+                    PREMIUM MEMBER
+                </div>
+<div class="flex items-center gap-6">
+<button class="relative text-white-muted hover:text-gold-opulent transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 size-2 bg-copper-subtle rounded-full border-2 border-espresso-rich"></span>
+</button>
+<div class="h-8 w-[1px] bg-white/10"></div>
+<button class="flex items-center gap-3 group">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-bold text-white leading-none group-hover:text-gold-opulent transition-colors font-serif">Arjun M.</p>
+<p class="text-xs text-white-muted mt-1 leading-none">Amex Platinum</p>
+</div>
+<div class="size-9 rounded-full bg-cover bg-center border border-white/10 group-hover:border-gold-opulent transition-colors" data-alt="User profile portrait" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuApl88UT_7HkjrWZsSqsYS8Fraj0w6TPfog4sFkTdPuQAr39HFI_V4ehSb2ND9VAhDIyCuGbb0RT7lMV7vYckoVgqekG5d431KusKiQlzPmar26PI6Ij46f9wkFkJKEUJg0fJGPC1VNt-qyc2i7YgAcEcnZeg7fPLtBZab3F1Tv6DLwdkmLlHjOfRAxUm4r3B48fm2_OGYDh2HmB2G3vAL3edxanG__OFy65Yscvtto1GDTOfB0UTZ81RSvVO5E1TtN4svroSijx_QL')"></div>
+</button>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto relative">
+<div class="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-espresso-light/40 to-transparent pointer-events-none"></div>
+<div class="max-w-4xl mx-auto px-6 py-12 flex flex-col gap-10 min-h-[calc(100vh-64px)]">
+<div class="text-center space-y-3 pt-4">
+<h1 class="text-3xl md:text-5xl font-bold text-gold-opulent tracking-tight font-serif">Verify Merchant Eligibility</h1>
+<p class="text-white-crisp text-lg max-w-xl mx-auto opacity-90 font-light">Enter a merchant name to instantly reveal the MCC and reward status for your specific card portfolio.</p>
+</div>
+<div class="w-full max-w-2xl mx-auto relative z-10">
+<div class="search-input-wrapper bg-espresso-darker border border-copper-subtle rounded-lg h-16 flex items-center px-4 shadow-ambient transition-all duration-200">
+<span class="material-symbols-outlined text-copper-subtle text-3xl mr-4">search</span>
+<input autofocus="" class="bg-transparent border-none text-white-crisp text-lg placeholder:text-white/30 w-full h-full focus:ring-0 p-0" placeholder="e.g. Amazon India, Paytm Utilities, Starbucks..." type="text" value="Starbucks"/>
+<button class="text-white-muted hover:text-white transition-colors" title="Clear">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="mt-2 pl-4">
+<p class="text-sm text-white-muted">Did you mean: <button class="text-gold-opulent font-bold hover:underline font-serif">Starbucks Coffee</button>?</p>
+</div>
+</div>
+<div class="w-full max-w-2xl mx-auto animate-fade-in-up">
+<div class="bg-espresso-light rounded-lg border border-copper-subtle/30 shadow-ambient overflow-hidden relative group">
+<div class="h-1 w-full bg-gradient-to-r from-status-safe-metallic to-status-safe shadow-[0_0_15px_rgba(61,139,77,0.6)]"></div>
+<div class="p-6 md:p-8 flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-center">
+<div class="flex-shrink-0 relative group/status">
+<div class="size-24 rounded-full bg-gradient-to-br from-[#1E5631] to-[#0F2B18] flex items-center justify-center border border-copper-subtle/20 shadow-emboss animate-zoom-in-status relative z-10">
+<div class="absolute inset-0 rounded-full border border-white/5 animate-pulse-glow"></div>
+<span class="material-symbols-outlined text-white-crisp text-[48px] drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">check_circle</span>
+</div>
+<div class="absolute inset-0 bg-status-safe/10 rounded-full blur-xl animate-pulse-glow z-0"></div>
+<div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-espresso-rich/95 backdrop-blur px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest text-status-safe border border-copper-subtle/30 shadow-lg z-20 whitespace-nowrap">
+                                        Safe
+                                    </div>
+</div>
+<div class="flex-1 min-w-0 pt-2">
+<div class="flex items-center gap-3 mb-2">
+<h2 class="text-3xl font-bold text-gold-opulent truncate font-serif">Starbucks India</h2>
+<span class="material-symbols-outlined text-gold-muted text-xl" title="Verified Merchant">verified</span>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 text-sm mb-6">
+<div class="flex items-center gap-2 text-white-muted">
+<span class="font-mono text-copper-subtle bg-copper-subtle/5 px-2 py-0.5 rounded border border-copper-subtle/40 font-bold">5812</span>
+<span class="text-white-crisp">Eating Places, Restaurants</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-5 py-2.5 rounded border border-copper-subtle text-copper-subtle hover:bg-copper-subtle hover:text-espresso-rich transition-all text-xs font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+                                            Copy MCC
+                                        </button>
+<button class="flex items-center gap-2 px-5 py-2.5 rounded border border-white/20 text-white-muted hover:text-white hover:border-white/40 hover:bg-white/5 transition-all text-xs font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px]">flag</span>
+                                            Report Issue
+                                        </button>
+</div>
+</div>
+</div>
+<div class="bg-espresso-rich/40 px-6 md:px-8 py-4 border-t border-copper-subtle/20 flex items-start gap-3">
+<span class="material-symbols-outlined text-gold-opulent text-xl mt-0.5">tips_and_updates</span>
+<p class="text-sm text-white/90 leading-relaxed">
+<span class="text-gold-opulent font-bold font-serif">Pro Tip:</span> This category qualifies for <span class="text-white font-bold border-b border-dashed border-white/40 cursor-help" title="Based on your Amex Platinum">5X Reward Points</span> on your current card portfolio. Use your <span class="text-white font-bold">Amex Platinum Travel</span> for maximum returns.
+                                </p>
+</div>
+</div>
+</div>
+<div class="w-full max-w-2xl mx-auto pt-8 border-t border-white/5">
+<h3 class="text-white-muted text-xs font-bold uppercase tracking-widest mb-4">Popular Searches</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<button class="flex flex-col items-center justify-center p-4 rounded bg-espresso-light border border-copper-subtle/30 hover:border-gold-opulent hover:bg-espresso-light/80 transition-all group">
+<div class="size-10 rounded-full bg-white flex items-center justify-center mb-3 overflow-hidden p-1 shadow-md">
+<img alt="Amazon logo" class="w-full h-full object-contain" data-alt="Amazon logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB6Ku00ArVgWztENkrIifMTKztkSzE3wqV0CBTY66wtTksb97a-03tynTDiezmukYEHLhdvj0TOtQrq2HxwEyVZgm-LL5MNkKQ-e23LVjFNpkOh2GmrpXORE6sAwsyD2W6g-Piu02pl8XS35LbzMl5uWtvTniJDWk03NCAOK1zujWHjtAVS2q5qkcSq2Q_Ko4QpcYBA5xHwFQyNH7sAzjEc3ih36jxzB1tvO462sM8JrHVnub651SaZHs7evmp_fGQBLivumo3oVkw"/>
+</div>
+<span class="text-sm font-medium text-white-crisp group-hover:text-gold-opulent font-serif">Amazon</span>
+<span class="text-[10px] text-white-muted mt-1 font-mono">5311</span>
+</button>
+<button class="flex flex-col items-center justify-center p-4 rounded bg-espresso-light border border-copper-subtle/30 hover:border-gold-opulent hover:bg-espresso-light/80 transition-all group">
+<div class="size-10 rounded-full bg-white flex items-center justify-center mb-3 overflow-hidden p-1 shadow-md">
+<img alt="Swiggy logo" class="w-full h-full object-contain" data-alt="Swiggy logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSCrKY1O9XKLGfCw2zR5IoWWRGiAIfc1X4uHsdRevmsib0nODFasNFGSdUxgE3KBsjK1LWYAQwsd3SZb64VokMyu2j3yxF8UfxDu_0ksiLfQCW-3YcARS4dIFDvsvaBdUfaF8Wl6ovJl4hnUb1DAHMGHe_9VUdZQRG_rtBlVP_isqkSnJwJyqGc8RFwws8Gy34ZbiPIYcOuD3ji8Zr0lmjGZ-57L8UnMgG1ypT8XyHfxrsHvqs1n71OoDtBaWeHLTp-2-MxPQl2sOj"/>
+</div>
+<span class="text-sm font-medium text-white-crisp group-hover:text-gold-opulent font-serif">Swiggy</span>
+<span class="text-[10px] text-white-muted mt-1 font-mono">5814</span>
+</button>
+<button class="flex flex-col items-center justify-center p-4 rounded bg-espresso-light border border-copper-subtle/30 hover:border-gold-opulent hover:bg-espresso-light/80 transition-all group">
+<div class="size-10 rounded-full bg-[#002e6e] flex items-center justify-center mb-3 overflow-hidden p-1.5 shadow-md">
+<span class="font-bold text-white text-[8px] leading-none">LIC</span>
+</div>
+<span class="text-sm font-medium text-white-crisp group-hover:text-gold-opulent font-serif">LIC Insurance</span>
+<span class="text-[10px] text-white-muted mt-1 font-mono">6300</span>
+</button>
+<button class="flex flex-col items-center justify-center p-4 rounded bg-espresso-light border border-copper-subtle/30 hover:border-gold-opulent hover:bg-espresso-light/80 transition-all group">
+<div class="size-10 rounded-full bg-white flex items-center justify-center mb-3 overflow-hidden p-1 shadow-md">
+<img alt="Uber logo" class="w-full h-full object-contain" data-alt="Uber logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD97TdOgJHCn5S1iuIEwezTXvlFTwuEskeWqJWlM04W0oFMYChXCQ8LWCwFttqXEu62S8KNQVLRlN176Oo7rr8qbi-qGovqvFmnnj97SNHHZdmMLHspDVXbe4fDjOjZOmdWRh8DVxJl1Xl51hv6iE9ba6CI5XBcQTgtp-nPjE5Gnq9lVnGkw_JC9jsYQrujm8v8bLu-lK3MyZMTyiNfGp0yetbc-un4NOdzscfqpFEv0IIypnHjtDA_JjFmUgV43qtKTzx3hIF02hIT"/>
+</div>
+<span class="text-sm font-medium text-white-crisp group-hover:text-gold-opulent font-serif">Uber</span>
+<span class="text-[10px] text-white-muted mt-1 font-mono">4121</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

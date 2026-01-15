@@ -47,31 +47,31 @@ export default function TermsOfService() {
     const [activeSection, setActiveSection] = useState('section-1');
 
     return (
-        <div className="min-h-screen flex flex-col bg-espresso-950 text-white">
+        <div className="min-h-screen flex flex-col bg-theme-bg text-theme-primary">
             {/* Header */}
-            <header className="sticky top-0 z-50 w-full border-b border-espresso-700 bg-espresso-900/95 backdrop-blur-sm">
+            <header className="sticky top-0 z-50 w-full border-b border-theme-border bg-theme-surface/95 backdrop-blur-sm">
                 <div className="max-w-[1400px] mx-auto px-6 h-16 flex items-center justify-between">
-                    <div className="flex items-center gap-3 text-white">
-                        <div className="size-8 text-gold-400">
+                    <div className="flex items-center gap-3 text-theme-primary">
+                        <div className="size-8 text-accent">
                             <span className="material-symbols-outlined text-3xl">savings</span>
                         </div>
-                        <h2 className="text-white text-lg font-bold tracking-tight font-serif">CardPerks</h2>
+                        <h2 className="text-theme-primary text-lg font-bold tracking-tight font-serif">CardPerks</h2>
                     </div>
                     <nav className="hidden md:flex items-center gap-8">
-                        <a className="text-gold-dim hover:text-gold-400 transition-colors text-sm font-medium" href="/">Dashboard</a>
-                        <a className="text-gold-dim hover:text-gold-400 transition-colors text-sm font-medium" href="/cards">Cards</a>
-                        <a className="text-gold-dim hover:text-gold-400 transition-colors text-sm font-medium" href="/guides">Guides</a>
+                        <a className="text-accent-dim hover:text-accent transition-colors text-sm font-medium" href="/">Dashboard</a>
+                        <a className="text-accent-dim hover:text-accent transition-colors text-sm font-medium" href="/cards">Cards</a>
+                        <a className="text-accent-dim hover:text-accent transition-colors text-sm font-medium" href="/guides">Guides</a>
                     </nav>
                 </div>
             </header>
 
             <div className="flex flex-1 max-w-[1400px] mx-auto w-full">
                 {/* Sidebar TOC */}
-                <aside className="hidden lg:block w-72 shrink-0 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto border-r border-espresso-700 py-8 pr-8">
+                <aside className="hidden lg:block w-72 shrink-0 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto border-r border-theme-border py-8 pr-8">
                     <div className="flex flex-col gap-6">
                         <div className="flex flex-col gap-1 px-3">
-                            <h3 className="text-gold-400 font-serif text-lg font-bold">Contents</h3>
-                            <p className="text-gold-dim text-xs uppercase tracking-wider">Legal Navigation</p>
+                            <h3 className="text-accent font-serif text-lg font-bold">Contents</h3>
+                            <p className="text-accent-dim text-xs uppercase tracking-wider">Legal Navigation</p>
                         </div>
 
                         <nav className="flex flex-col space-y-1">
@@ -81,12 +81,12 @@ export default function TermsOfService() {
                                     href={`#${section.id}`}
                                     onClick={() => setActiveSection(section.id)}
                                     className={`group flex items-center gap-3 px-3 py-3 rounded-lg border-l-2 transition-all ${activeSection === section.id
-                                            ? 'bg-espresso-700/50 border-gold-400'
-                                            : 'border-transparent hover:bg-espresso-800 hover:border-copper/50'
+                                        ? 'bg-theme-border/50 border-accent'
+                                        : 'border-transparent hover:bg-theme-surface hover:border-copper/50'
                                         }`}
                                 >
-                                    <span className={`material-symbols-outlined text-[20px] ${activeSection === section.id ? 'text-gold-400' : 'text-copper'}`}>{section.icon}</span>
-                                    <span className={`text-sm font-medium ${activeSection === section.id ? 'text-gold-400 font-semibold' : 'text-gold-dim group-hover:text-white'}`}>
+                                    <span className={`material-symbols-outlined text-[20px] ${activeSection === section.id ? 'text-accent' : 'text-accent-secondary'}`}>{section.icon}</span>
+                                    <span className={`text-sm font-medium ${activeSection === section.id ? 'text-accent font-semibold' : 'text-accent-dim group-hover:text-theme-primary'}`}>
                                         {idx + 1}. {section.title}
                                     </span>
                                 </a>
@@ -94,11 +94,11 @@ export default function TermsOfService() {
                         </nav>
 
                         <div className="px-3 pt-6 mt-auto">
-                            <div className="p-4 rounded-lg bg-espresso-800 border border-espresso-700">
-                                <span className="material-symbols-outlined text-gold-400 mb-2 text-[24px]">support_agent</span>
-                                <p className="text-white text-sm font-bold mb-1">Need Clarification?</p>
-                                <p className="text-gold-dim text-xs leading-relaxed mb-3">Our legal team is available for inquiries regarding these terms.</p>
-                                <a className="text-copper text-xs font-bold hover:text-white transition-colors" href="/contact">Contact Support →</a>
+                            <div className="p-4 rounded-lg bg-theme-surface border border-theme-border">
+                                <span className="material-symbols-outlined text-accent mb-2 text-[24px]">support_agent</span>
+                                <p className="text-theme-primary text-sm font-bold mb-1">Need Clarification?</p>
+                                <p className="text-accent-dim text-xs leading-relaxed mb-3">Our legal team is available for inquiries regarding these terms.</p>
+                                <a className="text-accent-secondary text-xs font-bold hover:text-theme-primary transition-colors" href="/contact">Contact Support →</a>
                             </div>
                         </div>
                     </div>
@@ -107,16 +107,16 @@ export default function TermsOfService() {
                 {/* Main Content */}
                 <main className="flex-1 py-10 px-6 lg:px-12 max-w-5xl mx-auto">
                     {/* Header */}
-                    <div className="mb-12 border-b border-espresso-700 pb-8">
+                    <div className="mb-12 border-b border-theme-border pb-8">
                         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                             <div className="flex flex-col gap-3 max-w-2xl">
-                                <h1 className="text-gold-400 text-4xl md:text-5xl font-serif font-black leading-tight tracking-tight">Terms of Service</h1>
-                                <p className="text-white text-lg md:text-xl font-light leading-relaxed opacity-90">Please read these terms carefully before using our financial dashboard and credit card optimization tools.</p>
+                                <h1 className="text-accent text-4xl md:text-5xl font-serif font-black leading-tight tracking-tight">Terms of Service</h1>
+                                <p className="text-theme-primary text-lg md:text-xl font-light leading-relaxed opacity-90">Please read these terms carefully before using our financial dashboard and credit card optimization tools.</p>
                             </div>
                             <div className="shrink-0">
-                                <div className="inline-flex items-center gap-2 px-4 py-2 bg-espresso-800 rounded-full border border-copper/30">
+                                <div className="inline-flex items-center gap-2 px-4 py-2 bg-theme-surface rounded-full border border-copper/30">
                                     <span className="size-2 rounded-full bg-copper animate-pulse"></span>
-                                    <span className="text-xs font-bold text-copper tracking-wide uppercase">Last Updated: Jan 6, 2026</span>
+                                    <span className="text-xs font-bold text-accent-secondary tracking-wide uppercase">Last Updated: Jan 6, 2026</span>
                                 </div>
                             </div>
                         </div>
@@ -129,23 +129,23 @@ export default function TermsOfService() {
                                 key={section.id}
                                 id={section.id}
                                 className={`scroll-mt-24 rounded-xl shadow-lg border relative overflow-hidden group ${section.highlight
-                                        ? 'bg-gradient-to-br from-espresso-800 to-espresso-700 border-gold-400/30'
-                                        : 'bg-espresso-800 border-espresso-700'
+                                    ? 'bg-gradient-to-br from-theme-surface to-theme-bg border-accent/30'
+                                    : 'bg-theme-surface border-theme-border'
                                     } ${section.compact ? 'p-8' : 'p-8 md:p-10'}`}
                             >
                                 {!section.compact && (
                                     <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
-                                        <span className="material-symbols-outlined text-9xl text-copper">{section.icon}</span>
+                                        <span className="material-symbols-outlined text-9xl text-accent-secondary">{section.icon}</span>
                                     </div>
                                 )}
                                 <div className="relative z-10">
-                                    <div className={`flex items-baseline gap-4 mb-6 border-b pb-4 ${section.highlight ? 'border-gold-400/20' : 'border-copper/20'}`}>
-                                        <span className={`font-serif text-3xl italic font-bold ${section.highlight ? 'text-gold-400' : 'text-copper'}`}>
+                                    <div className={`flex items-baseline gap-4 mb-6 border-b pb-4 ${section.highlight ? 'border-accent/20' : 'border-copper/20'}`}>
+                                        <span className={`font-serif text-3xl italic font-bold ${section.highlight ? 'text-accent' : 'text-accent-secondary'}`}>
                                             {String(idx + 1).padStart(2, '0')}.
                                         </span>
-                                        <h2 className={`text-2xl font-bold tracking-tight ${section.highlight ? 'text-gold-400' : 'text-white'}`}>
+                                        <h2 className={`text-2xl font-bold tracking-tight ${section.highlight ? 'text-accent' : 'text-theme-primary'}`}>
                                             {section.title}
-                                            {section.subtitle && <span className="text-gold-dim font-normal text-lg ml-2">{section.subtitle}</span>}
+                                            {section.subtitle && <span className="text-accent-dim font-normal text-lg ml-2">{section.subtitle}</span>}
                                         </h2>
                                     </div>
 
@@ -153,26 +153,26 @@ export default function TermsOfService() {
                                         {section.content.map((item, i) => (
                                             <div key={i}>
                                                 {item.subtitle && (
-                                                    <h3 className="text-white font-serif font-bold text-lg mb-2 flex items-center gap-2">
+                                                    <h3 className="text-theme-primary font-serif font-bold text-lg mb-2 flex items-center gap-2">
                                                         <span className="h-px w-6 bg-copper inline-block"></span> {item.subtitle}
                                                     </h3>
                                                 )}
                                                 {item.text && !item.callout && (
-                                                    <p className={`text-gold-dim leading-relaxed ${item.subtitle ? 'pl-8 border-l border-espresso-700' : ''}`}>
+                                                    <p className={`text-accent-dim leading-relaxed ${item.subtitle ? 'pl-8 border-l border-theme-border' : ''}`}>
                                                         {item.text}
                                                     </p>
                                                 )}
                                                 {item.callout && (
-                                                    <div className="bg-gold-400/10 border-l-4 border-gold-400 p-6 my-6 rounded-r-lg">
-                                                        <p className="text-gold-400 font-serif font-bold text-lg italic mb-2">{item.title}</p>
-                                                        <p className="text-white font-medium">{item.text}</p>
+                                                    <div className="bg-accent/10 border-l-4 border-accent p-6 my-6 rounded-r-lg">
+                                                        <p className="text-accent font-serif font-bold text-lg italic mb-2">{item.title}</p>
+                                                        <p className="text-theme-primary font-medium">{item.text}</p>
                                                     </div>
                                                 )}
                                                 {item.list && (
                                                     <ul className="list-none space-y-2 pl-4">
                                                         {item.list.map((li, j) => (
-                                                            <li key={j} className="flex items-start gap-3 text-gold-dim">
-                                                                <span className="text-copper mt-1 text-xs">●</span>
+                                                            <li key={j} className="flex items-start gap-3 text-accent-dim">
+                                                                <span className="text-accent-secondary mt-1 text-xs">●</span>
                                                                 <span>{li}</span>
                                                             </li>
                                                         ))}
@@ -187,8 +187,8 @@ export default function TermsOfService() {
                     </div>
 
                     {/* Footer */}
-                    <div className="text-center pt-12 pb-6 border-t border-espresso-700 mt-8">
-                        <p className="text-gold-dim text-sm">
+                    <div className="text-center pt-12 pb-6 border-t border-theme-border mt-8">
+                        <p className="text-accent-dim text-sm">
                             © 2026 CardPerks. All rights reserved. <br />
                             <span className="text-xs opacity-60">Designed for the Indian Credit Card Community.</span>
                         </p>

@@ -7,22 +7,22 @@ export default {
     theme: {
         extend: {
             colors: {
-                "primary": "#c87f45", // Copper
-                "primary-hover": "#df955d", // Lighter Copper
+                "primary": "var(--theme-accent-secondary, #c87f45)", // Theme-aware copper/accent
+                "primary-hover": "var(--theme-accent, #df955d)", // Theme-aware lighter accent
                 "background-light": "#fffaf5",
                 "background-dark": "#1a0f0c", // Deep Espresso
                 "surface-dark": "#2b1813", // Lighter Espresso
                 "surface-dark-hover": "#3c221b",
-                "gold-text": "#eecfa1", // Opulent Gold
-                "gold-dim": "#a68a6d", // Muted Gold
-                "warm-white": "#f5e6d3", // Creamy White
-                "warm-gray": "#bba595", // Latte Gray
+                "gold-text": "var(--theme-accent, #eecfa1)", // Theme-aware gold
+                "gold-dim": "var(--theme-accent-dim, #a68a6d)", // Theme-aware muted
+                "warm-white": "var(--theme-text-primary, #f5e6d3)", // Theme-aware white
+                "warm-gray": "var(--theme-text-secondary, #bba595)", // Theme-aware gray
                 "accent-red": "#9c3838",
-                "off-white": "#f2ebe6",
-                "modal-bg": "#1c1917", // Richer Espresso for Modal
-                "panel-bg": "#141210", // Darker Panel
-                "card-bg": "#201c1a",
-                "card-border": "#b87332", // Polished copper hairline
+                "off-white": "var(--theme-text-primary, #f2ebe6)",
+                "modal-bg": "var(--theme-surface, #1c1917)", // Theme-aware modal
+                "panel-bg": "var(--theme-bg-alt, #141210)", // Theme-aware panel
+                "card-bg": "var(--theme-surface, #201c1a)",
+                "card-border": "var(--theme-border-accent, #b87332)", // Theme-aware border
 
                 // Banking Page Specific Colors
                 "espresso-dark": "#050505",
@@ -38,12 +38,12 @@ export default {
                 "warm-white": "#f8f8f8",
                 "icy-blue": "#a5f3fc",
 
-                // Perk AI Response Page Colors
-                "obsidian": "#080808",
-                "espresso-matte": "#1C1917",
-                "leather": "#1A1614",
-                "primary-light": "#F3E5AB",
-                "primary-dim": "#8A7120",
+                // Perk AI Response Page Colors - Theme aware
+                "obsidian": "var(--theme-bg, #080808)",
+                "espresso-matte": "var(--theme-surface, #1C1917)",
+                "leather": "var(--theme-surface, #1A1614)",
+                "primary-light": "var(--theme-accent, #F3E5AB)",
+                "primary-dim": "var(--theme-accent-dim, #8A7120)",
 
                 // Espresso shades
                 "espresso": {
@@ -90,7 +90,7 @@ export default {
                 'copper-gradient': 'linear-gradient(135deg, rgba(200,127,69,0.15) 0%, rgba(200,127,69,0) 50%, rgba(200,127,69,0.05) 100%)',
                 'gold-gradient-text': 'linear-gradient(to right, #c87f45, #eecfa1, #c87f45)',
                 'nav-gradient': 'linear-gradient(to bottom, #2b1813, #1a0f0c)',
-                'espresso-texture': 'url("data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' viewBox=\'0 0 20 20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%232a1610\' fill-opacity=\'0.08\' fill-rule=\'evenodd\'%3E%3Ccircle cx=\'3\' cy=\'3\' r=\'3\'/%3E%3Ccircle cx=\'13\' cy=\'13\' r=\'3\'/%3E%3C/g%3E%3C/svg%3E")',
+                'theme-texture': 'url("data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' viewBox=\'0 0 20 20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%232a1610\' fill-opacity=\'0.08\' fill-rule=\'evenodd\'%3E%3Ccircle cx=\'3\' cy=\'3\' r=\'3\'/%3E%3Ccircle cx=\'13\' cy=\'13\' r=\'3\'/%3E%3C/g%3E%3C/svg%3E")',
                 'card-sheen': 'linear-gradient(105deg, transparent 20%, rgba(205, 127, 50, 0.15) 25%, rgba(255, 255, 255, 0.2) 30%, rgba(205, 127, 50, 0.15) 35%, transparent 40%)',
                 'gold-badge': 'linear-gradient(135deg, #d4af37 0%, #f9f1d0 50%, #b08d26 100%)',
                 'metal-sheen': 'linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.03) 100%)',

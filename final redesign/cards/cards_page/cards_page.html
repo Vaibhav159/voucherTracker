@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cards Page - Espresso &amp; Copper Theme</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "espresso": {
+                    950: "#130a06", // Deepest background
+                    900: "#1f120d", // Main BG
+                    800: "#321d15", // Lighter panels
+                    700: "#4e2e22",
+                },
+                "copper": {
+                    300: "#e8b088", 
+                    400: "#cd7f32", // Classic Copper
+                    500: "#b87333", // Darker Copper
+                    600: "#8b4513",
+                },
+                "gold": {
+                    100: "#f9f1d8", // Text light
+                    200: "#efe0aa",
+                    300: "#e5cf7e",
+                    400: "#d4af37", // Opulent Gold
+                    500: "#b5922f",
+                    600: "#8a6e1f",
+                },
+                "off-white": "#faf7f5",
+              },
+              fontFamily: {
+                "display": ["Inter", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+              backgroundImage: {
+                'espresso-gradient': 'linear-gradient(135deg, #130a06 0%, #1f120d 100%)',
+                'metallic-sheen': 'linear-gradient(45deg, rgba(212, 175, 55, 0.05) 25%, transparent 25%, transparent 50%, rgba(212, 175, 55, 0.05) 50%, rgba(212, 175, 55, 0.05) 75%, transparent 75%, transparent)',
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #130a06; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #321d15; 
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #cd7f32; 
+        }
+        .gold-text {
+            background: linear-gradient(to right, #f9f1d8, #d4af37, #f9f1d8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% auto;
+            animation: shine 5s linear infinite;
+        }
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+        .glass-card {
+            background: rgba(50, 29, 21, 0.3);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+        .card-shadow-hover:hover {
+            box-shadow: 0 20px 40px -5px rgba(205, 127, 50, 0.15); 
+        }
+    </style>
+</head>
+<body class="font-display bg-espresso-900 text-gold-100 antialiased overflow-hidden flex flex-col h-screen">
+<header class="h-16 flex-shrink-0 bg-espresso-950 border-b border-gold-500/10 flex items-center justify-between px-4 lg:px-8 z-50 relative">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded bg-gradient-to-br from-gold-300 to-copper-600 flex items-center justify-center shadow-lg shadow-gold-500/20">
+<span class="material-symbols-outlined text-espresso-950" style="font-size: 20px;">diamond</span>
+</div>
+<h1 class="text-gold-100 text-lg font-bold tracking-tight">LuxCard</h1>
+</div>
+<nav class="hidden lg:flex items-center gap-1">
+<a class="px-4 py-2 rounded-lg text-gold-100/70 hover:text-gold-400 hover:bg-espresso-800/50 transition-all text-sm font-medium" href="#">Home</a>
+<a class="px-4 py-2 rounded-lg text-gold-100/70 hover:text-gold-400 hover:bg-espresso-800/50 transition-all text-sm font-medium" href="#">Voucher</a>
+<a class="px-4 py-2 rounded-lg bg-espresso-800 text-gold-400 border border-gold-500/20 text-sm font-medium shadow-[0_0_10px_rgba(212,175,55,0.1)]" href="#">Cards</a>
+<a class="px-4 py-2 rounded-lg text-gold-100/70 hover:text-gold-400 hover:bg-espresso-800/50 transition-all text-sm font-medium" href="#">Banking</a>
+<a class="px-4 py-2 rounded-lg text-gold-100/70 hover:text-gold-400 hover:bg-espresso-800/50 transition-all text-sm font-medium flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">smart_toy</span> Ask AI
+                </a>
+<a class="px-4 py-2 rounded-lg text-gold-100/70 hover:text-gold-400 hover:bg-espresso-800/50 transition-all text-sm font-medium" href="#">Guides</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center relative">
+<span class="material-symbols-outlined absolute left-3 text-gold-500/50 text-[18px]">search</span>
+<input class="bg-espresso-900 border border-gold-500/10 rounded-full py-1.5 pl-10 pr-4 text-sm text-gold-100 focus:ring-1 focus:ring-gold-500/50 focus:border-gold-500/50 w-64 placeholder-gold-500/30" placeholder="Global search..." type="text"/>
+</div>
+<div class="h-8 w-px bg-gold-500/10 mx-2"></div>
+<div class="flex items-center gap-3 cursor-pointer group">
+<div class="flex flex-col text-right hidden sm:block">
+<span class="text-xs font-semibold text-gold-100 group-hover:text-gold-400 transition-colors">Aditya R.</span>
+<span class="text-[10px] text-copper-400 font-medium">PLATINUM</span>
+</div>
+<div class="relative">
+<div class="size-8 rounded-full bg-cover bg-center ring-1 ring-gold-500/30 group-hover:ring-copper-400 transition-all" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDe_fU7az22xuN7T6fE5I8uBvRoz2_jA7xqlAgkwx5jv-Lx8qdE63rcLFSYxbcAtgP5yHJFgnsEIFeZPyEJa5mUC1NLrDLFIzwBmSeYjrHUVL_fjuf3eCxZDGMVGmIn2DWxm3Cds63vC42nBFQc5Kxs78bHy8DEkDGqlwZ2VJNsYxh5WB2w2jcu0OMi-rUgBpg794va0qIzna8-_O9jIOgb5B4HuJNDWLrkXAldKZvCCUX7kH-qthNv4Bnj7I_drEzE-0M48r2z6DRC");'></div>
+<div class="absolute -bottom-0.5 -right-0.5 size-2.5 bg-green-500 border-2 border-espresso-950 rounded-full"></div>
+</div>
+</div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden relative">
+<aside class="w-80 flex-shrink-0 flex flex-col bg-espresso-900 border-r border-gold-500/10 overflow-y-auto z-20 hidden lg:flex">
+<div class="p-6 flex flex-col gap-8">
+<div class="relative w-full">
+<label class="text-xs font-bold text-copper-400 uppercase tracking-widest mb-2 block">Refine Search</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gold-500/50 text-[18px]">filter_list</span>
+<input class="bg-espresso-800/50 border border-gold-500/20 rounded-lg py-2.5 pl-10 pr-4 text-sm text-gold-100 focus:ring-1 focus:ring-gold-500/50 focus:border-gold-500/50 w-full placeholder-gold-500/30" placeholder="Search cards by name..." type="text"/>
+</div>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-4">
+<h4 class="text-gold-100 text-sm font-semibold uppercase tracking-wider">Features &amp; Benefits</h4>
+</div>
+<div class="flex flex-col gap-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative">
+<input checked="" class="peer appearance-none w-4 h-4 rounded border border-copper-400/30 bg-espresso-800/50 checked:bg-copper-500 checked:border-copper-500 focus:ring-0 transition-all" type="checkbox"/>
+<span class="material-symbols-outlined text-white absolute inset-0 text-[12px] flex items-center justify-center opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none">check</span>
+</div>
+<span class="text-off-white/70 text-sm font-medium group-hover:text-off-white transition-colors">Lounge Access</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative">
+<input class="peer appearance-none w-4 h-4 rounded border border-copper-400/30 bg-espresso-800/50 checked:bg-copper-500 checked:border-copper-500 focus:ring-0 transition-all" type="checkbox"/>
+<span class="material-symbols-outlined text-white absolute inset-0 text-[12px] flex items-center justify-center opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none">check</span>
+</div>
+<span class="text-off-white/70 text-sm font-medium group-hover:text-off-white transition-colors">Fuel Surcharge</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative">
+<input class="peer appearance-none w-4 h-4 rounded border border-copper-400/30 bg-espresso-800/50 checked:bg-copper-500 checked:border-copper-500 focus:ring-0 transition-all" type="checkbox"/>
+<span class="material-symbols-outlined text-white absolute inset-0 text-[12px] flex items-center justify-center opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none">check</span>
+</div>
+<span class="text-off-white/70 text-sm font-medium group-hover:text-off-white transition-colors">Shopping Rewards</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative">
+<input class="peer appearance-none w-4 h-4 rounded border border-copper-400/30 bg-espresso-800/50 checked:bg-copper-500 checked:border-copper-500 focus:ring-0 transition-all" type="checkbox"/>
+<span class="material-symbols-outlined text-white absolute inset-0 text-[12px] flex items-center justify-center opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none">check</span>
+</div>
+<span class="text-off-white/70 text-sm font-medium group-hover:text-off-white transition-colors">Movie Offers</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative">
+<input class="peer appearance-none w-4 h-4 rounded border border-copper-400/30 bg-espresso-800/50 checked:bg-copper-500 checked:border-copper-500 focus:ring-0 transition-all" type="checkbox"/>
+<span class="material-symbols-outlined text-white absolute inset-0 text-[12px] flex items-center justify-center opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none">check</span>
+</div>
+<span class="text-off-white/70 text-sm font-medium group-hover:text-off-white transition-colors">Dining</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative">
+<input class="peer appearance-none w-4 h-4 rounded border border-copper-400/30 bg-espresso-800/50 checked:bg-copper-500 checked:border-copper-500 focus:ring-0 transition-all" type="checkbox"/>
+<span class="material-symbols-outlined text-white absolute inset-0 text-[12px] flex items-center justify-center opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none">check</span>
+</div>
+<span class="text-off-white/70 text-sm font-medium group-hover:text-off-white transition-colors">Golf Games</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative">
+<input class="peer appearance-none w-4 h-4 rounded border border-copper-400/30 bg-espresso-800/50 checked:bg-copper-500 checked:border-copper-500 focus:ring-0 transition-all" type="checkbox"/>
+<span class="material-symbols-outlined text-white absolute inset-0 text-[12px] flex items-center justify-center opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none">check</span>
+</div>
+<span class="text-off-white/70 text-sm font-medium group-hover:text-off-white transition-colors">Insurance</span>
+</label>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col h-full overflow-hidden relative bg-espresso-900">
+<div class="absolute top-0 left-0 w-full h-96 bg-gradient-to-b from-copper-900/10 to-transparent pointer-events-none z-0"></div>
+<div class="flex-1 overflow-y-auto z-10 p-6 lg:p-10 scroll-smooth pb-24">
+<div class="max-w-7xl mx-auto flex flex-col gap-8">
+<div class="flex flex-col lg:flex-row justify-between items-end gap-6 border-b border-gold-500/10 pb-6">
+<div class="flex flex-col gap-2">
+<h2 class="text-3xl lg:text-4xl font-black tracking-tighter text-off-white">
+                                Explore <span class="gold-text">Premium Credit Cards</span>
+</h2>
+<p class="text-gold-100/50 text-sm font-light max-w-xl">
+                                Discover and compare elite credit cards to maximize your rewards and benefits.
+                            </p>
+</div>
+<div class="flex items-center gap-3 w-full lg:w-auto overflow-x-auto pb-1 lg:pb-0">
+<div class="relative group flex-shrink-0">
+<button class="h-10 px-4 rounded-lg bg-espresso-800 border border-gold-500/20 text-gold-100 text-sm font-medium flex items-center gap-2 hover:bg-espresso-700 hover:border-gold-500/40 transition-all justify-between min-w-[130px]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-copper-400">account_balance</span>
+                                        All Banks
+                                    </div>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+<div class="h-6 w-px bg-gold-500/10"></div>
+<div class="relative group flex-shrink-0">
+<button class="h-10 px-4 rounded-lg bg-espresso-800 border border-gold-500/20 text-gold-100 text-sm font-medium flex items-center gap-2 hover:bg-espresso-700 hover:border-gold-500/40 transition-all justify-between min-w-[130px]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-copper-400">sort</span>
+                                        Sort by
+                                    </div>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+<div class="group relative flex flex-col gap-4">
+<div class="relative w-full aspect-[1.586] rounded-2xl overflow-hidden shadow-2xl shadow-black/50 group-hover:shadow-gold-500/20 group-hover:scale-[1.02] transition-all duration-300 transform-gpu border border-white/5">
+<div class="absolute inset-0 bg-cover bg-center z-0" data-alt="HDFC Infinia Metal Card Art" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBwz4Z0xXa-7CC9PqVv3-PtCozR5yso5WmX0zoV81jKWmZamgG9AC3SwQpJrMKStrYByKf_R1tBMdXpDy4epfXeVZpkP3pJXFsGyqEyVur80ZnoHl_zjbUT1oLhy14a6KUJcEW2pxdZzJvh9X2OxxXM0FcDvwjHi6pMzAiI5DVJSUdJul5nnn_sbHeVrKY4CuEsmaTeqODk6OWfv86d5WC4ONaQjoDOSXs19Dnoozaj_Xkg2zwJ9BG2zTkG6bv4Ju6laEOlww0QHj5b"); filter: brightness(0.4) sepia(1) hue-rotate(180deg) saturate(2);'></div>
+<div class="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#2d2d2d] to-[#000000] opacity-90 mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-gradient-to-tr from-white/0 via-gold-100/5 to-white/0 opacity-50"></div>
+<div class="relative z-10 p-6 flex flex-col justify-between h-full">
+<div class="flex justify-between items-start">
+<div class="text-white/90 font-bold text-lg tracking-wider">HDFC BANK</div>
+<span class="material-symbols-outlined text-white/50 text-3xl">contactless</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-12 h-8 bg-gold-600/30 rounded-md border border-gold-500/30 flex items-center justify-center">
+<div class="w-8 h-5 border border-gold-500/50 rounded-sm"></div>
+</div>
+<span class="material-symbols-outlined text-white/80">wifi</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="text-white/90 font-mono text-xl tracking-widest drop-shadow-md">•••• •••• •••• 8892</div>
+<div class="flex justify-between items-end mt-2">
+<div class="text-white/60 text-xs uppercase tracking-wider font-semibold">Aditya R.</div>
+<div class="text-white font-bold italic text-2xl leading-none">VISA</div>
+</div>
+</div>
+<div class="absolute top-1/2 right-0 -translate-y-1/2 w-32 h-32 bg-gold-500/10 blur-3xl rounded-full pointer-events-none"></div>
+</div>
+</div>
+<div class="glass-card rounded-xl p-4 flex flex-col gap-3">
+<div class="flex justify-between items-center border-b border-gold-500/10 pb-3">
+<h3 class="text-lg font-bold text-off-white">Infinia Metal Edition</h3>
+<div class="flex items-center gap-3">
+<label class="flex items-center gap-1.5 cursor-pointer group/cmp" title="Add to Compare">
+<input class="appearance-none peer w-3.5 h-3.5 border border-gold-500/30 rounded bg-espresso-900/50 checked:bg-copper-500 checked:border-copper-500 focus:ring-0" type="checkbox"/>
+<span class="text-[10px] uppercase font-bold tracking-wider text-gold-500/50 peer-checked:text-copper-400 group-hover/cmp:text-gold-100 transition-colors">Compare</span>
+</label>
+<div class="h-4 w-px bg-gold-500/10"></div>
+<button class="text-gold-500/30 hover:text-red-500 transition-colors p-1 rounded-full hover:bg-gold-500/5" title="Add to Favourites">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<p class="text-gold-100/40 text-xs">Reward Rate</p>
+<p class="text-off-white font-medium">3.3% - 33%</p>
+</div>
+<div>
+<p class="text-gold-100/40 text-xs">SmartBuy Cap</p>
+<p class="text-off-white font-medium">₹ 15,000 / mo</p>
+</div>
+</div>
+<button class="w-full mt-1 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-gold-300 text-sm font-medium transition-colors flex items-center justify-center gap-2">
+                                    View Details <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="group relative flex flex-col gap-4">
+<div class="relative w-full aspect-[1.586] rounded-2xl overflow-hidden shadow-2xl shadow-black/50 group-hover:shadow-white/10 group-hover:scale-[1.02] transition-all duration-300 transform-gpu border border-white/5">
+<div class="absolute inset-0 bg-cover bg-center z-0" data-alt="Amex Platinum Card Art" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAzGpxxlGUDm-_SWVTSmab0Xf0wPcjYLDlfVV76AH4FxatJrvnK6bG1ZcX9cl8isFAlPxITHAfPg2-0kiLiriVczzKtU5cpnujLPYcLDYrtSFxmg2qJhDdmtBSnGpMKlJbYMv1BpqnD37apL6cv_sbr3qWS5WRmPLLaWdX9OjJH6SXn-Ib5Ry9vATasUS_Vtw93XEvh354E-h8GySmj7VvD__54ngudEYaCi6XAvrc3MOYp6QCxeFoaUcileK577XIHL0oJyqTL9UhT"); filter: grayscale(1) brightness(0.6) sepia(0.2);'></div>
+<div class="absolute inset-0 bg-gradient-to-br from-gray-300 via-gray-100 to-gray-400 opacity-90 mix-blend-overlay"></div>
+<div class="relative z-10 p-6 flex flex-col justify-between h-full">
+<div class="flex justify-between items-start">
+<div class="text-black/80 font-bold text-lg tracking-wider mix-blend-hard-light">AMERICAN EXPRESS</div>
+<span class="material-symbols-outlined text-black/60 text-3xl">contactless</span>
+</div>
+<div class="flex items-center justify-center">
+<div class="size-16 rounded-full border-2 border-black/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-black/20 text-4xl">person</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="text-black/80 font-mono text-xl tracking-widest drop-shadow-sm font-bold">3769 •••••• •••••</div>
+<div class="flex justify-between items-end mt-2">
+<div class="text-black/70 text-xs uppercase tracking-wider font-bold">Aditya R.</div>
+<div class="text-blue-900 font-bold italic text-xl leading-none">AMEX</div>
+</div>
+</div>
+</div>
+</div>
+<div class="glass-card rounded-xl p-4 flex flex-col gap-3">
+<div class="flex justify-between items-center border-b border-gold-500/10 pb-3">
+<h3 class="text-lg font-bold text-off-white">Platinum Charge</h3>
+<div class="flex items-center gap-3">
+<label class="flex items-center gap-1.5 cursor-pointer group/cmp" title="Add to Compare">
+<input class="appearance-none peer w-3.5 h-3.5 border border-gold-500/30 rounded bg-espresso-900/50 checked:bg-copper-500 checked:border-copper-500 focus:ring-0" type="checkbox"/>
+<span class="text-[10px] uppercase font-bold tracking-wider text-gold-500/50 peer-checked:text-copper-400 group-hover/cmp:text-gold-100 transition-colors">Compare</span>
+</label>
+<div class="h-4 w-px bg-gold-500/10"></div>
+<button class="text-gold-500/30 hover:text-red-500 transition-colors p-1 rounded-full hover:bg-gold-500/5" title="Add to Favourites">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<p class="text-gold-100/40 text-xs">Taj Vouchers</p>
+<p class="text-copper-400 font-medium">₹ 45,000</p>
+</div>
+<div>
+<p class="text-gold-100/40 text-xs">Concierge</p>
+<p class="text-off-white font-medium">24/7 Global</p>
+</div>
+</div>
+<button class="w-full mt-1 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-gold-300 text-sm font-medium transition-colors flex items-center justify-center gap-2">
+                                    View Details <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="group relative flex flex-col gap-4">
+<div class="relative w-full aspect-[1.586] rounded-2xl overflow-hidden shadow-2xl shadow-black/50 group-hover:shadow-copper-900/50 group-hover:scale-[1.02] transition-all duration-300 transform-gpu border border-white/5">
+<div class="absolute inset-0 bg-cover bg-center z-0" data-alt="Axis Magnus Card Art" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDAHlIqVq9QfwG71aVBY09vDALuR7EgDSnhqWTSP0Yw53IByx7hYMkMOTfyLax6P5prTVonVJhDOD-R0OUioMvFM67zvcXXGmqzV3BJU_VmlxI5YWR5sxFCxTVubyt9pmlDeJ2cZVCF0sIsd1RS4LfQdvcPazEYxm3zXS0RxhMTnUcMKN02tcYrmYQlw-BGzbEfvaSDL-6ycPYcUpR-2ghBoIR-rnVysgYkhlGH49_jmFiDmEbClyNu4g1OkAs8BANUT3goxu__2n1k"); filter: sepia(1) hue-rotate(-50deg) saturate(2) brightness(0.3);'></div>
+<div class="absolute inset-0 bg-gradient-to-tr from-[#3f190d] to-[#1a0505] opacity-90"></div>
+<div class="relative z-10 p-6 flex flex-col justify-between h-full">
+<div class="flex justify-between items-start">
+<div class="text-white/90 font-bold text-lg tracking-wider italic">Axis Bank</div>
+<div class="text-white/60 text-xs uppercase tracking-widest font-light border border-white/20 px-2 py-0.5 rounded">Burgundy</div>
+</div>
+<div class="flex flex-col gap-1 mt-auto">
+<div class="text-white/90 font-mono text-xl tracking-widest drop-shadow-md">•••• •••• •••• 4512</div>
+<div class="flex justify-between items-end mt-2">
+<div class="text-white/60 text-xs uppercase tracking-wider font-semibold">Aditya R.</div>
+<div class="flex gap-1">
+<div class="size-6 rounded-full bg-white/80"></div>
+<div class="size-6 rounded-full bg-white/50 -ml-3"></div>
+</div>
+</div>
+</div>
+<div class="absolute top-0 right-0 w-40 h-40 bg-red-600/10 blur-3xl rounded-full pointer-events-none"></div>
+</div>
+<div class="absolute top-4 right-4 w-px h-16 bg-gradient-to-b from-transparent via-copper-400 to-transparent rotate-45 opacity-50"></div>
+</div>
+<div class="glass-card rounded-xl p-4 flex flex-col gap-3">
+<div class="flex justify-between items-center border-b border-gold-500/10 pb-3">
+<h3 class="text-lg font-bold text-off-white">Magnus Burgundy</h3>
+<div class="flex items-center gap-3">
+<label class="flex items-center gap-1.5 cursor-pointer group/cmp" title="Add to Compare">
+<input class="appearance-none peer w-3.5 h-3.5 border border-gold-500/30 rounded bg-espresso-900/50 checked:bg-copper-500 checked:border-copper-500 focus:ring-0" type="checkbox"/>
+<span class="text-[10px] uppercase font-bold tracking-wider text-gold-500/50 peer-checked:text-copper-400 group-hover/cmp:text-gold-100 transition-colors">Compare</span>
+</label>
+<div class="h-4 w-px bg-gold-500/10"></div>
+<button class="text-gold-500/30 hover:text-red-500 transition-colors p-1 rounded-full hover:bg-gold-500/5" title="Add to Favourites">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<p class="text-gold-100/40 text-xs">Monthly Milestone</p>
+<div class="flex items-center gap-2 mt-0.5">
+<div class="h-1.5 w-16 bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-copper-400 w-[80%]"></div>
+</div>
+<span class="text-xs text-off-white">80%</span>
+</div>
+</div>
+<div>
+<p class="text-gold-100/40 text-xs">Edge Points</p>
+<p class="text-off-white font-medium">25,000</p>
+</div>
+</div>
+<button class="w-full mt-1 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-gold-300 text-sm font-medium transition-colors flex items-center justify-center gap-2">
+                                    View Details <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="group relative flex flex-col gap-4">
+<div class="relative w-full aspect-[1.586] rounded-2xl overflow-hidden shadow-2xl shadow-black/50 group-hover:shadow-copper-600/40 group-hover:scale-[1.02] transition-all duration-300 transform-gpu border border-white/5">
+<div class="absolute inset-0 bg-cover bg-center z-0" data-alt="SBI Aurum Card Art" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCI480D_1fvTMTaaqeEEmfn4LF6UtoVER8D_yFZrlUAeHuOy_Fano3NNm64YPraybux_Toih71VizM6rzIJJxYPFl-q256Q_NvnPtfL0hf4LrUTZbSKL50UP5MUiK52Mh3xxeA0xOoFHfeI5xif0OkgJZioXMaqU-KVNcbM1OFIrYuGq-QIGLGsBEePGUitRTIIeAEwSAwkVKFVA859DH2Vy7Qm5JA2DGOgsR6urepX16LcOyHSd_JBGQZOcZJ-5S-xN8Q28D1tutwM"); filter: brightness(0.2);'></div>
+<div class="absolute inset-0 bg-[#111] opacity-95"></div>
+<div class="absolute inset-0 border-[1px] border-copper-600/30 m-3 rounded-xl"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-32 border border-copper-600/10 rounded-full"></div>
+<div class="relative z-10 p-6 flex flex-col justify-between h-full">
+<div class="flex justify-between items-start">
+<div class="text-copper-500 font-serif font-bold text-xl tracking-wider">AURUM</div>
+</div>
+<div class="flex flex-col gap-1 mt-auto">
+<div class="text-copper-100/60 font-mono text-xl tracking-widest drop-shadow-md">•••• •••• •••• 1122</div>
+<div class="flex justify-between items-end mt-2">
+<div class="text-copper-100/40 text-xs uppercase tracking-wider font-semibold">Aditya R.</div>
+<div class="text-white font-bold italic text-2xl leading-none opacity-50">VISA</div>
+</div>
+</div>
+</div>
+</div>
+<div class="glass-card rounded-xl p-4 flex flex-col gap-3">
+<div class="flex justify-between items-center border-b border-gold-500/10 pb-3">
+<h3 class="text-lg font-bold text-off-white">SBI Aurum</h3>
+<div class="flex items-center gap-3">
+<label class="flex items-center gap-1.5 cursor-pointer group/cmp" title="Add to Compare">
+<input class="appearance-none peer w-3.5 h-3.5 border border-gold-500/30 rounded bg-espresso-900/50 checked:bg-copper-500 checked:border-copper-500 focus:ring-0" type="checkbox"/>
+<span class="text-[10px] uppercase font-bold tracking-wider text-gold-500/50 peer-checked:text-copper-400 group-hover/cmp:text-gold-100 transition-colors">Compare</span>
+</label>
+<div class="h-4 w-px bg-gold-500/10"></div>
+<button class="text-gold-500/30 hover:text-red-500 transition-colors p-1 rounded-full hover:bg-gold-500/5" title="Add to Favourites">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<p class="text-gold-100/40 text-xs">Tata Cliq</p>
+<p class="text-off-white font-medium">₹ 5,000 Due</p>
+</div>
+<div>
+<p class="text-gold-100/40 text-xs">BookMyShow</p>
+<p class="text-off-white font-medium">4 Free tix</p>
+</div>
+</div>
+<button class="w-full mt-1 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-gold-300 text-sm font-medium transition-colors flex items-center justify-center gap-2">
+                                    View Details <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-8 border-t border-gold-500/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-gold-100/40 text-sm">
+<p>© 2024 LuxCard Financial. Premium Banking Dashboard.</p>
+<div class="flex gap-6">
+<a class="hover:text-gold-100 transition-colors" href="#">Privacy</a>
+<a class="hover:text-gold-100 transition-colors" href="#">Terms</a>
+<a class="hover:text-gold-100 transition-colors" href="#">Support</a>
+</div>
+</div>
+</div>
+</div>
+</main>
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 z-40">
+<button class="bg-copper-500 hover:bg-copper-600 text-white pl-6 pr-8 py-3 rounded-full shadow-2xl shadow-copper-500/30 flex items-center gap-3 transition-all transform hover:scale-105 group border border-white/10">
+<div class="relative">
+<span class="material-symbols-outlined text-[24px]">compare_arrows</span>
+<span class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-espresso-950 text-[9px] font-bold text-copper-400 ring-2 ring-copper-500">2</span>
+</div>
+<span class="font-medium tracking-wide">Compare Cards</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</body></html>

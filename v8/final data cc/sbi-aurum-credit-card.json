@@ -1,0 +1,1189 @@
+{
+  "id": "sbi-aurum",
+  "name": "SBI Aurum Credit Card",
+  "bank": "SBI Cards and Payment Services Limited",
+  "slug": "sbi-aurum-credit-card",
+  "image": "assets/cards/sbi/aurum.png",
+  "link": "https://www.aurumcreditcard.com",
+  "isActive": true,
+
+  "network": {
+    "type": "Mastercard | Visa",
+    "variant": "World Elite | Infinite",
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "ultra-premium",
+    "isCobranded": false,
+    "cobrandPartner": {
+      "name": null,
+      "type": null,
+      "loyaltyProgram": null
+    },
+    "material": "metal"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 9999,
+      "gst": "18%",
+      "totalWithGst": 11799,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 9999,
+      "gst": "18%",
+      "totalWithGst": 11799,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 1200000,
+        "spendPeriod": "12 months",
+        "waiverText": "Annual fee waived on spending ₹12 lakh in the preceding year"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": null,
+      "joiningFee": null,
+      "annualFee": null,
+      "rewardSharing": true,
+      "note": "Add-on cards available for parents, spouse, children, or siblings above 18 years"
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 500, "fee": 0},
+        {"minAmount": 501, "maxAmount": 1000, "fee": 400},
+        {"minAmount": 1001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 950},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ],
+      "additionalCharge": {
+        "amount": 100,
+        "condition": "If minimum amount due is missed for 2 consecutive billing cycles, this fee recurs every cycle until MAD is cleared"
+      }
+    },
+    "overLimit": {
+      "amount": 600,
+      "percentage": 2.5,
+      "calculation": "2.5% of overlimit amount or ₹600, whichever is higher"
+    },
+    "cardReplacement": 1500,
+    "duplicateStatement": 100,
+    "rentPaymentProcessing": 199,
+    "utilityPaymentFee": {
+      "percentage": 1,
+      "threshold": 50000,
+      "condition": "1% fee on utility payments exceeding ₹50,000 per billing cycle (w.e.f. Dec 2024)"
+    },
+    "walletLoadFee": {
+      "percentage": 1,
+      "effectiveDate": "2025-11-01",
+      "condition": "1% of transaction amount on wallet loads"
+    },
+    "educationPaymentFee": {
+      "percentage": 1,
+      "effectiveDate": "2025-11-01",
+      "condition": "1% fee on education payments through third-party apps (CRED, Cheq, MobiKwik). Direct payments to schools/colleges exempt."
+    }
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": null,
+        "annual": 4000000
+      },
+      "selfEmployed": {
+        "itr": 4000000
+      }
+    },
+    "age": {
+      "minSalaried": 21,
+      "minSelfEmployed": 25,
+      "max": 60,
+      "addOnMin": 18
+    },
+    "employmentType": "Invite Only",
+    "creditScore": {
+      "minimum": 750,
+      "recommended": 800
+    },
+    "existingRelationship": {
+      "required": true,
+      "type": "Existing SBI Card customer with good relationship",
+      "note": "This is an invite-only card. Customers can express interest on the official website."
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 300000,
+      "max": null
+    },
+    "factors": "Based on income, credit score, existing relationship, and card usage history",
+    "enhancementCriteria": "Good repayment history and increased spending patterns"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.42,
+      "monthlyRate": 0.035
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.42,
+      "monthlyRate": 0.035
+    },
+    "gracePeriod": {
+      "days": 50,
+      "minDays": 20,
+      "note": "20-50 days from statement date to due date if previous balance paid in full"
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 200,
+      "calculation": "5% of total outstanding + EMIs + fees + taxes, or ₹200, whichever is higher"
+    },
+    "penaltyAPR": {
+      "rate": 0.438,
+      "monthlyRate": 0.0365,
+      "triggerCondition": "If Minimum Amount Due is not paid by the due date twice in a 12-month period"
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "calculation": "2.5% of transaction amount or ₹500, whichever is higher",
+    "limitPercentage": null,
+    "dailyLimit": null,
+    "interestFromDay1": true
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "AURUM Reward Points",
+      "symbol": "ARP",
+      "singularUnit": "point",
+      "pluralUnit": "points"
+    },
+    "baseRate": {
+      "rate": 4,
+      "spendUnit": 100,
+      "effectivePercentage": 0.01
+    },
+    "earningText": "Earn 4 AURUM Reward Points for every ₹100 spent on non-fuel transactions",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "Wallet loads/recharge",
+        "Rent payments",
+        "Government transactions",
+        "Insurance premium payments",
+        "Education payments",
+        "EMI transactions",
+        "Cash withdrawals/advances",
+        "Balance transfers",
+        "Flexipay EMI",
+        "Financial charges and fees"
+      ],
+      "mccs": [
+        "5172 - Petroleum and Petroleum Products",
+        "5541 - Service Stations",
+        "5542 - Fuel Dispenser, Automated",
+        "5983 - Fuel Dealers",
+        "6540 - POI Funding Transactions",
+        "6541 - Wallets",
+        "6513 - Real Estate/Rentals",
+        "9311 - Tax Payments",
+        "9399 - Government Services",
+        "8211 - Schools",
+        "8220 - Colleges/Universities",
+        "8241 - Correspondence Schools",
+        "8244 - Business/Secretarial Schools",
+        "8249 - Vocational/Trade Schools",
+        "8299 - Educational Services"
+      ],
+      "note": "Transactions at these MCCs do not earn reward points. Identification on best effort basis."
+    },
+
+    "caps": {
+      "monthly": {
+        "points": null,
+        "cashback": null
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": "statement",
+      "perTransaction": null
+    },
+
+    "expiry": {
+      "hasExpiry": false,
+      "period": null,
+      "condition": "AURUM Reward Points never expire"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": 40000,
+        "cashback": null,
+        "vouchers": null,
+        "value": 10000,
+        "spendCondition": {
+          "amount": null,
+          "period": null,
+          "transactionCount": null
+        },
+        "condition": "On payment of joining fee",
+        "validity": null,
+        "description": "Get 40,000 AURUM Reward Points worth ₹10,000 on payment of joining fee"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null,
+        "note": "No direct renewal benefits"
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "domestic": {
+        "rate": 4,
+        "spendUnit": 100,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "note": "4 reward points per ₹100 on all non-excluded domestic spends"
+      },
+      "international": {
+        "rate": 4,
+        "spendUnit": 100,
+        "multiplier": null,
+        "cap": null,
+        "note": "4 reward points per ₹100 on international spends (some sources mention 8 points - verify with official T&C)"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on fuel transactions"
+      },
+      "utilities": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on utility payments"
+      },
+      "insurance": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on insurance payments"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on rent payments (MCC 6513)"
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on wallet loads (MCC 6540, 6541)"
+      },
+      "government": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on government transactions (MCC 9311, 9399) - effective June 2024"
+      },
+      "education": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on education payments"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": false,
+        "name": null,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "link": null,
+        "note": "SBI does not have a dedicated accelerated rewards portal like HDFC SmartBuy"
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": [],
+        "note": "No specific partner merchant accelerated rewards"
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": []
+      },
+      "milestoneAccelerators": []
+    },
+
+    "redemption": {
+      "baseValue": 0.25,
+      "bestValue": 0.25,
+      "bestOption": "Flight/Hotel bookings or vouchers via AURUM Rewards portal",
+      "minRedemption": 500,
+      "redemptionIncrement": null,
+      "convenienceFee": 99,
+      "convenienceFeeNote": "₹99 + GST applicable on physical product redemptions, may be waived in some cases",
+      "monthlyRedemptionLimit": null,
+
+      "pointsPlusPay": {
+        "enabled": false,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": null,
+        "note": null
+      },
+
+      "options": [
+        {
+          "type": "travel",
+          "value": 0.25,
+          "description": "Flight & Hotel bookings via AURUM Rewards portal",
+          "recommended": true,
+          "minPoints": 500,
+          "processingFee": 0,
+          "partners": ["AURUM Rewards Portal"],
+          "note": "Best value redemption - ₹1 = 4 points"
+        },
+        {
+          "type": "vouchers",
+          "value": 0.25,
+          "description": "Gift vouchers from catalog",
+          "recommended": true,
+          "minPoints": 500,
+          "processingFee": 0,
+          "partners": ["Various brands"],
+          "note": "E-vouchers available on AURUM Rewards portal"
+        },
+        {
+          "type": "experiences",
+          "value": 0.25,
+          "description": "Experiences and activities",
+          "recommended": true,
+          "minPoints": 500,
+          "processingFee": 0,
+          "partners": ["AURUM Rewards Portal"],
+          "note": "Unique experiences via rewards portal"
+        },
+        {
+          "type": "products",
+          "value": 0.25,
+          "description": "Physical products from catalog",
+          "recommended": false,
+          "minPoints": 500,
+          "processingFee": 99,
+          "partners": ["AURUM Rewards Catalog"],
+          "note": "₹99+GST redemption fee on physical products"
+        },
+        {
+          "type": "philanthropy",
+          "value": 0.25,
+          "description": "Charitable donations",
+          "recommended": false,
+          "minPoints": 500,
+          "processingFee": 0,
+          "partners": ["Various charities"],
+          "note": "Donate points to supported causes"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": true,
+      "eligibleCards": ["SBI Aurum"],
+      "partners": [
+        {
+          "name": "Air India Maharaja Club",
+          "type": "airline",
+          "program": "Maharaja Club",
+          "alliance": "Star Alliance",
+          "ratio": {
+            "cardPoints": 1,
+            "partnerPoints": 1,
+            "display": "1:1"
+          },
+          "minTransfer": 500,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "Up to 72 hours",
+          "transferMethod": "AURUM Website/App",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Transfer in increments of 500 points"
+        },
+        {
+          "name": "Club Vistara",
+          "type": "airline",
+          "program": "Club Vistara",
+          "alliance": "Star Alliance (via merger with Air India)",
+          "ratio": {
+            "cardPoints": 1,
+            "partnerPoints": 1,
+            "display": "1:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "Up to 21 days",
+          "transferMethod": "AURUM Rewards Portal",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Available via AURUM Rewards portal"
+        },
+        {
+          "name": "Adani One Rewards",
+          "type": "travel",
+          "program": "Adani Rewards",
+          "alliance": null,
+          "ratio": {
+            "cardPoints": 4,
+            "partnerPoints": 1,
+            "display": "4:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "Up to 7 working days",
+          "transferMethod": "Adani One Website",
+          "blackoutDates": false,
+          "exclusive": true,
+          "note": "Redeem for flights, hotels, trains, buses, F&B, duty-free on Adani One platform"
+        }
+      ],
+      "currentBonus": {
+        "active": false,
+        "bonusPercentage": null,
+        "validUntil": null,
+        "applicablePartners": []
+      },
+      "processingTime": "Transfer requests may take up to 21 days to process"
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": null,
+      "acrossUsers": false,
+      "note": "Points cannot be combined with other SBI Cards"
+    },
+
+    "specialLogic": null,
+
+    "calculator": {
+      "enabled": true,
+      "formula": "points = (spend / 100) * 4; value = points * 0.25",
+      "variables": ["spend", "category"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": true,
+        "complimentaryCount": 16,
+        "countPerQuarter": 4,
+        "period": "year",
+        "accessType": "Visa/Mastercard Lounge Program",
+        "accessProvider": "Visa/Mastercard",
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "No spend requirement for domestic lounge access"
+        },
+        "addOnAccess": {
+          "included": true,
+          "count": null,
+          "note": "Add-on cardholders also eligible for domestic lounge visits"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null,
+          "note": "Guest access charged at actuals + taxes"
+        },
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "eligibleLounges": [
+          "https://www.aurumcreditcard.com/benefits.html"
+        ]
+      },
+      "international": {
+        "included": true,
+        "complimentaryCount": null,
+        "countText": "Unlimited",
+        "period": "year",
+        "accessType": "DreamFolks",
+        "accessProvider": "DreamFolks",
+        "membershipValue": null,
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "No spend requirement for international lounge access"
+        },
+        "guestAccess": {
+          "included": true,
+          "freeGuests": 1,
+          "freeGuestFrequency": "per quarter",
+          "guestFee": null,
+          "note": "1 complimentary guest visit per quarter. Beyond that, charged at actuals + taxes."
+        },
+        "loungeCount": "1000+",
+        "eligibleLounges": "https://www.dreamfolks.in/lounges"
+      }
+    },
+
+    "milestones": [
+      {
+        "spend": 100000,
+        "period": "monthly",
+        "benefit": "₹1,500 Tata CLiQ Fashion e-Gift Voucher",
+        "benefitType": "voucher",
+        "value": 1500,
+        "conditions": "On spending ₹1 lakh in a month",
+        "recurring": true
+      },
+      {
+        "spend": 500000,
+        "period": "annual",
+        "benefit": "₹5,000 Tata CLiQ Luxury e-Gift Voucher",
+        "benefitType": "voucher",
+        "value": 5000,
+        "conditions": "On annual spend of ₹5 lakh"
+      },
+      {
+        "spend": 1000000,
+        "period": "annual",
+        "benefit": "₹10,000 Taj Experiences e-Gift Voucher",
+        "benefitType": "voucher",
+        "value": 10000,
+        "conditions": "On annual spend of ₹10 lakh"
+      },
+      {
+        "spend": 2000000,
+        "period": "annual",
+        "benefit": "₹20,000 Apple Premium Reseller Gift Card",
+        "benefitType": "voucher",
+        "value": 20000,
+        "conditions": "On annual spend of ₹20 lakh"
+      },
+      {
+        "spend": 1200000,
+        "period": "annual",
+        "benefit": "Annual fee waiver (worth ₹9,999 + GST)",
+        "benefitType": "fee_waiver",
+        "value": 11799,
+        "conditions": "On annual spend of ₹12 lakh"
+      }
+    ],
+
+    "golf": {
+      "included": true,
+      "complimentaryRounds": 16,
+      "roundsPerQuarter": 4,
+      "period": "year",
+      "courses": "Select courses in India",
+      "greenFeeWaiver": true,
+      "lessonIncluded": true,
+      "lessonsPerYear": 12,
+      "note": "16 complimentary golf rounds per year (4 per quarter) + 12 complimentary golf lessons per year"
+    },
+
+    "movies": {
+      "included": true,
+      "platform": "BookMyShow",
+      "offer": "4 complimentary movie tickets per month",
+      "freeTickets": 4,
+      "frequency": "Monthly",
+      "cap": 250,
+      "capNote": "Maximum value of ₹250 per ticket",
+      "totalMonthlyValue": 1000,
+      "bookingLimit": 2,
+      "coolingPeriod": "24 hours between bookings",
+      "note": "4 movie tickets worth ₹1,000 per month on BookMyShow. Max 2 tickets per booking. 24-hour gap required between bookings. Convenience fee may apply."
+    },
+
+    "spa": {
+      "included": true,
+      "complimentaryVisits": 4,
+      "visitsPerQuarter": 1,
+      "period": "year",
+      "locations": "Select airports in India",
+      "provider": "DreamFolks",
+      "note": "1 complimentary spa session per quarter at select Indian airports"
+    },
+
+    "dining": {
+      "included": false,
+      "programs": [],
+      "hotelDining": {
+        "included": true,
+        "hotels": ["Club Marriott partner hotels"],
+        "offer": "Discounts via Club Marriott membership",
+        "note": "Club Marriott membership provides 20-25% off on dining, stays, and spa at member hotels"
+      }
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 500,
+      "maxTransaction": 4000,
+      "monthlyCap": 250,
+      "capNote": "Maximum surcharge waiver of ₹250 per statement cycle",
+      "applicableStations": "All petrol pumps in India",
+      "rewardsOnFuel": false,
+      "note": "1% fuel surcharge waiver on transactions between ₹500-₹4,000. Maximum waiver ₹250 per statement cycle. Exclusive of GST and other charges."
+    },
+
+    "forex": {
+      "markupPercentage": 1.99,
+      "markupText": "1.99% on international transactions",
+      "gst": "18% on markup",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "fee": 1.99,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 1.99,
+      "note": "One of the lowest forex markup rates among Indian credit cards. Same 1.99% applies for DCC transactions ≥₹1,000."
+    },
+
+    "concierge": {
+      "included": true,
+      "availability": "24/7",
+      "type": "AURUM Concierge",
+      "services": [
+        "Flight bookings",
+        "Hotel reservations",
+        "Hotel referrals",
+        "Restaurant reservations",
+        "Event tickets",
+        "Gift procurement and delivery",
+        "Travel assistance",
+        "General information"
+      ],
+      "contactNumber": null,
+      "note": "Dedicated 24x7 lifestyle concierge service"
+    },
+
+    "secretarialAccess": {
+      "included": true,
+      "description": "AURUM cardholders can authorize a secretary or executive assistant to conduct limited interactions with SBI Card on their behalf",
+      "note": "Unique feature for high-net-worth individuals"
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": [],
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "Flexipay",
+      "noCostEMI": {
+        "available": true,
+        "merchants": null,
+        "note": "No-cost EMI available on select merchants and products"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": null,
+        "minFee": null
+      },
+      "minAmount": 2500,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": null,
+        "max": null,
+        "note": "Interest rates vary based on tenure and offer"
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": null
+      },
+      "cancellationPeriod": null,
+      "conversionWindow": "Within 30 days of purchase",
+      "note": "Convert transactions of ₹2,500 or more into easy monthly installments within 30 days of purchase"
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": null
+      },
+      "processingFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "tenures": null,
+      "maxAmount": null,
+      "preclosureFee": null,
+      "note": "Transfer outstanding balance from other bank credit cards to AURUM and save with low interest rate options"
+    },
+
+    "memberships": [
+      {
+        "name": "Club Marriott",
+        "type": "hotel",
+        "value": null,
+        "duration": "1 year",
+        "condition": "Complimentary for first year on card issuance",
+        "benefits": "20-25% discount on room tariffs, restaurants, and spa at Club Marriott Hotels in India and Asia-Pacific",
+        "note": "Complimentary 1-year Club Marriott Membership"
+      },
+      {
+        "name": "The Wall Street Journal Digital",
+        "type": "subscription",
+        "value": null,
+        "duration": "1 year",
+        "condition": "Complimentary for first year on card issuance",
+        "note": "Complimentary 1-year digital subscription"
+      },
+      {
+        "name": "Mint Digital",
+        "type": "subscription",
+        "value": null,
+        "duration": "1 year",
+        "condition": "Complimentary for first year on card issuance",
+        "note": "Complimentary 1-year digital subscription"
+      },
+      {
+        "name": "Inflection Point Venture (IPV)",
+        "type": "investment",
+        "value": 29382,
+        "duration": "1 year",
+        "condition": "Complimentary for first year on card issuance",
+        "benefits": "Access to Angel Investor Network",
+        "note": "Complimentary 1-year membership to IPV worth ₹29,382"
+      }
+    ],
+
+    "discontinuedMemberships": {
+      "note": "The following memberships were previously offered but have been discontinued:",
+      "memberships": [
+        "Amazon Prime",
+        "Zomato Gold/Pro",
+        "Discovery Plus",
+        "EazyDiner Prime",
+        "bbstar"
+      ]
+    },
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      },
+      "clubMarriottBenefits": {
+        "included": true,
+        "discount": "20-25%",
+        "applicableOn": ["Room tariffs", "Dining", "Spa"],
+        "properties": "Club Marriott Hotels in India and Asia-Pacific"
+      }
+    },
+
+    "visaInfinitePrivileges": {
+      "included": true,
+      "benefits": "Exclusive offers across lifestyle, dining, travel, entertainment, and more worldwide",
+      "note": "Available for Visa Infinite variant"
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "previousCover": 35000000,
+      "discontinuedDate": "2025-07-15",
+      "condition": null,
+      "note": "Air accident insurance of ₹3.5 crore was DISCONTINUED from July 15, 2025"
+    },
+    "travelInsurance": {
+      "included": true,
+      "cover": 100000,
+      "type": "Flight delay and loss of goods/baggage during travel",
+      "condition": "During travel"
+    },
+    "flightCancellation": {
+      "included": true,
+      "refundsPerYear": 2,
+      "coverPerTicket": 3500,
+      "type": "Both refundable and non-refundable tickets",
+      "condition": "From any airline",
+      "note": "Two flight cancellation refunds per year (₹3,500 per ticket for both refundable and non-refundable)"
+    },
+    "lostBaggage": {
+      "included": true,
+      "cover": 100000,
+      "perBag": null,
+      "condition": "Included in travel insurance coverage"
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": true,
+      "cover": 100000,
+      "delayHours": null,
+      "coveredExpenses": null,
+      "note": "Included in travel insurance coverage of ₹1 lakh"
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": null,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": 1000000,
+      "fraudLiability": {
+        "included": true,
+        "cover": 1000000,
+        "reportingWindow": null
+      },
+      "note": "Lost card and fraud protection up to ₹10 lakh"
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "IMPORTANT: Air accident insurance (₹3.5 crore) and rail accident insurance were DISCONTINUED from July 15, 2025. All insurance covers subject to policy terms. Claims must be filed within specified period."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000,
+      "type": "Visa payWave / Mastercard Tap & Go"
+    },
+    "virtualCard": {
+      "available": false,
+      "instantIssuance": false,
+      "singleUse": false,
+      "spendControls": false
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": true,
+      "rewardsOnUPI": false,
+      "note": "UPI linking available but reward points may not accrue on UPI transactions"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international transactions",
+        "Enable/Disable online transactions",
+        "Enable/Disable contactless",
+        "Real-time alerts"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"],
+      "methods": ["e-NACH", "Standing Instruction"]
+    },
+    "chipAndPin": {
+      "enabled": true,
+      "note": "Enhanced security against counterfeiting and skimming"
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [
+      {
+        "cardId": "sbi-elite",
+        "spendRequired": null,
+        "tenure": null,
+        "autoUpgrade": false,
+        "note": "Invite-only upgrade from SBI Elite based on relationship and spend patterns"
+      }
+    ],
+    "upgradesTo": [],
+    "note": "Aurum is SBI Card's most premium offering. This is an invite-only card - upgrades are at SBI Card's discretion based on spend history and relationship."
+  },
+
+  "meta": {
+    "tags": [
+      "Ultra-Premium",
+      "Metal Card",
+      "Invite Only",
+      "Unlimited Lounge Access",
+      "Travel",
+      "Lifestyle",
+      "Milestone Rewards",
+      "Low Forex"
+    ],
+    "bestFor": "High-net-worth individuals earning ₹40L+ annually who travel frequently internationally and value luxury lifestyle benefits, concierge services, and unlimited international lounge access",
+    "notRecommendedFor": "Those who cannot spend ₹12L+ annually to maximize value, those looking for high reward rates (1% is lower than competitors), those who spend primarily on excluded categories like fuel, utilities, rent, or government payments",
+    "rating": {
+      "overall": 3.8,
+      "rewards": 3.0,
+      "benefits": 4.5,
+      "value": 3.5,
+      "loungeAccess": 5.0,
+      "forexValue": 4.5
+    },
+    "verdict": "SBI Aurum is a prestige-oriented super-premium metal card with excellent international travel benefits including unlimited lounge access and low forex markup. However, its 1% base reward rate is significantly lower than competitors like HDFC Infinia (3.33%) and ICICI Emeralde (3%). The card excels in milestone-based rewards (up to ₹45,000 in vouchers annually for ₹20L spend) and first-year memberships but loses value in subsequent years when memberships are not renewed. Best suited for SBI loyalists who value lifestyle perks over reward rates.",
+    "pros": [
+      "Unlimited international airport lounge access via DreamFolks",
+      "Lowest forex markup at 1.99% among SBI cards",
+      "Reward points never expire",
+      "Substantial milestone benefits (up to ₹45,000 in vouchers)",
+      "Premium metal card design",
+      "Complimentary first-year memberships (Club Marriott, WSJ, Mint, IPV)",
+      "4 free BookMyShow tickets per month",
+      "16 complimentary golf rounds + 12 lessons per year",
+      "Unique secretarial access feature",
+      "24/7 concierge service"
+    ],
+    "cons": [
+      "Low reward rate of 1% (4 points per ₹100) vs competitors at 3%+",
+      "High ₹9,999 + GST annual fee (₹12L spend needed for waiver)",
+      "Invite-only - not directly accessible",
+      "Limited domestic lounge access (16 per year vs unlimited international)",
+      "Memberships only complimentary for first year",
+      "No rewards on fuel, rent, utilities, government, insurance, education",
+      "Air accident insurance discontinued from July 2025",
+      "Limited transfer partners compared to HDFC/Amex",
+      "Card replacement fee of ₹1,500",
+      "Points cannot be pooled with other SBI cards"
+    ],
+    "alternatives": [
+      "hdfc-infinia",
+      "icici-emeralde-private",
+      "amex-platinum-charge",
+      "axis-magnus",
+      "sbi-elite"
+    ],
+    "lastVerified": "2026-01-05",
+    "dataSource": [
+      "Official SBI AURUM website (aurumcreditcard.com)",
+      "SBI Card MITC document (December 2025)",
+      "SBI Card customer notices page",
+      "Paisabazaar.com",
+      "CardInsider.com",
+      "Finology Select",
+      "BankBazaar.com",
+      "TechnoFino community discussions",
+      "PointsMath.com",
+      "Air India Maharaja Club partner page",
+      "Adani One rewards exchange page"
+    ],
+    "changelog": [
+      {
+        "date": "2025-07-15",
+        "change": "Air accident insurance (₹3.5 crore) and rail accident insurance discontinued for all SBI credit cards including Aurum",
+        "source": "SBI Card customer notices"
+      },
+      {
+        "date": "2025-11-01",
+        "change": "1% fee introduced on education payment transactions through third-party apps",
+        "source": "SBI Card MITC"
+      },
+      {
+        "date": "2025-11-01",
+        "change": "1% fee introduced on wallet load transactions",
+        "source": "SBI Card MITC"
+      },
+      {
+        "date": "2024-12-01",
+        "change": "1% utility payment fee for transactions exceeding ₹50,000 per billing cycle",
+        "source": "SBI Card MITC"
+      },
+      {
+        "date": "2024-06-01",
+        "change": "Reward points on government transactions discontinued for AURUM card",
+        "source": "SBI Card customer notices"
+      },
+      {
+        "date": "2024-04-15",
+        "change": "Reward points on rent payment transactions discontinued",
+        "source": "SBI Card customer notices"
+      },
+      {
+        "date": "2024-01-01",
+        "change": "Amazon Prime, Zomato Gold, Discovery Plus, EazyDiner Prime memberships discontinued",
+        "source": "Multiple sources"
+      }
+    ]
+  }
+}

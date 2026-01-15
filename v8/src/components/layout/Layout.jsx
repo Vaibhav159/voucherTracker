@@ -10,11 +10,11 @@ export default function Layout() {
     const showSidebar = !pagesWithoutSidebar.some(p => location.pathname === p || location.pathname.startsWith(p + '/'));
 
     return (
-        <div className="flex h-screen w-full flex-col overflow-hidden bg-texture">
+        <div className="flex h-screen w-full flex-col overflow-hidden bg-theme-bg">
             <Header />
             <div className="flex flex-1 overflow-hidden">
                 {showSidebar && <Sidebar />}
-                <main className={`flex-1 overflow-y-auto bg-espresso-950 ${!showSidebar ? 'overflow-hidden' : ''}`}>
+                <main className={`flex-1 overflow-y-auto bg-theme-bg ${!showSidebar ? 'overflow-hidden' : ''}`}>
                     <Outlet />
                 </main>
             </div>

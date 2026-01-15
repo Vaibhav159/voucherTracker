@@ -1,0 +1,1027 @@
+{
+  "id": "idfc-first-wealth-credit-card",
+  "name": "IDFC FIRST Wealth Credit Card",
+  "bank": "IDFC FIRST Bank",
+  "slug": "idfc-first-wealth-credit-card",
+  "image": "assets/cards/idfc-first-bank/wealth.png",
+  "link": "https://www.idfcfirst.bank.in/credit-card/wealth",
+  "isActive": true,
+
+  "network": {
+    "type": "Visa",
+    "variant": "Infinite",
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "premium",
+    "isCobranded": false,
+    "cobrandPartner": {
+      "name": null,
+      "type": null,
+      "loyaltyProgram": null
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 0,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 0,
+      "firstYearWaived": true,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": null,
+        "spendPeriod": null,
+        "waiverText": "Lifetime free - No annual fee ever"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": 0,
+      "joiningFee": 499,
+      "annualFee": 499,
+      "annualFeeWaiverCondition": "Reversed on Add-On spends of ₹60,000 or more in a year",
+      "rewardSharing": true
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "15% of Total Amount Due",
+      "tiers": [
+        {"description": "Minimum charge", "fee": 100},
+        {"description": "Maximum charge", "fee": 1250}
+      ],
+      "note": "15% of TAD with minimum ₹100 and maximum ₹1,250"
+    },
+    "overLimit": {
+      "amount": 500,
+      "percentage": 2.5,
+      "note": "2.5% of over-limit amount, minimum ₹500"
+    },
+    "chequeReturn": 250,
+    "cardReplacement": 100,
+    "duplicateStatement": null,
+    "imagePersonalisation": 499,
+    "cashAdvanceFee": {
+      "flatFee": 199,
+      "note": "₹199 + GST per transaction"
+    },
+    "rewardRedemptionFee": 99,
+    "emiFee": {
+      "percentage": 1,
+      "minimumFee": 99,
+      "note": "1% of transaction value, minimum ₹99"
+    },
+    "rentPaymentFee": {
+      "percentage": 1,
+      "note": "1% on rent payments"
+    },
+    "utilityBillFee": {
+      "percentage": 1,
+      "threshold": 20000,
+      "note": "1% transaction charge on utility bill payments above ₹20,000 in a billing cycle"
+    }
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": null,
+        "annual": 3600000
+      },
+      "selfEmployed": {
+        "itr": 3600000
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 65,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": "Also available for IDFC FIRST Bank Wealth account holders"
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": "Bank maintains a list of cities allowed for sourcing cards"
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": null,
+      "max": null
+    },
+    "factors": "Based on income, credit score, and existing relationship with IDFC FIRST Bank",
+    "enhancementCriteria": "Good repayment history for 12+ months; Bank discretion"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRateMin": 0.085,
+      "annualRateMax": 0.462,
+      "monthlyRateMin": 0.0075,
+      "monthlyRateMax": 0.035,
+      "note": "8.5% to 46.2% per annum (0.75% to 3.5% per month)"
+    },
+    "cashAdvanceAPR": {
+      "annualRateMin": 0.085,
+      "annualRateMax": 0.462,
+      "monthlyRateMin": 0.0075,
+      "monthlyRateMax": 0.035
+    },
+    "overdueInterest": {
+      "monthlyRate": 0.0399,
+      "annualRate": 0.4788,
+      "note": "47.88% per annum charged when payment is between MAD and TAD"
+    },
+    "gracePeriod": {
+      "days": 45,
+      "note": "Up to 45 days interest-free period from statement date"
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": null,
+      "calculation": "5% of total outstanding or as specified in statement"
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": null,
+    "flatFee": 199,
+    "minFee": 199,
+    "maxFee": null,
+    "limitPercentage": null,
+    "dailyLimit": null,
+    "interestFree": true,
+    "interestFreePeriod": 45,
+    "note": "Interest-free cash withdrawals for up to 45 days. ₹199 + GST per transaction."
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "Reward Points",
+      "symbol": "RP",
+      "singularUnit": "point",
+      "pluralUnit": "points"
+    },
+    "baseRate": {
+      "rate": 3,
+      "spendUnit": 150,
+      "effectivePercentage": 0.005,
+      "note": "3X Reward Points = 3 points per ₹150 spent (₹0.75 per ₹150 = 0.5%)"
+    },
+    "earningText": "Earn 3X Reward Points (3 points per ₹150) on spends up to ₹20,000 per statement cycle. Earn 10X Reward Points on incremental spends above ₹20,000.",
+    "minTransactionForRewards": null,
+    "pointValue": 0.25,
+    "pointValueNote": "1 Reward Point = ₹0.25",
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "EMI transactions (except first EMI for cashback)",
+        "Insurance premium payments",
+        "Cash withdrawals"
+      ],
+      "mccs": ["5172", "5541", "5542", "5983"],
+      "note": "Fuel, Insurance, EMI transactions & Cash withdrawals are not eligible for reward points"
+    },
+
+    "caps": {
+      "monthly": {
+        "points": null,
+        "cashback": null
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": "statement",
+      "perTransaction": null,
+      "note": "No caps on reward points earning"
+    },
+
+    "expiry": {
+      "hasExpiry": false,
+      "period": null,
+      "condition": "Reward points never expire"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": null,
+        "cashback": null,
+        "vouchers": "₹500 gift voucher from Amazon/BigBasket/Uber/Lifestyle",
+        "spendCondition": {
+          "amount": 5000,
+          "period": "30 days",
+          "transactionCount": null
+        },
+        "validity": "Within 30 days of card generation",
+        "description": "₹500 gift voucher on spending ₹5,000 within 30 days of card generation"
+      },
+      "firstEMI": {
+        "enabled": true,
+        "cashbackPercentage": 5,
+        "maxCashback": 1000,
+        "period": "30 days",
+        "description": "5% cashback (up to ₹1,000) on first EMI transaction within 30 days of card generation"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "birthday": {
+        "enabled": true,
+        "multiplier": 10,
+        "bonusPoints": null,
+        "validity": "On birthday",
+        "description": "10X Reward Points on all spends made on your birthday"
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      },
+      "addOnCard": {
+        "enabled": true,
+        "points": 1000,
+        "condition": "1000 Reward Points on Add-on card spends of minimum ₹500 within 15 days of card generation"
+      }
+    },
+
+    "categories": {
+      "online": {
+        "rate": 3,
+        "multiplier": "3X",
+        "cap": null,
+        "capPeriod": null,
+        "spendThreshold": 20000,
+        "note": "3X Reward Points on online spends up to ₹20,000 per statement cycle"
+      },
+      "offline": {
+        "rate": 3,
+        "multiplier": "3X",
+        "cap": null,
+        "capPeriod": null,
+        "spendThreshold": 20000,
+        "note": "3X Reward Points on offline spends up to ₹20,000 per statement cycle"
+      },
+      "incrementalSpends": {
+        "rate": 10,
+        "multiplier": "10X",
+        "cap": null,
+        "capPeriod": null,
+        "threshold": 20000,
+        "note": "10X Reward Points on incremental spends above ₹20,000 per statement cycle"
+      },
+      "rent": {
+        "rate": 3,
+        "multiplier": "3X",
+        "cap": null,
+        "note": "3X Reward Points on rent and property management transactions"
+      },
+      "education": {
+        "rate": 3,
+        "multiplier": "3X",
+        "cap": null,
+        "note": "3X Reward Points. NOT counted towards 10X threshold calculation."
+      },
+      "walletLoad": {
+        "rate": 3,
+        "multiplier": "3X",
+        "cap": null,
+        "note": "3X Reward Points. NOT counted towards 10X threshold calculation."
+      },
+      "governmentServices": {
+        "rate": 3,
+        "multiplier": "3X",
+        "cap": null,
+        "note": "3X Reward Points. NOT counted towards 10X threshold calculation."
+      },
+      "utilities": {
+        "rate": 1,
+        "multiplier": "1X",
+        "cap": null,
+        "note": "1X Reward Points on utility bill payments"
+      },
+      "insurance": {
+        "rate": 1,
+        "multiplier": "1X",
+        "cap": null,
+        "note": "1X Reward Points on insurance spends"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on fuel transactions"
+      },
+      "international": {
+        "rate": 3,
+        "multiplier": "3X",
+        "cap": null,
+        "note": "Same as domestic rates. Low forex markup of 1.5%."
+      }
+    },
+
+    "accelerators": {
+      "travelAndShop": {
+        "enabled": true,
+        "name": "Travel & Shop on IDFC FIRST Mobile App",
+        "flights": {
+          "bonusPoints": 20,
+          "note": "20 bonus Reward Points per ₹150 on flight bookings"
+        },
+        "hotels": {
+          "bonusPoints": 50,
+          "note": "50 bonus Reward Points per ₹150 on hotel bookings"
+        },
+        "cap": 8000,
+        "capPeriod": "monthly",
+        "link": "IDFC FIRST Mobile Banking App",
+        "note": "Earn up to 8,000 bonus Reward Points every month on flight and hotel bookings via IDFC FIRST Mobile App"
+      }
+    },
+
+    "redemption": {
+      "baseValue": 0.25,
+      "bestValue": 0.25,
+      "bestOption": "Vouchers via Poshvine or Pay with Points",
+      "minRedemption": null,
+      "redemptionIncrement": null,
+      "convenienceFee": 99,
+      "monthlyRedemptionLimit": null,
+
+      "payWithPoints": {
+        "enabled": true,
+        "note": "Use reward points to pay for online and in-store purchases instantly"
+      },
+
+      "options": [
+        {
+          "type": "vouchers",
+          "value": 0.25,
+          "description": "Gift vouchers from Poshvine portal (Amazon, Flipkart, Myntra, etc.)",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 99,
+          "partners": ["Amazon", "Flipkart", "Myntra", "BigBasket", "Others"],
+          "note": "Redeem via IDFC FIRST Bank Poshvine Rewards Portal"
+        },
+        {
+          "type": "pay_with_points",
+          "value": 0.25,
+          "description": "Pay directly for online and in-store purchases",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 99,
+          "partners": [],
+          "note": "Use points directly at checkout"
+        },
+        {
+          "type": "travel",
+          "value": 0.25,
+          "description": "Redeem on flight and hotel bookings via IDFC FIRST Mobile App",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 99,
+          "partners": ["IDFC FIRST Mobile App Travel & Shop"],
+          "note": "Redeem points instantly for travel bookings"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": null,
+      "partners": [],
+      "note": "No airline or hotel transfer partners available"
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": null,
+      "acrossUsers": false,
+      "note": null
+    },
+
+    "specialLogic": "Education, Wallet load, Government services spends earn 3X but are NOT counted towards 10X threshold calculation. w.e.f June 1, 2025, reward structure updated."
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": true,
+        "complimentaryCount": 2,
+        "period": "quarter",
+        "accessType": "DreamFolks",
+        "accessProvider": "DreamFolks",
+        "spendRequired": {
+          "amount": 20000,
+          "period": "previous calendar month",
+          "note": "Spend ₹20,000 in the current calendar month to avail lounge benefit in the next month"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "eligibleLounges": "https://www.idfcfirst.bank.in/content/dam/idfcfirstbank/pdf/credit-card/Wealth-Lounge-List.pdf"
+      },
+      "international": {
+        "included": true,
+        "complimentaryCount": 2,
+        "period": "quarter",
+        "accessType": "DreamFolks",
+        "accessProvider": "DreamFolks",
+        "membershipValue": null,
+        "spendRequired": {
+          "amount": 20000,
+          "period": "previous calendar month",
+          "note": "Spend ₹20,000 in the current calendar month to avail lounge benefit in the next month"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "eligibleLounges": "https://info.dreamfolks.in/partner-outlets-list",
+        "bookingLink": "https://webaccess.dreamfolks.in"
+      },
+      "railway": {
+        "included": true,
+        "complimentaryCount": 4,
+        "period": "quarter",
+        "spendRequired": {
+          "amount": 20000,
+          "period": "previous calendar month",
+          "note": "Spend ₹20,000 in the current calendar month to avail railway lounge benefit in the next month"
+        },
+        "note": "4 complimentary railway lounge visits per quarter at select Indian railway terminals"
+      }
+    },
+
+    "spa": {
+      "included": true,
+      "complimentaryCount": null,
+      "period": null,
+      "spendRequired": {
+        "amount": 20000,
+        "period": "previous calendar month"
+      },
+      "note": "Spa access included with lounge benefits via DreamFolks"
+    },
+
+    "golf": {
+      "included": true,
+      "complimentaryRounds": 2,
+      "period": "month",
+      "courses": "20+ golf courses in India",
+      "greenFeeWaiver": true,
+      "lessonIncluded": true,
+      "spendRequired": {
+        "amount": 20000,
+        "period": "statement cycle",
+        "note": "Unlock 1 golf round/lesson per month on spending over ₹20,000 in statement cycle. Max 2 per month."
+      },
+      "bookingLink": "https://idfcfirst.truztee.com/",
+      "note": "Book via truztee portal. Complimentary golf rounds or lessons available."
+    },
+
+    "movies": {
+      "included": true,
+      "platform": "District App",
+      "offer": "Buy 1 Get 1 Free",
+      "freeTickets": 1,
+      "frequency": "Twice per calendar month",
+      "cap": 250,
+      "capNote": "Up to ₹250 off on the second ticket",
+      "note": "BOGO movie ticket offer via District app, twice per calendar month"
+    },
+
+    "dining": {
+      "included": true,
+      "programs": [
+        {
+          "name": "Dine with Visa",
+          "discount": "Curated dining deals",
+          "cap": null,
+          "frequency": null,
+          "link": "https://dinewithvisa.in",
+          "note": "Experience luxury dining at handpicked restaurants with Visa Infinite privileges"
+        }
+      ],
+      "hotelDining": {
+        "included": false,
+        "hotels": null,
+        "offer": null
+      }
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 200,
+      "maxTransaction": 5000,
+      "monthlyCap": 400,
+      "capNote": "Effective 20th February 2025, Fuel Surcharge Waiver will be revised to ₹300",
+      "applicableStations": "All fuel stations in India",
+      "rewardsOnFuel": false,
+      "note": "1% fuel surcharge waiver up to ₹400 per statement cycle on transactions between ₹200 and ₹5,000"
+    },
+
+    "forex": {
+      "markupPercentage": 1.5,
+      "markupText": "1.5% + GST on international transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 1.5,
+      "note": "One of the lowest forex markup rates. Also applies to international transactions made in INR."
+    },
+
+    "concierge": {
+      "included": true,
+      "availability": "24/7",
+      "type": "Visa Concierge",
+      "services": [
+        "Travel bookings",
+        "Restaurant reservations",
+        "Event tickets",
+        "Dining reservations",
+        "Staycations",
+        "Activities"
+      ],
+      "link": "https://www.visa.co.in/pay-with-visa/visa-concierge.html",
+      "contactNumber": "1800 10 888",
+      "note": "Personalized Visa Concierge service for travel and lifestyle needs"
+    },
+
+    "roadsideAssistance": {
+      "included": true,
+      "provider": "Global Assure",
+      "value": 1399,
+      "services": [
+        "Flat tire change",
+        "Battery jump start",
+        "Emergency fuel delivery",
+        "Towing up to 50km",
+        "Lockout assistance"
+      ],
+      "coverageArea": "Pan India",
+      "callsPerYear": 4,
+      "note": "24/7 complimentary roadside assistance worth ₹1,399, up to 4 times annually"
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "EMI Conversion",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Select merchants and products"],
+        "note": "No-cost EMI available on select merchants"
+      },
+      "conversionFee": {
+        "percentage": 1,
+        "flatFee": null,
+        "minFee": 99
+      },
+      "minAmount": 2500,
+      "tenures": [3, 6, 9, 12, 18],
+      "interestRates": {
+        "min": 0.09,
+        "max": 0.42
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": null
+      },
+      "cancellationPeriod": null,
+      "conversionMethods": ["IDFC FIRST Mobile App", "OTP Page during online transactions"],
+      "note": "Convert transactions above ₹2,500 into EMIs with tenure of 3-18 months via mobile app or OTP page"
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": null
+      },
+      "processingFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "tenures": [3, 6, 9, 12, 18],
+      "maxAmount": null,
+      "preclosureFee": null,
+      "note": "Transfer balances from other bank credit cards and convert to easy EMIs"
+    },
+
+    "memberships": [],
+
+    "visaInfinitePrivileges": {
+      "enabled": true,
+      "benefits": [
+        {
+          "name": "ITC Hotels - Stay for 3, Pay for 2",
+          "description": "Complimentary 3rd night for every 2 consecutive paid nights at ITC Hotels. Use promocode ITCVIS.",
+          "link": "https://visaitcoffer.poshvine.com/"
+        },
+        {
+          "name": "ITC Hotels - 50% off 2nd night",
+          "description": "Stay for 2 nights and get 2nd night at 50% off. Use promocode ITCV50.",
+          "link": "https://visaitcoffer.poshvine.com/"
+        },
+        {
+          "name": "Elivaas - Stay for 3, Pay for 2",
+          "description": "Complimentary 3rd night at Elivaas properties",
+          "link": "https://www.elivaas.com/explore/visa-offers/"
+        },
+        {
+          "name": "Elivaas - 50% off 2nd night",
+          "description": "Stay for 2 nights and get 2nd night at 50% off at Elivaas properties",
+          "link": "https://www.elivaas.com/explore/visa-offers/"
+        },
+        {
+          "name": "Airport Meet and Greet - Complimentary",
+          "description": "Complimentary meet and greet service once a year on spending USD 1000 internationally in past 12 months",
+          "link": "https://www.visameetandgreet.com/"
+        },
+        {
+          "name": "Airport Meet and Greet - 10% discount",
+          "description": "Flat 10% discount on meet and greet service at major Indian airports for all other instances",
+          "link": "https://www.visameetandgreet.com/"
+        },
+        {
+          "name": "Airport Transfer Discounts",
+          "description": "Discounts on limousine/chauffeur services in 3000+ cities across 83 countries",
+          "link": "https://www.visa.com.my/en_my/visa-commercial-offers/tbr-global-chauffeuring/115002"
+        },
+        {
+          "name": "Luxury Hotel Collection",
+          "description": "Access to 900+ luxury hotels with benefits like room upgrade, complimentary breakfast, VIP status, 3PM checkout",
+          "link": "https://www.visaluxuryhotelcollection.com"
+        },
+        {
+          "name": "Visa Concierge",
+          "description": "24/7 personalized concierge for travel, dining, and lifestyle needs",
+          "link": "https://www.visa.co.in/pay-with-visa/visa-concierge.html"
+        }
+      ]
+    },
+
+    "tripCancellation": {
+      "included": true,
+      "name": "Cancel for Any Reason (CFAR)",
+      "cover": 10000,
+      "maxClaims": 2,
+      "claimsPeriod": "policy period",
+      "eligibilityCondition": "At least 1 transaction in calendar month preceding policy period start",
+      "coveredBookings": ["Flights (domestic and international)", "Hotels"],
+      "note": "Reimbursement for non-refundable portion of cancelled bookings. Max ₹10,000 total, up to 2 claims per policy year. Shared between primary and add-on cardholders."
+    },
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      },
+      "note": "Visa Infinite Luxury Hotel Collection benefits available (room upgrade, late checkout, breakfast at 900+ hotels)"
+    },
+
+    "merchantOffers": {
+      "enabled": true,
+      "count": 300,
+      "categories": ["Dining", "Shopping", "Travel", "Entertainment", "Wellness"],
+      "link": "https://idfcfirstrewards.poshvine.com/",
+      "note": "300+ brand offers across dining, shopping, travel, and lifestyle categories"
+    },
+
+    "healthAndWellness": {
+      "included": true,
+      "discount": "Up to 15%",
+      "outlets": 3000,
+      "note": "Up to 15% discount at over 3,000 Health & Wellness outlets"
+    },
+
+    "immigrationService": {
+      "included": true,
+      "destinations": 450,
+      "note": "Exclusive discounts on airport immigration/fast-track service at 450+ destinations worldwide"
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": true,
+      "cover": 10000000,
+      "condition": "At least 1 transaction with FIRST Wealth Credit Card in the last 30 days"
+    },
+    "personalAccident": {
+      "included": true,
+      "cover": 1000000,
+      "type": "Death & Dismemberment",
+      "condition": "At least 1 transaction in the last 30 days"
+    },
+    "lostCardLiability": {
+      "included": true,
+      "cover": 50000,
+      "reportingWindow": "Report immediately upon discovery"
+    },
+    "travelInsurance": {
+      "included": true,
+      "totalCoverUSD": 1200,
+      "coverageDetails": [
+        {
+          "type": "Loss of Checked-in Baggage",
+          "coverUSD": 500
+        },
+        {
+          "type": "Delay of Checked-in Baggage",
+          "coverUSD": 100,
+          "delayHours": 12
+        },
+        {
+          "type": "Loss of Passport and Documents",
+          "coverUSD": 300
+        },
+        {
+          "type": "Delay in Flight",
+          "coverUSD": 300
+        }
+      ],
+      "condition": "Air ticket must be purchased with card. International travel only.",
+      "note": "Travel insurance covers international travel only when ticket is purchased using the card"
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "insurer": "New India Assurance",
+    "note": "All insurance covers require at least 1 transaction in the last 30 days. Cover starts from card setup date. Claims must be filed with insurer directly."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000
+    },
+    "virtualCard": {
+      "available": true,
+      "instantIssuance": true,
+      "singleUse": false,
+      "spendControls": true
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": true,
+      "rewardsOnUPI": true,
+      "rupayVariant": {
+        "available": true,
+        "annualFee": 199,
+        "rewardRate": "3X",
+        "note": "Separate RuPay variant available at ₹199/year for UPI linkage. Earn 3X Reward Points on UPI spends."
+      },
+      "note": "Apply for separate RuPay variant to link to UPI apps like GPay, PhonePe, Paytm"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Real-time alerts",
+        "Set/Reset PIN"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [],
+    "upgradesTo": [
+      {
+        "cardId": "idfc-first-private",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": true,
+        "note": "FIRST Private is invite-only for ultra-high-net-worth individuals"
+      }
+    ],
+    "note": "FIRST Wealth is the premium tier. FIRST Private is invite-only."
+  },
+
+  "meta": {
+    "tags": [
+      "Lifetime Free",
+      "Premium",
+      "Lounge Access",
+      "Low Forex",
+      "Visa Infinite",
+      "Never Expiring Rewards",
+      "Golf",
+      "Travel"
+    ],
+    "bestFor": "High-income individuals (₹36L+ annual income) seeking a lifetime-free premium card with travel benefits, low forex markup, and never-expiring rewards",
+    "notRecommendedFor": "Those who can't spend ₹20,000/month to unlock lounge/golf benefits, or those seeking high reward value (0.25 RP value is low)",
+    "rating": {
+      "overall": 3.8,
+      "rewards": 3.0,
+      "benefits": 4.2,
+      "value": 4.0
+    },
+    "verdict": "A solid lifetime-free premium card with good travel benefits and low forex markup. The May 2024 devaluation reduced its competitiveness - base reward rate dropped and online accelerated rewards were discontinued. Best suited for high spenders who can meet the ₹20,000 monthly threshold to unlock lounge, golf, and 10X rewards. The never-expiring reward points and low 1.5% forex markup remain strong selling points.",
+    "pros": [
+      "Lifetime free with zero joining and annual fees",
+      "Low forex markup of just 1.5%",
+      "Reward points never expire",
+      "Visa Infinite privileges including luxury hotel access",
+      "Complimentary airport, international, and railway lounge access",
+      "Complimentary golf rounds and lessons",
+      "Interest-free cash withdrawals for up to 45 days",
+      "Cancel for Any Reason (CFAR) travel protection",
+      "10X rewards on spends above ₹20,000 and on birthday",
+      "Earns rewards on rent, education, wallet loads (unlike most cards)"
+    ],
+    "cons": [
+      "Low reward point value (₹0.25 per point)",
+      "Lounge/Golf benefits require ₹20,000 monthly spend",
+      "No airline or hotel transfer partners",
+      "May 2024 devaluation reduced reward rates significantly",
+      "₹99 fee for reward redemption",
+      "High income eligibility (₹36L annual)",
+      "1% fee on utility bills above ₹20,000",
+      "Add-on card has ₹499 fee (waivable on ₹60,000 spend)"
+    ],
+    "alternatives": [
+      "hdfc-regalia-gold",
+      "axis-magnus",
+      "sbi-elite",
+      "hdfc-diners-club-black"
+    ],
+    "lastVerified": "2026-01-05",
+    "dataSource": [
+      "IDFC FIRST Bank Official Website (https://www.idfcfirst.bank.in/credit-card/wealth)",
+      "MITC Document (https://www.idfcfirst.bank.in/content/dam/idfcfirstbank/pdf/credit-card/MITC-Document-Customer.pdf)",
+      "FIRST Wealth Privileges PDF",
+      "Schedule of Charges",
+      "PaisaBazaar.com",
+      "CardInsider.com",
+      "MyMoneyMantra.com"
+    ],
+    "changelog": [
+      {
+        "date": "2024-05-01",
+        "change": "Major devaluation - Base rate changed from 1 point per ₹100 to 1 point per ₹150. 6X online accelerated rewards discontinued. Education, wallet load, government services no longer count towards 10X threshold. Movie benefits and lounge access require ₹20,000 monthly spend.",
+        "source": "IDFC FIRST Bank Official Communication"
+      },
+      {
+        "date": "2025-02-20",
+        "change": "Fuel surcharge waiver cap to be reduced from ₹400 to ₹300",
+        "source": "Official T&C update"
+      },
+      {
+        "date": "2025-06-01",
+        "change": "Reward structure update - 3X on spends up to ₹20,000, 10X on incremental spends above ₹20,000, 1X on utilities and insurance",
+        "source": "Official website"
+      }
+    ]
+  }
+}

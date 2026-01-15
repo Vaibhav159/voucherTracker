@@ -105,16 +105,16 @@ export default function Vouchers() {
         <div className="flex flex-col h-full overflow-hidden relative">
             <div className="flex flex-1 overflow-hidden">
                 {/* Sidebar */}
-                <aside className="w-64 flex-shrink-0 flex flex-col bg-background-dark border-r border-primary/20 relative z-20 overflow-y-auto hide-scrollbar pb-6">
+                <aside className="w-64 flex-shrink-0 flex flex-col bg-theme-bg border-r border-primary/20 relative z-20 overflow-y-auto hide-scrollbar pb-6">
                     <div className="p-6 pb-2">
-                        <h3 className="text-gold-text font-serif font-bold text-lg mb-1">Filter Vouchers</h3>
+                        <h3 className="text-accent font-serif font-bold text-lg mb-1">Filter Vouchers</h3>
                         <p className="text-warm-gray text-xs mb-6">Refine by category & preferences</p>
 
                         {/* Search in sidebar */}
                         <div className="relative w-full mb-4 group">
-                            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gold-dim group-focus-within:text-primary transition-colors material-symbols-outlined text-[18px]">search</span>
+                            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-accent-dim group-focus-within:text-primary transition-colors material-symbols-outlined text-[18px]">search</span>
                             <input
-                                className="w-full bg-surface-dark border border-primary/20 rounded-lg py-2 pl-9 pr-4 text-xs text-warm-white focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50 placeholder-warm-gray/50 transition-all font-light"
+                                className="w-full bg-theme-surface border border-primary/20 rounded-lg py-2 pl-9 pr-4 text-xs text-theme-primary focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50 placeholder:text-theme-muted transition-all font-light"
                                 placeholder="Search filters..."
                                 type="text"
                                 value={searchQuery}
@@ -123,9 +123,9 @@ export default function Vouchers() {
                         </div>
 
                         {/* Reset button */}
-                        <div className="mb-8">
+                        <div className="mb-5">
                             <button
-                                className="w-full flex items-center justify-center gap-2 rounded-lg py-2.5 bg-gradient-to-r from-primary to-[#8c5341] text-background-dark text-xs font-bold uppercase tracking-wider hover:shadow-[0_0_15px_rgba(200,127,69,0.4)] transition-shadow"
+                                className="w-full flex items-center justify-center gap-2 rounded-lg py-2.5 bg-theme-accent-gradient text-theme-bg text-xs font-bold uppercase tracking-wider hover:shadow-glow-primary transition-shadow"
                                 onClick={() => {
                                     handleCategoryChange('All');
                                     setSortBy('recommended');
@@ -138,7 +138,7 @@ export default function Vouchers() {
                         </div>
 
                         {/* Categories */}
-                        <div className="mb-8">
+                        <div className="mb-5">
                             <h4 className="text-primary text-xs font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
                                 <span className="material-symbols-outlined text-sm">category</span> Categories
                             </h4>
@@ -148,8 +148,8 @@ export default function Vouchers() {
                                         key={cat}
                                         onClick={() => handleCategoryChange(cat)}
                                         className={`px-3 py-1.5 rounded-md text-[11px] font-medium transition-all ${selectedCategory === cat
-                                            ? 'bg-primary/20 border border-primary text-white shadow-[0_0_8px_rgba(200,127,69,0.3)]'
-                                            : 'bg-surface-dark border border-primary/20 text-warm-white hover:bg-white/5 hover:border-primary/50 hover:text-white'
+                                            ? 'bg-primary/20 border border-primary text-theme-primary shadow-glow-primary-sm'
+                                            : 'bg-theme-surface border border-primary/20 text-warm-white hover:bg-white/5 hover:border-primary/50 hover:text-theme-primary'
                                             }`}
                                     >
                                         {cat}
@@ -159,7 +159,7 @@ export default function Vouchers() {
                         </div>
 
                         {/* Sort By */}
-                        <div className="mb-8">
+                        <div className="mb-5">
                             <h4 className="text-primary text-xs font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
                                 <span className="material-symbols-outlined text-sm">sort</span> Sort By
                             </h4>
@@ -168,31 +168,31 @@ export default function Vouchers() {
                                     <input
                                         checked={sortBy === 'recommended'}
                                         onChange={() => setSortBy('recommended')}
-                                        className="bg-surface-dark border-primary/30 text-primary focus:ring-primary/50 focus:ring-offset-background-dark"
+                                        className="bg-theme-surface border-primary/30 text-primary focus:ring-primary/50 focus:ring-offset-theme-bg"
                                         name="sortby"
                                         type="radio"
                                     />
-                                    <span className={`text-sm transition-colors ${sortBy === 'recommended' ? 'text-warm-white' : 'text-gold-dim'} group-hover:text-white`}>Recommended</span>
+                                    <span className={`text-sm transition-colors ${sortBy === 'recommended' ? 'text-warm-white' : 'text-accent-dim'} group-hover:text-theme-primary`}>Recommended</span>
                                 </label>
                                 <label className="flex items-center gap-3 group cursor-pointer">
                                     <input
                                         checked={sortBy === 'highest-roi'}
                                         onChange={() => setSortBy('highest-roi')}
-                                        className="bg-surface-dark border-primary/30 text-primary focus:ring-primary/50 focus:ring-offset-background-dark"
+                                        className="bg-theme-surface border-primary/30 text-primary focus:ring-primary/50 focus:ring-offset-theme-bg"
                                         name="sortby"
                                         type="radio"
                                     />
-                                    <span className={`text-sm transition-colors ${sortBy === 'highest-roi' ? 'text-warm-white' : 'text-gold-dim'} group-hover:text-white`}>Highest ROI</span>
+                                    <span className={`text-sm transition-colors ${sortBy === 'highest-roi' ? 'text-warm-white' : 'text-accent-dim'} group-hover:text-theme-primary`}>Highest ROI</span>
                                 </label>
                                 <label className="flex items-center gap-3 group cursor-pointer">
                                     <input
                                         checked={sortBy === 'expires-soon'}
                                         onChange={() => setSortBy('expires-soon')}
-                                        className="bg-surface-dark border-primary/30 text-primary focus:ring-primary/50 focus:ring-offset-background-dark"
+                                        className="bg-theme-surface border-primary/30 text-primary focus:ring-primary/50 focus:ring-offset-theme-bg"
                                         name="sortby"
                                         type="radio"
                                     />
-                                    <span className={`text-sm transition-colors ${sortBy === 'expires-soon' ? 'text-warm-white' : 'text-gold-dim'} group-hover:text-white`}>Expires Soon</span>
+                                    <span className={`text-sm transition-colors ${sortBy === 'expires-soon' ? 'text-warm-white' : 'text-accent-dim'} group-hover:text-theme-primary`}>Expires Soon</span>
                                 </label>
                             </div>
                         </div>
@@ -200,7 +200,7 @@ export default function Vouchers() {
                 </aside>
 
                 {/* Main Content */}
-                <main className="flex-1 flex flex-col h-full overflow-hidden relative bg-gradient-to-br from-background-dark to-[#0f0502]">
+                <main className="flex-1 flex flex-col h-full overflow-hidden relative bg-gradient-to-br from-theme-bg to-[#0f0502]">
                     <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
 
                     <div className="flex-1 overflow-y-auto hide-scrollbar p-8 pb-20">
@@ -214,18 +214,18 @@ export default function Vouchers() {
                                     </div>
 
                                     {/* Rate Ticker */}
-                                    <div className="flex items-center gap-4 bg-surface-dark border border-primary/20 rounded-lg p-2 pr-4 shadow-lg shadow-black/30">
+                                    <div className="flex items-center gap-4 bg-theme-surface border border-primary/20 rounded-lg p-2 pr-4 shadow-lg shadow-black/30">
                                         <div className="bg-primary/10 rounded px-2 py-1">
                                             <span className="material-symbols-outlined text-primary text-sm">monitoring</span>
                                         </div>
                                         <div className="flex flex-col">
-                                            <span className="text-[10px] text-gold-dim uppercase tracking-wide">Gold (24k)</span>
-                                            <span className="text-xs font-bold text-gold-text">₹7,200/g <span className="text-green-500 ml-1">+0.4%</span></span>
+                                            <span className="text-[10px] text-accent-dim uppercase tracking-wide">Gold (24k)</span>
+                                            <span className="text-xs font-bold text-accent">₹7,200/g <span className="text-green-500 ml-1">+0.4%</span></span>
                                         </div>
                                         <div className="w-px h-6 bg-white/10 mx-2"></div>
                                         <div className="flex flex-col">
-                                            <span className="text-[10px] text-gold-dim uppercase tracking-wide">USD Buy</span>
-                                            <span className="text-xs font-bold text-white">₹83.50 <span className="text-red-400 ml-1">-0.05%</span></span>
+                                            <span className="text-[10px] text-accent-dim uppercase tracking-wide">USD Buy</span>
+                                            <span className="text-xs font-bold text-theme-primary">₹83.50 <span className="text-red-400 ml-1">-0.05%</span></span>
                                         </div>
                                     </div>
                                 </div>
@@ -239,10 +239,10 @@ export default function Vouchers() {
                                         Popular Vouchers
                                     </h3>
                                     <div className="flex gap-2">
-                                        <button className="p-1 rounded hover:bg-surface-dark-hover border border-transparent hover:border-primary/20 text-warm-white transition-all">
+                                        <button className="p-1 rounded hover:bg-theme-surface-hover border border-transparent hover:border-primary/20 text-warm-white transition-all">
                                             <span className="material-symbols-outlined">chevron_left</span>
                                         </button>
-                                        <button className="p-1 rounded hover:bg-surface-dark-hover border border-transparent hover:border-primary/20 text-warm-white transition-all">
+                                        <button className="p-1 rounded hover:bg-theme-surface-hover border border-transparent hover:border-primary/20 text-warm-white transition-all">
                                             <span className="material-symbols-outlined">chevron_right</span>
                                         </button>
                                     </div>
@@ -250,8 +250,8 @@ export default function Vouchers() {
 
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                     {popularVouchers.map((voucher) => (
-                                        <div key={voucher.id} onClick={() => handleVoucherClick(voucher)} className="relative group bg-surface-dark rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 transition-all duration-300 shadow-xl hover:shadow-primary/10 cursor-pointer">
-                                            <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/50 to-transparent z-10"></div>
+                                        <div key={voucher.id} onClick={() => handleVoucherClick(voucher)} className="relative group bg-theme-surface rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 transition-all duration-300 shadow-xl hover:shadow-primary/10 cursor-pointer">
+                                            <div className="absolute inset-0 bg-gradient-to-t from-theme-bg via-theme-bg/50 to-transparent z-10"></div>
                                             <div
                                                 className="h-48 w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                                                 style={{ backgroundImage: `url("${voucher.image}")` }}
@@ -268,8 +268,8 @@ export default function Vouchers() {
                                                         <h4 className="text-xl font-serif text-warm-white">{voucher.name}</h4>
                                                     </div>
                                                     <span className={`text-xs font-bold px-2 py-1 rounded shadow-lg shadow-black/40 ${voucher.badgeType === 'timer'
-                                                        ? 'bg-primary text-background-dark'
-                                                        : 'bg-white/10 backdrop-blur text-gold-text border border-gold-dim/30'
+                                                        ? 'bg-primary text-theme-bg'
+                                                        : 'bg-white/10 backdrop-blur text-accent border border-accent-dim/30'
                                                         }`}>
                                                         {voucher.discount}
                                                     </span>
@@ -285,17 +285,17 @@ export default function Vouchers() {
                             <div className="flex items-center justify-between border-b border-primary/10 pb-4">
                                 <h3 className="text-lg font-serif text-warm-white">All Offers</h3>
                                 <div className="flex items-center gap-4">
-                                    <span className="text-xs text-gold-dim uppercase tracking-wider font-medium">View:</span>
+                                    <span className="text-xs text-accent-dim uppercase tracking-wider font-medium">View:</span>
                                     <div className="flex gap-1">
                                         <button
                                             onClick={() => setViewMode('grid')}
-                                            className={`transition-colors ${viewMode === 'grid' ? 'text-primary' : 'text-gold-dim'} hover:text-white`}
+                                            className={`transition-colors ${viewMode === 'grid' ? 'text-primary' : 'text-accent-dim'} hover:text-theme-primary`}
                                         >
                                             <span className="material-symbols-outlined">grid_view</span>
                                         </button>
                                         <button
                                             onClick={() => setViewMode('list')}
-                                            className={`transition-colors ${viewMode === 'list' ? 'text-primary' : 'text-gold-dim'} hover:text-white`}
+                                            className={`transition-colors ${viewMode === 'list' ? 'text-primary' : 'text-accent-dim'} hover:text-theme-primary`}
                                         >
                                             <span className="material-symbols-outlined">view_list</span>
                                         </button>
@@ -306,10 +306,10 @@ export default function Vouchers() {
                             {/* Voucher Grid */}
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                                 {filteredVouchers.map((voucher) => (
-                                    <div key={voucher.id} onClick={() => handleVoucherClick(voucher)} className="bg-surface-dark rounded-xl p-5 border border-white/5 hover:border-primary/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,0,0,0.4)] group flex flex-col gap-4 relative overflow-hidden cursor-pointer">
+                                    <div key={voucher.id} onClick={() => handleVoucherClick(voucher)} className="bg-theme-surface rounded-xl p-5 border border-white/5 hover:border-primary/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,0,0,0.4)] group flex flex-col gap-4 relative overflow-hidden cursor-pointer">
                                         <div className="absolute top-0 right-0 p-5 z-10">
                                             <button
-                                                className={`transition-colors ${isFavorite('vouchers', voucher.id) ? 'text-red-500' : 'text-gold-dim hover:text-primary'}`}
+                                                className={`transition-colors ${isFavorite('vouchers', voucher.id) ? 'text-red-500' : 'text-accent-dim hover:text-primary'}`}
                                                 onClick={(e) => handleToggleFavorite(e, voucher.id)}
                                             >
                                                 <span
@@ -326,24 +326,24 @@ export default function Vouchers() {
                                         </div>
 
                                         <div>
-                                            <h4 className="text-gold-text font-semibold text-lg">{voucher.name}</h4>
+                                            <h4 className="text-accent font-semibold text-lg">{voucher.name}</h4>
                                             <p className="text-warm-gray text-xs mt-1">{voucher.category}</p>
                                         </div>
 
                                         <div className="py-3 border-t border-dashed border-primary/20">
                                             <div className="flex justify-between items-end">
                                                 <div>
-                                                    <p className="text-[10px] uppercase text-gold-dim/70 font-bold">Effective Rate</p>
+                                                    <p className="text-[10px] uppercase text-accent-dim/70 font-bold">Effective Rate</p>
                                                     <p className="text-2xl font-bold text-primary">{voucher.rate}</p>
                                                 </div>
                                                 <div className="text-right">
-                                                    <p className="text-[10px] uppercase text-gold-dim/70 font-bold">Value</p>
+                                                    <p className="text-[10px] uppercase text-accent-dim/70 font-bold">Value</p>
                                                     <p className="text-sm font-medium text-warm-white">{voucher.value}</p>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <button className="w-full py-2 rounded-lg bg-surface-dark border border-primary/30 text-primary font-bold text-sm hover:bg-primary hover:text-background-dark transition-all shadow-[0_4px_10px_rgba(0,0,0,0.2)]">
+                                        <button className="w-full py-2 rounded-lg bg-theme-surface border border-primary/30 text-primary font-bold text-sm hover:bg-primary hover:text-theme-bg transition-all shadow-[0_4px_10px_rgba(0,0,0,0.2)]">
                                             Buy Voucher
                                         </button>
                                     </div>
@@ -369,23 +369,23 @@ export default function Vouchers() {
                     onClick={closeVoucherModal}
                 >
                     <div
-                        className="relative w-full max-w-5xl bg-espresso-950 rounded-2xl shadow-2xl border border-espresso-700 flex flex-col md:flex-row overflow-hidden max-h-[90vh]"
+                        className="relative w-full max-w-5xl bg-theme-bg rounded-2xl shadow-2xl border border-theme-border flex flex-col md:flex-row overflow-hidden max-h-[90vh]"
                         onClick={(e) => e.stopPropagation()}
                     >
                         {/* Close Button */}
                         <button
                             onClick={closeVoucherModal}
-                            className="absolute top-4 right-4 z-30 size-10 rounded-full bg-espresso-900 hover:bg-espresso-800 text-gray-400 hover:text-white transition-all border border-espresso-700 flex items-center justify-center"
+                            className="absolute top-4 right-4 z-30 size-10 rounded-full bg-theme-surface hover:bg-theme-surface text-theme-secondary hover:text-theme-primary transition-all border border-theme-border flex items-center justify-center"
                         >
                             <span className="material-symbols-outlined text-xl">close</span>
                         </button>
 
                         {/* Left Panel - Brand Image */}
-                        <div className="w-full md:w-[38%] bg-espresso-900 p-6 md:p-8 flex flex-col justify-center items-center border-r border-espresso-700">
+                        <div className="w-full md:w-[38%] bg-theme-surface p-6 md:p-8 flex flex-col justify-center items-center border-r border-theme-border">
                             {/* Image Container */}
-                            <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-6 group border border-espresso-700 shadow-lg">
+                            <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-6 group border border-theme-border shadow-lg">
                                 {/* Corner Badge */}
-                                <div className="absolute top-3 left-3 z-20 bg-white text-espresso-950 px-3 py-1 rounded shadow-md">
+                                <div className="absolute top-3 left-3 z-20 bg-white text-theme-primary px-3 py-1 rounded shadow-md">
                                     <span className="font-bold text-[10px] tracking-wider uppercase">{selectedVoucher.name?.split(' ')[0] || 'Brand'}</span>
                                 </div>
 
@@ -395,30 +395,30 @@ export default function Vouchers() {
                                         style={{ backgroundImage: `url('${selectedVoucher.image}')` }}
                                     />
                                 ) : (
-                                    <div className="w-full h-full bg-espresso-800 flex items-center justify-center p-6">
+                                    <div className="w-full h-full bg-theme-surface flex items-center justify-center p-6">
                                         <img src={selectedVoucher.logo} alt={selectedVoucher.name} className="w-2/3 h-auto object-contain" />
                                     </div>
                                 )}
-                                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-espresso-900 to-transparent" />
+                                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-theme-surface to-transparent" />
                             </div>
 
                             {/* Brand Info */}
                             <div className="text-center space-y-2 w-full">
-                                <h2 className="text-2xl md:text-3xl font-serif font-bold text-gold-400 uppercase tracking-wide">{selectedVoucher.name}</h2>
-                                <p className="text-xs text-copper-500 font-medium uppercase tracking-widest">{selectedVoucher.description}</p>
+                                <h2 className="text-2xl md:text-3xl font-serif font-bold text-accent uppercase tracking-wide">{selectedVoucher.name}</h2>
+                                <p className="text-xs text-accent-secondary-500 font-medium uppercase tracking-widest">{selectedVoucher.description}</p>
                             </div>
                         </div>
 
                         {/* Right Panel - Offers */}
-                        <div className="w-full md:w-[62%] flex flex-col bg-espresso-950">
+                        <div className="w-full md:w-[62%] flex flex-col bg-theme-bg">
                             {/* Header */}
-                            <div className="px-6 py-5 border-b border-espresso-700">
+                            <div className="px-6 py-5 border-b border-theme-border">
                                 <div className="flex items-start justify-between pr-12">
                                     <div>
-                                        <h3 className="text-xl font-serif font-bold text-white">Available Offers</h3>
-                                        <p className="text-xs text-gray-500 mt-1">Compare real-time rewards across platforms</p>
+                                        <h3 className="text-xl font-serif font-bold text-theme-primary">Available Offers</h3>
+                                        <p className="text-xs text-theme-muted mt-1">Compare real-time rewards across platforms</p>
                                     </div>
-                                    <div className="flex items-center gap-1.5 text-[10px] text-gray-500 bg-espresso-900 px-2.5 py-1 rounded border border-espresso-700 mt-1">
+                                    <div className="flex items-center gap-1.5 text-[10px] text-theme-muted bg-theme-surface px-2.5 py-1 rounded border border-theme-border mt-1">
                                         <span className="material-symbols-outlined text-xs">schedule</span>
                                         Updated today
                                     </div>
@@ -429,32 +429,32 @@ export default function Vouchers() {
                             <div className="flex-1 overflow-y-auto p-6 space-y-3">
                                 {/* Best Rate - Featured */}
                                 <div className="relative">
-                                    <div className="absolute -top-2 left-4 z-10 bg-gold-400 text-espresso-950 text-[9px] font-bold px-2.5 py-0.5 rounded flex items-center gap-1 uppercase tracking-wider">
+                                    <div className="absolute -top-2 left-4 z-10 bg-accent text-theme-primary text-[9px] font-bold px-2.5 py-0.5 rounded flex items-center gap-1 uppercase tracking-wider">
                                         <span className="material-symbols-outlined text-xs">verified</span>
                                         Best Rate
                                     </div>
-                                    <div className="bg-espresso-900 border-2 border-copper-500/50 rounded-xl p-4 mt-1">
+                                    <div className="bg-theme-surface border-2 border-accent-secondary/50 rounded-xl p-4 mt-1">
                                         <div className="flex flex-col sm:flex-row items-center gap-4">
-                                            <div className="flex items-center gap-3 w-full sm:w-[35%] sm:border-r sm:border-espresso-700 sm:pr-4">
-                                                <div className="size-11 rounded-lg bg-copper-500/20 flex items-center justify-center text-copper-400 border border-copper-500/30">
+                                            <div className="flex items-center gap-3 w-full sm:w-[35%] sm:border-r sm:border-theme-border sm:pr-4">
+                                                <div className="size-11 rounded-lg bg-accent-secondary/20 flex items-center justify-center text-accent-secondary border border-accent-secondary/30">
                                                     <span className="material-symbols-outlined text-xl">storefront</span>
                                                 </div>
                                                 <div className="flex-1">
-                                                    <h4 className="text-white font-semibold">iShop</h4>
-                                                    <p className="text-[10px] text-copper-500 uppercase tracking-wider font-medium">Recommended</p>
+                                                    <h4 className="text-theme-primary font-semibold">iShop</h4>
+                                                    <p className="text-[10px] text-accent-secondary-500 uppercase tracking-wider font-medium">Recommended</p>
                                                 </div>
-                                                <span className="material-symbols-outlined text-sm text-gray-600 hover:text-gray-400 cursor-help">info</span>
+                                                <span className="material-symbols-outlined text-sm text-theme-muted hover:text-theme-secondary cursor-help">info</span>
                                             </div>
                                             <div className="flex items-center gap-6 w-full sm:w-[65%]">
                                                 <div className="flex-1">
-                                                    <p className="text-[9px] text-gray-500 uppercase tracking-wider font-medium mb-0.5">Savings</p>
-                                                    <p className="text-xl font-bold text-gold-400">{selectedVoucher.rate || selectedVoucher.discount || '25% OFF'}</p>
+                                                    <p className="text-[9px] text-theme-muted uppercase tracking-wider font-medium mb-0.5">Savings</p>
+                                                    <p className="text-xl font-bold text-accent">{selectedVoucher.rate || selectedVoucher.discount || '25% OFF'}</p>
                                                 </div>
                                                 <div className="flex-1">
-                                                    <p className="text-[9px] text-gray-500 uppercase tracking-wider font-medium mb-0.5">Cap/Mo</p>
-                                                    <p className="text-sm font-semibold text-white">No Cap</p>
+                                                    <p className="text-[9px] text-theme-muted uppercase tracking-wider font-medium mb-0.5">Cap/Mo</p>
+                                                    <p className="text-sm font-semibold text-theme-primary">No Cap</p>
                                                 </div>
-                                                <button className="h-9 px-5 rounded-lg bg-copper-500 hover:bg-copper-400 text-espresso-950 font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-all shadow-md shrink-0">
+                                                <button className="h-9 px-5 rounded-lg bg-accent-secondary hover:bg-accent text-theme-primary font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-all shadow-md shrink-0">
                                                     Buy Now
                                                     <span className="material-symbols-outlined text-sm">arrow_forward</span>
                                                 </button>
@@ -470,28 +470,28 @@ export default function Vouchers() {
                                     { name: 'Amazon', type: 'Marketplace', icon: 'local_shipping', savings: '2% Back', savingsLabel: 'Cashback', cap: '₹500' },
                                     { name: 'Flipkart', type: 'Marketplace', icon: 'inventory_2', savings: '₹50 Off', savingsLabel: 'Fees', cap: '1 Usage' }
                                 ].map((platform, idx) => (
-                                    <div key={idx} className="bg-espresso-900 border border-espresso-700 rounded-xl p-4 hover:border-copper-500/50 transition-all group">
+                                    <div key={idx} className="bg-theme-surface border border-theme-border rounded-xl p-4 hover:border-accent-secondary/50 transition-all group">
                                         <div className="flex flex-col sm:flex-row items-center gap-4">
-                                            <div className="flex items-center gap-3 w-full sm:w-[35%] sm:border-r sm:border-espresso-700 sm:pr-4">
-                                                <div className="size-10 rounded-lg bg-espresso-800 flex items-center justify-center text-copper-500 border border-espresso-700">
+                                            <div className="flex items-center gap-3 w-full sm:w-[35%] sm:border-r sm:border-theme-border sm:pr-4">
+                                                <div className="size-10 rounded-lg bg-theme-surface flex items-center justify-center text-accent-secondary-500 border border-theme-border">
                                                     <span className="material-symbols-outlined text-lg">{platform.icon}</span>
                                                 </div>
                                                 <div className="flex-1">
-                                                    <h4 className="text-white font-medium text-sm">{platform.name}</h4>
-                                                    <p className="text-[10px] text-gray-500 uppercase tracking-wider">{platform.type}</p>
+                                                    <h4 className="text-theme-primary font-medium text-sm">{platform.name}</h4>
+                                                    <p className="text-[10px] text-theme-muted uppercase tracking-wider">{platform.type}</p>
                                                 </div>
-                                                <span className="material-symbols-outlined text-sm text-gray-600 hover:text-gray-400 cursor-help opacity-50 group-hover:opacity-100">info</span>
+                                                <span className="material-symbols-outlined text-sm text-theme-muted hover:text-theme-secondary cursor-help opacity-50 group-hover:opacity-100">info</span>
                                             </div>
                                             <div className="flex items-center gap-6 w-full sm:w-[65%]">
                                                 <div className="flex-1">
-                                                    <p className="text-[9px] text-gray-500 uppercase tracking-wider font-medium mb-0.5">{platform.savingsLabel || 'Savings'}</p>
-                                                    <p className="text-base font-bold text-gold-400">{platform.savings}</p>
+                                                    <p className="text-[9px] text-theme-muted uppercase tracking-wider font-medium mb-0.5">{platform.savingsLabel || 'Savings'}</p>
+                                                    <p className="text-base font-bold text-accent">{platform.savings}</p>
                                                 </div>
                                                 <div className="flex-1">
-                                                    <p className="text-[9px] text-gray-500 uppercase tracking-wider font-medium mb-0.5">Cap/Mo</p>
-                                                    <p className="text-xs font-medium text-gray-400">{platform.cap}</p>
+                                                    <p className="text-[9px] text-theme-muted uppercase tracking-wider font-medium mb-0.5">Cap/Mo</p>
+                                                    <p className="text-xs font-medium text-theme-secondary">{platform.cap}</p>
                                                 </div>
-                                                <div className="size-9 flex items-center justify-center text-copper-500 border border-espresso-700 rounded-lg hover:bg-copper-500/10 hover:border-copper-500/50 cursor-pointer transition-all shrink-0">
+                                                <div className="size-9 flex items-center justify-center text-accent-secondary-500 border border-theme-border rounded-lg hover:bg-accent-secondary/10 hover:border-accent-secondary/50 cursor-pointer transition-all shrink-0">
                                                     <span className="material-symbols-outlined text-lg">arrow_forward</span>
                                                 </div>
                                             </div>
@@ -501,9 +501,9 @@ export default function Vouchers() {
                             </div>
 
                             {/* Footer */}
-                            <div className="px-6 py-3 border-t border-espresso-700 bg-espresso-900/50">
-                                <p className="text-[10px] text-gray-500 text-center">
-                                    Offers are real-time and subject to card eligibility. <a className="text-copper-500 hover:text-copper-400 cursor-pointer">View T&C</a>
+                            <div className="px-6 py-3 border-t border-theme-border bg-theme-surface/50">
+                                <p className="text-[10px] text-theme-muted text-center">
+                                    Offers are real-time and subject to card eligibility. <a className="text-accent-secondary-500 hover:text-accent-secondary cursor-pointer">View T&C</a>
                                 </p>
                             </div>
                         </div>
@@ -513,7 +513,7 @@ export default function Vouchers() {
             {/* Floating Favorites Bar */}
             {notification.show && notification.type === 'vouchers' && (
                 <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[60] animate-fade-in-up">
-                    <div className="bg-surface-dark border-2 border-primary rounded-full px-6 py-3 flex items-center gap-4 shadow-[0_10px_40px_rgba(0,0,0,0.6),0_0_20px_rgba(200,127,69,0.3)]">
+                    <div className="bg-theme-surface border-2 border-primary rounded-full px-6 py-3 flex items-center gap-4 shadow-card-glow">
                         <div className="flex items-center gap-3">
                             <div className="size-10 rounded-full bg-red-500/20 border border-red-500/50 flex items-center justify-center">
                                 <span className="material-symbols-outlined text-red-500 text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>favorite</span>
@@ -526,14 +526,14 @@ export default function Vouchers() {
                         <div className="h-8 w-px bg-primary/30"></div>
                         <Link
                             to="/favorites"
-                            className="px-5 py-2.5 rounded-full bg-primary text-background-dark text-xs font-bold uppercase tracking-wider transition-all hover:bg-primary-hover shadow-glow-copper flex items-center gap-2"
+                            className="px-5 py-2.5 rounded-full bg-primary text-theme-bg text-xs font-bold uppercase tracking-wider transition-all hover:bg-primary-hover shadow-glow-copper flex items-center gap-2"
                         >
                             View Favorites
                             <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
                         </Link>
                         <button
                             onClick={() => clearFavorites('vouchers')}
-                            className="size-8 rounded-full bg-transparent border border-white/10 text-white/40 hover:text-white hover:border-white/30 flex items-center justify-center transition-all"
+                            className="size-8 rounded-full bg-transparent border border-white/10 text-theme-primary/40 hover:text-theme-primary hover:border-white/30 flex items-center justify-center transition-all"
                             title="Clear favorites"
                         >
                             <span className="material-symbols-outlined text-[18px]">close</span>

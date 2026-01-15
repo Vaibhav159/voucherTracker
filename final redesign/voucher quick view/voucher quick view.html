@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voucher Details (Quick View Refined)</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800;900&amp;family=Noto+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#b87332", // Copper
+                        "primary-hover": "#a06228",
+                        "primary-light": "#dcbfa6",
+                        "accent-gold": "#D4AF37",
+                        "accent-gold-light": "#e5c55c",
+                        "modal-bg": "#231f1c", // Richer Espresso
+                        "panel-bg": "#1c1917", // Darker Panel
+                        "background-light": "#fbfaf9",
+                        "background-dark": "#1a1614", // Main App BG
+                        "text-secondary": "#b4aba2",
+                        "text-light": "#e8e6e3",
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    boxShadow: {
+                        "glow": "0 0 25px -5px rgba(184, 115, 50, 0.4)",
+                        "modal": "0 25px 60px -12px rgba(0, 0, 0, 0.95)",
+                    },
+                    backgroundImage: {
+                        'copper-gradient': 'linear-gradient(135deg, #b87332 0%, #D4AF37 100%)',
+                        'metallic-badge': 'linear-gradient(180deg, #e6c874 0%, #b87332 50%, #8c5626 100%)',
+                    },
+                    animation: {
+                        'breathe-glow': 'breathe-glow 4s ease-in-out infinite',
+                        'badge-pulse': 'badge-pulse 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        'breathe-glow': {
+                            '0%, 100%': { 
+                                boxShadow: '0 0 20px -5px rgba(184, 115, 50, 0.2), inset 0 0 15px rgba(184, 115, 50, 0.05)',
+                                borderColor: '#8c5626'
+                            },
+                            '50%': { 
+                                boxShadow: '0 10px 40px -5px rgba(212, 175, 55, 0.5), inset 0 0 30px rgba(212, 175, 55, 0.2)',
+                                borderColor: '#e6c874'
+                            },
+                        },
+                        'badge-pulse': {
+                            '0%, 100%': { transform: 'scale(1)', filter: 'brightness(1)' },
+                            '50%': { transform: 'scale(1.03)', filter: 'brightness(1.15)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #231f1c; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #443C36; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b87332; 
+        }
+        .blur-backdrop {
+            filter: blur(8px) brightness(0.6);
+            pointer-events: none;
+            user-select: none;
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-white font-display overflow-hidden selection:bg-primary selection:text-white">
+<div class="relative flex h-screen w-full overflow-hidden">
+<div class="flex h-full w-full blur-backdrop transition-all duration-500">
+<aside class="w-72 hidden lg:flex flex-col border-r border-[#36302b] bg-[#171412] p-6 justify-between shrink-0">
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-3 px-2">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[20px]">credit_card</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight">CreditFolio</h1>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-[#36302b] transition-colors cursor-default text-text-secondary">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg bg-[#36302b] border border-[#36302b] cursor-default">
+<span class="material-symbols-outlined text-primary">sell</span>
+<span class="text-sm font-medium text-white">Vouchers</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-[#36302b] transition-colors cursor-default text-text-secondary">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-sm font-medium">Wallet</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-[#36302b] transition-colors cursor-default text-text-secondary">
+<span class="material-symbols-outlined">groups</span>
+<span class="text-sm font-medium">Community</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 px-3 py-3 rounded-xl bg-[#25211e] border border-[#36302b]">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 shrink-0" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCbx4NqyT54-hOfgiAw-Ihd1_1VYJS54v-IJI4v4Atf7L13G5GuDbTZE0iLDc8SQ1il-pl6NVhUqqoNhIR80ngxxrgZRefsP6C_5criVXwmVuH00tu2OYK6hATK5T20WFpIVaO7PBwIoFnmKMT5F6EsnCglyPJcPQyncYm7OdqWof_U9f0FEVgFKmy2LETZFZHtSOp_3xM3C8kBbENXdJjFOIeMnAyRi-dQMh2ycYUcBeJZGqnmaftHxgWQvdXrLrAGby5x4aRrNr0E");'></div>
+<div class="flex flex-col overflow-hidden">
+<span class="text-sm font-bold truncate">Arjun Mehta</span>
+<span class="text-xs text-primary truncate">Black Metal Member</span>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col h-full min-w-0 overflow-y-auto">
+<header class="h-20 border-b border-[#36302b] bg-[#171412] px-8 flex items-center justify-between shrink-0 sticky top-0 z-10">
+<h2 class="text-2xl font-bold">Exclusive Vouchers</h2>
+<div class="flex items-center gap-6">
+<div class="relative w-64 hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#b4aba2]">search</span>
+<input class="w-full bg-[#25211e] border border-[#36302b] rounded-lg py-2 pl-10 pr-4 text-sm text-white focus:ring-1 focus:ring-primary focus:border-primary placeholder-[#666]" placeholder="Search brands..." type="text"/>
+</div>
+<button class="relative p-2 text-[#b4aba2] hover:text-white">
+<span class="material-symbols-outlined">notifications</span>
+<div class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border border-[#171412]"></div>
+</button>
+</div>
+</header>
+<div class="p-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<div class="bg-[#25211e] rounded-xl p-4 border border-[#36302b] flex flex-col gap-4 opacity-50">
+<div class="h-40 w-full bg-[#36302b] rounded-lg bg-cover bg-center" data-alt="Luxury hotel lobby" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDRp1qy-dWX6X7fN7o-gzS30U1S1uF2H4leMzF-WOJ5CYkXQil46R7eY5ceLDgqNF9_q74b4wNt7vIyh-YOUlpPNQ1izpi5gnhlWmeqtKIrqWbFf0LEONzUrFaoNYOyp_sX3EfOxYNpXYkwJfr64DzyjC9jmAkqVPNPjPSXeAuKn6zPEiiBzxXNgV0Htt5uEonvXhANUInXoolggUHfU36OSqajgx2fbpPR96f0mwNABn8e6vDKvRduh7yrBkSvbyk4qkcAQ3KDwjEh')"></div>
+<div class="space-y-2">
+<div class="h-6 w-3/4 bg-[#36302b] rounded"></div>
+<div class="h-4 w-1/2 bg-[#36302b] rounded"></div>
+</div>
+</div>
+<div class="bg-[#25211e] rounded-xl p-4 border border-[#36302b] flex flex-col gap-4 opacity-50">
+<div class="h-40 w-full bg-[#36302b] rounded-lg bg-cover bg-center" data-alt="Fine dining restaurant interior" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCswwU5NMPbYOSIL1Hv6vkYpl4C0-t_2JjoC1l7GdDwn5E-DmqWrQhzWCaqtkrZ6HPHB1L_GDzDIqQUc7fdtiVWfOEKUAuqcGiVueoxh20XUpDdYtyihg4N6Dgb8wE0YcGZ44xIDcSt951Bq05f07rzJN_LEfErTOvFpCzfDCpxcEw-U4CY97ibsQ6h2a408-Z2i9bBaDqtU3ddmBPAYQzI8GkF-gN0bhQUIhC_0qTzTafYOYYY21F10MZRTrjpZ0hRQF4Cz2LI5fcA')"></div>
+<div class="space-y-2">
+<div class="h-6 w-3/4 bg-[#36302b] rounded"></div>
+<div class="h-4 w-1/2 bg-[#36302b] rounded"></div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<div class="absolute inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/70 backdrop-blur-sm">
+<div class="relative w-full max-w-5xl bg-modal-bg rounded-2xl shadow-modal border border-[#443C36] flex flex-col md:flex-row overflow-hidden animate-in fade-in zoom-in-95 duration-500 ease-out group">
+<button class="absolute top-4 right-4 z-20 p-2 rounded-full bg-modal-bg/80 hover:bg-[#36302b] text-primary hover:text-accent-gold transition-colors duration-200 backdrop-blur-md border border-primary/20 shadow-lg group/close">
+<span class="material-symbols-outlined text-[20px] font-bold group-hover/close:rotate-90 transition-transform duration-300">close</span>
+</button>
+<div class="w-full md:w-[35%] bg-panel-bg relative p-8 flex flex-col justify-center items-center border-r border-[#36302b]">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-72 rounded-full bg-primary/5 blur-3xl opacity-60"></div>
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-2xl shadow-black/60 group-hover:shadow-glow transition-shadow duration-700">
+<div class="absolute top-3 left-3 z-20 bg-white/95 backdrop-blur px-3 py-1.5 rounded-md border border-primary/40 shadow-sm">
+<span class="text-[#231f1c] font-bold text-xs tracking-wider uppercase font-display">Taj Hotels</span>
+</div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Elegant Taj Hotel exterior at sunset" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBadwl8XjUCmxgnMOXtRyGpIgYOmyPJBODxL0N5sPMr_a3uaNxz0JNfwtXztQImajdJMblZbTYqY9y2KGXeS8ClYgoAx6NlMISjn9O3hxYAJ45x3PJNTyjZ6x2g9tcd8idIeciH5Ble0N9TrjJPiOIVgeXU32x80wwcUgJI3DY1m2R1ZVrlu4qGoS2E7lprTICz8L-ceBJLTGw8FIM6OmvlqN0Bcbc96nZSUdDEWBOO3lQ2BZ6IqRnme4jTn47We98r1nxudf3nI74w')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+<div class="mt-8 text-center space-y-1">
+<p class="text-white font-display font-bold text-2xl tracking-tight">Taj Epicure Plus</p>
+<p class="text-white/60 font-body text-sm font-light opacity-90">Luxury Dining &amp; Staycations</p>
+</div>
+</div>
+<div class="w-full md:w-[65%] p-8 flex flex-col relative bg-modal-bg">
+<div class="flex items-center justify-between mb-6 border-b border-[#36302b] pb-4">
+<div>
+<h2 class="text-xl md:text-2xl font-display font-bold text-white tracking-wide uppercase">Available Offers</h2>
+<p class="text-xs text-white/50 mt-1 font-body">Compare real-time rewards across 5 platforms</p>
+</div>
+<div class="hidden sm:flex items-center gap-2 text-xs font-medium text-primary bg-[#2C2621] px-3 py-1.5 rounded-lg border border-[#36302b]">
+<span class="material-symbols-outlined text-[14px]">history</span>
+                        Last updated: Today
+                    </div>
+</div>
+<div class="flex flex-col gap-3 overflow-y-auto max-h-[500px] pr-2 custom-scrollbar">
+<div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 rounded-xl bg-[#2C2621] border border-[#36302b] hover:border-primary/40 hover:bg-[#322c26] transition-all gap-4">
+<div class="flex items-center gap-4 w-full sm:w-[30%]">
+<div class="size-10 rounded-lg bg-[#38312b] border border-[#443C36] flex items-center justify-center shrink-0 text-white shadow-inner">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+</div>
+<div>
+<h4 class="text-white font-bold text-sm tracking-wide">SmartBuy</h4>
+<p class="text-[10px] text-white/40 uppercase tracking-wider font-semibold">HDFC Bank</p>
+</div>
+</div>
+<div class="flex items-center justify-between w-full sm:w-[70%] pl-0 sm:pl-4 border-t sm:border-t-0 border-[#36302b] pt-3 sm:pt-0">
+<div class="min-w-[100px]">
+<p class="text-[10px] text-white/40 uppercase tracking-wider font-semibold mb-0.5">Savings</p>
+<p class="text-white font-bold text-base">5X Points</p>
+</div>
+<div class="min-w-[80px]">
+<p class="text-[10px] text-white/40 uppercase tracking-wider font-semibold mb-0.5">Cap/Mo</p>
+<p class="text-white/80 font-medium text-sm">10,000 Pts</p>
+</div>
+<button class="group/btn h-9 w-9 rounded-full bg-[#38312b] hover:bg-white text-white hover:text-[#231f1c] flex items-center justify-center transition-colors shadow-lg border border-[#443C36]">
+<span class="material-symbols-outlined text-[18px] -rotate-45 group-hover/btn:rotate-0 transition-transform duration-300">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 rounded-xl bg-[#2C2621] border border-[#36302b] hover:border-primary/40 hover:bg-[#322c26] transition-all gap-4">
+<div class="flex items-center gap-4 w-full sm:w-[30%]">
+<div class="size-10 rounded-lg bg-[#38312b] border border-[#443C36] flex items-center justify-center shrink-0 text-white shadow-inner">
+<span class="material-symbols-outlined text-[20px]">card_giftcard</span>
+</div>
+<div>
+<h4 class="text-white font-bold text-sm tracking-wide">Gyftr</h4>
+<p class="text-[10px] text-white/40 uppercase tracking-wider font-semibold">Aggregator</p>
+</div>
+</div>
+<div class="flex items-center justify-between w-full sm:w-[70%] pl-0 sm:pl-4 border-t sm:border-t-0 border-[#36302b] pt-3 sm:pt-0">
+<div class="min-w-[100px]">
+<p class="text-[10px] text-white/40 uppercase tracking-wider font-semibold mb-0.5">Savings</p>
+<p class="text-white font-bold text-base">3X Points</p>
+</div>
+<div class="min-w-[80px]">
+<p class="text-[10px] text-white/40 uppercase tracking-wider font-semibold mb-0.5">Cap/Mo</p>
+<p class="text-white/80 font-medium text-sm">2,500 Pts</p>
+</div>
+<button class="group/btn h-9 w-9 rounded-full bg-[#38312b] hover:bg-white text-white hover:text-[#231f1c] flex items-center justify-center transition-colors shadow-lg border border-[#443C36]">
+<span class="material-symbols-outlined text-[18px] -rotate-45 group-hover/btn:rotate-0 transition-transform duration-300">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="relative group flex flex-col sm:flex-row items-start sm:items-center justify-between p-5 rounded-xl bg-[#2C2621] border-2 z-20 gap-4 mt-3 mb-3 scale-[1.02] animate-breathe-glow">
+<div class="absolute -top-4 left-6 z-30 bg-metallic-badge text-white text-[11px] font-bold px-4 py-1.5 rounded-full flex items-center gap-2 shadow-lg border-t border-[#ffe082]/60 border-b border-[#5d4037] animate-badge-pulse">
+<span class="material-symbols-outlined text-[16px] text-white drop-shadow-md">emoji_events</span>
+<span class="tracking-widest drop-shadow-sm font-display text-xs">BEST RATE</span>
+</div>
+<div class="flex items-center gap-4 w-full sm:w-[30%]">
+<div class="size-10 rounded-lg bg-gradient-to-br from-accent-gold to-[#b88a44] border border-accent-gold-light flex items-center justify-center shrink-0 text-[#1c1917] shadow-lg">
+<span class="material-symbols-outlined text-[22px]">storefront</span>
+</div>
+<div>
+<h4 class="text-white font-bold text-base tracking-wide">iShop</h4>
+<p class="text-[10px] text-accent-gold uppercase tracking-wider font-bold">Recommended</p>
+</div>
+</div>
+<div class="flex items-center justify-between w-full sm:w-[70%] pl-0 sm:pl-4 border-t sm:border-t-0 border-[#36302b] pt-3 sm:pt-0">
+<div class="min-w-[100px]">
+<p class="text-[10px] text-white/40 uppercase tracking-wider font-semibold mb-0.5">Instant Disc.</p>
+<p class="text-accent-gold font-black text-lg drop-shadow-sm">25% OFF</p>
+</div>
+<div class="min-w-[80px]">
+<p class="text-[10px] text-white/40 uppercase tracking-wider font-semibold mb-0.5">Cap/Mo</p>
+<p class="text-white font-bold text-sm">No Cap</p>
+</div>
+<button class="h-10 px-5 rounded-lg bg-copper-gradient hover:brightness-110 text-white font-bold flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/20 hover:shadow-primary/40 active:scale-95">
+<span class="text-xs tracking-wide">Buy Now</span>
+<span class="material-symbols-outlined text-[16px] animate-pulse">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 rounded-xl bg-[#2C2621] border border-[#36302b] hover:border-primary/40 hover:bg-[#322c26] transition-all gap-4">
+<div class="flex items-center gap-4 w-full sm:w-[30%]">
+<div class="size-10 rounded-lg bg-[#38312b] border border-[#443C36] flex items-center justify-center shrink-0 text-white shadow-inner">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</div>
+<div>
+<h4 class="text-white font-bold text-sm tracking-wide">Amazon</h4>
+<p class="text-[10px] text-white/40 uppercase tracking-wider font-semibold">Marketplace</p>
+</div>
+</div>
+<div class="flex items-center justify-between w-full sm:w-[70%] pl-0 sm:pl-4 border-t sm:border-t-0 border-[#36302b] pt-3 sm:pt-0">
+<div class="min-w-[100px]">
+<p class="text-[10px] text-white/40 uppercase tracking-wider font-semibold mb-0.5">Cashback</p>
+<p class="text-white font-bold text-base">2% Back</p>
+</div>
+<div class="min-w-[80px]">
+<p class="text-[10px] text-white/40 uppercase tracking-wider font-semibold mb-0.5">Cap/Mo</p>
+<p class="text-white/80 font-medium text-sm">₹500</p>
+</div>
+<button class="group/btn h-9 w-9 rounded-full bg-[#38312b] hover:bg-white text-white hover:text-[#231f1c] flex items-center justify-center transition-colors shadow-lg border border-[#443C36]">
+<span class="material-symbols-outlined text-[18px] -rotate-45 group-hover/btn:rotate-0 transition-transform duration-300">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 rounded-xl bg-[#2C2621] border border-[#36302b] hover:border-primary/40 hover:bg-[#322c26] transition-all gap-4">
+<div class="flex items-center gap-4 w-full sm:w-[30%]">
+<div class="size-10 rounded-lg bg-[#38312b] border border-[#443C36] flex items-center justify-center shrink-0 text-white shadow-inner">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+</div>
+<div>
+<h4 class="text-white font-bold text-sm tracking-wide">Flipkart</h4>
+<p class="text-[10px] text-white/40 uppercase tracking-wider font-semibold">Marketplace</p>
+</div>
+</div>
+<div class="flex items-center justify-between w-full sm:w-[70%] pl-0 sm:pl-4 border-t sm:border-t-0 border-[#36302b] pt-3 sm:pt-0">
+<div class="min-w-[100px]">
+<p class="text-[10px] text-white/40 uppercase tracking-wider font-semibold mb-0.5">Fees</p>
+<p class="text-white font-bold text-base">₹50 Off</p>
+</div>
+<div class="min-w-[80px]">
+<p class="text-[10px] text-white/40 uppercase tracking-wider font-semibold mb-0.5">Cap/Mo</p>
+<p class="text-white/80 font-medium text-sm">1 Usage</p>
+</div>
+<button class="group/btn h-9 w-9 rounded-full bg-[#38312b] hover:bg-white text-white hover:text-[#231f1c] flex items-center justify-center transition-colors shadow-lg border border-[#443C36]">
+<span class="material-symbols-outlined text-[18px] -rotate-45 group-hover/btn:rotate-0 transition-transform duration-300">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-6 border-t border-[#36302b]/50">
+<p class="text-[10px] text-white/30 text-center font-light tracking-wide">
+                        Offers are real-time and subject to card eligibility. <a class="hover:text-primary transition-colors underline decoration-primary/30 underline-offset-2 cursor-pointer">View T&amp;C</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

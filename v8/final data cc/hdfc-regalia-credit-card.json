@@ -1,0 +1,1171 @@
+{
+  "id": "hdfc-regalia",
+  "name": "HDFC Bank Regalia Credit Card",
+  "bank": "HDFC Bank",
+  "slug": "hdfc-regalia-credit-card",
+  "image": "assets/cards/hdfc/regalia.png",
+  "link": "https://www.hdfc.bank.in/credit-cards/regalia-credit-card",
+  "isActive": false,
+  "discontinuedNote": "This card has been phased out for new applications. Existing cardholders can continue using the card. HDFC Regalia Gold is the successor card.",
+
+  "network": {
+    "type": "Visa",
+    "variant": "Signature",
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "premium",
+    "isCobranded": false,
+    "cobrandPartner": {
+      "name": null,
+      "type": null,
+      "loyaltyProgram": null
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 2500,
+      "gst": true,
+      "totalWithGst": 2950,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 2500,
+      "gst": true,
+      "totalWithGst": 2950,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 300000,
+        "spendPeriod": "12 months (anniversary year)",
+        "waiverText": "Spend ₹3,00,000 in the previous anniversary year for renewal fee waiver"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": null,
+      "joiningFee": 0,
+      "annualFee": 0,
+      "rewardSharing": true,
+      "note": "Add-on cards are free and share lounge access benefits"
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 100, "fee": 0},
+        {"minAmount": 101, "maxAmount": 500, "fee": 100},
+        {"minAmount": 501, "maxAmount": 5000, "fee": 500},
+        {"minAmount": 5001, "maxAmount": 10000, "fee": 600},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 800},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ]
+    },
+    "overLimit": {
+      "amount": 500,
+      "percentage": 2.5,
+      "note": "2.5% of over-limit amount, minimum ₹500"
+    },
+    "chequeReturn": 500,
+    "cardReplacement": 100,
+    "duplicateStatement": 100,
+    "thirdPartyAppFee": {
+      "enabled": true,
+      "effectiveDate": "2024-08-01",
+      "rentPayments": {
+        "percentage": 1,
+        "cap": 3000,
+        "platforms": ["CRED", "PayTM", "Cheq", "MobiKwik", "Freecharge"]
+      },
+      "utilityBills": {
+        "threshold": 50000,
+        "percentage": 1,
+        "cap": 3000
+      },
+      "fuelTransactions": {
+        "threshold": 15000,
+        "percentage": 1,
+        "cap": 3000
+      }
+    }
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 70000,
+        "annual": 840000
+      },
+      "selfEmployed": {
+        "itr": 840000
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 60,
+      "selfEmployedMax": 65,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": "Easier approval for existing HDFC Bank customers"
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 100000,
+      "max": 500000
+    },
+    "factors": "Based on income, credit score, existing HDFC relationship, and credit history",
+    "enhancementCriteria": "Good repayment history for 6+ months and increased income documentation"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.432,
+      "monthlyRate": 0.036
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.432,
+      "monthlyRate": 0.036
+    },
+    "gracePeriod": {
+      "days": 50,
+      "note": "Up to 50 days interest-free period from date of purchase if previous balance paid in full"
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 200,
+      "calculation": "5% of total outstanding or ₹200, whichever is higher"
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": 30,
+    "dailyLimit": null,
+    "interestFromDay1": true,
+    "note": "Cash advance fee is 2.5% of amount or ₹500, whichever is higher"
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "Reward Points",
+      "symbol": "RP",
+      "singularUnit": "point",
+      "pluralUnit": "points"
+    },
+    "baseRate": {
+      "rate": 4,
+      "spendUnit": 150,
+      "effectivePercentage": 0.0266,
+      "effectivePercentageNote": "2.66% at best redemption value of ₹1 per point for travel"
+    },
+    "earningText": "Earn 4 Reward Points for every ₹150 spent on retail purchases",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "EasyEMI transactions",
+        "Wallet loading transactions",
+        "Rent payments",
+        "Property management transactions",
+        "Government transactions",
+        "Insurance premium payments (capped)",
+        "EMI transactions (reversed if converted)",
+        "Cash withdrawals",
+        "Balance transfers"
+      ],
+      "mccs": ["5541", "5542", "5983", "6513", "9311", "9222", "9399", "9402"],
+      "note": "Fuel, wallet loads, rent, government, and property management transactions earn zero points. Insurance and grocery transactions have caps."
+    },
+
+    "caps": {
+      "monthly": {
+        "points": null,
+        "cashback": null,
+        "smartBuyBonus": 4000,
+        "insuranceCap": null,
+        "groceryCap": 2000
+      },
+      "daily": {
+        "insuranceCap": 2000
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "statementCycle": {
+        "maxRewardPoints": 25000
+      },
+      "resetPeriod": "statement",
+      "perTransaction": null,
+      "note": "SmartBuy accelerated rewards capped at 4,000 bonus points per month. Grocery rewards capped at 2,000 RP per month. Insurance capped at 2,000 RP per day."
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "2 years",
+      "condition": "From date of earning/accumulation"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": 2500,
+        "cashback": null,
+        "vouchers": null,
+        "spendCondition": {
+          "amount": null,
+          "period": null,
+          "transactionCount": null
+        },
+        "validity": "On payment of joining fee",
+        "description": "Get 2,500 Reward Points on payment of joining membership fee"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": true,
+        "points": 2500,
+        "condition": "On payment of renewal membership fee (not applicable when fee is waived)"
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "retail": {
+        "rate": 4,
+        "spendUnit": 150,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "note": "Base rate on all retail purchases except excluded categories"
+      },
+      "travel": {
+        "rate": 4,
+        "spendUnit": 150,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "mccs": ["3000-3299", "4511", "4722", "7011"],
+        "weekendRate": null,
+        "note": "Use SmartBuy for accelerated rewards on travel"
+      },
+      "dining": {
+        "rate": 4,
+        "spendUnit": 150,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "weekendRate": null,
+        "note": "Standard reward rate applies"
+      },
+      "online": {
+        "rate": 4,
+        "spendUnit": 150,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "note": "Standard reward rate on online transactions except excluded categories"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on fuel transactions"
+      },
+      "groceries": {
+        "rate": 4,
+        "spendUnit": 150,
+        "multiplier": null,
+        "cap": 2000,
+        "capPeriod": "monthly",
+        "merchants": null,
+        "note": "Grocery rewards capped at 2,000 points per month"
+      },
+      "utilities": {
+        "rate": 4,
+        "spendUnit": 150,
+        "cap": null,
+        "note": "Standard rewards on utility payments"
+      },
+      "insurance": {
+        "rate": 4,
+        "spendUnit": 150,
+        "cap": 2000,
+        "capPeriod": "daily",
+        "note": "Insurance transactions capped at 2,000 points per day"
+      },
+      "international": {
+        "rate": 4,
+        "spendUnit": 150,
+        "multiplier": null,
+        "cap": null,
+        "note": "Standard reward rate on international transactions"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on rent payments"
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on wallet loading transactions"
+      },
+      "government": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on government transactions"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": true,
+        "name": "SmartBuy",
+        "link": "https://offers.smartbuy.hdfcbank.com/regalia",
+        "multipliers": {
+          "hotels": {
+            "multiplier": 10,
+            "effectivePoints": 40,
+            "note": "10X on hotel bookings via SmartBuy"
+          },
+          "flights": {
+            "multiplier": 5,
+            "effectivePoints": 20,
+            "partners": ["Cleartrip", "EaseMyTrip"],
+            "note": "5X on flight bookings via SmartBuy"
+          },
+          "shopping": {
+            "amazon": {
+              "multiplier": 5,
+              "effectivePoints": 20
+            },
+            "flipkart": {
+              "multiplier": 3,
+              "effectivePoints": 12
+            }
+          },
+          "railTickets": {
+            "multiplier": 3,
+            "partner": "Confirmtkt",
+            "note": "IRCTC replaced with Confirmtkt on SmartBuy"
+          },
+          "busTickets": {
+            "multiplier": 10,
+            "partner": "RedBus"
+          },
+          "appleImagine": {
+            "multiplier": 5
+          },
+          "giftVouchers": {
+            "multiplier": "Varies",
+            "note": "Accelerated rewards via Gyftr"
+          }
+        },
+        "cap": 4000,
+        "capPeriod": "monthly",
+        "note": "Maximum accelerated (bonus) reward points capped at 4,000 per month"
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": [],
+        "note": "No dedicated partner merchant accelerators outside SmartBuy"
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": []
+      },
+      "milestoneAccelerators": []
+    },
+
+    "redemption": {
+      "baseValue": 0.20,
+      "bestValue": 1.0,
+      "bestOption": "Flight & Hotel bookings via SmartBuy portal",
+      "minRedemption": null,
+      "redemptionIncrement": null,
+      "convenienceFee": 99,
+      "convenienceFeeNote": "₹99 + GST per redemption request",
+      "monthlyRedemptionLimit": {
+        "flightsHotels": 50000,
+        "statementCredit": 50000
+      },
+
+      "pointsPlusPay": {
+        "enabled": true,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": 70,
+        "note": "Up to 70% of booking value can be redeemed through reward points on Flights, Hotels and Experiences via SmartBuy"
+      },
+
+      "options": [
+        {
+          "type": "travel",
+          "value": 0.50,
+          "description": "Flight & Hotel bookings via SmartBuy",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["SmartBuy"],
+          "note": "Best value redemption at 1 RP = ₹0.50 for travel bookings"
+        },
+        {
+          "type": "airmiles",
+          "value": 0.50,
+          "description": "Transfer to airline partners",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["Singapore Airlines KrisFlyer", "InterMiles", "Club Vistara"],
+          "note": "1:1 transfer ratio to airline partners via NetBanking"
+        },
+        {
+          "type": "products",
+          "value": 0.35,
+          "description": "Products and vouchers via SmartBuy catalog",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["SmartBuy Catalog"],
+          "note": "Up to ₹0.35 per point on products and vouchers"
+        },
+        {
+          "type": "statement_credit",
+          "value": 0.20,
+          "description": "Statement credit / Cashback",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 99,
+          "partners": [],
+          "note": "Lowest value redemption at 1 RP = ₹0.20. Capped at 50,000 RP per month."
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": true,
+      "eligibleCards": ["hdfc-regalia"],
+      "note": "Regalia has limited transfer partners compared to Infinia/DCB/Regalia Gold. Transfer via NetBanking only.",
+      "partners": [
+        {
+          "name": "Singapore Airlines KrisFlyer",
+          "type": "airline",
+          "program": "KrisFlyer",
+          "alliance": "Star Alliance",
+          "ratio": {
+            "cardPoints": 1,
+            "partnerPoints": 1,
+            "display": "1:1"
+          },
+          "minTransfer": 500,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "2-3 days",
+          "transferMethod": "NetBanking",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Primary transfer partner via NetBanking"
+        },
+        {
+          "name": "InterMiles",
+          "type": "airline",
+          "program": "InterMiles",
+          "alliance": null,
+          "ratio": {
+            "cardPoints": 1,
+            "partnerPoints": 1,
+            "display": "1:1"
+          },
+          "minTransfer": 500,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "Instant",
+          "transferMethod": "NetBanking",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Low value - avoid unless topping up for specific redemption"
+        },
+        {
+          "name": "Club Vistara",
+          "type": "airline",
+          "program": "Club Vistara Points",
+          "alliance": null,
+          "ratio": {
+            "cardPoints": 1,
+            "partnerPoints": 1,
+            "display": "1:1"
+          },
+          "minTransfer": 500,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "24-48 hours",
+          "transferMethod": "NetBanking",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Transfer via NetBanking. Note: Vistara merged with Air India - check current availability."
+        }
+      ],
+      "extendedPartners": {
+        "enabled": false,
+        "note": "Extended transfer partners (17+ airlines and hotels) are only available for Infinia, Diners Club Black, and Regalia Gold cardholders via SmartBuy portal."
+      },
+      "currentBonus": {
+        "active": false,
+        "bonusPercentage": null,
+        "validUntil": null,
+        "applicablePartners": []
+      }
+    },
+
+    "pooling": {
+      "enabled": true,
+      "eligibleCards": ["All HDFC credit cards of same customer"],
+      "acrossUsers": false,
+      "note": "Pool points across your HDFC cards via NetBanking"
+    },
+
+    "specialLogic": {
+      "emiReversal": "If a transaction is converted to EMI, the reward points earned on that transaction will be reversed"
+    },
+
+    "calculator": {
+      "enabled": true,
+      "formula": "basePoints = Math.floor(spend / 150) * 4",
+      "variables": ["spend", "category", "isSmartBuy", "smartBuyCategory"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": true,
+        "complimentaryCount": 8,
+        "period": "year",
+        "perQuarterLimit": 2,
+        "accessType": "HDFC Bank Lounge Program",
+        "accessProvider": "HDFC Bank / Visa",
+        "spendRequired": {
+          "amount": 100000,
+          "period": "quarterly",
+          "note": "Spend ₹1,00,000 in a calendar quarter (Jan-Mar, Apr-Jun, Jul-Sep, Oct-Dec) to unlock up to 2 lounge access vouchers for that quarter. This is a spend-based milestone benefit effective from December 1, 2023."
+        },
+        "voucherGeneration": {
+          "method": "SmartBuy Portal",
+          "url": "https://offers.smartbuy.hdfcbank.com/regalia",
+          "note": "Generate lounge access vouchers from Regalia SmartBuy page >> Lounge Benefits >> Lounge access voucher"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null,
+          "note": "Guest access will attract charges"
+        },
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "eligibleLounges": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/regalia/lounge-list",
+        "loungeList": [
+          "Delhi (DEL)",
+          "Mumbai (BOM)",
+          "Chennai (MAA)",
+          "Kolkata (CCU)",
+          "Bangalore (BLR)",
+          "Hyderabad (HYD)",
+          "Ahmedabad (AMD)",
+          "Cochin (COK)",
+          "Pune (PNQ)"
+        ]
+      },
+      "international": {
+        "included": true,
+        "complimentaryCount": 6,
+        "period": "year",
+        "accessType": "Priority Pass",
+        "accessProvider": "Priority Pass",
+        "membershipValue": null,
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "No spend requirement for international lounge access. Priority Pass requires completion of 4 retail transactions to apply."
+        },
+        "priorityPassApplication": {
+          "requirement": "Complete minimum 4 retail transactions",
+          "url": "https://leads.hdfcbank.com/applications/webforms/apply/HDFC_Regalia_Priority_Pass1/Regalia_Priority_Pass.aspx",
+          "note": "Apply for Priority Pass for self and add-on members after 4 retail transactions"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": 27,
+          "guestFeeCurrency": "USD",
+          "guestFeeNote": "US $27 + GST per guest per visit"
+        },
+        "additionalVisitFee": {
+          "amount": 27,
+          "currency": "USD",
+          "note": "US $27 + GST per visit after 6 complimentary visits"
+        },
+        "priorityPassInIndia": {
+          "charged": true,
+          "note": "Using Priority Pass in India will attract charges on your Credit Card"
+        },
+        "eligibleLounges": "https://www.prioritypass.com/lounges"
+      }
+    },
+
+    "milestones": [
+      {
+        "spend": 500000,
+        "period": "anniversary year",
+        "benefit": "10,000 bonus Reward Points",
+        "benefitType": "points",
+        "value": 5000,
+        "conditions": "Spend ₹5 lakh in anniversary year",
+        "fulfillment": "Within a month of reaching milestone"
+      },
+      {
+        "spend": 800000,
+        "period": "anniversary year",
+        "benefit": "Additional 5,000 Reward Points",
+        "benefitType": "points",
+        "value": 2500,
+        "conditions": "Spend ₹8 lakh in same anniversary year (cumulative with ₹5L milestone)",
+        "fulfillment": "Within a month of reaching milestone",
+        "note": "Total 15,000 bonus points on spending ₹8 lakh"
+      }
+    ],
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": false,
+      "lessonIncluded": false,
+      "note": null
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": null
+    },
+
+    "dining": {
+      "included": true,
+      "programs": [
+        {
+          "name": "Good Food Trail Program",
+          "platform": "Swiggy Dineout",
+          "discount": "Up to 7.5%-15%",
+          "cap": null,
+          "frequency": "Per visit",
+          "note": "Get up to 15% discount on partner restaurant bills via Swiggy Dineout app when paying with HDFC Regalia"
+        }
+      ],
+      "hotelDining": {
+        "included": false,
+        "hotels": null,
+        "offer": null
+      }
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 400,
+      "maxTransaction": 5000,
+      "monthlyCap": null,
+      "applicableStations": "All fuel stations in India",
+      "rewardsOnFuel": false,
+      "note": "1% fuel surcharge waiver (excluding GST) on transactions between ₹400 and ₹5,000"
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% + GST on international/foreign currency transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "recommendation": "Always decline DCC and pay in local currency to avoid additional charges"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "Forex markup applies to all non-INR transactions. Some older sources mention 2% markup - verify with current MITC."
+    },
+
+    "concierge": {
+      "included": true,
+      "availability": "24/7",
+      "type": "Regalia Concierge Services",
+      "services": [
+        "Travel bookings and assistance",
+        "Restaurant reservations",
+        "Event tickets",
+        "Gift procurement",
+        "General travel information"
+      ],
+      "contactNumber": "1860 425 1188",
+      "email": "regalia.support@smartbuyoffers.co",
+      "note": "24x7 exclusive concierge services for Regalia cardholders"
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": [],
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "SmartEMI / EasyEMI",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Amazon", "Flipkart", "Croma", "Reliance Digital", "Select partners"],
+        "note": "No-cost EMI available on select merchants and products"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": 199,
+        "minFee": 199,
+        "note": "EMI conversion fee of ₹199 + GST applies"
+      },
+      "minAmount": 2500,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": 0.12,
+        "max": 0.18
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": 0
+      },
+      "cancellationPeriod": null,
+      "note": "Convert eligible transactions to EMI after purchase. Note: Reward points earned on EMI-converted transactions are reversed."
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": 0.036
+      },
+      "processingFee": {
+        "percentage": 1,
+        "minFee": 250
+      },
+      "tenures": null,
+      "maxAmount": null,
+      "preclosureFee": null,
+      "note": "Balance transfer facility available. Check current offers for promotional rates."
+    },
+
+    "memberships": [],
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": true,
+      "cover": 10000000,
+      "condition": "Death cover. Ticket must be booked with card."
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": []
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": [],
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": true,
+      "cover": 1500000,
+      "overseas": true,
+      "condition": "Emergency overseas hospitalization up to ₹15 lakh"
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": 900000,
+      "fraudLiability": {
+        "included": true,
+        "cover": 900000,
+        "reportingWindow": "2 days before and 30 days after card is blocked",
+        "note": "Credit liability cover up to ₹9 lakh. Zero liability on fraudulent transactions if reported immediately."
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": []
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": [],
+      "excludedCountries": [],
+      "excludedVehicleTypes": []
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "claimProcess": {
+      "provider": "HDFC ERGO",
+      "timeLimit": "130 days from date of loss",
+      "tollFree": "+800 08250825",
+      "chargeable": "01204507250",
+      "note": "HDFC Bank Regalia Credit Cardholders can directly raise the claim with HDFC ERGO"
+    },
+    "note": "Insurance covers are available to Primary cardholder only. Lost card liability starts from dispatch date. Air Accident/Emergency Medical starts from card activation (first POS transaction). Terrorism specifically excluded."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000,
+      "note": "Contactless payments up to ₹5,000 without PIN"
+    },
+    "virtualCard": {
+      "available": false,
+      "instantIssuance": false,
+      "singleUse": false,
+      "spendControls": false
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": false,
+      "rewardsOnUPI": false,
+      "note": "Visa cards cannot be linked to UPI. Consider RuPay credit card for UPI."
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "platform": "MyCards / PayZapp",
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international transactions",
+        "Enable/Disable online transactions",
+        "Enable/Disable contactless",
+        "Real-time transaction alerts"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    },
+    "chipType": "EMV Chip"
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [
+      {
+        "cardId": "hdfc-regalia-first",
+        "spendRequired": null,
+        "tenure": null,
+        "autoUpgrade": false,
+        "note": "Regalia First holders may be offered upgrade to Regalia"
+      }
+    ],
+    "upgradesTo": [
+      {
+        "cardId": "hdfc-regalia-gold",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false,
+        "note": "Regalia Gold is the recommended upgrade/replacement for Regalia"
+      },
+      {
+        "cardId": "hdfc-diners-club-black",
+        "spendRequired": 800000,
+        "tenure": "12 months",
+        "inviteOnly": true,
+        "note": "Premium upgrade based on spend history"
+      },
+      {
+        "cardId": "hdfc-infinia",
+        "spendRequired": 1000000,
+        "tenure": "12 months",
+        "inviteOnly": true,
+        "note": "Ultra-premium upgrade - invite only"
+      }
+    ],
+    "note": "Regalia has been discontinued for new applications. Existing holders are recommended to upgrade to Regalia Gold for better benefits."
+  },
+
+  "meta": {
+    "tags": [
+      "Travel",
+      "Premium",
+      "Lounge Access",
+      "Rewards",
+      "Transfer Partners",
+      "SmartBuy",
+      "Discontinued"
+    ],
+    "bestFor": "Existing cardholders who spend ₹3-8 lakh annually and want lounge access + airmiles transfer capability",
+    "notRecommendedFor": "New applicants (card is discontinued). Low spenders who can't meet ₹1L quarterly for domestic lounge access.",
+    "rating": {
+      "overall": 3.5,
+      "rewards": 3.5,
+      "benefits": 3.5,
+      "value": 3.0,
+      "note": "Rating reflects post-devaluation status. Regalia Gold offers better value now."
+    },
+    "verdict": "HDFC Regalia was once a legendary premium card but has seen significant devaluation over the years. The spend-based domestic lounge access (₹1L quarterly) is inconvenient compared to competitors. The card has been phased out for new applications, with Regalia Gold as the successor. Existing cardholders should consider upgrading to Regalia Gold or Diners Club Black for better benefits.",
+    "pros": [
+      "Reasonable annual fee of ₹2,500 with spend-based waiver",
+      "Good base reward rate of 4 RP per ₹150 (2.66% effective)",
+      "SmartBuy accelerated rewards up to 10X on hotels",
+      "Transfer to Singapore Airlines KrisFlyer at 1:1 ratio",
+      "6 complimentary international lounge visits via Priority Pass",
+      "Comprehensive insurance (₹1 crore air accident, ₹15 lakh medical)"
+    ],
+    "cons": [
+      "Card discontinued for new applications",
+      "Domestic lounge access requires ₹1L quarterly spend (major devaluation)",
+      "Only 3 transfer partners vs 21 for Regalia Gold/Infinia",
+      "3.5% forex markup is high for travel card",
+      "Reward points expire in 2 years",
+      "SmartBuy bonus cap at 4,000 points/month is restrictive",
+      "No dedicated partner accelerators outside SmartBuy"
+    ],
+    "alternatives": [
+      {
+        "cardId": "hdfc-regalia-gold",
+        "reason": "Direct replacement with better benefits including 12 complimentary domestic lounge visits without spend requirement, 5X on lifestyle brands, and access to all 21 transfer partners"
+      },
+      {
+        "cardId": "hdfc-diners-club-privilege",
+        "reason": "Higher reward rate (4 RP per ₹150) with unlimited domestic lounge access"
+      },
+      {
+        "cardId": "axis-magnus",
+        "reason": "Better transfer partners and reward value for frequent flyers"
+      },
+      {
+        "cardId": "sbi-elite",
+        "reason": "Similar fee structure with better lounge access and milestone benefits"
+      }
+    ],
+    "lastVerified": "2026-01-05",
+    "dataSource": [
+      "Official HDFC Bank website - https://www.hdfc.bank.in/credit-cards/regalia-credit-card",
+      "HDFC Bank MITC document",
+      "SmartBuy portal - https://offers.smartbuy.hdfcbank.com/regalia",
+      "CardExpert.in review",
+      "Paisabazaar.com",
+      "BankBazaar.com",
+      "TechnoFino community discussions",
+      "CardInsider.com",
+      "Live From A Lounge - transfer partner updates"
+    ],
+    "changelog": [
+      {
+        "date": "2023-12-01",
+        "change": "Domestic lounge access now requires ₹1L quarterly spend - major devaluation",
+        "source": "Official HDFC Bank announcement"
+      },
+      {
+        "date": "2024-08-01",
+        "change": "1% fee introduced on rent payments via third-party apps (CRED, PayTM, etc.)",
+        "source": "HDFC Bank T&C update"
+      },
+      {
+        "date": "2024-08-01",
+        "change": "3.5% forex markup confirmed (was 2% on some premium variants)",
+        "source": "HDFC Bank fee schedule"
+      },
+      {
+        "date": "2024-Q2",
+        "change": "Card phased out for new applications - Regalia Gold launched as successor",
+        "source": "HDFC Bank website, Paisabazaar"
+      }
+    ]
+  }
+}

@@ -55,25 +55,25 @@ export default function MCCFinder() {
     return (
         <div className="flex flex-1 overflow-hidden relative">
             {/* Main Content */}
-            <main className="flex-1 flex flex-col relative overflow-hidden bg-espresso-900">
+            <main className="flex-1 flex flex-col relative overflow-hidden bg-theme-surface">
                 {/* Background gradient */}
-                <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-espresso-800/40 to-transparent pointer-events-none"></div>
+                <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-theme-surface/40 to-transparent pointer-events-none"></div>
 
                 <div className="flex-1 overflow-y-auto relative">
                     <div className="max-w-4xl mx-auto px-6 py-12 flex flex-col gap-10 min-h-[calc(100vh-64px)]">
                         {/* Header */}
                         <div className="text-center space-y-3 pt-4">
-                            <h1 className="text-3xl md:text-5xl font-bold text-gold-400 tracking-tight font-serif">Verify Merchant Eligibility</h1>
+                            <h1 className="text-3xl md:text-5xl font-bold text-accent tracking-tight font-serif">Verify Merchant Eligibility</h1>
                             <p className="text-warm-white text-lg max-w-xl mx-auto opacity-90 font-light">Enter a merchant name to instantly reveal the MCC and reward status for your specific card portfolio.</p>
                         </div>
 
                         {/* Search Box */}
                         <div className="w-full max-w-2xl mx-auto relative z-10">
-                            <div className="bg-espresso-950 border border-copper/50 rounded-lg h-16 flex items-center px-4 shadow-lg transition-all duration-200 focus-within:border-gold-400 focus-within:shadow-[0_0_0_1px_#d4af37]">
-                                <span className="material-symbols-outlined text-copper text-3xl mr-4">search</span>
+                            <div className="bg-theme-bg border border-copper/50 rounded-lg h-16 flex items-center px-4 shadow-lg transition-all duration-200 focus-within:border-accent focus-within:shadow-[0_0_0_1px_#d4af37]">
+                                <span className="material-symbols-outlined text-accent-secondary text-3xl mr-4">search</span>
                                 <input
                                     autoFocus
-                                    className="bg-transparent border-none text-warm-white text-lg placeholder:text-white/30 w-full h-full focus:ring-0 p-0"
+                                    className="bg-transparent border-none text-warm-white text-lg placeholder:text-theme-primary/30 w-full h-full focus:ring-0 p-0"
                                     placeholder="e.g. Amazon India, Paytm Utilities, Starbucks..."
                                     type="text"
                                     value={searchQuery}
@@ -81,7 +81,7 @@ export default function MCCFinder() {
                                 />
                                 {searchQuery && (
                                     <button
-                                        className="text-gold-dim hover:text-white transition-colors"
+                                        className="text-accent-dim hover:text-theme-primary transition-colors"
                                         onClick={() => handleSearch('')}
                                         title="Clear"
                                     >
@@ -90,14 +90,14 @@ export default function MCCFinder() {
                                 )}
                             </div>
                             <div className="mt-4 pl-4">
-                                <p className="text-sm text-gold-dim">Did you mean: <button className="text-gold-400 font-bold hover:underline font-serif">Starbucks Coffee</button>?</p>
+                                <p className="text-sm text-accent-dim">Did you mean: <button className="text-accent font-bold hover:underline font-serif">Starbucks Coffee</button>?</p>
                             </div>
                         </div>
 
                         {/* Search Result Card */}
                         {searchResult && (
                             <div className="w-full max-w-2xl mx-auto animate-fade-in">
-                                <div className="bg-espresso-800 rounded-lg border border-copper/30 shadow-xl overflow-hidden relative group">
+                                <div className="bg-theme-surface rounded-lg border border-copper/30 shadow-xl overflow-hidden relative group">
                                     {/* Status bar - Green for safe */}
                                     <div className="h-1 w-full bg-gradient-to-r from-emerald-700 to-emerald-500 shadow-[0_0_15px_rgba(61,139,77,0.6)]"></div>
 
@@ -109,7 +109,7 @@ export default function MCCFinder() {
                                                 <span className="material-symbols-outlined text-warm-white text-[48px] drop-shadow-lg">{getStatusIcon(searchResult.status)}</span>
                                             </div>
                                             <div className="absolute inset-0 bg-emerald-500/10 rounded-full blur-xl animate-pulse z-0"></div>
-                                            <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-espresso-950/95 backdrop-blur px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest text-emerald-500 border border-copper/30 shadow-lg z-20 whitespace-nowrap">
+                                            <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-theme-bg/95 backdrop-blur px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest text-emerald-500 border border-copper/30 shadow-lg z-20 whitespace-nowrap">
                                                 Safe
                                             </div>
                                         </div>
@@ -117,23 +117,23 @@ export default function MCCFinder() {
                                         {/* Main Content */}
                                         <div className="flex-1 min-w-0 pt-2">
                                             <div className="flex items-center gap-3 mb-2">
-                                                <h2 className="text-3xl font-bold text-gold-400 truncate font-serif">{searchResult.name}</h2>
+                                                <h2 className="text-3xl font-bold text-accent truncate font-serif">{searchResult.name}</h2>
                                                 {searchResult.verified && (
-                                                    <span className="material-symbols-outlined text-gold-600 text-xl" title="Verified Merchant">verified</span>
+                                                    <span className="material-symbols-outlined text-accent-dim text-xl" title="Verified Merchant">verified</span>
                                                 )}
                                             </div>
                                             <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 text-sm mb-6">
-                                                <div className="flex items-center gap-2 text-gold-dim">
-                                                    <span className="font-mono text-copper bg-copper/5 px-2 py-0.5 rounded border border-copper/40 font-bold">{searchResult.mcc}</span>
+                                                <div className="flex items-center gap-2 text-accent-dim">
+                                                    <span className="font-mono text-accent-secondary bg-copper/5 px-2 py-0.5 rounded border border-copper/40 font-bold">{searchResult.mcc}</span>
                                                     <span className="text-warm-white">{searchResult.category}</span>
                                                 </div>
                                             </div>
                                             <div className="flex items-center gap-3">
-                                                <button className="flex items-center gap-2 px-5 py-2.5 rounded border border-copper text-copper hover:bg-copper hover:text-espresso-950 transition-all text-xs font-bold uppercase tracking-wider">
+                                                <button className="flex items-center gap-2 px-5 py-2.5 rounded border border-copper text-accent-secondary hover:bg-copper hover:text-theme-primary transition-all text-xs font-bold uppercase tracking-wider">
                                                     <span className="material-symbols-outlined text-[16px]">content_copy</span>
                                                     Copy MCC
                                                 </button>
-                                                <button className="flex items-center gap-2 px-5 py-2.5 rounded border border-white/20 text-gold-dim hover:text-white hover:border-white/40 hover:bg-white/5 transition-all text-xs font-bold uppercase tracking-wider">
+                                                <button className="flex items-center gap-2 px-5 py-2.5 rounded border border-white/20 text-accent-dim hover:text-theme-primary hover:border-white/40 hover:bg-white/5 transition-all text-xs font-bold uppercase tracking-wider">
                                                     <span className="material-symbols-outlined text-[16px]">flag</span>
                                                     Report Issue
                                                 </button>
@@ -142,10 +142,10 @@ export default function MCCFinder() {
                                     </div>
 
                                     {/* Pro Tip */}
-                                    <div className="bg-espresso-950/40 px-6 md:px-8 py-4 border-t border-copper/20 flex items-start gap-3">
-                                        <span className="material-symbols-outlined text-gold-400 text-xl mt-0.5">tips_and_updates</span>
-                                        <p className="text-sm text-white/90 leading-relaxed">
-                                            <span className="text-gold-400 font-bold font-serif">Pro Tip:</span> This category qualifies for <span className="text-white font-bold border-b border-dashed border-white/40 cursor-help" title="Based on your Amex Platinum">{searchResult.rewardMultiplier} Reward Points</span> on your current card portfolio. Use your <span className="text-white font-bold">{searchResult.recommendedCard}</span> for maximum returns.
+                                    <div className="bg-theme-bg/40 px-6 md:px-8 py-4 border-t border-copper/20 flex items-start gap-3">
+                                        <span className="material-symbols-outlined text-accent text-xl mt-0.5">tips_and_updates</span>
+                                        <p className="text-sm text-theme-primary/90 leading-relaxed">
+                                            <span className="text-accent font-bold font-serif">Pro Tip:</span> This category qualifies for <span className="text-theme-primary font-bold border-b border-dashed border-white/40 cursor-help" title="Based on your Amex Platinum">{searchResult.rewardMultiplier} Reward Points</span> on your current card portfolio. Use your <span className="text-theme-primary font-bold">{searchResult.recommendedCard}</span> for maximum returns.
                                         </p>
                                     </div>
                                 </div>
@@ -154,19 +154,19 @@ export default function MCCFinder() {
 
                         {/* Popular Searches */}
                         <div className="w-full max-w-2xl mx-auto pt-8 border-t border-white/5">
-                            <h3 className="text-gold-dim text-xs font-bold uppercase tracking-widest mb-4">Popular Searches</h3>
+                            <h3 className="text-accent-dim text-xs font-bold uppercase tracking-widest mb-4">Popular Searches</h3>
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                                 {popularSearches.map((item) => (
                                     <button
                                         key={item.id}
                                         onClick={() => setSearchQuery(item.name)}
-                                        className="flex flex-col items-center justify-center p-4 rounded bg-espresso-800 border border-copper/30 hover:border-gold-400 hover:bg-espresso-800/80 transition-all group"
+                                        className="flex flex-col items-center justify-center p-4 rounded bg-theme-surface border border-copper/30 hover:border-accent hover:bg-theme-surface/80 transition-all group"
                                     >
                                         <div className={`size-10 rounded-full ${item.bgColor} flex items-center justify-center mb-3 overflow-hidden shadow-md`}>
-                                            <span className="font-bold text-white text-xs">{item.logo}</span>
+                                            <span className="font-bold text-theme-primary text-xs">{item.logo}</span>
                                         </div>
-                                        <span className="text-sm font-medium text-warm-white group-hover:text-gold-400 font-serif">{item.name}</span>
-                                        <span className="text-[10px] text-gold-dim mt-1 font-mono">{item.mcc}</span>
+                                        <span className="text-sm font-medium text-warm-white group-hover:text-accent font-serif">{item.name}</span>
+                                        <span className="text-[10px] text-accent-dim mt-1 font-mono">{item.mcc}</span>
                                     </button>
                                 ))}
                             </div>

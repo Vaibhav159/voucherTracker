@@ -1,0 +1,1171 @@
+{
+  "id": "sbi-elite",
+  "name": "SBI Card ELITE",
+  "bank": "SBI Card",
+  "slug": "sbi-card-elite",
+  "image": "assets/cards/sbi/sbi-elite.png",
+  "link": "https://www.sbicard.com/en/personal/credit-cards/lifestyle/sbi-card-elite.page",
+  "isActive": true,
+
+  "network": {
+    "type": "Multi-Network",
+    "variant": "World / Signature / Select",
+    "bin": null,
+    "availableNetworks": ["Mastercard World", "Visa Signature", "RuPay Select", "American Express"]
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "premium",
+    "isCobranded": false,
+    "cobrandPartner": {
+      "name": null,
+      "type": null,
+      "loyaltyProgram": null
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 4999,
+      "taxesExtra": true,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 4999,
+      "taxesExtra": true,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 1000000,
+        "spendPeriod": "12 months",
+        "waiverText": "Spend ₹10 lakh in 12 months for annual fee waiver"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": 4,
+      "joiningFee": 0,
+      "annualFee": 0,
+      "rewardSharing": true
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding + additional ₹100 for 2 consecutive missed payments",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 500, "fee": 0},
+        {"minAmount": 501, "maxAmount": 1000, "fee": 400},
+        {"minAmount": 1001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 950},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ]
+    },
+    "overLimit": {
+      "amount": 600,
+      "percentage": 2.5,
+      "note": "2.5% of overlimit amount or ₹600, whichever is higher"
+    },
+    "cashAdvance": {
+      "percentage": 2.5,
+      "minFee": 500,
+      "note": "2.5% of cash amount or ₹500, whichever is higher"
+    },
+    "foreignCurrency": {
+      "percentage": 1.99,
+      "taxesExtra": true,
+      "note": "1.99% + applicable taxes on all foreign currency transactions"
+    },
+    "chequeReturn": 500,
+    "cardReplacement": 100,
+    "duplicateStatement": 100,
+    "rentPaymentFee": {
+      "amount": 199,
+      "note": "₹199 per rent payment transaction"
+    },
+    "utilityPaymentFee": {
+      "percentage": 1,
+      "threshold": 50000,
+      "period": "billing cycle",
+      "note": "1% fee on utility payments exceeding ₹50,000 per billing cycle"
+    },
+    "educationPaymentFee": {
+      "percentage": 1,
+      "effectiveDate": "November 2025",
+      "note": "1% fee on education payments via third-party apps"
+    },
+    "walletLoadFee": {
+      "percentage": 1,
+      "threshold": 1000,
+      "effectiveDate": "November 2025",
+      "note": "1% fee on wallet loads exceeding ₹1,000"
+    }
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 25000,
+        "annual": 300000,
+        "note": "Income requirements vary; some sources indicate ₹60,000 monthly"
+      },
+      "selfEmployed": {
+        "itr": 600000,
+        "note": "₹6 lakh annual ITR for self-employed"
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 70,
+      "selfEmployedMax": 60,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": "SBI account not mandatory but may help approval"
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident",
+    "documents": [
+      "PAN Card",
+      "Aadhaar Card / Passport / Voter ID (Identity Proof)",
+      "Address Proof (Utility bill / Passport / Voter ID)",
+      "Income Proof (3 months salary slips or ITR for self-employed)"
+    ]
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 100000,
+      "max": 500000
+    },
+    "factors": "Based on income, credit score, and existing relationship with SBI",
+    "enhancementCriteria": "Good repayment history for 6+ months",
+    "cashLimit": {
+      "percentage": 80,
+      "note": "Up to 80% of credit limit for cash advances"
+    }
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375,
+      "note": "3.75% per month (45% p.a.) for unsecured cards"
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "min": 20,
+      "max": 50,
+      "note": "20-50 days interest-free if previous balance paid in full"
+    },
+    "minPayment": {
+      "percentage": 0.02,
+      "minAmount": 200,
+      "calculation": "100% GST + 100% EMI + 100% fees + 100% finance charges + overlimit + 2% remaining balance (min ₹200)"
+    },
+    "balanceTransfer": {
+      "promotionalRate": 0,
+      "promotionalPeriod": "60 days",
+      "regularRate": 0.017,
+      "regularPeriod": "180 days",
+      "note": "0% for 60 days, 1.7% p.m. for 180 days"
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": 80,
+    "dailyLimit": null,
+    "interestFromDay1": true
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "Reward Points",
+      "symbol": "RP",
+      "singularUnit": "point",
+      "pluralUnit": "points"
+    },
+    "baseRate": {
+      "rate": 2,
+      "spendUnit": 100,
+      "effectivePercentage": 0.005,
+      "note": "2 Reward Points per ₹100 spent = 0.5% effective rate (1 RP = ₹0.25)"
+    },
+    "earningText": "Earn 2 Reward Points for every ₹100 spent",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "Merchant EMI",
+        "Flexipay EMI",
+        "E-wallet loading",
+        "Cash advances",
+        "Balance transfers",
+        "Rent payments",
+        "Utility payments over ₹50,000/billing cycle",
+        "Education payments via third-party apps",
+        "Wallet loads over ₹1,000"
+      ],
+      "mccs": null,
+      "note": "No rewards on excluded categories; processing fees apply to rent, high utility, education, and wallet transactions"
+    },
+
+    "caps": {
+      "acceleratedCategories": {
+        "points": 10000,
+        "period": "calendar month",
+        "note": "10,000 RP cap on accelerated categories (dining, grocery, departmental stores) combined"
+      },
+      "monthly": {
+        "points": null,
+        "cashback": null
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": "calendar",
+      "perTransaction": null
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "24 months",
+      "condition": "From date of accrual"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": null,
+        "cashback": null,
+        "vouchers": "₹5,000 e-gift voucher",
+        "voucherBrands": ["Yatra", "Hush Puppies/Bata", "Pantaloons", "Aditya Birla Fashion", "Shoppers Stop"],
+        "spendCondition": {
+          "amount": null,
+          "period": null,
+          "transactionCount": null
+        },
+        "validity": null,
+        "description": "₹5,000 e-gift voucher from select brands on card issuance"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "vouchers": null,
+        "condition": null,
+        "note": "No renewal benefit; only welcome voucher on joining"
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "accelerated": {
+        "rate": 10,
+        "spendUnit": 100,
+        "multiplier": 5,
+        "effectivePercentage": 0.025,
+        "cap": 10000,
+        "capPeriod": "calendar month",
+        "applicableCategories": ["Dining", "Departmental stores", "Grocery"],
+        "note": "5X rewards (10 RP per ₹100 = 2.5% effective) on dining, grocery, and departmental stores"
+      },
+      "dining": {
+        "rate": 10,
+        "spendUnit": 100,
+        "multiplier": 5,
+        "effectivePercentage": 0.025,
+        "cap": 10000,
+        "capPeriod": "calendar month (combined with grocery/departmental)",
+        "merchants": null,
+        "weekendRate": null,
+        "note": "Part of accelerated categories; 5X = 10 RP per ₹100"
+      },
+      "groceries": {
+        "rate": 10,
+        "spendUnit": 100,
+        "multiplier": 5,
+        "effectivePercentage": 0.025,
+        "cap": 10000,
+        "capPeriod": "calendar month (combined with dining/departmental)",
+        "merchants": null,
+        "note": "Part of accelerated categories; 5X = 10 RP per ₹100"
+      },
+      "departmentalStores": {
+        "rate": 10,
+        "spendUnit": 100,
+        "multiplier": 5,
+        "effectivePercentage": 0.025,
+        "cap": 10000,
+        "capPeriod": "calendar month (combined with dining/grocery)",
+        "merchants": null,
+        "note": "Part of accelerated categories; 5X = 10 RP per ₹100"
+      },
+      "international": {
+        "rate": 2,
+        "spendUnit": 100,
+        "multiplier": null,
+        "effectivePercentage": 0.005,
+        "cap": null,
+        "note": "Base rate on international transactions"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on fuel transactions"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on rent; ₹199 processing fee applies"
+      },
+      "utilities": {
+        "rate": 2,
+        "spendUnit": 100,
+        "cap": null,
+        "note": "Base rate up to ₹50,000/billing cycle; 1% fee on excess"
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards; 1% fee on loads over ₹1,000 (from Nov 2025)"
+      },
+      "insurance": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on insurance premium payments"
+      },
+      "education": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards; 1% fee via third-party apps (from Nov 2025)"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": false,
+        "name": null,
+        "note": "SBI Card does not have a dedicated rewards portal like SmartBuy"
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": [],
+        "note": null
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": []
+      },
+      "milestoneAccelerators": []
+    },
+
+    "redemption": {
+      "baseValue": 0.25,
+      "bestValue": 0.32,
+      "bestOption": "Select catalog items (e.g., 50,000 RP = ₹16,000 Yatra voucher)",
+      "minRedemption": 2000,
+      "redemptionIncrement": null,
+      "convenienceFee": 99,
+      "convenienceFeeNote": "₹99 for physical products, statement credit, and physical vouchers",
+      "monthlyRedemptionLimit": null,
+
+      "pointsPlusPay": {
+        "enabled": false,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": null,
+        "note": null
+      },
+
+      "options": [
+        {
+          "type": "catalog_vouchers",
+          "value": 0.32,
+          "description": "Select catalog vouchers (e.g., Yatra)",
+          "recommended": true,
+          "minPoints": 2000,
+          "processingFee": 99,
+          "partners": ["Yatra"],
+          "note": "Best value: 50,000 RP = ₹16,000 Yatra voucher"
+        },
+        {
+          "type": "statement_credit",
+          "value": 0.25,
+          "description": "Statement credit / Cashback",
+          "recommended": false,
+          "minPoints": 2000,
+          "processingFee": 99,
+          "partners": [],
+          "note": "₹0.25 per point"
+        },
+        {
+          "type": "products",
+          "value": 0.25,
+          "description": "Physical products from catalog",
+          "recommended": false,
+          "minPoints": 2000,
+          "processingFee": 99,
+          "partners": [],
+          "note": "Variable value depending on product"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "partners": [],
+      "note": "SBI Card ELITE does not have airline/hotel transfer partners"
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": [],
+      "acrossUsers": false,
+      "note": null
+    },
+
+    "specialLogic": null,
+
+    "calculator": {
+      "enabled": true,
+      "formula": "basePoints = (spend / 100) * 2; acceleratedPoints = (acceleratedSpend / 100) * 10 (capped at 10,000/month)",
+      "variables": ["spend", "acceleratedSpend", "isAcceleratedCategory"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": true,
+        "complimentaryCount": 8,
+        "period": "year",
+        "perQuarterLimit": 2,
+        "accessType": "Visa/Mastercard/Amex/RuPay Lounge Programs",
+        "accessProvider": "DreamFolks / Card Network",
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "No spend requirement mentioned in current sources"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null,
+          "note": "Guest access may be chargeable"
+        },
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "eligibleLounges": "https://sbicard.com/en/personal/credit-cards/sbi-card-lounge-access.page"
+      },
+      "international": {
+        "included": true,
+        "complimentaryCount": 6,
+        "period": "year",
+        "perQuarterLimit": 2,
+        "accessType": "Priority Pass",
+        "accessProvider": "Priority Pass",
+        "membershipValue": 8200,
+        "membershipValidity": "2 years",
+        "membershipRenewal": "Not automatically renewed",
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "No spend requirement for lounge access"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": 2700,
+          "guestFeeUSD": 27,
+          "note": "$27 + taxes per guest/visit after complimentary visits"
+        },
+        "addOnCardEligible": false,
+        "eligibleLounges": "https://prioritypass.com/lounges"
+      }
+    },
+
+    "milestones": [
+      {
+        "spend": 300000,
+        "period": "annual",
+        "benefit": "10,000 bonus Reward Points",
+        "benefitType": "points",
+        "value": 2500,
+        "conditions": null
+      },
+      {
+        "spend": 400000,
+        "period": "annual",
+        "benefit": "10,000 bonus Reward Points",
+        "benefitType": "points",
+        "value": 2500,
+        "conditions": "Cumulative with ₹3L milestone"
+      },
+      {
+        "spend": 500000,
+        "period": "annual",
+        "benefit": "15,000 bonus Reward Points",
+        "benefitType": "points",
+        "value": 3750,
+        "conditions": "Cumulative with previous milestones"
+      },
+      {
+        "spend": 800000,
+        "period": "annual",
+        "benefit": "15,000 bonus Reward Points",
+        "benefitType": "points",
+        "value": 3750,
+        "conditions": "Cumulative with previous milestones; total 50,000 RP (₹12,500) at ₹8L spend"
+      }
+    ],
+
+    "golf": {
+      "included": true,
+      "complimentaryRounds": 4,
+      "period": "year",
+      "courses": "Select courses in India",
+      "greenFeeWaiver": true,
+      "lessonIncluded": true,
+      "lessonCount": 1,
+      "lessonPeriod": "month",
+      "discountOnAdditional": 50,
+      "note": "Mastercard World variant: 4 complimentary rounds/year + 50% discount + 1 free lesson/month"
+    },
+
+    "movies": {
+      "included": true,
+      "platform": "BookMyShow",
+      "offer": "2 complimentary movie tickets per month OR ₹500 discount, whichever is lower",
+      "freeTickets": 2,
+      "frequency": "monthly",
+      "maxDiscountPerTicket": 250,
+      "totalMaxDiscount": 500,
+      "annualValue": 6000,
+      "conditions": [
+        "Minimum 2 tickets must be booked",
+        "Max discount ₹250 per ticket (for 2 tickets only)",
+        "Convenience fee charged separately",
+        "No quota limits",
+        "No day-of-week restrictions"
+      ],
+      "note": "Key differentiator from SBI Prime; one of the best movie benefits in segment"
+    },
+
+    "dining": {
+      "included": true,
+      "programs": [
+        {
+          "name": "American Express Dining",
+          "discount": "25% off",
+          "cap": null,
+          "frequency": "Per visit",
+          "note": "Available on Amex variant only"
+        }
+      ],
+      "hotelDining": {
+        "included": true,
+        "hotels": ["The Lalit Hotels"],
+        "offer": "15% off on F&B",
+        "note": "Mastercard World variant only"
+      }
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 500,
+      "maxTransaction": 4000,
+      "monthlyCap": 250,
+      "applicableStations": "All fuel stations in India",
+      "rewardsOnFuel": false,
+      "note": "1% surcharge waiver on fuel transactions ₹500-₹4,000, max ₹250 per statement cycle"
+    },
+
+    "forex": {
+      "markupPercentage": 1.99,
+      "markupText": "1.99% + GST on international transactions",
+      "historicalNote": "Reduced from 3.5% in February 2017",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 1.99,
+      "note": "Among the lowest forex markup in premium segment"
+    },
+
+    "concierge": {
+      "included": true,
+      "availability": "24/7",
+      "type": "Premium Concierge",
+      "services": [
+        "Flower delivery",
+        "Gift delivery",
+        "Online doctor consultation",
+        "Travel bookings",
+        "Restaurant reservations"
+      ],
+      "contactNumber": "1800-2121-68168",
+      "email": "support@premiumconcierge.in",
+      "note": null
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": [],
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "Flexipay EMI",
+      "noCostEMI": {
+        "available": true,
+        "merchants": null,
+        "note": "Available on select merchants"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": null,
+        "minFee": null
+      },
+      "minAmount": 2500,
+      "tenures": null,
+      "interestRates": {
+        "min": null,
+        "max": null
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": 0
+      },
+      "cancellationPeriod": null,
+      "note": "EMI conversion available for transactions ≥₹2,500 within 30 days"
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": 0,
+        "promotionalPeriod": "60 days",
+        "regular": 0.017,
+        "regularPeriod": "180 days"
+      },
+      "processingFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "tenures": null,
+      "maxAmount": null,
+      "preclosureFee": null,
+      "note": "0% for 60 days, 1.7% p.m. for 180 days"
+    },
+
+    "memberships": [
+      {
+        "name": "ITC Hotels Club ITC Silver",
+        "type": "hotel_loyalty",
+        "value": null,
+        "duration": "1 year",
+        "condition": "Cards sourced from September 1, 2025 onwards only",
+        "activationCondition": "First transaction within 60 days",
+        "confirmationTime": "7 working days after registration",
+        "status": "Active",
+        "note": "Complimentary 1-year membership for new cardholders"
+      },
+      {
+        "name": "Club Vistara Silver Tier",
+        "type": "airline_loyalty",
+        "value": null,
+        "duration": null,
+        "condition": null,
+        "status": "DISCONTINUED",
+        "discontinuedDate": "2024",
+        "benefits": [
+          "9 CV points per ₹100 on Vistara bookings",
+          "1 upgrade voucher"
+        ],
+        "note": "This benefit has been discontinued"
+      },
+      {
+        "name": "Trident Privilege Red Tier",
+        "type": "hotel_loyalty",
+        "value": null,
+        "duration": null,
+        "condition": null,
+        "status": "DISCONTINUED",
+        "discontinuedDate": "2024",
+        "benefits": [
+          "1,000 welcome points",
+          "1,500 bonus points on first stay",
+          "₹1,000 hotel credit on extended stay",
+          "10% discount on hotel website bookings"
+        ],
+        "note": "This benefit has been discontinued"
+      },
+      {
+        "name": "Tablet Plus",
+        "type": "subscription",
+        "value": null,
+        "duration": null,
+        "condition": null,
+        "status": "Active",
+        "note": "Available on Visa Signature variant"
+      },
+      {
+        "name": "Times Prime",
+        "type": "subscription",
+        "value": null,
+        "duration": null,
+        "condition": null,
+        "status": "Active",
+        "note": "Available on Visa Signature variant"
+      }
+    ],
+
+    "networkSpecificBenefits": {
+      "mastercardWorld": [
+        "Golf: 4 rounds/year + 50% discount + 1 free lesson/month",
+        "15% discount at The Lalit Hotels F&B"
+      ],
+      "visaSignature": [
+        "MMT Signature offers",
+        "Times Prime membership",
+        "Alaya Stays benefits",
+        "Tablet Plus membership"
+      ],
+      "americanExpress": [
+        "Dining platform: 25% discount",
+        "Tablet Plus membership"
+      ],
+      "rupaySelect": [
+        "RuPay Select lounge access"
+      ]
+    },
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null,
+        "note": "Club Vistara Silver was discontinued in 2024"
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": true,
+        "tier": "Silver",
+        "program": "Club ITC",
+        "condition": "Cards sourced from September 1, 2025 onwards only"
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "condition": null,
+      "discontinuedDate": "July 15, 2025",
+      "previousCover": 10000000,
+      "note": "₹1 crore air accident insurance was DISCONTINUED from July 15, 2025"
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": []
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": [],
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": null,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": 100000,
+      "fraudLiability": {
+        "included": true,
+        "cover": 100000,
+        "reportingWindow": "48 hours before to 7 days after reporting"
+      },
+      "note": "₹1 lakh fraud liability cover"
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": []
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": [],
+      "excludedCountries": [],
+      "excludedVehicleTypes": []
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "Most travel insurance benefits were discontinued or never offered. Only fraud liability cover remains active."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000
+    },
+    "virtualCard": {
+      "available": true,
+      "instantIssuance": true,
+      "singleUse": false,
+      "spendControls": true
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true,
+      "note": "Apple Pay not supported in India"
+    },
+    "upiLinking": {
+      "available": true,
+      "rewardsOnUPI": true,
+      "note": "RuPay Select variant can be linked to UPI"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Category-wise controls",
+        "Real-time alerts"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    },
+    "emergencyCardReplacement": {
+      "available": true,
+      "worldwide": true,
+      "networks": ["Visa", "Mastercard"],
+      "note": "Emergency card replacement available worldwide for Visa/Mastercard variants"
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [
+      {
+        "cardId": "sbi-prime",
+        "spendRequired": null,
+        "tenure": null,
+        "autoUpgrade": false,
+        "note": "SBI Prime cardholders may be offered upgrade based on spending"
+      },
+      {
+        "cardId": "sbi-simply-click",
+        "spendRequired": null,
+        "tenure": null,
+        "autoUpgrade": false
+      }
+    ],
+    "upgradesTo": [
+      {
+        "cardId": "sbi-aurum",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": true,
+        "note": "SBI AURUM is invitation-only ultra-premium card"
+      }
+    ],
+    "note": "Upgrade eligibility based on spend history and relationship"
+  },
+
+  "meta": {
+    "tags": [
+      "Premium",
+      "Lifestyle",
+      "Movie Tickets",
+      "Lounge Access",
+      "Low Forex",
+      "Milestone Rewards"
+    ],
+    "bestFor": "Movie enthusiasts spending ₹5-10 lakh annually who value BookMyShow benefit + lounge access + low forex markup",
+    "notRecommendedFor": "Low spenders (<₹5L annually), those seeking high reward rates or travel transfer partners",
+    "rating": {
+      "overall": 4.0,
+      "rewards": 3.5,
+      "benefits": 4.0,
+      "value": 4.0
+    },
+    "verdict": "A solid premium lifestyle card with standout movie benefit (₹6,000/year value) and excellent low forex markup (1.99%). Best suited for those who can hit ₹5L+ annual spend to maximize milestone rewards. The high fee waiver threshold (₹10L) and low base reward rate (0.5%) are downsides. No renewal benefit means value drops after first year unless spending heavily.",
+    "pros": [
+      "Best-in-class BookMyShow offer: 2 tickets/month worth ₹6,000/year",
+      "Low forex markup at 1.99% (among lowest in India)",
+      "Good milestone rewards totaling ₹12,500 at ₹8L spend",
+      "Priority Pass with 6 international lounge visits",
+      "8 domestic lounge visits per year",
+      "₹5,000 welcome voucher offsets first-year fee",
+      "ITC Silver membership for new cards (from Sep 2025)",
+      "5X rewards on dining/grocery/departmental stores"
+    ],
+    "cons": [
+      "High fee waiver threshold (₹10 lakh annual spend)",
+      "Low base reward rate (0.5%)",
+      "No renewal benefit or voucher",
+      "Reward points expire in 24 months",
+      "No airline/hotel transfer partners",
+      "Priority Pass valid only 2 years (not renewed)",
+      "Air accident insurance discontinued (July 2025)",
+      "Club Vistara and Trident memberships discontinued (2024)",
+      "10,000 RP monthly cap on accelerated categories"
+    ],
+    "alternatives": [
+      {
+        "cardId": "sbi-prime",
+        "reason": "Lower fee (₹2,999), ₹3L waiver threshold, better for utility spends, but no movie benefit"
+      },
+      {
+        "cardId": "hdfc-regalia",
+        "reason": "Better reward value, transfer partners, SmartBuy 10X, but higher forex markup"
+      },
+      {
+        "cardId": "axis-magnus",
+        "reason": "Superior transfer partners and milestone rewards for premium spenders"
+      },
+      {
+        "cardId": "icici-emeralde",
+        "reason": "Good alternative with different benefit structure"
+      }
+    ],
+    "lastVerified": "2026-01-05",
+    "dataSource": [
+      "Official SBI Card website (sbicard.com)",
+      "MITC document dated December 2025",
+      "CardExpert.in review and community discussion",
+      "PaisaBazaar.com",
+      "BankBazaar.com",
+      "Airtel Finance",
+      "BookMyShow offer terms"
+    ],
+    "changelog": [
+      {
+        "date": "2025-09-01",
+        "change": "ITC Hotels Club ITC Silver membership added for new cards",
+        "source": "Official SBI Card website"
+      },
+      {
+        "date": "2025-07-15",
+        "change": "Air accident insurance (₹1 crore) discontinued",
+        "source": "Official T&C update"
+      },
+      {
+        "date": "2025-11-01",
+        "change": "1% fee on education payments via third-party apps and wallet loads >₹1,000",
+        "source": "MITC update"
+      },
+      {
+        "date": "2024",
+        "change": "Club Vistara Silver and Trident Privilege Red memberships discontinued",
+        "source": "CardExpert community reports"
+      },
+      {
+        "date": "2017-02",
+        "change": "Foreign currency markup reduced from 3.5% to 1.99%",
+        "source": "Official announcement"
+      },
+      {
+        "date": "2017-07",
+        "change": "International lounge visits capped at 6/year (max 2/quarter)",
+        "source": "Official T&C update"
+      },
+      {
+        "date": "2016-09",
+        "change": "SBI Signature card converted to SBI Elite with modified benefits",
+        "source": "CardExpert"
+      }
+    ],
+    "communityInsights": {
+      "positives": [
+        "Movie benefit highly valued among users",
+        "Low forex markup appreciated for international travel",
+        "Welcome voucher effectively offsets first-year fee",
+        "No conditions or quotas on BookMyShow offer (unlike competitors)"
+      ],
+      "negatives": [
+        "High renewal fee with no renewal benefit",
+        "Customer service issues reported",
+        "Priority Pass not automatically renewed after 2 years"
+      ],
+      "recommendations": [
+        "Best for 5-8L annual spenders",
+        "Compare with SBI Prime for lower spenders",
+        "Use for dining/grocery for 5X rewards",
+        "Maximize movie benefit for ₹500/month value"
+      ],
+      "source": "CardExpert.in community (125+ comments)"
+    }
+  }
+}

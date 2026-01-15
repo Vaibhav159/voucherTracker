@@ -1,0 +1,898 @@
+{
+  "id": "sbi-cashback-card",
+  "name": "CASHBACK SBI Card",
+  "bank": "SBI Card",
+  "slug": "cashback-sbi-card",
+  "image": "assets/cards/sbi/cashback-sbi-card.png",
+  "link": "https://www.sbicard.com/en/personal/credit-cards/rewards/cashback-sbi-card.page",
+  "isActive": true,
+
+  "network": {
+    "type": "Visa",
+    "variant": null,
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "entry",
+    "isCobranded": false,
+    "cobrandPartner": {
+      "name": null,
+      "type": null,
+      "loyaltyProgram": null
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 999,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 999,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 200000,
+        "spendPeriod": "12 months",
+        "waiverText": "Renewal fee reversed if annual spends for last year >= Rs. 2,00,000"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": null,
+      "joiningFee": 0,
+      "annualFee": 0,
+      "rewardSharing": true
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 500, "fee": 0},
+        {"minAmount": 501, "maxAmount": 5000, "fee": 400},
+        {"minAmount": 5001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 900},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ],
+      "additionalPenalty": "Rs. 100 additional penalty for missing MAD for two consecutive billing cycles"
+    },
+    "overLimit": {
+      "amount": 600,
+      "percentage": 2.5,
+      "note": "2.5% of overlimit amount or Rs. 600, whichever is higher"
+    },
+    "chequeReturn": null,
+    "cardReplacement": 200,
+    "duplicateStatement": 100,
+    "cashPaymentFee": 250
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 30000,
+        "annual": 360000
+      },
+      "selfEmployed": {
+        "itr": 360000
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 70,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 650,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": null
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 10000,
+      "max": 500000
+    },
+    "factors": "Based on income, credit score, and existing relationship with SBI Card",
+    "enhancementCriteria": "Good repayment history and increased income"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": 50,
+      "note": "Interest-free period of 20 to 50 days, subject to merchant claim submission date"
+    },
+    "minPayment": {
+      "percentage": 0.02,
+      "minAmount": 200,
+      "calculation": "100% of GST + 100% of EMI amount + 100% of Fees/Charges + 100% of Finance charges + Overlimit Amount (if any) + 2% of remaining balance outstanding or Rs 200 (whichever is greater)"
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": null,
+    "dailyLimit": 15000,
+    "interestFromDay1": true,
+    "note": "2.5% of the amount withdrawn or Rs. 500, whichever is higher. Finance charges apply from day of withdrawal."
+  },
+
+  "rewards": {
+    "type": "cashback",
+    "currency": {
+      "name": "Cashback",
+      "symbol": "₹",
+      "singularUnit": "rupee",
+      "pluralUnit": "rupees"
+    },
+    "baseRate": {
+      "online": {
+        "rate": 5,
+        "spendUnit": 100,
+        "effectivePercentage": 0.05
+      },
+      "offline": {
+        "rate": 1,
+        "spendUnit": 100,
+        "effectivePercentage": 0.01
+      }
+    },
+    "earningText": "Earn 5% Cashback on online spends without any merchant restriction and 1% Cashback on offline spends",
+    "minTransactionForRewards": 100,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "Utility payments",
+        "Insurance payments",
+        "Rent payments",
+        "Wallet loads",
+        "School & Educational Services",
+        "Jewelry",
+        "Railways",
+        "Card/Gift/Novelty/Souvenir Shops",
+        "Member Financial Institution/Quasi Cash",
+        "Merchant EMI transactions",
+        "Flexipay EMI transactions",
+        "Balance transfers",
+        "Cash advances",
+        "Financial charges (late payment fee, dishonored cheque charges, etc.)",
+        "Disputed transactions",
+        "Encash",
+        "ATM withdrawals"
+      ],
+      "mccs": [
+        "5172",
+        "5541",
+        "5542",
+        "5983",
+        "4900",
+        "9399",
+        "4814",
+        "5960",
+        "6300",
+        "5947",
+        "8211",
+        "8220",
+        "8241",
+        "8244",
+        "8249",
+        "8299"
+      ],
+      "note": "Cashback not applicable on transactions at these MCCs. MCCs are defined by Networks and subject to change."
+    },
+
+    "caps": {
+      "monthly": {
+        "points": null,
+        "cashback": 5000
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": 60000
+      },
+      "resetPeriod": "statement",
+      "perTransaction": null,
+      "note": "Maximum cashback that can be earned on online & offline spends in a statement cycle is capped at Rs. 5,000"
+    },
+
+    "expiry": {
+      "hasExpiry": false,
+      "period": null,
+      "condition": "Cashback is credited directly to SBI Card account and does not expire. It is auto-adjusted in the next statement."
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": false,
+        "points": null,
+        "cashback": null,
+        "vouchers": null,
+        "spendCondition": null,
+        "validity": null,
+        "description": null
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "online": {
+        "rate": 5,
+        "multiplier": null,
+        "cap": 5000,
+        "capPeriod": "statement cycle",
+        "merchants": ["All online merchants without restriction"],
+        "weekendRate": null,
+        "note": "5% cashback on all online spends without any merchant restriction"
+      },
+      "offline": {
+        "rate": 1,
+        "multiplier": null,
+        "cap": 5000,
+        "capPeriod": "statement cycle",
+        "note": "1% cashback on all offline/POS spends. Combined cap with online of Rs. 5,000 per statement cycle."
+      },
+      "travel": {
+        "rate": 5,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["Online travel bookings"],
+        "mccs": null,
+        "weekendRate": null,
+        "note": "5% cashback when booked online, subject to overall online cap"
+      },
+      "dining": {
+        "rate": 5,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["Online food delivery platforms"],
+        "weekendRate": null,
+        "note": "5% cashback on online food ordering (Swiggy, Zomato, etc.), subject to overall online cap"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on fuel transactions. However, 1% fuel surcharge waiver applicable."
+      },
+      "groceries": {
+        "rate": 5,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["Online grocery platforms"],
+        "note": "5% cashback on online grocery shopping (BigBasket, etc.), subject to overall online cap"
+      },
+      "utilities": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on utility payments (MCC 4900, 9399, 4814, 5960, 6300)"
+      },
+      "international": {
+        "rate": 5,
+        "multiplier": null,
+        "cap": null,
+        "note": "5% cashback on online international transactions (effective ~1% after forex markup of 3.5%+GST)"
+      },
+      "insurance": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on insurance payments"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on rent payments"
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on wallet loads. Additionally, 1% fee on wallet loads w.e.f. 1st Nov 2025"
+      },
+      "education": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on school & educational services. Additionally, 1% fee on education payments via third-party apps w.e.f. 1st Nov 2025"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": false,
+        "name": null,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "link": null,
+        "note": "SBI Card does not have a dedicated rewards portal like SmartBuy for this card"
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": null,
+        "note": null
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": null
+      },
+      "milestoneAccelerators": null
+    },
+
+    "redemption": {
+      "baseValue": 1.0,
+      "bestValue": 1.0,
+      "bestOption": "Auto-credited to card account as statement credit",
+      "minRedemption": null,
+      "redemptionIncrement": null,
+      "convenienceFee": null,
+      "monthlyRedemptionLimit": null,
+
+      "pointsPlusPay": {
+        "enabled": false,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": null,
+        "note": null
+      },
+
+      "options": [
+        {
+          "type": "statement_credit",
+          "value": 1.0,
+          "description": "Auto-credited to SBI Card account",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": [],
+          "note": "Cashback is automatically credited to your SBI Card account within 2 working days of statement generation. No redemption required."
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": null,
+      "partners": null,
+      "currentBonus": null
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": null,
+      "acrossUsers": false,
+      "note": "Cashback is not poolable. Reward points from other SBI Cards will expire if transferred/flipped to CASHBACK SBI Card."
+    },
+
+    "specialLogic": "Cashback is accrued on posting/settlement date of transaction, not on effective date. Cashback will be reversed for purchase cancellations, reversals and returns.",
+
+    "calculator": {
+      "enabled": true,
+      "formula": "onlineCashback = onlineSpend * 0.05; offlineCashback = offlineSpend * 0.01; totalCashback = min(onlineCashback + offlineCashback, 5000)",
+      "variables": ["onlineSpend", "offlineSpend", "isExcludedCategory"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "railwayLounge": null,
+        "eligibleLounges": null,
+        "note": "Complimentary Domestic Airport Lounge benefit was discontinued effective 1st May 2023"
+      },
+      "international": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "membershipValue": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "eligibleLounges": null,
+        "note": "International lounge access not included"
+      }
+    },
+
+    "milestones": null,
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": null,
+      "lessonIncluded": null,
+      "note": null
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": null
+    },
+
+    "dining": {
+      "included": false,
+      "programs": null,
+      "hotelDining": null
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 500,
+      "maxTransaction": 3000,
+      "monthlyCap": 100,
+      "applicableStations": "All petrol pumps in India",
+      "rewardsOnFuel": false,
+      "note": "1% Fuel Surcharge Waiver across all petrol pumps in India on transactions of Rs. 500 - Rs. 3,000. Maximum surcharge waiver of Rs. 100 per statement cycle per credit card account. Exclusive of GST and other charges."
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% of the transaction amount + applicable taxes",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "fee": 3.5,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "3.5% forex markup applicable on all international transactions and transactions in foreign currency"
+    },
+
+    "concierge": {
+      "included": false,
+      "availability": null,
+      "type": null,
+      "services": null,
+      "contactNumber": null,
+      "note": null
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": null,
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "Flexipay EMI",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Select partner merchants"],
+        "note": "No-cost EMI available on select merchants and products"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": 199,
+        "minFee": 199
+      },
+      "minAmount": 2500,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": 0.12,
+        "max": 0.18
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": null
+      },
+      "cancellationPeriod": null,
+      "note": "Flexipay EMI available. Note: Merchant EMI & Flexipay EMI transactions are not eligible for cashback."
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": 0.0375
+      },
+      "processingFee": {
+        "percentage": 1,
+        "minFee": 199
+      },
+      "tenures": [6, 12, 18, 24],
+      "maxAmount": null,
+      "preclosureFee": 3,
+      "note": "Transfer outstanding balance of other banks' credit cards to CASHBACK SBI Card at lower interest rate and pay back in EMIs"
+    },
+
+    "memberships": null,
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "condition": null
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": null,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": false,
+      "cover": null,
+      "fraudLiability": {
+        "included": false,
+        "cover": null,
+        "reportingWindow": null
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "CASHBACK SBI Card is an entry-level card and does not include insurance benefits. For insurance coverage, consider premium SBI cards like SBI Card PRIME or SBI Card ELITE."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000,
+      "note": "Visa PayWave contactless enabled. Tap your card at a secure reader for transactions."
+    },
+    "virtualCard": {
+      "available": false,
+      "instantIssuance": false,
+      "singleUse": false,
+      "spendControls": false
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": false,
+      "rewardsOnUPI": false,
+      "note": "This is a Visa card and does not support UPI linking. Only RuPay credit cards support UPI linking."
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "View statements",
+        "Track spending",
+        "Pay bills",
+        "Set up auto-pay",
+        "Real-time alerts"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    },
+    "emvChip": true
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": null,
+    "upgradesTo": [
+      {
+        "cardId": "sbi-simplyclick",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false,
+        "note": "Can request flip/transfer to other SBI Card variants"
+      },
+      {
+        "cardId": "sbi-prime",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false,
+        "note": "Based on usage and relationship"
+      }
+    ],
+    "note": "Card flip/transfer available. Note: If flipping/transferring from another SBI Card to CASHBACK SBI Card, all reward points accrued and not redeemed on existing card would expire immediately upon flipping/transfer. Redeem reward points before transferring."
+  },
+
+  "meta": {
+    "tags": [
+      "Cashback",
+      "Entry-level",
+      "Online Shopping",
+      "E-commerce",
+      "No Merchant Restriction"
+    ],
+    "bestFor": "Online shoppers who prefer direct cashback over reward points and spend primarily on e-commerce platforms like Amazon, Flipkart, Myntra, Swiggy, Zomato, etc.",
+    "notRecommendedFor": "Those who spend primarily on fuel, utilities, rent, education, or insurance. Also not ideal for those seeking airport lounge access, travel benefits, or welcome bonuses.",
+    "rating": {
+      "overall": 3.8,
+      "rewards": 4.5,
+      "benefits": 2.5,
+      "value": 4.0
+    },
+    "verdict": "The CASHBACK SBI Card is arguably the best entry-level cashback credit card in India for online shopping, offering an industry-leading 5% cashback on all online spends without any merchant restrictions. The card delivers exceptional value for e-commerce enthusiasts who can maximize the Rs. 5,000 monthly cashback cap. However, the May 2023 devaluation removed airport lounge access and added multiple exclusion categories, making it less versatile. Best used as a dedicated online shopping card alongside other cards for utilities, fuel, and offline spends.",
+    "pros": [
+      "Industry-leading 5% cashback on online spends with no merchant restriction",
+      "1% cashback on offline spends",
+      "Cashback auto-credited - no redemption hassle",
+      "Cashback does not expire",
+      "Annual fee waiver achievable with Rs. 2 lakh spend",
+      "1% fuel surcharge waiver (up to Rs. 100/month)",
+      "5% effective cashback on international online transactions after forex markup",
+      "Free add-on cards",
+      "Contactless enabled"
+    ],
+    "cons": [
+      "No airport lounge access (discontinued May 2023)",
+      "Rs. 5,000 monthly cashback cap limits earning potential",
+      "Many exclusion categories (fuel, utilities, rent, education, insurance, jewelry, railways)",
+      "No welcome bonus",
+      "No reward points - only cashback",
+      "3.5% forex markup on international transactions",
+      "Not eligible for instant discounts during online sales (confirmed by user reports)",
+      "No insurance or travel benefits"
+    ],
+    "alternatives": [
+      "axis-ace-credit-card",
+      "amazon-pay-icici-credit-card",
+      "axis-flipkart-credit-card",
+      "hsbc-live-plus-credit-card"
+    ],
+    "lastVerified": "2026-01-06",
+    "dataSource": [
+      "Official SBI Card website (sbicard.com)",
+      "SBI Card MITC document (mitc-english.pdf)",
+      "SBI Card Cashback Card Terms & Conditions (cashback-tnc-booklet.pdf)",
+      "SBI Card Customer Notices (customer-notices.page)",
+      "SBI Card FAQ page (cashback-sbi-card-faq.page)",
+      "TechnoFino community",
+      "CardExpert.in",
+      "PaisaBazaar.com"
+    ],
+    "changelog": [
+      {
+        "date": "2023-05-01",
+        "change": "Complimentary Domestic Airport Lounge benefit discontinued",
+        "source": "SBI Card official notification"
+      },
+      {
+        "date": "2023-05-01",
+        "change": "Maximum cashback capped at Rs. 5,000 per statement cycle (combined online + offline)",
+        "source": "SBI Card official notification"
+      },
+      {
+        "date": "2023-05-01",
+        "change": "Added exclusion categories: Jewelry, School & Educational Services, Utilities, Insurance, Card/Gift/Novelty/Souvenir Shops, Member Financial Institution/Quasi Cash, Railways",
+        "source": "SBI Card official notification"
+      },
+      {
+        "date": "2024-11-01",
+        "change": "Finance charges revised to 3.75% p.m. (45% p.a.) for all unsecured SBI Credit Cards",
+        "source": "SBI Card MITC"
+      },
+      {
+        "date": "2024-12-01",
+        "change": "1% fee on utility payments if total exceeds Rs. 50,000 in a billing cycle",
+        "source": "SBI Card MITC"
+      },
+      {
+        "date": "2025-11-01",
+        "change": "1% fee on wallet loads and education payments via third-party apps",
+        "source": "SBI Card MITC"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1632 @@
+{
+  "id": "hdfc-diners-club-black-metal-edition",
+  "name": "HDFC Bank Diners Club Black Metal Edition Credit Card",
+  "bank": "HDFC Bank",
+  "slug": "hdfc-diners-club-black-metal-edition",
+  "image": "assets/cards/hdfc/diners-club-black-metal-edition.png",
+  "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/diners-club-black-metal-edition",
+  "isActive": true,
+
+  "network": {
+    "type": "Diners Club",
+    "variant": "Black Metal Edition",
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "super-premium",
+    "isCobranded": false,
+    "cobrandPartner": {
+      "name": null,
+      "type": null,
+      "loyaltyProgram": null
+    },
+    "material": "metal"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 10000,
+      "gst": 1800,
+      "totalWithGst": 11800,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 10000,
+      "gst": 1800,
+      "totalWithGst": 11800,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 800000,
+        "spendPeriod": "12 months (card anniversary year)",
+        "waiverText": "Spend ₹8 lakh in 12 months for fee waiver"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": null,
+      "joiningFee": 0,
+      "annualFee": 0,
+      "rewardSharing": true
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding balance",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 500, "fee": 0},
+        {"minAmount": 501, "maxAmount": 1000, "fee": 400},
+        {"minAmount": 1001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 950},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ]
+    },
+    "overLimit": {
+      "amount": 600,
+      "percentage": 2.5,
+      "note": "2.5% of over-limit amount or ₹600, whichever is higher"
+    },
+    "chequeReturn": {
+      "percentage": 2,
+      "minAmount": 450,
+      "note": "2% of amount or ₹450, whichever is higher"
+    },
+    "cardReplacement": 100,
+    "duplicateStatement": 10,
+    "cashProcessingFee": 100,
+    "rewardsRedemptionFee": 0,
+    "railwayTicketFee": {
+      "percentage": 1,
+      "note": "1% of transaction amount + GST"
+    },
+    "rentPaymentFee": {
+      "percentage": 1,
+      "maxAmount": 3000,
+      "note": "1% of transaction amount, max ₹3,000 per transaction"
+    }
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 250000,
+        "annual": 3000000
+      },
+      "selfEmployed": {
+        "itr": 3000000
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": {
+        "salaried": 60,
+        "selfEmployed": 65
+      },
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 750,
+      "recommended": 800
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": "Existing HDFC Bank relationship may help in approval"
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": "Only for Indian nationals"
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 200000,
+      "max": 2000000
+    },
+    "factors": "Based on income, credit score, and existing HDFC Bank relationship",
+    "enhancementCriteria": "Good repayment history for 6+ months and consistent high spends"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.2388,
+      "monthlyRate": 0.0199,
+      "displayRate": "1.99% per month (23.88% annually)"
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.2388,
+      "monthlyRate": 0.0199,
+      "displayRate": "1.99% per month (23.88% annually)"
+    },
+    "gracePeriod": {
+      "days": 50,
+      "note": "Up to 50 days interest-free period from date of purchase, subject to payment of previous statement in full"
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 200,
+      "calculation": "5% of total outstanding or ₹200, whichever is higher"
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": 30,
+    "dailyLimit": null,
+    "interestFromDay1": true,
+    "note": "2.5% of amount or ₹500, whichever is higher. Interest from day 1 at 1.99% p.m."
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "Reward Points",
+      "symbol": "RP",
+      "singularUnit": "point",
+      "pluralUnit": "points"
+    },
+    "baseRate": {
+      "rate": 5,
+      "spendUnit": 150,
+      "effectivePercentage": 0.0333,
+      "displayRate": "3.33%"
+    },
+    "earningText": "Earn 5 Reward Points for every ₹150 spent",
+    "minTransactionForRewards": 150,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "Rent payments (via third-party apps)",
+        "Wallet loads (Paytm, MobiKwik, Freecharge, etc.)",
+        "Government transactions (MCCs 9222, 9311, 9399, 9402)",
+        "EMI transactions",
+        "Cash advances/withdrawals",
+        "Balance transfers",
+        "Card fee payments",
+        "Easy EMI transactions"
+      ],
+      "mccs": ["5541", "5542", "5983", "6513", "9222", "9311", "9399", "9402"],
+      "note": "No reward points on fuel, rent, wallet loads, government payments, EMI, and cash advances"
+    },
+
+    "caps": {
+      "monthly": {
+        "points": null,
+        "cashback": null
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "perStatementCycle": {
+        "points": 75000,
+        "note": "Maximum 75,000 reward points per statement cycle"
+      },
+      "categorySpecific": {
+        "insurance": {
+          "points": 5000,
+          "period": "daily",
+          "note": "Insurance transactions capped at 5,000 points per day"
+        },
+        "grocery": {
+          "points": 2000,
+          "period": "monthly",
+          "note": "Grocery spends capped at 2,000 points per month"
+        }
+      },
+      "resetPeriod": "statement",
+      "perTransaction": null
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "3 years",
+      "condition": "From date of earning",
+      "inactivityExpiry": {
+        "enabled": true,
+        "period": "365 days",
+        "note": "All points lapse if card unused for 365 days"
+      }
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": null,
+        "cashback": null,
+        "vouchers": null,
+        "memberships": [
+          {
+            "name": "Club Marriott",
+            "value": 9000,
+            "duration": "1 year"
+          },
+          {
+            "name": "Amazon Prime",
+            "value": 1499,
+            "duration": "1 year"
+          },
+          {
+            "name": "Swiggy One",
+            "value": 299,
+            "duration": "3 months"
+          }
+        ],
+        "spendCondition": {
+          "amount": 150000,
+          "period": "90 days",
+          "transactionCount": null
+        },
+        "validity": "Within 90 days of card issuance",
+        "description": "Spend ₹1.5 lakh within first 90 days to get complimentary Club Marriott, Amazon Prime, and Swiggy One memberships"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": true,
+        "memberships": [
+          {
+            "name": "Club Marriott",
+            "value": 9000
+          },
+          {
+            "name": "Amazon Prime",
+            "value": 1499
+          },
+          {
+            "name": "Swiggy One",
+            "value": 299,
+            "duration": "3 months"
+          }
+        ],
+        "condition": "On achieving annual spend milestone of ₹8 lakh"
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "travel": {
+        "rate": 5,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "mccs": null,
+        "weekendRate": null,
+        "note": "Base rate applies to travel spends"
+      },
+      "dining": {
+        "rate": 10,
+        "multiplier": 2,
+        "cap": 1000,
+        "capPeriod": "daily",
+        "merchants": ["Standalone restaurants"],
+        "weekendRate": {
+          "enabled": true,
+          "rate": 10,
+          "multiplier": 2,
+          "days": ["Saturday", "Sunday"],
+          "minTransaction": 150
+        },
+        "note": "2X reward points (10 RP per ₹150) at standalone restaurants on weekends. Not applicable to Swiggy/Zomato. Capped at 1000 points per day."
+      },
+      "online": {
+        "rate": 5,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "note": "Base rate applies to online transactions except excluded categories"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on fuel transactions"
+      },
+      "groceries": {
+        "rate": 5,
+        "multiplier": null,
+        "cap": 2000,
+        "capPeriod": "monthly",
+        "merchants": null,
+        "note": "Capped at 2,000 points per month"
+      },
+      "utilities": {
+        "rate": 5,
+        "cap": null,
+        "note": "Base rate applies"
+      },
+      "international": {
+        "rate": 5,
+        "multiplier": null,
+        "cap": null,
+        "note": "Base rate applies to international transactions"
+      },
+      "insurance": {
+        "rate": 5,
+        "cap": 5000,
+        "capPeriod": "daily",
+        "note": "Capped at 5,000 points per day"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on rent payments via third-party apps. 1% fee charged."
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on wallet loads"
+      },
+      "government": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on government transactions (MCCs 9222, 9311, 9399, 9402)"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": true,
+        "name": "SmartBuy",
+        "rates": {
+          "hotels": {
+            "multiplier": 10,
+            "rate": 50,
+            "displayRate": "33.33%",
+            "note": "10X rewards on hotel bookings"
+          },
+          "flights": {
+            "multiplier": 5,
+            "rate": 25,
+            "displayRate": "16.67%",
+            "note": "5X rewards on flight bookings"
+          },
+          "trains": {
+            "multiplier": 3,
+            "rate": 15,
+            "displayRate": "10%",
+            "note": "3X rewards on train bookings via Confirmtkt"
+          },
+          "buses": {
+            "multiplier": 5,
+            "rate": 25,
+            "displayRate": "16.67%",
+            "note": "5X rewards on redBus bookings"
+          },
+          "shopping": {
+            "multiplier": 1,
+            "note": "Base rate on shopping through SmartBuy"
+          },
+          "giftVouchers": {
+            "multiplier": 5,
+            "rate": 25,
+            "displayRate": "16.67%",
+            "note": "5X rewards on instant vouchers"
+          },
+          "dining": {
+            "multiplier": 4,
+            "rate": 20,
+            "displayRate": "13.33%",
+            "note": "4X rewards on dining experiences via SmartBuy"
+          }
+        },
+        "cap": 10000,
+        "capPeriod": "monthly",
+        "note": "Monthly cap of 10,000 accelerated reward points on SmartBuy. No daily cap.",
+        "link": "https://offers.smartbuy.hdfcbank.com/diners"
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": null,
+        "note": "No specific partner merchant accelerated rates documented"
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": null
+      },
+      "milestoneAccelerators": null
+    },
+
+    "redemption": {
+      "baseValue": 0.50,
+      "bestValue": 1.0,
+      "bestOption": "Flight/Hotel bookings via SmartBuy or Airmiles transfer at 1 RP = ₹1",
+      "minRedemption": null,
+      "redemptionIncrement": null,
+      "convenienceFee": 0,
+      "monthlyRedemptionLimit": null,
+
+      "pointsPlusPay": {
+        "enabled": true,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": 70,
+        "note": "Redeem up to 70% of booking value through reward points. Rest via credit card."
+      },
+
+      "options": [
+        {
+          "type": "travel",
+          "value": 1.0,
+          "description": "Flight & Hotel bookings via SmartBuy",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["SmartBuy"],
+          "note": "Best value redemption at 1 RP = ₹1. Max 70% of booking value."
+        },
+        {
+          "type": "airmiles",
+          "value": 1.0,
+          "description": "Transfer to airline partners at 1:1 ratio for select partners",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["Singapore Airlines KrisFlyer", "AirAsia", "Flying Blue", "IHG One Rewards", "Finnair Plus"],
+          "note": "1:1 transfer ratio for select partners. Others at 2:1."
+        },
+        {
+          "type": "products",
+          "value": 0.50,
+          "description": "Products and vouchers via catalogue",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": null,
+          "note": "1 RP = up to ₹0.50 value"
+        },
+        {
+          "type": "vouchers",
+          "value": 1.0,
+          "description": "Select gift vouchers at 1:1 value",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": null,
+          "note": "Select vouchers redeemable at 1 RP = ₹1"
+        },
+        {
+          "type": "statement_credit",
+          "value": 0.30,
+          "description": "Cashback to card account",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": null,
+          "note": "1 RP = ₹0.30. Lowest value - avoid if possible."
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": true,
+      "eligibleCards": ["hdfc-infinia", "hdfc-diners-black", "hdfc-diners-black-metal", "hdfc-regalia-gold"],
+      "partners": [
+        {
+          "name": "Singapore Airlines KrisFlyer",
+          "type": "airline",
+          "program": "KrisFlyer",
+          "alliance": "Star Alliance",
+          "ratio": {
+            "cardPoints": 1,
+            "partnerPoints": 1,
+            "display": "1:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "2-3 days (7 working days)",
+          "transferMethod": "NetBanking",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Legacy partner. Transfer via NetBanking."
+        },
+        {
+          "name": "Air India Maharaja Club",
+          "type": "airline",
+          "program": "Maharaja Club",
+          "alliance": "Star Alliance",
+          "ratio": {
+            "cardPoints": 2,
+            "partnerPoints": 1,
+            "display": "2:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "48-96 hours",
+          "transferMethod": "SmartBuy",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Added February 2025 after Vistara merger"
+        },
+        {
+          "name": "InterMiles",
+          "type": "airline",
+          "program": "InterMiles",
+          "alliance": null,
+          "ratio": {
+            "cardPoints": 1,
+            "partnerPoints": 1,
+            "display": "1:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "Instant",
+          "transferMethod": "NetBanking",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Low value partner. Use only for topping up."
+        },
+        {
+          "name": "British Airways Executive Club",
+          "type": "airline",
+          "program": "Avios",
+          "alliance": "OneWorld",
+          "ratio": {
+            "cardPoints": 2,
+            "partnerPoints": 1,
+            "display": "2:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "24 hours",
+          "transferMethod": "SmartBuy",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": null
+        },
+        {
+          "name": "Cathay Pacific Asia Miles",
+          "type": "airline",
+          "program": "Asia Miles",
+          "alliance": "OneWorld",
+          "ratio": {
+            "cardPoints": 2,
+            "partnerPoints": 1,
+            "display": "2:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "24 hours",
+          "transferMethod": "SmartBuy",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Added 2025"
+        },
+        {
+          "name": "Thai Airways Royal Orchid Plus",
+          "type": "airline",
+          "program": "Royal Orchid Plus",
+          "alliance": "Star Alliance",
+          "ratio": {
+            "cardPoints": 2,
+            "partnerPoints": 1,
+            "display": "2:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "24 hours",
+          "transferMethod": "SmartBuy",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Added 2025"
+        },
+        {
+          "name": "Etihad Guest",
+          "type": "airline",
+          "program": "Etihad Guest",
+          "alliance": null,
+          "ratio": {
+            "cardPoints": 2,
+            "partnerPoints": 1,
+            "display": "2:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "24 hours",
+          "transferMethod": "SmartBuy",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": null
+        },
+        {
+          "name": "Air Canada Aeroplan",
+          "type": "airline",
+          "program": "Aeroplan",
+          "alliance": "Star Alliance",
+          "ratio": {
+            "cardPoints": 2,
+            "partnerPoints": 1,
+            "display": "2:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "24 hours",
+          "transferMethod": "SmartBuy",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": null
+        },
+        {
+          "name": "United MileagePlus",
+          "type": "airline",
+          "program": "MileagePlus",
+          "alliance": "Star Alliance",
+          "ratio": {
+            "cardPoints": 2,
+            "partnerPoints": 1,
+            "display": "2:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "24 hours",
+          "transferMethod": "SmartBuy",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": null
+        },
+        {
+          "name": "Turkish Airlines Miles&Smiles",
+          "type": "airline",
+          "program": "Miles&Smiles",
+          "alliance": "Star Alliance",
+          "ratio": {
+            "cardPoints": 2,
+            "partnerPoints": 1,
+            "display": "2:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "24 hours",
+          "transferMethod": "SmartBuy",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": null
+        },
+        {
+          "name": "Qatar Airways Privilege Club",
+          "type": "airline",
+          "program": "Privilege Club",
+          "alliance": "OneWorld",
+          "ratio": {
+            "cardPoints": 2,
+            "partnerPoints": 1,
+            "display": "2:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "24 hours",
+          "transferMethod": "SmartBuy",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": null
+        },
+        {
+          "name": "Finnair Plus (Avios)",
+          "type": "airline",
+          "program": "Finnair Plus",
+          "alliance": "OneWorld",
+          "ratio": {
+            "cardPoints": 1,
+            "partnerPoints": 1,
+            "display": "1:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "24 hours",
+          "transferMethod": "SmartBuy",
+          "blackoutDates": false,
+          "exclusive": true,
+          "note": "HDFC exclusive partner. 1:1 ratio unlike BA at 2:1."
+        },
+        {
+          "name": "Flying Blue (Air France/KLM)",
+          "type": "airline",
+          "program": "Flying Blue",
+          "alliance": "SkyTeam",
+          "ratio": {
+            "cardPoints": 1,
+            "partnerPoints": 1,
+            "display": "1:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "24 hours",
+          "transferMethod": "SmartBuy",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Excellent 1:1 ratio"
+        },
+        {
+          "name": "Vietnam Airlines LotusMiles",
+          "type": "airline",
+          "program": "LotusMiles",
+          "alliance": "SkyTeam",
+          "ratio": {
+            "cardPoints": 1,
+            "partnerPoints": 1,
+            "display": "1:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "24 hours",
+          "transferMethod": "SmartBuy",
+          "blackoutDates": false,
+          "exclusive": true,
+          "note": "HDFC exclusive partner"
+        },
+        {
+          "name": "Avianca LifeMiles",
+          "type": "airline",
+          "program": "LifeMiles",
+          "alliance": "Star Alliance",
+          "ratio": {
+            "cardPoints": 2,
+            "partnerPoints": 1,
+            "display": "2:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "24 hours",
+          "transferMethod": "SmartBuy",
+          "blackoutDates": false,
+          "exclusive": true,
+          "note": "HDFC exclusive partner"
+        },
+        {
+          "name": "AirAsia Rewards",
+          "type": "airline",
+          "program": "AirAsia Rewards",
+          "alliance": null,
+          "ratio": {
+            "cardPoints": 1,
+            "partnerPoints": 1,
+            "display": "1:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "24 hours",
+          "transferMethod": "SmartBuy",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": null
+        },
+        {
+          "name": "SpiceJet SpiceClub",
+          "type": "airline",
+          "program": "SpiceClub",
+          "alliance": null,
+          "ratio": {
+            "cardPoints": 1,
+            "partnerPoints": 1,
+            "display": "1:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "24 hours",
+          "transferMethod": "SmartBuy",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": null
+        },
+        {
+          "name": "Marriott Bonvoy",
+          "type": "hotel",
+          "program": "Marriott Bonvoy",
+          "alliance": null,
+          "ratio": {
+            "cardPoints": 2,
+            "partnerPoints": 1,
+            "display": "2:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "24 hours",
+          "transferMethod": "SmartBuy",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Added 2025"
+        },
+        {
+          "name": "Accor Live Limitless (ALL)",
+          "type": "hotel",
+          "program": "ALL",
+          "alliance": null,
+          "ratio": {
+            "cardPoints": 2,
+            "partnerPoints": 1,
+            "display": "2:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "24 hours",
+          "transferMethod": "SmartBuy",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Good value at approximately ₹1.8/point"
+        },
+        {
+          "name": "IHG One Rewards",
+          "type": "hotel",
+          "program": "IHG One Rewards",
+          "alliance": null,
+          "ratio": {
+            "cardPoints": 1,
+            "partnerPoints": 1,
+            "display": "1:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "24 hours",
+          "transferMethod": "SmartBuy",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Excellent 1:1 ratio"
+        },
+        {
+          "name": "Club ITC",
+          "type": "hotel",
+          "program": "Club ITC Green Points",
+          "alliance": null,
+          "ratio": {
+            "cardPoints": 2,
+            "partnerPoints": 1,
+            "display": "2:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "48-96 hours",
+          "transferMethod": "SmartBuy",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Can further transfer to Marriott at 2:3 ratio"
+        },
+        {
+          "name": "Wyndham Rewards",
+          "type": "hotel",
+          "program": "Wyndham Rewards",
+          "alliance": null,
+          "ratio": {
+            "cardPoints": 1,
+            "partnerPoints": 1,
+            "display": "1:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "24 hours",
+          "transferMethod": "SmartBuy",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": null
+        },
+        {
+          "name": "Radisson Rewards",
+          "type": "hotel",
+          "program": "Radisson Rewards",
+          "alliance": null,
+          "ratio": {
+            "cardPoints": 1,
+            "partnerPoints": 1,
+            "display": "1:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "24 hours",
+          "transferMethod": "SmartBuy",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Added 2025. Not recommended for transfer."
+        }
+      ],
+      "currentBonus": {
+        "active": false,
+        "bonusPercentage": null,
+        "validUntil": null,
+        "applicablePartners": [],
+        "note": "Periodic transfer bonuses offered. Check SmartBuy for current offers."
+      }
+    },
+
+    "pooling": {
+      "enabled": true,
+      "eligibleCards": ["All HDFC credit cards of same customer"],
+      "acrossUsers": false,
+      "note": "Pool points across your HDFC cards via NetBanking"
+    },
+
+    "specialLogic": null,
+
+    "calculator": {
+      "enabled": true,
+      "formula": "basePoints = (spend / 150) * 5; smartBuyBonus = varies by category; weekendDiningBonus = (weekendDiningSpend / 150) * 5",
+      "variables": ["spend", "category", "isSmartBuy", "isWeekendDining"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": true,
+        "complimentaryCount": "Unlimited",
+        "period": "year",
+        "accessType": "Diners Club Lounge Program",
+        "accessProvider": "Diners Club",
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "No spend requirement for lounge access"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "addOnCardAccess": {
+          "included": true,
+          "count": "Unlimited",
+          "note": "Add-on cardholders also get unlimited access"
+        },
+        "eligibleLounges": "1300+ lounges across India and worldwide"
+      },
+      "international": {
+        "included": true,
+        "complimentaryCount": "Unlimited",
+        "period": "year",
+        "accessType": "Diners Club International Lounge Network",
+        "accessProvider": "Diners Club",
+        "membershipValue": null,
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "No spend requirement for lounge access"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "addOnCardAccess": {
+          "included": true,
+          "count": "Unlimited",
+          "note": "Add-on cardholders also get unlimited international access"
+        },
+        "eligibleLounges": "1300+ lounges worldwide"
+      }
+    },
+
+    "milestones": [
+      {
+        "spend": 400000,
+        "period": "quarterly (calendar quarter)",
+        "benefit": "10,000 bonus reward points",
+        "benefitType": "points",
+        "value": 10000,
+        "conditions": "Spend ₹4 lakh in a calendar quarter (Jan-Mar, Apr-Jun, Jul-Sep, Oct-Dec)",
+        "creditTiming": "Within 10 days from start of next quarter",
+        "note": "Calendar quarters: Jan-Mar, Apr-Jun, Jul-Sep, Oct-Dec"
+      },
+      {
+        "spend": 80000,
+        "period": "monthly (calendar month)",
+        "benefit": "Choice of 2 monthly benefits worth ₹500 each",
+        "benefitType": "voucher",
+        "value": 500,
+        "conditions": "Spend ₹80,000 in a calendar month",
+        "options": [
+          "cult.fit Live 1-month subscription",
+          "BookMyShow voucher ₹500",
+          "TataCLiQ voucher ₹500",
+          "Uber cabs voucher ₹500"
+        ],
+        "note": "Choose any 2 from the available options each month"
+      }
+    ],
+
+    "golf": {
+      "included": true,
+      "complimentaryRounds": 6,
+      "period": "quarter",
+      "annualRounds": 24,
+      "courses": "Select courses in India and worldwide",
+      "greenFeeWaiver": true,
+      "lessonIncluded": false,
+      "bookingMethod": {
+        "phone": "1800 118 887",
+        "alternatePhone": "022 42320226",
+        "email": "dinersblack.support@smartbuyoffers.co"
+      },
+      "note": "6 complimentary golf games per quarter (24 per year). Book via concierge 48 hours in advance."
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": "MovieMax/BookMyShow offers available as monthly milestone benefit if qualified"
+    },
+
+    "dining": {
+      "included": true,
+      "programs": [
+        {
+          "name": "Swiggy Dineout",
+          "discount": "Up to 25% off",
+          "cap": null,
+          "frequency": "Per visit",
+          "note": "25% savings on restaurant bill payments via Swiggy Dineout (20,000+ restaurants). Inclusive of restaurant and Swiggy discount."
+        },
+        {
+          "name": "Club Marriott",
+          "discount": "Various dining discounts",
+          "cap": null,
+          "frequency": "Per visit",
+          "note": "Complimentary Club Marriott membership with dining benefits at Marriott properties"
+        }
+      ],
+      "hotelDining": {
+        "included": true,
+        "hotels": ["Marriott properties in India"],
+        "offer": "Up to 30% off on food & 20% on beverages at select Marriott properties"
+      },
+      "weekendBonus": {
+        "enabled": true,
+        "multiplier": 2,
+        "cap": 1000,
+        "capPeriod": "daily",
+        "note": "2X reward points on weekend dining at standalone restaurants"
+      }
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 400,
+      "maxTransaction": 5000,
+      "monthlyCap": 1000,
+      "applicableStations": "All fuel stations in India",
+      "rewardsOnFuel": false,
+      "note": "1% fuel surcharge waiver (max ₹1,000 per statement cycle). No reward points on fuel."
+    },
+
+    "forex": {
+      "markupPercentage": 2,
+      "markupText": "2% on all foreign currency transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 2,
+      "note": "2% forex markup. Lower than most premium cards (3.5%). Currency conversion at settlement date rate."
+    },
+
+    "concierge": {
+      "included": true,
+      "availability": "24/7",
+      "type": "Global Personal Concierge",
+      "services": [
+        "Travel bookings",
+        "Restaurant reservations",
+        "Event tickets",
+        "Golf course bookings",
+        "Gift procurement",
+        "General assistance"
+      ],
+      "contactNumber": "1800 118 887",
+      "alternateNumber": "022 42320226",
+      "email": "dinersblack.support@smartbuyoffers.co",
+      "note": "24/7 Global Personal Concierge service"
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": null,
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "SmartEMI / Flexipay",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Select partner merchants"],
+        "note": "No-cost EMI available on select merchants and products"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": 999,
+        "gst": "Additional",
+        "minFee": 999
+      },
+      "minAmount": null,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": 0.12,
+        "max": 0.18
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": 0
+      },
+      "cancellationPeriod": null,
+      "note": "EMI conversion available after purchase. Processing fee ₹999 + GST."
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": 0.0199
+      },
+      "processingFee": {
+        "percentage": 1,
+        "minFee": 250
+      },
+      "tenures": [6, 12, 18, 24],
+      "maxAmount": null,
+      "preclosureFee": 3,
+      "note": "1% processing fee or ₹250, whichever is higher"
+    },
+
+    "memberships": [
+      {
+        "name": "Club Marriott",
+        "type": "club",
+        "value": 9000,
+        "duration": "1 year",
+        "condition": "Spend ₹1.5 lakh within 90 days of card issuance",
+        "note": "Dining and stay discounts at Marriott properties in India and Asia Pacific"
+      },
+      {
+        "name": "Amazon Prime",
+        "type": "subscription",
+        "value": 1499,
+        "duration": "1 year",
+        "condition": "Spend ₹1.5 lakh within 90 days of card issuance",
+        "note": "Free delivery, Prime Video, Prime Music"
+      },
+      {
+        "name": "Swiggy One",
+        "type": "subscription",
+        "value": 299,
+        "duration": "3 months",
+        "condition": "Spend ₹1.5 lakh within 90 days of card issuance",
+        "note": "Free delivery on Swiggy orders"
+      }
+    ],
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      },
+      "clubMarriottBenefits": {
+        "included": true,
+        "benefits": [
+          "Up to 30% off on food and 20% off on beverages at participating restaurants",
+          "Up to 15% off on stays at participating hotels in India",
+          "20% off on Spa services at select Marriott Hotels",
+          "15% off on Marriott Bonvoy on Wheels orders"
+        ]
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": true,
+      "cover": 20000000,
+      "coverUSD": 250000,
+      "condition": "Death within 12 months of air accident. Ticket must be booked with card.",
+      "claimTimeLimit": "120 days from date of loss"
+    },
+    "travelAccident": {
+      "included": true,
+      "cover": 20000000,
+      "type": "Death & Permanent Disability",
+      "condition": "Air travel accident"
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": true,
+      "cover": 55000,
+      "delayHours": 8,
+      "perHour": 850,
+      "perHourUSD": 10,
+      "condition": "International flights only. Capped at $10/hour."
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": true,
+      "cover": 5000000,
+      "coverUSD": 62500,
+      "overseas": true,
+      "condition": "Overseas emergency hospitalization for international travel outside India"
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": 900000,
+      "fraudLiability": {
+        "included": true,
+        "cover": 900000,
+        "reportingWindow": "Report within reasonable time"
+      },
+      "note": "Credit liability cover up to ₹9 lakh"
+    },
+    "purchaseProtection": {
+      "included": true,
+      "cover": null,
+      "period": 90,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": ["Theft", "Accidental damage"],
+      "note": "Purchase protection for up to 90 days on purchases made with card"
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "insurer": "HDFC ERGO General Insurance Company Limited",
+    "policyNumber": "2999204800579203000",
+    "note": "All insurance covers subject to policy terms. Claims must be filed within 120 days from date of loss."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000,
+      "note": "Contactless payments up to ₹5,000 without PIN. PIN required for higher amounts."
+    },
+    "virtualCard": {
+      "available": false,
+      "instantIssuance": false,
+      "singleUse": false,
+      "spendControls": false
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": false,
+      "rewardsOnUPI": false,
+      "note": "Diners Club cards not linkable to UPI"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card via MyCards/PayZapp",
+        "Set transaction limits",
+        "Enable/Disable international transactions",
+        "Enable/Disable online transactions",
+        "Enable/Disable contactless payments",
+        "Real-time transaction alerts"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    },
+    "managementApp": {
+      "name": "MyCards / PayZapp",
+      "features": [
+        "Card activation",
+        "Spend tracking",
+        "Reward points view and redemption",
+        "Bill payments",
+        "EMI conversion"
+      ]
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [
+      {
+        "cardId": "hdfc-diners-club-black",
+        "spendRequired": null,
+        "tenure": null,
+        "autoUpgrade": false,
+        "note": "Upgrade from Diners Club Black to Metal Edition"
+      },
+      {
+        "cardId": "hdfc-regalia",
+        "spendRequired": 800000,
+        "tenure": "12 months",
+        "autoUpgrade": false
+      }
+    ],
+    "upgradesTo": [
+      {
+        "cardId": "hdfc-infinia",
+        "spendRequired": 1000000,
+        "tenure": "12 months",
+        "inviteOnly": true,
+        "note": "Infinia is invite-only based on spend and relationship"
+      }
+    ],
+    "note": "Upgrade eligibility based on spend history and HDFC Bank relationship"
+  },
+
+  "meta": {
+    "tags": [
+      "Travel",
+      "Super-Premium",
+      "Metal Card",
+      "Unlimited Lounge Access",
+      "Transfer Partners",
+      "SmartBuy Rewards",
+      "Golf",
+      "Diners Club"
+    ],
+    "bestFor": "Frequent travelers with annual spends of ₹8-15 lakh who want unlimited lounge access, 33% reward rate on SmartBuy, and airmiles transfer options",
+    "notRecommendedFor": "Low spenders, those who primarily use UPI/cash, or those needing wide international acceptance (Diners Club has limited acceptance)",
+    "rating": {
+      "overall": 4.3,
+      "rewards": 4.5,
+      "benefits": 4.5,
+      "value": 4.0,
+      "acceptance": 3.5
+    },
+    "verdict": "The HDFC Diners Club Black Metal Edition is one of India's best super-premium cards for high spenders and frequent travelers. It offers a strong 3.33% base reward rate, up to 33.33% via SmartBuy, unlimited lounge access for primary and add-on cardholders, and access to 22 airline/hotel transfer partners. The ₹8 lakh spend requirement for fee waiver is achievable for the target audience. Main drawbacks are limited Diners Club acceptance internationally and no UPI linking capability.",
+    "pros": [
+      "Excellent 3.33% base reward rate (5 RP per ₹150)",
+      "Up to 33% reward rate via SmartBuy (10X on hotels)",
+      "Unlimited domestic and international lounge access for primary + add-on cards",
+      "22 airline and hotel transfer partners with decent ratios",
+      "Low 2% forex markup (vs 3.5% industry standard)",
+      "1.99% interest rate (lower than standard 3.5%+)",
+      "6 complimentary golf games per quarter",
+      "Valuable welcome memberships (Club Marriott, Amazon Prime, Swiggy One)",
+      "No spend requirement for lounge access",
+      "Monthly cap simplified to 10K on SmartBuy (no daily cap)"
+    ],
+    "cons": [
+      "₹8 lakh annual spend required for fee waiver (high threshold)",
+      "Limited Diners Club acceptance globally",
+      "Cannot link to UPI",
+      "No Apple Pay support",
+      "75,000 points cap per statement cycle",
+      "No rewards on fuel, rent, wallet loads",
+      "Welcome benefits require ₹1.5L spend in 90 days",
+      "Grocery and insurance rewards have caps"
+    ],
+    "alternatives": [
+      {
+        "cardId": "hdfc-infinia",
+        "reason": "If invite-only eligible - better rewards and same transfer partners"
+      },
+      {
+        "cardId": "axis-magnus",
+        "reason": "Better acceptance (MasterCard), but lower transfer ratios"
+      },
+      {
+        "cardId": "hdfc-regalia-gold",
+        "reason": "Lower fee, Visa acceptance, but fewer benefits"
+      },
+      {
+        "cardId": "icici-emeralde-amex",
+        "reason": "Amex network, different rewards structure"
+      }
+    ],
+    "lastVerified": "2026-01-05",
+    "dataSource": [
+      "Official HDFC Bank website (hdfc.bank.in)",
+      "HDFC Bank MITC document (Version 2.5, Nov 2025)",
+      "SmartBuy portal (offers.smartbuy.hdfcbank.com)",
+      "HDFC ERGO Insurance Policy (July 2025)",
+      "PointsMath.com (transfer partners - Nov 2025)",
+      "1Finance.co.in (card review - Oct 2025)",
+      "CardInsider.com",
+      "Live From A Lounge"
+    ],
+    "changelog": [
+      {
+        "date": "2025-02-28",
+        "change": "Air India added as transfer partner at 2:1 ratio",
+        "source": "PointsMath.com"
+      },
+      {
+        "date": "2025",
+        "change": "Marriott Bonvoy, Cathay Pacific, Thai Airways added as transfer partners",
+        "source": "HDFC SmartBuy"
+      },
+      {
+        "date": "2025",
+        "change": "SmartBuy monthly cap increased to 10K points (from 7.5K), daily cap removed",
+        "source": "HDFC Bank"
+      },
+      {
+        "date": "2024",
+        "change": "Hainan Airlines removed as transfer partner",
+        "source": "SmartBuy portal"
+      },
+      {
+        "date": "2024-01",
+        "change": "Transfer ratios changed for Accor, Turkish, Avianca from 1:1 to 2:1",
+        "source": "HDFC SmartBuy"
+      }
+    ]
+  }
+}

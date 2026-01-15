@@ -1,0 +1,928 @@
+{
+  "id": "icici-amazon-pay",
+  "name": "Amazon Pay ICICI Bank Credit Card",
+  "bank": "ICICI Bank",
+  "slug": "amazon-pay-icici-credit-card",
+  "image": "assets/cards/icici/amazon-pay.png",
+  "link": "https://www.icicibank.com/personal-banking/cards/credit-card/amazon-pay-credit-card",
+  
+  "network": {
+    "type": "Visa",
+    "variant": null,
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "entry",
+    "isCobranded": true,
+    "cobrandPartner": {
+      "name": "Amazon Pay (India) Private Limited",
+      "type": "E-commerce",
+      "loyaltyProgram": "Amazon Pay Balance"
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 0,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 0,
+      "firstYearWaived": true,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 0,
+        "spendPeriod": null,
+        "waiverText": "Lifetime free - no annual fee"
+      }
+    },
+    "addOnCard": {
+      "available": false,
+      "freeCount": 0,
+      "joiningFee": null,
+      "annualFee": null,
+      "rewardSharing": false
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on Total Amount Due",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 99, "fee": 0},
+        {"minAmount": 100, "maxAmount": 500, "fee": 100},
+        {"minAmount": 501, "maxAmount": 10000, "fee": 500},
+        {"minAmount": 10001, "maxAmount": null, "fee": 750}
+      ]
+    },
+    "overLimit": {
+      "amount": 500,
+      "percentage": 2.5
+    },
+    "chequeReturn": 450,
+    "cardReplacement": 200,
+    "duplicateStatement": 100
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 20000,
+        "annual": 240000
+      },
+      "selfEmployed": {
+        "itr": 360000
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 65,
+      "addOnMin": null
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": "Available through Amazon.in application portal"
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 10000,
+      "max": 500000
+    },
+    "factors": "Based on income, credit score, and Amazon account activity",
+    "enhancementCriteria": "Good repayment history for 12+ months; request via iMobile app or Internet Banking"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.456,
+      "monthlyRate": 0.038
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.456,
+      "monthlyRate": 0.038
+    },
+    "gracePeriod": {
+      "days": 48,
+      "note": "Grace period ranges from 18 to 48 days depending on transaction date"
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 100,
+      "calculation": "5% of Total Outstanding Amount"
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": "Interest rate varies dynamically from 3.5% to 3.8% per month based on customer behavior"
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 300,
+    "maxFee": null,
+    "limitPercentage": null,
+    "dailyLimit": null,
+    "interestFromDay1": true,
+    "note": "Cash limit is NIL for first 180 days from card issuance"
+  },
+
+  "rewards": {
+    "type": "cashback",
+    "currency": {
+      "name": "Amazon Pay Balance",
+      "symbol": "₹",
+      "singularUnit": "rupee",
+      "pluralUnit": "rupees"
+    },
+    "baseRate": {
+      "rate": 1,
+      "spendUnit": 100,
+      "effectivePercentage": 0.01
+    },
+    "earningText": "Earn 5% cashback on Amazon for Prime members, 3% for Non-Prime, 2% on Amazon Pay partners, 1% on other spends",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "EMI transactions",
+        "Transactions converted to EMI post facto",
+        "Amazon Business transactions (amazon.in/business)",
+        "Physical and digital gold purchases on Amazon.in",
+        "Rent payments on Amazon.in",
+        "Tax payments on Amazon.in",
+        "Education payments on Amazon.in",
+        "Fuel transactions (outside Amazon)",
+        "Rent payments (outside Amazon)",
+        "Tax payments (outside Amazon)",
+        "Education payments (outside Amazon)",
+        "Utility payments (outside Amazon)",
+        "International transactions (outside Amazon - effective Oct 11, 2025)",
+        "Cash advances",
+        "Fees and charges"
+      ],
+      "mccs": null,
+      "note": "No cashback on excluded categories; fuel gets 1% surcharge waiver instead of cashback"
+    },
+
+    "caps": {
+      "monthly": {
+        "points": null,
+        "cashback": null
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": null,
+      "perTransaction": null,
+      "note": "Unlimited cashback - no caps on earnings"
+    },
+
+    "expiry": {
+      "hasExpiry": false,
+      "period": null,
+      "condition": "Amazon Pay Balance never expires; rewards are credited as Amazon Pay Gift Cards which have technical validity but can be revalidated"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": null,
+        "cashback": 2500,
+        "vouchers": "Amazon Pay Balance + EazyDiner membership",
+        "spendCondition": {
+          "amount": null,
+          "period": null,
+          "transactionCount": 1
+        },
+        "validity": "Upon card approval and first transaction",
+        "description": "Prime members: Up to ₹2,500 in rewards. Non-Prime members: Up to ₹2,000 in rewards + ₹500 off on Amazon Prime membership + 1-month EazyDiner Prime membership"
+      },
+      "activation": {
+        "enabled": true,
+        "points": null,
+        "condition": "Instant cashback on first transaction"
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "amazonPrime": {
+        "rate": 5,
+        "effectivePercentage": 0.05,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["Amazon.in shopping", "Amazon Pay travel bookings (flights & hotels)"],
+        "mccs": null,
+        "weekendRate": null,
+        "note": "5% unlimited cashback for Amazon Prime members on Amazon.in and travel via Amazon Pay"
+      },
+      "amazonNonPrime": {
+        "rate": 3,
+        "effectivePercentage": 0.03,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["Amazon.in shopping", "Amazon Pay travel bookings (flights & hotels)"],
+        "mccs": null,
+        "weekendRate": null,
+        "note": "3% unlimited cashback for Non-Prime members on Amazon.in and travel via Amazon Pay"
+      },
+      "amazonPayPartners": {
+        "rate": 2,
+        "effectivePercentage": 0.02,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["BookMyShow", "RedBus", "Yatra", "Café Coffee Day", "Urban Ladder", "Swiggy", "Zomato", "Zepto", "Blinkit", "Uber", "Ola", "Rapido", "100+ partner merchants"],
+        "mccs": null,
+        "note": "2% cashback using Login and Pay with Amazon or Amazon Pay wallet at partner merchants"
+      },
+      "otherSpends": {
+        "rate": 1,
+        "effectivePercentage": 0.01,
+        "cap": null,
+        "capPeriod": null,
+        "note": "1% cashback on all other spends outside Amazon (excluding fuel, rent, tax, education, utilities, international transactions)"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on fuel transactions; 1% fuel surcharge waiver applies instead"
+      },
+      "international": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on international transactions outside Amazon (effective Oct 11, 2025); 1.99% forex markup applies"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on rent payments"
+      },
+      "utilities": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on utility payments outside Amazon"
+      },
+      "education": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on education payments"
+      },
+      "tax": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on tax payments"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": true,
+        "name": "ICICI iShop",
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["Flights", "Hotels", "Bus bookings", "Shopping vouchers"],
+        "link": "https://www.icicibank.com/ishop",
+        "note": "Earn up to 4% cashback on iShop; up to 12X reward points on flights, buses, hotels and shopping vouchers"
+      },
+      "partnerMerchants": {
+        "enabled": true,
+        "merchants": [
+          {
+            "name": "Amazon Pay Partners",
+            "multiplier": null,
+            "rate": 2,
+            "cap": null,
+            "capPeriod": null,
+            "mcc": null,
+            "validUntil": null
+          }
+        ],
+        "note": "100+ Amazon Pay partner merchants including Swiggy, Zomato, BookMyShow, RedBus, Uber, Ola, etc."
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": null
+      },
+      "milestoneAccelerators": null
+    },
+
+    "redemption": {
+      "baseValue": 1.0,
+      "bestValue": 1.0,
+      "bestOption": "Automatic credit as Amazon Pay Balance - usable at Amazon.in and 100+ partner merchants",
+      "minRedemption": 0,
+      "redemptionIncrement": null,
+      "convenienceFee": 0,
+      "monthlyRedemptionLimit": null,
+
+      "pointsPlusPay": {
+        "enabled": false,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": null,
+        "note": null
+      },
+
+      "options": [
+        {
+          "type": "amazon_pay_balance",
+          "value": 1.0,
+          "description": "Automatic credit to Amazon Pay Balance at end of billing cycle",
+          "recommended": true,
+          "minPoints": 0,
+          "processingFee": 0,
+          "partners": ["Amazon.in", "100+ Amazon Pay partner merchants"],
+          "note": "1 Reward Point = ₹1; credited within 2 working days of billing cycle completion"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": null,
+      "partners": null,
+      "currentBonus": null
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": null,
+      "acrossUsers": false,
+      "note": "Rewards credited only to card owner's linked Amazon account"
+    },
+
+    "specialLogic": "Cashback varies based on Prime membership status at time of transaction; rewards credited as Amazon Pay Gift Cards redeemable into Amazon Pay Balance",
+
+    "calculator": {
+      "enabled": true,
+      "formula": "cashback = (amazonPrimeSpend * 0.05) + (amazonNonPrimeSpend * 0.03) + (partnerSpend * 0.02) + (otherSpend * 0.01)",
+      "variables": ["isPrimeMember", "amazonSpend", "partnerSpend", "otherSpend"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": false,
+        "complimentaryCount": 1,
+        "period": "promotional",
+        "accessType": "ICICI Bank Domestic Lounge Network",
+        "accessProvider": null,
+        "spendRequired": {
+          "amount": 75000,
+          "period": "March 26 to June 25, 2025",
+          "note": "Spend ₹75,000 between March 26-June 25, 2025 to unlock one complimentary domestic lounge access between July 1-September 30, 2025. Primary cardholder only. Must be Amazon Prime member as of June 25, 2025. Limited time promotional offer."
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "eligibleLounges": null
+      },
+      "international": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "membershipValue": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "eligibleLounges": null
+      }
+    },
+
+    "milestones": null,
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": false,
+      "lessonIncluded": false,
+      "note": null
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": "2% cashback available when paying via Amazon Pay at BookMyShow"
+    },
+
+    "dining": {
+      "included": true,
+      "programs": [
+        {
+          "name": "ICICI Culinary Treats",
+          "discount": "Minimum 15% off",
+          "cap": null,
+          "frequency": "Per visit",
+          "note": "Discount at 2,500+ partner restaurants across India"
+        },
+        {
+          "name": "EazyDiner",
+          "discount": "Complimentary 1-month membership",
+          "cap": null,
+          "frequency": "Welcome offer",
+          "note": "Included as part of welcome benefits"
+        }
+      ],
+      "hotelDining": {
+        "included": false,
+        "hotels": null,
+        "offer": null
+      }
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": null,
+      "maxTransaction": 4000,
+      "monthlyCap": null,
+      "applicableStations": "All fuel stations in India",
+      "rewardsOnFuel": false,
+      "note": "1% fuel surcharge waiver on transactions up to ₹4,000 at all fuel outlets; no cashback earned on fuel"
+    },
+
+    "forex": {
+      "markupPercentage": 1.99,
+      "markupText": "1.99% + GST on international transactions (reduced from 3.5% effective October 11, 2025)",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 1.99,
+      "note": "Forex markup reduced from 3.5% to 1.99% effective October 11, 2025"
+    },
+
+    "concierge": {
+      "included": false,
+      "availability": null,
+      "type": null,
+      "services": null,
+      "contactNumber": null,
+      "note": null
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": null,
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "No-Cost EMI",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Amazon.in"],
+        "note": "3 months No-Cost EMI facility on eligible Amazon.in transactions"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": null,
+        "minFee": null
+      },
+      "minAmount": null,
+      "tenures": [3, 6],
+      "interestRates": {
+        "min": null,
+        "max": null
+      },
+      "preclosureFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "cancellationPeriod": null,
+      "note": "No-cost EMI available sitewide on eligible Amazon.in transactions; no cashback on EMI purchases"
+    },
+
+    "balanceTransfer": {
+      "available": false,
+      "interestRate": null,
+      "processingFee": null,
+      "tenures": null,
+      "maxAmount": null,
+      "preclosureFee": null,
+      "note": null
+    },
+
+    "memberships": [
+      {
+        "name": "EazyDiner Prime",
+        "type": "subscription",
+        "value": 1095,
+        "duration": "1 month",
+        "condition": "Welcome offer on card approval",
+        "note": "Complimentary 1-month EazyDiner Prime membership"
+      },
+      {
+        "name": "Amazon Prime",
+        "type": "discount",
+        "value": 500,
+        "duration": null,
+        "condition": "Welcome offer for Non-Prime members",
+        "note": "₹500 discount on Amazon Prime membership for Non-Prime cardholders"
+      }
+    ],
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "condition": null
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": false,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": false,
+      "cover": null,
+      "fraudLiability": {
+        "included": true,
+        "cover": null,
+        "reportingWindow": "Report immediately via Customer Care or SMS CCBLK <last 4 digits> to 5676766"
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "This card does not include travel or personal insurance benefits. Coverage is limited to standard card-related protections."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000
+    },
+    "virtualCard": {
+      "available": true,
+      "instantIssuance": true,
+      "singleUse": false,
+      "spendControls": true
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true,
+      "amazonPay": true
+    },
+    "upiLinking": {
+      "available": true,
+      "rewardsOnUPI": false,
+      "note": "Card can be linked to UPI for payments"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card via SMS or iMobile",
+        "View virtual card details",
+        "Generate/Change PIN",
+        "View statements",
+        "Track application status",
+        "Real-time transaction alerts"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    },
+    "chip": {
+      "enabled": true,
+      "type": "EMV",
+      "note": "EMV chip-enabled for enhanced security and fraud protection"
+    },
+    "3DSecure": {
+      "enabled": true,
+      "note": "All online transactions protected with 3D Secure verification"
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": null,
+    "upgradesTo": [
+      {
+        "cardId": "icici-coral",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false
+      },
+      {
+        "cardId": "icici-rubyx",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false
+      }
+    ],
+    "note": "Entry-level card; eligible customers may apply for premium ICICI cards separately based on income and credit profile"
+  },
+
+  "meta": {
+    "tags": [
+      "Cashback",
+      "Lifetime Free",
+      "Amazon",
+      "Shopping",
+      "No Annual Fee",
+      "Co-branded",
+      "Entry Level"
+    ],
+    "bestFor": "Frequent Amazon shoppers, especially Amazon Prime members who want simple, unlimited cashback with no fees",
+    "notRecommendedFor": "Those seeking lounge access, travel benefits, premium insurance coverage, or those who rarely shop on Amazon",
+    "rating": {
+      "overall": 4.3,
+      "rewards": 4.5,
+      "benefits": 3.5,
+      "value": 5.0
+    },
+    "verdict": "The Amazon Pay ICICI Bank Credit Card is India's most popular co-branded credit card with over 5 million customers. Its simple, transparent cashback structure (5%/3%/2%/1%) combined with zero fees makes it an excellent choice for Amazon shoppers. The automatic redemption as Amazon Pay Balance (no expiry, no minimum) and reduced forex markup (1.99%) enhance its appeal. However, the lack of lounge access, insurance benefits, and low 1% cashback outside Amazon ecosystem are notable limitations.",
+    "pros": [
+      "Lifetime free - no joining or annual fees",
+      "Unlimited 5% cashback on Amazon for Prime members",
+      "Simple and transparent reward structure",
+      "Cashback never expires (credited as Amazon Pay Balance)",
+      "Automatic redemption - no manual conversion needed",
+      "Low forex markup at 1.99% (reduced from 3.5%)",
+      "Wide acceptance at 100+ Amazon Pay partner merchants",
+      "Fully digital application and instant virtual card",
+      "15% discount at 2,500+ restaurants via Culinary Treats"
+    ],
+    "cons": [
+      "No complimentary lounge access (limited promotional offer only)",
+      "No travel or personal insurance benefits",
+      "Low 1% cashback outside Amazon ecosystem",
+      "No add-on card available",
+      "Prime membership (₹1,499/year) required for maximum 5% benefits",
+      "No cashback on fuel, rent, tax, education, utilities",
+      "No cashback on international transactions outside Amazon",
+      "No milestone or anniversary benefits"
+    ],
+    "alternatives": [
+      "flipkart-axis-bank",
+      "sbi-cashback",
+      "hdfc-millennia",
+      "axis-ace"
+    ],
+    "lastVerified": "2026-01-05",
+    "dataSource": [
+      "ICICI Bank Official Website - https://www.icicibank.com/personal-banking/cards/credit-card/amazon-pay-credit-card",
+      "Amazon.in Official Terms - https://www.amazon.in/b?ie=UTF8&node=15430917031",
+      "ICICI Bank MITC Document - https://www.icicibank.com/managed-assets/docs/personal/cards/mitc-for-amazon-pay-credit-card.pdf",
+      "ICICI Bank Terms & Conditions - https://www.icicibank.com/content/dam/icicibank/india/managed-assets/docs/personal/cards/tc-for-amazon-pay-credit-card.pdf",
+      "ICICI Bank Newsroom - September 2025 Partnership Renewal Announcement",
+      "Amazon India Press Release - October 2025 Forex Markup Reduction",
+      "BankBazaar.com",
+      "CardInsider.com",
+      "Live From A Lounge - March 2025 Lounge Access Offer"
+    ],
+    "changelog": [
+      {
+        "date": "2025-10-11",
+        "change": "Forex markup reduced from 3.5% to 1.99% on international transactions",
+        "source": "ICICI Bank and Amazon Pay partnership renewal announcement"
+      },
+      {
+        "date": "2025-10-11",
+        "change": "No cashback on international transactions outside Amazon (devaluation)",
+        "source": "Official card T&C update"
+      },
+      {
+        "date": "2025-09-11",
+        "change": "Partnership renewed between ICICI Bank and Amazon Pay",
+        "source": "ICICI Bank Newsroom"
+      },
+      {
+        "date": "2025-03-26",
+        "change": "Limited-time promotional lounge access introduced (spend ₹75,000 for one lounge visit)",
+        "source": "ICICI Bank website T&C update"
+      },
+      {
+        "date": "2024-07-01",
+        "change": "Card replacement fee standardized at ₹200",
+        "source": "ICICI Bank fee structure update"
+      },
+      {
+        "date": "2018",
+        "change": "Card launched as co-branded partnership between ICICI Bank and Amazon Pay",
+        "source": "ICICI Bank"
+      }
+    ]
+  },
+
+  "customerSupport": {
+    "tollFree": "1800 1080",
+    "alternateNumber": "1800 102 0123",
+    "email": null,
+    "availableHours": "7:00 AM to 9:00 PM",
+    "grievanceOfficer": {
+      "name": "Vinayak More",
+      "designation": "Nodal Officer",
+      "address": "ICICI Bank Limited, ICICI Phone Banking Center, ICICI Bank Tower, 7th floor, Survey no: 115/27, Plot no. 12, Nanakramguda, Serilingampally, Hyderabad – 500032, India"
+    },
+    "grievanceTollFree": "1800 102 4242",
+    "grievanceHours": "9 AM to 6 PM, Monday to Friday",
+    "blockCard": "SMS CCBLK <last 4 digits> to 5676766 from registered mobile number"
+  }
+}
