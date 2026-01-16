@@ -7,6 +7,7 @@ from wagtail.api import APIField
 from wagtail.blocks import CharBlock
 from wagtail.blocks import RawHTMLBlock
 from wagtail.blocks import RichTextBlock
+from wagtail.fields import RichTextField
 from wagtail.fields import StreamField
 from wagtail.models import Page
 
@@ -44,3 +45,19 @@ class GuidePage(Page):
         APIField("body"),
         APIField("tags"),
     ]
+
+
+class GuideIndexPage(Page):
+    intro = RichTextField(blank=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel("intro"),
+    ]
+
+    subpage_types = ["GuidePage"]
+
+    def get_context(self, request):
+        context = super().get_context(request)
+        # Get all published guides, reversed chronologically
+        context["guides"] = GuidePage.objects.child_of(self).live().order_by("-first_published_at")
+        return context

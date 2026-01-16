@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}Voucher Tracker Guides{% endblock %}
+    </title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet" />
+    <!-- Theme CSS -->
+    <link href="{% static 'css/guides_theme.css' %}" rel="stylesheet" />
+    {% block extra_css %}{% endblock %}
+  </head>
+  <body>
+    <!-- Background Effects -->
+    <div class="bg-gradient-orb orb-corner-top"></div>
+    <div class="bg-gradient-orb orb-corner-bottom"></div>
+    <div class="app-container">
+      <!-- Minimal Header -->
+      <nav class="navbar-minimal">
+        <a href="/" class="brand-logo">
+          <span style="color: var(--accent-pink);">%</span> VoucherTracker
+        </a>
+        <a href="/" class="back-link">← Back to App</a>
+      </nav>
+      <main>
+        {% block content %}{% endblock %}
+      </main>
+      <footer style="margin-top: 4rem;
+                     text-align: center;
+                     color: var(--text-secondary);
+                     font-size: 0.85rem;
+                     padding-top: 2rem;
+                     border-top: 1px solid var(--glass-border)">
+        <p>© {% now "Y" %} Voucher Tracker. Community Driven.</p>
+      </footer>
+    </div>
+  </body>
+</html>
