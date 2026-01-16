@@ -135,7 +135,9 @@ ignore = [
     "TRY003",
     "T201",
     "TRY301",
-    "PLR2004"
+    "PLR2004",
+    "EM102",
+    "UP038",
 ]
 # The fixes in extend-unsafe-fixes will require
 # provide the `--unsafe-fixes` flag when fixing.

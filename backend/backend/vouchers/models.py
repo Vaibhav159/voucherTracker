@@ -78,11 +78,11 @@ class VoucherMismatch(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return f"{self.brand_name} ({self.platform.name})"
-
     class Meta:
         unique_together = ["platform", "external_id"]
+
+    def __str__(self):
+        return f"{self.brand_name} ({self.platform.name})"
 
     def get_category(self):
         if self.platform.name == PlatformName.MAXIMIZE:
@@ -90,11 +90,15 @@ class VoucherMismatch(models.Model):
             if isinstance(category_str_list, str):
                 category_list = json.loads(category_str_list)
                 return category_list[0]
+        if self.platform.name == PlatformName.ISHOP:
+            return self.raw_data.get("sub_category")
         return self.raw_data.get("category")
 
     def get_external_id(self):
         if self.platform.name == PlatformName.MAXIMIZE:
             return self.raw_data.get("id")
+        if self.platform.name == PlatformName.ISHOP:
+            return self.raw_data.get("_id")
         return self.raw_data.get("external_id") or self.raw_data.get("id")
 
     def get_logo(self):
@@ -102,4 +106,7 @@ class VoucherMismatch(models.Model):
             return self.raw_data.get("giftCardLogo")
         if self.platform.name == PlatformName.GYFTR:
             return self.raw_data.get("brand_icon_url")
+        if self.platform.name == PlatformName.ISHOP:
+            image_gallery = self.raw_data.get("image_gallery", {})
+            return image_gallery.get("image1") or image_gallery.get("image2")
         return self.raw_data.get("logo")

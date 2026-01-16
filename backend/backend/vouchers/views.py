@@ -59,15 +59,9 @@ class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
     @decorators.action(detail=False, methods=["post"], permission_classes=[permissions.AllowAny])
     def sync_ishop(self, request):
         """Sync vouchers from iShop platform (requires encrypted data in request body)."""
-        encrypted_data = request.data
-        if not encrypted_data:
-            return response.Response(
-                {"status": "error", "message": "No encrypted data provided"},
-                status=400,
-            )
 
         service = IShopSyncService()
-        result = service.sync_from_encrypted(encrypted_data)
+        result = service.fetch_and_sync()
 
         status_code = 200 if result.get("status") == "success" else 400
         return response.Response(result, status=status_code)
