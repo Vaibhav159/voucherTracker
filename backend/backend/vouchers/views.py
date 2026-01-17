@@ -65,3 +65,19 @@ class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
 
         status_code = 200 if result.get("status") == "success" else 400
         return response.Response(result, status=status_code)
+
+    @decorators.action(detail=False, methods=["post"], permission_classes=[permissions.IsAuthenticated])
+    def sync_ishop_local(self, request):
+        """Sync vouchers from iShop platform using provided item list."""
+        items = request.data
+        if not isinstance(items, list):
+            return response.Response(
+                {"status": "error", "message": "Expected a list of items"},
+                status=400,
+            )
+
+        service = IShopSyncService()
+        result = service.process_items(items)
+
+        status_code = 200 if result.get("status") == "success" else 400
+        return response.Response(result, status=status_code)
