@@ -46,7 +46,8 @@ class IShopSyncService(BaseSyncService):
                 "sec-fetch-dest": "empty",
                 "sec-fetch-mode": "cors",
                 "sec-fetch-site": "same-origin",
-                "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",  # noqa: E501
+                "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+                # noqa: E501
             },
         )
 
@@ -210,26 +211,32 @@ class IShopSyncService(BaseSyncService):
             self.initialize_session()
             self.get_app_config()
             items = self.fetch_product_listing()
+            return self.process_items(items)
 
-            # 2. Transform items
-            sync_items: list[SyncItem] = []
-            for item in items:
-                sync_item = self._transform_item(item)
-                if sync_item:
-                    sync_items.append(sync_item)
-
-            # 3. Perform bulk sync
-            result = self.sync_items(sync_items)
-
-            return {
-                "status": "success",
-                "message": f"Synced {len(items)} items from iShop.",
-                "created": result.created,
-                "updated": result.updated,
-                "skipped_count": result.skipped_count,
-            }
         except Exception as e:
             return {"status": "error", "message": str(e)}
+
+    def process_items(self, items: list[dict]) -> dict:
+        """
+        Process a list of iShop items and sync them.
+        """
+        # 2. Transform items
+        sync_items: list[SyncItem] = []
+        for item in items:
+            sync_item = self._transform_item(item)
+            if sync_item:
+                sync_items.append(sync_item)
+
+        # 3. Perform bulk sync
+        result = self.sync_items(sync_items)
+
+        return {
+            "status": "success",
+            "message": f"Synced {len(items)} items from iShop.",
+            "created": result.created,
+            "updated": result.updated,
+            "skipped_count": result.skipped_count,
+        }
 
     def _transform_item(self, item: dict) -> SyncItem | None:
         """Transform an iShop item to SyncItem format."""
