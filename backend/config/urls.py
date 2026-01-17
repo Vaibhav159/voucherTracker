@@ -16,7 +16,7 @@ from wagtail.documents import urls as wagtaildocs_urls
 from .wagtail_api import api_router as wagtail_api_router
 
 urlpatterns = [
-    # path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
+    path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
     path(
         "about/",
         TemplateView.as_view(template_name="pages/about.html"),
