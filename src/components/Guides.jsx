@@ -459,11 +459,20 @@ const Guides = () => {
                             key={guide.id}
                             className="guide-card glass-panel"
                             onClick={() => {
+                                // Priority 1: Open Wagtail Guide Page if available (SEO friendly)
+                                if (guide.url) {
+                                    window.location.href = guide.url;
+                                    return;
+                                }
+
+                                // Priority 2: Open Modal for internal content (fallback)
                                 if (isInternal) {
                                     setSelectedGuide(guide);
-                                } else {
-                                    window.open(guide.link, '_blank');
+                                    return;
                                 }
+
+                                // Priority 3: Open External Link
+                                window.open(guide.link, '_blank');
                             }}
                         >
                             <div className="guide-card-content">
@@ -499,9 +508,20 @@ const Guides = () => {
                                         {guide.author}
                                     </span>
                                     {isInternal ? (
-                                        <button className="guide-action-btn">
-                                            {hasContent ? 'Read Guide' : 'Read Thread'}
-                                        </button>
+                                        guide.url ? (
+                                            <a
+                                                href={guide.url}
+                                                className="guide-action-btn"
+                                                style={{ textDecoration: 'none', display: 'inline-block', textAlign: 'center' }}
+                                                onClick={(e) => e.stopPropagation()}
+                                            >
+                                                {hasContent ? 'Read Guide' : 'Read Thread'}
+                                            </a>
+                                        ) : (
+                                            <button className="guide-action-btn">
+                                                {hasContent ? 'Read Guide' : 'Read Thread'}
+                                            </button>
+                                        )
                                     ) : (
                                         <span className="guide-action-btn" style={{ border: 'none', background: 'transparent', padding: '0' }}>
                                             Visit Link ↗

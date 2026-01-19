@@ -2,37 +2,27 @@
 
 {% load wagtailcore_tags %}
 
-{% block title %}{{ page.title }} | Voucher Tracker{% endblock %}
+{% block title %}
+  {{ page.title }} | Voucher Tracker
+{% endblock title %}
 {% block content %}
-  <article class="glass-panel" style="padding: 2.5rem;">
+  <article class="glass-panel article-container">
     <!-- Header Section -->
-    <header style="margin-bottom: 2rem;">
+    <header class="header-container">
       <h1>{{ page.title }}</h1>
       <div class="metadata">
-        {% if page.author %}
-          <span class="author">By {{ page.author }}</span>
-          <span>•</span>
-        {% endif %}
+        <!--        {% if page.author %}-->
+        <!--          <span class="author">By {{ page.author }}</span>-->
+        <!--          <span>•</span>-->
+        <!--        {% endif %}-->
         <span class="date">{{ page.last_published_at|date:"F j, Y" }}</span>
       </div>
       {% if page.tags.all %}
-        <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem;">
+        <div class="tags-container">
           {% for tag in page.tags.all %}<span class="tag-pill">#{{ tag }}</span>{% endfor %}
         </div>
       {% endif %}
       {% if page.intro %}<div class="intro">{{ page.intro }}</div>{% endif %}
-      {% if page.external_link %}
-        <div style="margin-bottom: 2rem;">
-          <a href="{{ page.external_link }}"
-             target="_blank"
-             class="glass-panel"
-             style="display: inline-block;
-                    padding: 0.8rem 1.5rem;
-                    border: 1px solid var(--accent-cyan);
-                    color: var(--accent-cyan);
-                    font-weight: 500">Visit External Discussion ↗</a>
-        </div>
-      {% endif %}
     </header>
     <!-- Main Content -->
     <div class="content-wrapper">
@@ -42,14 +32,41 @@
         {% elif block.block_type == 'paragraph' %}
           {{ block.value|richtext }}
         {% elif block.block_type == 'embed' %}
-          <div class="block-embed"
-               style="margin: 2rem 0;
-                      display: flex;
-                      justify-content: center">{{ block.value|safe }}</div>
+          <div class="block-embed">{{ block.value|safe }}</div>
         {% endif %}
       {% endfor %}
     </div>
+    {% if page.external_link %}
+      <div class="external-link-wrapper">
+        <a href="{{ page.external_link }}"
+           target="_blank"
+           class="glass-panel external-link-btn">Visit External Discussion
+        ↗</a>
+      </div>
+    {% endif %}
   </article>
+  <!-- JSON-LD Structured Data for SEO -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "{{ page.title|escapejs }}",
+      "image": [
+        "https://vaibhav159.github.io/voucherTracker/og-image.png"
+      ],
+      "author": {
+        "@type": "Person",
+        "name": "{{ page.author|default:'Voucher Tracker Community'|escapejs }}"
+      },
+      "datePublished": "{{ page.first_published_at|date:'c' }}",
+      "dateModified": "{{ page.last_published_at|date:'c' }}",
+      "description": "{{ page.intro|default:''|escapejs }}",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ request.build_absolute_uri }}"
+      }
+    }
+  </script>
   <!-- Twitter Widgets Script for Embeds if needed -->
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endblock %}
+{% endblock content %}

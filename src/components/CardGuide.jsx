@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
+import { Helmet } from 'react-helmet-async';
 import { useCreditCards } from '../hooks/useCreditCards';
 import { useTheme } from '../context/ThemeContext';
 import CardImage from './CardImage';
@@ -83,8 +84,56 @@ const CardGuide = () => {
         );
     }
 
+    // SEO Data
+    const pageTitle = `${card.name} Review & Benefits - Voucher Tracker`;
+    const pageDescription = `Comprehensive guide for ${card.name}. Learn about fees, rewards, benefits, and eligibility criteria to decide if this card is right for you.`;
+    const pageUrl = `${window.location.origin}${window.location.pathname}#/card-guide/${slug}`;
+
+    // Structured Data (JSON-LD)
+    const structuredData = {
+        "@context": "https://schema.org/",
+        "@type": "FinancialProduct",
+        "name": card.name,
+        "description": pageDescription,
+        "brand": {
+            "@type": "Brand",
+            "name": card.bank
+        },
+        "image": card.image,
+        "offers": {
+            "@type": "Offer",
+            "price": card.joiningFee.replace(/[^0-9]/g, ''),
+            "priceCurrency": "INR",
+            "url": card.applyLink
+        },
+        "feesAndCommissionsSpecification": card.annualFee
+    };
+
     return (
         <div className="card-guide-container" style={{ paddingTop: '2rem', maxWidth: '1000px', margin: '0 auto' }}>
+            <Helmet>
+                <title>{pageTitle}</title>
+                <meta name="description" content={pageDescription} />
+
+                {/* Open Graph */}
+                <meta property="og:title" content={pageTitle} />
+                <meta property="og:description" content={pageDescription} />
+                <meta property="og:image" content={card.image} />
+                <meta property="og:url" content={pageUrl} />
+                <meta property="og:type" content="article" />
+
+                {/* Twitter */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={pageTitle} />
+                <meta name="twitter:description" content={pageDescription} />
+                <meta name="twitter:image" content={card.image} />
+
+                {/* Structured Data */}
+                <script type="application/ld+json">
+                    {JSON.stringify(structuredData)}
+                </script>
+            </Helmet>
+
             <Link to="/compare-cards" style={{ color: 'var(--text-secondary)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '2rem' }}>
                 ← Back to Comparison
             </Link>

@@ -84,10 +84,7 @@ h1 {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-cyan) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--text-primary);
 }
 
 h2 {
@@ -130,6 +127,14 @@ blockquote {
     max-width: 900px;
     margin: 0 auto;
     padding: 2rem 1rem 4rem 1rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    /* Pushes footer to bottom */
 }
 
 /* Navigation */
@@ -156,6 +161,16 @@ blockquote {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+/* Footer */
+.app-footer {
+    margin-top: 4rem;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--glass-border);
 }
 
 /* Content Blocks */
@@ -191,4 +206,41 @@ blockquote {
     background: rgba(255, 255, 255, 0.05);
     color: var(--text-secondary);
     border: 1px solid var(--glass-border);
+}
+
+/* Utilities replacing inline styles */
+.text-accent-pink {
+    color: var(--accent-pink);
+}
+
+.article-container {
+    padding: 2.5rem;
+}
+
+.header-container {
+    margin-bottom: 2rem;
+}
+
+.tags-container {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.block-embed {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.external-link-wrapper {
+    margin-bottom: 2rem;
+}
+
+.external-link-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid var(--accent-cyan);
+    color: var(--accent-cyan);
+    font-weight: 500;
 }

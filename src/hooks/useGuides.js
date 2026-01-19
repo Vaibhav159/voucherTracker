@@ -59,7 +59,7 @@ export const useGuides = (options = {}) => {
             // Start new fetch
             cache.promise = (async () => {
                 try {
-                    const response = await fetch(`${API_BASE_URL}/v2/pages/?type=guides.GuidePage&fields=_,id,title,intro,body,tags,author,external_link`);
+                    const response = await fetch(`${API_BASE_URL}/v2/pages/?type=guides.GuidePage&fields=_,id,title,intro,body,tags,author,external_link,html_url`);
                     if (!response.ok) {
                         throw new Error('Failed to fetch guides');
                     }
@@ -76,7 +76,12 @@ export const useGuides = (options = {}) => {
                             author: page.author,
                             // If external_link is present, use it. Otherwise use '#'.
                             // Note: frontend uses presence of content/embed to decide if internal.
-                            link: page.external_link || '#'
+                            link: page.external_link || '#',
+                            meta: page.meta,
+                            // Ensure URL is absolute pointing to backend
+                            url: (page.meta?.html_url || page.html_url) ?
+                                ((page.meta?.html_url || page.html_url).startsWith('http') ? (page.meta?.html_url || page.html_url) : `${API_BASE_URL}${page.meta?.html_url || page.html_url}`)
+                                : null
                         }));
                     } else if (data.results) { // Fallback if structure differs
                         backendGuides = data.results;
@@ -85,6 +90,7 @@ export const useGuides = (options = {}) => {
                     // Update cache
                     cache.data = backendGuides;
                     cache.timestamp = Date.now();
+                    console.log(backendGuides)
                     return backendGuides;
                 } catch (err) {
                     cache.promise = null;
