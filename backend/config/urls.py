@@ -5,7 +5,7 @@ from django.contrib import admin
 from django.urls import include
 from django.urls import path
 from django.views import defaults as default_views
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, RedirectView
 from django.http import JsonResponse
 from drf_spectacular.views import SpectacularAPIView
 from drf_spectacular.views import SpectacularSwaggerView
@@ -17,12 +17,9 @@ from wagtail.contrib.sitemaps.views import sitemap
 from .wagtail_api import api_router as wagtail_api_router
 
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
-    path(
-        "about/",
-        TemplateView.as_view(template_name="pages/about.html"),
-        name="about",
-    ),
+    path("", RedirectView.as_view(url="/guides/", permanent=False), name="home"),
+    # User management
+    # path("users/", include("backend.users.urls", namespace="users")),
     path(
         "robots.txt",
         TemplateView.as_view(template_name="robots.txt", content_type="text/plain"),
@@ -31,8 +28,8 @@ urlpatterns = [
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
-    path("users/", include("backend.users.urls", namespace="users")),
-    path("accounts/", include("allauth.urls")),
+    # path("users/", include("backend.users.urls", namespace="users")),
+    # path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
     # ...
     # Media files
