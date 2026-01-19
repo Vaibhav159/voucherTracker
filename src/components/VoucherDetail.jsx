@@ -4,6 +4,8 @@ import { useVouchers } from '../hooks/useVouchers';
 import { getPlatformLogo } from '../utils/platformLogos';
 import LoadingSpinner from './LoadingSpinner';
 
+import { Helmet } from 'react-helmet-async';
+
 const VoucherDetail = () => {
     const { id } = useParams();
     const { vouchers, loading, error } = useVouchers();
@@ -45,9 +47,61 @@ const VoucherDetail = () => {
         );
     }
 
+    // SEO Data
+    const platformNames = voucher.platforms.map(p => p.name).join(', ');
+    const pageTitle = `${voucher.brand} Voucher & Gift Card Deals - Voucher Tracker`;
+    const pageDescription = `Get the best deals and discounts on ${voucher.brand} gift cards. Compare rates across ${platformNames} and maximize your savings.`;
+    const pageUrl = `${window.location.origin}${window.location.pathname}#/voucher/${id}`;
+
+    // Structured Data (JSON-LD)
+    const structuredData = {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": `${voucher.brand} Gift Card`,
+        "image": voucher.logo,
+        "description": pageDescription,
+        "brand": {
+            "@type": "Brand",
+            "name": voucher.brand
+        },
+        "offers": voucher.platforms.map(platform => ({
+            "@type": "Offer",
+            "priceCurrency": "INR", // Assuming generic currency context
+            "availability": "https://schema.org/InStock",
+            "seller": {
+                "@type": "Organization",
+                "name": platform.name
+            },
+            "url": platform.link
+        }))
+    };
+
 
     return (
         <div className="container" style={{ maxWidth: '1000px' }}>
+            <Helmet>
+                <title>{pageTitle}</title>
+                <meta name="description" content={pageDescription} />
+
+                {/* Open Graph */}
+                <meta property="og:title" content={pageTitle} />
+                <meta property="og:description" content={pageDescription} />
+                <meta property="og:image" content={voucher.logo} />
+                <meta property="og:url" content={pageUrl} />
+                <meta property="og:type" content="product" />
+
+                {/* Twitter */}
+                <meta name="twitter:card" content="summary" />
+                <meta name="twitter:title" content={pageTitle} />
+                <meta name="twitter:description" content={pageDescription} />
+                <meta name="twitter:image" content={voucher.logo} />
+
+                {/* Structured Data */}
+                <script type="application/ld+json">
+                    {JSON.stringify(structuredData)}
+                </script>
+            </Helmet>
+
             <Link to="/" style={{ color: 'var(--text-secondary)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', marginBottom: '2rem' }}>
                 ← Back to Vouchers
             </Link>
