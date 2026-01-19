@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /guides/
+Allow: /static/
+Disallow: /admin/
+Disallow: /api/
