@@ -2,80 +2,72 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      {% block title %}
-        Voucher Tracker Guides
-      {% endblock title %}
-    </title>
-    <meta name="robots" content="index, follow" />
-    <meta name="description"
-          content="Detailed credit card and voucher guides, strategies, and optimizations." />
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet" />
-    <!-- Theme CSS -->
-    <link href="{% static 'css/guides_theme.css' %}" rel="stylesheet" />
-    {% block extra_css %}
-    {% endblock extra_css %}
-    <!-- JSON-LD Breadcrumb Schema -->
-    {% if page %}
-      <script type="application/ld+json">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    {% block title %}
+    Voucher Tracker Guides
+    {% endblock title %}
+  </title>
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Detailed credit card and voucher guides, strategies, and optimizations." />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Theme CSS -->
+  <link href="{% static 'css/guides_theme.css' %}" rel="stylesheet" />
+  {% block extra_css %}
+  {% endblock extra_css %}
+  <!-- JSON-LD Breadcrumb Schema -->
+  {% if page %}
+  <script type="application/ld+json">
         {
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
-          "itemListElement": [{
-            %
-            for ancestor in page.get_ancestors.live | slice: "1:" %
-          } {
-            "@type": "ListItem",
-            "position": {
-              {
-                forloop.counter
-              }
+          "itemListElement": [
+            {% for ancestor in page.get_ancestors.live|slice:"1:" %}
+            {
+              "@type": "ListItem",
+              "position": {{ forloop.counter }},
+              "name": "{{ ancestor.title|escapejs }}",
+              "item": "{{ ancestor.get_full_url }}"
             },
-            "name": "{{ ancestor.title|escapejs }}",
-            "item": "{{ ancestor.get_full_url }}"
-          }, {
-            %
-            endfor %
-          } {
-            "@type": "ListItem",
-            "position": {
-              {
-                page.get_ancestors.live.count
-              }
-            },
-            "name": "{{ page.title|escapejs }}",
-            "item": "{{ page.get_full_url }}"
-          }]
+            {% endfor %}
+            {
+              "@type": "ListItem",
+              "position": {{ page.get_ancestors.live.count }},
+              "name": "{{ page.title|escapejs }}",
+              "item": "{{ page.get_full_url }}"
+            }
+          ]
         }
       </script>
-    {% endif %}
-  </head>
-  <body>
-    <!-- Background Effects -->
-    <div class="bg-gradient-orb orb-corner-top"></div>
-    <div class="bg-gradient-orb orb-corner-bottom"></div>
-    <div class="app-container">
-      <!-- Minimal Header -->
-      <nav class="navbar-minimal">
-        <a href="{% url 'home' %}" class="brand-logo">
-          <span class="text-accent-pink">%</span> VoucherTracker
-        </a>
-        <a href="https://vaibhav159.github.io/voucherTracker/" class="back-link">← Back to App</a>
-      </nav>
-      <main>
-        {% block content %}
-        {% endblock content %}
-      </main>
-      <footer class="app-footer">
-        <p>© {% now "Y" %} Voucher Tracker. Community Driven.</p>
-      </footer>
-    </div>
-  </body>
+  {% endif %}
+</head>
+
+<body>
+  <!-- Background Effects -->
+  <div class="bg-gradient-orb orb-corner-top"></div>
+  <div class="bg-gradient-orb orb-corner-bottom"></div>
+  <div class="app-container">
+    <!-- Minimal Header -->
+    <nav class="navbar-minimal">
+      <a href="{% url 'home' %}" class="brand-logo">
+        <span class="text-accent-pink">%</span> VoucherTracker
+      </a>
+      <a href="https://vaibhav159.github.io/voucherTracker/" class="back-link">← Back to App</a>
+    </nav>
+    <main>
+      {% block content %}
+      {% endblock content %}
+    </main>
+    <footer class="app-footer">
+      <p>© {% now "Y" %} Voucher Tracker. Community Driven.</p>
+    </footer>
+  </div>
+</body>
+
 </html>
