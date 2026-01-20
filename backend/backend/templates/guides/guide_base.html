@@ -22,6 +22,40 @@
     <link href="{% static 'css/guides_theme.css' %}" rel="stylesheet" />
     {% block extra_css %}
     {% endblock extra_css %}
+    <!-- JSON-LD Breadcrumb Schema -->
+    {% if page %}
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [{
+            %
+            for ancestor in page.get_ancestors.live | slice: "1:" %
+          } {
+            "@type": "ListItem",
+            "position": {
+              {
+                forloop.counter
+              }
+            },
+            "name": "{{ ancestor.title|escapejs }}",
+            "item": "{{ ancestor.get_full_url }}"
+          }, {
+            %
+            endfor %
+          } {
+            "@type": "ListItem",
+            "position": {
+              {
+                page.get_ancestors.live.count
+              }
+            },
+            "name": "{{ page.title|escapejs }}",
+            "item": "{{ page.get_full_url }}"
+          }]
+        }
+      </script>
+    {% endif %}
   </head>
   <body>
     <!-- Background Effects -->
