@@ -24,8 +24,8 @@ const baseFlags = {
     // Core features (always enabled)
     home: true,
     voucherTracker: true,
-    useBackendApi: false, // Master switch for backend API, default OFF
-    useGuidesApi: false,
+    useBackendApi: true, // Master switch for backend API, default OFF
+    useGuidesApi: true,
     useCreditCardsApi: false,
 
     // Credit card features

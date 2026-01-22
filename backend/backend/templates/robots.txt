@@ -3,3 +3,5 @@ Allow: /guides/
 Allow: /static/
 Disallow: /admin/
 Disallow: /api/
+
+Sitemap: https://tracker.cheq.dpdns.org/sitemap.xml
