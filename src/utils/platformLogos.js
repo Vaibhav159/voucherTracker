@@ -1,3 +1,5 @@
+import maximizeLogo from '../assets/maximize-logo.jpg';
+
 export const PLATFORM_STYLES = {
     "iShop": {
         logo: "https://d35fe9hjas7aql.cloudfront.net/ishop1.0/prod/shared-ui/v1/assets/images/icons/logo.svg",
@@ -15,7 +17,7 @@ export const PLATFORM_STYLES = {
         padding: "0px"
     },
     "Maximize": {
-        logo: "/maximize-logo.jpg",
+        logo: maximizeLogo,
         bg: "#22c55e",
         padding: "10px"
     },
