@@ -337,59 +337,57 @@ function App() {
                 isShortcutsOpen={isShortcutsOpen}
                 setIsShortcutsOpen={setIsShortcutsOpen}
               >
-                <ErrorBoundary>
-                  <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '400px' }}><LoadingSpinner size="lg" text="Loading..." /></div>}>
-                    <Routes>
-                      <Route path="/" element={<Home data={vouchers} onOpenShortcuts={() => setIsShortcutsOpen(true)} />} />
-                      <Route path="/guides" element={<Guides />} />
-                      <Route
-                        path="/know-your-cards"
-                        element={
-                          <CreditCardComparison
-                            view="grid"
-                            selectedCards={selectedCards}
-                            toggleCardSelection={toggleCardSelection}
-                            clearSelection={() => setSelectedCards([])}
-                          />
-                        }
-                      />
-                      <Route
-                        path="/compare-cards"
-                        element={
-                          <CreditCardComparison
-                            view="table"
-                            selectedCards={selectedCards}
-                            toggleCardSelection={toggleCardSelection}
-                            clearSelection={() => setSelectedCards([])}
-                          />
-                        }
-                      />
-                      <Route path="/card-guide/:slug" element={<CardGuide />} />
-                      {featureFlags.rewardsCalculator && (
-                        <Route path="/rewards-calculator" element={<RewardsCalculator />} />
-                      )}
-                      {featureFlags.pointsConverter && (
-                        <Route path="/points-converter" element={<PointsConverter />} />
-                      )}
-                      {featureFlags.askAI && (
-                        <Route path="/ask-ai" element={<AskAI />} />
-                      )}
-                      {featureFlags.bankingGuides && (
-                        <Route path="/banking-guides" element={<BankingGuides />} />
-                      )}
-                      <Route path="/browse-banking" element={<BankingGuides />} />
-                      <Route path="/compare-banking" element={<CompareBanking />} />
-                      <Route path="/voucher/:id" element={<VoucherDetail vouchers={vouchers} />} />
+                <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '400px' }}><LoadingSpinner size="lg" text="Loading..." /></div>}>
+                  <Routes>
+                    <Route path="/" element={<Home data={vouchers} onOpenShortcuts={() => setIsShortcutsOpen(true)} />} />
+                    <Route path="/guides" element={<Guides />} />
+                    <Route
+                      path="/know-your-cards"
+                      element={
+                        <CreditCardComparison
+                          view="grid"
+                          selectedCards={selectedCards}
+                          toggleCardSelection={toggleCardSelection}
+                          clearSelection={() => setSelectedCards([])}
+                        />
+                      }
+                    />
+                    <Route
+                      path="/compare-cards"
+                      element={
+                        <CreditCardComparison
+                          view="table"
+                          selectedCards={selectedCards}
+                          toggleCardSelection={toggleCardSelection}
+                          clearSelection={() => setSelectedCards([])}
+                        />
+                      }
+                    />
+                    <Route path="/card-guide/:slug" element={<CardGuide />} />
+                    {featureFlags.rewardsCalculator && (
+                      <Route path="/rewards-calculator" element={<RewardsCalculator />} />
+                    )}
+                    {featureFlags.pointsConverter && (
+                      <Route path="/points-converter" element={<PointsConverter />} />
+                    )}
+                    {featureFlags.askAI && (
+                      <Route path="/ask-ai" element={<AskAI />} />
+                    )}
+                    {featureFlags.bankingGuides && (
+                      <Route path="/banking-guides" element={<BankingGuides />} />
+                    )}
+                    <Route path="/browse-banking" element={<BankingGuides />} />
+                    <Route path="/compare-banking" element={<CompareBanking />} />
+                    <Route path="/voucher/:id" element={<VoucherDetail vouchers={vouchers} />} />
 
-                      <Route path="/favorites" element={<Favorites />} />
-                      {/* New UX Feature Routes */}
-                      <Route path="/spend-optimizer" element={<SpendOptimizer />} />
-                      <Route path="/milestones" element={<MilestoneTracker />} />
-                      <Route path="/savings" element={<SavingsDashboard />} />
-                      <Route path="/my-cards" element={<MyCards />} />
-                    </Routes>
-                  </Suspense>
-                </ErrorBoundary>
+                    <Route path="/favorites" element={<Favorites />} />
+                    {/* New UX Feature Routes */}
+                    <Route path="/spend-optimizer" element={<SpendOptimizer />} />
+                    <Route path="/milestones" element={<MilestoneTracker />} />
+                    <Route path="/savings" element={<SavingsDashboard />} />
+                    <Route path="/my-cards" element={<MyCards />} />
+                  </Routes>
+                </Suspense>
               </Layout>
             </Router>
           </MyCardsProvider>

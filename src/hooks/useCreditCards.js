@@ -155,23 +155,24 @@ const transformCreditCard = (card) => {
 
 export const useCreditCards = (options = {}) => {
     const { enabled = true } = options;
-    const [creditCards, setCreditCards] = useState([]);
-    const [loading, setLoading] = useState(true);
+    // Initialize with static data immediately for optimistic UI
+    // Ensure we start with transformed data
+    const [creditCards, setCreditCards] = useState(() => {
+        return localCreditCards.map(transformCreditCard);
+    });
+    // Start with loading=false to unblock UI
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
     useEffect(() => {
         if (!enabled) {
-            setLoading(false);
             return;
         }
 
         const fetchCreditCards = async () => {
             // Check feature flag first
             if (!featureFlags.useBackendApi || !featureFlags.useCreditCardsApi) {
-                // Transform all cards to ensure compatibility
-                const transformedCards = localCreditCards.map(transformCreditCard);
-                setCreditCards(transformedCards);
-                setLoading(false);
+                // Already initialized with local data
                 return;
             }
 
@@ -179,7 +180,6 @@ export const useCreditCards = (options = {}) => {
             const now = Date.now();
             if (cache.data && (now - cache.timestamp < CACHE_DURATION)) {
                 setCreditCards(cache.data);
-                setLoading(false);
                 return;
             }
 
@@ -190,18 +190,22 @@ export const useCreditCards = (options = {}) => {
                     setCreditCards(data);
                 } catch (err) {
                     console.error("Error waiting for shared credit cards fetch:", err);
-                    const transformedCards = localCreditCards.map(transformCreditCard);
-                    setCreditCards(transformedCards);
-                } finally {
-                    setLoading(false);
+                    // Stay with static data
                 }
                 return;
             }
 
             // Start new fetch
             cache.promise = (async () => {
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
+
                 try {
-                    const response = await fetch(`${API_BASE_URL}/credit-cards/`);
+                    const response = await fetch(`${API_BASE_URL}/credit-cards/`, {
+                        signal: controller.signal
+                    });
+                    clearTimeout(timeoutId);
+
                     if (!response.ok) {
                         throw new Error('Failed to fetch credit cards');
                     }
@@ -238,11 +242,8 @@ export const useCreditCards = (options = {}) => {
                 setCreditCards(data);
             } catch (err) {
                 console.error('Error fetching credit cards:', err);
-                const transformedCards = localCreditCards.map(transformCreditCard);
-                setCreditCards(transformedCards);
+                // Already have static data, just log error
                 setError(err);
-            } finally {
-                setLoading(false);
             }
         };
 
