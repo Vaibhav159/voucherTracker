@@ -243,7 +243,7 @@ export const useCreditCards = (options = {}) => {
             } catch (err) {
                 console.error('Error fetching credit cards:', err);
                 // Already have static data, just log error
-                setError(err);
+                // setError(err); // Removed to prevent UI blocking since we have fallback
             }
         };
 

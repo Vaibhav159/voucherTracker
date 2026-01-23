@@ -14,6 +14,15 @@ const cache = {
 
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
+// Helper to process and sort voucher data
+// Moved outside component to avoid ReferenceError during initialization
+const processVouchers = (items) => {
+    return items.map(voucher => ({
+        ...voucher,
+        platforms: sortPlatforms(voucher.platforms || [])
+    }));
+};
+
 export const useVouchers = (options = {}) => {
     const { enabled = true } = options;
     // Initialize with static data immediately for optimistic UI
@@ -112,13 +121,7 @@ export const useVouchers = (options = {}) => {
         fetchVouchers();
     }, [enabled]);
 
-    // Helper to process and sort voucher data
-    const processVouchers = (items) => {
-        return items.map(voucher => ({
-            ...voucher,
-            platforms: sortPlatforms(voucher.platforms || [])
-        }));
-    };
+
 
     return { vouchers, loading, error };
 };
