@@ -14,13 +14,14 @@ const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
 export const useGuides = (options = {}) => {
     const { enabled = true } = options;
-    const [guides, setGuides] = useState([]);
-    const [loading, setLoading] = useState(true);
+    // Initialize with static data immediately for optimistic UI
+    const [guides, setGuides] = useState(guidesData);
+    // Start with loading=false to unblock UI
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
     useEffect(() => {
         if (!enabled) {
-            setLoading(false);
             return;
         }
 
@@ -28,8 +29,7 @@ export const useGuides = (options = {}) => {
             // Check feature flag first
             if (!featureFlags.useBackendApi || !featureFlags.useGuidesApi) {
                 console.log('Using local guides data (Feature flag off)');
-                setGuides(guidesData);
-                setLoading(false);
+                // Already initialized with local data
                 return;
             }
 
@@ -38,7 +38,6 @@ export const useGuides = (options = {}) => {
             if (cache.data && (now - cache.timestamp < CACHE_DURATION)) {
                 console.log('Using cached guides data');
                 setGuides(cache.data);
-                setLoading(false);
                 return;
             }
 
@@ -49,17 +48,22 @@ export const useGuides = (options = {}) => {
                     setGuides(data);
                 } catch (err) {
                     console.error("Error waiting for shared guides fetch:", err);
-                    setGuides(guidesData);
-                } finally {
-                    setLoading(false);
+                    // Stay with static data
                 }
                 return;
             }
 
             // Start new fetch
             cache.promise = (async () => {
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
+
                 try {
-                    const response = await fetch(`${API_BASE_URL}/v2/pages/?type=guides.GuidePage&fields=_,id,title,intro,body,tags,author,external_link,html_url`);
+                    const response = await fetch(`${API_BASE_URL}/v2/pages/?type=guides.GuidePage&fields=_,id,title,intro,body,tags,author,external_link,html_url`, {
+                        signal: controller.signal
+                    });
+                    clearTimeout(timeoutId);
+
                     if (!response.ok) {
                         throw new Error('Failed to fetch guides');
                     }
@@ -90,7 +94,6 @@ export const useGuides = (options = {}) => {
                     // Update cache
                     cache.data = backendGuides;
                     cache.timestamp = Date.now();
-                    console.log(backendGuides)
                     return backendGuides;
                 } catch (err) {
                     cache.promise = null;
@@ -103,11 +106,9 @@ export const useGuides = (options = {}) => {
                 setGuides(data);
             } catch (err) {
                 console.error('Error fetching guides:', err);
-                // Fallback to local data on error
-                setGuides(guidesData);
-                setError(err); // Keep error state but we still show data from fallback
-            } finally {
-                setLoading(false);
+                // Fallback to local data on error (already set, but log error)
+                // setGuides(guidesData); // No need to re-set if already initial
+                // setError(err); // Removed to prevent UI blocking since we have fallback
             }
         };
 

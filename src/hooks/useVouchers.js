@@ -14,15 +14,29 @@ const cache = {
 
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
+// Helper to process and sort voucher data
+// Moved outside component to avoid ReferenceError during initialization
+const processVouchers = (items) => {
+    return items.map(voucher => ({
+        ...voucher,
+        platforms: sortPlatforms(voucher.platforms || [])
+    }));
+};
+
 export const useVouchers = (options = {}) => {
     const { enabled = true } = options;
-    const [vouchers, setVouchers] = useState([]);
-    const [loading, setLoading] = useState(true);
+    // Initialize with static data immediately for optimistic UI
+    const [vouchers, setVouchers] = useState(() => {
+        return processVouchers(vouchersData);
+    });
+    // We start with loading=false because we have static data!
+    // We can add a separate 'isRefetching' state if we want to show a small spinner,
+    // but for the main blocking load, it should be false.
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
     useEffect(() => {
         if (!enabled) {
-            setLoading(false);
             return;
         }
 
@@ -30,8 +44,7 @@ export const useVouchers = (options = {}) => {
             // Check feature flag first
             if (!featureFlags.useBackendApi) {
                 console.log("Backend API disabled (feature flag), using local data");
-                setVouchers(processVouchers(vouchersData));
-                setLoading(false);
+                // Already initialized with local data, just return
                 return;
             }
 
@@ -39,7 +52,6 @@ export const useVouchers = (options = {}) => {
             const now = Date.now();
             if (cache.data && (now - cache.timestamp < CACHE_DURATION)) {
                 setVouchers(cache.data);
-                setLoading(false);
                 return;
             }
 
@@ -50,17 +62,22 @@ export const useVouchers = (options = {}) => {
                     setVouchers(data);
                 } catch (err) {
                     console.error("Error waiting for shared voucher fetch:", err);
-                    setVouchers(processVouchers(vouchersData));
-                } finally {
-                    setLoading(false);
+                    // No need to fallback, we already have static data
                 }
                 return;
             }
 
             // Start new fetch and assign to cache.promise
             cache.promise = (async () => {
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
+
                 try {
-                    const response = await fetch(`${API_BASE_URL}/vouchers/`);
+                    const response = await fetch(`${API_BASE_URL}/vouchers/`, {
+                        signal: controller.signal
+                    });
+                    clearTimeout(timeoutId);
+
                     if (!response.ok) {
                         throw new Error(`API Error: ${response.status} ${response.statusText}`);
                     }
@@ -71,7 +88,8 @@ export const useVouchers = (options = {}) => {
                     let processed = [];
 
                     if (!items || items.length === 0) {
-                        console.warn("API returned no data, falling back to local data");
+                        console.warn("API returned no data, keeping local data");
+                        // Return current static data if API fails to give meaningful data
                         processed = processVouchers(vouchersData);
                     } else {
                         processed = processVouchers(items);
@@ -94,24 +112,16 @@ export const useVouchers = (options = {}) => {
                 const data = await cache.promise;
                 setVouchers(data);
             } catch (err) {
-                console.error("Error fetching vouchers from API, falling back to local data:", err);
-                // Fallback to local data on error
-                setVouchers(processVouchers(vouchersData));
-            } finally {
-                setLoading(false);
+                console.error("Error fetching vouchers from API, using fallback data:", err);
+                // We already have static data, so just log the error
+                // setVouchers(processVouchers(vouchersData));
             }
         };
 
         fetchVouchers();
     }, [enabled]);
 
-    // Helper to process and sort voucher data
-    const processVouchers = (items) => {
-        return items.map(voucher => ({
-            ...voucher,
-            platforms: sortPlatforms(voucher.platforms || [])
-        }));
-    };
+
 
     return { vouchers, loading, error };
 };
