@@ -27,3 +27,9 @@ class PlatformName(models.TextChoices):
     MAXIMIZE = "Maximize", _("Maximize")
     GYFTR = "Gyftr", _("Gyftr")
     ISHOP = "iShop", _("iShop")
+
+
+class StockAlertStatus(models.TextChoices):
+    PENDING = "PENDING", _("Pending")
+    SENT = "SENT", _("Sent")
+    FAILED = "FAILED", _("Failed")

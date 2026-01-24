@@ -109,7 +109,11 @@ class GyftrSyncService(BaseSyncService):
         external_id = str(item.get("id"))
 
         try:
-            offer_val = float(item.get("offer_value", 0) or 0)
+            offer_type = item.get("offer_type") or ""
+            if offer_type == "DIS":
+                offer_val = float(item.get("offer_value", 0) or 0)
+            else:
+                offer_val = 0
         except (ValueError, TypeError):
             offer_val = 0
 
