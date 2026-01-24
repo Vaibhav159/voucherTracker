@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Compare Banking Tiers - Espresso &amp; Copper</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#cfab3f", // Opulent Gold
+                        "primary-hover": "#b59535",
+                        "accent-copper": "#B87333",
+                        "copper-light": "#E8C39E",
+                        "espresso-dark": "#1a1612", // Main bg darkened
+                        "espresso-deep": "#13100d", // Sidebar/Header darkened
+                        "card-bg": "#241f1a", // Tier Card bg
+                        "card-bg-alt": "#2a241e",
+                        "text-muted": "#a89f8d", // Beige/Copper text
+                        "text-light": "#e3dacb",
+                        "metallic-dark": "#363028",
+                    },
+                    fontFamily: {
+                        "display": ["Playfair Display", "serif"],
+                        "sans": ["Manrope", "sans-serif"]
+                    },
+                    backgroundImage: {
+                        'gradient-metallic': 'linear-gradient(145deg, #2a241e 0%, #1f1b17 100%)',
+                        'gradient-copper': 'linear-gradient(135deg, #cfab3f 0%, #B87333 100%)',
+                        'texture-grain': "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22 opacity=%220.05%22/%3E%3C/svg%3E')",
+                    },
+                    boxShadow: {
+                        "glow": "0 0 20px rgba(207, 171, 63, 0.15)",
+                        "emboss": "inset 1px 1px 2px rgba(0,0,0,0.5), 1px 1px 0px rgba(255,255,255,0.05)",
+                        "card-float": "0 20px 40px -10px rgba(0, 0, 0, 0.5)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1612; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #423c29; 
+            border-radius: 4px;
+            border: 2px solid #1a1612;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #cfab3f; 
+        }
+        .tier-table {
+            border-spacing: 16px 0; 
+            border-collapse: separate;
+        }
+        .tier-col-header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            padding-bottom: 1rem;
+        }
+        .sticky-col-first {
+            position: sticky;
+            left: 0;
+            z-index: 30;
+            background: #1a1612;
+        }.text-metallic {
+            background: linear-gradient(to bottom, #cfab3f, #a67c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+        }
+        .text-copper-metallic {
+            background: linear-gradient(to bottom, #E8C39E, #B87333);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }.border-hairline {
+            border-bottom-width: 1px;
+            border-image: linear-gradient(to right, transparent, #5c4d3c, transparent) 1;
+        }
+        .border-hairline-card {
+            border-bottom: 1px solid rgba(184, 115, 51, 0.15);
+        }.metric-emboss {
+            background: linear-gradient(180deg, rgba(30,26,22,0.6) 0%, rgba(40,35,30,0.4) 100%);
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.05);
+            border: 1px solid rgba(184, 115, 51, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-espresso-dark text-text-light font-sans overflow-hidden h-screen w-full flex selection:bg-primary selection:text-espresso-dark">
+<aside class="w-20 bg-espresso-deep border-r border-white/5 flex flex-col items-center py-6 shrink-0 z-50 shadow-2xl">
+<div class="mb-12 text-primary drop-shadow-lg">
+<svg class="size-9" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="url(#logo-grad)"></path>
+<defs>
+<linearGradient gradientUnits="userSpaceOnUse" id="logo-grad" x1="4" x2="44" y1="4" y2="44">
+<stop stop-color="#cfab3f"></stop>
+<stop offset="1" stop-color="#B87333"></stop>
+</linearGradient>
+</defs>
+</svg>
+</div>
+<nav class="flex flex-col gap-8 w-full items-center">
+<button class="size-10 rounded-xl flex items-center justify-center text-text-muted hover:text-primary hover:bg-white/5 transition-all duration-300 group" title="Dashboard">
+<span class="material-symbols-outlined font-light group-hover:scale-110 transition-transform">grid_view</span>
+</button>
+<button class="size-10 rounded-xl flex items-center justify-center text-text-muted hover:text-primary hover:bg-white/5 transition-all duration-300 group" title="My Cards">
+<span class="material-symbols-outlined font-light group-hover:scale-110 transition-transform">credit_card</span>
+</button>
+<button class="size-10 rounded-xl flex items-center justify-center bg-gradient-copper text-espresso-deep shadow-glow relative ring-1 ring-white/20" title="Compare Tiers">
+<span class="material-symbols-outlined font-normal">compare_arrows</span>
+<div class="absolute inset-0 rounded-xl bg-white/20 opacity-0 hover:opacity-100 transition-opacity"></div>
+</button>
+<button class="size-10 rounded-xl flex items-center justify-center text-text-muted hover:text-primary hover:bg-white/5 transition-all duration-300 group" title="Settings">
+<span class="material-symbols-outlined font-light group-hover:scale-110 transition-transform">settings</span>
+</button>
+</nav>
+<div class="mt-auto flex flex-col gap-8 items-center">
+<button class="size-10 rounded-xl flex items-center justify-center text-text-muted hover:text-primary hover:bg-white/5 transition-all duration-300" title="Support">
+<span class="material-symbols-outlined font-light">help</span>
+</button>
+<div class="size-10 rounded-full bg-cover bg-center border border-[#cfab3f]/30 ring-2 ring-espresso-dark ring-offset-1 ring-offset-[#cfab3f]/20" data-alt="User profile photo showing a man in a suit" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCcnFUFZxW07Ou4x7I_LNj_6QWnllyCesdw672pVOKtZhIkY-ZwyVnpp0DgXFwaWq7iHd89JTi6HKU4K4HDncqRsIdc0LTNe9-cn_a27M5YFt8tlAZJIY09KB5Z7hmh9MRFTN2rbR0aO3GWc-OfKxV2_zVlQ6Wx9haBFj-1sqMiZy6DYJTnS2ApgG7iQPRf28Snm1OsfrlEEVfNjsN-tXpO2kdRMbrjzMYlDWdr2Aec31B8hCzOL84za2aY16K8CCNKL6g0KBUjaJCf');"></div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col min-w-0 h-full relative bg-texture-grain">
+<header class="flex items-center justify-between px-8 py-4 border-b border-white/5 bg-espresso-deep/90 backdrop-blur-md sticky top-0 z-40 shadow-lg shrink-0">
+<div class="flex items-center gap-6 flex-1">
+<div class="relative group max-w-md w-full">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-text-muted font-light group-focus-within:text-primary transition-colors">search</span>
+</div>
+<input class="block w-full pl-12 pr-4 py-2.5 border border-white/5 rounded-full leading-5 bg-white/5 text-text-light placeholder-text-muted/60 focus:outline-none focus:ring-1 focus:ring-primary/50 focus:bg-white/10 sm:text-sm transition-all font-sans font-light tracking-wide shadow-inner" placeholder="Search banks, cards, or benefits..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 text-primary text-sm font-semibold border border-primary/20 hover:border-primary/60 hover:bg-primary/5 transition-all duration-300 shadow-emboss hover:shadow-glow group">
+<span class="material-symbols-outlined text-[18px] group-hover:rotate-90 transition-transform duration-300">add</span>
+<span class="tracking-wide">Add Tier</span>
+</button>
+<button class="size-10 flex items-center justify-center text-text-muted hover:text-primary transition-colors relative rounded-full hover:bg-white/5">
+<span class="material-symbols-outlined font-light">notifications</span>
+<span class="absolute top-2 right-2.5 size-1.5 bg-accent-copper rounded-full ring-2 ring-espresso-deep"></span>
+</button>
+</div>
+</header>
+<div class="flex-1 overflow-auto relative">
+<div class="max-w-[1920px] mx-auto px-8 py-8 pb-24">
+<div class="mb-8 flex flex-col gap-2">
+<h1 class="text-3xl font-display font-medium text-white tracking-wide">Compare <span class="text-copper-metallic italic font-serif">Banking Tiers</span></h1>
+<p class="text-text-muted font-light tracking-wide max-w-2xl text-base">Detailed side-by-side analysis of premium benefits, fees, and eligibility.</p>
+</div>
+<div class="w-full overflow-x-auto pb-4">
+<table class="w-full tier-table text-left">
+<thead>
+<tr>
+<th class="sticky-col-first w-64 min-w-[240px] px-6 pt-4 pb-2 bg-espresso-dark border-r border-white/5 shadow-[5px_0_20px_-10px_rgba(0,0,0,0.5)]"></th>
+<th class="tier-col-header w-[320px] min-w-[300px] align-top">
+<div class="bg-gradient-metallic p-1 rounded-2xl shadow-card-float group hover:-translate-y-1 transition-transform duration-500 ease-out h-full">
+<div class="bg-card-bg rounded-xl p-5 relative overflow-hidden h-full flex flex-col">
+<div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-copper opacity-80"></div>
+<div class="absolute top-4 right-4 text-text-muted hover:text-accent-copper cursor-pointer transition-colors opacity-50 hover:opacity-100 p-1 rounded-full hover:bg-white/5 z-20">
+<span class="material-symbols-outlined text-sm font-light">close</span>
+</div>
+<div class="flex items-center gap-4 mb-2 pr-6">
+<div class="size-12 shrink-0 rounded-full bg-white/95 shadow-lg flex items-center justify-center p-2 ring-1 ring-white/20">
+<img alt="HDFC Bank Logo" class="w-full h-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQZuIzHFSz-YcsuOQnkRG3MP2VDx5u-S4n2ExW-hnuAZhO22DHrf_AezBkNzG5-TYuNiQZGZhvp6sta0qzXf7aoD0nyoiAqZYo6t71xQwpQXSezxkIZsgc7ZLeptsthlev8-1gyQocNF1A-BVe3eAv3t0bLb8M1ftYQysghirXDzYKxWJY1sB0p8XeLcSP0TZ0epAqCmNQQWvZI8z4Ezuwh2nfXsIuT2jW_535Gudl1kwI7Qmio_AlBURqx6_YUfPJjndu3oRH9oyv"/>
+</div>
+<div class="min-w-0">
+<h3 class="text-lg font-display font-semibold text-primary tracking-wide truncate">Infinia Metal</h3>
+<p class="text-[9px] text-text-muted uppercase tracking-[0.2em] font-bold mt-0.5">HDFC Bank</p>
+</div>
+</div>
+<div class="absolute -bottom-6 -right-6 text-white/5 pointer-events-none rotate-12">
+<span class="material-symbols-outlined text-9xl">diamond</span>
+</div>
+</div>
+</div>
+</th>
+<th class="tier-col-header w-[320px] min-w-[300px] align-top">
+<div class="bg-gradient-metallic p-1 rounded-2xl shadow-card-float group hover:-translate-y-1 transition-transform duration-500 ease-out h-full">
+<div class="bg-card-bg rounded-xl p-5 relative overflow-hidden h-full flex flex-col">
+<div class="absolute top-0 left-0 right-0 h-[2px] bg-white/30 opacity-60"></div>
+<div class="absolute top-4 right-4 text-text-muted hover:text-accent-copper cursor-pointer transition-colors opacity-50 hover:opacity-100 p-1 rounded-full hover:bg-white/5 z-20">
+<span class="material-symbols-outlined text-sm font-light">close</span>
+</div>
+<div class="flex items-center gap-4 mb-2 pr-6">
+<div class="size-12 shrink-0 rounded-full bg-[#006fcf] shadow-lg flex items-center justify-center p-2 ring-1 ring-white/10">
+<img alt="American Express Logo" class="w-full h-auto object-contain invert opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDUuYQn8EdBJdB4Fb21iYPhvTV55tAj_4OIALVR6NiQNKw0JlBZGChJM99w1vS_4F5mPSn5JMIjO3Uj7lcLS_yHlH5L-5seb9uzECA4HmkDwR6jAGOcwF3EAQO7RmZxV96jW9eHW1iVN_26RWzjup1FrBldeJgzN7uvLZNjM4btWVD7CZQWAfRR3BYuHyQAFr5rztQzgdq8mqplRoDHpiWtl7bycCAe7CUuqz4mf3jC6OKwxbKC2FtGsYuW158zRQwP539Z52Tbsqi"/>
+</div>
+<div class="min-w-0">
+<h3 class="text-lg font-display font-semibold text-text-light tracking-wide truncate">Platinum Charge</h3>
+<p class="text-[9px] text-text-muted uppercase tracking-[0.2em] font-bold mt-0.5">Amex</p>
+</div>
+</div>
+<div class="absolute -bottom-6 -right-6 text-white/5 pointer-events-none rotate-12">
+<span class="material-symbols-outlined text-9xl">workspace_premium</span>
+</div>
+</div>
+</div>
+</th>
+<th class="tier-col-header w-[320px] min-w-[300px] align-top">
+<div class="bg-gradient-metallic p-1 rounded-2xl shadow-card-float group hover:-translate-y-1 transition-transform duration-500 ease-out h-full">
+<div class="bg-card-bg rounded-xl p-5 relative overflow-hidden h-full flex flex-col">
+<div class="absolute top-0 left-0 right-0 h-[2px] bg-[#97144d] opacity-80"></div>
+<div class="absolute top-4 right-4 text-text-muted hover:text-accent-copper cursor-pointer transition-colors opacity-50 hover:opacity-100 p-1 rounded-full hover:bg-white/5 z-20">
+<span class="material-symbols-outlined text-sm font-light">close</span>
+</div>
+<div class="flex items-center gap-4 mb-2 pr-6">
+<div class="size-12 shrink-0 rounded-full bg-white/95 shadow-lg flex items-center justify-center p-2 ring-1 ring-white/20">
+<img alt="Axis Bank Logo" class="w-full h-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd2Yz18K1RIFBXDJkEreU2QRMLQPL66N4voDoVO6oxAGY0WsHjc4JmHFVd9iUVzYoZaIJB12sBNFiO1zTcAKTmazsEqW4TqiNJKR0ydoV7aKqd08MCTIDf-0jBu1aB9lwO_pTlPf5w5fKX5hw2FXkQlk2uyLbEgay5MC2JpqqzE7KbCN4Zx073savVesHXMs_qwXTZ4vp4GBiN6KS8OHIhn4dxJJjBpDAQBFxd-i-SvPCcjmyjLLrlW43Qd9LBWXt2Zh6u3zKQrYK_"/>
+</div>
+<div class="min-w-0">
+<h3 class="text-lg font-display font-semibold text-text-light tracking-wide truncate">Magnus</h3>
+<p class="text-[9px] text-text-muted uppercase tracking-[0.2em] font-bold mt-0.5">Axis Bank</p>
+</div>
+</div>
+<div class="absolute -bottom-6 -right-6 text-white/5 pointer-events-none rotate-12">
+<span class="material-symbols-outlined text-9xl">flight_takeoff</span>
+</div>
+</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody class="text-sm font-sans">
+<tr>
+<td class="sticky-col-first px-6 py-4 border-r border-white/5 shadow-[5px_0_20px_-10px_rgba(0,0,0,0.5)] bg-espresso-dark">
+<div class="flex items-center gap-3">
+<span class="h-px w-8 bg-accent-copper"></span>
+<span class="font-display font-bold text-accent-copper uppercase text-[10px] tracking-[0.2em]">Basics &amp; Fees</span>
+</div>
+</td>
+<td class="bg-card-bg px-6 py-1 border-b border-transparent"></td>
+<td class="bg-card-bg px-6 py-1 border-b border-transparent"></td>
+<td class="bg-card-bg px-6 py-1 border-b border-transparent"></td>
+</tr>
+<tr>
+<td class="sticky-col-first px-6 py-4 text-text-muted font-display text-base italic border-r border-white/5 shadow-[5px_0_20px_-10px_rgba(0,0,0,0.5)] bg-gradient-to-r from-espresso-dark to-[#1e1a16] align-middle">Annual Fee</td>
+<td class="bg-card-bg px-6 py-4 border-hairline-card align-middle">
+<div class="flex items-baseline gap-2 flex-wrap">
+<span class="text-lg font-bold text-text-light tracking-tight whitespace-nowrap">₹12,500</span>
+<span class="text-[9px] font-bold text-text-muted uppercase tracking-wider bg-white/5 px-1.5 py-0.5 rounded whitespace-nowrap">+ GST</span>
+</div>
+</td>
+<td class="bg-card-bg px-6 py-4 border-hairline-card align-middle">
+<div class="flex items-baseline gap-2 flex-wrap">
+<span class="text-lg font-bold text-text-light tracking-tight whitespace-nowrap">₹60,000</span>
+<span class="text-[9px] font-bold text-text-muted uppercase tracking-wider bg-white/5 px-1.5 py-0.5 rounded whitespace-nowrap">+ GST</span>
+</div>
+</td>
+<td class="bg-card-bg px-6 py-4 border-hairline-card align-middle">
+<div class="flex items-baseline gap-2 flex-wrap">
+<span class="text-lg font-bold text-text-light tracking-tight whitespace-nowrap">₹10,000</span>
+<span class="text-[9px] font-bold text-text-muted uppercase tracking-wider bg-white/5 px-1.5 py-0.5 rounded whitespace-nowrap">+ GST</span>
+</div>
+</td>
+</tr>
+<tr>
+<td class="sticky-col-first px-6 py-4 text-text-muted font-display text-base italic border-r border-white/5 shadow-[5px_0_20px_-10px_rgba(0,0,0,0.5)] bg-gradient-to-r from-espresso-dark to-[#1e1a16] align-middle">Welcome Bonus</td>
+<td class="bg-card-bg px-6 py-4 border-hairline-card bg-white/[0.02] align-middle">
+<div class="metric-emboss rounded-lg p-2.5 inline-block w-full">
+<div class="flex items-center justify-between gap-2 mb-1.5">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-xs">stars</span>
+<span class="text-copper-light font-bold text-sm whitespace-nowrap">12,500 Pts</span>
+</div>
+</div>
+<div class="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-1/3"></div>
+</div>
+</div>
+</td>
+<td class="bg-card-bg px-6 py-4 border-hairline-card bg-white/[0.02] align-middle">
+<div class="metric-emboss rounded-lg p-2.5 inline-block w-full relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full animate-[shimmer_2s_infinite]"></div>
+<div class="flex items-center justify-between gap-2 mb-1 relative z-10">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-xs">stars</span>
+<span class="text-copper-light font-bold text-sm whitespace-nowrap">45,000 Pts</span>
+</div>
+</div>
+<div class="text-[10px] text-text-muted tracking-wide font-medium relative z-10 leading-tight">Worth ₹45k Taj Vouchers</div>
+</div>
+</td>
+<td class="bg-card-bg px-6 py-4 border-hairline-card bg-white/[0.02] align-middle">
+<div class="metric-emboss rounded-lg p-2.5 inline-block w-full">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-xs">stars</span>
+<span class="text-copper-light font-bold text-sm whitespace-nowrap">10,000 Pts</span>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="sticky-col-first px-6 py-4 border-r border-white/5 shadow-[5px_0_20px_-10px_rgba(0,0,0,0.5)] bg-espresso-dark">
+<div class="flex items-center gap-3 pt-2">
+<span class="h-px w-8 bg-accent-copper"></span>
+<span class="font-display font-bold text-accent-copper uppercase text-[10px] tracking-[0.2em]">Travel Benefits</span>
+</div>
+</td>
+<td class="bg-card-bg px-6 py-1 border-b border-transparent"></td>
+<td class="bg-card-bg px-6 py-1 border-b border-transparent"></td>
+<td class="bg-card-bg px-6 py-1 border-b border-transparent"></td>
+</tr>
+<tr>
+<td class="sticky-col-first px-6 py-4 text-text-muted font-display text-base italic border-r border-white/5 shadow-[5px_0_20px_-10px_rgba(0,0,0,0.5)] bg-gradient-to-r from-espresso-dark to-[#1e1a16] align-middle">Lounge Access</td>
+<td class="bg-card-bg px-6 py-4 border-hairline-card align-middle">
+<div class="text-text-light font-semibold tracking-wide flex items-center gap-2 whitespace-nowrap">
+<span class="material-symbols-outlined text-accent-copper text-base">all_inclusive</span>
+                                        Unlimited
+                                    </div>
+<div class="text-[10px] text-text-muted mt-0.5 font-light tracking-wide pl-6 leading-tight">Domestic &amp; International</div>
+</td>
+<td class="bg-card-bg px-6 py-4 border-hairline-card relative align-middle">
+<div class="absolute inset-0 bg-[#B87333]/5"></div>
+<div class="relative z-10">
+<div class="text-primary font-bold tracking-wide flex items-center gap-2 whitespace-nowrap">
+<span class="material-symbols-outlined text-base">all_inclusive</span>
+                                            Unlimited + Guest
+                                        </div>
+<div class="text-[10px] text-text-muted mt-0.5 font-light tracking-wide pl-6 leading-tight">Centurion &amp; Priority Pass</div>
+</div>
+</td>
+<td class="bg-card-bg px-6 py-4 border-hairline-card align-middle">
+<div class="text-text-light font-semibold tracking-wide flex items-center gap-2 whitespace-nowrap">
+<span class="material-symbols-outlined text-accent-copper text-base">all_inclusive</span>
+                                        Unlimited
+                                    </div>
+<div class="text-[10px] text-text-muted mt-0.5 font-light tracking-wide pl-6 leading-tight">8 Guest visits / yr</div>
+</td>
+</tr>
+<tr>
+<td class="sticky-col-first px-6 py-4 text-text-muted font-display text-base italic border-r border-white/5 shadow-[5px_0_20px_-10px_rgba(0,0,0,0.5)] bg-gradient-to-r from-espresso-dark to-[#1e1a16] align-middle">Hotel Status</td>
+<td class="bg-card-bg px-6 py-4 border-hairline-card align-middle">
+<div class="flex items-center gap-2 text-text-muted/50">
+<span class="material-symbols-outlined text-sm">remove</span>
+<span class="text-xs font-light">None</span>
+</div>
+</td>
+<td class="bg-card-bg px-6 py-4 border-hairline-card relative align-middle">
+<div class="absolute inset-0 bg-[#B87333]/5"></div>
+<div class="flex flex-col gap-1.5 relative z-10 items-start">
+<span class="inline-flex items-center px-2 py-0.5 rounded border border-primary/20 bg-primary/10 text-primary text-[10px] font-semibold tracking-wide w-fit whitespace-nowrap">
+<span class="size-1 rounded-full bg-primary mr-1.5"></span> Marriott Gold
+                                        </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded border border-primary/20 bg-primary/10 text-primary text-[10px] font-semibold tracking-wide w-fit whitespace-nowrap">
+<span class="size-1 rounded-full bg-primary mr-1.5"></span> Hilton Gold
+                                        </span>
+</div>
+</td>
+<td class="bg-card-bg px-6 py-4 border-hairline-card align-middle">
+<div class="flex items-center gap-2 text-text-muted/50">
+<span class="material-symbols-outlined text-sm">remove</span>
+<span class="text-xs font-light">None</span>
+</div>
+</td>
+</tr>
+<tr>
+<td class="sticky-col-first px-6 py-4 border-r border-white/5 shadow-[5px_0_20px_-10px_rgba(0,0,0,0.5)] bg-espresso-dark">
+<div class="flex items-center gap-3 pt-2">
+<span class="h-px w-8 bg-accent-copper"></span>
+<span class="font-display font-bold text-accent-copper uppercase text-[10px] tracking-[0.2em]">Rewards &amp; Value</span>
+</div>
+</td>
+<td class="bg-card-bg px-6 py-1 border-b border-transparent"></td>
+<td class="bg-card-bg px-6 py-1 border-b border-transparent"></td>
+<td class="bg-card-bg px-6 py-1 border-b border-transparent"></td>
+</tr>
+<tr>
+<td class="sticky-col-first px-6 py-4 text-text-muted font-display text-base italic border-r border-white/5 shadow-[5px_0_20px_-10px_rgba(0,0,0,0.5)] bg-gradient-to-r from-espresso-dark to-[#1e1a16] align-middle">Reward Rate</td>
+<td class="bg-card-bg px-6 py-4 border-hairline-card relative overflow-hidden group align-middle">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10">
+<div class="text-xl font-bold text-metallic font-display tracking-tight whitespace-nowrap">3.3% - 33%</div>
+<div class="text-[9px] uppercase tracking-wider text-primary mt-0.5 font-semibold flex items-center gap-1 whitespace-nowrap">
+<span class="material-symbols-outlined text-[10px]">trending_up</span>
+                                            SmartBuy Accelerator
+                                        </div>
+</div>
+</td>
+<td class="bg-card-bg px-6 py-4 border-hairline-card align-middle">
+<div class="text-lg font-bold text-text-light font-sans whitespace-nowrap">1.25% - 2.5%</div>
+<div class="text-[10px] text-text-muted mt-0.5 italic">Depends on redemption</div>
+</td>
+<td class="bg-card-bg px-6 py-4 border-hairline-card align-middle">
+<div class="text-lg font-bold text-text-light font-sans whitespace-nowrap">4.8%</div>
+<div class="text-[10px] text-text-muted mt-0.5 italic">On Travel Edge</div>
+</td>
+</tr>
+<tr>
+<td class="sticky-col-first px-6 py-4 text-text-muted font-display text-base italic border-r border-white/5 shadow-[5px_0_20px_-10px_rgba(0,0,0,0.5)] bg-gradient-to-r from-espresso-dark to-[#1e1a16] align-middle">Golf Access</td>
+<td class="bg-card-bg px-6 py-4 border-hairline-card align-middle">
+<span class="text-text-light font-medium flex items-center gap-2 whitespace-nowrap text-sm">
+<span class="material-symbols-outlined text-primary text-sm">sports_golf</span>
+                                        Unlimited
+                                    </span>
+</td>
+<td class="bg-card-bg px-6 py-4 border-hairline-card align-middle">
+<span class="text-text-light font-medium flex items-center gap-2 whitespace-nowrap text-sm">
+<span class="material-symbols-outlined text-text-muted text-sm">sports_golf</span>
+                                        2 Games / Month
+                                    </span>
+</td>
+<td class="bg-card-bg px-6 py-4 border-hairline-card align-middle">
+<span class="text-text-muted/50 text-sm">—</span>
+</td>
+</tr>
+<tr>
+<td class="sticky-col-first px-6 py-6 border-r border-white/5 shadow-[5px_0_20px_-10px_rgba(0,0,0,0.5)] bg-espresso-dark"></td>
+<td class="bg-card-bg px-6 py-6 rounded-b-2xl">
+<button class="w-full py-3 rounded-lg bg-gradient-to-r from-primary to-[#b59535] text-espresso-deep font-bold hover:shadow-glow hover:-translate-y-0.5 transition-all duration-300 font-sans tracking-wide text-xs border-t border-white/20 whitespace-nowrap">
+                                        Check Eligibility
+                                    </button>
+<p class="text-[9px] text-text-muted mt-2 text-center tracking-wider font-medium opacity-70 whitespace-nowrap">Salary &gt; 3L / Month</p>
+</td>
+<td class="bg-card-bg px-6 py-6 rounded-b-2xl">
+<button class="w-full py-3 rounded-lg bg-metallic-dark text-text-light font-bold hover:bg-[#4a4236] hover:text-white hover:border-primary/50 transition-all duration-300 border border-white/10 text-xs tracking-wide shadow-emboss whitespace-nowrap">
+                                        Request Invite
+                                    </button>
+<p class="text-[9px] text-accent-copper mt-2 text-center tracking-wider font-bold flex items-center justify-center gap-1 whitespace-nowrap">
+<span class="material-symbols-outlined text-[10px]">lock</span> Invite Only
+                                    </p>
+</td>
+<td class="bg-card-bg px-6 py-6 rounded-b-2xl">
+<button class="w-full py-3 rounded-lg bg-gradient-to-r from-primary to-[#b59535] text-espresso-deep font-bold hover:shadow-glow hover:-translate-y-0.5 transition-all duration-300 font-sans tracking-wide text-xs border-t border-white/20 whitespace-nowrap">
+                                        Apply Now
+                                    </button>
+<p class="text-[9px] text-text-muted mt-2 text-center tracking-wider font-medium opacity-70 whitespace-nowrap">Salary &gt; 1.5L / Month</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-8 text-center border-t border-white/5 pt-6">
+<p class="text-text-muted text-[10px] tracking-wider font-light">
+<span class="text-accent-copper">Note:</span> Comparison data updated on October 24, 2023. Terms and conditions apply. Actual approval is subject to bank discretion.
+                    </p>
+</div>
+</div>
+</div>
+</main>
+</body></html>

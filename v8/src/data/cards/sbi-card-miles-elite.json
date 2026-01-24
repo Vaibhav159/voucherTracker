@@ -1,0 +1,1218 @@
+{
+  "id": "sbi-card-miles-elite",
+  "name": "SBI Card MILES ELITE",
+  "bank": "SBI Card (SBI Cards and Payment Services Limited)",
+  "slug": "sbi-card-miles-elite",
+  "image": "assets/cards/sbi/miles-elite.png",
+  "link": "https://www.sbicard.com/sprint/MilesElite",
+  "isActive": true,
+
+  "network": {
+    "type": "Mastercard | RuPay",
+    "variant": "World",
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "premium",
+    "isCobranded": false,
+    "cobrandPartner": {
+      "name": null,
+      "type": null,
+      "loyaltyProgram": null
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 4999,
+      "waivable": false,
+      "waiverCondition": null,
+      "gstApplicable": true,
+      "totalWithGST": 5899
+    },
+    "annual": {
+      "amount": 4999,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 1500000,
+        "spendPeriod": "12 months (preceding membership year)",
+        "waiverText": "Annual fee waived on annual spends of ₹15 Lakh or more in the preceding year"
+      },
+      "gstApplicable": true,
+      "totalWithGST": 5899
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": null,
+      "joiningFee": 0,
+      "annualFee": 0,
+      "rewardSharing": true
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 500, "fee": 0},
+        {"minAmount": 501, "maxAmount": 1000, "fee": 400},
+        {"minAmount": 1001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 950},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ],
+      "additionalLateFee": {
+        "amount": 100,
+        "condition": "Additional charge for missing MAD payment for two consecutive cycles"
+      }
+    },
+    "overLimit": {
+      "amount": 600,
+      "percentage": 2.5,
+      "calculation": "2.5% of overlimit amount or ₹600, whichever is higher"
+    },
+    "paymentDishonor": {
+      "percentage": 2,
+      "minFee": 500
+    },
+    "cashPaymentFee": 250,
+    "cardReplacement": {
+      "min": 100,
+      "max": 250
+    },
+    "chequePaymentFee": 200,
+    "rentPaymentProcessingFee": 199,
+    "utilityPaymentFee": {
+      "percentage": 1,
+      "threshold": 50000,
+      "note": "1% of total utility payments if exceeds ₹50,000 in a billing cycle"
+    },
+    "walletLoadFee": {
+      "percentage": 1,
+      "threshold": 1000,
+      "effectiveDate": "2025-11-01",
+      "note": "1% on wallet loads exceeding ₹1,000"
+    },
+    "educationPaymentFee": {
+      "percentage": 1,
+      "effectiveDate": "2025-11-01",
+      "note": "1% on education payments via third-party apps; direct payments to institutions exempt"
+    }
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": null,
+        "annual": null
+      },
+      "selfEmployed": {
+        "itr": null
+      }
+    },
+    "age": {
+      "min": 18,
+      "max": 70,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": null,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": null
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident",
+    "documentsRequired": [
+      "PAN Card",
+      "Aadhaar Card",
+      "Voter ID",
+      "Bank statements / Salary slips / ITR"
+    ]
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 100000,
+      "max": 1500000
+    },
+    "factors": "Based on income, credit score, and existing relationship",
+    "enhancementCriteria": "Good repayment history for 6+ months"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": "20-50",
+      "note": "Subject to submission of claims by merchant; suspended if previous balance outstanding"
+    },
+    "minPayment": {
+      "percentage": 0.02,
+      "minAmount": 200,
+      "calculation": "100% GST + 100% EMI + 100% Fees/Charges + 100% Finance Charges + Overlimit Amount + 2% of Remaining Balance Outstanding"
+    },
+    "minimumFinanceCharge": 25
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": null,
+    "dailyLimit": 15000,
+    "interestFromDay1": true,
+    "note": "Cash Advance Limit is part of overall Credit Limit"
+  },
+
+  "rewards": {
+    "type": "miles",
+    "currency": {
+      "name": "Travel Credits",
+      "symbol": "TC",
+      "singularUnit": "Travel Credit",
+      "pluralUnit": "Travel Credits"
+    },
+    "baseRate": {
+      "travelSpends": {
+        "rate": 6,
+        "spendUnit": 200,
+        "effectivePercentage": 0.03
+      },
+      "otherSpends": {
+        "rate": 2,
+        "spendUnit": 200,
+        "effectivePercentage": 0.01
+      }
+    },
+    "earningText": "Earn 6 Travel Credits for every ₹200 spent on travel, 2 Travel Credits for every ₹200 on other spends",
+    "minTransactionForRewards": null,
+
+    "travelMCCs": [
+      "4511", "3020", "3026", "3034", "3005", "3008", "3075", "3136", 
+      "3007", "3010", "3047", "4722", "4784", "4131", "4111", "4121", 
+      "7512", "4789", "4214", "7011", "3640", "3509", "3649", "3501"
+    ],
+
+    "exclusions": {
+      "categories": [
+        "Fuel/Petrol pumps",
+        "EMI transactions",
+        "Wallet loads",
+        "Rent/Property management payments",
+        "Utility transactions",
+        "Insurance transactions",
+        "Education payments (school/educational services)",
+        "Quasi Cash transactions",
+        "Balance transfers",
+        "Cash advances",
+        "Financial charges (late payment fee, dishonored cheque charges, etc.)",
+        "Disputed transactions",
+        "Encash",
+        "ATM Withdrawals",
+        "Flexipay transactions",
+        "Merchant EMI"
+      ],
+      "mccs": [
+        "5172", "5541", "5542", "5983",
+        "6540", "6541",
+        "6513",
+        "8211", "8241", "8244", "8249", "8299",
+        "4900", "4814", "4899", "9399",
+        "5960", "6300", "6380",
+        "6012", "6051", "9222", "9311", "9402"
+      ],
+      "note": "All exclusion identification is on best effort basis and subject to MCC definitions by network partners"
+    },
+
+    "caps": {
+      "monthly": {
+        "points": null,
+        "cashback": null
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": null,
+      "perTransaction": null
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "24 months",
+      "condition": "From date of earning/accrual"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": 5000,
+        "cashback": null,
+        "vouchers": null,
+        "spendCondition": {
+          "amount": 100000,
+          "period": "60 days",
+          "transactionCount": null
+        },
+        "validity": "Within 60 days of card issuance",
+        "description": "Get 5,000 Travel Credits on spending ₹1,00,000 within 60 days of card issuance"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "travel": {
+        "rate": 6,
+        "perSpend": 200,
+        "effectivePercentage": 0.03,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["Airlines", "Hotels", "OTAs", "Travel agencies", "Taxis", "Toll", "Public transport"],
+        "mccs": ["4511", "3020", "3026", "3034", "3005", "3008", "3075", "3136", "3007", "3010", "3047", "4722", "4784", "4131", "4111", "4121", "7512", "4789", "4214", "7011", "3640", "3509", "3649", "3501"],
+        "note": "3% value-back on travel spends when redeemed for airline/hotel transfers"
+      },
+      "other": {
+        "rate": 2,
+        "perSpend": 200,
+        "effectivePercentage": 0.01,
+        "cap": null,
+        "note": "1% value-back on other spends when redeemed for airline/hotel transfers"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on fuel transactions"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards; ₹199 processing fee applies"
+      },
+      "utilities": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards; 1% fee if total exceeds ₹50,000/billing cycle"
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards; 1% fee on loads >₹1,000 from Nov 2025"
+      },
+      "insurance": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on insurance payments"
+      },
+      "education": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards; 1% fee via third-party apps from Nov 2025"
+      },
+      "international": {
+        "rate": 2,
+        "perSpend": 200,
+        "note": "Standard earning rate applies"
+      }
+    },
+
+    "redemption": {
+      "baseValue": 0.25,
+      "bestValue": 1.0,
+      "bestOption": "Transfer to airline/hotel partners at 1:1 ratio",
+      "minRedemption": 2000,
+      "maxRedemption": null,
+      "convenienceFee": 99,
+      "note": "No redemption fee for AURUM; ₹99 for physical products/statement credit/physical vouchers",
+
+      "conversionRates": {
+        "airMileHotelPoint": {
+          "ratio": "1 Travel Credit = ₹1 for Air Mile / Hotel Point",
+          "note": "Best value redemption"
+        },
+        "travelBookings": {
+          "ratio": "1 Travel Credit = ₹0.50 for Travel Bookings",
+          "note": "Via SBI Card portal"
+        },
+        "catalogue": {
+          "ratio": "1 Travel Credit = ₹0.25 for Shop & Smile Product Catalogue",
+          "note": "Lowest value redemption"
+        }
+      },
+
+      "options": [
+        {
+          "type": "airmiles",
+          "value": 1.0,
+          "description": "Transfer to partner airline frequent flyer programs",
+          "recommended": true,
+          "minPoints": 2000,
+          "processingFee": 0,
+          "note": "Best value; ratio varies by partner (1:1 to 6:1)"
+        },
+        {
+          "type": "hotel_points",
+          "value": 1.0,
+          "description": "Transfer to partner hotel loyalty programs",
+          "recommended": true,
+          "minPoints": 2000,
+          "processingFee": 0,
+          "note": "Best value for hotels; ratio varies by partner"
+        },
+        {
+          "type": "travel_bookings",
+          "value": 0.50,
+          "description": "Book flights/hotels via SBI Card portal",
+          "recommended": false,
+          "minPoints": 2000,
+          "processingFee": 0,
+          "note": "50% value compared to partner transfers"
+        },
+        {
+          "type": "catalogue",
+          "value": 0.25,
+          "description": "Shop & Smile Product Catalogue",
+          "recommended": false,
+          "minPoints": 2000,
+          "processingFee": 99,
+          "note": "Lowest value - avoid if possible"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": true,
+      "transferTime": "Up to 21 days",
+      "transferMethod": "SBI Card App/Website",
+      "minTransfer": 2000,
+      "maxTransfer": null,
+      "transferFee": 0,
+      "reversible": false,
+
+      "airlines": [
+        {
+          "name": "Air Canada",
+          "program": "Aeroplan",
+          "alliance": "Star Alliance",
+          "ratio": {"cardPoints": 1, "partnerPoints": 1, "display": "1:1"},
+          "recommended": true,
+          "note": "Good value; multiple airline partners"
+        },
+        {
+          "name": "Air France-KLM",
+          "program": "Flying Blue",
+          "alliance": "SkyTeam",
+          "ratio": {"cardPoints": 1, "partnerPoints": 1, "display": "1:1"},
+          "recommended": true,
+          "note": "Good value; wide European network"
+        },
+        {
+          "name": "Air India",
+          "program": "Flying Returns / Maharaja Club",
+          "alliance": "Star Alliance",
+          "ratio": {"cardPoints": 1, "partnerPoints": 1, "display": "1:1"},
+          "recommended": true,
+          "note": "Domestic flights; merger with Vistara"
+        },
+        {
+          "name": "British Airways",
+          "program": "Executive Club (Avios)",
+          "alliance": "OneWorld",
+          "ratio": {"cardPoints": 1, "partnerPoints": 1, "display": "1:1"},
+          "recommended": true,
+          "note": "Good for short-haul redemptions"
+        },
+        {
+          "name": "Cathay Pacific",
+          "program": "Cathay",
+          "alliance": "OneWorld",
+          "ratio": {"cardPoints": 1, "partnerPoints": 1, "display": "1:1"},
+          "recommended": true,
+          "note": "Recently added; good for Asia routes"
+        },
+        {
+          "name": "Etihad Airways",
+          "program": "Etihad Guest",
+          "alliance": null,
+          "ratio": {"cardPoints": 1, "partnerPoints": 1, "display": "1:1"},
+          "recommended": true,
+          "note": null
+        },
+        {
+          "name": "Thai Airways",
+          "program": "Royal Orchid Plus",
+          "alliance": "Star Alliance",
+          "ratio": {"cardPoints": 1, "partnerPoints": 1, "display": "1:1"},
+          "recommended": true,
+          "note": null
+        },
+        {
+          "name": "Qantas Airways",
+          "program": "Qantas Frequent Flyer",
+          "alliance": "OneWorld",
+          "ratio": {"cardPoints": 1, "partnerPoints": 1, "display": "1:1"},
+          "recommended": true,
+          "note": null
+        },
+        {
+          "name": "SpiceJet",
+          "program": "SpiceClub",
+          "alliance": null,
+          "ratio": {"cardPoints": 1, "partnerPoints": 1, "display": "1:1"},
+          "recommended": false,
+          "note": "Domestic LCC"
+        },
+        {
+          "name": "AirAsia",
+          "program": "AirAsia Rewards",
+          "alliance": null,
+          "ratio": {"cardPoints": 1, "partnerPoints": 1, "display": "1:1"},
+          "recommended": false,
+          "note": "Low value per point (~₹0.20)"
+        },
+        {
+          "name": "Vietnam Airlines",
+          "program": "Lotusmiles",
+          "alliance": "SkyTeam",
+          "ratio": {"cardPoints": 1, "partnerPoints": 1, "display": "1:1"},
+          "recommended": false,
+          "note": null
+        },
+        {
+          "name": "Air Arabia",
+          "program": "AA Rewards",
+          "alliance": null,
+          "ratio": {"cardPoints": 2, "partnerPoints": 1, "display": "2:1"},
+          "recommended": false,
+          "note": "Poor ratio"
+        },
+        {
+          "name": "Emirates",
+          "program": "Emirates Skywards",
+          "alliance": null,
+          "ratio": {"cardPoints": 2, "partnerPoints": 1, "display": "2:1"},
+          "recommended": false,
+          "note": "Poor ratio"
+        },
+        {
+          "name": "Ethiopian Airlines",
+          "program": "ShebaMiles",
+          "alliance": "Star Alliance",
+          "ratio": {"cardPoints": 2, "partnerPoints": 1, "display": "2:1"},
+          "recommended": false,
+          "note": "Poor ratio"
+        },
+        {
+          "name": "Japan Airlines",
+          "program": "JAL Mileage Bank",
+          "alliance": "OneWorld",
+          "ratio": {"cardPoints": 2, "partnerPoints": 1, "display": "2:1"},
+          "recommended": false,
+          "note": "Poor ratio"
+        },
+        {
+          "name": "Saudia (Saudi Arabian Airlines)",
+          "program": "AlFursan",
+          "alliance": "SkyTeam",
+          "ratio": {"cardPoints": 2, "partnerPoints": 1, "display": "2:1"},
+          "recommended": false,
+          "note": "Poor ratio"
+        },
+        {
+          "name": "Turkish Airlines",
+          "program": "Miles&Smiles",
+          "alliance": "Star Alliance",
+          "ratio": {"cardPoints": 2, "partnerPoints": 1, "display": "2:1"},
+          "recommended": false,
+          "note": "Poor ratio"
+        },
+        {
+          "name": "United Airlines",
+          "program": "United MileagePlus",
+          "alliance": "Star Alliance",
+          "ratio": {"cardPoints": 2, "partnerPoints": 1, "display": "2:1"},
+          "recommended": false,
+          "note": "Poor ratio"
+        },
+        {
+          "name": "Qatar Airways",
+          "program": "Privilege Club",
+          "alliance": "OneWorld",
+          "ratio": {"cardPoints": 2, "partnerPoints": 1, "display": "2:1"},
+          "recommended": false,
+          "note": "Poor ratio; use BA Avios instead"
+        }
+      ],
+
+      "hotels": [
+        {
+          "name": "IHG Hotels & Resorts",
+          "program": "IHG One Rewards",
+          "ratio": {"cardPoints": 1, "partnerPoints": 1, "display": "1:1"},
+          "recommended": true,
+          "note": "Good value"
+        },
+        {
+          "name": "Wyndham Hotels & Resorts",
+          "program": "Wyndham Rewards",
+          "ratio": {"cardPoints": 1, "partnerPoints": 1, "display": "1:1"},
+          "recommended": true,
+          "note": null
+        },
+        {
+          "name": "Radisson Hotel Group",
+          "program": "Radisson Rewards",
+          "ratio": {"cardPoints": 1, "partnerPoints": 1, "display": "1:1"},
+          "recommended": true,
+          "note": null
+        },
+        {
+          "name": "Orchid Hotels",
+          "program": "Orchid Rewards",
+          "ratio": {"cardPoints": 1, "partnerPoints": 1, "display": "1:1"},
+          "recommended": false,
+          "note": "~₹0.50 value per point"
+        },
+        {
+          "name": "Accor",
+          "program": "Accor ALL",
+          "ratio": {"cardPoints": 2, "partnerPoints": 1, "display": "2:1"},
+          "recommended": true,
+          "note": "2000 points = €40 fixed value; ~₹0.95/point at 2:1"
+        },
+        {
+          "name": "ITC Hotels",
+          "program": "Club ITC",
+          "ratio": {"cardPoints": 2, "partnerPoints": 1, "display": "2:1"},
+          "recommended": false,
+          "note": "~₹0.50 value at 2:1"
+        },
+        {
+          "name": "Jumeirah Hotels & Resorts",
+          "program": "Jumeirah One",
+          "ratio": {"cardPoints": 2, "partnerPoints": 1, "display": "2:1"},
+          "recommended": false,
+          "note": null
+        },
+        {
+          "name": "Shangri-La Group",
+          "program": "Shangri-La Circle",
+          "ratio": {"cardPoints": 6, "partnerPoints": 1, "display": "6:1"},
+          "recommended": false,
+          "note": "Poor ratio; 15 points = 1 USD, so ~₹0.95 per Travel Credit at 6:1"
+        }
+      ],
+
+      "currentBonus": {
+        "active": false,
+        "bonusPercentage": null,
+        "validUntil": null,
+        "applicablePartners": [],
+        "note": "Check SBI Card website for current transfer bonuses"
+      }
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": null,
+      "acrossUsers": false,
+      "note": "Travel Credits cannot be combined with Reward Points of other SBI Cards"
+    },
+
+    "specialLogic": {
+      "flipToOtherCard": "Travel Credits transferred as Reward Points within 2 working days",
+      "flipFromOtherCard": "Reward Points from previous SBI Card NOT transferred"
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": true,
+        "complimentaryCount": 8,
+        "period": "year",
+        "maxPerQuarter": 2,
+        "accessType": "Mastercard/RuPay Lounge Program",
+        "accessProvider": "Mastercard / RuPay",
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "No minimum spend requirement for complimentary visits"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "additionalVisits": {
+          "enabled": true,
+          "spendPerVisit": 100000,
+          "maxAdditionalVisits": 15,
+          "period": "membership year",
+          "applicableTo": "Primary cardholder and guest",
+          "voucherDelivery": "SMS and Email within 120 days of becoming eligible",
+          "redemptionLink": "https://sbicmiles.lkp.loungekey.com"
+        },
+        "eligibleLounges": {
+          "mastercard": "https://specials.priceless.com/mastercard/images/05c74b3e-7c36-477c-8665-8d62e4aa62cf.pdf",
+          "rupay": "https://www.rupay.co.in/lounges"
+        }
+      },
+      "international": {
+        "included": true,
+        "complimentaryCount": 6,
+        "period": "year",
+        "maxPerQuarter": 2,
+        "accessType": "Priority Pass",
+        "accessProvider": "Priority Pass",
+        "membershipValue": {
+          "amount": 99,
+          "currency": "USD"
+        },
+        "membershipValidity": "First 2 years from card issuance",
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "No minimum spend requirement"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": {
+            "amount": 27,
+            "currency": "USD",
+            "note": "Plus applicable taxes"
+          }
+        },
+        "excessVisitFee": {
+          "amount": 27,
+          "currency": "USD",
+          "note": "Plus applicable taxes for visits beyond complimentary limit"
+        },
+        "domesticVisitsViaInternationalProgram": {
+          "fee": {
+            "amount": 27,
+            "currency": "USD",
+            "note": "Domestic visits via Priority Pass are charged"
+          }
+        },
+        "eligibleLounges": "https://www.prioritypass.com/",
+        "primaryCardholderOnly": true
+      }
+    },
+
+    "milestones": [
+      {
+        "spend": 100000,
+        "period": "cumulative",
+        "benefit": "1 additional domestic airport lounge visit",
+        "benefitType": "lounge",
+        "value": null,
+        "conditions": "Max 15 additional visits per membership year; applicable for primary cardholder and guest",
+        "delivery": "Voucher via SMS/Email within 120 days"
+      },
+      {
+        "spend": 1200000,
+        "period": "annual (membership year)",
+        "benefit": "20,000 Bonus Travel Credits",
+        "benefitType": "points",
+        "value": 20000,
+        "conditions": null
+      },
+      {
+        "spend": 1500000,
+        "period": "annual (membership year)",
+        "benefit": "Annual fee reversal",
+        "benefitType": "fee_waiver",
+        "value": 4999,
+        "conditions": "Fee reversal is preconditioned on fee levied during the renewal cycle"
+      }
+    ],
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": null,
+      "lessonIncluded": null,
+      "note": null
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": null
+    },
+
+    "dining": {
+      "included": false,
+      "programs": null,
+      "note": null
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 500,
+      "maxTransaction": 4000,
+      "monthlyCap": 500,
+      "capPeriod": "statement cycle",
+      "applicableStations": "All fuel stations in India",
+      "rewardsOnFuel": false,
+      "note": "1% fuel surcharge waiver (excluding GST) for transactions ₹500-₹4,000; max waiver ₹500 per statement cycle"
+    },
+
+    "forex": {
+      "markupPercentage": 1.99,
+      "markupText": "1.99% on international transactions (one of the lowest in the market)",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "fee": 1.99,
+        "recommendation": "Always decline DCC and pay in local currency",
+        "note": "1.99% charged on transactions ≥₹1,000 in INR at international locations"
+      },
+      "crossCurrencyCharges": 1.99,
+      "note": "Forex markup not reversed on transaction refunds"
+    },
+
+    "concierge": {
+      "included": false,
+      "availability": null,
+      "type": null,
+      "services": null,
+      "contactNumber": null,
+      "note": null
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": null,
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "Flexipay",
+      "noCostEMI": {
+        "available": true,
+        "merchants": null,
+        "note": "Available at select merchants"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": null,
+        "minFee": null
+      },
+      "minAmount": 2500,
+      "tenures": null,
+      "interestRates": {
+        "min": null,
+        "max": null
+      },
+      "preclosureFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "cancellationPeriod": null,
+      "note": "Convert transactions ≥₹2,500 to EMI within 30 days via sbicard.com"
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": 0,
+        "promotionalPeriod": "60 days",
+        "regular": 0.204
+      },
+      "regularTenure": "180 days",
+      "regularRate": "1.7% p.m. (20.40% p.a.)",
+      "processingFee": {
+        "percentage": null,
+        "minFee": null,
+        "note": "One-time processing fee charged over ROI"
+      },
+      "minAmount": 5000,
+      "maxAmount": "75% of credit limit",
+      "note": "Transfer from other bank credit cards; no interest-free period on retail purchases while BT balance exists"
+    },
+
+    "memberships": [],
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": true,
+      "cover": 10000000,
+      "currency": "INR",
+      "condition": null,
+      "discontinuedDate": "2025-07-15",
+      "note": "IMPORTANT: Air Accident coverage of ₹1 crore DISCONTINUED from July 15, 2025"
+    },
+    "fraudLiability": {
+      "included": true,
+      "cover": 100000,
+      "currency": "INR",
+      "condition": "Valid from 48 hours prior to reporting loss till 7 days post reporting",
+      "reportingHelpline": "1860 180 1290 or 39 02 02 02 (prefix local STD code)"
+    },
+    "flightCancellation": {
+      "included": true,
+      "cover": 3500,
+      "perIncident": 3500,
+      "maxIncidentsPerYear": 6,
+      "annualCap": 21000,
+      "condition": null
+    },
+    "lostBaggage": {
+      "included": true,
+      "cover": 72000,
+      "perBag": null,
+      "condition": "Check-in baggage"
+    },
+    "baggageDelay": {
+      "included": true,
+      "cover": 7500,
+      "delayHours": null,
+      "perDay": null
+    },
+    "baggageDamage": {
+      "included": true,
+      "cover": 5000
+    },
+    "lostTravelDocuments": {
+      "included": true,
+      "cover": 12500
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": null
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": null,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": 100000,
+      "note": "Fraud liability cover"
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "insuranceProvider": "Oriental Insurance Company Ltd (current provider; subject to change)",
+    "note": "All insurance subject to terms in policy document. Claims must be filed as per policy terms."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": null,
+      "note": "Tap to pay at terminals with Contactless Indicator"
+    },
+    "virtualCard": {
+      "available": false,
+      "instantIssuance": null,
+      "singleUse": null,
+      "spendControls": null
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": true,
+      "rewardsOnUPI": true,
+      "note": "RuPay variant can be linked to UPI for credit card payments"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card via SMS, app, website, IVR",
+        "View statements",
+        "Pay bills",
+        "Convert to EMI",
+        "Manage rewards"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["e-NACH"]
+    },
+    "emvChip": true
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [
+      {
+        "cardId": "sbi-card-miles",
+        "spendRequired": null,
+        "tenure": null,
+        "autoUpgrade": false
+      },
+      {
+        "cardId": "sbi-card-miles-prime",
+        "spendRequired": null,
+        "tenure": null,
+        "autoUpgrade": false
+      }
+    ],
+    "upgradesTo": [
+      {
+        "cardId": "sbi-card-aurum",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": true
+      }
+    ],
+    "note": "Travel Credits transfer as Reward Points when flipping to other SBI cards; Reward Points from other cards do NOT transfer when flipping to Miles Elite"
+  },
+
+  "meta": {
+    "tags": [
+      "Travel",
+      "Miles",
+      "Airmiles",
+      "Transfer Partners",
+      "Lounge Access",
+      "Priority Pass",
+      "Low Forex Markup",
+      "Premium"
+    ],
+    "bestFor": "Frequent international travelers who want to accumulate airline miles and prefer low forex markup (1.99%)",
+    "notRecommendedFor": "Low spenders, those who primarily need cashback, or those seeking high reward rates on everyday spending",
+    "rating": {
+      "overall": 3.5,
+      "rewards": 3.0,
+      "benefits": 4.0,
+      "value": 3.5
+    },
+    "verdict": "SBI Card MILES ELITE offers a decent entry point for miles-focused credit cards with 18+ airline and 8 hotel transfer partners. The 1.99% forex markup is competitive, and the lounge benefits are generous without spend requirements. However, the 3% reward rate on travel (and 1% on others) is significantly lower than competitors like Axis Atlas (5%). The milestone benefits are good, but the overall earning rate makes it harder to accumulate meaningful miles. Best suited for those who want the SBI brand reliability with moderate miles earning capability.",
+    "pros": [
+      "Wide range of transfer partners (18 airlines, 8 hotels)",
+      "1:1 transfer ratio with premium airlines (Aeroplan, Flying Blue, BA Avios, Cathay)",
+      "Low forex markup of 1.99% (among lowest in India)",
+      "No spend requirement for complimentary lounge access",
+      "Additional lounge visits on every ₹1 lakh spend (up to 15/year)",
+      "Priority Pass membership included for first 2 years",
+      "RuPay variant available for UPI linking",
+      "Good milestone benefits (20K Travel Credits at ₹12L spend)",
+      "Fee waiver at ₹15L annual spend"
+    ],
+    "cons": [
+      "Low reward rate: 3% on travel, 1% on other spends",
+      "Air accident insurance discontinued from July 2025",
+      "Transfer processing takes up to 21 days",
+      "Many hotel partners at poor 2:1 or 6:1 ratios",
+      "No renewal bonus",
+      "Travel Credits expire in 24 months",
+      "₹1 lakh spend required in 60 days for welcome bonus",
+      "No movie/dining benefits",
+      "Competes poorly with Axis Atlas on reward rate",
+      "Priority Pass membership limited to 2 years"
+    ],
+    "alternatives": [
+      {
+        "cardId": "axis-atlas",
+        "reason": "Better reward rate (5% vs 3%), similar fee, better transfer ratios (1:2)"
+      },
+      {
+        "cardId": "hdfc-regalia-gold",
+        "reason": "Better overall benefits and 10X SmartBuy rewards"
+      },
+      {
+        "cardId": "hsbc-travelone",
+        "reason": "Better for Accor/Aeroplan accumulation"
+      },
+      {
+        "cardId": "idfc-first-club-vistara",
+        "reason": "Better if primarily flying Vistara/Air India"
+      }
+    ],
+    "lastVerified": "2026-01-06",
+    "dataSource": [
+      "Official SBI Card website (https://www.sbicard.com/en/personal/credit-cards/travel/sbi-card-miles-elite.page)",
+      "SBI Card MITC document (December 2025)",
+      "SBI Card Miles Rewards Program T&C (https://www.sbicard.com/sbi-card-en/assets/docs/pdf/tnc/rewards-program-TnC-miles.pdf)",
+      "CardExpert.in",
+      "TechnoFino.in",
+      "Paisabazaar.com",
+      "CardInsider.com",
+      "PointsMath.com",
+      "Live From A Lounge"
+    ],
+    "changelog": [
+      {
+        "date": "2025-07-15",
+        "change": "Air Accident insurance coverage of ₹1 crore discontinued",
+        "source": "Official SBI Card website notice"
+      },
+      {
+        "date": "2025-11-01",
+        "change": "1% fee on wallet loads >₹1,000 and education payments via third-party apps introduced",
+        "source": "MITC update"
+      },
+      {
+        "date": "2024-12-01",
+        "change": "1% utility payment fee introduced for amounts >₹50,000/billing cycle",
+        "source": "MITC update"
+      },
+      {
+        "date": "2024-04-24",
+        "change": "SBI Card MILES ELITE launched",
+        "source": "Official SBI Card press release"
+      }
+    ]
+  }
+}

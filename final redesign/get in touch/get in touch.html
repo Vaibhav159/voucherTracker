@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us - VoucherTracker</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "espresso": "#151413",       // Rich espresso brown
+                        "espresso-light": "#1E1C1A", // Slightly lighter for cards
+                        "espresso-lighter": "#2C2A28", // Nav hovers
+                        "copper": "#bb702a",         // Polished copper
+                        "copper-light": "#d48c4a",
+                        "gold": "#E0BB6B",           // Opulent gold
+                        "off-white": "#FFFFFF",      // Crisp white
+                    },
+                    fontFamily: {
+                        "sans": ["Manrope", "sans-serif"],
+                        "serif": ["Noto Serif", "serif"],
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'copper-sheen': 'linear-gradient(135deg, rgba(187,112,42,0.1) 0%, transparent 100%)',
+                    },
+                    boxShadow: {
+                        'copper-glow': '0 4px 20px -5px rgba(187, 112, 42, 0.15)',
+                        'card-depth': '0 10px 30px -10px rgba(0, 0, 0, 0.5)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #151413; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2C2A28; 
+            border-radius: 4px;
+            border: 1px solid #151413;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #bb702a; 
+        }.transition-slow {
+            transition-duration: 400ms;
+        }
+    </style>
+</head>
+<body class="bg-espresso text-off-white font-sans overflow-hidden antialiased selection:bg-copper selection:text-white">
+<div class="flex h-screen w-full overflow-hidden">
+<div class="hidden md:flex w-72 flex-col justify-between bg-espresso border-r border-[#2C2A28] p-6 flex-shrink-0 z-20 relative">
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-3">
+<div class="relative flex items-center justify-center size-10 rounded-xl bg-gradient-to-br from-[#2C2A28] to-espresso border border-[#2C2A28] shadow-inner group cursor-pointer">
+<span class="material-symbols-outlined text-gold group-hover:scale-110 transition-transform duration-300">account_balance_wallet</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-white text-lg font-bold leading-none tracking-tight font-serif">VoucherTracker</h1>
+<p class="text-copper text-[10px] font-bold uppercase tracking-[0.15em] mt-1.5">Premium</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:text-white hover:bg-espresso-lighter transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-copper transition-colors">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:text-white hover:bg-espresso-lighter transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-copper transition-colors">credit_card</span>
+<span class="text-sm font-medium">Cards</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:text-white hover:bg-espresso-lighter transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-copper transition-colors">bar_chart</span>
+<span class="text-sm font-medium">Analysis</span>
+</a>
+<div class="h-px bg-[#2C2A28] my-2 mx-4 opacity-50"></div>
+<a class="relative flex items-center gap-3 px-4 py-3 bg-[#1E1C1A] text-white transition-all duration-200 overflow-hidden group" href="#">
+<div class="absolute left-0 top-0 bottom-0 w-[3px] bg-copper shadow-[0_0_10px_rgba(187,112,42,0.5)]"></div>
+<span class="material-symbols-outlined text-copper">support_agent</span>
+<span class="text-sm font-bold z-10 tracking-wide">Get in Touch</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:text-white hover:bg-espresso-lighter transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-copper transition-colors">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+</div>
+<div class="flex items-center gap-3 px-3 py-3 rounded-xl bg-[#1E1C1A] border border-[#2C2A28] group cursor-pointer hover:border-copper/30 transition-colors">
+<div class="size-9 rounded-full bg-gradient-to-br from-[#2C2A28] to-espresso flex items-center justify-center text-copper font-serif font-bold text-xs border border-copper/20 group-hover:border-copper transition-colors shadow-inner">
+                    VL
+                </div>
+<div class="flex flex-col overflow-hidden">
+<p class="text-white text-sm font-bold truncate font-serif">Vaibhav Lodha</p>
+<p class="text-gray-400 text-[10px] uppercase tracking-wider truncate">Pro Member</p>
+</div>
+<span class="material-symbols-outlined text-gray-500 text-lg ml-auto group-hover:text-white transition-colors">more_vert</span>
+</div>
+</div>
+<div class="flex flex-col flex-1 h-full relative overflow-hidden bg-espresso">
+<header class="flex items-center justify-between border-b border-[#2C2A28] bg-espresso px-8 py-5 z-10">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-gray-400 hover:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="hidden md:flex items-center text-sm font-medium">
+<span class="text-gray-500">Help Center</span>
+<span class="material-symbols-outlined text-[16px] mx-3 text-gray-600">chevron_right</span>
+<span class="text-copper font-semibold">Contact</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center size-10 rounded-full text-gray-400 hover:bg-[#1E1C1A] hover:text-white border border-transparent hover:border-[#2C2A28] transition-all relative group">
+<span class="material-symbols-outlined text-[22px] group-hover:animate-pulse">notifications</span>
+<span class="absolute top-2.5 right-2.5 size-2 bg-copper rounded-full ring-2 ring-espresso"></span>
+</button>
+<button class="flex items-center justify-center size-10 rounded-full text-gray-400 hover:bg-[#1E1C1A] hover:text-white border border-transparent hover:border-[#2C2A28] transition-all">
+<span class="material-symbols-outlined text-[22px]">help</span>
+</button>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto bg-espresso relative custom-scrollbar">
+<div class="absolute top-0 left-0 w-full h-[600px] bg-[radial-gradient(circle_at_50%_-20%,rgba(187,112,42,0.08),transparent_70%)] pointer-events-none"></div>
+<div class="max-w-6xl mx-auto px-6 py-12 md:px-12 md:py-16">
+<div class="mb-16 max-w-3xl relative">
+<div class="absolute -left-12 top-2 bottom-2 w-[1px] bg-gradient-to-b from-transparent via-copper/50 to-transparent hidden xl:block"></div>
+<h1 class="font-serif text-5xl md:text-6xl text-gold font-bold leading-tight mb-4 tracking-tight drop-shadow-sm">
+                            Get in Touch
+                        </h1>
+<p class="text-white text-lg md:text-xl font-normal leading-relaxed max-w-2xl opacity-90">
+                            Have a feature request, found a bug, or just want to talk points? We are listening.
+                        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+<div class="group relative flex flex-col bg-espresso-light border border-copper rounded-xl p-8 transition-all duration-500 hover:-translate-y-1 shadow-card-depth hover:shadow-copper-glow overflow-hidden">
+<div class="absolute inset-0 bg-copper-sheen opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10 mb-6 inline-flex p-3 rounded-lg bg-espresso border border-[#2C2A28] text-copper w-fit shadow-md">
+<svg aria-hidden="true" class="size-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+</div>
+<div class="relative z-10 flex-1">
+<h3 class="text-white text-xl font-bold mb-2 tracking-wide">Join the Conversation</h3>
+<p class="text-white/80 font-normal leading-relaxed text-sm">Fastest way to get help and connect with the community.</p>
+</div>
+<div class="relative z-10 mt-8">
+<button class="w-full flex items-center justify-center gap-2 px-4 py-3 bg-espresso border border-copper text-white rounded-lg transition-all duration-300 shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_0_15px_rgba(187,112,42,0.2)] hover:bg-gradient-to-r hover:from-espresso hover:to-[#2C2A28] font-bold tracking-wide text-sm">
+<span>DM on X</span>
+<span class="opacity-70 font-normal text-xs">(@vaibhav_lodha)</span>
+</button>
+</div>
+</div>
+<div class="group relative flex flex-col bg-espresso-light border border-copper rounded-xl p-8 transition-all duration-500 hover:-translate-y-1 shadow-card-depth hover:shadow-copper-glow overflow-hidden">
+<div class="absolute inset-0 bg-copper-sheen opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10 mb-6 inline-flex p-3 rounded-lg bg-espresso border border-[#2C2A28] text-copper w-fit shadow-md">
+<svg aria-hidden="true" class="size-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
+</div>
+<div class="relative z-10 flex-1">
+<h3 class="text-white text-xl font-bold mb-2 tracking-wide">Report a Bug</h3>
+<p class="text-white/80 font-normal leading-relaxed text-sm">Found something off? Open an issue on our repo.</p>
+</div>
+<div class="relative z-10 mt-8">
+<button class="w-full flex items-center justify-center gap-2 px-4 py-3 bg-espresso border border-copper text-white rounded-lg transition-all duration-300 shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_0_15px_rgba(187,112,42,0.2)] hover:bg-gradient-to-r hover:from-espresso hover:to-[#2C2A28] font-bold tracking-wide text-sm">
+<span>View GitHub Repo</span>
+<span class="material-symbols-outlined text-sm">arrow_outward</span>
+</button>
+</div>
+</div>
+<div class="group relative flex flex-col bg-espresso-light border border-copper rounded-xl p-8 transition-all duration-500 hover:-translate-y-1 shadow-card-depth hover:shadow-copper-glow overflow-hidden">
+<div class="absolute inset-0 bg-copper-sheen opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10 mb-6 inline-flex p-3 rounded-lg bg-espresso border border-[#2C2A28] text-copper w-fit shadow-md">
+<span class="material-symbols-outlined text-[24px]">mail</span>
+</div>
+<div class="relative z-10 flex-1">
+<h3 class="text-white text-xl font-bold mb-2 tracking-wide">General Inquiries</h3>
+<p class="text-white/80 font-normal leading-relaxed text-sm">For collaboration, partnerships, or just to say hello.</p>
+</div>
+<div class="relative z-10 mt-8 h-[46px] flex items-center">
+<a class="group/link flex items-center gap-2 text-white font-bold text-sm tracking-wide transition-colors" href="mailto:hello@vouchertracker.com">
+<span class="border-b-2 border-transparent group-hover/link:border-copper pb-0.5 transition-all duration-300">hello@vouchertracker.com</span>
+<span class="material-symbols-outlined text-copper text-lg transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<div class="mt-24 pt-8 border-t border-[#2C2A28] flex flex-col md:flex-row justify-between items-center text-white text-sm gap-4 opacity-80">
+<p class="font-medium tracking-wide">© 2024 VoucherTracker. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="text-white border-b border-copper hover:text-copper-light transition-colors pb-0.5" href="#">Privacy</a>
+<a class="text-white border-b border-copper hover:text-copper-light transition-colors pb-0.5" href="#">Terms</a>
+<a class="text-white border-b border-copper hover:text-copper-light transition-colors pb-0.5" href="#">Sitemap</a>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

@@ -1,0 +1,998 @@
+{
+  "id": "icici-hpcl-super-saver",
+  "name": "ICICI Bank HPCL Super Saver Credit Card",
+  "bank": "ICICI Bank",
+  "slug": "icici-bank-hpcl-super-saver-credit-card",
+  "image": "assets/cards/icici/hpcl-super-saver.png",
+  "link": "https://www.icicibank.com/personal-banking/cards/credit-card/hpcl-super-saver",
+  "isActive": true,
+
+  "network": {
+    "type": "Visa",
+    "variant": "Classic",
+    "bin": null,
+    "alternateNetwork": {
+      "type": "RuPay",
+      "variant": "Platinum",
+      "note": "Also available in RuPay variant with additional benefits like personal accident cover and 24x7 concierge"
+    }
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "entry",
+    "isCobranded": true,
+    "cobrandPartner": {
+      "name": "Hindustan Petroleum Corporation Limited (HPCL)",
+      "type": "fuel",
+      "loyaltyProgram": "HP Pay / Happy Coins"
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 500,
+      "gst": true,
+      "totalWithGst": 590,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 500,
+      "gst": true,
+      "totalWithGst": 590,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 150000,
+        "spendPeriod": "12 months (anniversary year)",
+        "waiverText": "Spend ₹1.5 lakh in the preceding anniversary year to get annual fee waived",
+        "exclusions": "Rent, government, and education payments excluded from spend threshold"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": 0,
+      "joiningFee": 100,
+      "annualFee": 0,
+      "rewardSharing": true
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 100, "fee": 0},
+        {"minAmount": 101, "maxAmount": 500, "fee": 100},
+        {"minAmount": 501, "maxAmount": 5000, "fee": 500},
+        {"minAmount": 5001, "maxAmount": 10000, "fee": 600},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 800},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ],
+      "note": "Plus applicable taxes"
+    },
+    "overLimit": {
+      "percentage": 2.5,
+      "minFee": 500
+    },
+    "chequeReturn": {
+      "percentage": 2,
+      "minFee": 450
+    },
+    "cardReplacement": 200,
+    "duplicateStatement": 100,
+    "rentTransactionFee": {
+      "percentage": 1,
+      "note": "All transactions through MCC 6513 (rent) are levied 1% fee"
+    },
+    "educationPaymentFee": {
+      "percentage": 1,
+      "note": "Education payments via third-party apps attract 1% fee"
+    },
+    "utilitySpendFee": {
+      "threshold": 50000,
+      "percentage": 1,
+      "note": "1% fee on utility spends above ₹50,000 per month"
+    },
+    "fuelSpendFee": {
+      "threshold": 10000,
+      "percentage": 1,
+      "note": "1% fee on fuel spends above ₹10,000 per month"
+    }
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 20000,
+        "annual": 240000
+      },
+      "selfEmployed": {
+        "itr": 240000
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 65,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": null
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 25000,
+      "max": 200000
+    },
+    "factors": "Based on income, credit score, and existing relationship with ICICI Bank",
+    "enhancementCriteria": "Good repayment history and regular card usage"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.42,
+      "monthlyRate": 0.035,
+      "note": "3.5% per month (42% per annum)"
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.42,
+      "monthlyRate": 0.035
+    },
+    "gracePeriod": {
+      "days": 50,
+      "note": "From transaction date if previous balance paid in full"
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 200,
+      "calculation": "5% of total outstanding or ₹200, whichever is higher"
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": 30,
+    "dailyLimit": null,
+    "interestFromDay1": true
+  },
+
+  "rewards": {
+    "type": "hybrid",
+    "currency": {
+      "name": "ICICI Bank Reward Points",
+      "symbol": "RP",
+      "singularUnit": "point",
+      "pluralUnit": "points"
+    },
+    "baseRate": {
+      "rate": 2,
+      "spendUnit": 100,
+      "effectivePercentage": 0.005,
+      "note": "2 reward points per ₹100 spent on retail purchases (excluding fuel)"
+    },
+    "earningText": "Earn 2 Reward Points for every ₹100 spent on retail purchases",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Non-HPCL Fuel stations",
+        "Rent payments",
+        "E-wallet loads",
+        "EMI transactions",
+        "Balance transfer",
+        "Personal loan on credit cards (PLCC)",
+        "Cash withdrawals",
+        "Payment of fees, interest and other charges"
+      ],
+      "mccs": ["6513"],
+      "note": "No rewards on non-HPCL fuel spends, rent, wallets, EMI, BT, PLCC, cash advance, and fee payments"
+    },
+
+    "caps": {
+      "monthly": {
+        "fuelCashback": {
+          "amount": 200,
+          "note": "4% fuel cashback capped at ₹200 per month"
+        },
+        "acceleratedRewards": {
+          "points": 400,
+          "value": 100,
+          "note": "5% on utilities/departmental stores capped at 400 points (₹100 value) per month"
+        },
+        "totalValueCap": {
+          "amount": 300,
+          "note": "Maximum earning capped at ₹300 per month across fuel cashback and accelerated rewards"
+        }
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": "statement",
+      "perTransaction": null
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "3 years",
+      "condition": "From date of earning"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": 2000,
+        "cashback": {
+          "amount": 100,
+          "type": "HP Pay wallet credit",
+          "condition": "On first fuel purchase of ₹1,000 or more via HP Pay app"
+        },
+        "vouchers": null,
+        "spendCondition": {
+          "amount": 5000,
+          "period": "45 days",
+          "transactionCount": null,
+          "additionalCondition": "Joining fee must be paid within 2 months of card setup"
+        },
+        "validity": "Within 45 days of card issuance",
+        "description": "Get 2,000 reward points on paying joining fee within 2 months and spending ₹5,000 in 45 days. Plus ₹100 HP Pay cashback on first ₹1,000 fuel purchase"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "fuel": {
+        "hpclOnly": {
+          "cashbackRate": 4,
+          "surchargeWaiver": 1,
+          "totalBenefit": 5,
+          "cashbackCap": 200,
+          "capPeriod": "monthly",
+          "merchants": ["All HPCL fuel stations"],
+          "note": "4% cashback + 1% fuel surcharge waiver at HPCL pumps via any bank POS or HP Pay app"
+        },
+        "hpPayAppBonus": {
+          "additionalCashback": 1.5,
+          "type": "Happy Coins / Reward Points",
+          "note": "Additional 1.5% benefit on fuel purchases via HP Pay app at HPCL outlets"
+        },
+        "nonHpcl": {
+          "rate": 0,
+          "note": "No rewards on non-HPCL fuel purchases"
+        }
+      },
+      "utilities": {
+        "rate": 20,
+        "spendUnit": 100,
+        "effectivePercentage": 5,
+        "cap": 400,
+        "capValue": 100,
+        "capPeriod": "monthly",
+        "merchants": ["Electricity bills", "Mobile bills"],
+        "note": "20 points per ₹100 spent on utilities (5% value), capped at 400 points/month"
+      },
+      "departmentalStores": {
+        "rate": 20,
+        "spendUnit": 100,
+        "effectivePercentage": 5,
+        "cap": 400,
+        "capValue": 100,
+        "capPeriod": "monthly",
+        "merchants": ["Big Bazaar", "D-Mart", "Other departmental stores"],
+        "note": "20 points per ₹100, capped at 400 points/month (combined with utilities)"
+      },
+      "groceries": {
+        "rate": 20,
+        "spendUnit": 100,
+        "effectivePercentage": 5,
+        "cap": 400,
+        "capValue": 100,
+        "capPeriod": "monthly",
+        "note": "Part of departmental store category"
+      },
+      "retail": {
+        "rate": 2,
+        "spendUnit": 100,
+        "effectivePercentage": 0.5,
+        "cap": null,
+        "capPeriod": null,
+        "note": "2 points per ₹100 on all other retail purchases"
+      },
+      "online": {
+        "rate": 2,
+        "spendUnit": 100,
+        "effectivePercentage": 0.5,
+        "cap": null,
+        "capPeriod": null,
+        "note": "Standard retail rate"
+      },
+      "international": {
+        "rate": 2,
+        "spendUnit": 100,
+        "effectivePercentage": 0.5,
+        "cap": null,
+        "note": "Standard retail rate, but 3.5% forex markup applies"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards + 1% transaction fee on rent payments"
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on e-wallet loads"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": true,
+        "name": "iShop",
+        "multiplier": "6x to 12x",
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["Various partner merchants"],
+        "link": "https://www.icicibank.com/ishop",
+        "note": "Earn 6x to 12x reward points on iShop portal purchases"
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": [],
+        "note": null
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": []
+      },
+      "milestoneAccelerators": []
+    },
+
+    "redemption": {
+      "baseValue": 0.25,
+      "bestValue": 0.25,
+      "bestOption": "Vouchers and merchandise from ICICI Rewards catalogue",
+      "minRedemption": null,
+      "redemptionIncrement": null,
+      "convenienceFee": {
+        "amount": 99,
+        "gst": true,
+        "totalWithGst": 117,
+        "note": "₹99 + GST per redemption request"
+      },
+      "monthlyRedemptionLimit": null,
+
+      "pointsPlusPay": {
+        "enabled": false,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": null,
+        "note": null
+      },
+
+      "options": [
+        {
+          "type": "vouchers",
+          "value": 0.25,
+          "description": "Gift vouchers from catalogue (Amazon, Flipkart, etc.)",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 99,
+          "partners": ["Amazon", "Flipkart", "Various brands"],
+          "note": "1 point = ₹0.25"
+        },
+        {
+          "type": "products",
+          "value": 0.25,
+          "description": "Merchandise from ICICI Rewards catalogue",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 99,
+          "partners": ["Health & Beauty", "Electronics", "Home Appliances", "Fashion"],
+          "note": "Delivery within 10 working days"
+        },
+        {
+          "type": "fuel_vouchers",
+          "value": 0.25,
+          "description": "Fuel vouchers for HPCL",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 99,
+          "partners": ["HPCL"],
+          "note": "Redeem for fuel at HPCL stations"
+        },
+        {
+          "type": "statement_credit",
+          "value": 0.25,
+          "description": "Statement credit / Cashback",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 99,
+          "partners": [],
+          "note": "1 point = ₹0.25"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": [],
+      "partners": [],
+      "note": "Transfer partners not available for this entry-level card"
+    },
+
+    "pooling": {
+      "enabled": true,
+      "eligibleCards": ["All ICICI Bank credit cards of same customer"],
+      "acrossUsers": false,
+      "note": "Pool reward points across your ICICI Bank cards"
+    },
+
+    "specialLogic": null,
+
+    "calculator": {
+      "enabled": true,
+      "formula": "fuelCashback = min(fuelSpend * 0.04, 200); utilityRewards = min((utilitySpend / 100) * 20, 400); retailRewards = (retailSpend / 100) * 2",
+      "variables": ["fuelSpend", "utilitySpend", "retailSpend", "isHPCL", "isHPPayApp"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": true,
+        "complimentaryCount": 1,
+        "period": "quarter",
+        "accessType": "VISA Domestic Lounge / DreamFolks",
+        "accessProvider": "DreamFolks",
+        "spendRequired": {
+          "amount": 75000,
+          "period": "previous calendar quarter",
+          "note": "Spend ₹75,000 in preceding calendar quarter to get 1 lounge visit in next quarter. Effective from January 2025."
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "eligibleLounges": "https://www.icicibank.com/content/dam/icicibank/india/managed-assets/revamp-page-images/docs/pdf/domestic_consolidated_lounge_list-1.pdf",
+        "authorizationFee": 2,
+        "note": "Lounge access only for primary cardholder. Previously ₹35,000 spend was required, increased to ₹75,000 from Nov 2024"
+      },
+      "international": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "note": "No international lounge access with this card"
+      }
+    },
+
+    "milestones": [],
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": false,
+      "lessonIncluded": false,
+      "note": null
+    },
+
+    "movies": {
+      "included": true,
+      "platforms": [
+        {
+          "name": "BookMyShow",
+          "offer": "25% discount",
+          "cap": 100,
+          "frequency": "2 times per month",
+          "minTickets": 2,
+          "note": "Discount capped at ₹100 per transaction on minimum 2 tickets"
+        },
+        {
+          "name": "INOX",
+          "offer": "25% discount",
+          "cap": 100,
+          "frequency": "2 times per month",
+          "minTickets": 2,
+          "note": "Discount capped at ₹100 per transaction on minimum 2 tickets"
+        }
+      ],
+      "note": "Cashback credited to statement within 60 days, not upfront discount"
+    },
+
+    "dining": {
+      "included": true,
+      "programs": [
+        {
+          "name": "ICICI Bank Culinary Treats Programme",
+          "discount": "Varies by restaurant",
+          "cap": null,
+          "frequency": null,
+          "note": "Exclusive discounts at partner restaurants across India"
+        }
+      ],
+      "hotelDining": {
+        "included": false,
+        "hotels": null,
+        "offer": null
+      }
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 400,
+      "maxTransaction": 5000,
+      "monthlyCap": 250,
+      "applicableStations": "All HPCL fuel stations in India",
+      "rewardsOnFuel": true,
+      "note": "1% fuel surcharge waiver + 4% cashback at HPCL stations only"
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% of transaction amount on international transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "Forex markup applies to all non-INR transactions"
+    },
+
+    "concierge": {
+      "included": true,
+      "availability": "24/7",
+      "type": "RuPay Variant only",
+      "services": [
+        "General assistance",
+        "Travel bookings",
+        "Restaurant reservations"
+      ],
+      "contactNumber": "18002670731",
+      "note": "24x7 concierge available only on RuPay variant"
+    },
+
+    "roadsideAssistance": {
+      "included": true,
+      "provider": "Allianz Partners",
+      "value": null,
+      "services": [
+        "24x7 toll-free helpline",
+        "On-site repairs (flat tire, dead battery, minor fuse issues)",
+        "Towing to nearest authorized OEM workshop",
+        "Taxi services up to 50km",
+        "Customer conference calling",
+        "Custody services",
+        "Fuel delivery up to 5 litres (at actual cost)",
+        "Locked/Lost key retrieval",
+        "Emergency accommodation assistance",
+        "Vehicle repatriation (up to 100km free if repairs exceed 2 days)",
+        "Replacement/Courtesy car arrangement (at market rates)"
+      ],
+      "coverageArea": "Pan India",
+      "callsPerYear": null,
+      "activationNote": "Customer must pay joining/annual fee; details sent to service provider who sends confirmation SMS",
+      "note": "Complimentary 24x7 Road Assistance Service (RAS)"
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "ICICI Bank EMI",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Select merchants"],
+        "note": "No-cost EMI on select merchants and products"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": null,
+        "minFee": null
+      },
+      "minAmount": 2500,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": 0.12,
+        "max": 0.18
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": 0
+      },
+      "cancellationPeriod": null,
+      "note": null
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": 0.035
+      },
+      "processingFee": {
+        "percentage": 1,
+        "minFee": 199
+      },
+      "tenures": [6, 12, 18, 24],
+      "maxAmount": null,
+      "preclosureFee": 3,
+      "note": "Transfer balances from other bank cards"
+    },
+
+    "memberships": [],
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": true,
+      "cover": 1000000,
+      "condition": "RuPay variant only",
+      "note": "Personal Accident Insurance Cover on RuPay variant"
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": false,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": null,
+      "fraudLiability": {
+        "included": true,
+        "cover": null,
+        "reportingWindow": "Report immediately",
+        "note": "Zero lost card liability if reported promptly"
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "Limited insurance coverage; Personal Accident Cover only on RuPay variant"
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000
+    },
+    "virtualCard": {
+      "available": true,
+      "instantIssuance": true,
+      "singleUse": false,
+      "spendControls": true
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true,
+      "hpPay": true
+    },
+    "upiLinking": {
+      "available": true,
+      "rewardsOnUPI": true,
+      "note": "RuPay variant supports UPI linking for Credit Card on UPI"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Real-time alerts",
+        "View CVV in iMobile app"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [],
+    "upgradesTo": [
+      {
+        "cardId": "icici-hpcl-coral",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false,
+        "note": "Can upgrade to ICICI HPCL Coral for better benefits"
+      }
+    ],
+    "note": "Entry-level card; upgrade possible based on spend history and credit profile"
+  },
+
+  "meta": {
+    "tags": [
+      "Fuel",
+      "Entry-level",
+      "HPCL",
+      "Co-branded",
+      "Cashback",
+      "Roadside Assistance"
+    ],
+    "bestFor": "Regular HPCL fuel purchasers who spend ₹4,000-5,000/month on fuel and want basic rewards on utilities and departmental stores",
+    "notRecommendedFor": "High spenders, those who fuel at non-HPCL stations, or those seeking premium travel benefits",
+    "rating": {
+      "overall": 3.2,
+      "rewards": 3.0,
+      "benefits": 3.5,
+      "value": 3.5
+    },
+    "verdict": "A decent entry-level fuel card for HPCL loyalists with tight monthly reward caps. The 5% fuel benefit (4% cashback + 1% surcharge waiver) is attractive, but the ₹200/month cashback cap limits earning to ₹5,000 fuel spend. The lounge access requirement of ₹75,000/quarter makes it practically inaccessible for most entry-level cardholders. Best for those with consistent HPCL fuel usage of ~₹5,000/month and some utility/grocery spends.",
+    "pros": [
+      "5% total benefit on HPCL fuel (4% cashback + 1% surcharge waiver)",
+      "5% rewards on utilities and departmental stores",
+      "Low joining and annual fee (₹500 + GST)",
+      "24x7 complimentary roadside assistance",
+      "25% movie discount on BookMyShow and INOX",
+      "Annual fee waiver available on ₹1.5L spend"
+    ],
+    "cons": [
+      "Cashback and rewards heavily capped (₹300 total/month)",
+      "Benefits only at HPCL stations, not other fuel brands",
+      "Lounge access requires ₹75,000 quarterly spend (too high for entry-level)",
+      "Annual fee waiver threshold of ₹1.5L is high for an entry card",
+      "3.5% forex markup is high",
+      "No international lounge access",
+      "Low base reward rate of 0.5% on other spends"
+    ],
+    "alternatives": [
+      {
+        "cardId": "sbi-bpcl",
+        "reason": "Better for BPCL fuel users with similar benefits"
+      },
+      {
+        "cardId": "idfc-first-power",
+        "reason": "Higher caps and better overall value on fuel spends"
+      },
+      {
+        "cardId": "bob-hpcl-energie",
+        "reason": "Alternative HPCL card with lower annual fee waiver threshold"
+      },
+      {
+        "cardId": "icici-hpcl-coral",
+        "reason": "Premium HPCL option with better rewards"
+      }
+    ],
+    "lastVerified": "2026-01-07",
+    "dataSource": [
+      "ICICI Bank official website (icicibank.com)",
+      "ICICI Bank MITC document (Dec 2025)",
+      "PaisaBazaar.com",
+      "CardExpert.in",
+      "BankBazaar.com",
+      "Finology Select",
+      "Card Maven review",
+      "Our Money Guide"
+    ],
+    "changelog": [
+      {
+        "date": "2024-11-15",
+        "change": "Lounge access spend requirement increased from ₹35,000 to ₹75,000 per quarter",
+        "source": "ICICI Bank T&C update"
+      },
+      {
+        "date": "2024-11-15",
+        "change": "Annual fee waiver spend threshold excludes rent, government, and education payments",
+        "source": "ICICI Bank MITC update"
+      },
+      {
+        "date": "2024-04-01",
+        "change": "Lounge access changed to spend-based (₹35,000/quarter) from complimentary",
+        "source": "ICICI Bank announcement"
+      },
+      {
+        "date": "2021-07-20",
+        "change": "Card launched in partnership with HPCL",
+        "source": "ICICI Bank press release"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1043 @@
+{
+  "id": "hdfc-tata-neu-plus",
+  "name": "Tata Neu Plus HDFC Bank Credit Card",
+  "bank": "HDFC Bank",
+  "slug": "tata-neu-plus-hdfc-bank-credit-card",
+  "image": "assets/cards/hdfc/tata-neu-plus.png",
+  "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/tata-neu-plus-hdfc-bank-credit-card",
+  "isActive": true,
+
+  "network": {
+    "type": "Visa | RuPay",
+    "variant": null,
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "entry",
+    "isCobranded": true,
+    "cobrandPartner": {
+      "name": "Tata Digital Private Limited",
+      "type": "retail",
+      "loyaltyProgram": "NeuCoins"
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 499,
+      "gst": true,
+      "effectiveAmount": 588,
+      "waivable": true,
+      "waiverCondition": "Limited Time Offer: Lifetime Free for applications from Oct 1 to Dec 31, 2024 (digital/physical channels). Joining fee levied on 120th day of card issuance.",
+      "note": "Fee charged on 120th day from issuance"
+    },
+    "annual": {
+      "amount": 499,
+      "gst": true,
+      "effectiveAmount": 588,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 100000,
+        "spendPeriod": "anniversary year",
+        "waiverText": "Spend ₹1,00,000 or more before your renewal date to get annual fee waived"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": 4,
+      "joiningFee": 0,
+      "annualFee": 0,
+      "rewardSharing": true,
+      "note": "Add-on cards are lifetime free"
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding amount",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 100, "fee": 0},
+        {"minAmount": 101, "maxAmount": 500, "fee": 100},
+        {"minAmount": 501, "maxAmount": 5000, "fee": 500},
+        {"minAmount": 5001, "maxAmount": 10000, "fee": 600},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 800},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ],
+      "note": "Standard HDFC Bank late payment fee structure"
+    },
+    "overLimit": {
+      "amount": 550,
+      "percentage": 2.5,
+      "calculation": "2.5% of over-limit amount or ₹550, whichever is higher"
+    },
+    "cashAdvance": {
+      "percentage": 2.5,
+      "minFee": 500,
+      "calculation": "2.5% of withdrawal amount or ₹500, whichever is higher"
+    },
+    "chequeReturn": 500,
+    "cardReplacement": 100,
+    "duplicateStatement": 10,
+    "rewardsRedemptionFee": 99,
+    "balanceTransferFee": {
+      "percentage": 1,
+      "minFee": 250,
+      "calculation": "1% of transfer amount or ₹250, whichever is higher"
+    },
+    "outstationCheque": {
+      "upTo5000": 25,
+      "above5000": 50
+    },
+    "cardValidation": 2,
+    "rentPayFee": {
+      "percentage": 1,
+      "note": "1% of transaction amount"
+    }
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 25000,
+        "annual": 300000
+      },
+      "selfEmployed": {
+        "itr": 600000
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 65,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": "Existing HDFC Bank customers may get preferential treatment"
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 25000,
+      "max": 500000
+    },
+    "factors": "Based on income, credit score, existing relationship, and repayment history",
+    "enhancementCriteria": "Good repayment history for 6+ months and increased income"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.432,
+      "monthlyRate": 0.036,
+      "displayRate": "3.60% per month (43.20% per annum)"
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.432,
+      "monthlyRate": 0.036,
+      "displayRate": "3.60% per month (43.20% per annum)"
+    },
+    "gracePeriod": {
+      "days": 50,
+      "note": "Up to 50 days interest-free period from transaction date if previous balance paid in full"
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 200,
+      "calculation": "5% of total outstanding or ₹200, whichever is higher"
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": 40,
+    "dailyLimit": 15000,
+    "interestFromDay1": true,
+    "note": "Interest charged from date of withdrawal, no grace period"
+  },
+
+  "rewards": {
+    "type": "cashback",
+    "currency": {
+      "name": "NeuCoins",
+      "symbol": "NC",
+      "singularUnit": "NeuCoin",
+      "pluralUnit": "NeuCoins"
+    },
+    "baseRate": {
+      "tataPartners": {
+        "rate": 2,
+        "unit": "percent",
+        "effectivePercentage": 0.02,
+        "condition": "On non-EMI spends at Tata Neu and partner Tata brands"
+      },
+      "otherSpends": {
+        "rate": 1,
+        "unit": "percent",
+        "effectivePercentage": 0.01,
+        "condition": "On non-Tata brand spends and merchant EMI transactions"
+      }
+    },
+    "valuePerNeuCoin": 1,
+    "earningText": "Earn 2% NeuCoins on Tata partner brands, 1% on other spends. 1 NeuCoin = ₹1",
+    "minTransactionForRewards": null,
+
+    "partnerBrands": [
+      "Tata 1MG",
+      "BigBasket",
+      "Croma",
+      "Air India Express",
+      "Tata CLiQ",
+      "IHCL (Taj Hotels)",
+      "Westside",
+      "Qmin",
+      "Tata Play",
+      "Cult.fit",
+      "Tata Pay",
+      "Titan",
+      "Tanishq"
+    ],
+
+    "additional5Percent": {
+      "enabled": true,
+      "condition": "On select categories on Tata Neu App/Website after registering for NeuPass",
+      "effectiveFrom": "January 15, 2025",
+      "restriction": "Only via primary cardholder mobile number account",
+      "excludedBrands": ["Bill Payment (Tata Pay)", "Tanishq", "Cult.fit", "Air India", "Tata Play"],
+      "note": "Additional 5% NeuCoins on select categories via NeuPass membership"
+    },
+
+    "upiRewards": {
+      "enabled": true,
+      "applicableTo": "RuPay variant only",
+      "baseRate": {
+        "percentage": 0.25,
+        "note": "0.25% on all eligible UPI spends (posted by bank)"
+      },
+      "additionalRate": {
+        "percentage": 0.75,
+        "condition": "On UPI payments via Tata Neu UPI ID",
+        "note": "Posted to Tata Neu account"
+      },
+      "totalMaxRate": 1,
+      "cap": {
+        "amount": 500,
+        "period": "calendar month"
+      }
+    },
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "Wallet loads/reloads",
+        "Rental payments (from Jan 1, 2023)",
+        "Government transactions",
+        "Online gaming (MCC-5816, effective July 1, 2025)",
+        "Voucher purchases",
+        "Cash advances",
+        "Post-transaction EMI conversions",
+        "Card fees payments",
+        "Outstanding balance payments",
+        "Education payments via third-party apps (CRED, Cheq, MobiKwik)"
+      ],
+      "mccs": ["5541", "5542", "5983", "6513", "9311", "9222", "5816"],
+      "note": "Education payments directly to school/college are eligible. EMI at merchant is eligible, post-transaction EMI conversion is not."
+    },
+
+    "caps": {
+      "grocery": {
+        "amount": 1000,
+        "period": "calendar month",
+        "effectiveFrom": "January 1, 2023"
+      },
+      "utility": {
+        "amount": 2000,
+        "period": "calendar month",
+        "effectiveFrom": "September 1, 2024"
+      },
+      "telecomCable": {
+        "amount": 2000,
+        "period": "calendar month",
+        "effectiveFrom": "September 1, 2024"
+      },
+      "insurance": {
+        "amount": 2000,
+        "period": "calendar month",
+        "effectiveFrom": "July 1, 2025",
+        "previousCap": "2000 per day",
+        "note": "Changed from per day to per month cap"
+      },
+      "upi": {
+        "amount": 500,
+        "period": "calendar month",
+        "applicableTo": "RuPay variant only"
+      },
+      "rent": {
+        "amount": 500,
+        "period": "calendar month",
+        "note": "Tata Neu Plus only"
+      },
+      "resetPeriod": "calendar",
+      "perTransaction": null
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "12 months",
+      "condition": "From end of month credited",
+      "effectiveFrom": "August 1, 2025",
+      "example": "NeuCoins credited Aug 5, 2025 valid until Aug 31, 2026",
+      "existingCoins": {
+        "note": "Non-promotional NeuCoins earned before Aug 1, 2025 valid until July 31, 2026"
+      },
+      "promotional": {
+        "note": "Promotional/Welcome NeuCoins follow terms at issuance"
+      }
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": 499,
+        "cashback": null,
+        "vouchers": null,
+        "spendCondition": {
+          "amount": null,
+          "period": "30 days",
+          "transactionCount": 1
+        },
+        "claimWindow": "60 days of eligible transaction",
+        "validity": "365 days from claim date",
+        "maxClaimWindow": "180 days from statement date of eligible transaction",
+        "description": "499 NeuCoins on Tata Neu App (as reversal of 1st Year Membership Fees). Applicable on 1st transaction within 30 days of card issuance.",
+        "exclusion": "Not applicable on Lifetime Free and First Year Free cards"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "tataPartners": {
+        "rate": 2,
+        "unit": "percent",
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["BigBasket", "Croma", "Tata CLiQ", "IHCL", "Westside", "Titan", "Tanishq", "Tata 1MG", "Qmin", "Cult.fit"],
+        "note": "2% back on non-EMI spends at partner Tata brands"
+      },
+      "nonTata": {
+        "rate": 1,
+        "unit": "percent",
+        "cap": null,
+        "capPeriod": null,
+        "note": "1% back on non-Tata brand spends and merchant EMI"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No NeuCoins on fuel transactions. 1% surcharge waiver available."
+      },
+      "groceries": {
+        "rate": 1,
+        "cap": 1000,
+        "capPeriod": "monthly",
+        "note": "Capped at 1000 NeuCoins per month (effective Jan 1, 2023)"
+      },
+      "utilities": {
+        "rate": 1,
+        "cap": 2000,
+        "capPeriod": "monthly",
+        "note": "Capped at 2000 NeuCoins per month (effective Sep 1, 2024)"
+      },
+      "telecom": {
+        "rate": 1,
+        "cap": 2000,
+        "capPeriod": "monthly",
+        "note": "Capped at 2000 NeuCoins per month (effective Sep 1, 2024)"
+      },
+      "insurance": {
+        "rate": 1,
+        "cap": 2000,
+        "capPeriod": "monthly",
+        "note": "Capped at 2000 NeuCoins per month (effective Jul 1, 2025). Changed from per day cap."
+      },
+      "rent": {
+        "rate": 1,
+        "cap": 500,
+        "capPeriod": "monthly",
+        "note": "Capped at 500 NeuCoins per month. Standard rental payments excluded."
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No NeuCoins on wallet loads/reloads"
+      },
+      "government": {
+        "rate": 0,
+        "cap": null,
+        "note": "No NeuCoins on government transactions"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": false,
+        "name": null,
+        "note": "This card uses NeuCoins system, not HDFC reward points. SmartBuy not applicable."
+      },
+      "partnerMerchants": {
+        "enabled": true,
+        "merchants": [
+          {
+            "name": "Tata Neu App Partners",
+            "multiplier": null,
+            "rate": "2% + additional 5% via NeuPass",
+            "maxEffectiveRate": 7,
+            "cap": null,
+            "capPeriod": null,
+            "note": "Additional 5% on select categories via NeuPass registration"
+          }
+        ]
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": []
+      },
+      "milestoneAccelerators": []
+    },
+
+    "redemption": {
+      "baseValue": 1,
+      "bestValue": 1,
+      "bestOption": "Redemption on Tata Neu App for partner brand purchases",
+      "minRedemption": 1,
+      "redemptionIncrement": 1,
+      "convenienceFee": 0,
+      "monthlyRedemptionLimit": null,
+
+      "pointsPlusPay": {
+        "enabled": true,
+        "note": "Can combine NeuCoins with other payment methods on Tata Neu App"
+      },
+
+      "options": [
+        {
+          "type": "tata_brands",
+          "value": 1.0,
+          "description": "Redemption at Tata partner brands on Tata Neu App",
+          "recommended": true,
+          "minPoints": 1,
+          "processingFee": 0,
+          "partners": ["BigBasket", "Croma", "Westside", "Tata CLiQ", "IHCL Hotels", "Titan", "Tanishq", "Qmin", "Tata 1MG"],
+          "note": "1 NeuCoin = ₹1. Best and only redemption option."
+        }
+      ],
+
+      "excludedFromRedemption": ["Air India", "Tata Play", "Bill Payment (Tata Neu)"],
+      "redemptionMethod": "Select Tata Pay/NeuCoins/Loyalty Redemption as payment method on Tata Neu App/Website"
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "note": "NeuCoins can only be redeemed within Tata ecosystem. No external transfer partners."
+    },
+
+    "pooling": {
+      "enabled": false,
+      "note": "NeuCoins are not poolable across cards or users"
+    },
+
+    "specialLogic": "NeuCoins are credited within 7 working days of statement generation. Posting to Tata Neu account happens periodically.",
+
+    "calculator": {
+      "enabled": true,
+      "formula": "NeuCoins = spendAmount × (isTataPartner ? 0.02 : 0.01) + (hasNeuPass && eligibleCategory ? spendAmount × 0.05 : 0)",
+      "variables": ["spendAmount", "isTataPartner", "hasNeuPass", "eligibleCategory", "category"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": true,
+        "complimentaryCount": 4,
+        "period": "year",
+        "perQuarter": 1,
+        "accessType": "Milestone-based voucher",
+        "accessProvider": "DreamFolks via Gyftr platform",
+        "spendRequired": {
+          "amount": 50000,
+          "period": "quarterly",
+          "quarters": ["Jan-Mar", "Apr-Jun", "Jul-Sep", "Oct-Dec"],
+          "effectiveFrom": "June 10, 2025",
+          "note": "Direct swipe access discontinued from midnight June 9, 2025. Now requires ₹50,000 spend per calendar quarter to earn 1 complimentary lounge voucher."
+        },
+        "voucherDetails": {
+          "notification": "SMS/email within 30 working days after qualifying",
+          "claimWindow": "120 days from qualification",
+          "validity": "180 days from issuance"
+        },
+        "feeIfNotQualified": {
+          "visa": 2,
+          "rupay": 2,
+          "note": "₹2 per entry if spend threshold not met"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "tracking": "Via NetBanking → Credit Card → Redeem Reward Points → MyReward → Spend Promo Details",
+        "importantNote": "Only new card spends count if card upgraded/lost/reissued. Net spends calculated (purchases minus reversals).",
+        "eligibleLounges": "Select domestic airport lounges"
+      },
+      "international": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "note": "International lounge access not available on Tata Neu Plus. Available on Infinity variant only."
+      }
+    },
+
+    "milestones": [
+      {
+        "spend": 50000,
+        "period": "quarterly",
+        "benefit": "1 complimentary domestic lounge voucher",
+        "benefitType": "lounge",
+        "value": null,
+        "conditions": "Calendar quarter basis"
+      },
+      {
+        "spend": 100000,
+        "period": "annual",
+        "benefit": "Annual fee waiver",
+        "benefitType": "fee_waiver",
+        "value": 588,
+        "conditions": "Spend before renewal date"
+      }
+    ],
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": 0,
+      "period": null,
+      "courses": null,
+      "note": "Golf benefits not available on this card"
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "note": "No dedicated movie offers on this card"
+    },
+
+    "dining": {
+      "included": false,
+      "programs": [],
+      "note": "Earn NeuCoins at Qmin and IHCL properties as part of Tata ecosystem"
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 400,
+      "maxTransaction": 5000,
+      "monthlyCap": 250,
+      "capPeriod": "statement cycle",
+      "applicableStations": "All fuel stations in India",
+      "rewardsOnFuel": false,
+      "note": "1% fuel surcharge waiver on transactions between ₹400-₹5,000. Maximum waiver ₹250 per statement cycle. No NeuCoins earned on fuel."
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "gstOnMarkup": true,
+      "effectiveMarkup": 4.13,
+      "markupText": "3.5% + GST on international transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "fee": 1,
+        "gst": true,
+        "recommendation": "Always decline DCC and pay in local currency to avoid additional 1% + GST charge"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "Forex markup applies to all non-INR transactions"
+    },
+
+    "concierge": {
+      "included": false,
+      "availability": null,
+      "type": null,
+      "note": "Concierge services not included on entry-level card"
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "note": "Roadside assistance not included on this card"
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "SmartEMI",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Amazon", "Flipkart", "Croma", "Reliance Digital"],
+        "note": "No-cost EMI available on select merchants and products"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": 499,
+        "gst": true,
+        "minFee": 499
+      },
+      "minAmount": 2500,
+      "tenures": [3, 6, 9, 12, 18, 24, 36, 48],
+      "interestRates": {
+        "min": 0.12,
+        "max": 0.18,
+        "note": "Varies based on tenure and merchant"
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "note": "3% of principal outstanding"
+      },
+      "cancellationPeriod": null,
+      "note": "Merchant EMI earns 1% NeuCoins. Post-transaction EMI conversion does not earn NeuCoins."
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": 0.036
+      },
+      "processingFee": {
+        "percentage": 1,
+        "minFee": 250,
+        "note": "1% of transfer amount or ₹250, whichever is higher"
+      },
+      "tenures": [6, 12, 18, 24],
+      "maxAmount": null,
+      "preclosureFee": null,
+      "note": "Transfer balances from other bank cards"
+    },
+
+    "memberships": [],
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "note": "Earn 2% NeuCoins at Air India Express. Redemption at Air India currently not available."
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      },
+      "note": "Earn 2% NeuCoins at IHCL (Taj Hotels) and redeem NeuCoins for stays"
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "condition": null
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": false,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": 500000,
+      "fraudLiability": {
+        "included": true,
+        "cover": 500000,
+        "reportingWindow": "Report within 7 days of unauthorized transaction",
+        "note": "Zero liability on fraudulent transactions if reported within 7 days"
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "Limited insurance coverage on this entry-level card. Primary benefit is zero liability on fraudulent transactions if reported within 7 days."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000,
+      "note": "Contactless payments up to ₹5,000 without PIN"
+    },
+    "virtualCard": {
+      "available": false,
+      "instantIssuance": false,
+      "singleUse": false,
+      "spendControls": false
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true,
+      "note": "RuPay variant supports UPI linking for enhanced rewards"
+    },
+    "upiLinking": {
+      "available": true,
+      "rewardsOnUPI": true,
+      "applicableTo": "RuPay variant",
+      "rate": "Up to 1% (0.25% base + 0.75% via Tata Neu UPI ID)",
+      "cap": "500 NeuCoins per month",
+      "note": "RuPay credit card UPI transactions earn NeuCoins"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Real-time alerts",
+        "Generate PIN"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [],
+    "upgradesTo": [
+      {
+        "cardId": "hdfc-tata-neu-infinity",
+        "cardName": "Tata Neu Infinity HDFC Bank Credit Card",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false,
+        "note": "Higher tier card with international lounge access and enhanced benefits"
+      }
+    ],
+    "note": "Upgrade eligibility based on spend history, income, and relationship with bank"
+  },
+
+  "meta": {
+    "tags": [
+      "Entry-level",
+      "Co-branded",
+      "Tata Ecosystem",
+      "NeuCoins",
+      "UPI Rewards",
+      "Cashback",
+      "RuPay",
+      "Visa"
+    ],
+    "bestFor": "Users who frequently shop on Tata brands (BigBasket, Croma, Tata CLiQ, etc.) and want straightforward cashback with 1 NeuCoin = ₹1 value",
+    "notRecommendedFor": "Those who don't shop in Tata ecosystem, heavy fuel spenders, or those seeking premium travel benefits and international lounge access",
+    "rating": {
+      "overall": 3.5,
+      "rewards": 3.5,
+      "benefits": 3.0,
+      "value": 4.0
+    },
+    "verdict": "A solid entry-level co-branded card for Tata ecosystem loyalists. The 2% NeuCoins on Tata brands and 1% on other spends provide decent value, especially since 1 NeuCoin = ₹1. The RuPay variant offers UPI rewards which is a plus. However, the June 2025 lounge policy change requiring ₹50K quarterly spend significantly reduced the card's value for casual users. Multiple category caps also limit earning potential. Best suited for those who can maximize Tata brand spending and meet spend thresholds.",
+    "pros": [
+      "Simple reward structure: 1 NeuCoin = ₹1",
+      "2% back on Tata partner brands is competitive",
+      "Additional 5% via NeuPass on select categories",
+      "UPI rewards on RuPay variant (up to 1%)",
+      "Low joining fee (₹499) with easy fee waiver (₹1L spend)",
+      "Lifetime free offer available periodically",
+      "Wide Tata brand ecosystem for redemption",
+      "1% fuel surcharge waiver"
+    ],
+    "cons": [
+      "Lounge access now requires ₹50K quarterly spend (major devaluation June 2025)",
+      "Multiple category caps limit earning (grocery 1000, utility 2000, insurance 2000/month)",
+      "No international lounge access",
+      "NeuCoins only redeemable in Tata ecosystem",
+      "3.5% forex markup is high for international use",
+      "No travel insurance benefits",
+      "Limited value outside Tata brands (only 1%)",
+      "No transfer partners"
+    ],
+    "recentChanges": [
+      {
+        "date": "2025-08-01",
+        "change": "NeuCoins validity changed to 12 months from end of month credited",
+        "impact": "Moderate - shorter validity requires more active redemption"
+      },
+      {
+        "date": "2025-07-01",
+        "change": "Insurance NeuCoins cap changed from 2000/day to 2000/month",
+        "impact": "High - significant devaluation for insurance premium payments"
+      },
+      {
+        "date": "2025-07-01",
+        "change": "Online gaming (MCC-5816) excluded from NeuCoins earning",
+        "impact": "Low - affects limited user base"
+      },
+      {
+        "date": "2025-06-10",
+        "change": "Domestic lounge access changed from direct swipe to milestone-based (₹50K quarterly spend)",
+        "impact": "Very High - major devaluation for casual users"
+      },
+      {
+        "date": "2025-01-15",
+        "change": "Additional 5% NeuCoins via NeuPass now requires primary cardholder mobile account",
+        "impact": "Moderate - restricts family usage"
+      },
+      {
+        "date": "2024-09-01",
+        "change": "Utility and Telecom caps introduced at 2000 NeuCoins/month each",
+        "impact": "High - affects bill payment users"
+      }
+    ],
+    "alternatives": [
+      {
+        "cardId": "hdfc-tata-neu-infinity",
+        "reason": "For international lounge access and higher benefits within Tata ecosystem"
+      },
+      {
+        "cardId": "axis-ace",
+        "reason": "For Google Pay rewards and broader cashback without ecosystem lock-in"
+      },
+      {
+        "cardId": "amazon-pay-icici",
+        "reason": "For Amazon-focused shopping with simpler reward structure"
+      },
+      {
+        "cardId": "flipkart-axis",
+        "reason": "For Flipkart ecosystem users with unlimited 5% cashback"
+      }
+    ],
+    "lastVerified": "2026-01-05",
+    "dataSource": [
+      "Official HDFC Bank website (hdfcbank.com)",
+      "HDFC Bank MITC document (Nov 2025)",
+      "Tata Neu official website (tataneu.com)",
+      "HDFC Bank T&C PDF (TATA_Neu_Plus_Card_TnC.pdf)",
+      "CardExpert.in",
+      "TechnoFino.in community",
+      "PaisaBazaar.com",
+      "BankBazaar.com",
+      "Live From A Lounge (lounge policy updates)",
+      "MyMoneyMantra.com",
+      "BuddyLoan.com"
+    ],
+    "changelog": [
+      {
+        "date": "2025-06-10",
+        "change": "Domestic lounge access policy changed - now requires ₹50,000 quarterly spend for 1 voucher per quarter",
+        "source": "Official HDFC Bank T&C update, Live From A Lounge"
+      },
+      {
+        "date": "2025-08-01",
+        "change": "NeuCoins validity changed to 12 months from end of month credited",
+        "source": "Official T&C document"
+      },
+      {
+        "date": "2025-07-01",
+        "change": "Insurance cap changed from 2000/day to 2000/month; Online gaming excluded",
+        "source": "Official T&C update"
+      },
+      {
+        "date": "2024-09-01",
+        "change": "Utility and Telecom caps of 2000 NeuCoins per month introduced",
+        "source": "Fair Usage Policy update"
+      },
+      {
+        "date": "2024-08-01",
+        "change": "UPI rewards (0.25% + 0.75% via Tata Neu UPI ID) introduced for RuPay variant",
+        "source": "Official HDFC Bank announcement"
+      },
+      {
+        "date": "2023-01-01",
+        "change": "Grocery cap of 1000 NeuCoins per month introduced; Rental payments excluded",
+        "source": "Fair Usage Policy update"
+      }
+    ]
+  }
+}

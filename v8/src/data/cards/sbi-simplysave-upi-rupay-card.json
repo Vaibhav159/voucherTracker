@@ -1,0 +1,939 @@
+{
+  "id": "sbi-simplysave-upi-rupay",
+  "name": "SimplySAVE UPI SBI Card (RuPay)",
+  "bank": "SBI Card (SBI Cards and Payment Services Limited)",
+  "slug": "sbi-simplysave-upi-rupay-card",
+  "image": "assets/cards/sbi/simplysave-upi-rupay.png",
+  "link": "https://www.sbicard.com/en/personal/credit-cards/shopping/simplysave-upi-rupay-card.page",
+  "isActive": true,
+
+  "network": {
+    "type": "RuPay",
+    "variant": null,
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "entry",
+    "isCobranded": false,
+    "cobrandPartner": {
+      "name": null,
+      "type": null,
+      "loyaltyProgram": null
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 499,
+      "gst": "applicable (18%)",
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 499,
+      "gst": "applicable (18%)",
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 100000,
+        "spendPeriod": "12 months (previous membership year)",
+        "waiverText": "Renewal Fee reversed if annual spends for last year >= Rs. 1,00,000"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": 0,
+      "joiningFee": null,
+      "annualFee": null,
+      "rewardSharing": true,
+      "note": "Add-on cards available for parents, spouse, children or siblings above 18 years"
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on total outstanding amount",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 500, "fee": 0},
+        {"minAmount": 501, "maxAmount": 1000, "fee": 400},
+        {"minAmount": 1001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": null, "fee": 950}
+      ],
+      "additionalPenalty": "Additional Rs. 100 per cycle if MAD missed for 2+ consecutive cycles"
+    },
+    "overLimit": {
+      "percentage": 2.5,
+      "minFee": 600,
+      "calculation": "2.5% of overlimit amount or Rs. 600, whichever is higher"
+    },
+    "chequeReturn": {
+      "percentage": 2,
+      "minFee": 500,
+      "calculation": "2% of payment amount, minimum Rs. 500"
+    },
+    "cardReplacement": {
+      "minFee": 100,
+      "maxFee": 250
+    },
+    "duplicateStatement": 100,
+    "cashPaymentAtBranch": 199,
+    "chequePaymentFee": 100,
+    "rewardRedemptionFee": 99,
+    "networkChangeFee": 200
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 20000,
+        "annual": 240000
+      },
+      "selfEmployed": {
+        "monthly": 20000,
+        "itr": 240000
+      }
+    },
+    "age": {
+      "salaried": {
+        "min": 21,
+        "max": 70
+      },
+      "selfEmployed": {
+        "min": 25,
+        "max": 70
+      },
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": null
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident",
+    "documentsRequired": [
+      "PAN Card",
+      "Aadhaar Card / Voter ID / Driving License / Passport",
+      "Address Proof (Utility bills, Ration Card)",
+      "Income Proof (Salary slips / Bank statements / ITR)"
+    ]
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 10000,
+      "max": 500000
+    },
+    "factors": "Based on income, credit history, credit score, and existing liabilities",
+    "enhancementCriteria": "Good repayment history for 6-12 months"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375,
+      "note": "W.e.f. 01 NOV 2024, revised to 3.75% p.m. (45% p.a.) for unsecured SBI Credit Cards"
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": "20-50",
+      "note": "Interest-free period of 20-50 days. Not applicable if previous month's balance not cleared in full or on cash advances"
+    },
+    "minPayment": {
+      "percentage": 0.02,
+      "minAmount": 200,
+      "calculation": "W.e.f. 15 Jul'25: 100% GST + 100% EMI + 100% Fees/Charges + 100% Finance charges + Overlimit Amount + 2% of remaining balance outstanding"
+    },
+    "minFinanceCharge": 25,
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": 80,
+    "dailyLimit": 12000,
+    "interestFromDay1": true,
+    "note": "Cash limit up to 80% of credit limit. Max Rs. 12,000/day"
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "Reward Points",
+      "symbol": "RP",
+      "singularUnit": "point",
+      "pluralUnit": "points"
+    },
+    "baseRate": {
+      "rate": 1,
+      "spendUnit": 150,
+      "effectivePercentage": 0.17,
+      "valuePerPoint": 0.25
+    },
+    "acceleratedRate": {
+      "rate": 10,
+      "spendUnit": 150,
+      "effectivePercentage": 1.67,
+      "applicableCategories": ["Dining", "Movies", "Departmental Stores", "Groceries"]
+    },
+    "earningText": "Earn 10 Reward Points per Rs. 150 on Dining, Movies, Departmental Stores & Groceries. Earn 1 Reward Point per Rs. 150 on all other spends. 4 Reward Points = Rs. 1",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "Rent payments (MCC 6513) - w.e.f. 01 Apr 2024",
+        "Government transactions (MCC 9399, 9311) - w.e.f. 01 Jun 2024",
+        "Digital Gaming Platforms/Merchants - w.e.f. 01 Dec 2024",
+        "Cash withdrawals",
+        "Balance transfers",
+        "Flexipay/EMI conversions",
+        "Card Protection Plan charges",
+        "Wallet loads (w.e.f. Nov 2025)"
+      ],
+      "mccs": ["5541", "5542", "6513", "9399", "9311", "5816", "5945", "7993", "7994"],
+      "note": "Transactions at these MCCs do not earn reward points. Some exclusions added in 2024"
+    },
+
+    "caps": {
+      "monthly": {
+        "acceleratedPoints": 5000,
+        "note": "Maximum 5,000 Reward Points per calendar month on 10X categories. After cap, 1 RP per Rs. 150 applies"
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": "calendar month",
+      "perTransaction": null
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "24 months",
+      "condition": "From date of earning"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": 2000,
+        "cashback": null,
+        "vouchers": null,
+        "spendCondition": {
+          "amount": 2000,
+          "period": "60 days",
+          "transactionCount": null
+        },
+        "validity": "Within 60 days of receiving the card",
+        "description": "Get 2000 bonus Reward Points on spending Rs. 2,000 or more within first 60 days"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "dining": {
+        "rate": 10,
+        "spendUnit": 150,
+        "multiplier": "10X",
+        "effectivePercentage": 1.67,
+        "cap": 5000,
+        "capPeriod": "monthly (combined with other 10X categories)",
+        "mccs": ["5812", "5813", "5814"],
+        "note": "Eating Places, Restaurants, Drinking Places, Fast Food Restaurants"
+      },
+      "movies": {
+        "rate": 10,
+        "spendUnit": 150,
+        "multiplier": "10X",
+        "effectivePercentage": 1.67,
+        "cap": 5000,
+        "capPeriod": "monthly (combined with other 10X categories)",
+        "mccs": ["7832"],
+        "note": "Motion Picture Theaters"
+      },
+      "groceries": {
+        "rate": 10,
+        "spendUnit": 150,
+        "multiplier": "10X",
+        "effectivePercentage": 1.67,
+        "cap": 5000,
+        "capPeriod": "monthly (combined with other 10X categories)",
+        "mccs": ["5411"],
+        "note": "Grocery Stores & Supermarkets. Excludes Metro Cash & Carry, Walmart, Reliance Market"
+      },
+      "departmentalStores": {
+        "rate": 10,
+        "spendUnit": 150,
+        "multiplier": "10X",
+        "effectivePercentage": 1.67,
+        "cap": 5000,
+        "capPeriod": "monthly (combined with other 10X categories)",
+        "mccs": ["5311"],
+        "note": "Departmental Stores. Excludes Metro Cash & Carry, Walmart, Reliance Market"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on fuel transactions"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on rent payments (MCC 6513) w.e.f. 01 Apr 2024"
+      },
+      "government": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on government transactions (MCC 9399, 9311) w.e.f. 01 Jun 2024"
+      },
+      "digitalGaming": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on Digital Gaming Platforms w.e.f. 01 Dec 2024"
+      },
+      "other": {
+        "rate": 1,
+        "spendUnit": 150,
+        "effectivePercentage": 0.17,
+        "cap": null,
+        "note": "Base rate on all other eligible transactions"
+      },
+      "international": {
+        "rate": 1,
+        "spendUnit": 150,
+        "effectivePercentage": 0.17,
+        "note": "RuPay card - international acceptance limited"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": false,
+        "name": null,
+        "note": "No specific portal-based accelerators for this entry-level card"
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": [],
+        "note": "No specific partner merchant accelerators"
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": []
+      },
+      "milestoneAccelerators": []
+    },
+
+    "redemption": {
+      "baseValue": 0.25,
+      "bestValue": 0.25,
+      "bestOption": "Statement credit or Gift vouchers",
+      "minRedemption": 2000,
+      "redemptionIncrement": null,
+      "convenienceFee": 99,
+      "monthlyRedemptionLimit": null,
+
+      "pointsPlusPay": {
+        "enabled": false,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": null,
+        "note": null
+      },
+
+      "options": [
+        {
+          "type": "statement_credit",
+          "value": 0.25,
+          "description": "Pay outstanding balance on credit card",
+          "recommended": true,
+          "minPoints": 2000,
+          "processingFee": 99,
+          "partners": [],
+          "note": "Call SBI Card helpline to redeem points against outstanding"
+        },
+        {
+          "type": "vouchers",
+          "value": 0.25,
+          "description": "E-Gift vouchers and products from rewards catalogue",
+          "recommended": true,
+          "minPoints": 2000,
+          "processingFee": 99,
+          "partners": ["Amazon", "Flipkart", "Various brands"],
+          "note": "Redeem via sbicard.com or SBI Card mobile app"
+        },
+        {
+          "type": "products",
+          "value": 0.25,
+          "description": "Products from SBI Card Rewards Catalogue",
+          "recommended": false,
+          "minPoints": 2000,
+          "processingFee": 99,
+          "partners": [],
+          "note": "Physical products delivered within 15-30 days"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": [],
+      "partners": [],
+      "note": "Entry-level card - no transfer partners available"
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": [],
+      "acrossUsers": false,
+      "note": null
+    },
+
+    "specialLogic": "10X rewards apply only on specific MCCs: Departmental Stores (5311), Grocery (5411), Dining (5812, 5813, 5814), Movies (7832). Category determined by MCC as defined by Visa/MasterCard/RuPay. SBI Card's decision on category is final.",
+
+    "calculator": {
+      "enabled": true,
+      "formula": "if (category in [dining, movies, groceries, departmental]) then points = (spend / 150) * 10 else points = spend / 150; value = points * 0.25",
+      "variables": ["spend", "category", "monthlyAcceleratedPointsUsed"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "railwayLounge": null,
+        "note": "No lounge access included with this entry-level card"
+      },
+      "international": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "note": "No international lounge access"
+      }
+    },
+
+    "milestones": [],
+
+    "golf": {
+      "included": false,
+      "note": null
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "note": "No dedicated movie offers, but 10X reward points on movie spends"
+    },
+
+    "dining": {
+      "included": false,
+      "programs": [],
+      "note": "No dedicated dining program, but 10X reward points on dining spends"
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 500,
+      "maxTransaction": 3000,
+      "monthlyCap": 100,
+      "capPeriod": "statement cycle",
+      "applicableStations": "All petrol pumps in India",
+      "rewardsOnFuel": false,
+      "note": "1% fuel surcharge waiver on transactions between Rs. 500-3000. Maximum waiver Rs. 100 per statement cycle. No reward points on fuel."
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% + GST on international transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "markupPercentage": 3.5,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 3.5,
+      "internationalAcceptance": "Limited - RuPay network primarily accepted in India, Singapore, UAE, Bhutan, Nepal (local currency only)",
+      "restrictedCountries": ["Nepal (no forex)", "Bhutan (no forex)"],
+      "note": "RuPay card has limited international acceptance compared to Visa/Mastercard"
+    },
+
+    "concierge": {
+      "included": false,
+      "note": "Not available for entry-level card"
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "Flexipay",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Select partner merchants"],
+        "note": "Available at participating merchant outlets"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": null,
+        "minFee": null,
+        "note": "May be charged depending on offer"
+      },
+      "minAmount": 2500,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": null,
+        "max": null,
+        "note": "Varies based on tenure and offer"
+      },
+      "preclosureFee": null,
+      "cancellationPeriod": null,
+      "conversionWindow": "30 days from purchase",
+      "note": "Convert transactions of Rs. 2,500+ into EMI via sbicard.com within 30 days"
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": null
+      },
+      "processingFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "tenures": null,
+      "maxAmount": "Up to 75% of available credit limit",
+      "minAmount": 5000,
+      "processingTime": "3-7 working days",
+      "preclosureFee": null,
+      "note": "Transfer outstanding from other bank cards. Min Rs. 5,000, max 75% of credit limit."
+    },
+
+    "memberships": [],
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    },
+
+    "upiFeatures": {
+      "enabled": true,
+      "supportedApps": ["Google Pay", "PhonePe", "Paytm", "BHIM", "Other UPI apps"],
+      "transactionLimit": {
+        "perTransaction": 500000,
+        "daily": 500000,
+        "smallMerchantLimit": 100000
+      },
+      "rewardsOnUPI": true,
+      "note": "RuPay credit card can be linked to UPI apps for payments. Rewards earned same as POS transactions. Daily limit Rs. 5 Lakh (Rs. 1 Lakh for small offline merchants)."
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "condition": null
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": false,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": false,
+      "cover": null,
+      "fraudLiability": {
+        "included": true,
+        "cover": null,
+        "reportingWindow": "Report immediately to SBI Card helpline",
+        "note": "Zero liability for unauthorized transactions if reported promptly as per RBI guidelines"
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "Entry-level card with minimal/no insurance coverage. SBI Card offers optional insurance products separately."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000,
+      "note": "RuPay Contactless enabled. PIN not required for transactions up to Rs. 5,000"
+    },
+    "virtualCard": {
+      "available": false,
+      "instantIssuance": false,
+      "singleUse": false,
+      "spendControls": false
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": false,
+      "payTM": true,
+      "phonePe": true,
+      "bhimUPI": true,
+      "note": "RuPay credit card supported on UPI-based apps"
+    },
+    "upiLinking": {
+      "available": true,
+      "rewardsOnUPI": true,
+      "note": "Link to any UPI app. Earn rewards on UPI transactions."
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Real-time alerts",
+        "Report lost/stolen"
+      ],
+      "note": "Manage via SBI Card mobile app or sbicard.com"
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"],
+      "methods": ["NACH", "Auto-debit", "UPI Mandate"]
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [],
+    "upgradesTo": [
+      {
+        "cardId": "sbi-simplysave",
+        "spendRequired": null,
+        "tenure": null,
+        "note": "Can switch to Visa/Mastercard variant"
+      },
+      {
+        "cardId": "sbi-prime",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false,
+        "note": "Based on spending pattern and credit history"
+      }
+    ],
+    "note": "Upgrade options depend on spending history and credit profile. Contact SBI Card for eligibility."
+  },
+
+  "meta": {
+    "tags": [
+      "Entry-level",
+      "RuPay",
+      "UPI-enabled",
+      "Grocery rewards",
+      "Dining rewards",
+      "Shopping",
+      "Beginners"
+    ],
+    "bestFor": "Beginners, students, and anyone seeking an entry-level UPI-enabled credit card with rewards on everyday spending like groceries, dining, and movies",
+    "notRecommendedFor": "Frequent travelers (no lounge access), heavy online shoppers (SimplyCLICK better), those seeking premium benefits, international travelers (limited RuPay acceptance)",
+    "rating": {
+      "overall": 3.5,
+      "rewards": 3.5,
+      "benefits": 2.5,
+      "value": 4.0
+    },
+    "verdict": "A solid entry-level credit card for beginners who want to earn rewards on everyday expenses. The 10X rewards on groceries, dining, movies, and departmental stores offer decent value. The UPI-enabled RuPay variant is unique and useful for those who prefer UPI payments. However, the low base reward rate (0.17%), limited features, and no lounge access make it less competitive compared to cashback cards. Best for those new to credit cards or who primarily spend on the accelerated categories.",
+    "pros": [
+      "Low annual fee (Rs. 499) with easy waiver condition (Rs. 1 lakh spend)",
+      "UPI-enabled RuPay card - can pay via Google Pay, PhonePe etc.",
+      "10X reward points on groceries, dining, movies, departmental stores",
+      "Welcome bonus worth Rs. 500 (2000 points on Rs. 2000 spend)",
+      "Fuel surcharge waiver (1% on Rs. 500-3000)",
+      "Easy eligibility for beginners",
+      "Contactless payments supported"
+    ],
+    "cons": [
+      "Very low reward rate on regular purchases (0.17%)",
+      "No lounge access",
+      "No travel or premium benefits",
+      "Monthly cap of 5000 points on accelerated categories",
+      "Limited international acceptance (RuPay network)",
+      "No transfer partners for points",
+      "Multiple reward exclusions (rent, govt, fuel, gaming)",
+      "Points expire in 24 months"
+    ],
+    "alternatives": [
+      "sbi-simplyclick-rupay",
+      "hdfc-millennia",
+      "axis-ace",
+      "amazon-pay-icici",
+      "flipkart-axis"
+    ],
+    "lastVerified": "2026-01-06",
+    "dataSource": [
+      "Official SBI Card website - https://www.sbicard.com/en/personal/credit-cards/shopping/simplysave-upi-rupay-card.page",
+      "SBI Card MITC document - https://www.sbicard.com/sbi-card-en/assets/docs/pdf/most-important-terms-and-conditions/mitc-english.pdf",
+      "SBI Card T&C Booklet - https://www.sbicard.com/sbi-card-en/assets/docs/pdf/ekit-tncs/simplysave-upi-digi-tnc.pdf",
+      "SBI Card Customer Notices - https://www.sbicard.com/en/customer-notices.page",
+      "CardMaven.in review",
+      "PaisaBazaar.com",
+      "BankBazaar.com",
+      "CardInsider.com"
+    ],
+    "changelog": [
+      {
+        "date": "2024-04-01",
+        "change": "Reward points discontinued on Rent Payment transactions (MCC 6513)",
+        "source": "Official SBI Card notice"
+      },
+      {
+        "date": "2024-06-01",
+        "change": "Reward points discontinued on Government transactions (MCC 9399, 9311)",
+        "source": "Official SBI Card notice"
+      },
+      {
+        "date": "2024-11-01",
+        "change": "Finance charges revised to 3.75% p.m. (45% p.a.) from 3.35% p.m.",
+        "source": "Official SBI Card notice"
+      },
+      {
+        "date": "2024-12-01",
+        "change": "Reward points discontinued on Digital Gaming Platforms/Merchants",
+        "source": "Official SBI Card notice"
+      },
+      {
+        "date": "2024-12-01",
+        "change": "1% fee on Utility Payments exceeding Rs. 50,000 per billing cycle",
+        "source": "Official SBI Card notice"
+      },
+      {
+        "date": "2025-07-15",
+        "change": "MAD calculation revised to 2% of remaining balance + 100% of charges/EMI/fees",
+        "source": "Official SBI Card notice"
+      },
+      {
+        "date": "2025-11-01",
+        "change": "1% fee on wallet loads and education payments via third-party apps",
+        "source": "Official SBI Card notice"
+      }
+    ]
+  },
+
+  "contactInfo": {
+    "customerCare": {
+      "phone": ["39 02 02 02 (prefix local STD code)", "1860 180 1290", "1860 500 1290"],
+      "email": "customercare@sbicard.com",
+      "hours": "24/7"
+    },
+    "grievanceRedressal": {
+      "nodalOfficer": {
+        "address": "PO Bag 28 - GPO, New Delhi - 110001",
+        "email": "Nodalofficer@sbicard.com"
+      }
+    },
+    "correspondence": {
+      "address": "SBI Cards & Payment Services Ltd., DLF Infinity Towers, Tower C, 12th Floor, Block 2, Building 3, DLF Cyber City Gurugram-122002 (Haryana) India"
+    },
+    "website": "www.sbicard.com",
+    "smsServices": {
+      "balance": "SMS BAL XXXX to 5676791",
+      "blockCard": "SMS BLOCK XXXX to 5676791"
+    }
+  }
+}

@@ -1,0 +1,1056 @@
+{
+  "id": "sbi-apollo-card-select",
+  "name": "Apollo SBI Card SELECT",
+  "bank": "SBI Card",
+  "slug": "apollo-sbi-card-select",
+  "image": "assets/cards/sbi/apollo-sbi-card-select.png",
+  "link": "https://www.sbicard.com/sprint/ApolloSelect",
+  "isActive": true,
+
+  "network": {
+    "type": "Mastercard | RuPay",
+    "variant": null,
+    "bin": null,
+    "note": "User can choose between RuPay or Mastercard at the time of application. Selection cannot be changed after card issuance."
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "mid",
+    "isCobranded": true,
+    "cobrandPartner": {
+      "name": "Apollo 24|7 / Apollo HealthCo",
+      "type": "healthcare",
+      "loyaltyProgram": "Apollo Circle"
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 1499,
+      "gst": "18%",
+      "totalWithGST": 1769,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 1499,
+      "gst": "18%",
+      "totalWithGST": 1769,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 300000,
+        "spendPeriod": "previous membership year",
+        "waiverText": "Spend Rs. 3 Lakh in previous membership year for annual fee waiver"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": "unlimited",
+      "joiningFee": 0,
+      "annualFee": 0,
+      "rewardSharing": true,
+      "minAge": 18
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 500, "fee": 0},
+        {"minAmount": 501, "maxAmount": 1000, "fee": 400},
+        {"minAmount": 1001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 950},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ],
+      "additionalCharge": {
+        "amount": 100,
+        "condition": "Missing MAD payment for two consecutive cycles"
+      }
+    },
+    "overLimit": {
+      "amount": 600,
+      "percentage": 2.5,
+      "calculation": "2.5% of overlimit amount or Rs. 600, whichever is higher"
+    },
+    "chequeReturn": 500,
+    "cardReplacement": {
+      "domestic": "100-250",
+      "international": "USD 148 (Mastercard) / USD 175 (Visa)"
+    },
+    "duplicateStatement": null,
+    "cashPaymentFee": 250,
+    "rentPaymentFee": 199,
+    "utilityPaymentFee": {
+      "threshold": 50000,
+      "fee": "1% of total utility payments if exceeds Rs. 50,000 in billing cycle"
+    },
+    "educationPaymentFee": {
+      "effectiveDate": "2025-11-01",
+      "fee": "1% on education payments via third-party apps",
+      "exemption": "Direct payments to schools/colleges via their websites or POS"
+    },
+    "walletLoadFee": {
+      "effectiveDate": "2025-11-01",
+      "fee": "1% on wallet load transactions exceeding Rs. 1,000"
+    }
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": null,
+        "annual": null
+      },
+      "selfEmployed": {
+        "itr": null
+      },
+      "note": "Income verification required; specific thresholds determined by CIBIL score and internal criteria"
+    },
+    "age": {
+      "min": 21,
+      "max": 60,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": null,
+      "recommended": 700,
+      "note": "CIBIL report pulled during application"
+    },
+    "existingRelationship": {
+      "required": true,
+      "type": "Apollo 24|7 account",
+      "note": "Must apply using same mobile number registered with Apollo 24|7 account"
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident",
+    "documents": [
+      "PAN Card",
+      "Identity Proof (Aadhaar/Passport/Voter ID/Driving License)",
+      "Address Proof (Utility Bills/Passport/Bank Passbook/Aadhaar)",
+      "Income Proof (Salary Slips/Bank Statements/ITR/Form 16)"
+    ],
+    "kycModes": [
+      "Aadhaar-based e-KYC (OTP verification)",
+      "Video KYC",
+      "In-person verification at Apollo touchpoints or SBI branches"
+    ]
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": null,
+      "max": null
+    },
+    "factors": "Based on income, credit score (CIBIL), and existing relationship",
+    "enhancementCriteria": "Good repayment history for 6+ months"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": "20-50",
+      "note": "Interest-free period of 20-50 days if previous balance paid in full. Suspended if any balance outstanding."
+    },
+    "minPayment": {
+      "percentage": 0.02,
+      "minAmount": 200,
+      "calculation": "100% of GST + 100% of EMI + 100% of Fees/Charges + 100% of Finance Charges + Overlimit Amount + 2% of Remaining Balance Outstanding"
+    },
+    "minFinanceCharge": 25,
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": null,
+    "dailyLimit": 15000,
+    "interestFromDay1": true,
+    "note": "Cash advance limit is part of overall credit limit. No interest-free period for cash advances."
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "Reward Points",
+      "symbol": "RP",
+      "singularUnit": "point",
+      "pluralUnit": "points"
+    },
+    "baseRate": {
+      "rate": 1,
+      "spendUnit": 200,
+      "effectivePercentage": 0.005,
+      "note": "1 RP per Rs. 200 on other purchases (0.5%)"
+    },
+    "earningText": "Earn 10 Reward Points per Rs. 100 spent on Apollo 24|7 and Apollo Pharmacy. Earn 2 Reward Points per Rs. 100 spent on Dining, Movies & Entertainment, and Travel. Earn 1 Reward Point per Rs. 200 spent on other purchases.",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "Rent payments",
+        "Wallet loads",
+        "Government payments",
+        "Insurance premium payments",
+        "EMI transactions",
+        "Cash withdrawals",
+        "Balance transfers",
+        "Fee/charges payments"
+      ],
+      "mccs": ["5541", "5542", "5983", "6513", "9311", "9222", "4900", "6540", "6541"],
+      "note": "Fuel transactions are excluded from rewards but eligible for surcharge waiver"
+    },
+
+    "caps": {
+      "monthly": {
+        "points": 5000,
+        "note": "5,000 RP per statement cycle per category (Apollo spends and non-Apollo accelerated spends capped separately)"
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": "statement",
+      "perTransaction": null,
+      "beyondCapRate": {
+        "apollo": "0.5% after 5,000 RP cap on Apollo spends worth Rs. 50,000",
+        "other": "0.5% after 5,000 RP cap on non-Apollo spends worth Rs. 2,50,000"
+      }
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "24 months",
+      "condition": "From date of earning"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": null,
+        "cashback": null,
+        "vouchers": "Apollo 24|7 e-Gift Voucher worth Rs. 1,500",
+        "spendCondition": {
+          "amount": null,
+          "period": null,
+          "transactionCount": null
+        },
+        "validity": "On payment of joining fee",
+        "description": "Get Apollo 24|7 e-Gift Voucher worth Rs. 1,500 on payment of joining fee. Voucher valid for 12 months, redeemable at Apollo Pharmacy (offline and online via Apollo 24|7 app/website)."
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "apollo": {
+        "rate": 10,
+        "spendUnit": 100,
+        "effectivePercentage": 0.10,
+        "cap": 5000,
+        "capPeriod": "statement cycle",
+        "capSpend": 50000,
+        "merchants": ["Apollo 24|7 App", "Apollo 24|7 Website", "Apollo Pharmacy stores", "Apollo Diagnostics", "Apollo Medical Centres"],
+        "note": "10 RP per Rs. 100 (10%). Combined with Apollo Circle benefits, total value back up to 25%."
+      },
+      "dining": {
+        "rate": 2,
+        "spendUnit": 100,
+        "effectivePercentage": 0.02,
+        "cap": 5000,
+        "capPeriod": "statement cycle (combined with movies/entertainment/travel)",
+        "merchants": ["Restaurants", "Food delivery apps"],
+        "note": "2 RP per Rs. 100 (2%)"
+      },
+      "movies": {
+        "rate": 2,
+        "spendUnit": 100,
+        "effectivePercentage": 0.02,
+        "cap": 5000,
+        "capPeriod": "statement cycle (combined with dining/entertainment/travel)",
+        "merchants": ["Cinema halls", "Movie ticketing platforms"],
+        "note": "2 RP per Rs. 100 (2%)"
+      },
+      "entertainment": {
+        "rate": 2,
+        "spendUnit": 100,
+        "effectivePercentage": 0.02,
+        "cap": 5000,
+        "capPeriod": "statement cycle (combined with dining/movies/travel)",
+        "note": "2 RP per Rs. 100 (2%)"
+      },
+      "travel": {
+        "rate": 2,
+        "spendUnit": 100,
+        "effectivePercentage": 0.02,
+        "cap": 5000,
+        "capPeriod": "statement cycle (combined with dining/movies/entertainment)",
+        "merchants": ["Airlines", "Hotels", "Travel agencies", "Railways"],
+        "note": "2 RP per Rs. 100 (2%)"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on fuel transactions. Fuel surcharge waiver available separately."
+      },
+      "groceries": {
+        "rate": 1,
+        "spendUnit": 200,
+        "effectivePercentage": 0.005,
+        "cap": null,
+        "capPeriod": null,
+        "note": "Standard base rate of 1 RP per Rs. 200 (0.5%)"
+      },
+      "utilities": {
+        "rate": 1,
+        "spendUnit": 200,
+        "effectivePercentage": 0.005,
+        "cap": null,
+        "note": "Standard base rate. 1% fee applies if utility payments exceed Rs. 50,000 in billing cycle."
+      },
+      "international": {
+        "rate": 1,
+        "spendUnit": 200,
+        "effectivePercentage": 0.005,
+        "cap": null,
+        "note": "Standard base rate applies"
+      },
+      "insurance": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on insurance premium payments"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on rent payments. Rs. 199 processing fee applies."
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on wallet loads. 1% fee on wallet loads exceeding Rs. 1,000 (from Nov 2025)."
+      },
+      "other": {
+        "rate": 1,
+        "spendUnit": 200,
+        "effectivePercentage": 0.005,
+        "cap": null,
+        "note": "1 RP per Rs. 200 (0.5%)"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": false,
+        "name": null,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "link": null,
+        "note": null
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": [],
+        "note": null
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": []
+      },
+      "milestoneAccelerators": []
+    },
+
+    "redemption": {
+      "baseValue": 1.0,
+      "bestValue": 1.0,
+      "bestOption": "Convert to Apollo Health Credits at 1:1 ratio",
+      "minRedemption": null,
+      "redemptionIncrement": null,
+      "convenienceFee": 99,
+      "monthlyRedemptionLimit": null,
+
+      "pointsPlusPay": {
+        "enabled": false,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": null,
+        "note": null
+      },
+
+      "options": [
+        {
+          "type": "health_credits",
+          "value": 1.0,
+          "description": "Convert to Apollo Health Credits",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["Apollo 24|7", "Apollo Pharmacy", "Apollo Diagnostics", "Apollo Medical Centres"],
+          "note": "1 Reward Point = 1 Health Credit = Re. 1. Health Credits can be used for medicines, doctor consultations, diagnostic tests, and other Apollo services."
+        }
+      ],
+      "restrictions": "Reward Points can only be redeemed as Apollo Health Credits. No cash redemption, statement credit, or gift voucher options available.",
+      "redemptionMethod": "Via SBI Card Mobile App or Website only"
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": [],
+      "partners": [],
+      "currentBonus": null
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": [],
+      "acrossUsers": false,
+      "note": null
+    },
+
+    "specialLogic": {
+      "apolloCircleBenefits": {
+        "enabled": true,
+        "description": "Built-in Apollo Circle membership provides additional Health Credits on top of Reward Points",
+        "benefits": {
+          "medicines": "Up to 15% Value Back as Health Credits on medicines",
+          "diagnostics": "Up to 20% Value Back as Health Credits on diagnostic services",
+          "freeTest": "One free test (HbA1c, TSH, or CBC) per year",
+          "doctorConsultations": "Up to Rs. 150 savings on doctor consultations",
+          "freeDelivery": "Free home delivery of medicines"
+        },
+        "totalValueBack": "Up to 25% (10% Reward Points + 15% Health Credits on medicines)"
+      }
+    },
+
+    "calculator": {
+      "enabled": true,
+      "formula": "apolloPoints = (apolloSpend / 100) * 10; acceleratedPoints = (acceleratedSpend / 100) * 2; basePoints = (otherSpend / 200) * 1",
+      "variables": ["apolloSpend", "diningSpend", "travelSpend", "entertainmentSpend", "otherSpend"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": true,
+        "complimentaryCount": 4,
+        "period": "year",
+        "perQuarter": 1,
+        "accessType": "SBI Card Lounge Program",
+        "accessProvider": "DreamFolks / Mastercard Lounge / RuPay network lounges",
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "No spend requirement for domestic lounge access"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "eligibleLounges": "https://www.sbicard.com/en/personal/credit-cards/lounge-access.page",
+        "validationFee": {
+          "rupay": 2,
+          "mastercard": 25,
+          "note": "Rs. 2 (RuPay/Visa) or Rs. 25 hold (Mastercard) for card validation at lounge POS"
+        }
+      },
+      "international": {
+        "included": true,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": "Priority Pass Membership",
+        "accessProvider": "Priority Pass",
+        "membershipValue": 99,
+        "membershipValueCurrency": "USD",
+        "membershipDuration": "2 years",
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "Complimentary Priority Pass membership but no free lounge visits. Visits charged at up to USD 27 + taxes per visit."
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": "USD 27 + taxes"
+        },
+        "eligibleLounges": "https://www.prioritypass.com/lounges",
+        "note": "2-year complimentary Priority Pass membership worth $99. International lounge visits are chargeable at up to USD 27 per visit."
+      }
+    },
+
+    "milestones": [
+      {
+        "spend": 50000,
+        "period": "within 90 days of joining",
+        "benefit": "Complimentary Comprehensive Health Check-up Package",
+        "benefitType": "health checkup",
+        "value": 1999,
+        "conditions": "Link to book diagnostic test sent via SMS/email after qualification",
+        "recurring": false
+      },
+      {
+        "spend": 50000,
+        "period": "within 90 days of card anniversary each year",
+        "benefit": "Complimentary Comprehensive Health Check-up Package",
+        "benefitType": "health checkup",
+        "value": 1999,
+        "conditions": "Available from second membership year onwards",
+        "recurring": true
+      },
+      {
+        "spend": 300000,
+        "period": "previous membership year",
+        "benefit": "Annual Fee Waiver",
+        "benefitType": "fee waiver",
+        "value": 1499,
+        "conditions": "Fee waiver preconditioned on fee being levied during renewal cycle",
+        "recurring": true
+      },
+      {
+        "spend": 600000,
+        "period": "annual",
+        "benefit": "Complimentary Noise Smartwatch",
+        "benefitType": "gift",
+        "value": 7999,
+        "conditions": null,
+        "recurring": true
+      }
+    ],
+
+    "healthBenefits": {
+      "fitpassMembership": {
+        "included": true,
+        "value": null,
+        "duration": "1 year",
+        "type": "FITPASS PRO",
+        "condition": "On payment of joining fee and completion of at least one retail transaction"
+      },
+      "apolloCircle": {
+        "included": true,
+        "value": null,
+        "duration": "As long as card is held",
+        "benefits": [
+          "Up to 15% Value Back as Health Credits on medicines",
+          "Up to 20% Value Back as Health Credits on diagnostic services",
+          "One free test (HbA1c, TSH, or CBC) per year",
+          "Up to Rs. 150 savings on doctor consultations",
+          "Free home delivery of medicines",
+          "Rs. 1 Lakh Accidental cover"
+        ]
+      },
+      "healthCheckup": {
+        "included": true,
+        "value": 1999,
+        "condition": "Spend Rs. 50,000 within 90 days of joining and on each anniversary"
+      }
+    },
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": null,
+      "lessonIncluded": null,
+      "note": null
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": null
+    },
+
+    "dining": {
+      "included": false,
+      "programs": [],
+      "hotelDining": {
+        "included": false,
+        "hotels": null,
+        "offer": null
+      }
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 500,
+      "maxTransaction": 4000,
+      "monthlyCap": 100,
+      "applicableStations": "All fuel stations in India",
+      "rewardsOnFuel": false,
+      "note": "1% fuel surcharge waiver (excluding GST) on transactions between Rs. 500 and Rs. 4,000. Maximum waiver Rs. 100 per statement cycle per card."
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% foreign currency transaction fee + GST",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "fee": 3.5,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "Foreign currency transaction fee and DCC fee not reversed in case of transaction refunds"
+    },
+
+    "concierge": {
+      "included": false,
+      "availability": null,
+      "type": null,
+      "services": [],
+      "contactNumber": null,
+      "note": null
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": [],
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "Flexipay",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Select merchants and products"],
+        "note": "No-cost EMI on select merchants and products"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": null,
+        "minFee": null
+      },
+      "minAmount": 2500,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": null,
+        "max": null
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": null
+      },
+      "cancellationPeriod": null,
+      "note": "Convert transactions of Rs. 2,500 or more to EMI. Request must be made within 30 days of purchase via sbicard.com."
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": 0,
+        "promotionalPeriod": "60 days",
+        "regular": 0.017
+      },
+      "processingFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "tenures": [60, 180],
+      "maxAmount": "Up to 75% of available credit limit",
+      "minAmount": 5000,
+      "preclosureFee": null,
+      "note": "Transfer balances from other bank credit cards. 0% for 60 days, 1.7% p.m. (20.40% p.a.) for 180 days."
+    },
+
+    "memberships": [
+      {
+        "name": "Apollo Circle",
+        "type": "health benefits",
+        "value": null,
+        "duration": "As long as card is held",
+        "condition": "Built-in with card",
+        "note": "Complimentary Apollo Circle membership with up to 25% value back on medicines, discounts on diagnostics, doctor consultations, and more"
+      },
+      {
+        "name": "FITPASS PRO",
+        "type": "fitness subscription",
+        "value": null,
+        "duration": "1 year",
+        "condition": "On payment of joining fee and at least one retail transaction",
+        "note": "Complimentary 1-year FITPASS PRO membership"
+      },
+      {
+        "name": "Priority Pass",
+        "type": "lounge access",
+        "value": 99,
+        "valueCurrency": "USD",
+        "duration": "2 years",
+        "condition": "On card issuance",
+        "note": "Complimentary Priority Pass membership. Lounge visits chargeable at up to USD 27 + taxes."
+      }
+    ],
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "condition": null,
+      "note": "Air accident insurance has been discontinued by SBI Card from July 2025"
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": null,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": null,
+      "fraudLiability": {
+        "included": true,
+        "cover": null,
+        "reportingWindow": "Report within 7 days of noticing loss/theft",
+        "provider": "ICICI Lombard General Insurance / Other insurer as decided by SBI Card"
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "apolloCircleAccidentCover": {
+      "included": true,
+      "cover": 100000,
+      "note": "Rs. 1 Lakh Accidental cover included as part of Apollo Circle benefits"
+    },
+    "note": "Insurance benefits are limited. Air accident insurance has been discontinued from July 2025. Lost card liability protection available."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000
+    },
+    "virtualCard": {
+      "available": false,
+      "instantIssuance": false,
+      "singleUse": false,
+      "spendControls": false
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true,
+      "note": "RuPay variant can be linked to UPI apps. Mastercard variant cannot be linked to UPI apps."
+    },
+    "upiLinking": {
+      "available": true,
+      "rewardsOnUPI": true,
+      "condition": "Only RuPay variant can be linked to UPI",
+      "note": "Earn rewards on RuPay credit card UPI transactions. Transaction limits set by NPCI apply."
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Real-time alerts"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    },
+    "eStatement": {
+      "available": true,
+      "subscription": "SMS ESR <email id> to 56767 from registered mobile number"
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [],
+    "upgradesTo": [],
+    "note": "No specific upgrade pathway documented. Card issuance based on Apollo 24|7 relationship and creditworthiness."
+  },
+
+  "meta": {
+    "tags": [
+      "Healthcare",
+      "Co-branded",
+      "Apollo",
+      "Pharmacy Rewards",
+      "Wellness",
+      "Mid-tier",
+      "RuPay",
+      "Mastercard",
+      "UPI-enabled"
+    ],
+    "bestFor": "Individuals and families with regular Apollo pharmacy and healthcare expenses who want to maximize savings on medicines, diagnostics, and doctor consultations",
+    "notRecommendedFor": "Users who don't use Apollo services regularly, those seeking flexible reward redemption options, or travelers wanting premium lounge access and travel insurance",
+    "rating": {
+      "overall": 3.8,
+      "rewards": 4.0,
+      "benefits": 3.5,
+      "value": 4.0
+    },
+    "verdict": "The Apollo SBI Card SELECT is India's first dedicated healthcare credit card, offering exceptional value for regular Apollo users with up to 25% value back on medicines. While the reward redemption is restricted to Apollo Health Credits only, the card justifies its Rs. 1,499 fee through a Rs. 1,500 welcome voucher, free health checkups, FITPASS membership, and Apollo Circle benefits. The domestic lounge access and Priority Pass membership add lifestyle value, though international lounge visits are chargeable. Best suited for households with significant healthcare expenses at Apollo.",
+    "pros": [
+      "Up to 25% value back on Apollo spends (10% RP + 15% Circle benefits)",
+      "1 Reward Point = Re. 1 (excellent redemption value)",
+      "Rs. 1,500 welcome voucher covers joining fee",
+      "Complimentary 1-year FITPASS PRO membership",
+      "Free comprehensive health checkup on spending milestones",
+      "Built-in Apollo Circle membership",
+      "4 complimentary domestic lounge visits per year",
+      "RuPay variant supports UPI linking",
+      "No spend requirement for lounge access"
+    ],
+    "cons": [
+      "Reward redemption restricted to Apollo Health Credits only",
+      "Low base reward rate of 0.5% on non-accelerated spends",
+      "No free international lounge visits despite Priority Pass membership",
+      "3.5% forex markup is high",
+      "No air accident or comprehensive travel insurance",
+      "Limited transfer partners or redemption flexibility",
+      "Requires Apollo 24|7 account for application",
+      "Air accident insurance discontinued from July 2025"
+    ],
+    "alternatives": [
+      "sbi-pulse",
+      "hdfc-millennia",
+      "axis-flipkart",
+      "icici-coral"
+    ],
+    "lastVerified": "2026-01-06",
+    "dataSource": [
+      "Official SBI Card website - https://www.sbicard.com/en/personal/credit-cards/rewards/apollo-sbi-card-select.page",
+      "SBI Card MITC document - December 2025",
+      "Apollo 24|7 FAQs - https://www.apollo247.com/apollo-sbi-credit-card-faqs",
+      "SBI Card Apollo SELECT FAQ PDF",
+      "CardInsider.com",
+      "TechnoFino community discussions",
+      "PaisaBazaar.com",
+      "CardMaven.in"
+    ],
+    "changelog": [
+      {
+        "date": "2025-05",
+        "change": "Card launched by SBI Card in partnership with Apollo HealthCo",
+        "source": "Economic Times / SBI Card press release"
+      },
+      {
+        "date": "2025-07-15",
+        "change": "Air accident insurance discontinued for SBI Cards including Apollo SELECT",
+        "source": "SBI Card official communication"
+      },
+      {
+        "date": "2025-11-01",
+        "change": "Fee on education payments via third-party apps and wallet loads introduced",
+        "source": "SBI Card MITC update"
+      },
+      {
+        "date": "2026-01-01",
+        "change": "Updated lounge validation charges and access rules",
+        "source": "Business Standard / SBI Card website"
+      }
+    ]
+  }
+}

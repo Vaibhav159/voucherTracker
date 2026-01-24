@@ -1,0 +1,1225 @@
+{
+  "id": "icici-times-black",
+  "name": "Times Black ICICI Bank Credit Card",
+  "bank": "ICICI Bank",
+  "slug": "times-black-icici-bank-credit-card",
+  "image": "assets/cards/icici/times-black.png",
+  "link": "https://www.timesblack.com/login",
+  "isActive": true,
+
+  "network": {
+    "type": "Visa",
+    "variant": "Infinite",
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "super-premium",
+    "isCobranded": true,
+    "cobrandPartner": {
+      "name": "Times Internet Ltd.",
+      "type": "Media & Digital",
+      "loyaltyProgram": "Times Black"
+    },
+    "material": "metal"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 20000,
+      "gst": 3600,
+      "totalWithGST": 23600,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 20000,
+      "gst": 3600,
+      "totalWithGST": 23600,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 2500000,
+        "spendPeriod": "anniversary year",
+        "waiverText": "Spend ₹25 lakh in an anniversary year to get annual fee waived for the next year"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": 0,
+      "joiningFee": 3500,
+      "annualFee": 3500,
+      "rewardSharing": true,
+      "priorityPassIncluded": true,
+      "loungeAccess": true
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on Total Amount Due",
+      "gracePeriod": "3 days after due date",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 100, "fee": 0},
+        {"minAmount": 101, "maxAmount": 500, "fee": 100},
+        {"minAmount": 501, "maxAmount": 10000, "fee": 500},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 600},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 800},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1100}
+      ],
+      "note": "Late payment charges are not applicable on ICICI Emeralde Credit Cards - Times Black status to be confirmed with MITC"
+    },
+    "overLimit": {
+      "amount": 500,
+      "percentage": 2.5,
+      "note": "2.5% of over-limit amount, minimum ₹500"
+    },
+    "chequeReturn": 450,
+    "cardReplacement": 200,
+    "duplicateStatement": 100,
+    "cashPaymentAtBranch": 100
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 200000,
+        "annual": 2400000
+      },
+      "selfEmployed": {
+        "itr": 2400000
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 60,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": "Easy approval for existing ICICI customers; instant approval possible"
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident",
+    "kycOptions": ["Video KYC (24/7)", "In-Person KYC", "Branch Visit"]
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 300000,
+      "max": 2000000
+    },
+    "factors": "Based on income, credit score, existing ICICI relationship, and credit history",
+    "enhancementCriteria": "Good repayment history and increased spending pattern"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": 48,
+      "note": "Interest-free period of up to 48 days from statement date if previous balance paid in full"
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 200,
+      "calculation": "5% of total outstanding or ₹200, whichever is higher"
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": 20,
+    "dailyLimit": null,
+    "interestFromDay1": true,
+    "availableAfter": "180 days from card issuance",
+    "note": "No interest-free period on cash advances"
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "ICICI Bank Reward Points",
+      "symbol": "RP",
+      "singularUnit": "reward point",
+      "pluralUnit": "reward points"
+    },
+    "baseRate": {
+      "domestic": {
+        "rate": 2,
+        "spendUnit": 100,
+        "effectivePercentage": 0.02
+      },
+      "international": {
+        "rate": 2.5,
+        "spendUnit": 100,
+        "effectivePercentage": 0.025
+      }
+    },
+    "earningText": "Earn 2% reward points on domestic transactions and 2.5% on international transactions",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "Rent payments",
+        "EMI transactions",
+        "Wallet loads (as per utility cap)"
+      ],
+      "mccs": null,
+      "note": "Reward points earned on fuel, rent, and EMI transactions will be reversed"
+    },
+
+    "caps": {
+      "monthly": {
+        "points": 5000,
+        "categories": ["Utilities", "Insurance Premium", "Education", "Government Payments"],
+        "note": "Combined cap of 5,000 reward points per statement cycle for capped categories"
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": "statement",
+      "perTransaction": null
+    },
+
+    "expiry": {
+      "hasExpiry": false,
+      "period": null,
+      "condition": "Points never expire but will be forfeited if card remains inactive for 365+ days"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": null,
+        "cashback": null,
+        "vouchers": [
+          {
+            "name": "EaseMyTrip Hotel Voucher OR Lohono Stays Voucher",
+            "value": "₹10,000 or ₹12,000",
+            "type": "Travel"
+          },
+          {
+            "name": "Visa Services (Atlys + OneVasco)",
+            "value": 10000,
+            "type": "Travel Visa"
+          },
+          {
+            "name": "Toni & Guy Gift Card",
+            "value": 3000,
+            "type": "Lifestyle"
+          },
+          {
+            "name": "Interflora Gift Card",
+            "value": 1000,
+            "type": "Lifestyle"
+          },
+          {
+            "name": "Zomato Gold Membership",
+            "value": 1499,
+            "type": "Dining",
+            "duration": "1 year"
+          },
+          {
+            "name": "The Quorum Club Access",
+            "value": null,
+            "type": "Lifestyle",
+            "note": "Dining discounts, exclusive events access, co-working space perks"
+          }
+        ],
+        "spendCondition": null,
+        "validity": "1 year from date of receiving email notification",
+        "description": "Welcome benefits available upon payment of joining fee in first billing cycle"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": true,
+        "benefits": [
+          "Luxury Stay Gift Card",
+          "Travel Visa Benefits (lounge access, concierge support)",
+          "The Quorum Club Access",
+          "Lifestyle Gift Cards",
+          "Zomato Gold Membership"
+        ],
+        "condition": "On payment of renewal fee after 12 months"
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "travel": {
+        "rate": 2,
+        "spendUnit": 100,
+        "multiplier": 1,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "mccs": null,
+        "note": "Base 2% rate; use iShop for accelerated rewards"
+      },
+      "dining": {
+        "rate": 2,
+        "spendUnit": 100,
+        "multiplier": 1,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "note": "Base 2% rate"
+      },
+      "online": {
+        "rate": 2,
+        "spendUnit": 100,
+        "multiplier": 1,
+        "cap": null,
+        "capPeriod": null,
+        "note": "Base 2% rate on all online transactions except excluded categories"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on fuel transactions; points will be reversed"
+      },
+      "groceries": {
+        "rate": 2,
+        "spendUnit": 100,
+        "multiplier": 1,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null
+      },
+      "utilities": {
+        "rate": 2,
+        "spendUnit": 100,
+        "cap": 5000,
+        "capPeriod": "statement cycle",
+        "note": "Part of combined 5,000 points cap with insurance, education, govt payments"
+      },
+      "international": {
+        "rate": 2.5,
+        "spendUnit": 100,
+        "multiplier": 1.25,
+        "cap": null,
+        "note": "2.5% reward rate on all international transactions"
+      },
+      "insurance": {
+        "rate": 2,
+        "spendUnit": 100,
+        "cap": 5000,
+        "capPeriod": "statement cycle",
+        "note": "Part of combined 5,000 points cap"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on rent payments; points will be reversed"
+      },
+      "walletLoads": {
+        "rate": 2,
+        "cap": 5000,
+        "capPeriod": "statement cycle",
+        "note": "Part of utility cap; considered under utilities"
+      },
+      "education": {
+        "rate": 2,
+        "spendUnit": 100,
+        "cap": 5000,
+        "capPeriod": "statement cycle",
+        "note": "Part of combined 5,000 points cap; 1% fee on third-party education payments"
+      },
+      "governmentPayments": {
+        "rate": 2,
+        "spendUnit": 100,
+        "cap": 5000,
+        "capPeriod": "statement cycle",
+        "note": "Part of combined 5,000 points cap; includes tax, court, postal payments"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": true,
+        "name": "iShop",
+        "link": "https://www.icicibank.com/ishop",
+        "multipliers": {
+          "flights": {
+            "multiplier": 6,
+            "effectiveRate": 0.12,
+            "note": "6X reward points (12% return) on flight bookings"
+          },
+          "hotels": {
+            "multiplier": 12,
+            "effectiveRate": 0.24,
+            "note": "12X reward points (24% return) on hotel bookings"
+          },
+          "vouchers": {
+            "multiplier": 6,
+            "effectiveRate": 0.12,
+            "note": "6X reward points (12% return) on shopping vouchers; 2.5-3% processing fee on select brands"
+          }
+        },
+        "caps": {
+          "daily": 8000,
+          "monthly": 15000,
+          "note": "Accelerated Reward Points capped at 8,000 per day and 15,000 per calendar month"
+        },
+        "redemptionRules": {
+          "flights": {
+            "maxPointsPercentage": 100,
+            "note": "Use 100% reward points for flight bookings"
+          },
+          "hotels": {
+            "maxPointsPercentage": 90,
+            "note": "Use up to 90% reward points, remaining 10% via card"
+          },
+          "vouchers": {
+            "maxPointsPercentage": 50,
+            "note": "Use up to 50% reward points, remaining via card"
+          }
+        },
+        "redemptionFee": {
+          "amount": 0,
+          "note": "No redemption fee for Times Black card (₹99 + GST for other ICICI cards)"
+        }
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": [],
+        "note": "No specific partner merchant accelerators outside iShop"
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": []
+      },
+      "milestoneAccelerators": []
+    },
+
+    "redemption": {
+      "baseValue": 0.40,
+      "bestValue": 1.0,
+      "bestOption": "Product/voucher redemption via ICICI Bank Netbanking or iShop at 1 RP = ₹1",
+      "minRedemption": null,
+      "redemptionIncrement": null,
+      "convenienceFee": 0,
+      "monthlyRedemptionLimit": null,
+
+      "pointsPlusPay": {
+        "enabled": true,
+        "note": "Variable percentage based on redemption type via iShop"
+      },
+
+      "options": [
+        {
+          "type": "products_vouchers",
+          "value": 1.0,
+          "description": "Products and vouchers via ICICI Bank Netbanking/iShop",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["ICICI Bank Rewards Portal", "iShop"],
+          "note": "Best value redemption at 1 RP = ₹1"
+        },
+        {
+          "type": "travel",
+          "value": 1.0,
+          "description": "Flight & Hotel bookings via iShop",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["iShop"],
+          "note": "Use up to 100% points on flights, 90% on hotels"
+        },
+        {
+          "type": "statement_credit",
+          "value": 0.40,
+          "description": "Cashback / Statement credit",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": [],
+          "note": "Lowest value at 1 RP = ₹0.40 - avoid if possible"
+        },
+        {
+          "type": "rewards_catalogue",
+          "value": 0.60,
+          "description": "Rewards catalogue products",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["ICICI Bank Rewards Portal"],
+          "note": "1 RP = ₹0.60 on rewards catalogue"
+        },
+        {
+          "type": "airmiles",
+          "value": 1.0,
+          "description": "Transfer to Air India Maharaja Club",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["Air India Maharaja Club"],
+          "note": "1:1 transfer ratio for Times Black card (no minimum requirement)"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": true,
+      "eligibleCards": ["icici-times-black", "icici-emeralde-private-metal"],
+      "partners": [
+        {
+          "name": "Air India Maharaja Club",
+          "type": "airline",
+          "program": "Maharaja Club",
+          "alliance": "Star Alliance",
+          "ratio": {
+            "cardPoints": 1,
+            "partnerPoints": 1,
+            "display": "1:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "5 working days",
+          "transferMethod": "ICICI Bank Rewards Portal / iMobile Pay",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "No minimum requirement for Times Black cardholders"
+        }
+      ],
+      "currentBonus": {
+        "active": false,
+        "bonusPercentage": null,
+        "validUntil": null,
+        "applicablePartners": []
+      }
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": null,
+      "acrossUsers": false,
+      "note": "Points pooling across cards not available"
+    },
+
+    "specialLogic": null,
+
+    "calculator": {
+      "enabled": true,
+      "link": "https://www.timesblack.com/credit-card-benefits-calculator",
+      "formula": "basePoints = (spend / 100) * rate; For iShop: bonusPoints = spend * multiplier",
+      "variables": ["spend", "category", "isiShop", "isInternational"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": true,
+        "complimentaryCount": "Unlimited",
+        "period": null,
+        "accessType": "Visa Infinite / Card-based",
+        "accessProvider": "DreamFolks / Visa",
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "No spend requirement for lounge access"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "eligibleLounges": "https://www.visa.co.in/en_in/support/consumer/visa-infinite.html",
+        "specialLounges": {
+          "enabled": true,
+          "lounges": ["Encalm Privé Lounge (Delhi) - Business Class Lounge"],
+          "note": "One of the only credit cards with access to Encalm Privé business class lounge"
+        }
+      },
+      "international": {
+        "included": true,
+        "complimentaryCount": "Unlimited",
+        "period": null,
+        "accessType": "Priority Pass",
+        "accessProvider": "Priority Pass",
+        "membershipValue": null,
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "No spend requirement for lounge access"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "eligibleLounges": "https://www.prioritypass.com/airport-lounges",
+        "addOnCardholderAccess": true,
+        "note": "Complimentary Priority Pass membership for both primary and add-on cardholders"
+      }
+    },
+
+    "milestones": [
+      {
+        "spend": 200000,
+        "period": "annual",
+        "benefit": "Klook international experiences voucher",
+        "benefitType": "voucher",
+        "value": 10000,
+        "conditions": "Redeemable via Times Black app within 6 months of notification"
+      },
+      {
+        "spend": 500000,
+        "period": "annual",
+        "benefit": "Airport transfer voucher (2 sedan pickups by Avis/ITH OR 1 helicopter by BLADE from Bangalore Airport)",
+        "benefitType": "voucher",
+        "value": 10000,
+        "conditions": "WeWork day passes also available as alternative; via Times Black Mobility Wallet"
+      },
+      {
+        "spend": 1000000,
+        "period": "annual",
+        "benefit": "Tata CLiQ Luxury gift card",
+        "benefitType": "voucher",
+        "value": 10000,
+        "conditions": "Redeemable via Times Black app within 6 months of notification"
+      },
+      {
+        "spend": 2000000,
+        "period": "annual",
+        "benefit": "One-night luxury stay at Ayatana or Lohono OR Lohono Stays voucher",
+        "benefitType": "voucher",
+        "value": 20000,
+        "conditions": "Redeemable via Times Black app within 6 months of notification"
+      },
+      {
+        "spend": 2500000,
+        "period": "annual",
+        "benefit": "Annual fee waiver for next year",
+        "benefitType": "fee_waiver",
+        "value": 23600,
+        "conditions": "Automatic waiver; email notification within 45 business days"
+      }
+    ],
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": false,
+      "lessonIncluded": false,
+      "note": null
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": "Movie cancellation charges covered under zero cancellation benefit"
+    },
+
+    "dining": {
+      "included": true,
+      "programs": [
+        {
+          "name": "Zomato Gold",
+          "discount": "Complimentary membership",
+          "cap": null,
+          "frequency": "Annual",
+          "note": "Included as welcome/renewal benefit"
+        },
+        {
+          "name": "The Quorum Club",
+          "discount": "20% off at exclusive restaurants",
+          "cap": null,
+          "frequency": null,
+          "note": "Access to dining discounts at Quorum Club partner restaurants"
+        }
+      ],
+      "hotelDining": {
+        "included": false,
+        "hotels": null,
+        "offer": null
+      }
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": null,
+      "maxTransaction": 4000,
+      "monthlyCap": 100000,
+      "applicableStations": "All fuel stations in India",
+      "rewardsOnFuel": false,
+      "note": "1% fuel surcharge waiver; max benefit up to ₹1 lakh per month on fuel spends up to ₹4,000"
+    },
+
+    "forex": {
+      "markupPercentage": 1.49,
+      "markupText": "1.49% on international transactions (significantly lower than industry standard of 3.5%)",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "recommendation": "Always decline DCC and pay in local currency to avoid additional 1% fee"
+      },
+      "crossCurrencyCharges": 1.49,
+      "note": "One of the lowest forex markup rates among Indian credit cards"
+    },
+
+    "concierge": {
+      "included": true,
+      "availability": "24/7",
+      "type": "i-Assist + CribLife Concierge",
+      "services": [
+        "Travel bookings",
+        "Restaurant reservations",
+        "Event tickets",
+        "Gift procurement",
+        "General information",
+        "CribLife lifestyle management (6 exclusive personalized requests)"
+      ],
+      "contactNumber": "1800 26 70731 (toll-free MTNL/BSNL) or 022 6787 2016",
+      "note": "CribLife concierge for premium lifestyle requests including concert tickets and elite dining reservations"
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": null,
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "ICICI Bank EMI",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Amazon", "Flipkart", "Select Partners"],
+        "note": "No-cost EMI on select merchants and products"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": null,
+        "minFee": null
+      },
+      "minAmount": 2500,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": 0.12,
+        "max": 0.18
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": null
+      },
+      "cancellationPeriod": null,
+      "note": null
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": 0.035
+      },
+      "processingFee": {
+        "percentage": 1,
+        "minFee": 199
+      },
+      "tenures": [6, 12, 18, 24],
+      "maxAmount": null,
+      "preclosureFee": 3,
+      "note": null
+    },
+
+    "memberships": [
+      {
+        "name": "Zomato Gold",
+        "type": "subscription",
+        "value": 1499,
+        "duration": "1 year",
+        "condition": "Welcome and renewal benefit",
+        "note": "Annual complimentary membership"
+      },
+      {
+        "name": "The Quorum Club Access",
+        "type": "club",
+        "value": null,
+        "duration": "While card is active",
+        "condition": "Welcome benefit",
+        "note": "20% dining discounts, exclusive events access, co-working space perks, 15% discount on memberships"
+      }
+    ],
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": true,
+        "count": 1,
+        "condition": "On spending ₹20 lakh (milestone benefit)",
+        "maxValue": 20000,
+        "note": "At Ayatana or Lohono properties"
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    },
+
+    "visaServices": {
+      "included": true,
+      "providers": ["Atlys", "OneVasco"],
+      "value": 10000,
+      "services": [
+        "Doorstep biometric visa services",
+        "Visa fee waivers/discounts",
+        "Complimentary lounge vouchers",
+        "Processing charge waivers"
+      ],
+      "note": "Welcome benefit; covers Atlys service fee (not embassy fee)"
+    },
+
+    "airportTransfer": {
+      "included": true,
+      "condition": "On spending ₹5 lakh annually",
+      "options": [
+        {
+          "type": "Sedan",
+          "provider": "Avis / Indian Travel House",
+          "count": 2,
+          "value": 5000,
+          "coverage": "Pan India"
+        },
+        {
+          "type": "Helicopter",
+          "provider": "BLADE India",
+          "count": 1,
+          "value": 10000,
+          "coverage": "Bangalore Airport to select destinations only"
+        }
+      ],
+      "note": "Via Times Black Mobility Wallet on Times Black app"
+    },
+
+    "zeroCancellation": {
+      "included": true,
+      "coverage": {
+        "flights": true,
+        "hotels": true,
+        "movies": true
+      },
+      "maxLimit": 12000,
+      "maxIncidents": 2,
+      "period": "year",
+      "conditions": [
+        "Transaction must be done using Times Black card",
+        "Only 4/5 star hotels eligible",
+        "Domestic bookings only",
+        "First two cancellations covered",
+        "Non-refundable amount covered (excluding convenience charges)"
+      ],
+      "note": "Covers cancellation charges up to ₹12,000 per year for first 2 incidents"
+    },
+
+    "events": {
+      "included": true,
+      "types": [
+        "ET Awards",
+        "Curated dining experiences with celebrity chefs",
+        "Exclusive Times Group events",
+        "The Quorum Club events"
+      ],
+      "note": "Exclusive access to premium events via Times Black app"
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": true,
+      "cover": 30000000,
+      "condition": "Death only; ticket must be purchased using covered card"
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": true,
+      "cover": 84000,
+      "perBag": null,
+      "condition": "Total loss of checked baggage on international flight"
+    },
+    "baggageDelay": {
+      "included": true,
+      "cover": 21000,
+      "delayHours": 12,
+      "perDay": null,
+      "condition": "For emergency purchase of basic essential items"
+    },
+    "flightDelay": {
+      "included": true,
+      "cover": 17500,
+      "delayHours": 12,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": true,
+      "cover": 12000,
+      "coveredReasons": null,
+      "cancelForAnyReason": false,
+      "note": "Via zero cancellation feature"
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": true,
+      "cover": 21000,
+      "minimumDelay": "3 hours"
+    },
+    "emergencyMedical": {
+      "included": true,
+      "cover": 50000,
+      "overseas": false,
+      "condition": "Medical expenses for bodily injury from rail/road accident"
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": 50000,
+      "fraudLiability": {
+        "included": true,
+        "cover": 50000,
+        "reportingWindow": "7 days from date of notification of fraud"
+      }
+    },
+    "purchaseProtection": {
+      "included": true,
+      "cover": 140000,
+      "period": 90,
+      "perClaim": null,
+      "annualLimit": 140000,
+      "coveredEvents": ["Fire", "Burglary"],
+      "geographicLimit": "India",
+      "note": "Cover against fire and burglary at cardholder's residential premises"
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "planeHijacking": {
+      "included": true,
+      "cover": 100000,
+      "condition": "If not released within 12 hours; USD 250/hour equivalent",
+      "maxHours": null
+    },
+    "creditShield": {
+      "included": true,
+      "cover": 100000,
+      "condition": "Cover for card debits in event of accidental death of cardholder"
+    },
+    "lostPassport": {
+      "included": true,
+      "cover": 35000,
+      "condition": "Reimbursement for procuring travel documents including visa"
+    },
+    "baggageInsurance": {
+      "included": true,
+      "cover": 25000,
+      "condition": "Domestic travel; items valued Rs.20,000 to Rs.2,00,000"
+    },
+    "note": "Insurance provided by ICICI Lombard General Insurance Co. Ltd. Active card clause applies - one transaction required in last 90 days. Primary cardholder only."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000
+    },
+    "virtualCard": {
+      "available": true,
+      "instantIssuance": true,
+      "singleUse": false,
+      "spendControls": true
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": false,
+      "rewardsOnUPI": false,
+      "note": "Visa card - not eligible for credit card UPI linking"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "apps": ["Times Black App", "iMobile Pay"],
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Real-time alerts",
+        "View transactions",
+        "View reward points"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [
+      {
+        "cardId": "icici-sapphiro",
+        "spendRequired": null,
+        "tenure": null,
+        "autoUpgrade": false,
+        "note": "Can apply directly"
+      },
+      {
+        "cardId": "icici-emeralde",
+        "spendRequired": null,
+        "tenure": null,
+        "autoUpgrade": false,
+        "note": "Can apply directly"
+      }
+    ],
+    "upgradesTo": [
+      {
+        "cardId": "icici-emeralde-private-metal",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": true,
+        "note": "Emeralde Private Metal requires HNI banking relationship"
+      }
+    ],
+    "note": "Times Black has easy approval process; Emeralde Private Metal is for HNI segment"
+  },
+
+  "meta": {
+    "tags": [
+      "Travel",
+      "Super-Premium",
+      "Metal Card",
+      "Unlimited Lounge Access",
+      "Low Forex",
+      "Lifestyle",
+      "Co-branded",
+      "Times Group"
+    ],
+    "bestFor": "Frequent international travelers seeking unlimited lounge access, low forex markup (1.49%), and luxury lifestyle benefits. Ideal for those who can spend ₹5-25 lakh annually to maximize milestone benefits.",
+    "notRecommendedFor": "Low spenders, those seeking best reward rates, or users who prefer simple cashback. High ₹25 lakh threshold for fee waiver is challenging for average users.",
+    "rating": {
+      "overall": 3.8,
+      "rewards": 3.5,
+      "benefits": 4.0,
+      "travel": 4.5,
+      "value": 3.5
+    },
+    "verdict": "The Times Black ICICI Bank Credit Card is a lifestyle-focused super-premium card with unique benefits like helicopter transfers, doorstep visa services, and The Quorum Club access. While the 2% base reward rate is lower than competitors, the 1.49% forex markup is industry-leading and the unlimited lounge access (with Priority Pass for add-on cardholders too) is exceptional. The iShop portal offers excellent accelerated rewards (up to 24% on hotels). However, the ₹20,000 annual fee and ₹25 lakh waiver threshold are steep, and many milestone benefits are location-specific (Bangalore helicopter) or brand-specific, limiting their universal appeal. Best suited for those who value exclusive experiences over pure reward rates.",
+    "pros": [
+      "Unlimited domestic and international lounge access (including add-on cardholders)",
+      "Industry-leading 1.49% forex markup (vs standard 3.5%)",
+      "Excellent iShop accelerated rewards: 12% on flights, 24% on hotels",
+      "Premium metal card with unique design",
+      "Easy approval process for existing ICICI customers",
+      "1:1 Air India Maharaja Club transfer ratio",
+      "Access to exclusive Encalm Privé business class lounge (Delhi)",
+      "CribLife concierge for lifestyle requests",
+      "Unique visa services benefit worth ₹10,000",
+      "Comprehensive insurance coverage (₹3 Cr air accident)",
+      "Reward points never expire (if card is active)"
+    ],
+    "cons": [
+      "High ₹20,000 + GST annual fee",
+      "Very high ₹25 lakh spend required for fee waiver",
+      "Base 2% reward rate is lower than competitors like HDFC Infinia (3.33%)",
+      "Many milestone benefits are location-specific (helicopter only from Bangalore)",
+      "Brand-specific vouchers may not suit all users",
+      "Limited transfer partners (only Air India currently)",
+      "5,000 points monthly cap on utilities/insurance/education/govt payments",
+      "iShop bonus rewards capped at 15,000 points/month",
+      "No Apple Pay support",
+      "Add-on card fee of ₹3,500 (though includes Priority Pass)"
+    ],
+    "alternatives": [
+      "icici-emeralde-private-metal",
+      "hdfc-infinia",
+      "axis-reserve",
+      "sbi-aurum"
+    ],
+    "lastVerified": "2026-01-07",
+    "dataSource": [
+      "Official Times Black website (timesblack.com)",
+      "Official ICICI Bank product page",
+      "Times Black FAQs",
+      "ICICI Bank Comprehensive Insurance Cover PDF",
+      "CardExpert.in review",
+      "TechnoFino.in community discussions",
+      "PaisaBazaar.com",
+      "BankBazaar.com",
+      "CardInsider.com review",
+      "Financialy Substack user review"
+    ],
+    "changelog": [
+      {
+        "date": "2024-12-16",
+        "change": "ICICI Bank updated MITC to remove 1st-year fee; only joining fee charged at issuance",
+        "source": "TechnoFino community"
+      },
+      {
+        "date": "2024-12-20",
+        "change": "Card officially launched",
+        "source": "ICICI Bank"
+      },
+      {
+        "date": "2025-02-13",
+        "change": "iShop accelerated rewards portal launched with 6X/12X multipliers",
+        "source": "TechnoFino community"
+      }
+    ]
+  }
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Guide Details (Quick View Refined)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#d4af37","primary-dark": "#b08d1a",
+              "copper": "#b87333","copper-dark": "#8b5a2b",
+              "copper-light": "#dba578",
+              "espresso": "#261E1B","espresso-dark": "#181210",
+              "background-light": "#ffffff",
+              "background-dark": "#121212",
+              "surface-dark": "#1A1A1A",
+              "surface-light": "#F5F5F5",
+              "text-muted": "#9CA3AF",
+            },
+            fontFamily: {
+              "display": ["Noto Serif", "serif"],
+              "body": ["Noto Sans", "sans-serif"],
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+            boxShadow: {
+                "glow": "0 0 20px rgba(184, 115, 51, 0.2)",
+                "modal": "0 25px 50px -12px rgba(0, 0, 0, 0.7)",
+                "tactile": "inset 0 1px 0 rgba(255,255,255,0.1), 0 1px 2px rgba(0,0,0,0.2)",
+            }
+          },
+        },
+      }
+    </script>
+<style type="text/tailwindcss">
+    @layer utilities {
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    }
+</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-body text-slate-900 dark:text-white antialiased overflow-hidden min-h-screen relative">
+<div aria-hidden="true" class="fixed inset-0 z-0 pointer-events-none">
+<div class="absolute left-0 top-0 bottom-0 w-64 border-r border-neutral-800 hidden lg:block bg-[#0e0e0e]">
+<div class="p-6">
+<div class="h-8 w-8 bg-copper/50 rounded mb-8"></div>
+<div class="space-y-4">
+<div class="h-4 w-3/4 bg-neutral-800 rounded"></div>
+<div class="h-4 w-1/2 bg-neutral-800 rounded"></div>
+<div class="h-4 w-5/6 bg-neutral-800 rounded"></div>
+</div>
+</div>
+</div>
+<div class="absolute inset-0 lg:left-64 p-8 bg-[#121212]">
+<div class="max-w-7xl mx-auto space-y-6">
+<div class="flex justify-between items-center mb-8">
+<div class="h-8 w-48 bg-neutral-800 rounded"></div>
+<div class="h-10 w-10 rounded-full bg-neutral-800"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="h-48 bg-surface-dark rounded-xl border border-neutral-800"></div>
+<div class="h-48 bg-surface-dark rounded-xl border border-neutral-800"></div>
+<div class="h-48 bg-surface-dark rounded-xl border border-neutral-800"></div>
+</div>
+<div class="h-96 bg-surface-dark rounded-xl border border-neutral-800 w-full"></div>
+</div>
+</div>
+</div>
+<div class="fixed inset-0 z-40 bg-black/70 backdrop-blur-[8px] transition-all duration-300 flex items-center justify-center p-4 sm:p-6 lg:p-12">
+<div class="group/design-root relative w-full max-w-5xl bg-espresso rounded-2xl shadow-modal overflow-hidden flex flex-col lg:flex-row border border-copper/30 animate-fade-in-up" style="max-height: 90vh;">
+<button class="absolute top-4 right-4 z-50 p-2.5 rounded-full bg-espresso-dark/80 text-copper hover:text-white hover:bg-copper border border-copper/40 transition-all duration-300 backdrop-blur-sm group shadow-tactile">
+<span class="material-symbols-outlined text-[20px] group-hover:rotate-90 transition-transform duration-300">close</span>
+</button>
+<div class="relative w-full lg:w-[45%] h-64 lg:h-auto shrink-0 overflow-hidden bg-espresso-dark">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover/design-root:scale-105 opacity-90" data-alt="Abstract close-up of golden metallic textures representing wealth and premium banking" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTzBfgsV2ZThLLznvgL3MjrRNQtV7Cdogrmkod-XB_hvrWvu9bnJN_3cZfJfrJ_8nIaXpZFiR4Ijfe84JAB6mL-GuCq4aVy7hyA6vQGmvweZcLRfSjfEJsv-krtBo8GryVEn9gIQM_SCx_1C9KzJwnKzOE1GQA5hZKfN2ZHvFBbrbb3YBT-orZaMhcR7IFqKxtxaKiP87u8G7sFpIVOLvGeakwXCiIN7Ka6UC5F7bMdXYEZjbts10afM5rL1WEvCd4VNkZTvCN33XN');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-espresso via-transparent to-black/40 lg:bg-gradient-to-r lg:from-transparent lg:via-espresso/20 lg:to-espresso"></div>
+<div class="absolute bottom-4 left-4 lg:bottom-8 lg:left-8 flex gap-2">
+<span class="inline-flex items-center justify-center px-3.5 py-1.5 rounded-full bg-espresso-dark/90 backdrop-blur-md border border-copper/50 text-copper-light text-xs font-semibold tracking-wide shadow-lg">
+<span class="material-symbols-outlined text-[16px] mr-1.5 text-copper">verified</span>
+                    Verified Guide
+                </span>
+</div>
+</div>
+<div class="relative flex-1 flex flex-col bg-espresso lg:bg-transparent overflow-hidden">
+<div class="flex-1 overflow-y-auto p-6 md:p-10 lg:p-12 scrollbar-hide">
+<div class="flex flex-wrap items-center gap-4 mb-6 text-sm">
+<span class="text-copper font-bold tracking-[0.15em] uppercase text-[11px] border-b border-copper/30 pb-0.5">Credit Strategy</span>
+<span class="w-1 h-1 rounded-full bg-copper/40"></span>
+<div class="flex items-center text-copper-light/80 font-medium">
+<span class="material-symbols-outlined text-[18px] mr-1.5 text-copper">schedule</span>
+<span>7 Min Read</span>
+</div>
+</div>
+<h1 class="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-medium text-white leading-[1.15] mb-6 tracking-tight drop-shadow-sm">
+                    Maximizing Rewards: The Ultimate Guide to Metal Cards
+                </h1>
+<div class="w-24 h-[1px] bg-gradient-to-r from-copper to-transparent mb-8 opacity-60"></div>
+<div class="prose prose-invert max-w-none">
+<p class="text-white/90 text-lg leading-relaxed font-light mb-8 antialiased">
+                        Unlock the full potential of your premium cards. This guide breaks down the hidden concierge benefits, lounge access networks, and reward multipliers that define the elite tier of Indian banking.
+                    </p>
+</div>
+<div class="bg-espresso-dark/60 rounded-xl p-7 border border-copper/20 mb-4 shadow-inner">
+<h3 class="font-display text-copper-light text-xl mb-5 flex items-center tracking-wide">
+<span class="material-symbols-outlined text-copper mr-2.5">lightbulb</span>
+                        Quick Insights
+                    </h3>
+<ul class="space-y-4">
+<li class="flex items-start gap-3.5">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-gray-100 text-[15px] leading-relaxed font-light">How to waive the ₹50,000 annual fee on top-tier metal cards through spend milestones.</span>
+</li>
+<li class="flex items-start gap-3.5">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-gray-100 text-[15px] leading-relaxed font-light">Exclusive access to golf courses and private airport terminals in Mumbai &amp; Delhi.</span>
+</li>
+<li class="flex items-start gap-3.5">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-gray-100 text-[15px] leading-relaxed font-light">Comparing the reward redemption ratio: 1:1 Airline Transfer vs. Cashback.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="p-6 md:px-10 md:py-8 border-t border-copper/20 bg-espresso z-10 flex flex-col sm:flex-row gap-4 items-center justify-between shadow-[0_-10px_40px_rgba(0,0,0,0.3)]">
+<button class="w-full sm:w-auto flex items-center justify-center gap-2.5 h-12 px-6 rounded-lg border border-copper/40 bg-espresso-dark hover:bg-copper/10 text-copper-light hover:text-white hover:border-copper transition-all duration-300 text-sm font-semibold tracking-wide group shadow-tactile active:shadow-inner active:translate-y-px">
+<span class="material-symbols-outlined text-[20px] group-hover:text-red-500 transition-colors duration-300" data-icon="favorite">favorite</span>
+<span>Save to Favourites</span>
+</button>
+<button class="w-full sm:w-auto flex items-center justify-center gap-2.5 h-12 px-8 rounded-lg bg-gradient-to-br from-copper to-copper-dark hover:from-copper-light hover:to-copper text-white border border-white/10 font-bold text-sm tracking-wide shadow-lg shadow-black/40 hover:shadow-glow transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 active:shadow-none">
+<span>Read Full Guide</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

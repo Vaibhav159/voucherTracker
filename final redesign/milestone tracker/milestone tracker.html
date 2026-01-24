@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Milestone &amp; Capping Tracker | CreditTracker</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c3703c",
+                        "primary-dark": "#a05a2e",
+                        "background-light": "#f7f3ed",
+                        "background-dark": "#171412",
+                        "surface-dark": "#25201e",
+                        "surface-border": "#362f2b",
+                        "text-muted": "#b4a9a2",
+                        "success": "#4CAF50",
+                        "warning": "#FFEB3B",
+                        "danger": "#F44336",
+                        "copper": "#c3703c",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #171412;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #362f2b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c3703c;
+        }@keyframes pop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .animate-pop {
+            animation: pop 0.3s ease-in-out;
+        }@keyframes shimmer {
+            0% { transform: translateX(-150%) skewX(-20deg); }
+            100% { transform: translateX(150%) skewX(-20deg); }
+        }
+        .animate-shimmer {
+            animation: shimmer 2.5s infinite linear;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white overflow-hidden flex h-screen antialiased selection:bg-primary selection:text-white">
+<aside class="w-72 bg-[#171412] border-r border-[#362f2b] hidden md:flex flex-col z-20 shrink-0">
+<div class="h-16 flex items-center gap-3 px-6 border-b border-[#362f2b]">
+<div class="size-8 bg-gradient-to-br from-primary to-orange-600 rounded-lg flex items-center justify-center text-white shadow-lg shadow-orange-900/20">
+<span class="material-symbols-outlined text-xl">account_balance_wallet</span>
+</div>
+<h2 class="text-white text-lg font-bold tracking-tight">CreditTracker</h2>
+</div>
+<nav class="flex-1 overflow-y-auto py-6 px-4 flex flex-col gap-8">
+<div>
+<p class="px-3 text-[#b4a9a2] text-xs font-bold uppercase tracking-wider mb-2">Menu</p>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#b4a9a2] hover:bg-[#25201e] hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">grid_view</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#25201e] text-white border-l-2 border-primary shadow-sm" href="#">
+<span class="material-symbols-outlined text-primary fill-1">track_changes</span>
+<span class="text-sm font-medium">Milestones</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#b4a9a2] hover:bg-[#25201e] hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">confirmation_number</span>
+<span class="text-sm font-medium">Fee Waivers</span>
+</a>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between px-3 mb-2">
+<p class="text-[#b4a9a2] text-xs font-bold uppercase tracking-wider">My Cards</p>
+<button class="text-[#b4a9a2] hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<button class="flex items-center gap-3 px-3 py-3 rounded-lg bg-[#25201e] border border-[#362f2b] shadow-sm group relative overflow-hidden">
+<div class="absolute inset-y-0 left-0 w-1 bg-primary"></div>
+<div class="size-8 rounded bg-gradient-to-tr from-gray-700 to-gray-600 shadow-inner flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xs text-white/50">credit_card</span>
+</div>
+<div class="flex flex-col items-start min-w-0">
+<p class="text-white text-sm font-bold truncate w-full text-left">Axis Magnus</p>
+<p class="text-[#b4a9a2] text-xs truncate w-full text-left">ending 4092</p>
+</div>
+</button>
+<button class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-[#25201e] border border-transparent hover:border-[#362f2b] transition-all group opacity-60 hover:opacity-100">
+<div class="size-8 rounded bg-gradient-to-tr from-blue-900 to-blue-800 shadow-inner flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xs text-white/50">credit_card</span>
+</div>
+<div class="flex flex-col items-start min-w-0">
+<p class="text-white text-sm font-medium truncate w-full text-left">HDFC Infinia</p>
+<p class="text-[#b4a9a2] text-xs truncate w-full text-left">ending 8812</p>
+</div>
+</button>
+<button class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-[#25201e] border border-transparent hover:border-[#362f2b] transition-all group opacity-60 hover:opacity-100">
+<div class="size-8 rounded bg-gradient-to-tr from-purple-900 to-purple-800 shadow-inner flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xs text-white/50">credit_card</span>
+</div>
+<div class="flex flex-col items-start min-w-0">
+<p class="text-white text-sm font-medium truncate w-full text-left">Amex Platinum</p>
+<p class="text-[#b4a9a2] text-xs truncate w-full text-left">ending 1005</p>
+</div>
+</button>
+</div>
+</div>
+<div class="mt-auto">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#b4a9a2] hover:bg-[#25201e] hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</div>
+</nav>
+</aside>
+<div class="flex-1 flex flex-col h-full min-w-0 overflow-hidden relative">
+<header class="h-16 bg-[#171412]/95 backdrop-blur-sm border-b border-[#362f2b] flex items-center justify-between px-4 sm:px-8 z-10 shrink-0">
+<button class="md:hidden p-2 text-white mr-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="flex-1 max-w-md hidden sm:block">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#b4a9a2] group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full bg-[#25201e] border border-[#362f2b] text-white text-sm rounded-lg pl-10 pr-4 py-2 focus:ring-1 focus:ring-primary focus:border-primary placeholder:text-[#b4a9a2]/50 transition-all outline-none" placeholder="Search cards, milestones..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-3 sm:gap-4 ml-auto">
+<button class="hidden sm:flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg text-sm font-bold transition-colors shadow-[0_0_15px_rgba(195,112,60,0.3)]">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span class="whitespace-nowrap">Add Spend</span>
+</button>
+<button class="relative p-2 text-[#b4a9a2] hover:text-white transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 size-2 bg-danger rounded-full border-2 border-[#171412]"></span>
+</button>
+<button class="size-9 rounded-full bg-[#362f2b] border border-[#4f4640] overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Portrait of a user" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQbvG6V_j4QoLGF7rXKTPvvA6__qUVVRDgQiFscUo5yjFgnmyiGWfvh6HRetBj2rjB-krLJ7AnYJYy_UA6VRAixknOGt--LiohvQ1nCehfFkUbaP4hzvcL8F_CbUlWBg8Sv-E2qvxENNrH9ynWsI65VpCZyyeMxgFv99pzP-JWt4RBHmhmIzMRmoYowoYat2kNWGmYUT2T1SXxRRChV85TDqx2u5z12FcqJ7io7iEIp_BVKCBCFwjMmpOFAYIji4wzLppSmWBwVPY6"/>
+</button>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto p-4 sm:p-8 scroll-smooth">
+<div class="max-w-[1200px] mx-auto flex flex-col gap-6 sm:gap-8 pb-20">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+<div>
+<h1 class="text-3xl sm:text-4xl font-black tracking-tight text-white mb-2">Axis Magnus Tracker</h1>
+<p class="text-[#b4a9a2] text-base font-normal">Manage your spend milestones and capping limits.</p>
+</div>
+<div class="flex items-center gap-2 text-sm text-[#b4a9a2]">
+<span class="material-symbols-outlined text-primary text-base">calendar_today</span>
+<span>Statement Cycle: <span class="text-white font-medium">12th - 11th</span></span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="lg:col-span-2 bg-[#25201e] rounded-xl border border-[#362f2b] p-6 shadow-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+<div class="flex flex-col md:flex-row gap-8 items-center md:items-stretch">
+<div class="w-full md:w-1/3 shrink-0 flex flex-col gap-3">
+<div class="aspect-[1.586/1] w-full rounded-xl shadow-2xl relative overflow-hidden transform group-hover:scale-[1.02] transition-transform duration-500">
+<div class="absolute inset-0 bg-gradient-to-bl from-gray-800 to-black z-0"></div>
+<div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="absolute bottom-4 left-4 z-10 flex flex-col">
+<p class="text-xs text-gray-400 uppercase tracking-widest mb-1">Axis Bank</p>
+<p class="text-white font-bold text-lg tracking-widest drop-shadow-md">MAGNUS</p>
+</div>
+<div class="absolute top-4 right-4 z-10">
+<span class="material-symbols-outlined text-white/80 text-3xl">contactless</span>
+</div>
+<img class="absolute inset-0 w-full h-full object-cover opacity-0" data-alt="Realistic rendering of Axis Magnus credit card with dark finish and geometric patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoYIK_rdCzU_l0PwL2ICfe1ZMDuOCvVnNL3zvkqWewfkiEMQ6wXlf-w54n5ETmETOMfHzbqHBiAixqZofXtHOKP6GC51es6AMPayVoLD69YtrVHmSYQG8-4KQB_tZv1IK9FjM9gJJvwDVIf0bPfcH3mWqQGR-2hojpYxFGKB_EFU83zLnIz2FmTli-ebxjHBcT7tRAKVtO_kjbAfWOXYpXNknAVl9UupwxpyaL4XmHXcE_voYy1bBuSlq4NJAjBVZckdpKw8-Nk3Y9"/>
+</div>
+<div class="flex justify-between items-center px-1">
+<span class="text-xs font-medium text-[#b4a9a2]">Status: Active</span>
+<span class="text-xs font-bold text-success flex items-center gap-1">
+<span class="size-1.5 rounded-full bg-success"></span> Online
+                                    </span>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-center w-full">
+<label class="text-[#b4a9a2] text-sm font-medium mb-3 flex items-center gap-2" for="spend-input">
+                                Current Statement Spend
+                                <span class="material-symbols-outlined text-base text-[#b4a9a2]/60" title="Enter the total spend for the current statement cycle">info</span>
+</label>
+<div class="relative flex items-center group/input">
+<span class="absolute left-4 text-[#b4a9a2] text-xl font-light">₹</span>
+<input class="w-full bg-[#171412] text-white text-3xl font-bold py-4 pl-10 pr-24 rounded-lg border border-[#4f4640] focus:border-primary focus:ring-0 outline-none transition-all placeholder:text-[#362f2b]" id="spend-input" placeholder="0" type="text" value="87,600"/>
+<button class="absolute right-2 top-2 bottom-2 bg-[#362f2b] hover:bg-primary text-white px-4 rounded font-medium text-sm transition-colors animate-pop">
+                                    Update
+                                </button>
+</div>
+<p class="text-xs text-[#b4a9a2] mt-3 pl-1">Last updated: Today, 10:42 AM</p>
+</div>
+</div>
+</div>
+<div class="bg-[#25201e] rounded-xl border border-[#362f2b] p-6 shadow-xl flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 mix-blend-overlay"></div>
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-copper">savings</span>
+<h3 class="text-[#b4a9a2] text-xs font-bold uppercase tracking-widest">Milestone Gap</h3>
+</div>
+<span class="material-symbols-outlined text-copper/40 group-hover:text-copper transition-colors">trending_up</span>
+</div>
+<p class="text-[#b4a9a2] text-sm font-medium mb-2">Remaining Spend</p>
+<p class="text-4xl lg:text-5xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-[#fcd34d] via-[#fbbf24] to-[#b45309] drop-shadow-sm mb-1">
+                                ₹12,400
+                            </p>
+</div>
+<div class="mt-4">
+<p class="text-sm text-white font-medium leading-relaxed mb-4">
+                                Spend this to unlock <span class="text-copper font-bold">25,000 Edge Points</span> bonus this month.
+                            </p>
+<div class="h-2 w-full bg-[#120f0d] rounded-full overflow-hidden border border-[#362f2b] shadow-[inset_0_1px_2px_rgba(0,0,0,0.6)]">
+<div class="h-full bg-gradient-to-r from-copper via-[#e6a372] to-[#ffedd5] w-[87%] rounded-full relative shadow-[0_0_10px_rgba(195,112,60,0.4)]">
+<div class="absolute right-0 top-0 bottom-0 w-[2px] bg-white/60 shadow-[0_0_4px_white]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-[#25201e] rounded-xl border border-[#362f2b] p-6 shadow-lg flex flex-col gap-6 group hover:border-[#fbbf24]/30 transition-colors duration-300">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-4">
+<div class="bg-gradient-to-br from-[#25201e] to-[#120f0d] p-3 rounded-xl border border-[#362f2b] shadow-inner group-hover:shadow-lg group-hover:shadow-amber-900/10 transition-all">
+<span class="material-symbols-outlined text-[#fbbf24]">calendar_view_month</span>
+</div>
+<div>
+<h3 class="text-white font-bold text-lg tracking-tight">Monthly Milestone</h3>
+<p class="text-xs text-[#b4a9a2] font-medium uppercase tracking-wider mt-0.5">Target: ₹ 1.0L</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-2xl font-black text-[#fbbf24] drop-shadow-sm">87%</span>
+<span class="text-[10px] text-[#b4a9a2] font-bold uppercase tracking-wide bg-[#fbbf24]/10 px-1.5 py-0.5 rounded text-[#fbbf24]">Active</span>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs font-bold uppercase tracking-wider text-[#b4a9a2] mb-3">
+<span class="text-white">₹ 87,600</span>
+<span>₹ 1,00,000</span>
+</div>
+<div class="h-5 w-full bg-[#0f0c0a] rounded-full relative shadow-[inset_0_2px_6px_rgba(0,0,0,0.9)] border border-[#362f2b]/60 overflow-hidden">
+<div class="h-full w-[87.6%] rounded-l-full relative flex items-center bg-gradient-to-r from-[#78350f] via-[#d97706] to-[#fbbf24] shadow-[0_2px_15px_rgba(251,191,36,0.25)] transition-all duration-1000 ease-out">
+<div class="absolute inset-x-0 top-0 h-[50%] bg-gradient-to-b from-white/20 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent w-1/2 h-full skew-x-[-20deg] animate-shimmer"></div>
+<div class="absolute right-0 top-0 bottom-0 w-1 bg-[#c3703c] shadow-[0_0_10px_#c3703c] z-10 border-l border-white/30"></div>
+</div>
+</div>
+<p class="text-xs text-[#b4a9a2] mt-4 flex items-center gap-1.5 opacity-80 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[#fbbf24] text-sm">bolt</span>
+                            You are just <span class="text-white font-bold">₹12,400</span> away from the goal!
+                        </p>
+</div>
+</div>
+<div class="bg-[#25201e] rounded-xl border border-[#362f2b] p-6 shadow-lg flex flex-col gap-6 group hover:border-[#34d399]/30 transition-colors duration-300">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-4">
+<div class="bg-gradient-to-br from-[#25201e] to-[#120f0d] p-3 rounded-xl border border-[#362f2b] shadow-inner">
+<span class="material-symbols-outlined text-[#34d399]">verified</span>
+</div>
+<div>
+<h3 class="text-white font-bold text-lg tracking-tight">Annual Fee Waiver</h3>
+<p class="text-xs text-[#b4a9a2] font-medium uppercase tracking-wider mt-0.5">Target: ₹ 10.0L</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-2xl font-black text-[#34d399] drop-shadow-sm">22%</span>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs font-bold uppercase tracking-wider text-[#b4a9a2] mb-3">
+<span class="text-white">₹ 2,20,000</span>
+<span>₹ 10,00,000</span>
+</div>
+<div class="h-5 w-full bg-[#0f0c0a] rounded-full relative shadow-[inset_0_2px_6px_rgba(0,0,0,0.9)] border border-[#362f2b]/60 overflow-hidden">
+<div class="h-full w-[22%] rounded-l-full relative flex items-center bg-gradient-to-r from-[#064e3b] via-[#059669] to-[#34d399] shadow-[0_2px_15px_rgba(52,211,153,0.25)] transition-all duration-1000 ease-out">
+<div class="absolute inset-x-0 top-0 h-[50%] bg-gradient-to-b from-white/20 to-transparent"></div>
+<div class="absolute right-0 top-0 bottom-0 w-1 bg-[#c3703c] shadow-[0_0_10px_#c3703c] z-10 border-l border-white/30"></div>
+</div>
+</div>
+<p class="text-xs text-[#b4a9a2] mt-4 opacity-80">
+                            Long way to go. Keep spending strategically.
+                        </p>
+</div>
+</div>
+<div class="bg-[#25201e] rounded-xl border border-danger/30 p-6 shadow-[0_0_20px_rgba(244,67,54,0.15)] flex flex-col gap-6 relative overflow-hidden group">
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-danger/10 rounded-full blur-[60px] pointer-events-none group-hover:bg-danger/20 transition-colors"></div>
+<div class="flex justify-between items-start z-10">
+<div class="flex items-center gap-4">
+<div class="bg-gradient-to-br from-[#25201e] to-[#120f0d] p-3 rounded-xl border border-danger/30 shadow-inner animate-pulse">
+<span class="material-symbols-outlined text-danger">warning</span>
+</div>
+<div>
+<h3 class="text-white font-bold text-lg tracking-tight">Utility Spend Cap</h3>
+<p class="text-xs text-[#b4a9a2] font-medium uppercase tracking-wider mt-0.5">Limit: ₹ 20K</p>
+</div>
+</div>
+<span class="bg-danger text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded shadow-lg shadow-red-900/50">Maxed Out</span>
+</div>
+<div class="z-10">
+<div class="flex justify-between text-xs font-bold uppercase tracking-wider text-[#b4a9a2] mb-3">
+<span class="text-danger">₹ 20,500</span>
+<span>₹ 20,000</span>
+</div>
+<div class="h-5 w-full bg-[#0f0c0a] rounded-full relative shadow-[inset_0_2px_6px_rgba(0,0,0,0.9)] border border-[#362f2b]/60 overflow-hidden flex gap-0.5">
+<div class="h-full w-[98%] rounded-l-full relative flex items-center bg-gradient-to-r from-[#7f1d1d] via-[#dc2626] to-[#f87171] shadow-[0_2px_15px_rgba(248,113,113,0.3)]">
+<div class="absolute inset-x-0 top-0 h-[50%] bg-gradient-to-b from-white/20 to-transparent"></div>
+</div>
+<div class="h-full flex-1 rounded-r-full bg-[#f87171] animate-pulse relative">
+<div class="absolute right-0 top-0 bottom-0 w-1 bg-[#c3703c] shadow-[0_0_10px_#c3703c] z-10 border-l border-white/30"></div>
+</div>
+</div>
+<div class="mt-4 flex items-start gap-3 p-3 bg-gradient-to-r from-danger/10 to-transparent rounded-lg border-l-2 border-danger">
+<span class="material-symbols-outlined text-danger text-lg mt-0.5">info</span>
+<p class="text-xs text-danger/90 font-medium leading-relaxed">
+                                Warning: Spend above ₹20k on utilities earns <span class="underline decoration-danger font-bold">0 points</span>! Stop spend here.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-4">
+<h3 class="text-lg font-bold text-white mb-4">Recent Qualifying Spends</h3>
+<div class="bg-[#25201e] border border-[#362f2b] rounded-xl overflow-hidden">
+<table class="w-full text-left text-sm">
+<thead class="bg-[#1d1917] text-[#b4a9a2]">
+<tr>
+<th class="px-6 py-3 font-medium">Merchant</th>
+<th class="px-6 py-3 font-medium">Date</th>
+<th class="px-6 py-3 font-medium">Category</th>
+<th class="px-6 py-3 font-medium text-right">Amount</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#362f2b]">
+<tr class="hover:bg-[#2d2624] transition-colors">
+<td class="px-6 py-4 font-medium text-white flex items-center gap-3">
+<div class="size-8 rounded bg-white flex items-center justify-center p-1">
+<img class="w-full object-contain" data-alt="Amazon Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxAQ7YMs-aZ6IdMDnVHR5C6XzJVAU6-I9fNwyeOLFn3kBf_pYIJ7FcEEgJHQS9HvQUn1ET3FIRfhGght_ZV-jW1mtQgExeL38rx4MlUWKT8vsLjqbhKPw_A479k7Bk_JG-JFv90i7y3K6E4IdjYienaMGaO7Mrdox6y0h-cgTqSNfGlg8VavtktOn8dXmHQH6wm5s46fjUkNbk34UGyyiqd0JzvpYm_On5lAC7DTD0n6E37jk0V3nUoN9QjI9KGu53YfWr9Z5wTLxY"/>
+</div>
+                                Amazon India
+                            </td>
+<td class="px-6 py-4 text-[#b4a9a2]">Oct 24, 2023</td>
+<td class="px-6 py-4 text-[#b4a9a2]">Shopping</td>
+<td class="px-6 py-4 text-right font-medium text-white">₹ 14,200</td>
+</tr>
+<tr class="hover:bg-[#2d2624] transition-colors">
+<td class="px-6 py-4 font-medium text-white flex items-center gap-3">
+<div class="size-8 rounded bg-white flex items-center justify-center p-1">
+<img class="w-full object-contain" data-alt="Air India Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdahDh5rUy257ur1d3Bd1bDOVStNGhO-FaP4UIZF235xG1-j7_7zFa8h1PKcQ7edR9cHxMF8tshWze5fl2vkvtcDByybH7FROArN-jvUgGekhFKzi9XBD7gn-UBb2xjoq_kMfOyE2xs5DsGX8dUTlocfZlJmbhvk0rPITk3bjPNKekx1e6PpRj7GIc3gc-SLL8rrluLR-O3MtA3WygrTNPni6Xz_c-52_oDPkwJnYOwffOzzANR52AT5lOjzys9aV7Fyz-qqCGR-dq"/>
+</div>
+                                Air India
+                            </td>
+<td class="px-6 py-4 text-[#b4a9a2]">Oct 22, 2023</td>
+<td class="px-6 py-4 text-[#b4a9a2]">Travel</td>
+<td class="px-6 py-4 text-right font-medium text-white">₹ 8,500</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

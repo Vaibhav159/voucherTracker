@@ -1,0 +1,1134 @@
+{
+  "id": "icici-emeralde-private-metal",
+  "name": "ICICI Bank Emeralde Private Metal Credit Card",
+  "bank": "ICICI Bank",
+  "slug": "icici-emeralde-private-metal-credit-card",
+  "image": "assets/cards/icici/emeralde-private-metal.png",
+  "link": "https://www.icicibank.com/personal-banking/cards/credit-card/emeralde-private-metal-credit-card",
+  "isActive": true,
+
+  "network": {
+    "type": "Mastercard",
+    "variant": "World Elite",
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "super-premium",
+    "isCobranded": false,
+    "cobrandPartner": {
+      "name": null,
+      "type": null,
+      "loyaltyProgram": null
+    },
+    "material": "metal"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 12499,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 12499,
+      "firstYearWaived": true,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 1000000,
+        "spendPeriod": "12 months (anniversary year)",
+        "waiverText": "Spend ₹10 lakh in the card anniversary year for fee waiver. Rent, government, and education payments excluded from threshold calculation w.e.f. Nov 15, 2024."
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": 3,
+      "joiningFee": 3500,
+      "annualFee": 0,
+      "rewardSharing": true,
+      "note": "Supplementary card fee of ₹3,500 + GST applicable as one-time fee for each supplementary card w.e.f. Jan 15, 2026. Prior to this date, add-on cards are free."
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Emeralde Private Metal Credit Card is excluded from standard late payment charges",
+      "tiers": null,
+      "note": "Late payment charges not applicable for this card as per MITC"
+    },
+    "overLimit": {
+      "amount": null,
+      "percentage": null,
+      "note": "Over-limit charges not applicable for ICICI Bank Emeralde Private Metal Credit Card"
+    },
+    "chequeReturn": 500,
+    "cardReplacement": 3500,
+    "duplicateStatement": 100
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 250000,
+        "annual": 3000000
+      },
+      "selfEmployed": {
+        "itr": 3000000
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 65,
+      "addOnMin": 12
+    },
+    "employmentType": "Invite Only",
+    "creditScore": {
+      "minimum": 750,
+      "recommended": 800
+    },
+    "existingRelationship": {
+      "required": true,
+      "type": "High NRV (Net Relationship Value) or Wealth Management Client",
+      "note": "Card is invite-only. Typically offered to ICICI Bank Global Private Clients, Wealth Management customers, or those with substantial FD/banking relationship (often 1-2 crore+). May also be offered as upgrade from Emeralde PVC or Sapphiro based on spend history."
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 500000,
+      "max": 5000000
+    },
+    "factors": "Based on income, credit score, existing relationship with ICICI Bank, NRV, and spend history on existing ICICI cards",
+    "enhancementCriteria": "Good repayment history, increased NRV, or relationship upgrade"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": 48,
+      "note": "Interest-free period ranges from 18 to 48 days depending on transaction date. Grace period of 3 days after payment due date."
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 200,
+      "calculation": "5% of total outstanding or ₹200, whichever is higher. Includes unpaid minimum due from previous statements."
+    },
+    "penaltyAPR": {
+      "rate": 0.45,
+      "triggerCondition": "Default on minimum payment"
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 0,
+    "minFee": 0,
+    "maxFee": null,
+    "limitPercentage": 10,
+    "dailyLimit": 20000,
+    "interestFromDay1": true,
+    "note": "No cash advance transaction fee for Emeralde Private Metal Credit Card. Cash limit is 10% of credit limit up to ₹20,000 for first 180 days."
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "ICICI Reward Points",
+      "symbol": "RP",
+      "singularUnit": "point",
+      "pluralUnit": "points"
+    },
+    "baseRate": {
+      "rate": 6,
+      "spendUnit": 200,
+      "effectivePercentage": 0.03
+    },
+    "earningText": "Earn 6 ICICI Reward Points for every ₹200 spent on eligible transactions (3% reward rate)",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "Rent payments",
+        "E-Wallet loads",
+        "Government payments and services",
+        "Tax payments (any medium)",
+        "Property management services",
+        "EMI transactions"
+      ],
+      "mccs": [
+        "5541", "5542", "1361", "3851", "5983", "9752", "5555", "5172",
+        "6513", "7014", "7407", "5271",
+        "9405", "9222", "9399", "9402", "9211", "6760", "9311", "9313", "7276",
+        "6540",
+        "1520", "1750", "1740", "1711", "1761", "1771", "1731"
+      ],
+      "note": "No reward points on Fuel, Rent, Government, Tax, E-Wallet loads, and Property Management categories"
+    },
+
+    "caps": {
+      "monthly": {
+        "points": null,
+        "cashback": null
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": "statement",
+      "perTransaction": null,
+      "categoryWiseCaps": [
+        {
+          "category": "Grocery",
+          "points": 1000,
+          "period": "statement cycle"
+        },
+        {
+          "category": "Education",
+          "points": 1000,
+          "period": "statement cycle"
+        },
+        {
+          "category": "Insurance",
+          "points": 5000,
+          "period": "statement cycle"
+        },
+        {
+          "category": "Utilities",
+          "points": 1000,
+          "period": "statement cycle"
+        }
+      ]
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "36 months",
+      "condition": "From date of earning"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": 12500,
+        "cashback": null,
+        "vouchers": null,
+        "spendCondition": {
+          "amount": null,
+          "period": null,
+          "transactionCount": null
+        },
+        "validity": "On payment of joining fee",
+        "description": "12,500 bonus reward points on payment of joining fee + Complimentary Taj Epicure Plus membership (1 year with 1 night stay) + EazyDiner Prime membership"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": true,
+        "points": 12500,
+        "condition": "On payment of annual fee"
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "travel": {
+        "rate": 6,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "mccs": null,
+        "weekendRate": null,
+        "note": "Standard 6 RP per ₹200 (3%). Use iShop for accelerated rewards."
+      },
+      "dining": {
+        "rate": 6,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "weekendRate": null,
+        "note": "Standard 6 RP per ₹200 (3%). EazyDiner Prime membership provides additional dining discounts."
+      },
+      "online": {
+        "rate": 6,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "note": "Standard 6 RP per ₹200 (3%) on all online transactions except excluded categories"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on fuel transactions"
+      },
+      "groceries": {
+        "rate": 6,
+        "multiplier": null,
+        "cap": 1000,
+        "capPeriod": "statement cycle",
+        "merchants": null,
+        "note": "6 RP per ₹200 capped at 1000 RP per statement cycle"
+      },
+      "utilities": {
+        "rate": 6,
+        "cap": 1000,
+        "capPeriod": "statement cycle",
+        "note": "6 RP per ₹200 capped at 1000 RP per statement cycle"
+      },
+      "international": {
+        "rate": 6,
+        "multiplier": null,
+        "cap": null,
+        "note": "Standard 6 RP per ₹200 (3%) on international transactions"
+      },
+      "insurance": {
+        "rate": 6,
+        "cap": 5000,
+        "capPeriod": "statement cycle",
+        "note": "6 RP per ₹200 capped at 5000 RP per statement cycle - a unique benefit as most cards exclude insurance"
+      },
+      "education": {
+        "rate": 6,
+        "cap": 1000,
+        "capPeriod": "statement cycle",
+        "note": "6 RP per ₹200 capped at 1000 RP per statement cycle - a unique benefit as most cards exclude education"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on rent payments. 1% fee charged on rent transactions."
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on e-wallet loads. 1% fee charged on wallet loads of ₹5,000 or more w.e.f. Jan 15, 2026."
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": true,
+        "name": "iShop",
+        "multiplier": null,
+        "cap": 18000,
+        "capPeriod": "monthly",
+        "merchants": ["Flights", "Hotels", "Gift Vouchers (Amazon, Flipkart, Tanishq, Apple, etc.)"],
+        "link": "https://icicibank.com/ishoplogin",
+        "note": "6X rewards on flights and gift vouchers (18% value back), 12X rewards on hotel bookings (36% value back). Accelerated bonus points capped at 18,000 per statement cycle.",
+        "flightMultiplier": 6,
+        "hotelMultiplier": 12,
+        "voucherMultiplier": 6
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": null,
+        "note": null
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": null
+      },
+      "milestoneAccelerators": null
+    },
+
+    "redemption": {
+      "baseValue": 0.40,
+      "bestValue": 1.0,
+      "bestOption": "Flight/Hotel bookings via iShop or select brand vouchers at 1 RP = ₹1",
+      "minRedemption": null,
+      "redemptionIncrement": null,
+      "convenienceFee": 0,
+      "monthlyRedemptionLimit": 50000,
+
+      "pointsPlusPay": {
+        "enabled": true,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": 100,
+        "note": "100% points can be used for flight bookings, 90% for hotel bookings, 50% for gift vouchers on iShop"
+      },
+
+      "options": [
+        {
+          "type": "travel",
+          "value": 1.0,
+          "description": "Flight & Hotel bookings via iShop",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["iShop"],
+          "note": "Best value redemption at 1 RP = ₹1"
+        },
+        {
+          "type": "vouchers_premium",
+          "value": 1.0,
+          "description": "Select premium brand vouchers - Apple, Tanishq, Tumi, Coach, Brooks Brothers, Emporio Armani, Jimmy Choo, G-Star Raw, Canali, Mothercare, ITC, Hyatt, Marriott, Taj",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["Apple", "Tanishq", "Tumi", "Coach", "ITC Hotels", "Hyatt", "Marriott", "Taj"],
+          "note": "Select brand vouchers at 1 RP = ₹1"
+        },
+        {
+          "type": "vouchers_general",
+          "value": 0.60,
+          "description": "Other gift vouchers from rewards catalog",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["Amazon", "Flipkart", "Others"],
+          "note": "General vouchers at 1 RP = ₹0.60"
+        },
+        {
+          "type": "statement_credit",
+          "value": 0.40,
+          "description": "Statement credit / Cashback",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": [],
+          "note": "Lowest value at 1 RP = ₹0.40. Max 50,000 points per statement."
+        },
+        {
+          "type": "airmiles",
+          "value": 1.0,
+          "description": "Transfer to Air India Maharaja Club",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["Air India Maharaja Club"],
+          "note": "1:1 transfer ratio. No minimum transfer for Emeralde Private Metal."
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": true,
+      "eligibleCards": ["icici-emeralde-private-metal", "icici-times-black"],
+      "partners": [
+        {
+          "name": "Air India Maharaja Club",
+          "type": "airline",
+          "program": "Maharaja Club",
+          "alliance": "Star Alliance",
+          "ratio": {
+            "cardPoints": 1,
+            "partnerPoints": 1,
+            "display": "1:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "5 working days",
+          "transferMethod": "ICICI Bank Rewards Portal",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Only transfer partner currently available. 1:1 ratio exclusive to Emeralde Private Metal and Times Black cards. Other ICICI cards get 6:1 ratio."
+        }
+      ],
+      "currentBonus": {
+        "active": false,
+        "bonusPercentage": null,
+        "validUntil": null,
+        "applicablePartners": []
+      }
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": null,
+      "acrossUsers": false,
+      "note": null
+    },
+
+    "specialLogic": "Unique feature: Rewards on insurance, education, and utility spends with reasonable caps - categories typically excluded by most premium cards.",
+
+    "calculator": {
+      "enabled": true,
+      "formula": "basePoints = (spend / 200) * 6; acceleratedPoints for iShop: flights/vouchers = spend * 0.18, hotels = spend * 0.36",
+      "variables": ["spend", "category", "isiShop", "isHotel", "isFlight"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": true,
+        "complimentaryCount": null,
+        "period": null,
+        "accessType": "Unlimited",
+        "accessProvider": "Mastercard World Elite / Card Swipe",
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "No spend requirement for lounge access. Emeralde Private Metal is excluded from the ₹75,000 quarterly spend requirement applicable to other ICICI cards."
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "eligibleLounges": "https://www.icicibank.com/personal-banking/cards/credit-card/lounge",
+        "note": "Unlimited complimentary access for both primary and add-on cardholders by swiping the card. Access to VIP section of 080 Lounge at Bangalore Airport."
+      },
+      "international": {
+        "included": true,
+        "complimentaryCount": null,
+        "period": null,
+        "accessType": "Unlimited",
+        "accessProvider": "Priority Pass",
+        "membershipValue": null,
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": null
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "eligibleLounges": "https://www.prioritypass.com/airport-lounges",
+        "note": "Complimentary Priority Pass membership with unlimited access for both primary and add-on cardholders. Access to 1,400+ lounges across 145+ countries."
+      }
+    },
+
+    "milestones": [
+      {
+        "spend": 400000,
+        "period": "annual",
+        "benefit": "EaseMyTrip air travel voucher worth ₹3,000",
+        "benefitType": "voucher",
+        "value": 3000,
+        "conditions": "First voucher on reaching ₹4 lakh annual spend"
+      },
+      {
+        "spend": 800000,
+        "period": "annual",
+        "benefit": "Second EaseMyTrip air travel voucher worth ₹3,000 (total ₹6,000 for the year)",
+        "benefitType": "voucher",
+        "value": 3000,
+        "conditions": "Second voucher on reaching ₹8 lakh annual spend. Total milestone benefit: ₹6,000/year (0.75% additional return)."
+      }
+    ],
+
+    "golf": {
+      "included": true,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": "Select golf courses in India and 90+ international golf courses via Golftripz",
+      "greenFeeWaiver": true,
+      "lessonIncluded": true,
+      "note": "Unlimited complimentary golf rounds and lessons for primary cardholder. Book via Golftripz (teetimes.golftripz.com). Benefits credited by 10th of following month, valid for next 2 months. Only 1 booking can be held at any time. Access to international golf courses is rare feature."
+    },
+
+    "movies": {
+      "included": true,
+      "platform": "BookMyShow",
+      "offer": "Buy 1 Get 1 Free (up to ₹750 off on second ticket)",
+      "freeTickets": 1,
+      "frequency": "2 times per month",
+      "cap": 750,
+      "note": "Buy one ticket, get up to ₹750 off on second ticket for movies, theatre, concerts, sports events. Valid twice per month. Effective discount up to ₹1,500/month."
+    },
+
+    "dining": {
+      "included": true,
+      "programs": [
+        {
+          "name": "EazyDiner Prime",
+          "discount": "Up to 50% off at partner restaurants",
+          "cap": null,
+          "frequency": "Membership renewed annually",
+          "note": "Complimentary EazyDiner Prime membership as welcome and renewal benefit. Access to 2,000+ restaurants with discounts up to 50%."
+        },
+        {
+          "name": "Culinary Treats Programme",
+          "discount": "Up to 20% off at partner restaurants",
+          "cap": null,
+          "frequency": "Per visit",
+          "note": "Additional dining discounts at select partner restaurants across India"
+        }
+      ],
+      "hotelDining": {
+        "included": true,
+        "hotels": ["Taj Hotels (via Taj Epicure membership)"],
+        "offer": "25% off on F&B for dine-in and takeaway (max 10 persons), 20% off on Qmin app orders"
+      }
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": null,
+      "maxTransaction": 4000,
+      "monthlyCap": 1000,
+      "statementCycleCap": 100000,
+      "applicableStations": "All fuel stations in India",
+      "rewardsOnFuel": false,
+      "note": "1% fuel surcharge waiver on transactions up to ₹4,000 at all petrol pumps. Max waiver ₹1,000 per statement cycle. Applicable for spends up to ₹1,00,000 per statement cycle. Fee of 1% charged on fuel transactions exceeding ₹10,000."
+    },
+
+    "forex": {
+      "markupPercentage": 2.0,
+      "markupText": "2% + GST on international transactions (lower than standard 3.5%)",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "fee": 2.0,
+        "recommendation": "Always decline DCC and pay in local currency. DCC fee of 2% w.e.f. Jan 15, 2026."
+      },
+      "crossCurrencyCharges": 2.0,
+      "note": "Competitive 2% forex markup compared to industry standard of 3.5%. Refunds on foreign currency transactions also attract 2% markup."
+    },
+
+    "concierge": {
+      "included": true,
+      "availability": "24/7",
+      "type": "i-Assist Concierge",
+      "services": [
+        "Travel bookings (flights, hotels, car rentals)",
+        "Restaurant reservations",
+        "Event tickets",
+        "Gift procurement",
+        "General information",
+        "Emergency auto assistance",
+        "Medical concierge support"
+      ],
+      "contactNumber": "1800-26-70731 (Toll-free for MTNL/BSNL) or 022-67872016",
+      "note": "Currently available in New Delhi, Mumbai, Bengaluru, and Chennai only"
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": null,
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "Instant EMI / EMI on Call",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Select merchants and products"],
+        "note": "No-cost EMI available on select merchants. Interest subvention may not be passed if EMI is pre-closed."
+      },
+      "conversionFee": {
+        "percentage": 2.99,
+        "flatFee": null,
+        "minFee": null,
+        "maxFee": 299,
+        "note": "Processing fee of 2.99% capped at ₹299 + GST for Instant EMI w.e.f. Sep 01, 2025"
+      },
+      "minAmount": null,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": 0.1599,
+        "max": 0.20
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": 0
+      },
+      "cancellationPeriod": null,
+      "note": "EMI conversion available. ROI between 15.99% to 20% depending on tenure and transaction type."
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": 0.0375
+      },
+      "processingFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "tenures": [6, 12, 18, 24],
+      "maxAmount": null,
+      "preclosureFee": 3,
+      "note": "Balance transfer facility available. Contact bank for current promotional rates."
+    },
+
+    "memberships": [
+      {
+        "name": "Taj Epicure Plus",
+        "type": "hotel loyalty",
+        "value": 25000,
+        "duration": "1 year",
+        "condition": "On payment of joining fee (first year only)",
+        "benefits": [
+          "Complimentary 1-night stay at Taj Hotel",
+          "25% off on F&B for dine-in and takeaway (max 10 persons)",
+          "20% off on Qmin app orders",
+          "Access to hotel spa and salon",
+          "Discounted stays at Taj properties"
+        ],
+        "note": "Welcome benefit only - not renewed annually. Highly valuable membership for Taj loyalists."
+      },
+      {
+        "name": "EazyDiner Prime",
+        "type": "dining",
+        "value": 2499,
+        "duration": "1 year",
+        "condition": "On joining and renewed annually on payment of annual fee",
+        "benefits": [
+          "Up to 50% off at 2,000+ partner restaurants",
+          "Free desserts at select restaurants",
+          "Priority reservations",
+          "2,000 EazyDiner bonus points"
+        ],
+        "note": "Renewed every year as long as card is active with annual fee paid"
+      },
+      {
+        "name": "Priority Pass",
+        "type": "lounge access",
+        "value": null,
+        "duration": "Card validity",
+        "condition": "On card issuance",
+        "benefits": [
+          "Unlimited international lounge access",
+          "Access to 1,400+ lounges in 145+ countries",
+          "Available for both primary and add-on cardholders"
+        ],
+        "note": "Complimentary membership for unlimited international lounge access"
+      }
+    ],
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": true,
+        "count": 1,
+        "condition": "Via Taj Epicure Plus membership (first year only)",
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    },
+
+    "tripCancellation": {
+      "included": true,
+      "cover": 12000,
+      "transactionsPerYear": 2,
+      "applicableTo": ["Domestic flights", "Hotels", "Movie tickets"],
+      "condition": "Bookings made with the card only. Valid for 4-star and 5-star hotels.",
+      "note": "No cancellation charges on travel and hotel bookings. Refund of up to ₹12,000 for max 2 transactions per year."
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": true,
+      "cover": 30000000,
+      "condition": "Card must be used at least once in 60 days prior to the event. International travel only. Ticket must be purchased using the card. Supplementary cardholders not eligible."
+    },
+    "travelAccident": {
+      "included": true,
+      "cover": 50000,
+      "type": "Medical expenses for bodily injury caused by rail/road accident"
+    },
+    "lostBaggage": {
+      "included": true,
+      "cover": 25000,
+      "perBag": null,
+      "condition": "Baggage insurance cover"
+    },
+    "baggageDelay": {
+      "included": true,
+      "cover": 21000,
+      "delayHours": null,
+      "perDay": null,
+      "note": "Delay of checked-in baggage cover"
+    },
+    "lostCheckedBaggage": {
+      "included": true,
+      "cover": 84000,
+      "condition": "Loss of checked-in baggage"
+    },
+    "flightDelay": {
+      "included": true,
+      "cover": 17500,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": true,
+      "cover": 12000,
+      "coveredReasons": null,
+      "cancelForAnyReason": true,
+      "note": "Via cancellation cover benefit, not traditional insurance"
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": true,
+      "cover": 21000,
+      "minimumDelay": null,
+      "note": "Missed connecting international flight during transit"
+    },
+    "planeHijack": {
+      "included": true,
+      "cover": 75000,
+      "condition": null
+    },
+    "lostPassport": {
+      "included": true,
+      "cover": 35000,
+      "note": "Loss of passport and travel related documents"
+    },
+    "emergencyMedical": {
+      "included": true,
+      "cover": 50000,
+      "overseas": false,
+      "condition": "Medical expenses for bodily injury due to rail/road accident"
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": 50000,
+      "fraudLiability": {
+        "included": true,
+        "cover": 50000,
+        "reportingWindow": "Report immediately",
+        "note": "Card Liability Cover includes Lost Card Liability, Counterfeit/Skimming/Phishing/Online Fraud Protection"
+      }
+    },
+    "creditShield": {
+      "included": true,
+      "cover": 100000,
+      "note": "Credit Shield cover"
+    },
+    "purchaseProtection": {
+      "included": true,
+      "cover": 140000,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": 140000,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "All insurance covers are subject to terms in the policy document provided by ICICI Lombard General Insurance Co. Ltd. Claims to be filed directly with ICICI Lombard at 1800-2666 or ihealthcare@icicilombard.com."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000
+    },
+    "virtualCard": {
+      "available": true,
+      "instantIssuance": true,
+      "singleUse": false,
+      "spendControls": true
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": false,
+      "rewardsOnUPI": false,
+      "note": "Mastercard variant - UPI linking available only for RuPay cards"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Real-time alerts via SMS, Email, Push",
+        "View statements and transactions",
+        "Reward points tracking and redemption"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    },
+    "chipAndPin": {
+      "enabled": true,
+      "note": "Embedded microchip for enhanced security. PIN required for merchant transactions, not for online."
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [
+      {
+        "cardId": "icici-emeralde-pvc",
+        "spendRequired": null,
+        "tenure": null,
+        "autoUpgrade": false,
+        "note": "Upgrade offered based on relationship and spend history"
+      },
+      {
+        "cardId": "icici-sapphiro",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": true,
+        "note": "Upgrade based on high spend, NRV, or wealth management relationship"
+      }
+    ],
+    "upgradesTo": [
+      {
+        "cardId": "icici-times-black",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": true,
+        "note": "Higher tier card with ₹20,000 joining fee and ₹25 lakh spend for fee waiver"
+      },
+      {
+        "cardId": "icici-diamant",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": true,
+        "note": "Ultra-premium card with ₹1.25 lakh joining fee"
+      }
+    ],
+    "note": "Invite-only card. Upgrades typically offered to existing ICICI customers with strong banking relationship, high NRV, or consistent high spend on existing cards."
+  },
+
+  "meta": {
+    "tags": [
+      "Travel",
+      "Super Premium",
+      "Metal Card",
+      "Unlimited Lounge Access",
+      "Rewards",
+      "Golf",
+      "Invite Only",
+      "Taj Epicure",
+      "iShop",
+      "Priority Pass"
+    ],
+    "bestFor": "High-net-worth individuals who spend ₹10+ lakh annually, value unlimited lounge access, golf privileges, and want good rewards on categories like insurance, education, and utilities typically excluded by other cards. Best for those who can maximize iShop for 18-36% returns on travel.",
+    "notRecommendedFor": "Low spenders (under ₹8-10 lakh annually), those who prefer airmiles transfers to multiple partners, or those who primarily use UPI for payments. Not suitable for those wanting easy application - invite-only nature makes it hard to obtain.",
+    "rating": {
+      "overall": 4.3,
+      "rewards": 4.2,
+      "benefits": 4.5,
+      "value": 4.2
+    },
+    "verdict": "ICICI's flagship super-premium card that finally competes with HDFC Infinia. The 3% base reward rate with 1:1 redemption, combined with iShop's 18-36% returns on travel, makes it highly rewarding. Unlimited lounge access without spend requirements, complimentary Taj Epicure with free night stay, and rewards on insurance/education/utilities are standout features. Main drawbacks: only one transfer partner (Air India 1:1), invite-only access, and the valuable Taj Epicure membership is first year only. Excellent for ICICI relationship holders who can leverage iShop and value lifestyle perks.",
+    "pros": [
+      "3% base reward rate with sensible category caps",
+      "iShop offers 18% on flights/vouchers, 36% on hotels",
+      "Unlimited domestic and international lounge access for primary and add-on cards",
+      "No spend requirement for lounge access (excluded from ₹75K rule)",
+      "Rewards on insurance, education, utilities - typically excluded categories",
+      "1:1 transfer to Air India Maharaja Club",
+      "Complimentary Taj Epicure Plus with 1 night stay (first year)",
+      "EazyDiner Prime membership renewed annually",
+      "Unlimited golf rounds and lessons",
+      "2% forex markup (vs 3.5% industry standard)",
+      "No cash advance fee",
+      "No late payment charges",
+      "₹12,000 trip cancellation cover",
+      "Low ₹12,499 fee for benefits offered (waivable at ₹10L spend)"
+    ],
+    "cons": [
+      "Invite-only - difficult to obtain",
+      "Only one transfer partner (Air India)",
+      "Taj Epicure membership not renewed annually",
+      "Statement credit value drops to ₹0.40 per point",
+      "Concierge available only in 4 cities",
+      "No Apple Pay support",
+      "Add-on card fee of ₹3,500 from Jan 2026",
+      "18,000 points monthly cap on iShop accelerated rewards",
+      "No rewards on fuel, rent, government payments",
+      "Points expire in 3 years"
+    ],
+    "alternatives": [
+      "hdfc-infinia",
+      "hdfc-diners-black",
+      "axis-magnus",
+      "icici-times-black",
+      "yes-marquee"
+    ],
+    "lastVerified": "2026-01-05",
+    "dataSource": [
+      "Official ICICI Bank Emeralde Private Metal Credit Card page",
+      "ICICI Bank MITC document dated Dec 12, 2025",
+      "ICICI Bank iShop portal",
+      "CardExpert.in",
+      "TechnoFino community discussions",
+      "PaisaBazaar.com",
+      "CardInsider.com",
+      "CardMaven.in"
+    ],
+    "changelog": [
+      {
+        "date": "2026-01-15",
+        "change": "Add-on card fee of ₹3,500 + GST becomes applicable as one-time fee",
+        "source": "ICICI Bank MITC Dec 2025"
+      },
+      {
+        "date": "2026-01-15",
+        "change": "DCC fee updated to 2% (from 1%)",
+        "source": "ICICI Bank MITC Dec 2025"
+      },
+      {
+        "date": "2026-01-15",
+        "change": "Wallet load fee of 1% on ₹5,000+ transactions",
+        "source": "ICICI Bank MITC Dec 2025"
+      },
+      {
+        "date": "2025-09-01",
+        "change": "Instant EMI processing fee updated to 2.99% capped at ₹299",
+        "source": "ICICI Bank MITC"
+      },
+      {
+        "date": "2025-02-13",
+        "change": "iShop accelerated rewards portal launched",
+        "source": "TechnoFino"
+      },
+      {
+        "date": "2024-11-15",
+        "change": "Rent, government, education payments excluded from annual fee waiver threshold calculation",
+        "source": "ICICI Bank MITC"
+      },
+      {
+        "date": "2024-07-01",
+        "change": "Card replacement fee of ₹3,500 introduced",
+        "source": "ICICI Bank MITC"
+      },
+      {
+        "date": "2024-03",
+        "change": "Air India Maharaja Club added as 1:1 transfer partner",
+        "source": "CardExpert, TechnoFino"
+      }
+    ]
+  }
+}

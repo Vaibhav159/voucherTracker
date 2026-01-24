@@ -1,0 +1,967 @@
+{
+  "id": "hdfc-pixel-go",
+  "name": "HDFC Bank Pixel Go Credit Card",
+  "bank": "HDFC Bank",
+  "slug": "hdfc-pixel-go-credit-card",
+  "image": "assets/cards/hdfc/pixel-go.png",
+  "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/pixel-go-credit-card",
+  "isActive": true,
+
+  "network": {
+    "type": "Visa | RuPay",
+    "variant": null,
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "entry",
+    "isCobranded": false,
+    "cobrandPartner": {
+      "name": null,
+      "type": null,
+      "loyaltyProgram": null
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 250,
+      "gst": "applicable",
+      "waivable": true,
+      "waiverCondition": "Spend ₹10,000 within first 90 days of card issuance"
+    },
+    "annual": {
+      "amount": 250,
+      "gst": "applicable",
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 50000,
+        "spendPeriod": "12 months (preceding year)",
+        "waiverText": "Spend ₹50,000 or more in the preceding 12 months to get renewal fee waived"
+      }
+    },
+    "addOnCard": {
+      "available": false,
+      "freeCount": null,
+      "joiningFee": null,
+      "annualFee": null,
+      "rewardSharing": null
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding balance",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 100, "fee": 0},
+        {"minAmount": 101, "maxAmount": 500, "fee": 100},
+        {"minAmount": 501, "maxAmount": 1000, "fee": 500},
+        {"minAmount": 1001, "maxAmount": 5000, "fee": 600},
+        {"minAmount": 5001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 900},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ],
+      "note": "Late Payment Charges applicable if Minimum Amount Due is not paid by payment due date. GST extra."
+    },
+    "overLimit": {
+      "amount": null,
+      "percentage": null
+    },
+    "chequeReturn": null,
+    "paymentReturn": {
+      "percentage": 2,
+      "minFee": 450,
+      "note": "2% of payment amount subject to minimum of ₹450"
+    },
+    "cardReplacement": 100,
+    "duplicateStatement": null,
+    "railwayTicketFee": {
+      "percentage": 1,
+      "gst": true,
+      "note": "1% of transaction amount + GST for IRCTC purchases"
+    },
+    "rentTransactionFee": {
+      "percentage": 1,
+      "cap": 4999,
+      "note": "w.e.f 1st Oct 2025, 1% fee on rental transactions done on any applicable merchant for the month"
+    },
+    "fuelCharges": {
+      "percentage": 1,
+      "threshold": 15000,
+      "cap": 4999,
+      "note": "w.e.f 1st Oct 2025, 1% fee on fuel transactions exceeding ₹15,000"
+    },
+    "utilityCharges": {
+      "percentage": 1,
+      "monthlyThreshold": 50000,
+      "cap": 4999,
+      "note": "w.e.f 1st Oct 2025, 1% fee on utility spends exceeding ₹50,000 per calendar month"
+    },
+    "educationCharges": {
+      "percentage": 1,
+      "cap": 4999,
+      "note": "w.e.f 1st Oct 2025, 1% fee on education transactions via third party apps (CRED, Nobroker, Cheq etc.). Direct college/school transactions exempted."
+    },
+    "walletLoading": {
+      "percentage": 1,
+      "monthlyThreshold": 10000,
+      "cap": 4999,
+      "note": "w.e.f 1st Oct 2025, 1% fee on wallet loading spends exceeding ₹10,000 per calendar month (excl PayZapp)"
+    },
+    "onlineGaming": {
+      "percentage": 1,
+      "monthlyThreshold": 10000,
+      "cap": 4999,
+      "note": "w.e.f 1st Oct 2025, 1% fee on online skill-based gaming spends exceeding ₹10,000 per calendar month"
+    }
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 25000,
+        "annual": 300000
+      },
+      "selfEmployed": {
+        "itr": 600000
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 60,
+      "addOnMin": null
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": null,
+      "recommended": 700
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": "Can be applied via PayZapp app. FD-backed variant also available."
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident",
+    "applicationMethod": "PayZapp App only"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": null,
+      "max": null
+    },
+    "factors": "Based on income, credit score, and existing relationship. For existing HDFC cardholders, requires split limit from existing card.",
+    "enhancementCriteria": "Periodic review based on usage and repayment history",
+    "fdBackedOption": {
+      "available": true,
+      "limitPercentage": 90,
+      "note": "Get up to 90% of FD value as credit limit with FD-backed variant"
+    }
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375,
+      "note": "3.75% per month (45% per annum) - updated w.e.f 1st Oct 2025"
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375,
+      "note": "Interest charged from date of withdrawal until full payment"
+    },
+    "gracePeriod": {
+      "days": 50,
+      "minDays": 20,
+      "note": "20 to 50 days interest-free period from date of purchase. Not applicable if previous balance not cleared or cash advance taken."
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 200,
+      "calculation": "5% of (Retail Balance + Cash Advance + Finance Charges) or ₹200, whichever is higher. Plus 100% of fees/charges, EMI amount, GST, and overlimit amount."
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": 40,
+    "dailyLimit": null,
+    "interestFromDay1": true,
+    "note": "Transaction fee of 2.5% or ₹500 whichever is higher. Finance charges apply from date of withdrawal."
+  },
+
+  "rewards": {
+    "type": "cashback",
+    "currency": {
+      "name": "PIXEL CashPoints",
+      "symbol": "CP",
+      "singularUnit": "CashPoint",
+      "pluralUnit": "CashPoints"
+    },
+    "baseRate": {
+      "rate": 1,
+      "spendUnit": 100,
+      "effectivePercentage": 0.01,
+      "note": "1% unlimited cashback on all eligible transactions"
+    },
+    "earningText": "Earn 1% unlimited CashBack on all eligible transactions",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "Rent payments",
+        "EMI transactions",
+        "E-wallet loading",
+        "Government-related transactions",
+        "Cash withdrawals",
+        "Online skill-based gaming (w.e.f Oct 2025)"
+      ],
+      "mccs": null,
+      "note": "Fuel, EMI, Rent payments, e-wallet loading, Government related transactions do not earn CashPoints"
+    },
+
+    "caps": {
+      "monthly": {
+        "points": 15000,
+        "cashback": 15000,
+        "note": "Maximum ₹15,000 CashPoints per calendar month under 1% unlimited cashback category"
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": "calendar",
+      "perTransaction": null,
+      "insuranceCap": {
+        "daily": 2000,
+        "monthly": null,
+        "note": "CashPoints on insurance transactions capped at 2,000 per month (w.e.f Oct 2025)"
+      }
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "2 years",
+      "condition": "From date of accumulation",
+      "inactivityExpiry": {
+        "enabled": true,
+        "period": "365 days",
+        "note": "CashPoints nullified if card not used for more than 365 days"
+      }
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": false,
+        "points": null,
+        "cashback": null,
+        "vouchers": null,
+        "spendCondition": null,
+        "validity": null,
+        "description": null
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "smartbuy": {
+        "rate": 5,
+        "cashbackPercentage": 5,
+        "cap": 500,
+        "capPeriod": "monthly",
+        "merchants": ["IGP", "Flights", "Hotels", "Bus", "Rail", "Instant Vouchers", "Apple Imagine Tresor"],
+        "note": "5% cashback on SmartBuy purchases, capped at 500 CashPoints per month"
+      },
+      "upi": {
+        "rate": 1,
+        "cashbackPercentage": 1,
+        "cap": 500,
+        "capPeriod": "monthly",
+        "applicableTo": "RuPay variant only",
+        "note": "1% cashback on UPI spends for RuPay Credit Card holders, capped at 500 CashPoints per month"
+      },
+      "online": {
+        "rate": 1,
+        "cashbackPercentage": 1,
+        "cap": 15000,
+        "capPeriod": "monthly",
+        "note": "1% unlimited cashback (capped at ₹15,000 per month)"
+      },
+      "retail": {
+        "rate": 1,
+        "cashbackPercentage": 1,
+        "cap": 15000,
+        "capPeriod": "monthly",
+        "note": "1% unlimited cashback on retail transactions"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on fuel transactions"
+      },
+      "insurance": {
+        "rate": 1,
+        "cashbackPercentage": 1,
+        "cap": 2000,
+        "capPeriod": "monthly",
+        "note": "1% cashback on insurance, capped at 2,000 CashPoints per month"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on rent payments"
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on wallet loads"
+      },
+      "government": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on government-related transactions"
+      },
+      "emi": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on EMI transactions. CashPoints reversed if transaction converted to EMI."
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": true,
+        "name": "SmartBuy",
+        "multiplier": 5,
+        "cashbackPercentage": 5,
+        "cap": 500,
+        "capPeriod": "monthly",
+        "merchants": ["IGP", "Flights", "Hotels", "Bus", "Rail", "Instant Vouchers", "Apple Imagine Tresor"],
+        "link": "https://offers.smartbuy.hdfcbank.com",
+        "note": "5% cashback on SmartBuy purchases, capped at 500 CashPoints per calendar month"
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": null,
+        "note": null
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": null
+      },
+      "milestoneAccelerators": null
+    },
+
+    "redemption": {
+      "baseValue": 1.0,
+      "bestValue": 1.0,
+      "bestOption": "Redeem via PayZapp for brand vouchers at 1 CashPoint = ₹1",
+      "minRedemption": 500,
+      "redemptionIncrement": null,
+      "convenienceFee": 0,
+      "monthlyRedemptionLimit": null,
+
+      "pointsPlusPay": {
+        "enabled": false,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": null,
+        "note": null
+      },
+
+      "options": [
+        {
+          "type": "payzapp_wallet",
+          "value": 1.0,
+          "description": "Transfer CashPoints to PayZapp Wallet balance",
+          "recommended": true,
+          "minPoints": 500,
+          "processingFee": 0,
+          "partners": ["PayZapp"],
+          "note": "CashPoints transferred to PayZapp wallet can be used for bill payments, recharges, or brand vouchers"
+        },
+        {
+          "type": "brand_vouchers",
+          "value": 1.0,
+          "description": "Purchase brand e-vouchers from 100+ brands via PayZapp",
+          "recommended": true,
+          "minPoints": 500,
+          "processingFee": 0,
+          "partners": ["Multiple brands available on PayZapp"],
+          "note": "Redeemed CashPoints can be used to purchase vouchers within PayZapp digitally"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": null,
+      "partners": null,
+      "currentBonus": null
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": null,
+      "acrossUsers": false,
+      "note": null
+    },
+
+    "specialLogic": "CashPoints calculated on rounded down integer. E.g., ₹260 transaction = 2 CashPoints (260 × 1% = 2.6, rounded down to 2). Fractional CashPoints not accrued.",
+
+    "calculator": {
+      "enabled": true,
+      "formula": "cashback = floor(transactionAmount * rate / 100)",
+      "variables": ["transactionAmount", "category", "isSmartBuy", "isUPI"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "eligibleLounges": null
+      },
+      "international": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "membershipValue": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "eligibleLounges": null
+      }
+    },
+
+    "milestones": [
+      {
+        "spend": 10000,
+        "period": "90 days from issuance",
+        "benefit": "Joining fee waiver",
+        "benefitType": "fee_waiver",
+        "value": 250,
+        "conditions": "Spend ₹10,000 within 90 days of card issuance"
+      },
+      {
+        "spend": 50000,
+        "period": "annual (preceding 12 months)",
+        "benefit": "Renewal fee waiver",
+        "benefitType": "fee_waiver",
+        "value": 250,
+        "conditions": "Spend ₹50,000 in the preceding 12 months before renewal"
+      }
+    ],
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": false,
+      "lessonIncluded": false,
+      "note": null
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": null
+    },
+
+    "dining": {
+      "included": true,
+      "programs": [
+        {
+          "name": "Swiggy Dineout",
+          "discount": "Up to 10-20%",
+          "cap": 300,
+          "frequency": "Monthly",
+          "note": "Save up to 10-20% on restaurant bill payments via Swiggy Dineout. Maximum savings ₹300 per month."
+        }
+      ],
+      "hotelDining": {
+        "included": false,
+        "hotels": null,
+        "offer": null
+      }
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 400,
+      "maxTransaction": 5000,
+      "monthlyCap": 250,
+      "capPeriod": "statement cycle",
+      "applicableStations": "All fuel stations in India",
+      "rewardsOnFuel": false,
+      "note": "1% fuel surcharge waiver (excluding GST) on transactions between ₹400 to ₹5,000. Maximum waiver of ₹250 per statement cycle."
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% foreign currency transaction fee",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "markupFee": 1,
+        "recommendation": "Always decline DCC and pay in local currency",
+        "note": "1% markup fee on transactions in INR at international locations or merchants registered overseas"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "3.5% forex markup on all non-INR transactions"
+    },
+
+    "concierge": {
+      "included": false,
+      "availability": null,
+      "type": null,
+      "services": null,
+      "contactNumber": null,
+      "note": null
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": null,
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "SmartEMI / Pay-in-Parts",
+      "noCostEMI": {
+        "available": false,
+        "merchants": null,
+        "note": null
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": 199,
+        "gst": true,
+        "minFee": 199
+      },
+      "minAmount": null,
+      "tenures": null,
+      "interestRates": {
+        "min": null,
+        "max": null,
+        "note": "Refer EMI section in PayZapp app for interest rates"
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": null,
+        "note": "3% of Balance Principal Outstanding"
+      },
+      "cancellationPeriod": null,
+      "note": "One-click EMI conversion via PayZapp. CashPoints reversed if transaction converted to EMI. Gold and Jewelry transactions not eligible.",
+      "easyEMI": {
+        "processingFee": 299,
+        "note": "Up to ₹299 EMI processing fee at merchant"
+      }
+    },
+
+    "balanceTransfer": {
+      "available": false,
+      "interestRate": null,
+      "processingFee": null,
+      "tenures": null,
+      "maxAmount": null,
+      "preclosureFee": null,
+      "note": null
+    },
+
+    "memberships": null,
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "condition": null
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": false,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": false,
+      "cover": null,
+      "fraudLiability": {
+        "included": true,
+        "cover": null,
+        "reportingWindow": "Zero liability on transactions post reporting card loss",
+        "note": "As per RBI guidelines on customer protection for unauthorized transactions"
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "Entry-level card with no complimentary insurance coverage. Zero liability on unauthorized transactions post reporting."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000,
+      "note": "Tap & Pay for transactions up to ₹5,000 without PIN"
+    },
+    "virtualCard": {
+      "available": true,
+      "instantIssuance": true,
+      "singleUse": false,
+      "spendControls": true,
+      "note": "Digital credit card issued instantly via PayZapp. RuPay variant as digital card, Visa as physical card."
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true,
+      "payzapp": true
+    },
+    "upiLinking": {
+      "available": true,
+      "rewardsOnUPI": true,
+      "applicableTo": "RuPay variant only",
+      "note": "Link RuPay Pixel Credit Card to UPI apps (PayZapp, GPay, PhonePe, Paytm) for Scan & Pay. 1% cashback on UPI (capped at 500 CashPoints/month)."
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "app": "PayZapp",
+      "features": [
+        "Block/Unblock card",
+        "View statements",
+        "Make repayments",
+        "EMI conversion",
+        "Dispute management",
+        "Hotlisting",
+        "Transaction notifications",
+        "Card PIN management"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true,
+      "inApp": true
+    },
+    "emiAtPOS": false,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"],
+      "note": "Payment via UPI, Debit Card, or NetBanking"
+    },
+    "swipeWithoutOTP": {
+      "available": true,
+      "note": "Swipe to Pay for online e-commerce transactions without OTP"
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": null,
+    "upgradesTo": [
+      {
+        "cardId": "hdfc-pixel-play",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false,
+        "note": "Upgrade to Pixel Play for 5% on selected categories and 3% on Amazon/Flipkart/PayZapp"
+      }
+    ],
+    "note": "Entry-level card. Consider Pixel Play for enhanced category-based cashback."
+  },
+
+  "meta": {
+    "tags": [
+      "Entry-level",
+      "Digital",
+      "Cashback",
+      "PayZapp",
+      "Virtual Card",
+      "UPI Credit Card",
+      "First Credit Card"
+    ],
+    "bestFor": "First-time credit card users, beginners building credit history, PayZapp users seeking simple cashback rewards",
+    "notRecommendedFor": "High spenders seeking premium benefits, frequent travelers needing lounge access, users wanting accelerated category rewards",
+    "rating": {
+      "overall": 3.0,
+      "rewards": 2.5,
+      "benefits": 2.0,
+      "value": 3.5
+    },
+    "verdict": "A simple entry-level digital credit card with straightforward 1% cashback and easy fee waivers. Best suited for beginners who want to build credit history with a low-risk card. The 5% SmartBuy cashback (capped at 500 points) adds some value. Limited benefits compared to other cashback cards, but the digital-first experience via PayZapp is convenient.",
+    "pros": [
+      "Low joining and annual fee (₹250 each)",
+      "Easy fee waiver conditions (₹10K/₹50K)",
+      "1% unlimited cashback on all eligible spends",
+      "5% cashback on SmartBuy purchases",
+      "Instant digital card issuance via PayZapp",
+      "1% UPI cashback with RuPay variant",
+      "Fuel surcharge waiver up to ₹250/month",
+      "FD-backed option available for no income proof",
+      "1 CashPoint = ₹1 (no devaluation)"
+    ],
+    "cons": [
+      "No airport lounge access",
+      "No complimentary insurance coverage",
+      "Low cashback caps on SmartBuy and UPI (500 points each)",
+      "Available only via PayZapp app",
+      "Limited to Visa and RuPay networks",
+      "No welcome bonus",
+      "3.5% forex markup is high",
+      "Many new fees introduced from Oct 2025 (utility, education, gaming, etc.)",
+      "Requires split limit for existing HDFC cardholders",
+      "CashPoints expire in 2 years"
+    ],
+    "alternatives": [
+      "hdfc-pixel-play",
+      "hdfc-millennia",
+      "au-lit",
+      "amazon-pay-icici",
+      "flipkart-axis",
+      "sbi-cashback"
+    ],
+    "lastVerified": "2026-01-08",
+    "dataSource": [
+      "Official HDFC Bank Pixel Go Credit Card page - hdfcbank.com",
+      "HDFC Bank Pixel Credit Card MITC (Version 1.05, Updated Sep 2025)",
+      "PayZapp microsite - v.hdfcbank.com/pixel-credit-card",
+      "PaisaBazaar.com",
+      "CardInsider.com",
+      "CardMaven.in",
+      "BankBazaar.com",
+      "Pice App Blog"
+    ],
+    "changelog": [
+      {
+        "date": "2025-10-01",
+        "change": "New fees introduced: 1% on rent transactions, fuel >₹15K, utility >₹50K/month, education via third-party apps, wallet loading >₹10K/month, online gaming >₹10K/month",
+        "source": "MITC Version 1.05"
+      },
+      {
+        "date": "2025-10-01",
+        "change": "Finance charges updated to 3.75% per month (45% p.a.)",
+        "source": "MITC Version 1.05"
+      },
+      {
+        "date": "2025-10-01",
+        "change": "Fair Usage Policy: Max ₹15,000 CashPoints per month under 1% unlimited cashback",
+        "source": "MITC Version 1.05"
+      },
+      {
+        "date": "2025-10-01",
+        "change": "Insurance cashback capped at 2,000 CashPoints per month",
+        "source": "MITC Version 1.05"
+      },
+      {
+        "date": "2025-10-01",
+        "change": "Online skill-based gaming transactions no longer earn CashPoints",
+        "source": "MITC Version 1.05"
+      },
+      {
+        "date": "2025-10-01",
+        "change": "Late payment charges revised: ranges from ₹100 to ₹1,300 based on outstanding",
+        "source": "MITC Version 1.05"
+      }
+    ]
+  }
+}

@@ -1,0 +1,984 @@
+{
+  "id": "icici-emirates-skywards-sapphiro",
+  "name": "Emirates Skywards ICICI Bank Sapphiro Credit Card",
+  "bank": "ICICI Bank",
+  "slug": "icici-emirates-skywards-sapphiro-credit-card",
+  "image": "assets/cards/icici/emirates-skywards-sapphiro.png",
+  "link": "https://www.icicibank.com/personal-banking/cards/credit-card/emirates-skywards/emirates-sapphiro",
+  "isActive": true,
+
+  "network": {
+    "type": "Visa",
+    "variant": null,
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "premium",
+    "isCobranded": true,
+    "cobrandPartner": {
+      "name": "Emirates",
+      "type": "airline",
+      "loyaltyProgram": "Emirates Skywards"
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 5000,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 5000,
+      "firstYearWaived": true,
+      "renewalWaiver": {
+        "available": false,
+        "spendThreshold": null,
+        "spendPeriod": null,
+        "waiverText": "No annual fee waiver available for this card"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": 0,
+      "joiningFee": 199,
+      "annualFee": 199,
+      "rewardSharing": true
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 100, "fee": 0},
+        {"minAmount": 100, "maxAmount": 500, "fee": 100},
+        {"minAmount": 501, "maxAmount": 1000, "fee": 500},
+        {"minAmount": 1001, "maxAmount": 5000, "fee": 600},
+        {"minAmount": 5001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 900},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ]
+    },
+    "overLimit": {
+      "amount": 550,
+      "percentage": 2.5
+    },
+    "chequeReturn": 500,
+    "cardReplacement": 200,
+    "duplicateStatement": null
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": null,
+        "annual": null
+      },
+      "selfEmployed": {
+        "itr": null
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 65,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": null
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 100000,
+      "max": 500000
+    },
+    "factors": "Based on income, credit score, existing relationship, and repayment history",
+    "enhancementCriteria": "Good repayment history for 6+ months"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": 48,
+      "note": "Interest-free period ranges from 18-48 days depending on transaction date"
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": null,
+      "calculation": "5% of outstanding amount"
+    },
+    "penaltyAPR": {
+      "rate": 0.45,
+      "triggerCondition": "On default"
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": 10,
+    "dailyLimit": 20000,
+    "interestFromDay1": true
+  },
+
+  "rewards": {
+    "type": "miles",
+    "currency": {
+      "name": "Skywards Miles",
+      "symbol": "Miles",
+      "singularUnit": "mile",
+      "pluralUnit": "miles"
+    },
+    "baseRate": {
+      "rate": 2,
+      "spendUnit": 100,
+      "effectivePercentage": 0.02,
+      "note": "Effective from Jan 15, 2026: 1.5 Miles per ₹100 spent"
+    },
+    "earningText": "Earn 2 Skywards Miles for every ₹100 spent on eligible retail transactions",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "Cash advances",
+        "ATM withdrawals",
+        "EMI transactions",
+        "Balance transfers",
+        "Personal Loan on Credit Card (PLCC)",
+        "Fees and other charges",
+        "Insurance payments (from Jan 15, 2026)",
+        "Utility payments (from Jan 15, 2026)",
+        "Government payments (from Jan 15, 2026)",
+        "Education payments (from Jan 15, 2026)"
+      ],
+      "mccs": ["5541", "5542", "5983", "6540", "6513"],
+      "note": "No Skywards Miles earned on excluded categories"
+    },
+
+    "caps": {
+      "monthly": {
+        "points": null,
+        "cashback": null
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": "statement",
+      "perTransaction": null,
+      "categorySpecific": {
+        "utility": {
+          "spendCap": 80000,
+          "period": "statement cycle"
+        },
+        "insurance": {
+          "spendCap": 80000,
+          "period": "statement cycle"
+        },
+        "grocery": {
+          "spendCap": 40000,
+          "period": "statement cycle"
+        }
+      }
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "3 years",
+      "condition": "Emirates Skywards Miles expire 3 years from date of earning"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": 5000,
+        "cashback": null,
+        "vouchers": null,
+        "spendCondition": {
+          "amount": null,
+          "period": null,
+          "transactionCount": null
+        },
+        "validity": "Credited upon payment of joining fee",
+        "description": "5,000 Skywards Miles + Complimentary Emirates Skywards Silver Tier Membership"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": true,
+        "points": 5000,
+        "condition": "5,000 Skywards Miles on spending ₹1 lakh in a year"
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "retail": {
+        "rate": 2,
+        "spendUnit": 100,
+        "cap": null,
+        "capPeriod": null,
+        "note": "2 Skywards Miles per ₹100 (1.5 Miles from Jan 15, 2026)"
+      },
+      "insurance": {
+        "rate": 1,
+        "spendUnit": 100,
+        "cap": 80000,
+        "capPeriod": "statement cycle",
+        "note": "1 Mile per ₹100 (No miles from Jan 15, 2026)"
+      },
+      "utility": {
+        "rate": 1,
+        "spendUnit": 100,
+        "cap": 80000,
+        "capPeriod": "statement cycle",
+        "note": "1 Mile per ₹100 (No miles from Jan 15, 2026)"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No Skywards Miles on fuel transactions"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No Skywards Miles + 1% rent pay fee applicable"
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No Skywards Miles on wallet loads"
+      },
+      "government": {
+        "rate": 0,
+        "cap": null,
+        "note": "No Skywards Miles on government transactions (from Jan 15, 2026)"
+      },
+      "education": {
+        "rate": 0,
+        "cap": null,
+        "note": "No Skywards Miles on education payments (from Jan 15, 2026)"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": true,
+        "name": "iShop",
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "link": "https://www.icicibank.com/ishop",
+        "note": "Earn up to 4% cashback on iShop purchases"
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": [],
+        "note": "No specific accelerated partner merchants"
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": []
+      },
+      "milestoneAccelerators": []
+    },
+
+    "redemption": {
+      "baseValue": null,
+      "bestValue": 1.0,
+      "bestOption": "Flight upgrades on Emirates",
+      "minRedemption": null,
+      "redemptionIncrement": null,
+      "convenienceFee": null,
+      "monthlyRedemptionLimit": null,
+
+      "pointsPlusPay": {
+        "enabled": true,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": null,
+        "note": "Cash + Miles option available for Emirates bookings"
+      },
+
+      "options": [
+        {
+          "type": "flights",
+          "value": null,
+          "description": "Award flights on Emirates and partner airlines",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": null,
+          "partners": ["Emirates", "flydubai", "Partner Airlines"],
+          "note": "Book Classic Rewards flights to any Emirates or flydubai destination"
+        },
+        {
+          "type": "upgrades",
+          "value": 2.0,
+          "description": "Flight upgrades on Emirates",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": null,
+          "partners": ["Emirates"],
+          "note": "Best value - upgrade from Economy to Business or Business to First Class"
+        },
+        {
+          "type": "hotels",
+          "value": null,
+          "description": "Hotel bookings via Emirates Skywards",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": null,
+          "partners": ["Emirates Hotels"],
+          "note": "Redeem for hotel stays through Emirates partners"
+        },
+        {
+          "type": "experiences",
+          "value": null,
+          "description": "Skywards Exclusives events and experiences",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": null,
+          "partners": ["Emirates Skywards Exclusives"],
+          "note": "Access to exclusive events, auctions, and Money Can't Buy experiences"
+        },
+        {
+          "type": "cashPlusMiles",
+          "value": null,
+          "description": "Reduce flight cost with Cash + Miles",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": null,
+          "partners": ["Emirates", "flydubai"],
+          "note": "Pay with any combination of cash and Skywards Miles"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": null,
+      "partners": [],
+      "note": "Skywards Miles are exclusive to Emirates Skywards program and cannot be transferred to other loyalty programs"
+    },
+
+    "pooling": {
+      "enabled": true,
+      "eligibleCards": ["Emirates Skywards ICICI Bank family cards under same Emirates Skywards account"],
+      "acrossUsers": false,
+      "note": "Supplementary card miles credited to primary cardholder's Emirates Skywards account"
+    },
+
+    "specialLogic": "Miles are credited directly to Emirates Skywards account within 48 hours of statement generation",
+
+    "calculator": {
+      "enabled": true,
+      "formula": "skywardsMiles = (eligibleSpend / 100) * categoryRate",
+      "variables": ["eligibleSpend", "categoryRate"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": true,
+        "complimentaryCount": 2,
+        "period": "quarter",
+        "accessType": "DreamFolks / Priority Pass",
+        "accessProvider": "Priority Pass (cards issued after Nov 15, 2024) / DreamFolks (cards issued before)",
+        "spendRequired": {
+          "amount": 75000,
+          "period": "previous quarter",
+          "note": "Spend ₹75,000 in preceding quarter to unlock 2 lounge visits for the next quarter"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "eligibleLounges": "https://dreamfolks.in or https://www.prioritypass.com/airport-lounges"
+      },
+      "international": {
+        "included": true,
+        "complimentaryCount": 2,
+        "period": "year",
+        "accessType": "Priority Pass / DreamFolks",
+        "accessProvider": "Priority Pass (cards issued after Nov 15, 2024) / DreamFolks (cards issued before)",
+        "membershipValue": null,
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "No minimum spend required for international lounge access"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "eligibleLounges": "https://www.prioritypass.com/airport-lounges"
+      },
+      "spa": {
+        "included": true,
+        "complimentaryCount": 2,
+        "period": "year",
+        "note": "2 complimentary spa sessions at select airports in India"
+      }
+    },
+
+    "milestones": [
+      {
+        "spend": 100000,
+        "period": "annual",
+        "benefit": "5,000 Skywards Miles",
+        "benefitType": "miles",
+        "value": null,
+        "conditions": "Spend ₹1 lakh in an anniversary year"
+      },
+      {
+        "spend": 500000,
+        "period": "annual",
+        "benefit": "Renewal of Emirates Skywards Silver Tier Membership",
+        "benefitType": "membership",
+        "value": null,
+        "conditions": "Spend ₹5 lakh in an anniversary year to retain Silver Tier status"
+      }
+    ],
+
+    "emiratesTierBenefits": {
+      "silverTier": {
+        "included": true,
+        "complimentary": true,
+        "renewalCondition": "Spend ₹5 lakh annually",
+        "benefits": [
+          "Priority check-in",
+          "Priority boarding",
+          "Extra baggage allowance",
+          "Access to special offers"
+        ]
+      },
+      "goldTier": {
+        "included": false,
+        "upgradeCondition": null,
+        "note": "Gold Tier upgrade not available for Sapphiro card (available only for Emeralde card)"
+      }
+    },
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": null,
+      "lessonIncluded": null,
+      "note": "Golf privileges not explicitly mentioned for Emirates Skywards Sapphiro variant"
+    },
+
+    "movies": {
+      "included": true,
+      "platform": "BookMyShow",
+      "offer": "Buy 1 Get 1 Free",
+      "freeTickets": 1,
+      "frequency": "Twice per month",
+      "cap": 500,
+      "note": "Buy one ticket, get up to ₹500 off on second ticket, twice a month. Subject to spending ₹25,000 in preceding quarter from Jan 15, 2026"
+    },
+
+    "dining": {
+      "included": true,
+      "programs": [
+        {
+          "name": "ICICI Bank Culinary Treats Programme",
+          "discount": "Exclusive discounts",
+          "cap": null,
+          "frequency": null,
+          "note": "Special dining offers at partner restaurants"
+        }
+      ],
+      "hotelDining": {
+        "included": false,
+        "hotels": null,
+        "offer": null
+      }
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 400,
+      "maxTransaction": 4000,
+      "monthlyCap": 250,
+      "applicableStations": "All fuel stations",
+      "rewardsOnFuel": false,
+      "note": "1% fuel surcharge waiver on transactions between ₹400-₹4,000, capped at ₹250 per month"
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% markup on international transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "recommendation": "Always decline DCC and pay in local currency",
+        "dccFee": 3.5
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "High forex markup - not ideal for frequent international spenders"
+    },
+
+    "concierge": {
+      "included": true,
+      "availability": "24/7",
+      "type": "ICICI Bank Concierge",
+      "services": [
+        "Travel bookings",
+        "Restaurant reservations",
+        "Event tickets",
+        "Gift procurement",
+        "General assistance"
+      ],
+      "contactNumber": "1800-103-8181",
+      "note": "24x7 concierge services available"
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": null,
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "Instant EMI / EMI on Call",
+      "noCostEMI": {
+        "available": true,
+        "merchants": null,
+        "note": "No-cost EMI available on select merchants and products"
+      },
+      "conversionFee": {
+        "percentage": 2.99,
+        "flatFee": 299,
+        "minFee": 299
+      },
+      "minAmount": null,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": 0.1599,
+        "max": 0.18
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": null
+      },
+      "cancellationPeriod": null,
+      "note": "EMI conversion available on transactions"
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": 0.0375
+      },
+      "processingFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "tenures": null,
+      "maxAmount": null,
+      "preclosureFee": null,
+      "note": null
+    },
+
+    "memberships": [
+      {
+        "name": "Emirates Skywards Silver Tier",
+        "type": "airline loyalty tier",
+        "value": null,
+        "duration": "1 year",
+        "condition": "Complimentary on card issuance",
+        "renewalCondition": "Spend ₹5 lakh annually to retain",
+        "note": "Silver Tier benefits include priority check-in, boarding, and extra baggage"
+      }
+    ],
+
+    "airlinePerks": {
+      "priorityCheckIn": true,
+      "priorityBoarding": true,
+      "freeCheckedBag": {
+        "included": true,
+        "count": null,
+        "airline": "Emirates",
+        "note": "Extra baggage allowance with Silver Tier membership"
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": true,
+        "tier": "Silver",
+        "program": "Emirates Skywards"
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": true,
+      "cover": 30000000,
+      "condition": "Card must be used at least once in the 60 days prior to the event. International travel only. Tickets must be purchased using the card."
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": null,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": 50000,
+      "fraudLiability": {
+        "included": true,
+        "cover": 50000,
+        "reportingWindow": "Report immediately"
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "Air Accident Insurance of ₹3 crore and Card Liability Cover of ₹50,000. Insurance provided by ICICI Lombard General Insurance Co. Ltd. Supplementary cardholders are not eligible for insurance coverage."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000
+    },
+    "virtualCard": {
+      "available": false,
+      "instantIssuance": false,
+      "singleUse": false,
+      "spendControls": false
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": false,
+      "rewardsOnUPI": false,
+      "note": "Not a RuPay card, UPI on Credit Card not available"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Real-time alerts"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    },
+    "embeddedChip": {
+      "enabled": true,
+      "note": "EMV chip for enhanced security against counterfeiting and duplication"
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [
+      {
+        "cardId": "icici-emirates-skywards-rubyx",
+        "spendRequired": null,
+        "tenure": null,
+        "autoUpgrade": false
+      }
+    ],
+    "upgradesTo": [
+      {
+        "cardId": "icici-emirates-skywards-emeralde",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false
+      }
+    ],
+    "note": "Upgrade eligibility based on spend history and bank relationship"
+  },
+
+  "meta": {
+    "tags": [
+      "Travel",
+      "Airline Co-brand",
+      "Emirates",
+      "Skywards Miles",
+      "Lounge Access",
+      "Premium"
+    ],
+    "bestFor": "Frequent Emirates flyers who want to earn Skywards Miles on everyday spending and are comfortable with reward redemption limited to Emirates",
+    "notRecommendedFor": "Those who fly multiple airlines (not just Emirates), frequent international spenders (high 3.5% forex markup), or those seeking flexible reward redemption options",
+    "rating": {
+      "overall": 3.5,
+      "rewards": 3.5,
+      "benefits": 3.5,
+      "value": 3.0
+    },
+    "verdict": "A mid-tier co-branded card for Emirates loyalists. The 2% earning rate (reducing to 1.5% from Jan 2026) is decent but locked to Emirates redemptions. The spend-based domestic lounge access (₹75K quarterly) and Silver Tier membership renewal requirement (₹5L annually) limit value for moderate spenders. High forex markup of 3.5% makes it unsuitable for frequent international transactions. Best suited for dedicated Emirates flyers who can meet spend thresholds.",
+    "pros": [
+      "Direct Skywards Miles earning - credited automatically to Emirates account",
+      "Complimentary Emirates Skywards Silver Tier membership",
+      "2 international lounge visits per year without spend requirement",
+      "Buy 1 Get 1 movie offer on BookMyShow",
+      "1% fuel surcharge waiver",
+      "Air accident insurance cover of ₹3 crore"
+    ],
+    "cons": [
+      "Reward rate reducing from 2% to 1.5% from Jan 15, 2026",
+      "No annual fee waiver option",
+      "High forex markup of 3.5%",
+      "Domestic lounge access requires ₹75K quarterly spend",
+      "Miles exclusive to Emirates - no transfer partners",
+      "Silver Tier renewal requires ₹5L annual spend",
+      "No miles on fuel, insurance, utility, government, education from Jan 2026"
+    ],
+    "alternatives": [
+      "icici-sapphiro",
+      "axis-atlas",
+      "icici-emirates-skywards-rubyx",
+      "icici-emirates-skywards-emeralde"
+    ],
+    "lastVerified": "2026-01-07",
+    "dataSource": [
+      "Official ICICI Bank website - Emirates Skywards Sapphiro page",
+      "ICICI Bank MITC document dated Dec 12, 2025",
+      "Emirates Skywards partner page",
+      "PaisaBazaar.com",
+      "CardInsider.com",
+      "TechnoFino community discussions"
+    ],
+    "changelog": [
+      {
+        "date": "2026-01-15",
+        "change": "Reward rate changing from 2 Miles to 1.5 Miles per ₹100 spent",
+        "source": "ICICI Bank MITC Dec 2025"
+      },
+      {
+        "date": "2026-01-15",
+        "change": "No miles on Insurance, Utility, Government & Education payments",
+        "source": "ICICI Bank MITC Dec 2025"
+      },
+      {
+        "date": "2026-01-15",
+        "change": "BookMyShow benefit requires ₹25,000 spend in preceding quarter",
+        "source": "ICICI Bank MITC Dec 2025"
+      },
+      {
+        "date": "2025-01-01",
+        "change": "Domestic lounge access requires ₹75,000 quarterly spend",
+        "source": "ICICI Bank MITC"
+      },
+      {
+        "date": "2024-11-15",
+        "change": "New cards issued after Nov 15, 2024 get Priority Pass instead of DreamFolks",
+        "source": "ICICI Bank website"
+      },
+      {
+        "date": "2024-11-15",
+        "change": "Supplementary Card fee changed to ₹199",
+        "source": "ICICI Bank MITC"
+      }
+    ],
+    "importantUpcomingChanges": {
+      "effectiveDate": "2026-01-15",
+      "changes": [
+        "Reward rate reduction: 2 Miles → 1.5 Miles per ₹100",
+        "No miles on Insurance, Utility, Government & Education payments",
+        "BookMyShow BOGO requires ₹25,000 quarterly spend"
+      ],
+      "source": "ICICI Bank MITC Dec 12, 2025"
+    }
+  }
+}

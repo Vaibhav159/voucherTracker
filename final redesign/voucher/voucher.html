@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CredVault - Exclusive Vouchers</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#c87f45", // Copper
+              "primary-hover": "#df955d", // Lighter Copper
+              "background-light": "#fffaf5",
+              "background-dark": "#1a0f0c", // Deep Espresso
+              "surface-dark": "#2b1813", // Lighter Espresso
+              "surface-dark-hover": "#3c221b",
+              "gold-text": "#eecfa1", // Opulent Gold
+              "gold-dim": "#a68a6d", // Muted Gold
+              "warm-white": "#f5e6d3", // Creamy White
+              "warm-gray": "#bba595", // Latte Gray
+              "accent-red": "#9c3838",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"],
+              "serif": ["Playfair Display", "serif"],
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+            backgroundImage: {
+                'copper-gradient': 'linear-gradient(135deg, rgba(200,127,69,0.15) 0%, rgba(200,127,69,0) 50%, rgba(200,127,69,0.05) 100%)',
+                'gold-gradient-text': 'linear-gradient(to right, #c87f45, #eecfa1, #c87f45)',
+                'nav-gradient': 'linear-gradient(to bottom, #2b1813, #1a0f0c)',
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a0f0c; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3c221b; 
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c87f45; 
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-warm-white antialiased overflow-hidden selection:bg-primary/30 selection:text-gold-text">
+<div class="flex flex-col h-screen w-full">
+<header class="h-16 flex-shrink-0 bg-surface-dark border-b border-primary/20 flex items-center justify-between px-6 z-50 relative shadow-lg shadow-black/20">
+<div class="flex items-center gap-8 w-1/3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-size: 28px;">diamond</span>
+<span class="font-serif text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gold-gradient-text">CredVault</span>
+</div>
+<div class="relative w-full max-w-xs group hidden md:block">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-gold-dim group-focus-within:text-primary transition-colors material-symbols-outlined text-[18px]">search</span>
+<input class="w-full bg-background-dark/50 border border-primary/20 rounded-full py-1.5 pl-9 pr-4 text-sm text-warm-white focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50 placeholder-warm-gray/50 transition-all font-light" placeholder="Search vouchers..." type="text"/>
+</div>
+</div>
+<nav class="hidden lg:flex items-center justify-center gap-1 w-1/3">
+<a class="px-4 py-2 text-gold-dim hover:text-warm-white text-sm font-medium transition-colors" href="#">Home</a>
+<a class="px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded-lg text-sm font-bold shadow-[0_0_10px_rgba(200,127,69,0.2)]" href="#">Voucher</a>
+<a class="px-4 py-2 text-gold-dim hover:text-warm-white text-sm font-medium transition-colors" href="#">Cards</a>
+<a class="px-4 py-2 text-gold-dim hover:text-warm-white text-sm font-medium transition-colors" href="#">Banking</a>
+<a class="px-4 py-2 text-gold-dim hover:text-warm-white text-sm font-medium transition-colors flex items-center gap-1" href="#">
+                    Ask AI <span class="material-symbols-outlined text-[14px]">spark</span>
+</a>
+<a class="px-4 py-2 text-gold-dim hover:text-warm-white text-sm font-medium transition-colors" href="#">Guides</a>
+</nav>
+<div class="flex items-center justify-end gap-4 w-1/3">
+<button class="relative p-2 text-gold-dim hover:text-primary transition-colors rounded-full hover:bg-white/5">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-accent-red rounded-full ring-2 ring-surface-dark"></span>
+</button>
+<div class="h-8 w-px bg-primary/10"></div>
+<div class="flex items-center gap-3 cursor-pointer hover:bg-white/5 p-1.5 rounded-lg transition-colors border border-transparent hover:border-primary/10">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-8 ring-2 ring-primary/30" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD56UuZHiFMmOq6KJeqFW6gYeA7INt3SQKyYvjrbem0QtG_IvLOeUByWusl3Jn_BacFZTBrgex0shmHJzxnt0lEFEouupqye4BeNeTLis8B0CdJ4HGcXbnTSsmxrJCFjLfSuLP_13d2HAGVHk-ErBfngSKCaGgq8f26m7LewN-BUjmFHu1RYIL45W_k-O9ZajCPvXbDkCtqjxi1Cuy1v9LXf6843O_1YM5LkiL4YbIc7qxseqfMaPv5NDa_-jf_l-2oDJO0ZFhGvUli");'></div>
+<div class="flex flex-col hidden xl:flex">
+<p class="text-gold-text text-xs font-semibold">Arjun Mehta</p>
+<p class="text-primary text-[10px] uppercase tracking-wide">Platinum</p>
+</div>
+</div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<aside class="w-64 flex-shrink-0 flex flex-col bg-background-dark border-r border-primary/20 relative z-20 overflow-y-auto hide-scrollbar pb-6">
+<div class="p-6 pb-2">
+<h3 class="text-gold-text font-serif font-bold text-lg mb-1">Filter Vouchers</h3>
+<p class="text-warm-gray text-xs mb-6">Refine by category &amp; preferences</p>
+<div class="relative w-full mb-4 group">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-gold-dim group-focus-within:text-primary transition-colors material-symbols-outlined text-[18px]">search</span>
+<input class="w-full bg-surface-dark border border-primary/20 rounded-lg py-2 pl-9 pr-4 text-xs text-warm-white focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50 placeholder-warm-gray/50 transition-all font-light" placeholder="Search filters..." type="text"/>
+</div>
+<div class="mb-8">
+<button class="w-full flex items-center justify-center gap-2 rounded-lg py-2.5 bg-gradient-to-r from-primary to-[#8c5341] text-background-dark text-xs font-bold uppercase tracking-wider hover:shadow-[0_0_15px_rgba(200,127,69,0.4)] transition-shadow">
+<span class="material-symbols-outlined text-sm">filter_alt_off</span>
+                        RESET FILTERS
+                    </button>
+</div>
+<div class="mb-8">
+<h4 class="text-primary text-xs font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">category</span> Categories
+                    </h4>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 rounded-md text-[11px] font-medium bg-primary/20 border border-primary text-white shadow-[0_0_8px_rgba(200,127,69,0.3)] hover:bg-primary/30 transition-all">All</button>
+<button class="px-3 py-1.5 rounded-md text-[11px] font-medium bg-surface-dark border border-primary/20 text-warm-white hover:bg-white/5 hover:border-primary/50 hover:text-white transition-all">Dining &amp; Food</button>
+<button class="px-3 py-1.5 rounded-md text-[11px] font-medium bg-surface-dark border border-primary/20 text-warm-white hover:bg-white/5 hover:border-primary/50 hover:text-white transition-all">Fashion &amp; Accessories</button>
+<button class="px-3 py-1.5 rounded-md text-[11px] font-medium bg-surface-dark border border-primary/20 text-warm-white hover:bg-white/5 hover:border-primary/50 hover:text-white transition-all">Travel &amp; Leisure</button>
+<button class="px-3 py-1.5 rounded-md text-[11px] font-medium bg-surface-dark border border-primary/20 text-warm-white hover:bg-white/5 hover:border-primary/50 hover:text-white transition-all">E-commerce &amp; Technology</button>
+<button class="px-3 py-1.5 rounded-md text-[11px] font-medium bg-surface-dark border border-primary/20 text-warm-white hover:bg-white/5 hover:border-primary/50 hover:text-white transition-all">Groceries &amp; Essentials</button>
+<button class="px-3 py-1.5 rounded-md text-[11px] font-medium bg-surface-dark border border-primary/20 text-warm-white hover:bg-white/5 hover:border-primary/50 hover:text-white transition-all">Entertainment &amp; OTT</button>
+<button class="px-3 py-1.5 rounded-md text-[11px] font-medium bg-surface-dark border border-primary/20 text-warm-white hover:bg-white/5 hover:border-primary/50 hover:text-white transition-all">Home &amp; Living</button>
+<button class="px-3 py-1.5 rounded-md text-[11px] font-medium bg-surface-dark border border-primary/20 text-warm-white hover:bg-white/5 hover:border-primary/50 hover:text-white transition-all">Health &amp; Wellness</button>
+<button class="px-3 py-1.5 rounded-md text-[11px] font-medium bg-surface-dark border border-primary/20 text-warm-white hover:bg-white/5 hover:border-primary/50 hover:text-white transition-all">Miscellaneous</button>
+<button class="px-3 py-1.5 rounded-md text-[11px] font-medium bg-surface-dark border border-primary/20 text-warm-white hover:bg-white/5 hover:border-primary/50 hover:text-white transition-all">Jewellery</button>
+<button class="px-3 py-1.5 rounded-md text-[11px] font-medium bg-surface-dark border border-primary/20 text-warm-white hover:bg-white/5 hover:border-primary/50 hover:text-white transition-all">New</button>
+<button class="px-3 py-1.5 rounded-md text-[11px] font-medium bg-surface-dark border border-primary/20 text-warm-white hover:bg-white/5 hover:border-primary/50 hover:text-white transition-all">Books &amp; Stationery</button>
+<button class="px-3 py-1.5 rounded-md text-[11px] font-medium bg-surface-dark border border-primary/20 text-warm-white hover:bg-white/5 hover:border-primary/50 hover:text-white transition-all">Beauty &amp; Personal Care</button>
+<button class="px-3 py-1.5 rounded-md text-[11px] font-medium bg-surface-dark border border-primary/20 text-warm-white hover:bg-white/5 hover:border-primary/50 hover:text-white transition-all">Sports &amp; Fitness</button>
+<button class="px-3 py-1.5 rounded-md text-[11px] font-medium bg-surface-dark border border-primary/20 text-warm-white hover:bg-white/5 hover:border-primary/50 hover:text-white transition-all">Shopping</button>
+<button class="px-3 py-1.5 rounded-md text-[11px] font-medium bg-surface-dark border border-primary/20 text-warm-white hover:bg-white/5 hover:border-primary/50 hover:text-white transition-all">Gaming</button>
+</div>
+</div>
+<div class="mb-8">
+<h4 class="text-primary text-xs font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">sort</span> Sort By
+                    </h4>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-3 group cursor-pointer">
+<input checked="" class="bg-surface-dark border-primary/30 text-primary focus:ring-primary/50 focus:ring-offset-background-dark" name="sortby" type="radio"/>
+<span class="text-sm text-warm-white group-hover:text-white transition-colors">Recommended</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<input class="bg-surface-dark border-primary/30 text-primary focus:ring-primary/50 focus:ring-offset-background-dark" name="sortby" type="radio"/>
+<span class="text-sm text-gold-dim group-hover:text-white transition-colors">Highest ROI</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<input class="bg-surface-dark border-primary/30 text-primary focus:ring-primary/50 focus:ring-offset-background-dark" name="sortby" type="radio"/>
+<span class="text-sm text-gold-dim group-hover:text-white transition-colors">Expires Soon</span>
+</label>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col h-full overflow-hidden relative bg-gradient-to-br from-background-dark to-[#0f0502]">
+<div class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="flex-1 overflow-y-auto hide-scrollbar p-8 pb-20">
+<div class="max-w-[1200px] mx-auto flex flex-col gap-10">
+<div class="flex flex-col gap-6">
+<div class="flex flex-wrap items-end justify-between gap-4">
+<div>
+<h2 class="text-4xl font-serif text-warm-white mb-2">Exclusive Vouchers</h2>
+<p class="text-warm-gray font-light">Negotiated rates for premium cardholders. Maximize your <span class="text-primary font-medium">Reward ROI</span>.</p>
+</div>
+<div class="flex items-center gap-4 bg-surface-dark border border-primary/20 rounded-lg p-2 pr-4 shadow-lg shadow-black/30">
+<div class="bg-primary/10 rounded px-2 py-1">
+<span class="material-symbols-outlined text-primary text-sm">monitoring</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] text-gold-dim uppercase tracking-wide">Gold (24k)</span>
+<span class="text-xs font-bold text-gold-text">₹7,200/g <span class="text-green-500 ml-1">+0.4%</span></span>
+</div>
+<div class="w-px h-6 bg-white/10 mx-2"></div>
+<div class="flex flex-col">
+<span class="text-[10px] text-gold-dim uppercase tracking-wide">USD Buy</span>
+<span class="text-xs font-bold text-gold-text">₹83.50 <span class="text-red-400 ml-1">-0.05%</span></span>
+</div>
+</div>
+</div>
+</div>
+<section class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-serif text-warm-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">hotel_class</span>
+                                    Popular Vouchers
+                                </h3>
+<div class="flex gap-2">
+<button class="p-1 rounded hover:bg-surface-dark-hover border border-transparent hover:border-primary/20 text-warm-white transition-all"><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="p-1 rounded hover:bg-surface-dark-hover border border-transparent hover:border-primary/20 text-warm-white transition-all"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="relative group bg-surface-dark rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 transition-all duration-300 shadow-xl hover:shadow-primary/10">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/50 to-transparent z-10"></div>
+<div class="h-48 w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Luxury hotel lobby with golden lighting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAnAtu-QR6_CP0UCf8hGSh8dHj4yewlwefB85eeU3BS67QiT7BNghVu9jovQ5g2OuIII8B0wauqVKWqqCrofZcXz0omkiYX35URgsMko3joKfPbkQsF_sRvdJxwC_Pnn_BRHGBiyN5K0gGvsWk1fvDf6cyKuYfTOg44NoaPrw00xleFvYnwpgoWJLM09qfojjO1qaFokVb9vgJfD7C5MzT830-eVg4Ak1RW0Ae7pG9ix5luRmVLwxhBJEaehh0XhzGMADwLxoMZDmzL");'></div>
+<div class="absolute bottom-0 left-0 w-full p-5 z-20 flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[10px] text-primary font-bold uppercase tracking-widest mb-1 flex items-center gap-1"><span class="material-symbols-outlined text-[10px]">timer</span> Ends in 4h</p>
+<h4 class="text-xl font-serif text-warm-white">Taj Hotels</h4>
+</div>
+<span class="bg-primary text-background-dark text-xs font-bold px-2 py-1 rounded shadow-lg shadow-black/40">15% OFF</span>
+</div>
+<p class="text-sm text-warm-gray">Flat discount on dining &amp; stay vouchers.</p>
+</div>
+</div>
+<div class="relative group bg-surface-dark rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 transition-all duration-300 shadow-xl hover:shadow-primary/10">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/50 to-transparent z-10"></div>
+<div class="h-48 w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Close up of luxury mechanical watch mechanism" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAFfCT9brPI76WstLeXdvhwzyQzMLCmk_VJo_BgYOUfSuz6yDuPO3Q-NpYfSWOCHy2UpDqsrvtHw8738PhRs4Ro0dG5a1DXkP893rGvFLYHPtGPEnecAoY-vUUnJ-8vPcKRHnWos6qtatC0zPIllktk9dCLUSv-8SWvqCJ0wmUzRraxbmwunVBDN-KJ0MfegzEsFnFgadnh0puXm2jibqALd_pOA_41ZainYE6z1xaN5cqiSBpwyh_yRjMBesbNp_NDedAvXiWlHk9k");'></div>
+<div class="absolute bottom-0 left-0 w-full p-5 z-20 flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[10px] text-green-400 font-bold uppercase tracking-widest mb-1">Cashback</p>
+<h4 class="text-xl font-serif text-warm-white">Ethos Watches</h4>
+</div>
+<span class="bg-white/10 backdrop-blur text-gold-text text-xs font-bold px-2 py-1 rounded border border-gold-dim/30">5% Back</span>
+</div>
+<p class="text-sm text-warm-gray">Plus free comprehensive insurance.</p>
+</div>
+</div>
+<div class="relative group bg-surface-dark rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 transition-all duration-300 shadow-xl hover:shadow-primary/10">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/50 to-transparent z-10"></div>
+<div class="h-48 w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Airplane wing over clouds at sunset" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBx03ltNqZoOIZlJQYFqxtEjXqM_Jvl2Sxh2m7-XZoaCpaWnH3Y4-4FT-IScynKfw9ksaBpcVNWoDKW0ASAJbdAHJo2SzmSmO3NQQKR3iqnDHG9aG3fCl6AJ1gn6QiEQR4Y8X_NF-Xyv3_TORTYc8ys7ARPGCNUwy09SxhNmlpKyxyOujhiBcweVI590fLu36KfGS7vCD-UvgPnotDjf4QeBArbf51KpNn5f_cGRvnBEs2GAZetuyGqYAw6ipdJS5jrHyF0m0fcvPaV");'></div>
+<div class="absolute bottom-0 left-0 w-full p-5 z-20 flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[10px] text-primary font-bold uppercase tracking-widest mb-1">Multiplier</p>
+<h4 class="text-xl font-serif text-warm-white">Singapore Air</h4>
+</div>
+<span class="bg-white/10 backdrop-blur text-gold-text text-xs font-bold px-2 py-1 rounded border border-gold-dim/30">2x Pts</span>
+</div>
+<p class="text-sm text-warm-gray">Double points on Business Class bookings.</p>
+</div>
+</div>
+</div>
+</section>
+<div class="flex items-center justify-between border-b border-primary/10 pb-4">
+<h3 class="text-lg font-serif text-warm-white">All Offers</h3>
+<div class="flex items-center gap-4">
+<span class="text-xs text-gold-dim uppercase tracking-wider font-medium">View:</span>
+<div class="flex gap-1">
+<button class="text-primary hover:text-white transition-colors"><span class="material-symbols-outlined">grid_view</span></button>
+<button class="text-gold-dim hover:text-white transition-colors"><span class="material-symbols-outlined">view_list</span></button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-surface-dark rounded-xl p-5 border border-white/5 hover:border-primary/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,0,0,0.4)] group flex flex-col gap-4 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-5 z-10">
+<button class="text-gold-dim hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="bg-white rounded-lg p-2 size-12 flex items-center justify-center shadow-lg">
+<img class="w-full h-auto opacity-90" data-alt="Amazon logo abstract" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6ooTpHUSnAD9hmeg7s1PEfgLoq7kgBpeRRPU3a3UGNEWHnVXEA_L6LkoilChCHJwo4H14Mk62SWPWZVKKi_pFE1dyrTT77oFgpp4bOtByYracviXGTEh65FgAUKScYl3rY3QI9gzY1vbSfsWghAyIcNJ4MhbN_Bdp7S7VK_e4cbFbzKKus6pwVFAIbWJPHz4M5GQOGUoTXsUXOvPKZVohrvtzk6ijpTy6Srrf_i6qx_xl253JXbk3WyVqWZn0PaTesO0ZpzCTJpfi"/>
+</div>
+<div>
+<h4 class="text-gold-text font-semibold text-lg">Amazon Pay</h4>
+<p class="text-warm-gray text-xs mt-1">Shopping &amp; Utilities</p>
+</div>
+<div class="py-3 border-t border-dashed border-primary/20">
+<div class="flex justify-between items-end">
+<div>
+<p class="text-[10px] uppercase text-gold-dim/70 font-bold">Effective Rate</p>
+<p class="text-2xl font-bold text-primary">3.0%</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] uppercase text-gold-dim/70 font-bold">Value</p>
+<p class="text-sm font-medium text-warm-white">₹5k - ₹50k</p>
+</div>
+</div>
+</div>
+<button class="w-full py-2 rounded-lg bg-surface-dark border border-primary/30 text-primary font-bold text-sm hover:bg-primary hover:text-background-dark transition-all shadow-[0_4px_10px_rgba(0,0,0,0.2)]">
+                                    Buy Voucher
+                                </button>
+</div>
+<div class="bg-surface-dark rounded-xl p-5 border border-white/5 hover:border-primary/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,0,0,0.4)] group flex flex-col gap-4 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-5 z-10">
+<button class="text-gold-dim hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="bg-white rounded-lg p-2 size-12 flex items-center justify-center shadow-lg">
+<img class="w-full h-auto" data-alt="Flipkart logo abstract" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSMojF3rvw73gprVwzCBUCoYRgI7GOdnc5eaplizQrIJFpqkUc82WRJCdZquN9bFgBtvpP4YlW1Lm194FZ0zp-U3RXf6JrB9pOap1dkSJXo6R3my73kgrwLyzDQpCV4kIYR2ZpIGcbtp21fSPMrxinvCds4i4Vai7MVmm2VYwzCrkvohNi29HXy1KvU4Va4i3tzSK2H0YHgtp0KCNnYMu4WNfuCLpGpRDjdNodgD1O90-NtzIftNXGAk74yLUJLeLMgymQetDZiqAY"/>
+</div>
+<div>
+<h4 class="text-gold-text font-semibold text-lg">Flipkart</h4>
+<p class="text-warm-gray text-xs mt-1">Electronics &amp; Fashion</p>
+</div>
+<div class="py-3 border-t border-dashed border-primary/20">
+<div class="flex justify-between items-end">
+<div>
+<p class="text-[10px] uppercase text-gold-dim/70 font-bold">Effective Rate</p>
+<p class="text-2xl font-bold text-primary">4.5%</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] uppercase text-gold-dim/70 font-bold">Value</p>
+<p class="text-sm font-medium text-warm-white">₹2k - ₹25k</p>
+</div>
+</div>
+</div>
+<button class="w-full py-2 rounded-lg bg-surface-dark border border-primary/30 text-primary font-bold text-sm hover:bg-primary hover:text-background-dark transition-all shadow-[0_4px_10px_rgba(0,0,0,0.2)]">
+                                    Buy Voucher
+                                </button>
+</div>
+<div class="bg-surface-dark rounded-xl p-5 border border-white/5 hover:border-primary/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,0,0,0.4)] group flex flex-col gap-4 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-5 z-10">
+<button class="text-gold-dim hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="bg-white rounded-lg p-2 size-12 flex items-center justify-center shadow-lg">
+<img class="w-full h-auto" data-alt="Tata Cliq logo abstract" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEdbAgcCQMfi9KSzqnzCkFTwBfgbiHmvO4JYxSLr-QOKwrsZ8RuVC1zMGzO7Qpn7r7Jqd1WxR41uPbdKQuH9Qf4Tw5F1k1-9F-QSCK2Y3fmFgvZBG5F3fnjXYThBhD6wMvrlzs15z2Ti6ndRui3p3Q0bD-sQX8pV_4A-1G0MDkXdgWA2SONVMyMY_M2oydYeutePq7VEVqMACY2-dPZGNrPEpwnaLc3t_6hA17oH3yD8M3fqlM4gzSXtiw26o513btn_K0OcKP9f12"/>
+</div>
+<div>
+<h4 class="text-gold-text font-semibold text-lg">Tata CLiQ Lux</h4>
+<p class="text-warm-gray text-xs mt-1">Premium Brands</p>
+</div>
+<div class="py-3 border-t border-dashed border-primary/20">
+<div class="flex justify-between items-end">
+<div>
+<p class="text-[10px] uppercase text-gold-dim/70 font-bold">Effective Rate</p>
+<p class="text-2xl font-bold text-primary">8.0%</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] uppercase text-gold-dim/70 font-bold">Value</p>
+<p class="text-sm font-medium text-warm-white">₹10k - ₹1L</p>
+</div>
+</div>
+</div>
+<button class="w-full py-2 rounded-lg bg-surface-dark border border-primary/30 text-primary font-bold text-sm hover:bg-primary hover:text-background-dark transition-all shadow-[0_4px_10px_rgba(0,0,0,0.2)]">
+                                    Buy Voucher
+                                </button>
+</div>
+<div class="bg-surface-dark rounded-xl p-5 border border-white/5 hover:border-primary/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,0,0,0.4)] group flex flex-col gap-4 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-5 z-10">
+<button class="text-gold-dim hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="bg-white rounded-lg p-2 size-12 flex items-center justify-center shadow-lg">
+<img class="w-full h-auto" data-alt="MakeMyTrip logo abstract" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM-ONx7YRVj3FdDI7tiF6jXggWo8vVeNsdhmAYpSva-x39r2gRDg2MuwUK1ln_XSPJldShfEX1j95iBTv4RPvUA-0-ZrzUT4DPxVlrmKOTFKFJNAA-DxsIa4oSwTNiS5VANIKVCyzPYhhEZLCqfrT9Nvda9LQcB2Wjcm6BDfhdeG13QGkpyA0OO1IZqjs29PqRSFgyNz12sw5HzSz_s5W45A_HQj3bKMYUl5h13-Lq0D0ve-4Y06wOlIdJxYAruOA5D9mqEOQ2QLyc"/>
+</div>
+<div>
+<h4 class="text-gold-text font-semibold text-lg">MakeMyTrip</h4>
+<p class="text-warm-gray text-xs mt-1">Flights &amp; Hotels</p>
+</div>
+<div class="py-3 border-t border-dashed border-primary/20">
+<div class="flex justify-between items-end">
+<div>
+<p class="text-[10px] uppercase text-gold-dim/70 font-bold">Effective Rate</p>
+<p class="text-2xl font-bold text-primary">6.5%</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] uppercase text-gold-dim/70 font-bold">Value</p>
+<p class="text-sm font-medium text-warm-white">₹5k - ₹50k</p>
+</div>
+</div>
+</div>
+<button class="w-full py-2 rounded-lg bg-surface-dark border border-primary/30 text-primary font-bold text-sm hover:bg-primary hover:text-background-dark transition-all shadow-[0_4px_10px_rgba(0,0,0,0.2)]">
+                                    Buy Voucher
+                                </button>
+</div>
+<div class="bg-surface-dark rounded-xl p-5 border border-white/5 hover:border-primary/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,0,0,0.4)] group flex flex-col gap-4 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-5 z-10">
+<button class="text-gold-dim hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="bg-white rounded-lg p-2 size-12 flex items-center justify-center shadow-lg">
+<img class="w-full h-auto" data-alt="Croma logo abstract" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqEG-P67B28mebCrP1nukI8G_eCwTqUK7Lx0oZknEOlpKdz4VRBIdFrJlfukKbWnLdPxI9VOAjfQygXpMM75e4uHL3zOCQMQLw05jzckvAlTUeS6d9MGNV07y5CoSaIxE_pJXWBwunxq7Ms4IsV2vcF5s9eNMRrt8EKnGZMkHUpM-yLMawMt2GhJXIL_GqWMuM0ryNo1Hp0FsiczJ3FcAj7KPCSRY5an8AoW9iTbYeZwBfcp_KhhpkcRB9t2qnqhpaqOxuaGBZShwE"/>
+</div>
+<div>
+<h4 class="text-gold-text font-semibold text-lg">Croma</h4>
+<p class="text-warm-gray text-xs mt-1">Electronics</p>
+</div>
+<div class="py-3 border-t border-dashed border-primary/20">
+<div class="flex justify-between items-end">
+<div>
+<p class="text-[10px] uppercase text-gold-dim/70 font-bold">Effective Rate</p>
+<p class="text-2xl font-bold text-primary">2.5%</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] uppercase text-gold-dim/70 font-bold">Value</p>
+<p class="text-sm font-medium text-warm-white">₹1k - ₹20k</p>
+</div>
+</div>
+</div>
+<button class="w-full py-2 rounded-lg bg-surface-dark border border-primary/30 text-primary font-bold text-sm hover:bg-primary hover:text-background-dark transition-all shadow-[0_4px_10px_rgba(0,0,0,0.2)]">
+                                    Buy Voucher
+                                </button>
+</div>
+<div class="bg-surface-dark rounded-xl p-5 border border-white/5 hover:border-primary/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,0,0,0.4)] group flex flex-col gap-4 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-5 z-10">
+<button class="text-gold-dim hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="bg-white rounded-lg p-2 size-12 flex items-center justify-center shadow-lg">
+<img class="w-full h-auto" data-alt="Zomato logo abstract" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBDsnC14q0_RtAr00y67eEuLu8dLGD68k501H14IrHKN_BNxt9vv8diQPGeelzcAwSEPSGkq0vZ9pebC204ch2vPFsNlJGdMAaLQPu4XotNdynDU1rvyEA3PkNy0iJDndHsrbXxXuJn5sPT09ltohF_BuHPccFAbpaCWDGT7QnNGTm-dx4dbfwO2c2zguNuv6Ckylis_NbykYPBreFM-F4GHg05m2uYwHQxHxm9pb05NsSOg5GMd0FoSuCorZktrSJkJI6jkmTBjBw"/>
+</div>
+<div>
+<h4 class="text-gold-text font-semibold text-lg">Zomato Gold</h4>
+<p class="text-warm-gray text-xs mt-1">Dining</p>
+</div>
+<div class="py-3 border-t border-dashed border-primary/20">
+<div class="flex justify-between items-end">
+<div>
+<p class="text-[10px] uppercase text-gold-dim/70 font-bold">Effective Rate</p>
+<p class="text-2xl font-bold text-primary">9.0%</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] uppercase text-gold-dim/70 font-bold">Value</p>
+<p class="text-sm font-medium text-warm-white">₹500 - ₹2k</p>
+</div>
+</div>
+</div>
+<button class="w-full py-2 rounded-lg bg-surface-dark border border-primary/30 text-primary font-bold text-sm hover:bg-primary hover:text-background-dark transition-all shadow-[0_4px_10px_rgba(0,0,0,0.2)]">
+                                    Buy Voucher
+                                </button>
+</div>
+<div class="bg-surface-dark rounded-xl p-5 border border-white/5 hover:border-primary/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,0,0,0.4)] group flex flex-col gap-4 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-5 z-10">
+<button class="text-gold-dim hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="bg-white rounded-lg p-2 size-12 flex items-center justify-center shadow-lg">
+<img class="w-full h-auto" data-alt="Uber logo abstract" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjrU0BovYB7KFoJhxYaf2i-WqsZTevE70yUIKVEMbNBZhTsoPXjT7aqYFOAUil2l5t8O8MFYglpR_hW5eHBWDhGsUmgsy_hF9Q5s-C8cmQ11T7T9Q9gPvwV27ntdl0cMGJkBgIeeh6ZC7qim8E-RMPNbBqISe1ePwrqn-bP6NdFyLwtnvJ0VvJu8GiDE8VfTijj24fd4Y2upd6CJdCz-77xzTdIF9Myw8Ou_2JRZ9FL3m0LZbvi5O_TT4cDD5UuET-ALKanV6kjJxe"/>
+</div>
+<div>
+<h4 class="text-gold-text font-semibold text-lg">Uber</h4>
+<p class="text-warm-gray text-xs mt-1">Travel &amp; Commute</p>
+</div>
+<div class="py-3 border-t border-dashed border-primary/20">
+<div class="flex justify-between items-end">
+<div>
+<p class="text-[10px] uppercase text-gold-dim/70 font-bold">Effective Rate</p>
+<p class="text-2xl font-bold text-primary">4.0%</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] uppercase text-gold-dim/70 font-bold">Value</p>
+<p class="text-sm font-medium text-warm-white">₹250 - ₹1k</p>
+</div>
+</div>
+</div>
+<button class="w-full py-2 rounded-lg bg-surface-dark border border-primary/30 text-primary font-bold text-sm hover:bg-primary hover:text-background-dark transition-all shadow-[0_4px_10px_rgba(0,0,0,0.2)]">
+                                    Buy Voucher
+                                </button>
+</div>
+<div class="bg-surface-dark rounded-xl p-5 border border-white/5 hover:border-primary/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,0,0,0.4)] group flex flex-col gap-4 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-5 z-10">
+<button class="text-gold-dim hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="bg-white rounded-lg p-2 size-12 flex items-center justify-center shadow-lg">
+<img class="w-full h-auto" data-alt="Pantaloons logo abstract" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrkvktUP3yXOPrJLGn0AA6smpfIUsoQK99C-5YueLjRuPK00TgFDvZNaZmi1Li5CSzosnNv1NDHYfyAgXSVoFKNy9ee0mh5MHcrTFVjvCorI8FiU7dwyvjEL2STBXZti9nAMJmNI_tpTiVWHNY0vKhKeuvawd6vKzeDv_gUb4PbNNVTKwu5XunDVSuD7y_WF1g8IwHLcP79RA33q6HBZTeYnLc3W7va1wMxuycU3N6Ths8WvSqZNVU30TfCdBQA4yXnI1mqjQUZi8l"/>
+</div>
+<div>
+<h4 class="text-gold-text font-semibold text-lg">Pantaloons</h4>
+<p class="text-warm-gray text-xs mt-1">Fashion Retail</p>
+</div>
+<div class="py-3 border-t border-dashed border-primary/20">
+<div class="flex justify-between items-end">
+<div>
+<p class="text-[10px] uppercase text-gold-dim/70 font-bold">Effective Rate</p>
+<p class="text-2xl font-bold text-primary">7.5%</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] uppercase text-gold-dim/70 font-bold">Value</p>
+<p class="text-sm font-medium text-warm-white">₹1k - ₹10k</p>
+</div>
+</div>
+</div>
+<button class="w-full py-2 rounded-lg bg-surface-dark border border-primary/30 text-primary font-bold text-sm hover:bg-primary hover:text-background-dark transition-all shadow-[0_4px_10px_rgba(0,0,0,0.2)]">
+                                    Buy Voucher
+                                </button>
+</div>
+</div>
+<div class="flex justify-center mt-6">
+<button class="text-warm-gray hover:text-primary flex items-center gap-2 text-sm font-medium group transition-colors">
+                                Load More Vouchers
+                                <span class="material-symbols-outlined group-hover:translate-y-1 transition-transform">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

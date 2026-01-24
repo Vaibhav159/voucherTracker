@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us - VoucherTracker</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Noto+Sans:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#bc694e", // Polished Copper
+                        "gold": "#C9A959",    // Opulent Gold
+                        "espresso": "#1D1C1B", // Rich Espresso
+                        "espresso-light": "#252322",
+                        "border-copper": "#bc694e",
+                        "text-white": "#FFFFFF",
+                        "text-muted": "#A3A3A3",
+                    },
+                    fontFamily: {
+                        "display": ["Noto Serif", "serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    backgroundImage: {
+                        'gradient-espresso': 'linear-gradient(to bottom right, #252322, #1D1C1B)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1D1C1B; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #bc694e; 
+            border-radius: 4px;
+            opacity: 0.5;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C9A959; 
+        }
+        .text-copper {
+            color: #bc694e;
+        }
+        .border-copper-thin {
+            border-color: rgba(188, 105, 78, 0.4);
+            border-width: 1px;
+        }
+    </style>
+</head>
+<body class="bg-espresso text-text-white font-body antialiased overflow-hidden tracking-wide selection:bg-primary selection:text-white">
+<div class="flex h-screen w-full flex-col overflow-hidden">
+<header class="flex h-16 w-full items-center justify-between border-b border-copper-thin bg-espresso px-6 shrink-0 z-20 relative">
+<div class="flex items-center gap-4">
+<div class="size-8 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">savings</span>
+</div>
+<h2 class="font-display text-xl font-bold tracking-tight text-white">VoucherTracker</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-2 text-sm font-light">
+<a class="text-text-muted hover:text-gold transition-colors" href="#">Home</a>
+<span class="text-primary/50">/</span>
+<span class="text-white font-medium">About Us</span>
+</div>
+<div class="h-6 w-px bg-primary/20 mx-2"></div>
+<div class="flex gap-4 items-center">
+<button class="relative text-text-muted hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 h-2 w-2 rounded-full bg-primary block"></span>
+</button>
+<div class="h-8 w-8 rounded-full bg-espresso-light border border-primary/50 flex items-center justify-center overflow-hidden cursor-pointer hover:border-gold transition-colors">
+<div class="bg-center bg-no-repeat bg-cover h-full w-full" data-alt="User profile avatar showing a minimalist silhouette" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBp8g20_w-bee6Uy2Y5NrXKIbLFXJbMCj60GDP-m59MvJ6BlXAuw1KAuIsh9C4S2cGBvcpZpHWipvAJffbxSu1zDUX-jHQ012ZobSNJYYjQwwYt0CGjc95chvoZ6a6k3PPbQoEX4O6fFqPMABTPED8zvNR72nnCDnJWDigJuU17Aa0qbUO2U4cgYJ87b1DWPXjqY1HMyWV4-Xa0obrG8faPEVnLZMpc2_GL2zvUNsYrW0PN1lPeOwmxZIXbpqKu8tiLKZv8tD-GQZaM");'></div>
+</div>
+</div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden relative">
+<aside class="w-64 bg-espresso border-r border-copper-thin hidden md:flex flex-col flex-shrink-0 h-full overflow-y-auto pb-4">
+<div class="p-4">
+<div class="bg-espresso-light rounded-sm p-4 mb-8 flex items-center gap-3 border border-primary/20 shadow-lg">
+<div class="h-8 w-8 rounded-full border border-primary/40 flex items-center justify-center text-gold">
+<span class="material-symbols-outlined text-sm">diamond</span>
+</div>
+<div>
+<h3 class="text-xs font-bold text-white uppercase tracking-wider font-display">Premium Plan</h3>
+<p class="text-[10px] text-text-muted mt-0.5">Valid until Dec 2024</p>
+</div>
+</div>
+<nav class="space-y-2">
+<a class="flex items-center gap-3 px-3 py-3 rounded-sm text-text-muted hover:bg-espresso-light hover:text-white group transition-all duration-300" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors text-[20px]">dashboard</span>
+<span class="text-sm font-light">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-sm text-text-muted hover:bg-espresso-light hover:text-white group transition-all duration-300" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors text-[20px]">credit_card</span>
+<span class="text-sm font-light">My Cards</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-sm text-text-muted hover:bg-espresso-light hover:text-white group transition-all duration-300" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors text-[20px]">confirmation_number</span>
+<span class="text-sm font-light">Vouchers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-sm bg-espresso-light/50 text-white border-l-2 border-primary group transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-primary text-[20px]">info</span>
+<span class="text-sm font-medium">About Us</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-sm text-text-muted hover:bg-espresso-light hover:text-white group transition-all duration-300" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors text-[20px]">settings</span>
+<span class="text-sm font-light">Settings</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-4 border-t border-primary/10">
+<a class="flex items-center gap-3 px-3 py-2 rounded-sm text-text-muted hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-primary transition-colors">logout</span>
+<span class="text-sm font-light">Sign Out</span>
+</a>
+</div>
+</aside>
+<main class="flex-1 overflow-y-auto bg-espresso scroll-smooth relative custom-scrollbar">
+<div class="max-w-6xl mx-auto px-8 py-16 md:px-16 md:py-24 space-y-24 md:space-y-32">
+<section class="text-center max-w-4xl mx-auto space-y-8">
+<h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-gold leading-tight drop-shadow-sm">
+                        Democratizing Credit <br/> Card Rewards.
+                    </h1>
+<p class="text-xl md:text-2xl text-white font-body font-light tracking-wide opacity-90 max-w-2xl mx-auto leading-relaxed">
+                        Making every rupee count through transparency and precision data.
+                    </p>
+</section>
+<section>
+<div class="border-l border-primary pl-8 md:pl-12 max-w-4xl mx-auto">
+<span class="text-primary font-bold tracking-[0.2em] text-xs uppercase mb-6 block">The Problem</span>
+<div class="space-y-8 text-lg md:text-xl leading-loose text-white font-body font-light">
+<p>
+                                The financial rewards ecosystem is <span class="text-primary font-medium">intentionally opaque</span>. With fragmented data across multiple portals, complex redemption ratios, and hidden terms, genuine savings are often elusive.
+                            </p>
+<p>
+                                Banks rely on this complexity. We believe in <span class="text-primary font-medium">clarity</span>. By aggregating real-time data and simplifying the mathematics of rewards, we ensure you never leave money on the table.
+                            </p>
+</div>
+</div>
+</section>
+<section>
+<div class="mb-16">
+<h2 class="font-display text-4xl md:text-5xl text-gold mb-6">What We Build</h2>
+<p class="text-white max-w-xl font-body text-lg font-light tracking-wide opacity-80">
+                            A comprehensive ecosystem of tools designed to replace spreadsheets and guesswork with actionable intelligence.
+                        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-espresso-light/40 p-10 rounded-sm border border-copper-thin hover:border-primary transition-all duration-500 group hover:-translate-y-1 backdrop-blur-sm">
+<span class="material-symbols-outlined text-primary text-5xl mb-8 group-hover:scale-110 transition-transform duration-500 font-light">hub</span>
+<h3 class="text-white font-body font-medium text-xl mb-4 tracking-wide">Rate Aggregator</h3>
+<p class="text-gray-300 font-body leading-relaxed text-sm font-light opacity-90">
+                                Real-time consolidation of voucher rates across Gyftr, Amazon, and direct portals, instantly highlighting the highest redemption value.
+                            </p>
+</div>
+<div class="bg-espresso-light/40 p-10 rounded-sm border border-copper-thin hover:border-primary transition-all duration-500 group hover:-translate-y-1 backdrop-blur-sm">
+<span class="material-symbols-outlined text-primary text-5xl mb-8 group-hover:scale-110 transition-transform duration-500 font-light">calculate</span>
+<h3 class="text-white font-body font-medium text-xl mb-4 tracking-wide">Reward Calculator</h3>
+<p class="text-gray-300 font-body leading-relaxed text-sm font-light opacity-90">
+                                Advanced algorithms that factor in card-specific multipliers, monthly capping limits, and MCC codes to project exact savings.
+                            </p>
+</div>
+<div class="bg-espresso-light/40 p-10 rounded-sm border border-copper-thin hover:border-primary transition-all duration-500 group hover:-translate-y-1 backdrop-blur-sm">
+<span class="material-symbols-outlined text-primary text-5xl mb-8 group-hover:scale-110 transition-transform duration-500 font-light">notifications_active</span>
+<h3 class="text-white font-body font-medium text-xl mb-4 tracking-wide">Deal Alerts</h3>
+<p class="text-gray-300 font-body leading-relaxed text-sm font-light opacity-90">
+                                Automated monitoring of limited-time offers and potential devaluations, ensuring you maximize benefits before they expire.
+                            </p>
+</div>
+</div>
+</section>
+<section class="border-y border-primary/20 py-20 -mx-8 px-8 md:-mx-16 md:px-16 relative overflow-hidden">
+<div class="absolute inset-0 bg-espresso-light/20 pointer-events-none"></div>
+<div class="max-w-5xl mx-auto relative z-10">
+<div class="text-center mb-16">
+<h2 class="font-display text-4xl md:text-5xl text-gold mb-6">Our Open Source Promise</h2>
+<p class="text-gray-200 font-body font-light text-lg tracking-wide max-w-2xl mx-auto">
+                                Financial tools require absolute trust. We don't just ask for it; we prove it through transparency.
+                            </p>
+</div>
+<div class="grid md:grid-cols-3 gap-12">
+<div class="text-center px-4 group">
+<h4 class="text-xl text-white font-display font-bold mb-4 group-hover:text-gold transition-colors">Community Audited</h4>
+<p class="text-sm text-gray-400 font-body leading-loose font-light">
+                                    Our entire codebase is open for public inspection. Security researchers and community members verify our calculations daily.
+                                </p>
+</div>
+<div class="text-center px-4 border-t md:border-t-0 md:border-l border-primary/30 pt-10 md:pt-0 group">
+<h4 class="text-xl text-white font-display font-bold mb-4 group-hover:text-gold transition-colors">Privacy Centric</h4>
+<p class="text-sm text-gray-400 font-body leading-loose font-light">
+                                    We practice data minimization. Your financial data stays on your device and is never sold to third-party advertisers.
+                                </p>
+</div>
+<div class="text-center px-4 border-t md:border-t-0 md:border-l border-primary/30 pt-10 md:pt-0 group">
+<h4 class="text-xl text-white font-display font-bold mb-4 group-hover:text-gold transition-colors">User Governance</h4>
+<p class="text-sm text-gray-400 font-body leading-loose font-light">
+                                    Roadmap decisions are driven by user votes, not investor pressure. We build what the community actually needs.
+                                </p>
+</div>
+</div>
+</div>
+</section>
+<section class="max-w-4xl mx-auto">
+<div class="relative bg-gradient-espresso border border-primary/40 p-10 md:p-16 rounded-sm overflow-hidden shadow-2xl">
+<div class="absolute top-0 right-0 p-48 bg-primary/5 rounded-full blur-[100px] -mr-20 -mt-20 pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-12 text-center md:text-left">
+<div class="flex-shrink-0 relative group">
+<div class="h-40 w-40 rounded-full p-2 border border-primary/40 group-hover:border-gold transition-colors duration-500">
+<div aria-label="Portrait of Vaibhav Lodha" class="h-full w-full rounded-full bg-cover bg-center bg-gray-600 grayscale group-hover:grayscale-0 transition-all duration-700 ease-out" role="img" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCe7gvd5Glig_8mwnA0FR7h9g-Z7pa8vuQjGU2HhP5e-J5QQ9UtGBelCkbTdllmCSSXGodq-tkzMK-ggiZ55vxmoRvYzXYo4a7bBcnKdUaPHbv6VXl08FCnPH_Bdr4NYqLqL_LxnkxguQKSQEENIfM7ALqaMgOLMBDqJsd2xagwoz_yleHgbuHg_ly3C_Dbpr0ja7bWRru4u1HLBMSt5i6qLO1p9bsD6OS5bU2xUAjcUkH9SK3R5rBTApimDBfMIJ3hO7wnCctf4XVV');"></div>
+</div>
+<div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-espresso border border-primary text-gold text-[10px] uppercase font-bold px-3 py-1 rounded-full tracking-widest shadow-lg">
+                                    Founder
+                                </div>
+</div>
+<div class="flex-1 pt-2">
+<h3 class="font-display text-4xl text-gold font-bold mb-2">Vaibhav Lodha</h3>
+<p class="text-white font-body text-sm tracking-[0.2em] uppercase mb-8 opacity-90">Creator &amp; Lead Architect</p>
+<blockquote class="text-xl text-white font-body font-light italic mb-10 leading-relaxed opacity-90">
+                                    "I built VoucherTracker because I was tired of spreadsheets. I wanted a dashboard that respected both my time and my wallet."
+                                </blockquote>
+<div class="flex flex-wrap justify-center md:justify-start gap-6">
+<a class="px-8 py-3 bg-espresso border border-primary/60 text-white font-body text-sm hover:border-gold hover:text-gold transition-all duration-300 rounded-sm uppercase tracking-widest font-medium" href="#">
+                                        Contact
+                                    </a>
+<a class="px-8 py-3 bg-espresso border border-primary/60 text-white font-body text-sm hover:border-gold hover:text-gold transition-all duration-300 rounded-sm uppercase tracking-widest font-medium" href="#">
+                                        View Source
+                                    </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="pt-16 border-t border-primary/20 text-center md:text-left flex flex-col md:flex-row justify-between items-center text-xs text-text-muted pb-12">
+<p class="font-light tracking-wide">© 2024 VoucherTracker Inc. All rights reserved.</p>
+<div class="flex gap-8 mt-6 md:mt-0 font-light">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+</footer>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

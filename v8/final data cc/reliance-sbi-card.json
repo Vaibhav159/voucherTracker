@@ -1,0 +1,1056 @@
+{
+  "id": "sbi-reliance-card",
+  "name": "Reliance SBI Card",
+  "bank": "SBI Card",
+  "slug": "reliance-sbi-card",
+  "image": "assets/cards/sbi/reliance-sbi-card.png",
+  "link": "https://www.sbicard.com/sprint/Reliance",
+  "isActive": true,
+
+  "network": {
+    "type": "Mastercard | RuPay",
+    "variant": null,
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "entry",
+    "isCobranded": true,
+    "cobrandPartner": {
+      "name": "Reliance Retail",
+      "type": "retail",
+      "loyaltyProgram": "RelianceOne"
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 499,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 499,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 100000,
+        "spendPeriod": "12 months (preceding year)",
+        "waiverText": "Renewal fee waived on annual spends of Rs. 1 Lakh or more in the preceding year"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": 3,
+      "joiningFee": 0,
+      "annualFee": 0,
+      "rewardSharing": true
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 500, "fee": 0},
+        {"minAmount": 501, "maxAmount": 1000, "fee": 400},
+        {"minAmount": 1001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 950},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ]
+    },
+    "overLimit": {
+      "amount": 600,
+      "percentage": 2.5,
+      "note": "2.5% of overlimit amount or Rs. 600, whichever is higher"
+    },
+    "chequeReturn": 500,
+    "paymentDishonor": {
+      "percentage": 2,
+      "minFee": 500
+    },
+    "cardReplacement": {
+      "min": 100,
+      "max": 250
+    },
+    "duplicateStatement": 100,
+    "cashPaymentFee": 250,
+    "chequePaymentFee": 200,
+    "rentPaymentFee": 199,
+    "utilityPaymentFee": {
+      "percentage": 1,
+      "threshold": 50000,
+      "note": "1% of total utility payments if exceeds Rs. 50,000 per billing cycle (w.e.f. 1st Dec 2024)"
+    },
+    "walletLoadFee": {
+      "percentage": 1,
+      "threshold": 1000,
+      "note": "1% on wallet loads exceeding Rs. 1,000 (w.e.f. 1st Nov 2025)"
+    },
+    "educationPaymentFee": {
+      "percentage": 1,
+      "note": "1% on education payments via third-party apps (w.e.f. 1st Nov 2025)"
+    }
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": null,
+        "annual": 200000
+      },
+      "selfEmployed": {
+        "itr": 200000
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 60,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": null
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 10000,
+      "max": 300000
+    },
+    "factors": "Based on income, credit score, and credit history",
+    "enhancementCriteria": "Good repayment history for 6+ months"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": 50,
+      "note": "20 to 50 days interest-free period on retail purchases if previous balance paid in full. Not applicable for cash advances."
+    },
+    "minPayment": {
+      "percentage": 0.02,
+      "minAmount": 200,
+      "calculation": "100% of GST + 100% of EMI amount + 100% of Fees/Charges + 100% of Finance Charges + Overlimit Amount (if any) + 2% of Remaining Balance Outstanding or Rs. 200, whichever is greater"
+    },
+    "minFinanceCharge": 25,
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": null,
+    "dailyLimit": 15000,
+    "interestFromDay1": true,
+    "note": "2.5% of transaction amount or Rs. 500, whichever is higher at domestic and international ATMs"
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "Reward Points",
+      "symbol": "RP",
+      "singularUnit": "point",
+      "pluralUnit": "points"
+    },
+    "baseRate": {
+      "rate": 1,
+      "spendUnit": 100,
+      "effectivePercentage": 0.0025,
+      "note": "1 Reward Point per Rs. 100 on other retail purchases"
+    },
+    "earningText": "Earn 10 Reward Points per Rs. 100 on AJIO & JioMart Online, 5 Reward Points per Rs. 100 on other Reliance Retail stores and dining/movies, 1 Reward Point per Rs. 100 on other retail spends",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "Property rental payments",
+        "Wallet uploads/loads",
+        "Cash advances",
+        "Balance transfers",
+        "EMI transactions",
+        "Flexipay",
+        "Financial charges and fees",
+        "UPI payments (reduced rate at Reliance stores only)"
+      ],
+      "mccs": ["5541", "5542", "5983", "6513", "6540", "6541"],
+      "note": "Fuel, property rental, and wallet upload transactions do not earn reward points"
+    },
+
+    "caps": {
+      "monthly": {
+        "points": null,
+        "cashback": null
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": "statement",
+      "perTransaction": null
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "24 months",
+      "condition": "From date of earning"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": null,
+        "cashback": null,
+        "vouchers": "Reliance Retail Voucher worth Rs. 500 + Additional discount vouchers worth Rs. 3,200",
+        "spendCondition": {
+          "amount": null,
+          "period": null,
+          "transactionCount": null
+        },
+        "validity": "Vouchers delivered within 30 days post realization of joining fees",
+        "description": "Get Reliance Retail Voucher worth Rs. 500 on payment of joining fees plus additional discount vouchers worth Rs. 3,200 from various participating Reliance Retail stores"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "relianceAjioJioMart": {
+        "rate": 10,
+        "spendUnit": 100,
+        "multiplier": 10,
+        "effectivePercentage": 0.025,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["AJIO", "JioMart Online"],
+        "mccs": null,
+        "note": "10 Reward Points per Rs. 100 spent on AJIO & JioMart Online Stores (except UPI payments)"
+      },
+      "relianceRetailOther": {
+        "rate": 5,
+        "spendUnit": 100,
+        "multiplier": 5,
+        "effectivePercentage": 0.0125,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["Reliance Trends", "Reliance Digital", "Reliance Fresh", "Reliance Smart", "Reliance Jewels", "Netmeds", "Urban Ladder", "Zivame"],
+        "note": "5 Reward Points per Rs. 100 spent on other participating Reliance Retail Stores (except UPI payments)"
+      },
+      "relianceRetailUPI": {
+        "rate": 1,
+        "spendUnit": 100,
+        "multiplier": 1,
+        "effectivePercentage": 0.0025,
+        "cap": null,
+        "capPeriod": null,
+        "note": "1 Reward Point per Rs. 100 on Reliance Retail Stores when payment is made through UPI (RuPay variant only)"
+      },
+      "dining": {
+        "rate": 5,
+        "spendUnit": 100,
+        "multiplier": 5,
+        "effectivePercentage": 0.0125,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "mccs": null,
+        "note": "5 Reward Points per Rs. 100 spent on dining"
+      },
+      "movies": {
+        "rate": 5,
+        "spendUnit": 100,
+        "multiplier": 5,
+        "effectivePercentage": 0.0125,
+        "cap": null,
+        "capPeriod": null,
+        "note": "5 Reward Points per Rs. 100 spent on movies"
+      },
+      "otherRetail": {
+        "rate": 1,
+        "spendUnit": 100,
+        "multiplier": 1,
+        "effectivePercentage": 0.0025,
+        "cap": null,
+        "capPeriod": null,
+        "note": "1 Reward Point per Rs. 100 spent on other retail purchases except excluded categories"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on fuel transactions"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on rent/property payments"
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on wallet loads"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": false,
+        "name": null,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "link": null,
+        "note": null
+      },
+      "partnerMerchants": {
+        "enabled": true,
+        "merchants": [
+          {
+            "name": "AJIO",
+            "rate": 10,
+            "spendUnit": 100,
+            "effectivePercentage": 0.025,
+            "cap": null,
+            "capPeriod": null,
+            "validUntil": null
+          },
+          {
+            "name": "JioMart Online",
+            "rate": 10,
+            "spendUnit": 100,
+            "effectivePercentage": 0.025,
+            "cap": null,
+            "capPeriod": null,
+            "validUntil": null
+          }
+        ],
+        "note": "10X rewards on AJIO & JioMart Online purchases"
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": null
+      },
+      "milestoneAccelerators": null
+    },
+
+    "redemption": {
+      "baseValue": 0.25,
+      "bestValue": 0.25,
+      "bestOption": "Reliance Retail Vouchers",
+      "minRedemption": null,
+      "redemptionIncrement": null,
+      "convenienceFee": 99,
+      "monthlyRedemptionLimit": null,
+      "note": "Each Reward Point = Rs. 0.25. Redemption fee of Rs. 99 applicable on physical products, statement credit & physical vouchers",
+
+      "pointsPlusPay": {
+        "enabled": false,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": null,
+        "note": null
+      },
+
+      "options": [
+        {
+          "type": "vouchers",
+          "value": 0.25,
+          "description": "Reliance Retail Vouchers",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 99,
+          "partners": ["Reliance Retail"],
+          "note": "Redeem reward points against Reliance Retail Vouchers"
+        },
+        {
+          "type": "statement_credit",
+          "value": 0.25,
+          "description": "Statement Credit",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 99,
+          "partners": [],
+          "note": "Redemption fee applicable"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": null,
+      "partners": null,
+      "currentBonus": null
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": null,
+      "acrossUsers": false,
+      "note": null
+    },
+
+    "specialLogic": null,
+
+    "calculator": {
+      "enabled": true,
+      "formula": "points = (spend / 100) * rate; value = points * 0.25",
+      "variables": ["spend", "category", "isRelianceStore", "isAjioJioMart"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "railwayLounge": null,
+        "eligibleLounges": null,
+        "note": "Reliance SBI Card (base variant) does not offer lounge access. Premium variant Reliance SBI Card PRIME offers lounge access."
+      },
+      "international": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "membershipValue": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "eligibleLounges": null
+      }
+    },
+
+    "milestones": [
+      {
+        "spend": 25000,
+        "period": "annual",
+        "location": "Reliance Retail Stores",
+        "benefit": "Rs. 500 worth Reliance Retail Voucher",
+        "benefitType": "voucher",
+        "value": 500,
+        "conditions": "Annual spends at participating Reliance Retail Stores"
+      },
+      {
+        "spend": 50000,
+        "period": "annual",
+        "location": "Reliance Retail Stores",
+        "benefit": "Rs. 750 worth Reliance Retail Voucher",
+        "benefitType": "voucher",
+        "value": 750,
+        "conditions": "Annual spends at participating Reliance Retail Stores"
+      },
+      {
+        "spend": 80000,
+        "period": "annual",
+        "location": "Reliance Retail Stores",
+        "benefit": "Rs. 1,000 worth Reliance Retail Voucher",
+        "benefitType": "voucher",
+        "value": 1000,
+        "conditions": "Annual spends at participating Reliance Retail Stores"
+      },
+      {
+        "spend": 100000,
+        "period": "annual",
+        "location": "All",
+        "benefit": "Renewal fee waiver",
+        "benefitType": "fee_waiver",
+        "value": 499,
+        "conditions": "Annual spends of Rs. 1 Lakh in the previous year"
+      }
+    ],
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": false,
+      "lessonIncluded": false,
+      "note": null
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": "Movie benefits not included in base Reliance SBI Card. Available in PRIME variant."
+    },
+
+    "dining": {
+      "included": false,
+      "programs": null,
+      "hotelDining": null,
+      "note": "5X reward points on dining spends"
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 500,
+      "maxTransaction": 4000,
+      "monthlyCap": 100,
+      "applicableStations": "All fuel stations in India",
+      "rewardsOnFuel": false,
+      "note": "1% fuel surcharge waiver for transactions between Rs. 500 and Rs. 4,000. Maximum waiver Rs. 100 per statement cycle."
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% + GST on international transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "fee": 3.5,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "3.5% foreign currency transaction fee. Not applicable for transactions in Nepal and Bhutan."
+    },
+
+    "concierge": {
+      "included": false,
+      "availability": null,
+      "type": null,
+      "services": null,
+      "contactNumber": null,
+      "note": null
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": null,
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "Flexipay",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Select merchants"],
+        "note": "No-cost EMI available on select merchants"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": null,
+        "minFee": null
+      },
+      "minAmount": 2500,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": 0.0083,
+        "max": null,
+        "note": "From 0.83% per month for 3 months"
+      },
+      "preclosureFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "cancellationPeriod": null,
+      "note": "Convert transactions of Rs. 2,500 or more into EMIs via sbicard.com within 30 days of purchase"
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": 0,
+        "promotionalPeriod": "60 days",
+        "regular": 0.017
+      },
+      "processingFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "tenures": [60, 180],
+      "maxAmount": null,
+      "preclosureFee": null,
+      "note": "0% for 60 days, 1.7% p.m. (20.40% p.a.) for 180 days"
+    },
+
+    "memberships": null,
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    },
+
+    "discountVouchers": {
+      "enabled": true,
+      "welcomeVouchers": [
+        {
+          "brand": "Reliance Retail",
+          "value": 500,
+          "condition": "On payment of joining fees",
+          "usageRestriction": "Redeemable across general merchandise & fashion categories"
+        },
+        {
+          "brand": "Reliance Trends",
+          "type": "discount",
+          "discount": "10%",
+          "cap": 500,
+          "condition": "Welcome benefit",
+          "usageRestriction": "Applicable on Apparel & Footwear"
+        },
+        {
+          "brand": "AJIO",
+          "type": "discount",
+          "discount": "10%",
+          "cap": 1000,
+          "condition": "Welcome benefit"
+        },
+        {
+          "brand": "Zivame",
+          "type": "discount",
+          "discount": "10%",
+          "cap": 300,
+          "condition": "Welcome benefit"
+        },
+        {
+          "brand": "Netmeds",
+          "type": "discount",
+          "discount": "25%",
+          "cap": 200,
+          "condition": "Welcome benefit",
+          "usageRestriction": "Online purchase of Pharma/prescription products"
+        },
+        {
+          "brand": "Urban Ladder",
+          "type": "discount",
+          "discount": "5%",
+          "cap": 500,
+          "condition": "Welcome benefit"
+        },
+        {
+          "brand": "Reliance Jewels",
+          "type": "discount",
+          "discount": "2%",
+          "cap": 700,
+          "condition": "Welcome benefit"
+        }
+      ],
+      "totalWelcomeValue": 3700,
+      "note": "Vouchers delivered within 30 days of payment of joining fees"
+    },
+
+    "networkPrivileges": {
+      "mastercard": {
+        "enabled": true,
+        "offers": [
+          "Up to 12% instant discount on hotel bookings via Agoda",
+          "Up to 15% off at Apollo Pharmacy",
+          "Up to 15% discount on Room Bookings and F&B at Lalit Hotels"
+        ],
+        "emergencyCardReplacement": true,
+        "link": "https://www.mastercard.co.in/en-in/personal/get-support/global-services.html"
+      },
+      "rupay": {
+        "enabled": true,
+        "offers": [
+          "Up to 15% Cashback on Hotels and Flight bookings at MakeMyTrip",
+          "Up to 20% off on ZoomCar",
+          "Up to 15% off on Shopping at Lifestyle Stores"
+        ],
+        "upiLinkage": true,
+        "link": "https://www.rupay.co.in"
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "condition": null
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": false,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": null,
+      "fraudLiability": {
+        "included": true,
+        "cover": null,
+        "reportingWindow": "Report immediately to SBI Card helpline",
+        "note": "SBI Card offers complimentary lost/stolen card insurance cover on certain cards. Provided by ICICI Lombard General Insurance Company Limited."
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "rupayPersonalAccident": {
+      "included": true,
+      "cover": 1000000,
+      "condition": "Complimentary with RuPay variant",
+      "note": "Personal accident insurance coverage worth Rs. 10 lakh from RuPay (for RuPay card variant)"
+    },
+    "note": "Base Reliance SBI Card has limited insurance. RuPay variant includes complimentary personal accident cover from RuPay."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000,
+      "note": "Contactless payments up to Rs. 5,000 without PIN"
+    },
+    "virtualCard": {
+      "available": false,
+      "instantIssuance": false,
+      "singleUse": false,
+      "spendControls": false
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": true,
+      "rewardsOnUPI": true,
+      "note": "RuPay variant can be linked to UPI apps. Earn 1 Reward Point per Rs. 100 at Reliance Retail stores on UPI payments."
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "View transactions",
+        "EMI conversion",
+        "Bill payment",
+        "Statement download"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    },
+    "chipAndPin": true
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": null,
+    "upgradesTo": [
+      {
+        "cardId": "sbi-reliance-card-prime",
+        "cardName": "Reliance SBI Card PRIME",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false,
+        "note": "Premium variant with lounge access and higher rewards"
+      }
+    ],
+    "note": "Consider upgrading to Reliance SBI Card PRIME for lounge access, higher rewards, and additional benefits"
+  },
+
+  "meta": {
+    "tags": [
+      "Shopping",
+      "Co-branded",
+      "Entry-level",
+      "Reliance Retail",
+      "RuPay",
+      "Mastercard",
+      "UPI enabled",
+      "Low annual fee"
+    ],
+    "bestFor": "Frequent shoppers at Reliance Retail stores (AJIO, JioMart, Reliance Trends, Reliance Digital, Netmeds, etc.) looking for rewards and discounts on their regular purchases",
+    "notRecommendedFor": "Those who don't shop at Reliance brands, high spenders seeking premium travel/lounge benefits, or those preferring higher reward rates on general spending",
+    "rating": {
+      "overall": 3.3,
+      "rewards": 3.0,
+      "benefits": 3.0,
+      "value": 3.5
+    },
+    "verdict": "A decent entry-level co-branded credit card for Reliance Retail loyalists. The effective reward rate of 1.25%-2.5% on Reliance purchases is modest compared to competitors, but milestone benefits and welcome vouchers enhance overall value. The low annual fee of Rs. 499 (waivable on Rs. 1 lakh spend) makes it accessible. Best suited for those who regularly shop at Reliance stores and can maximize the discount vouchers.",
+    "pros": [
+      "Low joining and annual fee of Rs. 499",
+      "Annual fee waiver on Rs. 1 lakh spend",
+      "Welcome vouchers worth Rs. 3,700+",
+      "10X rewards on AJIO & JioMart Online",
+      "5X rewards on Reliance stores, dining & movies",
+      "RuPay variant supports UPI linkage",
+      "1% fuel surcharge waiver",
+      "Milestone benefits in vouchers",
+      "Available in both Mastercard and RuPay variants"
+    ],
+    "cons": [
+      "Low base reward rate of 0.25% on non-Reliance spends",
+      "No lounge access (available in PRIME variant)",
+      "Rewards limited to Reliance Retail voucher redemption",
+      "Rs. 99 redemption fee on rewards",
+      "No travel or insurance benefits",
+      "3.5% forex markup on international transactions",
+      "No reward points on fuel, rent, wallet loads, UPI payments (except reduced rate at Reliance)",
+      "Reward points expire in 24 months",
+      "Benefits mainly useful for Reliance brand loyalists only"
+    ],
+    "alternatives": [
+      {
+        "cardId": "sbi-reliance-card-prime",
+        "reason": "Premium variant with lounge access, higher rewards, movie tickets"
+      },
+      {
+        "cardId": "amazon-pay-icici-card",
+        "reason": "5% cashback on Amazon, 2% on Amazon Pay partners, no annual fee"
+      },
+      {
+        "cardId": "flipkart-axis-bank-credit-card",
+        "reason": "5% cashback on Flipkart, 4% on preferred partners"
+      },
+      {
+        "cardId": "sbi-simplysave-card",
+        "reason": "10X rewards on groceries, dining, movies - broader category rewards"
+      }
+    ],
+    "lastVerified": "2026-01-06",
+    "dataSource": [
+      "Official SBI Card website - https://www.sbicard.com/en/personal/credit-cards/shopping/reliance-sbi-card.page",
+      "SBI Card MITC document - https://www.sbicard.com/sbi-card-en/assets/docs/pdf/most-important-terms-and-conditions/mitc-english.pdf",
+      "PaisaBazaar.com",
+      "BankBazaar.com",
+      "CardInsider.com",
+      "Finology Select"
+    ],
+    "changelog": [
+      {
+        "date": "2024-12-01",
+        "change": "Utility payment fee of 1% introduced for payments exceeding Rs. 50,000 per billing cycle",
+        "source": "SBI Card MITC update"
+      },
+      {
+        "date": "2025-11-01",
+        "change": "Education payment fee of 1% via third-party apps and wallet load fee of 1% on loads exceeding Rs. 1,000 introduced",
+        "source": "SBI Card MITC update"
+      },
+      {
+        "date": "2024-04-01",
+        "change": "Rent payment rewards discontinued for most SBI cards",
+        "source": "SBI Card policy update"
+      }
+    ]
+  },
+
+  "contactInformation": {
+    "customerCare": {
+      "tollFree": "1860 180 1290",
+      "alternate": "39 02 02 02 (prefix local STD code)",
+      "additional": "1860 500 1290",
+      "hours": "8 AM to 8 PM, Monday to Saturday"
+    },
+    "lostCardHelpline": "1860 500 3000",
+    "email": {
+      "general": "customercare@sbicard.com",
+      "lostCard": "lostcard@sbicard.com",
+      "disputes": "chargeback@sbicard.com",
+      "salesGrievance": "salesgrievance@sbicard.com",
+      "closure": "closurerequest@sbicard.com",
+      "nodal": "Nodalofficer@sbicard.com"
+    },
+    "address": "SBI Cards and Payment Services Ltd., DLF Infinity Towers, Tower C, 12th Floor, Block 2, Building 3, DLF Cyber City, Gurugram-122002 (Haryana) India",
+    "postalAddress": "PO Bag 28 - GPO, New Delhi - 110001",
+    "website": "https://www.sbicard.com"
+  }
+}

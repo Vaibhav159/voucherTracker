@@ -1,0 +1,1061 @@
+{
+  "id": "hdfc-moneyback-plus",
+  "name": "HDFC Bank MoneyBack+ Credit Card",
+  "bank": "HDFC Bank",
+  "slug": "hdfc-moneyback-plus-credit-card",
+  "image": "assets/cards/hdfc/moneyback-plus.png",
+  "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/moneyback-plus-credit-card",
+  "isActive": true,
+
+  "network": {
+    "type": "Visa | RuPay",
+    "variant": null,
+    "bin": null,
+    "note": "Available on Visa and RuPay networks. Mastercard issuance discontinued per RBI guidelines. RuPay variant supports UPI linking."
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "entry",
+    "isCobranded": false,
+    "cobrandPartner": {
+      "name": null,
+      "type": null,
+      "loyaltyProgram": null
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 500,
+      "taxInclusive": false,
+      "taxNote": "+ applicable GST (18%)",
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 500,
+      "taxInclusive": false,
+      "taxNote": "+ applicable GST (18%)",
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 50000,
+        "spendPeriod": "12 months before renewal date",
+        "waiverText": "Spend ₹50,000 or more in a year before your Credit Card renewal date and get your renewal fee waived off"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": null,
+      "joiningFee": 0,
+      "annualFee": 0,
+      "note": "Free for lifetime",
+      "rewardSharing": true
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding balance (effective August 1, 2024)",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 100, "fee": 0},
+        {"minAmount": 101, "maxAmount": 500, "fee": 100},
+        {"minAmount": 501, "maxAmount": 1000, "fee": 500},
+        {"minAmount": 1001, "maxAmount": 5000, "fee": 600},
+        {"minAmount": 5001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 900},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ],
+      "note": "Fees exclude GST"
+    },
+    "overLimit": {
+      "amount": 550,
+      "percentage": 2.5,
+      "note": "2.5% of the over-limit amount, minimum ₹550"
+    },
+    "chequeReturn": null,
+    "paymentReturnCharges": {
+      "percentage": 2,
+      "minimum": 450,
+      "note": "2% of the payment amount, minimum ₹450"
+    },
+    "cardReplacement": null,
+    "duplicateStatement": 10,
+    "rewardsRedemptionFee": 99,
+    "cashProcessingFee": {
+      "amount": 100,
+      "note": "For card payments at HDFC Bank branches or ATMs. Waived if late payment charges applied in current statement."
+    },
+    "railwayTicketPurchaseFee": {
+      "percentage": 1,
+      "note": "1% of transaction amount + GST, reversed after transaction"
+    },
+    "rentPaymentFee": {
+      "percentage": 1,
+      "cap": 3000,
+      "note": "Applicable when using third-party apps like CRED, PayTM, Cheq, MobiKwik, Freecharge. Effective August 1, 2024."
+    },
+    "utilityPaymentFee": {
+      "threshold": 50000,
+      "percentage": 1,
+      "cap": 3000,
+      "note": "1% fee on utility payments exceeding ₹50,000 per transaction. Insurance payments exempt."
+    },
+    "fuelTransactionFee": {
+      "threshold": 15000,
+      "percentage": 1,
+      "cap": 3000,
+      "note": "1% fee on fuel transactions exceeding ₹15,000 per transaction"
+    }
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 20000,
+        "annual": 240000,
+        "note": "Gross monthly income > ₹20,000"
+      },
+      "selfEmployed": {
+        "itr": 600000,
+        "note": "Annual ITR > ₹6 lakhs"
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": {
+        "salaried": 60,
+        "selfEmployed": 65
+      },
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 650,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": "Open to new-to-bank customers"
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 25000,
+      "max": 200000
+    },
+    "factors": "Based on income, credit score, credit history, and existing relationship with HDFC Bank",
+    "enhancementCriteria": "Good repayment history for 6+ months"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.432,
+      "monthlyRate": 0.036,
+      "note": "3.6% per month (43.2% per annum)"
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375,
+      "note": "3.75% per month (45% per annum) for non-premium cards"
+    },
+    "gracePeriod": {
+      "days": 50,
+      "note": "Up to 50 days from the date of purchase (subject to submission of charge by merchant)"
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 200,
+      "calculation": "5% of total outstanding or ₹200, whichever is higher"
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": null,
+    "dailyLimit": null,
+    "interestFromDay1": true,
+    "note": "2.5% of withdrawn amount or ₹500, whichever is higher. Interest charged from day of withdrawal."
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "CashPoints",
+      "symbol": "CP",
+      "singularUnit": "CashPoint",
+      "pluralUnit": "CashPoints"
+    },
+    "baseRate": {
+      "rate": 2,
+      "spendUnit": 150,
+      "effectivePercentage": 0.0033,
+      "note": "Base rate of 2 CashPoints per ₹150 = 0.33% reward rate (at ₹0.25 per point)"
+    },
+    "earningText": "Earn 2 CashPoints for every ₹150 spent on regular purchases. Earn 10X CashPoints (20 per ₹150) on Amazon, BigBasket, Flipkart, Reliance Smart SuperStore & Swiggy.",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "Rent payments (via third-party apps)",
+        "Government-related transactions",
+        "Wallet loads (PayTM, PhonePe, etc.)",
+        "Prepaid card loads",
+        "Gift card/Voucher purchases",
+        "Cash advances",
+        "Payment of outstanding balances",
+        "Payment of card fees and charges",
+        "EMI transactions (principal and interest)",
+        "Smart EMI transactions",
+        "Online skill-based gaming transactions (effective October 1, 2025)"
+      ],
+      "mccs": ["5541", "5542", "5983", "6513", "9311", "9222", "6540"],
+      "note": "MCC codes defined by card networks (Visa, Mastercard, RuPay). Transactions at these MCCs do not earn CashPoints."
+    },
+
+    "caps": {
+      "monthly": {
+        "points": {
+          "tenXCategory": 2500,
+          "fiveXCategory": 2500,
+          "grocery": 1000,
+          "upi": 500
+        },
+        "cashback": null,
+        "overall": 15000
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": "calendar",
+      "perTransaction": null,
+      "note": "Maximum 15,000 CashPoints can be earned per statement cycle. 10X and 5X categories capped at 2,500 CashPoints/month each. Grocery transactions capped at 1,000 CashPoints/month. UPI transactions capped at 500 CashPoints/month."
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "2 years",
+      "condition": "From date of earning. If card not used for 365+ days, all CashPoints are nullified."
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": 500,
+        "cashback": null,
+        "vouchers": null,
+        "spendCondition": null,
+        "validity": "On payment of joining membership fee",
+        "description": "Get 500 CashPoints as welcome benefit on payment of joining membership fee"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": true,
+        "points": 500,
+        "condition": "On payment of renewal membership fee"
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "tenXPartners": {
+        "rate": 20,
+        "perSpend": 150,
+        "multiplier": 10,
+        "cap": 2500,
+        "capPeriod": "monthly",
+        "merchants": ["Amazon", "BigBasket", "Flipkart", "Reliance Smart SuperStore", "Swiggy"],
+        "note": "10X CashPoints (20 CashPoints per ₹150) = 3.33% effective reward rate. Applicable on App, Website, and Physical stores."
+      },
+      "emi": {
+        "rate": 10,
+        "perSpend": 150,
+        "multiplier": 5,
+        "cap": 2500,
+        "capPeriod": "monthly",
+        "note": "5X CashPoints on Merchant/EasyEMI transactions. Only EMI principal amount eligible. SmartEMI/Dial An EMI not included. Points reversed if EMI preclosed."
+      },
+      "online": {
+        "rate": 2,
+        "perSpend": 150,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "note": "Base rate applies to online transactions except excluded categories"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on fuel transactions. 1% surcharge waiver available."
+      },
+      "groceries": {
+        "rate": 2,
+        "perSpend": 150,
+        "multiplier": null,
+        "cap": 1000,
+        "capPeriod": "monthly",
+        "merchants": [],
+        "note": "Base rate capped at 1,000 CashPoints per month on grocery transactions. BigBasket covered under 10X partners."
+      },
+      "utilities": {
+        "rate": 2,
+        "perSpend": 150,
+        "cap": null,
+        "note": "Base rate applies. 1% fee applies on transactions > ₹50,000."
+      },
+      "international": {
+        "rate": 2,
+        "perSpend": 150,
+        "multiplier": null,
+        "cap": null,
+        "note": "Base rate applies. 3.5% forex markup charged."
+      },
+      "insurance": {
+        "rate": 2,
+        "perSpend": 150,
+        "cap": 2000,
+        "capPeriod": "monthly",
+        "note": "CashPoints on insurance transactions capped at 2,000 per month (effective October 1, 2025)"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on rent payments. 1% fee (capped at ₹3,000) applies when using third-party apps."
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on wallet loads, prepaid card loads, or voucher purchases"
+      },
+      "upi": {
+        "rate": 2,
+        "perSpend": 200,
+        "cap": 500,
+        "capPeriod": "monthly",
+        "note": "RuPay variant only. 2 CashPoints per ₹200 spent via UPI, capped at 500 points/month."
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": true,
+        "name": "SmartBuy",
+        "multiplier": null,
+        "rate": 2,
+        "perSpend": 150,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["Amazon", "Flipkart", "Flights", "Hotels", "Instant Vouchers"],
+        "link": "https://offers.smartbuy.hdfcbank.com",
+        "note": "SmartBuy/PayZapp transactions earn base rate of 2 CashPoints per ₹150. Other SmartBuy offers apply as per T&C."
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": [],
+        "note": "10X partners already listed in categories. No additional partner accelerators."
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": [],
+        "note": "No spend-based multiplier unlocks for this card"
+      },
+      "milestoneAccelerators": []
+    },
+
+    "redemption": {
+      "baseValue": 0.25,
+      "bestValue": 0.25,
+      "bestOption": "Statement credit/Cashback at ₹0.25 per CashPoint",
+      "minRedemption": 500,
+      "minRedemptionValue": 125,
+      "redemptionIncrement": null,
+      "convenienceFee": 99,
+      "monthlyRedemptionLimit": {
+        "cashback": 50000,
+        "travel": 50000,
+        "count": 5,
+        "note": "W.e.f. February 1, 2026, reward points can be redeemed up to a maximum of 5 times a month"
+      },
+
+      "pointsPlusPay": {
+        "enabled": true,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": 70,
+        "note": "Up to 70% of product/voucher value can be redeemed through CashPoints on select products/vouchers"
+      },
+
+      "options": [
+        {
+          "type": "statement_credit",
+          "value": 0.25,
+          "description": "Cashback against statement balance",
+          "recommended": true,
+          "minPoints": 500,
+          "processingFee": 99,
+          "partners": [],
+          "note": "1 CashPoint = ₹0.25. Minimum 500 CashPoints (₹125) required. Maximum 50,000 CashPoints per month. Via NetBanking, PhoneBanking, or physical form."
+        },
+        {
+          "type": "travel",
+          "value": 0.25,
+          "description": "Flight & Hotel bookings via SmartBuy",
+          "recommended": true,
+          "minPoints": 500,
+          "processingFee": 0,
+          "partners": ["SmartBuy"],
+          "note": "Up to 50% of booking value can be redeemed through CashPoints. Maximum 50,000 CashPoints per calendar month."
+        },
+        {
+          "type": "products",
+          "value": 0.25,
+          "description": "Product Catalogue redemption",
+          "recommended": false,
+          "minPoints": 500,
+          "processingFee": 99,
+          "partners": [],
+          "note": "Redeem against products from rewards catalog"
+        },
+        {
+          "type": "vouchers",
+          "value": 0.25,
+          "description": "Gift vouchers from catalog",
+          "recommended": false,
+          "minPoints": 500,
+          "processingFee": 99,
+          "partners": ["Amazon", "Flipkart", "Others"],
+          "note": "Up to 70% of voucher value redeemable via CashPoints on select vouchers"
+        },
+        {
+          "type": "airmiles",
+          "value": null,
+          "description": "Convert to partner airline miles",
+          "recommended": false,
+          "minPoints": 500,
+          "processingFee": 99,
+          "partners": [],
+          "note": "Airmiles conversion available but transfer ratios not specified for this card tier"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": [],
+      "partners": [],
+      "note": "Transfer partners not available for entry-level MoneyBack+ card. Available on premium cards like Infinia, Diners Black."
+    },
+
+    "pooling": {
+      "enabled": true,
+      "eligibleCards": ["All HDFC credit cards of same customer"],
+      "acrossUsers": false,
+      "note": "Pool CashPoints across your HDFC cards via NetBanking"
+    },
+
+    "specialLogic": {
+      "postingTiming": "CashPoints earned in a calendar month are posted in the 1st week of the subsequent calendar month",
+      "transactionEligibility": "Only settled transactions within the calendar month are considered for CashPoints posting"
+    },
+
+    "calculator": {
+      "enabled": false,
+      "formula": "For 10X merchants: (spend / 150) * 20; For base: (spend / 150) * 2",
+      "variables": ["spend", "merchant", "isEMI", "isUPI"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "railwayLounge": null,
+        "eligibleLounges": null,
+        "note": "No domestic lounge access - this is an entry-level card"
+      },
+      "international": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "membershipValue": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "eligibleLounges": null,
+        "note": "No international lounge access - this is an entry-level card"
+      }
+    },
+
+    "milestones": [
+      {
+        "spend": 50000,
+        "period": "quarterly",
+        "benefit": "₹500 gift voucher",
+        "benefitType": "voucher",
+        "value": 500,
+        "conditions": "Earn a gift voucher worth ₹500 every calendar quarter on spends of ₹50,000 or above. Maximum ₹2,000 worth of vouchers in a year (4 quarters).",
+        "voucherValidity": "120 days from issuance",
+        "voucherRedemption": "www.gyftr.com/hdfcbankmoneyback+/"
+      }
+    ],
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": null,
+      "lessonIncluded": null,
+      "note": "No golf benefits - this is an entry-level card"
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": "No movie benefits on this card"
+    },
+
+    "dining": {
+      "included": true,
+      "programs": [
+        {
+          "name": "Swiggy Dineout",
+          "discount": "Up to 20% off",
+          "cap": null,
+          "frequency": "Per visit",
+          "minimumOrderValue": 2000,
+          "discountAmount": 200,
+          "note": "Up to 20% off at 2000+ premium restaurants in select cities. ₹200 discount on MOV ₹2,000 when paying via Swiggy Dineout."
+        }
+      ],
+      "hotelDining": {
+        "included": false,
+        "hotels": [],
+        "offer": null
+      }
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 400,
+      "maxTransaction": 5000,
+      "monthlyCap": 250,
+      "capPeriod": "statement cycle",
+      "applicableStations": "All fuel stations in India",
+      "rewardsOnFuel": false,
+      "note": "1% fuel surcharge waiver on transactions between ₹400 and ₹5,000. Maximum waiver ₹250 per statement cycle. Surcharge rate varies by fuel station and acquiring bank. GST not waived."
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% + GST on international/cross-currency transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "recommendation": "Always decline DCC and pay in local currency to avoid higher markup"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "Forex markup applies to all non-INR transactions including online purchases from foreign merchants"
+    },
+
+    "concierge": {
+      "included": false,
+      "availability": null,
+      "type": null,
+      "services": [],
+      "contactNumber": null,
+      "note": "No concierge service - this is an entry-level card"
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": [],
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": "No roadside assistance - this is an entry-level card"
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "SmartEMI / EasyEMI",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Select merchants and products"],
+        "note": "No-cost EMI available on select merchants and products"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": 199,
+        "minFee": null,
+        "note": "Processing fee up to ₹199 + GST for EasyEMI at online/offline stores"
+      },
+      "minAmount": null,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": null,
+        "max": null,
+        "autoEMI": "20% p.a. + ₹99 processing fee"
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": null
+      },
+      "cancellationPeriod": null,
+      "note": "Convert big-ticket purchases to EMI post-purchase. 5X CashPoints on Merchant/EasyEMI. SmartEMI not eligible for 5X."
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": null
+      },
+      "processingFee": {
+        "percentage": 1,
+        "minFee": 250,
+        "flatFee": null,
+        "note": "1% of transfer amount or ₹250, whichever is higher"
+      },
+      "tenures": [],
+      "maxAmount": null,
+      "preclosureFee": null,
+      "note": "Balance transfer facility available from other bank credit cards"
+    },
+
+    "memberships": [],
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "condition": null
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": []
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": [],
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": false,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": null,
+      "fraudLiability": {
+        "included": true,
+        "cover": null,
+        "reportingWindow": "Report immediately to 24-hour call centre",
+        "note": "Zero lost card liability on fraudulent transactions if reported immediately to HDFC Bank's 24-hour Call Centre (1800 1600 / 1800 2600 or 022-61606160 for overseas)"
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": []
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": [],
+      "excludedCountries": [],
+      "excludedVehicleTypes": []
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "This is an entry-level card with minimal insurance benefits. Only zero lost card liability is included."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000,
+      "note": "Contactless payments enabled. PIN required for transactions ≥₹5,000."
+    },
+    "virtualCard": {
+      "available": false,
+      "instantIssuance": false,
+      "singleUse": false,
+      "spendControls": false
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true,
+      "payZapp": true,
+      "upi": {
+        "available": true,
+        "ruPayOnly": true,
+        "note": "UPI linking available for RuPay variant only. Link via PayZapp or other UPI apps."
+      }
+    },
+    "upiLinking": {
+      "available": true,
+      "ruPayOnly": true,
+      "rewardsOnUPI": true,
+      "rewardRate": "2 CashPoints per ₹200",
+      "cap": 500,
+      "capPeriod": "monthly",
+      "note": "Only P2M transactions eligible. RuPay variant required."
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "platform": "HDFC Bank MyCards",
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international transactions",
+        "Enable/Disable online transactions",
+        "Enable/Disable contactless",
+        "Real-time alerts",
+        "Spends tracking",
+        "View and redeem reward points"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"],
+      "note": "SmartPay available for automated bill payments"
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [
+      {
+        "cardId": "hdfc-freedom",
+        "spendRequired": null,
+        "tenure": null,
+        "autoUpgrade": false,
+        "note": "Entry-level migration from Freedom card"
+      }
+    ],
+    "upgradesTo": [
+      {
+        "cardId": "hdfc-millennia",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false,
+        "note": "Upgrade to Millennia for better cashback rates"
+      },
+      {
+        "cardId": "hdfc-regalia",
+        "spendRequired": 300000,
+        "tenure": "12 months",
+        "inviteOnly": false,
+        "note": "Upgrade to Regalia for travel benefits and lounge access"
+      }
+    ],
+    "note": "Upgrade eligibility based on spend history, credit score, and relationship with HDFC Bank"
+  },
+
+  "meta": {
+    "tags": [
+      "Entry-level",
+      "Cashback",
+      "Rewards",
+      "Everyday spending",
+      "Online shopping",
+      "Amazon",
+      "Flipkart",
+      "Swiggy"
+    ],
+    "bestFor": "Beginners and budget-conscious spenders who frequently shop on Amazon, Flipkart, Swiggy, BigBasket, and Reliance Smart SuperStore. Annual spending of ₹50,000-₹2,00,000.",
+    "notRecommendedFor": "Travelers seeking lounge access, premium insurance, or concierge services. High spenders who would benefit more from premium cards. Those who primarily use UPI or cash.",
+    "rating": {
+      "overall": 3.8,
+      "rewards": 4.0,
+      "benefits": 3.0,
+      "value": 4.5,
+      "note": "Excellent value for fee. Strong rewards on select merchants but limited benefits."
+    },
+    "verdict": "The HDFC MoneyBack+ is an excellent entry-level credit card for those who frequently shop on Amazon, Flipkart, Swiggy, BigBasket, and Reliance Smart SuperStore. The 10X CashPoints (3.33% effective rate) on these partners is competitive for this price point. However, the card lacks travel benefits, lounge access, and comprehensive insurance. Best suited for beginners building credit history or those maximizing rewards on specific partner merchants.",
+    "pros": [
+      "Low annual fee of ₹500 with easy spend-based waiver (₹50K/year)",
+      "10X CashPoints (3.33% effective rate) on popular merchants like Amazon, Flipkart, Swiggy",
+      "5X CashPoints on EMI transactions",
+      "Quarterly ₹500 voucher on ₹50,000 spend (up to ₹2,000/year)",
+      "1% fuel surcharge waiver",
+      "RuPay variant supports UPI with rewards",
+      "Low income eligibility (₹20,000/month)",
+      "Free add-on cards for lifetime"
+    ],
+    "cons": [
+      "No lounge access (domestic or international)",
+      "No travel insurance or purchase protection",
+      "Low point value (₹0.25 per CashPoint)",
+      "₹99 redemption fee for cashback",
+      "2,500 monthly cap on 10X category earnings",
+      "No rewards on fuel, rent, government transactions",
+      "3.5% forex markup on international transactions",
+      "1% fee on rent payments via third-party apps"
+    ],
+    "alternatives": [
+      {
+        "cardId": "hdfc-millennia",
+        "reason": "Better cashback rates (1:1) but double the annual fee (₹1,000)"
+      },
+      {
+        "cardId": "hdfc-upi-rupay",
+        "reason": "Better for UPI-heavy users with category-based cashback"
+      },
+      {
+        "cardId": "sbi-cashback",
+        "reason": "5% unlimited cashback on online spends but requires higher income"
+      },
+      {
+        "cardId": "axis-ace",
+        "reason": "Higher cashback on bill payments and partner merchants"
+      }
+    ],
+    "lastVerified": "2026-01-08",
+    "dataSource": [
+      "HDFC Bank official website (hdfcbank.com)",
+      "HDFC Bank MoneyBack+ product page",
+      "HDFC Bank MITC document (Version dated November 2025)",
+      "HDFC Bank Terms & Conditions effective August 2024",
+      "Paisabazaar.com",
+      "BankBazaar.com",
+      "CardInsider.com",
+      "MyMoneyMantra.com",
+      "Finology Select"
+    ],
+    "changelog": [
+      {
+        "date": "2024-08-01",
+        "change": "1% fee introduced on rent payments via third-party apps (CRED, PayTM, etc.), capped at ₹3,000",
+        "source": "HDFC Bank official announcement"
+      },
+      {
+        "date": "2024-08-01",
+        "change": "Late payment fee structure revised - tiered from ₹100 to ₹1,300 based on outstanding",
+        "source": "HDFC Bank official announcement"
+      },
+      {
+        "date": "2024-08-01",
+        "change": "1% fee on fuel transactions exceeding ₹15,000",
+        "source": "HDFC Bank official announcement"
+      },
+      {
+        "date": "2024-08-01",
+        "change": "1% fee on utility payments exceeding ₹50,000",
+        "source": "HDFC Bank official announcement"
+      },
+      {
+        "date": "2024-09-01",
+        "change": "Wallet loading and Easy EMI transactions no longer earn Reward Points",
+        "source": "HDFC Bank T&C update"
+      },
+      {
+        "date": "2025-10-01",
+        "change": "Insurance transactions CashPoints capped at 2,000 per month",
+        "source": "HDFC Bank T&C update"
+      },
+      {
+        "date": "2025-10-01",
+        "change": "Online skill-based gaming transactions no longer earn CashPoints",
+        "source": "HDFC Bank T&C update"
+      },
+      {
+        "date": "2026-02-01",
+        "change": "Reward points redemption limited to maximum 5 times per month",
+        "source": "HDFC Bank T&C update"
+      },
+      {
+        "date": "2023-01-01",
+        "change": "Rent payments and government-related transactions excluded from rewards. Grocery transactions capped at 1,000 CashPoints/month.",
+        "source": "HDFC Bank T&C update"
+      },
+      {
+        "date": "2023-01-01",
+        "change": "Flight & hotel redemption via SmartBuy capped at 50,000 CashPoints per calendar month",
+        "source": "HDFC Bank T&C update"
+      },
+      {
+        "date": "2023-02-01",
+        "change": "Cashback redemption capped at 50,000 CashPoints per calendar month",
+        "source": "HDFC Bank T&C update"
+      }
+    ]
+  }
+}

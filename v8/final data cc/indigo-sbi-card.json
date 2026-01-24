@@ -1,0 +1,884 @@
+{
+  "id": "sbi-indigo-card",
+  "name": "IndiGo SBI Card",
+  "bank": "SBI Card",
+  "slug": "indigo-sbi-card",
+  "image": "assets/cards/sbi/indigo-sbi-card.png",
+  "link": "https://www.sbicard.com/en/personal/credit-cards/travel/indigo-sbi-card.page",
+  "isActive": true,
+
+  "network": {
+    "type": "Mastercard | RuPay",
+    "variant": "World",
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "mid",
+    "isCobranded": true,
+    "cobrandPartner": {
+      "name": "IndiGo Airlines",
+      "type": "airline",
+      "loyaltyProgram": "IndiGo BluChip"
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 1499,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 1499,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 200000,
+        "spendPeriod": "12 months",
+        "waiverText": "Waived off on annual spends of Rs.2 Lakh or more in the preceding year"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": null,
+      "joiningFee": 0,
+      "annualFee": 0,
+      "rewardSharing": true
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 500, "fee": 0},
+        {"minAmount": 501, "maxAmount": 1000, "fee": 400},
+        {"minAmount": 1001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 950},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ]
+    },
+    "overLimit": {
+      "amount": 600,
+      "percentage": 2.5
+    },
+    "chequeReturn": 500,
+    "cardReplacement": 250,
+    "duplicateStatement": 100
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 18000,
+        "annual": 200000
+      },
+      "selfEmployed": {
+        "itr": 200000
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 70,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": "IndiGo BluChip membership is mandatory to earn BluChips"
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 25000,
+      "max": 500000
+    },
+    "factors": "Based on income, credit score, and existing relationship",
+    "enhancementCriteria": "Good repayment history for 6+ months"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": 50,
+      "note": "Interest free credit period of 20-50 days if previous balance paid in full"
+    },
+    "minPayment": {
+      "percentage": 0.02,
+      "minAmount": 200,
+      "calculation": "100% of GST + 100% of EMI amount + 100% of Fees/Charges + 100% of Finance Charges + Overlimit Amount (if any) + 2% of Remaining Balance Outstanding or Rs 200 (whichever is greater)"
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": null,
+    "dailyLimit": 15000,
+    "interestFromDay1": true
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "IndiGo BluChips",
+      "symbol": "BluChips",
+      "singularUnit": "BluChip",
+      "pluralUnit": "BluChips"
+    },
+    "baseRate": {
+      "rate": 1,
+      "spendUnit": 100,
+      "effectivePercentage": 0.0054
+    },
+    "earningText": "Earn 1 IndiGo BluChip for every Rs.100 spent on all other eligible spends",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Fuel",
+        "Utility payments",
+        "Government transactions",
+        "Rental payments",
+        "Gaming",
+        "Crossell transactions",
+        "Insurance premium payments",
+        "Cash withdrawals",
+        "Balance transfers",
+        "E-wallet loads",
+        "Flexipay transactions",
+        "Cashback transactions"
+      ],
+      "mccs": ["5541", "5542", "4900", "9311", "9222", "6513", "7995"],
+      "note": "No BluChips on Utility, Govt Transactions, Rental, Fuel, Gaming, Crossell and insurance MCCs"
+    },
+
+    "caps": {
+      "monthly": {
+        "points": null,
+        "cashback": null
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": null,
+      "perTransaction": null
+    },
+
+    "expiry": {
+      "hasExpiry": false,
+      "period": "Never expires if program active",
+      "condition": "BluChips don't expire as long as you earn or spend once in 2 years"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": 2500,
+        "cashback": null,
+        "vouchers": null,
+        "spendCondition": {
+          "amount": null,
+          "period": "60 days",
+          "transactionCount": 1
+        },
+        "validity": "Within 60 days of account opening",
+        "description": "2,500 IndiGo BluChips post annual fee payment and first transaction within 60 days of account opening"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": true,
+        "points": 2500,
+        "condition": "2,500 IndiGo BluChips post annual fee payment from second year onwards"
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "indigoSpends": {
+        "rate": 3,
+        "spendUnit": 100,
+        "multiplier": 3,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["IndiGo App", "IndiGo Website"],
+        "mccs": null,
+        "note": "3 IndiGo BluChips per Rs.100 spent on IndiGo App and Web"
+      },
+      "travel": {
+        "rate": 2,
+        "spendUnit": 100,
+        "multiplier": 2,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["Hotels", "Lodging", "Travel MCCs"],
+        "mccs": ["3501-3999", "7011", "4722"],
+        "note": "2 IndiGo BluChips per Rs.100 spent on Hotel/Lodging and Travel MCCs"
+      },
+      "dining": {
+        "rate": 1,
+        "spendUnit": 100,
+        "multiplier": 1,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "note": "Base rate of 1 BluChip per Rs.100"
+      },
+      "online": {
+        "rate": 1,
+        "spendUnit": 100,
+        "multiplier": 1,
+        "cap": null,
+        "capPeriod": null,
+        "note": "1 IndiGo BluChip per Rs.100 on all other spends except excluded categories"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No BluChips on fuel transactions"
+      },
+      "groceries": {
+        "rate": 1,
+        "spendUnit": 100,
+        "multiplier": 1,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null
+      },
+      "utilities": {
+        "rate": 0,
+        "cap": null,
+        "note": "No BluChips on utility payments"
+      },
+      "international": {
+        "rate": 1,
+        "spendUnit": 100,
+        "multiplier": 1,
+        "cap": null,
+        "note": "Base rate applies to international transactions"
+      },
+      "insurance": {
+        "rate": 0,
+        "cap": null,
+        "note": "No BluChips on insurance payments"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No BluChips on rent payments"
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No BluChips on wallet loads"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": false,
+        "name": null,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "link": null,
+        "note": null
+      },
+      "partnerMerchants": {
+        "enabled": true,
+        "merchants": [
+          {
+            "name": "IndiGo App & Website",
+            "multiplier": 3,
+            "cap": null,
+            "capPeriod": null,
+            "mcc": null,
+            "validUntil": null
+          }
+        ],
+        "note": "3X BluChips on IndiGo channel spends"
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": null
+      },
+      "milestoneAccelerators": null
+    },
+
+    "redemption": {
+      "baseValue": 0.50,
+      "bestValue": 0.54,
+      "bestOption": "IndiGo flight bookings via IndiGo App/Website at approximately Rs.0.47-0.54 per BluChip (dynamic value)",
+      "minRedemption": null,
+      "redemptionIncrement": null,
+      "convenienceFee": null,
+      "monthlyRedemptionLimit": null,
+
+      "pointsPlusPay": {
+        "enabled": false,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": null,
+        "note": null
+      },
+
+      "options": [
+        {
+          "type": "travel",
+          "value": 0.50,
+          "description": "IndiGo flight bookings via IndiGo App/Website",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["IndiGo Airlines"],
+          "note": "Dynamic value - approximately Rs.0.47-0.54 per BluChip depending on route. Can only be redeemed for flights marketed and operated by IndiGo. Cannot be used for 6E Add-ons, taxes, or additional fees."
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": null,
+      "partners": null,
+      "currentBonus": null
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": null,
+      "acrossUsers": false,
+      "note": "BluChips are tied to IndiGo BluChip Membership account, not transferable between cards"
+    },
+
+    "specialLogic": "BluChips are automatically credited to the cardholder's IndiGo BluChip account on every statement cycle. Redemption is only available for the primary cardholder and saved nominees.",
+
+    "calculator": {
+      "enabled": true,
+      "formula": "bluChips = (spend / 100) * categoryRate where categoryRate is 3 for IndiGo, 2 for Hotel/Travel MCCs, 1 for others",
+      "variables": ["spend", "category", "isIndiGoChannel", "isHotelTravel"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": true,
+        "complimentaryCount": 4,
+        "period": "year",
+        "accessType": "Mastercard/RuPay Lounge",
+        "accessProvider": "Mastercard/RuPay",
+        "spendRequired": {
+          "amount": 50000,
+          "period": "quarterly",
+          "note": "Lounge benefit is applicable only if the customer meets the spending criteria of Rs. 50,000 in the last quarter. Capped at 1 access per quarter."
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "eligibleLounges": "https://www.sbicard.com/sbi-card-en/assets/docs/pdf/Indigo-SBI-Cards-Domestic-Lounge-List.pdf"
+      },
+      "international": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "membershipValue": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "eligibleLounges": null
+      }
+    },
+
+    "milestones": [
+      {
+        "spend": 200000,
+        "period": "annual",
+        "benefit": "2,500 IndiGo BluChips",
+        "benefitType": "points",
+        "value": 1350,
+        "conditions": "On annual spend of Rs. 2 Lakh"
+      },
+      {
+        "spend": 400000,
+        "period": "annual",
+        "benefit": "2,500 IndiGo BluChips",
+        "benefitType": "points",
+        "value": 1350,
+        "conditions": "On annual spend of Rs. 4 Lakh"
+      },
+      {
+        "spend": 600000,
+        "period": "annual",
+        "benefit": "2,500 IndiGo BluChips",
+        "benefitType": "points",
+        "value": 1350,
+        "conditions": "On annual spend of Rs. 6 Lakh"
+      }
+    ],
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": false,
+      "lessonIncluded": false,
+      "note": null
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": null
+    },
+
+    "dining": {
+      "included": false,
+      "programs": null,
+      "hotelDining": null
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 500,
+      "maxTransaction": 4000,
+      "monthlyCap": 200,
+      "applicableStations": "All fuel stations in India",
+      "rewardsOnFuel": false,
+      "note": "1% fuel surcharge waiver for transactions between Rs.500 and Rs.4,000 (exclusive of GST and other charges). Maximum surcharge waiver of Rs.200 per statement cycle."
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% foreign currency transaction fee on international transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "Foreign currency transaction fee of 3.5% applies to all non-INR transactions. Fee will not be reversed in case of transaction refunds."
+    },
+
+    "concierge": {
+      "included": false,
+      "availability": null,
+      "type": null,
+      "services": null,
+      "contactNumber": null,
+      "note": null
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": null,
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "Flexipay",
+      "noCostEMI": {
+        "available": false,
+        "merchants": null,
+        "note": null
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": null,
+        "minFee": null
+      },
+      "minAmount": 2500,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": null,
+        "max": null
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": 0
+      },
+      "cancellationPeriod": null,
+      "note": "Convert transactions of Rs.2,500 or more into Flexipay within 30 days of purchase via sbicard.com"
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": 0,
+        "promotionalPeriod": "60 days",
+        "regular": 0.017
+      },
+      "processingFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "tenures": [60, 180],
+      "maxAmount": null,
+      "preclosureFee": null,
+      "note": "Transfer outstanding balance of other bank credit cards to IndiGo SBI Card at 0% for 60 days or 1.7% p.m. (20.40% p.a.) for 180 days"
+    },
+
+    "memberships": null,
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "condition": null
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": false,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": null,
+      "fraudLiability": {
+        "included": true,
+        "cover": null,
+        "reportingWindow": "Report immediately to SBI Card helpline"
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "IndiGo SBI Card (base variant) does not include travel insurance benefits. The Elite variant offers insurance coverage."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000
+    },
+    "virtualCard": {
+      "available": false,
+      "instantIssuance": false,
+      "singleUse": false,
+      "spendControls": false
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": true,
+      "rewardsOnUPI": true,
+      "note": "RuPay variant supports UPI linking for credit card transactions"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Real-time alerts via SMS/Email"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": null,
+    "upgradesTo": [
+      {
+        "cardId": "sbi-indigo-elite",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false
+      }
+    ],
+    "note": "As per SBI Card policy, switching from IndiGo SBI Card to another SBI Credit Card is not permitted. You need to apply for a different card separately."
+  },
+
+  "meta": {
+    "tags": [
+      "Travel",
+      "Airline Co-brand",
+      "IndiGo",
+      "BluChips",
+      "Lounge Access",
+      "Mid-tier"
+    ],
+    "bestFor": "Frequent IndiGo flyers who can spend Rs.50,000+ quarterly for lounge access and want to accumulate BluChips for free flights",
+    "notRecommendedFor": "Infrequent travelers, those who prefer other airlines, or those seeking premium travel insurance benefits",
+    "rating": {
+      "overall": 3.5,
+      "rewards": 3.5,
+      "benefits": 3.0,
+      "value": 3.5
+    },
+    "verdict": "The IndiGo SBI Card is a decent co-branded travel card for regular IndiGo flyers. At Rs.1,499 annual fee, you get 2,500 welcome BluChips (worth approximately Rs.1,250-1,350) which nearly offsets the fee. The card offers good value through milestone rewards (up to 7,500 additional BluChips annually on Rs.6L spend) and domestic lounge access. However, the lounge access requires Rs.50,000 quarterly spend, and there's no international lounge benefit or travel insurance unlike the Elite variant. The base reward rate of 1 BluChip per Rs.100 (approx 0.5% value) is below average, but the 3% rate on IndiGo spends is competitive. Best suited for those who fly IndiGo 4+ times a year and can meet the quarterly spend threshold.",
+    "pros": [
+      "Welcome and renewal benefits (2,500 BluChips each) nearly offset annual fee",
+      "No cap on BluChip earnings",
+      "BluChips don't expire if program remains active",
+      "3X BluChips on IndiGo channel spends",
+      "2X BluChips on Hotel/Travel MCCs",
+      "Domestic lounge access (4 per year)",
+      "Milestone rewards up to 7,500 BluChips annually",
+      "Available on both Mastercard and RuPay (UPI enabled)",
+      "Free add-on cards",
+      "Annual fee waiver on Rs.2L spend"
+    ],
+    "cons": [
+      "Lounge access requires Rs.50,000 quarterly spend",
+      "No international lounge access",
+      "No travel insurance benefits",
+      "Low base reward rate (1 BluChip per Rs.100)",
+      "BluChips can only be redeemed on IndiGo flights",
+      "Dynamic BluChip value (approximately Rs.0.47-0.54 per point)",
+      "Cannot transfer BluChips to other programs",
+      "3.5% forex markup is high",
+      "Many spending categories excluded from rewards",
+      "Cannot switch to other SBI cards"
+    ],
+    "alternatives": [
+      "sbi-indigo-elite",
+      "kotak-indigo-card",
+      "idfc-indigo-card"
+    ],
+    "lastVerified": "2026-01-06",
+    "dataSource": [
+      "Official SBI Card website - https://www.sbicard.com/en/personal/credit-cards/travel/indigo-sbi-card.page",
+      "SBI Card MITC document dated December 2025",
+      "IndiGo BluChip program page - https://www.goindigo.in/loyalty/partners/sbi-bank-credit-card.html",
+      "PaisaBazaar.com",
+      "BankBazaar.com",
+      "CardInsider.com"
+    ],
+    "changelog": [
+      {
+        "date": "2025-09-25",
+        "change": "Card launched in partnership between SBI Card and IndiGo under BluChip loyalty program",
+        "source": "Official SBI Card announcement"
+      },
+      {
+        "date": "2024-12-01",
+        "change": "Utility payments fee of 1% introduced for utility payments exceeding Rs.50,000 per billing cycle",
+        "source": "SBI Card MITC"
+      },
+      {
+        "date": "2025-11-01",
+        "change": "1% fee on education payments through third-party apps and 1% fee on wallet loads exceeding Rs.1,000 introduced",
+        "source": "SBI Card MITC"
+      }
+    ]
+  }
+}

@@ -1,0 +1,911 @@
+{
+  "id": "sbi-paytm-card-select",
+  "name": "Paytm SBI Card SELECT",
+  "bank": "SBI Card",
+  "slug": "paytm-sbi-card-select",
+  "image": "assets/cards/sbi/paytm-sbi-card-select.png",
+  "link": "https://www.sbicard.com/en/personal/credit-cards/travel/paytm-sbi-card-select.page",
+  "isActive": true,
+
+  "network": {
+    "type": "Visa",
+    "variant": null,
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "mid",
+    "isCobranded": true,
+    "cobrandPartner": {
+      "name": "Paytm",
+      "type": "fintech",
+      "loyaltyProgram": "Paytm First"
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 1499,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 1499,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 200000,
+        "spendPeriod": "12 months",
+        "waiverText": "Annual fee waived on achieving annual retail spends of Rs. 2,00,000 or more in a membership year"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": null,
+      "joiningFee": 0,
+      "annualFee": 0,
+      "rewardSharing": true
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding amount",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 500, "fee": 0},
+        {"minAmount": 501, "maxAmount": 1000, "fee": 400},
+        {"minAmount": 1001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 950},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ],
+      "additionalNote": "Additional Rs. 100 charged if MAD missed for two consecutive billing cycles"
+    },
+    "overLimit": {
+      "amount": 600,
+      "percentage": 2.5,
+      "note": "2.5% of overlimit amount or Rs. 600, whichever is higher. Charged once per billing cycle."
+    },
+    "chequeReturn": 500,
+    "cardReplacement": 250,
+    "duplicateStatement": null,
+    "cashPaymentFee": 250,
+    "rentPaymentFee": 199,
+    "utilityPaymentFee": {
+      "percentage": 1,
+      "threshold": 50000,
+      "note": "1% fee if total utility payments exceed Rs. 50,000 in a billing cycle (w.e.f. Dec 2024)"
+    }
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": null,
+        "annual": 400000,
+        "note": "Suggested minimum of Rs. 4-5 lakh annually for approval"
+      },
+      "selfEmployed": {
+        "itr": 400000
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 60,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": true,
+      "type": "Paytm User",
+      "note": "Card is exclusively issued to Paytm users through the Paytm App"
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 40000,
+      "max": 1000000
+    },
+    "factors": "Based on income, credit score, and existing relationship with Paytm/SBI",
+    "enhancementCriteria": "Good repayment history for 6+ months"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": 50,
+      "note": "Interest-free period of 20-50 days if previous month's balance is paid in full"
+    },
+    "minPayment": {
+      "percentage": 0.02,
+      "minAmount": 200,
+      "calculation": "100% GST + 100% EMI + 100% Fees/Charges + 100% Finance Charges + Overlimit Amount + 2% of remaining balance"
+    },
+    "minFinanceCharge": 25,
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": null,
+    "dailyLimit": 15000,
+    "interestFromDay1": true,
+    "note": "2.5% of transaction amount or Rs. 500, whichever is higher"
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "Reward Points",
+      "symbol": "RP",
+      "singularUnit": "point",
+      "pluralUnit": "points"
+    },
+    "baseRate": {
+      "rate": 1,
+      "spendUnit": 100,
+      "effectivePercentage": 0.01,
+      "note": "1 Reward Point = Re 1 (effective from July 1, 2024, cashback replaced with Reward Points)"
+    },
+    "earningText": "Earn 1% to 5% Reward Points on spends (1 RP = Re 1)",
+    "minTransactionForRewards": 100,
+
+    "exclusions": {
+      "categories": [
+        "Fuel",
+        "Wallet loads (Paytm or any other app)",
+        "Rent payments (from Jan 2024)",
+        "Government transactions (from July 2024)",
+        "EMI transactions",
+        "Cash withdrawals"
+      ],
+      "mccs": ["5541", "5542", "6540", "6541", "6513", "9399", "9311"],
+      "note": "QR-based transactions via Paytm App earn only 1% regardless of category"
+    },
+
+    "caps": {
+      "monthly": {
+        "points": null,
+        "cashback": null
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": "statement",
+      "perTransaction": null,
+      "note": "No stated caps on reward point earnings"
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "24 months",
+      "condition": "Reward Points valid for 24 months from date of earning"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": 750,
+        "cashback": null,
+        "vouchers": null,
+        "membership": {
+          "name": "Paytm First Membership",
+          "value": 750,
+          "duration": "1 year"
+        },
+        "spendCondition": {
+          "amount": null,
+          "period": null,
+          "transactionCount": 1
+        },
+        "validity": "On card activation (first settled retail transaction)",
+        "description": "Get complimentary Paytm First Membership (worth Rs. 750) + Rs. 750 Reward Points on card activation"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": true,
+        "points": null,
+        "membership": "Paytm First Membership renewal voucher",
+        "condition": "On achieving annual retail spends of Rs. 1,00,000"
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "paytmTravel": {
+        "rate": 5,
+        "multiplier": 5,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["Paytm Travel (flights, hotels, buses)"],
+        "note": "5% Reward Points on Paytm Travel bookings"
+      },
+      "paytmOther": {
+        "rate": 2,
+        "multiplier": 2,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["All other Paytm App transactions", "Bill payments", "Recharges"],
+        "note": "2% Reward Points on all other Paytm App purchases"
+      },
+      "offlineAndOtherOnline": {
+        "rate": 1,
+        "multiplier": 1,
+        "cap": null,
+        "capPeriod": null,
+        "note": "1% Reward Points on all other online and offline spends"
+      },
+      "qrPayments": {
+        "rate": 1,
+        "cap": null,
+        "note": "All QR-based transactions via Paytm App categorized under 1% Reward Points"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No Reward Points on fuel transactions"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No Reward Points on rent payments (from Jan 2024)"
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No Reward Points on wallet loads"
+      },
+      "government": {
+        "rate": 0,
+        "cap": null,
+        "note": "No Reward Points on government transactions (from July 2024)"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": false,
+        "name": null,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "link": null,
+        "note": null
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": [],
+        "note": null
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": []
+      },
+      "milestoneAccelerators": []
+    },
+
+    "redemption": {
+      "baseValue": 1.0,
+      "bestValue": 1.0,
+      "bestOption": "Reward Points auto-credited to Paytm Wallet as Gift Voucher balance",
+      "minRedemption": null,
+      "redemptionIncrement": null,
+      "convenienceFee": 99,
+      "monthlyRedemptionLimit": null,
+
+      "pointsPlusPay": {
+        "enabled": false,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": null,
+        "note": null
+      },
+
+      "options": [
+        {
+          "type": "paytm_wallet",
+          "value": 1.0,
+          "description": "Auto-credited to Paytm Wallet as Gift Voucher balance",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["Paytm"],
+          "note": "Reward Points automatically redeemed to cardholder's Paytm Wallet"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": [],
+      "partners": [],
+      "currentBonus": {
+        "active": false,
+        "bonusPercentage": null,
+        "validUntil": null,
+        "applicablePartners": []
+      }
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": [],
+      "acrossUsers": false,
+      "note": null
+    },
+
+    "specialLogic": "Reward Points are automatically redeemed to cardholder's Paytm Wallet as Gift Voucher balance within 3 working days from transaction settlement",
+
+    "calculator": {
+      "enabled": true,
+      "formula": "points = spend * rate (5% Paytm Travel, 2% other Paytm, 1% elsewhere)",
+      "variables": ["spend", "category", "isPaytmApp", "isQRTransaction"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": true,
+        "complimentaryCount": 4,
+        "period": "year",
+        "periodNote": "Capped at 1 per quarter",
+        "accessType": "Visa Lounge Program",
+        "accessProvider": "Visa",
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "No spend requirement"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "eligibleLounges": "https://www.visa.co.in/en_in/visa-offers-and-perks/visa-airport-lounge-access-program/114566"
+      },
+      "international": {
+        "included": true,
+        "complimentaryCount": 0,
+        "period": "year",
+        "accessType": "Priority Pass Membership",
+        "accessProvider": "Priority Pass",
+        "membershipValue": 8000,
+        "membershipDuration": "2 years",
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": null
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "loungeFee": {
+          "amount": 27,
+          "currency": "USD",
+          "note": "Up to USD 27 per visit + applicable taxes for Priority Pass lounge visits"
+        },
+        "eligibleLounges": "https://prioritypass.com/lounges",
+        "note": "Priority Pass membership complimentary for first 2 years; NO complimentary visits included"
+      }
+    },
+
+    "milestones": [
+      {
+        "spend": 400000,
+        "period": "annual",
+        "benefit": "Rs. 2,000 e-Gift Voucher",
+        "benefitType": "voucher",
+        "value": 2000,
+        "conditions": "Choose from Hush Puppies/Bata or Pantaloons"
+      },
+      {
+        "spend": 600000,
+        "period": "annual",
+        "benefit": "Rs. 4,000 e-Gift Voucher",
+        "benefitType": "voucher",
+        "value": 4000,
+        "conditions": "Choose from Hush Puppies/Bata or Pantaloons"
+      },
+      {
+        "spend": 100000,
+        "period": "annual",
+        "benefit": "Paytm First Membership renewal e-Voucher",
+        "benefitType": "membership",
+        "value": 750,
+        "conditions": "Annual retail spends during membership year"
+      }
+    ],
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": false,
+      "lessonIncluded": false,
+      "note": null
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": null
+    },
+
+    "dining": {
+      "included": false,
+      "programs": [],
+      "hotelDining": {
+        "included": false,
+        "hotels": [],
+        "offer": null
+      }
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 500,
+      "maxTransaction": 4000,
+      "monthlyCap": 250,
+      "applicableStations": "All fuel stations in India",
+      "rewardsOnFuel": false,
+      "note": "1% fuel surcharge waiver (excluding GST) for transactions between Rs. 500 and Rs. 4,000. Maximum waiver Rs. 250 per statement cycle."
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% Foreign Currency Transaction Fee",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "fee": 3.5,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "3.5% markup on all non-INR transactions. Fee not reversed on transaction refunds."
+    },
+
+    "concierge": {
+      "included": false,
+      "availability": null,
+      "type": null,
+      "services": [],
+      "contactNumber": null,
+      "note": null
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": [],
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "Flexipay",
+      "noCostEMI": {
+        "available": true,
+        "merchants": [],
+        "note": "Available on select merchants and products"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": null,
+        "minFee": null
+      },
+      "minAmount": 2500,
+      "tenures": [3, 6, 9, 12],
+      "interestRates": {
+        "min": null,
+        "max": null
+      },
+      "preclosureFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "cancellationPeriod": null,
+      "note": "Convert transactions above Rs. 2,500 into easy EMIs via Flexipay"
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": 0,
+        "promotionalPeriod": "60 days",
+        "regular": 0.017
+      },
+      "processingFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "tenures": [60, 180],
+      "maxAmount": null,
+      "preclosureFee": null,
+      "note": "Transfer outstanding balance from other bank credit cards. 0% for 60 days, 1.7% p.m. (20.4% p.a.) for 180 days."
+    },
+
+    "memberships": [
+      {
+        "name": "Paytm First Membership",
+        "type": "subscription",
+        "value": 750,
+        "duration": "1 year",
+        "condition": "On card activation (first retail transaction)",
+        "benefits": "Exclusive privileges up to Rs. 75,000 on food, travel, fashion, entertainment",
+        "note": "Complimentary 1-year membership provided within 15 days of first retail transaction"
+      }
+    ],
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    }
+  },
+
+  "insurance": {
+    "cyberFraud": {
+      "included": true,
+      "cover": 200000,
+      "provider": "ICICI Lombard General Insurance Company Ltd",
+      "condition": "Covers financial loss due to fraudulent usage of credit card",
+      "exclusions": "Lost card liability excluded",
+      "note": "SBI Card acts only as group policy administrator"
+    },
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "condition": null
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": []
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": [],
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": false,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": false,
+      "cover": null,
+      "fraudLiability": {
+        "included": false,
+        "cover": null,
+        "reportingWindow": null
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": []
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": [],
+      "excludedCountries": [],
+      "excludedVehicleTypes": []
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "Primary insurance is Cyber Fraud Insurance of Rs. 2,00,000. All insurance claims subject to ICICI Lombard policy terms."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000
+    },
+    "virtualCard": {
+      "available": false,
+      "instantIssuance": false,
+      "singleUse": false,
+      "spendControls": false
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": false,
+      "rewardsOnUPI": false,
+      "note": "Card is Visa network - UPI linking for Visa cards may have limitations"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card (One Tap Lock/Unlock)",
+        "Spend Analyzer",
+        "Smart Spend Control",
+        "Card Re-issue",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Real-time alerts"
+      ],
+      "apps": ["Paytm App", "SBI Card App"]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [
+      {
+        "cardId": "sbi-paytm-card",
+        "spendRequired": null,
+        "tenure": null,
+        "autoUpgrade": false
+      }
+    ],
+    "upgradesTo": [],
+    "note": "Paytm SBI Card SELECT is the premium variant; upgrade to other SBI premium cards based on eligibility"
+  },
+
+  "meta": {
+    "tags": [
+      "Cashback",
+      "Co-branded",
+      "Paytm",
+      "Lounge Access",
+      "Priority Pass",
+      "Cyber Insurance"
+    ],
+    "bestFor": "Frequent Paytm users who shop, book travel, and make payments through the Paytm ecosystem",
+    "notRecommendedFor": "Users who primarily transact outside Paytm app or prefer cards with broader reward categories",
+    "rating": {
+      "overall": 3.5,
+      "rewards": 3.5,
+      "benefits": 3.0,
+      "value": 3.5
+    },
+    "verdict": "A solid co-branded card for Paytm loyalists offering up to 5% rewards on Paytm transactions, complimentary Paytm First Membership, domestic lounge access, and Priority Pass membership. The rewards structure heavily favors Paytm app usage; outside the Paytm ecosystem, the 1% return is average. Annual fee waiver threshold of Rs. 2 lakh is achievable for regular spenders. Key limitation: Priority Pass membership includes no complimentary visits, and international lounge access is chargeable.",
+    "pros": [
+      "5% Reward Points on Paytm Travel bookings",
+      "2% Reward Points on other Paytm app spends",
+      "Complimentary Paytm First Membership worth Rs. 750",
+      "4 domestic airport lounge visits per year",
+      "Priority Pass membership for 2 years",
+      "Rs. 2,00,000 Cyber Fraud Insurance",
+      "1% fuel surcharge waiver up to Rs. 250/month",
+      "Annual fee waiver at Rs. 2 lakh spend",
+      "Card management via both Paytm and SBI Card apps"
+    ],
+    "cons": [
+      "No complimentary Priority Pass lounge visits (membership only)",
+      "Rewards limited to Paytm ecosystem - only 1% elsewhere",
+      "3.5% forex markup is high",
+      "QR transactions via Paytm earn only 1%",
+      "No rewards on fuel, rent, wallet loads, government payments",
+      "Exclusively available to Paytm app users",
+      "No travel/accident insurance coverage",
+      "Reward Points expire in 24 months"
+    ],
+    "alternatives": [
+      "sbi-cashback",
+      "axis-ace",
+      "hsbc-cashback",
+      "amazon-pay-icici"
+    ],
+    "lastVerified": "2026-01-06",
+    "dataSource": [
+      "Official SBI Card website - https://www.sbicard.com/en/personal/credit-cards/travel/paytm-sbi-card-select.page",
+      "SBI Card MITC document (July 2025)",
+      "Paytm SBI Card SELECT T&C - https://www.sbicard.com/sbi-card-en/assets/docs/pdf/PaytmSelect-TnC.pdf",
+      "Paytm FAQ - https://paytm.com/offer/creditcard/sbi-select-faq",
+      "BankBazaar.com",
+      "Paisabazaar.com",
+      "CardInsider.com",
+      "Wishfin.com"
+    ],
+    "changelog": [
+      {
+        "date": "2024-07-01",
+        "change": "Cashback replaced with Reward Points (1 RP = Re 1)",
+        "source": "Official SBI Card announcement"
+      },
+      {
+        "date": "2024-07-15",
+        "change": "Reward Points discontinued on Government transactions (MCC 9399, 9311)",
+        "source": "SBI Card T&C update"
+      },
+      {
+        "date": "2024-01-01",
+        "change": "Cashback/Reward Points discontinued on Rent Payment transactions",
+        "source": "SBI Card T&C update"
+      },
+      {
+        "date": "2024-12-01",
+        "change": "1% Utility Payment Fee introduced if total exceeds Rs. 50,000 per billing cycle",
+        "source": "SBI Card MITC update"
+      }
+    ]
+  }
+}

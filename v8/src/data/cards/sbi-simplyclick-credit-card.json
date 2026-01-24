@@ -1,0 +1,1031 @@
+{
+  "id": "sbi-simplyclick-credit-card",
+  "name": "SimplyCLICK SBI Credit Card",
+  "bank": "SBI Card",
+  "slug": "sbi-simplyclick-credit-card",
+  "image": "assets/cards/sbi/simplyclick.png",
+  "link": "https://www.sbicard.com/en/personal/credit-cards/shopping/simplyclick-sbi-card.page",
+  "isActive": true,
+
+  "network": {
+    "type": "Visa",
+    "variant": null,
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "entry",
+    "isCobranded": false,
+    "cobrandPartner": {
+      "name": null,
+      "type": null,
+      "loyaltyProgram": null
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 499,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 499,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 100000,
+        "spendPeriod": "12 months (anniversary year)",
+        "waiverText": "Spend Rs 1,00,000 in the previous anniversary year to get annual fee reversed"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": null,
+      "joiningFee": 0,
+      "annualFee": 0,
+      "rewardSharing": true
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding amount",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 500, "fee": 0},
+        {"minAmount": 501, "maxAmount": 1000, "fee": 400},
+        {"minAmount": 1001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 950},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ],
+      "additionalCharge": {
+        "amount": 100,
+        "condition": "Additional Rs 100 for missing MAD for 2 consecutive cycles"
+      }
+    },
+    "overLimit": {
+      "amount": 600,
+      "percentage": 2.5,
+      "note": "2.5% of overlimit amount or Rs 600, whichever is higher"
+    },
+    "chequeReturn": 500,
+    "chequePaymentFee": 200,
+    "cardReplacement": 100,
+    "duplicateStatement": 100,
+    "cashPaymentFee": 250,
+    "rewardRedemptionFee": 99
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 18000,
+        "annual": 216000
+      },
+      "selfEmployed": {
+        "itr": 216000
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 70,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": "Pre-approved offers available for existing SBI account holders"
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 30000,
+      "max": 300000
+    },
+    "factors": "Based on income, credit score, existing relationship with SBI, and other internal parameters",
+    "enhancementCriteria": "Good repayment history and request via SBI Card app/website"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": 50,
+      "note": "Interest-free credit period of 20 to 50 days if previous balance paid in full"
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": null,
+      "calculation": "5% of total outstanding or Minimum Amount Due as per statement"
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": 80,
+    "dailyLimit": 12000,
+    "interestFromDay1": true
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "Reward Points",
+      "symbol": "RP",
+      "singularUnit": "point",
+      "pluralUnit": "points"
+    },
+    "baseRate": {
+      "rate": 1,
+      "spendUnit": 100,
+      "effectivePercentage": 0.0025,
+      "note": "1 Reward Point per Rs 100 spent on offline transactions"
+    },
+    "earningText": "Earn 10X Reward Points on exclusive partner brands, 5X on other online spends, 1X on offline spends",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions (offline)",
+        "Rent payments (MCC 6513) - effective 01 Apr 2024",
+        "E-wallet loading transactions (MCC 6540, 6541)",
+        "Government related transactions (MCC 9399, 9311) - effective 01 Jun 2024",
+        "Digital gaming platforms (MCC 5816, 7993, 7994) - effective 01 Dec 2024",
+        "Cash advance",
+        "Balance transfer",
+        "Encash",
+        "Flexipay EMI transactions",
+        "Utility bill payments via SBI Card website/app (no 5X)",
+        "Transactions with instant discounts (reward points forfeited)"
+      ],
+      "mccs": ["5172", "5541", "5983", "5542", "6540", "6541", "6513", "9399", "9311", "5816", "7993", "7994"],
+      "note": "Transactions at these MCCs do not earn reward points. Affiliate transactions on Cleartrip/Yatra not eligible for 10X."
+    },
+
+    "caps": {
+      "monthly": {
+        "points": 10000,
+        "note": "5X Reward Points on online spends capped at 10,000 points per calendar month"
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": "calendar",
+      "perTransaction": null
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "24 months",
+      "condition": "From date of accrual"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": null,
+        "cashback": null,
+        "vouchers": "Amazon.in gift card worth Rs 500",
+        "spendCondition": {
+          "amount": null,
+          "period": null,
+          "transactionCount": null
+        },
+        "validity": "Within 12 months from joining date",
+        "description": "Get Amazon.in gift card worth Rs 500 on payment of Annual Fee of Rs 499 + taxes. Voucher sent within 21-30 days."
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "partnerBrands10X": {
+        "rate": 10,
+        "effectivePercentage": 0.025,
+        "cap": 10000,
+        "capPeriod": "monthly",
+        "merchants": [
+          "Apollo 24x7",
+          "BookMyShow",
+          "Cleartrip",
+          "Dominos",
+          "IGP",
+          "Myntra",
+          "Netmeds",
+          "Yatra",
+          "GyFTR (via SimplyCLICK portal)"
+        ],
+        "note": "10 Reward Points per Rs 100 spent = 2.5% return (4 RP = Rs 1)"
+      },
+      "swiggy": {
+        "rate": 5,
+        "effectivePercentage": 0.0125,
+        "cap": null,
+        "note": "Reduced from 10X to 5X effective 01 April 2025"
+      },
+      "online": {
+        "rate": 5,
+        "effectivePercentage": 0.0125,
+        "cap": 10000,
+        "capPeriod": "monthly",
+        "note": "5 Reward Points per Rs 100 spent on all other online spends = 1.25% return. Capped at 10,000 points/month, beyond which 1X accrues."
+      },
+      "offline": {
+        "rate": 1,
+        "effectivePercentage": 0.0025,
+        "cap": null,
+        "capPeriod": null,
+        "note": "1 Reward Point per Rs 100 spent on offline transactions = 0.25% return"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on offline fuel transactions"
+      },
+      "groceries": {
+        "rate": 1,
+        "multiplier": null,
+        "cap": null,
+        "note": "1X on offline grocery, 5X on online grocery (except excluded categories)"
+      },
+      "utilities": {
+        "rate": 0,
+        "cap": null,
+        "note": "Utility bill payments via SBI Card platforms do not accrue 5X Reward Points"
+      },
+      "international": {
+        "rate": 1,
+        "multiplier": null,
+        "cap": null,
+        "note": "Base rate applies; 10X only for INR transactions"
+      },
+      "insurance": {
+        "rate": 1,
+        "cap": null,
+        "note": "Base rate unless excluded"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on rent payments effective 01 Apr 2024 (MCC 6513)"
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on e-wallet loading transactions (MCC 6540, 6541)"
+      },
+      "government": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on government related transactions effective 01 Jun 2024 (MCC 9399, 9311)"
+      },
+      "digitalGaming": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on digital gaming platforms effective 01 Dec 2024 (MCC 5816, 7993, 7994)"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": false,
+        "name": null,
+        "multiplier": null,
+        "cap": null,
+        "note": "SBI Card does not have a SmartBuy-like portal; benefits are through direct partner brand transactions"
+      },
+      "partnerMerchants": {
+        "enabled": true,
+        "merchants": [
+          {
+            "name": "Apollo 24x7",
+            "multiplier": 10,
+            "cap": 10000,
+            "capPeriod": "monthly (combined)",
+            "effectiveDate": "01 Aug 2023",
+            "validUntil": null
+          },
+          {
+            "name": "BookMyShow",
+            "multiplier": 10,
+            "cap": 10000,
+            "capPeriod": "monthly (combined)",
+            "effectiveDate": "15 Sep 2015",
+            "validUntil": null
+          },
+          {
+            "name": "Cleartrip",
+            "multiplier": 10,
+            "cap": 10000,
+            "capPeriod": "monthly (combined)",
+            "effectiveDate": "15 Sep 2015",
+            "validUntil": null,
+            "note": "Affiliate bookings not eligible"
+          },
+          {
+            "name": "Dominos",
+            "multiplier": 10,
+            "cap": 10000,
+            "capPeriod": "monthly (combined)",
+            "effectiveDate": "01 Aug 2023",
+            "validUntil": null
+          },
+          {
+            "name": "IGP",
+            "multiplier": 10,
+            "cap": 10000,
+            "capPeriod": "monthly (combined)",
+            "effectiveDate": "01 Aug 2025",
+            "validUntil": null
+          },
+          {
+            "name": "Myntra",
+            "multiplier": 10,
+            "cap": 10000,
+            "capPeriod": "monthly (combined)",
+            "effectiveDate": "01 Aug 2023",
+            "validUntil": null
+          },
+          {
+            "name": "Netmeds",
+            "multiplier": 10,
+            "cap": 10000,
+            "capPeriod": "monthly (combined)",
+            "effectiveDate": "01 Aug 2023",
+            "validUntil": null
+          },
+          {
+            "name": "Yatra",
+            "multiplier": 10,
+            "cap": 10000,
+            "capPeriod": "monthly (combined)",
+            "effectiveDate": "01 Aug 2025",
+            "validUntil": null,
+            "note": "Affiliate bookings not eligible"
+          },
+          {
+            "name": "GyFTR",
+            "multiplier": 10,
+            "cap": 10000,
+            "capPeriod": "monthly (combined)",
+            "effectiveDate": "10 Feb 2025",
+            "validUntil": null,
+            "note": "Only via SimplyCLICK GyFTR portal: https://www.gyftr.com/sbicsimplyclick"
+          },
+          {
+            "name": "Swiggy",
+            "multiplier": 5,
+            "cap": null,
+            "capPeriod": null,
+            "effectiveDate": "01 Apr 2025",
+            "validUntil": null,
+            "note": "Reduced from 10X to 5X effective 01 April 2025"
+          }
+        ],
+        "note": "10X rewards on select partner brands. Cap of 10,000 points/month applies to combined 10X accruals."
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": null
+      },
+      "milestoneAccelerators": null
+    },
+
+    "redemption": {
+      "baseValue": 0.25,
+      "bestValue": 0.25,
+      "bestOption": "E-gift vouchers from SimplyCLICK Partners in the Rewards Catalogue",
+      "minRedemption": 2500,
+      "redemptionIncrement": null,
+      "convenienceFee": 99,
+      "convenienceFeeNote": "Rs 99 redemption fee on physical products only",
+      "monthlyRedemptionLimit": null,
+
+      "pointsPlusPay": {
+        "enabled": true,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": null,
+        "note": "Points + Pay option available for partial redemption"
+      },
+
+      "options": [
+        {
+          "type": "vouchers",
+          "value": 0.25,
+          "description": "E-gift vouchers from partner brands",
+          "recommended": true,
+          "minPoints": 2500,
+          "processingFee": 0,
+          "partners": ["SimplyCLICK Partners in Rewards Catalogue"],
+          "deliveryTime": "5 calendar days",
+          "note": "4 Reward Points = Rs 1"
+        },
+        {
+          "type": "products",
+          "value": 0.25,
+          "description": "Merchandise from SBI Card Rewards Catalogue",
+          "recommended": false,
+          "minPoints": 2500,
+          "processingFee": 99,
+          "partners": ["SBI Card Rewards Catalogue"],
+          "deliveryTime": "15 calendar days",
+          "note": "Rs 99 redemption fee applicable"
+        },
+        {
+          "type": "statement_credit",
+          "value": 0.25,
+          "description": "Cash redemption against statement",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 99,
+          "partners": [],
+          "note": "Contact customer care for cash redemption. Processing fee of Rs 99 + GST applies."
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": null,
+      "partners": null,
+      "note": "SimplyCLICK does not have airline/hotel transfer partners"
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": null,
+      "acrossUsers": false,
+      "note": null
+    },
+
+    "specialLogic": "Reward points are forfeited for transactions that receive instant discounts. SBI Card debits points with charge 'RP FORFEIT FOR CBK OFFER'.",
+
+    "calculator": {
+      "enabled": true,
+      "formula": "For 10X partners: (spend / 100) * 10; For 5X online: (spend / 100) * 5; For offline: (spend / 100) * 1",
+      "variables": ["spend", "merchantType", "isOnline", "isPartnerBrand"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "eligibleLounges": null,
+        "note": "No domestic lounge access included"
+      },
+      "international": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "membershipValue": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "eligibleLounges": null,
+        "note": "No international lounge access included"
+      }
+    },
+
+    "milestones": [
+      {
+        "spend": 100000,
+        "spendType": "online",
+        "period": "annual",
+        "benefit": "Cleartrip/Yatra e-voucher worth Rs 2,000",
+        "benefitType": "voucher",
+        "value": 2000,
+        "conditions": "Annual online spends of Rs 1 Lakh. Voucher valid for 4 months. Can be used for flights, hotels, holidays via Cleartrip/Yatra apps/websites. Must use SimplyCLICK card to pay balance amount."
+      },
+      {
+        "spend": 200000,
+        "spendType": "online",
+        "period": "annual",
+        "benefit": "Additional Cleartrip/Yatra e-voucher worth Rs 2,000",
+        "benefitType": "voucher",
+        "value": 2000,
+        "conditions": "Annual online spends of Rs 2 Lakh (cumulative, including first milestone). Voucher valid for 4 months. Same terms as first milestone."
+      }
+    ],
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": false,
+      "lessonIncluded": false,
+      "note": null
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": "No dedicated movie offers; BookMyShow is a 10X partner brand"
+    },
+
+    "dining": {
+      "included": false,
+      "programs": null,
+      "hotelDining": null,
+      "note": "No dedicated dining program"
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 500,
+      "maxTransaction": 3000,
+      "monthlyCap": 100,
+      "capNote": "Rs 100 per statement cycle",
+      "applicableStations": "All fuel stations in India",
+      "rewardsOnFuel": false,
+      "note": "1% fuel surcharge waiver for transactions between Rs 500 and Rs 3,000 (exclusive of GST). Max waiver Rs 100 per statement cycle. No reward points on fuel."
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% foreign currency markup on international transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "Foreign currency markup fee of 3.5% of all overseas spending. High compared to travel-focused cards."
+    },
+
+    "concierge": {
+      "included": false,
+      "availability": null,
+      "type": null,
+      "services": null,
+      "contactNumber": null,
+      "note": null
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": null,
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "Flexipay",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Select merchants"],
+        "note": "Available on select products and merchants"
+      },
+      "conversionFee": {
+        "percentage": 1,
+        "flatFee": null,
+        "minFee": null,
+        "maxFee": 2000,
+        "note": "1% processing fee up to Rs 2,000"
+      },
+      "minAmount": 2500,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": null,
+        "max": null,
+        "note": "EMIs can be as low as Rs 52 per Rs 1,000"
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": null
+      },
+      "cancellationPeriod": 30,
+      "note": "Convert transactions above Rs 2,500 into EMIs within 30 days of purchase via sbicard.com or SMS"
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": 0.0083,
+        "promotionalPeriod": "Varies",
+        "regular": 0.0375
+      },
+      "processingFee": {
+        "percentage": 1,
+        "minFee": null
+      },
+      "tenures": [6, 12, 18, 24],
+      "maxAmount": null,
+      "preclosureFee": 3,
+      "note": "Transfer outstanding balance from other bank credit cards at lower interest rates. Interest-free period does not apply to new purchases during active BT."
+    },
+
+    "memberships": null,
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "condition": null
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": false,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": null,
+      "fraudLiability": {
+        "included": true,
+        "cover": null,
+        "reportingWindow": "Report within 7 days for liability protection"
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "SimplyCLICK is an entry-level card with minimal insurance coverage. SBI Card offers optional insurance products at additional cost through Royal Sundaram, SBI General Insurance, and SBI Life Insurance."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000,
+      "note": "Visa payWave contactless payments supported"
+    },
+    "virtualCard": {
+      "available": false,
+      "instantIssuance": false,
+      "singleUse": false,
+      "spendControls": false
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": false,
+      "rewardsOnUPI": false,
+      "note": "Visa card - UPI linking not available (RuPay cards only)"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international transactions",
+        "Enable/Disable online transactions",
+        "Real-time SMS/Email alerts",
+        "WhatsApp Connect",
+        "View statements",
+        "Pay bills",
+        "Convert to EMI"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true,
+      "whatsapp": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": null,
+    "upgradesTo": [
+      {
+        "cardId": "sbi-cashback-credit-card",
+        "spendRequired": null,
+        "tenure": null,
+        "autoUpgrade": false,
+        "note": "SBI Cashback card offers 5% cashback on online spends but not eligible for instant discounts"
+      },
+      {
+        "cardId": "sbi-prime-credit-card",
+        "spendRequired": null,
+        "tenure": null,
+        "autoUpgrade": false,
+        "note": "Upgrade offer may be available via SBI Card app"
+      },
+      {
+        "cardId": "sbi-elite-credit-card",
+        "spendRequired": null,
+        "tenure": null,
+        "autoUpgrade": false,
+        "note": "Higher tier with lounge access and better benefits"
+      }
+    ],
+    "note": "Upgrade eligibility based on spend history and SBI Card's internal criteria. Pre-approved offers shown in SBI Card app under EMI & More section."
+  },
+
+  "meta": {
+    "tags": [
+      "Entry-level",
+      "Online Shopping",
+      "Rewards",
+      "Low Annual Fee",
+      "Partner Brands"
+    ],
+    "bestFor": "Online shoppers who frequently use partner brands like Myntra, BookMyShow, Cleartrip, Apollo 24x7, and can achieve Rs 1-2 Lakh annual online spend for milestone vouchers",
+    "notRecommendedFor": "Travelers seeking lounge access, those preferring cashback over reward points, high spenders who need premium benefits, international travelers (3.5% forex markup)",
+    "rating": {
+      "overall": 3.5,
+      "rewards": 3.5,
+      "benefits": 2.5,
+      "value": 4.0
+    },
+    "verdict": "SBI SimplyCLICK is a solid entry-level credit card for digital shoppers. The 10X rewards on partner brands (2.5% return) and 5X on other online spends (1.25% return) are competitive for this fee range. The milestone vouchers worth up to Rs 4,000 annually add good value if you can hit the spend thresholds. However, recent devaluations (Swiggy dropped to 5X, reward points forfeited on instant discounts, gaming/rent/govt exclusions) have reduced its attractiveness. The 0.25% return on offline spends is poor. No lounge access and no travel insurance make it unsuitable for travelers. Best used alongside other cards - keep it for partner brand spends and SBI instant discount offers during sales.",
+    "pros": [
+      "Low annual fee of Rs 499 with easy waiver (Rs 1L spend)",
+      "Welcome Amazon voucher worth Rs 500 covers first year fee",
+      "10X rewards (2.5%) on popular partner brands",
+      "5X rewards (1.25%) on other online spends",
+      "Milestone vouchers worth up to Rs 4,000 annually",
+      "1% fuel surcharge waiver",
+      "Globally accepted Visa card",
+      "Easy eligibility for entry-level card",
+      "Useful for SBI Card instant discount offers during sales"
+    ],
+    "cons": [
+      "No lounge access (domestic or international)",
+      "No travel or purchase insurance",
+      "Reward points forfeited on instant discount transactions",
+      "Points expire in 24 months",
+      "Low reward rate (0.25%) on offline spends",
+      "High forex markup (3.5%)",
+      "Limited redemption options (only vouchers at par value)",
+      "Rs 99 fee for physical product redemption",
+      "Multiple excluded categories (rent, govt, gaming, fuel, wallet loads)",
+      "5X cap of 10,000 points/month limits high spenders",
+      "Recent devaluations reduced overall value"
+    ],
+    "alternatives": [
+      "sbi-cashback-credit-card",
+      "hdfc-moneyback-plus-credit-card",
+      "axis-flipkart-credit-card",
+      "amazon-pay-icici-credit-card",
+      "yes-bank-paisabazaar-paisasave-credit-card"
+    ],
+    "lastVerified": "2026-01-06",
+    "dataSource": [
+      "Official SBI Card website - https://www.sbicard.com/en/personal/credit-cards/shopping/simplyclick-sbi-card.page",
+      "SBI Card MITC document - https://www.sbicard.com/en/most-important-terms-and-conditions.page",
+      "SimplyCLICK Reward Points T&C PDF - https://www.sbicard.com/sbi-card-en/assets/docs/pdf/personal/credit-cards/value-savings/simplyclick/simplyclick-sbi-card-rp-tnc.pdf",
+      "CardExpert.in review",
+      "TechnoFino.in community discussions",
+      "PaisaBazaar.com",
+      "BankBazaar.com"
+    ],
+    "changelog": [
+      {
+        "date": "2025-04-01",
+        "change": "Swiggy rewards reduced from 10X to 5X",
+        "source": "Official SBI Card T&C"
+      },
+      {
+        "date": "2025-02-10",
+        "change": "GyFTR added as 10X partner brand (via SimplyCLICK portal only)",
+        "source": "Official T&C PDF"
+      },
+      {
+        "date": "2025-01-08",
+        "change": "IGP and Yatra 10X effective dates updated to Aug 2025",
+        "source": "Official T&C PDF"
+      },
+      {
+        "date": "2024-12-01",
+        "change": "Digital gaming platforms (MCC 5816, 7993, 7994) excluded from rewards",
+        "source": "Official T&C PDF"
+      },
+      {
+        "date": "2024-06-01",
+        "change": "Government related transactions (MCC 9399, 9311) excluded from rewards",
+        "source": "Official T&C PDF"
+      },
+      {
+        "date": "2024-04-01",
+        "change": "Rent payment transactions (MCC 6513) excluded from rewards",
+        "source": "Official T&C PDF"
+      },
+      {
+        "date": "2023-09-01",
+        "change": "Reward point value devalued - 2500 points now needed for Rs 500 voucher (was 2000)",
+        "source": "TechnoFino community reports"
+      }
+    ]
+  }
+}

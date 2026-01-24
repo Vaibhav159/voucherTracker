@@ -1,0 +1,956 @@
+{
+  "id": "icici-manchester-united-platinum",
+  "name": "ICICI Bank Manchester United Platinum Credit Card",
+  "bank": "ICICI Bank",
+  "slug": "icici-bank-manchester-united-platinum-credit-card",
+  "image": "assets/cards/icici/manchester-united-platinum.png",
+  "link": "https://www.icicibank.com/personal-banking/cards/credit-card/manchester-platinum-card",
+  "isActive": true,
+
+  "network": {
+    "type": "Visa",
+    "variant": "Platinum",
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "entry",
+    "isCobranded": true,
+    "cobrandPartner": {
+      "name": "Manchester United Football Club",
+      "type": "sports",
+      "loyaltyProgram": null
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 499,
+      "gst": true,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 499,
+      "gst": true,
+      "firstYearWaived": true,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 125000,
+        "spendPeriod": "12 months (anniversary year)",
+        "waiverText": "Spend ₹1,25,000 in the anniversary year for annual fee waiver for the next year"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": 0,
+      "joiningFee": 0,
+      "annualFee": 199,
+      "rewardSharing": true,
+      "note": "Supplementary card fee of ₹199 applicable from Nov 15, 2024"
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding (Total Amount Due minus payment received before due date)",
+      "gracePeriod": "3 days after payment due date",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 100, "fee": 0},
+        {"minAmount": 101, "maxAmount": 500, "fee": 100},
+        {"minAmount": 501, "maxAmount": 1000, "fee": 500},
+        {"minAmount": 1001, "maxAmount": 5000, "fee": 600},
+        {"minAmount": 5001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 900},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ]
+    },
+    "overLimit": {
+      "amount": 550,
+      "percentage": 2.5,
+      "note": "2.5% on over-limit amount, minimum ₹550"
+    },
+    "chequeReturn": {
+      "percentage": 2,
+      "minimum": 500,
+      "note": "2% of Total Amount Due, minimum ₹500"
+    },
+    "autoDebitReturn": {
+      "percentage": 2,
+      "minimum": 500,
+      "additionalFee": 50,
+      "note": "2% of TAD (min ₹500) + ₹50+GST debited from savings account"
+    },
+    "cardReplacement": 200,
+    "duplicateStatement": null,
+    "cashPaymentAtBranch": 100
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 20000,
+        "annual": 240000
+      },
+      "selfEmployed": {
+        "itr": 240000
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 60,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": null
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident",
+    "applicationStatus": "Currently not accepting applications (as per ICICI Bank website)"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 25000,
+      "max": 200000
+    },
+    "factors": "Based on income, credit score, and existing relationship with ICICI Bank",
+    "enhancementCriteria": "Good repayment history for 6+ months"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": "18-48",
+      "note": "Interest-free period of 18 to 48 days if previous Total Amount Due was paid in full"
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 100,
+      "calculation": "5% of total outstanding or minimum specified amount"
+    },
+    "penaltyAPR": {
+      "rate": 0.45,
+      "triggerCondition": "Default on payment"
+    },
+    "note": "Fees/GST on customer statement post Oct 26, 2023 will not be compounded for interest calculation"
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": 10,
+    "maxLimit": 20000,
+    "note": "Cash limit is 10% of credit limit up to max ₹20,000 for first 180 days",
+    "interestFromDay1": true
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "ICICI Bank Reward Points",
+      "symbol": "RP",
+      "singularUnit": "point",
+      "pluralUnit": "points"
+    },
+    "baseRate": {
+      "rate": 2,
+      "spendUnit": 100,
+      "effectivePercentage": 0.005,
+      "note": "2 Reward Points per ₹100 spent = 0.5% reward rate (at ₹0.25 per point)"
+    },
+    "earningText": "Earn 2 Reward Points for every ₹100 spent on domestic and international transactions. Earn 3 Reward Points per ₹100 on Manchester United match days.",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "Rent payments",
+        "E-wallet loads",
+        "Government payments",
+        "Education payments",
+        "Cash withdrawals",
+        "EMI transactions"
+      ],
+      "mccs": [
+        "5541", "5542", "5983", "1361", "3851", "5172", "9752", "5555",
+        "6513", "7014", "7407", "5271",
+        "6540",
+        "9405", "9222", "9399", "9402", "9211", "6760", "9311", "9313"
+      ],
+      "note": "Transactions at these MCCs do not earn reward points. From Nov 15, 2024, rent, government, and education spends also excluded from annual fee waiver calculation."
+    },
+
+    "caps": {
+      "monthly": {
+        "utility": {
+          "spendCap": 40000,
+          "note": "Rewards capped at ₹40,000 utility spend per statement cycle"
+        },
+        "insurance": {
+          "spendCap": 40000,
+          "note": "Rewards capped at ₹40,000 insurance spend per statement cycle"
+        },
+        "grocery": {
+          "spendCap": 20000,
+          "note": "Rewards capped at ₹20,000 grocery/departmental spend per statement cycle"
+        }
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": "statement",
+      "perTransaction": null
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "36 months",
+      "condition": "From date of issuance"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": null,
+        "cashback": null,
+        "vouchers": null,
+        "merchandise": "Manchester United branded football",
+        "spendCondition": {
+          "amount": 3000,
+          "period": "3 months",
+          "transactionCount": 3,
+          "transactionMin": 1000
+        },
+        "validity": "Within 3 months of card issuance",
+        "description": "Get a Manchester United branded football as welcome gift after making 3 transactions of minimum ₹1,000 each within first 3 months"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "domestic": {
+        "rate": 2,
+        "spendUnit": 100,
+        "effectivePercentage": 0.005,
+        "note": "2 Reward Points per ₹100 spent"
+      },
+      "international": {
+        "rate": 2,
+        "spendUnit": 100,
+        "effectivePercentage": 0.005,
+        "note": "2 Reward Points per ₹100 spent"
+      },
+      "manchesterUnitedMatchDay": {
+        "rate": 3,
+        "spendUnit": 100,
+        "effectivePercentage": 0.0075,
+        "note": "3 Reward Points per ₹100 spent on Manchester United match days (0.75% reward rate)"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on fuel transactions"
+      },
+      "utilities": {
+        "rate": 2,
+        "cap": 40000,
+        "capPeriod": "statement cycle",
+        "note": "Rewards capped at ₹40,000 utility spend per statement cycle"
+      },
+      "insurance": {
+        "rate": 2,
+        "cap": 40000,
+        "capPeriod": "statement cycle",
+        "note": "Rewards capped at ₹40,000 insurance spend per statement cycle"
+      },
+      "groceries": {
+        "rate": 2,
+        "cap": 20000,
+        "capPeriod": "statement cycle",
+        "note": "Rewards capped at ₹20,000 grocery/departmental spend per statement cycle"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on rent payments. 1% transaction fee applies."
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on e-wallet loads"
+      },
+      "government": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on government payments"
+      },
+      "education": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on education payments. 1% fee applies via third-party apps."
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": true,
+        "name": "iShop",
+        "multiplier": "6x to 12x",
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["Various brands and products"],
+        "link": "https://www.icicibank.com/ishop.html",
+        "note": "Earn 6x to 12x reward points on iShop purchases"
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": [],
+        "note": null
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": []
+      },
+      "milestoneAccelerators": []
+    },
+
+    "redemption": {
+      "baseValue": 0.25,
+      "bestValue": 0.25,
+      "bestOption": "Gift vouchers and products from ICICI Bank Rewards catalog",
+      "minRedemption": null,
+      "redemptionIncrement": null,
+      "convenienceFee": 99,
+      "convenienceFeeNote": "₹99 plus applicable taxes per redemption request",
+      "monthlyRedemptionLimit": null,
+
+      "pointsPlusPay": {
+        "enabled": false,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": null,
+        "note": null
+      },
+
+      "options": [
+        {
+          "type": "vouchers",
+          "value": 0.25,
+          "description": "Gift vouchers from catalog",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 99,
+          "partners": ["Amazon", "Flipkart", "Myntra", "Others"],
+          "note": "Redeem via ICICI Bank Rewards Platform on iMobile or Internet Banking"
+        },
+        {
+          "type": "products",
+          "value": 0.25,
+          "description": "Products from rewards catalog",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 99,
+          "partners": ["Health & Beauty", "Travel & Luggage", "Home Appliances", "Electronics", "Fashion & Lifestyle"],
+          "note": "Redeem via ICICI Bank Rewards Platform"
+        },
+        {
+          "type": "manchester_united_merchandise",
+          "value": 0.25,
+          "description": "Manchester United merchandise",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 99,
+          "partners": ["Manchester United"],
+          "note": "Exclusive Manchester United merchandise available"
+        }
+      ],
+      "note": "Order once placed cannot be cancelled or modified. Gift vouchers once issued cannot be reversed/exchanged."
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": [],
+      "partners": [],
+      "currentBonus": null
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": [],
+      "acrossUsers": false,
+      "note": null
+    },
+
+    "specialLogic": "3 Reward Points per ₹100 on Manchester United match days (Premier League, Champions League, etc.)",
+
+    "calculator": {
+      "enabled": true,
+      "formula": "basePoints = (spend / 100) * rate; matchDayPoints = (spend / 100) * 3",
+      "variables": ["spend", "isMatchDay"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": true,
+        "complimentaryCount": 1,
+        "period": "quarter",
+        "annualTotal": 4,
+        "accessType": "Visa Domestic Lounge",
+        "accessProvider": "Visa/DreamFolks",
+        "spendRequired": {
+          "amount": 75000,
+          "period": "preceding calendar quarter",
+          "note": "Spend ₹75,000 in the preceding calendar quarter to unlock lounge access for the next quarter. E.g., spend in Oct-Nov-Dec 2024 unlocks access for Jan-Feb-Mar 2025."
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "eligibleLounges": "https://www.icicibank.com/content/dam/icicibank/india/managed-assets/revamp-page-images/docs/pdf/domestic_consolidated_lounge_list-1.pdf",
+        "validationCharge": 2,
+        "validationChargeNote": "₹2 authorization taken on each eligible Visa card at lounge entrance"
+      },
+      "international": {
+        "included": false,
+        "complimentaryCount": null,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "membershipValue": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "eligibleLounges": null
+      }
+    },
+
+    "milestones": [],
+
+    "manchesterUnitedExclusive": {
+      "topSpenderBenefits": [
+        {
+          "rank": "Top 1 Spender (Monthly)",
+          "benefit": "Signed Manchester United jersey + Match ticket",
+          "note": "Across both Platinum and Signature card variants"
+        },
+        {
+          "rank": "Top 18 Spenders (Annual)",
+          "benefit": "Fully-paid Manchester United Experience",
+          "details": [
+            "Private tour of Old Trafford stadium and museum in Manchester, England",
+            "Opportunity to watch part of First Team squad training session",
+            "Visit to Manchester United megastore at the stadium"
+          ],
+          "note": "Across both Platinum and Signature card variants"
+        },
+        {
+          "rank": "Top 100 Spenders (Monthly)",
+          "benefit": "Manchester United branded T-shirt",
+          "note": "Across both Platinum and Signature card variants"
+        }
+      ],
+      "merchandiseDiscount": {
+        "discount": 10,
+        "platform": "Manchester United online store (United Direct)",
+        "note": "10% discount on merchandise at the Manchester United online megastore"
+      }
+    },
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": false,
+      "lessonIncluded": false,
+      "note": null
+    },
+
+    "movies": {
+      "included": true,
+      "platform": "BookMyShow and INOX",
+      "offer": "25% off on movie tickets",
+      "freeTickets": null,
+      "frequency": "2 times per month",
+      "cap": 100,
+      "capNote": "Maximum discount of ₹100 per transaction",
+      "condition": "Minimum purchase of 2 tickets",
+      "spendRequired": {
+        "amount": 25000,
+        "period": "preceding quarter",
+        "effectiveFrom": "Jan 15, 2026",
+        "note": "From Jan 15, 2026, spend ₹25,000 in preceding quarter to enjoy BookMyShow offers"
+      },
+      "note": "25% off up to ₹100 on purchase of minimum 2 tickets through BookMyShow and INOX, twice a month"
+    },
+
+    "dining": {
+      "included": true,
+      "programs": [
+        {
+          "name": "ICICI Bank Culinary Treats Programme",
+          "discount": "Up to 15% off",
+          "cap": null,
+          "frequency": "Per visit",
+          "restaurants": "2,500+ restaurants across India",
+          "note": "Download ICICI Bank Culinary Treats app for restaurant list"
+        }
+      ],
+      "hotelDining": {
+        "included": false,
+        "hotels": [],
+        "offer": null
+      }
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 400,
+      "maxTransaction": 4000,
+      "monthlyCap": null,
+      "statementCycleCap": 50000,
+      "applicableStations": "HPCL fuel pumps only",
+      "additionalRequirement": "Payment must be made on ICICI Merchant Services POS machine",
+      "rewardsOnFuel": false,
+      "transactionFee": {
+        "threshold": 10000,
+        "feePercentage": 1,
+        "note": "1% fee on fuel transactions exceeding ₹10,000 per month"
+      },
+      "note": "1% fuel surcharge waiver on transactions of ₹400-₹4,000 at HPCL pumps using ICICI Bank POS. No rewards on fuel."
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% markup on foreign currency transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "fee": 1,
+        "note": "1% DCC fee if merchant charges in INR at international locations. From Jan 15, 2026, this increases to 3.5%.",
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "3.5% markup applies to all non-INR transactions. Refunds on foreign currency transactions also attract 3.5% markup."
+    },
+
+    "concierge": {
+      "included": false,
+      "availability": null,
+      "type": null,
+      "services": [],
+      "contactNumber": null,
+      "note": null
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": [],
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "Instant EMI / EMI on Call",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Select merchants and products"],
+        "note": "No-cost EMI available on select merchants"
+      },
+      "conversionFee": {
+        "percentage": 2.99,
+        "flatFee": null,
+        "maxFee": 299,
+        "note": "Processing fee of 2.99%, capped at ₹299 + 18% GST on Instant EMI transactions"
+      },
+      "minAmount": null,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": 0.1599,
+        "max": 0.20,
+        "note": "15.99% to 20% per annum on reducing balance"
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": 0,
+        "note": "Up to 3% on principal outstanding amount plus interest of upcoming unbilled EMI"
+      },
+      "cancellationPeriod": null,
+      "note": "EMI conversion available on eligible transactions"
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": 0.0375
+      },
+      "processingFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "tenures": null,
+      "maxAmount": null,
+      "preclosureFee": null,
+      "note": "Balance transfer facility available"
+    },
+
+    "memberships": [],
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "condition": null
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": []
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": [],
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": false,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": null,
+      "fraudLiability": {
+        "included": true,
+        "cover": null,
+        "reportingWindow": "Report immediately to ICICI Bank Customer Care or SMS CCBLK <last 4 digits> to 5676766"
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": []
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": [],
+      "excludedCountries": [],
+      "excludedVehicleTypes": []
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "This is an entry-level card with limited insurance coverage. For comprehensive insurance, refer to ICICI Bank's premium cards like Sapphiro or Emeralde."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000
+    },
+    "virtualCard": {
+      "available": false,
+      "instantIssuance": false,
+      "singleUse": false,
+      "spendControls": false
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": false,
+      "rewardsOnUPI": false,
+      "note": "This card is on Visa network. UPI on Credit Card is available only for RuPay cards."
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card via SMS (CCBLK)",
+        "Block/Unblock via iMobile Pay app",
+        "Set transaction limits",
+        "Enable/Disable international transactions",
+        "Enable/Disable online transactions",
+        "Real-time alerts via SMS/Email"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"],
+      "note": "Auto-debit from ICICI Bank Savings Account"
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [],
+    "upgradesTo": [
+      {
+        "cardId": "icici-manchester-united-signature",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false,
+        "note": "Upgrade to Manchester United Signature for more premium benefits"
+      }
+    ],
+    "note": "Manchester United Signature Card offers more premium benefits including ₹2,499 joining fee, higher lounge access, and better welcome gifts"
+  },
+
+  "meta": {
+    "tags": [
+      "Football",
+      "Manchester United",
+      "Co-branded",
+      "Entry-level",
+      "Sports",
+      "Lounge Access",
+      "Movies",
+      "Dining"
+    ],
+    "bestFor": "Manchester United fans looking for an affordable co-branded credit card with exclusive club merchandise, stadium tour opportunities, and basic lifestyle benefits",
+    "notRecommendedFor": "Those seeking premium travel benefits, international lounge access, or high reward rates",
+    "rating": {
+      "overall": 3.2,
+      "rewards": 2.5,
+      "benefits": 3.5,
+      "value": 3.5
+    },
+    "verdict": "The ICICI Bank Manchester United Platinum Credit Card is a niche product designed specifically for Manchester United fans. While the reward rate is modest at 0.5%, the unique Manchester United benefits like stadium tours, signed jerseys, and match tickets make it attractive for die-hard supporters. The domestic lounge access (1 per quarter with ₹75,000 spend requirement) and movie/dining discounts add value. However, for non-fans, there are better entry-level cards available with higher rewards and more universal benefits.",
+    "pros": [
+      "Exclusive Manchester United experiences and merchandise",
+      "Low annual fee of ₹499 + GST",
+      "Annual fee waiver on ₹1.25 lakh spend",
+      "Domestic lounge access (spend-based)",
+      "Movie discounts on BookMyShow/INOX",
+      "Culinary Treats dining program",
+      "1% fuel surcharge waiver at HPCL",
+      "3 Reward Points per ₹100 on match days"
+    ],
+    "cons": [
+      "No international lounge access",
+      "Low base reward rate (0.5%)",
+      "Lounge access requires ₹75,000 quarterly spend",
+      "3.5% forex markup is high",
+      "No transfer partners for rewards",
+      "Limited insurance coverage",
+      "Currently not accepting new applications",
+      "Top spender benefits are highly competitive (national level)"
+    ],
+    "alternatives": [
+      "icici-coral-credit-card",
+      "icici-manchester-united-signature",
+      "amazon-pay-icici-credit-card",
+      "flipkart-axis-bank-credit-card"
+    ],
+    "lastVerified": "2026-01-07",
+    "dataSource": [
+      "Official ICICI Bank website - https://www.icicibank.com/personal-banking/cards/credit-card/manchester-platinum-card",
+      "ICICI Bank MITC document dated Dec 12, 2025",
+      "Paisabazaar.com",
+      "CardInsider.com",
+      "BankBazaar.com"
+    ],
+    "changelog": [
+      {
+        "date": "2024-11-15",
+        "change": "Late payment charges revised; Supplementary card fee of ₹199 introduced; Lounge access requires ₹75,000 quarterly spend; Reward caps on utility/insurance (₹40,000) and grocery (₹20,000) introduced; 1% fee on fuel >₹10,000, utility >₹50,000, education via third-party apps",
+        "source": "ICICI Bank MITC"
+      },
+      {
+        "date": "2025-01-01",
+        "change": "New lounge access criteria effective - spend ₹75,000 in preceding calendar quarter for access",
+        "source": "ICICI Bank MITC"
+      },
+      {
+        "date": "2026-01-15",
+        "change": "BookMyShow offer will require ₹25,000 spend in preceding quarter; DCC fee increases to 3.5%",
+        "source": "ICICI Bank MITC"
+      }
+    ]
+  }
+}

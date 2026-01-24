@@ -1,0 +1,1029 @@
+{
+  "id": "airtel-axis-bank-credit-card",
+  "name": "Airtel Axis Bank Credit Card",
+  "bank": "Axis Bank",
+  "slug": "airtel-axis-bank-credit-card",
+  "image": "assets/cards/axis/airtel-axis-bank-credit-card.png",
+  "link": "https://www.axisbank.com/retail/cards/credit-card/airtel-axis-bank-credit-card",
+  "isActive": true,
+
+  "network": {
+    "type": "Visa | RuPay",
+    "variant": null,
+    "bin": null,
+    "note": "Card may be issued on Visa or RuPay network depending on bank's discretion. RuPay variant supports UPI linkage."
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "entry",
+    "isCobranded": true,
+    "cobrandPartner": {
+      "name": "Bharti Airtel",
+      "type": "telecom",
+      "loyaltyProgram": null
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 500,
+      "gst": true,
+      "totalWithGST": 590,
+      "waivable": false,
+      "waiverCondition": null,
+      "note": "₹500 Amazon voucher provided on first transaction within 30 days, effectively offsetting the joining fee"
+    },
+    "annual": {
+      "amount": 500,
+      "gst": true,
+      "totalWithGST": 590,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 200000,
+        "spendPeriod": "12 months",
+        "waiverText": "Annual fee waived on spending ₹2 lakh in a year"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": 0,
+      "joiningFee": null,
+      "annualFee": null,
+      "rewardSharing": true
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding amount",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 500, "fee": 0},
+        {"minAmount": 501, "maxAmount": 5000, "fee": 500},
+        {"minAmount": 5001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": null, "fee": 1200}
+      ],
+      "additionalCharge": {
+        "amount": 100,
+        "condition": "If MAD not paid for 2 consecutive billing periods",
+        "note": "Additional ₹100 charged from third billing period onwards until MAD is paid"
+      }
+    },
+    "overLimit": {
+      "amount": null,
+      "percentage": 2.5
+    },
+    "chequeReturn": {
+      "percentage": 2,
+      "minFee": 500,
+      "maxFee": null,
+      "note": "2% of payment amount, minimum ₹500. Maximum cap of ₹1,500 removed effective Dec 20, 2024"
+    },
+    "cashPaymentAtBranch": 175,
+    "cardReplacement": 200,
+    "duplicateStatement": 100,
+    "nachFailure": {
+      "percentage": 2,
+      "minFee": 500,
+      "maxFee": null,
+      "note": "2% of payment amount, minimum ₹500"
+    }
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 15000,
+        "annual": 180000
+      },
+      "selfEmployed": {
+        "itr": 180000
+      }
+    },
+    "age": {
+      "min": 18,
+      "max": 70,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 650,
+      "recommended": 700
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": "Can be applied via Airtel Thanks App without Axis Bank relationship"
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 15000,
+      "max": 500000
+    },
+    "factors": "Based on income, credit score, existing relationship, and Airtel usage history",
+    "enhancementCriteria": "Good repayment history for 6+ months"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375,
+      "note": "3.75% per month effective from Dec 20, 2024"
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": 50,
+      "min": 20,
+      "max": 50,
+      "note": "20-50 days from transaction date if previous balance paid in full"
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 200,
+      "calculation": "5% of total outstanding or ₹200, whichever is higher"
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": 30,
+    "dailyLimit": null,
+    "interestFromDay1": true,
+    "note": "2.5% of withdrawal amount or ₹500, whichever is higher. Interest charged from day of withdrawal."
+  },
+
+  "rewards": {
+    "type": "cashback",
+    "currency": {
+      "name": "Cashback",
+      "symbol": "₹",
+      "singularUnit": "rupee",
+      "pluralUnit": "rupees"
+    },
+    "baseRate": {
+      "rate": 1,
+      "spendUnit": 100,
+      "effectivePercentage": 0.01
+    },
+    "earningText": "Earn 1% cashback on all other spends",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "Rent payments",
+        "Wallet loads",
+        "Government payments",
+        "Insurance premium payments",
+        "Education payments (via third-party apps - 1% fee applies)",
+        "EMI transactions",
+        "Cash withdrawals",
+        "Balance transfers",
+        "Gold/Jewelry purchases",
+        "Utility bills (except via Airtel Thanks App)"
+      ],
+      "mccs": [
+        "5541", "5542", "5983",
+        "6513",
+        "9311", "9222", "9399",
+        "8211", "8220", "8241", "8244", "8249", "8299",
+        "6300", "6381", "5944"
+      ],
+      "note": "Government transactions added to exclusions effective Dec 20, 2024"
+    },
+
+    "caps": {
+      "monthly": {
+        "airtelServices": {
+          "cashback": 250,
+          "percentage": 25,
+          "note": "25% cashback on Airtel bills capped at ₹250/month"
+        },
+        "utilities": {
+          "cashback": 250,
+          "percentage": 10,
+          "note": "10% on utility bills via Airtel Thanks App, capped at ₹250/month"
+        },
+        "partnerMerchants": {
+          "cashback": 500,
+          "percentage": 10,
+          "note": "10% on Swiggy/Zomato/BigBasket combined, capped at ₹500/month"
+        },
+        "otherSpends": {
+          "cashback": null,
+          "percentage": 1,
+          "note": "1% unlimited cashback on other eligible spends"
+        }
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null,
+        "maximumPotential": 12000,
+        "note": "Maximum savings potential of ₹12,000+ per year"
+      },
+      "resetPeriod": "statement",
+      "perTransaction": null
+    },
+
+    "expiry": {
+      "hasExpiry": false,
+      "period": null,
+      "condition": "Cashback credited directly to card statement"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": null,
+        "cashback": null,
+        "vouchers": "Amazon eVoucher worth ₹500",
+        "spendCondition": {
+          "amount": null,
+          "period": "30 days",
+          "transactionCount": 1
+        },
+        "validity": "First transaction within 30 days of card issuance",
+        "description": "Get Amazon eVoucher worth ₹500 on first transaction made within 30 days of card issuance"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "airtelServices": {
+        "rate": 25,
+        "cap": 250,
+        "capPeriod": "monthly",
+        "merchants": ["Airtel Mobile", "Airtel Postpaid", "Airtel Broadband", "Airtel WiFi", "Airtel DTH", "Airtel Black"],
+        "platform": "Airtel Thanks App only",
+        "note": "25% cashback only via Airtel Thanks App. Hardware costs, installation charges, advance payments for new/inactive connections excluded."
+      },
+      "utilities": {
+        "rate": 10,
+        "cap": 250,
+        "capPeriod": "monthly",
+        "categories": ["Electricity", "Gas", "Water", "Piped Gas"],
+        "platform": "Airtel Thanks App only",
+        "note": "10% cashback only via Airtel Thanks App. No cashback on utilities paid via other platforms."
+      },
+      "foodDelivery": {
+        "rate": 10,
+        "cap": 500,
+        "capPeriod": "monthly",
+        "merchants": ["Swiggy", "Zomato", "BigBasket"],
+        "note": "10% cashback combined across all three merchants. Sub-brands like Blinkit, Zomaland excluded."
+      },
+      "travel": {
+        "rate": 1,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "note": "Base 1% cashback"
+      },
+      "dining": {
+        "rate": 1,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "note": "Base 1% cashback (separate dining discounts available via EazyDiner)"
+      },
+      "online": {
+        "rate": 1,
+        "cap": null,
+        "capPeriod": null,
+        "note": "1% on all online transactions except excluded categories"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on fuel transactions. Fuel surcharge waiver available separately."
+      },
+      "groceries": {
+        "rate": 1,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "note": "1% cashback except BigBasket which gets 10%"
+      },
+      "international": {
+        "rate": 1,
+        "cap": null,
+        "note": "1% cashback on international transactions (3.5% forex markup applies)"
+      },
+      "insurance": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on insurance payments"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "surcharge": 1,
+        "note": "No cashback. 1% surcharge on rent payments effective Dec 20, 2024"
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on wallet loads"
+      },
+      "education": {
+        "rate": 0,
+        "cap": null,
+        "surcharge": 1,
+        "note": "No cashback. 1% fee on education payments via third-party apps"
+      },
+      "government": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on government transactions (added Dec 2024)"
+      },
+      "gaming": {
+        "rate": 0,
+        "surcharge": 1,
+        "note": "1% fee on transactions ≥₹10,000 on online skill-based gaming platforms"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": false,
+        "name": null,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "link": null,
+        "note": "Not applicable - this is a cashback card, not a points card"
+      },
+      "partnerMerchants": {
+        "enabled": true,
+        "merchants": [
+          {
+            "name": "Swiggy",
+            "cashbackRate": 10,
+            "cap": 500,
+            "capPeriod": "monthly",
+            "combinedWith": ["Zomato", "BigBasket"],
+            "validUntil": null
+          },
+          {
+            "name": "Zomato",
+            "cashbackRate": 10,
+            "cap": 500,
+            "capPeriod": "monthly",
+            "combinedWith": ["Swiggy", "BigBasket"],
+            "validUntil": null
+          },
+          {
+            "name": "BigBasket",
+            "cashbackRate": 10,
+            "cap": 500,
+            "capPeriod": "monthly",
+            "combinedWith": ["Swiggy", "Zomato"],
+            "validUntil": null
+          }
+        ],
+        "note": "Combined cap of ₹500/month across all three merchants"
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": null
+      },
+      "milestoneAccelerators": null
+    },
+
+    "redemption": {
+      "baseValue": 1,
+      "bestValue": 1,
+      "bestOption": "Automatic statement credit",
+      "minRedemption": null,
+      "redemptionIncrement": null,
+      "convenienceFee": null,
+      "monthlyRedemptionLimit": null,
+
+      "options": [
+        {
+          "type": "statement_credit",
+          "value": 1,
+          "description": "Automatic credit to next statement",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": null,
+          "note": "Cashback automatically credited to next billing cycle, 3 days before statement generation"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "note": "Not applicable - this is a cashback card with no transfer partners"
+    },
+
+    "pooling": {
+      "enabled": false,
+      "note": "Cashback is card-specific and cannot be pooled"
+    },
+
+    "specialLogic": "Cashback for 25% category only applicable on active Airtel connections. New connections, inactive connections, hardware costs, installation charges, and advance payments are excluded.",
+
+    "calculator": {
+      "enabled": true,
+      "formula": "airtelCashback = min(airtelSpend * 0.25, 250); utilityCashback = min(utilitySpend * 0.10, 250); partnerCashback = min(partnerSpend * 0.10, 500); otherCashback = otherSpend * 0.01; totalCashback = airtelCashback + utilityCashback + partnerCashback + otherCashback",
+      "variables": ["airtelSpend", "utilitySpend", "partnerSpend", "otherSpend"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": true,
+        "complimentaryCount": 4,
+        "period": "year",
+        "accessType": "DreamFolks/Mastercard Lounge",
+        "accessProvider": "DreamFolks",
+        "spendRequired": {
+          "amount": 50000,
+          "period": "previous 3 calendar months",
+          "note": "Must spend ₹50,000 in previous 3 calendar months before travel date to be eligible"
+        },
+        "structure": "1 visit per quarter",
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null,
+          "note": "Guest access available at applicable charges"
+        },
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "eligibleAirports": [
+          "Bangalore (BLR)",
+          "Chennai (MAA)",
+          "Delhi (DEL)",
+          "Hyderabad (HYD)",
+          "Kolkata (CCU)",
+          "Mumbai (BOM)",
+          "Pune (PNQ)"
+        ],
+        "eligibleLounges": "https://www.axisbank.com/retail/cards/credit-card/airtel-axis-bank-credit-card"
+      },
+      "international": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "note": "No international lounge access"
+      }
+    },
+
+    "milestones": null,
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": null,
+      "lessonIncluded": null,
+      "note": null
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": null
+    },
+
+    "dining": {
+      "included": true,
+      "programs": [
+        {
+          "name": "Axis Bank Dining Delights via EazyDiner",
+          "discount": "Up to 15%",
+          "cap": 500,
+          "minTransaction": 2500,
+          "frequency": "Once per card per month",
+          "note": "Up to 15% off at 4000+ partner restaurants across India"
+        }
+      ],
+      "hotelDining": {
+        "included": false,
+        "hotels": null,
+        "offer": null
+      }
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 400,
+      "maxTransaction": 4000,
+      "monthlyCap": 500,
+      "applicableStations": "All fuel stations across India",
+      "rewardsOnFuel": false,
+      "cumulativeFuelFee": {
+        "applicable": true,
+        "threshold": 50000,
+        "fee": 1,
+        "period": "statement",
+        "note": "1% fee on cumulative fuel transactions ≥₹50,000 in a single statement period (effective Dec 20, 2024)"
+      },
+      "note": "1% fuel surcharge waiver on transactions between ₹400-₹4,000. Max benefit ₹500 per statement. GST on surcharge not refundable."
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% + GST on international transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "markup": 1.5,
+        "recommendation": "Always decline DCC and pay in local currency",
+        "note": "DCC markup revised to 1.5% from 1% effective Dec 20, 2024"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "Forex markup applies to all non-INR transactions including online purchases and overseas ATM withdrawals"
+    },
+
+    "concierge": {
+      "included": false,
+      "availability": null,
+      "type": null,
+      "services": null,
+      "contactNumber": null,
+      "note": null
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": null,
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "EMI on Call",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Select merchants"],
+        "note": "No-cost EMI available on select merchants and products"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": null,
+        "minFee": null
+      },
+      "minAmount": 1500,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": 0.12,
+        "max": 0.18
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": 0
+      },
+      "cancellationPeriod": null,
+      "note": "Convert transactions of ₹1,500 or more into EMI"
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": 0.0375
+      },
+      "processingFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "tenures": null,
+      "maxAmount": null,
+      "preclosureFee": null,
+      "note": "Balance transfer facility available"
+    },
+
+    "memberships": null,
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    },
+
+    "wednesdayDelights": {
+      "included": true,
+      "note": "Access to Axis Bank Wednesday Delights offers"
+    },
+
+    "travelOffers": {
+      "goibibo": {
+        "discount": "Up to 15%",
+        "note": "Instant savings on flights & hotels via Goibibo"
+      },
+      "makemytrip": {
+        "discount": "Up to 15%",
+        "note": "Instant savings on flights & hotels via MakeMyTrip"
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "condition": null
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": null,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": null,
+      "fraudLiability": {
+        "included": true,
+        "cover": null,
+        "reportingWindow": "Report immediately"
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "This is an entry-level card with limited insurance coverage. Check official terms for any basic protections."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000
+    },
+    "virtualCard": {
+      "available": true,
+      "instantIssuance": true,
+      "singleUse": false,
+      "spendControls": true
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true,
+      "note": "RuPay variant can be linked to UPI apps for credit card on UPI payments"
+    },
+    "upiLinking": {
+      "available": true,
+      "rewardsOnUPI": true,
+      "note": "RuPay variant supports UPI linkage. 1% cashback on UPI transactions."
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "platforms": ["Axis Mobile App", "Airtel Thanks App"],
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Real-time alerts"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": null,
+    "upgradesTo": [
+      {
+        "cardId": "axis-ace-credit-card",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false,
+        "note": "Can apply for Axis Ace for better all-round cashback"
+      },
+      {
+        "cardId": "axis-flipkart-credit-card",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false,
+        "note": "Can apply for Flipkart Axis for e-commerce benefits"
+      }
+    ],
+    "note": "Entry-level card. Upgrade options depend on spending pattern and eligibility."
+  },
+
+  "customerService": {
+    "phone": "1860 419 5555",
+    "tollFree": "1800 419 0065",
+    "email": null,
+    "chat": true,
+    "app": "Axis Mobile App / Airtel Thanks App"
+  },
+
+  "meta": {
+    "tags": [
+      "Cashback",
+      "Entry-Level",
+      "Utility Bills",
+      "Airtel",
+      "Telecom",
+      "Co-branded",
+      "Lounge Access",
+      "RuPay UPI"
+    ],
+    "bestFor": "Airtel customers who pay bills via Airtel Thanks App and frequently order from Swiggy/Zomato/BigBasket",
+    "notRecommendedFor": "Non-Airtel users, high spenders seeking premium rewards, international travelers, those wanting no-cap cashback",
+    "idealMonthlySpend": {
+      "min": 5000,
+      "max": 50000,
+      "note": "Best value when Airtel bills + utilities + food delivery combined reach cap thresholds"
+    },
+    "rating": {
+      "overall": 3.8,
+      "rewards": 4.2,
+      "benefits": 3.5,
+      "value": 4.0,
+      "note": "Excellent for Airtel ecosystem users, average for general spending"
+    },
+    "verdict": "The Airtel Axis Bank Credit Card is an excellent entry-level cashback card for Airtel customers. The 25% cashback on Airtel services and 10% on utilities via Airtel Thanks App provides strong value for users in the Airtel ecosystem. The ₹500 joining fee is effectively offset by the Amazon voucher welcome benefit. The card's main limitations are the low monthly caps on accelerated cashback categories and the requirement to use only the Airtel Thanks App for utility benefits. Non-Airtel users may find better value with cards like Axis Ace or Amazon Pay ICICI.",
+    "pros": [
+      "25% cashback on Airtel services (highest in category)",
+      "10% cashback on utilities and food delivery platforms",
+      "Welcome benefit effectively makes joining fee-free",
+      "Domestic lounge access (4 per year)",
+      "RuPay variant supports UPI credit card payments",
+      "Low annual fee with easy spend-based waiver",
+      "Direct cashback to statement (no redemption hassle)",
+      "1% fuel surcharge waiver"
+    ],
+    "cons": [
+      "Low monthly caps (₹250-500) on accelerated categories",
+      "Utility cashback only via Airtel Thanks App",
+      "No international lounge access",
+      "3.5% forex markup (high)",
+      "Lounge access requires ₹50,000 quarterly spend",
+      "Limited to 4 domestic lounges per year",
+      "1% surcharge on rent and education payments",
+      "No travel or purchase protection insurance"
+    ],
+    "alternatives": [
+      {
+        "cardId": "axis-ace-credit-card",
+        "reason": "Better all-round cashback (5% via Google Pay) without platform restrictions"
+      },
+      {
+        "cardId": "amazon-pay-icici-credit-card",
+        "reason": "5% on Amazon Prime purchases, no annual fee"
+      },
+      {
+        "cardId": "sbi-cashback-credit-card",
+        "reason": "5% cashback on online spends with higher caps"
+      },
+      {
+        "cardId": "hdfc-millennia-credit-card",
+        "reason": "5% on Amazon/Flipkart/online, 2.5% on other spends"
+      }
+    ],
+    "lastVerified": "2026-01-05",
+    "dataSource": [
+      "Official Axis Bank website",
+      "Axis Bank MITC document",
+      "Airtel Finance website",
+      "Terms & Conditions update Dec 20, 2024",
+      "PaisaBazaar.com",
+      "CardInsider.com",
+      "BankBazaar.com"
+    ],
+    "changelog": [
+      {
+        "date": "2024-12-20",
+        "changes": [
+          "Finance charges increased from 3.6% to 3.75% per month",
+          "NACH/cheque return minimum fee increased from ₹450 to ₹500, cap of ₹1,500 removed",
+          "Cash payment at branch fee increased from ₹100 to ₹175",
+          "Additional ₹100 charge for missing MAD for 2 consecutive billing periods",
+          "1% fee on rent payments",
+          "1% fee on education payments via third-party apps",
+          "1% fee on gaming transactions ≥₹10,000",
+          "1% fee on cumulative fuel transactions ≥₹50,000 per statement",
+          "DCC markup increased from 1% to 1.5%",
+          "Government transactions added to exclusions"
+        ],
+        "source": "Official Axis Bank T&C update"
+      },
+      {
+        "date": "2024-04-20",
+        "changes": [
+          "Airtel bills cashback cap reduced from ₹300 to ₹250",
+          "Utility bills cashback cap reduced from ₹300 to ₹250",
+          "Utility cashback now only via Airtel Thanks App",
+          "Cashback exclusion for new/inactive Airtel connections"
+        ],
+        "source": "Official Axis Bank T&C update"
+      },
+      {
+        "date": "2023-12-10",
+        "changes": [
+          "Added MCC exclusions for education, insurance, rental, government payments"
+        ],
+        "source": "Axis Bank MCC exclusion update"
+      }
+    ]
+  }
+}

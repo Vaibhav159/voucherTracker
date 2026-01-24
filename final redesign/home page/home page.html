@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VoucherTracker - Premium Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        espresso: {
+                            950: "#0F0A08", // Main Background (Deepest)
+                            900: "#18100C", // Sidebar/Header (Deep)
+                            800: "#241A15", // Cards/Surfaces
+                            700: "#3D2E26", // Borders/Divisions
+                        },
+                        gold: {
+                            300: "#E5C875",
+                            400: "#D4AF37", // Primary Gold
+                            500: "#B59428",
+                            600: "#967A1D",
+                        },
+                        copper: {
+                            400: "#E09F7D",
+                            500: "#CD7F32", // Primary Copper
+                            600: "#A05A1C",
+                        },
+                        ivory: "#F9FAF5", // Body text
+                    },
+                    fontFamily: {
+                        "sans": ["Inter", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                    animation: {
+                        'shimmer': 'shimmer 10s ease-in-out infinite alternate',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        shimmer: {
+                            '0%': { backgroundPosition: '0% 50%' },
+                            '100%': { backgroundPosition: '100% 50%' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0F0A08; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3D2E26; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37; 
+        }
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #F9FAF5 0%, #D4AF37 50%, #B59428 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .text-gradient-copper {
+            background: linear-gradient(135deg, #E09F7D 0%, #CD7F32 60%, #A05A1C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-bg-shimmer {
+            background: linear-gradient(125deg, rgba(212, 175, 55, 0.05), rgba(15, 10, 8, 0.95), rgba(205, 127, 50, 0.08));
+            background-size: 200% 200%;
+            animation: shimmer 15s ease infinite;
+        }
+        .border-gradient-gold {
+            border-image: linear-gradient(to right, #D4AF37, #3D2E26) 1;
+        }
+        .nav-link-active {
+            background-color: rgba(212, 175, 55, 0.08);
+            color: #D4AF37;
+            border-left: 2px solid #D4AF37;
+        }.bg-texture {
+            background-image: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.03) 0%, transparent 70%);
+        }
+    </style>
+</head>
+<body class="bg-espresso-950 font-sans text-ivory antialiased selection:bg-gold-400 selection:text-espresso-950">
+<div class="flex h-screen w-full flex-col overflow-hidden bg-texture">
+<header class="z-20 flex h-16 shrink-0 items-center gap-4 border-b border-espresso-700 bg-espresso-900/90 px-4 shadow-lg backdrop-blur-md lg:gap-8 lg:px-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gold-400 text-3xl">diamond</span>
+<h1 class="font-serif text-xl font-bold tracking-wide text-white">Voucher<span class="text-gold-400">Tracker</span></h1>
+</div>
+<div class="relative hidden max-w-sm flex-1 md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-espresso-700 text-[20px] dark:text-gray-500">search</span>
+<input class="h-10 w-full rounded-full border border-espresso-700 bg-espresso-800 pl-10 pr-4 text-sm text-white placeholder-gray-500 transition-all focus:border-gold-400 focus:bg-espresso-900 focus:outline-none focus:ring-1 focus:ring-gold-400" placeholder="Search cards, rates..." type="text"/>
+</div>
+<nav class="ml-auto hidden items-center gap-1 lg:flex">
+<a class="nav-link-active flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all hover:text-gold-400" href="#">
+<span class="material-symbols-outlined filled text-[18px]">home</span>
+                Home
+            </a>
+<a class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-gray-400 transition-all hover:bg-white/5 hover:text-gold-300" href="#">
+<span class="material-symbols-outlined text-[18px]">sell</span>
+                Vouchers
+            </a>
+<a class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-gray-400 transition-all hover:bg-white/5 hover:text-gold-300" href="#">
+<span class="material-symbols-outlined text-[18px]">credit_card</span>
+                Cards
+            </a>
+<a class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-gray-400 transition-all hover:bg-white/5 hover:text-gold-300" href="#">
+<span class="material-symbols-outlined text-[18px]">account_balance</span>
+                Banking
+            </a>
+<a class="group flex items-center gap-2 rounded-lg border border-gold-400/20 bg-gold-400/5 px-3 py-2 text-sm font-medium text-gold-300 transition-all hover:border-gold-400/50 hover:bg-gold-400/10 hover:text-gold-400" href="#">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+                Ask AI
+            </a>
+<a class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-gray-400 transition-all hover:bg-white/5 hover:text-gold-300" href="#">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+                Guides
+            </a>
+</nav>
+<button class="ml-auto flex items-center justify-center rounded-lg p-2 text-gray-400 hover:bg-espresso-800 lg:hidden">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<button class="hidden h-9 w-9 items-center justify-center rounded-full border border-gold-400/30 bg-espresso-800 ring-2 ring-transparent transition-all hover:ring-gold-400/50 lg:flex">
+<span class="font-serif text-sm font-bold text-gold-400">JD</span>
+</button>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<aside class="hidden w-64 flex-col justify-between border-r border-espresso-700 bg-espresso-900 lg:flex">
+<div class="flex flex-col gap-6 p-4 pt-8">
+<div class="flex flex-col gap-2">
+<p class="px-3 text-xs font-bold uppercase tracking-widest text-copper-400/80">Tools</p>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-gray-400 transition-all hover:bg-white/5 hover:text-gold-300" href="#">
+<span class="material-symbols-outlined text-[20px]">calculate</span>
+                            Rewards Calculator
+                        </a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-gray-400 transition-all hover:bg-white/5 hover:text-gold-300" href="#">
+<span class="material-symbols-outlined text-[20px]">currency_exchange</span>
+                            Points Converter
+                        </a>
+</nav>
+</div>
+<div class="flex flex-col gap-2">
+<p class="px-3 text-xs font-bold uppercase tracking-widest text-copper-400/80">Personal</p>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-gray-400 transition-all hover:bg-white/5 hover:text-gold-300" href="#">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+                            Favourites
+                        </a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-gray-400 transition-all hover:bg-white/5 hover:text-gold-300" href="#">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+                            My Wallet
+                        </a>
+</nav>
+</div>
+</div>
+<div class="flex flex-col gap-2 border-t border-espresso-700 p-4">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-gray-400 transition-all hover:bg-white/5 hover:text-white" href="#">
+<span class="material-symbols-outlined text-[20px]">close</span>
+                    Follow X
+                </a>
+<button class="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-gray-400 transition-all hover:bg-white/5 hover:text-white">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+                    Settings
+                </button>
+</div>
+</aside>
+<main class="flex-1 overflow-y-auto bg-espresso-950">
+<div class="mx-auto max-w-[1200px] px-4 py-8 md:px-8 lg:py-16">
+<section class="@container mb-24 relative overflow-hidden rounded-3xl border border-espresso-700 bg-espresso-900 shadow-2xl">
+<div class="hero-bg-shimmer absolute inset-0 opacity-40"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-espresso-900 via-espresso-900/95 to-transparent"></div>
+<div class="absolute top-0 right-0 h-64 w-64 bg-gold-400/10 blur-[100px] rounded-full pointer-events-none"></div>
+<div class="absolute bottom-0 left-20 h-48 w-48 bg-copper-500/10 blur-[80px] rounded-full pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-12 p-8 lg:flex-row lg:items-center lg:p-12">
+<div class="flex flex-1 flex-col gap-8">
+<div class="inline-flex w-fit items-center gap-2 rounded-full border border-copper-400/40 bg-copper-400/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-copper-400 backdrop-blur-sm shadow-sm shadow-copper-900/50">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+                                Elite Access
+                            </div>
+<h1 class="font-serif text-5xl font-extrabold leading-[1.1] tracking-wide text-white md:text-6xl lg:text-7xl">
+                                Stop Overpaying.<br/>
+<span class="text-gradient-gold drop-shadow-sm">Start Maximizing.</span>
+</h1>
+<p class="max-w-lg text-lg font-light leading-relaxed text-gray-300">
+                                Your all-in-one dashboard for credit card rewards, gift card discounts, and banking offers. Track vouchers across Gyftr, Amazon, and 10+ platforms in real-time.
+                            </p>
+<div class="flex flex-wrap gap-5 pt-2">
+<button class="group relative inline-flex h-14 min-w-[180px] items-center justify-center overflow-hidden rounded-lg bg-gold-500 px-8 text-base font-bold text-espresso-950 shadow-lg shadow-gold-900/20 transition-all hover:scale-[1.02] hover:bg-gold-400 hover:shadow-gold-500/20 border-b-4 border-copper-600 active:border-b-0 active:translate-y-1">
+<span class="relative z-10">Explore Vouchers</span>
+<div class="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+</button>
+<button class="inline-flex h-14 min-w-[160px] items-center justify-center gap-2 rounded-lg border border-gold-400/30 bg-transparent px-8 text-base font-medium text-gold-300 transition-all hover:border-gold-400 hover:bg-gold-400/5 hover:text-gold-400 backdrop-blur-sm">
+<span class="material-symbols-outlined text-[20px]">calculate</span>
+                                    Calculate My Rewards
+                                </button>
+</div>
+</div>
+<div class="relative flex flex-1 items-center justify-center lg:justify-end">
+<div class="relative h-[380px] w-full max-w-[500px] animate-float">
+<div class="absolute inset-0 z-0 rounded-2xl bg-gradient-to-br from-espresso-800 to-espresso-950 border border-white/10 shadow-2xl shadow-black/60 backdrop-blur-xl">
+<div class="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/5 to-transparent pointer-events-none"></div>
+<div class="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-gold-400/10 blur-[60px]"></div>
+<div class="absolute -left-8 -bottom-8 h-32 w-32 rounded-full bg-copper-400/10 blur-[50px]"></div>
+<div class="relative flex h-full flex-col justify-between p-8">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-4">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-gold-300 to-gold-600 shadow-lg ring-1 ring-white/20">
+<span class="material-symbols-outlined text-espresso-950 text-2xl">diamond</span>
+</div>
+<div class="flex flex-col">
+<span class="font-serif text-lg font-bold text-gold-300 tracking-wide">VoucherTracker</span>
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-copper-400">Infinia Reserve</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-white/20 text-4xl">contactless</span>
+</div>
+<div class="space-y-8 mt-4">
+<div class="group relative overflow-hidden rounded-xl border border-gold-500/10 bg-gradient-to-r from-white/5 to-white/[0.02] p-6 backdrop-blur-md transition-all hover:border-gold-500/20">
+<div class="absolute inset-0 bg-gold-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10 flex justify-between items-end">
+<div>
+<p class="text-xs font-medium uppercase tracking-wider text-gray-400 mb-1">Total Rewards Value</p>
+<div class="font-serif text-4xl font-bold text-white tracking-wide">₹ 2,45,890</div>
+</div>
+<div class="flex items-center gap-1 rounded-full bg-green-500/10 px-2 py-1 text-xs font-bold text-green-400 border border-green-500/20">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+                                                +12.4%
+                                            </div>
+</div>
+</div>
+<div class="flex justify-between items-end px-1">
+<div class="flex flex-col gap-1.5">
+<span class="text-[9px] font-bold uppercase tracking-widest text-gray-500">Card Holder</span>
+<span class="font-mono text-sm tracking-widest text-gray-200">VIKRAM MEHTA</span>
+</div>
+<div class="flex flex-col gap-1.5 text-right">
+<span class="text-[9px] font-bold uppercase tracking-widest text-gray-500">Valid Thru</span>
+<span class="font-mono text-sm font-medium text-gray-200">09/28</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pointer-events-none absolute inset-0 rounded-2xl border border-white/5 ring-1 ring-inset ring-white/5"></div>
+</div>
+<div class="absolute -right-6 top-20 z-10 animate-[float_4s_ease-in-out_infinite_reverse] rounded-lg border border-espresso-700 bg-espresso-800/90 p-3 shadow-xl backdrop-blur-md">
+<div class="flex items-center gap-3">
+<div class="flex h-8 w-8 items-center justify-center rounded bg-green-500/20 text-green-400">
+<span class="material-symbols-outlined text-[18px]">arrow_upward</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase text-gray-400">Marriott Bonvoy</span>
+<span class="text-sm font-bold text-white">+5,000 Pts</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="mb-16">
+<div class="mb-8 flex flex-col gap-2 border-b border-espresso-700 pb-4">
+<h2 class="font-serif text-3xl font-bold text-white">Feature Highlights</h2>
+<p class="text-gray-400">Everything you need to optimize your savings in one place.</p>
+</div>
+<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+<div class="group relative overflow-hidden rounded-2xl border border-espresso-700 bg-espresso-800 p-8 transition-all hover:-translate-y-1 hover:border-gold-500/30 hover:shadow-xl hover:shadow-black/20">
+<div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gold-400/10 text-gold-400 group-hover:bg-gold-400 group-hover:text-espresso-900 transition-colors duration-300">
+<span class="material-symbols-outlined text-[28px]">compare_arrows</span>
+</div>
+<h3 class="mb-2 font-serif text-xl font-bold text-white">Compare &amp; Conquer</h3>
+<p class="text-sm leading-relaxed text-gray-400 group-hover:text-gray-300">Instantly compare voucher rates across major platforms like Gyftr, Amazon, and Park+ to ensure you never overpay.</p>
+<div class="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-gold-400/5 blur-2xl transition-all group-hover:bg-gold-400/10"></div>
+</div>
+<div class="group relative overflow-hidden rounded-2xl border border-espresso-700 bg-espresso-800 p-8 transition-all hover:-translate-y-1 hover:border-gold-500/30 hover:shadow-xl hover:shadow-black/20">
+<div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-copper-400/10 text-copper-400 group-hover:bg-copper-400 group-hover:text-espresso-900 transition-colors duration-300">
+<span class="material-symbols-outlined text-[28px]">credit_score</span>
+</div>
+<h3 class="mb-2 font-serif text-xl font-bold text-white">Credit Card Companion</h3>
+<p class="text-sm leading-relaxed text-gray-400 group-hover:text-gray-300">Detailed breakdowns of premium cards like Infinia, Magnus, and DCB Black—know your perks inside out.</p>
+<div class="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-copper-400/5 blur-2xl transition-all group-hover:bg-copper-400/10"></div>
+</div>
+<div class="group relative overflow-hidden rounded-2xl border border-espresso-700 bg-espresso-800 p-8 transition-all hover:-translate-y-1 hover:border-gold-500/30 hover:shadow-xl hover:shadow-black/20">
+<div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gold-400/10 text-gold-400 group-hover:bg-gold-400 group-hover:text-espresso-900 transition-colors duration-300">
+<span class="material-symbols-outlined text-[28px]">tips_and_updates</span>
+</div>
+<h3 class="mb-2 font-serif text-xl font-bold text-white">Smart Tools</h3>
+<p class="text-sm leading-relaxed text-gray-400 group-hover:text-gray-300">From reward point calculators to currency conversion guides, use our utilities to make informed decisions.</p>
+<div class="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-gold-400/5 blur-2xl transition-all group-hover:bg-gold-400/10"></div>
+</div>
+<div class="group relative overflow-hidden rounded-2xl border border-espresso-700 bg-espresso-800 p-8 transition-all hover:-translate-y-1 hover:border-gold-500/30 hover:shadow-xl hover:shadow-black/20">
+<div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-copper-400/10 text-copper-400 group-hover:bg-copper-400 group-hover:text-espresso-900 transition-colors duration-300">
+<span class="material-symbols-outlined text-[28px]">local_mall</span>
+</div>
+<h3 class="mb-2 font-serif text-xl font-bold text-white">Daily Essentials</h3>
+<p class="text-sm leading-relaxed text-gray-400 group-hover:text-gray-300">Find the best discounts for your everyday needs—Swiggy, Zomato, BigBasket, and Uber.</p>
+<div class="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-copper-400/5 blur-2xl transition-all group-hover:bg-copper-400/10"></div>
+</div>
+</div>
+</section>
+<section class="mb-16">
+<div class="rounded-3xl border border-espresso-700 bg-espresso-900/50 p-8 lg:p-12 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-gold-400/5 to-transparent pointer-events-none"></div>
+<div class="relative z-10">
+<div class="text-center mb-12">
+<h2 class="font-serif text-3xl font-bold text-white mb-4">How It Works</h2>
+<p class="text-gray-400 max-w-2xl mx-auto">Three simple steps to maximize your savings.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-espresso-800 border border-gold-400/20 flex items-center justify-center mb-6 shadow-lg shadow-gold-900/20">
+<span class="font-serif text-2xl font-bold text-gold-400">1</span>
+</div>
+<h3 class="font-serif text-xl font-bold text-white mb-3">Search</h3>
+<p class="text-sm text-gray-400 leading-relaxed">Enter the brand or store you want to shop at (e.g., 'Amazon', 'Myntra').</p>
+</div>
+<div class="relative flex flex-col items-center text-center">
+<div class="hidden md:block absolute top-8 -left-1/2 w-full h-[2px] bg-gradient-to-r from-transparent via-espresso-700 to-transparent"></div>
+<div class="w-16 h-16 rounded-full bg-espresso-800 border border-gold-400/20 flex items-center justify-center mb-6 relative z-10 shadow-lg shadow-gold-900/20">
+<span class="font-serif text-2xl font-bold text-gold-400">2</span>
+</div>
+<h3 class="font-serif text-xl font-bold text-white mb-3">Compare</h3>
+<p class="text-sm text-gray-400 leading-relaxed">View a list of voucher rates and reward multipliers across different platforms.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-espresso-800 border border-gold-400/20 flex items-center justify-center mb-6 shadow-lg shadow-gold-900/20">
+<span class="font-serif text-2xl font-bold text-gold-400">3</span>
+</div>
+<h3 class="font-serif text-xl font-bold text-white mb-3">Save</h3>
+<p class="text-sm text-gray-400 leading-relaxed">Choose the best deal, buy the voucher, and enjoy instant savings.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="mb-16">
+<div class="mb-6 flex items-center justify-between">
+<h2 class="font-serif text-3xl font-bold text-white">Latest Guides</h2>
+<a class="text-sm font-semibold text-gold-400 hover:text-gold-300" href="#">View All</a>
+</div>
+<div class="flex flex-col gap-6 lg:flex-row">
+<div class="group flex flex-1 flex-col gap-5 rounded-2xl border border-espresso-700 bg-espresso-800 p-5 transition-all hover:border-gold-500/30 sm:flex-row">
+<div class="aspect-video w-full overflow-hidden rounded-lg bg-espresso-700 sm:w-56 relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBnEOKhNhBmMb4b5quIo7V96zApqsBPW1kCbw-b-nYnuir-laJIS_bNeDfVziwF5GfT1-jfN5HN7XQi0cmvzILoczOZZpmJWe2R-43TQYDtBcmOJV_U_wL-8PO8lcgNAut4g82Z8dNfaDH3IPm7EQJceN44rEzojOgzjH6Dgeo7u7FawisAjigzO3VGwHpJiBQtyNe8L2wG8DG5IPTTol4hCvFot9N0NHOPhPyCqJ0at-VQZeBnQ5SuuAYAfWLYvEFj1T_y_cl2aNaY'); opacity: 0.8;"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-espresso-900/80 to-transparent"></div>
+</div>
+<div class="flex flex-col justify-center gap-3">
+<span class="text-xs font-bold uppercase tracking-widest text-copper-400">Travel Strategy</span>
+<h3 class="font-serif text-xl font-bold leading-tight text-white group-hover:text-gold-300 transition-colors">How to maximize HDFC Infinia for international flights</h3>
+<p class="line-clamp-2 text-sm text-gray-400">Learn the secret strategies to get up to 33% return on your travel bookings.</p>
+</div>
+</div>
+<div class="group flex flex-1 flex-col gap-5 rounded-2xl border border-espresso-700 bg-espresso-800 p-5 transition-all hover:border-gold-500/30 sm:flex-row">
+<div class="aspect-video w-full overflow-hidden rounded-lg bg-espresso-700 sm:w-56 relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZwtjEuzZuKCQ7BboLe1zotmgyLUa5VdXJQ0grX58ATgi3_Y8oGT4yEZ9u_fGbphm3PxmAHdqmcf8UhuSrjf_g4XaPJOc1H2l2Il4W6NN329ie44omHAtfgiTK3WwxXqTrUl2z3nTMcR9l8Ah0DqechJGyZM8Gof_agO1Z8NLJVfziFOIvBdrxSrR8V4ASEXi-ja5JRthykYk7bHGZzyD1eYojDc5qmSW30pcZT1rXyJJUlYu50200pDOaTlv0FNHfJZhwRLCcGKC0'); opacity: 0.8;"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-espresso-900/80 to-transparent"></div>
+</div>
+<div class="flex flex-col justify-center gap-3">
+<span class="text-xs font-bold uppercase tracking-widest text-copper-400">Wealth</span>
+<h3 class="font-serif text-xl font-bold leading-tight text-white group-hover:text-gold-300 transition-colors">Converting Reward Points to Gold: Is it worth it?</h3>
+<p class="line-clamp-2 text-sm text-gray-400">A detailed analysis of conversion ratios across major banks in 2024.</p>
+</div>
+</div>
+</div>
+</section>
+<footer class="mt-auto border-t border-espresso-700 bg-espresso-900 py-16 text-center">
+<div class="max-w-[1200px] mx-auto px-4">
+<div class="mb-10 flex flex-col items-center justify-center gap-4">
+<span class="material-symbols-outlined text-gold-500 text-5xl">diamond</span>
+<span class="font-serif text-2xl font-bold text-white tracking-wide">Voucher<span class="text-gold-400">Tracker</span></span>
+</div>
+<div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-10">
+<p class="text-gray-400 font-medium">An Open Source Community Project created by <a class="text-gold-400 hover:text-gold-300 font-bold transition-colors" href="#">@vaibhav_lodha</a>.</p>
+</div>
+<div class="inline-flex items-center gap-2 rounded-full border border-green-500/20 bg-green-500/10 px-6 py-2 mb-10">
+<span class="material-symbols-outlined text-green-400 text-sm">check_circle</span>
+<span class="text-sm font-semibold text-green-400 tracking-wide">100% Free. No Ads. Just Savings.</span>
+</div>
+<div class="flex flex-wrap justify-center gap-8 mb-8">
+<a class="text-sm text-gray-500 hover:text-gold-400 transition-colors" href="#">Privacy Policy</a>
+<a class="text-sm text-gray-500 hover:text-gold-400 transition-colors" href="#">Terms of Service</a>
+<a class="text-sm text-gray-500 hover:text-gold-400 transition-colors" href="#">Contact Support</a>
+</div>
+<div class="flex justify-center gap-6">
+<a class="text-gray-600 transition-colors hover:text-gold-400 p-2 rounded-full hover:bg-espresso-800" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="text-gray-600 transition-colors hover:text-gold-400 p-2 rounded-full hover:bg-espresso-800" href="#">
+<span class="material-symbols-outlined">mail</span>
+</a>
+</div>
+<p class="mt-8 text-xs text-gray-700">© 2024 VoucherTracker. Premium Financial Dashboard.</p>
+</div>
+</footer>
+</div>
+</main>
+</div>
+</div>
+</body></html>

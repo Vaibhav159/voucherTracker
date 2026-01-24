@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FinancePro - Card Details Refined</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&amp;family=Noto+Serif:ital,wght@0,300;0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#b8880f", // Opulent Gold
+                        "primary-hover": "#9a720c",
+                        "copper": "#c87f4f",
+                        "background-light": "#f4f2f0",
+                        "background-dark": "#1e1814", // Deeper Espresso
+                        "surface-dark": "#2b221d", // Standard Espresso
+                        "surface-border": "#4a3e36", // Border color
+                        "copper-hairline": "rgba(184, 136, 15, 0.2)",
+                        "text-muted": "#b9b19d", // Warm Grey
+                        "text-on-dark": "#e8e6e3",
+                    },
+                    fontFamily: {
+                        "display": ["Noto Serif", "serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    letterSpacing: {
+                        "editorial": "0.05em",
+                        "widest-heading": "0.1em",
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e1814; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4a3e36; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b8880f; 
+        }
+        .copper-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(184, 136, 15, 0.4), transparent);
+        }
+        .glass-card {
+            background: rgba(43, 34, 29, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-on-dark font-body overflow-hidden antialiased">
+<div class="flex h-screen w-full">
+<aside class="hidden md:flex flex-col w-72 h-full border-r border-surface-border bg-[#18120e] shrink-0 z-30">
+<div class="flex flex-col h-full p-6">
+<div class="flex gap-4 mb-12 items-center">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-12 border border-surface-border shadow-lg" data-alt="Abstract golden profile avatar pattern" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_Jf_qxhK2wG69X0-843oebhdss-lT5hISiC9xTyWYAoDZzK9ieG9Ng1JZKfCS-o0FEu8h6nKbkN0IidXB7y0SkmeA8MpNFt9IznpR4QFM_qeeKvdzVFqZ9q216ZD4o6iBh0ah8-hJbL9iDY2bZeW_hF3e7e9wpqoePKlcrGrXI2nnDutJ-FPwA7Zq2-8SuF_NVJpXyviqlwEiB2u4FxQUBgiReD2D1pCnUzpBZsybS03S7duljc7Qbqrk7P16JlzclFVaV4daw7zw");'></div>
+<div class="flex flex-col">
+<h1 class="text-white text-lg font-display font-bold tracking-wide">FinancePro</h1>
+<p class="text-primary text-[10px] font-bold tracking-[0.2em] uppercase mt-0.5">Premium Access</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 flex-1">
+<a class="flex items-center gap-4 px-4 py-3.5 rounded-lg text-text-muted hover:bg-surface-dark hover:text-white transition-all group duration-300" href="#">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors text-[20px]">dashboard</span>
+<span class="text-sm font-medium tracking-wide">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3.5 rounded-lg bg-surface-dark border-l-2 border-primary shadow-[0_4px_20px_rgba(0,0,0,0.2)]" href="#">
+<span class="material-symbols-outlined text-primary fill-1 text-[20px]">credit_card</span>
+<span class="text-white text-sm font-bold tracking-wide">Cards</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3.5 rounded-lg text-text-muted hover:bg-surface-dark hover:text-white transition-all group duration-300" href="#">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors text-[20px]">local_offer</span>
+<span class="text-sm font-medium tracking-wide">Offers</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3.5 rounded-lg text-text-muted hover:bg-surface-dark hover:text-white transition-all group duration-300" href="#">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors text-[20px]">groups</span>
+<span class="text-sm font-medium tracking-wide">Community</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3.5 rounded-lg text-text-muted hover:bg-surface-dark hover:text-white transition-all group mt-auto duration-300" href="#">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors text-[20px]">settings</span>
+<span class="text-sm font-medium tracking-wide">Settings</span>
+</a>
+</nav>
+</div>
+</aside>
+<main class="flex-1 flex flex-col h-full min-w-0 overflow-hidden relative bg-background-dark">
+<header class="flex items-center justify-between border-b border-surface-border/40 bg-background-dark/80 backdrop-blur-md px-8 py-5 z-20 sticky top-0">
+<div class="flex items-center gap-4 md:hidden">
+<span class="material-symbols-outlined text-white cursor-pointer">menu</span>
+</div>
+<div class="flex-1 max-w-md hidden md:flex">
+<div class="relative w-full group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted group-focus-within:text-primary transition-colors text-[18px]">search</span>
+<input class="w-full bg-surface-dark/50 border border-surface-border/50 rounded-full py-2.5 pl-10 pr-4 text-white placeholder-text-muted focus:ring-1 focus:ring-primary focus:border-primary/50 focus:bg-surface-dark transition-all text-sm font-light tracking-wide" placeholder="Search premium cards..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6 ml-auto">
+<button class="relative p-2 text-text-muted hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-2 right-2 size-1.5 bg-primary rounded-full animate-pulse"></span>
+</button>
+<button class="p-2 text-text-muted hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-[20px]">account_circle</span>
+</button>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto p-6 md:p-12 scroll-smooth">
+<div class="max-w-7xl mx-auto space-y-12">
+<nav class="flex items-center text-xs font-medium tracking-widest uppercase text-text-muted/70">
+<a class="hover:text-primary transition-colors" href="#">Dashboard</a>
+<span class="mx-3 text-surface-border text-[10px]">/</span>
+<a class="hover:text-primary transition-colors" href="#">Credit Cards</a>
+<span class="mx-3 text-surface-border text-[10px]">/</span>
+<span class="text-primary font-bold">Infinia Metal Edition</span>
+</nav>
+<section class="relative">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<div class="lg:col-span-7 space-y-8">
+<div class="space-y-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-[10px] font-bold text-primary tracking-[0.15em] uppercase">
+<span class="material-symbols-outlined text-[12px]">diamond</span>
+                                        Invite Only
+                                    </div>
+<h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-medium text-white leading-[1.1] tracking-tight">
+                                        HDFC Infinia <br/>
+<span class="italic font-light text-primary bg-clip-text text-transparent bg-gradient-to-r from-[#e5cf96] via-[#b8880f] to-[#e5cf96] bg-[length:200%_auto] animate-gradient">Metal Edition</span>
+</h1>
+<p class="text-lg md:text-xl text-text-muted font-light max-w-2xl leading-loose tracking-wide border-l-2 border-primary/30 pl-6 my-6">
+                                        The ultimate experience for the global citizen. Unparalleled rewards, unlimited lounge access, and dedicated concierge services tailored for the elite.
+                                    </p>
+</div>
+<div class="flex flex-wrap gap-5 pt-4">
+<button class="bg-primary hover:bg-[#d4a01e] text-background-dark font-bold px-10 py-4 rounded-full transition-all transform hover:-translate-y-1 shadow-[0_10px_30px_-10px_rgba(184,136,15,0.4)] text-sm tracking-widest uppercase">
+                                        Apply Now
+                                    </button>
+<button class="group border border-surface-border/60 hover:border-primary/50 text-white hover:text-primary px-8 py-4 rounded-full font-medium transition-all flex items-center gap-3 bg-surface-dark/30 hover:bg-surface-dark/80 text-sm tracking-widest uppercase backdrop-blur-sm">
+<span class="material-symbols-outlined text-[18px] group-hover:rotate-180 transition-transform duration-500">compare_arrows</span>
+                                        Compare
+                                    </button>
+</div>
+</div>
+<div class="lg:col-span-5 relative group perspective-1000">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent blur-[80px] rounded-full opacity-30 group-hover:opacity-50 transition-opacity duration-700"></div>
+<div class="relative transform rotate-y-12 rotate-x-6 hover:rotate-y-0 hover:rotate-x-0 transition-transform duration-700 ease-out preserve-3d">
+<img alt="Premium black metal credit card floating against dark background" class="w-full rounded-[20px] shadow-2xl border border-white/5 aspect-[1.586/1]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMCxD_JvOmmup6p9Y_J1NIFNis74OiLdUjG1cIXmmgL4xwJ4ndunKFD28poKP5KNgWnGTksseOdUQuKjtjca5BTz2BmDnO2eCPuDvJPQvZt-ntbLZW733RM1uS-86asyRh5S3kGG2rLkrcwKqfaYexrseOaQa3HAwmKFQMtPhitIFv7eiFObKaLE2d1zwBGgrvNuTMEneF7rDXYrUHSMJfXHTSI5mMsVpOHqtECj3ThYvQJbZJz9c42Cw5-q2U19Svpr_Dc8sxoQ9x" style="box-shadow: 20px 30px 60px -10px rgba(0, 0, 0, 0.7);"/>
+<div class="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent rounded-[20px] pointer-events-none mix-blend-overlay"></div>
+</div>
+</div>
+</div>
+<div class="mt-20">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-gradient-to-r from-transparent via-surface-border/50 to-transparent p-px">
+<div class="bg-background-dark p-8 flex flex-col items-center justify-center text-center gap-2 group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="text-text-muted text-[10px] uppercase tracking-[0.2em]">Reward Rate</span>
+<span class="text-3xl font-display text-white mt-1 group-hover:text-primary transition-colors">3.3<span class="text-lg text-primary/80">%</span></span>
+<div class="w-12 h-1 bg-surface-dark rounded-full mt-2 overflow-hidden">
+<div class="h-full bg-primary w-[80%]"></div>
+</div>
+</div>
+<div class="bg-background-dark p-8 flex flex-col items-center justify-center text-center gap-2 group relative">
+<div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="text-text-muted text-[10px] uppercase tracking-[0.2em]">Forex Markup</span>
+<span class="text-3xl font-display text-white mt-1 group-hover:text-primary transition-colors">2<span class="text-lg text-primary/80">%</span></span>
+<div class="w-12 h-1 bg-surface-dark rounded-full mt-2 overflow-hidden">
+<div class="h-full bg-primary w-[40%]"></div>
+</div>
+</div>
+<div class="bg-background-dark p-8 flex flex-col items-center justify-center text-center gap-2 group relative">
+<div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="text-text-muted text-[10px] uppercase tracking-[0.2em]">Lounge Access</span>
+<span class="text-3xl font-display text-white mt-1 group-hover:text-primary transition-colors">∞</span>
+<div class="w-12 h-1 bg-surface-dark rounded-full mt-2 overflow-hidden">
+<div class="h-full bg-primary w-full"></div>
+</div>
+</div>
+<div class="bg-background-dark p-8 flex flex-col items-center justify-center text-center gap-2 group relative">
+<div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="text-text-muted text-[10px] uppercase tracking-[0.2em]">Bonus Points</span>
+<span class="text-3xl font-display text-white mt-1 group-hover:text-primary transition-colors">12.5<span class="text-lg text-primary/80">K</span></span>
+<div class="w-12 h-1 bg-surface-dark rounded-full mt-2 overflow-hidden">
+<div class="h-full bg-primary w-[60%]"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="copper-divider"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 xl:gap-20">
+<div class="lg:col-span-8 space-y-16">
+<section>
+<h2 class="text-2xl font-display font-normal text-white mb-6 flex items-center gap-3 tracking-wide">
+<span class="material-symbols-outlined text-primary text-[28px] font-thin">gavel</span>
+                                    The Verdict
+                                </h2>
+<div class="prose prose-invert prose-lg prose-p:text-text-muted prose-p:font-light prose-p:leading-[2] prose-strong:text-white prose-strong:font-medium max-w-none">
+<p class="first-letter:text-5xl first-letter:font-display first-letter:text-primary first-letter:mr-2 first-letter:float-left">
+                                        The <strong class="text-white">Infinia Metal Edition</strong> sits at the apex of HDFC Bank's credit card hierarchy. It is not merely a payment instrument but a gateway to a suite of privileges designed for the affluent spender. The card exudes exclusivity with its metallic finish and invite-only issuance.
+                                    </p>
+<p>
+                                        Its strongest suit remains the reward rate, which effectively translates to a minimum of 3.3% on all spends, accelerating up to 33% on partner brands via SmartBuy. For the frequent traveler, the unlimited lounge access (Priority Pass for primary and add-on holders) coupled with low forex markup makes it an indispensable companion.
+                                    </p>
+</div>
+</section>
+<section>
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-xl font-display text-white tracking-widest uppercase">Rewards Structure</h3>
+<div class="h-[1px] bg-surface-border flex-1 ml-6 opacity-50"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="group glass-card p-8 rounded-xl hover:bg-surface-dark transition-all duration-300 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-8xl">shopping_bag</span>
+</div>
+<div class="flex justify-between items-start mb-6 relative z-10">
+<div class="p-3 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-background-dark transition-colors">
+<span class="material-symbols-outlined">shopping_cart</span>
+</div>
+<span class="text-3xl font-display font-bold text-white">5<span class="text-primary text-xl">X</span></span>
+</div>
+<h4 class="text-white font-medium mb-3 tracking-wide relative z-10">SmartBuy Partners</h4>
+<p class="text-sm text-text-muted leading-relaxed relative z-10">Earn accelerated 5x Reward Points on travel and shopping via SmartBuy (Amazon, Flipkart, Flights).</p>
+</div>
+<div class="group glass-card p-8 rounded-xl hover:bg-surface-dark transition-all duration-300 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-8xl">flight</span>
+</div>
+<div class="flex justify-between items-start mb-6 relative z-10">
+<div class="p-3 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-background-dark transition-colors">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<span class="text-3xl font-display font-bold text-white">10<span class="text-primary text-xl">X</span></span>
+</div>
+<h4 class="text-white font-medium mb-3 tracking-wide relative z-10">Travel &amp; Dining</h4>
+<p class="text-sm text-text-muted leading-relaxed relative z-10">Dining at partner restaurants and hotel bookings yield unparalleled 10x rewards.</p>
+</div>
+</div>
+</section>
+<section>
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-xl font-display text-white tracking-widest uppercase">Lifestyle Privileges</h3>
+<div class="h-[1px] bg-surface-border flex-1 ml-6 opacity-50"></div>
+</div>
+<ul class="space-y-6">
+<li class="flex items-start gap-6 p-6 bg-surface-dark/30 rounded-xl border border-transparent hover:border-surface-border transition-colors group">
+<div class="shrink-0 p-3 rounded-full bg-surface-dark border border-surface-border group-hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-primary text-[20px]">chair</span>
+</div>
+<div>
+<h4 class="text-white font-display text-lg tracking-wide group-hover:text-primary transition-colors">Unlimited Lounge Access</h4>
+<p class="text-sm text-text-muted mt-2 leading-relaxed font-light">Complimentary Priority Pass membership for primary and add-on cardholders with unlimited visits worldwide.</p>
+</div>
+</li>
+<li class="flex items-start gap-6 p-6 bg-surface-dark/30 rounded-xl border border-transparent hover:border-surface-border transition-colors group">
+<div class="shrink-0 p-3 rounded-full bg-surface-dark border border-surface-border group-hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-primary text-[20px]">golf_course</span>
+</div>
+<div>
+<h4 class="text-white font-display text-lg tracking-wide group-hover:text-primary transition-colors">Golf Games</h4>
+<p class="text-sm text-text-muted mt-2 leading-relaxed font-light">Unlimited complimentary golf games at leading courses across India and select international destinations.</p>
+</div>
+</li>
+<li class="flex items-start gap-6 p-6 bg-surface-dark/30 rounded-xl border border-transparent hover:border-surface-border transition-colors group">
+<div class="shrink-0 p-3 rounded-full bg-surface-dark border border-surface-border group-hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-primary text-[20px]">support_agent</span>
+</div>
+<div>
+<h4 class="text-white font-display text-lg tracking-wide group-hover:text-primary transition-colors">24/7 Concierge</h4>
+<p class="text-sm text-text-muted mt-2 leading-relaxed font-light">Dedicated desk for flight bookings, table reservations, and exclusive event access.</p>
+</div>
+</li>
+</ul>
+</section>
+<section>
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-xl font-display text-white tracking-widest uppercase">Insurance Cover</h3>
+<div class="h-[1px] bg-surface-border flex-1 ml-6 opacity-50"></div>
+</div>
+<div class="rounded-xl border border-surface-border overflow-hidden">
+<table class="w-full text-left text-sm">
+<thead class="bg-surface-dark text-white font-display tracking-wider uppercase text-xs">
+<tr>
+<th class="p-5 font-medium text-text-muted">Type</th>
+<th class="p-5 font-medium text-right text-text-muted">Coverage Amount</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-border/50 bg-background-dark/30">
+<tr class="group hover:bg-surface-dark/50 transition-colors">
+<td class="p-5 text-white font-medium">Accidental Air Death</td>
+<td class="p-5 text-primary font-mono text-right">₹ 3 Crores</td>
+</tr>
+<tr class="group hover:bg-surface-dark/50 transition-colors">
+<td class="p-5 text-white font-medium">Emergency Overseas Hospitalization</td>
+<td class="p-5 text-primary font-mono text-right">₹ 50 Lakhs</td>
+</tr>
+<tr class="group hover:bg-surface-dark/50 transition-colors">
+<td class="p-5 text-white font-medium">Credit Shield Cover</td>
+<td class="p-5 text-primary font-mono text-right">₹ 9 Lakhs</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+<aside class="lg:col-span-4 space-y-10">
+<div class="sticky top-28 space-y-8">
+<div class="glass-card rounded-2xl overflow-hidden shadow-2xl">
+<div class="bg-gradient-to-r from-surface-dark to-[#3a2e27] p-6 border-b border-surface-border/50">
+<h3 class="text-lg font-display font-medium text-white tracking-wide flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">payments</span>
+                                            Fees &amp; Eligibility
+                                        </h3>
+</div>
+<div class="p-8 space-y-8">
+<div class="space-y-4">
+<div class="flex justify-between items-end pb-2 border-b border-dashed border-surface-border/50">
+<span class="text-text-muted text-xs uppercase tracking-widest">First Year Fee</span>
+<div class="text-right">
+<span class="text-white font-display text-xl">₹ 12,500</span>
+<span class="block text-[10px] text-text-muted">+ GST</span>
+</div>
+</div>
+<div class="flex justify-between items-end pb-2 border-b border-dashed border-surface-border/50">
+<span class="text-text-muted text-xs uppercase tracking-widest">Renewal Fee</span>
+<div class="text-right">
+<span class="text-white font-display text-xl">₹ 12,500</span>
+<span class="block text-[10px] text-text-muted">+ GST</span>
+</div>
+</div>
+</div>
+<div class="bg-primary/5 p-4 rounded-lg border border-primary/20">
+<div class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary text-sm mt-1">verified_user</span>
+<p class="text-xs text-text-muted leading-relaxed font-light">
+                                                    Spend <span class="text-primary font-bold">₹ 10 Lakhs</span> in the preceding year to get the renewal fee waived.
+                                                </p>
+</div>
+</div>
+<div>
+<h4 class="text-white text-xs font-bold uppercase tracking-widest mb-4 opacity-80">Eligibility Criteria</h4>
+<ul class="text-sm text-text-muted space-y-3 font-light">
+<li class="flex items-center gap-3">
+<span class="size-1.5 rounded-full bg-primary ring-2 ring-primary/30"></span>
+                                                    ITR &gt; ₹ 45 Lakhs per annum
+                                                </li>
+<li class="flex items-center gap-3">
+<span class="size-1.5 rounded-full bg-primary ring-2 ring-primary/30"></span>
+                                                    Invite Only for existing customers
+                                                </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="bg-surface-dark border border-primary/20 rounded-2xl p-6 relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent"></div>
+<div class="relative z-10">
+<h3 class="text-lg font-display text-white mb-2">Not sure yet?</h3>
+<p class="text-sm text-text-muted font-light mb-4">Compare Infinia with other premium metal cards like Amex Platinum.</p>
+<button class="w-full py-3 border border-surface-border hover:border-primary text-text-muted hover:text-white rounded-lg transition-colors text-sm uppercase tracking-widest flex items-center justify-center gap-2 group-hover:bg-surface-dark">
+<span class="material-symbols-outlined text-[16px]">balance</span>
+                                            Compare Cards
+                                        </button>
+</div>
+</div>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="h-px bg-surface-border flex-1"></div>
+<h3 class="text-[10px] font-bold text-text-muted uppercase tracking-[0.2em]">Analysis</h3>
+<div class="h-px bg-surface-border flex-1"></div>
+</div>
+<div class="grid gap-4">
+<div class="bg-surface-dark/40 border border-green-900/30 rounded-lg p-5 hover:bg-surface-dark/60 transition-colors">
+<div class="flex items-center gap-2 mb-3 text-green-500">
+<span class="material-symbols-outlined text-[18px]">thumb_up</span>
+<span class="text-xs font-bold uppercase tracking-wider">The Good</span>
+</div>
+<ul class="space-y-2">
+<li class="flex gap-3 text-sm text-text-muted font-light items-start">
+<span class="material-symbols-outlined text-green-500/70 text-[14px] mt-1">check</span>
+                                                    Best-in-class reward rate (3.3%)
+                                                </li>
+<li class="flex gap-3 text-sm text-text-muted font-light items-start">
+<span class="material-symbols-outlined text-green-500/70 text-[14px] mt-1">check</span>
+                                                    Unlimited lounge access globally
+                                                </li>
+</ul>
+</div>
+<div class="bg-surface-dark/40 border border-red-900/30 rounded-lg p-5 hover:bg-surface-dark/60 transition-colors">
+<div class="flex items-center gap-2 mb-3 text-red-400">
+<span class="material-symbols-outlined text-[18px]">thumb_down</span>
+<span class="text-xs font-bold uppercase tracking-wider">The Bad</span>
+</div>
+<ul class="space-y-2">
+<li class="flex gap-3 text-sm text-text-muted font-light items-start">
+<span class="material-symbols-outlined text-red-400/70 text-[14px] mt-1">close</span>
+                                                    High annual fee (₹ 12,500)
+                                                </li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+<div class="h-12"></div> 
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

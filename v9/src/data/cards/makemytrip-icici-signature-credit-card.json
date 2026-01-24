@@ -1,0 +1,909 @@
+{
+  "id": "icici-makemytrip-signature",
+  "name": "MakeMyTrip ICICI Bank Signature Credit Card",
+  "bank": "ICICI Bank",
+  "slug": "makemytrip-icici-bank-signature-credit-card",
+  "image": "assets/cards/icici/makemytrip-signature.png",
+  "link": "https://www.icicibank.com/personal-banking/cards/credit-card/makemytrip/signature-credit-card",
+  "isActive": false,
+  "discontinuedNote": "ICICI Bank is no longer accepting new applications for this card. It has been replaced by the new MakeMyTrip ICICI Bank Credit Card.",
+
+  "network": {
+    "type": "Visa",
+    "variant": "Signature",
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "premium",
+    "isCobranded": true,
+    "cobrandPartner": {
+      "name": "MakeMyTrip",
+      "type": "travel",
+      "loyaltyProgram": "MMTBLACK"
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 2500,
+      "waivable": false,
+      "waiverCondition": null,
+      "gstApplicable": true,
+      "effectiveAmount": 2950
+    },
+    "annual": {
+      "amount": 0,
+      "firstYearWaived": true,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": null,
+        "spendPeriod": null,
+        "waiverText": "No annual fee from 2nd year onwards"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": 0,
+      "joiningFee": 199,
+      "annualFee": 199,
+      "rewardSharing": true
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding (Total Amount Due minus payments received before due date)",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 100, "fee": 0},
+        {"minAmount": 100, "maxAmount": 500, "fee": 100},
+        {"minAmount": 501, "maxAmount": 1000, "fee": 500},
+        {"minAmount": 1001, "maxAmount": 5000, "fee": 600},
+        {"minAmount": 5001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 900},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ]
+    },
+    "overLimit": {
+      "amount": 550,
+      "percentage": 2.5,
+      "note": "2.5% on over-limit amount, minimum ₹550"
+    },
+    "chequeReturn": {
+      "percentage": 2,
+      "minimumFee": 500,
+      "note": "2% of Total Amount Due, minimum ₹500"
+    },
+    "cardReplacement": 200,
+    "duplicateStatement": null,
+    "cashPaymentAtBranch": 100
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 75000,
+        "annual": 900000
+      },
+      "selfEmployed": {
+        "itr": 900000,
+        "monthly": 75000
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 60,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": null
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 50000,
+      "max": 500000
+    },
+    "factors": "Based on income, credit score, and existing relationship with ICICI Bank",
+    "enhancementCriteria": "Good repayment history for 6+ months"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": 48,
+      "maxDays": 48,
+      "minDays": 18,
+      "note": "Interest-free period of 18-48 days depending on transaction date, with 3 days grace period after due date"
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 100,
+      "calculation": "5% of total outstanding or ₹100, whichever is higher"
+    },
+    "penaltyAPR": {
+      "rate": 0.45,
+      "triggerCondition": "On default or non-payment"
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": 10,
+    "dailyLimit": 20000,
+    "interestFromDay1": true,
+    "note": "Cash limit is 10% of credit limit up to max ₹20,000 for first 180 days from card issuance"
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "myCash",
+      "symbol": "MC",
+      "singularUnit": "myCash",
+      "pluralUnit": "myCash",
+      "valuePerUnit": 1
+    },
+    "baseRate": {
+      "rate": 1.25,
+      "spendUnit": 200,
+      "effectivePercentage": 0.625
+    },
+    "earningText": "Earn 1.25 myCash for every ₹200 spent on domestic transactions",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "Rent payments",
+        "Wallet loads",
+        "Government payments",
+        "EMI transactions",
+        "Cash withdrawals",
+        "Balance transfers",
+        "Late payment fees",
+        "Joining/Annual fees",
+        "Personal loan transactions"
+      ],
+      "mccs": ["5541", "5542", "5983", "6513", "9311", "9222", "6540", "6760"],
+      "note": "No myCash on these categories as per ICICI Bank MITC"
+    },
+
+    "caps": {
+      "monthly": {
+        "points": null,
+        "cashback": null
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null,
+        "insuranceSpendCap": 1000
+      },
+      "resetPeriod": "anniversary",
+      "perTransaction": null,
+      "note": "Insurance category rewards capped at 1,000 myCash per anniversary year"
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "12 months",
+      "condition": "From date of credit to MyWallet"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": 1500,
+        "cashback": null,
+        "vouchers": "MakeMyTrip Holiday Voucher worth ₹2,500",
+        "spendCondition": {
+          "amount": null,
+          "period": null,
+          "transactionCount": null
+        },
+        "validity": "Within 45 business days of joining fee payment",
+        "description": "Get 1,500 myCash + ₹2,500 MakeMyTrip Holiday Voucher on payment of joining fee"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": "No annual fee applicable from 2nd year"
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "travel": {
+        "hotelBookings": {
+          "rate": 4,
+          "spendUnit": 200,
+          "effectivePercentage": 2.0,
+          "merchants": ["MakeMyTrip"],
+          "note": "4 myCash per ₹200 on hotel and holiday bookings via MakeMyTrip"
+        },
+        "flightBookings": {
+          "rate": 2,
+          "spendUnit": 200,
+          "effectivePercentage": 1.0,
+          "merchants": ["MakeMyTrip"],
+          "note": "2 myCash per ₹200 on flight bookings via MakeMyTrip"
+        },
+        "holidayPackages": {
+          "rate": 4,
+          "spendUnit": 200,
+          "effectivePercentage": 2.0,
+          "merchants": ["MakeMyTrip"],
+          "note": "4 myCash per ₹200 on holiday packages via MakeMyTrip"
+        }
+      },
+      "international": {
+        "rate": 1.5,
+        "spendUnit": 200,
+        "effectivePercentage": 0.75,
+        "cap": null,
+        "note": "1.5 myCash per ₹200 on all international transactions outside MakeMyTrip"
+      },
+      "domestic": {
+        "rate": 1.25,
+        "spendUnit": 200,
+        "effectivePercentage": 0.625,
+        "cap": null,
+        "note": "1.25 myCash per ₹200 on all domestic transactions outside MakeMyTrip"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No myCash on fuel transactions"
+      },
+      "insurance": {
+        "rate": 1.25,
+        "cap": 1000,
+        "capPeriod": "anniversary year",
+        "note": "Standard rate applies but capped at 1,000 myCash per year"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "feeApplicable": true,
+        "feePercentage": 1,
+        "note": "No myCash on rent payments; 1% convenience fee applies"
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No myCash on wallet loads"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": true,
+        "name": "iShop",
+        "multiplier": null,
+        "cashbackPercentage": 4,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["Various partner brands"],
+        "link": "https://www.icicibank.com/ishop.html",
+        "note": "Earn up to 4% cashback on iShop purchases"
+      },
+      "partnerMerchants": {
+        "enabled": true,
+        "merchants": [
+          {
+            "name": "MakeMyTrip Hotels",
+            "rate": 4,
+            "spendUnit": 200,
+            "effectivePercentage": 2.0,
+            "cap": null,
+            "capPeriod": null,
+            "note": "4 myCash per ₹200"
+          },
+          {
+            "name": "MakeMyTrip Flights",
+            "rate": 2,
+            "spendUnit": 200,
+            "effectivePercentage": 1.0,
+            "cap": null,
+            "capPeriod": null,
+            "note": "2 myCash per ₹200"
+          }
+        ]
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": []
+      },
+      "milestoneAccelerators": []
+    },
+
+    "redemption": {
+      "baseValue": 1.0,
+      "bestValue": 1.0,
+      "bestOption": "Travel bookings via MakeMyTrip at 1 myCash = ₹1",
+      "minRedemption": null,
+      "redemptionIncrement": null,
+      "convenienceFee": 0,
+      "monthlyRedemptionLimit": null,
+
+      "pointsPlusPay": {
+        "enabled": true,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": 100,
+        "note": "100% myCash can be used for MakeMyTrip bookings"
+      },
+
+      "options": [
+        {
+          "type": "travel",
+          "value": 1.0,
+          "description": "Travel bookings via MakeMyTrip",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["MakeMyTrip"],
+          "note": "Use myCash for flights, hotels, holidays, cabs, buses on MakeMyTrip"
+        },
+        {
+          "type": "vouchers",
+          "value": 1.0,
+          "description": "Partner vouchers via MakeMyTrip",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["Various MakeMyTrip partners"],
+          "note": "Redeem for partner vouchers through MakeMyTrip platform"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": [],
+      "partners": [],
+      "note": "myCash can only be redeemed via MakeMyTrip platform"
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": [],
+      "acrossUsers": false,
+      "note": "myCash is credited to cardholder's MakeMyTrip MyWallet only"
+    },
+
+    "specialLogic": "myCash rewards are automatically transferred to MakeMyTrip MyWallet within statement cycle",
+
+    "calculator": {
+      "enabled": true,
+      "formula": "myCash = (spend / 200) * categoryRate",
+      "variables": ["spend", "category", "isMakeMyTrip", "isInternational"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": true,
+        "complimentaryCount": 8,
+        "period": "year",
+        "maxPerQuarter": 2,
+        "accessType": "DreamFolks / Mastercard Lounge",
+        "accessProvider": "DreamFolks",
+        "spendRequired": {
+          "amount": 75000,
+          "period": "preceding calendar quarter",
+          "note": "Spend ₹75,000 in preceding quarter to unlock 2 lounge accesses for the following quarter (as per Jan 2025 policy)"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "railwayLounge": {
+          "included": true,
+          "count": 1,
+          "period": "quarter",
+          "note": "1 complimentary railway lounge access per quarter for primary cardholder"
+        },
+        "eligibleLounges": "https://www.icicibank.com/content/dam/icicibank/india/managed-assets/revamp-page-images/docs/pdf/domestic_consolidated_lounge_list-1.pdf"
+      },
+      "international": {
+        "included": true,
+        "complimentaryCount": 1,
+        "period": "year",
+        "accessType": "Priority Pass / DreamFolks",
+        "accessProvider": {
+          "beforeNov2024": "DreamFolks",
+          "afterNov2024": "Priority Pass"
+        },
+        "membershipValue": null,
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": null
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "eligibleLounges": "https://www.prioritypass.com/airport-lounges",
+        "note": "Cards applied on/after Nov 15, 2024 get Priority Pass membership. Cards before this date get DreamFolks membership with 1 lounge access + 1 spa session per year"
+      }
+    },
+
+    "milestones": [
+      {
+        "spend": 250000,
+        "period": "anniversary year",
+        "benefit": "1,100 myCash",
+        "benefitType": "points",
+        "value": 1100,
+        "conditions": null
+      },
+      {
+        "spend": 500000,
+        "period": "anniversary year",
+        "benefit": "4,000 myCash",
+        "benefitType": "points",
+        "value": 4000,
+        "conditions": "Additional to ₹2.5 lakh milestone benefit"
+      }
+    ],
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": false,
+      "lessonIncluded": false,
+      "note": null
+    },
+
+    "movies": {
+      "included": true,
+      "platform": "BookMyShow / INOX",
+      "offer": "25% off on second ticket",
+      "freeTickets": null,
+      "frequency": "Twice a month",
+      "cap": 150,
+      "note": "Buy 1 ticket and get 25% off (max ₹150) on the second ticket. Spend-based eligibility from Jan 2026: ₹25,000 spend in preceding quarter required",
+      "spendRequired": {
+        "amount": 25000,
+        "period": "preceding quarter",
+        "effectiveFrom": "Jan 15, 2026"
+      }
+    },
+
+    "dining": {
+      "included": true,
+      "programs": [
+        {
+          "name": "ICICI Bank Culinary Treats Programme",
+          "discount": "Up to 20% off",
+          "cap": null,
+          "frequency": "Per visit",
+          "note": "At 2,500+ participating restaurants in 12 cities"
+        }
+      ],
+      "hotelDining": {
+        "included": false,
+        "hotels": [],
+        "offer": null
+      }
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 400,
+      "maxTransaction": 4000,
+      "monthlyCap": null,
+      "applicableStations": "HPCL fuel stations only",
+      "posRestriction": "ICICI Merchant Services POS machines only",
+      "rewardsOnFuel": false,
+      "note": "1% surcharge waiver on fuel transactions between ₹400-₹4,000 at HPCL pumps when swiped on ICICI Merchant Services machines"
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% on foreign currency transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "fee": 1,
+        "effectiveFromJan2026": 3.5,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "Forex markup applies to all non-INR transactions. DCC fee increasing to 3.5% from Jan 15, 2026"
+    },
+
+    "concierge": {
+      "included": true,
+      "availability": "24/7",
+      "type": "Visa Signature Concierge",
+      "services": [
+        "Travel bookings",
+        "Restaurant reservations",
+        "Event tickets",
+        "Gift procurement",
+        "General information"
+      ],
+      "contactNumber": "1800 1080",
+      "note": null
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": [],
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "internationalRoaming": {
+      "included": true,
+      "provider": "Airtel",
+      "value": 3999,
+      "duration": "10 days",
+      "condition": "Book international flight/hotel on MMT using this card",
+      "subscriberType": "Airtel Postpaid only",
+      "note": "Complimentary 10-day Airtel international roaming pack worth up to ₹3,999"
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "Instant EMI / EMI on Call",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Select partner merchants"],
+        "note": "No-cost EMI on select merchants and products"
+      },
+      "conversionFee": {
+        "percentage": 2.99,
+        "flatFee": 299,
+        "minFee": 299,
+        "maxFee": 299,
+        "note": "Processing fee of 2.99% capped at ₹299 + 18% GST on Instant EMI"
+      },
+      "minAmount": null,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": 0.1599,
+        "max": 0.18
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": 0
+      },
+      "cancellationPeriod": null,
+      "note": "EMI conversion within statement cycle; interest rates may vary by tenure and campaign"
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": 0.0375
+      },
+      "processingFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "tenures": [],
+      "maxAmount": null,
+      "preclosureFee": 3,
+      "note": "Transfer balances from other bank cards; subject to eligibility"
+    },
+
+    "memberships": [
+      {
+        "name": "MMTBLACK Platinum Membership",
+        "type": "loyalty",
+        "value": null,
+        "duration": "12 months",
+        "condition": "On payment of joining fee",
+        "benefits": [
+          "0.75% off on Flight bookings",
+          "1.5% off on Hotel/Holiday bookings",
+          "Benefits on select hotels",
+          "50% off on ancillaries - Zero Cancellation, Meal, Date Change, Fast Forward",
+          "Two vouchers worth ₹10,000 each on booking holiday package worth ₹1.5 lakh+"
+        ],
+        "note": "MMTBLACK Platinum membership replaces MMTBLACK Exclusive from Apr 15, 2024"
+      }
+    ],
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      },
+      "welcomeVoucher": {
+        "included": true,
+        "provider": "Lemon Tree / MakeMyTrip",
+        "value": 2500,
+        "condition": "On payment of joining fee",
+        "note": "MakeMyTrip Holiday Voucher worth ₹2,500"
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": true,
+      "cover": null,
+      "condition": "Travel insurance coverage included",
+      "note": "Air accident cover included as part of travel insurance; refer to ICICI Lombard policy for details"
+    },
+    "lostBaggage": {
+      "included": true,
+      "cover": null,
+      "perBag": null,
+      "condition": "Part of travel insurance coverage"
+    },
+    "fraudProtection": {
+      "included": true,
+      "coverType": "Counterfeit Card Liability",
+      "cover": null,
+      "note": "Protection against unauthorized usage"
+    },
+    "accountTakeoverCover": {
+      "included": true,
+      "cover": null,
+      "note": "Safeguards if personal information is accessed or misused by third party without consent"
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": []
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "note": "Insurance is provided by ICICI Lombard General Insurance Co. Ltd. For claims: Toll-free 1800-2666, Email: ihealthcare@icicilombard.com"
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000
+    },
+    "virtualCard": {
+      "available": true,
+      "instantIssuance": true,
+      "singleUse": false,
+      "spendControls": true
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": false,
+      "rewardsOnUPI": false,
+      "note": "Visa Signature variant does not support RuPay UPI linking"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Real-time alerts"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    },
+    "chipAndPin": {
+      "enabled": true,
+      "note": "Enhanced security against counterfeiting and duplication"
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [],
+    "upgradesTo": [
+      {
+        "cardId": "icici-sapphiro",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false,
+        "note": "Can apply for higher tier cards based on income eligibility"
+      }
+    ],
+    "note": "Card has been discontinued for new applications"
+  },
+
+  "meta": {
+    "tags": [
+      "Travel",
+      "Co-branded",
+      "MakeMyTrip",
+      "Lounge Access",
+      "Premium",
+      "Discontinued"
+    ],
+    "bestFor": "Frequent travelers who book primarily through MakeMyTrip and want myCash rewards for travel redemption",
+    "notRecommendedFor": "Those who don't use MakeMyTrip, prefer flexible redemption options, or need low forex markup",
+    "rating": {
+      "overall": 3.8,
+      "rewards": 3.5,
+      "benefits": 4.0,
+      "value": 3.5
+    },
+    "verdict": "A discontinued travel co-branded card that offered good myCash rewards on MakeMyTrip bookings. The 3.5% forex markup is high compared to newer cards. The new MakeMyTrip ICICI Bank Credit Card offers better forex rates (0.99%) and similar benefits. Existing cardholders can continue to use the card but new applications are not accepted.",
+    "pros": [
+      "No annual fee from 2nd year onwards",
+      "Good reward rates on MakeMyTrip bookings (up to 2%)",
+      "MMTBLACK Platinum membership included",
+      "₹2,500 holiday voucher on joining",
+      "Complimentary lounge access (domestic and international)",
+      "Railway lounge access",
+      "Free 10-day international roaming pack"
+    ],
+    "cons": [
+      "Card discontinued for new applications",
+      "3.5% forex markup is high",
+      "myCash can only be redeemed on MakeMyTrip",
+      "myCash expires in 12 months",
+      "Lounge access now requires ₹75K quarterly spend (from Jan 2025)",
+      "No rewards on fuel transactions",
+      "Limited international lounge access (only 1 per year)"
+    ],
+    "alternatives": [
+      "icici-makemytrip-credit-card",
+      "icici-sapphiro",
+      "axis-atlas"
+    ],
+    "lastVerified": "2026-01-07",
+    "dataSource": [
+      "Official ICICI Bank website - https://www.icicibank.com/personal-banking/cards/credit-card/makemytrip/signature-credit-card",
+      "ICICI Bank MITC document dated Dec 12, 2025",
+      "MakeMyTrip official card page",
+      "Paisabazaar.com",
+      "BankBazaar.com",
+      "CardInsider.com"
+    ],
+    "changelog": [
+      {
+        "date": "2024-04-15",
+        "change": "MMTBLACK Exclusive membership replaced with MMTBLACK Platinum membership",
+        "source": "MakeMyTrip T&Cs"
+      },
+      {
+        "date": "2024-11-15",
+        "change": "New cards get Priority Pass membership instead of DreamFolks",
+        "source": "ICICI Bank website"
+      },
+      {
+        "date": "2025-01-01",
+        "change": "Domestic lounge access now requires ₹75,000 quarterly spend",
+        "source": "ICICI Bank MITC"
+      },
+      {
+        "date": "2025",
+        "change": "Card discontinued for new applications; replaced by new MakeMyTrip ICICI Bank Credit Card",
+        "source": "Paisabazaar.com, BankBazaar.com"
+      },
+      {
+        "date": "2026-01-15",
+        "change": "BookMyShow benefit will require ₹25,000 quarterly spend",
+        "source": "ICICI Bank MITC"
+      }
+    ]
+  }
+}

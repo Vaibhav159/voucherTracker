@@ -1,0 +1,925 @@
+{
+  "id": "sbi-yatra-credit-card",
+  "name": "Yatra SBI Credit Card",
+  "bank": "SBI Card",
+  "slug": "yatra-sbi-credit-card",
+  "image": "assets/cards/sbi/yatra-sbi-card.png",
+  "link": "https://www.sbicard.com/en/personal/credit-cards/travel/yatra-sbi-card.page",
+  "isActive": false,
+  "discontinuationDate": "2025-03-28",
+  "discontinuationNote": "W.e.f 28 Mar'25, the issuance of Yatra SBI Credit Card has been discontinued. Welcome gift and travel benefits discontinued w.e.f 1 May 2025. Air Accident insurance discontinued w.e.f 26 July 2025.",
+
+  "network": {
+    "type": "Mastercard",
+    "variant": "World",
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "entry",
+    "isCobranded": true,
+    "cobrandPartner": {
+      "name": "Yatra.com",
+      "type": "Travel",
+      "loyaltyProgram": null
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 499,
+      "taxInclusive": false,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 499,
+      "taxInclusive": false,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 100000,
+        "spendPeriod": "12 months",
+        "waiverText": "Annual fee waived if total annual spends for last year > Rs. 1,00,000"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": null,
+      "joiningFee": 0,
+      "annualFee": 0,
+      "rewardSharing": true
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 500, "fee": 0},
+        {"minAmount": 501, "maxAmount": 1000, "fee": 400},
+        {"minAmount": 1001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 950},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ],
+      "additionalNote": "Additional Rs. 100 fee if minimum due is missed for two consecutive billing cycles"
+    },
+    "overLimit": {
+      "amount": 600,
+      "percentage": 2.5,
+      "note": "2.5% of overlimit amount or Rs. 600, whichever is higher"
+    },
+    "chequeReturn": 500,
+    "cardReplacement": 100,
+    "duplicateStatement": 100
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": null,
+        "annual": null
+      },
+      "selfEmployed": {
+        "itr": null
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 60,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": null,
+      "recommended": 700
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": "Not required to have SBI bank account"
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": null,
+      "max": null
+    },
+    "factors": "Based on income, credit score, and existing relationship",
+    "enhancementCriteria": "Good repayment history for 6+ months"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375,
+      "note": "W.e.f. 01 NOV 2024, finance charges revised to 3.75% p.m. on all unsecured SBI Credit Cards"
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": 50,
+      "minDays": 20,
+      "note": "Interest-free period of 20-50 days, subject to merchant claim submission"
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": null,
+      "calculation": "5% of total outstanding + taxes + active EMIs + fees and penalties"
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": null,
+    "dailyLimit": null,
+    "interestFromDay1": true,
+    "note": "2.5% of amount withdrawn or Rs. 500, whichever is higher"
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "Reward Points",
+      "symbol": "RP",
+      "singularUnit": "point",
+      "pluralUnit": "points"
+    },
+    "baseRate": {
+      "rate": 1,
+      "spendUnit": 100,
+      "effectivePercentage": 0.0025
+    },
+    "earningText": "Earn 1 Reward Point for every Rs. 100 spent on all retail shopping",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "Cash withdrawals"
+      ],
+      "mccs": ["5541", "5542", "5983", "5712"],
+      "note": "Reward Points not applicable for Cash & fuel transactions (MCCs: 5712, 5541, 5983, 5542)"
+    },
+
+    "caps": {
+      "monthly": {
+        "acceleratedCategoryCap": 5000,
+        "internationalSpendCap": 5000,
+        "note": "5000 reward points cap per month on accelerated categories and international spends separately"
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": "statement",
+      "perTransaction": null
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "2 years",
+      "condition": "From date of accrual"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": false,
+        "discontinuedDate": "2025-05-01",
+        "previousOffer": {
+          "vouchers": "Yatra.com vouchers worth Rs. 8,250",
+          "breakdown": [
+            {"type": "Domestic Air Vouchers", "value": 500, "count": 2},
+            {"type": "International Air Vouchers", "value": 1000, "count": 2},
+            {"type": "Hotel Booking Voucher", "value": 750, "count": 1},
+            {"type": "Domestic Holiday Voucher", "value": 1500, "count": 1},
+            {"type": "International Holiday Voucher", "value": 3000, "count": 1}
+          ],
+          "condition": "On payment of joining fee"
+        }
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "departmentalStores": {
+        "rate": 6,
+        "spendUnit": 100,
+        "effectivePercentage": 0.015,
+        "cap": 5000,
+        "capPeriod": "monthly",
+        "note": "6 Reward Points per Rs. 100, capped at 5000 points/month"
+      },
+      "grocery": {
+        "rate": 6,
+        "spendUnit": 100,
+        "effectivePercentage": 0.015,
+        "cap": 5000,
+        "capPeriod": "monthly",
+        "note": "6 Reward Points per Rs. 100, capped at 5000 points/month"
+      },
+      "dining": {
+        "rate": 6,
+        "spendUnit": 100,
+        "effectivePercentage": 0.015,
+        "cap": 5000,
+        "capPeriod": "monthly",
+        "note": "6 Reward Points per Rs. 100, capped at 5000 points/month"
+      },
+      "movies": {
+        "rate": 6,
+        "spendUnit": 100,
+        "effectivePercentage": 0.015,
+        "cap": 5000,
+        "capPeriod": "monthly",
+        "note": "6 Reward Points per Rs. 100, capped at 5000 points/month"
+      },
+      "entertainment": {
+        "rate": 6,
+        "spendUnit": 100,
+        "effectivePercentage": 0.015,
+        "cap": 5000,
+        "capPeriod": "monthly",
+        "note": "6 Reward Points per Rs. 100, capped at 5000 points/month"
+      },
+      "international": {
+        "rate": 6,
+        "spendUnit": 100,
+        "effectivePercentage": 0.015,
+        "cap": 5000,
+        "capPeriod": "monthly",
+        "note": "6 Reward Points per Rs. 100 on international spends, capped at 5000 points/month"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on fuel transactions"
+      },
+      "cash": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on cash withdrawals"
+      },
+      "other": {
+        "rate": 1,
+        "spendUnit": 100,
+        "effectivePercentage": 0.0025,
+        "cap": null,
+        "note": "1 Reward Point per Rs. 100 on all other categories"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": false,
+        "name": null,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "link": null,
+        "note": null
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": null,
+        "note": null
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": null
+      },
+      "milestoneAccelerators": null
+    },
+
+    "redemption": {
+      "baseValue": 0.25,
+      "bestValue": 0.25,
+      "bestOption": "Yatra.com discount vouchers",
+      "minRedemption": 1000,
+      "redemptionIncrement": null,
+      "convenienceFee": null,
+      "monthlyRedemptionLimit": null,
+
+      "pointsPlusPay": {
+        "enabled": false,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": null,
+        "note": null
+      },
+
+      "options": [
+        {
+          "type": "vouchers",
+          "value": 0.25,
+          "description": "Yatra.com discount vouchers",
+          "recommended": true,
+          "minPoints": 1000,
+          "processingFee": 0,
+          "partners": ["Yatra.com"],
+          "voucherValidity": "6 months",
+          "note": "1 Reward Point = Rs. 0.25. Redeem all reward points for Yatra.com discount vouchers only"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": null,
+      "partners": null,
+      "currentBonus": null
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": null,
+      "acrossUsers": false,
+      "note": null
+    },
+
+    "specialLogic": null,
+
+    "calculator": {
+      "enabled": true,
+      "formula": "For accelerated categories: points = (spend / 100) * 6; For other spends: points = (spend / 100) * 1",
+      "variables": ["spend", "category", "isInternational"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "discontinuedDate": "2019-04-01",
+        "previousOffer": {
+          "complimentaryCount": 8,
+          "period": "year",
+          "accessType": "MasterCard Airport Lounges",
+          "accessProvider": "MasterCard",
+          "quarterlyLimit": 2,
+          "note": "2 complimentary lounge access per calendar quarter"
+        },
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": null
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "eligibleLounges": null,
+        "note": "W.e.f 1 April'19, access to MasterCard Airport Lounges is no longer applicable on Yatra SBI Credit Card"
+      },
+      "international": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "membershipValue": null,
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": null
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "eligibleLounges": null
+      }
+    },
+
+    "milestones": [
+      {
+        "spend": 30000,
+        "period": "cumulative",
+        "benefit": "Rs. 500 Yatra discount voucher",
+        "benefitType": "voucher",
+        "value": 500,
+        "voucherValidity": "6 months",
+        "conditions": "Rs. 500 discount voucher for every Rs. 30,000 spent"
+      }
+    ],
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": false,
+      "lessonIncluded": false,
+      "note": null
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": null
+    },
+
+    "dining": {
+      "included": false,
+      "programs": null,
+      "hotelDining": null
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 500,
+      "maxTransaction": 3000,
+      "monthlyCap": 100,
+      "applicableStations": "All petrol pumps in India",
+      "rewardsOnFuel": false,
+      "note": "1% fuel surcharge waiver on fuel transactions between Rs. 500 and Rs. 3,000. Maximum waiver of Rs. 100 per month. GST extra wherever applicable."
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% foreign currency markup on international transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "Forex markup applies to all non-INR transactions"
+    },
+
+    "concierge": {
+      "included": false,
+      "availability": null,
+      "type": null,
+      "services": null,
+      "contactNumber": null,
+      "note": null
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": null,
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "Flexipay",
+      "noCostEMI": {
+        "available": false,
+        "merchants": null,
+        "note": null
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": 199,
+        "minFee": 199,
+        "note": "Processing fee of Rs. 199 on all transactions (updated March 2024)"
+      },
+      "minAmount": 2500,
+      "tenures": null,
+      "interestRates": {
+        "min": null,
+        "max": null
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": null
+      },
+      "cancellationPeriod": null,
+      "note": "Convert transactions of Rs. 2,500 or more into easy monthly installments"
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": null
+      },
+      "processingFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "tenures": null,
+      "maxAmount": null,
+      "preclosureFee": null,
+      "note": "Transfer outstanding balance from other bank's credit card to avail lower rate of interest and repay in EMIs"
+    },
+
+    "memberships": null,
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    },
+
+    "travelBenefits": {
+      "enabled": false,
+      "discontinuedDate": "2025-05-01",
+      "previousOffer": {
+        "domesticFlights": {
+          "discount": 1000,
+          "minTransaction": 5000,
+          "promoCode": "TRAVEL"
+        },
+        "internationalFlights": {
+          "discount": 4000,
+          "minTransaction": 40000,
+          "promoCode": "TRAVEL"
+        },
+        "domesticHotels": {
+          "discountPercentage": 20,
+          "maxDiscount": 2000,
+          "minTransaction": 3000,
+          "promoCode": "TRAVEL",
+          "note": "TRAVEL promo code applicable on selected Hotels only"
+        },
+        "usageLimit": "Maximum 6 times per calendar year",
+        "platform": "Yatra.com",
+        "note": "Discount cannot be clubbed with any other offer"
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "discontinuedDate": "2025-07-26",
+      "previousOffer": {
+        "cover": 5000000,
+        "condition": "Ticket booked via Yatra.com using Yatra SBI Card",
+        "validFor": "Primary cardholder only"
+      }
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": false,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": false,
+      "cover": null,
+      "fraudLiability": {
+        "included": false,
+        "cover": null,
+        "reportingWindow": null
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "Air Accident insurance coverage of Rs. 50 Lakh discontinued with effect from 26th July 2025"
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000
+    },
+    "virtualCard": {
+      "available": false,
+      "instantIssuance": false,
+      "singleUse": false,
+      "spendControls": false
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": false,
+      "rewardsOnUPI": false,
+      "note": "MasterCard variant - UPI linking not supported"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Real-time alerts"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": null,
+    "upgradesTo": null,
+    "note": "Card discontinued - no upgrade pathway available"
+  },
+
+  "customerSupport": {
+    "helpline": ["39 02 02 02", "1860 180 1290"],
+    "helplineNote": "Prefix local STD code for 39 02 02 02",
+    "sms": "5676791",
+    "emergencyReplacement": {
+      "available": true,
+      "international": true,
+      "note": "24x7 toll-free helpline for emergency card replacement"
+    }
+  },
+
+  "meta": {
+    "tags": [
+      "Travel",
+      "Co-branded",
+      "Entry-level",
+      "Yatra",
+      "Discontinued"
+    ],
+    "bestFor": "Frequent Yatra.com users who want discounts on domestic flights and hotel bookings",
+    "notRecommendedFor": "New applicants (card discontinued), travelers seeking lounge access, those who prefer flexible reward redemption",
+    "rating": {
+      "overall": 3.0,
+      "rewards": 3.0,
+      "benefits": 2.5,
+      "value": 3.0
+    },
+    "verdict": "The Yatra SBI Credit Card was an entry-level travel card offering good value for Yatra.com users with welcome vouchers worth Rs. 8,250 and ongoing travel discounts. However, the card has been discontinued since March 28, 2025, with welcome gift and travel benefits stopped from May 1, 2025, and insurance benefits discontinued from July 26, 2025. Existing cardholders can continue using the card but with significantly reduced benefits. The card no longer offers lounge access (discontinued April 2019), welcome vouchers, travel discounts, or air accident insurance.",
+    "pros": [
+      "Low annual fee of Rs. 499",
+      "Annual fee waiver on Rs. 1 lakh spend",
+      "6X reward points on multiple categories (departmental stores, grocery, dining, movies, entertainment, international)",
+      "1% fuel surcharge waiver",
+      "Worldwide MasterCard acceptance",
+      "Add-on cards at no extra cost",
+      "EMI conversion (Flexipay) available"
+    ],
+    "cons": [
+      "Card discontinued - no new applications accepted",
+      "Welcome gift discontinued (w.e.f May 2025)",
+      "Travel benefits on Yatra.com discontinued (w.e.f May 2025)",
+      "Air accident insurance discontinued (w.e.f July 2025)",
+      "No lounge access (discontinued since April 2019)",
+      "Rewards redeemable only for Yatra.com vouchers",
+      "High forex markup of 3.5%",
+      "Reward points expire in 2 years",
+      "5000 points monthly cap on accelerated categories",
+      "No international lounge access"
+    ],
+    "alternatives": [
+      "sbi-simplysave-credit-card",
+      "sbi-simplyclick-credit-card",
+      "icici-makemytrip-credit-card",
+      "au-ixigo-credit-card",
+      "standard-chartered-easemytrip-credit-card"
+    ],
+    "lastVerified": "2026-01-08",
+    "dataSource": [
+      "Official SBI Card website - https://www.sbicard.com/en/personal/credit-cards/travel/yatra-sbi-card.page",
+      "SBI Card Yatra Benefits PDF - https://www.sbicard.com/sbi-card-en/assets/docs/pdf/personal/credit-cards/travel/yatra-sbi-card-benefits.pdf",
+      "SBI Card MITC document",
+      "SBI Card Customer Notices - https://www.sbicard.com/en/customer-notices.page",
+      "PaisaBazaar.com",
+      "CardInsider.com",
+      "OurMoneyGuide.com"
+    ],
+    "changelog": [
+      {
+        "date": "2025-07-26",
+        "change": "Air Accident insurance coverage of Rs. 50 Lakh discontinued",
+        "source": "Official SBI Card Customer Notices"
+      },
+      {
+        "date": "2025-05-01",
+        "change": "Welcome gift (Yatra vouchers worth Rs. 8,250) discontinued",
+        "source": "Official SBI Card Customer Notices"
+      },
+      {
+        "date": "2025-05-01",
+        "change": "Travel benefits (flight and hotel discounts on Yatra.com) discontinued",
+        "source": "Official SBI Card Customer Notices"
+      },
+      {
+        "date": "2025-03-28",
+        "change": "Card issuance discontinued - no new applications accepted",
+        "source": "Official SBI Card website"
+      },
+      {
+        "date": "2024-11-01",
+        "change": "Finance charges revised to 3.75% p.m. on all unsecured SBI Credit Cards",
+        "source": "Official SBI Card Customer Notices"
+      },
+      {
+        "date": "2024-03-17",
+        "change": "Processing fee increased from Rs. 99 to Rs. 199",
+        "source": "Official SBI Card"
+      },
+      {
+        "date": "2019-04-01",
+        "change": "MasterCard Airport Lounge access (8 complimentary visits per year) discontinued",
+        "source": "Official SBI Card website"
+      }
+    ]
+  }
+}

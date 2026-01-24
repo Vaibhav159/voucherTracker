@@ -1,0 +1,885 @@
+{
+  "id": "hdfc-freedom-credit-card",
+  "name": "HDFC Bank Freedom Credit Card",
+  "bank": "HDFC Bank",
+  "slug": "hdfc-freedom-credit-card",
+  "image": "assets/cards/hdfc/freedom.png",
+  "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/freedom-card-new",
+  "isActive": true,
+
+  "network": {
+    "type": "Visa | Mastercard | RuPay",
+    "variant": "Platinum",
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "entry",
+    "isCobranded": false,
+    "cobrandPartner": {
+      "name": null,
+      "type": null,
+      "loyaltyProgram": null
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 500,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 500,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 50000,
+        "spendPeriod": "12 months",
+        "waiverText": "Spend ₹50,000 in 12 months for next year's fee waiver"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": null,
+      "joiningFee": 0,
+      "annualFee": 0,
+      "rewardSharing": true
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding balance (effective August 1, 2024)",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 100, "fee": 0},
+        {"minAmount": 101, "maxAmount": 500, "fee": 100},
+        {"minAmount": 501, "maxAmount": 1000, "fee": 500},
+        {"minAmount": 1001, "maxAmount": 5000, "fee": 600},
+        {"minAmount": 5001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 900},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ]
+    },
+    "overLimit": {
+      "amount": 500,
+      "percentage": 2.5
+    },
+    "chequeReturn": 500,
+    "cardReplacement": 200,
+    "duplicateStatement": 100
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 12000,
+        "annual": 144000
+      },
+      "selfEmployed": {
+        "itr": 600000
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 60,
+      "maxSelfEmployed": 65,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": null
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 15000,
+      "max": 300000
+    },
+    "factors": "Based on income, credit score, and existing relationship",
+    "enhancementCriteria": "Good repayment history for 6+ months"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "introductoryAPR": {
+      "annualRate": 0.1188,
+      "monthlyRate": 0.0099,
+      "duration": "First 90 days",
+      "note": "0.99% per month for first 90 days from card issuance (not applicable for cards sourced from Feb 2024 onwards)"
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": 50,
+      "note": "Up to 50 days interest-free from transaction date if previous balance paid in full"
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 200,
+      "calculation": "5% of total outstanding or ₹200, whichever is higher"
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": 40,
+    "dailyLimit": null,
+    "interestFromDay1": true
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "CashPoints",
+      "symbol": "CP",
+      "singularUnit": "CashPoint",
+      "pluralUnit": "CashPoints"
+    },
+    "baseRate": {
+      "rate": 1,
+      "spendUnit": 150,
+      "effectivePercentage": 0.001
+    },
+    "earningText": "Earn 1 CashPoint for every ₹150 spent",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "Rent payments (via CRED, PayTM, Cheq, MobiKwik, Freecharge, etc.)",
+        "Wallet loads",
+        "Prepaid card loads",
+        "Gift card purchases",
+        "Voucher purchases",
+        "Government-related transactions",
+        "EMI transactions",
+        "Cash withdrawals"
+      ],
+      "mccs": ["5541", "5542", "5983", "6540", "9311", "9222"],
+      "note": "Transactions at MCC 6540 (wallet/prepaid card/voucher loads) do not earn CashPoints"
+    },
+
+    "caps": {
+      "monthly": {
+        "points": 2500,
+        "cashback": null,
+        "note": "Maximum 2,500 CashPoints per calendar month on 10X category merchants"
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": "calendar",
+      "perTransaction": null,
+      "redemptionLimit": {
+        "timesPerMonth": 5,
+        "pointsPerMonth": 50000,
+        "note": "W.e.f. 1st Feb 2026, reward points can be redeemed up to a maximum of 5 times a month"
+      }
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "2 years",
+      "condition": "From the date of transaction"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": 500,
+        "cashback": null,
+        "vouchers": null,
+        "spendCondition": {
+          "amount": null,
+          "period": null,
+          "transactionCount": null
+        },
+        "validity": "Upon payment of joining fee",
+        "description": "Get 500 CashPoints on payment of joining fee"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": true,
+        "points": 500,
+        "condition": "On payment of renewal membership fee"
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "accelerated10X": {
+        "rate": 10,
+        "multiplier": 10,
+        "cap": 2500,
+        "capPeriod": "monthly",
+        "merchants": ["BigBasket", "BookMyShow", "OYO", "Swiggy", "Uber"],
+        "mccs": null,
+        "weekendRate": null,
+        "note": "10X CashPoints (10 CashPoints per ₹150) on these merchants. Max 2,500 CashPoints per calendar month"
+      },
+      "emi": {
+        "rate": 5,
+        "multiplier": 5,
+        "cap": 2500,
+        "capPeriod": "monthly",
+        "merchants": null,
+        "note": "5X CashPoints on EMI spends at merchant locations. Only EMI principal amount earns CashPoints"
+      },
+      "online": {
+        "rate": 1,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "note": "1 CashPoint per ₹150 on other purchases"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on fuel transactions"
+      },
+      "groceries": {
+        "rate": 1,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "note": "1 CashPoint per ₹150 (except BigBasket which has 10X)"
+      },
+      "utilities": {
+        "rate": 1,
+        "cap": null,
+        "note": "1 CashPoint per ₹150. Utility transactions over ₹50,000 incur 1% fee"
+      },
+      "international": {
+        "rate": 1,
+        "multiplier": null,
+        "cap": null,
+        "note": "1 CashPoint per ₹150 on international transactions"
+      },
+      "insurance": {
+        "rate": 1,
+        "cap": null,
+        "note": "Insurance not considered as utility transaction"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on rent payments. 1% fee (capped at ₹3,000) on rent via third-party apps"
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on wallet loads"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": true,
+        "name": "SmartBuy",
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["Amazon", "Flipkart", "Flights", "Hotels", "Instant Vouchers"],
+        "link": "https://offers.smartbuy.hdfcbank.com",
+        "note": "Redeem CashPoints for travel bookings (up to 50% of booking value) and products/vouchers (up to 70% of value)"
+      },
+      "partnerMerchants": {
+        "enabled": true,
+        "merchants": [
+          {
+            "name": "BigBasket",
+            "multiplier": 10,
+            "cap": 2500,
+            "capPeriod": "monthly",
+            "mcc": null,
+            "validUntil": null
+          },
+          {
+            "name": "BookMyShow",
+            "multiplier": 10,
+            "cap": 2500,
+            "capPeriod": "monthly",
+            "mcc": null,
+            "validUntil": null
+          },
+          {
+            "name": "OYO",
+            "multiplier": 10,
+            "cap": 2500,
+            "capPeriod": "monthly",
+            "mcc": null,
+            "validUntil": null
+          },
+          {
+            "name": "Swiggy",
+            "multiplier": 10,
+            "cap": 2500,
+            "capPeriod": "monthly",
+            "mcc": null,
+            "validUntil": null
+          },
+          {
+            "name": "Uber",
+            "multiplier": 10,
+            "cap": 2500,
+            "capPeriod": "monthly",
+            "mcc": null,
+            "validUntil": null
+          }
+        ],
+        "note": "10X CashPoints on these 5 partner merchants, combined cap of 2,500 CashPoints per calendar month"
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": null
+      },
+      "milestoneAccelerators": null
+    },
+
+    "redemption": {
+      "baseValue": 0.15,
+      "bestValue": 0.15,
+      "bestOption": "All redemptions valued at 1 CashPoint = ₹0.15",
+      "minRedemption": 500,
+      "redemptionIncrement": null,
+      "convenienceFee": 50,
+      "monthlyRedemptionLimit": 50000,
+
+      "pointsPlusPay": {
+        "enabled": true,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": 50,
+        "note": "For flights & hotels via SmartBuy, redeem up to 50% of booking value through CashPoints"
+      },
+
+      "options": [
+        {
+          "type": "travel",
+          "value": 0.15,
+          "description": "Flight & Hotel bookings via SmartBuy",
+          "recommended": true,
+          "minPoints": 500,
+          "processingFee": 0,
+          "partners": ["SmartBuy"],
+          "note": "Redeem up to 50% of booking value through CashPoints (1 CashPoint = ₹0.15)"
+        },
+        {
+          "type": "products",
+          "value": 0.15,
+          "description": "Products & vouchers from rewards catalogue",
+          "recommended": true,
+          "minPoints": 500,
+          "processingFee": 0,
+          "partners": ["SmartBuy Rewards Catalogue"],
+          "note": "Redeem up to 70% of product/voucher value through CashPoints"
+        },
+        {
+          "type": "statement_credit",
+          "value": 0.15,
+          "description": "Statement credit / Cashback",
+          "recommended": false,
+          "minPoints": 500,
+          "processingFee": 50,
+          "partners": [],
+          "note": "₹50 redemption fee applicable. Minimum 500 CashPoints (equivalent to ₹75) for cashback"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": null,
+      "partners": null,
+      "currentBonus": null
+    },
+
+    "pooling": {
+      "enabled": true,
+      "eligibleCards": ["All HDFC credit cards of same customer"],
+      "acrossUsers": false,
+      "note": "Pool CashPoints across your HDFC cards via NetBanking"
+    },
+
+    "specialLogic": null,
+
+    "calculator": {
+      "enabled": true,
+      "formula": "cashPoints = (spend / 150) * multiplier; value = cashPoints * 0.15",
+      "variables": ["spend", "category", "merchant", "is10XMerchant"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "railwayLounge": null,
+        "eligibleLounges": null
+      },
+      "international": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "membershipValue": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "eligibleLounges": null
+      }
+    },
+
+    "milestones": null,
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": null,
+      "lessonIncluded": null,
+      "note": null
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": "10X CashPoints on BookMyShow is the primary movie benefit"
+    },
+
+    "dining": {
+      "included": true,
+      "programs": [
+        {
+          "name": "Swiggy Dineout",
+          "discount": "Up to 20% off",
+          "cap": null,
+          "frequency": "Per visit",
+          "note": "Additional discount on partner restaurants via Swiggy Dineout"
+        }
+      ],
+      "hotelDining": null
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 400,
+      "maxTransaction": 5000,
+      "monthlyCap": 250,
+      "applicableStations": "All fuel stations in India",
+      "rewardsOnFuel": false,
+      "note": "1% surcharge waiver on fuel transactions between ₹400 and ₹5,000. Maximum waiver of ₹250 per statement cycle. No CashPoints on fuel. Fuel transactions over ₹15,000 incur 1% fee on entire amount."
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% + GST on international transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "Forex markup applies to all non-INR transactions"
+    },
+
+    "concierge": {
+      "included": false,
+      "availability": null,
+      "type": null,
+      "services": null,
+      "contactNumber": null,
+      "note": null
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": null,
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "SmartEMI / EasyEMI",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Select online and offline merchants"],
+        "note": "No-cost EMI on select merchants and products"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": 199,
+        "minFee": 199
+      },
+      "minAmount": 2500,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": 0.12,
+        "max": 0.20
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": 0
+      },
+      "cancellationPeriod": null,
+      "note": "EMI conversion available via SmartEMI. 5X CashPoints earned on EMI merchant spends."
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": null
+      },
+      "processingFee": {
+        "percentage": 1,
+        "minFee": 250
+      },
+      "tenures": [6, 12, 18, 24],
+      "maxAmount": null,
+      "preclosureFee": 3,
+      "note": "Transfer balances from other bank cards"
+    },
+
+    "memberships": null,
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": null,
+      "companionPass": null,
+      "upgradeVouchers": null,
+      "loyaltyTierCredit": null
+    },
+
+    "hotelPerks": {
+      "eliteStatus": null,
+      "freeNights": null,
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": null
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "condition": null
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": null,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": null,
+      "fraudLiability": {
+        "included": true,
+        "cover": null,
+        "reportingWindow": "Zero lost card liability when reported promptly"
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "This is an entry-level card with minimal insurance coverage. Zero lost card liability is the primary protection."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000
+    },
+    "virtualCard": {
+      "available": false,
+      "instantIssuance": false,
+      "singleUse": false,
+      "spendControls": false
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": true,
+      "rewardsOnUPI": true,
+      "note": "RuPay variant can be linked to UPI for credit card payments"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card via MyCards",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Real-time alerts"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": null,
+    "upgradesTo": [
+      {
+        "cardId": "hdfc-moneyback-plus",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false
+      },
+      {
+        "cardId": "hdfc-millennia",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false
+      }
+    ],
+    "note": "Entry-level card; can upgrade to MoneyBack+ or Millennia based on usage and eligibility"
+  },
+
+  "meta": {
+    "tags": [
+      "Entry-level",
+      "Rewards",
+      "Cashback",
+      "Dining",
+      "Entertainment",
+      "Groceries",
+      "First Credit Card"
+    ],
+    "bestFor": "First-time credit card users, students, and low-income individuals looking for an affordable rewards card with accelerated points on everyday merchants like Swiggy, BigBasket, and Uber",
+    "notRecommendedFor": "Frequent travelers (no lounge access), premium spenders, or those seeking high reward rates",
+    "rating": {
+      "overall": 3.2,
+      "rewards": 2.8,
+      "benefits": 2.5,
+      "value": 3.5
+    },
+    "verdict": "The HDFC Freedom Credit Card is a solid entry-level option for building credit history. While the base reward rate of 0.1% (1 CashPoint = ₹0.15 per ₹150 spent) is low, the 10X accelerated rewards on popular merchants like Swiggy, BigBasket, BookMyShow, OYO, and Uber make it useful for everyday expenses. The card suffered a devaluation in September 2024, reducing its overall value proposition. Consider alternatives like HDFC MoneyBack+ or SBI SimplyCLICK for better reward rates at similar annual fees.",
+    "pros": [
+      "Low annual fee of ₹500 with easy waiver condition (₹50,000 spend)",
+      "10X CashPoints on 5 popular everyday merchants",
+      "1% fuel surcharge waiver",
+      "Relaxed eligibility criteria ideal for first-time users",
+      "Up to 20% discount on Swiggy Dineout",
+      "0.99% introductory interest rate for first 90 days"
+    ],
+    "cons": [
+      "Very low base reward rate (0.1% effective)",
+      "Low CashPoint redemption value (1 CP = ₹0.15)",
+      "No lounge access",
+      "No travel or accident insurance",
+      "2,500 CashPoints monthly cap on accelerated categories",
+      "CashPoints expire in 2 years",
+      "High forex markup of 3.5%",
+      "Devalued in September 2024"
+    ],
+    "alternatives": [
+      "hdfc-moneyback-plus",
+      "sbi-simplyclick",
+      "axis-ace",
+      "hdfc-millennia"
+    ],
+    "lastVerified": "2026-01-08",
+    "dataSource": [
+      "HDFC Bank official website (hdfcbank.com)",
+      "HDFC Bank Freedom Card Terms & Conditions (dated August 2024)",
+      "HDFC Bank MITC document (updated November 2025)",
+      "PaisaBazaar.com",
+      "BankBazaar.com",
+      "CardInsider.com"
+    ],
+    "changelog": [
+      {
+        "date": "2024-09-01",
+        "change": "Card devalued - 10X CashPoints now capped at 2,500 per month, 5X EMI feature added",
+        "source": "Official T&C update"
+      },
+      {
+        "date": "2024-08-01",
+        "change": "Late payment fee structure revised; 1% fee on rent payments via third-party apps introduced",
+        "source": "HDFC Bank official communication"
+      },
+      {
+        "date": "2024-02-01",
+        "change": "0.99% introductory interest rate discontinued for new cards sourced from this date",
+        "source": "Official T&C update"
+      },
+      {
+        "date": "2026-02-01",
+        "change": "Reward points redemption limited to maximum 5 times per month",
+        "source": "Official HDFC Bank announcement"
+      }
+    ]
+  }
+}

@@ -1,0 +1,968 @@
+{
+  "id": "icici-platinum-chip",
+  "name": "ICICI Bank Platinum Chip Credit Card",
+  "bank": "ICICI Bank",
+  "slug": "icici-platinum-chip-credit-card",
+  "image": "assets/cards/icici/platinum-chip.png",
+  "link": "https://www.icicibank.com/personal-banking/cards/credit-card/platinum-chip",
+  "isActive": true,
+
+  "network": {
+    "type": "Visa",
+    "variant": "Platinum",
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "entry",
+    "isCobranded": false,
+    "cobrandPartner": {
+      "name": null,
+      "type": null,
+      "loyaltyProgram": null
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 0,
+      "waivable": false,
+      "waiverCondition": null,
+      "note": "Lifetime free card. MITC mentions ₹99 may apply in some cases as communicated at sourcing."
+    },
+    "annual": {
+      "amount": 0,
+      "firstYearWaived": true,
+      "renewalWaiver": {
+        "available": false,
+        "spendThreshold": null,
+        "spendPeriod": null,
+        "waiverText": "No annual fee applicable"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": 0,
+      "joiningFee": 0,
+      "annualFee": 199,
+      "rewardSharing": true
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on Total Amount Due minus payments received before due date",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 100, "fee": 0},
+        {"minAmount": 100, "maxAmount": 500, "fee": 100},
+        {"minAmount": 501, "maxAmount": 1000, "fee": 500},
+        {"minAmount": 1001, "maxAmount": 5000, "fee": 600},
+        {"minAmount": 5001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 900},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ]
+    },
+    "overLimit": {
+      "amount": 550,
+      "percentage": 2.5,
+      "note": "2.5% of over-limit amount, minimum ₹550. Requires explicit customer consent."
+    },
+    "chequeReturn": 500,
+    "cardReplacement": 200,
+    "duplicateStatement": null
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 20000,
+        "annual": 240000
+      },
+      "selfEmployed": {
+        "itr": 240000
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 65,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": null,
+      "recommended": 650,
+      "note": "Decent credit score required. Entry-level card suitable for credit beginners."
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": null
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 15000,
+      "max": 300000
+    },
+    "factors": "Based on income, credit score, and existing banking relationship",
+    "enhancementCriteria": "Good repayment history and regular usage"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": 48,
+      "note": "Interest-free period ranges from 18 to 48 days. 3 days grace period after payment due date."
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 100,
+      "calculation": "5% of outstanding or ₹100, whichever is higher. Includes EMI installments and over-limit amounts."
+    },
+    "penaltyAPR": {
+      "rate": 0.45,
+      "triggerCondition": "Default on payment"
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": 10,
+    "dailyLimit": 20000,
+    "interestFromDay1": true,
+    "note": "Cash limit is 10% of credit limit, up to max ₹20,000 for first 180 days"
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "ICICI Bank Reward Points",
+      "symbol": "RP",
+      "singularUnit": "point",
+      "pluralUnit": "points"
+    },
+    "baseRate": {
+      "rate": 2,
+      "spendUnit": 100,
+      "effectivePercentage": 0.005,
+      "note": "At ₹0.25 per point redemption value"
+    },
+    "earningText": "Earn 2 Reward Points for every ₹100 spent on retail purchases (excluding fuel)",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "Rent payments",
+        "Wallet loads",
+        "Government payments",
+        "Tax payments",
+        "Cash advances",
+        "Property management services"
+      ],
+      "mccs": [
+        "5541", "5542", "1361", "3851", "5983", "9752", "5555", "5172",
+        "6513", "7014", "7407", "5271",
+        "6540",
+        "9405", "9222", "9399", "9402", "9211", "6760",
+        "9311", "9313", "7276",
+        "1520", "1750", "1740", "1711", "1761", "1771", "1731",
+        "6011", "6050", "6051", "6529", "6530", "6538", "6666", "7777", "9999", "6010", "3882", "6541", "6542"
+      ],
+      "note": "No reward points on fuel, rent, government, cash, wallet loads, and property management categories"
+    },
+
+    "caps": {
+      "monthly": {
+        "points": null,
+        "cashback": null
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": "statement",
+      "perTransaction": null,
+      "categoryWise": {
+        "utility": {
+          "spendCap": 40000,
+          "period": "statement cycle",
+          "note": "Reward points capped on utility spends of ₹40,000 per statement cycle"
+        },
+        "insurance": {
+          "spendCap": 40000,
+          "period": "statement cycle",
+          "note": "Reward points capped on insurance spends of ₹40,000 per statement cycle"
+        },
+        "groceryDepartmental": {
+          "spendCap": 20000,
+          "period": "statement cycle",
+          "note": "Reward points capped on grocery and departmental store spends of ₹20,000 per statement cycle"
+        }
+      }
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "36 months",
+      "condition": "From date of earning"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": false,
+        "points": null,
+        "cashback": null,
+        "vouchers": null,
+        "spendCondition": null,
+        "validity": null,
+        "description": "No joining bonus as card has no joining fee"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": "No annual fee, hence no renewal benefits"
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "retail": {
+        "rate": 2,
+        "multiplier": 1,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "mccs": null,
+        "note": "2 reward points per ₹100 on all retail purchases excluding fuel"
+      },
+      "utilities": {
+        "rate": 1,
+        "multiplier": 0.5,
+        "cap": 40000,
+        "capPeriod": "statement cycle",
+        "mccs": ["4899", "4900", "4901", "3887", "4897", "5416", "5417", "4812", "4813", "4814", "4815", "4821", "4896", "4902", "3886"],
+        "note": "1 reward point per ₹100 on utility payments, capped at ₹40,000 spend per statement"
+      },
+      "insurance": {
+        "rate": 1,
+        "multiplier": 0.5,
+        "cap": 40000,
+        "capPeriod": "statement cycle",
+        "mccs": ["5960", "6300", "6381", "6399"],
+        "note": "1 reward point per ₹100 on insurance payments, capped at ₹40,000 spend per statement"
+      },
+      "grocery": {
+        "rate": 2,
+        "multiplier": 1,
+        "cap": 20000,
+        "capPeriod": "statement cycle",
+        "mccs": ["3333", "5411", "5412", "5441", "9751", "5311", "5331", "5499"],
+        "note": "2 reward points per ₹100 on grocery and departmental stores, capped at ₹20,000 spend per statement"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on fuel transactions"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on rent payments. 1% fee applicable on rent transactions."
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on e-wallet loads. 1% fee on wallet loads of ₹5,000+ w.e.f. Jan 15, 2026"
+      },
+      "government": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on government and tax payments"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": true,
+        "name": "iShop",
+        "multipliers": {
+          "flights": 6,
+          "hotels": 12,
+          "vouchers": 6
+        },
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["Flights", "Hotels", "Shopping Vouchers"],
+        "link": "https://www.icicibank.com/ishoplogin",
+        "note": "6X reward points on flights and vouchers, 12X on hotel bookings via iShop portal"
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": [],
+        "note": "No specific partner merchant accelerators for this card"
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": []
+      },
+      "milestoneAccelerators": []
+    },
+
+    "redemption": {
+      "baseValue": 0.25,
+      "bestValue": 1.0,
+      "bestOption": "Flight/Hotel bookings via iShop at higher value",
+      "minRedemption": null,
+      "redemptionIncrement": null,
+      "convenienceFee": 99,
+      "convenienceFeeNote": "₹99 + GST per redemption request",
+      "monthlyRedemptionLimit": null,
+
+      "pointsPlusPay": {
+        "enabled": true,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": 80,
+        "note": "Up to 80% of order value can be paid via points on iShop"
+      },
+
+      "options": [
+        {
+          "type": "travel",
+          "value": 1.0,
+          "description": "Flight & Hotel bookings via iShop",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["iShop"],
+          "note": "Best value redemption on iShop travel bookings"
+        },
+        {
+          "type": "vouchers",
+          "value": 0.25,
+          "description": "Gift vouchers from ICICI Bank Rewards catalogue",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 99,
+          "partners": ["Amazon", "Flipkart", "Various brands"],
+          "note": "Standard redemption value"
+        },
+        {
+          "type": "products",
+          "value": 0.25,
+          "description": "Lifestyle products from catalogue",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 99,
+          "partners": [],
+          "note": "Health & Beauty, Travel, Electronics, Home Appliances"
+        },
+        {
+          "type": "cashback",
+          "value": 0.20,
+          "description": "Statement credit redemption",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 99,
+          "partners": [],
+          "note": "Lower value - call 080-40146444 to redeem for cashback"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": [],
+      "partners": [],
+      "note": "Points transfer to airline/hotel partners not available for this entry-level card"
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": [],
+      "acrossUsers": false,
+      "note": null
+    },
+
+    "specialLogic": null,
+
+    "calculator": {
+      "enabled": true,
+      "formula": "points = (retailSpend / 100) * 2 + (utilitySpend / 100) * 1 + (insuranceSpend / 100) * 1",
+      "variables": ["retailSpend", "utilitySpend", "insuranceSpend", "grocerySpend"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "railwayLounge": null,
+        "eligibleLounges": null,
+        "note": "No airport lounge access for this entry-level card"
+      },
+      "international": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "membershipValue": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "eligibleLounges": null
+      }
+    },
+
+    "milestones": [],
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": false,
+      "lessonIncluded": false,
+      "note": null
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": "No dedicated movie offers for this card"
+    },
+
+    "dining": {
+      "included": true,
+      "programs": [
+        {
+          "name": "ICICI Bank Culinary Treats Programme",
+          "discount": "Minimum 15% off",
+          "cap": null,
+          "frequency": "Per visit",
+          "restaurants": "2500+",
+          "partners": ["Pizza Hut", "Mainland China", "TGI Friday's", "Café Coffee Day", "Vaango"],
+          "note": "Inform restaurant about card payment before bill generation. Blackout dates apply."
+        },
+        {
+          "name": "EazyDiner",
+          "discount": "Varies by restaurant",
+          "cap": null,
+          "frequency": "Per booking",
+          "note": "Use PayEazy option for discounts"
+        },
+        {
+          "name": "Swiggy",
+          "discount": "Up to ₹75-₹125 off",
+          "cap": null,
+          "frequency": "Per transaction",
+          "minOrder": 599,
+          "note": "Use code CULINARYTREATS"
+        },
+        {
+          "name": "Zomato",
+          "discount": "Up to 15%",
+          "cap": null,
+          "frequency": "Per transaction",
+          "minOrder": 4000,
+          "note": "Use applicable promo code"
+        }
+      ],
+      "hotelDining": null
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 400,
+      "maxTransaction": 4000,
+      "monthlyCap": null,
+      "statementCycleCap": 50000,
+      "applicableStations": "HPCL petrol pumps only (when swiped on ICICI Merchant Services machines)",
+      "rewardsOnFuel": false,
+      "note": "1% fuel surcharge waiver at HPCL pumps on transactions ₹400-₹4,000. Applicable up to ₹50,000 spends per statement cycle."
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% markup on foreign currency transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "fee": 3.5,
+        "feeChangeDate": "Jan 15, 2026",
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "Forex markup applies to all non-INR transactions. DCC fee changing to 3.5% from Jan 15, 2026."
+    },
+
+    "concierge": {
+      "included": false,
+      "availability": null,
+      "type": null,
+      "services": null,
+      "contactNumber": null,
+      "note": null
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": null,
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "Instant EMI / EMI on Call",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Select merchants"],
+        "note": "No-cost EMI on select merchants and products"
+      },
+      "conversionFee": {
+        "percentage": 2.99,
+        "flatFee": null,
+        "maxFee": 299,
+        "note": "Processing fee of 2.99%, capped at ₹299 + 18% GST for Instant EMI"
+      },
+      "minAmount": null,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "instantEMI": 0.1599,
+        "emiOnCall": 0.1599,
+        "posEcom": {"min": 0.15, "max": 0.18}
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": 0,
+        "note": "Up to 3% on principal outstanding plus interest on upcoming unbilled EMI"
+      },
+      "cancellationPeriod": null,
+      "note": "EMI conversion available for transactions. 18% GST on interest component."
+    },
+
+    "balanceTransfer": {
+      "available": false,
+      "interestRate": null,
+      "processingFee": null,
+      "tenures": null,
+      "maxAmount": null,
+      "preclosureFee": null,
+      "note": null
+    },
+
+    "memberships": [],
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": null
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "condition": null
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": false,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": null,
+      "fraudLiability": {
+        "included": true,
+        "cover": null,
+        "reportingWindow": "Report immediately via Customer Care or SMS CCBLK to 5676766"
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "This entry-level card does not include travel or purchase insurance. Zero liability on unauthorized transactions when reported promptly."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000
+    },
+    "virtualCard": {
+      "available": true,
+      "instantIssuance": true,
+      "singleUse": false,
+      "spendControls": true
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": true,
+      "rewardsOnUPI": true,
+      "note": "Available for RuPay variant. UPI ID format: ccpay.<mobile><last4digits>@icici"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card via iMobile or SMS",
+        "Set transaction limits",
+        "Enable/Disable international transactions",
+        "Enable/Disable online transactions",
+        "Enable/Disable contactless",
+        "Real-time transaction alerts"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    },
+    "chipSecurity": {
+      "enabled": true,
+      "type": "EMV Chip",
+      "pinRequired": true,
+      "note": "EMV chip with PIN required at POS terminals. PIN not required for online transactions (OTP used instead)."
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [],
+    "upgradesTo": [
+      {
+        "cardId": "icici-coral",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false,
+        "note": "Upgrade to ICICI Coral for better rewards and benefits"
+      },
+      {
+        "cardId": "icici-rubyx",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false,
+        "note": "Upgrade to ICICI Rubyx for lounge access and higher rewards"
+      }
+    ],
+    "note": "Contact customer care or use Twitter DM for upgrade requests"
+  },
+
+  "additionalCharges": {
+    "rentPayTransactions": {
+      "fee": "1%",
+      "applicableMCC": "6513",
+      "note": "1% fee on all rent payment transactions"
+    },
+    "fuelAbove10000": {
+      "fee": "1%",
+      "effectiveDate": "Nov 15, 2024",
+      "note": "1% fee on fuel transactions exceeding ₹10,000"
+    },
+    "utilityAbove50000": {
+      "fee": "1%",
+      "effectiveDate": "Nov 15, 2024",
+      "note": "1% fee on utility payments exceeding ₹50,000"
+    },
+    "educationViaThirdParty": {
+      "fee": "1%",
+      "effectiveDate": "Nov 15, 2024",
+      "note": "1% fee on education payments via third-party apps"
+    },
+    "walletLoad5000Plus": {
+      "fee": "1%",
+      "effectiveDate": "Jan 15, 2026",
+      "note": "1% fee on wallet loads of ₹5,000 or more"
+    },
+    "skillBasedGaming": {
+      "fee": "2%",
+      "effectiveDate": "Jan 15, 2026",
+      "note": "2% fee on skill-based gaming transactions"
+    },
+    "transportationAbove50000": {
+      "fee": "1%",
+      "effectiveDate": "Jan 15, 2026",
+      "note": "1% fee on transportation transactions exceeding ₹50,000"
+    },
+    "railwayBooking": {
+      "surcharge": "1.80%",
+      "note": "1.80% on IRCTC internet transactions, 2.50% for other bookings"
+    },
+    "cashPaymentAtBranch": {
+      "fee": 150,
+      "effectiveDate": "Jan 15, 2026",
+      "note": "₹150 per cash payment transaction at branches"
+    },
+    "autoDebitReturn": {
+      "fee": "2% of TAD",
+      "minFee": 500,
+      "additionalCharge": "₹50 + GST from savings account"
+    }
+  },
+
+  "meta": {
+    "tags": [
+      "Entry-level",
+      "Lifetime Free",
+      "No Annual Fee",
+      "Rewards",
+      "Fuel Surcharge Waiver",
+      "Credit Building"
+    ],
+    "bestFor": "First-time credit card users and those looking for a no-cost card to build credit history while earning basic rewards on everyday spends",
+    "notRecommendedFor": "Frequent travelers seeking lounge access, premium lifestyle benefits, or higher reward rates",
+    "rating": {
+      "overall": 3.5,
+      "rewards": 2.5,
+      "benefits": 2.5,
+      "value": 4.5
+    },
+    "verdict": "A solid entry-level lifetime free credit card ideal for credit beginners. The card offers basic rewards on retail, utility, and insurance spends with no joining or annual fees. The 6X-12X accelerated rewards on iShop and 15%+ dining discounts via Culinary Treats add decent value. However, it lacks lounge access, milestone benefits, and premium features. Best suited for those who want to start their credit journey with minimal risk and no annual cost.",
+    "pros": [
+      "Lifetime free - No joining or annual fee",
+      "Rewards on utilities and insurance (often excluded by other cards)",
+      "6X-12X accelerated rewards on iShop portal",
+      "15%+ dining discounts at 2500+ restaurants",
+      "1% fuel surcharge waiver at HPCL pumps",
+      "EMV chip security with PIN",
+      "Easy eligibility with ₹20,000 monthly income requirement"
+    ],
+    "cons": [
+      "Low base reward rate (only ₹0.005 per ₹1 spent)",
+      "No airport lounge access",
+      "No welcome or milestone benefits",
+      "3.5% forex markup is high",
+      "No travel or purchase insurance",
+      "Fuel transactions earn no rewards",
+      "₹99 redemption fee on reward redemptions",
+      "No Apple Pay support"
+    ],
+    "alternatives": [
+      "amazon-pay-icici",
+      "icici-coral",
+      "sbi-cashback"
+    ],
+    "lastVerified": "2026-01-07",
+    "dataSource": [
+      "Official ICICI Bank website - https://www.icicibank.com/personal-banking/cards/credit-card/platinum-chip",
+      "MITC document dated Dec 12, 2025 - https://www.icici.bank.in/content/dam/icicibank/india/managed-assets/revamp-page-images/docs/pdf/mitc_cc.pdf",
+      "iShop portal - https://www.icicibank.com/ishoplogin",
+      "Culinary Treats programme - https://www.icicibank.com/personal-banking/cards/credit-card/culinary-treat",
+      "PaisaBazaar.com",
+      "CardExpert.in",
+      "TechnoFino.in community"
+    ],
+    "changelog": [
+      {
+        "date": "2025-02-13",
+        "change": "iShop accelerated rewards portal launched with 6X-12X rewards",
+        "source": "CardExpert.in, TechnoFino.in"
+      },
+      {
+        "date": "2024-11-15",
+        "change": "Spend threshold criteria updated - rent, government, education payments excluded. New fee structures for fuel >₹10K, utility >₹50K",
+        "source": "MITC document"
+      },
+      {
+        "date": "2026-01-15",
+        "change": "Upcoming - DCC fee 3.5%, wallet load fee 1% on ₹5K+, skill-based gaming 2% fee, transportation 1% fee on >₹50K",
+        "source": "MITC document Dec 2025"
+      },
+      {
+        "date": "2025-01-01",
+        "change": "Airport lounge access now requires ₹75,000 quarterly spend for eligible cards (this card not eligible)",
+        "source": "MITC document"
+      }
+    ]
+  }
+}
