@@ -4,10 +4,13 @@ from django.db import models
 
 from .choices import VoucherMismatchStatus
 from .models import Platform
+from .models import StockAlert
+from .models import TelegramSubscription
 from .models import Voucher
 from .models import VoucherAlias
 from .models import VoucherMismatch
 from .models import VoucherPlatform
+from .models import VoucherSubscription
 
 
 class VoucherAliasInline(admin.TabularInline):
@@ -120,3 +123,26 @@ class VoucherMismatchAdmin(admin.ModelAdmin):
             mismatch.save()
 
         self.message_user(request, f"Created {created_count} new Aliases.", level="SUCCESS")
+
+
+class VoucherSubscriptionInline(admin.TabularInline):
+    model = VoucherSubscription
+    extra = 0
+    autocomplete_fields = ["voucher"]
+
+
+@admin.register(TelegramSubscription)
+class TelegramSubscriptionAdmin(admin.ModelAdmin):
+    list_display = ["chat_id", "username", "first_name", "is_active", "subscribe_all", "created_at"]
+    list_filter = ["is_active", "subscribe_all", "created_at"]
+    search_fields = ["chat_id", "username", "first_name"]
+    readonly_fields = ["created_at", "updated_at"]
+    inlines = [VoucherSubscriptionInline]
+
+
+@admin.register(StockAlert)
+class StockAlertAdmin(admin.ModelAdmin):
+    list_display = ["voucher_platform", "previous_stock", "new_stock", "status", "created_at", "sent_at"]
+    list_filter = ["status", "created_at", "voucher_platform__platform"]
+    search_fields = ["voucher_platform__voucher__name"]
+    readonly_fields = ["created_at"]
