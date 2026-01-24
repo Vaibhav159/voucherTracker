@@ -3,50 +3,56 @@
 {% load wagtailcore_tags %}
 
 {% block title %}
-  {{ page.title }} | Voucher Tracker
+{{ page.title }} | Voucher Tracker
 {% endblock title %}
+
+{% block meta_description %}
+<meta name="description"
+  content="{{ page.search_description|default:page.intro|default:'Expert credit card and voucher tips on Voucher Tracker.' }}" />
+{% endblock meta_description %}
+
+{% block og_type %}article{% endblock og_type %}
+
 {% block content %}
-  <article class="glass-panel article-container">
-    <!-- Header Section -->
-    <header class="header-container">
-      <h1>{{ page.title }}</h1>
-      <div class="metadata">
-        <!--        {% if page.author %}-->
-        <!--          <span class="author">By {{ page.author }}</span>-->
-        <!--          <span>•</span>-->
-        <!--        {% endif %}-->
-        <span class="date">{{ page.last_published_at|date:"F j, Y" }}</span>
-      </div>
-      {% if page.tags.all %}
-        <div class="tags-container">
-          {% for tag in page.tags.all %}<span class="tag-pill">#{{ tag }}</span>{% endfor %}
-        </div>
-      {% endif %}
-      {% if page.intro %}<div class="intro">{{ page.intro }}</div>{% endif %}
-    </header>
-    <!-- Main Content -->
-    <div class="content-wrapper">
-      {% for block in page.body %}
-        {% if block.block_type == 'heading' %}
-          <h2>{{ block.value }}</h2>
-        {% elif block.block_type == 'paragraph' %}
-          {{ block.value|richtext }}
-        {% elif block.block_type == 'embed' %}
-          <div class="block-embed">{{ block.value|safe }}</div>
-        {% endif %}
-      {% endfor %}
+<article class="glass-panel article-container">
+  <!-- Header Section -->
+  <header class="header-container">
+    <h1>{{ page.title }}</h1>
+    <div class="metadata">
+      <!--        {% if page.author %}-->
+      <!--          <span class="author">By {{ page.author }}</span>-->
+      <!--          <span>•</span>-->
+      <!--        {% endif %}-->
+      <span class="date">{{ page.last_published_at|date:"F j, Y" }}</span>
     </div>
-    {% if page.external_link %}
-      <div class="external-link-wrapper">
-        <a href="{{ page.external_link }}"
-           target="_blank"
-           class="glass-panel external-link-btn">Visit External Discussion
-        ↗</a>
-      </div>
+    {% if page.tags.all %}
+    <div class="tags-container">
+      {% for tag in page.tags.all %}<span class="tag-pill">#{{ tag }}</span>{% endfor %}
+    </div>
     {% endif %}
-  </article>
-  <!-- JSON-LD Structured Data for SEO -->
-  <script type="application/ld+json">
+    {% if page.intro %}<div class="intro">{{ page.intro }}</div>{% endif %}
+  </header>
+  <!-- Main Content -->
+  <div class="content-wrapper">
+    {% for block in page.body %}
+    {% if block.block_type == 'heading' %}
+    <h2>{{ block.value }}</h2>
+    {% elif block.block_type == 'paragraph' %}
+    {{ block.value|richtext }}
+    {% elif block.block_type == 'embed' %}
+    <div class="block-embed">{{ block.value|safe }}</div>
+    {% endif %}
+    {% endfor %}
+  </div>
+  {% if page.external_link %}
+  <div class="external-link-wrapper">
+    <a href="{{ page.external_link }}" target="_blank" class="glass-panel external-link-btn">Visit External Discussion
+      ↗</a>
+  </div>
+  {% endif %}
+</article>
+<!-- JSON-LD Structured Data for SEO -->
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Article",
@@ -67,6 +73,6 @@
       }
     }
   </script>
-  <!-- Twitter Widgets Script for Embeds if needed -->
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<!-- Twitter Widgets Script for Embeds if needed -->
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 {% endblock content %}
