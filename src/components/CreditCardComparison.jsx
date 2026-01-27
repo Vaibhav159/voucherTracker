@@ -889,7 +889,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                         <title>Best Credit Cards in India 2025 - Compare Fees & Rewards | Voucher Tracker</title>
                         <meta name="description" content="Compare the best credit cards in India. Find top cards for cashback, travel, and lounge access. Check eligibility and apply online." />
                         <meta name="keywords" content="best credit card, credit card comparison, best rewards card in India, lifetime free credit cards, voucher tracker" />
-                        <link rel="canonical" href="https://vaibhav159.github.io/voucherTracker/#/know-your-cards" />
+                        <link rel="canonical" href="https://cardperks.xyz/know-your-cards" />
                     </Helmet>
                     <h2 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '0.25rem', fontStyle: 'italic' }}>
                         Browse Cards
@@ -900,7 +900,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                     <Helmet>
                         <title>Compare Credit Cards | Voucher Tracker</title>
                         <meta name="description" content="Compare selected credit cards side-by-side. Analyze fees, rewards, and features to choose the best card for you." />
-                        <link rel="canonical" href="https://vaibhav159.github.io/voucherTracker/#/compare-cards" />
+                        <link rel="canonical" href="https://cardperks.xyz/compare-cards" />
                     </Helmet>
                     <h2 className="text-gradient" style={{ fontSize: '2rem', margin: 0, fontStyle: 'italic' }}>
                         Compare Credit Cards

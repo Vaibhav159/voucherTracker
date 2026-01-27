@@ -1,7 +1,7 @@
 # 🎟️ Voucher Tracker
 
  > A community-driven platform to track shopping voucher caps, fees, and platforms.
- > **[Live Demo](https://vaibhav159.github.io/voucherTracker/)**
+ > **[Live Demo](https://cardperks.xyz/)**
 
 <video src="https://github.com/user-attachments/assets/dcd76170-5bd3-46d6-92b0-40004845cc14" controls muted autoplay loop style="width: 100%"></video>
 

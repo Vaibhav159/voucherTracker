@@ -35,6 +35,18 @@ const staticRoutes = [
   '/my-cards',
 ];
 
+const escapeXml = (unsafe) => {
+  return unsafe.replace(/[<>&'"]/g, (c) => {
+    switch (c) {
+      case '<': return '&lt;';
+      case '>': return '&gt;';
+      case '&': return '&amp;';
+      case '\'': return '&apos;';
+      case '"': return '&quot;';
+    }
+  });
+};
+
 const generateSitemap = () => {
   const today = new Date().toISOString().split('T')[0];
 
@@ -45,7 +57,7 @@ const generateSitemap = () => {
   staticRoutes.forEach(route => {
     xml += `
   <url>
-    <loc>${BASE_URL}/${route === '/' ? '' : route.substring(1)}</loc>
+    <loc>${escapeXml(BASE_URL + (route === '/' ? '' : route))}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>${route === '/' ? '1.0' : '0.8'}</priority>
@@ -56,7 +68,7 @@ const generateSitemap = () => {
   //  vouchers.forEach(voucher => {
   //    xml += `
   //  <url>
-  //    <loc>${BASE_URL}/voucher/${voucher.id}</loc>
+  //    <loc>${escapeXml(`${BASE_URL}/voucher/${voucher.id}`)}</loc>
   //    <lastmod>${today}</lastmod>
   //    <changefreq>weekly</changefreq>
   //    <priority>0.7</priority>
@@ -69,7 +81,7 @@ const generateSitemap = () => {
     const slug = card.slug || card.id;
     xml += `
   <url>
-    <loc>${BASE_URL}/card-guide/${slug}</loc>
+    <loc>${escapeXml(`${BASE_URL}/card-guide/${slug}`)}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
