@@ -12,8 +12,8 @@
     "sync-vouchers": "node scripts/sync-gyftr.js",
     "sync-maximise": "node scripts/sync-maximise.js",
     "sync-magicpin": "node scripts/sync-magicpin.js",
+    "prebuild": "node scripts/generate-sitemap.js",
     "predeploy": "npm run build",
-    "postbuild": "node scripts/generate-sitemap.js",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {

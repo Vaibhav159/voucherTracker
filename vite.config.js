@@ -13,7 +13,7 @@ export default defineConfig({
       }
     }
   },
-  base: './', // Important for GitHub Pages with HashRouter
+  base: '/', // Updated for custom domain cardperks.xyz at root
   build: {
     rollupOptions: {
       output: {
