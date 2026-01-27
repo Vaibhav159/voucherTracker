@@ -1,81 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://vaibhav159.github.io/voucherTracker/#/</loc>
-    <lastmod>2026-01-02</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://cardperks.xyz/#/</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://vaibhav159.github.io/voucherTracker/#/know-your-cards</loc>
-    <lastmod>2026-01-02</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://cardperks.xyz/#/guides</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vaibhav159.github.io/voucherTracker/#/compare-cards</loc>
-    <lastmod>2026-01-02</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://cardperks.xyz/#/know-your-cards</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vaibhav159.github.io/voucherTracker/#/guides</loc>
-    <lastmod>2026-01-02</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://cardperks.xyz/#/compare-cards</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vaibhav159.github.io/voucherTracker/#/browse-banking</loc>
-    <lastmod>2026-01-02</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://cardperks.xyz/#/browse-banking</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vaibhav159.github.io/voucherTracker/#/compare-banking</loc>
-    <lastmod>2026-01-02</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://cardperks.xyz/#/compare-banking</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vaibhav159.github.io/voucherTracker/#/favorites</loc>
-    <lastmod>2026-01-02</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://cardperks.xyz/#/rewards-calculator</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vaibhav159.github.io/voucherTracker/#/spend-optimizer</loc>
-    <lastmod>2026-01-02</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://cardperks.xyz/#/points-converter</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vaibhav159.github.io/voucherTracker/#/milestones</loc>
-    <lastmod>2026-01-02</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://cardperks.xyz/#/ask-ai</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vaibhav159.github.io/voucherTracker/#/savings</loc>
-    <lastmod>2026-01-02</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://cardperks.xyz/#/favorites</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vaibhav159.github.io/voucherTracker/#/my-cards</loc>
-    <lastmod>2026-01-02</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://cardperks.xyz/#/spend-optimizer</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vaibhav159.github.io/voucherTracker/#/rewards-calculator</loc>
-    <lastmod>2026-01-02</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://cardperks.xyz/#/milestones</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vaibhav159.github.io/voucherTracker/#/points-converter</loc>
-    <lastmod>2026-01-02</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://cardperks.xyz/#/savings</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cardperks.xyz/#/my-cards</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>
