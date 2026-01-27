@@ -159,8 +159,8 @@ SPECTACULAR_SETTINGS["SERVERS"] = [
 ]
 # Your stuff...
 # ------------------------------------------------------------------------------
-CORS_ALLOWED_ORIGINS = ["https://vaibhav159.github.io", "https://cardperks.xyz"]
-CSRF_TRUSTED_ORIGINS = ["https://vaibhav159.github.io", "https://tracker.cheq.dpdns.org", "https://cardperks.xyz"]
+CORS_ALLOWED_ORIGINS = ["https://cardperks.xyz"]
+CSRF_TRUSTED_ORIGINS = ["https://tracker.cheq.dpdns.org", "https://cardperks.xyz"]
 CORS_ALLOW_CREDENTIALS = True
 
 REST_FRAMEWORK = {
