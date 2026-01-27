@@ -138,6 +138,19 @@ class TelegramSubscriptionViewSet(viewsets.ModelViewSet):
             status=status.HTTP_201_CREATED if created else status.HTTP_200_OK,
         )
 
+    @decorators.action(detail=False, methods=["get"], url_path="by-token/(?P<token>[^/.]+)")
+    def by_token(self, request, token=None):
+        """Get subscription by link token."""
+        try:
+            subscription = TelegramSubscription.objects.get(link_token=token)
+            return response.Response(TelegramSubscriptionSerializer(subscription).data)
+        except TelegramSubscription.DoesNotExist:
+            return response.Response({"status": "not_linked"}, status=status.HTTP_404_NOT_FOUND)
+        except TelegramSubscription.MultipleObjectsReturned:
+            # Should not happen with UUIDs, but just in case
+            subscription = TelegramSubscription.objects.filter(link_token=token).first()
+            return response.Response(TelegramSubscriptionSerializer(subscription).data)
+
     @decorators.action(detail=True, methods=["get"])
     def subscriptions(self, request, chat_id=None):
         """Get voucher subscriptions for a specific Telegram user."""
