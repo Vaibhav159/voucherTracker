@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect, lazy, Suspense, useCallback } from 'react';
-import { HashRouter as Router, Routes, Route, useSearchParams } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useSearchParams } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import { FavoritesProvider } from './context/FavoritesContext';
 import { MyCardsProvider } from './context/MyCardsContext';

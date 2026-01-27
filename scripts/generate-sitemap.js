@@ -45,23 +45,23 @@ const generateSitemap = () => {
   staticRoutes.forEach(route => {
     xml += `
   <url>
-    <loc>${BASE_URL}/#${route}</loc>
+    <loc>${BASE_URL}/${route === '/' ? '' : route.substring(1)}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>${route === '/' ? '1.0' : '0.8'}</priority>
   </url>`;
   });
 
-//  // Add Voucher routes
-//  vouchers.forEach(voucher => {
-//    xml += `
-//  <url>
-//    <loc>${BASE_URL}/#/voucher/${voucher.id}</loc>
-//    <lastmod>${today}</lastmod>
-//    <changefreq>weekly</changefreq>
-//    <priority>0.7</priority>
-//  </url>`;
-//  });
+  //  // Add Voucher routes
+  //  vouchers.forEach(voucher => {
+  //    xml += `
+  //  <url>
+  //    <loc>${BASE_URL}/voucher/${voucher.id}</loc>
+  //    <lastmod>${today}</lastmod>
+  //    <changefreq>weekly</changefreq>
+  //    <priority>0.7</priority>
+  //  </url>`;
+  //  });
 
   // Add Credit Card Guide routes
   cards.forEach(card => {
@@ -69,7 +69,7 @@ const generateSitemap = () => {
     const slug = card.slug || card.id;
     xml += `
   <url>
-    <loc>${BASE_URL}/#/card-guide/${slug}</loc>
+    <loc>${BASE_URL}/card-guide/${slug}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
