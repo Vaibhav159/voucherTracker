@@ -12,6 +12,7 @@
 import React, { memo, useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import { getPlatformLogo } from '../utils/platformLogos';
+import { ensureHttps } from '../utils/urlUtils';
 import ExpiryBadge from './ExpiryBadge';
 import { useFavorites } from '../context/FavoritesContext';
 
@@ -151,7 +152,7 @@ const VoucherCard = memo(({ voucher, onClick, index = 0 }) => {
                     transform: isHovered ? 'scale(1.05)' : 'scale(1)',
                 }}>
                     <img
-                        src={voucher.logo}
+                        src={ensureHttps(voucher.logo)}
                         alt="" // Decorative, brand name is in text
                         loading="lazy"
                         onError={(e) => {

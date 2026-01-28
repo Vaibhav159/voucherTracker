@@ -1,4 +1,5 @@
 import maximizeLogo from '../assets/maximize-logo.jpg';
+import { ensureHttps } from './urlUtils';
 
 export const PLATFORM_STYLES = {
     "iShop": {
@@ -46,12 +47,18 @@ export const PLATFORM_STYLES = {
 // Get platform style with smart fallbacks
 export const getPlatformStyle = (name) => {
     // Exact match
-    if (PLATFORM_STYLES[name]) return PLATFORM_STYLES[name];
+    if (PLATFORM_STYLES[name]) {
+        const style = PLATFORM_STYLES[name];
+        return { ...style, logo: ensureHttps(style.logo) };
+    }
 
     // Partial match (case-insensitive)
     const keys = Object.keys(PLATFORM_STYLES);
     const match = keys.find(k => name.toLowerCase().includes(k.toLowerCase()));
-    if (match) return PLATFORM_STYLES[match];
+    if (match) {
+        const style = PLATFORM_STYLES[match];
+        return { ...style, logo: ensureHttps(style.logo) };
+    }
 
     // Generate a fallback with gradient background
     const colors = [
