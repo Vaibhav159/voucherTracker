@@ -4,6 +4,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 from backend.vouchers.choices import PlatformName
+from backend.vouchers.choices import StockAlertStatus
 from backend.vouchers.choices import VoucherCategory
 from backend.vouchers.choices import VoucherMismatchStatus
 
@@ -46,6 +47,10 @@ class VoucherPlatform(models.Model):
     color = models.CharField(_("Color"), max_length=50, blank=True)
     priority = models.IntegerField(_("Priority"), default=0)
     external_id = models.CharField(_("External ID"), max_length=255, blank=True, db_index=True)
+    # Stock tracking for alerts
+    stock_count = models.IntegerField(_("Stock Count"), null=True, blank=True)
+    last_stock_check = models.DateTimeField(_("Last Stock Check"), null=True, blank=True)
+    was_out_of_stock = models.BooleanField(_("Was Out of Stock"), default=False)
 
     class Meta:
         ordering = ["priority"]
@@ -110,3 +115,76 @@ class VoucherMismatch(models.Model):
             image_gallery = self.raw_data.get("image_gallery", {})
             return image_gallery.get("image1") or image_gallery.get("image2")
         return self.raw_data.get("logo")
+
+
+class TelegramSubscription(models.Model):
+    """User's Telegram subscription for stock alerts."""
+
+    chat_id = models.CharField(_("Chat ID"), max_length=50, unique=True, db_index=True)
+    username = models.CharField(_("Username"), max_length=100, blank=True)
+    first_name = models.CharField(_("First Name"), max_length=100, blank=True)
+    link_token = models.CharField(_("Link Token"), max_length=100, blank=True, db_index=True)
+    is_active = models.BooleanField(_("Is Active"), default=True)
+    # Subscribe to all restocks or specific vouchers
+    subscribe_all = models.BooleanField(_("Subscribe to All"), default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = _("Telegram Subscription")
+        verbose_name_plural = _("Telegram Subscriptions")
+
+    def __str__(self):
+        return f"@{self.username}" if self.username else f"Chat {self.chat_id}"
+
+
+class VoucherSubscription(models.Model):
+    """Specific voucher subscriptions for a Telegram user."""
+
+    subscription = models.ForeignKey(
+        TelegramSubscription,
+        on_delete=models.CASCADE,
+        related_name="voucher_subscriptions",
+    )
+    voucher = models.ForeignKey(
+        "Voucher",
+        on_delete=models.CASCADE,
+        related_name="telegram_subscriptions",
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ["subscription", "voucher"]
+        verbose_name = _("Voucher Subscription")
+        verbose_name_plural = _("Voucher Subscriptions")
+
+    def __str__(self):
+        return f"{self.subscription} -> {self.voucher.name}"
+
+
+class StockAlert(models.Model):
+    """Queue of stock alerts to be sent to subscribers."""
+
+    voucher_platform = models.ForeignKey(
+        VoucherPlatform,
+        on_delete=models.CASCADE,
+        related_name="stock_alerts",
+    )
+    previous_stock = models.IntegerField(_("Previous Stock"), default=0)
+    new_stock = models.IntegerField(_("New Stock"), default=0)
+    status = models.CharField(
+        _("Status"),
+        max_length=20,
+        choices=StockAlertStatus.choices,
+        default=StockAlertStatus.PENDING,
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    sent_at = models.DateTimeField(_("Sent At"), null=True, blank=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+        verbose_name = _("Stock Alert")
+        verbose_name_plural = _("Stock Alerts")
+
+    def __str__(self):
+        return f"{self.voucher_platform.voucher.name} - {self.status}"

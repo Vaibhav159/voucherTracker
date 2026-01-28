@@ -6,10 +6,36 @@ import { ensureHttps } from '../utils/urlUtils';
 import LoadingSpinner from './LoadingSpinner';
 
 import { Helmet } from 'react-helmet-async';
+import { useTelegram } from '../hooks/useTelegram';
+import TelegramConnect from './TelegramConnect';
 
 const VoucherDetail = () => {
     const { id } = useParams();
     const { vouchers, loading, error } = useVouchers();
+    const { isLinked, subscribeToVoucher, unsubscribeFromVoucher, getSubscribedVouchers, getBotUrl } = useTelegram();
+    const [isSubscribed, setIsSubscribed] = React.useState(false);
+    const [subLoading, setSubLoading] = React.useState(false);
+
+    // Check if subscribed to this voucher
+    React.useEffect(() => {
+        if (isLinked && id) {
+            getSubscribedVouchers().then(subs => {
+                setIsSubscribed(subs.includes(Number(id)) || subs.includes(id));
+            });
+        }
+    }, [isLinked, id, getSubscribedVouchers]);
+
+    const handleSubscribe = async () => {
+        setSubLoading(true);
+        if (isSubscribed) {
+            const success = await unsubscribeFromVoucher(id);
+            if (success) setIsSubscribed(false);
+        } else {
+            const success = await subscribeToVoucher(id);
+            if (success) setIsSubscribed(true);
+        }
+        setSubLoading(false);
+    };
 
     const voucher = useMemo(() => {
         return vouchers.find(v => v.id === id);
@@ -115,26 +141,77 @@ const VoucherDetail = () => {
                     <h1 style={{ margin: '0 0 10px 0', fontSize: '2.5rem' }}>{voucher.brand}</h1>
                     <span style={{ background: 'rgba(255,255,255,0.1)', padding: '4px 12px', borderRadius: '20px' }}>{voucher.category}</span>
                 </div>
-                <button
-                    onClick={shareToX}
-                    style={{
-                        padding: '10px 16px',
-                        borderRadius: '10px',
-                        border: '1px solid rgba(29, 161, 242, 0.4)',
-                        background: 'rgba(29, 161, 242, 0.1)',
-                        color: '#1DA1F2',
-                        cursor: 'pointer',
-                        fontSize: '0.9rem',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '8px',
-                        fontWeight: 500,
-                    }}
-                    title="Share to X (Twitter)"
-                >
-                    𝕏 Share
-                </button>
+                <div style={{ display: 'flex', gap: '10px' }}>
+                    <button
+                        onClick={shareToX}
+                        style={{
+                            padding: '10px 16px',
+                            borderRadius: '10px',
+                            border: '1px solid rgba(29, 161, 242, 0.4)',
+                            background: 'rgba(29, 161, 242, 0.1)',
+                            color: '#1DA1F2',
+                            cursor: 'pointer',
+                            fontSize: '0.9rem',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            fontWeight: 500,
+                        }}
+                        title="Share to X (Twitter)"
+                    >
+                        𝕏 Share
+                    </button>
+                    {isLinked ? (
+                        <button
+                            onClick={handleSubscribe}
+                            disabled={subLoading}
+                            style={{
+                                padding: '10px 16px',
+                                borderRadius: '10px',
+                                border: `1px solid ${isSubscribed ? '#ef4444' : '#229ED9'}`,
+                                background: isSubscribed ? 'rgba(239, 68, 68, 0.1)' : 'rgba(34, 158, 217, 0.1)',
+                                color: isSubscribed ? '#ef4444' : '#229ED9',
+                                cursor: 'pointer',
+                                fontSize: '0.9rem',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '8px',
+                                fontWeight: 500,
+                                opacity: subLoading ? 0.7 : 1,
+                            }}
+                        >
+                            {subLoading ? '...' : isSubscribed ? '🔕 Unsubscribe' : '🔔 Alert Me'}
+                        </button>
+                    ) : (
+                        <a
+                            href={getBotUrl(id)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ textDecoration: 'none' }}
+                        >
+                            <button
+                                style={{
+                                    padding: '10px 16px',
+                                    borderRadius: '10px',
+                                    border: '1px solid #229ED9',
+                                    background: 'rgba(34, 158, 217, 0.1)',
+                                    color: '#229ED9',
+                                    cursor: 'pointer',
+                                    fontSize: '0.9rem',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '8px',
+                                    fontWeight: 500,
+                                }}
+                            >
+                                🔔 Alert Me
+                            </button>
+                        </a>
+                    )}
+                </div>
             </div>
+
+            <TelegramConnect voucherId={id} />
 
 
             <h2 style={{ marginBottom: '1.5rem' }}>Available Platforms</h2>

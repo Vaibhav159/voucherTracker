@@ -252,6 +252,9 @@ class IShopSyncService(BaseSyncService):
         reward_value = item.get("reward_value", "")
         fee_text = reward_value if reward_value else "Check Site"
 
+        # Stock count - prefer stock_count, fallback to live_stock_count
+        stock_count = item.get("live_stock_count")
+
         return SyncItem(
             external_id=external_id,
             brand_name=brand_name,
@@ -261,4 +264,5 @@ class IShopSyncService(BaseSyncService):
             raw_data=item,
             priority=5,
             cap="",
+            stock_count=stock_count,
         )
