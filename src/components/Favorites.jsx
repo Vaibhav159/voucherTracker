@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { wealthBanking, familyBanking } from '../data/bankingPrograms';
 import CardImage from './CardImage';
 import LoadingSpinner from './LoadingSpinner';
+import { ensureHttps } from '../utils/urlUtils';
 
 const Favorites = () => {
     const { favoriteVouchers, favoriteCards, favoriteGuides, isVoucherFavorite, isCardFavorite, toggleFavoriteVoucher, toggleFavoriteCard, toggleFavoriteGuide, totalFavorites } = useFavorites();
@@ -459,7 +460,7 @@ const Favorites = () => {
                                         <div className="favorite-voucher-content">
                                             <div className="favorite-voucher-logo">
                                                 {voucher.logo ? (
-                                                    <img src={voucher.logo} alt={voucher.brand} />
+                                                    <img src={ensureHttps(voucher.logo)} alt={voucher.brand} />
                                                 ) : (
                                                     <span className="brand-letter">
                                                         {voucher.brand.charAt(0).toUpperCase()}

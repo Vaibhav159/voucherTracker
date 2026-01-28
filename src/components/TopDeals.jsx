@@ -1,6 +1,7 @@
 
 import { useMemo, useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { ensureHttps } from '../utils/urlUtils';
 
 /**
  * TopDeals (Daily Essentials) - Redesigned
@@ -133,7 +134,7 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
               <div className="card-logo">
                 {voucher.logo ? (
                   <img
-                    src={voucher.logo}
+                    src={ensureHttps(voucher.logo)}
                     alt={voucher.brand}
                     onError={(e) => {
                       e.target.style.display = 'none';

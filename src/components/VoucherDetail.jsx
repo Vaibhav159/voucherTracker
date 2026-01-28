@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useVouchers } from '../hooks/useVouchers';
 import { getPlatformLogo } from '../utils/platformLogos';
+import { ensureHttps } from '../utils/urlUtils';
 import LoadingSpinner from './LoadingSpinner';
 
 import { Helmet } from 'react-helmet-async';
@@ -58,7 +59,7 @@ const VoucherDetail = () => {
         "@context": "https://schema.org/",
         "@type": "Product",
         "name": `${voucher.brand} Gift Card`,
-        "image": voucher.logo,
+        "image": ensureHttps(voucher.logo),
         "description": pageDescription,
         "brand": {
             "@type": "Brand",
@@ -86,7 +87,7 @@ const VoucherDetail = () => {
                 {/* Open Graph */}
                 <meta property="og:title" content={pageTitle} />
                 <meta property="og:description" content={pageDescription} />
-                <meta property="og:image" content={voucher.logo} />
+                <meta property="og:image" content={ensureHttps(voucher.logo)} />
                 <meta property="og:url" content={pageUrl} />
                 <meta property="og:type" content="product" />
 
@@ -94,7 +95,7 @@ const VoucherDetail = () => {
                 <meta name="twitter:card" content="summary" />
                 <meta name="twitter:title" content={pageTitle} />
                 <meta name="twitter:description" content={pageDescription} />
-                <meta name="twitter:image" content={voucher.logo} />
+                <meta name="twitter:image" content={ensureHttps(voucher.logo)} />
 
                 {/* Structured Data */}
                 <script type="application/ld+json">
@@ -108,7 +109,7 @@ const VoucherDetail = () => {
 
             <div className="glass-panel" style={{ padding: '2rem', marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '2rem', flexWrap: 'wrap' }}>
                 <div style={{ width: '100px', height: '100px', background: '#fff', borderRadius: '20px', padding: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <img src={voucher.logo} alt={voucher.brand} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                    <img src={ensureHttps(voucher.logo)} alt={voucher.brand} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                 </div>
                 <div style={{ flex: 1 }}>
                     <h1 style={{ margin: '0 0 10px 0', fontSize: '2.5rem' }}>{voucher.brand}</h1>
