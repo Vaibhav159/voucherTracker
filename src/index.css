@@ -3645,9 +3645,7 @@ a:focus-visible {
 @media (max-width: 414px) {
 
   /* Header adjustments */
-  .header-logo .logo-text {
-    display: none;
-  }
+
 
   .header-actions {
     gap: 0.5rem;
