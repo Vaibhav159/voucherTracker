@@ -513,9 +513,7 @@
 }
 
 @media (max-width: 480px) {
-  .logo-secondary {
-    display: none;
-  }
+
 
   .theme-toggle-wrapper {
     display: none;
