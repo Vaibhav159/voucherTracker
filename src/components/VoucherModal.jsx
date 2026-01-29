@@ -126,7 +126,11 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
         if (fee === 'None') {
             return { label: 'Fees', value: '0%' };
         }
-        return { label: 'Fees', value: fee };
+        if (fee === 'Variable') {
+            return { label: 'Savings', value: 'Variable' };
+        }
+        // Default fallthrough - changed from 'Fees' to 'Savings' as requested
+        return { label: 'Savings', value: fee };
     };
 
     if (!voucher) return null;
