@@ -7,7 +7,7 @@ const TOUR_STORAGE_KEY = 'voucherTracker_tourCompleted';
 const tourSteps = [
   {
     target: '[data-tour="navigation"]',
-    title: 'Welcome to Voucher Tracker! 🎉',
+    title: 'Welcome to Card Perks! 🎉',
     content: 'Your one-stop hub for credit cards, vouchers, and banking guides. Let me show you around!',
     position: 'bottom'
   },

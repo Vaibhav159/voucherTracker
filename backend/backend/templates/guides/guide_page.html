@@ -3,12 +3,12 @@
 {% load wagtailcore_tags %}
 
 {% block title %}
-{{ page.title }} | Voucher Tracker
+{{ page.title }} | Card Perks
 {% endblock title %}
 
 {% block meta_description %}
 <meta name="description"
-  content="{{ page.search_description|default:page.intro|default:'Expert credit card and voucher tips on Voucher Tracker.' }}" />
+  content="{{ page.search_description|default:page.intro|default:'Expert credit card and voucher tips on Card Perks.' }}" />
 {% endblock meta_description %}
 
 {% block og_type %}article{% endblock og_type %}
@@ -62,7 +62,7 @@
       ],
       "author": {
         "@type": "Person",
-        "name": "{{ page.author|default:'Voucher Tracker Community'|escapejs }}"
+        "name": "{{ page.author|default:'Card Perks Community'|escapejs }}"
       },
       "datePublished": "{{ page.first_published_at|date:'c' }}",
       "dateModified": "{{ page.last_published_at|date:'c' }}",

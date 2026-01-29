@@ -1,6 +1,6 @@
 {
-  "name": "VoucherTracker - Gift Card Rates Tracker",
-  "short_name": "VoucherTracker",
+  "name": "Card Perks - Gift Card Rates Tracker",
+  "short_name": "Card Perks",
   "description": "Track and compare gift voucher rates across multiple platforms in India",
   "start_url": "./",
   "display": "standalone",
@@ -15,7 +15,11 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["finance", "shopping", "utilities"],
+  "categories": [
+    "finance",
+    "shopping",
+    "utilities"
+  ],
   "lang": "en-IN",
   "dir": "ltr"
 }

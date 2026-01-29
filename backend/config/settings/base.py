@@ -325,5 +325,5 @@ SPECTACULAR_SETTINGS = {
 }
 # Your stuff...
 # ------------------------------------------------------------------------------
-WAGTAIL_SITE_NAME = "Voucher Tracker"
+WAGTAIL_SITE_NAME = "Card Perks"
 WAGTAILADMIN_BASE_URL = "/cms/"

@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>
     {% block title %}
-    Voucher Tracker Guides
+    Card Perks Guides
     {% endblock title %}
   </title>
   <meta name="robots" content="index, follow" />
@@ -25,17 +25,17 @@
   <meta property="og:type" content="{% block og_type %}website{% endblock og_type %}" />
   {% if page %}
   <meta property="og:url" content="{{ page.get_full_url }}" />
-  <meta property="og:title" content="{{ page.title }} | Voucher Tracker" />
+  <meta property="og:title" content="{{ page.title }} | Card Perks" />
   <meta property="og:description"
     content="{% block og_description %}{{ page.search_description|default:page.intro|default:'Expert insights on credit cards, banking, and maximizing rewards.' }}{% endblock og_description %}" />
   {% endif %}
   <meta property="og:image" content="https://tracker.cheq.dpdns.org/static/images/og-image.png" />
-  <meta property="og:site_name" content="Voucher Tracker" />
+  <meta property="og:site_name" content="Card Perks" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   {% if page %}
-  <meta name="twitter:title" content="{{ page.title }} | Voucher Tracker" />
+  <meta name="twitter:title" content="{{ page.title }} | Card Perks" />
   <meta name="twitter:description"
     content="{{ page.search_description|default:page.intro|default:'Expert insights on credit cards, banking, and maximizing rewards.' }}" />
   {% endif %}
@@ -83,7 +83,7 @@
     <!-- Minimal Header -->
     <nav class="navbar-minimal">
       <a href="{% url 'home' %}" class="brand-logo">
-        <span class="text-accent-pink">%</span> VoucherTracker
+        <span class="text-accent-pink">%</span> CardPerks
       </a>
       <a href="https://cardperks.xyz/" class="back-link">← Back to App</a>
     </nav>
@@ -92,7 +92,7 @@
       {% endblock content %}
     </main>
     <footer class="app-footer">
-      <p>© {% now "Y" %} Voucher Tracker. Community Driven.</p>
+      <p>© {% now "Y" %} Card Perks. Community Driven.</p>
     </footer>
   </div>
 </body>

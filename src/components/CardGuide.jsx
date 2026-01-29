@@ -85,7 +85,7 @@ const CardGuide = () => {
     }
 
     // SEO Data
-    const pageTitle = `${card.name} Review & Benefits - Voucher Tracker`;
+    const pageTitle = `${card.name} Review & Benefits - Card Perks`;
     const pageDescription = `Comprehensive guide for ${card.name}. Learn about fees, rewards, benefits, and eligibility criteria to decide if this card is right for you.`;
     const pageUrl = `${window.location.origin}${window.location.pathname}#/card-guide/${slug}`;
 

@@ -116,8 +116,8 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
           <Link to="/" className="header-logo">
             <img src="./logo.svg" alt="" className="logo-icon" />
             <span className="logo-text">
-              <span className="logo-primary">Voucher</span>
-              <span className="logo-secondary">Tracker</span>
+              <span className="logo-primary">Card</span>
+              <span className="logo-secondary">Perks</span>
             </span>
           </Link>
 
@@ -350,7 +350,7 @@ const Layout = ({ children, selectedCardsCount = 0, isShortcutsOpen, setIsShortc
 
       {!isActive('/') && (
         <footer className="app-footer">
-          <p>© {new Date().getFullYear()} Voucher Tracker.</p>
+          <p>© {new Date().getFullYear()} Card Perks.</p>
           <p className="footer-credit">
             Created by <a href="https://twitter.com/vaibhav_lodha" target="_blank" rel="noopener noreferrer">@vaibhav_lodha</a>
           </p>

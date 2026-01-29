@@ -186,7 +186,7 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                             <button
                                 onClick={() => {
                                     const url = `${window.location.origin}${window.location.pathname}#/?voucher=${voucher.id}`;
-                                    const text = `Check out ${voucher.brand} voucher deals on Voucher Tracker! 🎫💰`;
+                                    const text = `Check out ${voucher.brand} voucher deals on Card Perks! 🎫💰`;
                                     window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
                                     toast.success('Opening X/Twitter...');
                                 }}

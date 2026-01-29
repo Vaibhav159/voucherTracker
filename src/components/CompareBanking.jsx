@@ -98,7 +98,7 @@ const CompareBanking = () => {
     // Share to X
     const handleShareToX = () => {
         const tierNames = selectedTiers.map(t => `${t.bank} ${t.tier.name}`).join(' vs ');
-        const text = `Comparing banking tiers: ${tierNames} on Voucher Tracker 🏦\n\nCheck out wealth banking options:`;
+        const text = `Comparing banking tiers: ${tierNames} on Card Perks 🏦\n\nCheck out wealth banking options:`;
         const url = window.location.href;
         const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
         window.open(twitterUrl, '_blank');
