@@ -10,9 +10,11 @@ from __future__ import annotations
 from typing import NamedTuple
 
 from django.core.cache import cache
+from django.utils import timezone
 
 from backend.vouchers.choices import VoucherMismatchStatus
 from backend.vouchers.models import Platform
+from backend.vouchers.models import StockAlert
 from backend.vouchers.models import Voucher
 from backend.vouchers.models import VoucherAlias
 from backend.vouchers.models import VoucherMismatch
@@ -30,6 +32,7 @@ class SyncItem(NamedTuple):
     raw_data: dict
     priority: int = 0
     cap: str = ""
+    stock_count: int | None = None  # For stock alert tracking
 
 
 class SyncResult(NamedTuple):
@@ -150,6 +153,8 @@ class BaseSyncService:
                         cap=item.cap,
                         link=item.link,
                         priority=item.priority,
+                        stock_count=item.stock_count,
+                        last_stock_check=timezone.now() if item.stock_count is not None else None,
                     ),
                 )
             else:
@@ -176,26 +181,49 @@ class BaseSyncService:
         updated_count = 0
 
         if voucher_platforms_to_upsert:
-            # Get existing VoucherPlatform records to determine created vs updated
-            existing_pairs = set(
-                VoucherPlatform.objects.filter(
+            # Check for stock changes before bulk upsert
+            existing_vps = {
+                (vp.voucher_id, vp.platform_id): vp
+                for vp in VoucherPlatform.objects.filter(
                     platform=platform,
                     voucher_id__in=[vp.voucher_id for vp in voucher_platforms_to_upsert],
-                ).values_list("voucher_id", "platform_id"),
-            )
+                )
+            }
+
+            alerts_to_create: list[StockAlert] = []
 
             for vp in voucher_platforms_to_upsert:
-                if (vp.voucher_id, vp.platform_id) in existing_pairs:
+                pair_key = (vp.voucher_id, vp.platform_id)
+                if pair_key in existing_vps:
                     updated_count += 1
+                    existing_vp = existing_vps[pair_key]
+
+                    # Detect restock: was out of stock, now has stock
+                    old_stock = existing_vp.stock_count or 0
+                    new_stock = vp.stock_count or 0
+
+                    if old_stock == 0 and new_stock > 0:
+                        # Restock detected! Create an alert
+                        alerts_to_create.append(
+                            StockAlert(
+                                voucher_platform=existing_vp,
+                                previous_stock=old_stock,
+                                new_stock=new_stock,
+                            ),
+                        )
                 else:
                     created_count += 1
+
+            # Create stock alerts
+            if alerts_to_create:
+                StockAlert.objects.bulk_create(alerts_to_create)
 
             # Perform bulk upsert
             VoucherPlatform.objects.bulk_create(
                 voucher_platforms_to_upsert,
                 update_conflicts=True,
                 unique_fields=["voucher", "platform"],
-                update_fields=["external_id", "fee", "cap", "link", "priority"],
+                update_fields=["external_id", "fee", "cap", "link", "priority", "stock_count", "last_stock_check"],
             )
 
         # Bulk upsert VoucherMismatch
