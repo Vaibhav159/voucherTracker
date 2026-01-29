@@ -52,7 +52,23 @@ function Home({ data, onOpenShortcuts }) {
   const [searchParams, setSearchParams] = useSearchParams();
 
   // Use data from props instead of static RAW_DATA or INITIAL_DATA
-  const ALL_PLATFORMS = useMemo(() => [...new Set(data.flatMap(v => v.platforms.map(p => p.name)))], [data]);
+  const ALL_PLATFORMS = useMemo(() => {
+    const platforms = [...new Set(data.flatMap(v => v.platforms.map(p => p.name)))];
+    // Custom sort order
+    const priority = ['Gyftr', 'Maximize', 'iShop', 'MagicPin', 'SaveSage', 'Amazon'];
+    return platforms.sort((a, b) => {
+      const idxA = priority.indexOf(a);
+      const idxB = priority.indexOf(b);
+      // If both in priority list, sort by index
+      if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+      // If only a in priority, a comes first
+      if (idxA !== -1) return -1;
+      // If only b in priority, b comes first
+      if (idxB !== -1) return 1;
+      // Otherwise alphabetical
+      return a.localeCompare(b);
+    });
+  }, [data]);
   const ALL_CATEGORIES = useMemo(() => [...new Set(data.map(v => v.category))].sort(), [data]);
 
   // State variables for filters, initialized from URL search params

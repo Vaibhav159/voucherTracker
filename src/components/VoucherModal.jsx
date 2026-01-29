@@ -367,12 +367,38 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                                             </span>
                                         </div>
 
-                                        <div className="platform-offer__details" style={{ marginLeft: '16px', flex: 1 }}>
+                                        <div className="platform-offer__details" style={{ marginLeft: '16px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                                             <div className="platform-offer__metric">
                                                 <div className="platform-offer__metric-label">{label}</div>
                                                 <div className={`platform-offer__metric-value ${label === 'Savings' ? 'savings' : ''}`}>
                                                     {value}
                                                 </div>
+                                            </div>
+
+                                            {/* Real-time Indicator or Request Integration - Below Fees */}
+                                            <div style={{ marginTop: '8px' }}>
+                                                {['iShop', 'Maximize', 'Gyftr'].some(p => platform.name.toLowerCase().includes(p.toLowerCase())) && (
+                                                    <div
+                                                        title="Real-time data"
+                                                        style={{
+                                                            display: 'inline-flex',
+                                                            alignItems: 'center',
+                                                            gap: '4px',
+                                                            padding: '2px 8px',
+                                                            borderRadius: '12px',
+                                                            background: 'rgba(34, 197, 94, 0.15)',
+                                                            border: '1px solid rgba(34, 197, 94, 0.3)',
+                                                            color: '#4ade80',
+                                                            fontSize: '0.7rem',
+                                                            fontWeight: '600',
+                                                            letterSpacing: '0.02em',
+                                                            animation: 'pulse 3s infinite'
+                                                        }}
+                                                    >
+                                                        <span style={{ fontSize: '0.8rem' }}>⚡</span>
+                                                        Live
+                                                    </div>
+                                                )}
                                             </div>
                                         </div>
                                     </div>

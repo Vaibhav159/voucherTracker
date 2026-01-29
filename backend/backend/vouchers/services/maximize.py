@@ -19,7 +19,7 @@ class MaximizeSyncService(BaseSyncService):
     platform_name = PlatformName.MAXIMIZE
     platform_icon_url = "https://savemax.maximize.money/favicon.ico"
 
-    API_URL = "https://savemax.maximize.money/api/savemax/giftcard/list-all-llm?pageSize=400"
+    API_URL = "https://savemax.maximize.money/api/savemax/giftcard/nsession/list?sort=alphabet_asc"
     HEADERS = {
         "accept": "application/json, text/plain, */*",
         "accept-language": "en-IN,en;q=0.6",
@@ -51,6 +51,8 @@ class MaximizeSyncService(BaseSyncService):
             sync_items: list[SyncItem] = []
 
             for brand_name, brand_items in brand_to_giftcard_map.items():
+                if "Phone" in brand_name:
+                    print(brand_items)
                 if len(brand_items) == 1:
                     item = brand_items[0]
                     sync_item = self._transform_item(item, use_brand_name=True)
