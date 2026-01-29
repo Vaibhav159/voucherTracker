@@ -886,7 +886,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
             {view === 'grid' ? (
                 <header style={{ marginBottom: '2.5rem', textAlign: 'center' }}>
                     <Helmet>
-                        <title>Best Credit Cards in India 2025 - Compare Fees & Rewards | Voucher Tracker</title>
+                        <title>Best Credit Cards in India 2025 - Compare Fees & Rewards | Card Perks</title>
                         <meta name="description" content="Compare the best credit cards in India. Find top cards for cashback, travel, and lounge access. Check eligibility and apply online." />
                         <meta name="keywords" content="best credit card, credit card comparison, best rewards card in India, lifetime free credit cards, voucher tracker" />
                         <link rel="canonical" href="https://cardperks.xyz/know-your-cards" />
@@ -898,7 +898,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
             ) : (
                 <header style={{ marginBottom: '0.75rem', textAlign: 'center' }}>
                     <Helmet>
-                        <title>Compare Credit Cards | Voucher Tracker</title>
+                        <title>Compare Credit Cards | Card Perks</title>
                         <meta name="description" content="Compare selected credit cards side-by-side. Analyze fees, rewards, and features to choose the best card for you." />
                         <link rel="canonical" href="https://cardperks.xyz/compare-cards" />
                     </Helmet>
@@ -1503,7 +1503,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                                             const cardNames = selectedCards.map(id => getCardDetails(id)?.name).filter(Boolean).join(' vs ');
                                             const cardIds = selectedCards.join(',');
                                             const url = `${window.location.origin}${window.location.pathname}#/compare-cards?cards=${cardIds}`;
-                                            const text = `Check out my credit card comparison: ${cardNames} on Voucher Tracker! 💳`;
+                                            const text = `Check out my credit card comparison: ${cardNames} on Card Perks! 💳`;
                                             window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
                                             toast.success('Opening X/Twitter...');
                                         }}

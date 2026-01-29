@@ -18,7 +18,7 @@ const VoucherDetail = () => {
     // Share to X function
     const shareToX = () => {
         const url = `${window.location.origin}${window.location.pathname}#/voucher/${id}`;
-        const text = `Check out ${voucher?.brand} voucher deals on Voucher Tracker! 🎫💰`;
+        const text = `Check out ${voucher?.brand} voucher deals on Card Perks! 🎫💰`;
         window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
     };
 
@@ -50,7 +50,7 @@ const VoucherDetail = () => {
 
     // SEO Data
     const platformNames = voucher.platforms.map(p => p.name).join(', ');
-    const pageTitle = `${voucher.brand} Voucher & Gift Card Deals - Voucher Tracker`;
+    const pageTitle = `${voucher.brand} Voucher & Gift Card Deals - Card Perks`;
     const pageDescription = `Get the best deals and discounts on ${voucher.brand} gift cards. Compare rates across ${platformNames} and maximize your savings.`;
     const pageUrl = `${window.location.origin}${window.location.pathname}#/voucher/${id}`;
 
