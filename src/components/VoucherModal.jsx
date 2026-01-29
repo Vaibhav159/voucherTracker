@@ -20,19 +20,69 @@ import { useDiscountParser } from '../hooks/useDiscountParser';
 import { useFavorites } from '../context/FavoritesContext';
 import { useToast } from './UXPolish';
 import ExpiryBadge from './ExpiryBadge';
+import { useTelegram } from '../hooks/useTelegram';
 
 const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
     const toast = useToast();
     const { toggleFavoriteVoucher, isVoucherFavorite } = useFavorites();
+    const { isLinked, subscribeToVoucher, unsubscribeFromVoucher, getSubscribedVouchers, getBotUrl, refetch } = useTelegram();
 
     const [activeTab, setActiveTab] = useState('offers');
     const [showShareMenu, setShowShareMenu] = useState(null);
+    const [isSubscribed, setIsSubscribed] = useState(false);
+    const [subLoading, setSubLoading] = useState(false);
 
     // Hooks
     useModalKeyHandler(true, onClose);
     const { getBestPlatform } = useDiscountParser();
 
     const isFavorite = isVoucherFavorite(voucher?.id);
+
+    // Poll for status update if not linked (e.g. user just clicked link)
+    useEffect(() => {
+        if (!isLinked) {
+            const interval = setInterval(() => {
+                refetch();
+            }, 5000);
+            return () => clearInterval(interval);
+        }
+    }, [isLinked, refetch]);
+
+    // Check subscription status
+    useEffect(() => {
+        if (isLinked && voucher?.id) {
+            getSubscribedVouchers().then(subs => {
+                setIsSubscribed(subs.includes(Number(voucher.id)) || subs.includes(voucher.id));
+            });
+        }
+    }, [isLinked, voucher, getSubscribedVouchers]);
+
+    // Lock body scroll when modal is open
+    useEffect(() => {
+        document.body.style.overflow = 'hidden';
+        return () => {
+            document.body.style.overflow = ''; // Restore original
+        };
+    }, []);
+
+    const handleSubscribe = async (e) => {
+        e.stopPropagation();
+        setSubLoading(true);
+        if (isSubscribed) {
+            const success = await unsubscribeFromVoucher(voucher.id);
+            if (success) {
+                setIsSubscribed(false);
+                toast.success('Unsubscribed from alerts');
+            }
+        } else {
+            const success = await subscribeToVoucher(voucher.id);
+            if (success) {
+                setIsSubscribed(true);
+                toast.success('Subscribed to alerts');
+            }
+        }
+        setSubLoading(false);
+    };
 
     // Lock body scroll when modal is open
     useEffect(() => {
@@ -267,6 +317,8 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
 
                 {/* Content - Directly show offers like production */}
                 <div className="modal-content" role="tabpanel">
+
+
                     <div className="modal-section-header" style={{
                         display: 'flex',
                         justifyContent: 'space-between',
@@ -377,29 +429,92 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                                         </div>
                                     </div>
 
-                                    {/* Buy Button - Absolute Bottom Right */}
-                                    <a
-                                        href={platform.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="btn-secondary"
-                                        style={{
-                                            position: 'absolute',
-                                            bottom: '12px',
-                                            right: '12px',
-                                            minWidth: '100px',
-                                            justifyContent: 'center',
-                                            padding: '6px 16px',
-                                            background: 'rgba(255, 255, 255, 0.05)',
-                                            border: '1px solid var(--glass-border)',
-                                            borderRadius: '8px',
-                                            color: 'var(--text-primary)',
-                                            transition: 'all 0.2s',
-                                            fontSize: '0.9rem'
-                                        }}
-                                    >
-                                        Buy Now <span style={{ opacity: 0.5 }}>↗</span>
-                                    </a>
+                                    {/* Actions Container - Bottom Right */}
+                                    <div style={{
+                                        position: 'absolute',
+                                        bottom: '12px',
+                                        right: '12px',
+                                        display: 'flex',
+                                        gap: '8px',
+                                        alignItems: 'center'
+                                    }}>
+                                        {/* Telegram Subscribe Button */}
+                                        {isLinked ? (
+                                            <button
+                                                onClick={handleSubscribe}
+                                                disabled={subLoading}
+                                                title={isSubscribed ? "Unsubscribe from alerts" : "Get stock alerts"}
+                                                style={{
+                                                    width: '32px',
+                                                    height: '32px',
+                                                    borderRadius: '8px',
+                                                    border: `1px solid ${isSubscribed ? '#ef4444' : '#229ED9'}`,
+                                                    background: isSubscribed ? 'rgba(239, 68, 68, 0.1)' : 'rgba(34, 158, 217, 0.1)',
+                                                    color: isSubscribed ? '#ef4444' : '#229ED9',
+                                                    cursor: 'pointer',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    transition: 'all 0.2s',
+                                                    opacity: subLoading ? 0.7 : 1
+                                                }}
+                                            >
+                                                {subLoading ? (
+                                                    <span style={{ fontSize: '0.8rem' }}>...</span>
+                                                ) : isSubscribed ? (
+                                                    <span>🔕</span>
+                                                ) : (
+                                                    <span>🔔</span>
+                                                )}
+                                            </button>
+                                        ) : (
+                                            <a
+                                                href={getBotUrl(voucher.id)}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                title="Get stock alerts"
+                                                style={{
+                                                    width: '32px',
+                                                    height: '32px',
+                                                    borderRadius: '8px',
+                                                    border: '1px solid #229ED9',
+                                                    background: 'rgba(34, 158, 217, 0.1)',
+                                                    color: '#229ED9',
+                                                    cursor: 'pointer',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    transition: 'all 0.2s',
+                                                    textDecoration: 'none'
+                                                }}
+                                            >
+                                                <span>🔔</span>
+                                            </a>
+                                        )}
+
+                                        <a
+                                            href={platform.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="btn-secondary"
+                                            style={{
+                                                minWidth: '100px',
+                                                justifyContent: 'center',
+                                                padding: '6px 16px',
+                                                background: 'rgba(255, 255, 255, 0.05)',
+                                                border: '1px solid var(--glass-border)',
+                                                borderRadius: '8px',
+                                                color: 'var(--text-primary)',
+                                                transition: 'all 0.2s',
+                                                fontSize: '0.9rem',
+                                                textDecoration: 'none',
+                                                display: 'inline-flex',
+                                                alignItems: 'center'
+                                            }}
+                                        >
+                                            Buy Now <span style={{ opacity: 0.5, marginLeft: '4px' }}>↗</span>
+                                        </a>
+                                    </div>
                                 </div>
                             );
                         })}
@@ -416,11 +531,6 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                         </div>
                     </div>
                 </div>
-
-                {/* Reviews and Price History tabs hidden for now */}
-
-                {/* Review Modal */}
-
 
                 {/* Animation styles */}
                 <style>{`
