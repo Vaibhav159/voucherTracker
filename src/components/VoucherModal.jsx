@@ -269,22 +269,7 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
 
                 {/* Content - Directly show offers like production */}
                 <div className="modal-content" role="tabpanel">
-                    <div className="modal-section-header" style={{
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'center',
-                        marginBottom: '12px',
-                        paddingLeft: '4px',
-                        paddingTop: '16px'
-                    }}>
-                        <span style={{
-                            fontSize: '0.85rem',
-                            fontWeight: '600',
-                            letterSpacing: '0.05em',
-                            color: 'var(--text-secondary)',
-                            textTransform: 'uppercase'
-                        }}>Available Offers</span>
-                    </div>
+
 
                     <div className="platforms-grid">
                         {voucher.platforms.map((platform, idx) => {
