@@ -371,8 +371,18 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                                                 fontSize: '1.1rem',
                                                 fontWeight: '700',
                                                 color: label === 'Savings' ? '#22c55e' : 'var(--text-primary)',
-                                                letterSpacing: '-0.02em'
-                                            }}>{value}</span>
+                                                letterSpacing: '-0.02em',
+                                                lineHeight: 1.15,
+                                                display: 'block'
+                                            }}>
+                                                {value.includes(' / ') ? (
+                                                    <span>
+                                                        {value.split(' / ')[0]} /
+                                                        <br />
+                                                        {value.split(' / ')[1]}
+                                                    </span>
+                                                ) : value}
+                                            </span>
                                         </div>
 
                                         {/* Monthly Cap */}
