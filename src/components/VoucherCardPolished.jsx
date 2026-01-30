@@ -13,6 +13,7 @@ import React, { memo, useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import { getPlatformLogo } from '../utils/platformLogos';
 import { ensureHttps } from '../utils/urlUtils';
+import { getLogoClass } from '../utils/logoUtils';
 import ExpiryBadge from './ExpiryBadge';
 import { useFavorites } from '../context/FavoritesContext';
 
@@ -155,6 +156,7 @@ const VoucherCard = memo(({ voucher, onClick, index = 0 }) => {
                         src={ensureHttps(voucher.logo)}
                         alt="" // Decorative, brand name is in text
                         loading="lazy"
+                        className={getLogoClass(voucher.logo)}
                         onError={(e) => {
                             e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(voucher.brand)}&background=random&color=fff&bold=true`;
                         }}

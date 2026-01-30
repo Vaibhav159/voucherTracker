@@ -9,6 +9,8 @@ import { ensureHttps } from '../utils/urlUtils';
  * Cleaner card design with better hover states
  */
 
+import { getLogoClass } from '../utils/logoUtils';
+
 const DAILY_ESSENTIALS = [
   'amazon', 'flipkart', 'myntra', 'ajio', 'district', 'nykaa', 'tata cliq',
   'swiggy', 'zomato', 'bigbasket', 'blinkit', 'zepto', 'instamart', 'jiomart',
@@ -136,6 +138,7 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
                   <img
                     src={ensureHttps(voucher.logo)}
                     alt={voucher.brand}
+                    className={getLogoClass(voucher.logo)}
                     onError={(e) => {
                       e.target.style.display = 'none';
                       e.target.nextSibling.style.display = 'flex';

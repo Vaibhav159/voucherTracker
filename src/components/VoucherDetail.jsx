@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useVouchers } from '../hooks/useVouchers';
 import { getPlatformLogo } from '../utils/platformLogos';
 import { ensureHttps } from '../utils/urlUtils';
+import { getLogoClass } from '../utils/logoUtils';
 import LoadingSpinner from './LoadingSpinner';
 
 import { Helmet } from 'react-helmet-async';
@@ -109,7 +110,12 @@ const VoucherDetail = () => {
 
             <div className="glass-panel" style={{ padding: '2rem', marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '2rem', flexWrap: 'wrap' }}>
                 <div style={{ width: '100px', height: '100px', background: '#fff', borderRadius: '20px', padding: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <img src={ensureHttps(voucher.logo)} alt={voucher.brand} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                    <img
+                        src={ensureHttps(voucher.logo)}
+                        alt={voucher.brand}
+                        className={getLogoClass(voucher.logo)}
+                        style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                    />
                 </div>
                 <div style={{ flex: 1 }}>
                     <h1 style={{ margin: '0 0 10px 0', fontSize: '2.5rem' }}>{voucher.brand}</h1>

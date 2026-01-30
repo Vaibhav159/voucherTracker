@@ -14,6 +14,7 @@ import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { getPlatformStyle } from '../utils/platformLogos';
 import { ensureHttps } from '../utils/urlUtils';
+import { getLogoClass } from '../utils/logoUtils';
 import { Link } from 'react-router-dom';
 import { useModalKeyHandler } from '../hooks/useModalKeyHandler';
 import { useDiscountParser } from '../hooks/useDiscountParser';
@@ -159,6 +160,7 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                         <img
                             src={ensureHttps(voucher.logo)}
                             alt=""
+                            className={getLogoClass(voucher.logo)}
                             onError={(e) => {
                                 e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(voucher.brand)}&background=random`;
                             }}
@@ -267,22 +269,7 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
 
                 {/* Content - Directly show offers like production */}
                 <div className="modal-content" role="tabpanel">
-                    <div className="modal-section-header" style={{
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'center',
-                        marginBottom: '12px',
-                        paddingLeft: '4px',
-                        paddingTop: '16px'
-                    }}>
-                        <span style={{
-                            fontSize: '0.85rem',
-                            fontWeight: '600',
-                            letterSpacing: '0.05em',
-                            color: 'var(--text-secondary)',
-                            textTransform: 'uppercase'
-                        }}>Available Offers</span>
-                    </div>
+
 
                     <div className="platforms-grid">
                         {voucher.platforms.map((platform, idx) => {
