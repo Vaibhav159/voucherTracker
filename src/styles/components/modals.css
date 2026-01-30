@@ -61,6 +61,14 @@
   object-fit: contain;
 }
 
+/* Special handling for small logos (e.g., savemax) */
+.modal-header__logo img.logo-savemax {
+  object-fit: cover !important;
+  transform: scale(1.3) !important;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
 .modal-header__info {
   flex: 1;
 }

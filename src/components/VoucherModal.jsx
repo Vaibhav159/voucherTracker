@@ -14,6 +14,7 @@ import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { getPlatformStyle } from '../utils/platformLogos';
 import { ensureHttps } from '../utils/urlUtils';
+import { getLogoClass } from '../utils/logoUtils';
 import { Link } from 'react-router-dom';
 import { useModalKeyHandler } from '../hooks/useModalKeyHandler';
 import { useDiscountParser } from '../hooks/useDiscountParser';
@@ -159,6 +160,7 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                         <img
                             src={ensureHttps(voucher.logo)}
                             alt=""
+                            className={getLogoClass(voucher.logo)}
                             onError={(e) => {
                                 e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(voucher.brand)}&background=random`;
                             }}
