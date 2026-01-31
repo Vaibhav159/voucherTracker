@@ -104,7 +104,7 @@ const CardGuide = () => {
             "@type": "Offer",
             "price": card.joiningFee ? card.joiningFee.replace(/[^0-9]/g, '') : '0',
             "priceCurrency": "INR",
-            "url": card.applyLink
+            "url": card.applyLink || card.link
         },
         "feesAndCommissionsSpecification": card.annualFee
     };
@@ -150,7 +150,7 @@ const CardGuide = () => {
                     <div>
                         <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }} className="text-gradient">{card.name}</h1>
                         <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>{card.bank}</p>
-                        <a href={card.applyLink} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ display: 'inline-block', padding: '0.8rem 2rem', fontSize: '1.1rem' }}>
+                        <a href={card.applyLink || card.link} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ display: 'inline-block', padding: '0.8rem 2rem', fontSize: '1.1rem' }}>
                             Apply Now
                         </a>
                     </div>
@@ -549,7 +549,7 @@ const CardGuide = () => {
             {/* Sticky Apply Button */}
             <div className="sticky-apply-container">
                 <a
-                    href={card.applyLink}
+                    href={card.link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary"
