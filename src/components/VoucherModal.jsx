@@ -302,7 +302,7 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                                         <div>
                                             <div style={{ fontWeight: '700', fontSize: '1.15rem', color: 'var(--text-primary)', marginBottom: '4px' }}>{platform.name}</div>
                                             {/* Live Tag - Preserving original desktop logic which added it conditionally */}
-                                            {['iShop', 'Maximize', 'Gyftr', 'MagicPin', 'SaveSage'].some(p => platform.name.toLowerCase().includes(p.toLowerCase())) && (
+                                            {['iShop', 'Maximize', 'Gyftr'].some(p => platform.name.toLowerCase().includes(p.toLowerCase())) && (
                                                 <div style={{
                                                     display: 'inline-flex', alignItems: 'center', gap: '4px', padding: '2px 8px', borderRadius: '100px',
                                                     background: '#bbf7d0', color: '#166534', fontSize: '0.75rem', fontWeight: '700', letterSpacing: '0.02em'
