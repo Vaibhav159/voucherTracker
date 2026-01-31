@@ -69,6 +69,13 @@ const extractFeaturesArray = (features) => {
 const transformCreditCard = (card) => {
     // If card already has the old flat structure (annualFee as string), skip transformation
     if (typeof card.annualFee === 'string' && Array.isArray(card.features)) {
+        // QUICK FIX: Ensure joiningFee is present if available in fees object
+        if (!card.joiningFee && card.fees?.joining !== undefined) {
+            return {
+                ...card,
+                joiningFee: card.fees.joining === 0 ? 'Free' : `₹${card.fees.joining.toLocaleString('en-IN')}`
+            };
+        }
         return card;
     }
 

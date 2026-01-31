@@ -86,7 +86,7 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                                     />
                                 </div>
                                 <div className="header-title-container">
-                                    <h2 className="header-title">{voucher.brand} Voucher</h2>
+                                    <h2 className="header-title">{voucher.brand}</h2>
                                     <div className="header-tags">
                                         <span className="header-tag">{voucher.category}</span>
                                     </div>
