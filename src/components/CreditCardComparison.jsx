@@ -886,7 +886,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
             {view === 'grid' ? (
                 <header style={{ marginBottom: '2.5rem', textAlign: 'center' }}>
                     <Helmet>
-                        <title>Best Credit Cards in India 2025 - Compare Fees & Rewards | Card Perks</title>
+                        <title>Best Credit Cards in India 2026 - Compare Fees & Rewards | Card Perks</title>
                         <meta name="description" content="Compare the best credit cards in India. Find top cards for cashback, travel, and lounge access. Check eligibility and apply online." />
                         <meta name="keywords" content="best credit card, credit card comparison, best rewards card in India, lifetime free credit cards, voucher tracker" />
                         <link rel="canonical" href="https://cardperks.xyz/know-your-cards" />
