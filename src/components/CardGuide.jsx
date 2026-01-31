@@ -549,7 +549,7 @@ const CardGuide = () => {
             {/* Sticky Apply Button */}
             <div className="sticky-apply-container">
                 <a
-                    href={card.link}
+                    href={card.applyLink || card.link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary"
