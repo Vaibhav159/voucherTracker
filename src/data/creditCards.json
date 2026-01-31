@@ -2320,6 +2320,7 @@
     "bank": "Federal Bank",
     "image": "/assets/cards/scapia-federal.avif",
     "annualFee": "Lifetime Free",
+    "joiningFee": "Free",
     "rewardRate": "2% flat (5 Coins/₹100)",
     "rewardType": "cashback",
     "rewardCaps": {

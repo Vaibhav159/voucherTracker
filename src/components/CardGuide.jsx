@@ -102,7 +102,7 @@ const CardGuide = () => {
         "image": card.image,
         "offers": {
             "@type": "Offer",
-            "price": card.joiningFee.replace(/[^0-9]/g, ''),
+            "price": card.joiningFee ? card.joiningFee.replace(/[^0-9]/g, '') : '0',
             "priceCurrency": "INR",
             "url": card.applyLink
         },
@@ -141,7 +141,7 @@ const CardGuide = () => {
             <div className="glass-panel" style={{ padding: '2.5rem' }}>
                 <div style={{ display: 'flex', gap: '2rem', alignItems: 'flex-start', flexWrap: 'wrap', marginBottom: '3rem', borderBottom: '1px solid var(--glass-border)', paddingBottom: '2rem' }}>
                     <div style={{ flexShrink: 0, width: '300px', maxWidth: '100%' }}>
-                        <div style={{ height: '190px', background: '#333', borderRadius: '12px', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <div style={{ height: '190px', background: 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
                             <img src={card.image} alt={card.name} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
                                 onError={(e) => { e.target.style.display = 'none'; e.target.parentElement.style.background = '#444'; e.target.parentElement.innerText = card.name; }}
                             />
