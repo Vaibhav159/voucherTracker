@@ -433,18 +433,9 @@
 
 @media (max-width: 768px) {
   .redesign-container {
-    height: 100vh;
-    /* Full height */
-    max-height: 100vh;
-    border-radius: 0;
-    /* Remove corners */
-  }
-
-  /* Full screen overlay toggle */
-  .mobile-fullscreen-overlay {
-    padding: 0 !important;
-    align-items: flex-start !important;
-    /* Start from top */
+    height: 85vh;
+    /* Fixed height on mobile */
+    max-height: 85vh;
   }
 }
 
