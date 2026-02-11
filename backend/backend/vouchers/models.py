@@ -92,6 +92,9 @@ class VoucherMismatch(models.Model):
                 return category_list[0]
         if self.platform.name == PlatformName.ISHOP:
             return self.raw_data.get("sub_category")
+        if self.platform.name == PlatformName.MAGNIFY:
+            category_str_list = self.raw_data.get("categories")
+            return category_str_list[0] if category_str_list else None
         return self.raw_data.get("category")
 
     def get_external_id(self):
@@ -99,6 +102,8 @@ class VoucherMismatch(models.Model):
             return self.raw_data.get("id")
         if self.platform.name == PlatformName.ISHOP:
             return self.raw_data.get("_id")
+        if self.platform.name == PlatformName.MAGNIFY:
+            return self.raw_data.get("id")
         return self.raw_data.get("external_id") or self.raw_data.get("id")
 
     def get_logo(self):
@@ -109,4 +114,6 @@ class VoucherMismatch(models.Model):
         if self.platform.name == PlatformName.ISHOP:
             image_gallery = self.raw_data.get("image_gallery", {})
             return image_gallery.get("image1") or image_gallery.get("image2")
+        if self.platform.name == PlatformName.MAGNIFY:
+            return self.raw_data.get("logoUrl")
         return self.raw_data.get("logo")
