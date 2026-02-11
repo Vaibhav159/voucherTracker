@@ -79,7 +79,8 @@ class MagnifySyncService(BaseSyncService):
                 if percentage.is_integer():
                     fee = f"Discount {int(percentage)}%"
                 else:
-                    fee = f"Discount {percentage:.2f}%".rstrip("0").rstrip(".") + "%"
+                    items_str = f"{percentage:.2f}".rstrip("0").rstrip(".")
+                    fee = f"Discount {items_str}%"
         except:
             fee = "Check App"
 

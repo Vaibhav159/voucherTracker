@@ -55,7 +55,7 @@ function Home({ data, onOpenShortcuts }) {
   const ALL_PLATFORMS = useMemo(() => {
     const platforms = [...new Set(data.flatMap(v => v.platforms.map(p => p.name)))];
     // Custom sort order
-    const priority = ['Gyftr', 'Maximize', 'iShop', 'MagicPin', 'SaveSage', 'Amazon'];
+    const priority = ['Gyftr', 'Maximize', 'iShop', 'MagicPin', "Magnify", "SaveSage", "Amazon"];
     return platforms.sort((a, b) => {
       const idxA = priority.indexOf(a);
       const idxB = priority.indexOf(b);
