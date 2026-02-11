@@ -20,6 +20,7 @@ from backend.vouchers.serializers import PlatformSerializer
 from backend.vouchers.serializers import VoucherSerializer
 from backend.vouchers.services import GyftrSyncService
 from backend.vouchers.services import IShopSyncService
+from backend.vouchers.services import MagnifySyncService
 from backend.vouchers.services import MaximizeSyncService
 
 
@@ -61,6 +62,15 @@ class VoucherViewSet(viewsets.ReadOnlyModelViewSet):
         """Sync vouchers from iShop platform (requires encrypted data in request body)."""
 
         service = IShopSyncService()
+        result = service.fetch_and_sync()
+
+        status_code = 200 if result.get("status") == "success" else 400
+        return response.Response(result, status=status_code)
+
+    @decorators.action(detail=False, methods=["post"], permission_classes=[permissions.AllowAny])
+    def sync_magnify(self, request):
+        """Sync vouchers from Magnify platform."""
+        service = MagnifySyncService()
         result = service.fetch_and_sync()
 
         status_code = 200 if result.get("status") == "success" else 400
