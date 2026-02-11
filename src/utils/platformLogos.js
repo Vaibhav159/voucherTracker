@@ -1,4 +1,5 @@
 import maximizeLogo from '../assets/maximize-logo.jpg';
+import magnifyLogo from '../assets/magnify-logo.jpeg';
 import { ensureHttps } from './urlUtils';
 
 export const PLATFORM_STYLES = {
@@ -21,6 +22,11 @@ export const PLATFORM_STYLES = {
         logo: maximizeLogo,
         bg: "#22c55e",
         padding: "10px"
+    },
+    "Magnify": {
+        logo: magnifyLogo,
+        bg: "#000000",
+        padding: "0px"
     },
     "Amazon": {
         logo: "https://1000logos.net/wp-content/uploads/2016/10/Amazon-Logo.png",

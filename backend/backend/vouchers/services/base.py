@@ -196,6 +196,7 @@ class BaseSyncService:
                 update_conflicts=True,
                 unique_fields=["voucher", "platform"],
                 update_fields=["external_id", "fee", "cap", "link", "priority"],
+                batch_size=50,
             )
 
         # Bulk upsert VoucherMismatch
@@ -205,6 +206,7 @@ class BaseSyncService:
                 update_conflicts=True,
                 unique_fields=["platform", "external_id"],
                 update_fields=["brand_name", "gift_card_name", "raw_data", "status"],
+                batch_size=50,
             )
 
         # Clear cache after sync

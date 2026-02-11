@@ -27,3 +27,4 @@ class PlatformName(models.TextChoices):
     MAXIMIZE = "Maximize", _("Maximize")
     GYFTR = "Gyftr", _("Gyftr")
     ISHOP = "iShop", _("iShop")
+    MAGNIFY = "Magnify", _("Magnify")
