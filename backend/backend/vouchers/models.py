@@ -10,9 +10,9 @@ from backend.vouchers.choices import VoucherMismatchStatus
 
 class Voucher(models.Model):
     name = models.CharField(_("Name"), max_length=255, db_index=True)
-    logo = models.URLField(_("Logo URL"), blank=True)
+    logo = models.URLField(_("Logo URL"), blank=True, max_length=1000)
     category = models.CharField(_("Category"), max_length=50, choices=VoucherCategory.choices, db_index=True)
-    site_link = models.URLField(_("Site Link"), blank=True)
+    site_link = models.URLField(_("Site Link"), blank=True, max_length=1000)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
