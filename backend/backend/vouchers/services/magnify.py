@@ -8,6 +8,8 @@ from backend.vouchers.choices import PlatformName
 from backend.vouchers.services.base import BaseSyncService
 from backend.vouchers.services.base import SyncItem
 
+BATCH_SIZE = 100
+
 
 class MagnifySyncService(BaseSyncService):
     """Sync service for Magnify platform."""
@@ -31,6 +33,7 @@ class MagnifySyncService(BaseSyncService):
 
     def fetch_and_sync(self) -> dict:
         try:
+            print("Fetching vouchers from Magnify platform...")
             response = requests.get(self.API_URL, headers=self.HEADERS)
             response.raise_for_status()
             data = response.json()
