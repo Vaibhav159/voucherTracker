@@ -48,6 +48,9 @@ const LoadingScreen = () => (
   </div>
 );
 
+import { Helmet } from 'react-helmet-async';
+import { BASE_URL } from './config/constants';
+
 function Home({ data, onOpenShortcuts }) {
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -192,6 +195,9 @@ function Home({ data, onOpenShortcuts }) {
   }, [searchParams, data]);
   return (
     <div className="home-container">
+      <Helmet>
+        <link rel="canonical" href={BASE_URL} />
+      </Helmet>
       {/* Mobile Filter Toggle Removed */}
 
       {/* Backdrop for mobile filters */}

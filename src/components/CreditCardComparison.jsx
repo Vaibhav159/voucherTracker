@@ -17,6 +17,7 @@ import { useToast } from './UXPolish';
 import { CreditCardGridSkeleton } from './Skeleton';
 import LoadingSpinner from './LoadingSpinner';
 import { Helmet } from 'react-helmet-async';
+import { BASE_URL } from '../config/constants';
 
 // Comparison rows configuration
 const COMPARISON_ROWS = [
@@ -889,7 +890,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                         <title>Best Credit Cards in India 2026 - Compare Fees & Rewards | Card Perks</title>
                         <meta name="description" content="Compare the best credit cards in India. Find top cards for cashback, travel, and lounge access. Check eligibility and apply online." />
                         <meta name="keywords" content="best credit card, credit card comparison, best rewards card in India, lifetime free credit cards, voucher tracker" />
-                        <link rel="canonical" href="https://cardperks.xyz/know-your-cards" />
+                        <link rel="canonical" href={`${BASE_URL}/know-your-cards`} />
                     </Helmet>
                     <h2 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '0.25rem', fontStyle: 'italic' }}>
                         Browse Cards
@@ -900,7 +901,7 @@ const CreditCardComparison = ({ view = 'grid', selectedCards = [], toggleCardSel
                     <Helmet>
                         <title>Compare Credit Cards | Card Perks</title>
                         <meta name="description" content="Compare selected credit cards side-by-side. Analyze fees, rewards, and features to choose the best card for you." />
-                        <link rel="canonical" href="https://cardperks.xyz/compare-cards" />
+                        <link rel="canonical" href={`${BASE_URL}/compare-cards`} />
                     </Helmet>
                     <h2 className="text-gradient" style={{ fontSize: '2rem', margin: 0, fontStyle: 'italic' }}>
                         Compare Credit Cards
