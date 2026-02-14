@@ -8,6 +8,8 @@ import LoadingSpinner from './LoadingSpinner';
 
 import { Helmet } from 'react-helmet-async';
 
+import { BASE_URL } from '../config/constants';
+
 const VoucherDetail = () => {
     const { id } = useParams();
     const { vouchers, loading, error } = useVouchers();
@@ -54,6 +56,7 @@ const VoucherDetail = () => {
     const pageTitle = `${voucher.brand} Voucher & Gift Card Deals - Card Perks`;
     const pageDescription = `Get the best deals and discounts on ${voucher.brand} gift cards. Compare rates across ${platformNames} and maximize your savings.`;
     const pageUrl = `${window.location.origin}${window.location.pathname}#/voucher/${id}`;
+    const canonicalUrl = `${BASE_URL}/voucher/${id}`;
 
     // Structured Data (JSON-LD)
     const structuredData = {
@@ -84,6 +87,7 @@ const VoucherDetail = () => {
             <Helmet>
                 <title>{pageTitle}</title>
                 <meta name="description" content={pageDescription} />
+                <link rel="canonical" href={canonicalUrl} />
 
                 {/* Open Graph */}
                 <meta property="og:title" content={pageTitle} />

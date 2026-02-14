@@ -55,33 +55,26 @@ const generateSitemap = () => {
 
   // Add static routes
   staticRoutes.forEach(route => {
+    const url = encodeURI(BASE_URL + (route === '/' ? '' : route));
     xml += `
   <url>
-    <loc>${escapeXml(BASE_URL + (route === '/' ? '' : route))}</loc>
+    <loc>${escapeXml(url)}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>${route === '/' ? '1.0' : '0.8'}</priority>
   </url>`;
   });
 
-  //  // Add Voucher routes
-  //  vouchers.forEach(voucher => {
-  //    xml += `
-  //  <url>
-  //    <loc>${escapeXml(`${BASE_URL}/voucher/${voucher.id}`)}</loc>
-  //    <lastmod>${today}</lastmod>
-  //    <changefreq>weekly</changefreq>
-  //    <priority>0.7</priority>
-  //  </url>`;
-  //  });
+
 
   // Add Credit Card Guide routes
   cards.forEach(card => {
     // Fallback to id if slug is missing, matching component logic
     const slug = card.slug || card.id;
+    const url = encodeURI(`${BASE_URL}/card-guide/${slug}`);
     xml += `
   <url>
-    <loc>${escapeXml(`${BASE_URL}/card-guide/${slug}`)}</loc>
+    <loc>${escapeXml(url)}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

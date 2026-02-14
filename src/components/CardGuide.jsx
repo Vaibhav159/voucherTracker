@@ -7,6 +7,8 @@ import { useTheme } from '../context/ThemeContext';
 import CardImage from './CardImage';
 import LoadingSpinner from './LoadingSpinner';
 
+import { BASE_URL } from '../config/constants';
+
 const CardGuide = () => {
     const { slug } = useParams();
     const { creditCards, loading, error } = useCreditCards();
@@ -88,6 +90,7 @@ const CardGuide = () => {
     const pageTitle = `${card.name} Review & Benefits - Card Perks`;
     const pageDescription = `Comprehensive guide for ${card.name}. Learn about fees, rewards, benefits, and eligibility criteria to decide if this card is right for you.`;
     const pageUrl = `${window.location.origin}${window.location.pathname}#/card-guide/${slug}`;
+    const canonicalUrl = `${BASE_URL}/card-guide/${slug}`;
 
     // Structured Data (JSON-LD)
     const structuredData = {
@@ -114,6 +117,7 @@ const CardGuide = () => {
             <Helmet>
                 <title>{pageTitle}</title>
                 <meta name="description" content={pageDescription} />
+                <link rel="canonical" href={canonicalUrl} />
 
                 {/* Open Graph */}
                 <meta property="og:title" content={pageTitle} />
