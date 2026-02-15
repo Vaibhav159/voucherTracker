@@ -1,0 +1,938 @@
+{
+  "id": "hdfc-millennia",
+  "name": "HDFC Bank Millennia Credit Card",
+  "bank": "HDFC Bank",
+  "slug": "hdfc-millennia-credit-card",
+  "image": "assets/cards/hdfc/millennia.png",
+  "link": "https://www.hdfc.bank.in/credit-cards/millennia-credit-card",
+  "isActive": true,
+
+  "network": {
+    "type": "Visa | Mastercard | Diners Club",
+    "variant": "Signature | World | International",
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "entry",
+    "isCobranded": false,
+    "cobrandPartner": {
+      "name": null,
+      "type": null,
+      "loyaltyProgram": null
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 1000,
+      "waivable": true,
+      "waiverCondition": "Spend ₹30,000 within first 90 days for first year fee waiver (promotional); or via special bank offers"
+    },
+    "annual": {
+      "amount": 1000,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 100000,
+        "spendPeriod": "12 months",
+        "waiverText": "Spend ₹1,00,000 in 12 months and get Renewal Fee waived for next renewal year"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": 0,
+      "joiningFee": 0,
+      "annualFee": 0,
+      "rewardSharing": true
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding balance (effective August 2024)",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 100, "fee": 0},
+        {"minAmount": 101, "maxAmount": 500, "fee": 100},
+        {"minAmount": 501, "maxAmount": 5000, "fee": 500},
+        {"minAmount": 5001, "maxAmount": 10000, "fee": 600},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 800},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1000},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1100}
+      ]
+    },
+    "overLimit": {
+      "amount": null,
+      "percentage": 2.5
+    },
+    "chequeReturn": 500,
+    "cardReplacement": 200,
+    "duplicateStatement": 100,
+    "additionalCharges": {
+      "rentPaymentFee": {
+        "percentage": 1,
+        "cap": 3000,
+        "note": "1% fee on rent payments via CRED, PayTM, Cheq, MobiKwik, Freecharge etc, capped at ₹3000 (effective August 2024)"
+      },
+      "fuelOverLimitFee": {
+        "threshold": 15000,
+        "percentage": 1,
+        "note": "1% fee charged on entire amount if fuel transaction exceeds ₹15,000"
+      },
+      "utilityOverLimitFee": {
+        "threshold": 50000,
+        "percentage": 1,
+        "note": "1% fee charged on entire amount if utility transaction exceeds ₹50,000"
+      },
+      "cashbackRedemptionFee": 50,
+      "catalogRedemptionFee": 99,
+      "redemptionFeeNote": "₹50 for statement credit redemption, ₹99+GST for reward catalog redemption (effective August 2024)"
+    }
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 35000,
+        "annual": 420000
+      },
+      "selfEmployed": {
+        "itr": 600000
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 40,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": "Easier approval for existing HDFC Bank customers"
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 25000,
+      "max": 300000
+    },
+    "factors": "Based on income, credit score, existing relationship with HDFC Bank, and repayment capacity",
+    "enhancementCriteria": "Good repayment history for 6+ months, updated income documents"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.4272,
+      "monthlyRate": 0.0356
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": 50,
+      "note": "Up to 50 days interest-free period from date of purchase (subject to merchant submission)"
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 200,
+      "calculation": "5% of total outstanding or ₹200, whichever is higher"
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": 30,
+    "dailyLimit": null,
+    "interestFromDay1": true
+  },
+
+  "rewards": {
+    "type": "cashback",
+    "currency": {
+      "name": "CashPoints",
+      "symbol": "CP",
+      "singularUnit": "CashPoint",
+      "pluralUnit": "CashPoints"
+    },
+    "baseRate": {
+      "rate": 1,
+      "spendUnit": 100,
+      "effectivePercentage": 0.01
+    },
+    "earningText": "Earn 5% CashPoints on partner brands (Amazon, Flipkart, etc.), 1% on other eligible spends",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "Rent payments",
+        "Government-related transactions",
+        "Cash advances",
+        "Payment of outstanding balances",
+        "Card fees and other charges",
+        "EMI transactions (including Smart EMI, even if preclosed)",
+        "Wallet loading (effective September 2024)",
+        "Easy EMI transactions (effective September 2024)",
+        "Education payments via third-party apps (effective September 2024)"
+      ],
+      "mccs": ["5541", "5542", "5983", "6513", "9311", "9222", "6012"],
+      "note": "From 1st September 2024, wallet loading, Easy EMI, and education payments won't earn Reward Points. Education payments directly through college/school websites or POS are still eligible."
+    },
+
+    "caps": {
+      "monthly": {
+        "points": 2000,
+        "cashback": 2000
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": "statement",
+      "perTransaction": null,
+      "categoryWiseCaps": {
+        "acceleratedBrands": {
+          "cap": 1000,
+          "period": "statement cycle",
+          "note": "5% CashPoints on partner brands capped at 1,000 CashPoints per statement cycle"
+        },
+        "otherSpends": {
+          "cap": 1000,
+          "period": "statement cycle",
+          "note": "1% CashPoints on other spends capped at 1,000 CashPoints per statement cycle"
+        }
+      }
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "2 years",
+      "condition": "Unredeemed Reward Points expire/lapse after 2 years from date of accumulation"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": 1000,
+        "cashback": null,
+        "vouchers": null,
+        "spendCondition": {
+          "amount": null,
+          "period": null,
+          "transactionCount": null
+        },
+        "validity": "On payment of joining membership fee",
+        "description": "Welcome Benefit of 1000 CashPoints on payment of joining membership fee"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": "No CashPoints posting for renewal membership fee payments"
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "partnerBrands": {
+        "rate": 5,
+        "effectivePercentage": 0.05,
+        "cap": 1000,
+        "capPeriod": "statement cycle",
+        "merchants": [
+          "Amazon",
+          "Flipkart",
+          "Myntra",
+          "Zomato",
+          "Swiggy",
+          "Uber",
+          "Sony LIV",
+          "Tata CLiQ",
+          "BookMyShow",
+          "Cult.fit"
+        ],
+        "note": "5% CashPoints on transactions at these 10 partner brands, max 1,000 CashPoints per statement cycle"
+      },
+      "otherSpends": {
+        "rate": 1,
+        "effectivePercentage": 0.01,
+        "cap": 1000,
+        "capPeriod": "statement cycle",
+        "note": "1% CashPoints on all other eligible spends except excluded categories"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on fuel transactions"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on rent payments"
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on wallet loads (effective September 2024)"
+      },
+      "emi": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on EMI transactions including Smart EMI"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": true,
+        "name": "SmartBuy",
+        "rate": 5,
+        "cap": 1000,
+        "capPeriod": "monthly",
+        "merchants": ["Flights", "Hotels", "Instant Vouchers", "Amazon", "Flipkart"],
+        "link": "https://offers.smartbuy.hdfcbank.com",
+        "note": "5% CashPoints on SmartBuy transactions (min ₹2,000), capped at 1,000 CashPoints per month"
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": [],
+        "note": "Partner brand rewards are already covered in base categories"
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": []
+      },
+      "milestoneAccelerators": []
+    },
+
+    "redemption": {
+      "baseValue": 1.0,
+      "bestValue": 1.0,
+      "bestOption": "Statement credit redemption at 1 CashPoint = ₹1",
+      "minRedemption": 500,
+      "redemptionIncrement": null,
+      "convenienceFee": 50,
+      "monthlyRedemptionLimit": 3000,
+      "monthlyRedemptionCount": 5,
+      "monthlyRedemptionNote": "CashPoints redemption for statement credit capped at 3,000 CashPoints per calendar month. W.e.f. 1st Feb 2026, redemption limited to max 5 times per month",
+
+      "pointsPlusPay": {
+        "enabled": true,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": 50,
+        "note": "For flight/hotel bookings via SmartBuy, can redeem up to 50% of booking value through CashPoints"
+      },
+
+      "options": [
+        {
+          "type": "statement_credit",
+          "value": 1.0,
+          "description": "Redeem against statement balance",
+          "recommended": true,
+          "minPoints": 500,
+          "processingFee": 50,
+          "partners": [],
+          "note": "1 CashPoint = ₹1. Redemption via NetBanking, Phone Banking, or physical form. ₹50 redemption fee applies."
+        },
+        {
+          "type": "travel",
+          "value": 0.30,
+          "description": "Flight & Hotel bookings via SmartBuy",
+          "recommended": false,
+          "minPoints": 500,
+          "processingFee": 0,
+          "partners": ["SmartBuy"],
+          "note": "1 CashPoint = ₹0.30 for travel bookings. Max 50% of booking value via CashPoints, rest via credit card. Monthly cap of 50,000 CashPoints for flights/hotels."
+        },
+        {
+          "type": "vouchers",
+          "value": 0.30,
+          "description": "Gift vouchers from SmartBuy Rewards Catalogue",
+          "recommended": false,
+          "minPoints": 500,
+          "processingFee": 99,
+          "partners": ["Various brands"],
+          "note": "1 CashPoint = ₹0.30 for catalog redemption. ₹99+GST handling charges apply."
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": [],
+      "partners": [],
+      "currentBonus": {
+        "active": false,
+        "bonusPercentage": null,
+        "validUntil": null,
+        "applicablePartners": []
+      },
+      "note": "Millennia Credit Card does not support point transfers to airline/hotel partners"
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": [],
+      "acrossUsers": false,
+      "note": "CashPoints pooling not available for Millennia Credit Card"
+    },
+
+    "specialLogic": "CashPoints posted on calendar month basis. Transactions settled between 1st to 30/31st of calendar month are posted in the subsequent month's first week.",
+
+    "calculator": {
+      "enabled": true,
+      "formula": "partnerBrandPoints = min(spendOnPartners * 0.05, 1000); otherPoints = min(otherSpend * 0.01, 1000); totalMonthlyPoints = partnerBrandPoints + otherPoints",
+      "variables": ["spendOnPartners", "otherSpend", "isExcludedCategory"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "Complimentary domestic lounge access discontinued effective December 1, 2023. Lounge access now available as part of Quarterly Spends Milestone program or on chargeable basis."
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "eligibleLounges": null,
+        "chargeableAccess": {
+          "available": true,
+          "note": "Can avail lounge access on chargeable basis by presenting the card at lounge"
+        }
+      },
+      "international": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "membershipValue": null,
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": null
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "eligibleLounges": null
+      }
+    },
+
+    "milestones": [
+      {
+        "spend": 100000,
+        "period": "quarterly",
+        "benefit": "Choice of ₹1,000 gift voucher OR HOI domestic airport lounge access voucher",
+        "benefitType": "voucher_or_lounge",
+        "value": 1000,
+        "conditions": "Spend ₹1,00,000 in a calendar quarter (Jan-Mar, Apr-Jun, Jul-Sep, Oct-Dec). Choose from BigBasket, BookMyShow, Pizza Hut, PVR vouchers OR DreamFolks/HOI lounge access. SMS/email sent within 7 days of quarter end. Claim within 60 days.",
+        "claimProcess": "Click link in email to claim voucher from available brands",
+        "vouchers": ["BigBasket", "BookMyShow", "Pizza Hut", "PVR", "HOI Airport Lounge Access"]
+      }
+    ],
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": false,
+      "lessonIncluded": false,
+      "note": null
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": "No dedicated movie offers, but BookMyShow is a 5% CashPoints partner brand"
+    },
+
+    "dining": {
+      "included": true,
+      "programs": [
+        {
+          "name": "Swiggy Dineout",
+          "discount": "Up to 20%",
+          "cap": null,
+          "frequency": "Per transaction",
+          "note": "Additional discount on dining via Swiggy Dineout"
+        },
+        {
+          "name": "Good Food Trail",
+          "discount": "Various",
+          "cap": null,
+          "frequency": null,
+          "note": "Dining privileges with Good Food Trail program"
+        }
+      ],
+      "hotelDining": {
+        "included": false,
+        "hotels": [],
+        "offer": null
+      }
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 400,
+      "maxTransaction": 5000,
+      "monthlyCap": 250,
+      "applicableStations": "All fuel stations in India",
+      "rewardsOnFuel": false,
+      "note": "1% fuel surcharge waiver on transactions between ₹400 and ₹5,000. Maximum waiver ₹250 per statement cycle. Surcharge rate may vary depending on fuel station and acquiring bank."
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% + GST on international transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "Forex markup of 3.5% applies to all non-INR transactions. Not recommended for frequent international travelers."
+    },
+
+    "concierge": {
+      "included": false,
+      "availability": null,
+      "type": null,
+      "services": [],
+      "contactNumber": null,
+      "note": "Concierge service not available on Millennia Credit Card"
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": [],
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "SmartEMI",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Amazon", "Flipkart", "Croma", "Reliance Digital", "Various partners"],
+        "note": "No-cost EMI available on select merchants and products"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": 199,
+        "minFee": 199
+      },
+      "minAmount": 2500,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": 0.12,
+        "max": 0.20
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": 0
+      },
+      "cancellationPeriod": 7,
+      "note": "SmartEMI option to convert big spends into EMI after purchase. EMI transactions do not earn CashPoints."
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": 0.035
+      },
+      "processingFee": {
+        "percentage": 1,
+        "minFee": 199
+      },
+      "tenures": [6, 12, 18, 24],
+      "maxAmount": null,
+      "preclosureFee": 3,
+      "note": "Transfer balances from other bank cards"
+    },
+
+    "memberships": [],
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "condition": null
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": []
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": [],
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": false,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": null,
+      "fraudLiability": {
+        "included": true,
+        "cover": null,
+        "reportingWindow": "Report immediately to 24-hour call centre (1800 1600/1800 2600)"
+      },
+      "note": "Zero lost card liability on fraudulent transactions when reported immediately"
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": []
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": [],
+      "excludedCountries": [],
+      "excludedVehicleTypes": []
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "Millennia Credit Card is an entry-level card with limited insurance coverage. Zero lost card liability is the primary protection offered."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000
+    },
+    "virtualCard": {
+      "available": false,
+      "instantIssuance": false,
+      "singleUse": false,
+      "spendControls": false
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": true,
+      "rewardsOnUPI": false,
+      "note": "Can link to UPI apps. Wallet loading transactions do not earn rewards (effective September 2024)."
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Real-time alerts",
+        "View and redeem reward points",
+        "Track all spends"
+      ],
+      "app": "HDFC Bank MyCards"
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [],
+    "upgradesTo": [
+      {
+        "cardId": "hdfc-regalia",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false,
+        "note": "Can upgrade based on income increase and good credit history"
+      },
+      {
+        "cardId": "hdfc-regalia-gold",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false,
+        "note": "Can upgrade based on income increase and good credit history"
+      }
+    ],
+    "note": "Upgrade eligibility based on spend history, income, and relationship with HDFC Bank"
+  },
+
+  "meta": {
+    "tags": [
+      "Cashback",
+      "Entry Level",
+      "Online Shopping",
+      "Millennials",
+      "Lifestyle"
+    ],
+    "bestFor": "Young professionals and millennials who frequently shop online on Amazon, Flipkart, Myntra, and order food from Swiggy/Zomato. Ideal for monthly spends of ₹20,000-₹50,000 on partner brands.",
+    "notRecommendedFor": "High spenders (monthly caps limit benefit), frequent international travelers (high forex markup), those seeking lounge access (discontinued), fuel-heavy spenders (no rewards on fuel)",
+    "rating": {
+      "overall": 3.8,
+      "rewards": 4.0,
+      "benefits": 3.0,
+      "value": 4.2
+    },
+    "verdict": "HDFC Millennia is one of India's most popular entry-level cashback cards. The 5% CashPoints on 10 major lifestyle brands with 1:1 redemption makes it excellent value for online shoppers. However, the monthly caps (₹1,000 each for accelerated and non-accelerated categories), discontinued complimentary lounge access, and high forex markup are significant drawbacks. Best suited for moderate spenders who can consistently spend on partner brands and redeem as statement credit.",
+    "pros": [
+      "5% CashPoints on 10 popular lifestyle brands (Amazon, Flipkart, Swiggy, etc.)",
+      "1:1 redemption value for statement credit (1 CashPoint = ₹1)",
+      "Low annual fee with achievable waiver condition (₹1 lakh/year)",
+      "Quarterly milestone benefit worth ₹1,000",
+      "Wide partner brand coverage across shopping, food, entertainment, and commute",
+      "Available on Visa, Mastercard, and Diners platforms",
+      "Fuel surcharge waiver up to ₹250/month"
+    ],
+    "cons": [
+      "Monthly reward caps limit benefits for high spenders (max ₹2,000 CashPoints/month)",
+      "Complimentary lounge access discontinued (December 2023)",
+      "High forex markup (3.5%) - not suitable for international transactions",
+      "No rewards on fuel, rent, EMI, wallet loads, government payments",
+      "CashPoints expire after 2 years",
+      "Low redemption value on SmartBuy (0.30/point vs 1.0/point for statement credit)",
+      "New redemption fees introduced (₹50 for statement credit, ₹99 for catalog)",
+      "No comprehensive insurance coverage"
+    ],
+    "alternatives": [
+      "hdfc-moneyback-plus",
+      "sbi-simplysave",
+      "axis-ace",
+      "amazon-pay-icici"
+    ],
+    "lastVerified": "2026-01-05",
+    "dataSource": [
+      "Official HDFC Bank website (hdfc.bank.in)",
+      "HDFC Bank Millennia Credit Card T&C document",
+      "HDFC Bank MITC document (November 2025 version)",
+      "PaisaBazaar.com",
+      "BankBazaar.com",
+      "CardInsider.com",
+      "CardMaven.in"
+    ],
+    "changelog": [
+      {
+        "date": "2024-12-01",
+        "change": "Complimentary domestic lounge access discontinued; now part of quarterly milestone program",
+        "source": "Official T&C update"
+      },
+      {
+        "date": "2024-09-01",
+        "change": "Wallet loading, Easy EMI, and education payments no longer earn Reward Points",
+        "source": "Official HDFC Bank communication"
+      },
+      {
+        "date": "2024-08-01",
+        "change": "New fee structure for rent payments (1% capped at ₹3,000), fuel over ₹15,000 (1%), utilities over ₹50,000 (1%). New redemption fees: ₹50 for statement credit, ₹99 for catalog",
+        "source": "Official T&C update"
+      },
+      {
+        "date": "2023-01-01",
+        "change": "Monthly cap of 50,000 CashPoints for flight/hotel bookings via SmartBuy",
+        "source": "Official T&C update"
+      },
+      {
+        "date": "2026-02-01",
+        "change": "Reward points redemption limited to maximum 5 times per month (upcoming)",
+        "source": "Official HDFC Bank website"
+      }
+    ]
+  }
+}

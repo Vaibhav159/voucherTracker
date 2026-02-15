@@ -1,0 +1,743 @@
+{
+  "id": "sbi-bpcl-credit-card",
+  "name": "BPCL SBI Credit Card",
+  "bank": "SBI Card",
+  "slug": "bpcl-sbi-credit-card",
+  "image": "assets/cards/sbi/bpcl-sbi-card.png",
+  "link": "https://www.sbicard.com/en/personal/credit-cards/travel/bpcl-sbi-card.page",
+  "isActive": true,
+
+  "network": {
+    "type": "Visa | RuPay",
+    "variant": "Platinum",
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "entry",
+    "isCobranded": true,
+    "cobrandPartner": {
+      "name": "Bharat Petroleum Corporation Limited (BPCL)",
+      "type": "fuel",
+      "loyaltyProgram": null
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 499,
+      "waivable": false,
+      "waiverCondition": null,
+      "taxNote": "Plus applicable GST (18%)"
+    },
+    "annual": {
+      "amount": 499,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 50000,
+        "spendPeriod": "12 months (anniversary year)",
+        "waiverText": "Renewal fee reversible if annual spends for last year ≥ Rs. 50,000"
+      },
+      "taxNote": "Plus applicable GST (18%)"
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": "unlimited",
+      "joiningFee": 0,
+      "annualFee": 0,
+      "rewardSharing": true,
+      "minAge": 18,
+      "eligibleRelations": ["Spouse", "Parents", "Children", "Siblings"]
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on Total Amount Due",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 500, "fee": 0},
+        {"minAmount": 501, "maxAmount": 1000, "fee": 400},
+        {"minAmount": 1001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 950},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ],
+      "additionalCharge": {
+        "amount": 100,
+        "condition": "Additional charge for missing MAD payment for 2 consecutive cycles, continues until MAD is cleared"
+      }
+    },
+    "overLimit": {
+      "amount": 600,
+      "percentage": 2.5,
+      "calculation": "2.5% of over-limit amount or Rs. 600, whichever is higher"
+    },
+    "paymentDishonor": {
+      "percentage": 2,
+      "minFee": 500,
+      "calculation": "2% of payment amount, minimum Rs. 500"
+    },
+    "cardReplacement": {
+      "min": 100,
+      "max": 250
+    },
+    "duplicateStatement": 100,
+    "chequePaymentFee": 100,
+    "cashPaymentFee": 250
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 20000,
+        "annual": 240000,
+        "note": "Approximately Rs. 20,000-25,000 monthly"
+      },
+      "selfEmployed": {
+        "itr": 400000,
+        "note": "Approximately Rs. 4-6 lakh annually"
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 70,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "employmentNote": "Salaried (6+ months with employer) or self-employed (1-2 years continuity)",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": "SBI account holders may have advantage"
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 10000,
+      "max": 500000
+    },
+    "factors": "Based on income, credit score, credit history, and existing relationship with SBI",
+    "enhancementCriteria": "Good repayment history and increased income"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.42,
+      "monthlyRate": 0.035,
+      "rateText": "3.50% per month (42% per annum)"
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.42,
+      "monthlyRate": 0.035,
+      "rateText": "3.50% per month (42% per annum) from date of withdrawal"
+    },
+    "gracePeriod": {
+      "days": "20-50",
+      "note": "Interest-free period of 20-50 days if previous month's balance paid in full and no cash advances taken"
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 200,
+      "calculation": "5% of outstanding amount or Rs. 200, whichever is higher, plus applicable taxes, EMI, and any overlimit amount"
+    },
+    "penaltyAPR": {
+      "rate": 0.0365,
+      "annualRate": 0.438,
+      "rateText": "3.65% per month (43.8% per annum)",
+      "triggerCondition": "Minimum Amount Due not paid by due date twice in a 12-month period"
+    },
+    "minFinanceCharge": 25
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": 80,
+    "dailyLimit": 12000,
+    "interestFromDay1": true,
+    "note": "2.5% of cash amount or Rs. 500, whichever is higher"
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "Reward Points",
+      "symbol": "RP",
+      "singularUnit": "point",
+      "pluralUnit": "points"
+    },
+    "baseRate": {
+      "rate": 1,
+      "spendUnit": 100,
+      "effectivePercentage": 0.0025,
+      "effectiveText": "0.25% value back on other retail purchases"
+    },
+    "earningText": "Earn 1 Reward Point for every Rs. 100 spent on other retail purchases (except fuel and excluded categories)",
+    "minTransactionForRewards": null,
+    "pointValue": 0.25,
+    "pointValueText": "4 Reward Points = Rs. 1",
+
+    "exclusions": {
+      "categories": [
+        "Balance transfers",
+        "E-wallet loading/recharge (MCCs 6540, 6541)",
+        "Cash advances",
+        "Financial charges (late payment fee, dishonored cheque charges, service fee)",
+        "Disputed transactions",
+        "Non-BPCL fuel spends",
+        "Flexipay transactions",
+        "Merchant EMI transactions"
+      ],
+      "mccs": ["6540", "6541"],
+      "note": "Reward Points not earned on above transactions. Accelerated rewards excluded for Metro Cash & Carry, Reliance Market, and Walmart under departmental/grocery stores."
+    },
+
+    "caps": {
+      "bpclFuel": {
+        "points": 1300,
+        "spendLimit": 10000,
+        "period": "billing cycle"
+      },
+      "acceleratedCategories": {
+        "points": 5000,
+        "period": "monthly",
+        "note": "Cap on 5X rewards for groceries, departmental stores, movies & dining. After cap, 1 RP per Rs. 100 continues."
+      }
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "24 months",
+      "condition": "Points not redeemed within 12 months of enrollment can be carried over for another year. Points not used by end of second year lapse and are forfeited."
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": 2000,
+        "cashback": null,
+        "vouchers": null,
+        "spendCondition": null,
+        "validity": "Credited after 20 days of payment of joining fee",
+        "description": "2,000 Activation Bonus Reward Points worth Rs. 500 on payment of joining fee",
+        "value": 500
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "bpclFuel": {
+        "rate": 13,
+        "multiplier": "13X",
+        "spendUnit": 100,
+        "effectivePercentage": 0.0325,
+        "cap": 1300,
+        "capPeriod": "billing cycle",
+        "spendCap": 10000,
+        "merchants": ["BPCL Petrol Pumps"],
+        "mccs": null,
+        "note": "13 Reward Points per Rs. 100 spent at BPCL Fuel, Lubricants & Bharat Gas (website and app)"
+      },
+      "bharatGas": {
+        "rate": 13,
+        "multiplier": "13X",
+        "spendUnit": 100,
+        "cap": 500,
+        "capPeriod": "billing cycle",
+        "note": "25 RP per Rs. 100 for Octane variant; 13 RP for base variant on website/app only"
+      },
+      "groceries": {
+        "rate": 5,
+        "multiplier": "5X",
+        "spendUnit": 100,
+        "effectivePercentage": 0.0125,
+        "cap": 5000,
+        "capPeriod": "monthly",
+        "merchants": null,
+        "mccs": ["5411"],
+        "note": "5 RP per Rs. 100. Excludes Metro Cash & Carry, Reliance Market, Walmart."
+      },
+      "departmentalStores": {
+        "rate": 5,
+        "multiplier": "5X",
+        "spendUnit": 100,
+        "effectivePercentage": 0.0125,
+        "cap": 5000,
+        "capPeriod": "monthly (combined with groceries, movies & dining)",
+        "mccs": ["5311"],
+        "note": "5 RP per Rs. 100. Excludes Metro Cash & Carry, Reliance Market, Walmart."
+      },
+      "dining": {
+        "rate": 5,
+        "multiplier": "5X",
+        "spendUnit": 100,
+        "effectivePercentage": 0.0125,
+        "cap": 5000,
+        "capPeriod": "monthly (combined)",
+        "merchants": null,
+        "note": "5 RP per Rs. 100 spent"
+      },
+      "movies": {
+        "rate": 5,
+        "multiplier": "5X",
+        "spendUnit": 100,
+        "effectivePercentage": 0.0125,
+        "cap": 5000,
+        "capPeriod": "monthly (combined)",
+        "merchants": null,
+        "note": "5 RP per Rs. 100 spent"
+      },
+      "otherRetail": {
+        "rate": 1,
+        "multiplier": "1X",
+        "spendUnit": 100,
+        "effectivePercentage": 0.0025,
+        "cap": null,
+        "note": "1 RP per Rs. 100 spent on all other retail purchases except excluded categories"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on non-BPCL fuel transactions"
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on e-wallet loads (MCCs 6540, 6541)"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": false,
+        "name": null,
+        "note": "No SmartBuy or similar portal accelerator for this card"
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "note": null
+      }
+    },
+
+    "redemption": {
+      "baseValue": 0.25,
+      "bestValue": 0.25,
+      "bestOption": "Instant redemption at BPCL outlets for fuel or BPCL fuel vouchers",
+      "minRedemption": 0,
+      "redemptionIncrement": null,
+      "convenienceFee": 99,
+      "convenienceFeeNote": "Rs. 99 on gifts, statement credit & specific vouchers only",
+      "noMinimumThreshold": true,
+
+      "options": [
+        {
+          "type": "fuel",
+          "value": 0.25,
+          "description": "Instant redemption at 1,200+ BPCL retail outlets",
+          "recommended": true,
+          "minPoints": 0,
+          "processingFee": 0,
+          "partners": ["BPCL"],
+          "note": "4 Reward Points = Rs. 1 of free fuel. No minimum threshold."
+        },
+        {
+          "type": "vouchers",
+          "value": 0.25,
+          "description": "BPCL fuel e-vouchers",
+          "recommended": true,
+          "minPoints": 0,
+          "processingFee": 0,
+          "partners": ["BPCL"],
+          "note": "Valid for 6 months"
+        },
+        {
+          "type": "catalog",
+          "value": 0.25,
+          "description": "Shop n Smile rewards catalogue",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 99,
+          "partners": ["SBI Card Shop n Smile"],
+          "note": "Products in lifestyle, leisure, and travel categories"
+        },
+        {
+          "type": "statement_credit",
+          "value": 0.25,
+          "description": "Statement credit",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 99,
+          "partners": [],
+          "note": "Convert to statement credit"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "note": "No airmiles or hotel transfer partners available for this card"
+    },
+
+    "pooling": {
+      "enabled": false,
+      "note": "Points cannot be pooled with other SBI Cards"
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": false,
+        "note": "No complimentary domestic airport lounge access"
+      },
+      "international": {
+        "included": false,
+        "note": "No complimentary international airport lounge access"
+      }
+    },
+
+    "milestones": [],
+
+    "golf": {
+      "included": false
+    },
+
+    "movies": {
+      "included": false,
+      "note": "5X rewards on movie purchases but no dedicated movie offers"
+    },
+
+    "dining": {
+      "included": false,
+      "note": "5X rewards on dining purchases but no dedicated dining program"
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 0,
+      "maxTransaction": 4000,
+      "monthlyCap": 100,
+      "annualSavings": 1200,
+      "applicableStations": "BPCL petrol pumps only",
+      "rewardsOnFuel": true,
+      "rewardsRate": "13X (13 RP per Rs. 100)",
+      "totalValueBack": "4.25% (3.25% rewards + 1% surcharge waiver)",
+      "note": "1% fuel surcharge waiver on transactions up to Rs. 4,000, max waiver Rs. 100 per billing cycle. Surcharge waiver NOT applicable on UPI transactions via RuPay variant."
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% Foreign Currency Transaction fee + applicable taxes",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "fee": 3.5,
+        "minTransaction": 1000,
+        "note": "3.5% on transactions ≥ Rs. 1000 in Indian currency at international locations or merchants registered overseas"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "Exchange rate determined by Visa/RuPay on settlement date"
+    },
+
+    "concierge": {
+      "included": false
+    },
+
+    "roadsideAssistance": {
+      "included": false
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "Flexipay",
+      "minAmount": 2500,
+      "bookingWindow": "30 days of purchase",
+      "note": "Convert transactions of Rs. 2,500+ into EMI. Reward points reversed for Flexipay are credited back only on cancellation, not foreclosure."
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "minAmount": 5000,
+      "maxAmount": "75% of available credit limit",
+      "processingFee": "As applicable",
+      "note": "Transfer balances from other bank credit cards at lower interest rates"
+    },
+
+    "easyMoney": {
+      "available": true,
+      "minAmount": 5000,
+      "maxAmount": "75% of available cash limit",
+      "delivery": "Cheque/draft delivered to doorstep",
+      "note": "Get cash against cash limit via cheque/draft"
+    },
+
+    "memberships": [],
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false
+      },
+      "companionPass": {
+        "included": false
+      },
+      "upgradeVouchers": {
+        "included": false
+      },
+      "loyaltyTierCredit": {
+        "included": false
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false
+      },
+      "freeNights": {
+        "included": false
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false
+    }
+  },
+
+  "insurance": {
+    "fraudLiability": {
+      "included": true,
+      "cover": null,
+      "condition": "Coverage valid 3 days prior to reporting loss to 7 days post reporting",
+      "reportingWindow": "Report immediately to SBI Card Helpline"
+    },
+    "airAccident": {
+      "included": false
+    },
+    "travelAccident": {
+      "included": false
+    },
+    "lostBaggage": {
+      "included": false
+    },
+    "flightDelay": {
+      "included": false
+    },
+    "purchaseProtection": {
+      "included": false
+    },
+    "extendedWarranty": {
+      "included": false
+    },
+    "note": "Basic fraud liability cover only. No comprehensive travel or purchase insurance."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "type": "Visa payWave / RuPay Contactless",
+      "pinlessLimit": 5000,
+      "note": "Contactless limit of Rs. 5000 per transaction without PIN"
+    },
+    "emvChip": {
+      "enabled": true,
+      "note": "EMV chip enabled for additional security"
+    },
+    "virtualCard": {
+      "available": false
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": true,
+      "variant": "RuPay only",
+      "rewardsOnUPI": true,
+      "note": "RuPay variant can be linked to UPI. Fuel surcharge waiver NOT applicable on UPI transactions at BPCL pumps."
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Real-time transaction alerts",
+        "Track applications",
+        "View statements"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"],
+      "methods": ["Auto Debit", "NACH", "Standing Instructions"]
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [],
+    "upgradesTo": [
+      {
+        "cardId": "sbi-bpcl-octane",
+        "cardName": "BPCL SBI Card Octane",
+        "benefits": "7.25% value back on BPCL fuel, 10X on groceries/dining/movies, domestic lounge access",
+        "annualFee": 1499,
+        "note": "Higher rewards variant for heavy fuel spenders"
+      }
+    ],
+    "note": "Can upgrade to BPCL SBI Card Octane for higher rewards and lounge access"
+  },
+
+  "meta": {
+    "tags": [
+      "Fuel Card",
+      "Entry Level",
+      "BPCL",
+      "Co-branded",
+      "Travel & Fuel",
+      "Low Annual Fee"
+    ],
+    "bestFor": "Frequent BPCL customers who want to maximize savings on fuel purchases with a low annual fee card",
+    "notRecommendedFor": "Those who use HPCL/IOCL pumps, need airport lounge access, or want premium travel benefits",
+    "idealMonthlySpend": {
+      "fuel": "Rs. 8,000-10,000 at BPCL",
+      "other": "Rs. 10,000+ on groceries, dining, movies"
+    },
+    "rating": {
+      "overall": 3.5,
+      "rewards": 3.5,
+      "benefits": 3.0,
+      "value": 4.0
+    },
+    "verdict": "A solid entry-level fuel card for BPCL loyalists. The 4.25% value back on BPCL fuel, combined with 5X rewards on everyday categories and a low annual fee of Rs. 499, makes it a cost-effective choice. The fee waiver at Rs. 50,000 annual spend is easily achievable. However, it lacks lounge access and premium benefits. Best paired with a general-purpose rewards card for non-fuel spends.",
+    "pros": [
+      "4.25% value back on BPCL fuel (13X rewards + 1% surcharge waiver)",
+      "Low annual fee of Rs. 499 with easy waiver at Rs. 50,000 spend",
+      "5X rewards on groceries, dining, movies, departmental stores",
+      "Instant reward redemption at 1,200+ BPCL outlets with no minimum threshold",
+      "Free add-on cards for family members",
+      "Available in both Visa and RuPay variants",
+      "RuPay variant supports UPI linking",
+      "Contactless payments supported"
+    ],
+    "cons": [
+      "No airport lounge access",
+      "No transfer partners for airmiles/hotel points",
+      "3.5% forex markup is high",
+      "No comprehensive travel insurance",
+      "Fuel surcharge waiver not applicable on UPI transactions",
+      "Limited to BPCL pumps for fuel benefits",
+      "Low 0.25% value back on general retail purchases",
+      "No Apple Pay support"
+    ],
+    "alternatives": [
+      {
+        "cardId": "sbi-bpcl-octane",
+        "reason": "Higher 7.25% value back on BPCL fuel + domestic lounge access"
+      },
+      {
+        "cardId": "icici-hpcl-super-saver",
+        "reason": "For HPCL users with similar fuel benefits"
+      },
+      {
+        "cardId": "hdfc-indianoil",
+        "reason": "For IndianOil users"
+      },
+      {
+        "cardId": "axis-indianoil",
+        "reason": "For IndianOil users with RuPay option"
+      }
+    ],
+    "lastVerified": "2026-01-05",
+    "dataSource": [
+      "SBI Card Official Website (sbicard.com)",
+      "BPCL SBI Card MITC Document",
+      "BPCL-VISA-RuPay T&C Combined PDF",
+      "Paisabazaar.com",
+      "BankBazaar.com",
+      "TechnoFino Community",
+      "Finology Select"
+    ],
+    "changelog": [
+      {
+        "date": "2020-09-01",
+        "change": "5X Reward Points on groceries, departmental stores, movies & dining capped at 5,000 points per month",
+        "source": "SBI Card T&C"
+      },
+      {
+        "date": "2020-07-01",
+        "change": "E-wallet loading/recharge transactions (MCCs 6540, 6541) excluded from rewards",
+        "source": "SBI Card Policy Update"
+      },
+      {
+        "date": "2020-11-20",
+        "change": "Flexipay and Merchant EMI transactions excluded from earning reward points",
+        "source": "SBI Card T&C"
+      },
+      {
+        "date": "2021-06-01",
+        "change": "Overdue finance charges revised to 3.65% p.m. for defaulters",
+        "source": "SBI Card MITC"
+      },
+      {
+        "date": "2021-09-01",
+        "change": "Cash payment fee increased to Rs. 250",
+        "source": "SBI Card MITC"
+      }
+    ],
+    "customerCare": {
+      "phone": ["39 02 02 02 (prefix local STD code)", "1860 180 1290", "1860 500 1290"],
+      "email": "customercare@sbicard.com",
+      "nodalOfficer": "nodalofficer@sbicard.com",
+      "address": "SBI Cards and Payment Services Ltd., Unit 401 & 402, 4th Floor, Aggarwal Millennium Tower, E-1,2,3 Netaji Subhash Place, Wazirpur, New Delhi 110034"
+    }
+  }
+}

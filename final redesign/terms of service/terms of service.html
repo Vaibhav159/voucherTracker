@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Espresso Financial - Terms of Service</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c8a95f",
+                        "secondary": "#B87333", // Copper
+                        "background-light": "#fdf7e3",
+                        "background-dark": "#201c18", // Espresso base
+                        "surface-dark": "#2A2622", // Card surface
+                        "text-main": "#F8F8F8", // Off-white
+                        "text-muted": "#b3aea2",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "serif": ["Noto Serif", "serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #201c18; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #35322c; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c8a95f; 
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-text-main font-display antialiased selection:bg-primary/30 selection:text-primary">
+<div class="min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full border-b border-[#35322c] bg-[#161512]/95 backdrop-blur-sm">
+<div class="max-w-[1400px] mx-auto px-6 h-16 flex items-center justify-between">
+<!-- Logo -->
+<div class="flex items-center gap-3 text-white">
+<div class="size-8 text-primary">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-white text-lg font-bold tracking-tight font-serif">Espresso Financial</h2>
+</div>
+<!-- Nav Links -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-text-muted hover:text-primary transition-colors text-sm font-medium" href="#">Dashboard</a>
+<a class="text-text-muted hover:text-primary transition-colors text-sm font-medium" href="#">Cards</a>
+<a class="text-text-muted hover:text-primary transition-colors text-sm font-medium" href="#">Community</a>
+<a class="text-text-muted hover:text-primary transition-colors text-sm font-medium" href="#">Settings</a>
+</nav>
+<!-- User Actions -->
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex h-9 px-4 items-center justify-center rounded-lg border border-[#35322c] text-primary text-xs font-bold tracking-wide hover:bg-[#35322c] transition-colors uppercase">
+                        Log Out
+                    </button>
+<div class="size-9 rounded-full bg-cover bg-center border border-[#35322c]" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDJgZAikDocQtciFJ0P_J4QgEW63QfUTalmypgpWQ-8Jo0fc-FLbRrhKuYIScI7A_YohM_oA214VI5YUmai1kjErr1-TFrUC7JPRobRlQvvZHrW5EIR5qXa0O9bhYXGFbYl0RMxpsri_gI70GBqfGk3z-rVVYenyOD4V9NSzI6OIJYbwa4wUNHs7diFxXxCpm2uPfPhYREPbNiggibAOutQx6OBSO4W4-0-W1YJD9A_PusTBVdHV18WOLt5f9HiTnR3t3NA1iHSOJoL");'></div>
+</div>
+</div>
+</header>
+<!-- Main Layout Container -->
+<div class="flex flex-1 max-w-[1400px] mx-auto w-full">
+<!-- Sticky Left Sidebar (Table of Contents) -->
+<aside class="hidden lg:block w-72 shrink-0 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto border-r border-[#35322c] py-8 pr-8">
+<div class="flex flex-col gap-6">
+<div class="flex flex-col gap-1 px-3">
+<h3 class="text-primary font-serif text-lg font-bold">Contents</h3>
+<p class="text-text-muted text-xs uppercase tracking-wider">Legal Navigation</p>
+</div>
+<nav class="flex flex-col space-y-1">
+<!-- Active Item -->
+<a class="group flex items-center gap-3 px-3 py-3 rounded-lg bg-[#35322c]/50 border-l-2 border-primary" href="#section-1">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="text-primary text-sm font-semibold">1. Acceptance</span>
+</a>
+<a class="group flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-[#35322c] border-l-2 border-transparent hover:border-secondary/50 transition-all" href="#section-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">info</span>
+<span class="text-text-muted group-hover:text-white text-sm font-medium">2. Nature of Service</span>
+</a>
+<a class="group flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-[#35322c] border-l-2 border-transparent hover:border-secondary/50 transition-all" href="#section-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">verified_user</span>
+<span class="text-text-muted group-hover:text-white text-sm font-medium">3. Accuracy of Info</span>
+</a>
+<a class="group flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-[#35322c] border-l-2 border-transparent hover:border-secondary/50 transition-all" href="#section-4">
+<span class="material-symbols-outlined text-secondary text-[20px]">shield</span>
+<span class="text-text-muted group-hover:text-white text-sm font-medium">4. Liability Limits</span>
+</a>
+<a class="group flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-[#35322c] border-l-2 border-transparent hover:border-secondary/50 transition-all" href="#section-5">
+<span class="material-symbols-outlined text-secondary text-[20px]">handshake</span>
+<span class="text-text-muted group-hover:text-white text-sm font-medium">5. Affiliate Disclosure</span>
+</a>
+<a class="group flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-[#35322c] border-l-2 border-transparent hover:border-secondary/50 transition-all" href="#section-6">
+<span class="material-symbols-outlined text-secondary text-[20px]">link</span>
+<span class="text-text-muted group-hover:text-white text-sm font-medium">6. Third-Party Links</span>
+</a>
+<a class="group flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-[#35322c] border-l-2 border-transparent hover:border-secondary/50 transition-all" href="#section-7">
+<span class="material-symbols-outlined text-secondary text-[20px]">gavel</span>
+<span class="text-text-muted group-hover:text-white text-sm font-medium">7. Indemnification</span>
+</a>
+</nav>
+<div class="px-3 pt-6 mt-auto">
+<div class="p-4 rounded-lg bg-surface-dark border border-[#35322c]">
+<span class="material-symbols-outlined text-primary mb-2 text-[24px]">support_agent</span>
+<p class="text-white text-sm font-bold mb-1">Need Clarification?</p>
+<p class="text-text-muted text-xs leading-relaxed mb-3">Our legal team is available for inquiries regarding these terms.</p>
+<a class="text-secondary text-xs font-bold hover:text-white transition-colors" href="#">Contact Support →</a>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 py-10 px-6 lg:px-12 max-w-5xl mx-auto">
+<!-- Page Header -->
+<div class="mb-12 border-b border-[#35322c] pb-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="flex flex-col gap-3 max-w-2xl">
+<h1 class="text-primary text-4xl md:text-5xl font-serif font-black leading-tight tracking-tight">Terms of Service</h1>
+<p class="text-white text-lg md:text-xl font-light leading-relaxed opacity-90">Please read these terms carefully before using our financial dashboard and credit card optimization tools.</p>
+</div>
+<div class="shrink-0">
+<div class="inline-flex items-center gap-2 px-4 py-2 bg-surface-dark rounded-full border border-secondary/30">
+<span class="size-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-xs font-bold text-secondary tracking-wide uppercase">Last Updated: Jan 6, 2026</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Legal Content Stack -->
+<div class="flex flex-col gap-8">
+<!-- Section 1 -->
+<section class="scroll-mt-24 bg-surface-dark rounded-xl p-8 md:p-10 shadow-lg border border-[#35322c] relative overflow-hidden group" id="section-1">
+<div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-9xl text-secondary">check_circle</span>
+</div>
+<div class="relative z-10">
+<div class="flex items-baseline gap-4 mb-4 border-b border-secondary/20 pb-4">
+<span class="text-secondary font-serif text-3xl italic font-bold">01.</span>
+<h2 class="text-white text-2xl font-bold tracking-tight">Acceptance of Terms</h2>
+</div>
+<div class="prose prose-invert prose-lg max-w-none text-text-muted leading-relaxed">
+<p>
+                                    By accessing, registering for, or using the Espresso Financial dashboard (the "Service"), you accept and agree to be bound by the terms and provisions of this agreement. In addition, when using these particular services, you shall be subject to any posted guidelines or rules applicable to such services. All such guidelines or rules are hereby incorporated by reference into the TOS.
+                                </p>
+</div>
+</div>
+</section>
+<!-- Section 2 -->
+<section class="scroll-mt-24 bg-surface-dark rounded-xl p-8 md:p-10 shadow-lg border border-[#35322c]" id="section-2">
+<div class="flex items-baseline gap-4 mb-6 border-b border-secondary/20 pb-4">
+<span class="text-secondary font-serif text-3xl italic font-bold">02.</span>
+<h2 class="text-white text-2xl font-bold tracking-tight">Nature of Service <span class="text-text-muted font-normal text-lg ml-2">(Informational Only)</span></h2>
+</div>
+<div class="space-y-8">
+<div>
+<h3 class="text-white font-serif font-bold text-lg mb-2 flex items-center gap-2">
+<span class="h-px w-6 bg-secondary inline-block"></span> Not Financial Advice
+                                </h3>
+<p class="text-text-muted leading-relaxed pl-8 border-l border-[#35322c]">
+                                    The content provided within the Espresso Financial dashboard is strictly for informational and educational purposes. It is not intended to be a substitute for professional financial advice. Always seek the advice of your financial advisor or other qualified financial provider with any questions you may have regarding a financial decision.
+                                </p>
+</div>
+<div>
+<h3 class="text-white font-serif font-bold text-lg mb-2 flex items-center gap-2">
+<span class="h-px w-6 bg-secondary inline-block"></span> No Banking Affiliation
+                                </h3>
+<p class="text-text-muted leading-relaxed pl-8 border-l border-[#35322c]">
+                                    Espresso Financial is an independent entity and is not directly affiliated with, endorsed by, or sponsored by any specific bank or credit card issuer mentioned on the platform unless explicitly stated in the Affiliate Disclosure section.
+                                </p>
+</div>
+</div>
+</section>
+<!-- Section 3 -->
+<section class="scroll-mt-24 bg-surface-dark rounded-xl p-8 md:p-10 shadow-lg border border-[#35322c]" id="section-3">
+<div class="flex items-baseline gap-4 mb-6 border-b border-secondary/20 pb-4">
+<span class="text-secondary font-serif text-3xl italic font-bold">03.</span>
+<h2 class="text-white text-2xl font-bold tracking-tight">Accuracy of Information</h2>
+</div>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="bg-[#201c18] p-6 rounded-lg border border-[#35322c]">
+<div class="text-secondary mb-3"><span class="material-symbols-outlined">warning</span></div>
+<h4 class="text-white font-bold mb-2">The "No Guarantee" Clause</h4>
+<p class="text-sm text-text-muted leading-relaxed">
+                                    While we strive to keep information up to date, credit card offers, interest rates, and bonus categories change frequently. We make no representations or warranties of any kind, express or implied, about the completeness, accuracy, or reliability of the data.
+                                </p>
+</div>
+<div class="bg-[#201c18] p-6 rounded-lg border border-[#35322c]">
+<div class="text-secondary mb-3"><span class="material-symbols-outlined">fact_check</span></div>
+<h4 class="text-white font-bold mb-2">User Verification Required</h4>
+<p class="text-sm text-text-muted leading-relaxed">
+                                    It is your responsibility to verify all terms and conditions with the credit card issuer directly before applying. Reliance on any information provided by Espresso Financial is strictly at your own risk.
+                                </p>
+</div>
+</div>
+</section>
+<!-- Section 4 (Highlighted) -->
+<section class="scroll-mt-24 bg-gradient-to-br from-surface-dark to-[#3a3530] rounded-xl p-8 md:p-10 shadow-xl border border-primary/30 relative overflow-hidden" id="section-4">
+<!-- Decorative element -->
+<div class="absolute -right-12 -top-12 size-48 rounded-full bg-primary/5 blur-3xl"></div>
+<div class="relative z-10">
+<div class="flex items-baseline gap-4 mb-6 border-b border-primary/20 pb-4">
+<span class="text-primary font-serif text-3xl italic font-bold">04.</span>
+<h2 class="text-primary text-2xl font-bold tracking-tight">Limitation of Liability</h2>
+</div>
+<div class="text-text-muted leading-relaxed space-y-4">
+<p>
+                                    To the fullest extent permitted by applicable law, Espresso Financial shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly.
+                                </p>
+<div class="bg-primary/10 border-l-4 border-primary p-6 my-6 rounded-r-lg">
+<p class="text-primary font-serif font-bold text-lg italic mb-2">The "Protect at All Costs" Clause</p>
+<p class="text-white font-medium">
+                                        IN NO EVENT SHALL OUR AGGREGATE LIABILITY EXCEED THE AMOUNT YOU PAID US, IF ANY, IN THE PAST SIX MONTHS FOR THE SERVICES GIVING RISE TO THE CLAIM.
+                                    </p>
+</div>
+<p>
+                                    This limitation applies to all causes of action whether in contract, tort, or otherwise. You acknowledge that Espresso Financial would not provide the Service without these limitations on its liability.
+                                </p>
+</div>
+</div>
+</section>
+<!-- Section 5 -->
+<section class="scroll-mt-24 bg-surface-dark rounded-xl p-8 md:p-10 shadow-lg border border-[#35322c]" id="section-5">
+<div class="flex items-baseline gap-4 mb-6 border-b border-secondary/20 pb-4">
+<span class="text-secondary font-serif text-3xl italic font-bold">05.</span>
+<h2 class="text-white text-2xl font-bold tracking-tight">Affiliate Disclosure</h2>
+</div>
+<div class="text-text-muted leading-relaxed">
+<p class="mb-4">
+                                Transparency is core to our community. Please note that some of the links on this dashboard are "affiliate links." This means if you click on the link and purchase the item or apply for the card, we may receive an affiliate commission.
+                            </p>
+<ul class="list-none space-y-2 pl-4">
+<li class="flex items-start gap-3">
+<span class="text-secondary mt-1 text-xs">●</span>
+<span>This comes at no extra cost to you.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="text-secondary mt-1 text-xs">●</span>
+<span>We only recommend products or services we believe will add value to our readers.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="text-secondary mt-1 text-xs">●</span>
+<span>We do not accept payment to write positive reviews for products that we do not believe in.</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- Section 6 & 7 Split -->
+<div class="grid md:grid-cols-2 gap-8">
+<section class="scroll-mt-24 bg-surface-dark rounded-xl p-8 shadow-lg border border-[#35322c] flex flex-col" id="section-6">
+<div class="flex items-baseline gap-3 mb-4 border-b border-secondary/20 pb-3">
+<span class="text-secondary font-serif text-2xl italic font-bold">06.</span>
+<h2 class="text-white text-xl font-bold">Third-Party Links</h2>
+</div>
+<p class="text-text-muted text-sm leading-relaxed flex-1">
+                                Our Service may contain links to third-party web sites or services that are not owned or controlled by Espresso Financial. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third party web sites or services.
+                            </p>
+</section>
+<section class="scroll-mt-24 bg-surface-dark rounded-xl p-8 shadow-lg border border-[#35322c] flex flex-col" id="section-7">
+<div class="flex items-baseline gap-3 mb-4 border-b border-secondary/20 pb-3">
+<span class="text-secondary font-serif text-2xl italic font-bold">07.</span>
+<h2 class="text-white text-xl font-bold">Indemnification</h2>
+</div>
+<p class="text-text-muted text-sm leading-relaxed flex-1">
+                                You agree to defend, indemnify, and hold harmless Espresso Financial and its licensee and licensors, and their employees, contractors, agents, officers, and directors, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses.
+                            </p>
+</section>
+</div>
+<!-- Footer Note -->
+<div class="text-center pt-12 pb-6 border-t border-[#35322c] mt-8">
+<p class="text-text-muted text-sm">
+                            © 2026 Espresso Financial. All rights reserved. <br/>
+<span class="text-xs opacity-60">Designed for the Indian Credit Card Community.</span>
+</p>
+</div>
+</div>
+</main>
+</div>
+</div>
+<script>
+        // Optional: Simple script to handle smooth scrolling offset adjustments
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body></html>

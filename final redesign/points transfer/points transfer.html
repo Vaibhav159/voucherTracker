@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Points Transfer Tool - VoucherTracker</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ecb613", // Copper/Gold accent
+                        "primary-hover": "#d4a00f",
+                        "background-light": "#fdfbf7", // Warmer light background (Espresso foam?)
+                        "background-dark": "#0c0a09", // Warm Black (Espresso)
+                        "surface-dark": "#1c1917", // Stone 900
+                        "surface-darker": "#171513", // Darker Stone
+                        "copper-dark": "#451a03",
+                        "matte-black": "#0f1210", 
+                        "bronze": "#78350f",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                    boxShadow: {
+                        'glow': '0 0 20px -5px rgba(236, 182, 19, 0.3)',
+                        'emboss': 'inset 0 1px 1px rgba(255,255,255,0.4), 0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'shimmer-trail': 'shimmer 2.5s linear infinite',
+                        'pan-bg': 'pan 60s linear infinite',
+                        'float-weighted': 'floatWeighted 5s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        shimmer: {
+                            '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                            '20%': { opacity: '1' },
+                            '100%': { transform: 'translateX(200%)', opacity: '0' },
+                        },
+                        pan: {
+                            '0%': { backgroundPosition: '0% 0%' },
+                            '100%': { backgroundPosition: '100% 100%' },
+                        },
+                        floatWeighted: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-6px)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0c0a09; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #ecb613; }
+        .gold-text-gradient {
+            background: linear-gradient(to right, #ecb613, #f59e0b, #ecb613);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }.morph-icon { transition: all 0.5s ease; }
+        .group:hover .morph-icon { transform: scale(1.1) rotate(5deg); background-color: rgba(236, 182, 19, 0.2); }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-stone-900 dark:text-stone-200 antialiased transition-colors duration-200">
+<div class="flex h-screen w-full overflow-hidden">
+<aside class="hidden w-64 flex-col justify-between border-r border-stone-200 bg-white dark:border-white/5 dark:bg-surface-darker md:flex">
+<div class="flex flex-col gap-6 p-6">
+<div class="flex flex-col gap-1">
+<h1 class="gold-text-gradient text-xl font-bold tracking-tight">VoucherTracker</h1>
+<p class="text-xs font-medium text-stone-500 dark:text-stone-500">Espresso &amp; Copper Edition</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-stone-600 hover:bg-stone-100 dark:text-stone-400 dark:hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+                    Dashboard
+                </a>
+<a class="flex items-center gap-3 rounded-lg bg-primary/10 px-3 py-2 text-sm font-medium text-primary transition-colors border-l-2 border-primary" href="#">
+<span class="material-symbols-outlined filled text-[20px]">currency_exchange</span>
+                    Points Transfer
+                </a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-stone-600 hover:bg-stone-100 dark:text-stone-400 dark:hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">trending_up</span>
+                    Trends &amp; History
+                </a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-stone-600 hover:bg-stone-100 dark:text-stone-400 dark:hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">credit_card</span>
+                    Cards Portfolio
+                </a>
+<div class="my-2 h-px bg-stone-200 dark:bg-white/5"></div>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-stone-600 hover:bg-stone-100 dark:text-stone-400 dark:hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">auto_awesome</span>
+                    Partner Suggestions
+                </a>
+</nav>
+</div>
+<div class="flex flex-col gap-2 p-6">
+<button class="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-stone-600 hover:bg-stone-100 dark:text-stone-400 dark:hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+                Settings
+            </button>
+</div>
+</aside>
+<main class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark relative">
+<div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none"></div>
+<div class="mx-auto max-w-7xl px-4 py-8 md:px-8 lg:py-10 relative z-10">
+<header class="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="inline-flex items-center rounded-full bg-primary/10 px-2 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20">Transfer Tool</span>
+<span class="h-1 w-1 rounded-full bg-stone-500"></span>
+<span class="text-xs text-stone-500">v2.4 Updated</span>
+</div>
+<h1 class="text-3xl font-black text-stone-900 dark:text-white lg:text-4xl">
+                        Transfer <span class="gold-text-gradient">Journey</span>
+</h1>
+<p class="mt-2 max-w-2xl text-stone-600 dark:text-stone-400">
+                        Visualize point migration, check real-time ratios, and discover the best redemption sweet spots.
+                    </p>
+</div>
+<div class="flex items-center gap-3">
+<button class="inline-flex items-center gap-2 rounded-lg border border-stone-200 bg-white px-4 py-2 text-sm font-medium text-stone-700 transition-colors hover:bg-stone-50 dark:border-white/10 dark:bg-white/5 dark:text-stone-300 dark:hover:bg-white/10 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">history</span>
+                        History
+                    </button>
+</div>
+</header>
+<div class="grid grid-cols-1 gap-8 lg:grid-cols-12">
+<div class="lg:col-span-8 flex flex-col gap-8">
+<div class="group relative overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-xl dark:border-white/5 dark:bg-surface-dark">
+<div class="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')] animate-pan-bg pointer-events-none"></div>
+<div class="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-[80px]"></div>
+<div class="absolute -left-20 -bottom-20 h-64 w-64 rounded-full bg-primary/5 blur-[80px]"></div>
+<div class="relative p-6 md:p-10">
+<div class="flex flex-col md:flex-row items-center justify-between gap-6 relative">
+<div class="w-full md:w-5/12 relative z-10 transition-all duration-700 ease-in-out hover:scale-[1.01]">
+<label class="mb-3 block font-serif text-xs font-bold uppercase tracking-[0.25em] text-stone-500 dark:text-stone-400">From (Bank)</label>
+<div class="relative rounded-xl border-2 border-transparent bg-stone-50 p-1 transition-all focus-within:border-primary/50 hover:bg-stone-100 dark:bg-black/40 dark:hover:bg-black/60">
+<div class="flex items-center gap-3 rounded-lg p-3">
+<div class="morph-icon flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white shadow-sm dark:bg-white/5 dark:text-white">
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<div class="flex-1">
+<select class="w-full border-none bg-transparent p-0 text-sm font-bold text-stone-900 focus:ring-0 dark:text-white cursor-pointer">
+<option>HDFC Infinia</option>
+<option>Axis Magnus</option>
+<option>Amex Platinum</option>
+</select>
+<input class="w-full border-none bg-transparent p-0 text-xs text-stone-500 focus:ring-0" readonly="" type="text" value="100,000 pts available"/>
+</div>
+</div>
+<div class="mt-2 border-t border-stone-200 px-4 py-3 dark:border-white/5">
+<label class="text-[10px] font-semibold text-stone-400">TRANSFER AMOUNT</label>
+<input class="w-full border-none bg-transparent p-0 text-2xl font-mono font-bold text-stone-900 focus:ring-0 dark:text-white placeholder:text-stone-600" type="number" value="10000"/>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center relative z-20 min-w-[140px]">
+<div class="mb-6 group relative">
+<div class="absolute -inset-1 rounded-lg bg-gradient-to-r from-yellow-300 via-primary to-yellow-300 opacity-60 blur transition duration-1000 group-hover:opacity-100 animate-pulse"></div>
+<div class="relative flex flex-col items-center rounded-lg border border-yellow-200/40 bg-gradient-to-br from-[#fcd34d] via-[#d97706] to-[#b45309] px-5 py-2 shadow-emboss">
+<span class="mb-0.5 text-[9px] font-black uppercase tracking-widest text-stone-900/60 mix-blend-multiply" style="text-shadow: 0 1px 0 rgba(255,255,255,0.2);">Live Ratio</span>
+<span class="font-serif text-xl font-bold text-[#451a03] drop-shadow-[0_1px_0_rgba(255,255,255,0.3)]">1 : 1</span>
+</div>
+</div>
+<div class="relative flex w-full items-center justify-center">
+<div class="absolute h-[2px] w-48 bg-stone-200 dark:bg-white/10 rounded-full overflow-hidden">
+<div class="absolute inset-0 h-full w-1/3 bg-gradient-to-r from-transparent via-primary to-transparent animate-shimmer-trail"></div>
+</div>
+<div class="relative flex h-14 w-14 items-center justify-center rounded-full border-4 border-white bg-gradient-to-br from-stone-800 to-stone-950 shadow-2xl transition-transform duration-500 hover:scale-110 animate-float-weighted dark:border-surface-darker">
+<span class="material-symbols-outlined text-primary text-2xl drop-shadow-[0_0_8px_rgba(236,182,19,0.6)]">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="w-full md:w-5/12 relative z-10 transition-all duration-700 ease-in-out hover:scale-[1.01]">
+<label class="mb-3 block font-serif text-xs font-bold uppercase tracking-[0.25em] text-stone-500 dark:text-stone-400">To (Partner)</label>
+<div class="relative rounded-xl border-2 border-transparent bg-stone-50 p-1 transition-all focus-within:border-primary/50 hover:bg-stone-100 dark:bg-black/40 dark:hover:bg-black/60">
+<div class="flex items-center gap-3 rounded-lg p-3">
+<div class="morph-icon flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white shadow-sm dark:bg-white/5 dark:text-white">
+<span class="material-symbols-outlined">flight_takeoff</span>
+</div>
+<div class="flex-1">
+<select class="w-full border-none bg-transparent p-0 text-sm font-bold text-stone-900 focus:ring-0 dark:text-white cursor-pointer">
+<option>KrisFlyer (SIA)</option>
+<option>British Airways</option>
+<option>Marriott Bonvoy</option>
+</select>
+<div class="text-xs text-stone-500">Airline Partner</div>
+</div>
+</div>
+<div class="mt-2 border-t border-stone-200 px-4 py-3 dark:border-white/5 bg-gradient-to-br from-primary/5 to-transparent">
+<label class="text-[10px] font-semibold text-primary">YOU RECEIVE</label>
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-mono font-bold text-primary">10,000</span>
+<span class="text-sm font-medium text-primary/80">Miles</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-stone-100 pt-6 dark:border-white/5">
+<div class="flex items-center gap-3">
+<label class="inline-flex cursor-pointer items-center gap-3">
+<input class="peer sr-only" type="checkbox"/>
+<div class="peer relative h-6 w-11 rounded-full bg-stone-200 after:absolute after:start-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-primary peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none dark:bg-white/10 dark:border-white/10"></div>
+<span class="text-sm font-medium text-stone-600 dark:text-stone-400">Show Cash Value</span>
+</label>
+<span class="hidden text-sm text-stone-400 md:inline">|</span>
+<span class="text-sm text-stone-500">Est. Value: <span class="font-bold text-emerald-500">₹ 8,500</span></span>
+</div>
+<button class="w-full rounded-xl bg-primary px-6 py-3 text-sm font-bold text-stone-900 shadow-lg shadow-primary/20 transition-transform hover:scale-[1.02] active:scale-[0.98] md:w-auto">
+                                    Confirm Transfer
+                                </button>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-4 rounded-xl border border-amber-900/20 bg-amber-50/50 p-4 dark:bg-amber-900/10">
+<div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-500">
+<span class="material-symbols-outlined text-[18px]">lightbulb</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-stone-900 dark:text-amber-500">Smart Suggestion</h4>
+<p class="mt-1 text-sm text-stone-600 dark:text-stone-400">
+                                Consider transferring to <strong>Marriott Bonvoy</strong> instead. There is a <span class="font-bold text-amber-600 dark:text-amber-400">30% bonus</span> active until Friday, giving you better effective value (₹1.2 vs ₹0.85).
+                            </p>
+</div>
+<button class="ml-auto text-xs font-semibold text-amber-700 hover:underline dark:text-amber-500 whitespace-nowrap">Switch Partner</button>
+</div>
+<section>
+<h3 class="mb-4 flex items-center gap-2 text-lg font-bold text-stone-900 dark:text-white">
+<span class="material-symbols-outlined text-primary">redeem</span>
+                            What Can I Get?
+                        </h3>
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+<div class="group relative overflow-hidden rounded-xl border border-stone-200 bg-white p-4 transition-all hover:border-primary/50 hover:shadow-lg dark:border-white/5 dark:bg-surface-dark">
+<div class="mb-3 h-24 w-full rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 opacity-80 group-hover:opacity-100 transition-opacity relative">
+<span class="material-symbols-outlined absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-4xl opacity-50">flight</span>
+</div>
+<h4 class="font-bold text-stone-900 dark:text-white">Economy Saver</h4>
+<p class="text-xs text-stone-500 dark:text-stone-400">Mumbai to Singapore</p>
+<div class="mt-3 flex items-center justify-between">
+<span class="text-sm font-bold text-primary">20k pts</span>
+<span class="rounded bg-emerald-500/10 px-1.5 py-0.5 text-[10px] font-bold text-emerald-500">High Value</span>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl border border-stone-200 bg-white p-4 transition-all hover:border-primary/50 hover:shadow-lg dark:border-white/5 dark:bg-surface-dark">
+<div class="mb-3 h-24 w-full rounded-lg bg-gradient-to-br from-purple-500 to-pink-600 opacity-80 group-hover:opacity-100 transition-opacity relative">
+<span class="material-symbols-outlined absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-4xl opacity-50">hotel</span>
+</div>
+<h4 class="font-bold text-stone-900 dark:text-white">Luxury Stay</h4>
+<p class="text-xs text-stone-500 dark:text-stone-400">Ritz Carlton (1 Night)</p>
+<div class="mt-3 flex items-center justify-between">
+<span class="text-sm font-bold text-primary">45k pts</span>
+<span class="rounded bg-stone-500/10 px-1.5 py-0.5 text-[10px] font-bold text-stone-500">Avg Value</span>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl border border-stone-200 bg-white p-4 transition-all hover:border-primary/50 hover:shadow-lg dark:border-white/5 dark:bg-surface-dark">
+<div class="mb-3 h-24 w-full rounded-lg bg-gradient-to-br from-amber-500 to-orange-600 opacity-80 group-hover:opacity-100 transition-opacity relative">
+<span class="material-symbols-outlined absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-4xl opacity-50">diamond</span>
+</div>
+<h4 class="font-bold text-stone-900 dark:text-white">Business Upgrade</h4>
+<p class="text-xs text-stone-500 dark:text-stone-400">Delhi to London</p>
+<div class="mt-3 flex items-center justify-between">
+<span class="text-sm font-bold text-primary">60k pts</span>
+<span class="rounded bg-emerald-500/10 px-1.5 py-0.5 text-[10px] font-bold text-emerald-500">Best Value</span>
+</div>
+</div>
+</div>
+</section>
+<section class="rounded-xl border border-stone-200 bg-white p-6 dark:border-white/5 dark:bg-surface-dark">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-bold text-stone-900 dark:text-white">Bonus History (KrisFlyer)</h3>
+<select class="bg-transparent text-xs text-stone-500 border-none focus:ring-0 cursor-pointer">
+<option>Last 12 Months</option>
+<option>All Time</option>
+</select>
+</div>
+<div class="flex items-end gap-2 h-32 w-full px-2">
+<div class="flex-1 flex flex-col items-center gap-1 group">
+<div class="w-full bg-stone-100 dark:bg-white/5 rounded-t-sm h-[30%] group-hover:bg-primary/50 transition-colors"></div>
+<span class="text-[10px] text-stone-400">Jan</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 group">
+<div class="w-full bg-stone-100 dark:bg-white/5 rounded-t-sm h-[30%] group-hover:bg-primary/50 transition-colors"></div>
+<span class="text-[10px] text-stone-400">Feb</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 group relative">
+<div class="absolute -top-6 text-[10px] font-bold text-primary">20%</div>
+<div class="w-full bg-primary/20 border-t-2 border-primary rounded-t-sm h-[80%] group-hover:bg-primary/40 transition-colors"></div>
+<span class="text-[10px] font-bold text-stone-300">Mar</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 group">
+<div class="w-full bg-stone-100 dark:bg-white/5 rounded-t-sm h-[30%] group-hover:bg-primary/50 transition-colors"></div>
+<span class="text-[10px] text-stone-400">Apr</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 group">
+<div class="w-full bg-stone-100 dark:bg-white/5 rounded-t-sm h-[30%] group-hover:bg-primary/50 transition-colors"></div>
+<span class="text-[10px] text-stone-400">May</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 group">
+<div class="w-full bg-stone-100 dark:bg-white/5 rounded-t-sm h-[30%] group-hover:bg-primary/50 transition-colors"></div>
+<span class="text-[10px] text-stone-400">Jun</span>
+</div>
+</div>
+</section>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-6">
+<div class="rounded-2xl border border-stone-200 bg-white dark:border-white/5 dark:bg-surface-darker">
+<details class="group" open="">
+<summary class="flex cursor-pointer items-center justify-between p-6">
+<h3 class="font-bold text-stone-900 dark:text-white">Quick Cheat Sheet</h3>
+<span class="material-symbols-outlined text-stone-400 transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="border-t border-stone-200 px-6 pb-6 pt-4 dark:border-white/5">
+<p class="mb-4 text-xs text-stone-500">Bank vs Category Ratio Matrix</p>
+<div class="grid grid-cols-4 gap-2 text-center text-[10px] font-medium text-stone-400">
+<div></div>
+<div>Air</div>
+<div>Hotel</div>
+<div>Shop</div>
+<div class="text-left text-stone-300">HDFC</div>
+<div class="flex justify-center"><div class="h-3 w-3 rounded-full bg-emerald-500" title="1:1 Excellent"></div></div>
+<div class="flex justify-center"><div class="h-3 w-3 rounded-full bg-emerald-500" title="1:1 Excellent"></div></div>
+<div class="flex justify-center"><div class="h-3 w-3 rounded-full bg-red-500" title="Poor"></div></div>
+<div class="text-left text-stone-300">Axis</div>
+<div class="flex justify-center"><div class="h-3 w-3 rounded-full bg-yellow-500" title="5:4 Good"></div></div>
+<div class="flex justify-center"><div class="h-3 w-3 rounded-full bg-emerald-500" title="1:1 Excellent"></div></div>
+<div class="flex justify-center"><div class="h-3 w-3 rounded-full bg-stone-700" title="N/A"></div></div>
+<div class="text-left text-stone-300">Amex</div>
+<div class="flex justify-center"><div class="h-3 w-3 rounded-full bg-emerald-500" title="1:1 Excellent"></div></div>
+<div class="flex justify-center"><div class="h-3 w-3 rounded-full bg-yellow-500" title="5:4 Good"></div></div>
+<div class="flex justify-center"><div class="h-3 w-3 rounded-full bg-stone-700" title="N/A"></div></div>
+</div>
+<div class="mt-4 flex items-center justify-center gap-4 text-[10px] text-stone-500">
+<div class="flex items-center gap-1"><div class="h-2 w-2 rounded-full bg-emerald-500"></div> Great</div>
+<div class="flex items-center gap-1"><div class="h-2 w-2 rounded-full bg-yellow-500"></div> Good</div>
+<div class="flex items-center gap-1"><div class="h-2 w-2 rounded-full bg-red-500"></div> Poor</div>
+</div>
+</div>
+</details>
+</div>
+<div class="rounded-2xl border border-stone-200 bg-white dark:border-white/5 dark:bg-surface-darker">
+<div class="flex items-center justify-between border-b border-stone-200 px-6 py-4 dark:border-white/5">
+<h3 class="font-bold text-stone-900 dark:text-white">Partners</h3>
+<a class="text-xs font-semibold text-primary hover:text-primary-hover" href="#">View All</a>
+</div>
+<div class="divide-y divide-stone-200 dark:divide-white/5">
+<div class="flex items-center justify-between px-6 py-4 transition-colors hover:bg-stone-50 dark:hover:bg-white/5">
+<div class="flex items-center gap-3">
+<div class="flex h-8 w-8 items-center justify-center rounded-full bg-stone-100 dark:bg-white/10">
+<span class="material-symbols-outlined text-stone-600 dark:text-stone-300 text-sm">flight</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-stone-900 dark:text-white">KrisFlyer</p>
+</div>
+</div>
+<span class="text-xs font-bold text-emerald-500">1:1</span>
+</div>
+<div class="flex items-center justify-between px-6 py-4 transition-colors hover:bg-stone-50 dark:hover:bg-white/5">
+<div class="flex items-center gap-3">
+<div class="flex h-8 w-8 items-center justify-center rounded-full bg-stone-100 dark:bg-white/10">
+<span class="material-symbols-outlined text-stone-600 dark:text-stone-300 text-sm">hotel</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-stone-900 dark:text-white">Bonvoy</p>
+</div>
+</div>
+<span class="text-xs font-bold text-emerald-500">1:1</span>
+</div>
+<div class="flex items-center justify-between px-6 py-4 transition-colors hover:bg-stone-50 dark:hover:bg-white/5">
+<div class="flex items-center gap-3">
+<div class="flex h-8 w-8 items-center justify-center rounded-full bg-stone-100 dark:bg-white/10">
+<span class="material-symbols-outlined text-stone-600 dark:text-stone-300 text-sm">flight</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-stone-900 dark:text-white">Flying Blue</p>
+</div>
+</div>
+<span class="text-xs font-bold text-emerald-500">1:1</span>
+</div>
+<div class="flex items-center justify-between px-6 py-4 transition-colors hover:bg-stone-50 dark:hover:bg-white/5">
+<div class="flex items-center gap-3">
+<div class="flex h-8 w-8 items-center justify-center rounded-full bg-stone-100 dark:bg-white/10">
+<span class="material-symbols-outlined text-stone-600 dark:text-stone-300 text-sm">hotel</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-stone-900 dark:text-white">Accor</p>
+</div>
+</div>
+<span class="text-xs font-bold text-amber-500">2:1</span>
+</div>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-2xl border border-primary/20 bg-gradient-to-b from-surface-dark to-surface-darker p-6">
+<div class="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/10 blur-2xl"></div>
+<div class="relative z-10">
+<div class="flex justify-between items-start">
+<span class="mb-3 inline-block rounded bg-primary/20 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-primary">Limited Offer</span>
+<span class="material-symbols-outlined text-primary/50">timer</span>
+</div>
+<h3 class="mb-2 text-lg font-bold text-white">30% Bonus Avios</h3>
+<p class="mb-4 text-sm text-stone-400">Transfer from HDFC Bank to British Airways Executive Club before Sep 30.</p>
+<button class="w-full rounded-lg bg-white/10 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/20">
+                                View Details
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

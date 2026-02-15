@@ -1,0 +1,1591 @@
+{
+  "id": "axis-reserve",
+  "name": "Axis Bank Reserve Credit Card",
+  "bank": "Axis Bank",
+  "slug": "axis-bank-reserve-credit-card",
+  "image": "assets/cards/axis/reserve.png",
+  "link": "https://www.axisbank.com/retail/cards/credit-card/reserve-credit-card/index",
+  "isActive": true,
+
+  "network": {
+    "type": "Visa",
+    "variant": "Infinite",
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "super-premium",
+    "isCobranded": false,
+    "cobrandPartner": {
+      "name": null,
+      "type": null,
+      "loyaltyProgram": null
+    },
+    "material": "metal"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 50000,
+      "waivable": false,
+      "waiverCondition": null,
+      "note": "Plus applicable GST"
+    },
+    "annual": {
+      "amount": 50000,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 3500000,
+        "spendPeriod": "12 months (card anniversary year)",
+        "waiverText": "Spend ₹35,00,000 in preceding card anniversary year for fee waiver. For customers onboarded before 1st September 2023, threshold was ₹25,00,000 but changed to ₹35,00,000 for anniversary dates after 1st September 2024.",
+        "excludedCategories": [
+          "Rent",
+          "Wallet",
+          "Utilities",
+          "Government Institutions",
+          "Insurance",
+          "Gold/Jewellery",
+          "Fuel",
+          "Cash withdrawals",
+          "EMI transactions",
+          "Reversals and fees"
+        ]
+      },
+      "note": "Plus applicable GST"
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": 1,
+      "joiningFee": 25000,
+      "annualFee": 25000,
+      "rewardSharing": true,
+      "note": "First add-on card complimentary. For each subsequent add-on card (up to 4): ₹25,000 for cards issued after 31 Jul 2024, ₹15,000 for cards issued until 31 Jul 2024"
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 500, "fee": 0},
+        {"minAmount": 501, "maxAmount": 5000, "fee": 500},
+        {"minAmount": 5001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": null, "fee": 1200}
+      ],
+      "consecutiveMissedPaymentFee": 100,
+      "note": "Additional ₹100 if MAD is not paid by due date for two consecutive billing periods"
+    },
+    "overLimit": {
+      "amount": 500,
+      "percentage": 2.5,
+      "note": "2.5% of Over-limit Amount, minimum ₹500"
+    },
+    "chequeReturn": {
+      "percentage": 2,
+      "minFee": 450,
+      "maxFee": 1500,
+      "note": "2% of payment amount"
+    },
+    "cardReplacement": null,
+    "duplicateStatement": null,
+    "cashPaymentAtBranch": 175,
+    "rentTransactionFee": {
+      "percentage": 1,
+      "maxFee": 1500,
+      "note": "1% of each rental transaction amount, capped at ₹1,500"
+    },
+    "walletLoadFee": {
+      "percentage": 1,
+      "threshold": 10000,
+      "note": "1% on cumulative spends of ₹10,000 or more on wallet loads per statement cycle"
+    },
+    "fuelTransactionFee": {
+      "percentage": 1,
+      "threshold": 50000,
+      "note": "1% on cumulative spends of ₹50,000 or more on fuel transactions per statement cycle"
+    },
+    "educationFee": {
+      "percentage": 1,
+      "note": "1% on education payments made via third party apps"
+    },
+    "utilityFee": {
+      "percentage": 1,
+      "threshold": 25000,
+      "note": "1% on cumulative spends of ₹25,000 or more on utilities per statement cycle"
+    },
+    "onlineGamingFee": {
+      "percentage": 1,
+      "threshold": 10000,
+      "note": "1% on cumulative spends of ₹10,000 or more on online skill-based gaming platforms per statement cycle"
+    }
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": null,
+        "annual": null
+      },
+      "selfEmployed": {
+        "itr": null
+      }
+    },
+    "age": {
+      "min": 18,
+      "max": 70,
+      "addOnMin": 15
+    },
+    "employmentType": "Invite Only",
+    "creditScore": {
+      "minimum": null,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": true,
+      "type": "High-value Axis Bank customer",
+      "note": "This is an invitation-only card offered to customers who meet the bank's pre-set eligibility criteria. Cannot be applied for directly."
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": null,
+      "max": null
+    },
+    "factors": "Based on income, credit score, and existing relationship with Axis Bank",
+    "enhancementCriteria": "Good repayment history and relationship with bank"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.4258,
+      "monthlyRate": 0.0375
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.4258,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": 50,
+      "note": "Interest-free grace period ranges from 20 to 50 days, depending on the date of transaction"
+    },
+    "minPayment": {
+      "percentage": 0.02,
+      "minAmount": null,
+      "calculation": "100% of (Interest/finance charge, all fees, loans, taxes) + 2% of (Purchases/Cash Withdrawals)"
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 0,
+    "minFee": 0,
+    "maxFee": null,
+    "limitPercentage": 30,
+    "dailyLimit": null,
+    "interestFromDay1": true,
+    "note": "Cash withdrawal fee NIL for Reserve Credit Card. Cash Limit is 30% of Credit Limit."
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "EDGE Reward Points",
+      "symbol": "ERP",
+      "singularUnit": "point",
+      "pluralUnit": "points"
+    },
+    "baseRate": {
+      "rate": 15,
+      "spendUnit": 200,
+      "effectivePercentage": 0.075,
+      "note": "Earn 15 EDGE Reward Points for every ₹200 spent on eligible domestic transactions"
+    },
+    "earningText": "Earn 15 EDGE Reward Points for every ₹200 spent. 2X rewards (30 points per ₹200) on international spends up to credit limit per month.",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Motion Picture Theaters",
+        "Utilities",
+        "Government Institutions",
+        "Insurance",
+        "Wallet loads",
+        "Gold/Jewellery",
+        "Fuel",
+        "Cash Withdrawal"
+      ],
+      "mccs": ["7832", "4814", "4816", "4899", "4900", "9222", "9311", "9399", "9402", "6300", "6381", "5960", "6051", "6012", "6540", "5094", "5944", "5541", "5542", "5983", "6010", "6011"],
+      "note": "From 20th June 2025, exclusions will be based on spend category names instead of MCCs"
+    },
+
+    "caps": {
+      "monthly": {
+        "points": null,
+        "cashback": null,
+        "rentCap": {
+          "transactionAmount": 100000,
+          "points": 7500,
+          "note": "Rental transactions capped at ₹1,00,000 per month (7,500 EDGE points per month)"
+        }
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": 500000,
+        "cashback": null,
+        "transferCap": {
+          "groupA": 100000,
+          "groupB": 400000,
+          "note": "Maximum 1 lakh points to Group A partners and 4 lakh points to Group B partners per calendar year"
+        }
+      },
+      "resetPeriod": "calendar",
+      "perTransaction": null
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "3 years",
+      "condition": "From date of earning. Points forfeited if card closed and not redeemed within 30 days, or if minimum due outstanding for more than 90 days (effective 1 October 2025)"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": 15000,
+        "cashback": null,
+        "vouchers": null,
+        "spendCondition": {
+          "amount": null,
+          "period": "30 days",
+          "transactionCount": 1
+        },
+        "validity": "First transaction within 30 days of card creation",
+        "description": "Get 15,000 EDGE Reward Points on making first transaction within 30 days of card creation",
+        "note": "Activation benefit not applicable for customers who have first year free or lifetime free credit card"
+      },
+      "activation": {
+        "enabled": true,
+        "points": 15000,
+        "condition": "First transaction within 30 days of card creation (same as welcome benefit)"
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null,
+        "note": "W.e.f 20th April 2024, renewal benefit of 50,000 points has been discontinued"
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "domestic": {
+        "rate": 15,
+        "spendUnit": 200,
+        "effectivePercentage": 0.075,
+        "cap": null,
+        "capPeriod": null,
+        "note": "15 EDGE Reward Points per ₹200 on all eligible domestic transactions"
+      },
+      "international": {
+        "rate": 30,
+        "spendUnit": 200,
+        "effectivePercentage": 0.15,
+        "cap": "credit limit per calendar month",
+        "capPeriod": "monthly",
+        "postCapRate": 15,
+        "note": "W.e.f 20th June 2025: 30 points per ₹200 on international spends up to credit limit per calendar month. Thereafter 15 points per ₹200. Base 15 points credited within T+7 days, additional 15 points credited on 45th day from end of calendar month."
+      },
+      "rent": {
+        "rate": 15,
+        "spendUnit": 200,
+        "cap": 7500,
+        "transactionCap": 100000,
+        "capPeriod": "monthly",
+        "note": "Rental transactions capped at ₹1,00,000 per month (7,500 EDGE points per month)"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on fuel transactions. However, for fuel transactions below ₹400 and above ₹4,000, cardmembers get 15 EDGE reward points per ₹200."
+      },
+      "utilities": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on utility transactions"
+      },
+      "insurance": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on insurance payments"
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on wallet loads"
+      },
+      "government": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on government institution payments"
+      },
+      "gold": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on gold/jewellery purchases"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": true,
+        "name": "Axis Bank Travel EDGE Portal",
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["Flights", "Hotels", "Travel packages"],
+        "link": "https://traveledge.axisbank.com/",
+        "note": "Redeem points for travel bookings"
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": [],
+        "note": "No specific accelerated merchant categories"
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": [],
+        "note": null
+      },
+      "milestoneAccelerators": []
+    },
+
+    "redemption": {
+      "baseValue": 0.20,
+      "bestValue": 0.40,
+      "bestOption": "Transfer to airline/hotel partners at 5:2 ratio (effective ₹0.40 per point when transferred to partners like Singapore KrisFlyer)",
+      "minRedemption": null,
+      "redemptionIncrement": null,
+      "convenienceFee": 0,
+      "monthlyRedemptionLimit": null,
+      "note": "No redemption fee for Reserve Credit Card holders",
+
+      "pointsPlusPay": {
+        "enabled": false,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": null,
+        "note": null
+      },
+
+      "options": [
+        {
+          "type": "airmiles",
+          "value": 0.40,
+          "description": "Transfer to airline/hotel partners",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["See transferPartners section"],
+          "note": "Transfer ratio 5:2 (5 EDGE Points = 2 Partner Miles/Points)"
+        },
+        {
+          "type": "travel",
+          "value": 0.20,
+          "description": "Travel bookings via EDGE Rewards portal",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["Travel EDGE Portal"],
+          "note": "Book flights and hotels using points"
+        },
+        {
+          "type": "vouchers",
+          "value": 0.20,
+          "description": "Gift vouchers from catalog",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["Various brands"],
+          "note": "Redeem for instant vouchers and exclusive products via EDGE Rewards portal"
+        },
+        {
+          "type": "products",
+          "value": 0.20,
+          "description": "Products from catalog",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["Various"],
+          "note": "Redeem for electronic items and other products"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": true,
+      "eligibleCards": ["axis-reserve", "axis-magnus"],
+      "transferRatio": "5:2",
+      "transferRatioNote": "5 EDGE Reward Points = 2 Partner Points/Miles. Burgundy Private and Magnus for Burgundy cardholders get 5:4 ratio.",
+      "partners": [
+        {
+          "name": "Accor Live Limitless (ALL)",
+          "type": "hotel",
+          "program": "ALL - Accor Live Limitless",
+          "alliance": null,
+          "group": "A",
+          "ratio": {
+            "cardPoints": 5,
+            "partnerPoints": 2,
+            "display": "5:2"
+          },
+          "minTransfer": null,
+          "maxTransfer": 100000,
+          "maxTransferPeriod": "calendar year",
+          "transferFee": 0,
+          "transferTime": "2-7 days",
+          "transferMethod": "Travel EDGE Portal",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Group A partner - max 1 lakh points per year to Group A"
+        },
+        {
+          "name": "Air Canada Aeroplan",
+          "type": "airline",
+          "program": "Aeroplan",
+          "alliance": "Star Alliance",
+          "group": "A",
+          "ratio": {
+            "cardPoints": 5,
+            "partnerPoints": 2,
+            "display": "5:2"
+          },
+          "minTransfer": null,
+          "maxTransfer": 100000,
+          "maxTransferPeriod": "calendar year",
+          "transferFee": 0,
+          "transferTime": "2-7 days",
+          "transferMethod": "Travel EDGE Portal",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Group A partner"
+        },
+        {
+          "name": "Etihad Guest",
+          "type": "airline",
+          "program": "Etihad Guest",
+          "alliance": null,
+          "group": "A",
+          "ratio": {
+            "cardPoints": 5,
+            "partnerPoints": 2,
+            "display": "5:2"
+          },
+          "minTransfer": null,
+          "maxTransfer": 100000,
+          "maxTransferPeriod": "calendar year",
+          "transferFee": 0,
+          "transferTime": "2-7 days",
+          "transferMethod": "Travel EDGE Portal",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Group A partner"
+        },
+        {
+          "name": "Japan Airlines JAL Mileage Bank",
+          "type": "airline",
+          "program": "JAL Mileage Bank",
+          "alliance": "OneWorld",
+          "group": "A",
+          "ratio": {
+            "cardPoints": 5,
+            "partnerPoints": 2,
+            "display": "5:2"
+          },
+          "minTransfer": null,
+          "maxTransfer": 100000,
+          "maxTransferPeriod": "calendar year",
+          "transferFee": 0,
+          "transferTime": "2-7 days",
+          "transferMethod": "Travel EDGE Portal",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Group A partner"
+        },
+        {
+          "name": "Marriott Bonvoy",
+          "type": "hotel",
+          "program": "Marriott Bonvoy",
+          "alliance": null,
+          "group": "A",
+          "ratio": {
+            "cardPoints": 5,
+            "partnerPoints": 2,
+            "display": "5:2"
+          },
+          "minTransfer": null,
+          "maxTransfer": 100000,
+          "maxTransferPeriod": "calendar year",
+          "transferFee": 0,
+          "transferTime": "2-7 days",
+          "transferMethod": "Travel EDGE Portal",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Group A partner"
+        },
+        {
+          "name": "Qatar Airways Privilege Club",
+          "type": "airline",
+          "program": "Qatar Airways Privilege Club",
+          "alliance": "OneWorld",
+          "group": "A",
+          "ratio": {
+            "cardPoints": 5,
+            "partnerPoints": 2,
+            "display": "5:2"
+          },
+          "minTransfer": null,
+          "maxTransfer": 100000,
+          "maxTransferPeriod": "calendar year",
+          "transferFee": 0,
+          "transferTime": "2-7 days",
+          "transferMethod": "Travel EDGE Portal",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Group A partner"
+        },
+        {
+          "name": "Singapore Airlines KrisFlyer",
+          "type": "airline",
+          "program": "KrisFlyer",
+          "alliance": "Star Alliance",
+          "group": "A",
+          "ratio": {
+            "cardPoints": 5,
+            "partnerPoints": 2,
+            "display": "5:2"
+          },
+          "minTransfer": null,
+          "maxTransfer": 100000,
+          "maxTransferPeriod": "calendar year",
+          "transferFee": 0,
+          "transferTime": "2-7 days",
+          "transferMethod": "Travel EDGE Portal",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Group A partner"
+        },
+        {
+          "name": "Ethiopian Airlines Sheba Miles",
+          "type": "airline",
+          "program": "ShebaMiles",
+          "alliance": "Star Alliance",
+          "group": "A",
+          "ratio": {
+            "cardPoints": 5,
+            "partnerPoints": 2,
+            "display": "5:2"
+          },
+          "minTransfer": null,
+          "maxTransfer": 100000,
+          "maxTransferPeriod": "calendar year",
+          "transferFee": 0,
+          "transferTime": "2-7 days",
+          "transferMethod": "Travel EDGE Portal",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Group A partner"
+        },
+        {
+          "name": "Turkish Airlines Miles&Smiles",
+          "type": "airline",
+          "program": "Miles&Smiles",
+          "alliance": "Star Alliance",
+          "group": "A",
+          "ratio": {
+            "cardPoints": 5,
+            "partnerPoints": 2,
+            "display": "5:2"
+          },
+          "minTransfer": null,
+          "maxTransfer": 100000,
+          "maxTransferPeriod": "calendar year",
+          "transferFee": 0,
+          "transferTime": "2-7 days",
+          "transferMethod": "Travel EDGE Portal",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Group A partner"
+        },
+        {
+          "name": "Thai Airways Royal Orchid Plus",
+          "type": "airline",
+          "program": "Royal Orchid Plus",
+          "alliance": "Star Alliance",
+          "group": "A",
+          "ratio": {
+            "cardPoints": 5,
+            "partnerPoints": 2,
+            "display": "5:2"
+          },
+          "minTransfer": null,
+          "maxTransfer": 100000,
+          "maxTransferPeriod": "calendar year",
+          "transferFee": 0,
+          "transferTime": "2-7 days",
+          "transferMethod": "Travel EDGE Portal",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Group A partner"
+        },
+        {
+          "name": "United Airlines MileagePlus",
+          "type": "airline",
+          "program": "MileagePlus",
+          "alliance": "Star Alliance",
+          "group": "A",
+          "ratio": {
+            "cardPoints": 5,
+            "partnerPoints": 2,
+            "display": "5:2"
+          },
+          "minTransfer": null,
+          "maxTransfer": 100000,
+          "maxTransferPeriod": "calendar year",
+          "transferFee": 0,
+          "transferTime": "2-7 days",
+          "transferMethod": "Travel EDGE Portal",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Group A partner"
+        },
+        {
+          "name": "Wyndham Rewards",
+          "type": "hotel",
+          "program": "Wyndham Rewards",
+          "alliance": null,
+          "group": "A",
+          "ratio": {
+            "cardPoints": 5,
+            "partnerPoints": 2,
+            "display": "5:2"
+          },
+          "minTransfer": null,
+          "maxTransfer": 100000,
+          "maxTransferPeriod": "calendar year",
+          "transferFee": 0,
+          "transferTime": "2-7 days",
+          "transferMethod": "Travel EDGE Portal",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Group A partner"
+        },
+        {
+          "name": "Air France-KLM Flying Blue",
+          "type": "airline",
+          "program": "Flying Blue",
+          "alliance": "SkyTeam",
+          "group": "B",
+          "ratio": {
+            "cardPoints": 5,
+            "partnerPoints": 2,
+            "display": "5:2"
+          },
+          "minTransfer": null,
+          "maxTransfer": 400000,
+          "maxTransferPeriod": "calendar year",
+          "transferFee": 0,
+          "transferTime": "2-7 days",
+          "transferMethod": "Travel EDGE Portal",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Group B partner - max 4 lakh points per year to Group B"
+        },
+        {
+          "name": "Air India Flying Returns",
+          "type": "airline",
+          "program": "Flying Returns",
+          "alliance": "Star Alliance",
+          "group": "B",
+          "ratio": {
+            "cardPoints": 5,
+            "partnerPoints": 2,
+            "display": "5:2"
+          },
+          "minTransfer": null,
+          "maxTransfer": 400000,
+          "maxTransferPeriod": "calendar year",
+          "transferFee": 0,
+          "transferTime": "2-7 days",
+          "transferMethod": "Travel EDGE Portal",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Group B partner"
+        },
+        {
+          "name": "AirAsia",
+          "type": "airline",
+          "program": "AirAsia Rewards",
+          "alliance": null,
+          "group": "B",
+          "ratio": {
+            "cardPoints": 5,
+            "partnerPoints": 2,
+            "display": "5:2"
+          },
+          "minTransfer": null,
+          "maxTransfer": 400000,
+          "maxTransferPeriod": "calendar year",
+          "transferFee": 0,
+          "transferTime": "2-7 days",
+          "transferMethod": "Travel EDGE Portal",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Group B partner"
+        },
+        {
+          "name": "ITC Hotels",
+          "type": "hotel",
+          "program": "Club ITC",
+          "alliance": null,
+          "group": "B",
+          "ratio": {
+            "cardPoints": 5,
+            "partnerPoints": 2,
+            "display": "5:2"
+          },
+          "minTransfer": null,
+          "maxTransfer": 400000,
+          "maxTransferPeriod": "calendar year",
+          "transferFee": 0,
+          "transferTime": "2-7 days",
+          "transferMethod": "Travel EDGE Portal",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Group B partner"
+        },
+        {
+          "name": "IHG One Rewards",
+          "type": "hotel",
+          "program": "IHG One Rewards",
+          "alliance": null,
+          "group": "B",
+          "ratio": {
+            "cardPoints": 5,
+            "partnerPoints": 2,
+            "display": "5:2"
+          },
+          "minTransfer": null,
+          "maxTransfer": 400000,
+          "maxTransferPeriod": "calendar year",
+          "transferFee": 0,
+          "transferTime": "2-7 days",
+          "transferMethod": "Travel EDGE Portal",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Group B partner"
+        },
+        {
+          "name": "Qantas Frequent Flyer",
+          "type": "airline",
+          "program": "Qantas Frequent Flyer",
+          "alliance": "OneWorld",
+          "group": "B",
+          "ratio": {
+            "cardPoints": 5,
+            "partnerPoints": 2,
+            "display": "5:2"
+          },
+          "minTransfer": null,
+          "maxTransfer": 400000,
+          "maxTransferPeriod": "calendar year",
+          "transferFee": 0,
+          "transferTime": "2-7 days",
+          "transferMethod": "Travel EDGE Portal",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Group B partner"
+        },
+        {
+          "name": "SpiceJet SpiceClub",
+          "type": "airline",
+          "program": "SpiceClub",
+          "alliance": null,
+          "group": "B",
+          "ratio": {
+            "cardPoints": 5,
+            "partnerPoints": 2,
+            "display": "5:2"
+          },
+          "minTransfer": null,
+          "maxTransfer": 400000,
+          "maxTransferPeriod": "calendar year",
+          "transferFee": 0,
+          "transferTime": "2-7 days",
+          "transferMethod": "Travel EDGE Portal",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Group B partner"
+        },
+        {
+          "name": "The Postcard Hotels Sunshine Club",
+          "type": "hotel",
+          "program": "Sunshine Club",
+          "alliance": null,
+          "group": "B",
+          "ratio": {
+            "cardPoints": 5,
+            "partnerPoints": 2,
+            "display": "5:2"
+          },
+          "minTransfer": null,
+          "maxTransfer": 400000,
+          "maxTransferPeriod": "calendar year",
+          "transferFee": 0,
+          "transferTime": "2-7 days",
+          "transferMethod": "Travel EDGE Portal",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Group B partner - Recently added"
+        }
+      ],
+      "currentBonus": {
+        "active": false,
+        "bonusPercentage": null,
+        "validUntil": null,
+        "applicablePartners": []
+      },
+      "note": "For each airline/hotel transfer partner, customers can only link 1 partner program loyalty ID. If a customer wishes to link another ID, the existing linked ID will get delinked. Customer needs to wait 60 days after updating partner loyalty ID to update to a new ID."
+    },
+
+    "pooling": {
+      "enabled": true,
+      "eligibleCards": ["All Axis Bank credit cards of same customer"],
+      "acrossUsers": false,
+      "note": "Points pooled at Customer ID level"
+    },
+
+    "specialLogic": "EMI conversion debits EDGE Reward Points. On cancellation of EMI transaction, points shall not be credited back for the original transaction.",
+
+    "calculator": {
+      "enabled": true,
+      "formula": "basePoints = (spend / 200) * 15; internationalBonus = isInternational && withinCreditLimit ? (spend / 200) * 15 : 0",
+      "variables": ["spend", "category", "isInternational", "withinCreditLimit"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": true,
+        "complimentaryCount": "Unlimited",
+        "period": "year",
+        "accessType": "Axis Bank Domestic Lounge Program",
+        "accessProvider": "Axis Bank",
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "No spend requirement for domestic lounge access"
+        },
+        "guestAccess": {
+          "included": true,
+          "freeGuests": 12,
+          "guestFee": null,
+          "note": "12 complimentary guest visits per year included in Priority Pass"
+        },
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "eligibleLounges": "https://www.axisbank.com/docs/default-source/default-document-library/axis-bank-airport-lounge-access-program.pdf",
+        "note": "Unlimited domestic lounge visits for both primary and add-on cardholders"
+      },
+      "international": {
+        "included": true,
+        "complimentaryCount": "Unlimited",
+        "period": "year",
+        "accessType": "Priority Pass",
+        "accessProvider": "Priority Pass",
+        "membershipValue": null,
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "No spend requirement for international lounge access"
+        },
+        "guestAccess": {
+          "included": true,
+          "freeGuests": 12,
+          "guestFee": null,
+          "note": "12 complimentary guest visits per year"
+        },
+        "eligibleLounges": "https://www.prioritypass.com/lounges",
+        "note": "Complimentary Priority Pass membership with unlimited visits for both primary and add-on cardholders"
+      }
+    },
+
+    "milestones": [],
+
+    "golf": {
+      "included": true,
+      "complimentaryRounds": 50,
+      "period": "financial year (April to March)",
+      "courses": "Select golf courses across India",
+      "greenFeeWaiver": true,
+      "lessonIncluded": false,
+      "note": "50 complimentary golf rounds every year across best golf courses in India. Valid for FY 2025-26 (1 April 2025 to 31 March 2026)."
+    },
+
+    "movies": {
+      "included": true,
+      "platform": "BookMyShow",
+      "offer": "Buy 1 Get 1 Free",
+      "freeTickets": 1,
+      "frequency": "5 times per month",
+      "movieCap": 500,
+      "nonMovieCap": 1000,
+      "note": "Buy 1 movie ticket and get up to ₹500 off on second ticket (max 5 times/month). Buy 1 non-movie ticket and get up to ₹1,000 off on second ticket (max 5 times/month)."
+    },
+
+    "dining": {
+      "included": true,
+      "programs": [
+        {
+          "name": "EazyDiner Prime Membership",
+          "discount": "Up to 25% off",
+          "cap": 800,
+          "frequency": "Per visit",
+          "note": "Complimentary EazyDiner Prime membership offering up to 25% off at premium restaurants"
+        },
+        {
+          "name": "Dining Delights",
+          "discount": "Up to 20% off",
+          "cap": null,
+          "frequency": "Per transaction",
+          "note": "Up to 20% discount at over 4,000 restaurants across India"
+        }
+      ],
+      "hotelDining": {
+        "included": true,
+        "hotels": ["ITC Hotels", "Accor Hotels", "Marriott Hotels"],
+        "offer": "Various discounts via hotel memberships"
+      }
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 400,
+      "maxTransaction": 4000,
+      "monthlyCap": 400,
+      "applicableStations": "All fuel stations in India",
+      "rewardsOnFuel": false,
+      "note": "1% fuel surcharge waiver on transactions between ₹400 to ₹4,000. Maximum waiver capped at ₹400 per statement cycle."
+    },
+
+    "forex": {
+      "markupPercentage": 1.5,
+      "markupText": "1.5% of Transaction Amount",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "markupPercentage": 1,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 1.5,
+      "note": "Lower forex markup of 1.5% compared to 3.5% for most other Axis Bank cards"
+    },
+
+    "concierge": {
+      "included": true,
+      "availability": "24/7",
+      "type": "Axis Bank Reserve Concierge",
+      "services": [
+        "Travel bookings",
+        "Restaurant reservations",
+        "Event tickets",
+        "Gift procurement",
+        "General information"
+      ],
+      "contactNumber": "1800 103 4962",
+      "note": "Reach out to concierge desk at 1800 103 4962"
+    },
+
+    "airportServices": {
+      "vipAssistance": {
+        "included": true,
+        "count": 8,
+        "period": "year",
+        "services": [
+          "Check-in assistance",
+          "Security check assistance",
+          "Immigration process assistance",
+          "Porter services"
+        ],
+        "bookingLeadTime": "48 hours",
+        "validFor": "Domestic and international departures/arrivals",
+        "locations": 46,
+        "note": "8 complimentary VIP Assistance Services per year. Primary cardholder can use services for accompanying guests."
+      },
+      "luxuryTransfers": {
+        "included": false,
+        "count": null,
+        "period": null,
+        "note": "W.e.f 20th April 2024, Complimentary Luxury Airport Transfers has been discontinued"
+      }
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": [],
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "EMI on Credit Card",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Select merchants"],
+        "note": "No-cost EMI available on select merchants"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": null,
+        "minFee": null
+      },
+      "minAmount": null,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": null,
+        "max": null
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": null
+      },
+      "cancellationPeriod": null,
+      "note": "EDGE REWARD Points will be debited for credit card transactions which are converted to EMI. On cancellation of the EMI transaction, points shall not be credited back."
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": 0.0375
+      },
+      "processingFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "tenures": null,
+      "maxAmount": null,
+      "preclosureFee": null,
+      "note": null
+    },
+
+    "memberships": [
+      {
+        "name": "Club ITC Culinaire",
+        "type": "hotel",
+        "value": null,
+        "duration": "1 year",
+        "condition": "On card issuance - customer must fill consent form",
+        "benefits": [
+          "Complimentary third-night stay (2+1 nights stay)",
+          "50% savings on published room tariff for suites on weekends",
+          "25% Green Points on Food & Beverage spends",
+          "Bouquet of 10 certificates and more"
+        ],
+        "note": "If customer already has ITC membership, this membership can be availed only after expiry of current membership. Membership renewed on card renewal."
+      },
+      {
+        "name": "Accorplus Membership",
+        "type": "hotel",
+        "value": null,
+        "duration": "1 year",
+        "condition": "On card issuance - customer must fill consent form",
+        "benefits": [
+          "1 complimentary night stay at all Asia Pacific region",
+          "Complimentary room upgrade",
+          "Up to 50% off on dining",
+          "Complimentary lunch buffet for 2 across Accor hotels in India"
+        ],
+        "note": null
+      },
+      {
+        "name": "Club Marriott Asia Pacific Membership",
+        "type": "hotel",
+        "value": null,
+        "duration": "1 year",
+        "condition": "On card issuance",
+        "benefits": [
+          "20% discount on Food & Beverage",
+          "20% discount on best available rates at select Marriott hotels in India",
+          "20% off on weekend rates in Asia Pacific region"
+        ],
+        "note": "Handcrafted Club Marriott Asia Pacific membership"
+      },
+      {
+        "name": "Swiggy One",
+        "type": "subscription",
+        "value": null,
+        "duration": "6 months",
+        "condition": "Eligible cardholders receive redemption codes via email",
+        "benefits": [
+          "Unlimited free delivery on orders above ₹199",
+          "Up to additional 30% extra discount",
+          "Unlimited Instamart deliveries on orders above ₹199"
+        ],
+        "note": "Complimentary 6-month Swiggy One membership for Reserve cardholders"
+      }
+    ],
+
+    "hotelOffers": [
+      {
+        "name": "The Postcard Hotels",
+        "offer": "20% off on best available room rate",
+        "additionalBenefits": [
+          "Anytime check-in and check-out",
+          "Complimentary lifestyle consultation at hotels in Goa"
+        ],
+        "note": "15% savings at Postcard Hotel"
+      },
+      {
+        "name": "Oberoi Hotels and Resorts",
+        "offer": "DISCONTINUED",
+        "additionalBenefits": [],
+        "note": "W.e.f 1st October 2025, offers on Oberoi hotels and resorts have been discontinued"
+      }
+    ],
+
+    "wellness": {
+      "included": true,
+      "programs": [
+        {
+          "name": "Weljii",
+          "offer": "1st information session free and 25% off on all health and wellness coaching plans",
+          "note": null
+        },
+        {
+          "name": "Second Medical Opinion",
+          "offer": "Referral-based services for 2nd medical opinion from world's best specialists at reputed international hospitals",
+          "note": null
+        },
+        {
+          "name": "Diagnostics",
+          "offer": "Diagnoses at leading medical institutions like Dr. Lal Pathlabs, Metropolis and SRL Diagnostics",
+          "note": null
+        }
+      ],
+      "note": "Global travel and medical assistance for international travels"
+    },
+
+    "experiences": {
+      "included": true,
+      "name": "Extraordinary Weekends",
+      "website": "extraordinaryweekends.com",
+      "experiences": [
+        "Golf",
+        "Chef for a day",
+        "Sailing",
+        "Unique tours"
+      ],
+      "note": "Curated experiences for premium customers"
+    },
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": true,
+        "count": null,
+        "condition": "Via hotel membership benefits",
+        "maxValue": null,
+        "note": "Through Club ITC Culinaire and Accorplus memberships"
+      },
+      "roomUpgrade": true,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "condition": null
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": true,
+      "cover": null,
+      "currency": "USD",
+      "amount": 500,
+      "perBag": null,
+      "condition": null,
+      "note": "Loss/Delay in baggage & Personal Documents coverage up to USD 500"
+    },
+    "baggageDelay": {
+      "included": true,
+      "cover": null,
+      "currency": "USD",
+      "amount": 500,
+      "delayHours": null,
+      "perDay": null,
+      "note": "Included in USD 500 cover for loss/delay in baggage"
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": []
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": [],
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": true,
+      "cover": null,
+      "overseas": true,
+      "condition": "Global travel and medical assistance for international travels",
+      "note": "Cover arranged by Axis Bank under Digit Illness Group Insurance Policy"
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": null,
+      "fraudLiability": {
+        "included": true,
+        "cover": null,
+        "reportingWindow": null,
+        "note": "Counterfeit/lost card liability up to credit limit"
+      }
+    },
+    "purchaseProtection": {
+      "included": true,
+      "cover": 200000,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": [],
+      "note": "Purchase protection cover up to ₹2 Lakhs"
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": [],
+      "excludedCountries": [],
+      "excludedVehicleTypes": []
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "creditShield": {
+      "included": true,
+      "cover": 500000,
+      "condition": "Covers outstanding amount in event of death of primary cardholder",
+      "note": "Credit shield coverage up to ₹5 Lakhs"
+    },
+    "note": "All insurance covers are subject to terms in the policy document. Inform the Bank about the required cover and submit the documents to avail the insurance."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000
+    },
+    "virtualCard": {
+      "available": true,
+      "instantIssuance": true,
+      "singleUse": false,
+      "spendControls": true
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": false,
+      "rewardsOnUPI": false,
+      "note": "Visa Infinite card - UPI linking for credit cards typically available for RuPay cards"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Real-time alerts"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [
+      {
+        "cardId": "axis-magnus",
+        "spendRequired": null,
+        "tenure": null,
+        "autoUpgrade": false,
+        "note": "Invite only - based on bank relationship"
+      }
+    ],
+    "upgradesTo": [
+      {
+        "cardId": "axis-burgundy-private",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": true,
+        "note": "For Burgundy Private clients maintaining requisite relationship"
+      }
+    ],
+    "note": "This is an invitation-only card. Upgrade eligibility based on relationship with Axis Bank."
+  },
+
+  "meta": {
+    "tags": [
+      "Travel",
+      "Super-Premium",
+      "Unlimited Lounge Access",
+      "Golf",
+      "Metal Card",
+      "Transfer Partners",
+      "Luxury",
+      "Invite Only"
+    ],
+    "bestFor": "High-net-worth individuals who travel frequently, play golf, and can justify the ₹50,000 annual fee through lounge access and transfer partner redemptions",
+    "notRecommendedFor": "Low spenders, those who can't meet ₹35 lakh spend threshold for fee waiver, or users who prefer direct cashback",
+    "rating": {
+      "overall": 3.8,
+      "rewards": 4.0,
+      "benefits": 4.5,
+      "value": 3.0
+    },
+    "verdict": "The Axis Reserve remains a solid super-premium card for frequent travelers and golf enthusiasts, offering unlimited lounge access, 50 golf rounds, and premium hotel memberships. However, multiple devaluations since September 2023 have significantly reduced its value - the transfer ratio dropped from 5:4 to 5:2, renewal benefits were discontinued, and partner transfer caps were introduced. The 7.5% reward rate on domestic spends is still among the highest, but the low transfer ratio means actual value when converting to miles is much lower. Best suited for those who can maximize lounge access and golf benefits.",
+    "pros": [
+      "Unlimited domestic and international lounge access for primary and add-on cardholders",
+      "12 complimentary guest lounge visits per year",
+      "50 complimentary golf rounds annually - one of the best in the market",
+      "Highest reward rate among super-premium cards (7.5% on domestic, 15% on international)",
+      "Low forex markup of 1.5%",
+      "Complimentary hotel memberships - ITC Culinaire, Accorplus, Club Marriott",
+      "Metal card",
+      "No cash withdrawal fee",
+      "8 VIP airport assistance services per year"
+    ],
+    "cons": [
+      "Very high annual fee of ₹50,000 + GST",
+      "Poor transfer ratio of 5:2 (compared to 1:1 for HDFC Infinia)",
+      "Transfer caps limit redemption flexibility (1L to Group A, 4L to Group B annually)",
+      "Renewal benefits discontinued (was 50,000 points earlier)",
+      "Airport luxury transfers discontinued",
+      "Oberoi hotel benefits discontinued",
+      "Invite-only - cannot apply directly",
+      "Many spending categories excluded from rewards",
+      "High spend threshold (₹35 lakh) for fee waiver"
+    ],
+    "alternatives": [
+      "hdfc-infinia",
+      "hdfc-diners-black",
+      "axis-magnus",
+      "axis-burgundy-private",
+      "sbi-aurum"
+    ],
+    "lastVerified": "2026-01-05",
+    "dataSource": [
+      "Axis Bank official website (axisbank.com)",
+      "Axis Bank Schedule of Charges document (July 2024)",
+      "Axis Bank Reserve Credit Card T&C updates (June 2025)",
+      "PointsMath.com transfer partners guide (November 2025)",
+      "PaisaBazaar.com (January 2026)",
+      "CardInsider.com (October 2025)",
+      "BankBazaar.com",
+      "Live From A Lounge",
+      "TechnoFino community"
+    ],
+    "changelog": [
+      {
+        "date": "2025-10-01",
+        "change": "Oberoi Hotels and Resorts offers discontinued",
+        "source": "Official Axis Bank website"
+      },
+      {
+        "date": "2025-10-01",
+        "change": "EDGE Reward Points forfeiture policy updated - points forfeited if not redeemed within 30 days of card closure or if minimum due outstanding for more than 90 days",
+        "source": "Official Axis Bank T&C"
+      },
+      {
+        "date": "2025-06-20",
+        "change": "International spend rewards structure updated - 30 points per ₹200 up to credit limit per month, then 15 points per ₹200",
+        "source": "Official Axis Bank T&C"
+      },
+      {
+        "date": "2025-06-20",
+        "change": "Exclusions now defined by spend category instead of MCC codes",
+        "source": "Official Axis Bank T&C"
+      },
+      {
+        "date": "2024-04-20",
+        "change": "Renewal benefit of 50,000 points discontinued",
+        "source": "Official Axis Bank T&C"
+      },
+      {
+        "date": "2024-04-20",
+        "change": "Luxury Airport Transfers discontinued",
+        "source": "Official Axis Bank T&C"
+      },
+      {
+        "date": "2024-04-20",
+        "change": "Transfer partners divided into Group A (1L cap) and Group B (4L cap)",
+        "source": "Official Axis Bank T&C"
+      },
+      {
+        "date": "2024-04-20",
+        "change": "Insurance, Gold/Jewellery, Fuel added to exclusions for rewards and fee waiver",
+        "source": "Official Axis Bank T&C"
+      },
+      {
+        "date": "2023-09-01",
+        "change": "Transfer ratio changed from 5:4 to 5:2",
+        "source": "Official Axis Bank T&C"
+      },
+      {
+        "date": "2023-09-01",
+        "change": "Fee waiver threshold increased to ₹35 lakh (from ₹25 lakh)",
+        "source": "Official Axis Bank T&C"
+      },
+      {
+        "date": "2023-09-01",
+        "change": "Rent, Wallet, Utilities, Government payments excluded from fee waiver calculation",
+        "source": "Official Axis Bank T&C"
+      }
+    ]
+  }
+}

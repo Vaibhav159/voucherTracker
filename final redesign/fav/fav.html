@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Favourites - VoucherTracker</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#D4AF37", // Opulent Gold
+                        "primary-light": "#EEDC9A",
+                        "primary-dark": "#AA8C2C",
+                        "accent-copper": "#B87333", // Copper Accent
+                        "background-light": "#FCFAF8",
+                        "background-dark": "#1F1512", // Deep Espresso
+                        "surface-dark": "#2C1E1A", // Lighter Espresso
+                        "surface-darker": "#261916", // Surface Espresso
+                        "nav-bg": "#140D0B", // Very dark espresso for nav
+                        "warm-white": "#EFE5D5", // Warm off-white
+                        "text-gold": "#EACDA3", // Light Gold Text
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #140D0B; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2C1E1A; 
+            border-radius: 4px;
+            border: 1px solid #140D0B;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #B87333; 
+        }
+        .gold-text-gradient {
+            background: linear-gradient(to right, #D4AF37, #FFF2DB, #B87333);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }.banking-gradient {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(184, 115, 51, 0.05) 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-stone-900 dark:text-warm-white antialiased transition-colors duration-200">
+<div class="flex h-screen w-full flex-col overflow-hidden">
+<header class="flex h-16 w-full items-center justify-between border-b border-stone-200 bg-white px-4 shadow-sm dark:border-accent-copper/20 dark:bg-nav-bg md:px-6 z-20">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined filled text-3xl text-primary">savings</span>
+<span class="gold-text-gradient text-xl font-bold tracking-tight">VoucherTracker</span>
+</div>
+<div class="hidden lg:block">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-lg text-stone-400 dark:text-accent-copper">search</span>
+<input class="h-9 w-64 rounded-full border-0 bg-stone-100 pl-9 pr-4 text-sm text-stone-700 placeholder-stone-500 focus:ring-1 focus:ring-primary dark:bg-surface-dark dark:text-warm-white dark:placeholder-stone-500/70 dark:focus:ring-accent-copper" placeholder="Search vouchers, cards..." type="text"/>
+</div>
+</div>
+</div>
+<nav class="hidden items-center gap-1 md:flex">
+<a class="rounded-md px-3 py-2 text-sm font-medium text-stone-600 hover:text-primary dark:text-warm-white/80 dark:hover:text-primary transition-colors" href="#">Home</a>
+<a class="rounded-md px-3 py-2 text-sm font-medium text-stone-600 hover:text-primary dark:text-warm-white/80 dark:hover:text-primary transition-colors" href="#">Voucher</a>
+<a class="rounded-md px-3 py-2 text-sm font-medium text-stone-600 hover:text-primary dark:text-warm-white/80 dark:hover:text-primary transition-colors" href="#">Cards</a>
+<a class="rounded-md px-3 py-2 text-sm font-medium text-stone-600 hover:text-primary dark:text-warm-white/80 dark:hover:text-primary transition-colors" href="#">Banking</a>
+<a class="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-stone-600 hover:text-primary dark:text-warm-white/80 dark:hover:text-primary transition-colors" href="#">
+                    Ask AI <span class="material-symbols-outlined text-[16px]">auto_awesome</span>
+</a>
+<a class="rounded-md px-3 py-2 text-sm font-medium text-stone-600 hover:text-primary dark:text-warm-white/80 dark:hover:text-primary transition-colors" href="#">Guides</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="flex h-9 w-9 items-center justify-center rounded-full text-stone-600 hover:bg-stone-100 dark:text-accent-copper dark:hover:bg-surface-dark transition-colors">
+<span class="material-symbols-outlined filled text-[20px]">notifications</span>
+</button>
+<div class="h-8 w-8 overflow-hidden rounded-full border border-stone-200 dark:border-accent-copper/50">
+<div class="h-full w-full bg-surface-dark text-center text-xs font-bold leading-8 text-primary">JD</div>
+</div>
+<button class="md:hidden text-stone-600 dark:text-warm-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<aside class="hidden w-64 flex-col justify-between border-r border-stone-200 bg-white dark:border-accent-copper/10 dark:bg-surface-darker md:flex">
+<div class="flex flex-col gap-2 p-4">
+<div class="mb-4 px-3 text-xs font-semibold uppercase tracking-wider text-stone-400 dark:text-accent-copper/80">Dashboard</div>
+<nav class="flex flex-col gap-1">
+<a class="group relative flex items-center gap-3 rounded-lg bg-primary/10 px-3 py-3 text-sm font-bold text-primary ring-1 ring-primary/20 dark:bg-gradient-to-r dark:from-primary/20 dark:to-transparent dark:text-primary dark:ring-0" href="#">
+<div class="absolute left-0 top-0 h-full w-1 rounded-l-lg bg-primary opacity-100"></div>
+<span class="material-symbols-outlined filled text-[22px]">favorite</span>
+                            Favourites
+                        </a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-stone-600 hover:bg-stone-100 dark:text-warm-white/70 dark:hover:bg-white/5 dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">calculate</span>
+                            Rewards Calculator
+                        </a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-stone-600 hover:bg-stone-100 dark:text-warm-white/70 dark:hover:bg-white/5 dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">currency_exchange</span>
+                            Points Converter
+                        </a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-stone-600 hover:bg-stone-100 dark:text-warm-white/70 dark:hover:bg-white/5 dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+                            My Wallet
+                        </a>
+</nav>
+<div class="my-4 h-px bg-stone-200 dark:bg-white/5"></div>
+<div class="px-3 text-xs font-semibold uppercase tracking-wider text-stone-400 dark:text-accent-copper/80">Settings</div>
+<nav class="mt-2 flex flex-col gap-1">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-stone-600 hover:bg-stone-100 dark:text-warm-white/70 dark:hover:bg-white/5 dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">person</span>
+                            Profile
+                        </a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-stone-600 hover:bg-stone-100 dark:text-warm-white/70 dark:hover:bg-white/5 dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+                            Preferences
+                        </a>
+</nav>
+</div>
+<div class="flex flex-col gap-2 p-4">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-stone-600 hover:bg-stone-100 dark:text-warm-white/70 dark:hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">help</span>
+                        Support
+                    </a>
+<button class="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-stone-600 hover:bg-stone-100 dark:text-warm-white/70 dark:hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-[20px]">dark_mode</span>
+                        Theme
+                    </button>
+</div>
+</aside>
+<main class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark scroll-smooth">
+<div class="mx-auto max-w-[1200px] px-4 py-8 md:px-8 lg:py-10">
+<div class="mb-10 flex flex-col gap-6 border-b border-stone-200 pb-8 dark:border-accent-copper/20 md:flex-row md:items-end md:justify-between sticky top-0 z-10 bg-background-light dark:bg-background-dark pt-4 -mt-4">
+<div>
+<h1 class="text-3xl font-black text-stone-900 dark:text-warm-white md:text-4xl">
+                                Your <span class="gold-text-gradient">Favourites</span>
+</h1>
+<p class="mt-2 text-lg text-stone-600 dark:text-text-gold/80">Manage your tracked items across all categories.</p>
+</div>
+<div class="flex gap-1 overflow-x-auto rounded-lg bg-stone-100 p-1 dark:bg-surface-dark border dark:border-white/5 shadow-inner scrollbar-hide">
+<button class="rounded-md bg-white px-5 py-2 text-sm font-bold text-stone-900 shadow-sm transition-all dark:bg-primary dark:text-surface-darker ring-1 ring-black/5 dark:ring-0">All</button>
+<button class="whitespace-nowrap rounded-md px-5 py-2 text-sm font-medium text-stone-600 transition-all hover:bg-white/50 hover:text-stone-900 dark:text-warm-white/60 dark:hover:bg-white/5 dark:hover:text-primary">Vouchers</button>
+<button class="whitespace-nowrap rounded-md px-5 py-2 text-sm font-medium text-stone-600 transition-all hover:bg-white/50 hover:text-stone-900 dark:text-warm-white/60 dark:hover:bg-white/5 dark:hover:text-primary">Cards</button>
+<button class="whitespace-nowrap rounded-md px-5 py-2 text-sm font-medium text-stone-600 transition-all hover:bg-white/50 hover:text-stone-900 dark:text-warm-white/60 dark:hover:bg-white/5 dark:hover:text-primary">Banking</button>
+<button class="whitespace-nowrap rounded-md px-5 py-2 text-sm font-medium text-stone-600 transition-all hover:bg-white/50 hover:text-stone-900 dark:text-warm-white/60 dark:hover:bg-white/5 dark:hover:text-primary">Guides</button>
+</div>
+</div>
+<section class="mb-12">
+<div class="mb-6 flex items-center justify-between">
+<h2 class="flex items-center gap-2 text-xl font-bold text-stone-900 dark:text-warm-white">
+<span class="material-symbols-outlined text-primary">sell</span>
+                                Watchlisted Vouchers
+                            </h2>
+<span class="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary ring-1 ring-primary/20">3 Saved</span>
+</div>
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+<div class="group relative overflow-hidden rounded-xl border border-stone-200 bg-white p-5 transition-all hover:border-primary/50 hover:shadow-lg dark:border-white/5 dark:bg-surface-darker">
+<div class="mb-2 flex justify-between items-center">
+<span class="inline-flex items-center rounded-md bg-stone-100 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-stone-500 dark:bg-white/5 dark:text-stone-400">Voucher</span>
+<button class="group/btn flex h-8 w-8 items-center justify-center rounded-full text-stone-400 transition-colors hover:bg-red-500/10 hover:text-red-500 dark:text-stone-500" title="Remove from Favourites">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-stone-100 text-xl font-bold text-stone-800 dark:bg-nav-bg dark:text-primary">Am</div>
+<div class="flex flex-col">
+<h3 class="text-base font-bold text-stone-900 dark:text-warm-white line-clamp-1">Amazon Pay</h3>
+<p class="text-xs font-medium text-stone-500 dark:text-stone-400">Shopping</p>
+</div>
+</div>
+<div class="mt-5 flex items-baseline gap-2">
+<span class="text-3xl font-black text-stone-900 dark:text-warm-white">98.5%</span>
+<span class="flex items-center text-xs font-bold text-green-500 bg-green-500/10 px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px] mr-0.5">trending_up</span>
+                                        +0.5%
+                                    </span>
+</div>
+<p class="mt-2 text-[11px] text-stone-500 dark:text-stone-400">Real-time market rate</p>
+<div class="mt-5 flex gap-3">
+<button class="flex-1 rounded-lg bg-stone-100 py-2.5 text-xs font-bold uppercase tracking-wider text-stone-600 transition-colors hover:bg-stone-200 dark:bg-white/5 dark:text-warm-white dark:hover:bg-white/10">Details</button>
+<button class="flex-1 rounded-lg bg-primary py-2.5 text-xs font-bold uppercase tracking-wider text-stone-900 transition-transform hover:scale-[1.02]">Buy Now</button>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl border border-stone-200 bg-white p-5 transition-all hover:border-primary/50 hover:shadow-lg dark:border-white/5 dark:bg-surface-darker">
+<div class="mb-2 flex justify-between items-center">
+<span class="inline-flex items-center rounded-md bg-stone-100 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-stone-500 dark:bg-white/5 dark:text-stone-400">Voucher</span>
+<button class="group/btn flex h-8 w-8 items-center justify-center rounded-full text-stone-400 transition-colors hover:bg-red-500/10 hover:text-red-500 dark:text-stone-500" title="Remove from Favourites">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-stone-100 text-xl font-bold text-stone-800 dark:bg-nav-bg dark:text-primary">Sw</div>
+<div class="flex flex-col">
+<h3 class="text-base font-bold text-stone-900 dark:text-warm-white line-clamp-1">Swiggy Money</h3>
+<p class="text-xs font-medium text-stone-500 dark:text-stone-400">Food &amp; Dining</p>
+</div>
+</div>
+<div class="mt-5 flex items-baseline gap-2">
+<span class="text-3xl font-black text-stone-900 dark:text-warm-white">96.0%</span>
+<span class="flex items-center text-xs font-bold text-stone-500 bg-stone-500/10 px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px] mr-0.5">remove</span>
+                                        Stable
+                                    </span>
+</div>
+<p class="mt-2 text-[11px] text-stone-500 dark:text-stone-400">Real-time market rate</p>
+<div class="mt-5 flex gap-3">
+<button class="flex-1 rounded-lg bg-stone-100 py-2.5 text-xs font-bold uppercase tracking-wider text-stone-600 transition-colors hover:bg-stone-200 dark:bg-white/5 dark:text-warm-white dark:hover:bg-white/10">Details</button>
+<button class="flex-1 rounded-lg bg-primary py-2.5 text-xs font-bold uppercase tracking-wider text-stone-900 transition-transform hover:scale-[1.02]">Buy Now</button>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl border border-stone-200 bg-white p-5 transition-all hover:border-primary/50 hover:shadow-lg dark:border-white/5 dark:bg-surface-darker">
+<div class="mb-2 flex justify-between items-center">
+<span class="inline-flex items-center rounded-md bg-stone-100 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-stone-500 dark:bg-white/5 dark:text-stone-400">Voucher</span>
+<button class="group/btn flex h-8 w-8 items-center justify-center rounded-full text-stone-400 transition-colors hover:bg-red-500/10 hover:text-red-500 dark:text-stone-500" title="Remove from Favourites">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-stone-100 text-xl font-bold text-stone-800 dark:bg-nav-bg dark:text-primary">My</div>
+<div class="flex flex-col">
+<h3 class="text-base font-bold text-stone-900 dark:text-warm-white line-clamp-1">Myntra Luxe</h3>
+<p class="text-xs font-medium text-stone-500 dark:text-stone-400">Fashion</p>
+</div>
+</div>
+<div class="mt-5 flex items-baseline gap-2">
+<span class="text-3xl font-black text-stone-900 dark:text-warm-white">94.2%</span>
+<span class="flex items-center text-xs font-bold text-red-500 bg-red-500/10 px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px] mr-0.5">trending_down</span>
+                                        -1.2%
+                                    </span>
+</div>
+<p class="mt-2 text-[11px] text-stone-500 dark:text-stone-400">Real-time market rate</p>
+<div class="mt-5 flex gap-3">
+<button class="flex-1 rounded-lg bg-stone-100 py-2.5 text-xs font-bold uppercase tracking-wider text-stone-600 transition-colors hover:bg-stone-200 dark:bg-white/5 dark:text-warm-white dark:hover:bg-white/10">Details</button>
+<button class="flex-1 rounded-lg bg-primary py-2.5 text-xs font-bold uppercase tracking-wider text-stone-900 transition-transform hover:scale-[1.02]">Buy Now</button>
+</div>
+</div>
+</div>
+</section>
+<section class="mb-12">
+<div class="mb-6 flex items-center justify-between">
+<h2 class="flex items-center gap-2 text-xl font-bold text-stone-900 dark:text-warm-white">
+<span class="material-symbols-outlined text-primary">credit_card</span>
+                                Saved Cards
+                            </h2>
+<span class="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary ring-1 ring-primary/20">2 Saved</span>
+</div>
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+<div class="group relative overflow-hidden rounded-xl border border-stone-200 bg-white p-0 transition-all hover:border-primary/50 hover:shadow-lg dark:border-white/5 dark:bg-surface-darker">
+<div class="relative h-40 bg-gradient-to-br from-[#1a120b] to-[#2b2016] p-5">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-30"></div>
+<div class="absolute right-0 top-0 h-24 w-24 -translate-y-10 translate-x-8 rounded-full bg-primary/20 blur-2xl"></div>
+<div class="relative z-10 flex h-full flex-col justify-between">
+<div class="flex justify-between">
+<span class="text-sm font-bold tracking-widest text-white/90">HDFC BANK</span>
+<span class="material-symbols-outlined text-white/50">contactless</span>
+</div>
+<div>
+<div class="mb-2 text-xs text-white/50">INFINIA METAL</div>
+<div class="flex items-center gap-2">
+<div class="h-6 w-10 rounded bg-white/20"></div>
+<div class="text-sm tracking-widest text-white/90">•••• 8892</div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-5">
+<div class="flex items-start justify-between">
+<div>
+<span class="inline-flex items-center rounded-md bg-stone-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-stone-500 dark:bg-white/5 dark:text-stone-400 mb-1">Credit Card</span>
+<h3 class="font-bold text-stone-900 dark:text-warm-white">HDFC Infinia Metal</h3>
+<p class="text-xs text-stone-500 dark:text-stone-400">Super Premium</p>
+</div>
+<button class="flex h-8 w-8 items-center justify-center rounded-full text-stone-400 transition-colors hover:bg-red-500/10 hover:text-red-500 dark:text-stone-500" title="Remove from Favourites">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<div class="mt-4 space-y-3">
+<div class="flex justify-between text-sm">
+<span class="text-stone-500 dark:text-stone-400">Reward Rate</span>
+<span class="font-bold text-primary">3.3% - 33%</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-stone-500 dark:text-stone-400">Annual Fee</span>
+<span class="font-semibold text-stone-900 dark:text-warm-white">₹12,500 + GST</span>
+</div>
+</div>
+<div class="mt-5 grid grid-cols-2 gap-3">
+<button class="rounded-lg bg-stone-100 py-2 text-xs font-bold text-stone-700 hover:bg-stone-200 dark:bg-white/5 dark:text-warm-white dark:hover:bg-white/10">View Details</button>
+<button class="rounded-lg border border-primary/30 bg-primary/10 py-2 text-xs font-bold text-primary hover:bg-primary/20">Apply Now</button>
+</div>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl border border-stone-200 bg-white p-0 transition-all hover:border-primary/50 hover:shadow-lg dark:border-white/5 dark:bg-surface-darker">
+<div class="relative h-40 bg-gradient-to-br from-[#3b211a] to-[#1a110d] p-5">
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 20px 20px;"></div>
+<div class="relative z-10 flex h-full flex-col justify-between">
+<div class="flex justify-between">
+<span class="text-sm font-bold tracking-widest text-white/90">AXIS BANK</span>
+<span class="material-symbols-outlined text-white/50">contactless</span>
+</div>
+<div>
+<div class="mb-2 text-xs text-white/50">MAGNUS BURGUNDY</div>
+<div class="flex items-center gap-2">
+<div class="h-6 w-10 rounded bg-white/20"></div>
+<div class="text-sm tracking-widest text-white/90">•••• 4521</div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-5">
+<div class="flex items-start justify-between">
+<div>
+<span class="inline-flex items-center rounded-md bg-stone-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-stone-500 dark:bg-white/5 dark:text-stone-400 mb-1">Credit Card</span>
+<h3 class="font-bold text-stone-900 dark:text-warm-white">Axis Magnus Burgundy</h3>
+<p class="text-xs text-stone-500 dark:text-stone-400">Premium Lifestyle</p>
+</div>
+<button class="flex h-8 w-8 items-center justify-center rounded-full text-stone-400 transition-colors hover:bg-red-500/10 hover:text-red-500 dark:text-stone-500" title="Remove from Favourites">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<div class="mt-4 space-y-3">
+<div class="flex justify-between text-sm">
+<span class="text-stone-500 dark:text-stone-400">Reward Rate</span>
+<span class="font-bold text-primary">4.8% - 24%</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-stone-500 dark:text-stone-400">Annual Fee</span>
+<span class="font-semibold text-stone-900 dark:text-warm-white">₹30,000 + GST</span>
+</div>
+</div>
+<div class="mt-5 grid grid-cols-2 gap-3">
+<button class="rounded-lg bg-stone-100 py-2 text-xs font-bold text-stone-700 hover:bg-stone-200 dark:bg-white/5 dark:text-warm-white dark:hover:bg-white/10">View Details</button>
+<button class="rounded-lg border border-primary/30 bg-primary/10 py-2 text-xs font-bold text-primary hover:bg-primary/20">Apply Now</button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col items-center justify-center rounded-xl border border-dashed border-stone-300 bg-transparent p-6 text-center transition-all hover:border-primary/50 hover:bg-stone-50 dark:border-accent-copper/20 dark:hover:bg-white/5">
+<div class="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-stone-100 text-stone-400 transition-colors group-hover:bg-primary/10 group-hover:text-primary dark:bg-white/5 dark:text-accent-copper">
+<span class="material-symbols-outlined text-[24px]">add</span>
+</div>
+<h3 class="text-sm font-bold text-stone-900 dark:text-warm-white">Find More Cards</h3>
+<p class="mt-1 text-xs text-stone-500 dark:text-stone-400">Browse our database to add more favorites.</p>
+<a class="mt-4 text-xs font-bold text-primary hover:underline decoration-accent-copper" href="#">Browse Directory</a>
+</div>
+</div>
+</section>
+<section class="mb-12">
+<div class="mb-6 flex items-center justify-between">
+<h2 class="flex items-center gap-2 text-xl font-bold text-stone-900 dark:text-warm-white">
+<span class="material-symbols-outlined text-primary">account_balance</span>
+                                Saved Banking Tiers
+                            </h2>
+<span class="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary ring-1 ring-primary/20">2 Saved</span>
+</div>
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+<div class="group relative flex flex-col overflow-hidden rounded-xl border border-stone-200 bg-white p-5 transition-all hover:border-primary/50 hover:shadow-lg dark:border-white/5 dark:bg-surface-darker">
+<div class="mb-4 flex justify-between items-start">
+<div class="flex gap-4 items-center">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg border border-stone-100 bg-stone-50 text-xl font-bold text-stone-700 shadow-sm dark:border-white/10 dark:bg-surface-dark dark:text-primary banking-gradient">
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<div>
+<span class="inline-flex items-center rounded-md bg-stone-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-stone-500 dark:bg-white/5 dark:text-stone-400 mb-1">Banking Tier</span>
+<div class="flex flex-col">
+<p class="text-[10px] font-bold uppercase tracking-wider text-stone-400 dark:text-stone-500">HDFC Bank</p>
+<h3 class="text-lg font-bold text-stone-900 dark:text-warm-white leading-tight">Imperia Banking</h3>
+</div>
+</div>
+</div>
+<button class="group/btn flex h-8 w-8 items-center justify-center rounded-full text-stone-400 transition-colors hover:bg-red-500/10 hover:text-red-500 dark:text-stone-500" title="Remove from Favourites">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<div class="mt-2 mb-6 border-t border-dashed border-stone-100 pt-4 dark:border-white/5 flex-1">
+<ul class="space-y-3">
+<li class="flex items-start gap-2.5 text-sm text-stone-600 dark:text-stone-300">
+<span class="material-symbols-outlined text-[18px] text-accent-copper shrink-0 mt-0.5">diamond</span>
+<span>Dedicated Relationship Manager</span>
+</li>
+<li class="flex items-start gap-2.5 text-sm text-stone-600 dark:text-stone-300">
+<span class="material-symbols-outlined text-[18px] text-accent-copper shrink-0 mt-0.5">payments</span>
+<span>Preferential Loan Rates</span>
+</li>
+<li class="flex items-start gap-2.5 text-sm text-stone-600 dark:text-stone-300">
+<span class="material-symbols-outlined text-[18px] text-accent-copper shrink-0 mt-0.5">credit_card</span>
+<span>Lifetime Free Imperia Card</span>
+</li>
+</ul>
+</div>
+<div class="mt-auto">
+<button class="w-full rounded-lg bg-stone-100 py-2.5 text-xs font-bold uppercase tracking-wider text-stone-700 transition-colors hover:bg-stone-200 dark:bg-white/5 dark:text-warm-white dark:hover:bg-white/10">View Details</button>
+</div>
+</div>
+<div class="group relative flex flex-col overflow-hidden rounded-xl border border-stone-200 bg-white p-5 transition-all hover:border-primary/50 hover:shadow-lg dark:border-white/5 dark:bg-surface-darker">
+<div class="mb-4 flex justify-between items-start">
+<div class="flex gap-4 items-center">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg border border-stone-100 bg-stone-50 text-xl font-bold text-stone-700 shadow-sm dark:border-white/10 dark:bg-surface-dark dark:text-primary banking-gradient">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+<div>
+<span class="inline-flex items-center rounded-md bg-stone-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-stone-500 dark:bg-white/5 dark:text-stone-400 mb-1">Banking Tier</span>
+<div class="flex flex-col">
+<p class="text-[10px] font-bold uppercase tracking-wider text-stone-400 dark:text-stone-500">ICICI Bank</p>
+<h3 class="text-lg font-bold text-stone-900 dark:text-warm-white leading-tight">Wealth Mgmt</h3>
+</div>
+</div>
+</div>
+<button class="group/btn flex h-8 w-8 items-center justify-center rounded-full text-stone-400 transition-colors hover:bg-red-500/10 hover:text-red-500 dark:text-stone-500" title="Remove from Favourites">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<div class="mt-2 mb-6 border-t border-dashed border-stone-100 pt-4 dark:border-white/5 flex-1">
+<ul class="space-y-3">
+<li class="flex items-start gap-2.5 text-sm text-stone-600 dark:text-stone-300">
+<span class="material-symbols-outlined text-[18px] text-accent-copper shrink-0 mt-0.5">family_restroom</span>
+<span>Family Wealth Account</span>
+</li>
+<li class="flex items-start gap-2.5 text-sm text-stone-600 dark:text-stone-300">
+<span class="material-symbols-outlined text-[18px] text-accent-copper shrink-0 mt-0.5">flight_takeoff</span>
+<span>Unlimited Lounge Access</span>
+</li>
+<li class="flex items-start gap-2.5 text-sm text-stone-600 dark:text-stone-300">
+<span class="material-symbols-outlined text-[18px] text-accent-copper shrink-0 mt-0.5">percent</span>
+<span>Zero Forex Markup</span>
+</li>
+</ul>
+</div>
+<div class="mt-auto">
+<button class="w-full rounded-lg bg-stone-100 py-2.5 text-xs font-bold uppercase tracking-wider text-stone-700 transition-colors hover:bg-stone-200 dark:bg-white/5 dark:text-warm-white dark:hover:bg-white/10">View Details</button>
+</div>
+</div>
+</div>
+</section>
+<section>
+<div class="mb-6 flex items-center justify-between">
+<h2 class="flex items-center gap-2 text-xl font-bold text-stone-900 dark:text-warm-white">
+<span class="material-symbols-outlined text-primary">menu_book</span>
+                                Saved Guides
+                            </h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-4 rounded-xl border border-stone-200 bg-white p-4 transition-all hover:border-primary/30 dark:border-white/5 dark:bg-surface-darker sm:flex-row">
+<div class="aspect-video w-full overflow-hidden rounded-lg bg-stone-200 sm:w-40 shrink-0" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBnEOKhNhBmMb4b5quIo7V96zApqsBPW1kCbw-b-nYnuir-laJIS_bNeDfVziwF5GfT1-jfN5HN7XQi0cmvzILoczOZZpmJWe2R-43TQYDtBcmOJV_U_wL-8PO8lcgNAut4g82Z8dNfaDH3IPm7EQJceN44rEzojOgzjH6Dgeo7u7FawisAjigzO3VGwHpJiBQtyNe8L2wG8DG5IPTTol4hCvFot9N0NHOPhPyCqJ0at-VQZeBnQ5SuuAYAfWLYvEFj1T_y_cl2aNaY'); background-size: cover; background-position: center;"></div>
+<div class="flex flex-1 flex-col justify-between">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center rounded-md bg-stone-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary dark:bg-primary/10">Guide • Travel</span>
+<button class="group/btn flex h-6 w-6 items-center justify-center rounded-full text-stone-400 transition-colors hover:bg-red-500/10 hover:text-red-500 dark:text-stone-500" title="Remove from Favourites">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<h3 class="text-base font-bold leading-tight text-stone-900 dark:text-warm-white hover:text-primary cursor-pointer transition-colors mt-1">Maximizing HDFC Infinia for international flights</h3>
+</div>
+<div class="flex items-center justify-between mt-3">
+<div class="flex items-center gap-2 text-xs text-stone-500 dark:text-stone-400">
+<span class="material-symbols-outlined text-[14px] text-accent-copper">schedule</span>
+                                            5 min read
+                                        </div>
+<button class="text-xs font-bold text-stone-600 hover:text-primary dark:text-warm-white/80 dark:hover:text-primary">Read Now</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-xl border border-stone-200 bg-white p-4 transition-all hover:border-primary/30 dark:border-white/5 dark:bg-surface-darker sm:flex-row">
+<div class="aspect-video w-full overflow-hidden rounded-lg bg-stone-800 sm:w-40 shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-stone-600">credit_score</span>
+</div>
+<div class="flex flex-1 flex-col justify-between">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center rounded-md bg-stone-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary dark:bg-primary/10">Guide • Strategy</span>
+<button class="group/btn flex h-6 w-6 items-center justify-center rounded-full text-stone-400 transition-colors hover:bg-red-500/10 hover:text-red-500 dark:text-stone-500" title="Remove from Favourites">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<h3 class="text-base font-bold leading-tight text-stone-900 dark:text-warm-white hover:text-primary cursor-pointer transition-colors mt-1">Ultimate guide to hitting spending milestones</h3>
+</div>
+<div class="flex items-center justify-between mt-3">
+<div class="flex items-center gap-2 text-xs text-stone-500 dark:text-stone-400">
+<span class="material-symbols-outlined text-[14px] text-accent-copper">schedule</span>
+                                            8 min read
+                                        </div>
+<button class="text-xs font-bold text-stone-600 hover:text-primary dark:text-warm-white/80 dark:hover:text-primary">Read Now</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="mt-20 border-t border-stone-200 py-10 text-center dark:border-accent-copper/20">
+<div class="flex flex-wrap justify-center gap-8 md:gap-12">
+<a class="text-sm text-stone-500 hover:text-primary dark:text-stone-400 dark:hover:text-primary" href="#">Privacy Policy</a>
+<a class="text-sm text-stone-500 hover:text-primary dark:text-stone-400 dark:hover:text-primary" href="#">Terms of Service</a>
+<a class="text-sm text-stone-500 hover:text-primary dark:text-stone-400 dark:hover:text-primary" href="#">Contact Support</a>
+</div>
+<p class="mt-8 text-sm text-stone-400 dark:text-stone-600">© 2024 VoucherTracker. All rights reserved.</p>
+</footer>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

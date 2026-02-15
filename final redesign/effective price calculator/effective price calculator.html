@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Effective Price Calculator - VoucherTracker</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Noto+Sans:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#cd7f32", // Copper
+                        "primary-hover": "#b87333", // Darker Copper
+                        "espresso": "#1a1614", // Rich Deep Espresso
+                        "charcoal": "#2b2422", // Warmer dark brown for cards
+                        "border-subtle": "#4a403c", // Warm grey/brown border
+                        "text-light": "#ffffff",
+                        "text-muted": "#a89f91", // Warm grey text
+                        "gold": "#d4af37", // Metallic Gold
+                        "gold-hover": "#c5a028",
+                    },
+                    fontFamily: {
+                        "display": ["Noto Serif", "serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    backgroundImage: {
+                        'copper-gradient': 'linear-gradient(135deg, #cd7f32 0%, #b87333 100%)',
+                        'gold-gradient': 'linear-gradient(135deg, #d4af37 0%, #b8860b 100%)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #1a1614;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1614; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4a403c; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #cd7f32; 
+        }
+        input[type=range] {
+            -webkit-appearance: none; 
+            background: transparent; 
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #d4af37;
+            cursor: pointer;
+            margin-top: -8px; 
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+            border: 2px solid #fff;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: #4a403c;
+            border-radius: 2px;
+        }@keyframes confetti-fall {
+            0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+        .confetti-piece {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background-color: #d4af37;
+            animation: confetti-fall 4s ease-in-out infinite;
+        }
+        .text-shadow-gold {
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-espresso text-text-light font-body antialiased overflow-hidden">
+<div class="flex h-screen w-full flex-col overflow-hidden">
+<header class="flex h-16 w-full items-center justify-between border-b border-border-subtle bg-espresso px-6 shrink-0 z-20 relative shadow-sm">
+<div class="flex items-center gap-4 text-white">
+<div class="size-8 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl drop-shadow-md">savings</span>
+</div>
+<h2 class="font-display text-xl font-bold tracking-tight text-white">VoucherTracker</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-2 text-sm">
+<a class="text-text-muted hover:text-primary transition-colors" href="#">Dashboard</a>
+<span class="text-border-subtle">/</span>
+<span class="text-white font-medium">Effective Price Calculator</span>
+</div>
+<div class="h-6 w-px bg-border-subtle mx-2"></div>
+<div class="flex gap-4 items-center">
+<button class="relative text-text-muted hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 h-2 w-2 rounded-full bg-gold block shadow-[0_0_5px_#d4af37]"></span>
+</button>
+<div class="h-8 w-8 rounded-full bg-charcoal border border-primary/50 flex items-center justify-center overflow-hidden cursor-pointer hover:border-primary transition-colors">
+<div class="bg-center bg-no-repeat bg-cover h-full w-full" data-alt="User profile avatar showing a minimalist silhouette" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBp8g20_w-bee6Uy2Y5NrXKIbLFXJbMCj60GDP-m59MvJ6BlXAuw1KAuIsh9C4S2cGBvcpZpHWipvAJffbxSu1zDUX-jHQ012ZobSNJYYjQwwYt0CGjc95chvoZ6a6k3PPbQoEX4O6fFqPMABTPED8zvNR72nnCDnJWDigJuU17Aa0qbUO2U4cgYJ87b1DWPXjqY1HMyWV4-Xa0obrG8faPEVnLZMpc2_GL2zvUNsYrW0PN1lPeOwmxZIXbpqKu8tiLKZv8tD-GQZaM");'></div>
+</div>
+</div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden relative">
+<aside class="w-64 bg-espresso border-r border-border-subtle hidden md:flex flex-col flex-shrink-0 h-full overflow-y-auto pb-4">
+<div class="p-4">
+<div class="bg-charcoal rounded-sm p-3 mb-6 flex items-center gap-3 border border-border-subtle shadow-inner">
+<div class="h-8 w-8 rounded-full bg-gold/10 flex items-center justify-center text-gold border border-gold/20">
+<span class="material-symbols-outlined text-sm">diamond</span>
+</div>
+<div>
+<h3 class="text-xs font-bold text-white uppercase tracking-wider">Premium Plan</h3>
+<p class="text-[10px] text-text-muted">Valid until Dec 2024</p>
+</div>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-sm bg-charcoal text-white border-l-2 border-primary group transition-all shadow-md" href="#">
+<span class="material-symbols-outlined text-primary">calculate</span>
+<span class="text-sm font-medium">Effective Price Calc</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-sm text-text-muted hover:bg-charcoal hover:text-white group transition-all" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-sm text-text-muted hover:bg-charcoal hover:text-white group transition-all" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">credit_card</span>
+<span class="text-sm font-medium">My Cards</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-sm text-text-muted hover:bg-charcoal hover:text-white group transition-all" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">confirmation_number</span>
+<span class="text-sm font-medium">Vouchers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-sm text-text-muted hover:bg-charcoal hover:text-white group transition-all" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-4 border-t border-border-subtle/30">
+<a class="flex items-center gap-3 px-3 py-2 rounded-sm text-text-muted hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">logout</span>
+<span class="text-sm">Sign Out</span>
+</a>
+</div>
+</aside>
+<main class="flex-1 overflow-y-auto bg-espresso scroll-smooth relative">
+<div aria-hidden="true" class="absolute top-0 left-1/2 w-full h-full pointer-events-none overflow-hidden z-0 opacity-30">
+<div class="confetti-piece" style="left: 10%; animation-delay: 0s; background-color: #cd7f32;"></div>
+<div class="confetti-piece" style="left: 20%; animation-delay: 1.5s; background-color: #d4af37;"></div>
+<div class="confetti-piece" style="left: 50%; animation-delay: 0.5s; background-color: #cd7f32;"></div>
+<div class="confetti-piece" style="left: 70%; animation-delay: 2.5s; background-color: #d4af37;"></div>
+<div class="confetti-piece" style="left: 85%; animation-delay: 1s; background-color: #cd7f32;"></div>
+</div>
+<div class="max-w-7xl mx-auto px-6 py-8 relative z-10">
+<div class="mb-8 flex flex-col md:flex-row justify-between items-end gap-4">
+<div>
+<h1 class="font-display text-3xl md:text-4xl font-bold text-white mb-2">Effective Price Calculator</h1>
+<p class="text-text-muted text-sm">Optimize every transaction. Calculate the true effective price for maximum savings.</p>
+</div>
+<div class="flex items-center gap-2 bg-charcoal border border-primary/40 px-3 py-1.5 rounded-sm shadow-[0_0_15px_rgba(205,127,50,0.15)] animate-pulse">
+<span class="material-symbols-outlined text-gold text-lg">hotel_class</span>
+<span class="text-xs font-bold text-gold uppercase tracking-wider">Best Value Found</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<div class="lg:col-span-5 space-y-6">
+<div class="bg-charcoal p-6 rounded-sm border border-border-subtle relative group focus-within:border-primary transition-colors shadow-sm">
+<label class="block text-xs font-bold text-gold uppercase tracking-wider mb-2">Spend Amount</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-primary font-display text-lg">₹</span>
+<input class="w-full bg-espresso border border-border-subtle text-white text-xl font-display py-3 pl-10 pr-4 rounded-sm focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder-text-muted/30" placeholder="0" type="number" value="10000"/>
+</div>
+<p class="text-[10px] text-text-muted mt-2">Enter the total transaction value</p>
+</div>
+<div class="bg-charcoal p-6 rounded-sm border border-border-subtle shadow-sm">
+<div class="flex justify-between items-center mb-4">
+<label class="block text-xs font-bold text-gold uppercase tracking-wider">Brand / Category</label>
+<span class="text-[10px] text-primary cursor-pointer hover:text-gold transition-all">View All Brands</span>
+</div>
+<div class="grid grid-cols-3 gap-3">
+<button class="flex flex-col items-center justify-center gap-2 p-3 rounded-sm border-2 border-primary bg-espresso text-white relative shadow-[0_0_10px_rgba(205,127,50,0.2)] transition-all">
+<span class="absolute top-1 right-1 text-primary material-symbols-outlined text-[10px]">check_circle</span>
+<div class="w-8 h-8 rounded-full bg-text-light flex items-center justify-center text-espresso font-bold text-xs">A</div>
+<span class="text-xs font-medium">Amazon</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 p-3 rounded-sm border border-border-subtle bg-espresso text-text-muted hover:border-primary/50 transition-colors hover:bg-espresso/80">
+<div class="w-8 h-8 rounded-full bg-text-light flex items-center justify-center text-espresso font-bold text-xs">F</div>
+<span class="text-xs">Flipkart</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 p-3 rounded-sm border border-border-subtle bg-espresso text-text-muted hover:border-primary/50 transition-colors hover:bg-espresso/80">
+<div class="w-8 h-8 rounded-full bg-text-light flex items-center justify-center text-espresso font-bold text-xs">Z</div>
+<span class="text-xs">Zomato</span>
+</button>
+</div>
+</div>
+<div class="bg-charcoal p-6 rounded-sm border border-border-subtle shadow-sm">
+<label class="block text-xs font-bold text-gold uppercase tracking-wider mb-4">Payment Mode</label>
+<div class="space-y-3">
+<label class="flex items-center gap-3 p-3 rounded-sm bg-espresso border border-primary cursor-pointer transition-all hover:bg-espresso/80 relative overflow-hidden group shadow-[inset_0_0_5px_rgba(205,127,50,0.1)]">
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<input checked="" class="text-primary focus:ring-primary bg-charcoal border-border-subtle" name="card" type="radio"/>
+<div class="h-8 w-12 bg-gradient-to-br from-gray-700 to-black rounded border border-gray-600 flex items-center justify-center shadow-sm">
+<span class="text-[8px] text-white">INF</span>
+</div>
+<div class="flex-1 z-10">
+<div class="flex justify-between">
+<span class="text-sm font-medium text-white">HDFC Infinia</span>
+<span class="text-xs text-gold font-bold bg-gold/10 px-1.5 py-0.5 rounded border border-gold/20">16.5% Return</span>
+</div>
+<p class="text-[10px] text-text-muted">SmartBuy Multiplier (5x)</p>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-sm bg-espresso border border-border-subtle cursor-pointer hover:border-primary/50 transition-colors group">
+<input class="text-primary focus:ring-primary bg-charcoal border-border-subtle" name="card" type="radio"/>
+<div class="h-8 w-12 bg-gradient-to-br from-red-900 to-red-700 rounded border border-red-800 flex items-center justify-center shadow-sm">
+<span class="text-[8px] text-white">MAG</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between">
+<span class="text-sm font-medium text-text-muted group-hover:text-white transition-colors">Axis Magnus</span>
+<span class="text-xs text-text-muted">4.8% Return</span>
+</div>
+</div>
+</label>
+</div>
+</div>
+<div class="bg-charcoal p-6 rounded-sm border border-border-subtle shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<div class="flex items-center gap-2">
+<label class="text-xs font-bold text-gold uppercase tracking-wider">Point Valuation</label>
+<div class="group relative cursor-help">
+<span class="material-symbols-outlined text-border-subtle text-sm">info</span>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-52 bg-espresso border border-border-subtle p-3 rounded text-[10px] text-text-muted hidden group-hover:block z-20 shadow-xl">
+                                                Adjust the estimated monetary value of 1 Reward Point. Higher values apply when redeeming for premium flights or hotels.
+                                            </div>
+</div>
+</div>
+<span class="text-primary font-bold text-sm bg-primary/10 px-2 py-0.5 rounded border border-primary/20">₹<span id="slider-val">1.00</span> / pt</span>
+</div>
+<input class="w-full accent-primary hover:accent-primary-hover transition-colors" max="1.50" min="0.20" step="0.05" type="range" value="1.00"/>
+<div class="flex justify-between text-[10px] text-text-muted mt-2 font-mono">
+<span>₹0.20</span>
+<span>Conservative</span>
+<span>Optimistic</span>
+<span>₹1.50</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 flex flex-col gap-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-charcoal p-5 rounded-sm border border-border-subtle flex flex-col relative overflow-hidden group hover:border-gold/30 transition-colors shadow-sm">
+<div class="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-4xl text-gold">payments</span>
+</div>
+<span class="text-text-muted text-xs uppercase tracking-wide mb-1 flex items-center gap-1">Effective Price <span class="material-symbols-outlined text-[12px] text-border-subtle" title="Final price after subtracting savings">info</span></span>
+<span class="text-2xl font-display font-bold text-gold text-shadow-gold">₹8,350</span>
+<span class="text-[10px] text-text-muted mt-auto line-through decoration-primary/50">Original: ₹10,000</span>
+</div>
+<div class="bg-charcoal p-5 rounded-sm border border-primary flex flex-col relative overflow-hidden shadow-[0_0_20px_rgba(205,127,50,0.15)] group hover:shadow-[0_0_25px_rgba(205,127,50,0.25)] transition-all">
+<div class="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-4xl text-primary">savings</span>
+</div>
+<span class="text-primary text-xs uppercase tracking-wide mb-1 font-bold flex items-center gap-1">Total Savings <span class="material-symbols-outlined text-[12px] text-primary/70" title="Total value saved via points and discounts">info</span></span>
+<span class="text-2xl font-display font-bold text-white">₹1,650</span>
+<div class="flex items-center gap-1 mt-auto">
+<span class="bg-primary/20 text-primary text-[10px] px-1.5 py-0.5 rounded font-bold border border-primary/20">16.5% OFF</span>
+</div>
+</div>
+<div class="bg-charcoal p-5 rounded-sm border border-border-subtle flex flex-col relative overflow-hidden group hover:border-gold/50 transition-colors shadow-sm">
+<div class="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-4xl text-gold">stars</span>
+</div>
+<span class="text-gold text-xs uppercase tracking-wide mb-1 flex items-center gap-1">Points Earned <span class="material-symbols-outlined text-[12px] text-gold/70" title="Points accumulated from this transaction">info</span></span>
+<span class="text-2xl font-display font-bold text-white">1,650 <span class="text-sm font-normal text-text-muted">pts</span></span>
+<span class="text-[10px] text-text-muted mt-auto flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-gold inline-block shadow-[0_0_5px_#d4af37]"></span>
+                                        Valued at ₹1.00/pt
+                                    </span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 h-full">
+<div class="bg-charcoal p-6 rounded-sm border border-border-subtle flex flex-col items-center justify-center relative shadow-sm">
+<h4 class="w-full text-xs font-bold text-gold uppercase tracking-wider mb-6 text-left flex items-center gap-2">
+                                        Cost Breakdown
+                                        <span class="material-symbols-outlined text-[14px] text-border-subtle cursor-help" title="Visual representation of savings vs payable amount">help</span>
+</h4>
+<div class="relative w-48 h-48 hover:scale-105 transition-transform duration-300">
+<div class="w-full h-full rounded-full" style="background: conic-gradient(#cd7f32 0% 16.5%, #4a403c 16.5% 100%); mask-image: radial-gradient(transparent 60%, black 61%); -webkit-mask-image: radial-gradient(transparent 60%, black 61%); box-shadow: 0 0 15px rgba(0,0,0,0.5);"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+<span class="text-3xl font-bold text-white font-display">16.5%</span>
+<span class="text-xs text-text-muted uppercase tracking-widest">Saved</span>
+</div>
+</div>
+<div class="flex gap-6 mt-6 w-full justify-center">
+<div class="flex items-center gap-2 group">
+<div class="w-3 h-3 rounded-full bg-border-subtle group-hover:ring-2 ring-offset-1 ring-offset-charcoal ring-border-subtle transition-all"></div>
+<span class="text-xs text-text-muted">Payable (83.5%)</span>
+</div>
+<div class="flex items-center gap-2 group">
+<div class="w-3 h-3 rounded-full bg-primary group-hover:ring-2 ring-offset-1 ring-offset-charcoal ring-primary transition-all"></div>
+<span class="text-xs text-white">Savings (16.5%)</span>
+</div>
+</div>
+</div>
+<div class="bg-charcoal p-6 rounded-sm border border-border-subtle flex flex-col shadow-sm">
+<div class="flex justify-between items-start mb-6">
+<h4 class="text-xs font-bold text-gold uppercase tracking-wider">Comparison</h4>
+<div class="text-[10px] bg-primary/10 text-primary px-2 py-1 rounded border border-primary/20 font-medium">
+                                            Using SmartBuy
+                                        </div>
+</div>
+<div class="space-y-6 my-auto">
+<div class="group">
+<div class="flex justify-between text-xs mb-2">
+<span class="text-text-muted">Standard Pay</span>
+<span class="text-white">₹10,000</span>
+</div>
+<div class="h-8 w-full bg-espresso border border-border-subtle rounded-sm relative overflow-hidden">
+<div class="absolute top-0 left-0 h-full bg-border-subtle/50 group-hover:bg-border-subtle/70 transition-colors" style="width: 100%;"></div>
+</div>
+</div>
+<div class="group">
+<div class="flex justify-between text-xs mb-2">
+<span class="text-white font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">auto_awesome</span>
+                                                    Smart Pay
+                                                </span>
+<span class="text-primary font-bold">₹8,350</span>
+</div>
+<div class="h-8 w-full bg-espresso border border-primary/30 rounded-sm flex overflow-hidden">
+<div class="h-full bg-white/10 flex items-center justify-center text-[10px] text-white border-r border-black/20 group-hover:bg-white/15 transition-colors" style="width: 83.5%;">
+                                                    Net Cost
+                                                </div>
+<div class="h-full bg-copper-gradient flex items-center justify-center text-[10px] text-white font-bold group-hover:brightness-110 transition-all shadow-[inset_0_0_10px_rgba(0,0,0,0.2)]" style="width: 16.5%;">
+                                                    Saved
+                                                </div>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-border-subtle/30">
+<p class="text-[10px] text-text-muted leading-relaxed">
+<span class="text-primary font-bold">Analysis:</span> You save <span class="text-gold font-bold">₹1,650</span> by purchasing an Amazon Voucher via HDFC SmartBuy compared to direct payment.
+                                        </p>
+</div>
+</div>
+</div>
+<div class="bg-charcoal p-4 rounded-sm border border-border-subtle shadow-sm">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs font-bold text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-gold text-sm animate-bounce">flag</span>
+                                        Monthly Milestone
+                                    </span>
+<span class="text-xs text-text-muted">₹10,000 / ₹20,000</span>
+</div>
+<div class="w-full bg-espresso rounded-full h-1.5 mb-2 overflow-hidden relative">
+<div class="bg-gold h-1.5 rounded-full relative overflow-hidden shadow-[0_0_8px_rgba(212,175,55,0.6)]" style="width: 50%">
+<div class="absolute top-0 left-0 bottom-0 right-0 bg-white/20 w-full animate-[shimmer_2s_infinite] -translate-x-full"></div>
+</div>
+</div>
+<p class="text-[10px] text-text-muted">Spend <span class="text-white font-medium">₹10,000 more</span> to unlock <span class="text-gold font-bold">2,000 bonus points</span>.</p>
+</div>
+<div class="bg-espresso p-4 rounded-sm border border-primary/30 border-dashed relative overflow-hidden">
+<div class="absolute top-0 right-0 p-3 opacity-5">
+<span class="material-symbols-outlined text-6xl">stairs</span>
+</div>
+<h4 class="text-xs font-bold text-gold uppercase tracking-wider mb-4">Execution Plan</h4>
+<div class="flex items-center justify-between text-center relative z-10">
+<div class="absolute top-4 left-0 w-full h-0.5 bg-border-subtle -z-10"></div>
+<div class="flex flex-col items-center gap-2 bg-espresso px-2 group cursor-pointer">
+<div class="w-8 h-8 rounded-full bg-charcoal border border-primary text-primary flex items-center justify-center font-bold text-sm group-hover:bg-primary group-hover:text-white transition-colors">1</div>
+<span class="text-[10px] text-text-muted group-hover:text-white transition-colors">Log in to<br/>SmartBuy</span>
+</div>
+<div class="flex flex-col items-center gap-2 bg-espresso px-2 group cursor-pointer">
+<div class="w-8 h-8 rounded-full bg-charcoal border border-primary text-primary flex items-center justify-center font-bold text-sm group-hover:bg-primary group-hover:text-white transition-colors">2</div>
+<span class="text-[10px] text-text-muted group-hover:text-white transition-colors">Buy Amazon<br/>Voucher</span>
+</div>
+<div class="flex flex-col items-center gap-2 bg-espresso px-2 group cursor-pointer">
+<div class="w-8 h-8 rounded-full bg-charcoal border border-primary text-primary flex items-center justify-center font-bold text-sm group-hover:bg-primary group-hover:text-white transition-colors">3</div>
+<span class="text-[10px] text-text-muted group-hover:text-white transition-colors">Add to<br/>Amazon Pay</span>
+</div>
+<div class="flex flex-col items-center gap-2 bg-espresso px-2 group cursor-pointer">
+<div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm shadow-[0_0_10px_rgba(205,127,50,0.4)] group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-sm">check</span>
+</div>
+<span class="text-[10px] text-white font-medium">Pay for<br/>Order</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

@@ -1,0 +1,905 @@
+{
+  "id": "hdfc-shoppers-stop-black",
+  "name": "Shoppers Stop Black HDFC Bank Credit Card",
+  "bank": "HDFC Bank",
+  "slug": "shoppers-stop-black-hdfc-bank-credit-card",
+  "image": "assets/cards/hdfc/shoppers-stop-black.png",
+  "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/shoppers-stop-black-hdfc-bank-credit-card",
+  "isActive": true,
+
+  "network": {
+    "type": "Mastercard",
+    "variant": "World",
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "mid",
+    "isCobranded": true,
+    "cobrandPartner": {
+      "name": "Shoppers Stop",
+      "type": "retail",
+      "loyaltyProgram": "First Citizen"
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 4500,
+      "gst": true,
+      "totalWithGST": 5310,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 4500,
+      "gst": true,
+      "totalWithGST": 5310,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": false,
+        "spendThreshold": null,
+        "spendPeriod": null,
+        "waiverText": "No annual fee waiver available"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": 0,
+      "joiningFee": null,
+      "annualFee": null,
+      "rewardSharing": true
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding amount (revised August 2024)",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 100, "fee": 0},
+        {"minAmount": 101, "maxAmount": 500, "fee": 100},
+        {"minAmount": 501, "maxAmount": 1000, "fee": 500},
+        {"minAmount": 1001, "maxAmount": 5000, "fee": 600},
+        {"minAmount": 5001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 900},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ]
+    },
+    "overLimit": {
+      "amount": null,
+      "percentage": 2.5
+    },
+    "chequeReturn": 500,
+    "cardReplacement": 200,
+    "duplicateStatement": 100,
+    "rentalTransactionFee": {
+      "percentage": 1,
+      "cap": 3000,
+      "note": "1% fee from 2nd rental transaction per calendar month (via CRED, PayTM, etc.)"
+    }
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 70000,
+        "annual": 840000
+      },
+      "selfEmployed": {
+        "itr": 840000
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 60,
+      "selfEmployedMax": 65,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": null
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 50000,
+      "max": 500000
+    },
+    "factors": "Based on income, credit score, and existing relationship with HDFC Bank",
+    "enhancementCriteria": "Good repayment history for 6+ months"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": 50,
+      "note": "Interest-free period up to 50 days from transaction date if previous balance paid in full"
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 200,
+      "calculation": "5% of total outstanding or ₹200, whichever is higher"
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": 30,
+    "dailyLimit": null,
+    "interestFromDay1": true
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "HDFC Reward Points",
+      "symbol": "RP",
+      "singularUnit": "point",
+      "pluralUnit": "points"
+    },
+    "baseRate": {
+      "rate": 2,
+      "spendUnit": 150,
+      "effectivePercentage": 0.0133,
+      "note": "2% value back on non-Shoppers Stop spends (2 RP per ₹150)"
+    },
+    "earningText": "Earn 7% Reward Points on Shoppers Stop spends, 2% on other spends",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Fuel",
+        "Rent payments",
+        "Wallet loads",
+        "Government payments",
+        "EMI transactions",
+        "Cash withdrawals",
+        "Balance transfers"
+      ],
+      "mccs": null,
+      "note": "No Reward Points on rental and government category payments. Grocery spends capped at 1,000 points per month."
+    },
+
+    "caps": {
+      "shoppersStopSpends": {
+        "monthly": {
+          "points": 2000,
+          "note": "7% rewards on SS spends capped at 2,000 RP per month"
+        }
+      },
+      "nonShoppersStopSpends": {
+        "monthly": {
+          "points": 2000,
+          "note": "2% rewards on non-SS spends capped at 2,000 RP per month"
+        }
+      },
+      "grocery": {
+        "monthly": {
+          "points": 1000,
+          "note": "Grocery spends capped at 1,000 RP per month per customer"
+        }
+      },
+      "resetPeriod": "calendar",
+      "perTransaction": null
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "2 years",
+      "condition": "From date of accumulation"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": null,
+        "cashback": null,
+        "vouchers": "Shoppers Stop vouchers worth ₹4,500 + Complimentary Shoppers Stop Black Membership worth ₹4,500 + ₹1,500 SS voucher",
+        "spendCondition": {
+          "amount": null,
+          "period": null,
+          "transactionCount": null
+        },
+        "validity": "On card issuance",
+        "description": "Get Shoppers Stop vouchers worth ₹4,500 as welcome gift, plus complimentary First Citizen Black membership worth ₹4,500, plus ₹1,500 SS voucher redeemable on any transaction"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "shoppersStop": {
+        "rate": 7,
+        "effectivePercentage": 0.07,
+        "calculation": "7 RP per ₹150 spent = 4.67% value (at ₹1/point SS voucher redemption)",
+        "cap": 2000,
+        "capPeriod": "monthly",
+        "merchants": ["Shoppers Stop stores", "Shoppers Stop online"],
+        "note": "7% Reward Points on all online and offline Shoppers Stop spends"
+      },
+      "nonShoppersStop": {
+        "rate": 2,
+        "effectivePercentage": 0.0133,
+        "cap": 2000,
+        "capPeriod": "monthly",
+        "note": "2% Reward Points on non-Shoppers Stop spends"
+      },
+      "groceries": {
+        "rate": 2,
+        "cap": 1000,
+        "capPeriod": "monthly",
+        "note": "Grocery spends earn standard 2% but capped at 1,000 RP per month"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on fuel transactions"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on rent payments"
+      },
+      "government": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on government payments"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": true,
+        "name": "SmartBuy",
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["Amazon", "Flipkart", "Flights", "Hotels", "Instant Vouchers"],
+        "link": "https://offers.smartbuy.hdfcbank.com",
+        "note": "Points can be redeemed via SmartBuy for travel bookings at better value"
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": [],
+        "note": null
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": []
+      },
+      "milestoneAccelerators": []
+    },
+
+    "redemption": {
+      "baseValue": 0.20,
+      "bestValue": 1.0,
+      "bestOption": "Shoppers Stop vouchers at ₹1 = 1 point",
+      "minRedemption": null,
+      "redemptionIncrement": null,
+      "convenienceFee": 50,
+      "convenienceFeeNote": "₹50 redemption fee for statement credit/cashback redemption (from Aug 2024)",
+      "monthlyRedemptionLimit": null,
+
+      "pointsPlusPay": {
+        "enabled": false,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": null,
+        "note": null
+      },
+
+      "options": [
+        {
+          "type": "shoppersStopVouchers",
+          "value": 1.0,
+          "description": "Shoppers Stop vouchers",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["Shoppers Stop"],
+          "note": "Best value redemption - 1 Reward Point = ₹1"
+        },
+        {
+          "type": "airmiles",
+          "value": 0.50,
+          "description": "Air miles and travel bookings via SmartBuy",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["SmartBuy"],
+          "note": "1 Reward Point = ₹0.50 or 1 Airmile"
+        },
+        {
+          "type": "products",
+          "value": 0.35,
+          "description": "Product catalogue redemption",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": [],
+          "note": "1 Reward Point = ₹0.35"
+        },
+        {
+          "type": "statement_credit",
+          "value": 0.20,
+          "description": "Statement credit / Cashback",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 50,
+          "partners": [],
+          "note": "1 Reward Point = ₹0.20 + ₹50 redemption fee"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": null,
+      "partners": [],
+      "note": "Direct transfer partners not available for this card"
+    },
+
+    "pooling": {
+      "enabled": true,
+      "eligibleCards": ["All HDFC credit cards of same customer"],
+      "acrossUsers": false,
+      "note": "Pool points across your HDFC cards via NetBanking"
+    },
+
+    "specialLogic": {
+      "firstCitizenPoints": {
+        "enabled": true,
+        "privateLabelBrands": {
+          "rate": 20,
+          "perSpend": 200,
+          "note": "20 First Citizen Points per ₹200 on Shoppers Stop private label brands"
+        },
+        "otherSSBrands": {
+          "rate": 15,
+          "perSpend": 200,
+          "note": "15 First Citizen Points per ₹200 on other Shoppers Stop brands"
+        },
+        "otherSpends": {
+          "rate": 5,
+          "perSpend": 200,
+          "note": "5 First Citizen Points per ₹200 on other spends"
+        },
+        "redemption": "Redeem at Shoppers Stop outlets or online",
+        "validity": "2 years from date of accumulation"
+      }
+    },
+
+    "calculator": {
+      "enabled": true,
+      "formula": "For SS spends: points = (spend / 150) * 7; For non-SS: points = (spend / 150) * 2",
+      "variables": ["spend", "category", "isShoppersStop"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": true,
+        "complimentaryCount": 16,
+        "period": "year",
+        "quarterlyLimit": 4,
+        "accessType": "Mastercard Lounge",
+        "accessProvider": "DreamFolks",
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "No spend requirement for domestic lounge access"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "eligibleLounges": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/shoppers-stop-black-hdfc-bank-credit-card"
+      },
+      "international": {
+        "included": true,
+        "complimentaryCount": 8,
+        "period": "year",
+        "quarterlyLimit": 2,
+        "accessType": "Priority Pass",
+        "accessProvider": "Priority Pass",
+        "membershipValue": null,
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "No spend requirement for international lounge access"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "eligibleLounges": "https://prioritypass.com/lounges"
+      }
+    },
+
+    "milestones": [
+      {
+        "spend": 50000,
+        "period": "single transaction",
+        "benefit": "₹2,000 worth of Shoppers Stop voucher",
+        "benefitType": "voucher",
+        "value": 2000,
+        "conditions": "Single purchase of ₹50,000+ on Shoppers Stop over weekend (Friday/Saturday/Sunday). Capped to once per month and max 5 times per year."
+      }
+    ],
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": false,
+      "lessonIncluded": false,
+      "note": null
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": "This card does not provide any movie benefits"
+    },
+
+    "dining": {
+      "included": false,
+      "programs": [],
+      "hotelDining": {
+        "included": false,
+        "hotels": [],
+        "offer": null
+      },
+      "note": "This card does not provide any dining benefits"
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 400,
+      "maxTransaction": 5000,
+      "monthlyCap": 500,
+      "applicableStations": "All fuel stations in India",
+      "rewardsOnFuel": false,
+      "note": "1% surcharge waiver on fuel spends between ₹400 and ₹5,000, max ₹500 per statement cycle",
+      "additionalCharge": {
+        "threshold": 15000,
+        "percentage": 1,
+        "cap": 3000,
+        "note": "1% fee on fuel spends above ₹15,000 per transaction (from Aug 2024)"
+      }
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% + GST on international transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "additionalCharge": 1,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "1% markup on International DCC transactions in addition to forex markup"
+    },
+
+    "concierge": {
+      "included": false,
+      "availability": null,
+      "type": null,
+      "services": [],
+      "contactNumber": null,
+      "note": null
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": [],
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "SmartEMI",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Select merchants"],
+        "note": "No-cost EMI on select merchants and products"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": 299,
+        "minFee": null
+      },
+      "minAmount": 2500,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": 0.12,
+        "max": 0.18
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": 0
+      },
+      "cancellationPeriod": null,
+      "note": "EMI processing fee up to ₹299 for Easy-EMI at any online/offline store"
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": 0.0375
+      },
+      "processingFee": {
+        "percentage": 1,
+        "minFee": 250
+      },
+      "tenures": [6, 12, 18, 24],
+      "maxAmount": null,
+      "preclosureFee": 3,
+      "note": "Transfer balances from other bank cards"
+    },
+
+    "memberships": [
+      {
+        "name": "Shoppers Stop Black Membership",
+        "type": "loyalty",
+        "value": 4500,
+        "duration": "Lifetime",
+        "condition": "On card issuance",
+        "note": "Complimentary First Citizen Black membership for earning First Citizen Points at Shoppers Stop"
+      }
+    ],
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": true,
+      "cover": 30000000,
+      "condition": "Ticket booked with card"
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": []
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": [],
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": true,
+      "cover": 5000000,
+      "overseas": true,
+      "condition": "Emergency overseas hospitalization"
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": null,
+      "fraudLiability": {
+        "included": true,
+        "cover": 9000000,
+        "reportingWindow": "Report immediately to 24-hour call centre for zero liability"
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": []
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": [],
+      "excludedCountries": [],
+      "excludedVehicleTypes": []
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "Insurance covers: Accidental air death cover worth ₹3 Crores, Emergency overseas hospitalization up to ₹50 Lakhs, Credit liability cover up to ₹9 Lakhs"
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000
+    },
+    "virtualCard": {
+      "available": true,
+      "instantIssuance": true,
+      "singleUse": false,
+      "spendControls": true
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": false,
+      "rewardsOnUPI": false,
+      "note": "Only Mass variant (non-Black) can be linked with UPI for Scan n Pay"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Real-time alerts"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [
+      {
+        "cardId": "hdfc-shoppers-stop",
+        "spendRequired": null,
+        "tenure": null,
+        "autoUpgrade": false,
+        "note": "Base variant of Shoppers Stop HDFC Bank Credit Card"
+      }
+    ],
+    "upgradesTo": [],
+    "note": "This is the premium variant in the Shoppers Stop co-branded card lineup"
+  },
+
+  "meta": {
+    "tags": [
+      "Shopping",
+      "Co-branded",
+      "Retail",
+      "Lounge Access",
+      "Shoppers Stop"
+    ],
+    "bestFor": "Frequent Shoppers Stop customers who want to maximize rewards on fashion and lifestyle purchases",
+    "notRecommendedFor": "Those who don't shop frequently at Shoppers Stop, or those seeking travel-focused benefits beyond lounge access",
+    "rating": {
+      "overall": 3.2,
+      "rewards": 3.5,
+      "benefits": 3.0,
+      "value": 3.0
+    },
+    "verdict": "A niche co-branded card best suited for loyal Shoppers Stop customers. The 7% reward rate on SS spends with 1:1 redemption for SS vouchers makes it worthwhile for regular shoppers. However, the ₹4,500 annual fee with no waiver option is steep. The welcome benefits (₹4,500 voucher + Black membership + ₹1,500 voucher) help offset the first-year fee. The lounge access (16 domestic + 8 international) is a nice bonus for a shopping card. Not recommended for general-purpose use due to low non-SS reward rates.",
+    "pros": [
+      "7% rewards on Shoppers Stop spends (effective ~4.67% when redeemed for SS vouchers)",
+      "Generous welcome benefits worth ~₹10,500 total",
+      "Complimentary First Citizen Black membership",
+      "16 domestic + 8 international lounge visits per year",
+      "No spend requirement for lounge access",
+      "Good travel insurance coverage (₹3 Cr air accident, ₹50 L overseas hospitalization)"
+    ],
+    "cons": [
+      "High annual fee of ₹4,500 + GST with no waiver option",
+      "Low 2% rewards on non-Shoppers Stop spends",
+      "Monthly caps on rewards (2,000 points on SS, 2,000 on non-SS)",
+      "3.5% forex markup is high",
+      "No dining or movie benefits",
+      "No Apple Pay support",
+      "Points expire in 2 years",
+      "1% rental transaction fee from 2nd transaction per month"
+    ],
+    "alternatives": [
+      "hdfc-millennia",
+      "hdfc-regalia-gold",
+      "axis-flipkart"
+    ],
+    "lastVerified": "2026-01-08",
+    "dataSource": [
+      "Official HDFC Bank website - https://www.hdfcbank.com/personal/pay/cards/credit-cards/shoppers-stop-black-hdfc-bank-credit-card",
+      "HDFC Bank Terms & Conditions PDF",
+      "PaisaBazaar.com",
+      "CardInsider.com",
+      "BankBazaar.com",
+      "TechnoFino community discussions"
+    ],
+    "changelog": [
+      {
+        "date": "2024-08-01",
+        "change": "Late payment fee structure revised (₹100-₹1,300 tiered); Rental transaction fee of 1% added from 2nd transaction; ₹50 cashback redemption fee added; Finance charges updated to 3.75%/month",
+        "source": "Official HDFC Bank notification"
+      },
+      {
+        "date": "2024-03-01",
+        "change": "Card features revamped - now earns HDFC Reward Points instead of only First Citizen Points; Reward structure changed to 7% on SS and 2% on non-SS",
+        "source": "Official HDFC Bank product update"
+      }
+    ]
+  }
+}

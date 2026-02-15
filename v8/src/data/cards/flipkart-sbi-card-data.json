@@ -1,0 +1,971 @@
+{
+  "id": "sbi-flipkart",
+  "name": "Flipkart SBI Credit Card",
+  "bank": "SBI Card",
+  "slug": "flipkart-sbi-credit-card",
+  "image": "assets/cards/sbi/flipkart-sbi-card.png",
+  "link": "https://www.sbicard.com/en/personal/credit-cards/rewards/flipkart-sbi-card.page",
+  "isActive": true,
+
+  "network": {
+    "type": "Visa | Mastercard",
+    "variant": null,
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "entry",
+    "isCobranded": true,
+    "cobrandPartner": {
+      "name": "Flipkart",
+      "type": "e-commerce",
+      "loyaltyProgram": null
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 500,
+      "amountWithTax": 590,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 500,
+      "amountWithTax": 590,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 350000,
+        "spendPeriod": "previous membership year",
+        "waiverText": "Renewal fee reversed if annual spends for previous year >= Rs. 3,50,000"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "maxCards": 3,
+      "freeCount": 3,
+      "joiningFee": 0,
+      "annualFee": 0,
+      "rewardSharing": true
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 500, "fee": 0},
+        {"minAmount": 501, "maxAmount": 1000, "fee": 400},
+        {"minAmount": 1001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 950},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ],
+      "additionalPenalty": {
+        "amount": 100,
+        "condition": "Extra Rs. 100 charged for two consecutive billing cycles of missed MAD payment"
+      }
+    },
+    "overLimit": {
+      "percentage": 2.5,
+      "minFee": 600,
+      "calculation": "2.5% of overlimit amount or Rs. 600, whichever is higher"
+    },
+    "chequeReturn": {
+      "percentage": 2,
+      "minFee": 450,
+      "calculation": "2% of payment amount, minimum Rs. 450"
+    },
+    "cardReplacement": {
+      "min": 100,
+      "max": 250
+    },
+    "duplicateStatement": 100,
+    "cashPaymentFee": 250
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 18000,
+        "annual": 216000
+      },
+      "selfEmployed": {
+        "itr": 200000
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 60,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": null
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 25000,
+      "max": 300000
+    },
+    "factors": "Based on income, credit score, and credit history",
+    "enhancementCriteria": "Good repayment history for 6+ months"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.42,
+      "monthlyRate": 0.035
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.42,
+      "monthlyRate": 0.035
+    },
+    "gracePeriod": {
+      "days": {
+        "min": 20,
+        "max": 50
+      },
+      "note": "Interest-free period of 20 to 50 days subject to submission of claims by merchant. Not applicable if previous balance is carried forward."
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 200,
+      "calculation": "5% of total outstanding or Rs. 200, whichever is higher, plus any taxes, active EMIs, fees and penalties"
+    },
+    "minimumFinanceCharge": 25
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": null,
+    "dailyLimit": 15000,
+    "interestFromDay1": true,
+    "note": "Cash advance fee is 2.5% or Rs. 500, whichever is higher. Finance charges apply from date of withdrawal."
+  },
+
+  "rewards": {
+    "type": "cashback",
+    "currency": {
+      "name": "Cashback",
+      "symbol": "₹",
+      "singularUnit": "rupee",
+      "pluralUnit": "rupees"
+    },
+    "baseRate": {
+      "rate": 1,
+      "spendUnit": 100,
+      "effectivePercentage": 0.01
+    },
+    "earningText": "1% unlimited cashback on all other eligible spends",
+    "minTransactionForRewards": 100,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "Rental/Property Management payments",
+        "Government payments",
+        "Jewelry purchases",
+        "Insurance premium payments",
+        "Schools & Education payments",
+        "Gaming transactions",
+        "Wallet loads",
+        "EMI transactions",
+        "Merchant EMI & Flexipay EMI transactions",
+        "EMI spends on Flipkart, Cleartrip, and Myntra",
+        "Cash withdrawals",
+        "Balance transfers",
+        "Utility payments"
+      ],
+      "mccs": [
+        "5172", "5541", "5542", "5983",
+        "6513", "7349",
+        "9399", "9311",
+        "5051", "5094", "5944", "7631",
+        "5111", "5192", "5942", "5943", "5947", "8211", "8220", "8241", "8244", "8249", "8299", "8351",
+        "6540", "6541",
+        "5816", "7993", "7994",
+        "4225", "5962", "5963", "5964", "5965", "5966", "5968", "5969", "6300"
+      ],
+      "note": "Cashback not applicable on transactions at excluded MCCs and categories. EMI transactions do not earn cashback even on partner merchants."
+    },
+
+    "caps": {
+      "monthly": {
+        "points": null,
+        "cashback": null
+      },
+      "quarterly": {
+        "flipkart": 4000,
+        "myntra": 4000,
+        "cleartrip": 4000,
+        "selectPartners": 4000,
+        "note": "Each accelerated category has Rs. 4,000 quarterly cap"
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": "calendar quarter",
+      "perTransaction": null
+    },
+
+    "expiry": {
+      "hasExpiry": false,
+      "period": null,
+      "condition": "Cashback directly credited to card account - no expiry"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": null,
+        "cashback": null,
+        "vouchers": "Rs. 250 Flipkart Gift Card",
+        "spendCondition": {
+          "amount": null,
+          "period": null,
+          "transactionCount": null
+        },
+        "validity": "Within 60 days of joining fee realization",
+        "description": "Flipkart Gift Card worth Rs. 250 shared within 60 days of fee realization. Gift card valid for 1 year from issuance.",
+        "limitedTimeOffer": {
+          "enabled": true,
+          "validUntil": "2025-12-31",
+          "additionalBenefits": "Rs. 500 Flipkart e-Gift Card + Rs. 500 Cleartrip flights coupon on first transaction on Flipkart within 30 days of card approval",
+          "totalValue": 1250
+        }
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "myntra": {
+        "rate": 7.5,
+        "type": "percentage cashback",
+        "cap": 4000,
+        "capPeriod": "quarterly",
+        "merchants": ["Myntra"],
+        "mccs": null,
+        "note": "7.5% cashback on Myntra purchases, capped at Rs. 4,000 per calendar quarter"
+      },
+      "flipkart": {
+        "rate": 5,
+        "type": "percentage cashback",
+        "cap": 4000,
+        "capPeriod": "quarterly",
+        "merchants": ["Flipkart", "Shopsy", "Flipkart Travel", "Flipkart Minutes", "Flipkart Groceries"],
+        "mccs": null,
+        "note": "5% cashback on Flipkart ecosystem, capped at Rs. 4,000 per calendar quarter"
+      },
+      "cleartrip": {
+        "rate": 5,
+        "type": "percentage cashback",
+        "cap": 4000,
+        "capPeriod": "quarterly",
+        "merchants": ["Cleartrip"],
+        "additionalDiscounts": {
+          "domesticFlights": "7% instant discount + 5% cashback",
+          "internationalFlights": "7% instant discount + 5% cashback",
+          "hotels": "20% instant discount + 5% cashback",
+          "buses": "10% instant discount + 5% cashback"
+        },
+        "note": "5% cashback on Cleartrip plus additional instant discounts on bookings"
+      },
+      "selectPartners": {
+        "rate": 4,
+        "type": "percentage cashback",
+        "cap": 4000,
+        "capPeriod": "quarterly",
+        "merchants": ["Zomato", "Uber", "Netmeds", "PVR"],
+        "mccs": null,
+        "note": "4% cashback on select partner merchants, combined cap of Rs. 4,000 per calendar quarter"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on fuel transactions. 1% fuel surcharge waiver available separately."
+      },
+      "international": {
+        "rate": 1,
+        "cap": null,
+        "note": "1% cashback on international spends (forex markup of 3.5% applies)"
+      },
+      "insurance": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on insurance payments"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on rent payments"
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on wallet loads"
+      },
+      "otherSpends": {
+        "rate": 1,
+        "cap": null,
+        "capPeriod": null,
+        "note": "1% unlimited cashback on all other eligible spends"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": false,
+        "name": null,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "link": null,
+        "note": null
+      },
+      "partnerMerchants": {
+        "enabled": true,
+        "merchants": [
+          {
+            "name": "Myntra",
+            "cashbackRate": 7.5,
+            "cap": 4000,
+            "capPeriod": "quarterly",
+            "mcc": null,
+            "validUntil": null
+          },
+          {
+            "name": "Flipkart",
+            "cashbackRate": 5,
+            "cap": 4000,
+            "capPeriod": "quarterly",
+            "mcc": null,
+            "validUntil": null
+          },
+          {
+            "name": "Cleartrip",
+            "cashbackRate": 5,
+            "cap": 4000,
+            "capPeriod": "quarterly",
+            "mcc": null,
+            "validUntil": null
+          },
+          {
+            "name": "Zomato",
+            "cashbackRate": 4,
+            "cap": 4000,
+            "capPeriod": "quarterly",
+            "mcc": null,
+            "validUntil": null,
+            "note": "Combined cap with other select partners"
+          },
+          {
+            "name": "Uber",
+            "cashbackRate": 4,
+            "cap": 4000,
+            "capPeriod": "quarterly",
+            "mcc": null,
+            "validUntil": null,
+            "note": "Combined cap with other select partners"
+          },
+          {
+            "name": "Netmeds",
+            "cashbackRate": 4,
+            "cap": 4000,
+            "capPeriod": "quarterly",
+            "mcc": null,
+            "validUntil": null,
+            "note": "Combined cap with other select partners"
+          },
+          {
+            "name": "PVR",
+            "cashbackRate": 4,
+            "cap": 4000,
+            "capPeriod": "quarterly",
+            "mcc": null,
+            "validUntil": null,
+            "note": "Combined cap with other select partners"
+          }
+        ],
+        "note": "Partner merchants may change over time"
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": null
+      },
+      "milestoneAccelerators": null
+    },
+
+    "redemption": {
+      "baseValue": 1.0,
+      "bestValue": 1.0,
+      "bestOption": "Auto-credited to statement as cashback",
+      "minRedemption": null,
+      "redemptionIncrement": null,
+      "convenienceFee": null,
+      "monthlyRedemptionLimit": null,
+
+      "autoCredit": {
+        "enabled": true,
+        "timing": "Within 2 days of statement generation",
+        "note": "Cashback is automatically credited to SBI Card account - no manual redemption required"
+      },
+
+      "options": [
+        {
+          "type": "statement_credit",
+          "value": 1.0,
+          "description": "Automatic credit to card account",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": [],
+          "note": "Cashback auto-credited within 2 days of statement generation"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": null,
+      "partners": null,
+      "note": "This is a cashback card - no transfer partners available"
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": null,
+      "acrossUsers": false,
+      "note": "Cashback auto-credited to statement - no pooling feature"
+    },
+
+    "specialLogic": "Cashback is rounded down for each transaction. Cashback earned on Add-on cards accrues to Primary Cardholder's account.",
+
+    "calculator": {
+      "enabled": true,
+      "formula": "cashback = transactionAmount × applicableCashbackRate / 100",
+      "variables": ["transactionAmount", "merchantCategory", "isPartnerMerchant"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "railwayLounge": null,
+        "eligibleLounges": null
+      },
+      "international": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "membershipValue": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "eligibleLounges": null
+      }
+    },
+
+    "milestones": [],
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": null,
+      "lessonIncluded": null,
+      "note": null
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": null
+    },
+
+    "dining": {
+      "included": false,
+      "programs": null,
+      "hotelDining": null
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 500,
+      "maxTransaction": 4000,
+      "monthlyCap": 400,
+      "capPeriod": "statement cycle",
+      "applicableStations": "All petrol pumps in India",
+      "rewardsOnFuel": false,
+      "note": "1% fuel surcharge waiver on transactions from Rs. 500 to Rs. 4,000 (exclusive of GST and other charges). Maximum waiver Rs. 400 per statement cycle."
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% on international transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "3.5% forex markup applies to all non-INR transactions"
+    },
+
+    "concierge": {
+      "included": false,
+      "availability": null,
+      "type": null,
+      "services": null,
+      "contactNumber": null,
+      "note": null
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": null,
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "Flexipay",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Select partner merchants"],
+        "note": "No-cost EMI available at select merchants"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": 199,
+        "minFee": 199
+      },
+      "minAmount": 2500,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": 0.12,
+        "max": 0.18
+      },
+      "conversionWindow": 30,
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": 0
+      },
+      "note": "Convert transactions of Rs. 2,500 or more to EMI within 30 days of purchase. Cashback not earned on EMI transactions."
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": null
+      },
+      "processingFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "minAmount": 5000,
+      "maxAmount": null,
+      "maxPercentageOfLimit": 75,
+      "tenures": null,
+      "preclosureFee": null,
+      "note": "Transfer outstanding balance from other bank credit cards. Minimum Rs. 5,000, maximum up to 75% of available credit limit."
+    },
+
+    "memberships": [],
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "condition": null
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": null
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": null,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": false,
+      "cover": null,
+      "fraudLiability": {
+        "included": true,
+        "cover": null,
+        "reportingWindow": "Report immediately to SBI Card helpline"
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "This is an entry-level cashback card and does not include travel or purchase insurance. Insurance products can be purchased separately through SBI Card."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000,
+      "note": "Contactless payments up to Rs. 5,000 without PIN. Above Rs. 5,000 requires dip/swipe with PIN."
+    },
+    "virtualCard": {
+      "available": false,
+      "instantIssuance": false,
+      "singleUse": false,
+      "spendControls": false
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": false,
+      "rewardsOnUPI": false,
+      "note": "Card available on Visa and Mastercard networks only - not available on RuPay, so cannot be linked to UPI"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Real-time alerts",
+        "View statements",
+        "Book Flexipay EMI",
+        "Pay bills"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"],
+      "methods": ["e-NACH", "Standing Instruction"]
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [],
+    "upgradesTo": [
+      {
+        "cardId": "sbi-cashback",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false,
+        "note": "Can apply for SBI Cashback Card separately if eligible"
+      }
+    ],
+    "note": "Flipping/transfer from Flipkart SBI Card to other SBI Card variants or vice versa is not allowed"
+  },
+
+  "applicationChannels": [
+    {
+      "channel": "Flipkart App",
+      "url": "https://www.flipkart.com",
+      "note": "Primary application channel - apply during checkout or via offers"
+    },
+    {
+      "channel": "SBI Card SPRINT",
+      "url": "https://www.sbicard.com/sprint/Flipkart",
+      "note": "Digital application via SBI Card portal"
+    },
+    {
+      "channel": "SBI Card Website",
+      "url": "https://www.sbicard.com/en/personal/credit-cards/rewards/flipkart-sbi-card.page",
+      "note": "Official SBI Card website"
+    }
+  ],
+
+  "customerSupport": {
+    "helplineNumbers": ["1860 180 1290", "1860 500 1290", "39 02 02 02"],
+    "email": "customercare@sbicard.com",
+    "website": "https://www.sbicard.com",
+    "socialMedia": {
+      "twitter": "@sbicard_connect",
+      "facebook": "@sbicard",
+      "instagram": "@SBICard_Connect",
+      "linkedin": "@sbicard",
+      "whatsapp": "9004022022"
+    },
+    "postalAddress": "SBICPSL, Post Bag No. 28, GPO, New Delhi – 110001"
+  },
+
+  "meta": {
+    "tags": [
+      "Cashback",
+      "Shopping",
+      "Entry-level",
+      "E-commerce",
+      "Flipkart",
+      "Myntra",
+      "Cleartrip",
+      "Low annual fee"
+    ],
+    "bestFor": "Frequent Flipkart, Myntra, and Cleartrip shoppers who want straightforward cashback without complicated reward programs",
+    "notRecommendedFor": "Users who need lounge access, travel insurance, or those who don't shop frequently on Flipkart ecosystem platforms",
+    "rating": {
+      "overall": 3.8,
+      "rewards": 4.2,
+      "benefits": 3.0,
+      "value": 4.0
+    },
+    "verdict": "A solid entry-level cashback card for Flipkart ecosystem loyalists. The 7.5% cashback on Myntra and 5% on Flipkart/Cleartrip are excellent for frequent shoppers. The quarterly caps of Rs. 4,000 per category limit total annual value to around Rs. 64,000 in cashback. With the low Rs. 500 annual fee (waivable at Rs. 3.5L spend), it offers good value for regular online shoppers. However, it lacks premium features like lounge access and travel insurance.",
+    "pros": [
+      "Highest cashback rate (7.5%) on Myntra among co-branded cards",
+      "Good 5% cashback on Flipkart and Cleartrip",
+      "Additional instant discounts on Cleartrip bookings",
+      "Low annual fee of Rs. 500 (waivable at Rs. 3.5L spend)",
+      "Auto-credit cashback - no manual redemption needed",
+      "1% unlimited cashback on other spends",
+      "Fuel surcharge waiver",
+      "Up to 3 free add-on cards"
+    ],
+    "cons": [
+      "Quarterly caps of Rs. 4,000 per category limit total value",
+      "No lounge access",
+      "No travel or purchase insurance",
+      "No rewards on EMI transactions",
+      "3.5% forex markup is high",
+      "Not available on RuPay/UPI",
+      "No concierge services",
+      "Limited milestone benefits"
+    ],
+    "alternatives": [
+      {
+        "cardId": "axis-flipkart",
+        "reason": "Similar benefits but different partner merchants (Swiggy, Cult.fit instead of Zomato, Netmeds)"
+      },
+      {
+        "cardId": "sbi-cashback",
+        "reason": "5% cashback on all online spends with higher monthly cap (Rs. 5,000) - better for diverse online shopping"
+      },
+      {
+        "cardId": "sbi-simplyclick",
+        "reason": "10X rewards on partner online merchants with more versatile redemption options"
+      }
+    ],
+    "launchDate": "2025-08-26",
+    "lastVerified": "2026-01-05",
+    "dataSource": [
+      "Official SBI Card website - https://www.sbicard.com/en/personal/credit-cards/rewards/flipkart-sbi-card.page",
+      "Flipkart SBI Credit Card Terms & Conditions Booklet (PDF)",
+      "SBI Card Most Important Terms & Conditions (MITC)",
+      "Flipkart Stories - https://stories.flipkart.com/flipkart-sbi-credit-card-2025/",
+      "PaisaBazaar.com",
+      "BankBazaar.com",
+      "CardInsider.com",
+      "CardExpert.in"
+    ],
+    "changelog": [
+      {
+        "date": "2025-08-26",
+        "change": "Card launched as co-brand partnership between SBI Card and Flipkart",
+        "source": "Official launch announcement"
+      }
+    ]
+  }
+}

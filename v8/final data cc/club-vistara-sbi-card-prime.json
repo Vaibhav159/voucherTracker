@@ -1,0 +1,1077 @@
+{
+  "id": "sbi-club-vistara-prime",
+  "name": "Club Vistara SBI Card PRIME",
+  "bank": "SBI Card",
+  "slug": "club-vistara-sbi-card-prime",
+  "image": "assets/cards/sbi/club-vistara-sbi-card-prime.png",
+  "link": "https://www.sbicard.com/en/personal/credit-cards/travel/club-vistara-sbi-card-prime.page",
+  "isActive": false,
+
+  "network": {
+    "type": "Mastercard",
+    "variant": "World",
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "mid",
+    "isCobranded": true,
+    "cobrandPartner": {
+      "name": "Vistara (TATA SIA Airlines)",
+      "type": "airline",
+      "loyaltyProgram": "Club Vistara"
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 2999,
+      "waivable": false,
+      "waiverCondition": null,
+      "gstApplicable": true,
+      "totalWithGST": 3539
+    },
+    "annual": {
+      "amount": 2999,
+      "firstYearWaived": false,
+      "gstApplicable": true,
+      "totalWithGST": 3539,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": null,
+        "spendPeriod": null,
+        "waiverText": "Annual fee waived for all renewals after April 1, 2025 due to discontinuation of benefits post Vistara-Air India merger"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": "unlimited",
+      "joiningFee": 0,
+      "annualFee": 0,
+      "rewardSharing": true
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding amount",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 500, "fee": 0},
+        {"minAmount": 501, "maxAmount": 1000, "fee": 400},
+        {"minAmount": 1001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 950},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ],
+      "additionalNote": "Additional Rs. 100 late fee for consecutive missed payments until MAD is cleared"
+    },
+    "overLimit": {
+      "amount": 600,
+      "percentage": 2.5,
+      "note": "2.5% of overlimit amount or Rs. 600, whichever is higher"
+    },
+    "chequeReturn": 500,
+    "cardReplacement": 200,
+    "duplicateStatement": 100,
+    "rentPaymentFee": 199,
+    "utilityPaymentFee": {
+      "threshold": 50000,
+      "percentage": 1,
+      "note": "1% fee on total utility payments exceeding Rs. 50,000 per billing cycle (w.e.f. Dec 1, 2024)"
+    }
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": null,
+        "annual": null
+      },
+      "selfEmployed": {
+        "itr": null
+      }
+    },
+    "age": {
+      "min": 18,
+      "max": 70,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": "Card issuance discontinued as of September 28, 2024"
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident",
+    "note": "New applications discontinued since September 28, 2024 due to Vistara-Air India merger"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 50000,
+      "max": 500000
+    },
+    "factors": "Based on income, credit score, and existing relationship with SBI Card",
+    "enhancementCriteria": "Good repayment history for 6+ months"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375,
+      "note": "3.75% per month (45% per annum) w.e.f. November 1, 2024"
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": 50,
+      "minDays": 20,
+      "note": "Interest-free period of 20-50 days if previous balance paid in full"
+    },
+    "minPayment": {
+      "percentage": 0.02,
+      "minAmount": null,
+      "calculation": "100% of GST + 100% of EMI + 100% of Fees/Charges + 100% of Finance Charges + Overlimit Amount + 2% of remaining balance outstanding (w.e.f. July 15, 2025)"
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    },
+    "minimumFinanceCharge": 25
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": 80,
+    "dailyLimit": 12000,
+    "interestFromDay1": true,
+    "internationalFeePercentage": 2.5,
+    "internationalMinFee": 500
+  },
+
+  "rewards": {
+    "type": "miles",
+    "currency": {
+      "name": "Club Vistara Points",
+      "symbol": "CV",
+      "singularUnit": "CV Point",
+      "pluralUnit": "CV Points",
+      "postMergerName": "Maharaja Points (post November 12, 2024)"
+    },
+    "baseRate": {
+      "rate": 4,
+      "spendUnit": 200,
+      "effectivePercentage": 0.02,
+      "effectivePerRs100": 2,
+      "note": "4 CV Points per Rs. 200 spent (equivalent to 2 CV Points per Rs. 100)"
+    },
+    "earningText": "Earn 4 CV Points on every Rs. 200 spent",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Rent payments (w.e.f. April 15, 2024)",
+        "Wallet loads (w.e.f. November 1, 2025)",
+        "Education payments via third-party apps (w.e.f. November 1, 2025)"
+      ],
+      "mccs": null,
+      "note": "Fuel transactions are eligible for CV Points on this card. Rent payments excluded from April 15, 2024."
+    },
+
+    "caps": {
+      "monthly": {
+        "points": null,
+        "cashback": null
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": "statement",
+      "perTransaction": null
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "36 months",
+      "condition": "From date of flight/transaction. Post-merger, CV Points transferred to Flying Returns have minimum 1-year validity from migration date."
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": null,
+        "cashback": null,
+        "vouchers": "1 Premium Economy class ticket e-gift voucher",
+        "spendCondition": {
+          "amount": null,
+          "period": null,
+          "transactionCount": null
+        },
+        "validity": "Within 15 working days of joining fee payment",
+        "description": "Get 1 complimentary Premium Economy class ticket as e-gift voucher on payment of joining fee",
+        "discontinuedAfter": "April 1, 2025"
+      },
+      "activation": {
+        "enabled": true,
+        "points": 3000,
+        "condition": "Spend Rs. 75,000 within 90 days of card issuance",
+        "discontinuedAfter": "April 1, 2025"
+      },
+      "renewal": {
+        "enabled": true,
+        "points": null,
+        "vouchers": "1 Premium Economy class ticket e-gift voucher",
+        "condition": "On payment of renewal fee",
+        "discontinuedAfter": "April 1, 2025"
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "travel": {
+        "rate": 4,
+        "spendUnit": 200,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["Air Vistara", "Partner Airlines"],
+        "mccs": null,
+        "weekendRate": null,
+        "note": "Earn 9 CV Points per Rs. 100 spent on Vistara flights base fare"
+      },
+      "dining": {
+        "rate": 4,
+        "spendUnit": 200,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "weekendRate": null,
+        "note": null
+      },
+      "online": {
+        "rate": 4,
+        "spendUnit": 200,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "note": "Standard earning rate applies"
+      },
+      "fuel": {
+        "rate": 4,
+        "spendUnit": 200,
+        "cap": null,
+        "note": "Fuel transactions earn CV Points at standard rate. This is unique among co-branded cards."
+      },
+      "groceries": {
+        "rate": 4,
+        "spendUnit": 200,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null
+      },
+      "utilities": {
+        "rate": 4,
+        "spendUnit": 200,
+        "cap": null,
+        "note": "Subject to 1% fee if total utility payments exceed Rs. 50,000 per billing cycle"
+      },
+      "international": {
+        "rate": 4,
+        "spendUnit": 200,
+        "multiplier": null,
+        "cap": null,
+        "note": "Standard earning rate applies to international transactions"
+      },
+      "insurance": {
+        "rate": 4,
+        "spendUnit": 200,
+        "cap": null,
+        "note": "Insurance spends earn CV Points"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No CV Points on rent payments w.e.f. April 15, 2024. Rs. 199 processing fee per transaction."
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "1% fee on wallet loads w.e.f. November 1, 2025"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": false,
+        "name": null,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "link": null,
+        "note": "SBI Card does not have an accelerated rewards portal like HDFC SmartBuy"
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": [],
+        "note": null
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": []
+      },
+      "milestoneAccelerators": []
+    },
+
+    "redemption": {
+      "baseValue": 0.80,
+      "bestValue": 1.00,
+      "bestOption": "Redeem for Vistara flights, especially Premium Economy tickets close to travel date",
+      "minRedemption": null,
+      "redemptionIncrement": null,
+      "convenienceFee": 99,
+      "monthlyRedemptionLimit": null,
+
+      "pointsPlusPay": {
+        "enabled": true,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": null,
+        "note": "Vistara Cash + Points program available"
+      },
+
+      "options": [
+        {
+          "type": "flights",
+          "value": 1.0,
+          "description": "Award flights on Vistara network",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["Air Vistara", "Air India (post-merger)"],
+          "note": "Best value for domestic Premium Economy tickets"
+        },
+        {
+          "type": "upgrades",
+          "value": 0.80,
+          "description": "Class upgrades on Vistara flights",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["Air Vistara"],
+          "note": "Good value for upgrading to Business Class"
+        },
+        {
+          "type": "partner_flights",
+          "value": 0.60,
+          "description": "Award flights on partner airlines",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": ["Singapore Airlines", "SilkAir"],
+          "note": "Contact Club Vistara customer service for partner redemptions"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": true,
+      "eligibleCards": ["club-vistara-sbi-card-prime"],
+      "partners": [
+        {
+          "name": "Air India Flying Returns",
+          "type": "airline",
+          "program": "Flying Returns / Maharaja Club",
+          "alliance": "Star Alliance",
+          "ratio": {
+            "cardPoints": 1,
+            "partnerPoints": 1,
+            "display": "1:1"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": 0,
+          "transferTime": "Automatic post November 12, 2024",
+          "transferMethod": "Automatic migration",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "CV Points automatically transferred to Flying Returns at 1:1 ratio post Vistara-Air India merger"
+        },
+        {
+          "name": "Singapore Airlines KrisFlyer",
+          "type": "airline",
+          "program": "KrisFlyer",
+          "alliance": "Star Alliance",
+          "ratio": {
+            "cardPoints": null,
+            "partnerPoints": null,
+            "display": "Via Club Vistara partnership"
+          },
+          "minTransfer": null,
+          "maxTransfer": null,
+          "transferFee": null,
+          "transferTime": "Contact Club Vistara",
+          "transferMethod": "Customer service",
+          "blackoutDates": false,
+          "exclusive": false,
+          "note": "Redemption available through Club Vistara customer service"
+        }
+      ],
+      "currentBonus": {
+        "active": false,
+        "bonusPercentage": null,
+        "validUntil": null,
+        "applicablePartners": []
+      }
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": null,
+      "acrossUsers": false,
+      "note": "CV Points are linked to Club Vistara membership account, not SBI Card account"
+    },
+
+    "specialLogic": "CV Points earned through card are credited to Club Vistara membership account within 10 working days post monthly statement generation. Post November 12, 2024, points earn as Maharaja Points.",
+
+    "calculator": {
+      "enabled": true,
+      "formula": "cvPoints = (spend / 200) * 4",
+      "variables": ["spend"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": true,
+        "complimentaryCount": 8,
+        "period": "year",
+        "maxPerQuarter": 2,
+        "accessType": "Domestic Airport Lounge",
+        "accessProvider": "Mastercard Lounge Program",
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "No spend requirement for lounge access"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "eligibleLounges": "https://www.sbicard.com/en/personal/credit-cards/travel/club-vistara-sbi-card-prime.page",
+        "note": "8 complimentary visits per year, max 2 per quarter. Unutilized visits lapse at quarter end."
+      },
+      "international": {
+        "included": true,
+        "complimentaryCount": 4,
+        "period": "year",
+        "maxPerQuarter": 2,
+        "accessType": "Priority Pass",
+        "accessProvider": "Priority Pass",
+        "membershipValue": 9900,
+        "membershipValueUSD": 99,
+        "membershipValidity": "2 years",
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": null
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": 2700,
+          "guestFeeUSD": 27
+        },
+        "eligibleLounges": "https://www.prioritypass.com/lounges",
+        "note": "4 complimentary visits per calendar year (max 2 per quarter) outside India. Usage fee up to USD 27 + taxes charged after complimentary visits. Priority Pass delivered within 10 days of request."
+      }
+    },
+
+    "milestones": [
+      {
+        "spend": 75000,
+        "period": "first 90 days",
+        "benefit": "3,000 bonus CV Points",
+        "benefitType": "points",
+        "value": 2400,
+        "conditions": "Within 90 days of card issuance",
+        "discontinuedAfter": "April 1, 2025"
+      },
+      {
+        "spend": 150000,
+        "period": "annual",
+        "benefit": "1 Premium Economy class ticket voucher",
+        "benefitType": "voucher",
+        "value": 5500,
+        "conditions": "One-way domestic Premium Economy ticket",
+        "discontinuedAfter": "April 1, 2025"
+      },
+      {
+        "spend": 300000,
+        "period": "annual",
+        "benefit": "1 Premium Economy class ticket voucher",
+        "benefitType": "voucher",
+        "value": 5500,
+        "conditions": "Cumulative - 2nd ticket at Rs. 3 lakh spend",
+        "discontinuedAfter": "April 1, 2025"
+      },
+      {
+        "spend": 450000,
+        "period": "annual",
+        "benefit": "1 Premium Economy class ticket voucher",
+        "benefitType": "voucher",
+        "value": 5500,
+        "conditions": "Cumulative - 3rd ticket at Rs. 4.5 lakh spend",
+        "discontinuedAfter": "April 1, 2025"
+      },
+      {
+        "spend": 800000,
+        "period": "annual",
+        "benefit": "1 Premium Economy class ticket voucher + Rs. 10,000 Yatra hotel e-voucher",
+        "benefitType": "voucher",
+        "value": 15500,
+        "conditions": "Cumulative - 4th ticket + hotel voucher at Rs. 8 lakh spend",
+        "discontinuedAfter": "April 1, 2025"
+      }
+    ],
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": false,
+      "lessonIncluded": false,
+      "note": null
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": null
+    },
+
+    "dining": {
+      "included": false,
+      "programs": [],
+      "hotelDining": {
+        "included": false,
+        "hotels": null,
+        "offer": null
+      }
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 500,
+      "maxTransaction": 4000,
+      "monthlyCap": 250,
+      "applicableStations": "All fuel stations in India",
+      "rewardsOnFuel": true,
+      "note": "1% fuel surcharge waiver on transactions between Rs. 500 and Rs. 4,000, max Rs. 250 per statement cycle. CV Points also earned on fuel spends."
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% on international transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "fee": 3.5,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "Standard SBI Card forex markup of 3.5% applies"
+    },
+
+    "concierge": {
+      "included": true,
+      "availability": "24/7",
+      "type": "Mastercard World Concierge",
+      "services": [
+        "Travel bookings",
+        "Restaurant reservations",
+        "Event tickets",
+        "Gift procurement",
+        "General information"
+      ],
+      "contactNumber": "1860 180 1290",
+      "alternateNumber": "39 02 02 02 (prefix local STD code)",
+      "note": "Mastercard World privileges available"
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": [],
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "Flexipay",
+      "noCostEMI": {
+        "available": true,
+        "merchants": null,
+        "note": "Available on select merchants and products"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": null,
+        "minFee": null
+      },
+      "minAmount": 2500,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": 0.12,
+        "max": 0.18
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": null
+      },
+      "cancellationPeriod": null,
+      "note": "Convert transactions of Rs. 2,500+ into EMI within 30 days of purchase via sbicard.com"
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": 0.0375
+      },
+      "processingFee": {
+        "percentage": 2,
+        "minFee": 500
+      },
+      "tenures": null,
+      "maxAmount": null,
+      "preclosureFee": null,
+      "note": "Transfer outstanding balance from other bank credit cards at lower interest rate"
+    },
+
+    "memberships": [
+      {
+        "name": "Club Vistara Silver Membership",
+        "type": "airline_status",
+        "value": null,
+        "duration": "For life of card",
+        "condition": "Automatic on card issuance for CV Base/Silver members",
+        "benefits": [
+          "Priority waitlist clearance",
+          "Priority check-in",
+          "5 kg excess baggage allowance",
+          "Exclusive offers and promotions",
+          "9 CV Points per Rs. 100 on Vistara flight base fare"
+        ],
+        "note": "Discontinued for renewals after April 1, 2025"
+      },
+      {
+        "name": "Priority Pass Membership",
+        "type": "lounge_program",
+        "value": 9900,
+        "valueUSD": 99,
+        "duration": "2 years",
+        "condition": "Apply via sbicard.com",
+        "note": "Complimentary membership worth $99. Priority Pass delivered within 10 days of request."
+      }
+    ],
+
+    "airlinePerks": {
+      "priorityCheckIn": true,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": true,
+        "count": null,
+        "weight": "5 kg extra",
+        "airline": "Vistara"
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": true,
+        "tier": "Silver",
+        "program": "Club Vistara",
+        "note": "Upgrade to Silver on joining fee payment for CV Base/Silver members"
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      },
+      "yatraVoucher": {
+        "included": true,
+        "value": 10000,
+        "condition": "On annual spend of Rs. 8 lakh",
+        "note": "Discontinued for renewals after April 1, 2025"
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": true,
+      "cover": 10000000,
+      "coverText": "Rs. 1 Crore",
+      "condition": "Ticket booked with card"
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": true,
+      "cover": 72000,
+      "perBag": null,
+      "condition": "Check-in baggage only"
+    },
+    "baggageDelay": {
+      "included": true,
+      "cover": 7500,
+      "delayHours": null,
+      "perDay": null
+    },
+    "baggageDamage": {
+      "included": true,
+      "cover": 5000
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": true,
+      "cover": 3500,
+      "coverPerCancellation": 3500,
+      "maxCancellationsPerYear": 6,
+      "coveredReasons": null,
+      "cancelForAnyReason": false,
+      "note": "Up to 6 Vistara flight cancellations per year, each limited to Rs. 3,500. For refundable tickets, pays difference amount. For non-refundable tickets, pays ticket fare (excl. tax and convenience fee) or Rs. 3,000, whichever is less."
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": false,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": 100000,
+      "fraudLiability": {
+        "included": true,
+        "cover": 100000,
+        "reportingWindow": "48 hours prior to 7 days post reporting of loss"
+      }
+    },
+    "lostTravelDocuments": {
+      "included": true,
+      "cover": 12500
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "Insurance benefits subject to terms in policy document. Claims via insurance partner."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000,
+      "technology": "Mastercard PayWave"
+    },
+    "virtualCard": {
+      "available": false,
+      "instantIssuance": false,
+      "singleUse": false,
+      "spendControls": false
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": false,
+      "rewardsOnUPI": false,
+      "note": "Mastercard - UPI linking not available"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Real-time alerts",
+        "Card management via SBI Card app"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [],
+    "upgradesTo": [],
+    "note": "Card discontinued. No upgrade pathway available. Existing cardholders may be migrated to future Air India co-branded cards."
+  },
+
+  "discontinuationInfo": {
+    "isDiscontinued": true,
+    "newApplicationsClosedDate": "2024-09-28",
+    "benefitsEndDate": "2026-03-31",
+    "renewalBenefitsEndDate": "2025-04-01",
+    "reason": "Vistara-Air India merger completed on November 12, 2024. Club Vistara merged with Air India Flying Returns / Maharaja Club.",
+    "postMergerChanges": [
+      "CV Points automatically converted to Flying Returns/Maharaja Points at 1:1 ratio",
+      "Tier status transferred to Air India Flying Returns program",
+      "Complimentary ticket vouchers transferred with extended validity",
+      "Renewal benefits discontinued for cards renewing after April 1, 2025",
+      "Milestone benefits discontinued for cards renewing after April 1, 2025",
+      "Annual fee waived for renewals after April 1, 2025",
+      "Card to be fully phased out by March 31, 2026"
+    ],
+    "recommendation": "Hold the card until phase-out. May be eligible for future Air India co-branded card migration offers."
+  },
+
+  "meta": {
+    "tags": [
+      "Travel",
+      "Co-branded",
+      "Airline",
+      "Vistara",
+      "Air India",
+      "Lounge Access",
+      "Priority Pass",
+      "Discontinued"
+    ],
+    "bestFor": "Formerly best for frequent Vistara flyers who wanted Premium Economy tickets through milestone benefits. Now primarily useful for lounge access until phase-out.",
+    "notRecommendedFor": "New applicants (card discontinued). Existing holders should evaluate based on remaining benefits.",
+    "rating": {
+      "overall": 3.5,
+      "rewards": 3.0,
+      "benefits": 4.0,
+      "value": 3.0,
+      "note": "Rating reduced post-merger due to benefit discontinuation"
+    },
+    "verdict": "The Club Vistara SBI Card PRIME was an excellent travel card for Vistara loyalists, offering up to 4 Premium Economy tickets annually through milestones plus comprehensive travel insurance. Post the November 2024 Vistara-Air India merger, most benefits have been discontinued for renewals after April 2025. The card will be free to hold going forward but offers limited value. Existing cardholders should retain the card for potential migration to future Air India co-branded offerings.",
+    "pros": [
+      "CV Points earned on fuel transactions (rare feature)",
+      "Annual fee waived post April 2025",
+      "8 domestic + 4 international lounge visits per year",
+      "Priority Pass membership included",
+      "Comprehensive travel insurance including flight cancellation cover",
+      "No spend requirement for lounge access"
+    ],
+    "cons": [
+      "Card discontinued for new applications",
+      "Welcome/renewal ticket vouchers discontinued from April 2025",
+      "Milestone benefits discontinued from April 2025",
+      "Club Vistara Silver membership discontinued",
+      "3.5% forex markup is high",
+      "No accelerated earning categories",
+      "Card to be phased out by March 2026"
+    ],
+    "alternatives": [
+      "air-india-sbi-signature (also discontinued)",
+      "axis-vistara-infinite",
+      "sbi-card-elite",
+      "amex-platinum-travel"
+    ],
+    "lastVerified": "2026-01-05",
+    "dataSource": [
+      "Official SBI Card website - https://www.sbicard.com/en/personal/credit-cards/travel/club-vistara-sbi-card-prime.page",
+      "SBI Card MITC document",
+      "SBI Card Customer Notices page",
+      "Club Vistara SBI Card PRIME brochure",
+      "PaisaBazaar.com",
+      "BankBazaar.com",
+      "CardInsider.com",
+      "CardMaven.in",
+      "LiveFromALounge.com",
+      "BusinessToday merger coverage"
+    ],
+    "changelog": [
+      {
+        "date": "2024-09-28",
+        "change": "New card issuance discontinued",
+        "source": "SBI Card Customer Notices"
+      },
+      {
+        "date": "2024-11-01",
+        "change": "Finance charges increased to 3.75% p.m. from 3.50% p.m.",
+        "source": "SBI Card MITC"
+      },
+      {
+        "date": "2024-11-12",
+        "change": "Vistara-Air India merger completed. CV Points migrated to Flying Returns at 1:1 ratio.",
+        "source": "Club Vistara official communication"
+      },
+      {
+        "date": "2024-12-01",
+        "change": "1% utility payment fee introduced for amounts exceeding Rs. 50,000/billing cycle",
+        "source": "SBI Card MITC"
+      },
+      {
+        "date": "2025-03-01",
+        "change": "SBI Card announced benefit changes effective April 1, 2025",
+        "source": "SBI Card Customer Communication"
+      },
+      {
+        "date": "2025-04-01",
+        "change": "Renewal and milestone benefits discontinued. Annual fee waived for all future renewals.",
+        "source": "SBI Card Customer Notices"
+      },
+      {
+        "date": "2024-04-15",
+        "change": "CV Points on rent payments discontinued",
+        "source": "SBI Card Customer Notices"
+      }
+    ]
+  }
+}

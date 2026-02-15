@@ -1,0 +1,1055 @@
+{
+  "id": "axis-flipkart",
+  "name": "Flipkart Axis Bank Credit Card",
+  "bank": "Axis Bank",
+  "slug": "flipkart-axis-bank-credit-card",
+  "image": "assets/cards/axis-bank/flipkart-axis-bank-credit-card.png",
+  "link": "https://www.axisbank.com/retail/cards/credit-card/flipkart-axisbank-credit-card",
+  "isActive": true,
+
+  "network": {
+    "type": "Visa | Mastercard",
+    "variant": "Platinum",
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "entry",
+    "isCobranded": true,
+    "cobrandPartner": {
+      "name": "Flipkart Internet Pvt Ltd",
+      "type": "e-commerce",
+      "loyaltyProgram": null
+    },
+    "additionalPartners": [
+      {
+        "name": "Myntra",
+        "type": "e-commerce"
+      },
+      {
+        "name": "Cleartrip",
+        "type": "travel"
+      }
+    ],
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 500,
+      "amountWithGST": 590,
+      "waivable": true,
+      "waiverCondition": "Free cards issued during promotional periods"
+    },
+    "annual": {
+      "amount": 500,
+      "amountWithGST": 590,
+      "firstYearWaived": true,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 350000,
+        "spendPeriod": "preceding card anniversary year",
+        "waiverText": "Annual fee waived on spends of ₹3,50,000 in the preceding card anniversary year"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": null,
+      "joiningFee": 0,
+      "annualFee": 0,
+      "rewardSharing": true
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 500, "fee": 0},
+        {"minAmount": 501, "maxAmount": 5000, "fee": 500},
+        {"minAmount": 5001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": null, "fee": 1200}
+      ],
+      "additionalCharge": {
+        "amount": 100,
+        "condition": "Additional Rs. 100 charged if MAD not paid for 2 consecutive billing cycles"
+      }
+    },
+    "overLimit": {
+      "amount": 500,
+      "percentage": 2.5
+    },
+    "chequeReturn": {
+      "amount": 500,
+      "percentage": 2,
+      "minFee": 500,
+      "maxFee": null,
+      "note": "2% of amount or Rs. 500, whichever is higher. Max cap of Rs. 1500 removed from Dec 2024"
+    },
+    "cashPaymentAtBranch": 175,
+    "cardReplacement": 200,
+    "duplicateStatement": 100,
+    "rentSurcharge": {
+      "percentage": 1,
+      "maxFee": null,
+      "note": "1% rent surcharge on MCC 6513 transactions. Max cap removed from Dec 2024"
+    },
+    "surcharges": {
+      "walletLoad": {
+        "percentage": 1,
+        "threshold": 10000,
+        "period": "statement cycle",
+        "note": "1% fee on cumulative wallet load of Rs. 10,000 or more"
+      },
+      "fuel": {
+        "percentage": 1,
+        "threshold": 50000,
+        "period": "statement cycle",
+        "note": "1% fee on cumulative fuel transactions of Rs. 50,000 or more"
+      },
+      "education": {
+        "percentage": 1,
+        "note": "1% fee on education payments through third-party apps"
+      },
+      "utility": {
+        "percentage": 1,
+        "threshold": 25000,
+        "period": "statement cycle",
+        "note": "1% fee on cumulative utility spends of Rs. 25,000 or more"
+      },
+      "onlineGaming": {
+        "percentage": 1,
+        "threshold": 10000,
+        "period": "statement period",
+        "note": "1% fee on online skill-based gaming spends of Rs. 10,000 or more"
+      }
+    }
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 15000,
+        "annual": 180000
+      },
+      "selfEmployed": {
+        "monthly": 30000,
+        "itr": 360000
+      }
+    },
+    "age": {
+      "min": 18,
+      "max": 70,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 650,
+      "recommended": 700
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": "Available to both existing and new Axis Bank customers"
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 25000,
+      "max": 300000
+    },
+    "factors": "Based on income, credit score, and existing banking relationship",
+    "enhancementCriteria": "Good repayment history for 6+ months"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": 50,
+      "note": "Up to 50 days interest-free period from transaction date if previous balance paid in full"
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 200,
+      "calculation": "5% of total outstanding or ₹200, whichever is higher"
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": 40,
+    "dailyLimit": null,
+    "interestFromDay1": true,
+    "note": "Interest of 3.75% per month applies from day of withdrawal"
+  },
+
+  "rewards": {
+    "type": "cashback",
+    "currency": {
+      "name": "Cashback",
+      "symbol": "₹",
+      "singularUnit": "rupee",
+      "pluralUnit": "rupees"
+    },
+    "baseRate": {
+      "rate": 1,
+      "spendUnit": 100,
+      "effectivePercentage": 0.01
+    },
+    "earningText": "Earn 1% cashback on all other eligible spends",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Utility & Telecom",
+        "Education",
+        "Rent",
+        "Wallet load",
+        "Government services",
+        "Insurance",
+        "Gold & Jewellery",
+        "Fuel",
+        "Financial Institutions",
+        "Cash advances",
+        "Repayments",
+        "EMI transactions"
+      ],
+      "mccs": [
+        "4814", "4899", "4900",
+        "8211", "8220", "8241", "8244", "8249", "8299",
+        "6513",
+        "6540",
+        "9222", "9311", "9402",
+        "6300",
+        "5944",
+        "5541", "5542", "5983", "5172",
+        "6010", "6011", "6012"
+      ],
+      "note": "Transactions on these categories/MCCs do not earn cashback"
+    },
+
+    "caps": {
+      "monthly": {
+        "points": null,
+        "cashback": null
+      },
+      "quarterly": {
+        "flipkart": 4000,
+        "cleartrip": 4000,
+        "myntra": 4000,
+        "note": "Statement quarter based on statement date"
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": "statement",
+      "perTransaction": null
+    },
+
+    "expiry": {
+      "hasExpiry": false,
+      "period": null,
+      "condition": "Cashback credited directly to statement - no expiry"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": null,
+        "cashback": null,
+        "vouchers": "₹250 Flipkart voucher + ₹100 Swiggy discount (for new users)",
+        "totalValue": 350,
+        "spendCondition": {
+          "flipkartVoucher": {
+            "amount": null,
+            "period": "30 days",
+            "transactionCount": 1,
+            "note": "First transaction within 30 days. Applicable only for paid cards."
+          },
+          "swiggyDiscount": {
+            "discount": "50% up to Rs. 100",
+            "condition": "First Swiggy order for new Swiggy users",
+            "code": "AXISFKNEW",
+            "note": "Available for all cards including first-year free cards"
+          }
+        },
+        "validity": "Within 30 days of card issuance",
+        "description": "Get activation benefits worth ₹350: ₹250 Flipkart voucher on first transaction + 50% (up to ₹100) off on first Swiggy order"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "myntra": {
+        "rate": 7.5,
+        "type": "percentage",
+        "cap": 4000,
+        "capPeriod": "statement quarter",
+        "merchants": ["Myntra"],
+        "mccs": null,
+        "weekendRate": null,
+        "note": "7.5% cashback on Myntra, capped at ₹4000 per statement quarter. Increased from 1% effective June 20, 2025."
+      },
+      "flipkart": {
+        "rate": 5,
+        "type": "percentage",
+        "cap": 4000,
+        "capPeriod": "statement quarter",
+        "merchants": ["Flipkart"],
+        "mccs": null,
+        "weekendRate": null,
+        "note": "5% cashback on Flipkart, capped at ₹4000 per statement quarter"
+      },
+      "cleartrip": {
+        "rate": 5,
+        "type": "percentage",
+        "cap": 4000,
+        "capPeriod": "statement quarter",
+        "merchants": ["Cleartrip"],
+        "mccs": null,
+        "weekendRate": null,
+        "note": "5% cashback on Cleartrip, capped at ₹4000 per statement quarter"
+      },
+      "preferredMerchants": {
+        "rate": 4,
+        "type": "percentage",
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["Swiggy", "Uber", "PVR", "Cult.fit"],
+        "mccs": null,
+        "weekendRate": null,
+        "note": "Unlimited 4% cashback on preferred merchants"
+      },
+      "travel": {
+        "rate": 1,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "mccs": null,
+        "weekendRate": null,
+        "note": "1% base cashback on travel except Cleartrip"
+      },
+      "dining": {
+        "rate": 1,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "weekendRate": null,
+        "note": "1% base cashback; 4% on Swiggy"
+      },
+      "online": {
+        "rate": 1,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "note": "1% cashback on other online spends except excluded categories"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on fuel transactions. 1% surcharge waiver available."
+      },
+      "groceries": {
+        "rate": 1,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null
+      },
+      "utilities": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on utility payments"
+      },
+      "international": {
+        "rate": 1,
+        "multiplier": null,
+        "cap": null,
+        "note": "1% cashback on international transactions (subject to 3.5% forex markup)"
+      },
+      "insurance": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on insurance payments"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on rent payments. 1% rent surcharge applies."
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on wallet loads"
+      },
+      "government": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on government services (MCCs 9222, 9311, 9402)"
+      },
+      "education": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on education payments"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": false,
+        "name": null,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "link": null,
+        "note": null
+      },
+      "partnerMerchants": {
+        "enabled": true,
+        "merchants": [
+          {
+            "name": "Myntra",
+            "cashbackRate": 7.5,
+            "cap": 4000,
+            "capPeriod": "statement quarter",
+            "mcc": null,
+            "validUntil": null
+          },
+          {
+            "name": "Flipkart",
+            "cashbackRate": 5,
+            "cap": 4000,
+            "capPeriod": "statement quarter",
+            "mcc": null,
+            "validUntil": null
+          },
+          {
+            "name": "Cleartrip",
+            "cashbackRate": 5,
+            "cap": 4000,
+            "capPeriod": "statement quarter",
+            "mcc": null,
+            "validUntil": null
+          },
+          {
+            "name": "Swiggy",
+            "cashbackRate": 4,
+            "cap": null,
+            "capPeriod": null,
+            "mcc": null,
+            "validUntil": null
+          },
+          {
+            "name": "Uber",
+            "cashbackRate": 4,
+            "cap": null,
+            "capPeriod": null,
+            "mcc": null,
+            "validUntil": null
+          },
+          {
+            "name": "PVR",
+            "cashbackRate": 4,
+            "cap": null,
+            "capPeriod": null,
+            "mcc": null,
+            "validUntil": null
+          },
+          {
+            "name": "Cult.fit",
+            "cashbackRate": 4,
+            "cap": null,
+            "capPeriod": null,
+            "mcc": null,
+            "validUntil": null
+          }
+        ],
+        "note": "Accelerated cashback on co-brand partners and preferred merchants"
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": null
+      },
+      "milestoneAccelerators": null
+    },
+
+    "redemption": {
+      "baseValue": 1.0,
+      "bestValue": 1.0,
+      "bestOption": "Automatic statement credit",
+      "minRedemption": null,
+      "redemptionIncrement": null,
+      "convenienceFee": 0,
+      "monthlyRedemptionLimit": null,
+
+      "pointsPlusPay": {
+        "enabled": false,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": null,
+        "note": null
+      },
+
+      "options": [
+        {
+          "type": "statement_credit",
+          "value": 1.0,
+          "description": "Automatic statement credit",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": [],
+          "note": "Cashback automatically credited to statement 3 days before next statement generation"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": null,
+      "partners": null,
+      "currentBonus": null
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": null,
+      "acrossUsers": false,
+      "note": "Cashback card - no point pooling applicable"
+    },
+
+    "specialLogic": "Cashback earned during a statement month is credited 3 days prior to the next statement generation date",
+
+    "calculator": {
+      "enabled": true,
+      "formula": "cashback = (myntraSpend * 0.075, capped at 4000) + (flipkartSpend * 0.05, capped at 4000) + (cleartripSpend * 0.05, capped at 4000) + (preferredMerchantSpend * 0.04) + (otherEligibleSpend * 0.01)",
+      "variables": ["myntraSpend", "flipkartSpend", "cleartripSpend", "preferredMerchantSpend", "otherEligibleSpend"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "eligibleLounges": null,
+        "note": "Domestic airport lounge access discontinued effective June 20, 2025"
+      },
+      "international": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "membershipValue": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "eligibleLounges": null,
+        "note": "No international lounge access"
+      }
+    },
+
+    "milestones": null,
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": false,
+      "lessonIncluded": false,
+      "note": null
+    },
+
+    "movies": {
+      "included": true,
+      "platform": "District by Zomato",
+      "offer": "Buy 1 Get 1 Free",
+      "freeTickets": 1,
+      "frequency": "Monthly",
+      "cap": 250,
+      "minTickets": 2,
+      "note": "100% discount on second ticket up to ₹250, valid once per month on minimum 2 ticket booking"
+    },
+
+    "dining": {
+      "included": true,
+      "programs": [
+        {
+          "name": "Axis Bank Dining Delights with EazyDiner",
+          "discount": "Up to 15% off",
+          "cap": 500,
+          "frequency": "Per visit",
+          "minSpend": null,
+          "note": "At 10,000+ partner restaurants across India"
+        }
+      ],
+      "hotelDining": {
+        "included": false,
+        "hotels": null,
+        "offer": null
+      }
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 400,
+      "maxTransaction": 4000,
+      "monthlyCap": 400,
+      "capPeriod": "statement cycle",
+      "applicableStations": "All fuel stations in India",
+      "rewardsOnFuel": false,
+      "note": "1% surcharge waiver on fuel purchases between ₹400-₹4000, max waiver ₹400 per statement cycle. GST on fuel surcharge is non-refundable. No cashback earned on fuel."
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% + GST on international transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "markupFee": 1.5,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "Forex markup of 3.5% applies. DCC markup of 1.5% if paying in INR for international transactions."
+    },
+
+    "concierge": {
+      "included": false,
+      "availability": null,
+      "type": null,
+      "services": null,
+      "contactNumber": null,
+      "note": null
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": null,
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "EMI on Call",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Flipkart", "Partner merchants"],
+        "note": "No-cost EMI available on select Flipkart purchases"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": null,
+        "minFee": null
+      },
+      "minAmount": 2500,
+      "tenures": [3, 6, 9, 12],
+      "interestRates": {
+        "min": 0.12,
+        "max": 0.18
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": 0
+      },
+      "cancellationPeriod": null,
+      "note": "Convert transactions above ₹2,500 into EMIs by calling phone banking. For cancelled EMI transactions on Flipkart, cancel EMI via phone banking before first EMI debit."
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": 0.0375
+      },
+      "processingFee": {
+        "percentage": 1,
+        "minFee": 199
+      },
+      "tenures": [6, 12, 18, 24],
+      "maxAmount": null,
+      "preclosureFee": 3,
+      "note": null
+    },
+
+    "memberships": null,
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "condition": null
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": false,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": null,
+      "fraudLiability": {
+        "included": true,
+        "cover": null,
+        "reportingWindow": "Report immediately to bank"
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "This is an entry-level card with limited insurance coverage. Basic fraud liability protection available."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000
+    },
+    "virtualCard": {
+      "available": true,
+      "instantIssuance": true,
+      "singleUse": false,
+      "spendControls": true,
+      "note": "Instant virtual card available upon approval"
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": true,
+      "rewardsOnUPI": false,
+      "note": "Credit card can be linked to UPI. UPI transactions may not earn rewards."
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Real-time alerts",
+        "View statements",
+        "Pay bills"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": null,
+    "upgradesTo": [
+      {
+        "cardId": "axis-select",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false,
+        "note": "Can apply for Axis Bank Select Credit Card based on spend history"
+      },
+      {
+        "cardId": "axis-ace",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false,
+        "note": "Can apply for Axis Bank ACE Credit Card for better cashback on other categories"
+      }
+    ],
+    "note": "Entry-level card. Upgrade possible based on spend history and relationship."
+  },
+
+  "meta": {
+    "tags": [
+      "Cashback",
+      "Entry Level",
+      "Online Shopping",
+      "Flipkart",
+      "Myntra",
+      "Co-branded",
+      "E-commerce"
+    ],
+    "bestFor": "Frequent Flipkart, Myntra, and Cleartrip shoppers who want direct statement credit cashback",
+    "notRecommendedFor": "Those who spend primarily on utilities, rent, fuel, or government services. Also not ideal for international travelers due to high forex markup.",
+    "rating": {
+      "overall": 3.5,
+      "rewards": 4.0,
+      "benefits": 2.5,
+      "value": 3.5
+    },
+    "verdict": "A solid entry-level cashback card for Flipkart ecosystem users. The 7.5% cashback on Myntra and 5% on Flipkart/Cleartrip provide good value for online shoppers. However, the June 2025 changes removed lounge access and introduced quarterly caps on accelerated cashback. The 4% unlimited cashback on preferred merchants (Swiggy, Uber, PVR, Cult.fit) adds value for urban lifestyle spending. Best suited for those who can maximize Flipkart ecosystem spending without exceeding quarterly caps.",
+    "pros": [
+      "High 7.5% cashback on Myntra (best in category)",
+      "5% cashback on Flipkart and Cleartrip",
+      "4% unlimited cashback on Swiggy, Uber, PVR, Cult.fit",
+      "Direct statement credit - no redemption hassle",
+      "Low annual fee of ₹500 (waivable at ₹3.5L spend)",
+      "BOGO movie offer on District app",
+      "1% fuel surcharge waiver",
+      "Dining discounts via EazyDiner"
+    ],
+    "cons": [
+      "Lounge access discontinued from June 2025",
+      "Quarterly caps of ₹4000 each on Flipkart, Myntra, Cleartrip",
+      "High 3.5% forex markup",
+      "Extensive list of excluded categories (utilities, rent, fuel, insurance, education, government)",
+      "No rewards on wallet loads",
+      "1% surcharge on rent, high utility spends, education payments",
+      "Limited insurance coverage"
+    ],
+    "alternatives": [
+      "amazon-pay-icici",
+      "axis-ace",
+      "flipkart-axis-bank-super-elite",
+      "sbi-cashback"
+    ],
+    "lastVerified": "2026-01-05",
+    "dataSource": [
+      "Official Axis Bank website - https://www.axisbank.com/retail/cards/credit-card/flipkart-axisbank-credit-card",
+      "Axis Bank MITC document",
+      "June 2025 Terms Revision document - https://www.axisbank.com/docs/default-source/default-document-library/credit-card-tnc/terms-and-conditions-for-flipkart-credit-card.pdf",
+      "December 2024 Fee Revision document - https://www.axisbank.com/docs/default-source/default-document-library/credit-cards/terms-and-conditions-for-flipkart.pdf",
+      "PaisaBazaar.com",
+      "CardInsider.com",
+      "TechnoFino community",
+      "CardMaven.in",
+      "Live From A Lounge"
+    ],
+    "changelog": [
+      {
+        "date": "2025-06-20",
+        "change": "Myntra cashback increased to 7.5% (from 1%); Quarterly caps introduced for Flipkart, Cleartrip, Myntra at ₹4000 each; Domestic lounge access discontinued; BOGO movie offer added on District app",
+        "source": "Official Axis Bank T&C update"
+      },
+      {
+        "date": "2024-12-20",
+        "change": "Finance charges increased to 3.75%/month; DCC markup increased to 1.5%; Cheque return min fee increased to ₹500; Cash payment fee increased to ₹175; Additional LPC charge of ₹100 for 2 consecutive missed MADs; Rent surcharge cap removed; New surcharges on wallet load, fuel (>₹50K), education, utility (>₹25K), online gaming; Government services excluded from cashback",
+        "source": "Official Axis Bank T&C update"
+      },
+      {
+        "date": "2024-04-20",
+        "change": "Lounge access made subject to ₹50,000 spend in previous 3 months",
+        "source": "Official Axis Bank T&C update"
+      },
+      {
+        "date": "2023-08-12",
+        "change": "Rent and wallet load transactions excluded from spend-based fee waiver",
+        "source": "Official Axis Bank T&C update"
+      },
+      {
+        "date": "2023-03-05",
+        "change": "Rent surcharge of 1% introduced; DCC markup fee of 1% introduced; Utility, insurance, education payments excluded from cashback",
+        "source": "Official Axis Bank T&C update"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1034 @@
+{
+  "id": "standard-chartered-ultimate",
+  "name": "Standard Chartered Ultimate Credit Card",
+  "bank": "Standard Chartered Bank",
+  "slug": "standard-chartered-ultimate-credit-card",
+  "image": "assets/cards/standard-chartered/ultimate.png",
+  "link": "https://www.sc.com/in/credit-cards/ultimate-card/",
+  "isActive": true,
+
+  "network": {
+    "type": "Mastercard",
+    "variant": "World",
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "super-premium",
+    "isCobranded": false,
+    "cobrandPartner": {
+      "name": null,
+      "type": null,
+      "loyaltyProgram": null
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 5000,
+      "gst": 900,
+      "totalWithGst": 5900,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 5000,
+      "gst": 900,
+      "totalWithGst": 5900,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": false,
+        "spendThreshold": null,
+        "spendPeriod": null,
+        "waiverText": "No spend-based waiver available"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": null,
+      "joiningFee": 0,
+      "annualFee": 0,
+      "rewardSharing": true,
+      "note": "Lifetime free supplementary cards"
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 100, "fee": 0},
+        {"minAmount": 101, "maxAmount": 500, "fee": 100},
+        {"minAmount": 501, "maxAmount": 5000, "fee": 500},
+        {"minAmount": 5001, "maxAmount": 10000, "fee": 700},
+        {"minAmount": 10001, "maxAmount": null, "fee": 1200}
+      ],
+      "additionalNote": "Additional ₹100 late fee if MAD not paid for 2 or more consecutive months"
+    },
+    "overLimit": {
+      "amount": 500,
+      "percentage": 2.5,
+      "note": "₹500 per instance or 2.5% of overlimit amount, whichever is higher (minimum ₹500)"
+    },
+    "chequeReturn": 500,
+    "cardReplacement": 0,
+    "duplicateStatement": 99,
+    "rewardRedemptionFee": 99,
+    "cashRepaymentFee": 299,
+    "rentalPaymentProcessingFee": {
+      "percentage": 1,
+      "plusTaxes": true,
+      "effectiveFrom": "2023-04-02"
+    }
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 200000,
+        "annual": 2400000
+      },
+      "selfEmployed": {
+        "itr": 2400000
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 65,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": "Existing SC card with limit > ₹5 Lakh OR other bank card with ₹4.5 Lakh free limit",
+      "note": "Card-on-card basis application available"
+    },
+    "geography": {
+      "availableIn": ["Standard Chartered sourcing cities/locations in India"],
+      "restrictions": "Must belong to credit card sourcing cities/locations of the Bank"
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 200000,
+      "max": 1500000
+    },
+    "factors": "Based on income, credit score, and existing relationship",
+    "enhancementCriteria": "Good repayment history and relationship with the bank"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": {
+        "min": 18,
+        "max": 55
+      },
+      "note": "18-48 days to 25-55 days depending on Payment Due Date. Not applicable for cash advances and revolving balances."
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 250,
+      "calculation": "Higher of: (a) 5% of statement outstanding, or (b) sum of all installments billed + interest + fees + charges + overlimit amount + 1% of principal, or (c) ₹250"
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 3,
+    "minFee": 300,
+    "maxFee": null,
+    "limitPercentage": null,
+    "dailyLimit": null,
+    "interestFromDay1": true,
+    "note": "3% of cash withdrawal amount, minimum ₹300. Interest charged from transaction date."
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "Reward Points",
+      "symbol": "RP",
+      "singularUnit": "point",
+      "pluralUnit": "points"
+    },
+    "baseRate": {
+      "rate": 5,
+      "spendUnit": 150,
+      "effectivePercentage": 0.0333,
+      "note": "Earn 5 Reward Points for every ₹150 spent"
+    },
+    "earningText": "Earn 5 Reward Points for every ₹150 spent (1 RP = ₹1)",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "Cash advances",
+        "Returned purchases",
+        "Disputed or unauthorized/fraudulent transactions",
+        "Finance charges",
+        "Fees and charges",
+        "Chargeback transactions"
+      ],
+      "mccs": ["5541", "5542", "5983"],
+      "note": "Fuel transactions (MCCs 5541, 5542, 5983) do not earn reward points. However, 1% fuel surcharge waiver is provided instead."
+    },
+
+    "caps": {
+      "monthly": {
+        "points": null,
+        "cashback": null
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": null,
+      "perTransaction": null,
+      "note": "No capping on reward points that can be earned"
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "3 years",
+      "condition": "From date of accumulation"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": 6000,
+        "cashback": null,
+        "vouchers": null,
+        "spendCondition": {
+          "amount": null,
+          "period": null,
+          "transactionCount": null
+        },
+        "validity": "Within 60 days after realization of joining fees",
+        "description": "Earn 6,000 Reward Points (worth ₹6,000) on payment of joining fee"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": true,
+        "points": 5000,
+        "condition": "On payment of annual fee. Not applicable if renewal fee is converted to EMI."
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "general": {
+        "rate": 5,
+        "spendUnit": 150,
+        "effectivePercentage": 0.0333,
+        "cap": null,
+        "capPeriod": null,
+        "note": "All retail spends except excluded and reduced-rate categories"
+      },
+      "utilities": {
+        "rate": 3,
+        "spendUnit": 150,
+        "effectivePercentage": 0.02,
+        "cap": null,
+        "mccs": ["4900"],
+        "note": "Reduced rate of 3 RP per ₹150 (effective from April 2, 2023)"
+      },
+      "supermarkets": {
+        "rate": 3,
+        "spendUnit": 150,
+        "effectivePercentage": 0.02,
+        "cap": null,
+        "mccs": ["5411"],
+        "note": "Reduced rate of 3 RP per ₹150 (effective from April 2, 2023)"
+      },
+      "insurance": {
+        "rate": 3,
+        "spendUnit": 150,
+        "effectivePercentage": 0.02,
+        "cap": null,
+        "mccs": ["5960", "6300"],
+        "note": "Reduced rate of 3 RP per ₹150 (effective from April 2, 2023)"
+      },
+      "propertyManagement": {
+        "rate": 3,
+        "spendUnit": 150,
+        "effectivePercentage": 0.02,
+        "cap": null,
+        "mccs": ["7349", "6513"],
+        "note": "Includes rent payments. Reduced rate of 3 RP per ₹150 (effective from April 2, 2023)"
+      },
+      "schools": {
+        "rate": 3,
+        "spendUnit": 150,
+        "effectivePercentage": 0.02,
+        "cap": null,
+        "mccs": ["8299"],
+        "note": "Education payments. Reduced rate of 3 RP per ₹150 (effective from April 2, 2023)"
+      },
+      "government": {
+        "rate": 3,
+        "spendUnit": 150,
+        "effectivePercentage": 0.02,
+        "cap": null,
+        "mccs": ["9399"],
+        "note": "Government payments. Reduced rate of 3 RP per ₹150 (effective from April 2, 2023)"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on fuel transactions. 1% fuel surcharge waiver provided instead."
+      },
+      "international": {
+        "rate": 5,
+        "spendUnit": 150,
+        "effectivePercentage": 0.0333,
+        "cap": null,
+        "note": "Standard reward rate on international transactions"
+      },
+      "dutyFree": {
+        "rate": 0,
+        "cashback": {
+          "percentage": 5,
+          "maxCashback": 1000,
+          "period": "per statement cycle"
+        },
+        "note": "5% cashback on duty-free purchases, max ₹1,000 per statement cycle. Cashback transactions do not earn reward points."
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": false,
+        "name": null,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "link": null,
+        "note": "Standard Chartered does not have a rewards portal like SmartBuy"
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": null,
+        "note": null
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": null
+      },
+      "milestoneAccelerators": null
+    },
+
+    "redemption": {
+      "baseValue": 1.0,
+      "bestValue": 1.0,
+      "bestOption": "Gift vouchers through SC 360° Rewards portal",
+      "minRedemption": null,
+      "redemptionIncrement": null,
+      "convenienceFee": 99,
+      "monthlyRedemptionLimit": null,
+
+      "pointsPlusPay": {
+        "enabled": false,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": null,
+        "note": null
+      },
+
+      "options": [
+        {
+          "type": "vouchers",
+          "value": 1.0,
+          "description": "Gift vouchers from brands like Nykaa, Croma, Shoppers Stop, etc.",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 99,
+          "partners": ["Nykaa", "Croma", "Shoppers Stop", "Other premium brands"],
+          "note": "1 RP = ₹1. Best value redemption. ₹99 handling fee applies."
+        },
+        {
+          "type": "products",
+          "value": 1.0,
+          "description": "Electronics, home appliances, lifestyle products from catalog",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 99,
+          "partners": ["Samsung", "Other brands"],
+          "note": "Products usually at MRP - may miss retail discounts"
+        },
+        {
+          "type": "charity",
+          "value": 1.0,
+          "description": "Charitable donations through 360° Rewards program",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": [],
+          "note": "Donate reward points to charity"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": null,
+      "partners": null,
+      "note": "Standard Chartered Ultimate does not offer airline/hotel transfer partners"
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": null,
+      "acrossUsers": false,
+      "note": null
+    },
+
+    "specialLogic": "From April 2, 2023: 5 RP per ₹150 on regular categories; 3 RP per ₹150 on utilities, supermarkets, insurance, property management, schools & government payments; 0 RP on fuel",
+
+    "calculator": {
+      "enabled": true,
+      "formula": "For regular spends: points = (spend / 150) * 5; For reduced categories: points = (spend / 150) * 3",
+      "variables": ["spend", "category"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": true,
+        "complimentaryCount": 16,
+        "period": "year",
+        "perQuarterCount": 4,
+        "accessType": "Mastercard Lounge Program / Visa Lounge Program",
+        "accessProvider": "Mastercard/Visa",
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "Complimentary for all cardholders"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null,
+          "note": "Guest access charged as per lounge operator rates"
+        },
+        "railwayLounge": {
+          "included": false,
+          "count": null,
+          "period": null
+        },
+        "eligibleLounges": "Select domestic airport lounges under Mastercard Lounge Program",
+        "entryMechanism": "Card swipe with nominal ₹2 or ₹25 authorization charge for validation",
+        "note": "Both primary and supplementary cardholders eligible individually"
+      },
+      "international": {
+        "included": true,
+        "complimentaryCount": 12,
+        "period": "year",
+        "perMonthCount": 1,
+        "accessType": "Priority Pass",
+        "accessProvider": "Priority Pass",
+        "membershipValue": null,
+        "spendRequired": {
+          "amount": 20000,
+          "period": "previous calendar month",
+          "note": "Must spend ₹20,000 in previous month to get 1 complimentary visit that month"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": {
+            "amount": 35,
+            "currency": "USD",
+            "effectiveFrom": "2024-12-01"
+          },
+          "previousGuestFee": {
+            "amount": 29,
+            "currency": "USD",
+            "validUntil": "2024-11-30"
+          }
+        },
+        "eligibleLounges": "https://www.prioritypass.com",
+        "note": "Priority Pass membership complimentary for primary and supplementary cardholders. Domestic lounges in India NOT accessible via Priority Pass - will be charged."
+      }
+    },
+
+    "milestones": null,
+
+    "golf": {
+      "included": true,
+      "complimentaryRounds": 12,
+      "period": "year",
+      "perMonthRounds": 1,
+      "coachingSessions": {
+        "included": true,
+        "perMonth": 1,
+        "duration": "30 minutes minimum",
+        "includes": ["Access to golf course/driving range", "Instructor fee", "50 golf balls per lesson", "Learning equipment"]
+      },
+      "courses": "20 premier domestic golf courses including Kharghar Golf Club, Willingdon Golf Club, Classic Golf & Country Club, etc.",
+      "coursesLink": "https://bit.ly/3mmWLE1",
+      "bookingMethod": "Call Golflan at 1800-208-7899 (Mon-Fri 9am-6pm) or email customer.care@thriwe.com",
+      "bookingAdvanceNotice": "4 days in advance",
+      "cancellationPolicy": "3 days prior to booking",
+      "greenFeeWaiver": true,
+      "lessonIncluded": true,
+      "convenienceCharges": "Must be paid using SC Ultimate card even for complimentary games",
+      "note": "Operated by Golflan Technology Solutions. No walk-ins or direct club bookings. Max 2 complimentary slots if 4 cardholders book together."
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": null
+    },
+
+    "dining": {
+      "included": false,
+      "programs": null,
+      "hotelDining": null,
+      "note": "No specific dining program. Standard Chartered Good Life offers available."
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 400,
+      "maxTransaction": 4000,
+      "monthlyCap": 1000,
+      "applicableStations": "All petrol pumps across India",
+      "rewardsOnFuel": false,
+      "note": "1% fuel surcharge waiver on transactions between ₹400-₹4,000, max ₹1,000 per month. No reward points on fuel."
+    },
+
+    "forex": {
+      "markupPercentage": 2.0,
+      "markupText": "2% forex markup fee on all overseas transactions",
+      "effectiveFrom": "2024-08-25",
+      "previousMarkup": {
+        "percentage": 3.5,
+        "cashback": 1.5,
+        "note": "Prior to Aug 2024: 3.5% markup with 1.5% cashback (effective 2%)"
+      },
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 2.0,
+      "note": "From Aug 25, 2024: Direct 2% markup at transaction posting. No separate cashback posting."
+    },
+
+    "concierge": {
+      "included": false,
+      "availability": null,
+      "type": null,
+      "services": null,
+      "contactNumber": null,
+      "note": "No dedicated concierge service mentioned"
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": null,
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "Kuch Bhi on EMI",
+      "noCostEMI": {
+        "available": false,
+        "merchants": null,
+        "note": null
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": null,
+        "minFee": null,
+        "note": "Processing fee may apply"
+      },
+      "minAmount": 5000,
+      "tenures": [12, 24, 36, 48, 60],
+      "interestRates": {
+        "min": null,
+        "max": null,
+        "note": "Attractive rates offered"
+      },
+      "preclosureFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "cancellationPeriod": null,
+      "note": "Convert transactions above ₹5,000 to EMI via online banking or SC Mobile"
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": null,
+        "note": "Attractive interest rates"
+      },
+      "processingFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "maxAmount": 500000,
+      "tenures": null,
+      "preclosureFee": null,
+      "note": "Transfer card balance up to ₹5,00,000 from other bank credit cards"
+    },
+
+    "dialALoan": {
+      "available": true,
+      "maxAmount": 500000,
+      "tenures": [12, 24, 36, 48, 60],
+      "note": "Get loan on credit card up to ₹5,00,000 with flexible tenure from 12 to 60 months"
+    },
+
+    "balanceOnEMI": {
+      "available": true,
+      "maxAmount": 500000,
+      "processingFee": 0,
+      "note": "Convert entire outstanding (up to ₹5,00,000) into EMIs. Zero processing fee."
+    },
+
+    "memberships": [
+      {
+        "name": "Priority Pass",
+        "type": "lounge access",
+        "value": null,
+        "duration": "Card validity",
+        "condition": "On card issuance",
+        "note": "Complimentary Priority Pass membership for primary and supplementary cardholders"
+      }
+    ],
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    },
+
+    "dutyFreeCashback": {
+      "included": true,
+      "percentage": 5,
+      "maxCashback": 1000,
+      "period": "per statement cycle",
+      "creditTimeline": "Within 60 days of transaction date",
+      "note": "5% cashback on duty-free purchases. Cashback transactions do not earn reward points."
+    }
+  },
+
+  "insurance": {
+    "provider": "HDFC ERGO General Insurance Company Ltd",
+    "policyNumber": {
+      "airAccident": "2999204852948401000",
+      "travel": "2999204251883002000",
+      "financialLiability": "2999206693039300000"
+    },
+    "airAccident": {
+      "included": true,
+      "cover": 10000000,
+      "currency": "INR",
+      "condition": "International air travel only. Air ticket must be purchased using Ultimate credit card. Valid for primary cardholders only.",
+      "exclusions": ["Mounting/alighting from aircraft", "Helicopter travel"]
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": true,
+      "cover": 750,
+      "currency": "USD",
+      "perBag": null,
+      "perItem": 30,
+      "condition": "International travel. Indemnity based."
+    },
+    "baggageDelay": {
+      "included": true,
+      "cover": 100,
+      "currency": "USD",
+      "delayHours": 12,
+      "perHour": 10,
+      "per8Hours": 10,
+      "note": "International flights only"
+    },
+    "flightDelay": {
+      "included": true,
+      "cover": 200,
+      "currency": "USD",
+      "delayHours": 12,
+      "perHour": 10,
+      "coveredExpenses": null,
+      "note": "International flights only"
+    },
+    "hijacking": {
+      "included": true,
+      "cover": 100,
+      "currency": "USD",
+      "deductible": "24 hours",
+      "per6Hours": 75
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": true,
+      "cover": 25000,
+      "currency": "USD",
+      "deductible": 100,
+      "overseas": true,
+      "condition": "While travelling abroad. Primary cardholders only (age 18-70). Pre-existing illness not covered.",
+      "excludedConditions": ["Pre-existing illness", "Treatment purpose travel", "Pregnancy-related"]
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": 25000,
+      "currency": "INR",
+      "fraudLiability": {
+        "included": true,
+        "cover": 25000,
+        "preReportingPeriod": "7 days",
+        "postReportingPeriod": "7 days",
+        "note": "Covers counterfeit cards. Primary and add-on cards covered. Pre-delivery frauds not covered."
+      },
+      "atmCover": {
+        "included": true,
+        "note": "Card forgotten at ATM covered"
+      },
+      "digitalAccessCover": {
+        "included": true,
+        "note": "Theft of funds due to unauthorized digital access - credit card transactions only"
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "claimProcess": {
+      "contact": {
+        "tollFree": "+800 08250825",
+        "international": "+91-120-4507250",
+        "email": ["travelclaims@hdfcergo.com", "bankclaims@hdfcergo.com"],
+        "address": "HDFC ERGO General Insurance Company Limited, 5th floor, Tower 1, Stellar IT Park, C-25, Sector-62, Noida, UP, India – 201301"
+      },
+      "intimationPeriod": "15 days from date of loss/incident",
+      "settlementTime": "30 working days after receiving all documents"
+    },
+    "swipeRequirement": {
+      "required": true,
+      "minAmount": 499,
+      "period": "On or before 30 days from date of loss",
+      "transactionType": "Non-ATM swipe (POS/e-commerce)",
+      "note": "Mandatory for claims eligibility across all insurance sections"
+    },
+    "nomineeUpdate": "https://apply.standardchartered.co.in/nominee-credit-card-details/",
+    "note": "All insurance covers subject to terms in policy document. Primary cardholder only for most benefits."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000
+    },
+    "virtualCard": {
+      "available": true,
+      "instantIssuance": true,
+      "singleUse": false,
+      "spendControls": false,
+      "note": "Ultimate virtual credit card available for golf benefits, dining privileges & more"
+    },
+    "walletSupport": {
+      "googlePay": false,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": false,
+      "phonePe": false,
+      "bharatQR": true,
+      "bbps": true
+    },
+    "upiLinking": {
+      "available": false,
+      "rewardsOnUPI": false,
+      "note": "Mastercard - UPI linking not typically available"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card via Online Banking or SC Mobile",
+        "View statements",
+        "Card payments",
+        "EMI conversion"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": false,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"],
+      "methods": ["Standing Instruction", "NACH"]
+    },
+    "3DSecure": true
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [
+      {
+        "cardId": "standard-chartered-visa-infinite",
+        "spendRequired": null,
+        "tenure": null,
+        "autoUpgrade": false,
+        "note": "Can upgrade from free Visa Infinite via Phone Banking"
+      }
+    ],
+    "upgradesTo": null,
+    "note": "Ultimate is the top-tier card from Standard Chartered India"
+  },
+
+  "meta": {
+    "tags": [
+      "Premium",
+      "Golf",
+      "Rewards",
+      "Lounge Access",
+      "Travel",
+      "Low Forex Markup",
+      "Priority Pass"
+    ],
+    "bestFor": "High-income individuals who want high reward rates (3.33%), golf benefits, international travel with low forex markup (2%), and comprehensive insurance coverage",
+    "notRecommendedFor": "Those seeking airline/hotel transfer partners, lifestyle benefits beyond golf, or fee waiver options",
+    "rating": {
+      "overall": 4.0,
+      "rewards": 4.5,
+      "benefits": 3.5,
+      "value": 4.0
+    },
+    "verdict": "Strong rewards card with 3.33% value-back matching HDFC Infinia/Diners Black, but limited by poor redemption options (vouchers only), spend-based international lounge access, and lack of transfer partners. Best for golfers and those who can maximize voucher redemptions.",
+    "pros": [
+      "High 3.33% reward rate with 1:1 redemption (1 RP = ₹1)",
+      "Rewards on insurance, utilities, education - often excluded by others",
+      "Low 2% forex markup for international transactions",
+      "5% duty-free cashback up to ₹1,000/month",
+      "Complimentary golf games and coaching sessions (12 each/year)",
+      "Welcome bonus (6,000 RP) and renewal bonus (5,000 RP) offset fees",
+      "16 domestic lounge visits per year (4 per quarter)",
+      "Comprehensive travel insurance including $25,000 medical cover",
+      "Lifetime free supplementary cards",
+      "No reward point caps"
+    ],
+    "cons": [
+      "No spend-based annual fee waiver",
+      "Limited redemption options (vouchers/products only, no transfers)",
+      "International lounge access requires ₹20,000 monthly spend",
+      "Reduced rewards (3 RP vs 5 RP) on utilities, supermarkets, insurance, government, education",
+      "No rewards on fuel (only surcharge waiver)",
+      "₹99 redemption handling fee",
+      "No airline/hotel transfer partners",
+      "Priority Pass not valid for domestic lounges in India",
+      "Voucher catalog often lacks popular options like Amazon/Flipkart",
+      "High income eligibility (₹2L/month or ₹24L/year)"
+    ],
+    "alternatives": [
+      "hdfc-diners-club-black",
+      "hdfc-infinia",
+      "axis-magnus",
+      "icici-sapphiro"
+    ],
+    "lastVerified": "2026-01-05",
+    "dataSource": [
+      "Official Standard Chartered Bank website (sc.com/in)",
+      "MITC document (in-common-stmnt-reverse-ultimate.pdf)",
+      "Ultimate Credit Card Terms & Conditions PDF (in-ultimate-credit-card-tnc.pdf)",
+      "Tariffs and Charges page (sc.com/in/credit-cards/tariffs-and-charges)",
+      "Ultimate Credit Card FAQs",
+      "PaisaBazaar.com",
+      "CardInsider.com",
+      "CardInfo.in"
+    ],
+    "changelog": [
+      {
+        "date": "2024-12-01",
+        "change": "Priority Pass non-complimentary visit charge increased from $29 to $35 per visit",
+        "source": "Official T&C update"
+      },
+      {
+        "date": "2024-08-25",
+        "change": "Forex markup changed from 3.5% (with 1.5% cashback) to direct 2% at transaction posting",
+        "source": "Official website FAQ"
+      },
+      {
+        "date": "2024-05-01",
+        "change": "Late payment charges revised - ₹1,200 for outstanding > ₹10,000 (previously different tiers)",
+        "source": "MITC document"
+      },
+      {
+        "date": "2023-04-02",
+        "change": "Reduced rewards from 5 RP to 3 RP per ₹150 on utilities, supermarkets, insurance, property management, schools & government payments. Fuel rewards removed, 1% surcharge waiver added.",
+        "source": "Official T&C update"
+      },
+      {
+        "date": "2020-12-06",
+        "change": "Current welcome bonus structure (6,000 RP on joining fee payment) implemented",
+        "source": "Official T&C"
+      }
+    ]
+  }
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Exclusive Access - Premium Signup</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#b87332", // Copper base
+                        "primary-hover": "#a06228",
+                        "espresso-dark": "#0f0b08", // Darker espresso
+                        "espresso-card": "#1a140f", // Richer card bg
+                        "espresso-input": "#221b15",
+                        "gold-text": "#d4af37",
+                        "copper-light": "#e5a065",
+                        "text-muted": "#a89f96",
+                    },
+                    fontFamily: {
+                        "sans": ["Manrope", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                    backgroundImage: {
+                        'liquid-metal': 'radial-gradient(circle at 50% 0%, rgba(184, 115, 50, 0.15) 0%, rgba(24, 18, 11, 0) 60%), linear-gradient(135deg, #0f0b08 0%, #24180f 25%, #3e2816 50%, #24180f 75%, #0f0b08 100%)',
+                        'card-leather': 'linear-gradient(180deg, rgba(30,24,18,0.95) 0%, rgba(20,15,10,0.98) 100%)',
+                        'copper-gradient': 'linear-gradient(135deg, #b87332 0%, #d4af37 100%)',
+                    },
+                    boxShadow: {
+                        'copper-glow': '0 0 15px -3px rgba(184, 115, 50, 0.25)',
+                        'input-focus': '0 0 0 1px #b87332, 0 0 20px -4px rgba(184, 115, 50, 0.3)',
+                        'card-depth': '0 30px 60px -15px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(184, 115, 50, 0.15)',
+                    },
+                    animation: {
+                        'liquid-shift': 'liquid 20s ease-in-out infinite',
+                        'unfurl': 'unfurl 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
+                        'shimmer-hover': 'shimmer 2s linear infinite',
+                        'fade-in': 'fadeIn 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        liquid: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        },
+                        unfurl: {
+                            '0%': { opacity: '0', transform: 'translateY(15px) scale(0.98) filter(blur(4px))' },
+                            '100%': { opacity: '1', transform: 'translateY(0) scale(1) filter(blur(0))' },
+                        },
+                        shimmer: {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(100%)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+<style>::-webkit-scrollbar {
+    width: 8px
+    }
+::-webkit-scrollbar-track {
+    background: #0f0b08
+    }
+::-webkit-scrollbar-thumb {
+    background: #3e2816;
+    border-radius: 4px
+    }
+.smooth-transition {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1)
+    }
+.bg-liquid-size {
+    background-size: 200% 200%
+    }.leather-texture::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBNY_styNY3xi2Pba1s1XzHEy43_1dromfQetIVFHhLBJ-4ODV3pJZUhQ_gp9Ljzm2AjdLvO11g_DQWpbBkFGoVSGu3TkXzzUbLHVsKCc0dO2PUJ_kObr_tb-BMQj-_bK5tEtd_r5w8V5kJOLiBNBuBjrrqfTE-nGZTlWGBpx5qdg_EgmmQIMVHvfPCjAuxwiGFXgfMGE063oGSEgIzZhRknx9Y2wX3epMQR1wpc52cYZFPzKMUrKmh4dxBympKB-Hqw-jVZNfWr3fB);
+    opacity: 0.6;
+    pointer-events: none;
+    mix-blend-mode: overlay
+    }
+.input-caret-gold {
+    caret-color: #d4af37
+    }.link-underline {
+    position: relative
+    }
+.link-underline::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #b87332, #d4af37, transparent);
+    transform: scalex(0);
+    transform-origin: right;
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    opacity: 0.8
+    }
+.group:hover .link-underline::after {
+    transform: scalex(1);
+    transform-origin: left
+    }.btn-press:active {
+    transform: scale(0.97) translatey(1px)
+    }</style>
+</head>
+<body class="bg-espresso-dark text-white font-sans antialiased overflow-x-hidden min-h-screen flex flex-col relative selection:bg-primary/30 selection:text-gold-text">
+<div class="fixed inset-0 pointer-events-none z-0">
+<div class="absolute inset-0 bg-liquid-metal bg-liquid-size animate-liquid-shift opacity-80"></div>
+<div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjMTgxMjBiIi8+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiLz4KPC9zdmc+')] opacity-[0.07] mix-blend-overlay"></div>
+<div class="absolute top-[-10%] left-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] mix-blend-screen animate-pulse-slow"></div>
+<div class="absolute bottom-[-10%] right-1/4 w-[500px] h-[500px] bg-gold-text/5 rounded-full blur-[100px] mix-blend-screen"></div>
+</div>
+<main class="relative z-10 flex-grow flex items-center justify-center p-4 sm:p-6 lg:p-8">
+<div class="w-full max-w-[440px] flex flex-col gap-8 opacity-0 animate-unfurl" style="animation-delay: 0.1s;">
+<div class="flex justify-center mb-1">
+<div class="relative group cursor-default">
+<div class="absolute inset-0 bg-gold-text blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-700"></div>
+<div class="relative h-14 w-14 rounded-lg bg-gradient-to-br from-[#2a2018] to-[#150f0a] flex items-center justify-center shadow-lg border border-[#b87332]/40 ring-1 ring-white/5">
+<span class="material-symbols-outlined text-gold-text drop-shadow-[0_2px_8px_rgba(212,175,55,0.4)]" style="font-size: 30px;">account_balance_wallet</span>
+</div>
+</div>
+</div>
+<div class="relative bg-card-leather rounded-lg shadow-card-depth border border-[#b87332]/30 p-8 sm:p-10 leather-texture overflow-hidden group/card transition-all duration-700 hover:border-[#b87332]/50">
+<div class="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-7">
+<div class="text-center space-y-3">
+<h1 class="font-serif text-3xl sm:text-[2.5rem] text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] via-[#e5cca0] to-[#b87332] font-medium tracking-tight drop-shadow-sm pb-1">
+                            Exclusive Access
+                        </h1>
+<p class="text-text-muted text-xs font-semibold tracking-[0.2em] uppercase opacity-70">
+                            The Elite Indian Credit Community
+                        </p>
+</div>
+<form class="flex flex-col gap-5 mt-1" onsubmit="event.preventDefault();">
+<div class="space-y-2 group/field">
+<label class="text-[11px] font-bold uppercase tracking-widest text-[#8c8279] ml-1 group-focus-within/field:text-primary transition-colors duration-300" for="fullname">Full Name</label>
+<div class="relative group/input">
+<input autocomplete="name" class="w-full bg-espresso-input border border-[#b87332]/20 text-[#e0d8d0] placeholder-white/10 rounded px-4 py-3.5 focus:outline-none focus:border-primary focus:ring-0 focus:shadow-input-focus smooth-transition hover:border-[#b87332]/40 input-caret-gold font-medium tracking-wide" id="fullname" placeholder="e.g. Rahul Verma" type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-3.5 text-[#b87332]/30 pointer-events-none group-focus-within/input:text-primary smooth-transition" style="font-size: 20px;">person</span>
+</div>
+</div>
+<div class="space-y-2 group/field">
+<label class="text-[11px] font-bold uppercase tracking-widest text-[#8c8279] ml-1 group-focus-within/field:text-primary transition-colors duration-300" for="email">Email Address</label>
+<div class="relative group/input">
+<input autocomplete="email" class="w-full bg-espresso-input border border-[#b87332]/20 text-[#e0d8d0] placeholder-white/10 rounded px-4 py-3.5 focus:outline-none focus:border-primary focus:ring-0 focus:shadow-input-focus smooth-transition hover:border-[#b87332]/40 input-caret-gold font-medium tracking-wide" id="email" placeholder="name@example.com" type="email"/>
+<span class="material-symbols-outlined absolute right-4 top-3.5 text-[#b87332]/30 pointer-events-none group-focus-within/input:text-primary smooth-transition" style="font-size: 20px;">mail</span>
+</div>
+</div>
+<div class="space-y-2 group/field">
+<label class="text-[11px] font-bold uppercase tracking-widest text-[#8c8279] ml-1 group-focus-within/field:text-primary transition-colors duration-300" for="password">Password</label>
+<div class="relative group/input">
+<input autocomplete="new-password" class="w-full bg-espresso-input border border-[#b87332]/20 text-[#e0d8d0] placeholder-white/10 rounded px-4 py-3.5 pr-10 focus:outline-none focus:border-primary focus:ring-0 focus:shadow-input-focus smooth-transition hover:border-[#b87332]/40 input-caret-gold font-medium tracking-wide" id="password" placeholder="Create a strong password" type="password"/>
+<button aria-label="Toggle password visibility" class="absolute right-3 top-3 text-[#b87332]/30 hover:text-gold-text smooth-transition p-1" type="button">
+<span class="material-symbols-outlined" style="font-size: 18px;">visibility_off</span>
+</button>
+</div>
+<div class="flex items-center justify-between mt-2 px-1">
+<div class="flex gap-2">
+<div class="h-1.5 w-1.5 rounded-full bg-[#d4af37] shadow-[0_0_6px_rgba(212,175,55,0.6)] border border-[#d4af37]"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-[#d4af37]/80 shadow-[0_0_6px_rgba(212,175,55,0.4)] border border-[#d4af37]/80"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-transparent border border-[#b87332]/30"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-transparent border border-[#b87332]/30"></div>
+</div>
+<span class="text-[10px] text-gold-text/80 font-bold uppercase tracking-widest drop-shadow-sm">Medium</span>
+</div>
+</div>
+<div class="space-y-2 group/field">
+<label class="text-[11px] font-bold uppercase tracking-widest text-[#8c8279] ml-1 group-focus-within/field:text-primary transition-colors duration-300" for="confirm_password">Confirm Password</label>
+<div class="relative group/input">
+<input autocomplete="new-password" class="w-full bg-espresso-input border border-[#b87332]/20 text-[#e0d8d0] placeholder-white/10 rounded px-4 py-3.5 pr-10 focus:outline-none focus:border-primary focus:ring-0 focus:shadow-input-focus smooth-transition hover:border-[#b87332]/40 input-caret-gold font-medium tracking-wide" id="confirm_password" placeholder="Repeat password" type="password"/>
+</div>
+</div>
+<div class="pt-4">
+<button class="w-full relative overflow-hidden bg-primary text-white font-bold py-4 px-6 rounded shadow-lg btn-press smooth-transition flex items-center justify-center gap-3 group/btn border border-white/10 hover:border-gold-text/30 hover:text-white">
+<div class="absolute inset-0 bg-gradient-to-r from-primary via-[#c68b4c] to-gold-text opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></div>
+<span class="relative z-10 tracking-wide">Request Access</span>
+<span class="material-symbols-outlined relative z-10 group-hover/btn:translate-x-1 smooth-transition text-white/80 group-hover/btn:text-white" style="font-size: 18px;">arrow_forward</span>
+</button>
+<p class="text-center text-[11px] text-[#8c8279] mt-5 leading-relaxed font-medium">
+                                By proceeding, you acknowledge that membership is subject to approval and agree to our 
+                                <a class="text-[#a89f96] hover:text-gold-text underline decoration-[#b87332]/30 underline-offset-4 hover:decoration-gold-text/60 smooth-transition" href="#">Terms of Service</a>.
+                            </p>
+</div>
+</form>
+</div>
+</div>
+<div class="text-center group fade-in" style="animation-delay: 0.5s;">
+<p class="text-[#8c8279] text-sm font-medium">
+                    Already hold a membership? 
+                    <a class="relative inline-flex items-center gap-1.5 text-[#e0d8d0] font-semibold hover:text-gold-text transition-colors duration-300 ml-1 link-underline py-1" href="#">
+                        Log In
+                    </a>
+</p>
+</div>
+</div>
+</main>
+<div class="fixed bottom-0 left-0 w-full h-48 bg-gradient-to-t from-black/80 to-transparent pointer-events-none z-0"></div>
+
+</body></html>

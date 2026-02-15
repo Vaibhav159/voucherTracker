@@ -1,0 +1,1023 @@
+{
+  "id": "hdfc-swiggy",
+  "name": "Swiggy HDFC Bank Credit Card",
+  "bank": "HDFC Bank",
+  "slug": "swiggy-hdfc-bank-credit-card",
+  "image": "assets/cards/hdfc/swiggy-hdfc-bank-credit-card.png",
+  "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/swiggy-hdfc-bank-credit-card",
+
+  "network": {
+    "type": "Mastercard",
+    "variant": "World",
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "entry",
+    "isCobranded": true,
+    "cobrandPartner": {
+      "name": "Swiggy (Bundl Technologies Pvt Ltd)",
+      "type": "Food delivery & Quick commerce",
+      "loyaltyProgram": "Swiggy One"
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 500,
+      "gst": true,
+      "totalWithGst": 590,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 500,
+      "gst": true,
+      "totalWithGst": 590,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 200000,
+        "spendPeriod": "12 months before renewal date",
+        "exclusions": [
+          "Cash on Call",
+          "Balance Transfer",
+          "Cash Withdrawal"
+        ],
+        "waiverText": "Spend ₹2,00,000 or more in a year before your Credit Card renewal date to get renewal fee waived off"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": 3,
+      "joiningFee": 0,
+      "annualFee": 0,
+      "rewardSharing": true,
+      "note": "Up to 3 complimentary add-on cards for family members"
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding (as of August 2024)",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 100, "fee": 0},
+        {"minAmount": 101, "maxAmount": 500, "fee": 100},
+        {"minAmount": 501, "maxAmount": 5000, "fee": 500},
+        {"minAmount": 5001, "maxAmount": 10000, "fee": 600},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 800},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ]
+    },
+    "overLimit": {
+      "amount": 550,
+      "percentage": 2.5,
+      "note": "2.5% of over-limit amount, minimum ₹550"
+    },
+    "chequeReturn": 450,
+    "cardReplacement": 100,
+    "duplicateStatement": 100,
+    "cashProcessingFee": 100,
+    "railwayTicketPurchase": {
+      "percentage": 1,
+      "note": "1% of transaction amount + GST, reversed after transaction"
+    }
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 15000,
+        "annual": 180000
+      },
+      "selfEmployed": {
+        "itr": 600000
+      }
+    },
+    "age": {
+      "min": 21,
+      "maxSalaried": 60,
+      "maxSelfEmployed": 65,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": "Can be applied even if you already hold another HDFC Bank credit card"
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident",
+    "documentsRequired": [
+      "PAN Card",
+      "Aadhaar Card",
+      "Income Proof (Salary slips/Bank statements/ITR)",
+      "Address Proof",
+      "Passport-size photograph"
+    ]
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 25000,
+      "max": 300000
+    },
+    "factors": "Based on income, credit score, and existing relationship with HDFC Bank",
+    "enhancementCriteria": "Good repayment history for 6+ months"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375,
+      "rateText": "3.75% per month (45% per annum)"
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": 50,
+      "note": "Up to 50 days from transaction date if previous balance paid in full"
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 200,
+      "calculation": "5% of total outstanding or ₹200, whichever is higher"
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": 30,
+    "dailyLimit": null,
+    "interestFromDay1": true,
+    "note": "2.5% of cash amount or ₹500, whichever is higher"
+  },
+
+  "rewards": {
+    "type": "cashback",
+    "currency": {
+      "name": "Cashback",
+      "symbol": "₹",
+      "singularUnit": "rupee",
+      "pluralUnit": "rupees"
+    },
+    "baseRate": {
+      "rate": 1,
+      "spendUnit": 100,
+      "effectivePercentage": 0.01,
+      "note": "1% cashback on other spends (excluding exclusions)"
+    },
+    "earningText": "Earn 10% on Swiggy, 5% on select online categories, 1% on other spends",
+    "minTransactionForRewards": 100,
+
+    "exclusions": {
+      "categories": [
+        "Fuel",
+        "Rent payments",
+        "Wallet loads",
+        "Government payments",
+        "Insurance premium payments (for 5% category)",
+        "Jewellery",
+        "EMI transactions (all types)",
+        "Cash advances",
+        "Purchase of travelers' cheques",
+        "Purchase of foreign currency",
+        "Interest charges and penalties",
+        "Swiggy Money Wallet",
+        "Swiggy Liquor",
+        "Swiggy Minis",
+        "Gift cards (for 5% category)",
+        "Grocery purchases on 5% eligible merchants",
+        "Flight and hotel bookings (for 5% category)"
+      ],
+      "mccs": null,
+      "note": "Transactions below ₹100 do not earn cashback"
+    },
+
+    "caps": {
+      "monthly": {
+        "swiggy": 1500,
+        "online5Percent": 1500,
+        "other1Percent": 500,
+        "total": 3500
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": 42000,
+        "note": "Maximum potential annual cashback"
+      },
+      "resetPeriod": "statement",
+      "perTransaction": null
+    },
+
+    "expiry": {
+      "hasExpiry": false,
+      "period": null,
+      "condition": "Cashback credited as statement credit from June 21, 2024"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": null,
+        "cashback": null,
+        "vouchers": null,
+        "membership": {
+          "type": "Swiggy One",
+          "duration": "3 months",
+          "value": 899,
+          "note": "Complimentary 3-month Swiggy One membership on card activation"
+        },
+        "spendCondition": {
+          "amount": null,
+          "period": null,
+          "transactionCount": null
+        },
+        "validity": "Must activate card within 30 days of issuance",
+        "description": "Get complimentary 3-month Swiggy One membership on card activation as per RBI guidelines",
+        "claimMethod": "Claim on Swiggy app within 2-3 days of card activation"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "birthday": {
+        "enabled": true,
+        "multiplier": null,
+        "bonusPoints": null,
+        "discount": "10% extra discount up to ₹500",
+        "validity": "On birthday",
+        "conditions": "Available after 30 days of card activation"
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "swiggy": {
+        "rate": 10,
+        "effectivePercentage": 0.10,
+        "cap": 1500,
+        "capPeriod": "monthly",
+        "platforms": ["Food ordering", "Instamart", "Dineout", "Genie"],
+        "exclusions": ["Swiggy Money Wallet", "Swiggy Liquor", "Swiggy Minis"],
+        "note": "10% cashback on all Swiggy platform spends, capped at ₹1,500 per billing cycle"
+      },
+      "online5Percent": {
+        "rate": 5,
+        "effectivePercentage": 0.05,
+        "cap": 1500,
+        "capPeriod": "monthly",
+        "eligibleCategories": [
+          "Apparels",
+          "Electronics",
+          "Department Stores",
+          "Personal Care",
+          "Local Cabs (Ola, Uber)",
+          "Home Décor",
+          "Pet Stores and Supplies",
+          "Pharmacies",
+          "Discount Stores (Amazon, Flipkart, Meesho, Ajio)",
+          "Entertainment (BookMyShow, PVR)"
+        ],
+        "mccs": [
+          {"category": "Apparels", "mccs": ["5611", "5621", "5631", "5641", "5651", "5661", "5691", "5699"]},
+          {"category": "Electronics", "mccs": ["5045", "5722", "5732", "5734"]},
+          {"category": "Department Stores", "mccs": ["5311"]},
+          {"category": "Home Décor", "mccs": ["5200", "5719", "5950"]},
+          {"category": "Personal Care", "mccs": ["7230", "7298"]},
+          {"category": "Local Cabs", "mccs": ["4121"]},
+          {"category": "Pet Stores", "mccs": ["5995"]},
+          {"category": "Pharmacies", "mccs": ["5912"]},
+          {"category": "Discount Stores", "mccs": ["5399"]},
+          {"category": "Entertainment", "mccs": ["7832", "7922", "7929", "7941"]}
+        ],
+        "exclusions": ["Gift cards", "Grocery purchases", "Flight bookings", "Hotel bookings"],
+        "note": "5% cashback on select online spends based on MCC codes"
+      },
+      "other": {
+        "rate": 1,
+        "effectivePercentage": 0.01,
+        "cap": 500,
+        "capPeriod": "monthly",
+        "note": "1% cashback on all other spends except excluded categories"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on fuel transactions"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on rent payments"
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on wallet loads"
+      },
+      "government": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on government-related transactions"
+      },
+      "jewellery": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on jewellery purchases"
+      },
+      "emi": {
+        "rate": 0,
+        "cap": null,
+        "note": "No cashback on EMI transactions"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": false,
+        "name": null,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "link": null,
+        "note": "SmartBuy portal benefits not applicable for this card"
+      },
+      "partnerMerchants": {
+        "enabled": true,
+        "merchants": [
+          {
+            "name": "Swiggy (Food, Instamart, Dineout, Genie)",
+            "rate": 10,
+            "cap": 1500,
+            "capPeriod": "monthly",
+            "note": "Primary co-brand partner"
+          }
+        ],
+        "note": "10% on Swiggy ecosystem"
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": null
+      },
+      "milestoneAccelerators": null
+    },
+
+    "redemption": {
+      "baseValue": 1.0,
+      "bestValue": 1.0,
+      "bestOption": "Statement credit (automatic)",
+      "minRedemption": null,
+      "redemptionIncrement": null,
+      "convenienceFee": null,
+      "monthlyRedemptionLimit": null,
+      "automaticRedemption": true,
+      "redemptionMethod": "Cashback is automatically credited as statement credit in the subsequent month's statement balance",
+      "effectiveDate": "June 21, 2024",
+
+      "options": [
+        {
+          "type": "statement_credit",
+          "value": 1.0,
+          "description": "Automatic statement credit",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": 0,
+          "partners": [],
+          "note": "Cashback automatically reduces next month's statement balance"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": null,
+      "partners": null,
+      "note": "This is a cashback card, not a rewards points card"
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": null,
+      "acrossUsers": false,
+      "note": "Cashback cannot be pooled"
+    },
+
+    "specialLogic": {
+      "cardLinking": {
+        "required": true,
+        "platform": "Swiggy App",
+        "steps": [
+          "Go to Swiggy app > Accounts section",
+          "Click on 'Swiggy HDFC Bank Credit Card'",
+          "Click on 'Link Your Card to Swiggy'",
+          "Enter mobile number from card application",
+          "Submit OTP to complete linking"
+        ],
+        "note": "Card must be linked to Swiggy app to earn 10% cashback and claim Swiggy One membership"
+      }
+    },
+
+    "calculator": {
+      "enabled": true,
+      "formula": "cashback = (swiggySpend * 0.10) + (online5PercentSpend * 0.05) + (otherSpend * 0.01)",
+      "variables": ["swiggySpend", "online5PercentSpend", "otherSpend"],
+      "caps": {
+        "swiggy": 1500,
+        "online5Percent": 1500,
+        "other": 500
+      }
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "railwayLounge": null,
+        "eligibleLounges": null,
+        "note": "No domestic lounge access on this card"
+      },
+      "international": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "membershipValue": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "eligibleLounges": null,
+        "note": "No international lounge access on this card"
+      }
+    },
+
+    "milestones": [],
+
+    "golf": {
+      "included": true,
+      "complimentaryRounds": 4,
+      "period": "year",
+      "roundsPerMonth": 1,
+      "complimentaryLessons": 12,
+      "lessonsPerMonth": 1,
+      "courses": "Select golf courses in India",
+      "greenFeeWaiver": true,
+      "lessonIncluded": true,
+      "discountBeyondComplimentary": "50% off regular green fee",
+      "bookingNumber": "1800-102-6263",
+      "provider": "Mastercard World",
+      "note": "4 complimentary green fee rounds per calendar year (1 per month) + 12 complimentary golf lessons per year (1 per month)"
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": null
+    },
+
+    "dining": {
+      "included": true,
+      "programs": [
+        {
+          "name": "Mastercard World Dine & Stay",
+          "discount": "Complimentary stay and dinner for 1 person",
+          "cap": null,
+          "frequency": null,
+          "note": "At select Mastercard partner locations worldwide"
+        }
+      ],
+      "hotelDining": null
+    },
+
+    "fuel": {
+      "surchargeWaiver": false,
+      "waiverPercentage": null,
+      "minTransaction": null,
+      "maxTransaction": null,
+      "monthlyCap": null,
+      "applicableStations": null,
+      "rewardsOnFuel": false,
+      "note": "No fuel surcharge waiver on this card. No cashback on fuel transactions."
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% + GST (total ~4.13%) on international transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "Forex markup applies to all non-INR transactions including overseas ATM withdrawals and domestic POS linked to overseas accounts"
+    },
+
+    "concierge": {
+      "included": false,
+      "availability": null,
+      "type": null,
+      "services": null,
+      "contactNumber": null,
+      "note": null
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": null,
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "SmartEMI",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Select partner merchants"],
+        "note": "Available on select merchants and products"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": 499,
+        "gst": true,
+        "minFee": 499
+      },
+      "minAmount": 2500,
+      "tenures": [6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": 0.12,
+        "max": 0.18
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": 0
+      },
+      "cancellationPeriod": null,
+      "eligibleCategories": [
+        "Insurance",
+        "Groceries",
+        "Medical",
+        "Petrol",
+        "Utilities",
+        "Apparel",
+        "Education",
+        "Electronics",
+        "Travel"
+      ],
+      "exclusions": ["Gold and jewellery transactions"],
+      "conversionWindow": "Within 60 days of transaction",
+      "note": "Convert large purchases into Smart EMI for flexible repayments"
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": 0.0375
+      },
+      "processingFee": {
+        "percentage": 1,
+        "minFee": 250,
+        "gst": true
+      },
+      "tenures": [6, 12, 18, 24],
+      "maxAmount": null,
+      "preclosureFee": 3,
+      "note": "Transfer balances from other bank cards"
+    },
+
+    "memberships": [
+      {
+        "name": "Swiggy One",
+        "type": "subscription",
+        "value": 899,
+        "duration": "3 months",
+        "condition": "On card activation as per RBI guidelines",
+        "benefits": [
+          "Unlimited free deliveries on Swiggy",
+          "Extra 30% discount on popular restaurants",
+          "Free delivery on Swiggy Instamart"
+        ],
+        "note": "Claim within 2-3 days of activation via Swiggy app. Existing Swiggy One members get 3-month extension."
+      }
+    ],
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "indigoBluchips": {
+        "enabled": true,
+        "note": "Earn IndiGo BluChips on eligible transactions"
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      },
+      "agodaDiscount": {
+        "enabled": true,
+        "discount": "Up to 12%",
+        "note": "Up to 12% instant discount on worldwide hotels on Agoda"
+      }
+    },
+
+    "travel": {
+      "mastercardWorldBenefits": {
+        "enabled": true,
+        "benefits": [
+          "Complimentary loyalty memberships from top brands",
+          "Dine-and-stay offers",
+          "Privileges in sports, shopping, travel, arts and culture",
+          "Access to exclusive experiences in multiple countries"
+        ],
+        "website": "https://www.priceless.com"
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "condition": null
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": false,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": null,
+      "fraudLiability": {
+        "included": true,
+        "cover": "Zero liability",
+        "reportingWindow": "Report immediately to HDFC Bank's 24-hour Call Centre"
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "This is an entry-level card with limited insurance coverage. Zero lost card liability available if reported immediately."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000,
+      "note": "Contactless payments up to ₹5,000 without PIN"
+    },
+    "virtualCard": {
+      "available": false,
+      "instantIssuance": false,
+      "singleUse": false,
+      "spendControls": false
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": false,
+      "rewardsOnUPI": false,
+      "note": "This is a Mastercard, UPI linking available for RuPay cards only"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international transactions",
+        "Enable/Disable online transactions",
+        "Enable/Disable contactless",
+        "Real-time alerts"
+      ],
+      "platforms": ["HDFC Mobile Banking App", "Swiggy App (Manage Card section)"]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": null,
+    "upgradesTo": null,
+    "note": "This is a co-branded card offered as an additional card alongside other HDFC credit cards"
+  },
+
+  "applicationChannels": [
+    {
+      "channel": "Swiggy App",
+      "url": null,
+      "steps": [
+        "Open Swiggy App",
+        "Go to Accounts section",
+        "Click on 'Swiggy HDFC Bank Credit Card'",
+        "Complete application process"
+      ],
+      "recommended": true
+    },
+    {
+      "channel": "HDFC Bank Website",
+      "url": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/swiggy-hdfc-bank-credit-card",
+      "steps": ["Visit website", "Click Apply Now", "Fill application form", "Submit documents"],
+      "recommended": false
+    },
+    {
+      "channel": "HDFC Bank NetBanking",
+      "url": null,
+      "steps": ["Login to NetBanking", "Go to Cards section", "Apply for credit card"],
+      "recommended": false
+    },
+    {
+      "channel": "HDFC Bank Branch",
+      "url": null,
+      "steps": ["Visit nearest branch", "Request for Swiggy HDFC Credit Card", "Submit application and documents"],
+      "recommended": false
+    }
+  ],
+
+  "meta": {
+    "tags": [
+      "Cashback",
+      "Food Delivery",
+      "Co-branded",
+      "Online Shopping",
+      "Entry Level",
+      "Swiggy",
+      "Mastercard World"
+    ],
+    "bestFor": "Frequent Swiggy users who order food, groceries, and dine out regularly, and also shop online frequently",
+    "notRecommendedFor": "Those who primarily spend on fuel, rent, utilities, or government payments; those seeking lounge access or travel benefits; high spenders who would exceed monthly cashback caps",
+    "rating": {
+      "overall": 4.0,
+      "rewards": 4.5,
+      "benefits": 3.0,
+      "value": 4.5
+    },
+    "verdict": "An excellent entry-level cashback card for frequent Swiggy users. The 10% cashback on Swiggy spends and 5% on select online categories provide excellent value for the low ₹500 annual fee. The automatic statement credit makes redemption hassle-free. However, the card lacks lounge access, fuel surcharge waiver, and comprehensive insurance coverage that premium cards offer. Best suited for those who can maximize cashback on Swiggy and online shopping categories.",
+    "pros": [
+      "10% cashback on all Swiggy platform spends (Food, Instamart, Dineout, Genie)",
+      "5% cashback on select online categories (apparels, electronics, cabs, entertainment)",
+      "Low annual fee of ₹500 with fee waiver on ₹2L spend",
+      "Complimentary 3-month Swiggy One membership worth ₹899",
+      "Cashback as statement credit from June 2024 - no need to spend on Swiggy",
+      "4 free golf rounds and 12 free golf lessons via Mastercard World benefits",
+      "Up to 12% off on Agoda hotel bookings",
+      "Can be held alongside other HDFC credit cards",
+      "Up to 3 free add-on cards"
+    ],
+    "cons": [
+      "No airport lounge access",
+      "No fuel surcharge waiver",
+      "No cashback on fuel, rent, utilities, insurance, EMI, government payments",
+      "Monthly cashback caps limit earnings for high spenders (₹3,500 max per month)",
+      "Higher forex markup of 3.5% + GST",
+      "5% cashback is MCC-based, may not work on all online merchants",
+      "Gift cards and groceries excluded from 5% cashback category",
+      "Limited insurance coverage",
+      "Must link card to Swiggy app for 10% cashback and Swiggy One membership"
+    ],
+    "alternatives": [
+      "hdfc-millennia",
+      "sbi-cashback",
+      "axis-ace",
+      "amazon-pay-icici",
+      "flipkart-axis"
+    ],
+    "competitorComparison": {
+      "amazonPayICICI": "Amazon Pay ICICI offers 5% on Amazon vs 5% on multiple online categories; Swiggy card better for diversified online shopping",
+      "flipkartAxis": "Flipkart Axis offers 5% on Flipkart; Swiggy card offers 5% on Flipkart too plus 10% on Swiggy",
+      "axisFace": "Axis Ace offers 5% on bill payments; Swiggy card excludes utilities but offers 10% on food delivery",
+      "sbiCashback": "SBI Cashback offers 5% on online spends; Swiggy card offers 10% on Swiggy plus 5% on select online"
+    },
+    "launchDate": "July 26, 2023",
+    "lastVerified": "2026-01-05",
+    "dataSource": [
+      "Official HDFC Bank website (www.hdfcbank.com)",
+      "Official Swiggy website (www.swiggy.com)",
+      "HDFC Bank MITC document (November 2025 version)",
+      "Swiggy HDFC Bank Credit Card Terms & Conditions PDF",
+      "HDFC Bank Press Release (July 2023)",
+      "CardExpert.in",
+      "TechnoFino community",
+      "PaisaBazaar.com",
+      "CardMaven.in"
+    ],
+    "changelog": [
+      {
+        "date": "2024-06-21",
+        "change": "Cashback redemption changed from Swiggy Money to Statement Credit",
+        "source": "Official HDFC Bank announcement"
+      },
+      {
+        "date": "2024-08-01",
+        "change": "New late payment fee structure implemented across HDFC cards",
+        "source": "HDFC Bank MITC update"
+      },
+      {
+        "date": "2024-05-22",
+        "change": "Extended Swiggy One membership offer (12 months for new applicants via Swiggy app)",
+        "source": "Swiggy HDFC T&C update"
+      },
+      {
+        "date": "2023-07-26",
+        "change": "Card launched - First co-branded credit card from Swiggy",
+        "source": "HDFC Bank Press Release"
+      }
+    ],
+    "importantNotes": [
+      "Minimum transaction of ₹100 required to earn any cashback",
+      "Card must be linked to Swiggy app to earn 10% cashback on Swiggy and claim Swiggy One membership",
+      "Cashback from previous month is adjusted in subsequent month's statement balance",
+      "Birthday benefit available only after 30 days of card activation",
+      "Lifetime Free (LTF) offers are periodically available through Swiggy app",
+      "Rent payments via third-party apps (CRED, Paytm, etc.) incur 1% fee capped at ₹3,000"
+    ]
+  }
+}

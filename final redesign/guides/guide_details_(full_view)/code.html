@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Guide Details - CreditElite</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ad7138", // Copper
+                        "primary-hover": "#c68648",
+                        "background-light": "#f8f5f2",
+                        "background-dark": "#1b1918", // Espresso
+                        "surface-dark": "#2B2825", // Mocha
+                        "border-dark": "#35302c",
+                        "text-secondary": "#b3aba2",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "serif": ["Noto Serif", "serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "sm": "0.25rem", "md": "0.375rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Scrollbar for that premium feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1b1918; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #35302c; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ad7138; 
+        }
+        
+        .drop-cap::first-letter {
+            font-family: 'Noto Serif', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            float: left;
+            line-height: 0.8;
+            margin-right: 0.5rem;
+            margin-top: 0.25rem;
+            color: #ad7138;
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-white font-display overflow-hidden selection:bg-primary selection:text-white">
+<div class="flex h-screen w-full">
+<!-- LEFT SIDEBAR -->
+<aside class="hidden md:flex flex-col w-72 h-full border-r border-border-dark bg-[#161412] shrink-0">
+<!-- User Profile (Top of Sidebar per inspiration) -->
+<div class="p-6 border-b border-border-dark">
+<div class="flex items-center gap-4 mb-1">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-12 ring-2 ring-primary/20" data-alt="Portrait of Arjun Mehta" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA2K4tM6OD1gE72nWuSN3vBJfEp8cirU2I0yR18U30wGnW-HYdUjAcSKfiuFGFpl2hvG2hiKki3uy78munAL_U1KBBNsb91rhXguaN_jB7AegkN1fp7a_FOqRCg_gtF87TVcZ4hv7hOt9Hd-hcl6kBzNrmAteTwhiChGfPWKTxOiHyzXbJmzDKexWzbB-pInj-IRocUYURPT0WWtX5rNRR_vE-HThAInsD5lRnhf2mf-y0eTY2CDjWH4dTim00eKDbQwMqKMcizRGPl");'>
+</div>
+<div class="flex flex-col">
+<h1 class="text-white text-base font-bold leading-tight">Arjun Mehta</h1>
+<p class="text-primary text-xs font-medium tracking-wide uppercase">Premium Member</p>
+</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 flex flex-col gap-1 p-4 overflow-y-auto">
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg text-text-secondary hover:text-white hover:bg-surface-dark transition-colors cursor-pointer group">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">grid_view</span>
+<span class="text-sm font-medium">Dashboard</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg text-text-secondary hover:text-white hover:bg-surface-dark transition-colors cursor-pointer group">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">credit_card</span>
+<span class="text-sm font-medium">Cards</span>
+</div>
+<!-- Active State -->
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg bg-surface-dark border-l-2 border-primary cursor-pointer">
+<span class="material-symbols-outlined text-primary fill-1">menu_book</span>
+<span class="text-white text-sm font-medium">Guides</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg text-text-secondary hover:text-white hover:bg-surface-dark transition-colors cursor-pointer group">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">analytics</span>
+<span class="text-sm font-medium">Analysis</span>
+</div>
+<div class="mt-8 px-3 text-xs font-bold text-text-secondary uppercase tracking-widest mb-2">My Community</div>
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg text-text-secondary hover:text-white hover:bg-surface-dark transition-colors cursor-pointer group">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">forum</span>
+<span class="text-sm font-medium">Discussions</span>
+<span class="ml-auto bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm">3</span>
+</div>
+</nav>
+<!-- Bottom Settings -->
+<div class="p-4 border-t border-border-dark">
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg text-text-secondary hover:text-white hover:bg-surface-dark transition-colors cursor-pointer group">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</div>
+</div>
+</aside>
+<!-- MAIN CONTENT AREA -->
+<main class="flex-1 flex flex-col h-full relative min-w-0 bg-background-dark">
+<!-- TOP NAV BAR -->
+<header class="flex items-center justify-between border-b border-border-dark px-6 py-4 bg-[#161412]/95 backdrop-blur-sm z-20 sticky top-0">
+<!-- Mobile Menu Trigger -->
+<button class="md:hidden text-white mr-4">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Breadcrumbs & Logo Area -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 text-white/80 md:hidden mb-2">
+<span class="material-symbols-outlined text-primary">diamond</span>
+<span class="font-bold tracking-tight">CreditElite</span>
+</div>
+<nav class="flex items-center gap-2 text-sm">
+<a class="text-text-secondary hover:text-primary transition-colors" href="#">Guides</a>
+<span class="text-text-secondary/50">/</span>
+<a class="text-text-secondary hover:text-primary transition-colors" href="#">Credit Strategy</a>
+<span class="text-text-secondary/50">/</span>
+<span class="text-white font-medium">Rewards</span>
+</nav>
+</div>
+<!-- Right Actions -->
+<div class="flex items-center gap-6">
+<!-- Search -->
+<div class="hidden lg:flex items-center bg-surface-dark rounded-full px-4 py-2 border border-transparent focus-within:border-primary/50 transition-colors w-64">
+<span class="material-symbols-outlined text-text-secondary text-[20px]">search</span>
+<input class="bg-transparent border-none text-sm text-white focus:ring-0 placeholder:text-text-secondary/50 w-full p-0 pl-2" placeholder="Search guides..." type="text"/>
+</div>
+<!-- Notification -->
+<button class="relative text-text-secondary hover:text-white transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 size-2 bg-primary rounded-full border-2 border-background-dark"></span>
+</button>
+</div>
+</header>
+<!-- CONTENT SCROLL AREA -->
+<div class="flex-1 overflow-y-auto relative scroll-smooth group/scroller">
+<!-- READING PROGRESS BAR (Sticky within scroller) -->
+<div class="sticky top-0 left-0 right-0 h-1 bg-surface-dark z-10 w-full">
+<div class="h-full bg-gradient-to-r from-primary via-[#d4af37] to-primary w-[35%] shadow-[0_0_10px_rgba(173,113,56,0.5)]"></div>
+</div>
+<!-- ARTICLE CONTAINER -->
+<article class="max-w-4xl mx-auto px-6 py-10 md:py-16">
+<!-- HERO SECTION -->
+<div class="mb-12">
+<div class="flex flex-wrap gap-4 mb-6 text-xs font-bold tracking-widest uppercase text-primary">
+<span class="px-2 py-1 rounded bg-primary/10 border border-primary/20">Premium Strategy</span>
+<span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-text-secondary">8 min read</span>
+</div>
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.1] mb-6 tracking-tight">
+                            Mastering the Art of <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#e6cba8] to-primary">Premium Travel Rewards</span>
+</h1>
+<div class="flex items-center justify-between border-t border-b border-border-dark py-4 mb-8">
+<div class="flex items-center gap-3">
+<span class="text-text-secondary text-sm">Written by</span>
+<span class="text-white font-medium text-sm">Arjun Mehta</span>
+<span class="text-text-secondary/50">•</span>
+<span class="text-text-secondary text-sm">Updated Oct 24, 2023</span>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-full hover:bg-surface-dark text-text-secondary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-dark text-text-secondary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+</button>
+</div>
+</div>
+<div class="relative w-full aspect-[21/9] rounded-sm overflow-hidden mb-10 group">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent z-10"></div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Abstract golden map lines connecting global cities on a dark background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCVNeIHx8ZzWsY-_0G9cG3K0B_iXja-QL_WOQ0179Uea4qh7OZwx1xCfhRVngPnjJeAUWEVvwn1kRXlEaAZ_IZyVwTKoW2bTLcDsreDRpJUF-fJu9Kcf_rl048KaxMiCmA2jm4MPzqdlXg0g4uLZ6uaA8UNKmS15oLVQd3CF4mChw3ofDfLoHVgt-UXrmMrGTAk9d1QY60WS9iXKGr3U2s3qfTGu_kGaj2lnIF4vV2AkbUTp6iEQ9IOZoThfa_p-SZ8Gt_kGNcajsWy");'>
+</div>
+<div class="absolute bottom-4 left-6 z-20">
+<p class="text-white/80 text-xs font-medium tracking-wide backdrop-blur-md bg-black/30 px-3 py-1 rounded-full inline-block border border-white/10">
+<span class="material-symbols-outlined text-[14px] align-text-bottom mr-1">location_on</span>
+                                    Tokyo, Japan - First Class Lounge
+                                </p>
+</div>
+</div>
+</div>
+<!-- CONTENT BODY -->
+<div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12">
+<!-- Main Text Column -->
+<div class="text-lg leading-relaxed text-[#dcd7d1] font-light space-y-8">
+<p class="drop-cap">
+                                The allure of premium travel rewards isn't just about the occasional free flight; it's about systematically dismantling the cost of luxury. For the discerning Indian traveler, the landscape has shifted. The game is no longer about hoarding points—it's about velocity and valuation.
+                            </p>
+<p>
+                                Most "gurus" will tell you to save for a rainy day. I'm here to tell you that points are a depreciating asset. Airlines devalue their charts annually. Hotel categories shift upwards. The only hedge against this inflation is an "earn and burn" strategy executed with precision.
+                            </p>
+<!-- PULL QUOTE -->
+<blockquote class="my-10 border-l-2 border-primary pl-6 py-2">
+<p class="font-serif text-2xl md:text-3xl text-white italic leading-tight">
+                                    "Your points balance is a liability on the bank's balance sheet. They want to reduce it. Your job is to extract maximum value before they do."
+                                </p>
+</blockquote>
+<h2 class="text-2xl font-serif font-bold text-white mt-10 mb-4 flex items-center gap-3">
+<span class="text-primary text-xl">01.</span> Transfer Partners vs. Portals
+                            </h2>
+<p>
+                                The cardinal sin of credit card rewards is redeeming points directly through a bank portal at a fixed rate (usually ₹0.50 to ₹1.00 per point). By transferring to partners like Singapore Airlines KrisFlyer or Virgin Atlantic, you can unlock values upwards of ₹4.00 per point.
+                            </p>
+<!-- INFO CARD -->
+<div class="bg-surface-dark border border-border-dark rounded-sm p-6 my-8 shadow-lg shadow-black/20">
+<div class="flex items-start gap-4">
+<div class="bg-primary/20 p-2 rounded-full text-primary shrink-0">
+<span class="material-symbols-outlined">lightbulb</span>
+</div>
+<div>
+<h4 class="text-white font-bold text-lg mb-2">Pro Tip: The Sweet Spot</h4>
+<p class="text-base text-text-secondary">
+                                            Look for "Sweet Spots" in award charts. For example, using Virgin Atlantic miles to book ANA First Class from Tokyo to the US/Europe is often considered the best redemption in the world.
+                                        </p>
+</div>
+</div>
+</div>
+<p>
+                                Below is a breakdown of how the value of a single point changes depending on your redemption method. The disparity is shocking.
+                            </p>
+<!-- CUSTOM CSS CHART -->
+<figure class="my-10 p-6 bg-[#12100e] border border-border-dark rounded-sm">
+<h3 class="text-white font-medium mb-6 text-sm uppercase tracking-widest text-center">Value per 10,000 Points (in INR)</h3>
+<div class="flex flex-col gap-5">
+<!-- Bar 1 -->
+<div class="group">
+<div class="flex justify-between text-xs text-text-secondary mb-1">
+<span>Cashback</span>
+<span>₹5,000</span>
+</div>
+<div class="w-full bg-[#35302c] rounded-full h-2 overflow-hidden">
+<div class="bg-text-secondary h-full rounded-full" style="width: 20%"></div>
+</div>
+</div>
+<!-- Bar 2 -->
+<div class="group">
+<div class="flex justify-between text-xs text-text-secondary mb-1">
+<span>Travel Portal</span>
+<span>₹10,000</span>
+</div>
+<div class="w-full bg-[#35302c] rounded-full h-2 overflow-hidden">
+<div class="bg-white/50 h-full rounded-full" style="width: 40%"></div>
+</div>
+</div>
+<!-- Bar 3 -->
+<div class="group">
+<div class="flex justify-between text-sm text-primary font-bold mb-1">
+<span>Partner Transfer (Business Class)</span>
+<span>₹35,000+</span>
+</div>
+<div class="w-full bg-[#35302c] rounded-full h-4 overflow-hidden shadow-[0_0_15px_rgba(173,113,56,0.2)]">
+<div class="bg-gradient-to-r from-primary to-[#d4af37] h-full rounded-full relative" style="width: 95%">
+<div class="absolute top-0 right-0 bottom-0 w-[2px] bg-white animate-pulse"></div>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="text-center text-xs text-text-secondary mt-4 italic">Analysis based on Q3 2023 redemption data across major issuers.</figcaption>
+</figure>
+<h2 class="text-2xl font-serif font-bold text-white mt-10 mb-4 flex items-center gap-3">
+<span class="text-primary text-xl">02.</span> The Premium Card Showdown
+                            </h2>
+<p class="mb-6">
+                                Not all metal cards are created equal. When targeting aspirational travel, you need a card that offers <strong>transferable currency</strong>, not just brand loyalty.
+                            </p>
+<!-- TABLE -->
+<div class="overflow-x-auto border border-border-dark rounded-sm mb-12">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-dark text-xs uppercase tracking-wider text-text-secondary">
+<th class="p-4 font-medium border-b border-border-dark">Feature</th>
+<th class="p-4 font-medium border-b border-border-dark text-white">Infinia Reserve</th>
+<th class="p-4 font-medium border-b border-border-dark text-primary">Platinum Charge</th>
+</tr>
+</thead>
+<tbody class="text-sm">
+<tr class="border-b border-border-dark/50">
+<td class="p-4 text-text-secondary">Reward Rate</td>
+<td class="p-4">3.3% (Base)</td>
+<td class="p-4 text-white font-medium">2.5% (Base)</td>
+</tr>
+<tr class="border-b border-border-dark/50">
+<td class="p-4 text-text-secondary">Lounge Access</td>
+<td class="p-4">Unlimited</td>
+<td class="p-4 text-white font-medium">Unlimited + Guest</td>
+</tr>
+<tr class="bg-primary/5">
+<td class="p-4 text-text-secondary font-medium">Transfer Partners</td>
+<td class="p-4">15 Airlines</td>
+<td class="p-4 text-primary font-bold">22 Airlines</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 class="text-2xl font-serif font-bold text-white mt-10 mb-4 flex items-center gap-3">
+<span class="text-primary text-xl">03.</span> Conclusion
+                            </h2>
+<p>
+                                The path to luxury travel is paved with strategy, not just spending. Assess your goals, pick your ecosystem, and never let points sit idle. The world is waiting, and it's cheaper than you think.
+                            </p>
+</div>
+<!-- SIDEBAR WIDGETS (Desktop Only) -->
+<div class="hidden lg:flex flex-col gap-6 mt-2">
+<!-- Key Takeaways Widget -->
+<div class="bg-surface-dark border border-border-dark p-6 rounded-sm sticky top-24">
+<h4 class="text-primary font-serif font-bold text-lg mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined">key</span> Key Takeaways
+                                </h4>
+<ul class="space-y-4">
+<li class="flex gap-3 text-sm text-white/90">
+<span class="text-primary font-bold">•</span>
+<span>Points depreciate. Use them within 12-18 months.</span>
+</li>
+<li class="flex gap-3 text-sm text-white/90">
+<span class="text-primary font-bold">•</span>
+<span>Transfer partners offer 3x-4x more value than portals.</span>
+</li>
+<li class="flex gap-3 text-sm text-white/90">
+<span class="text-primary font-bold">•</span>
+<span>Amex offers the widest partner network for Indians.</span>
+</li>
+</ul>
+<button class="w-full mt-6 py-3 border border-primary/30 rounded-sm text-primary hover:bg-primary hover:text-white transition-all text-sm font-medium uppercase tracking-wider">
+                                    Download PDF
+                                </button>
+</div>
+<!-- Ad / CTA Widget -->
+<div class="p-6 rounded-sm bg-gradient-to-br from-[#2a2018] to-background-dark border border-primary/20 sticky top-[450px]">
+<h4 class="text-white font-bold mb-2">Need a personalized strategy?</h4>
+<p class="text-xs text-text-secondary mb-4">Get a 1-on-1 audit of your card portfolio.</p>
+<button class="w-full bg-primary text-white py-2 rounded-sm text-sm font-bold shadow-lg hover:bg-primary-hover transition-colors">
+                                    Book Consult
+                                </button>
+</div>
+</div>
+</div>
+</article>
+<!-- RELATED CONTENT FOOTER -->
+<div class="border-t border-border-dark bg-[#12100e] px-6 py-16 mt-12">
+<div class="max-w-4xl mx-auto">
+<h3 class="text-xl font-serif font-bold text-white mb-8">Read Next</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Card 1 -->
+<a class="group flex gap-4 items-start" href="#">
+<div class="w-24 h-24 shrink-0 rounded-sm bg-cover bg-center" data-alt="Close up of a luxury metal credit card" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCj6qoHj8jmOagkUSjAU8MNDsBCKVjAjyfKi9_HAfndI3z24OgfxFqm_ay_o7N2DZVwXE8pzgY13GPuDd5OE8idCaamziyTLnE9j9h4SwdO2TFhHH_vd8KwXAWRDEV2-r7zOg2QWMaEMww2KrPVls-ll1LCbyQemd5kugugCEnpTQ0eqCkzc41TW-pDzhRJng4S1O_PLsP-OtBX24yuMvyNjcF02LtFLm2NKjaw8puCCpmYwMAw1BTRnWIXCXwqYQxSsodIlRMCzYN8");'>
+</div>
+<div>
+<span class="text-[10px] text-primary font-bold uppercase tracking-widest">Analysis</span>
+<h4 class="text-white font-bold mt-1 mb-2 group-hover:text-primary transition-colors leading-snug">
+                                        Hidden Benefits of the Metal Edition Card
+                                    </h4>
+<p class="text-xs text-text-secondary">4 min read</p>
+</div>
+</a>
+<!-- Card 2 -->
+<a class="group flex gap-4 items-start" href="#">
+<div class="w-24 h-24 shrink-0 rounded-sm bg-cover bg-center" data-alt="Airport lounge interior with comfortable seating" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBkWfMfpzpvCXGir5xhg08_LDSoum0cPos3rggrSRuwO-VnR3yHyrdOXdfsEJbTahGUk4as1BDFQjSttoO1TiJWrn3dRIokIlvjGDeBV0uFW_FZ9oA8pQTg1OXgVUJjYUv71F3NtB6e46ZRmlvVxBn7Bs6zPrdkXdqwXukzojlh6_iW-tnL7smudWuB7BSRaPIEJjAiC4zV-mI0C9TRnziOzt3rnDYEp_LoSIhEDXLG8Mmp8wuPZ_zSO55DMXv3HFIHm9ihDFbYHEtf");'>
+</div>
+<div>
+<span class="text-[10px] text-primary font-bold uppercase tracking-widest">Guide</span>
+<h4 class="text-white font-bold mt-1 mb-2 group-hover:text-primary transition-colors leading-snug">
+                                        Lounge Access Guide: 2024 Update
+                                    </h4>
+<p class="text-xs text-text-secondary">6 min read</p>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- FLOATING ACTION BUTTON (Mobile/Tablet primarily, but nice on desktop too) -->
+<div class="absolute bottom-8 right-8 z-30 flex flex-col gap-3">
+<button class="size-12 rounded-full bg-surface-dark text-text-secondary border border-border-dark shadow-lg flex items-center justify-center hover:bg-white hover:text-black transition-all" title="Share">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="size-14 rounded-full bg-primary text-white shadow-[0_4px_20px_rgba(173,113,56,0.4)] flex items-center justify-center hover:bg-primary-hover hover:scale-105 transition-all" title="Save to Favourites">
+<span class="material-symbols-outlined fill-1">favorite</span>
+</button>
+</div>
+</main>
+</div>
+</body></html>

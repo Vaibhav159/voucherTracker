@@ -1,0 +1,962 @@
+{
+  "id": "hdfc-irctc-rupay-credit-card",
+  "name": "IRCTC HDFC Bank Credit Card",
+  "bank": "HDFC Bank",
+  "slug": "irctc-hdfc-bank-credit-card",
+  "image": "assets/cards/hdfc/irctc-hdfc-bank-credit-card.png",
+  "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/irctc-credit-card",
+  "isActive": true,
+
+  "network": {
+    "type": "RuPay",
+    "variant": null,
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "entry",
+    "isCobranded": true,
+    "cobrandPartner": {
+      "name": "IRCTC",
+      "type": "railway",
+      "loyaltyProgram": "IRCTC Loyalty Program"
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 500,
+      "waivable": false,
+      "waiverCondition": null,
+      "note": "₹500 + applicable GST, levied on the 45th day from card issuance"
+    },
+    "annual": {
+      "amount": 500,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 150000,
+        "spendPeriod": "12 months",
+        "waiverText": "Spend ₹1,50,000 or more in an anniversary year, before your Credit Card renewal date"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": 0,
+      "joiningFee": null,
+      "annualFee": null,
+      "rewardSharing": true,
+      "note": "Add-on cards available; reward points credited to primary cardholder account"
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding balance",
+      "effectiveDate": "2025-10-01",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 100, "fee": 0},
+        {"minAmount": 101, "maxAmount": 500, "fee": 100},
+        {"minAmount": 501, "maxAmount": 1000, "fee": 500},
+        {"minAmount": 1001, "maxAmount": 5000, "fee": 600},
+        {"minAmount": 5001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 900},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ],
+      "note": "Fees are exclusive of GST"
+    },
+    "overLimit": {
+      "amount": 550,
+      "percentage": 2.5,
+      "calculation": "2.5% of overlimit amount, subject to minimum of ₹550"
+    },
+    "chequeReturn": null,
+    "cardReplacement": 100,
+    "duplicateStatement": 10
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 15000,
+        "annual": 180000
+      },
+      "selfEmployed": {
+        "itr": 600000
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 65,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": null
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 25000,
+      "max": 300000
+    },
+    "factors": "Based on income, credit score, and existing relationship",
+    "enhancementCriteria": "Good repayment history for 6+ months"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.432,
+      "monthlyRate": 0.036
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.432,
+      "monthlyRate": 0.036
+    },
+    "gracePeriod": {
+      "days": 50,
+      "note": "Up to 50 days interest-free period from date of purchase, subject to full payment of previous balance"
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 200,
+      "calculation": "5% of total outstanding or ₹200, whichever is higher"
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": 40,
+    "dailyLimit": null,
+    "interestFromDay1": true,
+    "note": "Cash advance fee of 2.5% of transaction amount or ₹500, whichever is higher. Cash limit is 40% of total credit limit."
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "Reward Points",
+      "symbol": "RP",
+      "singularUnit": "point",
+      "pluralUnit": "points"
+    },
+    "baseRate": {
+      "rate": 1,
+      "spendUnit": 100,
+      "effectivePercentage": 0.01,
+      "note": "1 Reward Point for every ₹100 spent on all other spends"
+    },
+    "earningText": "Earn 5 Reward Points for every ₹100 spent on IRCTC website/Rail Connect App; 1 Reward Point for every ₹100 on other spends",
+    "minTransactionForRewards": 100,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "Rent payments",
+        "Wallet loads",
+        "Gift voucher purchases",
+        "Prepaid card loading",
+        "Government charges",
+        "Education payments",
+        "EMI interest amount and repayment",
+        "Cash advances",
+        "Payment of outstanding balances",
+        "Payment of card fees and other charges",
+        "Balance transfers"
+      ],
+      "mccs": null,
+      "note": "Transactions in excluded categories do not earn reward points"
+    },
+
+    "caps": {
+      "monthly": {
+        "points": 1000,
+        "cashback": 1000,
+        "note": "1,000 Reward Points per month on IRCTC spends; ₹1,000 cashback cap on SmartBuy"
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": 12000,
+        "cashback": 12000,
+        "note": "12,000 Reward Points per year on IRCTC spends; ₹12,000 cashback cap on SmartBuy"
+      },
+      "resetPeriod": "calendar",
+      "perTransaction": null,
+      "upiCap": {
+        "points": 500,
+        "period": "calendar month",
+        "note": "Maximum 500 reward points per calendar month on UPI transactions"
+      }
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "2 years",
+      "condition": "From date of issuance"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": null,
+        "cashback": null,
+        "vouchers": "Gift voucher worth ₹500",
+        "spendCondition": {
+          "amount": null,
+          "period": "37 days",
+          "transactionCount": 1
+        },
+        "validity": "Complete 1 transaction of any amount within first 37 days from card issuance",
+        "description": "Get a gift voucher worth ₹500 on performing 1 transaction of any amount within first 37 days from card issuance date",
+        "note": "For LTF cards issued from 1st Oct'25 to 31st Dec'25, welcome benefit is provided on card activation"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "irctc": {
+        "rate": 5,
+        "multiplier": 5,
+        "cap": 1000,
+        "capPeriod": "monthly",
+        "annualCap": 12000,
+        "merchants": ["IRCTC Ticketing Website", "Rail Connect App"],
+        "mccs": null,
+        "weekendRate": null,
+        "note": "5 Reward Points per ₹100 spent on IRCTC ticketing website and Rail Connect App"
+      },
+      "travel": {
+        "rate": 1,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "mccs": null,
+        "weekendRate": null,
+        "note": "Standard 1 RP per ₹100 on non-IRCTC travel"
+      },
+      "dining": {
+        "rate": 1,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "weekendRate": null,
+        "note": null
+      },
+      "online": {
+        "rate": 1,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "note": "All online transactions except excluded categories"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on fuel transactions"
+      },
+      "groceries": {
+        "rate": 1,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null
+      },
+      "utilities": {
+        "rate": 1,
+        "cap": null,
+        "note": null
+      },
+      "international": {
+        "rate": 1,
+        "multiplier": null,
+        "cap": null,
+        "note": "Standard reward rate on international transactions"
+      },
+      "insurance": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on insurance payments"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on rent payments"
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on wallet loads"
+      },
+      "upi": {
+        "rate": 1,
+        "multiplier": null,
+        "cap": 500,
+        "capPeriod": "monthly",
+        "note": "1 Reward Point per ₹100 on UPI transactions; capped at 500 points per calendar month"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": true,
+        "name": "HDFC Bank SmartBuy",
+        "multiplier": null,
+        "cashbackRate": 5,
+        "cap": 1000,
+        "capPeriod": "monthly",
+        "annualCap": 12000,
+        "merchants": ["IRCTC Train Bookings"],
+        "link": "https://offers.smartbuy.hdfcbank.com",
+        "note": "Additional 5% cashback on train ticket bookings via HDFC Bank SmartBuy (plus 5% as Reward Points)"
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": [],
+        "note": null
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": []
+      },
+      "milestoneAccelerators": []
+    },
+
+    "redemption": {
+      "baseValue": 1.0,
+      "bestValue": 1.0,
+      "bestOption": "Train ticket booking via HDFC Bank SmartBuy at 1 Reward Point = ₹1",
+      "minRedemption": 100,
+      "redemptionIncrement": null,
+      "convenienceFee": 99,
+      "convenienceFeeNote": "₹99 + GST charged on successful points redemption (subject to change)",
+      "monthlyRedemptionLimit": null,
+
+      "pointsPlusPay": {
+        "enabled": true,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": 70,
+        "note": "Redemption can be made only against 70% of fare ticket amount on train ticket booking via HDFC Bank SmartBuy"
+      },
+
+      "options": [
+        {
+          "type": "train_tickets",
+          "value": 1.0,
+          "description": "Train ticket booking via HDFC Bank SmartBuy",
+          "recommended": true,
+          "minPoints": 100,
+          "processingFee": 99,
+          "partners": ["IRCTC", "SmartBuy"],
+          "note": "1 Reward Point = ₹1; can redeem up to 70% of ticket fare"
+        },
+        {
+          "type": "irctc_vouchers",
+          "value": 1.0,
+          "description": "IRCTC voucher purchase via SmartBuy/NetBanking",
+          "recommended": true,
+          "minPoints": 100,
+          "processingFee": 99,
+          "partners": ["IRCTC"],
+          "note": "1 Reward Point = ₹1 for IRCTC voucher purchase"
+        },
+        {
+          "type": "flight_hotel",
+          "value": 0.30,
+          "description": "Flight/Hotel booking via IRCTC website",
+          "recommended": false,
+          "minPoints": 100,
+          "processingFee": null,
+          "partners": ["air.irctc.co.in", "irctctourism.com"],
+          "note": "1 Reward Point = ₹0.30 for flight/hotel bookings"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": null,
+      "partners": [],
+      "currentBonus": {
+        "active": false,
+        "bonusPercentage": null,
+        "validUntil": null,
+        "applicablePartners": []
+      }
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": null,
+      "acrossUsers": false,
+      "note": "Reward points specific to IRCTC redemption only"
+    },
+
+    "specialLogic": "Reward Points are calculated on spends made within the calendar month cycle. Only settled transactions within the calendar month will be considered for Reward Points posting. Points are posted on the 1st of the following month.",
+
+    "calculator": {
+      "enabled": true,
+      "formula": "irctcPoints = (irctcSpend / 100) * 5; otherPoints = (otherSpend / 100) * 1; totalPoints = min(irctcPoints, 1000) + otherPoints",
+      "variables": ["irctcSpend", "otherSpend", "isSmartBuy", "isUPI"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": false,
+        "complimentaryCount": null,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "note": "No airport lounge access"
+      },
+      "international": {
+        "included": false,
+        "complimentaryCount": null,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "note": "No international airport lounge access"
+      },
+      "railwayLounge": {
+        "included": true,
+        "complimentaryCount": 8,
+        "period": "year",
+        "perQuarterLimit": 2,
+        "accessType": "IRCTC Executive Lounge",
+        "accessProvider": "IRCTC",
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "No minimum spend required for lounge access"
+        },
+        "validationFee": 2,
+        "validationFeeNote": "₹2 non-refundable card validation charge",
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null,
+          "note": "Guests need to pay separately as per lounge operator pricing"
+        },
+        "addOnCardAccess": true,
+        "eligibleLounges": [
+          "Asansol Platform 2 and 5",
+          "Durgapur Platform 1",
+          "Jaipur Platform 1",
+          "New Delhi Platform 1 and 16",
+          "Agra Platform 1",
+          "Ahmedabad Platform 1",
+          "Madurai Platform 1",
+          "Kolkata (Sealdah) Platform 8",
+          "Varanasi Platform 1"
+        ],
+        "loungeCount": 11,
+        "facilities": [
+          "Buffet meal (breakfast/lunch/dinner based on time)",
+          "Tea and coffee with cookies",
+          "Free Wi-Fi",
+          "Newspaper and magazine",
+          "Comfortable seating"
+        ],
+        "additionalServicesChargeable": "Recliners and premium services chargeable separately",
+        "accessDuration": "2 hours",
+        "requiresTrainTicket": true,
+        "note": "8 complimentary access per year (max 2 per quarter). Must present valid credit card and train ticket at lounge entrance."
+      }
+    },
+
+    "milestones": [
+      {
+        "spend": 30000,
+        "period": "quarterly",
+        "benefit": "Gift voucher worth ₹500",
+        "benefitType": "voucher",
+        "value": 500,
+        "conditions": "Spend ₹30,000 in a quarter (90 days)"
+      }
+    ],
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": false,
+      "lessonIncluded": false,
+      "note": null
+    },
+
+    "movies": {
+      "included": false,
+      "platform": null,
+      "offer": null,
+      "freeTickets": null,
+      "frequency": null,
+      "cap": null,
+      "note": null
+    },
+
+    "dining": {
+      "included": false,
+      "programs": [],
+      "hotelDining": {
+        "included": false,
+        "hotels": null,
+        "offer": null
+      }
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 400,
+      "maxTransaction": 5000,
+      "monthlyCap": 250,
+      "capPeriod": "statement cycle",
+      "applicableStations": "All fuel stations in India",
+      "rewardsOnFuel": false,
+      "note": "1% fuel surcharge waiver on transactions between ₹400-₹5,000; max waiver ₹250 per statement cycle. Fuel surcharge varies from 1%-2.5% depending on fuel station and acquiring bank. GST is not reversible."
+    },
+
+    "irctcTransactionWaiver": {
+      "included": true,
+      "waiverPercentage": 1,
+      "cap": 1000,
+      "capPeriod": "month",
+      "applicablePlatforms": ["IRCTC Website", "IRCTC Mobile App", "Rail Connect App", "HDFC Bank SmartBuy"],
+      "note": "1% Transaction surcharge waiver on bookings made via IRCTC platforms, capped at ₹1,000 per month. Waiver reversed on ticket cancellation/refund."
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% of transaction amount + GST on international transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "Forex markup of 3.5% applies to all non-INR transactions"
+    },
+
+    "concierge": {
+      "included": false,
+      "availability": null,
+      "type": null,
+      "services": null,
+      "contactNumber": null,
+      "note": null
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": null,
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "SmartEMI",
+      "noCostEMI": {
+        "available": true,
+        "merchants": null,
+        "note": "No-cost EMI available on select merchants and products"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": 199,
+        "minFee": 199
+      },
+      "minAmount": 2500,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "min": 0.12,
+        "max": 0.18
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": 0
+      },
+      "cancellationPeriod": null,
+      "note": "EMI conversion available; option to convert big spends into EMI after purchase"
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": null
+      },
+      "processingFee": {
+        "percentage": 1,
+        "minFee": 250
+      },
+      "tenures": null,
+      "maxAmount": null,
+      "preclosureFee": null,
+      "note": "Balance transfer processing fee is 1% of transferred amount or ₹250, whichever is higher"
+    },
+
+    "memberships": [],
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "condition": null
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": false,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": null,
+      "fraudLiability": {
+        "included": true,
+        "cover": null,
+        "reportingWindow": "Report immediately to HDFC Bank's 24-hour Call Centre",
+        "note": "Zero liability on fraudulent transactions if reported immediately"
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "This is an entry-level co-branded card with limited insurance benefits. Zero fraud liability available on immediate reporting."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000
+    },
+    "virtualCard": {
+      "available": true,
+      "instantIssuance": true,
+      "singleUse": false,
+      "spendControls": true
+    },
+    "walletSupport": {
+      "googlePay": false,
+      "applePay": false,
+      "samsungPay": false,
+      "payTM": true,
+      "phonePe": true,
+      "note": "RuPay card - compatible with UPI-enabled apps"
+    },
+    "upiLinking": {
+      "available": true,
+      "rewardsOnUPI": true,
+      "rewardRate": 1,
+      "rewardCap": 500,
+      "rewardCapPeriod": "monthly",
+      "note": "IRCTC HDFC Bank Credit Card is enabled for linking to UPI. Earn 1 RP per ₹100 on UPI transactions (max 500 RP/month)"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "app": "HDFC Bank MyCards",
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Real-time alerts",
+        "Card activation",
+        "PIN management"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [],
+    "upgradesTo": [
+      {
+        "cardId": "hdfc-regalia",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false,
+        "note": "Can upgrade to premium HDFC cards based on credit history and spend pattern"
+      }
+    ],
+    "note": "Entry-level co-branded card; upgrade eligibility based on spend history and credit profile"
+  },
+
+  "meta": {
+    "tags": [
+      "Railway",
+      "Travel",
+      "IRCTC",
+      "Co-branded",
+      "Entry Level",
+      "RuPay",
+      "UPI",
+      "Railway Lounge",
+      "Train Booking",
+      "Cashback"
+    ],
+    "bestFor": "Frequent train travelers who book tickets through IRCTC and want to earn rewards on railway bookings with railway lounge access",
+    "notRecommendedFor": "Those who primarily travel by air or rarely use trains; those seeking premium travel benefits or airport lounge access",
+    "rating": {
+      "overall": 3.8,
+      "rewards": 4.2,
+      "benefits": 3.5,
+      "value": 4.0
+    },
+    "verdict": "The IRCTC HDFC Bank Credit Card is an excellent choice for frequent train travelers. With 10% value back on IRCTC bookings (5% rewards + 5% SmartBuy cashback), 8 complimentary railway lounge visits per year, and 1:1 reward redemption for train tickets, it offers substantial savings for regular rail users. The low annual fee of ₹500 (waivable at ₹1.5L spend) and UPI compatibility make it accessible and practical. However, the 1% base reward rate on other spends is below average, making it unsuitable as a primary card for non-railway expenses.",
+    "pros": [
+      "10% combined value back on IRCTC bookings (5% rewards + 5% SmartBuy cashback)",
+      "8 complimentary IRCTC Railway Lounge visits per year",
+      "1:1 reward redemption for train ticket bookings",
+      "Low annual fee of ₹500 with ₹1.5L spend waiver",
+      "UPI-enabled RuPay card with rewards on UPI transactions",
+      "1% IRCTC transaction charge waiver (up to ₹1,000/month)",
+      "Welcome benefit worth ₹500 on first transaction",
+      "Quarterly milestone benefit of ₹500 on ₹30K spend",
+      "Add-on card holders also get railway lounge access"
+    ],
+    "cons": [
+      "Low base reward rate of 1% on non-IRCTC spends",
+      "No airport lounge access",
+      "Limited reward redemption options (mainly IRCTC)",
+      "Monthly reward cap of 1,000 points on IRCTC spends",
+      "2-year reward point expiry",
+      "No transfer partners for miles/points",
+      "Limited travel insurance coverage",
+      "3.5% forex markup for international transactions"
+    ],
+    "alternatives": [
+      "irctc-sbi-card-platinum",
+      "irctc-bob-rupay-credit-card",
+      "au-bank-altura-credit-card"
+    ],
+    "lastVerified": "2026-01-08",
+    "dataSource": [
+      "Official HDFC Bank website (hdfcbank.com)",
+      "IRCTC HDFC Bank Credit Card Terms & Conditions (Updated May 2025)",
+      "HDFC Bank MITC document (Updated Nov 2025)",
+      "HDFC Bank SmartBuy portal",
+      "PaisaBazaar.com",
+      "BankBazaar.com",
+      "CardMaven.in",
+      "TechnoFino.in"
+    ],
+    "changelog": [
+      {
+        "date": "2025-10-01",
+        "change": "Late payment charges structure updated with new slabs",
+        "source": "HDFC Bank MITC"
+      },
+      {
+        "date": "2025-07-01",
+        "change": "Maximum charge per transaction for Rent, Fuel and Education categories now ₹4,999",
+        "source": "Terms & Conditions update"
+      },
+      {
+        "date": "2025-05-29",
+        "change": "Terms & Conditions document updated",
+        "source": "Official HDFC Bank T&C PDF"
+      }
+    ]
+  }
+}

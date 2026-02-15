@@ -1,0 +1,1004 @@
+{
+  "id": "adani-one-icici-bank-platinum",
+  "name": "Adani One ICICI Bank Platinum Credit Card",
+  "bank": "ICICI Bank",
+  "slug": "adani-one-icici-bank-platinum-credit-card",
+  "image": "assets/cards/icici/adani-one-platinum.png",
+  "link": "https://www.icicibank.com/personal-banking/cards/credit-card/adani-icici-credit-card/platinum-card",
+
+  "network": {
+    "type": "Visa",
+    "variant": "Platinum",
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "entry",
+    "isCobranded": true,
+    "cobrandPartner": {
+      "name": "Adani One",
+      "type": "Travel & Lifestyle",
+      "loyaltyProgram": "Adani Reward Points"
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 750,
+      "gst": true,
+      "totalWithGST": 885,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 750,
+      "gst": true,
+      "totalWithGST": 885,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 300000,
+        "spendPeriod": "12 months (anniversary year)",
+        "waiverText": "Spend ₹3,00,000 or more in an anniversary year and get Annual Fee waived for the following year"
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": 0,
+      "joiningFee": 0,
+      "annualFee": 199,
+      "rewardSharing": true
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding (Total Amount Due minus payments received before due date)",
+      "gracePeriod": "3 days",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 100, "fee": 0},
+        {"minAmount": 100, "maxAmount": 500, "fee": 100},
+        {"minAmount": 501, "maxAmount": 1000, "fee": 500},
+        {"minAmount": 1001, "maxAmount": 5000, "fee": 600},
+        {"minAmount": 5001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": 25000, "fee": 900},
+        {"minAmount": 25001, "maxAmount": 50000, "fee": 1100},
+        {"minAmount": 50001, "maxAmount": null, "fee": 1300}
+      ]
+    },
+    "overLimit": {
+      "amount": 550,
+      "percentage": 2.5,
+      "note": "2.5% of over-limit amount, minimum ₹550"
+    },
+    "chequeReturn": {
+      "percentage": 2,
+      "minFee": 500,
+      "note": "2% of Total Amount Due, minimum ₹500. Additional ₹50+GST from savings account"
+    },
+    "autoDebitReturn": {
+      "percentage": 2,
+      "minFee": 500,
+      "note": "2% of Total Amount Due, minimum ₹500. Additional ₹50+GST from savings account"
+    },
+    "cardReplacement": 200,
+    "cashPaymentAtBranch": 150,
+    "duplicateStatement": null
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 20000,
+        "annual": 240000
+      },
+      "selfEmployed": {
+        "itr": 240000
+      }
+    },
+    "age": {
+      "min": 21,
+      "max": 60,
+      "addOnMin": 18
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 700,
+      "recommended": 750
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": null
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 25000,
+      "max": 300000
+    },
+    "factors": "Based on income, credit score, and existing relationship",
+    "enhancementCriteria": "Good repayment history for 6+ months"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375,
+      "note": "3.75% per month (45% per annum)"
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375,
+      "note": "3.75% per month (45% per annum) from day of transaction"
+    },
+    "gracePeriod": {
+      "minDays": 18,
+      "maxDays": 48,
+      "note": "Interest-free period of 18 to 48 days if previous balance paid in full"
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 100,
+      "calculation": "5% of outstanding amount or ₹100, whichever is higher, plus any overlimit amount and fees"
+    },
+    "penaltyAPR": {
+      "rate": 0.45,
+      "triggerCondition": "Default case - up to 3.75% per month"
+    }
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": 10,
+    "dailyLimit": 20000,
+    "note": "Cash limit is 10% of credit limit up to ₹20,000 for first 180 days, then at bank's discretion",
+    "interestFromDay1": true
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "Adani Reward Points",
+      "symbol": "ARP",
+      "singularUnit": "point",
+      "pluralUnit": "points"
+    },
+    "baseRate": {
+      "description": "Points are earned as a percentage of spend amount",
+      "adaniEcosystem": {
+        "rate": 3,
+        "effectivePercentage": 0.03,
+        "note": "3% Adani Reward Points on Adani One ecosystem - flights, hotels, trains, Adani-managed airports, Trainman, Adani Gas, Adani Electricity"
+      },
+      "international": {
+        "rate": 1.5,
+        "effectivePercentage": 0.015,
+        "note": "1.5% Adani Reward Points on international spends"
+      },
+      "domestic": {
+        "rate": 1,
+        "effectivePercentage": 0.01,
+        "note": "1% Adani Reward Points on all other domestic spends (excluding fuel, rent, and other restricted categories)"
+      },
+      "utilityAndInsurance": {
+        "rate": 0.5,
+        "effectivePercentage": 0.005,
+        "note": "0.5% Adani Reward Points on utility and insurance spends"
+      }
+    },
+    "earningText": "Earn 3% on Adani ecosystem, 1.5% on international, 1% on domestic, 0.5% on utility/insurance",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Fuel transactions",
+        "Rent payments",
+        "Wallet loads (E-Wallet Reload)",
+        "Government payments",
+        "Tax payments",
+        "EMI transactions",
+        "Cash withdrawals",
+        "Property management services (rent, maintenance, packer & movers, construction, property purchases)",
+        "Third party wallets"
+      ],
+      "mccs": [
+        "5541", "5542", "1361", "3851", "5983", "9752", "5555", "5172",
+        "6513", "7014", "7407", "5271",
+        "9405", "9222", "9399", "9402", "9211", "6760",
+        "9311", "9313", "7276",
+        "6540",
+        "1520", "1750", "1740", "1711", "1761", "1771", "1731",
+        "6011", "6050", "6051", "6529", "6530", "6538", "6666", "7777", "9999", "6010", "3882", "6541", "6542"
+      ],
+      "note": "No reward points on fuel, rent, government, wallet loads, EMI, cash advances, and property management categories"
+    },
+
+    "caps": {
+      "monthly": {
+        "points": null,
+        "cashback": null,
+        "note": "No specific monthly cap mentioned for this card"
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null,
+        "note": "Rewards are uncapped"
+      },
+      "resetPeriod": "statement",
+      "perTransaction": null
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "36 months",
+      "condition": "From date of issuance"
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "hotelVoucher": {
+          "value": 1000,
+          "condition": "On card activation",
+          "minBookingValue": 5000,
+          "validity": "6 months from issuance",
+          "redemption": "Must book from Adani One platform with Adani Rewards Membership Account login"
+        },
+        "flightVoucher": {
+          "value": 2000,
+          "spendCondition": {
+            "amount": 10000,
+            "period": "60 days of card activation"
+          },
+          "validity": "6 months from issuance",
+          "redemption": "Must book from Adani One platform with Adani Rewards Membership Account login"
+        },
+        "holidayVoucher": {
+          "value": 2000,
+          "minBookingValue": 20000,
+          "condition": "On card activation"
+        },
+        "totalWelcomeValue": 5000,
+        "description": "Welcome benefits worth ₹5,000 - Hotel voucher ₹1,000 on activation, Flight voucher ₹2,000 on spending ₹10,000 within 60 days, Holiday voucher ₹2,000"
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": true,
+        "pointsPerReferral": 750,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": "Earn 750 Adani Reward Points on every successful referral"
+      }
+    },
+
+    "categories": {
+      "adaniEcosystem": {
+        "rate": 3,
+        "effectivePercentage": 0.03,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": ["Adani One app (flights, hotels, trains, buses, cabs)", "Adani-managed airports", "Trainman", "Adani Gas", "Adani Electricity", "Duty-free at Adani airports"],
+        "note": "3% on entire Adani ecosystem"
+      },
+      "international": {
+        "rate": 1.5,
+        "effectivePercentage": 0.015,
+        "cap": null,
+        "capPeriod": null,
+        "note": "1.5% on all international transactions"
+      },
+      "domestic": {
+        "rate": 1,
+        "effectivePercentage": 0.01,
+        "cap": null,
+        "capPeriod": null,
+        "note": "1% on all other domestic spends (except excluded categories)"
+      },
+      "utility": {
+        "rate": 0.5,
+        "effectivePercentage": 0.005,
+        "cap": null,
+        "note": "0.5% on utility spends"
+      },
+      "insurance": {
+        "rate": 0.5,
+        "effectivePercentage": 0.005,
+        "cap": null,
+        "note": "0.5% on insurance spends"
+      },
+      "fuel": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on fuel transactions"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on rent payments. 1% fee on rent transactions"
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on wallet loads. 1% fee on wallet load transactions of ₹5,000 or more (w.e.f. Jan 15, 2026)"
+      },
+      "government": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on government payments and tax payments"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": true,
+        "name": "iShop",
+        "cashback": "up to 4%",
+        "link": "https://www.icici.bank.in/ishop",
+        "note": "Earn up to 4% cashback on iShop"
+      },
+      "partnerMerchants": {
+        "enabled": false,
+        "merchants": [],
+        "note": null
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": []
+      },
+      "milestoneAccelerators": []
+    },
+
+    "redemption": {
+      "bestOption": "Redeem on Adani One platform for flights, hotels, train bookings, airport services",
+      "minRedemption": null,
+      "redemptionIncrement": null,
+      "convenienceFee": 99,
+
+      "options": [
+        {
+          "type": "travel",
+          "description": "Flight, hotel, train, bus, cab bookings via Adani One platform",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": null,
+          "partners": ["Adani One"],
+          "note": "Best value redemption - use for travel bookings"
+        },
+        {
+          "type": "airport_services",
+          "description": "Duty-free purchases at Adani airports, porter services, car parking, holiday bookings",
+          "recommended": true,
+          "minPoints": null,
+          "processingFee": null,
+          "partners": ["Adani-managed airports"],
+          "note": "Redeem for airport services at Adani airports"
+        },
+        {
+          "type": "in_store",
+          "description": "In-store purchases at participating stores",
+          "recommended": false,
+          "minPoints": null,
+          "processingFee": null,
+          "partners": ["Participating stores"],
+          "note": "Redeem at participating retail stores"
+        }
+      ]
+    },
+
+    "transferPartners": {
+      "enabled": true,
+      "partners": [
+        {
+          "name": "YES Bank Reward Points",
+          "type": "bank_points",
+          "program": "YES Bank Rewards",
+          "ratio": {
+            "partnerPoints": 400,
+            "adaniPoints": 100,
+            "display": "400:100"
+          },
+          "direction": "inbound",
+          "note": "Convert YES Bank reward points to Adani reward points at 400:100 ratio"
+        }
+      ],
+      "note": "Points can be received from YES Bank Rewards program"
+    },
+
+    "pooling": {
+      "enabled": false,
+      "eligibleCards": [],
+      "acrossUsers": false,
+      "note": "Points are credited to Adani OneApp Rewards account"
+    },
+
+    "specialLogic": "Reward points are credited to Adani OneApp in the form of Adani OneApp Rewards at the end of the billing cycle"
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": true,
+        "complimentaryCount": 8,
+        "countPerQuarter": 2,
+        "period": "year (2 per quarter)",
+        "accessType": "Domestic Airport Lounges",
+        "accessProvider": "DreamFolks",
+        "spendRequired": {
+          "amount": null,
+          "period": null,
+          "note": "No spend requirement - complimentary lounge access available without quarterly spend threshold (unlike other ICICI cards)"
+        },
+        "guestAccess": {
+          "included": false,
+          "freeGuests": 0,
+          "guestFee": null
+        },
+        "premiumLoungeUpgrade": {
+          "included": true,
+          "count": 8,
+          "period": "year (2 per quarter)",
+          "airports": "Adani-managed airports",
+          "note": "Free upgrades to Premium lounge, free child entry and 50% discount on liquor"
+        },
+        "eligibleLounges": "8 domestic lounges at all airports"
+      },
+      "international": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "note": "No international lounge access on Platinum variant"
+      }
+    },
+
+    "airportServices": {
+      "valetParking": {
+        "included": true,
+        "count": 2,
+        "period": "year",
+        "condition": "On card activation",
+        "airports": "Adani-managed airports"
+      },
+      "premiumCarParking": {
+        "included": true,
+        "count": 2,
+        "period": "year",
+        "condition": "On card activation",
+        "airports": "Adani-managed airports"
+      },
+      "porterServices": {
+        "included": true,
+        "count": 4,
+        "period": "year",
+        "condition": "Spend-based unlock - 2 services per ₹1,00,000 spent",
+        "airports": "Adani-managed airports",
+        "note": "Porter services get unlocked on each ₹1,00,000 spend (2 services per ₹1L, up to 4 services per year)"
+      },
+      "meetAndGreet": {
+        "included": false,
+        "count": 0,
+        "note": "Meet and Greet (Pranaam) service not available on Platinum variant"
+      }
+    },
+
+    "milestones": [],
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": 0,
+      "period": null,
+      "courses": null,
+      "note": null
+    },
+
+    "movies": {
+      "included": true,
+      "platform": "BookMyShow / INOX",
+      "offer": "25% off up to ₹100",
+      "frequency": "Twice per month",
+      "cap": 100,
+      "spendRequired": {
+        "amount": 25000,
+        "period": "preceding quarter",
+        "effectiveDate": "Jan 15, 2026",
+        "note": "W.e.f. Jan 15, 2026, spend ₹25,000 in preceding quarter to enjoy the offer"
+      },
+      "note": "Enjoy flat 25% off up to ₹100 through BookMyShow/INOX twice every month"
+    },
+
+    "dining": {
+      "included": true,
+      "programs": [
+        {
+          "name": "EazyDiner Prime",
+          "membership": "Free for 3 months",
+          "condition": "On card activation",
+          "note": "Complimentary EazyDiner Prime membership for 3 months"
+        },
+        {
+          "name": "Culinary Treats Programme",
+          "offer": "Dining discounts",
+          "note": "Get dining discounts with ICICI Bank's Culinary Treats Programme"
+        }
+      ]
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": null,
+      "maxTransaction": 4000,
+      "monthlyCap": null,
+      "statementCap": 50000,
+      "applicableStations": "All fuel stations in India",
+      "rewardsOnFuel": false,
+      "feeOnHighValue": {
+        "threshold": 10000,
+        "feePercentage": 1,
+        "note": "1% fee on fuel transactions exceeding ₹10,000 (w.e.f. Nov 15, 2024)"
+      },
+      "note": "1% fuel surcharge waiver on all petrol pumps for transactions up to ₹4,000. Fuel surcharge waiver applicable for spends up to ₹50,000 per statement cycle."
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% + GST on international transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "fee": "3.5% (w.e.f. Jan 15, 2026)",
+        "currentFee": "1%",
+        "recommendation": "Always decline DCC and pay in local currency"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "3.5% forex markup applies to all non-INR transactions"
+    },
+
+    "concierge": {
+      "included": false,
+      "availability": null,
+      "type": null,
+      "services": null,
+      "contactNumber": null,
+      "note": "Concierge service not specifically mentioned for Platinum variant"
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": null,
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "Instant EMI / EMI on Call",
+      "noCostEMI": {
+        "available": true,
+        "merchants": ["Various partner merchants"],
+        "note": "No-cost EMI available on select merchants and products"
+      },
+      "conversionFee": {
+        "percentage": 2.99,
+        "maxFee": 299,
+        "gst": true,
+        "note": "Processing fee of 2.99%, capped at max ₹299 + 18% GST on all Instant EMI transactions"
+      },
+      "minAmount": null,
+      "tenures": [3, 6, 9, 12, 18, 24],
+      "interestRates": {
+        "instantEMI": 0.1599,
+        "emiOnCall": "15% to 18%",
+        "note": "15.99% per annum on reducing balance for Instant EMI; 15-18% for EMI on Call"
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": 0,
+        "note": "Up to 3% on principal outstanding amount plus interest of upcoming unbilled EMI"
+      },
+      "cancellationPeriod": null,
+      "note": "EMI conversion available. 18% GST on interest component."
+    },
+
+    "balanceTransfer": {
+      "available": true,
+      "interestRate": {
+        "promotional": null,
+        "promotionalPeriod": null,
+        "regular": 0.0375
+      },
+      "processingFee": {
+        "percentage": null,
+        "minFee": null
+      },
+      "tenures": null,
+      "maxAmount": null,
+      "preclosureFee": null,
+      "note": "Balance transfer facility available"
+    },
+
+    "memberships": [
+      {
+        "name": "EazyDiner Prime",
+        "type": "subscription",
+        "value": null,
+        "duration": "3 months",
+        "condition": "On card activation",
+        "note": "Complimentary 3-month EazyDiner Prime membership"
+      }
+    ],
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": {
+        "included": false,
+        "count": null,
+        "airline": null
+      },
+      "companionPass": {
+        "included": false,
+        "condition": null
+      },
+      "upgradeVouchers": {
+        "included": false,
+        "count": null,
+        "condition": null
+      },
+      "loyaltyTierCredit": {
+        "included": false,
+        "tier": null,
+        "program": null
+      }
+    },
+
+    "hotelPerks": {
+      "eliteStatus": {
+        "included": false,
+        "tier": null,
+        "program": null
+      },
+      "freeNights": {
+        "included": false,
+        "count": null,
+        "condition": null,
+        "maxValue": null
+      },
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": {
+        "included": false,
+        "amount": null,
+        "condition": null
+      }
+    },
+
+    "additionalCharges": {
+      "rentPayTransactions": {
+        "fee": "1% of transaction amount",
+        "mcc": "6513",
+        "note": "1% fee on all rent payment transactions"
+      },
+      "fuelTransactions": {
+        "fee": "1% of transaction amount",
+        "threshold": 10000,
+        "note": "1% fee on fuel transactions exceeding ₹10,000 (w.e.f. Nov 15, 2024)"
+      },
+      "utilityTransactions": {
+        "fee": "1% of transaction amount",
+        "threshold": 50000,
+        "note": "1% fee on utility payment transactions exceeding ₹50,000 (w.e.f. Nov 15, 2024)"
+      },
+      "educationPayment": {
+        "fee": "1% of transaction amount",
+        "condition": "Through third-party apps",
+        "note": "1% fee for education payments made through third-party apps (w.e.f. Nov 15, 2024)"
+      },
+      "transportationTransaction": {
+        "fee": "1% of transaction amount",
+        "threshold": 50000,
+        "effectiveDate": "Jan 15, 2026",
+        "note": "1% fee on transportation transactions exceeding ₹50,000 (w.e.f. Jan 15, 2026)"
+      },
+      "walletLoad": {
+        "fee": "1% of transaction amount",
+        "threshold": 5000,
+        "effectiveDate": "Jan 15, 2026",
+        "note": "1% fee for wallet load transactions of ₹5,000 or more (w.e.f. Jan 15, 2026)"
+      },
+      "skillBasedGaming": {
+        "fee": "2% of transaction amount",
+        "effectiveDate": "Jan 15, 2026",
+        "note": "2% fee for skill-based gaming transactions (w.e.f. Jan 15, 2026)"
+      }
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "condition": null
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": false,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": false,
+      "cover": null,
+      "fraudLiability": {
+        "included": false,
+        "cover": null,
+        "reportingWindow": null
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "This card does not specifically include independent insurance coverage. Some base insurance may be available - refer to ICICI Bank's comprehensive insurance cover document for details."
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000
+    },
+    "virtualCard": {
+      "available": true,
+      "instantIssuance": true,
+      "singleUse": false,
+      "spendControls": true,
+      "note": "Card activated for online use within 30 minutes"
+    },
+    "walletSupport": {
+      "googlePay": true,
+      "applePay": false,
+      "samsungPay": true,
+      "payTM": true,
+      "phonePe": true
+    },
+    "upiLinking": {
+      "available": false,
+      "rewardsOnUPI": false,
+      "note": "Visa Platinum variant - UPI on RuPay Credit Card functionality not applicable"
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Real-time alerts"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": true,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount (TAD)", "Minimum due (MAD)", "Fixed amount"]
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": [],
+    "upgradesTo": [
+      {
+        "cardId": "adani-one-icici-bank-signature",
+        "name": "Adani One ICICI Bank Signature Credit Card",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false,
+        "benefits": "Higher rewards (7% on Adani ecosystem, 2% international, 1.5% domestic), Pranaam service, international lounge access, more airport benefits"
+      }
+    ],
+    "note": "Can upgrade to Signature variant for enhanced benefits"
+  },
+
+  "meta": {
+    "tags": [
+      "Travel",
+      "Airport Benefits",
+      "Co-branded",
+      "Entry Level",
+      "Adani Ecosystem",
+      "Lounge Access",
+      "Budget Friendly"
+    ],
+    "bestFor": "Frequent users of Adani ecosystem services (flights, trains, utilities) who want airport benefits without high annual fees",
+    "notRecommendedFor": "Those who don't use Adani services, international travelers (high forex markup, no international lounge), premium benefit seekers",
+    "rating": {
+      "overall": 3.5,
+      "rewards": 3.5,
+      "benefits": 3.5,
+      "value": 4.0
+    },
+    "verdict": "A budget-friendly entry-level co-branded card ideal for users within the Adani ecosystem. The card shines with complimentary domestic lounge access without spend requirements (unlike most ICICI cards), and good value welcome benefits worth ₹5,000. However, rewards outside the Adani ecosystem are modest, and the lack of international lounge access and high forex markup limit its appeal for frequent international travelers. Best suited for those who regularly use Adani services and can maximize the 3% reward rate.",
+    "pros": [
+      "Complimentary domestic lounge access without spend requirement (unlike other ICICI cards that require ₹75,000 quarterly spend)",
+      "3% rewards on Adani ecosystem - flights, hotels, trains, airports, utilities",
+      "Welcome benefits worth ₹5,000 (flight, hotel, holiday vouchers)",
+      "Low annual fee of ₹750 with waiver on ₹3 lakh spend",
+      "8 premium lounge upgrades per year at Adani airports",
+      "Porter services, valet parking, premium car parking at Adani airports",
+      "1% fuel surcharge waiver",
+      "Rewards are uncapped"
+    ],
+    "cons": [
+      "Low rewards (1%) outside Adani ecosystem",
+      "No international lounge access",
+      "High forex markup of 3.5%",
+      "No insurance coverage",
+      "No dining benefits beyond EazyDiner membership",
+      "Limited to Adani-managed airports for premium services",
+      "Points expire in 36 months",
+      "No meet and greet (Pranaam) service - only on Signature variant"
+    ],
+    "alternatives": [
+      "adani-one-icici-bank-signature",
+      "icici-bank-coral",
+      "axis-ace",
+      "hdfc-millennia"
+    ],
+    "launchDate": "2024-06-03",
+    "lastVerified": "2026-01-07",
+    "dataSource": [
+      "Official ICICI Bank website",
+      "MITC document dated Dec 12, 2025",
+      "Adani One official website",
+      "Paisabazaar.com",
+      "BankBazaar.com",
+      "CardInsider.com",
+      "Finology Select",
+      "Adani Enterprise press release"
+    ],
+    "changelog": [
+      {
+        "date": "2024-06-03",
+        "change": "Card launched - India's first credit card with airport-linked benefits",
+        "source": "Adani Enterprises press release"
+      },
+      {
+        "date": "2024-11-15",
+        "change": "New fees: 1% on fuel transactions >₹10K, 1% on utility >₹50K, 1% on education via third-party. Spend threshold for annual fee waiver excludes rent, govt, education payments",
+        "source": "ICICI Bank MITC"
+      },
+      {
+        "date": "2026-01-15",
+        "change": "Upcoming: BookMyShow offer requires ₹25,000 quarterly spend. DCC fee increases to 3.5%. New fees on wallet loads, transportation, skill-based gaming",
+        "source": "ICICI Bank MITC dated Dec 12, 2025"
+      }
+    ]
+  }
+}

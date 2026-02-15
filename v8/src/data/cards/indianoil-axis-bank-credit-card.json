@@ -1,0 +1,952 @@
+{
+  "id": "axis-indianoil-credit-card",
+  "name": "IndianOil Axis Bank Credit Card",
+  "bank": "Axis Bank",
+  "slug": "indianoil-axis-bank-credit-card",
+  "image": "assets/cards/axis/indianoil-axis-bank-credit-card.png",
+  "link": "https://www.axisbank.com/retail/cards/credit-card/indianoil-axis-bank-credit-card",
+  "isActive": true,
+
+  "network": {
+    "type": "RuPay",
+    "variant": null,
+    "bin": null
+  },
+
+  "cardType": {
+    "category": "personal",
+    "tier": "entry",
+    "isCobranded": true,
+    "cobrandPartner": {
+      "name": "Indian Oil Corporation Limited (IOCL)",
+      "type": "fuel",
+      "loyaltyProgram": "EDGE REWARDS"
+    },
+    "material": "plastic"
+  },
+
+  "fees": {
+    "currency": "INR",
+    "joining": {
+      "amount": 500,
+      "gst": true,
+      "waivable": false,
+      "waiverCondition": null
+    },
+    "annual": {
+      "amount": 500,
+      "gst": true,
+      "firstYearWaived": false,
+      "renewalWaiver": {
+        "available": true,
+        "spendThreshold": 350000,
+        "spendPeriod": "card anniversary year",
+        "waiverText": "Spend ₹3,50,000 in a card anniversary year for annual fee waiver",
+        "exclusions": ["Rent (MCC 6513)", "Wallet (MCC 6540)", "Insurance", "EMI transactions", "Cash withdrawals", "Fee & charges", "GST", "Reversals", "Temporary credit"]
+      }
+    },
+    "addOnCard": {
+      "available": true,
+      "freeCount": 0,
+      "joiningFee": null,
+      "annualFee": null,
+      "rewardSharing": true
+    },
+    "latePayment": {
+      "amount": null,
+      "calculation": "Tiered based on outstanding",
+      "tiers": [
+        {"minAmount": 0, "maxAmount": 500, "fee": 0},
+        {"minAmount": 501, "maxAmount": 5000, "fee": 500},
+        {"minAmount": 5001, "maxAmount": 10000, "fee": 750},
+        {"minAmount": 10001, "maxAmount": null, "fee": 1200}
+      ],
+      "additionalCharge": {
+        "amount": 100,
+        "condition": "If MAD not paid for two consecutive billing cycles"
+      }
+    },
+    "overLimit": {
+      "amount": 500,
+      "percentage": 2.5,
+      "note": "2.5% of over-limit amount, minimum ₹500"
+    },
+    "chequeReturn": {
+      "amount": 500,
+      "percentage": 2,
+      "note": "2% of payment amount, minimum ₹500 (revised from ₹450 effective Dec 20, 2024). Maximum cap of ₹1,500 discontinued."
+    },
+    "cardReplacement": 100,
+    "duplicateStatement": 100,
+    "cashPaymentFee": 175
+  },
+
+  "eligibility": {
+    "income": {
+      "salaried": {
+        "monthly": 20000,
+        "annual": 240000
+      },
+      "selfEmployed": {
+        "itr": 240000
+      }
+    },
+    "age": {
+      "min": 18,
+      "max": 70,
+      "addOnMin": 15
+    },
+    "employmentType": "Both",
+    "creditScore": {
+      "minimum": 650,
+      "recommended": 700
+    },
+    "existingRelationship": {
+      "required": false,
+      "type": null,
+      "note": null
+    },
+    "geography": {
+      "availableIn": ["All India"],
+      "restrictions": null
+    },
+    "citizenship": "Indian Resident or NRI"
+  },
+
+  "creditLimit": {
+    "typical": {
+      "min": 25000,
+      "max": 300000
+    },
+    "factors": "Based on income, credit score, and existing relationship",
+    "enhancementCriteria": "Good repayment history for 6+ months"
+  },
+
+  "interest": {
+    "purchaseAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "cashAdvanceAPR": {
+      "annualRate": 0.45,
+      "monthlyRate": 0.0375
+    },
+    "gracePeriod": {
+      "days": 50,
+      "note": "From transaction date if previous balance paid in full"
+    },
+    "minPayment": {
+      "percentage": 0.05,
+      "minAmount": 200,
+      "calculation": "100% of (Interest/finance charge, all fees, loans, taxes) + 2% of (Purchases/Cash Withdrawals)"
+    },
+    "penaltyAPR": {
+      "rate": null,
+      "triggerCondition": null
+    },
+    "note": "Finance/Interest charges revised to 3.75% per month from 3.6% effective Dec 20, 2024"
+  },
+
+  "cashAdvance": {
+    "feePercentage": 2.5,
+    "minFee": 500,
+    "maxFee": null,
+    "limitPercentage": 30,
+    "dailyLimit": null,
+    "interestFromDay1": true
+  },
+
+  "rewards": {
+    "type": "points",
+    "currency": {
+      "name": "EDGE REWARD Points",
+      "symbol": "ERP",
+      "singularUnit": "point",
+      "pluralUnit": "points"
+    },
+    "baseRate": {
+      "rate": 1,
+      "spendUnit": 100,
+      "effectivePercentage": 0.002
+    },
+    "earningText": "Earn 1 EDGE REWARD Point for every ₹100 spent",
+    "minTransactionForRewards": null,
+
+    "exclusions": {
+      "categories": [
+        "Insurance (MCC 5960, 6300, 6381, 6051, 6012)",
+        "Gold/Jewelry (MCC 5094, 5944)",
+        "Wallet (MCC 6540)",
+        "Rent (MCC 6513)",
+        "Utilities (MCC 4814, 4816, 4899, 4900)",
+        "Government Institutions (MCC 9222, 9311, 9399, 9402)",
+        "Education",
+        "EMI transactions",
+        "Cash withdrawals"
+      ],
+      "mccs": ["5960", "6300", "6381", "6051", "6012", "5094", "5944", "6540", "6513", "4814", "4816", "4899", "4900", "9222", "9311", "9399", "9402"],
+      "note": "Spends on these categories will not earn EDGE REWARD Points"
+    },
+
+    "caps": {
+      "monthly": {
+        "points": null,
+        "cashback": null
+      },
+      "quarterly": {
+        "points": null,
+        "cashback": null
+      },
+      "annual": {
+        "points": null,
+        "cashback": null
+      },
+      "resetPeriod": "statement",
+      "perTransaction": null
+    },
+
+    "expiry": {
+      "hasExpiry": true,
+      "period": "3 years",
+      "condition": "From date of earning. Points also expire if no eligible transaction for 365 days."
+    },
+
+    "bonuses": {
+      "welcome": {
+        "enabled": true,
+        "points": 1250,
+        "cashback": null,
+        "vouchers": null,
+        "spendCondition": {
+          "amount": null,
+          "period": "30 days",
+          "transactionCount": null,
+          "transactionType": "fuel"
+        },
+        "validity": "Within 30 days of card issuance",
+        "description": "Earn EDGE REWARD Points worth up to ₹250 (max 1250 points) equivalent to the value of first fuel transaction made within 30 days of card issuance. Only applicable on primary card, not add-on cards.",
+        "note": "This is a one-time offer. EDGE REWARD Points credited within 30 days of eligible transaction. Fuel transactions identified by MCC 5541, 5542, 5983."
+      },
+      "activation": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "renewal": {
+        "enabled": false,
+        "points": null,
+        "condition": null
+      },
+      "birthday": {
+        "enabled": false,
+        "multiplier": null,
+        "bonusPoints": null,
+        "validity": null
+      },
+      "anniversary": {
+        "enabled": false,
+        "bonusPoints": null,
+        "condition": null
+      },
+      "referral": {
+        "enabled": false,
+        "pointsPerReferral": null,
+        "cashPerReferral": null,
+        "cap": null,
+        "condition": null
+      }
+    },
+
+    "categories": {
+      "fuel": {
+        "rate": 20,
+        "spendUnit": 100,
+        "effectivePercentage": 0.04,
+        "multiplier": 20,
+        "cap": 1000,
+        "capPeriod": "monthly",
+        "merchants": ["IndianOil (IOCL) outlets only"],
+        "mccs": ["5541", "5542", "5983"],
+        "transactionRange": {
+          "min": 400,
+          "max": 4000
+        },
+        "note": "4% value back by earning 20 EDGE REWARD Points per ₹100 spent at IOCL outlets. Max 1000 accelerated points per statement month. Applicable on fuel transactions between ₹400 to ₹4,000."
+      },
+      "online": {
+        "rate": 5,
+        "spendUnit": 100,
+        "effectivePercentage": 0.01,
+        "multiplier": 5,
+        "cap": null,
+        "capPeriod": null,
+        "transactionRange": {
+          "min": 100,
+          "max": 5000
+        },
+        "note": "1% value back on online shopping by earning 5 EDGE REWARD Points per ₹100 spent. Applicable on transactions between ₹100 to ₹5,000."
+      },
+      "dining": {
+        "rate": 1,
+        "spendUnit": 100,
+        "effectivePercentage": 0.002,
+        "multiplier": 1,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "note": "Base earn rate applies"
+      },
+      "groceries": {
+        "rate": 1,
+        "spendUnit": 100,
+        "effectivePercentage": 0.002,
+        "multiplier": 1,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "note": "Base earn rate applies"
+      },
+      "utilities": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on utility payments (MCC 4814, 4816, 4899, 4900)"
+      },
+      "insurance": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on insurance payments"
+      },
+      "rent": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on rent payments (MCC 6513). 1% rent surcharge applicable with no cap."
+      },
+      "walletLoads": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on wallet loads (MCC 6540). 1% fee on cumulative wallet loads of ₹10,000+ per statement cycle."
+      },
+      "international": {
+        "rate": 1,
+        "spendUnit": 100,
+        "effectivePercentage": 0.002,
+        "multiplier": 1,
+        "cap": null,
+        "note": "Base earn rate applies"
+      },
+      "travel": {
+        "rate": 1,
+        "spendUnit": 100,
+        "effectivePercentage": 0.002,
+        "multiplier": 1,
+        "cap": null,
+        "merchants": null,
+        "note": "Base earn rate applies"
+      },
+      "education": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on education payments. 1% fee applicable on education payments through third-party apps."
+      },
+      "government": {
+        "rate": 0,
+        "cap": null,
+        "note": "No rewards on government transactions (MCC 9222, 9311, 9399, 9402)"
+      }
+    },
+
+    "accelerators": {
+      "bankPortal": {
+        "enabled": false,
+        "name": null,
+        "multiplier": null,
+        "cap": null,
+        "capPeriod": null,
+        "merchants": null,
+        "link": null,
+        "note": null
+      },
+      "partnerMerchants": {
+        "enabled": true,
+        "merchants": [
+          {
+            "name": "IndianOil (IOCL) Fuel Outlets",
+            "multiplier": 20,
+            "cap": 1000,
+            "capPeriod": "monthly",
+            "mcc": "5541, 5542, 5983",
+            "validUntil": null
+          }
+        ],
+        "note": "20X rewards on fuel at IOCL outlets"
+      },
+      "spendUnlock": {
+        "enabled": false,
+        "tiers": null
+      },
+      "milestoneAccelerators": null
+    },
+
+    "redemption": {
+      "baseValue": 0.20,
+      "bestValue": 0.20,
+      "bestOption": "EDGE REWARDS Catalogue - E-vouchers, products, or at IOCL petrol pumps",
+      "minRedemption": 300,
+      "redemptionIncrement": null,
+      "convenienceFee": 99,
+      "monthlyRedemptionLimit": null,
+
+      "pointsPlusPay": {
+        "enabled": true,
+        "minPointsPercentage": null,
+        "maxPointsPercentage": null,
+        "minPoints": 300,
+        "note": "Use minimum 300 points with Points Plus Pay feature. Not applicable for e-Voucher redemptions."
+      },
+
+      "options": [
+        {
+          "type": "vouchers",
+          "value": 0.20,
+          "description": "Instant E-Vouchers from EDGE REWARDS catalogue",
+          "recommended": true,
+          "minPoints": 300,
+          "processingFee": 99,
+          "partners": ["Amazon", "Flipkart", "Tanishq", "Myntra", "Others"],
+          "note": "1 point = ₹0.20. Redemption fee of ₹99 per transaction."
+        },
+        {
+          "type": "products",
+          "value": 0.20,
+          "description": "Physical products from EDGE REWARDS catalogue",
+          "recommended": false,
+          "minPoints": 300,
+          "processingFee": 99,
+          "partners": null,
+          "note": "Delivery in 9-13 working days"
+        },
+        {
+          "type": "fuel",
+          "value": 0.20,
+          "description": "Redemption at IOCL petrol pumps",
+          "recommended": true,
+          "minPoints": 300,
+          "processingFee": 99,
+          "partners": ["IndianOil"],
+          "note": "Use points at IOCL outlets. Min bill value ₹100."
+        },
+        {
+          "type": "statement_credit",
+          "value": 0.20,
+          "description": "Statement credit",
+          "recommended": false,
+          "minPoints": 300,
+          "processingFee": 99,
+          "partners": null,
+          "note": null
+        }
+      ],
+      "note": "EDGE REWARD Points redemption fee of ₹99 per transaction applicable effective Dec 20, 2024."
+    },
+
+    "transferPartners": {
+      "enabled": false,
+      "eligibleCards": null,
+      "partners": null,
+      "currentBonus": null,
+      "note": "This is an entry-level card and does not have airline/hotel transfer partners"
+    },
+
+    "pooling": {
+      "enabled": true,
+      "eligibleCards": ["All Axis Bank credit cards of same customer"],
+      "acrossUsers": false,
+      "note": "Points can be pooled with other Axis Bank cards under same customer ID via EDGE REWARDS"
+    },
+
+    "specialLogic": null,
+
+    "calculator": {
+      "enabled": true,
+      "formula": "basePoints = (spend / 100) * rate; For IOCL fuel (₹400-₹4000): 20 points per ₹100, max 1000/month; For online (₹100-₹5000): 5 points per ₹100; Other spends: 1 point per ₹100",
+      "variables": ["spend", "category", "isIOCLFuel", "isOnline"]
+    }
+  },
+
+  "features": {
+    "lounge": {
+      "domestic": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "railwayLounge": null,
+        "eligibleLounges": null,
+        "note": "No lounge access with this card"
+      },
+      "international": {
+        "included": false,
+        "complimentaryCount": 0,
+        "period": null,
+        "accessType": null,
+        "accessProvider": null,
+        "membershipValue": null,
+        "spendRequired": null,
+        "guestAccess": null,
+        "eligibleLounges": null,
+        "note": "No international lounge access"
+      }
+    },
+
+    "milestones": null,
+
+    "golf": {
+      "included": false,
+      "complimentaryRounds": null,
+      "period": null,
+      "courses": null,
+      "greenFeeWaiver": null,
+      "lessonIncluded": null,
+      "note": null
+    },
+
+    "movies": {
+      "included": true,
+      "platform": "BookMyShow",
+      "offer": "10% instant discount",
+      "freeTickets": null,
+      "frequency": "Monthly",
+      "cap": 100,
+      "validity": "Till 31st March 2025",
+      "note": "10% discount per transaction on movie tickets via BookMyShow app or website. Maximum discount ₹100 per month. Need to apply offer from offers section."
+    },
+
+    "dining": {
+      "included": true,
+      "programs": [
+        {
+          "name": "Axis Bank Dining Delights via EazyDiner",
+          "discount": "Up to 15% off",
+          "cap": 500,
+          "frequency": "Monthly",
+          "minTransaction": 2500,
+          "note": "Valid once per card per month. Min transaction ₹2,500."
+        }
+      ],
+      "hotelDining": null
+    },
+
+    "fuel": {
+      "surchargeWaiver": true,
+      "waiverPercentage": 1,
+      "minTransaction": 400,
+      "maxTransaction": 4000,
+      "monthlyCap": 50,
+      "applicableStations": "All IOCL fuel outlets across India",
+      "rewardsOnFuel": true,
+      "gstWaiver": false,
+      "note": "1% fuel surcharge waiver. Max waiver ₹50 per statement month. Applicable on fuel transactions between ₹400 to ₹4,000. GST on surcharge not refunded. Also applicable on UPI transactions via credit card."
+    },
+
+    "forex": {
+      "markupPercentage": 3.5,
+      "markupText": "3.5% of total transaction value on foreign currency transactions",
+      "dynamicCurrencyConversion": {
+        "available": true,
+        "markupFee": 1.5,
+        "recommendation": "Always decline DCC and pay in local currency",
+        "note": "DCC markup revised to 1.5% from 1% effective Dec 20, 2024"
+      },
+      "crossCurrencyCharges": 3.5,
+      "note": "Foreign currency transaction fee: 3.5% of total transaction value"
+    },
+
+    "concierge": {
+      "included": false,
+      "availability": null,
+      "type": null,
+      "services": null,
+      "contactNumber": null,
+      "note": null
+    },
+
+    "roadsideAssistance": {
+      "included": false,
+      "provider": null,
+      "value": null,
+      "services": null,
+      "coverageArea": null,
+      "callsPerYear": null,
+      "note": null
+    },
+
+    "emi": {
+      "available": true,
+      "brandName": "EMI on Call",
+      "noCostEMI": {
+        "available": true,
+        "merchants": null,
+        "note": "No-cost EMI on select merchants"
+      },
+      "conversionFee": {
+        "percentage": null,
+        "flatFee": null,
+        "minFee": null
+      },
+      "minAmount": null,
+      "tenures": [3, 6, 9, 12],
+      "interestRates": {
+        "min": null,
+        "max": null
+      },
+      "preclosureFee": {
+        "percentage": 3,
+        "minFee": null
+      },
+      "cancellationPeriod": null,
+      "note": null
+    },
+
+    "balanceTransfer": {
+      "available": false,
+      "interestRate": null,
+      "processingFee": null,
+      "tenures": null,
+      "maxAmount": null,
+      "preclosureFee": null,
+      "note": null
+    },
+
+    "memberships": null,
+
+    "airlinePerks": {
+      "priorityCheckIn": false,
+      "priorityBoarding": false,
+      "freeCheckedBag": null,
+      "companionPass": null,
+      "upgradeVouchers": null,
+      "loyaltyTierCredit": null
+    },
+
+    "hotelPerks": {
+      "eliteStatus": null,
+      "freeNights": null,
+      "roomUpgrade": false,
+      "lateCheckout": false,
+      "breakfastIncluded": false,
+      "resortCredit": null
+    },
+
+    "wednesdayOffers": {
+      "included": true,
+      "offers": [
+        {
+          "partner": "Goibibo/MakeMyTrip",
+          "discount": "Up to 15% off",
+          "category": "Flights & Hotels",
+          "note": "Valid on Wednesdays"
+        },
+        {
+          "partner": "Swiggy",
+          "discount": "10% off",
+          "category": "Food Delivery",
+          "note": "Valid on Wednesdays"
+        },
+        {
+          "partner": "Tira",
+          "discount": "10% off up to ₹1,000",
+          "category": "Beauty/Shopping",
+          "note": "Valid on Wednesdays"
+        }
+      ],
+      "note": "Wednesday Delight offers available"
+    }
+  },
+
+  "insurance": {
+    "airAccident": {
+      "included": false,
+      "cover": null,
+      "condition": null
+    },
+    "travelAccident": {
+      "included": false,
+      "cover": null,
+      "type": null
+    },
+    "lostBaggage": {
+      "included": false,
+      "cover": null,
+      "perBag": null,
+      "condition": null
+    },
+    "baggageDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "perDay": null
+    },
+    "flightDelay": {
+      "included": false,
+      "cover": null,
+      "delayHours": null,
+      "coveredExpenses": null
+    },
+    "tripCancellation": {
+      "included": false,
+      "cover": null,
+      "coveredReasons": null,
+      "cancelForAnyReason": false
+    },
+    "tripInterruption": {
+      "included": false,
+      "cover": null
+    },
+    "missedConnection": {
+      "included": false,
+      "cover": null,
+      "minimumDelay": null
+    },
+    "emergencyMedical": {
+      "included": false,
+      "cover": null,
+      "overseas": false,
+      "condition": null
+    },
+    "medicalEvacuation": {
+      "included": false,
+      "cover": null
+    },
+    "lostCard": {
+      "included": true,
+      "cover": null,
+      "fraudLiability": {
+        "included": true,
+        "cover": null,
+        "reportingWindow": "Report immediately to bank"
+      }
+    },
+    "purchaseProtection": {
+      "included": false,
+      "cover": null,
+      "period": null,
+      "perClaim": null,
+      "annualLimit": null,
+      "coveredEvents": null
+    },
+    "extendedWarranty": {
+      "included": false,
+      "extension": null,
+      "maxOriginalWarranty": null,
+      "perClaimLimit": null,
+      "annualLimit": null
+    },
+    "returnProtection": {
+      "included": false,
+      "period": null,
+      "maxPerItem": null,
+      "annualLimit": null
+    },
+    "priceProtection": {
+      "included": false,
+      "period": null,
+      "maxRefund": null
+    },
+    "rentalCarInsurance": {
+      "included": false,
+      "type": null,
+      "cover": null,
+      "coverage": null,
+      "excludedCountries": null,
+      "excludedVehicleTypes": null
+    },
+    "cellPhoneProtection": {
+      "included": false,
+      "cover": null,
+      "deductible": null,
+      "claimsPerYear": null,
+      "condition": null,
+      "coveredLines": null
+    },
+    "personalLiability": {
+      "included": false,
+      "cover": null
+    },
+    "note": "This is an entry-level card with limited insurance benefits"
+  },
+
+  "technology": {
+    "contactless": {
+      "enabled": true,
+      "pinlessLimit": 5000
+    },
+    "virtualCard": {
+      "available": true,
+      "instantIssuance": true,
+      "singleUse": false,
+      "spendControls": true
+    },
+    "walletSupport": {
+      "googlePay": false,
+      "applePay": false,
+      "samsungPay": false,
+      "payTM": true,
+      "phonePe": true,
+      "note": "RuPay card can be linked to UPI apps"
+    },
+    "upiLinking": {
+      "available": true,
+      "rewardsOnUPI": true,
+      "note": "RuPay credit card can be added to UPI apps for UPI payments. Rewards and fuel surcharge waiver applicable on UPI transactions."
+    },
+    "cardControls": {
+      "appEnabled": true,
+      "features": [
+        "Block/Unblock card",
+        "Set transaction limits",
+        "Enable/Disable international",
+        "Enable/Disable online",
+        "Enable/Disable contactless",
+        "Real-time alerts"
+      ]
+    },
+    "instantAlert": {
+      "sms": true,
+      "email": true,
+      "push": true
+    },
+    "emiAtPOS": false,
+    "autopay": {
+      "available": true,
+      "options": ["Full amount", "Minimum due", "Fixed amount"]
+    }
+  },
+
+  "surcharges": {
+    "fuel": {
+      "threshold": 50000,
+      "period": "statement cycle",
+      "fee": 1,
+      "note": "1% fee on cumulative fuel transactions of ₹50,000 or more in a statement cycle (effective Dec 20, 2024)"
+    },
+    "wallet": {
+      "threshold": 10000,
+      "period": "statement cycle",
+      "fee": 1,
+      "note": "1% fee on cumulative wallet load transactions of ₹10,000 or more in a statement cycle"
+    },
+    "utility": {
+      "threshold": 25000,
+      "period": "statement cycle",
+      "fee": 1,
+      "note": "1% fee on cumulative utility spends of ₹25,000 or more in a statement cycle"
+    },
+    "education": {
+      "threshold": 0,
+      "period": "per transaction",
+      "fee": 1,
+      "note": "1% fee on education payments through third-party apps"
+    },
+    "onlineGaming": {
+      "threshold": 10000,
+      "period": "statement cycle",
+      "fee": 1,
+      "note": "1% fee on cumulative spends of ₹10,000 or more on online skill-based gaming platforms"
+    },
+    "rent": {
+      "threshold": 0,
+      "period": "per transaction",
+      "fee": 1,
+      "note": "1% rent surcharge on all rent transactions. Maximum cap of ₹1,500 discontinued effective Dec 20, 2024."
+    }
+  },
+
+  "upgradePathway": {
+    "upgradesFrom": null,
+    "upgradesTo": [
+      {
+        "cardId": "axis-indianoil-premium-credit-card",
+        "spendRequired": null,
+        "tenure": null,
+        "inviteOnly": false,
+        "note": "Can apply for IndianOil Axis Bank Premium Credit Card for enhanced benefits"
+      }
+    ],
+    "note": "Entry-level card in IndianOil co-brand family"
+  },
+
+  "meta": {
+    "tags": [
+      "Fuel",
+      "Entry-level",
+      "Co-branded",
+      "RuPay",
+      "IOCL",
+      "UPI"
+    ],
+    "bestFor": "Daily commuters and individuals who regularly fuel at IndianOil outlets with monthly fuel spends up to ₹5,000",
+    "notRecommendedFor": "High spenders, travelers seeking lounge access, or those fueling at non-IOCL outlets",
+    "rating": {
+      "overall": 3.2,
+      "rewards": 3.5,
+      "benefits": 2.5,
+      "value": 3.5
+    },
+    "verdict": "A basic fuel credit card offering 4% value-back on IOCL fuel transactions with a low joining fee. Best suited for budget-conscious individuals with moderate fuel spends at IOCL outlets. The high annual fee waiver threshold of ₹3.5 lakh and reward caps limit the earning potential for heavy spenders. No lounge access or premium travel benefits.",
+    "pros": [
+      "4% value back on IOCL fuel transactions (20 points per ₹100)",
+      "Low joining fee of ₹500",
+      "1% fuel surcharge waiver up to ₹50/month",
+      "RuPay card with UPI linking capability",
+      "Welcome benefit of up to 1250 EDGE REWARD Points",
+      "10% discount on BookMyShow",
+      "Wednesday Delight offers"
+    ],
+    "cons": [
+      "High annual fee waiver threshold of ₹3.5 lakh (increased from ₹50,000 for new customers from Apr 2024)",
+      "Fuel rewards capped at 1000 points per month (₹5,000 max fuel spend for rewards)",
+      "No airport lounge access",
+      "Limited to IOCL outlets for fuel benefits",
+      "Multiple spending exclusions for rewards",
+      "New surcharges on various categories (fuel, wallet, utility, gaming)",
+      "No travel or insurance benefits"
+    ],
+    "alternatives": [
+      "axis-indianoil-premium-credit-card",
+      "hdfc-indianoil-credit-card",
+      "sbi-bpcl-credit-card",
+      "icici-hpcl-coral-credit-card"
+    ],
+    "lastVerified": "2026-01-05",
+    "dataSource": [
+      "Axis Bank Official Website",
+      "Axis Bank T&C Document (Revision effective 20th Dec 2024)",
+      "Axis Bank T&C Document (Revision effective 20th Apr 2024)",
+      "MITC Document",
+      "Key Fact Sheet",
+      "PaisaBazaar.com",
+      "BankBazaar.com",
+      "CardInsider.com"
+    ],
+    "changelog": [
+      {
+        "date": "2024-12-20",
+        "change": "Finance charges increased to 3.75% from 3.6%; Cheque return min fee increased to ₹500; Cash payment fee increased to ₹175; DCC markup increased to 1.5%; New surcharges on fuel (₹50K+), wallet (₹10K+), utility (₹25K+), education, and online gaming; Reward redemption fee of ₹99 introduced",
+        "source": "Official Axis Bank T&C Update"
+      },
+      {
+        "date": "2024-04-20",
+        "change": "Annual fee waiver threshold increased from ₹50,000 to ₹3.5 lakh for new customers; Welcome benefit changed to max 1250 points on first fuel transaction; Fuel reward eligibility changed to ₹400-₹4,000 transactions",
+        "source": "Official Axis Bank T&C Update"
+      },
+      {
+        "date": "2025-06-20",
+        "change": "Terms and conditions to be updated (announced)",
+        "source": "Axis Bank website notice"
+      }
+    ]
+  }
+}
