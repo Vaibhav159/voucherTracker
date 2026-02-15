@@ -197,6 +197,8 @@ function Home({ data, onOpenShortcuts }) {
     <div className="home-container">
       <Helmet>
         <link rel="canonical" href={BASE_URL} />
+        <title>Voucher Tracker: Compare Gift Card Rates & Maximize Savings</title>
+        <meta name="description" content="Track real-time gift card and voucher rates across platforms like Gyftr, Amazon, and more. Maximize your credit card rewards." />
       </Helmet>
       {/* Mobile Filter Toggle Removed */}
 
@@ -350,6 +352,26 @@ function App() {
 
   return (
     <ThemeProvider>
+
+      <Helmet>
+        <title>Card Perks - Maximize Your Savings</title>
+        <meta name="description" content="Track credit card vouchers, discover best discounts, and maximize your rewards with Card Perks. The ultimate guide to saving on gift cards." />
+        <link rel="canonical" href={BASE_URL} />
+
+        {/* Open Graph / Facebook / WhatsApp Defaults */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={BASE_URL} />
+        <meta property="og:title" content="Card Perks - Maximize Your Savings" />
+        <meta property="og:description" content="Track credit card vouchers, discover best discounts, and maximize your rewards with Card Perks." />
+        <meta property="og:image" content={`${BASE_URL}/social-preview.png`} />
+
+        {/* Twitter Defaults */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={BASE_URL} />
+        <meta name="twitter:title" content="Card Perks - Maximize Your Savings" />
+        <meta name="twitter:description" content="Track credit card vouchers, discover best discounts, and maximize your rewards with Card Perks." />
+        <meta name="twitter:image" content={`${BASE_URL}/social-preview.png`} />
+      </Helmet>
       <ToastProvider position="bottom-right" maxToasts={5}>
         <FavoritesProvider>
           <MyCardsProvider>

@@ -4,7 +4,7 @@
     "name": "Cashback SBI Card",
     "bank": "SBI Card",
     "image": "/assets/cards/sbi-cashback.png",
-    "link": "https://www.sbicard.com/en/personal/credit-cards/rewards/cashback-sbi-card.page",
+    "link": "https://bitli.in/5N2Z4ml",
     "fees": {
       "joining": 999,
       "annual": 999,
@@ -131,7 +131,8 @@
         "Limited additional benefits"
       ]
     },
-    "slug": "sbi-cashback"
+    "slug": "sbi-cashback",
+    "applyLink": "https://bitli.in/5N2Z4ml"
   },
   {
     "id": "icici-emeralde-private-metal",
@@ -770,7 +771,8 @@
         "No rewards on fuel"
       ]
     },
-    "slug": "hdfc-infinia-metal"
+    "slug": "hdfc-infinia-metal",
+    "applyLink": "https://bitli.in/htq58kh"
   },
   {
     "id": "hdfc-diners-club-black-metal",
@@ -1021,7 +1023,8 @@
         "Insurance rewards capped at 5,000 RP/month"
       ]
     },
-    "slug": "hdfc-diners-club-black-metal"
+    "slug": "hdfc-diners-club-black-metal",
+    "applyLink": "https://bitli.in/htq58kh"
   },
   {
     "id": "hdfc-diners-club-black",
@@ -1157,7 +1160,8 @@
       "6 Complimentary Golf games per quarter",
       "Air Accident Cover of ₹2 Crore"
     ],
-    "slug": "hdfc-diners-club-black"
+    "slug": "hdfc-diners-club-black",
+    "applyLink": "https://bitli.in/htq58kh"
   },
   {
     "id": "hdfc-diners-club-privilege",
@@ -1291,7 +1295,8 @@
       "Buy 1 Get 1 on BookMyShow (Weekend)",
       "Complimentary Swiggy One & Times Prime"
     ],
-    "slug": "hdfc-diners-club-privilege"
+    "slug": "hdfc-diners-club-privilege",
+    "applyLink": "https://bitli.in/htq58kh"
   },
   {
     "id": "hdfc-moneyback-plus",
@@ -1408,7 +1413,8 @@
       "Gift Voucher worth ₹500 on spending ₹50,000/quarter",
       "1% Fuel Surcharge Waiver"
     ],
-    "slug": "hdfc-moneyback-plus"
+    "slug": "hdfc-moneyback-plus",
+    "applyLink": "https://bitli.in/htq58kh"
   },
   {
     "id": "hdfc-freedom",
@@ -1523,7 +1529,8 @@
       "Low interest rate (0.99% for first 90 days)",
       "Zero lost card liability"
     ],
-    "slug": "hdfc-freedom"
+    "slug": "hdfc-freedom",
+    "applyLink": "https://bitli.in/htq58kh"
   },
   {
     "id": "hdfc-bizpower",
@@ -1649,7 +1656,8 @@
       "5X Rewards on GST, Vendor Pay, Google Ads",
       "55 Days Interest Free Credit"
     ],
-    "slug": "hdfc-bizpower"
+    "slug": "hdfc-bizpower",
+    "applyLink": "https://bitli.in/htq58kh"
   },
   {
     "id": "hdfc-regalia",
@@ -1761,14 +1769,15 @@
     "link": "https://www.google.com/search?q=HDFC%20Regalia%20Credit%20Card",
     "metadata": {
       "type": "consumer"
-    }
+    },
+    "applyLink": "https://bitli.in/htq58kh"
   },
   {
     "id": "hdfc-tata-neu-infinity",
     "name": "Tata Neu Infinity HDFC Bank Credit Card",
     "bank": "HDFC Bank",
     "image": "/assets/cards/hdfc-tata-neu-infinity.webp",
-    "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/tata-neu-infinity-hdfc-bank-credit-card",
+    "link": "https://bitli.in/CcltnvX",
     "fees": {
       "joining": 1499,
       "annual": 1499,
@@ -1964,7 +1973,8 @@
         "No rewards on rent, fuel, gaming"
       ]
     },
-    "slug": "hdfc-tata-neu-infinity"
+    "slug": "hdfc-tata-neu-infinity",
+    "applyLink": "https://bitli.in/CcltnvX"
   },
   {
     "id": "hdfc-tata-neu-plus",
@@ -2085,7 +2095,8 @@
       "2% NeuCoins on Tata Neu App, 1% on other spends",
       "Zero lost card liability"
     ],
-    "slug": "hdfc-tata-neu-plus"
+    "slug": "hdfc-tata-neu-plus",
+    "applyLink": "https://bitli.in/CcltnvX"
   },
   {
     "id": "amex-platinum-travel",
@@ -2644,7 +2655,8 @@
         "₹99 redemption fee applies"
       ]
     },
-    "slug": "hdfc-regalia-gold"
+    "slug": "hdfc-regalia-gold",
+    "applyLink": "https://bitli.in/htq58kh"
   },
   {
     "id": "yes-bank-marquee",
@@ -2976,7 +2988,8 @@
         "No fuel surcharge waiver"
       ]
     },
-    "slug": "marriott-bonvoy-hdfc"
+    "slug": "marriott-bonvoy-hdfc",
+    "applyLink": "https://bitli.in/htq58kh"
   },
   {
     "id": "irctc-sbi-premier",
@@ -3124,14 +3137,15 @@
         "Rail accident insurance discontinued July 2025"
       ]
     },
-    "slug": "irctc-sbi-premier"
+    "slug": "irctc-sbi-premier",
+    "applyLink": "https://bitli.in/iGMs2rK"
   },
   {
     "id": "hdfc-millennia",
     "name": "HDFC Millennia Credit Card",
     "bank": "HDFC Bank",
     "image": "/assets/cards/hdfc-millennia.png",
-    "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/millennia-credit-card",
+    "link": "https://bitli.in/xpogJRj",
     "fees": {
       "joining": 1000,
       "annual": 1000,
@@ -3327,14 +3341,15 @@
         "3.5% forex markup"
       ]
     },
-    "slug": "hdfc-millennia"
+    "slug": "hdfc-millennia",
+    "applyLink": "https://bitli.in/xpogJRj"
   },
   {
     "id": "irctc-hdfc",
     "name": "IRCTC HDFC Bank Credit Card",
     "bank": "HDFC Bank",
     "image": "/assets/cards/irctc-hdfc.webp",
-    "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/irctc-credit-card",
+    "link": "https://bitli.in/yFh2DM9",
     "fees": {
       "joining": 500,
       "annual": 500,
@@ -3473,14 +3488,15 @@
         "₹99 redemption fee"
       ]
     },
-    "slug": "irctc-hdfc"
+    "slug": "irctc-hdfc",
+    "applyLink": "https://bitli.in/yFh2DM9"
   },
   {
     "id": "hdfc-pixel-play",
     "name": "HDFC Pixel Play Credit Card",
     "bank": "HDFC Bank",
     "image": "/assets/cards/hdfc-pixel-play.png",
-    "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/pixel-play-credit-card",
+    "link": "https://bitli.in/jBP9fln",
     "fees": {
       "joining": 500,
       "annual": 500,
@@ -3608,14 +3624,15 @@
         "Shared limit if existing HDFC card holder"
       ]
     },
-    "slug": "hdfc-pixel-play"
+    "slug": "hdfc-pixel-play",
+    "applyLink": "https://bitli.in/jBP9fln"
   },
   {
     "id": "hdfc-pixel-go",
     "name": "HDFC Pixel Go Credit Card",
     "bank": "HDFC Bank",
     "image": "/assets/cards/hdfc-pixel-go.jpg",
-    "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/pixel-go-credit-card",
+    "link": "https://bitli.in/t43cnLV",
     "fees": {
       "joining": 250,
       "annual": 250,
@@ -3771,14 +3788,15 @@
         "No customization like Pixel Play"
       ]
     },
-    "slug": "hdfc-pixel-go"
+    "slug": "hdfc-pixel-go",
+    "applyLink": "https://bitli.in/t43cnLV"
   },
   {
     "id": "axis-magnus",
     "name": "Axis Magnus Credit Card",
     "bank": "Axis Bank",
     "image": "/assets/cards/axis-magnus.webp",
-    "link": "https://www.axisbank.com/retail/cards/credit-card/axis-bank-magnus-credit-card",
+    "link": "https://bitli.in/JpMNSa4",
     "fees": {
       "joining": 12500,
       "annual": 12500,
@@ -3948,7 +3966,8 @@
         "500K annual cap on miles transfer (100K Group A, 400K Group B)"
       ]
     },
-    "slug": "axis-magnus"
+    "slug": "axis-magnus",
+    "applyLink": "https://bitli.in/JpMNSa4"
   },
   {
     "id": "federal-celesta",
@@ -4128,7 +4147,7 @@
     "name": "Swiggy HDFC Bank Credit Card",
     "bank": "HDFC Bank",
     "image": "/assets/cards/hdfc-swiggy.png",
-    "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/swiggy-hdfc-bank-credit-card",
+    "link": "https://bitli.in/ug23jc1",
     "fees": {
       "joining": 500,
       "annual": 500,
@@ -4305,14 +4324,15 @@
         "Short Swiggy One membership (3 months only)"
       ]
     },
-    "slug": "hdfc-swiggy"
+    "slug": "hdfc-swiggy",
+    "applyLink": "https://bitli.in/ug23jc1"
   },
   {
     "id": "hdfc-shoppers-stop",
     "name": "Shoppers Stop HDFC Bank Credit Card",
     "bank": "HDFC Bank",
     "image": "/assets/cards/hdfc-shoppers-stop.png",
-    "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/shoppers-stop-hdfc-bank-credit-card",
+    "link": "https://bitli.in/rPgojZc",
     "fees": {
       "joining": 299,
       "annual": 299,
@@ -4456,7 +4476,8 @@
         "Monthly caps on rewards"
       ]
     },
-    "slug": "hdfc-shoppers-stop"
+    "slug": "hdfc-shoppers-stop",
+    "applyLink": "https://bitli.in/rPgojZc"
   },
   {
     "id": "hdfc-bizblack-metal",
@@ -4627,7 +4648,8 @@
         "No fuel surcharge waiver"
       ]
     },
-    "slug": "hdfc-bizblack-metal"
+    "slug": "hdfc-bizblack-metal",
+    "applyLink": "https://bitli.in/htq58kh"
   },
   {
     "id": "axis-atlas",
@@ -4788,7 +4810,7 @@
     "name": "Axis Reserve Credit Card",
     "bank": "Axis Bank",
     "image": "/assets/cards/axis-reserve.webp",
-    "link": "https://www.axisbank.com/retail/cards/credit-card/reserve-credit-card",
+    "link": "https://bitli.in/LNNeUnj",
     "fees": {
       "joining": 50000,
       "annual": 50000,
@@ -4929,7 +4951,7 @@
     "name": "Axis Bank Olympus Credit Card",
     "bank": "Axis Bank",
     "image": "/assets/cards/axis-olympus.webp",
-    "link": "https://www.axisbank.com/retail/cards/credit-card/olympus-credit-card",
+    "link": "https://bitli.in/wT6J0dS",
     "fees": {
       "joining": 20000,
       "annual": 20000,
@@ -5362,7 +5384,7 @@
     "name": "Axis Bank Privilege Credit Card",
     "bank": "Axis Bank",
     "image": "/assets/cards/axis-privilege.webp",
-    "link": "https://www.axisbank.com/retail/cards/credit-card/privilege-credit-card-with-unlimited-benefits",
+    "link": "https://bitli.in/X3B3YZs",
     "fees": {
       "joining": 1500,
       "annual": 1500,
@@ -5501,7 +5523,8 @@
         "No international lounge access"
       ]
     },
-    "slug": "axis-privilege"
+    "slug": "axis-privilege",
+    "applyLink": "https://bitli.in/X3B3YZs"
   },
   {
     "id": "axis-myzone",
@@ -5641,14 +5664,15 @@
         "Limited lounge access"
       ]
     },
-    "slug": "axis-myzone"
+    "slug": "axis-myzone",
+    "applyLink": "https://bitli.in/LNNeUnj"
   },
   {
     "id": "axis-neo",
     "name": "Axis Bank NEO Credit Card",
     "bank": "Axis Bank",
     "image": "/assets/cards/axis-neo.webp",
-    "link": "https://www.axisbank.com/retail/cards/credit-card/axis-bank-neo-credit-card",
+    "link": "https://bitli.in/fqhb20U",
     "fees": {
       "joining": 250,
       "annual": 250,
@@ -5770,14 +5794,15 @@
         "Very limited benefits"
       ]
     },
-    "slug": "axis-neo"
+    "slug": "axis-neo",
+    "applyLink": "https://bitli.in/fqhb20U"
   },
   {
     "id": "flipkart-axis",
     "name": "Flipkart Axis Bank Credit Card",
     "bank": "Axis Bank",
     "image": "/assets/cards/flipkart-axis.webp",
-    "link": "https://www.axisbank.com/retail/cards/credit-card/flipkart-axisbank-credit-card",
+    "link": "https://bitli.in/fnmksRa",
     "fees": {
       "joining": 500,
       "annual": 500,
@@ -5899,14 +5924,15 @@
         "Many exclusions"
       ]
     },
-    "slug": "flipkart-axis"
+    "slug": "flipkart-axis",
+    "applyLink": "https://bitli.in/fnmksRa"
   },
   {
     "id": "axis-airtel",
     "name": "Airtel Axis Bank Credit Card",
     "bank": "Axis Bank",
     "image": "/assets/cards/axis-airtel.png",
-    "link": "https://www.axisbank.com/retail/cards/credit-card/airtel-axis-bank-credit-card",
+    "link": "https://bitli.in/a613XSx",
     "fees": {
       "joining": 500,
       "annual": 500,
@@ -6028,7 +6054,8 @@
         "Only domestic lounges"
       ]
     },
-    "slug": "axis-airtel"
+    "slug": "axis-airtel",
+    "applyLink": "https://bitli.in/a613XSx"
   },
   {
     "id": "axis-ace",
@@ -6293,7 +6320,8 @@
         "Fuel txn must be ₹400-₹4,000"
       ]
     },
-    "slug": "axis-indianoil"
+    "slug": "axis-indianoil",
+    "applyLink": "https://bitli.in/wT6J0dS"
   },
   {
     "id": "axis-lic-signature",
@@ -6436,7 +6464,7 @@
     "name": "Axis Bank Rewards Credit Card",
     "bank": "Axis Bank",
     "image": "/assets/cards/axis-rewards.webp",
-    "link": "https://www.axisbank.com/retail/cards/credit-card/rewards-credit-card",
+    "link": "https://bitli.in/M0e6dkI",
     "fees": {
       "joining": 1000,
       "annual": 1000,
@@ -6575,14 +6603,15 @@
         "Only domestic lounges (spend-based)"
       ]
     },
-    "slug": "axis-rewards"
+    "slug": "axis-rewards",
+    "applyLink": "https://bitli.in/M0e6dkI"
   },
   {
     "id": "sbi-aurum",
     "name": "SBI Aurum Credit Card",
     "bank": "SBI Card",
     "image": "/assets/cards/sbi-aurum.webp",
-    "link": "https://www.aurumcreditcard.com/",
+    "link": "https://bitli.in/6orYv1h",
     "fees": {
       "joining": 9999,
       "annual": 9999,
@@ -7057,7 +7086,7 @@
     "name": "SBI SimplyCLICK Credit Card",
     "bank": "SBI Card",
     "image": "/assets/cards/sbi-simplyclick.png",
-    "link": "https://www.sbicard.com/en/personal/credit-cards/shopping/simplyclick-sbi-card.page",
+    "link": "https://bitli.in/sZQEFeu",
     "fees": {
       "joining": 499,
       "annual": 499,
@@ -7202,7 +7231,8 @@
         "No travel or dining perks"
       ]
     },
-    "slug": "sbi-simplyclick"
+    "slug": "sbi-simplyclick",
+    "applyLink": "https://bitli.in/sZQEFeu"
   },
   {
     "id": "sbi-simplysave",
@@ -7966,7 +7996,7 @@
     "name": "BPCL SBI Credit Card",
     "bank": "SBI Card",
     "image": "/assets/cards/bpcl-sbi.png",
-    "link": "https://www.sbicard.com/en/personal/credit-cards/travel/bpcl-sbi-card.page",
+    "link": "https://bitli.in/P2JSDb5",
     "fees": {
       "joining": 499,
       "annual": 499,
@@ -8102,7 +8132,8 @@
         "No milestone benefits"
       ]
     },
-    "slug": "bpcl-sbi"
+    "slug": "bpcl-sbi",
+    "applyLink": "https://bitli.in/P2JSDb5"
   },
   {
     "id": "yatra-sbi",
@@ -8754,7 +8785,7 @@
     "name": "ICICI Rubyx Credit Card",
     "bank": "ICICI Bank",
     "image": "/assets/cards/icici-rubyx.webp",
-    "link": "https://www.icicibank.com/personal-banking/cards/credit-card/rubyx-credit-card",
+    "link": "https://bitli.in/iGMs2rK",
     "fees": {
       "joining": 3000,
       "annual": 2000,
@@ -10877,7 +10908,7 @@
     "name": "IDFC First Private Credit Card",
     "bank": "IDFC First Bank",
     "image": "/assets/cards/idfc-first-private.webp",
-    "link": "https://www.idfcfirst.bank.in/credit-card/FIRSTPrivateCreditCard",
+    "link": "https://bitli.in/5aR6Uk1",
     "fees": {
       "joining": 50000,
       "annual": 50000,
@@ -11034,7 +11065,8 @@
         "Annual redemption cap of 3 lakh points"
       ]
     },
-    "slug": "idfc-first-private"
+    "slug": "idfc-first-private",
+    "applyLink": "https://bitli.in/l3refEa"
   },
   {
     "id": "idfc-first-wealth",
@@ -11198,7 +11230,8 @@
         "No airmiles transfer partners"
       ]
     },
-    "slug": "idfc-first-wealth"
+    "slug": "idfc-first-wealth",
+    "applyLink": "https://bitli.in/l3refEa"
   },
   {
     "id": "idfc-first-select",
@@ -11352,7 +11385,8 @@
         "No golf or premium lifestyle benefits"
       ]
     },
-    "slug": "idfc-first-select"
+    "slug": "idfc-first-select",
+    "applyLink": "https://bitli.in/l3refEa"
   },
   {
     "id": "idfc-first-classic",
@@ -11506,7 +11540,8 @@
         "Limited lifestyle benefits"
       ]
     },
-    "slug": "idfc-first-classic"
+    "slug": "idfc-first-classic",
+    "applyLink": "https://bitli.in/l3refEa"
   },
   {
     "id": "idfc-first-millennia",
@@ -11661,14 +11696,15 @@
         "Very similar to Classic card"
       ]
     },
-    "slug": "idfc-first-millennia"
+    "slug": "idfc-first-millennia",
+    "applyLink": "https://bitli.in/l3refEa"
   },
   {
     "id": "idfc-first-wow",
     "name": "IDFC First WOW! Credit Card",
     "bank": "IDFC First Bank",
     "image": "/assets/cards/idfc-first-wow.avif",
-    "link": "https://www.idfcfirst.bank.in/credit-card/wow",
+    "link": "https://bitli.in/I7oxr1Y",
     "fees": {
       "joining": 0,
       "annual": 0,
@@ -11806,7 +11842,8 @@
         "Limited lifestyle benefits"
       ]
     },
-    "slug": "idfc-first-wow"
+    "slug": "idfc-first-wow",
+    "applyLink": "https://bitli.in/I7oxr1Y"
   },
   {
     "id": "kotak-white-reserve",
@@ -12895,7 +12932,7 @@
     "name": "IndusInd Legend Credit Card",
     "bank": "IndusInd Bank",
     "image": "/assets/cards/indusind-legend.webp",
-    "link": "https://www.indusind.bank.in/in/en/personal/cards/credit-card/legend-credit-card.html",
+    "link": "https://bitli.in/q53avFd",
     "fees": {
       "joining": 0,
       "annual": 0,
@@ -13091,7 +13128,8 @@
         "InterMiles and Vistara redemption discontinued"
       ]
     },
-    "slug": "indusind-legend"
+    "slug": "indusind-legend",
+    "applyLink": "https://bitli.in/q53avFd"
   },
   {
     "id": "indusind-club-vistara-explorer",
@@ -13584,7 +13622,8 @@
         "Can only change reward plan after 6 months"
       ]
     },
-    "slug": "indusind-platinum-aura-edge"
+    "slug": "indusind-platinum-aura-edge",
+    "applyLink": "https://bitli.in/03Fo4wX"
   },
   {
     "id": "rbl-world-safari",
@@ -14282,7 +14321,7 @@
     "name": "RBL Bank ShopRite Credit Card",
     "bank": "RBL Bank",
     "image": "/assets/cards/rbl-shoprite.jpg",
-    "link": "https://www.rblbank.com/personal-banking/cards/credit-cards/shoprite-credit-card",
+    "link": "https://bitli.in/0365Lqf",
     "fees": {
       "joining": 500,
       "annual": 500,
@@ -14421,7 +14460,8 @@
       ]
     },
     "slug": "rbl-shoprite",
-    "network": "RuPay/Mastercard/Visa"
+    "network": "RuPay/Mastercard/Visa",
+    "applyLink": "https://bitli.in/0365Lqf"
   },
   {
     "id": "yes-bank-reserv",
@@ -15154,7 +15194,7 @@
     "bank": "Bank of Baroda",
     "image": "/assets/cards/bob-eterna.webp",
     "link": "https://www.bobcard.co.in/credit-card-types/eterna",
-    "applyLink": "https://bitli.in/82MhsOA",
+    "applyLink": "https://bitli.in/fnmksRa",
     "fees": {
       "joining": 2499,
       "annual": 2499,
@@ -16161,7 +16201,7 @@
     "name": "AU Zenith+ Credit Card",
     "bank": "AU Small Finance Bank",
     "image": "/assets/cards/au-zenith-plus.png",
-    "link": "https://www.au.bank.in/premium-banking/credit-cards/zenith-plus-credit-card",
+    "link": "https://bitli.in/o5xPU6l",
     "fees": {
       "joining": 4999,
       "annual": 4999,
@@ -17060,7 +17100,8 @@
         "International rewards reduced to 5X from 10X (Jan 2026 change)"
       ]
     },
-    "network": "Mastercard World"
+    "network": "Mastercard World",
+    "applyLink": "https://bitli.in/l3refEa"
   },
   {
     "id": "idfc-ashva",
@@ -17235,7 +17276,8 @@
         "Lounge access requires ₹20K monthly spend"
       ]
     },
-    "network": "Visa Infinite"
+    "network": "Visa Infinite",
+    "applyLink": "https://bitli.in/l3refEa"
   },
   {
     "id": "idfc-diamondr-reserve",
@@ -17259,7 +17301,8 @@
     ],
     "metadata": {
       "type": "consumer"
-    }
+    },
+    "applyLink": "https://bitli.in/l3refEa"
   },
   {
     "id": "idfc-swyp",
@@ -17390,7 +17433,8 @@
         "Must pay full amount or convert to EMI"
       ]
     },
-    "network": "Mastercard"
+    "network": "Mastercard",
+    "applyLink": "https://bitli.in/l3refEa"
   },
   {
     "id": "idfc-indigo",
@@ -17414,7 +17458,8 @@
     ],
     "metadata": {
       "type": "consumer"
-    }
+    },
+    "applyLink": "https://bitli.in/l3refEa"
   },
   {
     "id": "idfc-power-plus",
@@ -17480,7 +17525,7 @@
         "redemptionFee": 99
       }
     },
-    "link": "https://www.idfcfirstbank.com/credit-card/fuel-credit-card/hpcl-idfc-first-power-plus-credit-card",
+    "link": "https://bitli.in/5aR6Uk1",
     "features": {
       "lounge": {
         "domestic": "1 per quarter (4/year)",
@@ -17533,7 +17578,8 @@
         "High forex markup (3.5%)"
       ]
     },
-    "network": "RuPay Select"
+    "network": "RuPay Select",
+    "applyLink": "https://bitli.in/5aR6Uk1"
   },
   {
     "id": "idfc-gaj",
@@ -17557,7 +17603,8 @@
     ],
     "metadata": {
       "type": "consumer"
-    }
+    },
+    "applyLink": "https://bitli.in/l3refEa"
   },
   {
     "id": "yes-bank-select",
@@ -17891,13 +17938,14 @@
       "rate": 0,
       "description": "Details coming soon"
     },
-    "link": "https://www.google.com/search?q=IndusInd%20Platinum%20RuPay%20Credit%20Card",
+    "link": "https://bitli.in/03Fo4wX",
     "features": [
       "Details coming soon"
     ],
     "metadata": {
       "type": "consumer"
-    }
+    },
+    "applyLink": "https://bitli.in/03Fo4wX"
   },
   {
     "id": "indusind-tiger",
@@ -17915,8 +17963,8 @@
       "rate": 0,
       "description": "Details coming soon"
     },
-    "link": "https://www.google.com/search?q=IndusInd%20Tiger%20Credit%20Card",
-    "applyLink": "https://bitli.in/uVYmquT",
+    "link": "https://bitli.in/vd5UGzR",
+    "applyLink": "https://bitli.in/vd5UGzR",
     "features": [
       "Details coming soon"
     ],
@@ -17970,7 +18018,8 @@
     ],
     "metadata": {
       "type": "consumer"
-    }
+    },
+    "applyLink": "https://bitli.in/htq58kh"
   },
   {
     "id": "bob-uni",
@@ -17988,7 +18037,7 @@
       "rate": 0,
       "description": "Details coming soon"
     },
-    "link": "https://www.google.com/search?q=BOB%20UNI%20Credit%20Card",
+    "link": "https://bitli.in/fnmksRa",
     "features": [
       "Details coming soon"
     ],
@@ -19063,7 +19112,7 @@
         ]
       }
     },
-    "link": "https://www.au.bank.in/personal-banking/credit-cards/lit-credit-card",
+    "link": "https://bitli.in/qdxeul7",
     "features": {
       "lounge": {
         "domestic": "Up to 2-4 per 90 days (paid feature at ₹199-₹299)",
@@ -19204,7 +19253,8 @@
         "minIncome": 400000,
         "note": "Annual income of ₹4 lakh"
       }
-    }
+    },
+    "applyLink": "https://bitli.in/qdxeul7"
   },
   {
     "id": "au-vetta",
@@ -20227,7 +20277,7 @@
         ]
       }
     },
-    "link": "https://www.sbicard.com/en/personal/credit-cards/rewards/flipkart-sbi-card.page",
+    "link": "https://bitli.in/0adbi58",
     "features": {
       "lounge": {
         "domestic": "Not available",
@@ -20275,7 +20325,8 @@
       ]
     },
     "partner": "Flipkart",
-    "network": "Mastercard/Visa"
+    "network": "Mastercard/Visa",
+    "applyLink": "https://bitli.in/0adbi58"
   },
   {
     "id": "sbi-miles-elite",
@@ -20411,7 +20462,8 @@
         "No utilities/insurance/fuel rewards"
       ]
     },
-    "network": "RuPay/Mastercard"
+    "network": "RuPay/Mastercard",
+    "applyLink": "https://bitli.in/6orYv1h"
   },
   {
     "id": "sbi-indigo",
