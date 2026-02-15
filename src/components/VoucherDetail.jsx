@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useVouchers } from '../hooks/useVouchers';
+import { useDiscountParser } from '../hooks/useDiscountParser';
 import { getPlatformLogo } from '../utils/platformLogos';
 import { ensureHttps } from '../utils/urlUtils';
 import { getLogoClass } from '../utils/logoUtils';
@@ -13,6 +14,7 @@ import { BASE_URL } from '../config/constants';
 const VoucherDetail = () => {
     const { id } = useParams();
     const { vouchers, loading, error } = useVouchers();
+    const { getMaxDiscount } = useDiscountParser();
 
     const voucher = useMemo(() => {
         return vouchers.find(v => v.id === id);
@@ -20,7 +22,7 @@ const VoucherDetail = () => {
 
     // Share to X function
     const shareToX = () => {
-        const url = `${window.location.origin}${window.location.pathname}#/voucher/${id}`;
+        const url = window.location.href; // Use current URL
         const text = `Check out ${voucher?.brand} voucher deals on Card Perks! 🎫💰`;
         window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
     };
@@ -53,9 +55,12 @@ const VoucherDetail = () => {
 
     // SEO Data
     const platformNames = voucher.platforms.map(p => p.name).join(', ');
-    const pageTitle = `${voucher.brand} Voucher & Gift Card Deals - Card Perks`;
-    const pageDescription = `Get the best deals and discounts on ${voucher.brand} gift cards. Compare rates across ${platformNames} and maximize your savings.`;
-    const pageUrl = `${window.location.origin}${window.location.pathname}#/voucher/${id}`;
+    const maxDiscount = getMaxDiscount(voucher.platforms);
+    const discountText = maxDiscount > 0 ? `| Up to ${maxDiscount}% OFF` : '';
+
+    const pageTitle = `Buy ${voucher.brand} Gift Cards & Vouchers ${discountText} | Card Perks`;
+    const pageDescription = `Buy ${voucher.brand} gift cards instantly. Compare rates across ${platformNames} to get the best deal. Maximize your savings with Card Perks.`;
+    const pageUrl = window.location.href;
     const canonicalUrl = `${BASE_URL}/voucher/${id}`;
 
     // Structured Data (JSON-LD)
@@ -102,11 +107,11 @@ const VoucherDetail = () => {
                 <meta name="twitter:description" content={pageDescription} />
                 <meta name="twitter:image" content={ensureHttps(voucher.logo)} />
 
-                {/* Structured Data */}
-                <script type="application/ld+json">
-                    {JSON.stringify(structuredData)}
-                </script>
+
             </Helmet>
+
+            {/* JSON-LD Structured Data - Placed in body for reliability */}
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
 
             <Link to="/" style={{ color: 'var(--text-secondary)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', marginBottom: '2rem' }}>
                 ← Back to Vouchers
@@ -147,7 +152,7 @@ const VoucherDetail = () => {
             </div>
 
 
-            <h2 style={{ marginBottom: '1.5rem' }}>Available Platforms</h2>
+            <h2 style={{ marginBottom: '1.5rem' }}>Compare {voucher.brand} Gift Cards & Vouchers</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
                 {voucher.platforms.map((platform, idx) => (
                     <div key={idx} className="glass-panel" style={{ padding: '0', overflow: 'hidden', borderTop: `4px solid ${platform.color || '#8b5cf6'}` }}>
