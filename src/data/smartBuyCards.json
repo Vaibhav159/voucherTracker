@@ -1,0 +1,68 @@
+[
+    {
+        "cardId": "hdfc-infinia-metal",
+        "cardName": "Infinia Metal",
+        "effectiveRate": "16.5%",
+        "formulaType": 0,
+        "regularPriceRatio": 150,
+        "regularPriceRatioFactor": 5,
+        "regularMaxPoint": 4,
+        "bonusMinAmount": 15000,
+        "rpValue": 1
+    },
+    {
+        "cardId": "hdfc-diners-club-black-metal",
+        "cardName": "DCB Metal",
+        "effectiveRate": "10%",
+        "formulaType": 0,
+        "regularPriceRatio": 150,
+        "regularPriceRatioFactor": 5,
+        "regularMaxPoint": 2,
+        "bonusMinAmount": 10000,
+        "rpValue": 1
+    },
+    {
+        "cardId": "hdfc-diners-club-black",
+        "cardName": "Diners Black",
+        "effectiveRate": "10%",
+        "formulaType": 0,
+        "regularPriceRatio": 150,
+        "regularPriceRatioFactor": 5,
+        "regularMaxPoint": 2,
+        "bonusMinAmount": 2500,
+        "rpValue": 1
+    },
+    {
+        "cardId": "hdfc-regalia",
+        "cardName": "Regalia",
+        "effectiveRate": "6.6%",
+        "formulaType": 0,
+        "regularPriceRatio": 150,
+        "regularPriceRatioFactor": 4,
+        "regularMaxPoint": 4,
+        "bonusMinAmount": 2000,
+        "rpValue": 0.5
+    },
+    {
+        "cardId": "hdfc-diners-club-privilege",
+        "cardName": "Diners Privilege",
+        "effectiveRate": "6.6%",
+        "formulaType": 0,
+        "regularPriceRatio": 150,
+        "regularPriceRatioFactor": 4,
+        "regularMaxPoint": 4,
+        "bonusMinAmount": 2000,
+        "rpValue": 0.5
+    },
+    {
+        "cardId": "hdfc-regalia-gold",
+        "cardName": "Regalia Gold",
+        "effectiveRate": "6.6%",
+        "formulaType": 0,
+        "regularPriceRatio": 150,
+        "regularPriceRatioFactor": 5,
+        "regularMaxPoint": null,
+        "bonusMinAmount": 1000,
+        "rpValue": 1
+    }
+]
