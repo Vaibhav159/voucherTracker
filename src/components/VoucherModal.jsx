@@ -9,6 +9,7 @@ import { useDiscountParser } from '../hooks/useDiscountParser';
 import { useFavorites } from '../context/FavoritesContext';
 import { useToast } from './UXPolish';
 import { useMediaQuery } from '../hooks/useMediaQuery';
+import { useSmartBuySavings } from '../hooks/useSmartBuySavings';
 import ExpiryBadge from './ExpiryBadge';
 
 const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
@@ -16,6 +17,7 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
     const { toggleFavoriteVoucher, isVoucherFavorite } = useFavorites();
     const { getBestPlatform } = useDiscountParser();
     const isMobile = useMediaQuery('(max-width: 768px)');
+    const { hasSmartBuyCard, bestRate, bestCardName } = useSmartBuySavings();
 
     // Hooks
     useModalKeyHandler(true, onClose);
@@ -52,6 +54,25 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
             return { label: 'Savings', value: 'Variable', isSavings: false };
         }
         return { label: 'Savings', value: fee, isSavings: true };
+    };
+
+    // Check if a platform is Gyftr
+    const isGyftr = (platformName) => platformName?.toLowerCase() === 'gyftr';
+
+    // Get combined savings text for Gyftr when user has SmartBuy card
+    const getGyftrCombinedValue = (fee) => {
+        if (!hasSmartBuyCard || !bestRate) return null;
+        const baseReward = getRewardText(fee);
+        // Show SmartBuy rate + existing Gyftr discount
+        if (fee === 'None' || fee === '0%') {
+            return `~${bestRate}%`;
+        }
+        // Extract numeric discount from fee
+        const match = fee.match(/(\d+(?:\.\d+)?)\s*%/);
+        if (match) {
+            return `~${bestRate}% + ${match[1]}%`;
+        }
+        return `~${bestRate}%`;
     };
 
     if (!voucher) return null;
@@ -147,7 +168,17 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                                         <div className="item-right">
                                             <div className="item-metrics">
                                                 <span className="metric-label">{isSavings ? 'SAVINGS' : 'FEES'}</span>
-                                                <span className={`metric-value ${isSavings ? 'green' : ''}`}>{value}</span>
+                                                {isGyftr(platform.name) && hasSmartBuyCard ? (
+                                                    <span className="metric-value green smartbuy-combined">
+                                                        {getGyftrCombinedValue(platform.fee) || value}
+                                                        <span className="smartbuy-card-badge">
+                                                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><rect x="1" y="4" width="22" height="16" rx="3" /><line x1="1" y1="10" x2="23" y2="10" /></svg>
+                                                            {bestCardName}
+                                                        </span>
+                                                    </span>
+                                                ) : (
+                                                    <span className={`metric-value ${isSavings ? 'green' : ''}`}>{value}</span>
+                                                )}
                                             </div>
                                             <div className={`chevron ${isSelected ? 'rotated' : ''}`}>
                                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9" /></svg>
@@ -174,8 +205,17 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                                     </div>
                                     <div className="sheet-savings-col">
                                         <span className="label">SAVINGS</span>
-                                        <span className="value">{selectedReward.value}</span>
-                                        {selectedReward.isSavings && <span className="off-text">OFF</span>}
+                                        {isGyftr(selectedOffer.name) && hasSmartBuyCard ? (
+                                            <>
+                                                <span className="value">{getGyftrCombinedValue(selectedOffer.fee) || selectedReward.value}</span>
+                                                <span className="off-text">OFF ({bestCardName})</span>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <span className="value">{selectedReward.value}</span>
+                                                {selectedReward.isSavings && <span className="off-text">OFF</span>}
+                                            </>
+                                        )}
                                     </div>
                                 </div>
                                 <div className="sheet-stats-grid">
@@ -315,9 +355,20 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                                     </div>
                                     <div style={{ flex: 1 }}></div>
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
-                                        <div style={{ display: 'flex', flexDirection: 'column', minWidth: '80px' }}>
+                                        <div style={{ display: 'flex', flexDirection: 'column', minWidth: '120px', alignItems: 'flex-end', textAlign: 'right' }}>
                                             <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '2px' }}>{label}</span>
-                                            <span style={{ fontSize: '1.1rem', fontWeight: '700', color: label === 'Savings' ? '#22c55e' : 'var(--text-primary)' }}>{value}</span>
+                                            {isGyftr(platform.name) && hasSmartBuyCard ? (
+                                                <span style={{ fontSize: '1.1rem', fontWeight: '700', color: '#22c55e' }}>
+                                                    {getGyftrCombinedValue(platform.fee) || value}
+                                                    {' '}
+                                                    <span className="smartbuy-card-badge" style={{ verticalAlign: 'middle', marginTop: 0 }}>
+                                                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><rect x="1" y="4" width="22" height="16" rx="3" /><line x1="1" y1="10" x2="23" y2="10" /></svg>
+                                                        {bestCardName}
+                                                    </span>
+                                                </span>
+                                            ) : (
+                                                <span style={{ fontSize: '1.1rem', fontWeight: '700', color: label === 'Savings' ? '#22c55e' : 'var(--text-primary)' }}>{value}</span>
+                                            )}
                                         </div>
                                         {/* Buy Button */}
                                         <a href={platform.link} target="_blank" rel="noopener noreferrer" className="btn-buy"
