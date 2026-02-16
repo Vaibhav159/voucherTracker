@@ -31,6 +31,7 @@ export const MyCardsProvider = ({ children }) => {
     const [myCardIds, setMyCardIds] = useLocalStorage('myCards', []);
     const [primaryCards, setPrimaryCards] = useLocalStorage('primaryCards', {});
     const [cardNotes, setCardNotes] = useLocalStorage('cardNotes', {});
+    const [cardExpenses, setCardExpenses] = useLocalStorage('cardExpenses', {});
 
     // Get full card objects for user's cards
     const myCards = useMemo(() => {
@@ -199,6 +200,60 @@ export const MyCardsProvider = ({ children }) => {
         return cardNotes[cardId] || '';
     }, [cardNotes]);
 
+    // ===== EXPENSE TRACKING =====
+
+    // Add an expense to a card
+    const addExpense = useCallback((cardId, expense) => {
+        const newExpense = {
+            ...expense,
+            id: crypto.randomUUID(),
+        };
+        setCardExpenses(prev => {
+            const updated = { ...prev };
+            if (!updated[cardId]) updated[cardId] = [];
+            updated[cardId] = [newExpense, ...updated[cardId]];
+            return updated;
+        });
+        toast.success('Expense added');
+        return newExpense;
+    }, [setCardExpenses, toast]);
+
+    // Update an expense
+    const updateExpense = useCallback((cardId, expenseId, updates) => {
+        setCardExpenses(prev => {
+            const updated = { ...prev };
+            if (!updated[cardId]) return prev;
+            updated[cardId] = updated[cardId].map(exp =>
+                exp.id === expenseId ? { ...exp, ...updates } : exp
+            );
+            return updated;
+        });
+        toast.success('Expense updated');
+    }, [setCardExpenses, toast]);
+
+    // Delete an expense
+    const deleteExpense = useCallback((cardId, expenseId) => {
+        setCardExpenses(prev => {
+            const updated = { ...prev };
+            if (!updated[cardId]) return prev;
+            updated[cardId] = updated[cardId].filter(exp => exp.id !== expenseId);
+            if (updated[cardId].length === 0) delete updated[cardId];
+            return updated;
+        });
+        toast.info('Expense deleted');
+    }, [setCardExpenses, toast]);
+
+    // Get expenses for a card
+    const getExpenses = useCallback((cardId) => {
+        return cardExpenses[cardId] || [];
+    }, [cardExpenses]);
+
+    // Get total spend for a card
+    const getCardTotalSpend = useCallback((cardId) => {
+        const expenses = cardExpenses[cardId] || [];
+        return expenses.reduce((sum, exp) => sum + (Number(exp.amount) || 0), 0);
+    }, [cardExpenses]);
+
     // Clear all cards
     const clearAllCards = useCallback(() => {
         if (myCardIds.length === 0) {
@@ -255,6 +310,11 @@ export const MyCardsProvider = ({ children }) => {
             getCardNote,
             clearAllCards,
             restoreCards,
+            addExpense,
+            updateExpense,
+            deleteExpense,
+            getExpenses,
+            getCardTotalSpend,
         }}>
             {children}
         </MyCardsContext.Provider>
