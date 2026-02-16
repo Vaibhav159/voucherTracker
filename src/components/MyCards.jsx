@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useMyCards } from '../context/MyCardsContext';
 import creditCards from '../data/creditCards.json';
 import CardImage from './CardImage';
+import CardExpenses from './CardExpenses';
 
 /**
  * MyCards V2 - Complete Overhaul
@@ -40,8 +41,30 @@ const MyCards = () => {
     removeCard,
     addCard,
     hasCard,
-
+    getCardTotalSpend,
+    getExpenses,
   } = useMyCards();
+
+  // Compute total & monthly spend across all cards
+  const { totalAllSpend, totalMonthlySpend } = useMemo(() => {
+    let allSpend = 0;
+    let monthlySpend = 0;
+    const now = new Date();
+    const curMonth = now.getMonth();
+    const curYear = now.getFullYear();
+    myCards.forEach(card => {
+      const expenses = getExpenses(card.id);
+      expenses.forEach(exp => {
+        const amt = Number(exp.amount) || 0;
+        allSpend += amt;
+        const d = new Date(exp.date);
+        if (d.getMonth() === curMonth && d.getFullYear() === curYear) {
+          monthlySpend += amt;
+        }
+      });
+    });
+    return { totalAllSpend: allSpend, totalMonthlySpend: monthlySpend };
+  }, [myCards, getExpenses]);
 
   const [activeTab, setActiveTab] = useState('collection');
   const [searchQuery, setSearchQuery] = useState('');
@@ -49,6 +72,7 @@ const MyCards = () => {
   const [sortBy, setSortBy] = useState('name');
   const [collectionSearch, setCollectionSearch] = useState('');
   const [collectionFilter, setCollectionFilter] = useState('all');
+  const [expenseCardId, setExpenseCardId] = useState(null);
 
 
   // Banks in user's collection
@@ -188,7 +212,7 @@ const MyCards = () => {
           </div>
 
           {/* Stats Dashboard */}
-          <div className="mc-stats mc-stats-compact">
+          <div className="mc-stats mc-stats-4">
             <div className="stat-pill">
               <div className="stat-icon">💳</div>
               <span className="sp-label">Total Cards</span>
@@ -198,6 +222,16 @@ const MyCards = () => {
               <div className="stat-icon">💰</div>
               <span className="sp-label">Max Monthly Savings</span>
               <span className="sp-value green">₹{totalMonthlyValue > 0 ? totalMonthlyValue.toLocaleString() : '0'}</span>
+            </div>
+            <div className="stat-pill">
+              <div className="stat-icon">📅</div>
+              <span className="sp-label">This Month Spends</span>
+              <span className="sp-value orange">₹{totalMonthlySpend > 0 ? totalMonthlySpend.toLocaleString('en-IN') : '0'}</span>
+            </div>
+            <div className="stat-pill">
+              <div className="stat-icon">📊</div>
+              <span className="sp-label">Total Spends</span>
+              <span className="sp-value orange">₹{totalAllSpend > 0 ? totalAllSpend.toLocaleString('en-IN') : '0'}</span>
             </div>
           </div>
         </div>
@@ -336,6 +370,24 @@ const MyCards = () => {
                           </div>
                         </div>
 
+                        {/* Expense Quick Stat + Button */}
+                        <div className="tile-expense-row">
+                          {(() => {
+                            const spend = getCardTotalSpend(card.id);
+                            return spend > 0 ? (
+                              <span className="tile-spend">Spend: ₹{spend.toLocaleString('en-IN')}</span>
+                            ) : (
+                              <span className="tile-spend muted">No expenses</span>
+                            );
+                          })()}
+                          <button
+                            className="tile-expense-btn"
+                            onClick={() => setExpenseCardId(card.id)}
+                            title="View Expenses"
+                          >
+                            📊 Expenses
+                          </button>
+                        </div>
 
                       </div>
                     );
@@ -443,6 +495,18 @@ const MyCards = () => {
         )}
       </main>
 
+      {/* Expense Modal */}
+      {expenseCardId && (() => {
+        const expenseCard = myCards.find(c => c.id === expenseCardId);
+        if (!expenseCard) return null;
+        return (
+          <CardExpenses
+            card={expenseCard}
+            onClose={() => setExpenseCardId(null)}
+          />
+        );
+      })()}
+
       <style>{`
         /* ========================================
            MY WALLET - PREMIUM GLASSMORPHISM DESIGN
@@ -503,9 +567,16 @@ const MyCards = () => {
           gap: 0.875rem;
         }
 
-        .mc-stats-compact {
-          grid-template-columns: repeat(2, 1fr);
-          max-width: 600px;
+        .mc-stats-4 {
+          grid-template-columns: repeat(4, 1fr);
+        }
+
+        .stat-pill:nth-child(3) { --accent: #f59e0b; }
+        .stat-pill:nth-child(4) { --accent: #ef4444; }
+
+        .sp-value.orange {
+          color: #f59e0b;
+          text-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
         }
 
         .stat-pill {
@@ -1029,6 +1100,64 @@ const MyCards = () => {
           text-shadow: 0 0 12px rgba(74, 222, 128, 0.3);
         }
 
+        /* ===== EXPENSE ROW ON CARD TILE ===== */
+        .tile-expense-row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0.75rem 1.5rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .tile-spend {
+          font-size: 0.82rem;
+          font-weight: 600;
+          color: #f59e0b;
+        }
+
+        .tile-spend.muted {
+          color: var(--text-secondary, rgba(148, 163, 184, 0.5));
+          font-weight: 500;
+        }
+
+        .tile-expense-btn {
+          padding: 0.4rem 0.9rem;
+          background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.1));
+          border: 1px solid rgba(99, 102, 241, 0.25);
+          border-radius: 8px;
+          color: #a5b4fc;
+          font-size: 0.78rem;
+          font-weight: 600;
+          font-family: inherit;
+          cursor: pointer;
+          transition: all 0.2s;
+        }
+
+        .tile-expense-btn:hover {
+          background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(139, 92, 246, 0.2));
+          border-color: rgba(99, 102, 241, 0.5);
+          color: #c7d2fe;
+          transform: translateY(-1px);
+        }
+
+        [data-theme='light'] .tile-expense-row {
+          border-top-color: rgba(0, 0, 0, 0.06);
+        }
+
+        [data-theme='light'] .tile-spend {
+          color: #d97706;
+        }
+
+        [data-theme='light'] .tile-expense-btn {
+          background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.06));
+          border-color: rgba(99, 102, 241, 0.2);
+          color: #4f46e5;
+        }
+
+        [data-theme='light'] .tile-expense-btn:hover {
+          background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.1));
+          color: #4338ca;
+        }
 
 
         /* ===== ADD VIEW ===== */
