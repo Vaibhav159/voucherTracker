@@ -16,7 +16,7 @@ class VoucherPlatformSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = VoucherPlatform
-        fields = ["name", "cap", "fee", "denominations", "link", "color"]
+        fields = ["name", "cap", "fee", "denominations", "link", "color", "out_of_stock_at"]
 
 
 class VoucherSerializer(serializers.ModelSerializer):

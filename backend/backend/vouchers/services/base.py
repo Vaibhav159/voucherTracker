@@ -10,6 +10,7 @@ from __future__ import annotations
 from typing import NamedTuple
 
 from django.core.cache import cache
+from django.utils import timezone
 
 from backend.vouchers.choices import VoucherMismatchStatus
 from backend.vouchers.models import Platform
@@ -218,3 +219,26 @@ class BaseSyncService:
             skipped_count=len(skipped_items),
             skipped_items=skipped_items,
         )
+
+    def update_stock_status(self, active_external_ids: list[str] | set[str]) -> None:
+        """
+        Update out_of_stock_at for items based on their presence in the current sync.
+
+        Args:
+            active_external_ids: List/Set of external IDs found in the current sync.
+        """
+        platform = self.get_platform()
+        now = timezone.now()
+
+        # 1. Mark missing items as out of stock
+        # Only update if currently in stock (out_of_stock_at is None)
+        # We exclude items that match the active external_ids
+        VoucherPlatform.objects.filter(platform=platform).exclude(external_id__in=active_external_ids).filter(
+            out_of_stock_at__isnull=True,
+        ).update(out_of_stock_at=now)
+
+        # 2. Mark present items as in stock
+        # Only update if currently out of stock (out_of_stock_at is NOT None)
+        VoucherPlatform.objects.filter(platform=platform, external_id__in=active_external_ids).filter(
+            out_of_stock_at__isnull=False,
+        ).update(out_of_stock_at=None)

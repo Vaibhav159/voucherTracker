@@ -168,7 +168,9 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                                         <div className="item-right">
                                             <div className="item-metrics">
                                                 <span className="metric-label">{isSavings ? 'SAVINGS' : 'FEES'}</span>
-                                                {isGyftr(platform.name) && hasSmartBuyCard ? (
+                                                {platform.out_of_stock_at ? (
+                                                    <span className="metric-value" style={{ color: '#ef4444', fontSize: '0.9rem' }}>Out of Stock</span>
+                                                ) : isGyftr(platform.name) && hasSmartBuyCard ? (
                                                     <span className="metric-value green smartbuy-combined">
                                                         {getGyftrCombinedValue(platform.fee) || value}
                                                         <span className="smartbuy-card-badge">
@@ -228,8 +230,15 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                                         <span className="stat-value">{selectedOffer.cap || 'No Cap'}</span>
                                     </div>
                                 </div>
-                                <a href={selectedOffer.link} target="_blank" rel="noopener noreferrer" className="sheet-buy-btn">
-                                    Buy Now <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+                                <a href={selectedOffer.link} target="_blank" rel="noopener noreferrer"
+                                    className={`sheet-buy-btn ${selectedOffer.out_of_stock_at ? 'disabled' : ''}`}
+                                    style={selectedOffer.out_of_stock_at ? { opacity: 0.6, pointerEvents: 'none', background: '#334155' } : {}}
+                                >
+                                    {selectedOffer.out_of_stock_at ? 'Out of Stock' : (
+                                        <>
+                                            Buy Now <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+                                        </>
+                                    )}
                                 </a>
                             </div>
                         </div>
@@ -371,14 +380,33 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                                             )}
                                         </div>
                                         {/* Buy Button */}
-                                        <a href={platform.link} target="_blank" rel="noopener noreferrer" className="btn-buy"
-                                            style={{
-                                                padding: '12px 24px', borderRadius: '10px', background: '#0F172A',
-                                                border: '1px solid rgba(255,255,255,0.1)', color: '#fff', textDecoration: 'none', fontWeight: '600',
-                                                display: 'flex', alignItems: 'center', gap: '8px'
-                                            }}>
-                                            Buy Now ↗
-                                        </a>
+                                        {platform.out_of_stock_at ? (
+                                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
+                                                <span style={{
+                                                    padding: '8px 16px',
+                                                    borderRadius: '8px',
+                                                    background: 'rgba(239, 68, 68, 0.1)',
+                                                    color: '#ef4444',
+                                                    fontSize: '0.9rem',
+                                                    fontWeight: 600,
+                                                    whiteSpace: 'nowrap'
+                                                }}>
+                                                    Out of Stock
+                                                </span>
+                                                <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+                                                    Since {new Date(platform.out_of_stock_at).toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' })}
+                                                </span>
+                                            </div>
+                                        ) : (
+                                            <a href={platform.link} target="_blank" rel="noopener noreferrer" className="btn-buy"
+                                                style={{
+                                                    padding: '12px 24px', borderRadius: '10px', background: '#0F172A',
+                                                    border: '1px solid rgba(255,255,255,0.1)', color: '#fff', textDecoration: 'none', fontWeight: '600',
+                                                    display: 'flex', alignItems: 'center', gap: '8px'
+                                                }}>
+                                                Buy Now ↗
+                                            </a>
+                                        )}
                                     </div>
                                 </div>
                             );

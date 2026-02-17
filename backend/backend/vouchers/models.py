@@ -46,6 +46,7 @@ class VoucherPlatform(models.Model):
     color = models.CharField(_("Color"), max_length=50, blank=True)
     priority = models.IntegerField(_("Priority"), default=0)
     external_id = models.CharField(_("External ID"), max_length=255, blank=True, db_index=True)
+    out_of_stock_at = models.DateTimeField(_("Out of Stock At"), null=True, blank=True)
 
     class Meta:
         ordering = ["priority"]

@@ -53,12 +53,18 @@ class MagnifySyncService(BaseSyncService):
                     items = data.get("giftCards", [])
 
             sync_items = []
+            all_external_ids = set()
+
             for item in items:
                 sync_item = self._transform_item(item)
                 if sync_item:
                     sync_items.append(sync_item)
+                    all_external_ids.add(sync_item.external_id)
 
             result = self.sync_items(sync_items)
+
+            # Update stock status
+            self.update_stock_status(all_external_ids)
 
             return {
                 "status": "success",
