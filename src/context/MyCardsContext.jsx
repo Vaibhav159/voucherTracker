@@ -124,7 +124,7 @@ export const MyCardsProvider = ({ children }) => {
 
             return [...prev, cardId];
         });
-    }, [setMyCardIds, toast]);
+    }, [setMyCardIds, toast, creditCards]);
 
     // Remove a card from collection
     const removeCard = useCallback((cardId, showToast = true) => {
@@ -150,7 +150,7 @@ export const MyCardsProvider = ({ children }) => {
             });
             return updated;
         });
-    }, [setMyCardIds, setPrimaryCards, toast]);
+    }, [setMyCardIds, setPrimaryCards, toast, creditCards]);
 
     // Check if user has a card
     const hasCard = useCallback((cardId) => {
@@ -172,7 +172,7 @@ export const MyCardsProvider = ({ children }) => {
             }
             return updated;
         });
-    }, [setPrimaryCards, toast]);
+    }, [setPrimaryCards, toast, creditCards]);
 
     // Get primary card for a category
     const getPrimaryCard = useCallback((category) => {
@@ -289,6 +289,7 @@ export const MyCardsProvider = ({ children }) => {
                 sessionStorage.removeItem('myCardsBackup');
             }
         } catch (e) {
+            console.error('Failed to restore cards', e);
             toast.error('Could not restore cards');
         }
     }, [setMyCardIds, setPrimaryCards, setCardNotes, toast]);

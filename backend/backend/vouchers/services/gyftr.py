@@ -50,6 +50,8 @@ class GyftrSyncService(BaseSyncService):
 
             sync_result = SyncResult(0, 0, 0, [])
 
+            all_external_ids = set()
+
             # 2. Fetch brands for each category
             for cat in categories:
                 cat_slug = cat.get("slug")
@@ -80,6 +82,7 @@ class GyftrSyncService(BaseSyncService):
                         sync_item = self._transform_item(item)
                         if sync_item:
                             sync_items.append(sync_item)
+                            all_external_ids.add(sync_item.external_id)
 
                 except Exception as brand_err:
                     print(f"Error fetching brands for {cat_slug}: {brand_err}")
@@ -91,6 +94,10 @@ class GyftrSyncService(BaseSyncService):
                 sync_items.clear()
                 sync_result += result
                 print(f"Synced {len(result)} brands for {cat_slug}")
+
+            # 4. Update stock status for all items
+            print(f"Updating stock status. Found {len(all_external_ids)} active items.")
+            self.update_stock_status(all_external_ids)
 
             return {
                 "status": "success",

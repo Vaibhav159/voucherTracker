@@ -49,6 +49,7 @@ class MaximizeSyncService(BaseSyncService):
 
             # Transform items to SyncItem format
             sync_items: list[SyncItem] = []
+            all_external_ids = set()
 
             for brand_name, brand_items in brand_to_giftcard_map.items():
                 if "Phone" in brand_name:
@@ -58,15 +59,20 @@ class MaximizeSyncService(BaseSyncService):
                     sync_item = self._transform_item(item, use_brand_name=True)
                     if sync_item:
                         sync_items.append(sync_item)
+                        all_external_ids.add(sync_item.external_id)
                 else:
                     # Multiple items per brand - match via gift card name only
                     for item in brand_items:
                         sync_item = self._transform_item(item, use_brand_name=False)
                         if sync_item:
                             sync_items.append(sync_item)
+                            all_external_ids.add(sync_item.external_id)
 
             # Perform bulk sync
             result = self.sync_items(sync_items)
+
+            # Update stock status
+            self.update_stock_status(all_external_ids)
 
             return {
                 "status": "success",

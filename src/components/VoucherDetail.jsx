@@ -177,15 +177,36 @@ const VoucherDetail = () => {
                                     )}
                                     <h3 style={{ margin: 0, fontSize: '1.2rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{platform.name}</h3>
                                 </div>
-                                <a
-                                    href={platform.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="btn-primary"
-                                    style={{ padding: '8px 16px', fontSize: '0.9rem', whiteSpace: 'nowrap', flexShrink: 0 }}
-                                >
-                                    Buy Now ↗
-                                </a>
+                                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
+                                    {platform.out_of_stock_at ? (
+                                        <>
+                                            <span style={{
+                                                padding: '6px 12px',
+                                                borderRadius: '6px',
+                                                background: 'rgba(239, 68, 68, 0.1)',
+                                                color: '#ef4444',
+                                                fontSize: '0.9rem',
+                                                fontWeight: 600,
+                                                whiteSpace: 'nowrap'
+                                            }}>
+                                                Out of Stock
+                                            </span>
+                                            <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+                                                Since {new Date(platform.out_of_stock_at).toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' })}
+                                            </span>
+                                        </>
+                                    ) : (
+                                        <a
+                                            href={platform.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="btn-primary"
+                                            style={{ padding: '8px 16px', fontSize: '0.9rem', whiteSpace: 'nowrap', flexShrink: 0 }}
+                                        >
+                                            Buy Now ↗
+                                        </a>
+                                    )}
+                                </div>
                             </div>
                         </div>
 
