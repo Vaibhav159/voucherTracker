@@ -352,6 +352,14 @@ const Guides = () => {
                 <p className="guides-subtitle">
                     Curated discussions and threads to help you maximize savings.
                 </p>
+                <a
+                    href="https://www.creditkeeda.com/blog"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="guides-featured-link"
+                >
+                    Visit CreditKeeda Blog ↗
+                </a>
             </header>
 
             {/* Minimalist Control Bar */}
