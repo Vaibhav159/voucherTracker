@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 import { useVouchers } from '../hooks/useVouchers';
@@ -704,6 +705,16 @@ const AskAI = () => {
 
     return (
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '1rem' }}>
+            <Helmet>
+                <title>Ask AI - Credit Card & Banking Advisor | Card Perks</title>
+                <meta name="description" content="AI-powered credit card and banking advisor. Get instant recommendations for best cards, voucher combos, wealth banking tiers, and spending strategies." />
+                <link rel="canonical" href="https://cardperks.xyz/ask-ai" />
+                <meta property="og:title" content="Ask AI - Card Perks" />
+                <meta property="og:description" content="AI-powered credit card and banking advisor with instant recommendations." />
+                <meta property="og:url" content="https://cardperks.xyz/ask-ai" />
+                <meta property="og:image" content="https://cardperks.xyz/og/og-ai.png" />
+                <meta property="twitter:image" content="https://cardperks.xyz/og/og-ai.png" />
+            </Helmet>
             {/* Header */}
             <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
                 <h1 className="text-gradient" style={{ fontSize: '2rem', marginBottom: '0.25rem' }}>

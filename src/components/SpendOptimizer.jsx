@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import creditCards from '../data/creditCards.json';
 
@@ -142,6 +143,16 @@ const SpendOptimizer = () => {
 
   return (
     <div className="optimizer-page">
+      <Helmet>
+        <title>Spend Optimizer - Best Card for Each Category | Card Perks</title>
+        <meta name="description" content="Find the best credit card for each spending category. Enter your monthly spending and get personalized card recommendations." />
+        <link rel="canonical" href="https://cardperks.xyz/spend-optimizer" />
+        <meta property="og:title" content="Spend Optimizer - Card Perks" />
+        <meta property="og:description" content="Optimize your spending to maximize credit card rewards." />
+        <meta property="og:url" content="https://cardperks.xyz/spend-optimizer" />
+        <meta property="og:image" content="https://cardperks.xyz/og/og-optimizer.png" />
+        <meta property="twitter:image" content="https://cardperks.xyz/og/og-optimizer.png" />
+      </Helmet>
       {/* Header */}
       <header className="optimizer-header">
         <div className="header-icon">💳</div>

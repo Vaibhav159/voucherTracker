@@ -1,4 +1,5 @@
 import { useState, useMemo, useCallback } from 'react';
+import { Helmet } from 'react-helmet-async';
 import creditCards from '../data/creditCards.json';
 import { SPENDING_PRESETS, SPENDING_CATEGORIES, BANKS } from '../data/calculatorConfig';
 
@@ -135,6 +136,16 @@ const RewardsCalculator = () => {
 
     return (
         <div style={{ minHeight: '100vh', padding: '2rem 1rem 4rem' }}>
+            <Helmet>
+                <title>Credit Card Rewards Calculator - Compare Card Benefits | Card Perks</title>
+                <meta name="description" content="Calculate and compare credit card rewards across spending categories. Find the best card for your spending pattern from top Indian banks." />
+                <link rel="canonical" href="https://cardperks.xyz/rewards-calculator" />
+                <meta property="og:title" content="Credit Card Rewards Calculator - Card Perks" />
+                <meta property="og:description" content="Calculate and compare credit card rewards across spending categories." />
+                <meta property="og:url" content="https://cardperks.xyz/rewards-calculator" />
+                <meta property="og:image" content="https://cardperks.xyz/og/og-calculator.png" />
+                <meta property="twitter:image" content="https://cardperks.xyz/og/og-calculator.png" />
+            </Helmet>
             <header style={{ textAlign: 'center', marginBottom: '2rem', maxWidth: '700px', margin: '0 auto 2rem' }}>
                 <h1 className="text-gradient" style={{ fontSize: 'clamp(1.8rem, 5vw, 2.5rem)', fontWeight: '800', marginBottom: '0.5rem' }}>Credit Card Rewards Calculator</h1>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>Compare <strong style={{ color: '#22c55e' }}>{cardRewards.length} cards</strong> across <strong style={{ color: '#06b6d4' }}>{BANKS.length - 1} banks</strong></p>

@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 /**
  * MilestoneTracker - Track spending goals for fee waivers & bonus rewards
@@ -206,6 +207,16 @@ const MilestoneTracker = () => {
 
   return (
     <div style={{ padding: '1rem 0 4rem' }}>
+      <Helmet>
+        <title>Milestone Tracker - Spending Goals & Fee Waivers | Card Perks</title>
+        <meta name="description" content="Track your credit card spending progress towards fee waivers and bonus rewards. Set milestones and monitor your goals." />
+        <link rel="canonical" href="https://cardperks.xyz/milestones" />
+        <meta property="og:title" content="Milestone Tracker - Card Perks" />
+        <meta property="og:description" content="Track your credit card spending milestones and fee waivers." />
+        <meta property="og:url" content="https://cardperks.xyz/milestones" />
+        <meta property="og:image" content="https://cardperks.xyz/og/og-milestones.png" />
+        <meta property="twitter:image" content="https://cardperks.xyz/og/og-milestones.png" />
+      </Helmet>
       {/* Header */}
       <header style={{ textAlign: 'center', marginBottom: '2rem' }}>
         <h1 className="text-gradient" style={{ fontSize: 'clamp(1.8rem, 5vw, 2.5rem)', marginBottom: '0.5rem' }}>

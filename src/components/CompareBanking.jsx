@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import { wealthBanking, getBankNames } from '../data/bankingPrograms';
 import { useFavorites } from '../context/FavoritesContext';
@@ -147,6 +148,16 @@ const CompareBanking = () => {
 
     return (
         <div style={{ paddingTop: '1rem', paddingBottom: '4rem' }}>
+            <Helmet>
+                <title>Compare Banking Tiers - Side-by-Side Comparison | Card Perks</title>
+                <meta name="description" content="Compare wealth banking tiers side-by-side. Evaluate NRV requirements, benefits, interest rates, and exclusive perks across Indian banks." />
+                <link rel="canonical" href="https://cardperks.xyz/compare-banking" />
+                <meta property="og:title" content="Compare Banking Tiers - Card Perks" />
+                <meta property="og:description" content="Compare wealth banking tiers side-by-side across Indian banks." />
+                <meta property="og:url" content="https://cardperks.xyz/compare-banking" />
+                <meta property="og:image" content="https://cardperks.xyz/og/og-compare.png" />
+                <meta property="twitter:image" content="https://cardperks.xyz/og/og-compare.png" />
+            </Helmet>
             {/* Header */}
             <header style={{ marginBottom: '2.5rem', textAlign: 'center' }}>
                 <h2 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '0.5rem', fontStyle: 'italic' }}>

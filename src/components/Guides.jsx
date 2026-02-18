@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useMemo, useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useGuides } from '../hooks/useGuides';
 import Markdown from 'react-markdown';
 import { useTheme } from '../context/ThemeContext';
@@ -347,6 +348,16 @@ const Guides = () => {
 
     return (
         <div className="guides-container">
+            <Helmet>
+                <title>Community Guides - Credit Card Tips & Discussions | Card Perks</title>
+                <meta name="description" content="Curated community guides and discussions to help you maximize credit card savings, rewards, and benefits in India." />
+                <link rel="canonical" href="https://cardperks.xyz/guides" />
+                <meta property="og:title" content="Community Guides - Card Perks" />
+                <meta property="og:description" content="Curated community guides and discussions to help you maximize credit card savings." />
+                <meta property="og:url" content="https://cardperks.xyz/guides" />
+                <meta property="og:image" content="https://cardperks.xyz/og/og-guides.png" />
+                <meta property="twitter:image" content="https://cardperks.xyz/og/og-guides.png" />
+            </Helmet>
             <header className="guides-header">
                 <h2 className="guides-title">Community Guides</h2>
                 <p className="guides-subtitle">

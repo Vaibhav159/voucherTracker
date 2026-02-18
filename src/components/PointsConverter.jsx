@@ -1,5 +1,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import { Helmet } from 'react-helmet-async';
 import { pointsConversion, getCardNames, tierConfig, getAllBanks } from '../data/pointsConversion';
 import '../styles/components/points-converter.css';
 
@@ -176,6 +177,16 @@ const PointsConverter = () => {
 
   return (
     <div className="points-page">
+      <Helmet>
+        <title>Points Converter - Best Redemption Value for Reward Points | Card Perks</title>
+        <meta name="description" content="Find the best redemption value for your credit card reward points. Compare transfer partners, cashback rates, and airline miles conversions." />
+        <link rel="canonical" href="https://cardperks.xyz/points-converter" />
+        <meta property="og:title" content="Points Converter - Card Perks" />
+        <meta property="og:description" content="Find the best redemption value for your credit card reward points." />
+        <meta property="og:url" content="https://cardperks.xyz/points-converter" />
+        <meta property="og:image" content="https://cardperks.xyz/og/og-converter.png" />
+        <meta property="twitter:image" content="https://cardperks.xyz/og/og-converter.png" />
+      </Helmet>
       {/* Header */}
       <header className="points-header">
         <h1>Points Converter</h1>

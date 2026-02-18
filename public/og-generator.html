@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OG Image Generator</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+              rel="stylesheet">
+        <style>
+        :root {
+            --bg-color: #030014;
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --accent-cyan: #00f0ff;
+            --accent-pink: #8B5CF6;
+            --accent-violet: #4a00e0;
+            --font-family: 'Outfit', sans-serif;
+            --gradient-text-start: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000;
+            font-family: var(--font-family);
+        }
+
+        .og-container {
+            width: 1200px;
+            height: 630px;
+            position: relative;
+            background: var(--bg-color);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 50px;
+            /* Space between cards for easier screenshots */
+        }
+
+        /* Background Effects */
+        .og-bg-glow-1 {
+            position: absolute;
+            top: -20%;
+            left: -10%;
+            width: 60%;
+            height: 60%;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--accent-violet), transparent 70%);
+            opacity: 0.2;
+            filter: blur(80px);
+            z-index: 1;
+        }
+
+        .og-bg-glow-2 {
+            position: absolute;
+            bottom: -20%;
+            right: -10%;
+            width: 50%;
+            height: 50%;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--accent-cyan), transparent 70%);
+            opacity: 0.15;
+            filter: blur(80px);
+            z-index: 1;
+        }
+
+        .og-grid-overlay {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+            z-index: 2;
+        }
+
+        /* Content */
+        .og-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .og-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .og-title {
+            font-size: 5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--gradient-text-start) 0%, var(--accent-cyan) 50%, var(--accent-pink) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            max-width: 1000px;
+        }
+
+        .og-subtitle {
+            font-size: 2rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            max-width: 800px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0.5rem 1.5rem;
+            border-radius: 100px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .og-brand {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .og-brand img {
+            width: 30px;
+            height: 30px;
+            opacity: 0.7;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <!-- 1. Guides -->
+        <div id="og-guides" class="og-container">
+            <div class="og-bg-glow-1"></div>
+            <div class="og-bg-glow-2"></div>
+            <div class="og-grid-overlay"></div>
+            <div class="og-content">
+                <div class="og-icon">📚</div>
+                <h1 class="og-title">Community Guides</h1>
+                <p class="og-subtitle">Master Credit Cards, Rewards & Savings</p>
+            </div>
+            <div class="og-brand">CARD PERKS</div>
+        </div>
+        <!-- 2. Banking -->
+        <div id="og-banking" class="og-container">
+            <div class="og-bg-glow-1"
+                 style="background: radial-gradient(circle, #22c55e, transparent 70%)"></div>
+            <div class="og-bg-glow-2"></div>
+            <div class="og-grid-overlay"></div>
+            <div class="og-content">
+                <div class="og-icon">🏦</div>
+                <h1 class="og-title">Banking Guides</h1>
+                <p class="og-subtitle">Wealth Tiers & Family Banking Programs</p>
+            </div>
+            <div class="og-brand">CARD PERKS</div>
+        </div>
+        <!-- 3. Compare -->
+        <div id="og-compare" class="og-container">
+            <div class="og-bg-glow-1"></div>
+            <div class="og-bg-glow-2"
+                 style="background: radial-gradient(circle, #f59e0b, transparent 70%)"></div>
+            <div class="og-grid-overlay"></div>
+            <div class="og-content">
+                <div class="og-icon">⚖️</div>
+                <h1 class="og-title">Compare Banking</h1>
+                <p class="og-subtitle">Side-by-Side Wealth Tier Comparison</p>
+            </div>
+            <div class="og-brand">CARD PERKS</div>
+        </div>
+        <!-- 4. Calculator -->
+        <div id="og-calculator" class="og-container">
+            <div class="og-bg-glow-1"
+                 style="background: radial-gradient(circle, #06b6d4, transparent 70%)"></div>
+            <div class="og-bg-glow-2"></div>
+            <div class="og-grid-overlay"></div>
+            <div class="og-content">
+                <div class="og-icon">🧮</div>
+                <h1 class="og-title">Rewards Calculator</h1>
+                <p class="og-subtitle">Calculate Your Real Credit Card Rewards</p>
+            </div>
+            <div class="og-brand">CARD PERKS</div>
+        </div>
+        <!-- 5. Converter -->
+        <div id="og-converter" class="og-container">
+            <div class="og-bg-glow-1"></div>
+            <div class="og-bg-glow-2"
+                 style="background: radial-gradient(circle, #f97316, transparent 70%)"></div>
+            <div class="og-grid-overlay"></div>
+            <div class="og-content">
+                <div class="og-icon">🔄</div>
+                <h1 class="og-title">Points Converter</h1>
+                <p class="og-subtitle">Find the Best Redemption Value</p>
+            </div>
+            <div class="og-brand">CARD PERKS</div>
+        </div>
+        <!-- 6. Favorites -->
+        <div id="og-favorites" class="og-container">
+            <div class="og-bg-glow-1"
+                 style="background: radial-gradient(circle, #ec4899, transparent 70%)"></div>
+            <div class="og-bg-glow-2"></div>
+            <div class="og-grid-overlay"></div>
+            <div class="og-content">
+                <div class="og-icon">❤️</div>
+                <h1 class="og-title">My Favorites</h1>
+                <p class="og-subtitle">Your Saved Cards, Vouchers & Guides</p>
+            </div>
+            <div class="og-brand">CARD PERKS</div>
+        </div>
+        <!-- 7. Wallet -->
+        <div id="og-wallet" class="og-container">
+            <div class="og-bg-glow-1"></div>
+            <div class="og-bg-glow-2"
+                 style="background: radial-gradient(circle, #8b5cf6, transparent 70%)"></div>
+            <div class="og-grid-overlay"></div>
+            <div class="og-content">
+                <div class="og-icon">💳</div>
+                <h1 class="og-title">My Wallet</h1>
+                <p class="og-subtitle">Manage Your Credit Card Portfolio</p>
+            </div>
+            <div class="og-brand">CARD PERKS</div>
+        </div>
+        <!-- 8. Optimizer -->
+        <div id="og-optimizer" class="og-container">
+            <div class="og-bg-glow-1"
+                 style="background: radial-gradient(circle, #22c55e, transparent 70%)"></div>
+            <div class="og-bg-glow-2"></div>
+            <div class="og-grid-overlay"></div>
+            <div class="og-content">
+                <div class="og-icon">📈</div>
+                <h1 class="og-title">Spend Optimizer</h1>
+                <p class="og-subtitle">Maximize Every Spend Category</p>
+            </div>
+            <div class="og-brand">CARD PERKS</div>
+        </div>
+        <!-- 9. Milestones -->
+        <div id="og-milestones" class="og-container">
+            <div class="og-bg-glow-1"></div>
+            <div class="og-bg-glow-2"
+                 style="background: radial-gradient(circle, #ef4444, transparent 70%)"></div>
+            <div class="og-grid-overlay"></div>
+            <div class="og-content">
+                <div class="og-icon">🎯</div>
+                <h1 class="og-title">Milestone Tracker</h1>
+                <p class="og-subtitle">Track Fee Waivers & Bonus Rewards</p>
+            </div>
+            <div class="og-brand">CARD PERKS</div>
+        </div>
+        <!-- 10. Savings -->
+        <div id="og-savings" class="og-container">
+            <div class="og-bg-glow-1"
+                 style="background: radial-gradient(circle, #eab308, transparent 70%)"></div>
+            <div class="og-bg-glow-2"></div>
+            <div class="og-grid-overlay"></div>
+            <div class="og-content">
+                <div class="og-icon">💰</div>
+                <h1 class="og-title">Savings Dashboard</h1>
+                <p class="og-subtitle">Visualize Your Total Savings & Rewards</p>
+            </div>
+            <div class="og-brand">CARD PERKS</div>
+        </div>
+        <!-- 11. Ask AI -->
+        <div id="og-ai" class="og-container">
+            <div class="og-bg-glow-1"
+                 style="background: radial-gradient(circle, #8b5cf6, transparent 70%);
+                        opacity: 0.3"></div>
+            <div class="og-bg-glow-2"
+                 style="background: radial-gradient(circle, #00f0ff, transparent 70%);
+                        opacity: 0.3"></div>
+            <div class="og-grid-overlay"></div>
+            <div class="og-content">
+                <div class="og-icon">🧞‍♂️</div>
+                <h1 class="og-title">Ask AI</h1>
+                <p class="og-subtitle">Your Personal Credit Card & Banking Advisor</p>
+            </div>
+            <div class="og-brand">CARD PERKS</div>
+        </div>
+    </body>
+</html>

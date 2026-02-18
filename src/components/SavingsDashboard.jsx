@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 /**
  * SavingsDashboard - Visual summary of savings from vouchers and card rewards
@@ -345,6 +346,16 @@ const SavingsDashboard = () => {
 
   return (
     <div style={{ padding: '1rem 0 4rem' }}>
+      <Helmet>
+        <title>Savings Dashboard - Track Your Card Rewards & Savings | Card Perks</title>
+        <meta name="description" content="Track your savings from vouchers, cashback, and credit card rewards. Monitor monthly trends and potential savings." />
+        <link rel="canonical" href="https://cardperks.xyz/savings" />
+        <meta property="og:title" content="Savings Dashboard - Card Perks" />
+        <meta property="og:description" content="Visualize your total savings and rewards across all cards." />
+        <meta property="og:url" content="https://cardperks.xyz/savings" />
+        <meta property="og:image" content="https://cardperks.xyz/og/og-savings.png" />
+        <meta property="twitter:image" content="https://cardperks.xyz/og/og-savings.png" />
+      </Helmet>
       {/* Header */}
       <header style={{ textAlign: 'center', marginBottom: '2rem' }}>
         <h1 className="text-gradient" style={{ fontSize: 'clamp(1.8rem, 5vw, 2.5rem)', marginBottom: '0.5rem' }}>

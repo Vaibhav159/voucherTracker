@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { familyBanking, wealthBanking, getBankNames } from '../data/bankingPrograms';
 import { useFavorites } from '../context/FavoritesContext';
@@ -238,6 +239,16 @@ const BankingGuides = () => {
 
     return (
         <div style={{ padding: '1rem 0 4rem' }}>
+            <Helmet>
+                <title>Banking Guides - Wealth & Family Banking Programs | Card Perks</title>
+                <meta name="description" content="Explore wealth banking tiers and family banking programs at top Indian banks. Compare NRV requirements, benefits, and exclusive perks." />
+                <link rel="canonical" href="https://cardperks.xyz/banking-guides" />
+                <meta property="og:title" content="Banking Guides - Card Perks" />
+                <meta property="og:description" content="Explore wealth banking tiers and family banking programs at top Indian banks." />
+                <meta property="og:url" content="https://cardperks.xyz/banking-guides" />
+                <meta property="og:image" content="https://cardperks.xyz/og/og-banking.png" />
+                <meta property="twitter:image" content="https://cardperks.xyz/og/og-banking.png" />
+            </Helmet>
             {/* Header */}
             <header style={{ textAlign: 'center', marginBottom: '2rem' }}>
                 <h2 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>
