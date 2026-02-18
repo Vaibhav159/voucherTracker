@@ -6,6 +6,9 @@ def populate_slugs(apps, schema_editor):
     Voucher = apps.get_model("vouchers", "Voucher")
     used_slugs = set()
     for voucher in Voucher.objects.all():
+        if voucher.slug:
+            used_slugs.add(voucher.slug)
+            continue
         slug = slugify(voucher.name)
         original_slug = slug
         counter = 1
@@ -24,7 +27,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        # Step 1: Add slug field (nullable initially)
         migrations.AddField(
             model_name="voucher",
             name="slug",
@@ -35,17 +37,5 @@ class Migration(migrations.Migration):
                 verbose_name="Slug",
             ),
         ),
-        # Step 2: Populate slugs from names
         migrations.RunPython(populate_slugs, migrations.RunPython.noop),
-        # Step 3: Make slug non-null and unique
-        migrations.AlterField(
-            model_name="voucher",
-            name="slug",
-            field=models.SlugField(
-                blank=True,
-                max_length=255,
-                unique=True,
-                verbose_name="Slug",
-            ),
-        ),
     ]
