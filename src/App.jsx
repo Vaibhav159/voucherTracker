@@ -115,7 +115,7 @@ function Home({ data, onOpenShortcuts }) {
   // Handle Voucher selection (updates URL)
   const handleVoucherSelect = (voucher) => {
     if (voucher) {
-      updateParams('voucher', voucher.id);
+      updateParams('voucher', voucher.slug);
     } else {
       updateParams('voucher', null);
     }
@@ -182,7 +182,7 @@ function Home({ data, onOpenShortcuts }) {
 
     // Sync Voucher Modal
     if (currentVoucherId) {
-      const voucher = data.find(v => v.id === currentVoucherId);
+      const voucher = data.find(v => v.slug === currentVoucherId);
       if (voucher) {
         setSelectedVoucher(voucher);
       } else {
@@ -422,7 +422,7 @@ function App() {
                     )}
                     <Route path="/browse-banking" element={<BankingGuides />} />
                     <Route path="/compare-banking" element={<CompareBanking />} />
-                    <Route path="/voucher/:id" element={<VoucherDetail vouchers={vouchers} />} />
+                    <Route path="/voucher/:slug" element={<VoucherDetail vouchers={vouchers} />} />
 
                     <Route path="/favorites" element={<Favorites />} />
                     {/* New UX Feature Routes */}

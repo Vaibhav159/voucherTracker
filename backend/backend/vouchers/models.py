@@ -1,6 +1,7 @@
 import json
 
 from django.db import models
+from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 
 from backend.vouchers.choices import PlatformName
@@ -10,11 +11,23 @@ from backend.vouchers.choices import VoucherMismatchStatus
 
 class Voucher(models.Model):
     name = models.CharField(_("Name"), max_length=255, db_index=True)
+    slug = models.SlugField(_("Slug"), max_length=255, unique=True, blank=True)
     logo = models.URLField(_("Logo URL"), blank=True, max_length=1000)
     category = models.CharField(_("Category"), max_length=50, choices=VoucherCategory.choices, db_index=True)
     site_link = models.URLField(_("Site Link"), blank=True, max_length=1000)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+            # Ensure uniqueness
+            original_slug = self.slug
+            counter = 1
+            while Voucher.objects.filter(slug=self.slug).exclude(pk=self.pk).exists():
+                self.slug = f"{original_slug}-{counter}"
+                counter += 1
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name

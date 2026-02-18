@@ -29,7 +29,7 @@ class VoucherSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Voucher
-        fields = ["id", "brand", "logo", "category", "site", "platforms", "lastUpdated", "expiry_date"]
+        fields = ["id", "slug", "brand", "logo", "category", "site", "platforms", "lastUpdated", "expiry_date"]
 
     def get_expiry_date(self, obj):
         return "365"

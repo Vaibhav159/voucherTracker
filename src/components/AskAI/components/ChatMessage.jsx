@@ -226,8 +226,8 @@ const ChatMessage = memo(({
         <div className={styles.voucherLinks}>
           {message.vouchers.map((voucher) => (
             <Link
-              key={voucher.id}
-              to={`/voucher/${voucher.id}`}
+              key={voucher.slug}
+              to={`/voucher/${voucher.slug}`}
               className={styles.voucherLink}
             >
               🎫 {voucher.brand} →

@@ -20,7 +20,7 @@ import { useFavorites } from '../context/FavoritesContext';
 const VoucherCard = memo(({ voucher, onClick, index = 0 }) => {
     const platformNames = voucher.platforms.map(p => p.name);
     const { toggleFavoriteVoucher, isVoucherFavorite } = useFavorites();
-    const isFavorite = isVoucherFavorite(voucher.id);
+    const isFavorite = isVoucherFavorite(voucher.slug);
 
 
     const [isHovered, setIsHovered] = useState(false);
@@ -50,10 +50,10 @@ const VoucherCard = memo(({ voucher, onClick, index = 0 }) => {
             navigator.vibrate(isFavorite ? 30 : [30, 50, 30]);
         }
 
-        toggleFavoriteVoucher(voucher.id, voucher.brand);
+        toggleFavoriteVoucher(voucher.slug, voucher.brand);
 
         setTimeout(() => setFavoriteAnimating(false), 400);
-    }, [isFavorite, toggleFavoriteVoucher, voucher.id, voucher.brand]);
+    }, [isFavorite, toggleFavoriteVoucher, voucher.slug, voucher.brand]);
 
     // Staggered animation delay (max 0.5s)
     const animationDelay = Math.min(index * 0.03, 0.5);

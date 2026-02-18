@@ -23,7 +23,7 @@ const Favorites = () => {
     // Get Voucher Objects
     const favoritedVoucherObjects = useMemo(() => {
         if (!vouchers) return [];
-        return vouchers.filter(v => isVoucherFavorite(v.id));
+        return vouchers.filter(v => isVoucherFavorite(v.slug));
     }, [vouchers, favoriteVouchers, isVoucherFavorite]);
 
     // Get Card Objects
@@ -314,8 +314,8 @@ const Favorites = () => {
                         {/* Show last 2 vouchers */}
                         {favoritedVoucherObjects.slice(-2).reverse().map(voucher => (
                             <Link
-                                key={`recent-voucher-${voucher.id}`}
-                                to={`/voucher/${voucher.id}`}
+                                key={`recent-voucher-${voucher.slug}`}
+                                to={`/voucher/${voucher.slug}`}
                                 className="glass-panel"
                                 style={{
                                     minWidth: '180px',
@@ -460,10 +460,10 @@ const Favorites = () => {
                         ) : (
                             <div className="favorites-grid">
                                 {favoritedVoucherObjects.map(voucher => (
-                                    <div key={voucher.id} className="favorite-voucher glass-panel">
+                                    <div key={voucher.slug} className="favorite-voucher glass-panel">
                                         <button
                                             className="favorite-remove-btn"
-                                            onClick={() => toggleFavoriteVoucher(voucher.id)}
+                                            onClick={() => toggleFavoriteVoucher(voucher.slug)}
                                             title="Remove from favorites"
                                         >
                                             ✕

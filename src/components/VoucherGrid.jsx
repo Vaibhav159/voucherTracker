@@ -186,7 +186,7 @@ const VoucherGrid = ({ vouchers, onVoucherClick, isLoading = false }) => {
                         >
                             {rowVouchers.map((voucher, colIndex) => (
                                 <VoucherCard
-                                    key={voucher.id}
+                                    key={voucher.slug}
                                     voucher={voucher}
                                     onClick={onVoucherClick}
                                     index={virtualRow.index * columns + colIndex}

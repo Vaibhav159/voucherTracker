@@ -996,7 +996,7 @@ const AskAI = () => {
                                     {msg.vouchers?.length > 0 && (
                                         <div style={{ display: 'flex', gap: '6px', marginTop: '0.5rem', flexWrap: 'wrap' }}>
                                             {msg.vouchers.map(voucher => (
-                                                <Link key={voucher.id} to={`/voucher/${voucher.id}`} style={{
+                                                <Link key={voucher.slug} to={`/voucher/${voucher.slug}`} style={{
                                                     display: 'flex', alignItems: 'center', gap: '4px', padding: '6px 10px',
                                                     background: 'rgba(236, 72, 153, 0.1)', borderRadius: '8px',
                                                     border: '1px solid rgba(236, 72, 153, 0.2)', textDecoration: 'none',

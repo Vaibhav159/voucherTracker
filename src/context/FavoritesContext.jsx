@@ -8,9 +8,10 @@
  * - Clearing all favorites (with undo)
  */
 
-import { createContext, useContext, useCallback, useRef } from 'react';
+import { createContext, useContext, useCallback, useRef, useEffect } from 'react';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import { useToast } from '../components/UXPolish';
+import vouchersData from '../data/vouchers.json';
 
 const FavoritesContext = createContext();
 
@@ -34,6 +35,32 @@ export const FavoritesProvider = ({ children }) => {
     const hasShownFirstFavorite = useRef(
         typeof window !== 'undefined' && localStorage.getItem('hasShownFirstFavorite') === 'true'
     );
+
+    // One-time migration: convert old numeric voucher IDs to slugs
+    useEffect(() => {
+        if (favoriteVouchers.length === 0) return;
+        const hasNumericIds = favoriteVouchers.some(id => /^\d+$/.test(id));
+        if (!hasNumericIds) return;
+
+        // Build ID → slug map from static data
+        const idToSlug = {};
+        vouchersData.forEach(v => {
+            if (v.id && v.slug) idToSlug[String(v.id)] = v.slug;
+        });
+
+        const migrated = favoriteVouchers.map(id => {
+            if (/^\d+$/.test(id) && idToSlug[id]) {
+                return idToSlug[id];
+            }
+            return id;
+        });
+
+        // Only update if something actually changed
+        if (migrated.some((slug, i) => slug !== favoriteVouchers[i])) {
+            setFavoriteVouchers(migrated);
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []); // Run only once on mount
 
     // Show first favorite celebration
     const maybeShowFirstFavoriteCelebration = useCallback(() => {
