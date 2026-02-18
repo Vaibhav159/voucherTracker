@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useMyCards } from '../context/MyCardsContext';
 import creditCards from '../data/creditCards.json';
@@ -200,6 +201,16 @@ const MyCards = () => {
 
   return (
     <div className="mc-page">
+      <Helmet>
+        <title>My Wallet - Manage Your Credit Card Portfolio | Card Perks</title>
+        <meta name="description" content="Manage your credit card portfolio. Track cards, expenses, annual fees, and get personalized insights for your wallet." />
+        <link rel="canonical" href="https://cardperks.xyz/my-cards" />
+        <meta property="og:title" content="My Wallet - Card Perks" />
+        <meta property="og:description" content="Manage your credit card portfolio and track expenses." />
+        <meta property="og:url" content="https://cardperks.xyz/my-cards" />
+        <meta property="og:image" content="https://cardperks.xyz/og/og-wallet.png" />
+        <meta property="twitter:image" content="https://cardperks.xyz/og/og-wallet.png" />
+      </Helmet>
       {/* Compact Header */}
       <header className="mc-header">
         <div className="mc-title-row">

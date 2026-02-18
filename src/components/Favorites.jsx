@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useFavorites } from '../context/FavoritesContext';
 import { useVouchers } from '../hooks/useVouchers';
 import { useCreditCards } from '../hooks/useCreditCards';
@@ -124,6 +125,16 @@ const Favorites = () => {
 
     return (
         <div style={{ padding: '1rem 0 4rem' }}>
+            <Helmet>
+                <title>My Favorites - Saved Cards, Vouchers & Guides | Card Perks</title>
+                <meta name="description" content="Access your saved credit cards, vouchers, and guides in one place. Quickly find your favorite deals and offers." />
+                <link rel="canonical" href="https://cardperks.xyz/favorites" />
+                <meta property="og:title" content="My Favorites - Card Perks" />
+                <meta property="og:description" content="Access your saved credit cards, vouchers, and guides in one place." />
+                <meta property="og:url" content="https://cardperks.xyz/favorites" />
+                <meta property="og:image" content="https://cardperks.xyz/og/og-favorites.png" />
+                <meta property="twitter:image" content="https://cardperks.xyz/og/og-favorites.png" />
+            </Helmet>
             {/* Header */}
             <header style={{ textAlign: 'center', marginBottom: '2rem' }}>
                 <h2 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>
