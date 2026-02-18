@@ -127,7 +127,7 @@ const TopDeals = ({ vouchers, onVoucherClick }) => {
         >
           {dailyDeals.map((voucher) => (
             <button
-              key={voucher.id}
+              key={voucher.slug}
               className="essential-card-v2"
               onClick={() => onVoucherClick(voucher)}
               title={voucher.brand}

@@ -22,7 +22,7 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
     // Hooks
     useModalKeyHandler(true, onClose);
 
-    const isFavorite = isVoucherFavorite(voucher?.id);
+    const isFavorite = isVoucherFavorite(voucher?.slug);
 
     // State for selected offer (Mobile Redesign)
     // Initially null so bottom sheet is hidden until interaction
@@ -115,7 +115,7 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                             </div>
                             <div className="header-actions">
                                 <button className="icon-btn" onClick={() => {
-                                    const url = `${window.location.origin}${window.location.pathname}#/?voucher=${voucher.id}`;
+                                    const url = `${window.location.origin}${window.location.pathname}#/?voucher=${voucher.slug}`;
                                     const text = `Check out ${voucher.brand} voucher deals!`;
                                     if (navigator.share) {
                                         navigator.share({ title: voucher.brand, text, url }).catch(() => { });
@@ -301,7 +301,7 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                     <div className="modal-actions" style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
                         <button
                             onClick={() => {
-                                const url = `${window.location.origin}${window.location.pathname}#/?voucher=${voucher.id}`;
+                                const url = `${window.location.origin}${window.location.pathname}#/?voucher=${voucher.slug}`;
                                 const text = `Check out ${voucher.brand} voucher deals!`;
                                 window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
                             }}
@@ -421,6 +421,7 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
 VoucherModal.propTypes = {
     voucher: PropTypes.shape({
         id: PropTypes.string,
+        slug: PropTypes.string,
         brand: PropTypes.string.isRequired,
         logo: PropTypes.string,
         category: PropTypes.string,

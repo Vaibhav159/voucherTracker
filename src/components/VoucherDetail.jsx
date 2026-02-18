@@ -12,13 +12,13 @@ import { Helmet } from 'react-helmet-async';
 import { BASE_URL } from '../config/constants';
 
 const VoucherDetail = () => {
-    const { id } = useParams();
+    const { slug } = useParams();
     const { vouchers, loading, error } = useVouchers();
     const { getMaxDiscount } = useDiscountParser();
 
     const voucher = useMemo(() => {
-        return vouchers.find(v => v.id === id);
-    }, [id, vouchers]);
+        return vouchers.find(v => v.slug === slug);
+    }, [slug, vouchers]);
 
     // Share to X function
     const shareToX = () => {
@@ -61,7 +61,7 @@ const VoucherDetail = () => {
     const pageTitle = `Buy ${voucher.brand} Gift Cards & Vouchers ${discountText} | Card Perks`;
     const pageDescription = `Buy ${voucher.brand} gift cards instantly. Compare rates across ${platformNames} to get the best deal. Maximize your savings with Card Perks.`;
     const pageUrl = window.location.href;
-    const canonicalUrl = `${BASE_URL}/voucher/${id}`;
+    const canonicalUrl = `${BASE_URL}/voucher/${slug}`;
 
     // Structured Data (JSON-LD)
     const structuredData = {

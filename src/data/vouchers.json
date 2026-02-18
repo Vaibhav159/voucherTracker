@@ -72,7 +72,8 @@
         ],
         "site": "https://amzn.to/4ayHWbo",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-03"
+        "lastUpdated": "2025-12-03",
+        "slug": "amazon-shopping-voucher"
     },
     {
         "id": "2",
@@ -124,7 +125,8 @@
             }
         ],
         "expiryDays": 365,
-        "lastUpdated": "2025-12-15"
+        "lastUpdated": "2025-12-15",
+        "slug": "flipkart-gift-card"
     },
     {
         "id": "3",
@@ -175,7 +177,8 @@
         ],
         "site": "https://www.swiggy.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-20"
+        "lastUpdated": "2025-12-20",
+        "slug": "swiggy-money"
     },
     {
         "id": "4",
@@ -248,7 +251,8 @@
         ],
         "site": "https://www.zomato.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-03"
+        "lastUpdated": "2025-12-03",
+        "slug": "zomato"
     },
     {
         "id": "5",
@@ -310,7 +314,8 @@
         ],
         "site": "https://www.pvrcinemas.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-13"
+        "lastUpdated": "2025-12-13",
+        "slug": "pvr"
     },
     {
         "id": "6",
@@ -382,7 +387,8 @@
         ],
         "site": "https://www.uber.com",
         "expiryDays": 540,
-        "lastUpdated": "2025-12-02"
+        "lastUpdated": "2025-12-02",
+        "slug": "uber"
     },
     {
         "id": "7",
@@ -454,7 +460,8 @@
         ],
         "site": "https://www.bigbasket.com",
         "expiryDays": 90,
-        "lastUpdated": "2025-12-27"
+        "lastUpdated": "2025-12-27",
+        "slug": "bigbasket"
     },
     {
         "id": "8",
@@ -526,7 +533,8 @@
         ],
         "site": "https://blinkit.com",
         "expiryDays": 120,
-        "lastUpdated": "2025-12-26"
+        "lastUpdated": "2025-12-26",
+        "slug": "blinkit"
     },
     {
         "id": "9",
@@ -578,7 +586,8 @@
         ],
         "site": "https://pizzaonline.dominos.co.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-23"
+        "lastUpdated": "2025-12-23",
+        "slug": "dominos"
     },
     {
         "id": "10",
@@ -640,7 +649,8 @@
         ],
         "site": "https://myntr.it/qtsjD3l",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-28"
+        "lastUpdated": "2025-12-28",
+        "slug": "myntra"
     },
     {
         "id": "11",
@@ -702,7 +712,8 @@
         ],
         "site": "https://www.levi.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-16"
+        "lastUpdated": "2025-12-16",
+        "slug": "levis"
     },
     {
         "id": "12",
@@ -754,7 +765,8 @@
         ],
         "site": "https://ajiio.in/8N3suhS",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-12"
+        "lastUpdated": "2025-12-12",
+        "slug": "reliance-trends"
     },
     {
         "id": "13",
@@ -826,7 +838,8 @@
         ],
         "site": "https://ajiio.in/8N3suhS",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-05"
+        "lastUpdated": "2025-12-05",
+        "slug": "ajio"
     },
     {
         "id": "14",
@@ -858,7 +871,8 @@
         ],
         "site": "https://www.reliancedigital.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-04"
+        "lastUpdated": "2025-12-04",
+        "slug": "reliance-digital"
     },
     {
         "id": "15",
@@ -890,7 +904,8 @@
         ],
         "site": "https://reliancesmartbazaar.com/",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-01"
+        "lastUpdated": "2025-12-01",
+        "slug": "smart-bazaar"
     },
     {
         "id": "16",
@@ -942,7 +957,8 @@
         ],
         "site": "https://www.titan.co.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-15"
+        "lastUpdated": "2025-12-15",
+        "slug": "titan"
     },
     {
         "id": "17",
@@ -1004,7 +1020,8 @@
         ],
         "site": "https://online.kfc.co.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-26"
+        "lastUpdated": "2025-12-26",
+        "slug": "kfc"
     },
     {
         "id": "791",
@@ -1055,7 +1072,8 @@
         ],
         "site": "https://www.absolutebarbecues.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-20"
+        "lastUpdated": "2025-12-20",
+        "slug": "absolute-barbecues"
     },
     {
         "id": "440",
@@ -1096,7 +1114,8 @@
         ],
         "site": "https://www.aeropostale.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-12"
+        "lastUpdated": "2025-12-12",
+        "slug": "aeropostale"
     },
     {
         "id": "409",
@@ -1147,7 +1166,8 @@
         ],
         "site": "https://www.airindia.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-10"
+        "lastUpdated": "2025-12-10",
+        "slug": "air-india"
     },
     {
         "id": "733",
@@ -1178,7 +1198,8 @@
         ],
         "site": "https://ajiio.in/8N3suhS",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-08"
+        "lastUpdated": "2025-12-08",
+        "slug": "ajio-luxe"
     },
     {
         "id": "308",
@@ -1239,7 +1260,8 @@
         ],
         "site": "https://www.aldoshoes.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-11-30"
+        "lastUpdated": "2025-11-30",
+        "slug": "aldo"
     },
     {
         "id": "487",
@@ -1290,12 +1312,13 @@
         ],
         "site": "https://www.paulsmith.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-18"
+        "lastUpdated": "2025-12-18",
+        "slug": "aliste"
     },
     {
         "id": "214",
         "brand": "Allen Solly",
-        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Allen Solly E-Gift Voucher\u00a0.png",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Allen Solly E-Gift Voucher .png",
         "category": "Fashion & Accessories",
         "platforms": [
             {
@@ -1351,7 +1374,8 @@
         ],
         "site": "https://www.armaniexchange.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-13"
+        "lastUpdated": "2025-12-13",
+        "slug": "allen-solly"
     },
     {
         "id": "94",
@@ -1392,7 +1416,8 @@
         ],
         "site": "https://www.amazon.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-17"
+        "lastUpdated": "2025-12-17",
+        "slug": "amazon"
     },
     {
         "id": "490",
@@ -1453,7 +1478,8 @@
         ],
         "site": "https://www.aeo.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-09"
+        "lastUpdated": "2025-12-09",
+        "slug": "american-eagle"
     },
     {
         "id": "235",
@@ -1494,7 +1520,8 @@
         ],
         "site": "https://www.americantourister.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-03"
+        "lastUpdated": "2025-12-03",
+        "slug": "american-tourister"
     },
     {
         "id": "784",
@@ -1515,7 +1542,8 @@
         ],
         "site": "https://www.apollopharmacy.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-09"
+        "lastUpdated": "2025-12-09",
+        "slug": "apollo"
     },
     {
         "id": "859",
@@ -1556,7 +1584,8 @@
         ],
         "site": "https://www.indiaistore.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-21"
+        "lastUpdated": "2025-12-21",
+        "slug": "apple-premium-reseller"
     },
     {
         "id": "491",
@@ -1577,7 +1606,8 @@
         ],
         "site": "https://in.appyhigh.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-24"
+        "lastUpdated": "2025-12-24",
+        "slug": "appyhigh-prime"
     },
     {
         "id": "236",
@@ -1618,7 +1648,8 @@
         ],
         "site": "https://www.archiesonline.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-04"
+        "lastUpdated": "2025-12-04",
+        "slug": "archies-gallery"
     },
     {
         "id": "451",
@@ -1659,7 +1690,8 @@
         ],
         "site": "https://www.armaniexchange.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-05"
+        "lastUpdated": "2025-12-05",
+        "slug": "armani-exchange-luxe"
     },
     {
         "id": "453",
@@ -1690,7 +1722,8 @@
         ],
         "site": "https://www.lbf.co.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-11"
+        "lastUpdated": "2025-12-11",
+        "slug": "asia-seven-express"
     },
     {
         "id": "258",
@@ -1731,7 +1764,8 @@
         ],
         "site": "https://www.assemblytravel.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-06"
+        "lastUpdated": "2025-12-06",
+        "slug": "assembly"
     },
     {
         "id": "259",
@@ -1772,7 +1806,8 @@
         ],
         "site": "https://www.shopforaurelia.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-22"
+        "lastUpdated": "2025-12-22",
+        "slug": "aurelia"
     },
     {
         "id": "492",
@@ -1823,7 +1858,8 @@
         ],
         "site": "https://www.dunelondon.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-27"
+        "lastUpdated": "2025-12-27",
+        "slug": "auric"
     },
     {
         "id": "832",
@@ -1844,7 +1880,8 @@
         ],
         "site": "https://www.avast.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-12"
+        "lastUpdated": "2025-12-12",
+        "slug": "avast"
     },
     {
         "id": "493",
@@ -1895,7 +1932,8 @@
         ],
         "site": "https://www.bakingo.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-11"
+        "lastUpdated": "2025-12-11",
+        "slug": "bakingo"
     },
     {
         "id": "215",
@@ -1956,7 +1994,8 @@
         ],
         "site": "https://www.barbequenation.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-09"
+        "lastUpdated": "2025-12-09",
+        "slug": "barbeque-nation"
     },
     {
         "id": "494",
@@ -2007,7 +2046,8 @@
         ],
         "site": "https://baskinrobbinsindia.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-24"
+        "lastUpdated": "2025-12-24",
+        "slug": "baskin-robbins"
     },
     {
         "id": "495",
@@ -2058,7 +2098,8 @@
         ],
         "site": "https://www.bata.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-07"
+        "lastUpdated": "2025-12-07",
+        "slug": "bata"
     },
     {
         "id": "309",
@@ -2109,7 +2150,8 @@
         ],
         "site": "https://www.bathandbodyworks.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-26"
+        "lastUpdated": "2025-12-26",
+        "slug": "bath-body-works"
     },
     {
         "id": "497",
@@ -2160,7 +2202,8 @@
         ],
         "site": "https://www.behrouzbiryani.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-22"
+        "lastUpdated": "2025-12-22",
+        "slug": "behrouz-biryani"
     },
     {
         "id": "311",
@@ -2221,7 +2264,8 @@
         ],
         "site": "https://www.bhpc.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-15"
+        "lastUpdated": "2025-12-15",
+        "slug": "beverly-hills-polo-club"
     },
     {
         "id": "608",
@@ -2262,7 +2306,8 @@
         ],
         "site": "https://www.bhimajewellers.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-14"
+        "lastUpdated": "2025-12-14",
+        "slug": "bhima-jewellers-coin"
     },
     {
         "id": "607",
@@ -2303,7 +2348,8 @@
         ],
         "site": "https://www.bhimajewellers.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-27"
+        "lastUpdated": "2025-12-27",
+        "slug": "bhima-jewellers-jewellery"
     },
     {
         "id": "368",
@@ -2344,7 +2390,8 @@
         ],
         "site": "https://www.bikanervala.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-25"
+        "lastUpdated": "2025-12-25",
+        "slug": "bikanervala"
     },
     {
         "id": "369",
@@ -2385,7 +2432,8 @@
         ],
         "site": "https://www.birkenstock.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-17"
+        "lastUpdated": "2025-12-17",
+        "slug": "birkenstock"
     },
     {
         "id": "500",
@@ -2426,7 +2474,8 @@
         ],
         "site": "https://blaupunktaudio.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-28"
+        "lastUpdated": "2025-12-28",
+        "slug": "blaupunkt"
     },
     {
         "id": "712",
@@ -2477,7 +2526,8 @@
         ],
         "site": "https://blissclub.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-16"
+        "lastUpdated": "2025-12-16",
+        "slug": "bliss-club"
     },
     {
         "id": "71",
@@ -2508,7 +2558,8 @@
         ],
         "site": "https://bluetokai.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-13"
+        "lastUpdated": "2025-12-13",
+        "slug": "blue-tokai-coffee"
     },
     {
         "id": "817",
@@ -2539,7 +2590,8 @@
         ],
         "site": "https://www.bluestone.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-22"
+        "lastUpdated": "2025-12-22",
+        "slug": "bluestone-diamond"
     },
     {
         "id": "820",
@@ -2570,7 +2622,8 @@
         ],
         "site": "https://www.bluestone.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-17"
+        "lastUpdated": "2025-12-17",
+        "slug": "bluestone-gold"
     },
     {
         "id": "818",
@@ -2591,7 +2644,8 @@
         ],
         "site": "https://www.bluestone.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-23"
+        "lastUpdated": "2025-12-23",
+        "slug": "bluestone-gold-jewellery"
     },
     {
         "id": "554",
@@ -2622,7 +2676,8 @@
         ],
         "site": "https://www.boat-lifestyle.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-05"
+        "lastUpdated": "2025-12-05",
+        "slug": "boat"
     },
     {
         "id": "831",
@@ -2643,7 +2698,8 @@
         ],
         "site": "https://www.boditive.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-25"
+        "lastUpdated": "2025-12-25",
+        "slug": "boditive"
     },
     {
         "id": "374",
@@ -2694,7 +2750,8 @@
         ],
         "site": "https://bodycraft.co.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-06"
+        "lastUpdated": "2025-12-06",
+        "slug": "body-craft"
     },
     {
         "id": "375",
@@ -2735,7 +2792,8 @@
         ],
         "site": "https://in.bookmyshow.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-29"
+        "lastUpdated": "2025-12-29",
+        "slug": "bookmyshow"
     },
     {
         "id": "631",
@@ -2756,7 +2814,8 @@
         ],
         "site": "https://www.bharatpetroleum.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-14"
+        "lastUpdated": "2025-12-14",
+        "slug": "bpcl"
     },
     {
         "id": "502",
@@ -2787,7 +2846,8 @@
         ],
         "site": "https://www.braingymjr.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-11-30"
+        "lastUpdated": "2025-11-30",
+        "slug": "braingymjr"
     },
     {
         "id": "376",
@@ -2828,7 +2888,8 @@
         ],
         "site": "https://www.brooksbrothers.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-24"
+        "lastUpdated": "2025-12-24",
+        "slug": "brooks-brothers-luxe"
     },
     {
         "id": "830",
@@ -2849,7 +2910,8 @@
         ],
         "site": "https://www.bajajfinserv.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-23"
+        "lastUpdated": "2025-12-23",
+        "slug": "buywithemi"
     },
     {
         "id": "331",
@@ -2890,7 +2952,8 @@
         ],
         "site": "https://www.cafecoffeeday.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-14"
+        "lastUpdated": "2025-12-14",
+        "slug": "cafe-coffee-day"
     },
     {
         "id": "262",
@@ -2915,7 +2978,7 @@
                 "denominations": [
                     "Check Link"
                 ],
-                "link": "https://www.gyftr.com/instantvouchers/caf\u00e9-delhi-heights-gift-vouchers",
+                "link": "https://www.gyftr.com/instantvouchers/café-delhi-heights-gift-vouchers",
                 "color": "#D42426"
             },
             {
@@ -2941,7 +3004,8 @@
         ],
         "site": "https://cafedelhiheights.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-12"
+        "lastUpdated": "2025-12-12",
+        "slug": "cafe-delhi-heights"
     },
     {
         "id": "310",
@@ -3002,7 +3066,8 @@
         ],
         "site": "https://www.callitspring.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-03"
+        "lastUpdated": "2025-12-03",
+        "slug": "call-it-spring"
     },
     {
         "id": "263",
@@ -3053,7 +3118,8 @@
         ],
         "site": "https://www.campusshoes.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-08"
+        "lastUpdated": "2025-12-08",
+        "slug": "campus"
     },
     {
         "id": "264",
@@ -3084,7 +3150,8 @@
         ],
         "site": "https://www.candere.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-09"
+        "lastUpdated": "2025-12-09",
+        "slug": "candere-diamond-jewellery"
     },
     {
         "id": "265",
@@ -3115,7 +3182,8 @@
         ],
         "site": "https://www.candere.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-16"
+        "lastUpdated": "2025-12-16",
+        "slug": "candere-gold-coin"
     },
     {
         "id": "266",
@@ -3156,7 +3224,8 @@
         ],
         "site": "https://www.candere.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-15"
+        "lastUpdated": "2025-12-15",
+        "slug": "candere-gold-jewellery"
     },
     {
         "id": "834",
@@ -3177,7 +3246,8 @@
         ],
         "site": "https://www.celio.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-10"
+        "lastUpdated": "2025-12-10",
+        "slug": "celio"
     },
     {
         "id": "312",
@@ -3228,7 +3298,8 @@
         ],
         "site": "https://www.charleskeith.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-26"
+        "lastUpdated": "2025-12-26",
+        "slug": "charles-keith"
     },
     {
         "id": "338",
@@ -3289,7 +3360,8 @@
         ],
         "site": "https://www.chumbak.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-13"
+        "lastUpdated": "2025-12-13",
+        "slug": "chumbak"
     },
     {
         "id": "570",
@@ -3320,7 +3392,8 @@
         ],
         "site": "https://www.cinepolisindia.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-20"
+        "lastUpdated": "2025-12-20",
+        "slug": "cinepolis"
     },
     {
         "id": "792",
@@ -3341,7 +3414,8 @@
         ],
         "site": "https://www.citizen.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-10"
+        "lastUpdated": "2025-12-10",
+        "slug": "citizen"
     },
     {
         "id": "302",
@@ -3362,7 +3436,8 @@
         ],
         "site": "https://cleartax.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-24"
+        "lastUpdated": "2025-12-24",
+        "slug": "cleartax"
     },
     {
         "id": "803",
@@ -3423,7 +3498,8 @@
         ],
         "site": "https://www.cleartrip.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-26"
+        "lastUpdated": "2025-12-26",
+        "slug": "cleartrip"
     },
     {
         "id": "227",
@@ -3454,7 +3530,8 @@
         ],
         "site": "https://www.cleartrip.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-11"
+        "lastUpdated": "2025-12-11",
+        "slug": "cleartrip-hotels"
     },
     {
         "id": "557",
@@ -3485,7 +3562,8 @@
         ],
         "site": "https://www.coach.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-09"
+        "lastUpdated": "2025-12-09",
+        "slug": "coach"
     },
     {
         "id": "325",
@@ -3536,7 +3614,8 @@
         ],
         "site": "https://www.colorplus.co.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-05"
+        "lastUpdated": "2025-12-05",
+        "slug": "colorplus"
     },
     {
         "id": "835",
@@ -3557,7 +3636,8 @@
         ],
         "site": "https://www.cosmopolitan.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-13"
+        "lastUpdated": "2025-12-13",
+        "slug": "cosmopolitan-india"
     },
     {
         "id": "810",
@@ -3608,7 +3688,8 @@
         ],
         "site": "https://www.costacoffee.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-11"
+        "lastUpdated": "2025-12-11",
+        "slug": "costa-coffee"
     },
     {
         "id": "149",
@@ -3669,7 +3750,8 @@
         ],
         "site": "https://www.croma.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-26"
+        "lastUpdated": "2025-12-26",
+        "slug": "croma"
     },
     {
         "id": "770",
@@ -3690,7 +3772,8 @@
         ],
         "site": "https://www.crossword.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-12"
+        "lastUpdated": "2025-12-12",
+        "slug": "crossword"
     },
     {
         "id": "378",
@@ -3731,7 +3814,8 @@
         ],
         "site": "https://www.cult.fit",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-01"
+        "lastUpdated": "2025-12-01",
+        "slug": "cult"
     },
     {
         "id": "816",
@@ -3792,7 +3876,8 @@
         ],
         "site": "https://www.dailyobjects.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-06"
+        "lastUpdated": "2025-12-06",
+        "slug": "daily-objects"
     },
     {
         "id": "268",
@@ -3853,7 +3938,8 @@
         ],
         "site": "https://www.decathlon.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-03"
+        "lastUpdated": "2025-12-03",
+        "slug": "decathlon"
     },
     {
         "id": "509",
@@ -3894,7 +3980,8 @@
         ],
         "site": "https://www.discoveryplus.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-23"
+        "lastUpdated": "2025-12-23",
+        "slug": "discovery-plus"
     },
     {
         "id": "774",
@@ -3950,7 +4037,8 @@
         ],
         "site": "https://www.zomato.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-02"
+        "lastUpdated": "2025-12-02",
+        "slug": "district"
     },
     {
         "id": "812",
@@ -4001,7 +4089,8 @@
         ],
         "site": "https://dpauls.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-24"
+        "lastUpdated": "2025-12-24",
+        "slug": "dpauls"
     },
     {
         "id": "383",
@@ -4032,7 +4121,8 @@
         ],
         "site": "https://www.dunelondon.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-02"
+        "lastUpdated": "2025-12-02",
+        "slug": "dune-london-luxe"
     },
     {
         "id": "731",
@@ -4073,7 +4163,8 @@
         ],
         "site": "https://www.duroflexworld.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-03"
+        "lastUpdated": "2025-12-03",
+        "slug": "duroflex"
     },
     {
         "id": "384",
@@ -4134,7 +4225,8 @@
         ],
         "site": "https://www.easemytrip.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-11"
+        "lastUpdated": "2025-12-11",
+        "slug": "easemytrip"
     },
     {
         "id": "558",
@@ -4165,7 +4257,8 @@
         ],
         "site": "https://www.easybuyindia.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-11-30"
+        "lastUpdated": "2025-11-30",
+        "slug": "easybuy"
     },
     {
         "id": "559",
@@ -4236,7 +4329,8 @@
         ],
         "site": "https://www.eatsure.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-01"
+        "lastUpdated": "2025-12-01",
+        "slug": "eatsure"
     },
     {
         "id": "512",
@@ -4267,7 +4361,8 @@
         ],
         "site": "https://www.elleven.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-11"
+        "lastUpdated": "2025-12-11",
+        "slug": "elleven"
     },
     {
         "id": "513",
@@ -4298,7 +4393,8 @@
         ],
         "site": "https://www.elver.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-28"
+        "lastUpdated": "2025-12-28",
+        "slug": "elver"
     },
     {
         "id": "389",
@@ -4329,7 +4425,8 @@
         ],
         "site": "https://www.epicon.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-22"
+        "lastUpdated": "2025-12-22",
+        "slug": "epic-on"
     },
     {
         "id": "794",
@@ -4350,7 +4447,8 @@
         ],
         "site": "https://estuaryworld.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-08"
+        "lastUpdated": "2025-12-08",
+        "slug": "estuary-world"
     },
     {
         "id": "833",
@@ -4371,7 +4469,8 @@
         ],
         "site": "https://economictimes.indiatimes.com/prime",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-20"
+        "lastUpdated": "2025-12-20",
+        "slug": "et-prime"
     },
     {
         "id": "393",
@@ -4392,7 +4491,8 @@
         ],
         "site": "https://www.euphoriajewellery.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-19"
+        "lastUpdated": "2025-12-19",
+        "slug": "euphoria-jewellery"
     },
     {
         "id": "515",
@@ -4423,7 +4523,8 @@
         ],
         "site": "https://www.euphoriajewellery.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-03"
+        "lastUpdated": "2025-12-03",
+        "slug": "euphoria-jewellery-gold-coin"
     },
     {
         "id": "270",
@@ -4454,7 +4555,8 @@
         ],
         "site": "https://www.euphoriajewellery.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-02"
+        "lastUpdated": "2025-12-02",
+        "slug": "euphoria-jewellery-silver-coin"
     },
     {
         "id": "394",
@@ -4515,7 +4617,8 @@
         ],
         "site": "https://www.faasos.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-14"
+        "lastUpdated": "2025-12-14",
+        "slug": "faasos"
     },
     {
         "id": "272",
@@ -4566,7 +4669,8 @@
         ],
         "site": "https://www.fashionfactory.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-14"
+        "lastUpdated": "2025-12-14",
+        "slug": "fashion-factory"
     },
     {
         "id": "273",
@@ -4607,7 +4711,8 @@
         ],
         "site": "https://www.fastrack.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-16"
+        "lastUpdated": "2025-12-16",
+        "slug": "fastrack-bags"
     },
     {
         "id": "396",
@@ -4658,7 +4763,8 @@
         ],
         "site": "https://www.fastrack.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-22"
+        "lastUpdated": "2025-12-22",
+        "slug": "fastrack"
     },
     {
         "id": "718",
@@ -4699,7 +4805,8 @@
         ],
         "site": "https://www.femmella.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-06"
+        "lastUpdated": "2025-12-06",
+        "slug": "femmella"
     },
     {
         "id": "839",
@@ -4720,7 +4827,8 @@
         ],
         "site": "https://finusmart.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-20"
+        "lastUpdated": "2025-12-20",
+        "slug": "finusmart"
     },
     {
         "id": "350",
@@ -4751,7 +4859,8 @@
         ],
         "site": "https://www.firstcry.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-16"
+        "lastUpdated": "2025-12-16",
+        "slug": "firstcry"
     },
     {
         "id": "805",
@@ -4792,7 +4901,8 @@
         ],
         "site": "https://www.flixbus.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-15"
+        "lastUpdated": "2025-12-15",
+        "slug": "flixbus"
     },
     {
         "id": "516",
@@ -4833,7 +4943,8 @@
         ],
         "site": "https://www.floweraura.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-05"
+        "lastUpdated": "2025-12-05",
+        "slug": "flower-aura"
     },
     {
         "id": "351",
@@ -4884,7 +4995,8 @@
         ],
         "site": "https://www.forevernew.co.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-01"
+        "lastUpdated": "2025-12-01",
+        "slug": "forever-new"
     },
     {
         "id": "304",
@@ -4915,7 +5027,8 @@
         ],
         "site": "https://www.forever21.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-01"
+        "lastUpdated": "2025-12-01",
+        "slug": "forever21"
     },
     {
         "id": "255",
@@ -4976,7 +5089,8 @@
         ],
         "site": "https://foxtale.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-25"
+        "lastUpdated": "2025-12-25",
+        "slug": "foxtale"
     },
     {
         "id": "517",
@@ -5017,7 +5131,8 @@
         ],
         "site": "https://www.freecultr.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-06"
+        "lastUpdated": "2025-12-06",
+        "slug": "freecultr"
     },
     {
         "id": "398",
@@ -5068,7 +5183,8 @@
         ],
         "site": "https://www.freshmenu.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-03"
+        "lastUpdated": "2025-12-03",
+        "slug": "freshmenu"
     },
     {
         "id": "482",
@@ -5089,7 +5205,8 @@
         ],
         "site": "https://freakins.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-04"
+        "lastUpdated": "2025-12-04",
+        "slug": "fricken"
     },
     {
         "id": "518",
@@ -5130,7 +5247,8 @@
         ],
         "site": "https://myfrido.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-09"
+        "lastUpdated": "2025-12-09",
+        "slug": "frido"
     },
     {
         "id": "254",
@@ -5161,7 +5279,8 @@
         ],
         "site": "https://www.futureworldindia.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-27"
+        "lastUpdated": "2025-12-27",
+        "slug": "future-world-apple-reseller"
     },
     {
         "id": "404",
@@ -5182,7 +5301,8 @@
         ],
         "site": "https://www.g-star.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-13"
+        "lastUpdated": "2025-12-13",
+        "slug": "g-star-raw-luxe"
     },
     {
         "id": "538",
@@ -5223,7 +5343,8 @@
         ],
         "site": "https://gaana.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-26"
+        "lastUpdated": "2025-12-26",
+        "slug": "gaana"
     },
     {
         "id": "741",
@@ -5244,7 +5365,8 @@
         ],
         "site": "https://www.giva.co",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-28"
+        "lastUpdated": "2025-12-28",
+        "slug": "giva-jewellery"
     },
     {
         "id": "742",
@@ -5265,7 +5387,8 @@
         ],
         "site": "https://www.giva.co",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-11"
+        "lastUpdated": "2025-12-11",
+        "slug": "giva-silver-coin"
     },
     {
         "id": "825",
@@ -5286,7 +5409,8 @@
         ],
         "site": "https://glamstudios.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-02"
+        "lastUpdated": "2025-12-02",
+        "slug": "glam-studios"
     },
     {
         "id": "479",
@@ -5307,7 +5431,8 @@
         ],
         "site": "https://www.goibibo.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-13"
+        "lastUpdated": "2025-12-13",
+        "slug": "goibibo-hotel"
     },
     {
         "id": "460",
@@ -5338,7 +5463,8 @@
         ],
         "site": "https://www.goodbowls.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-27"
+        "lastUpdated": "2025-12-27",
+        "slug": "the-good-bowls"
     },
     {
         "id": "54",
@@ -5379,7 +5505,8 @@
         ],
         "site": "https://www.thebeercafe.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-10"
+        "lastUpdated": "2025-12-10",
+        "slug": "google-play"
     },
     {
         "id": "521",
@@ -5400,7 +5527,8 @@
         ],
         "site": "https://www.grtjewels.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-10"
+        "lastUpdated": "2025-12-10",
+        "slug": "grt-jewellers"
     },
     {
         "id": "405",
@@ -5441,7 +5569,8 @@
         ],
         "site": "https://www.hamleys.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-01"
+        "lastUpdated": "2025-12-01",
+        "slug": "hamleys-luxe"
     },
     {
         "id": "406",
@@ -5462,7 +5591,8 @@
         ],
         "site": "https://www.hamleys.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-04"
+        "lastUpdated": "2025-12-04",
+        "slug": "hamleys"
     },
     {
         "id": "522",
@@ -5513,7 +5643,8 @@
         ],
         "site": "https://hammeronline.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-25"
+        "lastUpdated": "2025-12-25",
+        "slug": "hammer"
     },
     {
         "id": "407",
@@ -5544,7 +5675,8 @@
         ],
         "site": "https://healthandglow.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-11-30"
+        "lastUpdated": "2025-11-30",
+        "slug": "health-and-glow"
     },
     {
         "id": "813",
@@ -5595,7 +5727,8 @@
         ],
         "site": "https://www.healthians.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-01"
+        "lastUpdated": "2025-12-01",
+        "slug": "healthians"
     },
     {
         "id": "627",
@@ -5616,7 +5749,8 @@
         ],
         "site": "https://www.healthifyme.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-14"
+        "lastUpdated": "2025-12-14",
+        "slug": "healthifyme-smart-plan"
     },
     {
         "id": "524",
@@ -5667,7 +5801,8 @@
         ],
         "site": "https://www.healthkart.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-09"
+        "lastUpdated": "2025-12-09",
+        "slug": "healthkart"
     },
     {
         "id": "462",
@@ -5728,7 +5863,8 @@
         ],
         "site": "https://hidesign.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-14"
+        "lastUpdated": "2025-12-14",
+        "slug": "hidesign"
     },
     {
         "id": "759",
@@ -5769,7 +5905,8 @@
         ],
         "site": "https://himalayawellness.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-03"
+        "lastUpdated": "2025-12-03",
+        "slug": "himalaya"
     },
     {
         "id": "527",
@@ -5810,7 +5947,8 @@
         ],
         "site": "https://www.hoichoi.tv",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-07"
+        "lastUpdated": "2025-12-07",
+        "slug": "hoichoi"
     },
     {
         "id": "765",
@@ -5831,7 +5969,8 @@
         ],
         "site": "https://holidaytribe.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-01"
+        "lastUpdated": "2025-12-01",
+        "slug": "holiday-tribe"
     },
     {
         "id": "53",
@@ -5862,7 +6001,8 @@
         ],
         "site": "https://www.homecentre.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-28"
+        "lastUpdated": "2025-12-28",
+        "slug": "homecentre"
     },
     {
         "id": "690",
@@ -5883,7 +6023,8 @@
         ],
         "site": "https://vaaree.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-27"
+        "lastUpdated": "2025-12-27",
+        "slug": "house-of-vaaree"
     },
     {
         "id": "788",
@@ -5924,7 +6065,8 @@
         ],
         "site": "https://www.hppay.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-17"
+        "lastUpdated": "2025-12-17",
+        "slug": "hp-pay"
     },
     {
         "id": "632",
@@ -5955,7 +6097,8 @@
         ],
         "site": "https://www.hugoboss.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-18"
+        "lastUpdated": "2025-12-18",
+        "slug": "hugo-boss"
     },
     {
         "id": "822",
@@ -6016,7 +6159,8 @@
         ],
         "site": "https://www.bata.in/hush-puppies",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-12"
+        "lastUpdated": "2025-12-12",
+        "slug": "hush-puppies"
     },
     {
         "id": "716",
@@ -6067,7 +6211,8 @@
         ],
         "site": "https://www.ikea.com/in/en/",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-13"
+        "lastUpdated": "2025-12-13",
+        "slug": "ikea"
     },
     {
         "id": "787",
@@ -6108,7 +6253,8 @@
         ],
         "site": "https://www.indianterrain.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-13"
+        "lastUpdated": "2025-12-13",
+        "slug": "indian-terrain"
     },
     {
         "id": "313",
@@ -6159,7 +6305,8 @@
         ],
         "site": "https://inglotcosmetics.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-01"
+        "lastUpdated": "2025-12-01",
+        "slug": "inglot"
     },
     {
         "id": "530",
@@ -6190,7 +6337,8 @@
         ],
         "site": "https://innovist.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-22"
+        "lastUpdated": "2025-12-22",
+        "slug": "innovist"
     },
     {
         "id": "821",
@@ -6221,7 +6369,8 @@
         ],
         "site": "https://www.irctc.co.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-18"
+        "lastUpdated": "2025-12-18",
+        "slug": "irctc"
     },
     {
         "id": "336",
@@ -6252,7 +6401,8 @@
         ],
         "site": "https://www.itchotels.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-11"
+        "lastUpdated": "2025-12-11",
+        "slug": "itc"
     },
     {
         "id": "799",
@@ -6303,7 +6453,8 @@
         ],
         "site": "https://www.ixigo.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-05"
+        "lastUpdated": "2025-12-05",
+        "slug": "ixigo"
     },
     {
         "id": "534",
@@ -6364,7 +6515,8 @@
         ],
         "site": "https://www.jackjones.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-27"
+        "lastUpdated": "2025-12-27",
+        "slug": "jack-jones"
     },
     {
         "id": "303",
@@ -6415,7 +6567,8 @@
         ],
         "site": "https://www.hotstar.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-23"
+        "lastUpdated": "2025-12-23",
+        "slug": "jiohotstar"
     },
     {
         "id": "576",
@@ -6466,7 +6619,8 @@
         ],
         "site": "https://www.jockey.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-21"
+        "lastUpdated": "2025-12-21",
+        "slug": "jockey"
     },
     {
         "id": "591",
@@ -6497,7 +6651,8 @@
         ],
         "site": "https://estele.co",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-04"
+        "lastUpdated": "2025-12-04",
+        "slug": "jos-alukkas-jewellery"
     },
     {
         "id": "464",
@@ -6528,7 +6683,8 @@
         ],
         "site": "https://www.joyalukkas.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-09"
+        "lastUpdated": "2025-12-09",
+        "slug": "joyalukkas-diamond"
     },
     {
         "id": "593",
@@ -6559,7 +6715,8 @@
         ],
         "site": "https://baglineindia.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-23"
+        "lastUpdated": "2025-12-23",
+        "slug": "bagline"
     },
     {
         "id": "226",
@@ -6590,7 +6747,8 @@
         ],
         "site": "https://www.kalyanjewellers.net",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-13"
+        "lastUpdated": "2025-12-13",
+        "slug": "kalyan"
     },
     {
         "id": "560",
@@ -6621,7 +6779,8 @@
         ],
         "site": "https://www.katespade.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-26"
+        "lastUpdated": "2025-12-26",
+        "slug": "kate-spade"
     },
     {
         "id": "241",
@@ -6652,7 +6811,8 @@
         ],
         "site": "https://www.ketandiamonds.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-02"
+        "lastUpdated": "2025-12-02",
+        "slug": "ketan-diamonds-diamond-only"
     },
     {
         "id": "242",
@@ -6683,7 +6843,8 @@
         ],
         "site": "https://www.ketandiamonds.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-02"
+        "lastUpdated": "2025-12-02",
+        "slug": "ketan-diamonds-gold-coin"
     },
     {
         "id": "243",
@@ -6714,7 +6875,8 @@
         ],
         "site": "https://www.ketandiamonds.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-19"
+        "lastUpdated": "2025-12-19",
+        "slug": "ketan-diamonds-gold-jewellery"
     },
     {
         "id": "465",
@@ -6755,7 +6917,8 @@
         ],
         "site": "https://kiehls.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-02"
+        "lastUpdated": "2025-12-02",
+        "slug": "kiehls"
     },
     {
         "id": "846",
@@ -6796,7 +6959,8 @@
         ],
         "site": "https://kimirica.shop",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-01"
+        "lastUpdated": "2025-12-01",
+        "slug": "kimirica"
     },
     {
         "id": "776",
@@ -6837,7 +7001,8 @@
         ],
         "site": "https://www.klook.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-09"
+        "lastUpdated": "2025-12-09",
+        "slug": "klook"
     },
     {
         "id": "466",
@@ -6868,7 +7033,8 @@
         ],
         "site": "https://www.lakmesalon.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-09"
+        "lastUpdated": "2025-12-09",
+        "slug": "lakme-salon"
     },
     {
         "id": "561",
@@ -6899,7 +7065,8 @@
         ],
         "site": "https://lawrenceandmayo.co.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-17"
+        "lastUpdated": "2025-12-17",
+        "slug": "lawrence-and-mayo"
     },
     {
         "id": "355",
@@ -6950,7 +7117,8 @@
         ],
         "site": "https://www.lee.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-24"
+        "lastUpdated": "2025-12-24",
+        "slug": "lee"
     },
     {
         "id": "66",
@@ -7011,7 +7179,8 @@
         ],
         "site": "https://www.lenskart.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-28"
+        "lastUpdated": "2025-12-28",
+        "slug": "lenskart"
     },
     {
         "id": "789",
@@ -7052,7 +7221,8 @@
         ],
         "site": "https://www.libertyshoesonline.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-11"
+        "lastUpdated": "2025-12-11",
+        "slug": "liberty"
     },
     {
         "id": "571",
@@ -7093,7 +7263,8 @@
         ],
         "site": "https://www.wowmomo.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-21"
+        "lastUpdated": "2025-12-21",
+        "slug": "lifestyle"
     },
     {
         "id": "572",
@@ -7124,7 +7295,8 @@
         ],
         "site": "https://www.lifestylestores.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-10"
+        "lastUpdated": "2025-12-10",
+        "slug": "lifestyle-online"
     },
     {
         "id": "455",
@@ -7175,7 +7347,8 @@
         ],
         "site": "https://www.linenclub.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-15"
+        "lastUpdated": "2025-12-15",
+        "slug": "linen-club"
     },
     {
         "id": "456",
@@ -7216,7 +7389,8 @@
         ],
         "site": "https://www.lbf.co.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-29"
+        "lastUpdated": "2025-12-29",
+        "slug": "lite-bite-food"
     },
     {
         "id": "836",
@@ -7247,7 +7421,8 @@
         ],
         "site": "https://www.livemint.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-10"
+        "lastUpdated": "2025-12-10",
+        "slug": "live-mint"
     },
     {
         "id": "277",
@@ -7308,7 +7483,8 @@
         ],
         "site": "https://louisphilippe.adityabirla.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-07"
+        "lastUpdated": "2025-12-07",
+        "slug": "louis-philippe"
     },
     {
         "id": "244",
@@ -7329,7 +7505,8 @@
         ],
         "site": "https://www.lovebeautyandplanet.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-17"
+        "lastUpdated": "2025-12-17",
+        "slug": "love-beauty-planet"
     },
     {
         "id": "457",
@@ -7360,7 +7537,8 @@
         ],
         "site": "https://www.luluhypermarket.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-07"
+        "lastUpdated": "2025-12-07",
+        "slug": "lulu-hypermarket"
     },
     {
         "id": "542",
@@ -7411,7 +7589,8 @@
         ],
         "site": "https://www.giva.co",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-29"
+        "lastUpdated": "2025-12-29",
+        "slug": "mainland-china"
     },
     {
         "id": "222",
@@ -7452,7 +7631,8 @@
         ],
         "site": "https://www.satyapaul.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-11-30"
+        "lastUpdated": "2025-11-30",
+        "slug": "makemytrip-bus"
     },
     {
         "id": "411",
@@ -7503,7 +7683,8 @@
         ],
         "site": "https://www.makemytrip.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-01"
+        "lastUpdated": "2025-12-01",
+        "slug": "makemytrip"
     },
     {
         "id": "225",
@@ -7554,7 +7735,8 @@
         ],
         "site": "https://stevemadden.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-17"
+        "lastUpdated": "2025-12-17",
+        "slug": "makemytrip-hotel"
     },
     {
         "id": "223",
@@ -7595,7 +7777,8 @@
         ],
         "site": "https://www.mothercare.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-03"
+        "lastUpdated": "2025-12-03",
+        "slug": "makemytrip-rail"
     },
     {
         "id": "307",
@@ -7626,7 +7809,8 @@
         ],
         "site": "https://www.malabargoldanddiamonds.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-05"
+        "lastUpdated": "2025-12-05",
+        "slug": "malabar-diamonds"
     },
     {
         "id": "306",
@@ -7647,7 +7831,8 @@
         ],
         "site": "https://www.malabargoldanddiamonds.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-18"
+        "lastUpdated": "2025-12-18",
+        "slug": "malabar-gold-coin"
     },
     {
         "id": "43",
@@ -7678,7 +7863,8 @@
         ],
         "site": "https://www.malabargoldanddiamonds.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-26"
+        "lastUpdated": "2025-12-26",
+        "slug": "malabar"
     },
     {
         "id": "245",
@@ -7719,7 +7905,8 @@
         ],
         "site": "https://mamaearth.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-16"
+        "lastUpdated": "2025-12-16",
+        "slug": "mamaearth"
     },
     {
         "id": "745",
@@ -7760,7 +7947,8 @@
         ],
         "site": "https://www.manyavar.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-24"
+        "lastUpdated": "2025-12-24",
+        "slug": "manyavar"
     },
     {
         "id": "279",
@@ -7801,7 +7989,8 @@
         ],
         "site": "https://www.marksandspencer.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-09"
+        "lastUpdated": "2025-12-09",
+        "slug": "marks-spencer"
     },
     {
         "id": "551",
@@ -7842,7 +8031,8 @@
         ],
         "site": "https://www.marriott.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-10"
+        "lastUpdated": "2025-12-10",
+        "slug": "marriott"
     },
     {
         "id": "681",
@@ -7893,7 +8083,8 @@
         ],
         "site": "https://www.mcdonaldsindia.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-05"
+        "lastUpdated": "2025-12-05",
+        "slug": "mcdonalds"
     },
     {
         "id": "753",
@@ -7934,7 +8125,8 @@
         ],
         "site": "https://www.menmoms.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-06"
+        "lastUpdated": "2025-12-06",
+        "slug": "me-n-moms"
     },
     {
         "id": "345",
@@ -7965,7 +8157,8 @@
         ],
         "site": "https://www.miabytanishq.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-07"
+        "lastUpdated": "2025-12-07",
+        "slug": "mia-by-tanishq"
     },
     {
         "id": "583",
@@ -7996,7 +8189,8 @@
         ],
         "site": "https://luxegiftcard.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-10"
+        "lastUpdated": "2025-12-10",
+        "slug": "luxe-gift-card"
     },
     {
         "id": "735",
@@ -8017,7 +8211,8 @@
         ],
         "site": "https://www.xbox.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-20"
+        "lastUpdated": "2025-12-20",
+        "slug": "microsoft-xbox"
     },
     {
         "id": "729",
@@ -8068,7 +8263,8 @@
         ],
         "site": "https://miniklub.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-23"
+        "lastUpdated": "2025-12-23",
+        "slug": "miniklub"
     },
     {
         "id": "622",
@@ -8089,7 +8285,8 @@
         ],
         "site": "https://mokobara.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-29"
+        "lastUpdated": "2025-12-29",
+        "slug": "mokobara-gift-card"
     },
     {
         "id": "655",
@@ -8120,7 +8317,8 @@
         ],
         "site": "https://www.mothercare.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-23"
+        "lastUpdated": "2025-12-23",
+        "slug": "mothercare"
     },
     {
         "id": "653",
@@ -8151,7 +8349,8 @@
         ],
         "site": "https://muroshoes.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-11"
+        "lastUpdated": "2025-12-11",
+        "slug": "muro-qc"
     },
     {
         "id": "654",
@@ -8182,7 +8381,8 @@
         ],
         "site": "https://www.muthootfinance.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-24"
+        "lastUpdated": "2025-12-24",
+        "slug": "muthoot-gold"
     },
     {
         "id": "656",
@@ -8223,7 +8423,8 @@
         ],
         "site": "https://www.naturesbasket.co.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-14"
+        "lastUpdated": "2025-12-14",
+        "slug": "natures-basket"
     },
     {
         "id": "790",
@@ -8254,7 +8455,8 @@
         ],
         "site": "https://neemans.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-16"
+        "lastUpdated": "2025-12-16",
+        "slug": "neemans"
     },
     {
         "id": "329",
@@ -8275,7 +8477,8 @@
         ],
         "site": "https://www.nilkamalhomes.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-01"
+        "lastUpdated": "2025-12-01",
+        "slug": "nilkamal-homes"
     },
     {
         "id": "806",
@@ -8296,7 +8499,8 @@
         ],
         "site": "https://www.nuawoman.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-23"
+        "lastUpdated": "2025-12-23",
+        "slug": "nua-women"
     },
     {
         "id": "234",
@@ -8357,7 +8561,8 @@
         ],
         "site": "https://www.nykaa.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-27"
+        "lastUpdated": "2025-12-27",
+        "slug": "nykaa"
     },
     {
         "id": "340",
@@ -8408,7 +8613,8 @@
         ],
         "site": "https://www.nykaafashion.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-25"
+        "lastUpdated": "2025-12-25",
+        "slug": "nykaa-fashion"
     },
     {
         "id": "341",
@@ -8429,7 +8635,8 @@
         ],
         "site": "https://www.nykaaman.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-14"
+        "lastUpdated": "2025-12-14",
+        "slug": "nykaa-men"
     },
     {
         "id": "564",
@@ -8460,7 +8667,8 @@
         ],
         "site": "https://www.oberoihotels.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-26"
+        "lastUpdated": "2025-12-26",
+        "slug": "oberoi-hotels-resort"
     },
     {
         "id": "544",
@@ -8511,7 +8719,8 @@
         ],
         "site": "https://www.speciality.co.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-04"
+        "lastUpdated": "2025-12-04",
+        "slug": "oh-calcutta"
     },
     {
         "id": "86",
@@ -8562,7 +8771,8 @@
         ],
         "site": "https://www.only.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-11-30"
+        "lastUpdated": "2025-11-30",
+        "slug": "only"
     },
     {
         "id": "546",
@@ -8603,7 +8813,8 @@
         ],
         "site": "https://organicindia.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-12"
+        "lastUpdated": "2025-12-12",
+        "slug": "organic-india"
     },
     {
         "id": "441",
@@ -8654,7 +8865,8 @@
         ],
         "site": "https://www.ovenstory.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-19"
+        "lastUpdated": "2025-12-19",
+        "slug": "ovenstory"
     },
     {
         "id": "360",
@@ -8715,7 +8927,8 @@
         ],
         "site": "https://www.pantaloons.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-21"
+        "lastUpdated": "2025-12-21",
+        "slug": "pantaloons"
     },
     {
         "id": "323",
@@ -8766,7 +8979,8 @@
         ],
         "site": "https://parkavenue.co.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-28"
+        "lastUpdated": "2025-12-28",
+        "slug": "park-avenue"
     },
     {
         "id": "324",
@@ -8817,7 +9031,8 @@
         ],
         "site": "https://www.raymond.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-24"
+        "lastUpdated": "2025-12-24",
+        "slug": "parx"
     },
     {
         "id": "35",
@@ -8838,7 +9053,8 @@
         ],
         "site": "https://www.paulandshark.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-20"
+        "lastUpdated": "2025-12-20",
+        "slug": "paul-shark"
     },
     {
         "id": "248",
@@ -8869,7 +9085,8 @@
         ],
         "site": "https://www.pcjeweller.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-26"
+        "lastUpdated": "2025-12-26",
+        "slug": "pc-jeweller-diamond"
     },
     {
         "id": "250",
@@ -8900,7 +9117,8 @@
         ],
         "site": "https://www.pcjeweller.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-04"
+        "lastUpdated": "2025-12-04",
+        "slug": "pc-jeweller-gold-coin"
     },
     {
         "id": "249",
@@ -8921,7 +9139,8 @@
         ],
         "site": "https://www.pcjeweller.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-21"
+        "lastUpdated": "2025-12-21",
+        "slug": "pc-jeweller-gold-jewellery"
     },
     {
         "id": "91",
@@ -8942,7 +9161,8 @@
         ],
         "site": "https://www.pcjeweller.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-24"
+        "lastUpdated": "2025-12-24",
+        "slug": "pcjeweller"
     },
     {
         "id": "443",
@@ -8993,7 +9213,8 @@
         ],
         "site": "https://www.pepperfry.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-29"
+        "lastUpdated": "2025-12-29",
+        "slug": "pepperfry"
     },
     {
         "id": "584",
@@ -9054,7 +9275,8 @@
         ],
         "site": "https://peterengland.adityabirla.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-18"
+        "lastUpdated": "2025-12-18",
+        "slug": "peter-england"
     },
     {
         "id": "219",
@@ -9085,7 +9307,8 @@
         ],
         "site": "https://www.hugoboss.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-15"
+        "lastUpdated": "2025-12-15",
+        "slug": "phone-pe"
     },
     {
         "id": "663",
@@ -9126,7 +9349,8 @@
         ],
         "site": "https://pigeonappliances.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-13"
+        "lastUpdated": "2025-12-13",
+        "slug": "pigeon"
     },
     {
         "id": "413",
@@ -9147,7 +9371,8 @@
         ],
         "site": "https://www.pineperks.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-23"
+        "lastUpdated": "2025-12-23",
+        "slug": "pineperks"
     },
     {
         "id": "664",
@@ -9168,7 +9393,8 @@
         ],
         "site": "https://www.google.com/pixel",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-01"
+        "lastUpdated": "2025-12-01",
+        "slug": "pixel-go"
     },
     {
         "id": "665",
@@ -9229,7 +9455,8 @@
         ],
         "site": "https://www.pizzahut.co.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-19"
+        "lastUpdated": "2025-12-19",
+        "slug": "pizza-hut"
     },
     {
         "id": "666",
@@ -9270,7 +9497,8 @@
         ],
         "site": "https://planetfashion.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-15"
+        "lastUpdated": "2025-12-15",
+        "slug": "planet-fashion"
     },
     {
         "id": "829",
@@ -9291,7 +9519,8 @@
         ],
         "site": "https://www.pmjjewels.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-25"
+        "lastUpdated": "2025-12-25",
+        "slug": "pmj-jewellers"
     },
     {
         "id": "667",
@@ -9332,7 +9561,8 @@
         ],
         "site": "https://www.prestigexclusive.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-24"
+        "lastUpdated": "2025-12-24",
+        "slug": "prestige"
     },
     {
         "id": "231",
@@ -9383,7 +9613,8 @@
         ],
         "site": "https://in.puma.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-20"
+        "lastUpdated": "2025-12-20",
+        "slug": "puma"
     },
     {
         "id": "604",
@@ -9414,7 +9645,8 @@
         ],
         "site": "https://www.purehomeandliving.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-29"
+        "lastUpdated": "2025-12-29",
+        "slug": "pure-home-living"
     },
     {
         "id": "670",
@@ -9465,7 +9697,8 @@
         ],
         "site": "https://randbfashion.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-02"
+        "lastUpdated": "2025-12-02",
+        "slug": "r-b"
     },
     {
         "id": "326",
@@ -9516,7 +9749,8 @@
         ],
         "site": "https://rangriti.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-25"
+        "lastUpdated": "2025-12-25",
+        "slug": "rangriti"
     },
     {
         "id": "361",
@@ -9557,7 +9791,8 @@
         ],
         "site": "https://www.ray-ban.com/india",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-13"
+        "lastUpdated": "2025-12-13",
+        "slug": "ray-ban"
     },
     {
         "id": "320",
@@ -9598,7 +9833,8 @@
         ],
         "site": "https://www.raymond.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-11-30"
+        "lastUpdated": "2025-11-30",
+        "slug": "raymond-ready-to-wear"
     },
     {
         "id": "281",
@@ -9649,7 +9885,8 @@
         ],
         "site": "https://www.relaxofootwear.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-26"
+        "lastUpdated": "2025-12-26",
+        "slug": "relaxo"
     },
     {
         "id": "671",
@@ -9690,12 +9927,13 @@
         ],
         "site": "https://relianceretail.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-18"
+        "lastUpdated": "2025-12-18",
+        "slug": "reliance"
     },
     {
         "id": "212",
         "brand": "Reliance Jio Mart",
-        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Reliance Jio Mart E-Gift Card\u00a0.png",
+        "logo": "https://savemax.s3.ap-south-1.amazonaws.com/app/logo/v1/Reliance Jio Mart E-Gift Card .png",
         "category": "E-commerce & Technology",
         "platforms": [
             {
@@ -9751,7 +9989,8 @@
         ],
         "site": "https://bitli.in/yBzkOyd",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-18"
+        "lastUpdated": "2025-12-18",
+        "slug": "reliance-jio-mart"
     },
     {
         "id": "282",
@@ -9802,7 +10041,8 @@
         ],
         "site": "https://www.jio.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-25"
+        "lastUpdated": "2025-12-25",
+        "slug": "reliance-my-jio-store"
     },
     {
         "id": "284",
@@ -9843,7 +10083,8 @@
         ],
         "site": "https://www.jiomart.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-25"
+        "lastUpdated": "2025-12-25",
+        "slug": "reliance-smart-point"
     },
     {
         "id": "357",
@@ -9864,7 +10105,8 @@
         ],
         "site": "https://www.jiomart.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-13"
+        "lastUpdated": "2025-12-13",
+        "slug": "reliance-smart-super-store"
     },
     {
         "id": "575",
@@ -9895,7 +10137,8 @@
         ],
         "site": "https://ajiio.in/8N3suhS",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-09"
+        "lastUpdated": "2025-12-09",
+        "slug": "reliance-trends-575"
     },
     {
         "id": "286",
@@ -9926,7 +10169,8 @@
         ],
         "site": "https://ajiio.in/8N3suhS",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-02"
+        "lastUpdated": "2025-12-02",
+        "slug": "reliance-trends-footwear"
     },
     {
         "id": "758",
@@ -9947,7 +10191,8 @@
         ],
         "site": "https://www.rentomojo.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-04"
+        "lastUpdated": "2025-12-04",
+        "slug": "rentomojo"
     },
     {
         "id": "795",
@@ -9968,7 +10213,8 @@
         ],
         "site": "https://www.roblox.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-26"
+        "lastUpdated": "2025-12-26",
+        "slug": "roblox"
     },
     {
         "id": "251",
@@ -10029,7 +10275,8 @@
         ],
         "site": "https://www.samsonite.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-22"
+        "lastUpdated": "2025-12-22",
+        "slug": "samsonite"
     },
     {
         "id": "476",
@@ -10070,7 +10317,8 @@
         ],
         "site": "https://www.scotch-soda.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-02"
+        "lastUpdated": "2025-12-02",
+        "slug": "scotch-soda-luxe"
     },
     {
         "id": "337",
@@ -10101,7 +10349,8 @@
         ],
         "site": "https://www.selectedhomme.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-02"
+        "lastUpdated": "2025-12-02",
+        "slug": "selected-homme"
     },
     {
         "id": "844",
@@ -10132,7 +10381,8 @@
         ],
         "site": "https://shivnaresh.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-20"
+        "lastUpdated": "2025-12-20",
+        "slug": "shiv-naresh"
     },
     {
         "id": "777",
@@ -10173,7 +10423,8 @@
         ],
         "site": "https://www.shoppersstop.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-08"
+        "lastUpdated": "2025-12-08",
+        "slug": "shoppers-stop"
     },
     {
         "id": "678",
@@ -10214,7 +10465,8 @@
         ],
         "site": "https://www.speciality.co.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-11-30"
+        "lastUpdated": "2025-11-30",
+        "slug": "sigree"
     },
     {
         "id": "556",
@@ -10265,7 +10517,8 @@
         ],
         "site": "https://www.simoncarter.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-15"
+        "lastUpdated": "2025-12-15",
+        "slug": "simon-carter"
     },
     {
         "id": "682",
@@ -10296,7 +10549,8 @@
         ],
         "site": "https://www.simpleskincare.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-07"
+        "lastUpdated": "2025-12-07",
+        "slug": "simple"
     },
     {
         "id": "288",
@@ -10357,7 +10611,8 @@
         ],
         "site": "https://www.skechers.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-24"
+        "lastUpdated": "2025-12-24",
+        "slug": "skechers"
     },
     {
         "id": "683",
@@ -10398,7 +10653,8 @@
         ],
         "site": "https://skinn.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-14"
+        "lastUpdated": "2025-12-14",
+        "slug": "skinn"
     },
     {
         "id": "289",
@@ -10449,7 +10705,8 @@
         ],
         "site": "https://www.skullcandy.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-02"
+        "lastUpdated": "2025-12-02",
+        "slug": "skullcandy"
     },
     {
         "id": "843",
@@ -10470,7 +10727,8 @@
         ],
         "site": "https://www.sleepwellproducts.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-27"
+        "lastUpdated": "2025-12-27",
+        "slug": "sleepwell"
     },
     {
         "id": "684",
@@ -10521,7 +10779,8 @@
         ],
         "site": "https://www.smilefoundationindia.org",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-05"
+        "lastUpdated": "2025-12-05",
+        "slug": "smile-foundation"
     },
     {
         "id": "756",
@@ -10542,7 +10801,8 @@
         ],
         "site": "https://www.snapdeal.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-23"
+        "lastUpdated": "2025-12-23",
+        "slug": "snapdeal"
     },
     {
         "id": "685",
@@ -10583,7 +10843,8 @@
         ],
         "site": "https://www.soch.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-11-30"
+        "lastUpdated": "2025-11-30",
+        "slug": "soch"
     },
     {
         "id": "686",
@@ -10624,7 +10885,8 @@
         ],
         "site": "https://www.sonyliv.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-08"
+        "lastUpdated": "2025-12-08",
+        "slug": "sonyliv"
     },
     {
         "id": "722",
@@ -10645,7 +10907,8 @@
         ],
         "site": "https://www.sparindia.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-08"
+        "lastUpdated": "2025-12-08",
+        "slug": "spar-hypermarket"
     },
     {
         "id": "603",
@@ -10716,7 +10979,8 @@
         ],
         "site": "https://www.speedo.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-17"
+        "lastUpdated": "2025-12-17",
+        "slug": "speedo"
     },
     {
         "id": "569",
@@ -10767,7 +11031,8 @@
         ],
         "site": "https://www.spencers.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-07"
+        "lastUpdated": "2025-12-07",
+        "slug": "spencers-retail"
     },
     {
         "id": "807",
@@ -10808,7 +11073,8 @@
         ],
         "site": "https://ssunsu.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-10"
+        "lastUpdated": "2025-12-10",
+        "slug": "ssunsu"
     },
     {
         "id": "321",
@@ -10869,7 +11135,8 @@
         ],
         "site": "https://www.starbucks.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-13"
+        "lastUpdated": "2025-12-13",
+        "slug": "starbucks"
     },
     {
         "id": "555",
@@ -10900,7 +11167,8 @@
         ],
         "site": "https://store.steampowered.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-06"
+        "lastUpdated": "2025-12-06",
+        "slug": "steam"
     },
     {
         "id": "687",
@@ -10951,7 +11219,8 @@
         ],
         "site": "https://www.sterlingholidays.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-03"
+        "lastUpdated": "2025-12-03",
+        "slug": "sterling-holidays"
     },
     {
         "id": "688",
@@ -10982,7 +11251,8 @@
         ],
         "site": "https://stevemadden.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-01"
+        "lastUpdated": "2025-12-01",
+        "slug": "steve-madden"
     },
     {
         "id": "330",
@@ -11043,7 +11313,8 @@
         ],
         "site": "https://www.subway.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-03"
+        "lastUpdated": "2025-12-03",
+        "slug": "subway"
     },
     {
         "id": "50",
@@ -11074,7 +11345,8 @@
         ],
         "site": "https://www.titaneyeplus.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-02"
+        "lastUpdated": "2025-12-02",
+        "slug": "superdry"
     },
     {
         "id": "691",
@@ -11125,7 +11397,8 @@
         ],
         "site": "https://www.speciality.co.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-23"
+        "lastUpdated": "2025-12-23",
+        "slug": "sweet-bengal"
     },
     {
         "id": "692",
@@ -11176,7 +11449,8 @@
         ],
         "site": "https://www.sweettruth.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-19"
+        "lastUpdated": "2025-12-19",
+        "slug": "sweet-truth"
     },
     {
         "id": "211",
@@ -11217,7 +11491,8 @@
         ],
         "site": "https://www.tajhotels.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-07"
+        "lastUpdated": "2025-12-07",
+        "slug": "taj"
     },
     {
         "id": "354",
@@ -11248,7 +11523,8 @@
         ],
         "site": "https://www.taneira.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-06"
+        "lastUpdated": "2025-12-06",
+        "slug": "taneira"
     },
     {
         "id": "48",
@@ -11289,7 +11565,8 @@
         ],
         "site": "https://www.tanishq.co.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-21"
+        "lastUpdated": "2025-12-21",
+        "slug": "tanishq"
     },
     {
         "id": "430",
@@ -11350,7 +11627,8 @@
         ],
         "site": "https://www.tatacliq.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-11"
+        "lastUpdated": "2025-12-11",
+        "slug": "tata-cliq"
     },
     {
         "id": "327",
@@ -11391,7 +11669,8 @@
         ],
         "site": "https://tattvaspa.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-06"
+        "lastUpdated": "2025-12-06",
+        "slug": "tattva-spa"
     },
     {
         "id": "840",
@@ -11432,7 +11711,8 @@
         ],
         "site": "https://tego.fit",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-23"
+        "lastUpdated": "2025-12-23",
+        "slug": "tego"
     },
     {
         "id": "841",
@@ -11473,7 +11753,8 @@
         ],
         "site": "https://www.tgifindia.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-16"
+        "lastUpdated": "2025-12-16",
+        "slug": "tgif"
     },
     {
         "id": "292",
@@ -11534,7 +11815,8 @@
         ],
         "site": "https://www.thebodyshop.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-11-30"
+        "lastUpdated": "2025-11-30",
+        "slug": "the-body-shop"
     },
     {
         "id": "728",
@@ -11575,7 +11857,8 @@
         ],
         "site": "https://www.thecollective.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-24"
+        "lastUpdated": "2025-12-24",
+        "slug": "the-collective"
     },
     {
         "id": "697",
@@ -11616,7 +11899,8 @@
         ],
         "site": "https://www.goodbowls.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-20"
+        "lastUpdated": "2025-12-20",
+        "slug": "the-good-bowl"
     },
     {
         "id": "845",
@@ -11637,7 +11921,8 @@
         ],
         "site": "https://readinghabit.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-11"
+        "lastUpdated": "2025-12-11",
+        "slug": "reading-habit"
     },
     {
         "id": "730",
@@ -11668,7 +11953,8 @@
         ],
         "site": "https://thesleepcompany.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-20"
+        "lastUpdated": "2025-12-20",
+        "slug": "the-sleep-company"
     },
     {
         "id": "197",
@@ -11709,7 +11995,8 @@
         ],
         "site": "https://thirdwavecoffeeroasters.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-09"
+        "lastUpdated": "2025-12-09",
+        "slug": "third-wave-coffee"
     },
     {
         "id": "797",
@@ -11750,7 +12037,8 @@
         ],
         "site": "https://timhortonsindia.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-25"
+        "lastUpdated": "2025-12-25",
+        "slug": "tim-hortons"
     },
     {
         "id": "732",
@@ -11781,7 +12069,8 @@
         ],
         "site": "https://tinder.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-28"
+        "lastUpdated": "2025-12-28",
+        "slug": "tinder"
     },
     {
         "id": "720",
@@ -11802,7 +12091,8 @@
         ],
         "site": "https://www.titaneyeplus.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-23"
+        "lastUpdated": "2025-12-23",
+        "slug": "titan-eye"
     },
     {
         "id": "294",
@@ -11843,7 +12133,8 @@
         ],
         "site": "https://www.titan.co.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-29"
+        "lastUpdated": "2025-12-29",
+        "slug": "titan-minimals"
     },
     {
         "id": "828",
@@ -11864,7 +12155,8 @@
         ],
         "site": "https://www.tripxoxo.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-26"
+        "lastUpdated": "2025-12-26",
+        "slug": "tripxoxo"
     },
     {
         "id": "295",
@@ -11915,7 +12207,8 @@
         ],
         "site": "https://www.truefittandhill.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-24"
+        "lastUpdated": "2025-12-24",
+        "slug": "truefitt-hill"
     },
     {
         "id": "798",
@@ -11946,7 +12239,8 @@
         ],
         "site": "https://shop.unicornstore.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-18"
+        "lastUpdated": "2025-12-18",
+        "slug": "unicorn"
     },
     {
         "id": "796",
@@ -11987,7 +12281,8 @@
         ],
         "site": "https://www.unipin.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-15"
+        "lastUpdated": "2025-12-15",
+        "slug": "unipin"
     },
     {
         "id": "721",
@@ -12028,7 +12323,8 @@
         ],
         "site": "https://www.urbanladder.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-10"
+        "lastUpdated": "2025-12-10",
+        "slug": "urban-ladder"
     },
     {
         "id": "751",
@@ -12069,7 +12365,8 @@
         ],
         "site": "https://urbanspace.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-11-30"
+        "lastUpdated": "2025-11-30",
+        "slug": "urban-space"
     },
     {
         "id": "296",
@@ -12110,7 +12407,8 @@
         ],
         "site": "https://www.vmart.co.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-02"
+        "lastUpdated": "2025-12-02",
+        "slug": "v-mart"
     },
     {
         "id": "824",
@@ -12131,7 +12429,8 @@
         ],
         "site": "https://www.vaango.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-09"
+        "lastUpdated": "2025-12-09",
+        "slug": "vaango"
     },
     {
         "id": "217",
@@ -12172,7 +12471,8 @@
         ],
         "site": "https://www.gasjeans.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-29"
+        "lastUpdated": "2025-12-29",
+        "slug": "valorant"
     },
     {
         "id": "586",
@@ -12233,7 +12533,8 @@
         ],
         "site": "https://vanheusenindia.adityabirla.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-04"
+        "lastUpdated": "2025-12-04",
+        "slug": "van-heusen"
     },
     {
         "id": "232",
@@ -12294,7 +12595,8 @@
         ],
         "site": "https://www.veromoda.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-23"
+        "lastUpdated": "2025-12-23",
+        "slug": "vero-moda"
     },
     {
         "id": "316",
@@ -12345,7 +12647,8 @@
         ],
         "site": "https://www.victoriassecret.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-29"
+        "lastUpdated": "2025-12-29",
+        "slug": "victorias-secret"
     },
     {
         "id": "315",
@@ -12376,7 +12679,8 @@
         ],
         "site": "https://www.victoriassecret.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-02"
+        "lastUpdated": "2025-12-02",
+        "slug": "victorias-secret-beauty"
     },
     {
         "id": "298",
@@ -12417,7 +12721,8 @@
         ],
         "site": "https://www.vijaysales.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-09"
+        "lastUpdated": "2025-12-09",
+        "slug": "vijay-sales"
     },
     {
         "id": "702",
@@ -12458,7 +12763,8 @@
         ],
         "site": "https://vrott.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-10"
+        "lastUpdated": "2025-12-10",
+        "slug": "vrott"
     },
     {
         "id": "352",
@@ -12509,7 +12815,8 @@
         ],
         "site": "https://www.wakefit.co",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-19"
+        "lastUpdated": "2025-12-19",
+        "slug": "wakefit"
     },
     {
         "id": "704",
@@ -12570,7 +12877,8 @@
         ],
         "site": "https://www.wendys.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-02"
+        "lastUpdated": "2025-12-02",
+        "slug": "wendys"
     },
     {
         "id": "77",
@@ -12621,7 +12929,8 @@
         ],
         "site": "https://www.westside.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-01"
+        "lastUpdated": "2025-12-01",
+        "slug": "westside"
     },
     {
         "id": "449",
@@ -12682,7 +12991,8 @@
         ],
         "site": "https://www.wildcraft.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-02"
+        "lastUpdated": "2025-12-02",
+        "slug": "wildcraft"
     },
     {
         "id": "705",
@@ -12723,7 +13033,8 @@
         ],
         "site": "https://www.williampenn.net",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-23"
+        "lastUpdated": "2025-12-23",
+        "slug": "william-penn"
     },
     {
         "id": "706",
@@ -12784,7 +13095,8 @@
         ],
         "site": "https://www.woggles.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-25"
+        "lastUpdated": "2025-12-25",
+        "slug": "woggles"
     },
     {
         "id": "471",
@@ -12845,7 +13157,8 @@
         ],
         "site": "https://wonderchef.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-10"
+        "lastUpdated": "2025-12-10",
+        "slug": "wonderchef"
     },
     {
         "id": "301",
@@ -12896,7 +13209,8 @@
         ],
         "site": "https://www.woodlandworldwide.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-20"
+        "lastUpdated": "2025-12-20",
+        "slug": "woodland"
     },
     {
         "id": "319",
@@ -12947,7 +13261,8 @@
         ],
         "site": "https://www.wowchina.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-23"
+        "lastUpdated": "2025-12-23",
+        "slug": "wow-china"
     },
     {
         "id": "485",
@@ -12998,7 +13313,8 @@
         ],
         "site": "https://www.wrangler.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-02"
+        "lastUpdated": "2025-12-02",
+        "slug": "wrangler"
     },
     {
         "id": "582",
@@ -13049,7 +13365,8 @@
         ],
         "site": "https://www.yatra.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-29"
+        "lastUpdated": "2025-12-29",
+        "slug": "yatra"
     },
     {
         "id": "472",
@@ -13070,7 +13387,8 @@
         ],
         "site": "https://www.yatra.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-25"
+        "lastUpdated": "2025-12-25",
+        "slug": "yatra-hotels-holidays-voucher"
     },
     {
         "id": "709",
@@ -13121,7 +13439,8 @@
         ],
         "site": "https://www.zee5.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-12"
+        "lastUpdated": "2025-12-12",
+        "slug": "zee5"
     },
     {
         "id": "854",
@@ -13152,7 +13471,8 @@
         ],
         "site": "https://www.snitch.co.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-07"
+        "lastUpdated": "2025-12-07",
+        "slug": "snitch"
     },
     {
         "id": "487",
@@ -13173,7 +13493,8 @@
         ],
         "site": "https://www.paulsmith.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-28"
+        "lastUpdated": "2025-12-28",
+        "slug": "paul-smith-luxe-gift-card"
     },
     {
         "id": "1544",
@@ -13194,7 +13515,8 @@
         ],
         "site": "https://abrahamandthakore.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-29"
+        "lastUpdated": "2025-12-29",
+        "slug": "abraham-thakore-luxe-gift-card"
     },
     {
         "id": "1540",
@@ -13215,7 +13537,8 @@
         ],
         "site": "https://www.adidas.co.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-07"
+        "lastUpdated": "2025-12-07",
+        "slug": "adidas-kids-luxe-gift-card"
     },
     {
         "id": "1545",
@@ -13236,7 +13559,8 @@
         ],
         "site": "https://www.bally.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-12"
+        "lastUpdated": "2025-12-12",
+        "slug": "bally-luxe-gift-card"
     },
     {
         "id": "1543",
@@ -13257,7 +13581,8 @@
         ],
         "site": "https://www.bottegaveneta.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-23"
+        "lastUpdated": "2025-12-23",
+        "slug": "bottega-veneta-luxe-gift-card"
     },
     {
         "id": "1535",
@@ -13278,7 +13603,8 @@
         ],
         "site": "https://www.canali.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-08"
+        "lastUpdated": "2025-12-08",
+        "slug": "canali-luxe-gift-card"
     },
     {
         "id": "1556",
@@ -13299,7 +13625,8 @@
         ],
         "site": "https://www.charlestyrwhitt.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-19"
+        "lastUpdated": "2025-12-19",
+        "slug": "charles-tyrwhitt-luxe-gift-card"
     },
     {
         "id": "1557",
@@ -13320,7 +13647,8 @@
         ],
         "site": "https://www.armani.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-24"
+        "lastUpdated": "2025-12-24",
+        "slug": "ea-7-luxe-gift-card"
     },
     {
         "id": "1546",
@@ -13341,7 +13669,8 @@
         ],
         "site": "https://www.ferragamo.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-22"
+        "lastUpdated": "2025-12-22",
+        "slug": "ferragamo-luxe-gift-card"
     },
     {
         "id": "1536",
@@ -13362,7 +13691,8 @@
         ],
         "site": "https://www.armani.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-19"
+        "lastUpdated": "2025-12-19",
+        "slug": "giorgio-armani-luxe-gift-card"
     },
     {
         "id": "1541",
@@ -13383,7 +13713,8 @@
         ],
         "site": "https://www.hamleys.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-04"
+        "lastUpdated": "2025-12-04",
+        "slug": "h-by-hamleys-luxe-gift-card"
     },
     {
         "id": "1542",
@@ -13414,7 +13745,8 @@
         ],
         "site": "https://www.hunkemoller.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-11-30"
+        "lastUpdated": "2025-11-30",
+        "slug": "hunkemoller-luxe-gift-card"
     },
     {
         "id": "1518",
@@ -13435,7 +13767,8 @@
         ],
         "site": "https://instafabplus.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-18"
+        "lastUpdated": "2025-12-18",
+        "slug": "instafab-plus"
     },
     {
         "id": "1532",
@@ -13456,7 +13789,8 @@
         ],
         "site": "https://www.jimmychoo.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-21"
+        "lastUpdated": "2025-12-21",
+        "slug": "jimmy-choo-luxe-gift-card"
     },
     {
         "id": "1533",
@@ -13477,7 +13811,8 @@
         ],
         "site": "https://www.katespade.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-12"
+        "lastUpdated": "2025-12-12",
+        "slug": "kate-spade-luxe-gift-card"
     },
     {
         "id": "1558",
@@ -13498,7 +13833,8 @@
         ],
         "site": "https://www.lamartina.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-23"
+        "lastUpdated": "2025-12-23",
+        "slug": "la-martina-luxe-gift-card"
     },
     {
         "id": "1520",
@@ -13529,7 +13865,8 @@
         ],
         "site": "https://www.libertyshoesonline.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-20"
+        "lastUpdated": "2025-12-20",
+        "slug": "liberty-online"
     },
     {
         "id": "1559",
@@ -13550,7 +13887,8 @@
         ],
         "site": "https://www.maje.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-07"
+        "lastUpdated": "2025-12-07",
+        "slug": "maje-luxe-gift-card"
     },
     {
         "id": "1560",
@@ -13571,7 +13909,8 @@
         ],
         "site": "https://www.paulandshark.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-03"
+        "lastUpdated": "2025-12-03",
+        "slug": "paul-shark-luxe-gift-card"
     },
     {
         "id": "1549",
@@ -13592,7 +13931,8 @@
         ],
         "site": "https://www.potterybarn.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-29"
+        "lastUpdated": "2025-12-29",
+        "slug": "pottery-barn-luxe-gift-card"
     },
     {
         "id": "1554",
@@ -13613,7 +13953,8 @@
         ],
         "site": "https://www.pretamanger.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-12"
+        "lastUpdated": "2025-12-12",
+        "slug": "pret-a-manger-luxe-gift-card"
     },
     {
         "id": "1531",
@@ -13634,7 +13975,8 @@
         ],
         "site": "https://www.ritukumar.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-01"
+        "lastUpdated": "2025-12-01",
+        "slug": "ritu-kumar-luxe-gift-card"
     },
     {
         "id": "1547",
@@ -13655,7 +13997,8 @@
         ],
         "site": "https://knitrowan.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-09"
+        "lastUpdated": "2025-12-09",
+        "slug": "rowan-luxe-gift-card"
     },
     {
         "id": "1561",
@@ -13676,7 +14019,8 @@
         ],
         "site": "https://www.sandro-paris.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-20"
+        "lastUpdated": "2025-12-20",
+        "slug": "sandro"
     },
     {
         "id": "1555",
@@ -13697,7 +14041,8 @@
         ],
         "site": "https://www.sunglasshut.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-13"
+        "lastUpdated": "2025-12-13",
+        "slug": "sunglass-hut-luxe-gift-card"
     },
     {
         "id": "1534",
@@ -13718,7 +14063,8 @@
         ],
         "site": "https://www.superdry.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-02"
+        "lastUpdated": "2025-12-02",
+        "slug": "superdry-sport-luxe-gift-card"
     },
     {
         "id": "1562",
@@ -13739,7 +14085,8 @@
         ],
         "site": "https://www.relianceretail.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-17"
+        "lastUpdated": "2025-12-17",
+        "slug": "the-white-crow"
     },
     {
         "id": "1552",
@@ -13760,7 +14107,8 @@
         ],
         "site": "https://www.tods.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-29"
+        "lastUpdated": "2025-12-29",
+        "slug": "tods-luxe-gift-card"
     },
     {
         "id": "1537",
@@ -13781,7 +14129,8 @@
         ],
         "site": "https://www.toryburch.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-17"
+        "lastUpdated": "2025-12-17",
+        "slug": "tory-burch-luxe-gift-card"
     },
     {
         "id": "1553",
@@ -13802,7 +14151,8 @@
         ],
         "site": "https://www.tumi.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-17"
+        "lastUpdated": "2025-12-17",
+        "slug": "tumi-luxe-gift-card"
     },
     {
         "id": "1538",
@@ -13823,7 +14173,8 @@
         ],
         "site": "https://www.valentino.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-22"
+        "lastUpdated": "2025-12-22",
+        "slug": "valentino-luxe-gift-card"
     },
     {
         "id": "1539",
@@ -13844,7 +14195,8 @@
         ],
         "site": "https://www.versace.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-06"
+        "lastUpdated": "2025-12-06",
+        "slug": "versace-luxe-gift-card"
     },
     {
         "id": "1550",
@@ -13865,7 +14217,8 @@
         ],
         "site": "https://www.villeroy-boch.co.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-11"
+        "lastUpdated": "2025-12-11",
+        "slug": "villeroy-and-boch-luxe-gift-card"
     },
     {
         "id": "1481",
@@ -13886,7 +14239,8 @@
         ],
         "site": "https://vincibotanicals.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-04"
+        "lastUpdated": "2025-12-04",
+        "slug": "vinci-botanicals"
     },
     {
         "id": "1551",
@@ -13907,7 +14261,8 @@
         ],
         "site": "https://www.westelm.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-25"
+        "lastUpdated": "2025-12-25",
+        "slug": "west-elm-luxe-gift-card"
     },
     {
         "id": "1548",
@@ -13928,7 +14283,8 @@
         ],
         "site": "https://www.muji.com/in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-01"
+        "lastUpdated": "2025-12-01",
+        "slug": "muji-luxe-gift-card"
     },
     {
         "id": "1353",
@@ -13969,7 +14325,8 @@
         ],
         "site": "https://luxury.tatacliq.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-27"
+        "lastUpdated": "2025-12-27",
+        "slug": "tata-cliq-luxury"
     },
     {
         "id": "1568",
@@ -14010,7 +14367,8 @@
         ],
         "site": "https://www.citizen.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-11"
+        "lastUpdated": "2025-12-11",
+        "slug": "citizen-watches"
     },
     {
         "id": "50",
@@ -14051,7 +14409,8 @@
         ],
         "site": "https://www.titaneyeplus.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-20"
+        "lastUpdated": "2025-12-20",
+        "slug": "titan-eye-plus"
     },
     {
         "id": "1490",
@@ -14072,7 +14431,8 @@
         ],
         "site": "https://www.jiomart.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-13"
+        "lastUpdated": "2025-12-13",
+        "slug": "reliance-smart-bazaar"
     },
     {
         "id": "427",
@@ -14103,7 +14463,8 @@
         ],
         "site": "https://www.fabindia.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-03"
+        "lastUpdated": "2025-12-03",
+        "slug": "fabindia"
     },
     {
         "id": "218",
@@ -14124,7 +14485,8 @@
         ],
         "site": "https://www.hamleys.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-03"
+        "lastUpdated": "2025-12-03",
+        "slug": "hamleys-luxe-gift-card"
     },
     {
         "id": "27",
@@ -14165,7 +14527,8 @@
         ],
         "site": "https://theraymondshop.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-08"
+        "lastUpdated": "2025-12-08",
+        "slug": "the-raymond-shop"
     },
     {
         "id": "542",
@@ -14186,7 +14549,8 @@
         ],
         "site": "https://www.giva.co",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-20"
+        "lastUpdated": "2025-12-20",
+        "slug": "giva"
     },
     {
         "id": "1242",
@@ -14217,7 +14581,8 @@
         ],
         "site": "https://www.maxfashion.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-04"
+        "lastUpdated": "2025-12-04",
+        "slug": "max-fashion-online"
     },
     {
         "id": "30",
@@ -14248,7 +14613,8 @@
         ],
         "site": "https://wforwoman.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-23"
+        "lastUpdated": "2025-12-23",
+        "slug": "w"
     },
     {
         "id": "223",
@@ -14269,7 +14635,8 @@
         ],
         "site": "https://www.mothercare.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-14"
+        "lastUpdated": "2025-12-14",
+        "slug": "mothercare-luxe-gift-card"
     },
     {
         "id": "428",
@@ -14290,7 +14657,8 @@
         ],
         "site": "https://www.maxfashion.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-20"
+        "lastUpdated": "2025-12-20",
+        "slug": "max"
     },
     {
         "id": "224",
@@ -14311,7 +14679,8 @@
         ],
         "site": "https://www.superdry.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-08"
+        "lastUpdated": "2025-12-08",
+        "slug": "superdry-luxe-gift-card"
     },
     {
         "id": "214",
@@ -14332,7 +14701,8 @@
         ],
         "site": "https://www.armaniexchange.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-02"
+        "lastUpdated": "2025-12-02",
+        "slug": "armani-exchange-luxe-gift-card"
     },
     {
         "id": "616",
@@ -14383,7 +14753,8 @@
         ],
         "site": "https://www.beyoung.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-05"
+        "lastUpdated": "2025-12-05",
+        "slug": "beyoung"
     },
     {
         "id": "13",
@@ -14424,7 +14795,8 @@
         ],
         "site": "https://www.biba.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-27"
+        "lastUpdated": "2025-12-27",
+        "slug": "biba"
     },
     {
         "id": "432",
@@ -14445,7 +14817,8 @@
         ],
         "site": "https://www.brooksbrothers.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-21"
+        "lastUpdated": "2025-12-21",
+        "slug": "brooks-brothers-luxe-gift-card"
     },
     {
         "id": "492",
@@ -14466,7 +14839,8 @@
         ],
         "site": "https://www.dunelondon.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-14"
+        "lastUpdated": "2025-12-14",
+        "slug": "dune-luxe-gift-card"
     },
     {
         "id": "591",
@@ -14487,7 +14861,8 @@
         ],
         "site": "https://estele.co",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-08"
+        "lastUpdated": "2025-12-08",
+        "slug": "estele"
     },
     {
         "id": "219",
@@ -14508,7 +14883,8 @@
         ],
         "site": "https://www.hugoboss.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-09"
+        "lastUpdated": "2025-12-09",
+        "slug": "hugo-boss-luxe-gift-card"
     },
     {
         "id": "221",
@@ -14539,7 +14915,8 @@
         ],
         "site": "https://www.michaelkors.global",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-23"
+        "lastUpdated": "2025-12-23",
+        "slug": "michael-kors-luxe-gift-card"
     },
     {
         "id": "1438",
@@ -14560,7 +14937,8 @@
         ],
         "site": "https://www.titan.co.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-05"
+        "lastUpdated": "2025-12-05",
+        "slug": "titan-smartwatches"
     },
     {
         "id": "1437",
@@ -14581,7 +14959,8 @@
         ],
         "site": "https://www.fastrack.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-02"
+        "lastUpdated": "2025-12-02",
+        "slug": "fastrack-smartwatches"
     },
     {
         "id": "217",
@@ -14612,7 +14991,8 @@
         ],
         "site": "https://www.gasjeans.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-01"
+        "lastUpdated": "2025-12-01",
+        "slug": "gas-luxe-gift-card"
     },
     {
         "id": "433",
@@ -14633,7 +15013,8 @@
         ],
         "site": "https://www.g-star.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-25"
+        "lastUpdated": "2025-12-25",
+        "slug": "g-star-luxe-gift-card"
     },
     {
         "id": "488",
@@ -14654,7 +15035,8 @@
         ],
         "site": "https://www.replayjeans.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-20"
+        "lastUpdated": "2025-12-20",
+        "slug": "replay-luxe-gift-card"
     },
     {
         "id": "222",
@@ -14685,7 +15067,8 @@
         ],
         "site": "https://www.satyapaul.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-04"
+        "lastUpdated": "2025-12-04",
+        "slug": "satya-paul-luxe-gift-card"
     },
     {
         "id": "435",
@@ -14706,7 +15089,8 @@
         ],
         "site": "https://www.scotch-soda.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-04"
+        "lastUpdated": "2025-12-04",
+        "slug": "scotch-soda-luxe-gift-card"
     },
     {
         "id": "225",
@@ -14727,7 +15111,8 @@
         ],
         "site": "https://stevemadden.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-04"
+        "lastUpdated": "2025-12-04",
+        "slug": "steve-madden-luxe-gift-card"
     },
     {
         "id": "1282",
@@ -14758,7 +15143,8 @@
         ],
         "site": "https://superbottoms.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-19"
+        "lastUpdated": "2025-12-19",
+        "slug": "superbottoms"
     },
     {
         "id": "434",
@@ -14779,7 +15165,8 @@
         ],
         "site": "https://www.armani.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-14"
+        "lastUpdated": "2025-12-14",
+        "slug": "emporio-armani-luxe-gift-card"
     },
     {
         "id": "1442",
@@ -14820,7 +15207,8 @@
         ],
         "site": "https://celloworld.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-07"
+        "lastUpdated": "2025-12-07",
+        "slug": "cello"
     },
     {
         "id": "110",
@@ -14851,7 +15239,8 @@
         ],
         "site": "https://www.maccosmetics.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-09"
+        "lastUpdated": "2025-12-09",
+        "slug": "mac"
     },
     {
         "id": "109",
@@ -14872,7 +15261,8 @@
         ],
         "site": "https://www.bobbibrown.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-07"
+        "lastUpdated": "2025-12-07",
+        "slug": "bobbi-brown"
     },
     {
         "id": "511",
@@ -14913,7 +15303,8 @@
         ],
         "site": "https://www.tajhotels.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-17"
+        "lastUpdated": "2025-12-17",
+        "slug": "taj-experiences"
     },
     {
         "id": "611",
@@ -14944,7 +15335,8 @@
         ],
         "site": "https://www.itchotels.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-01"
+        "lastUpdated": "2025-12-01",
+        "slug": "itc-hotels"
     },
     {
         "id": "1569",
@@ -14975,7 +15367,8 @@
         ],
         "site": "https://www.absolutebarbecues.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-27"
+        "lastUpdated": "2025-12-27",
+        "slug": "absolute-barbeque"
     },
     {
         "id": "1482",
@@ -14996,7 +15389,8 @@
         ],
         "site": "https://www.pranaam.adaniairports.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-11"
+        "lastUpdated": "2025-12-11",
+        "slug": "adani-meet-and-greet"
     },
     {
         "id": "1576",
@@ -15027,7 +15421,8 @@
         ],
         "site": "https://clayco.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-16"
+        "lastUpdated": "2025-12-16",
+        "slug": "clayco"
     },
     {
         "id": "1516",
@@ -15048,7 +15443,8 @@
         ],
         "site": "https://frenchaccent.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-25"
+        "lastUpdated": "2025-12-25",
+        "slug": "french-accent"
     },
     {
         "id": "1517",
@@ -15069,7 +15465,8 @@
         ],
         "site": "https://hautesauce.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-10"
+        "lastUpdated": "2025-12-10",
+        "slug": "haute-sauce"
     },
     {
         "id": "1525",
@@ -15090,7 +15487,8 @@
         ],
         "site": "https://www.bata.in/hush-puppies",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-25"
+        "lastUpdated": "2025-12-25",
+        "slug": "hush-puppies-voucher"
     },
     {
         "id": "1489",
@@ -15111,7 +15509,8 @@
         ],
         "site": "https://typsybeauty.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-18"
+        "lastUpdated": "2025-12-18",
+        "slug": "typsy-beauty"
     },
     {
         "id": "1504",
@@ -15132,7 +15531,8 @@
         ],
         "site": "https://www.airindia.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-13"
+        "lastUpdated": "2025-12-13",
+        "slug": "air-india-voucher"
     },
     {
         "id": "1577",
@@ -15153,7 +15553,8 @@
         ],
         "site": "https://blinkit.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-20"
+        "lastUpdated": "2025-12-20",
+        "slug": "blinkit-gift-card"
     },
     {
         "id": "1355",
@@ -15204,7 +15605,8 @@
         ],
         "site": "https://www.nykaaman.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-24"
+        "lastUpdated": "2025-12-24",
+        "slug": "nykaa-man"
     },
     {
         "id": "536",
@@ -15235,7 +15637,8 @@
         ],
         "site": "https://www.jiomart.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-25"
+        "lastUpdated": "2025-12-25",
+        "slug": "reliance-smart"
     },
     {
         "id": "1530",
@@ -15256,7 +15659,8 @@
         ],
         "site": "https://himalayawellness.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-11-30"
+        "lastUpdated": "2025-11-30",
+        "slug": "himalaya-wellness"
     },
     {
         "id": "1420",
@@ -15287,7 +15691,8 @@
         ],
         "site": "https://shivaorganic.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-02"
+        "lastUpdated": "2025-12-02",
+        "slug": "shiva-organic"
     },
     {
         "id": "107",
@@ -15328,7 +15733,8 @@
         ],
         "site": "https://www.kamaayurveda.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-17"
+        "lastUpdated": "2025-12-17",
+        "slug": "kama-ayurveda"
     },
     {
         "id": "1344",
@@ -15349,7 +15755,8 @@
         ],
         "site": "https://www.makemytrip.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-21"
+        "lastUpdated": "2025-12-21",
+        "slug": "makemytrip-holiday-e-pay"
     },
     {
         "id": "400",
@@ -15370,7 +15777,8 @@
         ],
         "site": "https://www.themancompany.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-23"
+        "lastUpdated": "2025-12-23",
+        "slug": "the-man-company"
     },
     {
         "id": "1364",
@@ -15411,7 +15819,8 @@
         ],
         "site": "https://www.amazon.in/amazonprime",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-26"
+        "lastUpdated": "2025-12-26",
+        "slug": "amazon-prime-membership"
     },
     {
         "id": "1342",
@@ -15432,7 +15841,8 @@
         ],
         "site": "https://www.makemytrip.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-13"
+        "lastUpdated": "2025-12-13",
+        "slug": "makemytrip-e-pay"
     },
     {
         "id": "1343",
@@ -15453,7 +15863,8 @@
         ],
         "site": "https://www.makemytrip.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-11"
+        "lastUpdated": "2025-12-11",
+        "slug": "makemytrip-hotel-e-pay"
     },
     {
         "id": "1572",
@@ -15484,7 +15895,8 @@
         ],
         "site": "https://www.nuawoman.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-06"
+        "lastUpdated": "2025-12-06",
+        "slug": "nua-woman"
     },
     {
         "id": "1373",
@@ -15515,7 +15927,8 @@
         ],
         "site": "https://pizzaonline.dominos.co.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-08"
+        "lastUpdated": "2025-12-08",
+        "slug": "dominos-pizza"
     },
     {
         "id": "1484",
@@ -15536,7 +15949,8 @@
         ],
         "site": "https://nathabit.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-06"
+        "lastUpdated": "2025-12-06",
+        "slug": "nat-habit"
     },
     {
         "id": "1500",
@@ -15557,7 +15971,8 @@
         ],
         "site": "https://www.shemaroome.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-23"
+        "lastUpdated": "2025-12-23",
+        "slug": "shemaroome"
     },
     {
         "id": "1276",
@@ -15578,7 +15993,8 @@
         ],
         "site": "https://www.cleartrip.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-19"
+        "lastUpdated": "2025-12-19",
+        "slug": "cleartrip-generic"
     },
     {
         "id": "1465",
@@ -15599,7 +16015,8 @@
         ],
         "site": "https://bareanatomy.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-20"
+        "lastUpdated": "2025-12-20",
+        "slug": "bare-anatomy"
     },
     {
         "id": "1467",
@@ -15630,7 +16047,8 @@
         ],
         "site": "https://sunscoop.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-17"
+        "lastUpdated": "2025-12-17",
+        "slug": "sunscoop"
     },
     {
         "id": "1466",
@@ -15651,7 +16069,8 @@
         ],
         "site": "https://chemistatplay.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-28"
+        "lastUpdated": "2025-12-28",
+        "slug": "chemist-at-play"
     },
     {
         "id": "1352",
@@ -15682,7 +16101,8 @@
         ],
         "site": "https://economictimes.indiatimes.com/prime",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-14"
+        "lastUpdated": "2025-12-14",
+        "slug": "et-prime-subscription"
     },
     {
         "id": "1434",
@@ -15713,7 +16133,8 @@
         ],
         "site": "https://www.netmeds.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-26"
+        "lastUpdated": "2025-12-26",
+        "slug": "netmeds"
     },
     {
         "id": "1277",
@@ -15734,7 +16155,8 @@
         ],
         "site": "https://www.cleartrip.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-10"
+        "lastUpdated": "2025-12-10",
+        "slug": "cleartrip-hotel"
     },
     {
         "id": "1362",
@@ -15755,7 +16177,8 @@
         ],
         "site": "https://dpauls.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-22"
+        "lastUpdated": "2025-12-22",
+        "slug": "dpauls-travel-tours"
     },
     {
         "id": "112",
@@ -15806,7 +16229,8 @@
         ],
         "site": "https://www.fnp.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-17"
+        "lastUpdated": "2025-12-17",
+        "slug": "ferns-n-petals"
     },
     {
         "id": "1118",
@@ -15847,7 +16271,8 @@
         ],
         "site": "https://fitpass.co.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-25"
+        "lastUpdated": "2025-12-25",
+        "slug": "fitpass"
     },
     {
         "id": "1446",
@@ -15868,7 +16293,8 @@
         ],
         "site": "https://www.easemytrip.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-09"
+        "lastUpdated": "2025-12-09",
+        "slug": "easemytrip-generic"
     },
     {
         "id": "1444",
@@ -15889,7 +16315,8 @@
         ],
         "site": "https://www.easemytrip.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-23"
+        "lastUpdated": "2025-12-23",
+        "slug": "easemytrip-hotels"
     },
     {
         "id": "1445",
@@ -15910,7 +16337,8 @@
         ],
         "site": "https://www.easemytrip.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-18"
+        "lastUpdated": "2025-12-18",
+        "slug": "easemytrip-holiday"
     },
     {
         "id": "483",
@@ -15941,7 +16369,8 @@
         ],
         "site": "https://www.apollopharmacy.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-08"
+        "lastUpdated": "2025-12-08",
+        "slug": "apollo-pharmacy"
     },
     {
         "id": "1376",
@@ -15962,7 +16391,8 @@
         ],
         "site": "https://pharmeasy.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-04"
+        "lastUpdated": "2025-12-04",
+        "slug": "pharmeasy"
     },
     {
         "id": "1441",
@@ -15983,7 +16413,8 @@
         ],
         "site": "https://mediwheel.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-15"
+        "lastUpdated": "2025-12-15",
+        "slug": "mediwheel"
     },
     {
         "id": "1422",
@@ -16004,7 +16435,8 @@
         ],
         "site": "https://www.hindustantimes.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-09"
+        "lastUpdated": "2025-12-09",
+        "slug": "hindustan-times-premium"
     },
     {
         "id": "1399",
@@ -16025,7 +16457,8 @@
         ],
         "site": "https://www.shoppersstop.com/homestop",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-06"
+        "lastUpdated": "2025-12-06",
+        "slug": "home-stop"
     },
     {
         "id": "1510",
@@ -16046,7 +16479,8 @@
         ],
         "site": "https://www.tajhotels.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-11-30"
+        "lastUpdated": "2025-11-30",
+        "slug": "taj-hotels-j-wellness-circle"
     },
     {
         "id": "1367",
@@ -16077,7 +16511,8 @@
         ],
         "site": "https://www.igp.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-18"
+        "lastUpdated": "2025-12-18",
+        "slug": "igp"
     },
     {
         "id": "1423",
@@ -16098,7 +16533,8 @@
         ],
         "site": "https://www.livehindustan.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-16"
+        "lastUpdated": "2025-12-16",
+        "slug": "live-hindustan"
     },
     {
         "id": "1398",
@@ -16129,7 +16565,8 @@
         ],
         "site": "https://thelunchbox.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-10"
+        "lastUpdated": "2025-12-10",
+        "slug": "lunch-box"
     },
     {
         "id": "65",
@@ -16160,7 +16597,8 @@
         ],
         "site": "https://machaan.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-03"
+        "lastUpdated": "2025-12-03",
+        "slug": "machaan"
     },
     {
         "id": "1377",
@@ -16191,7 +16629,8 @@
         ],
         "site": "https://www.ottplay.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-08"
+        "lastUpdated": "2025-12-08",
+        "slug": "ottplay"
     },
     {
         "id": "138",
@@ -16222,7 +16661,8 @@
         ],
         "site": "https://www.pointsforgood.org",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-25"
+        "lastUpdated": "2025-12-25",
+        "slug": "points-for-good"
     },
     {
         "id": "1469",
@@ -16253,7 +16693,8 @@
         ],
         "site": "https://store.steampowered.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-02"
+        "lastUpdated": "2025-12-02",
+        "slug": "steam-wallet"
     },
     {
         "id": "54",
@@ -16294,7 +16735,8 @@
         ],
         "site": "https://www.thebeercafe.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-18"
+        "lastUpdated": "2025-12-18",
+        "slug": "beer-cafe"
     },
     {
         "id": "601",
@@ -16335,7 +16777,8 @@
         ],
         "site": "https://www.timezonegames.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-07"
+        "lastUpdated": "2025-12-07",
+        "slug": "timezone"
     },
     {
         "id": "1414",
@@ -16366,7 +16809,8 @@
         ],
         "site": "https://www.wowchicken.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-22"
+        "lastUpdated": "2025-12-22",
+        "slug": "wow-chicken"
     },
     {
         "id": "1455",
@@ -16387,7 +16831,8 @@
         ],
         "site": "https://www.matrix.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-01"
+        "lastUpdated": "2025-12-01",
+        "slug": "matrix"
     },
     {
         "id": "571",
@@ -16428,7 +16873,8 @@
         ],
         "site": "https://www.wowmomo.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-12"
+        "lastUpdated": "2025-12-12",
+        "slug": "wow-momo"
     },
     {
         "id": "103",
@@ -16449,7 +16895,8 @@
         ],
         "site": "https://www.yatra.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-01"
+        "lastUpdated": "2025-12-01",
+        "slug": "yatra-com"
     },
     {
         "id": "1573",
@@ -16470,7 +16917,8 @@
         ],
         "site": "https://www.cult.fit",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-01"
+        "lastUpdated": "2025-12-01",
+        "slug": "cultfit-voucher"
     },
     {
         "id": "mp-5162128",
@@ -16491,7 +16939,8 @@
         ],
         "site": "https://www.libas.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-13"
+        "lastUpdated": "2025-12-13",
+        "slug": "libas"
     },
     {
         "id": "mp-7418661",
@@ -16512,7 +16961,8 @@
         ],
         "site": "https://www.swiggy.com",
         "expiryDays": 90,
-        "lastUpdated": "2025-12-25"
+        "lastUpdated": "2025-12-25",
+        "slug": "swiggy-money-e-gift-card"
     },
     {
         "id": "mp-2082212",
@@ -16533,7 +16983,8 @@
         ],
         "site": "https://www.jiomart.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-01"
+        "lastUpdated": "2025-12-01",
+        "slug": "jiomart"
     },
     {
         "id": "mp-1197561",
@@ -16574,7 +17025,8 @@
         ],
         "site": "https://www.amazon.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-10"
+        "lastUpdated": "2025-12-10",
+        "slug": "amazon-pay"
     },
     {
         "id": "mp-1298438",
@@ -16595,7 +17047,8 @@
         ],
         "site": "https://www.nykaa.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-27"
+        "lastUpdated": "2025-12-27",
+        "slug": "nykaa-com"
     },
     {
         "id": "mp-1310775",
@@ -16616,7 +17069,8 @@
         ],
         "site": "https://www.firstcry.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-17"
+        "lastUpdated": "2025-12-17",
+        "slug": "firstcry-online"
     },
     {
         "id": "mp-1349742",
@@ -16637,7 +17091,8 @@
         ],
         "site": "https://www.jockey.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-18"
+        "lastUpdated": "2025-12-18",
+        "slug": "jockey-india"
     },
     {
         "id": "mp-2237190",
@@ -16658,7 +17113,8 @@
         ],
         "site": "https://www.giva.co",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-10"
+        "lastUpdated": "2025-12-10",
+        "slug": "giva-online"
     },
     {
         "id": "mp-7160069",
@@ -16699,7 +17155,8 @@
         ],
         "site": "https://www.amazon.in/fresh",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-08"
+        "lastUpdated": "2025-12-08",
+        "slug": "amazon-fresh-voucher"
     },
     {
         "id": "mp-1372141",
@@ -16720,7 +17177,8 @@
         ],
         "site": "https://www.croma.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-01"
+        "lastUpdated": "2025-12-01",
+        "slug": "croma-com"
     },
     {
         "id": "mp-1163786",
@@ -16751,7 +17209,8 @@
         ],
         "site": "https://www.makemytrip.com",
         "expiryDays": 730,
-        "lastUpdated": "2025-12-29"
+        "lastUpdated": "2025-12-29",
+        "slug": "makemytrip-holiday"
     },
     {
         "id": "mp-1168073",
@@ -16782,7 +17241,8 @@
         ],
         "site": "https://bombayshavingcompany.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-17"
+        "lastUpdated": "2025-12-17",
+        "slug": "bombay-shaving-company"
     },
     {
         "id": "mp-1123552",
@@ -16803,7 +17263,8 @@
         ],
         "site": "https://mamaearth.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-20"
+        "lastUpdated": "2025-12-20",
+        "slug": "mamaearth-online"
     },
     {
         "id": "mp-1340292",
@@ -16834,7 +17295,8 @@
         ],
         "site": "https://www.leafstudios.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-02"
+        "lastUpdated": "2025-12-02",
+        "slug": "leaf-studio"
     },
     {
         "id": "mp-7321153",
@@ -16855,7 +17317,8 @@
         ],
         "site": "https://gullak.money",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-25"
+        "lastUpdated": "2025-12-25",
+        "slug": "gullak"
     },
     {
         "id": "mp-1379235",
@@ -16876,7 +17339,8 @@
         ],
         "site": "https://www.biba.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-20"
+        "lastUpdated": "2025-12-20",
+        "slug": "biba-online"
     },
     {
         "id": "mp-1327584",
@@ -16897,7 +17361,8 @@
         ],
         "site": "https://www.wakefit.co",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-24"
+        "lastUpdated": "2025-12-24",
+        "slug": "wakefit-online"
     },
     {
         "id": "mp-1292849",
@@ -16918,7 +17383,8 @@
         ],
         "site": "https://www.ixigo.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-27"
+        "lastUpdated": "2025-12-27",
+        "slug": "ixigo-flights"
     },
     {
         "id": "mp-1421351",
@@ -16959,7 +17425,8 @@
         ],
         "site": "https://www.fabhotels.com",
         "expiryDays": 730,
-        "lastUpdated": "2025-12-18"
+        "lastUpdated": "2025-12-18",
+        "slug": "fab-hotels"
     },
     {
         "id": "mp-7415306",
@@ -16980,7 +17447,8 @@
         ],
         "site": "https://www.playstation.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-28"
+        "lastUpdated": "2025-12-28",
+        "slug": "sony-playstation"
     },
     {
         "id": "mp-1793954",
@@ -17001,7 +17469,8 @@
         ],
         "site": "https://www.durexindia.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-03"
+        "lastUpdated": "2025-12-03",
+        "slug": "durex-india"
     },
     {
         "id": "mp-6831266",
@@ -17022,7 +17491,8 @@
         ],
         "site": "https://www.lovebeautyandplanet.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-15"
+        "lastUpdated": "2025-12-15",
+        "slug": "love-beauty-and-planet"
     },
     {
         "id": "mp-1297316",
@@ -17043,7 +17513,8 @@
         ],
         "site": "https://www.lifestylestores.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-22"
+        "lastUpdated": "2025-12-22",
+        "slug": "lifestylestores-com"
     },
     {
         "id": "mp-7426265",
@@ -17064,7 +17535,8 @@
         ],
         "site": "https://www.xbox.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-04"
+        "lastUpdated": "2025-12-04",
+        "slug": "xbox"
     },
     {
         "id": "mp-1845920",
@@ -17085,7 +17557,8 @@
         ],
         "site": "https://www.myimaginestore.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-13"
+        "lastUpdated": "2025-12-13",
+        "slug": "imagine-apple-premium-reseller-online"
     },
     {
         "id": "mp-7286769",
@@ -17106,7 +17579,8 @@
         ],
         "site": "https://www.maplestore.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-02"
+        "lastUpdated": "2025-12-02",
+        "slug": "maple"
     },
     {
         "id": "mp-7449982",
@@ -17137,7 +17611,8 @@
         ],
         "site": "https://campussutra.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-18"
+        "lastUpdated": "2025-12-18",
+        "slug": "campus-sutra"
     },
     {
         "id": "mp-6790092",
@@ -17158,7 +17633,8 @@
         ],
         "site": "https://www.zupee.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-23"
+        "lastUpdated": "2025-12-23",
+        "slug": "zupee"
     },
     {
         "id": "mp-7288490",
@@ -17179,7 +17655,8 @@
         ],
         "site": "https://www.perfume2order.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-18"
+        "lastUpdated": "2025-12-18",
+        "slug": "perfume2order"
     },
     {
         "id": "mp-6830770",
@@ -17210,7 +17687,8 @@
         ],
         "site": "https://swissbeauty.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-28"
+        "lastUpdated": "2025-12-28",
+        "slug": "swiss-beauty"
     },
     {
         "id": "mp-1317836",
@@ -17231,7 +17709,8 @@
         ],
         "site": "https://www.corseca.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-06"
+        "lastUpdated": "2025-12-06",
+        "slug": "corseca-in"
     },
     {
         "id": "mp-1340291",
@@ -17252,7 +17731,8 @@
         ],
         "site": "https://www.taggdigital.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-12"
+        "lastUpdated": "2025-12-12",
+        "slug": "tagg"
     },
     {
         "id": "mp-1845921",
@@ -17273,7 +17753,8 @@
         ],
         "site": "https://www.polaroid.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-05"
+        "lastUpdated": "2025-12-05",
+        "slug": "polaroid"
     },
     {
         "id": "mp-1845159",
@@ -17294,7 +17775,8 @@
         ],
         "site": "https://www.ketandiamonds.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-25"
+        "lastUpdated": "2025-12-25",
+        "slug": "ketan-diamonds"
     },
     {
         "id": "mp-1415813",
@@ -17315,7 +17797,8 @@
         ],
         "site": "https://www.saregama.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-08"
+        "lastUpdated": "2025-12-08",
+        "slug": "saregama-carvaan"
     },
     {
         "id": "mp-7288410",
@@ -17336,7 +17819,8 @@
         ],
         "site": "https://tzaro.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-06"
+        "lastUpdated": "2025-12-06",
+        "slug": "tzaro"
     },
     {
         "id": "mp-1298437",
@@ -17357,7 +17841,8 @@
         ],
         "site": "https://myglamm.com",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-06"
+        "lastUpdated": "2025-12-06",
+        "slug": "myglamm"
     },
     {
         "id": "mp-1419520",
@@ -17378,7 +17863,8 @@
         ],
         "site": "https://www.icanstay.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-02"
+        "lastUpdated": "2025-12-02",
+        "slug": "i-can-stay"
     },
     {
         "id": "mp-7605969",
@@ -17399,7 +17885,8 @@
         ],
         "site": "https://univest.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-03"
+        "lastUpdated": "2025-12-03",
+        "slug": "univest"
     },
     {
         "id": "mp-7286768",
@@ -17420,7 +17907,8 @@
         ],
         "site": "https://cosmus.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-07"
+        "lastUpdated": "2025-12-07",
+        "slug": "cosmus"
     },
     {
         "id": "mp-6773828",
@@ -17441,7 +17929,8 @@
         ],
         "site": "https://balenzia.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-05"
+        "lastUpdated": "2025-12-05",
+        "slug": "balenzia"
     },
     {
         "id": "mp-2138164",
@@ -17462,7 +17951,8 @@
         ],
         "site": "https://www.coloressence.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-26"
+        "lastUpdated": "2025-12-26",
+        "slug": "coloressence"
     },
     {
         "id": "mp-4719253",
@@ -17483,7 +17973,8 @@
         ],
         "site": "https://estele.co",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-08"
+        "lastUpdated": "2025-12-08",
+        "slug": "estele-jewelry"
     },
     {
         "id": "mp-7438383",
@@ -17514,7 +18005,8 @@
         ],
         "site": "https://nashermiles.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-23"
+        "lastUpdated": "2025-12-23",
+        "slug": "nasher-miles"
     },
     {
         "id": "mp-6992793",
@@ -17535,7 +18027,8 @@
         ],
         "site": "https://www.blackanddecker.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-25"
+        "lastUpdated": "2025-12-25",
+        "slug": "black-decker"
     },
     {
         "id": "mp-1450020",
@@ -17556,7 +18049,8 @@
         ],
         "site": "https://www.theassembly.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-13"
+        "lastUpdated": "2025-12-13",
+        "slug": "the-assembly"
     },
     {
         "id": "mp-4057993",
@@ -17577,7 +18071,8 @@
         ],
         "site": "https://teamonkglobal.com",
         "expiryDays": 120,
-        "lastUpdated": "2025-12-27"
+        "lastUpdated": "2025-12-27",
+        "slug": "teamonk"
     },
     {
         "id": "mp-6994227",
@@ -17598,7 +18093,8 @@
         ],
         "site": "https://fanaticsports.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-09"
+        "lastUpdated": "2025-12-09",
+        "slug": "fanatic-sports"
     },
     {
         "id": "mp-1845917",
@@ -17619,7 +18115,8 @@
         ],
         "site": "https://www.postcardresorts.com",
         "expiryDays": 540,
-        "lastUpdated": "2025-12-21"
+        "lastUpdated": "2025-12-21",
+        "slug": "postcard-hotels"
     },
     {
         "id": "mp-7637211",
@@ -17640,7 +18137,8 @@
         ],
         "site": "https://www.multipl.in",
         "expiryDays": 270,
-        "lastUpdated": "2025-12-01"
+        "lastUpdated": "2025-12-01",
+        "slug": "multipl"
     },
     {
         "id": "900",
@@ -17684,7 +18182,8 @@
         ],
         "site": "https://www.olacabs.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-30"
+        "lastUpdated": "2025-12-30",
+        "slug": "ola"
     },
     {
         "id": "901",
@@ -17727,7 +18226,8 @@
         ],
         "site": "https://www.zeptonow.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-30"
+        "lastUpdated": "2025-12-30",
+        "slug": "zepto"
     },
     {
         "id": "902",
@@ -17770,7 +18270,8 @@
         ],
         "site": "https://www.burgerking.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-30"
+        "lastUpdated": "2025-12-30",
+        "slug": "burger-king"
     },
     {
         "id": "903",
@@ -17803,7 +18304,8 @@
         ],
         "site": "https://www.haldirams.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-30"
+        "lastUpdated": "2025-12-30",
+        "slug": "haldirams"
     },
     {
         "id": "904",
@@ -17836,7 +18338,8 @@
         ],
         "site": "https://www.oyorooms.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-30"
+        "lastUpdated": "2025-12-30",
+        "slug": "oyo"
     },
     {
         "id": "905",
@@ -17869,7 +18372,8 @@
         ],
         "site": "https://www.goindigo.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-30"
+        "lastUpdated": "2025-12-30",
+        "slug": "indigo"
     },
     {
         "id": "906",
@@ -17902,7 +18406,8 @@
         ],
         "site": "https://www.dunkindonuts.co.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-30"
+        "lastUpdated": "2025-12-30",
+        "slug": "dunkin-donuts"
     },
     {
         "id": "907",
@@ -17935,7 +18440,8 @@
         ],
         "site": "https://www.spicejet.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-30"
+        "lastUpdated": "2025-12-30",
+        "slug": "spicejet"
     },
     {
         "id": "908",
@@ -17978,7 +18484,8 @@
         ],
         "site": "https://www.tacobell.co.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-30"
+        "lastUpdated": "2025-12-30",
+        "slug": "taco-bell"
     },
     {
         "id": "909",
@@ -18011,7 +18518,8 @@
         ],
         "site": "https://www.rapido.bike",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-30"
+        "lastUpdated": "2025-12-30",
+        "slug": "rapido"
     },
     {
         "id": "910",
@@ -18042,7 +18550,8 @@
         ],
         "site": "https://www.meesho.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-30"
+        "lastUpdated": "2025-12-30",
+        "slug": "meesho"
     },
     {
         "id": "911",
@@ -18075,7 +18584,8 @@
         ],
         "site": "https://www.airvistara.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-30"
+        "lastUpdated": "2025-12-30",
+        "slug": "vistara"
     },
     {
         "id": "912",
@@ -18118,7 +18628,8 @@
         ],
         "site": "https://www.inoxmovies.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-30"
+        "lastUpdated": "2025-12-30",
+        "slug": "inox"
     },
     {
         "id": "913",
@@ -18151,7 +18662,8 @@
         ],
         "site": "https://www.dmart.in",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-30"
+        "lastUpdated": "2025-12-30",
+        "slug": "d-mart"
     },
     {
         "id": "914",
@@ -18194,7 +18706,8 @@
         ],
         "site": "https://www.wowmomofoods.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-30"
+        "lastUpdated": "2025-12-30",
+        "slug": "wow-momo-914"
     },
     {
         "id": "915",
@@ -18215,7 +18728,8 @@
         ],
         "site": "https://www.cars24.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-30"
+        "lastUpdated": "2025-12-30",
+        "slug": "cars24"
     },
     {
         "id": "916",
@@ -18248,7 +18762,8 @@
         ],
         "site": "https://www.chaipoint.com",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-30"
+        "lastUpdated": "2025-12-30",
+        "slug": "chai-point"
     },
     {
         "id": "917",
@@ -18301,7 +18816,8 @@
         ],
         "site": "https://www.baskinrobbinsindia.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-30"
+        "lastUpdated": "2025-12-30",
+        "slug": "baskin-robbins-917"
     },
     {
         "id": "918",
@@ -18334,7 +18850,8 @@
         ],
         "site": "https://www.naturalsicecream.in",
         "expiryDays": 180,
-        "lastUpdated": "2025-12-30"
+        "lastUpdated": "2025-12-30",
+        "slug": "naturals-ice-cream"
     },
     {
         "id": "919",
@@ -18367,7 +18884,8 @@
         ],
         "site": "https://www.cult.fit",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-30"
+        "lastUpdated": "2025-12-30",
+        "slug": "curefit-cult-fit"
     },
     {
         "id": "920",
@@ -18400,6 +18918,7 @@
         ],
         "site": "https://www.urbancompany.com",
         "expiryDays": 365,
-        "lastUpdated": "2025-12-30"
+        "lastUpdated": "2025-12-30",
+        "slug": "urbanclap-urban-company"
     }
 ]
