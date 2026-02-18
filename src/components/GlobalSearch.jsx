@@ -60,7 +60,7 @@ const GlobalSearch = () => {
             ...v,
             name: v.brand,
             type: 'voucher',
-            path: `/?voucher=${v.id}`,
+            path: `/?voucher=${v.slug}`,
             icon: '🎟️'
         }));
 
