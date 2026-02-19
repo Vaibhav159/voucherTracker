@@ -1,15 +1,15 @@
-from django.db import migrations
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("vouchers", "0011_add_slug_to_voucher"),
     ]
 
     operations = [
-        migrations.RunSQL(
-            sql="ALTER TABLE vouchers_voucher ADD CONSTRAINT vouchers_voucher_slug_unique UNIQUE (slug);",
-            reverse_sql="ALTER TABLE vouchers_voucher DROP CONSTRAINT IF EXISTS vouchers_voucher_slug_unique;",
+        migrations.AlterField(
+            model_name='voucher',
+            name='slug',
+            field=models.SlugField(blank=True, max_length=255, unique=True, verbose_name='Slug'),
         ),
     ]
