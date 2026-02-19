@@ -104,6 +104,7 @@ LOCAL_APPS = [
     "backend.guides",
     "backend.vouchers",
     "backend.credit_cards",
+    "backend.notifications",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -327,3 +328,8 @@ SPECTACULAR_SETTINGS = {
 # ------------------------------------------------------------------------------
 WAGTAIL_SITE_NAME = "Card Perks"
 WAGTAILADMIN_BASE_URL = "/cms/"
+
+# Telegram Bot
+# ------------------------------------------------------------------------------
+TELEGRAM_BOT_TOKEN = env("TELEGRAM_BOT_TOKEN", default="")
+TELEGRAM_WEBHOOK_SECRET = env("TELEGRAM_WEBHOOK_SECRET", default="")

@@ -42,6 +42,8 @@ urlpatterns += [
     path("api/health/", lambda request: JsonResponse({"status": "ok"})),
     # API base url
     path("api/", include("config.api_router")),
+    # Telegram bot webhook
+    path("api/", include("backend.notifications.urls")),
     # DRF auth token
     path("api/auth-token/", obtain_auth_token),
     path("api/schema/", SpectacularAPIView.as_view(), name="api-schema"),

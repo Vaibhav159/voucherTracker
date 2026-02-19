@@ -7,6 +7,7 @@ implementing bulk operations to minimize database queries.
 
 from __future__ import annotations
 
+import logging
 from typing import NamedTuple
 
 from django.core.cache import cache
@@ -18,6 +19,8 @@ from backend.vouchers.models import Voucher
 from backend.vouchers.models import VoucherAlias
 from backend.vouchers.models import VoucherMismatch
 from backend.vouchers.models import VoucherPlatform
+
+logger = logging.getLogger(__name__)
 
 
 class SyncItem(NamedTuple):
@@ -220,12 +223,15 @@ class BaseSyncService:
             skipped_items=skipped_items,
         )
 
-    def update_stock_status(self, active_external_ids: list[str] | set[str]) -> None:
+    def update_stock_status(self, active_external_ids: list[str] | set[str]) -> list[VoucherPlatform]:
         """
         Update out_of_stock_at for items based on their presence in the current sync.
 
         Args:
             active_external_ids: List/Set of external IDs found in the current sync.
+
+        Returns:
+            List of VoucherPlatform objects that were restocked (came back in stock).
         """
         platform = self.get_platform()
         now = timezone.now()
@@ -237,8 +243,31 @@ class BaseSyncService:
             out_of_stock_at__isnull=True,
         ).update(out_of_stock_at=now)
 
-        # 2. Mark present items as in stock
-        # Only update if currently out of stock (out_of_stock_at is NOT None)
-        VoucherPlatform.objects.filter(platform=platform, external_id__in=active_external_ids).filter(
+        # 2. Find items that are coming back in stock (for notifications)
+        restocked_qs = VoucherPlatform.objects.filter(
+            platform=platform,
+            external_id__in=active_external_ids,
             out_of_stock_at__isnull=False,
-        ).update(out_of_stock_at=None)
+        ).select_related("voucher", "platform")
+        restocked_items = list(restocked_qs)
+
+        # 3. Mark present items as in stock
+        # Only update if currently out of stock (out_of_stock_at is NOT None)
+        restocked_qs.update(out_of_stock_at=None)
+
+        # 4. Send restock notifications (non-blocking — failures won't break sync)
+        if restocked_items:
+            try:
+                from backend.notifications.services import send_restock_alerts
+
+                result = send_restock_alerts(restocked_items)
+                logger.info(
+                    "Restock alerts for %s: %d sent, %d failed",
+                    platform.name,
+                    result.get("sent", 0),
+                    result.get("failed", 0),
+                )
+            except Exception:
+                logger.exception("Failed to send restock alerts for %s", platform.name)
+
+        return restocked_items
