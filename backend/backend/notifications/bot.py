@@ -31,6 +31,9 @@ from backend.vouchers.models import VoucherPlatform
 
 logger = logging.getLogger(__name__)
 
+# Max subscriptions per user (change this to allow more in future)
+MAX_SUBSCRIPTIONS_PER_USER = 1
+
 
 @csrf_exempt
 @require_POST
@@ -192,24 +195,41 @@ def _handle_subscribe(chat_id: int, text: str, username: str, first_name: str):
 
     subscriber = _get_or_create_subscriber(chat_id, username, first_name)
 
-    created_count = 0
-    for vp in vps:
-        _, created = TelegramSubscription.objects.get_or_create(
-            subscriber=subscriber,
-            voucher_platform=vp,
-        )
-        if created:
-            created_count += 1
+    # Check subscription limit
+    current_count = TelegramSubscription.objects.filter(subscriber=subscriber).count()
 
-    if created_count > 0:
-        voucher_name = vps[0].voucher.name
-        platforms = ", ".join(vp.platform.name for vp in vps)
+    remaining_slots = MAX_SUBSCRIPTIONS_PER_USER - current_count
+    if remaining_slots <= 0:
         _send(
             chat_id,
-            f"✅ Subscribed to <b>{voucher_name}</b> on {platforms}!\n\nYou'll be notified when it's back in stock.",
+            f"⚠️ You've reached the maximum of <b>{MAX_SUBSCRIPTIONS_PER_USER}</b> subscription{'s' if MAX_SUBSCRIPTIONS_PER_USER > 1 else ''}.\n\n"
+            "Use /unsubscribe to free up a slot first.",
         )
-    else:
+        return
+    # Filter out VPs the user is already subscribed to
+    existing_vp_ids = set(
+        TelegramSubscription.objects.filter(
+            subscriber=subscriber,
+            voucher_platform__in=vps,
+        ).values_list("voucher_platform_id", flat=True),
+    )
+    new_vps = [vp for vp in vps if vp.id not in existing_vp_ids]
+
+    if not new_vps:
         _send(chat_id, "ℹ️ You're already subscribed to all of those.")
+        return
+
+    # Only subscribe up to the remaining slots
+    to_subscribe = new_vps[:remaining_slots]
+    for vp in to_subscribe:
+        TelegramSubscription.objects.create(subscriber=subscriber, voucher_platform=vp)
+
+    voucher_name = to_subscribe[0].voucher.name
+    platforms = ", ".join(vp.platform.name for vp in to_subscribe)
+    _send(
+        chat_id,
+        f"✅ Subscribed to <b>{voucher_name}</b> on {platforms}!\n\nYou'll be notified when it's back in stock.",
+    )
 
 
 def _handle_unsubscribe(chat_id: int, text: str):
