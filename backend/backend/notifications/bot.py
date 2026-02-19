@@ -146,7 +146,7 @@ def _handle_search(chat_id: int, text: str):
     lines = [f"🔍 <b>Results for '{query}':</b>\n"]
     for vp in matches:
         stock = "✅" if not vp.out_of_stock_at else "🔴"
-        lines.append(f"  {stock} {vp.voucher.name} — {vp.platform.name}")
+        lines.append(f"  {stock} {vp.voucher.name} (<b>{vp.voucher.slug}</b>) — {vp.platform.name}")
 
     lines.append("\n💡 Use /subscribe &lt;voucher&gt; to get alerts.")
     _send(chat_id, "\n".join(lines))
@@ -165,9 +165,9 @@ def _handle_subscribe(chat_id: int, text: str, username: str, first_name: str):
     voucher_query = parts[1].strip()
     platform_filter = parts[2].strip() if len(parts) > 2 else None
 
-    # Find matching VoucherPlatforms
+    # Find matching VoucherPlatforms by slug
     vps = VoucherPlatform.objects.filter(
-        voucher__name__iexact=voucher_query,
+        voucher__slug__iexact=voucher_query,
     ).select_related("voucher", "platform")
 
     if platform_filter:
@@ -176,20 +176,28 @@ def _handle_subscribe(chat_id: int, text: str, username: str, first_name: str):
     vps = list(vps)
 
     if not vps:
-        # Try partial match to suggest alternatives
+        # Try fuzzy match (name or slug) to suggest alternatives
         partials = (
-            VoucherPlatform.objects.filter(voucher__name__icontains=voucher_query)
-            .select_related("voucher", "platform")
-            .values_list("voucher__name", flat=True)
+            VoucherPlatform.objects.filter(
+                Q(voucher__name__icontains=voucher_query) | Q(voucher__slug__icontains=voucher_query),
+            )
+            .select_related("voucher")
+            .values("voucher__name", "voucher__slug")
             .distinct()[:5]
         )
         suggestions = list(partials)
-        msg = f"❌ No voucher found matching '<b>{voucher_query}</b>'"
+
+        msg = f"❌ No voucher found matching slug '<b>{voucher_query}</b>'"
         if platform_filter:
             msg += f" on <b>{platform_filter}</b>"
+
         if suggestions:
-            msg += "\n\n💡 Did you mean:\n" + "\n".join(f"  • {s}" for s in suggestions)
-        msg += "\n\nUse /search &lt;query&gt; to find voucher names."
+            suggestion_lines = []
+            for s in suggestions:
+                suggestion_lines.append(f"  • {s['voucher__name']} (/subscribe {s['voucher__slug']})")
+            msg += "\n\n💡 Did you mean:\n" + "\n".join(suggestion_lines)
+
+        msg += "\n\nUse /search &lt;query&gt; to find voucher slugs."
         _send(chat_id, msg)
         return
 
@@ -310,7 +318,7 @@ def _handle_help(chat_id: int):
         "/unsubscribe &lt;voucher&gt; &lt;platform&gt; — Remove from one platform\n"
         "/list — Your subscriptions\n"
         "/help — Show this help\n\n"
-        "💡 Voucher names must be exact (use /search first).",
+        "💡 Use voucher slugs (find via /search).",
     )
 
 
