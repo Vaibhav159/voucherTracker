@@ -43,6 +43,7 @@ def telegram_webhook(request):
     secret_token = getattr(settings, "TELEGRAM_WEBHOOK_SECRET", "")
     if secret_token:
         header_token = request.headers.get("X-Telegram-Bot-Api-Secret-Token", "")
+        print(f"{secret_token=}, {request.headers=}")
         if not hmac.compare_digest(header_token, secret_token):
             logger.warning("Invalid Telegram webhook secret token")
             return HttpResponse(status=403)
