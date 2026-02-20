@@ -3,6 +3,7 @@ import logging
 from asgiref.sync import sync_to_async
 from django.conf import settings
 from django.db.models import Q
+from telegram import BotCommand
 from telegram import InlineKeyboardButton
 from telegram import InlineKeyboardMarkup
 from telegram import Update
@@ -187,38 +188,70 @@ async def search_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
     await update.message.reply_html("\n".join(lines))
 
 
-async def list_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    """Handle /list"""
+@sync_to_async
+def _unsubscribe_from_vp(chat_id: int, vp_id: int):
+    try:
+        subscriber = TelegramSubscriber.objects.get(chat_id=chat_id)
+        sub = TelegramSubscription.objects.filter(subscriber=subscriber, voucher_platform_id=vp_id).first()
+        if sub:
+            sub.delete()
+            return True
+    except TelegramSubscriber.DoesNotExist:
+        pass
+    return False
+
+
+async def show_subscriptions_menu(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     chat_id = update.effective_chat.id
     subs = await _get_user_subscriptions(chat_id)
 
     if not subs:
-        await update.message.reply_html(
-            "📭 No active subscriptions.\n\nUse /search &lt;query&gt; and /subscribe to get started.",
-        )
+        text = "📭 No active subscriptions.\n\nUse /search &lt;query&gt; and /subscribe to get started."
+        if update.callback_query:
+            await update.callback_query.edit_message_text(text, parse_mode="HTML")
+        else:
+            await update.message.reply_html(text)
         return
 
     lines = ["📋 <b>Your Subscriptions:</b>\n"]
+    keyboard = []
+
     for sub in subs:
         vp = sub.voucher_platform
         stock = "✅" if not vp.out_of_stock_at else "🔴"
         lines.append(f"  {stock} {vp.voucher.name} ({vp.voucher.slug}) — {vp.platform.name}")
+        keyboard.append(
+            [
+                InlineKeyboardButton(
+                    f"❌ Remove {vp.voucher.name} ({vp.platform.name})", callback_data=f"RM_SUB_{vp.id}"
+                )
+            ],
+        )
 
     lines.append(f"\nTotal: {len(subs)} alerts")
-    lines.append("Use /unsubscribe &lt;voucher_slug&gt; to remove.")
-    await update.message.reply_html("\n".join(lines))
+    reply_markup = InlineKeyboardMarkup(keyboard)
+
+    if update.callback_query:
+        await update.callback_query.edit_message_text("\n".join(lines), reply_markup=reply_markup, parse_mode="HTML")
+    else:
+        await update.message.reply_html("\n".join(lines), reply_markup=reply_markup)
+
+
+async def list_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """Handle /list"""
+    await show_subscriptions_menu(update, context)
 
 
 async def unsubscribe_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    """Handle /unsubscribe <voucher slug>"""
-    chat_id = update.effective_chat.id
+    """Handle /unsubscribe"""
     text = update.message.text
     parts = text.split(maxsplit=1)
     if len(parts) < 2:
-        await update.message.reply_html("⚠️ Please specify a voucher slug.\n\nExample: /unsubscribe amazon")
+        await show_subscriptions_menu(update, context)
         return
 
     voucher_slug = parts[1].strip()
+    chat_id = update.effective_chat.id
     count = await _unsubscribe_from_all(chat_id, voucher_slug)
 
     if count == 0:
@@ -227,6 +260,18 @@ async def unsubscribe_command(update: Update, context: ContextTypes.DEFAULT_TYPE
         await update.message.reply_html(
             f"✅ Unsubscribed from <b>{voucher_slug}</b> ({count} alert{'s' if count > 1 else ''} removed).",
         )
+
+
+async def handle_remove_sub(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """Handle inline button clicks to remove a subscription."""
+    query = update.callback_query
+    await query.answer()
+
+    vp_id = int(query.data.replace("RM_SUB_", ""))
+    chat_id = update.effective_chat.id
+
+    await _unsubscribe_from_vp(chat_id, vp_id)
+    await show_subscriptions_menu(update, context)
 
 
 # --- CONVERSATION HANDLER FLOW ---
@@ -382,6 +427,20 @@ async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     return ConversationHandler.END
 
 
+async def setup_commands(application: Application) -> None:
+    """Sets the bot command menu dynamically on startup."""
+    from telegram import BotCommandScopeAllPrivateChats
+
+    commands = [
+        BotCommand("subscribe", "Start the subscription menu"),
+        BotCommand("list", "View and manage active subscriptions"),
+        BotCommand("search", "Find vouchers to subscribe to"),
+        BotCommand("unsubscribe", "Remove alerts"),
+        BotCommand("help", "Show help and commands"),
+    ]
+    await application.bot.set_my_commands(commands, scope=BotCommandScopeAllPrivateChats())
+
+
 def get_application():
     """Returns the PTB application instance configured with handlers."""
     # We must not run multiple event loops, so we build without building if we're inside Django.
@@ -391,7 +450,7 @@ def get_application():
         logger.warning("No TELEGRAM_BOT_TOKEN configured.")
         return None
 
-    application = Application.builder().token(token).build()
+    application = Application.builder().token(token).post_init(setup_commands).build()
 
     # Commands
     application.add_handler(CommandHandler("start", start))
@@ -399,6 +458,9 @@ def get_application():
     application.add_handler(CommandHandler("search", search_command))
     application.add_handler(CommandHandler("list", list_command))
     application.add_handler(CommandHandler("unsubscribe", unsubscribe_command))
+
+    # Global callback handlers
+    application.add_handler(CallbackQueryHandler(handle_remove_sub, pattern="^RM_SUB_"))
 
     # Conversation handler for /subscribe
     conv_handler = ConversationHandler(
@@ -415,6 +477,8 @@ def get_application():
         },
         fallbacks=[CommandHandler("cancel", cancel)],
     )
+
+    application.add_handler(conv_handler)
 
     application.add_handler(conv_handler)
     return application

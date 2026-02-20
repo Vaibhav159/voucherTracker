@@ -53,6 +53,10 @@ class Command(BaseCommand):
         await application.initialize()
         await application.start()
 
+        from backend.notifications.telegram_app import setup_commands
+
+        await setup_commands(application)
+
         # Simple polling loop passing updates to the application
         offset = 0
         try:
