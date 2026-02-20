@@ -11,6 +11,15 @@ import { Helmet } from 'react-helmet-async';
 
 import { BASE_URL } from '../config/constants';
 
+const BellIcon = () => (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+        <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+    </svg>
+);
+
+const TELEGRAM_BOT_USERNAME = import.meta.env.VITE_TELEGRAM_BOT_USERNAME || 'card_perks_xyz_bot';
+
 const VoucherDetail = () => {
     const { slug } = useParams();
     const { vouchers, loading, error } = useVouchers();
@@ -177,24 +186,31 @@ const VoucherDetail = () => {
                                     )}
                                     <h3 style={{ margin: 0, fontSize: '1.2rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{platform.name}</h3>
                                 </div>
-                                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
+                                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px', justifyContent: 'center' }}>
                                     {platform.out_of_stock_at ? (
-                                        <>
-                                            <span style={{
-                                                padding: '6px 12px',
-                                                borderRadius: '6px',
-                                                background: 'rgba(239, 68, 68, 0.1)',
-                                                color: '#ef4444',
-                                                fontSize: '0.9rem',
-                                                fontWeight: 600,
-                                                whiteSpace: 'nowrap'
-                                            }}>
-                                                Out of Stock
-                                            </span>
-                                            <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
-                                                Since {new Date(platform.out_of_stock_at).toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' })}
-                                            </span>
-                                        </>
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
+                                                <span style={{
+                                                    padding: '6px 12px',
+                                                    borderRadius: '6px',
+                                                    background: 'rgba(239, 68, 68, 0.1)',
+                                                    color: '#ef4444',
+                                                    fontSize: '0.9rem',
+                                                    fontWeight: 600,
+                                                    whiteSpace: 'nowrap'
+                                                }}>
+                                                    Out of Stock
+                                                </span>
+                                                <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+                                                    Since {new Date(platform.out_of_stock_at).toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' })}
+                                                </span>
+                                            </div>
+                                            <a href={`https://t.me/${TELEGRAM_BOT_USERNAME}?text=/subscribe%20${voucher.slug}%20${encodeURIComponent(platform.name)}`} target="_blank" rel="noopener noreferrer"
+                                                style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '38px', height: '38px', borderRadius: '50%', background: 'rgba(56, 189, 248, 0.1)', color: '#38bdf8', border: '1px solid rgba(56, 189, 248, 0.2)', transition: 'all 0.2s', textDecoration: 'none' }}
+                                                title="Notify me when back in stock">
+                                                <BellIcon />
+                                            </a>
+                                        </div>
                                     ) : (
                                         <a
                                             href={platform.link}

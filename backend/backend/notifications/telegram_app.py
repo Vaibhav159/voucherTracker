@@ -61,6 +61,18 @@ def _get_vouchers_by_query(query: str):
 
 
 @sync_to_async
+def _get_vp_by_slug_and_platform(voucher_slug: str, platform_name: str):
+    return (
+        VoucherPlatform.objects.filter(
+            voucher__slug__iexact=voucher_slug,
+            platform__name__iexact=platform_name,
+        )
+        .select_related("voucher", "platform")
+        .first()
+    )
+
+
+@sync_to_async
 def _get_platforms_for_voucher(voucher_slug: str):
     return list(
         VoucherPlatform.objects.filter(
@@ -369,12 +381,34 @@ async def start_subscribe(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
     parts = text.split(maxsplit=1)
 
     if len(parts) == 2:
-        # User provided a query immediately (e.g. /subscribe amazon)
-        return await handle_voucher_search(update, context, query=parts[1].strip())
-    # Prompt user for search query
+        query = parts[1].strip()
+        # Check if the query contains both slug and platform separated by a space
+        query_parts = query.split()
+        if len(query_parts) >= 2:
+            voucher_slug = query_parts[0]
+            platform_name = " ".join(query_parts[1:])
+            print(f"Voucher slug: {voucher_slug=} {platform_name=}")
+            vp = await _get_vp_by_slug_and_platform(voucher_slug, platform_name)
+            if vp:
+                success, msg = await _subscribe_user_to_platform(
+                    chat_id=chat_id,
+                    vp_id=vp.id,
+                    username=user.username or "",
+                    first_name=user.first_name or "",
+                )
+                keyboard = await get_default_keyboard(chat_id)
+                await update.message.reply_html(text=msg, reply_markup=keyboard)
+                return ConversationHandler.END
+
+        # User provided a normal query (e.g. /subscribe amazon)
+        return await handle_voucher_search(update, context, query=query)
+
+    # Prompt user for search query if omitted
+    keyboard = await get_default_keyboard(chat_id)
     await update.message.reply_html(
         "To subscribe, please reply with the name of the voucher you're looking for (e.g., 'amazon' or 'flipkart').\n"
         "Or type /cancel to abort.",
+        reply_markup=keyboard,
     )
     return SELECT_VOUCHER
 

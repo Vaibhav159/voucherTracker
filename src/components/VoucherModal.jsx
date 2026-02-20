@@ -12,6 +12,15 @@ import { useMediaQuery } from '../hooks/useMediaQuery';
 import { useSmartBuySavings } from '../hooks/useSmartBuySavings';
 import ExpiryBadge from './ExpiryBadge';
 
+const BellIcon = () => (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+        <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+    </svg>
+);
+
+const TELEGRAM_BOT_USERNAME = import.meta.env.VITE_TELEGRAM_BOT_USERNAME || 'card_perks_xyz_bot';
+
 const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
     const toast = useToast();
     const { toggleFavoriteVoucher, isVoucherFavorite } = useFavorites();
@@ -169,7 +178,15 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                                             <div className="item-metrics">
                                                 <span className="metric-label">{isSavings ? 'SAVINGS' : 'FEES'}</span>
                                                 {platform.out_of_stock_at ? (
-                                                    <span className="metric-value" style={{ color: '#ef4444', fontSize: '0.9rem' }}>Out of Stock</span>
+                                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                                        <span className="metric-value" style={{ color: '#ef4444', fontSize: '0.9rem' }}>Out of Stock</span>
+                                                        <a href={`https://t.me/${TELEGRAM_BOT_USERNAME}?text=/subscribe%20${voucher.slug}%20${encodeURIComponent(platform.name)}`} target="_blank" rel="noopener noreferrer"
+                                                            onClick={(e) => e.stopPropagation()}
+                                                            className="bell-btn-mobile"
+                                                            style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '28px', height: '28px', borderRadius: '50%', background: 'rgba(56, 189, 248, 0.15)', color: '#38bdf8' }}>
+                                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" /><path d="M13.73 21a2 2 0 0 1-3.46 0" /></svg>
+                                                        </a>
+                                                    </div>
                                                 ) : isGyftr(platform.name) && hasSmartBuyCard ? (
                                                     <span className="metric-value green smartbuy-combined">
                                                         {getGyftrCombinedValue(platform.fee) || value}
@@ -230,16 +247,18 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                                         <span className="stat-value">{selectedOffer.cap || 'No Cap'}</span>
                                     </div>
                                 </div>
-                                <a href={selectedOffer.link} target="_blank" rel="noopener noreferrer"
-                                    className={`sheet-buy-btn ${selectedOffer.out_of_stock_at ? 'disabled' : ''}`}
-                                    style={selectedOffer.out_of_stock_at ? { opacity: 0.6, pointerEvents: 'none', background: '#334155' } : {}}
-                                >
-                                    {selectedOffer.out_of_stock_at ? 'Out of Stock' : (
-                                        <>
-                                            Buy Now <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
-                                        </>
-                                    )}
-                                </a>
+                                {selectedOffer.out_of_stock_at ? (
+                                    <a href={`https://t.me/${TELEGRAM_BOT_USERNAME}?text=/subscribe%20${voucher.slug}%20${encodeURIComponent(selectedOffer.name)}`} target="_blank" rel="noopener noreferrer"
+                                        className="sheet-buy-btn"
+                                        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', background: 'rgba(56, 189, 248, 0.1)', color: '#38bdf8', border: '1px solid rgba(56, 189, 248, 0.3)', textDecoration: 'none' }}
+                                    >
+                                        <BellIcon /> Notify Me
+                                    </a>
+                                ) : (
+                                    <a href={selectedOffer.link} target="_blank" rel="noopener noreferrer" className="sheet-buy-btn">
+                                        Buy Now <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+                                    </a>
+                                )}
                             </div>
                         </div>
                     )}
@@ -381,21 +400,28 @@ const VoucherModal = ({ voucher, onClose, selectedPlatform }) => {
                                         </div>
                                         {/* Buy Button */}
                                         {platform.out_of_stock_at ? (
-                                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
-                                                <span style={{
-                                                    padding: '8px 16px',
-                                                    borderRadius: '8px',
-                                                    background: 'rgba(239, 68, 68, 0.1)',
-                                                    color: '#ef4444',
-                                                    fontSize: '0.9rem',
-                                                    fontWeight: 600,
-                                                    whiteSpace: 'nowrap'
-                                                }}>
-                                                    Out of Stock
-                                                </span>
-                                                <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
-                                                    Since {new Date(platform.out_of_stock_at).toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' })}
-                                                </span>
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
+                                                    <span style={{
+                                                        padding: '8px 16px',
+                                                        borderRadius: '8px',
+                                                        background: 'rgba(239, 68, 68, 0.1)',
+                                                        color: '#ef4444',
+                                                        fontSize: '0.9rem',
+                                                        fontWeight: 600,
+                                                        whiteSpace: 'nowrap'
+                                                    }}>
+                                                        Out of Stock
+                                                    </span>
+                                                    <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+                                                        Since {new Date(platform.out_of_stock_at).toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' })}
+                                                    </span>
+                                                </div>
+                                                <a href={`https://t.me/${TELEGRAM_BOT_USERNAME}?text=/subscribe%20${voucher.slug}%20${encodeURIComponent(platform.name)}`} target="_blank" rel="noopener noreferrer"
+                                                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', borderRadius: '50%', background: 'rgba(56, 189, 248, 0.1)', color: '#38bdf8', border: '1px solid rgba(56, 189, 248, 0.2)', transition: 'all 0.2s', textDecoration: 'none' }}
+                                                    title="Notify me when back in stock">
+                                                    <BellIcon />
+                                                </a>
                                             </div>
                                         ) : (
                                             <a href={platform.link} target="_blank" rel="noopener noreferrer" className="btn-buy"
