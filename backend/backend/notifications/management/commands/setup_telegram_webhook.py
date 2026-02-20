@@ -62,6 +62,10 @@ class Command(BaseCommand):
         if secret:
             payload["secret_token"] = secret
 
+        self.stdout.write(
+            self.style.NOTICE(f"Request: {payload=}"),
+        )
+
         resp = httpx.post(api_url, json=payload, timeout=10)
         data = resp.json()
 
