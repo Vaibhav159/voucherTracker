@@ -48,3 +48,14 @@ services:
     # 4. UPDATED: Fixed duplicate keys and Port Conflict
     ports:
       - "8050:80"  # Map Host 8050 -> Container 80. Cosmos will talk to 8050.
+
+  telegram_bot:
+    image: vaibhav198/voucher-tracker-backend:latest
+    restart: unless-stopped
+    depends_on:
+      - postgres
+      - redis
+    env_file:
+      - ./.envs/.production/.django
+      - ./.envs/.production/.postgres
+    command: python manage.py run_telegram_bot

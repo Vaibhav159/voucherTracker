@@ -33,3 +33,4 @@ markdown
 # Telegram Bot API
 # ------------------------------------------------------------------------------
 httpx==0.28.1  # https://github.com/encode/httpx
+python-telegram-bot>=20.0
