@@ -6,6 +6,7 @@ from django.db.models import Q
 from telegram import BotCommand
 from telegram import InlineKeyboardButton
 from telegram import InlineKeyboardMarkup
+from telegram import ReplyKeyboardMarkup
 from telegram import Update
 from telegram.ext import Application
 from telegram.ext import CallbackQueryHandler
@@ -26,6 +27,7 @@ MAX_SUBSCRIPTIONS_PER_USER = 1
 
 # Conversation states
 SELECT_VOUCHER, SELECT_PLATFORM = range(2)
+AWAIT_SEARCH_QUERY = 2
 
 
 @sync_to_async
@@ -127,6 +129,28 @@ def _subscribe_user_to_platform(chat_id: int, vp_id: int, username: str, first_n
     )
 
 
+async def get_default_keyboard(chat_id: int):
+    count = await _get_user_subscription_count(chat_id)
+    if count == 0:
+        keyboard = [
+            ["/subscribe", "/search"],
+            ["/help", "/list"],
+        ]
+        # Remove list from the no-sub menu? User requested: "list all except for unsub and list"
+        # Wait, if I do exactly that:
+        keyboard = [
+            ["/subscribe", "/search"],
+            ["/help"],
+        ]
+    else:
+        # "else if sub, list all expect sub"
+        keyboard = [
+            ["/list", "/search"],
+            ["/unsubscribe", "/help"],
+        ]
+    return ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
+
+
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Send a message when the command /start is issued."""
     user = update.effective_user
@@ -138,6 +162,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         first_name=user.first_name or "",
     )
 
+    keyboard = await get_default_keyboard(chat_id)
+
     await update.message.reply_html(
         "👋 <b>Welcome to VoucherTracker Alerts!</b>\n\n"
         "I'll notify you when specific vouchers come back in stock.\n\n"
@@ -148,11 +174,15 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         "/list — Your subscriptions\n"
         "/help — Show this help\n\n"
         "💡 Start with /search or /subscribe to find vouchers!",
+        reply_markup=keyboard,
     )
 
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Send a message when the command /help is issued."""
+    chat_id = update.effective_chat.id
+    keyboard = await get_default_keyboard(chat_id)
+
     await update.message.reply_html(
         "🤖 <b>VoucherTracker Bot Commands:</b>\n\n"
         "/search &lt;query&gt; — Find vouchers\n"
@@ -161,23 +191,51 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
         "/list — Your subscriptions\n"
         "/help — Show this help\n\n"
         "💡 Use voucher slugs (find via /search).",
+        reply_markup=keyboard,
     )
 
 
-async def search_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    """Handle /search <query>"""
+async def search_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    """Handle /search <query> or prompt for a query."""
     text = update.message.text
     parts = text.split(maxsplit=1)
+    chat_id = update.effective_chat.id
+    keyboard = await get_default_keyboard(chat_id)
+
     if len(parts) < 2:
-        await update.message.reply_html("⚠️ Please provide a search term.\n\nExample: /search amazon")
-        return
+        await update.message.reply_html(
+            "What voucher are you looking for?\n\nPlease reply with a search term (e.g., 'amazon' or 'flipkart'), or type /cancel.",
+            reply_markup=keyboard,
+        )
+        return AWAIT_SEARCH_QUERY
 
     query = parts[1].strip()
+    return await execute_search(update, context, query, keyboard)
+
+
+async def perform_search(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    """Handle the text reply for a search query."""
+    query = update.message.text.strip()
+    chat_id = update.effective_chat.id
+    keyboard = await get_default_keyboard(chat_id)
+    return await execute_search(update, context, query, keyboard)
+
+
+async def execute_search(
+    update: Update,
+    context: ContextTypes.DEFAULT_TYPE,
+    query: str,
+    keyboard: ReplyKeyboardMarkup,
+) -> int:
+    """Executes the search logic and returns to ConversationHandler.END."""
     matches = await _get_vouchers_by_query(query)
 
     if not matches:
-        await update.message.reply_html(f"❌ No vouchers found matching '<b>{query}</b>'.")
-        return
+        await update.message.reply_html(
+            f"❌ No vouchers found matching '<b>{query}</b>'.",
+            reply_markup=keyboard,
+        )
+        return ConversationHandler.END
 
     lines = [f"🔍 <b>Results for '{query}':</b>\n"]
     for vp in matches:
@@ -185,7 +243,8 @@ async def search_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
         lines.append(f"  {stock} {vp.voucher.name} (<b>{vp.voucher.slug}</b>) — {vp.platform.name}")
 
     lines.append("\n💡 Use /subscribe to begin subscribing.")
-    await update.message.reply_html("\n".join(lines))
+    await update.message.reply_html("\n".join(lines), reply_markup=keyboard)
+    return ConversationHandler.END
 
 
 @sync_to_async
@@ -210,7 +269,8 @@ async def show_subscriptions_menu(update: Update, context: ContextTypes.DEFAULT_
         if update.callback_query:
             await update.callback_query.edit_message_text(text, parse_mode="HTML")
         else:
-            await update.message.reply_html(text)
+            keyboard = await get_default_keyboard(chat_id)
+            await update.message.reply_html(text, reply_markup=keyboard)
         return
 
     lines = ["📋 <b>Your Subscriptions:</b>\n"]
@@ -223,8 +283,9 @@ async def show_subscriptions_menu(update: Update, context: ContextTypes.DEFAULT_
         keyboard.append(
             [
                 InlineKeyboardButton(
-                    f"❌ Remove {vp.voucher.name} ({vp.platform.name})", callback_data=f"RM_SUB_{vp.id}"
-                )
+                    f"❌ Remove {vp.voucher.name} ({vp.platform.name})",
+                    callback_data=f"RM_SUB_{vp.id}",
+                ),
             ],
         )
 
@@ -234,6 +295,9 @@ async def show_subscriptions_menu(update: Update, context: ContextTypes.DEFAULT_
     if update.callback_query:
         await update.callback_query.edit_message_text("\n".join(lines), reply_markup=reply_markup, parse_mode="HTML")
     else:
+        # Note: We don't overwrite the InlineKeyboardMarkup here because it needs to be shown,
+        # but to keep the ReplyKeyboard sticky, we actually can't send two reply_markups at once.
+        # But sending an inline keyboard doesn't hide the existing ReplyKeyboard, so it's fine!
         await update.message.reply_html("\n".join(lines), reply_markup=reply_markup)
 
 
@@ -253,12 +317,17 @@ async def unsubscribe_command(update: Update, context: ContextTypes.DEFAULT_TYPE
     voucher_slug = parts[1].strip()
     chat_id = update.effective_chat.id
     count = await _unsubscribe_from_all(chat_id, voucher_slug)
+    keyboard = await get_default_keyboard(chat_id)
 
     if count == 0:
-        await update.message.reply_html(f"ℹ️ You're not subscribed to <b>{voucher_slug}</b>.")
+        await update.message.reply_html(
+            f"ℹ️ You're not subscribed to <b>{voucher_slug}</b>.",
+            reply_markup=keyboard,
+        )
     else:
         await update.message.reply_html(
             f"✅ Unsubscribed from <b>{voucher_slug}</b> ({count} alert{'s' if count > 1 else ''} removed).",
+            reply_markup=keyboard,
         )
 
 
@@ -422,8 +491,11 @@ async def confirm_subscription(update: Update, context: ContextTypes.DEFAULT_TYP
 async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     """Cancels and ends the conversation."""
     user = update.message.from_user
+    chat_id = update.effective_chat.id
     context.user_data.clear()
-    await update.message.reply_text("Subscription process cancelled.")
+
+    keyboard = await get_default_keyboard(chat_id)
+    await update.message.reply_text("Subscription process cancelled.", reply_markup=keyboard)
     return ConversationHandler.END
 
 
@@ -441,6 +513,11 @@ async def setup_commands(application: Application) -> None:
     await application.bot.set_my_commands(commands, scope=BotCommandScopeAllPrivateChats())
 
 
+async def unknown_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """Handle unknown text messages or commands and return the help menu."""
+    await help_command(update, context)
+
+
 def get_application():
     """Returns the PTB application instance configured with handlers."""
     # We must not run multiple event loops, so we build without building if we're inside Django.
@@ -455,12 +532,23 @@ def get_application():
     # Commands
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CommandHandler("help", help_command))
-    application.add_handler(CommandHandler("search", search_command))
     application.add_handler(CommandHandler("list", list_command))
     application.add_handler(CommandHandler("unsubscribe", unsubscribe_command))
 
     # Global callback handlers
     application.add_handler(CallbackQueryHandler(handle_remove_sub, pattern="^RM_SUB_"))
+
+    # Conversation handler for /search
+    search_conv_handler = ConversationHandler(
+        entry_points=[CommandHandler("search", search_command)],
+        states={
+            AWAIT_SEARCH_QUERY: [
+                MessageHandler(filters.TEXT & ~filters.COMMAND, perform_search),
+            ],
+        },
+        fallbacks=[CommandHandler("cancel", cancel)],
+    )
+    application.add_handler(search_conv_handler)
 
     # Conversation handler for /subscribe
     conv_handler = ConversationHandler(
@@ -480,5 +568,7 @@ def get_application():
 
     application.add_handler(conv_handler)
 
-    application.add_handler(conv_handler)
+    # Catch-all for unknown commands and plain text outside conversations
+    application.add_handler(MessageHandler(filters.ALL, unknown_message))
+
     return application
