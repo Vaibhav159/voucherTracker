@@ -84,8 +84,9 @@ def send_restock_alerts(restocked_voucher_platforms) -> dict:
 
 def _build_restock_message(vp) -> str:
     """Build a formatted restock alert message for a single VoucherPlatform."""
+    platform_param = vp.platform.name.replace(" ", "+")
     return (
         f"🔔 <b>Restock Alert!</b>\n\n"
         f"<b>{vp.voucher.name}</b> is back in stock on <b>{vp.platform.name}</b>!\n\n"
-        f"Check it out at <a href='https://cardperks.xyz/?voucher={vp.voucher.slug}'>{vp.voucher.name}</a>"
+        f"Check it out at <a href='https://cardperks.xyz/?voucher={vp.voucher.slug}&platform={platform_param}'>{vp.voucher.name}</a>"
     )
