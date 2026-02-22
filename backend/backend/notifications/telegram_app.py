@@ -6,8 +6,11 @@ from django.db.models import Q
 from telegram import BotCommand
 from telegram import InlineKeyboardButton
 from telegram import InlineKeyboardMarkup
+from telegram import KeyboardButton
 from telegram import ReplyKeyboardMarkup
 from telegram import Update
+from telegram import WebAppInfo
+from telegram.constants import ChatAction
 from telegram.ext import Application
 from telegram.ext import CallbackQueryHandler
 from telegram.ext import CommandHandler
@@ -48,14 +51,14 @@ def _get_vouchers_by_query(query: str):
             out_of_stock_at__isnull=True,  # only show in-stock items
         )
         .select_related("voucher", "platform")
-        .order_by("voucher__name", "platform__name")[:20]
+        .order_by("voucher__name", "platform__name")[:50]
     )
 
     if not matches:
         matches = (
             VoucherPlatform.objects.filter(Q(voucher__name__icontains=query) | Q(voucher__slug__icontains=query))
             .select_related("voucher", "platform")
-            .order_by("voucher__name", "platform__name")[:20]
+            .order_by("voucher__name", "platform__name")[:50]
         )
     return list(matches)
 
@@ -143,22 +146,20 @@ def _subscribe_user_to_platform(chat_id: int, vp_id: int, username: str, first_n
 
 async def get_default_keyboard(chat_id: int):
     count = await _get_user_subscription_count(chat_id)
+    webapp_btn = KeyboardButton(
+        text="🌐 Web App",
+        web_app=WebAppInfo(url="https://cardperks.xyz"),
+    )
     if count == 0:
         keyboard = [
             ["/subscribe", "/search"],
-            ["/help", "/list"],
-        ]
-        # Remove list from the no-sub menu? User requested: "list all except for unsub and list"
-        # Wait, if I do exactly that:
-        keyboard = [
-            ["/subscribe", "/search"],
-            ["/help"],
+            ["/help", webapp_btn],
         ]
     else:
         # "else if sub, list all expect sub"
         keyboard = [
             ["/list", "/search"],
-            ["/unsubscribe", "/help"],
+            ["/unsubscribe", webapp_btn],
         ]
     return ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
 
@@ -240,6 +241,12 @@ async def execute_search(
     keyboard: ReplyKeyboardMarkup,
 ) -> int:
     """Executes the search logic and returns to ConversationHandler.END."""
+    chat_id = update.effective_chat.id
+    try:
+        await context.bot.send_chat_action(chat_id=chat_id, action=ChatAction.TYPING)
+    except Exception:
+        pass
+
     matches = await _get_vouchers_by_query(query)
 
     if not matches:
@@ -250,11 +257,20 @@ async def execute_search(
         return ConversationHandler.END
 
     lines = [f"🔍 <b>Results for '{query}':</b>\n"]
-    for vp in matches:
-        stock = "✅" if not vp.out_of_stock_at else "🔴"
-        lines.append(f"  {stock} {vp.voucher.name} (<b>{vp.voucher.slug}</b>) — {vp.platform.name}")
 
-    lines.append("\n💡 Use /subscribe to begin subscribing.")
+    grouped = {}
+    for vp in matches:
+        slug = vp.voucher.slug
+        if slug not in grouped:
+            grouped[slug] = {"name": vp.voucher.name, "platforms": []}
+        stock = "🟢" if not vp.out_of_stock_at else "🔴"
+        grouped[slug]["platforms"].append(f"{stock} {vp.platform.name}")
+
+    for slug, data in grouped.items():
+        platforms_str = ", ".join(data["platforms"])
+        lines.append(f"<b>{data['name']}</b> (<code>{slug}</code>)\n  ↳ {platforms_str}\n")
+
+    lines.append("\n💡 <i>Use /subscribe to begin subscribing.</i>")
     await update.message.reply_html("\n".join(lines), reply_markup=keyboard)
     return ConversationHandler.END
 
@@ -274,6 +290,11 @@ def _unsubscribe_from_vp(chat_id: int, vp_id: int):
 
 async def show_subscriptions_menu(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     chat_id = update.effective_chat.id
+    try:
+        await context.bot.send_chat_action(chat_id=chat_id, action=ChatAction.TYPING)
+    except Exception:
+        pass
+
     subs = await _get_user_subscriptions(chat_id)
 
     if not subs:
@@ -419,8 +440,24 @@ async def process_voucher_search(update: Update, context: ContextTypes.DEFAULT_T
     return await handle_voucher_search(update, context, query)
 
 
-async def handle_voucher_search(update: Update, context: ContextTypes.DEFAULT_TYPE, query: str) -> int:
+async def handle_voucher_search(
+    update: Update,
+    context: ContextTypes.DEFAULT_TYPE,
+    query: str = None,
+    page: int = 0,
+) -> int:
     """Finds vouchers and builds the first menu."""
+    if query is None:
+        query = context.user_data.get("search_query", "")
+    else:
+        context.user_data["search_query"] = query
+
+    chat_id = update.effective_chat.id
+    try:
+        await context.bot.send_chat_action(chat_id=chat_id, action=ChatAction.TYPING)
+    except Exception:
+        pass
+
     matches = await _get_vouchers_by_query(query)
 
     if not matches:
@@ -436,21 +473,49 @@ async def handle_voucher_search(update: Update, context: ContextTypes.DEFAULT_TY
         if slug not in unique_vouchers:
             unique_vouchers[slug] = vp.voucher.name
 
+    unique_vouchers_list = list(unique_vouchers.items())
+    PAGE_SIZE = 6
+    total_pages = (len(unique_vouchers_list) + PAGE_SIZE - 1) // PAGE_SIZE
+
+    start_idx = page * PAGE_SIZE
+    end_idx = start_idx + PAGE_SIZE
+    paginated_vouchers = unique_vouchers_list[start_idx:end_idx]
+
     keyboard = []
-    # Maximum of 10 results to not flood the UI
-    for slug, name in list(unique_vouchers.items())[:10]:
+    for slug, name in paginated_vouchers:
         # limit callback_data to 64 bytes
         keyboard.append([InlineKeyboardButton(f"{name}", callback_data=f"VOUCHER_{slug}")])
 
+    nav_buttons = []
+    if page > 0:
+        nav_buttons.append(InlineKeyboardButton("⬅️ Prev", callback_data=f"PAGE_{page - 1}"))
+    if page < total_pages - 1:
+        nav_buttons.append(InlineKeyboardButton("Next ➡️", callback_data=f"PAGE_{page + 1}"))
+
+    if nav_buttons:
+        keyboard.append(nav_buttons)
+
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    msg_text = "Select a voucher to subscribe to:"
+    msg_text = (
+        f"Select a voucher to subscribe to (Page {page + 1}/{total_pages}):"
+        if total_pages > 1
+        else "Select a voucher to subscribe to:"
+    )
     if update.message:
         await update.message.reply_text(msg_text, reply_markup=reply_markup)
     elif update.callback_query:
         await update.callback_query.edit_message_text(msg_text, reply_markup=reply_markup)
 
     return SELECT_PLATFORM
+
+
+async def handle_pagination(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    query = update.callback_query
+    await query.answer()
+    page = int(query.data.replace("PAGE_", ""))
+    search_query = context.user_data.get("search_query", "")
+    return await handle_voucher_search(update, context, search_query, page)
 
 
 async def platform_selection(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
@@ -594,6 +659,7 @@ def get_application():
             ],
             SELECT_PLATFORM: [
                 CallbackQueryHandler(platform_selection, pattern="^VOUCHER_"),
+                CallbackQueryHandler(handle_pagination, pattern="^PAGE_"),
                 CallbackQueryHandler(confirm_subscription, pattern="^(VP_|BACK_TO_SEARCH)"),
             ],
         },

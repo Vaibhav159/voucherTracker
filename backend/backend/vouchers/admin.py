@@ -40,7 +40,7 @@ class PlatformAdmin(admin.ModelAdmin):
 
 @admin.register(VoucherPlatform)
 class VoucherPlatformAdmin(admin.ModelAdmin):
-    list_display = ["voucher", "platform", "fee", "cap"]
+    list_display = ["voucher", "platform", "fee", "cap", "link", "external_id", "out_of_stock_at"]
     list_filter = ["platform"]
     search_fields = ["voucher__name", "platform__name"]
     autocomplete_fields = ["voucher", "platform"]
